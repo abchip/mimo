@@ -144,7 +144,7 @@ public interface MethodPackage extends EPackage {
 	int CUSTOM_METHOD__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Fixed Asset Dep Methods</b></em>' attribute list.
+	 * The feature id for the '<em><b>Fixed Asset Dep Methods</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -317,15 +317,15 @@ public interface MethodPackage extends EPackage {
 	EAttribute getCustomMethod_Description();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.common.method.CustomMethod#getFixedAssetDepMethods <em>Fixed Asset Dep Methods</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.method.CustomMethod#getFixedAssetDepMethods <em>Fixed Asset Dep Methods</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Fixed Asset Dep Methods</em>'.
+	 * @return the meta object for the reference list '<em>Fixed Asset Dep Methods</em>'.
 	 * @see org.abchip.mimo.biz.common.method.CustomMethod#getFixedAssetDepMethods()
 	 * @see #getCustomMethod()
 	 * @generated
 	 */
-	EAttribute getCustomMethod_FixedAssetDepMethods();
+	EReference getCustomMethod_FixedAssetDepMethods();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.method.CustomMethodType <em>Custom Method Type</em>}'.
@@ -446,12 +446,12 @@ public interface MethodPackage extends EPackage {
 		EAttribute CUSTOM_METHOD__DESCRIPTION = eINSTANCE.getCustomMethod_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Fixed Asset Dep Methods</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Fixed Asset Dep Methods</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS = eINSTANCE.getCustomMethod_FixedAssetDepMethods();
+		EReference CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS = eINSTANCE.getCustomMethod_FixedAssetDepMethods();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.method.impl.CustomMethodTypeImpl <em>Custom Method Type</em>}' class.

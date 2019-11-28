@@ -15,7 +15,9 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.shipment.picklist.Picklist;
+import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
+import org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 import org.eclipse.emf.ecore.EClass;
 
@@ -232,8 +234,8 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPicklistStatusHistories() {
-		return (List<String>)eGet(PicklistPackage.Literals.PICKLIST__PICKLIST_STATUS_HISTORIES, true);
+	public List<PicklistStatusHistory> getPicklistStatusHistories() {
+		return (List<PicklistStatusHistory>)eGet(PicklistPackage.Literals.PICKLIST__PICKLIST_STATUS_HISTORIES, true);
 	}
 
 	/**
@@ -242,7 +244,7 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 * @generated
 	 */
 	@Override
-	public List<String> picklistBins() {
+	public List<PicklistBin> picklistBins() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

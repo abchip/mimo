@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.accounting.ledger.SettlementTerm;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -120,7 +121,7 @@ public class SettlementTermImpl extends BizEntityImpl implements SettlementTerm 
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTransEntries() {
+	public List<AcctgTransEntry> acctgTransEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

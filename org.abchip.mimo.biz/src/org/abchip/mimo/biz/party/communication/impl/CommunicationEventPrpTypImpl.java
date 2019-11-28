@@ -8,9 +8,9 @@
 package org.abchip.mimo.biz.party.communication.impl;
 
 import java.util.List;
-
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp;
+import org.abchip.mimo.biz.party.communication.CommunicationEventPurpose;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class CommunicationEventPrpTypImpl extends BizEntityImpl implements CommunicationEventPrpTyp {
+public class CommunicationEventPrpTypImpl extends BizEntityTypeImpl<CommunicationEventPurpose> implements CommunicationEventPrpTyp {
 	/**
 	 * 
 	 */
@@ -122,8 +122,8 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCommunicationEventPurposes() {
-		return (List<String>)eGet(CommunicationPackage.Literals.COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES, true);
+	public List<CommunicationEventPurpose> getCommunicationEventPurposes() {
+		return (List<CommunicationEventPurpose>)eGet(CommunicationPackage.Literals.COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES, true);
 	}
 
 	/**
@@ -132,7 +132,7 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 	 * @generated
 	 */
 	@Override
-	public List<String> childCommunicationEventPrpTyps() {
+	public List<CommunicationEventPrpTyp> childCommunicationEventPrpTyps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

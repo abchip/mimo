@@ -78,7 +78,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int CONTAINER__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -87,7 +87,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int CONTAINER__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -96,7 +96,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int CONTAINER__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -105,7 +105,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int CONTAINER__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Container Id</b></em>' attribute.
@@ -114,7 +114,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__CONTAINER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int CONTAINER__CONTAINER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Container Type Id</b></em>' reference.
@@ -123,7 +123,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__CONTAINER_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int CONTAINER__CONTAINER_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -132,7 +132,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int CONTAINER__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Facility Id</b></em>' reference.
@@ -141,7 +141,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__FACILITY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int CONTAINER__FACILITY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Container</em>' class.
@@ -150,7 +150,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int CONTAINER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.ContainerGeoPointImpl <em>Container Geo Point</em>}' class.
@@ -254,22 +254,13 @@ public interface FacilityPackage extends EPackage {
 	int CONTAINER_TYPE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int CONTAINER_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -278,7 +269,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int CONTAINER_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -287,7 +278,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int CONTAINER_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -296,7 +287,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int CONTAINER_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Container Type Id</b></em>' attribute.
@@ -305,7 +296,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_TYPE__CONTAINER_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int CONTAINER_TYPE__CONTAINER_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -314,7 +305,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int CONTAINER_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Container Type</em>' class.
@@ -323,7 +314,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int CONTAINER_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl <em>Facility</em>}' class.
@@ -435,7 +426,7 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Facility Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Facility Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -444,7 +435,7 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY__FACILITY_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Facility Locations</b></em>' attribute list.
+	 * The feature id for the '<em><b>Facility Locations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -668,7 +659,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int FACILITY_CALENDAR__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -677,7 +668,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int FACILITY_CALENDAR__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -686,7 +677,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int FACILITY_CALENDAR__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -695,7 +686,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int FACILITY_CALENDAR__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Facility Id</b></em>' reference.
@@ -704,7 +695,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR__FACILITY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int FACILITY_CALENDAR__FACILITY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Facility Calendar Type Id</b></em>' reference.
@@ -713,7 +704,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Calendar Id</b></em>' attribute.
@@ -722,7 +713,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR__CALENDAR_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int FACILITY_CALENDAR__CALENDAR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -731,7 +722,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int FACILITY_CALENDAR__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -740,7 +731,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int FACILITY_CALENDAR__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Calendar</em>' class.
@@ -749,7 +740,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int FACILITY_CALENDAR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarTypeImpl <em>Calendar Type</em>}' class.
@@ -762,22 +753,13 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_CALENDAR_TYPE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FACILITY_CALENDAR_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int FACILITY_CALENDAR_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -786,7 +768,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int FACILITY_CALENDAR_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -795,7 +777,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int FACILITY_CALENDAR_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -804,7 +786,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int FACILITY_CALENDAR_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Facility Calendar Type Id</b></em>' attribute.
@@ -813,7 +795,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR_TYPE__FACILITY_CALENDAR_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int FACILITY_CALENDAR_TYPE__FACILITY_CALENDAR_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -822,7 +804,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int FACILITY_CALENDAR_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
@@ -831,7 +813,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int FACILITY_CALENDAR_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Calendar Type</em>' class.
@@ -840,7 +822,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_CALENDAR_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
+	int FACILITY_CALENDAR_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityCarrierShipmentImpl <em>Carrier Shipment</em>}' class.
@@ -1250,7 +1232,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int FACILITY_GROUP__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1259,7 +1241,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int FACILITY_GROUP__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1268,7 +1250,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int FACILITY_GROUP__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1277,7 +1259,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int FACILITY_GROUP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Facility Group Id</b></em>' attribute.
@@ -1286,7 +1268,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP__FACILITY_GROUP_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int FACILITY_GROUP__FACILITY_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1295,7 +1277,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int FACILITY_GROUP__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Facility Group Name</b></em>' attribute.
@@ -1304,7 +1286,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP__FACILITY_GROUP_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int FACILITY_GROUP__FACILITY_GROUP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Facility Group Type Id</b></em>' reference.
@@ -1313,7 +1295,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP__FACILITY_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int FACILITY_GROUP__FACILITY_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Primary Parent Group Id</b></em>' reference.
@@ -1322,7 +1304,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Group</em>' class.
@@ -1331,7 +1313,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int FACILITY_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupMemberImpl <em>Group Member</em>}' class.
@@ -1626,22 +1608,13 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_GROUP_TYPE = 15;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FACILITY_GROUP_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int FACILITY_GROUP_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1650,7 +1623,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int FACILITY_GROUP_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1659,7 +1632,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int FACILITY_GROUP_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1668,7 +1641,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int FACILITY_GROUP_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Facility Group Type Id</b></em>' attribute.
@@ -1677,7 +1650,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP_TYPE__FACILITY_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int FACILITY_GROUP_TYPE__FACILITY_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1686,7 +1659,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int FACILITY_GROUP_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Group Type</em>' class.
@@ -1695,7 +1668,7 @@ public interface FacilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACILITY_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int FACILITY_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl <em>Location</em>}' class.
@@ -2107,7 +2080,7 @@ public interface FacilityPackage extends EPackage {
 	int FACILITY_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Facility Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Facility Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2792,26 +2765,26 @@ public interface FacilityPackage extends EPackage {
 	EReference getFacility_ProductStoreId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.facility.Facility#getFacilityAttributes <em>Facility Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.facility.Facility#getFacilityAttributes <em>Facility Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Facility Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Facility Attributes</em>'.
 	 * @see org.abchip.mimo.biz.product.facility.Facility#getFacilityAttributes()
 	 * @see #getFacility()
 	 * @generated
 	 */
-	EAttribute getFacility_FacilityAttributes();
+	EReference getFacility_FacilityAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.facility.Facility#getFacilityLocations <em>Facility Locations</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.facility.Facility#getFacilityLocations <em>Facility Locations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Facility Locations</em>'.
+	 * @return the meta object for the reference list '<em>Facility Locations</em>'.
 	 * @see org.abchip.mimo.biz.product.facility.Facility#getFacilityLocations()
 	 * @see #getFacility()
 	 * @generated
 	 */
-	EAttribute getFacility_FacilityLocations();
+	EReference getFacility_FacilityLocations();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.facility.FacilityAttribute <em>Attribute</em>}'.
@@ -3788,15 +3761,15 @@ public interface FacilityPackage extends EPackage {
 	EReference getFacilityType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.facility.FacilityType#getFacilityTypeAttrs <em>Facility Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.facility.FacilityType#getFacilityTypeAttrs <em>Facility Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Facility Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Facility Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.product.facility.FacilityType#getFacilityTypeAttrs()
 	 * @see #getFacilityType()
 	 * @generated
 	 */
-	EAttribute getFacilityType_FacilityTypeAttrs();
+	EReference getFacilityType_FacilityTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.facility.FacilityTypeAttr <em>Type Attr</em>}'.
@@ -4280,20 +4253,20 @@ public interface FacilityPackage extends EPackage {
 		EReference FACILITY__PRODUCT_STORE_ID = eINSTANCE.getFacility_ProductStoreId();
 
 		/**
-		 * The meta object literal for the '<em><b>Facility Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Facility Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FACILITY__FACILITY_ATTRIBUTES = eINSTANCE.getFacility_FacilityAttributes();
+		EReference FACILITY__FACILITY_ATTRIBUTES = eINSTANCE.getFacility_FacilityAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Facility Locations</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Facility Locations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FACILITY__FACILITY_LOCATIONS = eINSTANCE.getFacility_FacilityLocations();
+		EReference FACILITY__FACILITY_LOCATIONS = eINSTANCE.getFacility_FacilityLocations();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityAttributeImpl <em>Attribute</em>}' class.
@@ -5048,12 +5021,12 @@ public interface FacilityPackage extends EPackage {
 		EReference FACILITY_TYPE__PARENT_TYPE_ID = eINSTANCE.getFacilityType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Facility Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Facility Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FACILITY_TYPE__FACILITY_TYPE_ATTRS = eINSTANCE.getFacilityType_FacilityTypeAttrs();
+		EReference FACILITY_TYPE__FACILITY_TYPE_ATTRS = eINSTANCE.getFacilityType_FacilityTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.facility.impl.FacilityTypeAttrImpl <em>Type Attr</em>}' class.

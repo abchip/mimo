@@ -12,7 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.Testing;
 import org.abchip.mimo.biz.entity.test.TestingType;
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TestingTypeImpl extends BizEntityTypeImpl<Testing> implements TestingType {
+public class TestingTypeImpl extends BizEntityImpl implements TestingType {
 	/**
 	 * 
 	 */
@@ -79,7 +79,7 @@ public class TestingTypeImpl extends BizEntityTypeImpl<Testing> implements Testi
 	 * @generated
 	 */
 	@Override
-	public List<String> testings() {
+	public List<Testing> testings() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

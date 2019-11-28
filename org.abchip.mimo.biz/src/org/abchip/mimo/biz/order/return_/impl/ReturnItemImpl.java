@@ -10,7 +10,7 @@ package org.abchip.mimo.biz.order.return_.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.common.status.StatusItem;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnItem;
@@ -49,7 +49,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implements ReturnItem {
+public class ReturnItemImpl extends BizEntityImpl implements ReturnItem {
 	/**
 	 * 
 	 */

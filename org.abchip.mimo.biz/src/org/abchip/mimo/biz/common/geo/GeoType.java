@@ -112,22 +112,20 @@ public interface GeoType extends BizEntityType<Geo> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GeoType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childGeoTypes();
+	List<GeoType> childGeoTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Geo' route='geoTypeId'"
 	 * @generated
 	 */
-	List<String> geos();
+	List<Geo> geos();
 
 	/**
 	 * Returns the value of the '<em><b>Geo Type Id</b></em>' attribute.

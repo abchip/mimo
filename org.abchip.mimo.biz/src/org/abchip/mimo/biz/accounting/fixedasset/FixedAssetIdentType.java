@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.accounting.fixedasset;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame title='Fixed Asset Identification Type' dictionary='AccountingEntityLabels' formula='description'"
  * @generated
  */
-public interface FixedAssetIdentType extends BizEntityType<FixedAssetIdent> {
+public interface FixedAssetIdentType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,12 +58,11 @@ public interface FixedAssetIdentType extends BizEntityType<FixedAssetIdent> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetIdent' route='fixedAssetIdentTypeId'"
 	 * @generated
 	 */
-	List<String> fixedAssetIdents();
+	List<FixedAssetIdent> fixedAssetIdents();
 
 	/**
 	 * Returns the value of the '<em><b>Fixed Asset Ident Type Id</b></em>' attribute.

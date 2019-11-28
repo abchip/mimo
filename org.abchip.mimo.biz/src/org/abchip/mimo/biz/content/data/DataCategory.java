@@ -112,21 +112,19 @@ public interface DataCategory extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataCategory' route='parentCategoryId'"
 	 * @generated
 	 */
-	List<String> childDataCategories();
+	List<DataCategory> childDataCategories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='dataCategoryId'"
 	 * @generated
 	 */
-	List<String> dataResources();
+	List<DataResource> dataResources();
 
 } // DataCategory

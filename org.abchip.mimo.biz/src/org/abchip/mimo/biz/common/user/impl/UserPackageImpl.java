@@ -825,7 +825,7 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		initEAttribute(getUserPrefGroupType_UserPrefGroupTypeId(), ecorePackage.getEString(), "userPrefGroupTypeId", null, 1, 1, UserPrefGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserPrefGroupType_Description(), ecorePackage.getEString(), "description", null, 0, 1, UserPrefGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(userPrefGroupTypeEClass, ecorePackage.getEString(), "userPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(userPrefGroupTypeEClass, this.getUserPreference(), "userPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(userPreferenceEClass, UserPreference.class, "UserPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUserPreference_UserLoginId(), theLoginPackage.getUserLogin(), null, "userLoginId", null, 1, 1, UserPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -839,12 +839,12 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -880,13 +880,6 @@ public class UserPackageImpl extends EPackageImpl implements UserPackage {
 	 */
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
-		addAnnotation
-		  (userPrefGroupTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id-long",
-			   "length", "60"
-		   });
 		addAnnotation
 		  (getUserPrefGroupType_UserPrefGroupTypeId(),
 		   source,

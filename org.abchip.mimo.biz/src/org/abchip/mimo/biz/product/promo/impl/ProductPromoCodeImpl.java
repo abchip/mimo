@@ -11,8 +11,13 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderProductPromoCode;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
+import org.abchip.mimo.biz.product.promo.ProductPromoCodeEmail;
+import org.abchip.mimo.biz.product.promo.ProductPromoCodeParty;
+import org.abchip.mimo.biz.product.promo.ProductPromoUse;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.ecore.EClass;
@@ -275,8 +280,8 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductPromoCodeEmails() {
-		return (List<String>)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS, true);
+	public List<ProductPromoCodeEmail> getProductPromoCodeEmails() {
+		return (List<ProductPromoCodeEmail>)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS, true);
 	}
 
 	/**
@@ -286,8 +291,8 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductPromoCodeParties() {
-		return (List<String>)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES, true);
+	public List<ProductPromoCodeParty> getProductPromoCodeParties() {
+		return (List<ProductPromoCodeParty>)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES, true);
 	}
 
 	/**
@@ -296,7 +301,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public List<String> orderProductPromoCodes() {
+	public List<OrderProductPromoCode> orderProductPromoCodes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -308,7 +313,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public List<String> productPromoUses() {
+	public List<ProductPromoUse> productPromoUses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -320,7 +325,7 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public List<String> shoppingLists() {
+	public List<ShoppingList> shoppingLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

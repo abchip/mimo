@@ -10,9 +10,8 @@ package org.abchip.mimo.biz.party.party;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Party Role</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Party
+ * Role</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -28,26 +27,26 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface PartyRole extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Role Type Id</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Role Type Id</em>' reference isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Role Type Id</em>' reference.
 	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRole_RoleTypeId()
-	 * @model keys="roleTypeId" required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="roleTypeId" required="true" annotation="mimo-ent-slot
+	 *        key='true'"
 	 * @generated
 	 */
 	RoleType getRoleTypeId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyRole#getRoleTypeId <em>Role Type Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Role Type Id</em>' reference.
 	 * @see #getRoleTypeId()
 	 * @generated
@@ -55,26 +54,25 @@ public interface PartyRole extends BizEntity {
 	void setRoleTypeId(RoleType value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Party Id</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Party Id</em>' reference isn't clear, there really
+	 * should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Party Id</em>' reference.
 	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRole_PartyId()
-	 * @model keys="partyId" required="true"
-	 *        annotation="mimo-ent-slot key='true'"
+	 * @model keys="partyId" required="true" annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Party getPartyId();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyRole#getPartyId <em>Party Id</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated

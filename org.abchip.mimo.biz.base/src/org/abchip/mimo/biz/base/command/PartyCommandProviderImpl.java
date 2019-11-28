@@ -15,6 +15,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyFactory;
 import org.abchip.mimo.biz.party.party.PartyGroup;
+import org.abchip.mimo.biz.party.party.PartyRole;
 import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.context.Context;
@@ -39,7 +40,11 @@ public class PartyCommandProviderImpl extends BaseCommandProviderImpl {
 			System.out.println(party.getID());
 			System.out.println(party.getURI());
 			System.out.println(party.getPartyId());
-			System.out.println(party.getPartyRoles());
+
+			for (PartyRole partyRole : party.getPartyRoles()) {
+				System.out.println(partyRole.getID());
+			}
+
 			System.out.println(party.getCreatedByUserLogin().getPartyId().getID());
 			System.out.println(party.getPartyTypeId().getID());
 		}

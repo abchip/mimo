@@ -722,8 +722,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getComponent_TenantComponents() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(2);
+	public EReference getComponent_TenantComponents() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -782,8 +782,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTenant_TenantDataSources() {
-		return (EAttribute)tenantEClass.getEStructuralFeatures().get(3);
+	public EReference getTenant_TenantDataSources() {
+		return (EReference)tenantEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -978,13 +978,13 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		componentEClass = createEClass(COMPONENT);
 		createEAttribute(componentEClass, COMPONENT__COMPONENT_NAME);
 		createEAttribute(componentEClass, COMPONENT__ROOT_LOCATION);
-		createEAttribute(componentEClass, COMPONENT__TENANT_COMPONENTS);
+		createEReference(componentEClass, COMPONENT__TENANT_COMPONENTS);
 
 		tenantEClass = createEClass(TENANT);
 		createEAttribute(tenantEClass, TENANT__TENANT_ID);
 		createEAttribute(tenantEClass, TENANT__DISABLED);
 		createEAttribute(tenantEClass, TENANT__INITIAL_PATH);
-		createEAttribute(tenantEClass, TENANT__TENANT_DATA_SOURCES);
+		createEReference(tenantEClass, TENANT__TENANT_DATA_SOURCES);
 		createEAttribute(tenantEClass, TENANT__TENANT_NAME);
 
 		tenantComponentEClass = createEClass(TENANT_COMPONENT);
@@ -1050,18 +1050,18 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponent_ComponentName(), ecorePackage.getEString(), "componentName", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_RootLocation(), ecorePackage.getEString(), "rootLocation", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponent_TenantComponents(), ecorePackage.getEString(), "tenantComponents", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_TenantComponents(), this.getTenantComponent(), null, "tenantComponents", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tenantEClass, Tenant.class, "Tenant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTenant_TenantId(), ecorePackage.getEString(), "tenantId", null, 1, 1, Tenant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTenant_Disabled(), ecorePackage.getEBoolean(), "disabled", null, 0, 1, Tenant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTenant_InitialPath(), ecorePackage.getEString(), "initialPath", null, 0, 1, Tenant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTenant_TenantDataSources(), ecorePackage.getEString(), "tenantDataSources", null, 0, -1, Tenant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTenant_TenantDataSources(), this.getTenantDataSource(), null, "tenantDataSources", null, 0, -1, Tenant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTenant_TenantName(), ecorePackage.getEString(), "tenantName", null, 0, 1, Tenant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(tenantEClass, ecorePackage.getEString(), "tenantComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(tenantEClass, this.getTenantComponent(), "tenantComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(tenantEClass, ecorePackage.getEString(), "tenantDomainNames", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(tenantEClass, this.getTenantDomainName(), "tenantDomainNames", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(tenantComponentEClass, TenantComponent.class, "TenantComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTenantComponent_TenantId(), this.getTenant(), null, "tenantId", null, 1, 1, TenantComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1155,27 +1155,6 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getComponent_TenantComponents(),
-		   source,
-		   new String[] {
-			   "type", "name",
-			   "length", "100"
-		   });
-		addAnnotation
-		  (tenantEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (tenantEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getTenant_TenantId(),
 		   source,
 		   new String[] {
@@ -1195,13 +1174,6 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getTenant_TenantDataSources(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getTenant_TenantName(),

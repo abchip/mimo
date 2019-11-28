@@ -9,10 +9,12 @@ package org.abchip.mimo.biz.order.order.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderType;
+import org.abchip.mimo.biz.order.order.OrderTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -144,8 +146,8 @@ public class OrderTypeImpl extends BizEntityTypeImpl<OrderHeader> implements Ord
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOrderTypeAttrs() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_TYPE__ORDER_TYPE_ATTRS, true);
+	public List<OrderTypeAttr> getOrderTypeAttrs() {
+		return (List<OrderTypeAttr>)eGet(OrderPackage.Literals.ORDER_TYPE__ORDER_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +156,7 @@ public class OrderTypeImpl extends BizEntityTypeImpl<OrderHeader> implements Ord
 	 * @generated
 	 */
 	@Override
-	public List<String> childOrderTypes() {
+	public List<OrderType> childOrderTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +168,7 @@ public class OrderTypeImpl extends BizEntityTypeImpl<OrderHeader> implements Ord
 	 * @generated
 	 */
 	@Override
-	public List<String> orderHeaders() {
+	public List<OrderHeader> orderHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -178,7 +180,7 @@ public class OrderTypeImpl extends BizEntityTypeImpl<OrderHeader> implements Ord
 	 * @generated
 	 */
 	@Override
-	public List<String> partyPrefDocTypeTpls() {
+	public List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

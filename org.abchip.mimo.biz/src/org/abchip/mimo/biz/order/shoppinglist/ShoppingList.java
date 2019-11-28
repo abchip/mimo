@@ -10,8 +10,9 @@ package org.abchip.mimo.biz.order.shoppinglist;
 import java.util.Date;
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
@@ -55,7 +56,7 @@ import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
+public interface ShoppingList extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Carrier Party Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -578,59 +579,55 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	void setVisitorId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Shopping List Items</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Shopping List Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shopping List Items</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shopping List Items</em>' attribute list.
+	 * @return the value of the '<em>Shopping List Items</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListItems()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingListItem'"
 	 * @generated
 	 */
-	List<String> getShoppingListItems();
+	List<ShoppingListItem> getShoppingListItems();
 
 	/**
-	 * Returns the value of the '<em><b>Shopping List Work Efforts</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Shopping List Work Efforts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListWorkEffort}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shopping List Work Efforts</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shopping List Work Efforts</em>' attribute list.
+	 * @return the value of the '<em>Shopping List Work Efforts</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListWorkEfforts()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingListWorkEffort'"
 	 * @generated
 	 */
-	List<String> getShoppingListWorkEfforts();
+	List<ShoppingListWorkEffort> getShoppingListWorkEfforts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='autoOrderShoppingListId'"
 	 * @generated
 	 */
-	List<String> autoOrderOrderHeaders();
+	List<OrderHeader> autoOrderOrderHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='parentShoppingListId'"
 	 * @generated
 	 */
-	List<String> childShoppingLists();
+	List<ShoppingList> childShoppingLists();
 
 } // ShoppingList

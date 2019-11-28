@@ -10,10 +10,14 @@ package org.abchip.mimo.biz.service.schedule.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
+import org.abchip.mimo.biz.service.schedule.JobSandbox;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 import org.abchip.mimo.biz.service.schedule.RecurrenceRule;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -206,7 +210,7 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 * @generated
 	 */
 	@Override
-	public List<String> invoices() {
+	public List<Invoice> invoices() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -218,7 +222,7 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 * @generated
 	 */
 	@Override
-	public List<String> jobSandboxs() {
+	public List<JobSandbox> jobSandboxs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -230,7 +234,7 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 * @generated
 	 */
 	@Override
-	public List<String> shoppingLists() {
+	public List<ShoppingList> shoppingLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -242,7 +246,7 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 * @generated
 	 */
 	@Override
-	public List<String> workEfforts() {
+	public List<WorkEffort> workEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

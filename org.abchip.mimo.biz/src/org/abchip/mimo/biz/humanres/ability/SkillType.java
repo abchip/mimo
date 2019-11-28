@@ -8,8 +8,10 @@
 package org.abchip.mimo.biz.humanres.ability;
 
 import java.util.List;
-
-import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +32,7 @@ import org.abchip.mimo.biz.BizEntity;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface SkillType extends BizEntity {
+public interface SkillType extends BizEntityType<PartySkill> {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,52 +114,47 @@ public interface SkillType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SkillType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childSkillTypes();
+	List<SkillType> childSkillTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobRequisition' route='skillTypeId'"
 	 * @generated
 	 */
-	List<String> jobRequisitions();
+	List<JobRequisition> jobRequisitions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartySkill' route='skillTypeId'"
 	 * @generated
 	 */
-	List<String> partySkills();
+	List<PartySkill> partySkills();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteItem' route='skillTypeId'"
 	 * @generated
 	 */
-	List<String> quoteItems();
+	List<QuoteItem> quoteItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortSkillStandard' route='skillTypeId'"
 	 * @generated
 	 */
-	List<String> workEffortSkillStandards();
+	List<WorkEffortSkillStandard> workEffortSkillStandards();
 
 	/**
 	 * Returns the value of the '<em><b>Skill Type Id</b></em>' attribute.

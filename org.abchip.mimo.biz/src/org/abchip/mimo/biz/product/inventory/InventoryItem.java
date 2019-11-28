@@ -14,12 +14,21 @@ import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.order.order.OrderItem;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Container;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryProduced;
 
 /**
  * <!-- begin-user-doc -->
@@ -671,176 +680,162 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	void setUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Inventory Item Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Attributes</em>' attribute list.
+	 * @return the value of the '<em>Inventory Item Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemAttribute'"
 	 * @generated
 	 */
-	List<String> getInventoryItemAttributes();
+	List<InventoryItemAttribute> getInventoryItemAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Details</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Inventory Item Details</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Details</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Details</em>' attribute list.
+	 * @return the value of the '<em>Inventory Item Details</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemDetails()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemDetail'"
 	 * @generated
 	 */
-	List<String> getInventoryItemDetails();
+	List<InventoryItemDetail> getInventoryItemDetails();
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Label Appls</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Inventory Item Label Appls</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Label Appls</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Label Appls</em>' attribute list.
+	 * @return the value of the '<em>Inventory Item Label Appls</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemLabelAppls()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemLabelAppl'"
 	 * @generated
 	 */
-	List<String> getInventoryItemLabelAppls();
+	List<InventoryItemLabelAppl> getInventoryItemLabelAppls();
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Variances</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Inventory Item Variances</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Variances</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Variances</em>' attribute list.
+	 * @return the value of the '<em>Inventory Item Variances</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemVariances()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemVariance'"
 	 * @generated
 	 */
-	List<String> getInventoryItemVariances();
+	List<InventoryItemVariance> getInventoryItemVariances();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='inventoryItemId'"
 	 * @generated
 	 */
-	List<String> acctgTransEntries();
+	List<AcctgTransEntry> acctgTransEntries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='inventoryItemId'"
 	 * @generated
 	 */
-	List<String> acctgTranss();
+	List<AcctgTrans> acctgTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='fromInventoryItemId'"
 	 * @generated
 	 */
-	List<String> fromOrderItems();
+	List<OrderItem> fromOrderItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='inventoryItemId'"
 	 * @generated
 	 */
-	List<String> inventoryTransfers();
+	List<InventoryTransfer> inventoryTransfers();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='inventoryItemId'"
 	 * @generated
 	 */
-	List<String> invoiceItems();
+	List<InvoiceItem> invoiceItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ItemIssuance' route='inventoryItemId'"
 	 * @generated
 	 */
-	List<String> itemIssuances();
+	List<ItemIssuance> itemIssuances();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentReceipt' route='inventoryItemId'"
 	 * @generated
 	 */
-	List<String> shipmentReceipts();
+	List<ShipmentReceipt> shipmentReceipts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='inventoryItemId'"
 	 * @generated
 	 */
-	List<String> subscriptions();
+	List<Subscription> subscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortInventoryAssign' route='inventoryItemId'"
 	 * @generated
 	 */
-	List<String> workEffortInventoryAssigns();
+	List<WorkEffortInventoryAssign> workEffortInventoryAssigns();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortInventoryProduced' route='inventoryItemId'"
 	 * @generated
 	 */
-	List<String> workEffortInventoryProduceds();
+	List<WorkEffortInventoryProduced> workEffortInventoryProduceds();
 
 	/**
 	 * Returns the value of the '<em><b>Inventory Item Type Id</b></em>' reference.

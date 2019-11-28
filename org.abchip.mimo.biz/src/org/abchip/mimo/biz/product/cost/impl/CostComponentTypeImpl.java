@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.cost.CostComponentType;
+import org.abchip.mimo.biz.product.cost.CostComponentTypeAttr;
 import org.abchip.mimo.biz.product.cost.CostPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -124,8 +125,8 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCostComponentTypeAttrs() {
-		return (List<String>)eGet(CostPackage.Literals.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS, true);
+	public List<CostComponentTypeAttr> getCostComponentTypeAttrs() {
+		return (List<CostComponentTypeAttr>)eGet(CostPackage.Literals.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -134,7 +135,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> childCostComponentTypes() {
+	public List<CostComponentType> childCostComponentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -146,7 +147,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> costComponents() {
+	public List<CostComponent> costComponents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

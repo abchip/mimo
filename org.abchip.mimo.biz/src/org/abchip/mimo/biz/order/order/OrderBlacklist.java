@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.order.order;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * @model
  * @generated
  */
-public interface OrderBlacklist extends BizEntityTyped<OrderBlacklistType> {
+public interface OrderBlacklist extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Blacklist String</b></em>' attribute.
 	 * <!-- begin-user-doc -->

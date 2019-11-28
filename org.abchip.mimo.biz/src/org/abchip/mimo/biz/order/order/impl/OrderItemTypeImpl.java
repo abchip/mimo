@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderItem;
 import org.abchip.mimo.biz.order.order.OrderItemType;
+import org.abchip.mimo.biz.order.order.OrderItemTypeAttr;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -144,8 +145,8 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOrderItemTypeAttrs() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS, true);
+	public List<OrderItemTypeAttr> getOrderItemTypeAttrs() {
+		return (List<OrderItemTypeAttr>)eGet(OrderPackage.Literals.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +155,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 * @generated
 	 */
 	@Override
-	public List<String> childOrderItemTypes() {
+	public List<OrderItemType> childOrderItemTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +167,7 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	 * @generated
 	 */
 	@Override
-	public List<String> orderItems() {
+	public List<OrderItem> orderItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

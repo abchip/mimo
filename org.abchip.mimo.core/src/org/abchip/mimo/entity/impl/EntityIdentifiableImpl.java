@@ -41,6 +41,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -49,6 +50,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,12 +70,12 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 		EAttribute eIDAttribute = eClass().getEIDAttribute();
 		EStructuralFeature eFeature = eClass().getEStructuralFeature(featureID);
 
-		if (eFeature.isMany() && eFeature instanceof EAttribute) {
+		if (eFeature.isMany()) {
 			if (!eIsSet(featureID)) {
-				
+
 				if (!(eResource() instanceof MimoResourceImpl))
 					return super.eGet(featureID, resolve, coreType);
-				
+
 				Slot slot = isa().getSlot(eFeature.getName());
 				if (slot.getDomain() == null)
 					return super.eGet(featureID, resolve, coreType);
@@ -85,7 +87,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 				String filter = slot.getDomain().getRoute();
 				if (filter == null || filter.trim().isEmpty()) {
 					if (eIDAttribute != null) {
-						if (slot.isString())
+						if (slot.isString() || slot.getDomain() != null)
 							filter = eIDAttribute.getName() + " = '" + this.getID() + "'";
 						else
 							filter = eIDAttribute.getName() + " = " + this.getID();
@@ -93,11 +95,11 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 						return super.eGet(featureID, resolve, coreType);
 				}
 
-				List<String> values = new EDataTypeUniqueEList<String>(String.class, this, featureID);
+				List<EntityIdentifiable> values = new EDataTypeUniqueEList<EntityIdentifiable>(EntityIdentifiable.class, this, featureID);
 				for (EntityIdentifiable entityIdentifiable : resourceReader.find(filter)) {
 					String domainKey = entityIdentifiable.isa().getKeys().get(0);
 					entityIdentifiable.isa().setValue(entityIdentifiable, domainKey, this);
-					values.add(entityIdentifiable.getID());
+					values.add(entityIdentifiable);
 				}
 				super.eSet(eFeature, values);
 

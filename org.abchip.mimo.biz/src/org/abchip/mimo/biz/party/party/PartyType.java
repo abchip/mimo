@@ -138,41 +138,38 @@ public interface PartyType extends BizEntityType<Party> {
 	void setPartyTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Party Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Party Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyType_PartyTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyTypeAttr'"
 	 * @generated
 	 */
-	List<String> getPartyTypeAttrs();
+	List<PartyTypeAttr> getPartyTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childPartyTypes();
+	List<PartyType> childPartyTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Party' route='partyTypeId'"
 	 * @generated
 	 */
-	List<String> parties();
+	List<Party> parties();
 
 } // PartyType

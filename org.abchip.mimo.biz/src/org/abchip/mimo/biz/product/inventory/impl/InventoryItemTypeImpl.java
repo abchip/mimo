@@ -10,9 +10,12 @@ package org.abchip.mimo.biz.product.inventory.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
+import org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -124,8 +127,8 @@ public class InventoryItemTypeImpl extends BizEntityTypeImpl<InventoryItem> impl
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getInventoryItemTypeAttrs() {
-		return (List<String>)eGet(InventoryPackage.Literals.INVENTORY_ITEM_TYPE__INVENTORY_ITEM_TYPE_ATTRS, true);
+	public List<InventoryItemTypeAttr> getInventoryItemTypeAttrs() {
+		return (List<InventoryItemTypeAttr>)eGet(InventoryPackage.Literals.INVENTORY_ITEM_TYPE__INVENTORY_ITEM_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -134,7 +137,7 @@ public class InventoryItemTypeImpl extends BizEntityTypeImpl<InventoryItem> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> childInventoryItemTypes() {
+	public List<InventoryItemType> childInventoryItemTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -146,7 +149,7 @@ public class InventoryItemTypeImpl extends BizEntityTypeImpl<InventoryItem> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> defaultFacilities() {
+	public List<Facility> defaultFacilities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -158,7 +161,7 @@ public class InventoryItemTypeImpl extends BizEntityTypeImpl<InventoryItem> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryItems() {
+	public List<InventoryItem> inventoryItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -170,7 +173,7 @@ public class InventoryItemTypeImpl extends BizEntityTypeImpl<InventoryItem> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> products() {
+	public List<Product> products() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

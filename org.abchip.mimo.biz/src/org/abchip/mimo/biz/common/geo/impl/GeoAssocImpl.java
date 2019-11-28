@@ -11,7 +11,7 @@ import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoAssoc;
 import org.abchip.mimo.biz.common.geo.GeoAssocType;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements GeoAssoc {
+public class GeoAssocImpl extends BizEntityImpl implements GeoAssoc {
 	/**
 	 * 
 	 */

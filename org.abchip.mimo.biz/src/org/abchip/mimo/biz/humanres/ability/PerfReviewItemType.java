@@ -112,12 +112,11 @@ public interface PerfReviewItemType extends BizEntityType<PerfReviewItem> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PerfReviewItemType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childPerfReviewItemTypes();
+	List<PerfReviewItemType> childPerfReviewItemTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Perf Review Item Type Id</b></em>' attribute.

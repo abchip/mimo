@@ -11,7 +11,13 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
+import org.abchip.mimo.biz.order.requirement.DesiredFeature;
+import org.abchip.mimo.biz.product.cost.CostComponent;
+import org.abchip.mimo.biz.product.supplier.SupplierProductFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -223,102 +229,93 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	void setUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Main Product Feature Iactns</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Main Product Feature Iactns</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.feature.ProductFeatureIactn}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Main Product Feature Iactns</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Main Product Feature Iactns</em>' attribute list.
+	 * @return the value of the '<em>Main Product Feature Iactns</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_MainProductFeatureIactns()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeatureIactn'"
 	 * @generated
 	 */
-	List<String> getMainProductFeatureIactns();
+	List<ProductFeatureIactn> getMainProductFeatureIactns();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeatureIactn' route='productFeatureIdTo'"
 	 * @generated
 	 */
-	List<String> assocProductFeatureIactns();
+	List<ProductFeatureIactn> assocProductFeatureIactns();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponent' route='productFeatureId'"
 	 * @generated
 	 */
-	List<String> costComponents();
+	List<CostComponent> costComponents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DesiredFeature' route='productFeatureId'"
 	 * @generated
 	 */
-	List<String> desiredFeatures();
+	List<DesiredFeature> desiredFeatures();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='productFeatureId'"
 	 * @generated
 	 */
-	List<String> invoiceItems();
+	List<InvoiceItem> invoiceItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeatureDataResource' route='productFeatureId'"
 	 * @generated
 	 */
-	List<String> productFeatureDataResources();
+	List<ProductFeatureDataResource> productFeatureDataResources();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductManufacturingRule' route='productFeature'"
 	 * @generated
 	 */
-	List<String> productManufacturingRules();
+	List<ProductManufacturingRule> productManufacturingRules();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteItem' route='productFeatureId'"
 	 * @generated
 	 */
-	List<String> quoteItems();
+	List<QuoteItem> quoteItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SupplierProductFeature' route='productFeatureId'"
 	 * @generated
 	 */
-	List<String> supplierProductFeatures();
+	List<SupplierProductFeature> supplierProductFeatures();
 
 	/**
 	 * Returns the value of the '<em><b>Product Feature Category Id</b></em>' reference.

@@ -78,7 +78,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int SHOPPING_LIST__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -87,7 +87,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int SHOPPING_LIST__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -96,7 +96,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int SHOPPING_LIST__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -105,7 +105,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int SHOPPING_LIST__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Shopping List Id</b></em>' attribute.
@@ -114,7 +114,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__SHOPPING_LIST_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int SHOPPING_LIST__SHOPPING_LIST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Carrier Party Id</b></em>' attribute.
@@ -123,7 +123,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__CARRIER_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int SHOPPING_LIST__CARRIER_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Carrier Role Type Id</b></em>' attribute.
@@ -132,7 +132,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__CARRIER_ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int SHOPPING_LIST__CARRIER_ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
@@ -141,7 +141,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int SHOPPING_LIST__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Currency Uom</b></em>' attribute.
@@ -150,7 +150,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__CURRENCY_UOM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int SHOPPING_LIST__CURRENCY_UOM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -159,7 +159,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int SHOPPING_LIST__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
@@ -168,7 +168,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__IS_ACTIVE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int SHOPPING_LIST__IS_ACTIVE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Is Public</b></em>' attribute.
@@ -177,7 +177,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__IS_PUBLIC = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int SHOPPING_LIST__IS_PUBLIC = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Last Admin Modified</b></em>' attribute.
@@ -186,7 +186,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__LAST_ADMIN_MODIFIED = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int SHOPPING_LIST__LAST_ADMIN_MODIFIED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Last Ordered Date</b></em>' attribute.
@@ -195,7 +195,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__LAST_ORDERED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int SHOPPING_LIST__LAST_ORDERED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>List Name</b></em>' attribute.
@@ -204,7 +204,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__LIST_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int SHOPPING_LIST__LIST_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Parent Shopping List Id</b></em>' reference.
@@ -213,7 +213,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__PARENT_SHOPPING_LIST_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int SHOPPING_LIST__PARENT_SHOPPING_LIST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -222,7 +222,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int SHOPPING_LIST__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Payment Method Id</b></em>' reference.
@@ -231,7 +231,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int SHOPPING_LIST__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Product Promo Code Id</b></em>' reference.
@@ -240,7 +240,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__PRODUCT_PROMO_CODE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int SHOPPING_LIST__PRODUCT_PROMO_CODE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
@@ -249,7 +249,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+	int SHOPPING_LIST__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Recurrence Info Id</b></em>' reference.
@@ -258,7 +258,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__RECURRENCE_INFO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+	int SHOPPING_LIST__RECURRENCE_INFO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Method Type Id</b></em>' attribute.
@@ -267,16 +267,16 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__SHIPMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+	int SHOPPING_LIST__SHIPMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
-	 * The feature id for the '<em><b>Shopping List Items</b></em>' attribute list.
+	 * The feature id for the '<em><b>Shopping List Items</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__SHOPPING_LIST_ITEMS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
+	int SHOPPING_LIST__SHOPPING_LIST_ITEMS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Shopping List Type Id</b></em>' reference.
@@ -285,16 +285,16 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__SHOPPING_LIST_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
+	int SHOPPING_LIST__SHOPPING_LIST_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
 
 	/**
-	 * The feature id for the '<em><b>Shopping List Work Efforts</b></em>' attribute list.
+	 * The feature id for the '<em><b>Shopping List Work Efforts</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__SHOPPING_LIST_WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
+	int SHOPPING_LIST__SHOPPING_LIST_WORK_EFFORTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Visitor Id</b></em>' attribute.
@@ -303,7 +303,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__VISITOR_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 21;
+	int SHOPPING_LIST__VISITOR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
 
 	/**
 	 * The number of structural features of the '<em>Shopping List</em>' class.
@@ -312,7 +312,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
+	int SHOPPING_LIST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemImpl <em>Shopping List Item</em>}' class.
@@ -552,22 +552,13 @@ public interface ShoppinglistPackage extends EPackage {
 	int SHOPPING_LIST_TYPE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHOPPING_LIST_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int SHOPPING_LIST_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -576,7 +567,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int SHOPPING_LIST_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -585,7 +576,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int SHOPPING_LIST_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -594,7 +585,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int SHOPPING_LIST_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Shopping List Type Id</b></em>' attribute.
@@ -603,7 +594,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST_TYPE__SHOPPING_LIST_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int SHOPPING_LIST_TYPE__SHOPPING_LIST_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -612,7 +603,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int SHOPPING_LIST_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Shopping List Type</em>' class.
@@ -621,7 +612,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int SHOPPING_LIST_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListWorkEffortImpl <em>Shopping List Work Effort</em>}' class.
@@ -928,26 +919,26 @@ public interface ShoppinglistPackage extends EPackage {
 	EAttribute getShoppingList_VisitorId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListItems <em>Shopping List Items</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListItems <em>Shopping List Items</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Shopping List Items</em>'.
+	 * @return the meta object for the reference list '<em>Shopping List Items</em>'.
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListItems()
 	 * @see #getShoppingList()
 	 * @generated
 	 */
-	EAttribute getShoppingList_ShoppingListItems();
+	EReference getShoppingList_ShoppingListItems();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListWorkEfforts <em>Shopping List Work Efforts</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListWorkEfforts <em>Shopping List Work Efforts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Shopping List Work Efforts</em>'.
+	 * @return the meta object for the reference list '<em>Shopping List Work Efforts</em>'.
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListWorkEfforts()
 	 * @see #getShoppingList()
 	 * @generated
 	 */
-	EAttribute getShoppingList_ShoppingListWorkEfforts();
+	EReference getShoppingList_ShoppingListWorkEfforts();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem <em>Shopping List Item</em>}'.
@@ -1369,20 +1360,20 @@ public interface ShoppinglistPackage extends EPackage {
 		EAttribute SHOPPING_LIST__VISITOR_ID = eINSTANCE.getShoppingList_VisitorId();
 
 		/**
-		 * The meta object literal for the '<em><b>Shopping List Items</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Shopping List Items</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHOPPING_LIST__SHOPPING_LIST_ITEMS = eINSTANCE.getShoppingList_ShoppingListItems();
+		EReference SHOPPING_LIST__SHOPPING_LIST_ITEMS = eINSTANCE.getShoppingList_ShoppingListItems();
 
 		/**
-		 * The meta object literal for the '<em><b>Shopping List Work Efforts</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Shopping List Work Efforts</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHOPPING_LIST__SHOPPING_LIST_WORK_EFFORTS = eINSTANCE.getShoppingList_ShoppingListWorkEfforts();
+		EReference SHOPPING_LIST__SHOPPING_LIST_WORK_EFFORTS = eINSTANCE.getShoppingList_ShoppingListWorkEfforts();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemImpl <em>Shopping List Item</em>}' class.

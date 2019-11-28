@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -144,8 +145,8 @@ public class WorkEffortTypeImpl extends BizEntityTypeImpl<WorkEffort> implements
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkEffortTypeAttrs() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT_TYPE__WORK_EFFORT_TYPE_ATTRS, true);
+	public List<WorkEffortTypeAttr> getWorkEffortTypeAttrs() {
+		return (List<WorkEffortTypeAttr>)eGet(WorkeffortPackage.Literals.WORK_EFFORT_TYPE__WORK_EFFORT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +155,7 @@ public class WorkEffortTypeImpl extends BizEntityTypeImpl<WorkEffort> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> childWorkEffortTypes() {
+	public List<WorkEffortType> childWorkEffortTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +167,7 @@ public class WorkEffortTypeImpl extends BizEntityTypeImpl<WorkEffort> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> workEfforts() {
+	public List<WorkEffort> workEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

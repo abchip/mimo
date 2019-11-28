@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getLoggingLevel <em>Logging Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getMaxLogFileSize <em>Max Log File Size</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getPartner <em>Partner</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getPreAuth <em>Pre Auth</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#isPreAuth <em>Pre Auth</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getProxyAddress <em>Proxy Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getProxyLogon <em>Proxy Logon</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayPayflowProImpl#getProxyPassword <em>Proxy Password</em>}</li>
@@ -298,8 +298,8 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 * @generated
 	 */
 	@Override
-	public char getPreAuth() {
-		return (Character)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_PAYFLOW_PRO__PRE_AUTH, true);
+	public boolean isPreAuth() {
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_PAYFLOW_PRO__PRE_AUTH, true);
 	}
 
 	/**
@@ -308,7 +308,7 @@ public class PaymentGatewayPayflowProImpl extends BizEntityImpl implements Payme
 	 * @generated
 	 */
 	@Override
-	public void setPreAuth(char newPreAuth) {
+	public void setPreAuth(boolean newPreAuth) {
 		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_PAYFLOW_PRO__PRE_AUTH, newPreAuth);
 	}
 

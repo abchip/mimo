@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 import org.abchip.mimo.biz.service.schedule.RecurrenceRule;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
 import org.eclipse.emf.ecore.EClass;
@@ -394,7 +395,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 * @generated
 	 */
 	@Override
-	public List<String> exceptionRecurrenceInfos() {
+	public List<RecurrenceInfo> exceptionRecurrenceInfos() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -406,7 +407,7 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	 * @generated
 	 */
 	@Override
-	public List<String> recurrenceInfos() {
+	public List<RecurrenceInfo> recurrenceInfos() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

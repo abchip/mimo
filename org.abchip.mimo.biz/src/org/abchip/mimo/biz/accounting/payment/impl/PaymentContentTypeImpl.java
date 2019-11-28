@@ -121,7 +121,7 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	 * @generated
 	 */
 	@Override
-	public List<String> childPaymentContentTypes() {
+	public List<PaymentContentType> childPaymentContentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

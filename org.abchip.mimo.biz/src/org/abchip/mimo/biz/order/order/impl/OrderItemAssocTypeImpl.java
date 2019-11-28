@@ -142,7 +142,7 @@ public class OrderItemAssocTypeImpl extends BizEntityTypeImpl<OrderItemAssoc> im
 	 * @generated
 	 */
 	@Override
-	public List<String> childOrderItemAssocTypes() {
+	public List<OrderItemAssocType> childOrderItemAssocTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

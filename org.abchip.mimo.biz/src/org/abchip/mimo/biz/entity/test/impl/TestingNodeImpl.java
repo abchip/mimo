@@ -99,7 +99,7 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 	 * @generated
 	 */
 	@Override
-	public List<String> primaryChildTestingNodes() {
+	public List<TestingNode> primaryChildTestingNodes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

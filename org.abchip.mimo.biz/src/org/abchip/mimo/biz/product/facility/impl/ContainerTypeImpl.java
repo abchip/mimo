@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.product.facility.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.ContainerType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ContainerTypeImpl extends BizEntityTypeImpl<org.abchip.mimo.biz.product.facility.Container> implements ContainerType {
+public class ContainerTypeImpl extends BizEntityImpl implements ContainerType {
 	/**
 	 * 
 	 */
@@ -79,7 +79,7 @@ public class ContainerTypeImpl extends BizEntityTypeImpl<org.abchip.mimo.biz.pro
 	 * @generated
 	 */
 	@Override
-	public List<String> containers() {
+	public List<org.abchip.mimo.biz.product.facility.Container> containers() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

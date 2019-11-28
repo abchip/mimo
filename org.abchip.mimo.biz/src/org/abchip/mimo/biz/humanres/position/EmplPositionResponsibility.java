@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.humanres.position;
 
 import java.util.Date;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.humanres.ability.ResponsibilityType;
 

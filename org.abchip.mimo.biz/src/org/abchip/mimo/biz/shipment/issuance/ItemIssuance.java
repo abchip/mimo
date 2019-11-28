@@ -16,6 +16,8 @@ import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.inventory.InventoryItemDetail;
+import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
 
@@ -390,21 +392,19 @@ public interface ItemIssuance extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemDetail' route='itemIssuanceId'"
 	 * @generated
 	 */
-	List<String> inventoryItemDetails();
+	List<InventoryItemDetail> inventoryItemDetails();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='itemIssuanceId'"
 	 * @generated
 	 */
-	List<String> inventoryTransfers();
+	List<InventoryTransfer> inventoryTransfers();
 
 } // ItemIssuance

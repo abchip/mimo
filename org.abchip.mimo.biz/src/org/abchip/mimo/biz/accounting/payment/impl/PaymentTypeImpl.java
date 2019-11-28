@@ -10,8 +10,10 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.accounting.payment.PaymentType;
+import org.abchip.mimo.biz.accounting.payment.PaymentTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -144,8 +146,8 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPaymentGlAccountTypeMaps() {
-		return (List<String>)eGet(PaymentPackage.Literals.PAYMENT_TYPE__PAYMENT_GL_ACCOUNT_TYPE_MAPS, true);
+	public List<PaymentGlAccountTypeMap> getPaymentGlAccountTypeMaps() {
+		return (List<PaymentGlAccountTypeMap>)eGet(PaymentPackage.Literals.PAYMENT_TYPE__PAYMENT_GL_ACCOUNT_TYPE_MAPS, true);
 	}
 
 	/**
@@ -155,8 +157,8 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPaymentTypeAttrs() {
-		return (List<String>)eGet(PaymentPackage.Literals.PAYMENT_TYPE__PAYMENT_TYPE_ATTRS, true);
+	public List<PaymentTypeAttr> getPaymentTypeAttrs() {
+		return (List<PaymentTypeAttr>)eGet(PaymentPackage.Literals.PAYMENT_TYPE__PAYMENT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -165,7 +167,7 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 	 * @generated
 	 */
 	@Override
-	public List<String> childPaymentTypes() {
+	public List<PaymentType> childPaymentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -177,7 +179,7 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 	 * @generated
 	 */
 	@Override
-	public List<String> payments() {
+	public List<Payment> payments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

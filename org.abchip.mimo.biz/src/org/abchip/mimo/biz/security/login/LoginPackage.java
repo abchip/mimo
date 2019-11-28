@@ -252,7 +252,7 @@ public interface LoginPackage extends EPackage {
 	int USER_LOGIN__USER_LDAP_DN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
-	 * The feature id for the '<em><b>User Login Histories</b></em>' attribute list.
+	 * The feature id for the '<em><b>User Login Histories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -261,7 +261,7 @@ public interface LoginPackage extends EPackage {
 	int USER_LOGIN__USER_LOGIN_HISTORIES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
-	 * The feature id for the '<em><b>User Login Password Histories</b></em>' attribute list.
+	 * The feature id for the '<em><b>User Login Password Histories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -270,7 +270,7 @@ public interface LoginPackage extends EPackage {
 	int USER_LOGIN__USER_LOGIN_PASSWORD_HISTORIES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
-	 * The feature id for the '<em><b>User Preferences</b></em>' attribute list.
+	 * The feature id for the '<em><b>User Preferences</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -857,37 +857,37 @@ public interface LoginPackage extends EPackage {
 	EAttribute getUserLogin_UserLdapDn();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLoginHistories <em>User Login Histories</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLoginHistories <em>User Login Histories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>User Login Histories</em>'.
+	 * @return the meta object for the reference list '<em>User Login Histories</em>'.
 	 * @see org.abchip.mimo.biz.security.login.UserLogin#getUserLoginHistories()
 	 * @see #getUserLogin()
 	 * @generated
 	 */
-	EAttribute getUserLogin_UserLoginHistories();
+	EReference getUserLogin_UserLoginHistories();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLoginPasswordHistories <em>User Login Password Histories</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLoginPasswordHistories <em>User Login Password Histories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>User Login Password Histories</em>'.
+	 * @return the meta object for the reference list '<em>User Login Password Histories</em>'.
 	 * @see org.abchip.mimo.biz.security.login.UserLogin#getUserLoginPasswordHistories()
 	 * @see #getUserLogin()
 	 * @generated
 	 */
-	EAttribute getUserLogin_UserLoginPasswordHistories();
+	EReference getUserLogin_UserLoginPasswordHistories();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.security.login.UserLogin#getUserPreferences <em>User Preferences</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.security.login.UserLogin#getUserPreferences <em>User Preferences</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>User Preferences</em>'.
+	 * @return the meta object for the reference list '<em>User Preferences</em>'.
 	 * @see org.abchip.mimo.biz.security.login.UserLogin#getUserPreferences()
 	 * @see #getUserLogin()
 	 * @generated
 	 */
-	EAttribute getUserLogin_UserPreferences();
+	EReference getUserLogin_UserPreferences();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.security.login.UserLoginHistory <em>User Login History</em>}'.
@@ -955,11 +955,11 @@ public interface LoginPackage extends EPackage {
 	EAttribute getUserLoginHistory_PasswordUsed();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getSuccessfulLogin <em>Successful Login</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#isSuccessfulLogin <em>Successful Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Successful Login</em>'.
-	 * @see org.abchip.mimo.biz.security.login.UserLoginHistory#getSuccessfulLogin()
+	 * @see org.abchip.mimo.biz.security.login.UserLoginHistory#isSuccessfulLogin()
 	 * @see #getUserLoginHistory()
 	 * @generated
 	 */
@@ -1288,28 +1288,28 @@ public interface LoginPackage extends EPackage {
 		EAttribute USER_LOGIN__USER_LDAP_DN = eINSTANCE.getUserLogin_UserLdapDn();
 
 		/**
-		 * The meta object literal for the '<em><b>User Login Histories</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>User Login Histories</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_LOGIN__USER_LOGIN_HISTORIES = eINSTANCE.getUserLogin_UserLoginHistories();
+		EReference USER_LOGIN__USER_LOGIN_HISTORIES = eINSTANCE.getUserLogin_UserLoginHistories();
 
 		/**
-		 * The meta object literal for the '<em><b>User Login Password Histories</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>User Login Password Histories</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_LOGIN__USER_LOGIN_PASSWORD_HISTORIES = eINSTANCE.getUserLogin_UserLoginPasswordHistories();
+		EReference USER_LOGIN__USER_LOGIN_PASSWORD_HISTORIES = eINSTANCE.getUserLogin_UserLoginPasswordHistories();
 
 		/**
-		 * The meta object literal for the '<em><b>User Preferences</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>User Preferences</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_LOGIN__USER_PREFERENCES = eINSTANCE.getUserLogin_UserPreferences();
+		EReference USER_LOGIN__USER_PREFERENCES = eINSTANCE.getUserLogin_UserPreferences();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.security.login.impl.UserLoginHistoryImpl <em>User Login History</em>}' class.

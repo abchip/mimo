@@ -138,41 +138,38 @@ public interface OrderItemType extends BizEntityType<OrderItem> {
 	void setParentTypeId(OrderItemType value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Item Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Order Item Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderItemTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Item Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Item Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Order Item Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemType_OrderItemTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemTypeAttr'"
 	 * @generated
 	 */
-	List<String> getOrderItemTypeAttrs();
+	List<OrderItemTypeAttr> getOrderItemTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childOrderItemTypes();
+	List<OrderItemType> childOrderItemTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='orderItemTypeId'"
 	 * @generated
 	 */
-	List<String> orderItems();
+	List<OrderItem> orderItems();
 
 } // OrderItemType

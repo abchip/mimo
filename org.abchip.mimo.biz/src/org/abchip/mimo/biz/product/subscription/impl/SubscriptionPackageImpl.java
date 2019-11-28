@@ -1277,8 +1277,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSubscription_SubscriptionAttributes() {
-		return (EAttribute)subscriptionEClass.getEStructuralFeatures().get(29);
+	public EReference getSubscription_SubscriptionAttributes() {
+		return (EReference)subscriptionEClass.getEStructuralFeatures().get(29);
 	}
 
 	/**
@@ -1287,8 +1287,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSubscription_SubscriptionCommEvents() {
-		return (EAttribute)subscriptionEClass.getEStructuralFeatures().get(30);
+	public EReference getSubscription_SubscriptionCommEvents() {
+		return (EReference)subscriptionEClass.getEStructuralFeatures().get(30);
 	}
 
 	/**
@@ -1337,8 +1337,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSubscriptionActivity_SubscriptionFulfillmentPieces() {
-		return (EAttribute)subscriptionActivityEClass.getEStructuralFeatures().get(3);
+	public EReference getSubscriptionActivity_SubscriptionFulfillmentPieces() {
+		return (EReference)subscriptionActivityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1577,8 +1577,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSubscriptionType_SubscriptionTypeAttrs() {
-		return (EAttribute)subscriptionTypeEClass.getEStructuralFeatures().get(4);
+	public EReference getSubscriptionType_SubscriptionTypeAttrs() {
+		return (EReference)subscriptionTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1701,8 +1701,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		createEAttribute(subscriptionEClass, SUBSCRIPTION__PURCHASE_FROM_DATE);
 		createEAttribute(subscriptionEClass, SUBSCRIPTION__PURCHASE_THRU_DATE);
 		createEReference(subscriptionEClass, SUBSCRIPTION__ROLE_TYPE_ID);
-		createEAttribute(subscriptionEClass, SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES);
-		createEAttribute(subscriptionEClass, SUBSCRIPTION__SUBSCRIPTION_COMM_EVENTS);
+		createEReference(subscriptionEClass, SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES);
+		createEReference(subscriptionEClass, SUBSCRIPTION__SUBSCRIPTION_COMM_EVENTS);
 		createEReference(subscriptionEClass, SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID);
 		createEReference(subscriptionEClass, SUBSCRIPTION__SUBSCRIPTION_TYPE_ID);
 		createEAttribute(subscriptionEClass, SUBSCRIPTION__THRU_DATE);
@@ -1714,7 +1714,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		createEAttribute(subscriptionActivityEClass, SUBSCRIPTION_ACTIVITY__SUBSCRIPTION_ACTIVITY_ID);
 		createEAttribute(subscriptionActivityEClass, SUBSCRIPTION_ACTIVITY__COMMENTS);
 		createEAttribute(subscriptionActivityEClass, SUBSCRIPTION_ACTIVITY__DATE_SENT);
-		createEAttribute(subscriptionActivityEClass, SUBSCRIPTION_ACTIVITY__SUBSCRIPTION_FULFILLMENT_PIECES);
+		createEReference(subscriptionActivityEClass, SUBSCRIPTION_ACTIVITY__SUBSCRIPTION_FULFILLMENT_PIECES);
 
 		subscriptionAttributeEClass = createEClass(SUBSCRIPTION_ATTRIBUTE);
 		createEReference(subscriptionAttributeEClass, SUBSCRIPTION_ATTRIBUTE__SUBSCRIPTION_ID);
@@ -1743,7 +1743,7 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		createEAttribute(subscriptionTypeEClass, SUBSCRIPTION_TYPE__DESCRIPTION);
 		createEAttribute(subscriptionTypeEClass, SUBSCRIPTION_TYPE__HAS_TABLE);
 		createEReference(subscriptionTypeEClass, SUBSCRIPTION_TYPE__PARENT_TYPE_ID);
-		createEAttribute(subscriptionTypeEClass, SUBSCRIPTION_TYPE__SUBSCRIPTION_TYPE_ATTRS);
+		createEReference(subscriptionTypeEClass, SUBSCRIPTION_TYPE__SUBSCRIPTION_TYPE_ATTRS);
 
 		subscriptionTypeAttrEClass = createEClass(SUBSCRIPTION_TYPE_ATTR);
 		createEReference(subscriptionTypeAttrEClass, SUBSCRIPTION_TYPE_ATTR__SUBSCRIPTION_TYPE_ID);
@@ -1883,8 +1883,8 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		initEAttribute(getSubscription_PurchaseThruDate(), ecorePackage.getEDate(), "purchaseThruDate", null, 0, 1, Subscription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubscription_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, Subscription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSubscription_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
-		initEAttribute(getSubscription_SubscriptionAttributes(), ecorePackage.getEString(), "subscriptionAttributes", null, 0, -1, Subscription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSubscription_SubscriptionCommEvents(), ecorePackage.getEString(), "subscriptionCommEvents", null, 0, -1, Subscription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubscription_SubscriptionAttributes(), this.getSubscriptionAttribute(), null, "subscriptionAttributes", null, 0, -1, Subscription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubscription_SubscriptionCommEvents(), this.getSubscriptionCommEvent(), null, "subscriptionCommEvents", null, 0, -1, Subscription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubscription_SubscriptionResourceId(), this.getSubscriptionResource(), null, "subscriptionResourceId", null, 0, 1, Subscription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSubscription_SubscriptionResourceId().getEKeys().add(this.getSubscriptionResource_SubscriptionResourceId());
 		initEReference(getSubscription_SubscriptionTypeId(), this.getSubscriptionType(), null, "subscriptionTypeId", null, 0, 1, Subscription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1895,13 +1895,13 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		initEReference(getSubscription_UseTimeUomId(), theUomPackage.getUom(), null, "useTimeUomId", null, 0, 1, Subscription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSubscription_UseTimeUomId().getEKeys().add(theUomPackage.getUom_UomId());
 
-		addEOperation(subscriptionEClass, ecorePackage.getEString(), "subscriptionFulfillmentPieces", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(subscriptionEClass, this.getSubscriptionFulfillmentPiece(), "subscriptionFulfillmentPieces", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(subscriptionActivityEClass, SubscriptionActivity.class, "SubscriptionActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSubscriptionActivity_SubscriptionActivityId(), ecorePackage.getEString(), "subscriptionActivityId", null, 1, 1, SubscriptionActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSubscriptionActivity_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, SubscriptionActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSubscriptionActivity_DateSent(), ecorePackage.getEDate(), "dateSent", null, 0, 1, SubscriptionActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSubscriptionActivity_SubscriptionFulfillmentPieces(), ecorePackage.getEString(), "subscriptionFulfillmentPieces", null, 0, -1, SubscriptionActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubscriptionActivity_SubscriptionFulfillmentPieces(), this.getSubscriptionFulfillmentPiece(), null, "subscriptionFulfillmentPieces", null, 0, -1, SubscriptionActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(subscriptionAttributeEClass, SubscriptionAttribute.class, "SubscriptionAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSubscriptionAttribute_SubscriptionId(), this.getSubscription(), null, "subscriptionId", null, 1, 1, SubscriptionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1933,9 +1933,9 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		initEReference(getSubscriptionResource_WebSiteId(), theWebsitePackage_1.getWebSite(), null, "webSiteId", null, 0, 1, SubscriptionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSubscriptionResource_WebSiteId().getEKeys().add(theWebsitePackage_1.getWebSite_WebSiteId());
 
-		addEOperation(subscriptionResourceEClass, ecorePackage.getEString(), "childSubscriptionResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(subscriptionResourceEClass, this.getSubscriptionResource(), "childSubscriptionResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(subscriptionResourceEClass, ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(subscriptionResourceEClass, this.getSubscription(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(subscriptionTypeEClass, SubscriptionType.class, "SubscriptionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSubscriptionType_SubscriptionTypeId(), ecorePackage.getEString(), "subscriptionTypeId", null, 1, 1, SubscriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1943,11 +1943,11 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		initEAttribute(getSubscriptionType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, SubscriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubscriptionType_ParentTypeId(), this.getSubscriptionType(), null, "parentTypeId", null, 0, 1, SubscriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSubscriptionType_ParentTypeId().getEKeys().add(this.getSubscriptionType_SubscriptionTypeId());
-		initEAttribute(getSubscriptionType_SubscriptionTypeAttrs(), ecorePackage.getEString(), "subscriptionTypeAttrs", null, 0, -1, SubscriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubscriptionType_SubscriptionTypeAttrs(), this.getSubscriptionTypeAttr(), null, "subscriptionTypeAttrs", null, 0, -1, SubscriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(subscriptionTypeEClass, ecorePackage.getEString(), "childSubscriptionTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(subscriptionTypeEClass, this.getSubscriptionType(), "childSubscriptionTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(subscriptionTypeEClass, ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(subscriptionTypeEClass, this.getSubscription(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(subscriptionTypeAttrEClass, SubscriptionTypeAttr.class, "SubscriptionTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSubscriptionTypeAttr_SubscriptionTypeId(), this.getSubscriptionType(), null, "subscriptionTypeId", null, 1, 1, SubscriptionTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2052,13 +2052,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (subscriptionEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSubscription_SubscriptionId(),
@@ -2166,20 +2159,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getSubscription_SubscriptionAttributes(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getSubscription_SubscriptionCommEvents(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSubscription_ThruDate(),
 		   source,
 		   new String[] {
@@ -2222,13 +2201,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getSubscriptionActivity_SubscriptionFulfillmentPieces(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSubscriptionAttribute_AttrName(),
 		   source,
 		   new String[] {
@@ -2248,20 +2220,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (subscriptionResourceEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (subscriptionResourceEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSubscriptionResource_SubscriptionResourceId(),
@@ -2285,20 +2243,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 			   "length", "255"
 		   });
 		addAnnotation
-		  (subscriptionTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (subscriptionTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSubscriptionType_SubscriptionTypeId(),
 		   source,
 		   new String[] {
@@ -2318,13 +2262,6 @@ public class SubscriptionPackageImpl extends EPackageImpl implements Subscriptio
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (getSubscriptionType_SubscriptionTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSubscriptionTypeAttr_AttrName(),

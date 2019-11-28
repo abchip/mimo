@@ -495,7 +495,7 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE__MANUAL_AUTH_IS_CAPTURE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 42;
 
 	/**
-	 * The feature id for the '<em><b>OAuth2 Git Hubs</b></em>' attribute list.
+	 * The feature id for the '<em><b>OAuth2 Git Hubs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -504,7 +504,7 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE__OAUTH2_GIT_HUBS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 43;
 
 	/**
-	 * The feature id for the '<em><b>OAuth2 Googles</b></em>' attribute list.
+	 * The feature id for the '<em><b>OAuth2 Googles</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -513,7 +513,7 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE__OAUTH2_GOOGLES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 44;
 
 	/**
-	 * The feature id for the '<em><b>OAuth2 Linked Ins</b></em>' attribute list.
+	 * The feature id for the '<em><b>OAuth2 Linked Ins</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -612,7 +612,7 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 55;
 
 	/**
-	 * The feature id for the '<em><b>Product Store Email Settings</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Store Email Settings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -621,7 +621,7 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE__PRODUCT_STORE_EMAIL_SETTINGS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 56;
 
 	/**
-	 * The feature id for the '<em><b>Product Store Fin Act Settings</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Store Fin Act Settings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1433,7 +1433,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int PRODUCT_STORE_GROUP__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1442,7 +1442,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int PRODUCT_STORE_GROUP__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1451,7 +1451,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int PRODUCT_STORE_GROUP__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1460,7 +1460,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int PRODUCT_STORE_GROUP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Product Store Group Id</b></em>' attribute.
@@ -1469,7 +1469,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1478,7 +1478,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int PRODUCT_STORE_GROUP__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Primary Parent Group Id</b></em>' reference.
@@ -1487,7 +1487,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Product Store Group Name</b></em>' attribute.
@@ -1496,7 +1496,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Product Store Group Type Id</b></em>' reference.
@@ -1505,7 +1505,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Product Store Group</em>' class.
@@ -1514,7 +1514,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int PRODUCT_STORE_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupMemberImpl <em>Product Store Group Member</em>}' class.
@@ -1809,22 +1809,13 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE_GROUP_TYPE = 9;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_STORE_GROUP_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int PRODUCT_STORE_GROUP_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1833,7 +1824,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int PRODUCT_STORE_GROUP_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1842,7 +1833,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int PRODUCT_STORE_GROUP_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1851,7 +1842,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int PRODUCT_STORE_GROUP_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Product Store Group Type Id</b></em>' attribute.
@@ -1860,7 +1851,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP_TYPE__PRODUCT_STORE_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int PRODUCT_STORE_GROUP_TYPE__PRODUCT_STORE_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1869,7 +1860,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int PRODUCT_STORE_GROUP_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Product Store Group Type</em>' class.
@@ -1878,7 +1869,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int PRODUCT_STORE_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl <em>Product Store Keyword Ovrd</em>}' class.
@@ -3515,11 +3506,11 @@ public interface StorePackage extends EPackage {
 	EAttribute getProductStore_OldStyleSheet();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStore#getOneInventoryFacility <em>One Inventory Facility</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStore#isOneInventoryFacility <em>One Inventory Facility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>One Inventory Facility</em>'.
-	 * @see org.abchip.mimo.biz.product.store.ProductStore#getOneInventoryFacility()
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#isOneInventoryFacility()
 	 * @see #getProductStore()
 	 * @generated
 	 */
@@ -3570,33 +3561,33 @@ public interface StorePackage extends EPackage {
 	EReference getProductStore_PrimaryStoreGroupId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStore#getProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStore#isProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Prod Search Exclude Variants</em>'.
-	 * @see org.abchip.mimo.biz.product.store.ProductStore#getProdSearchExcludeVariants()
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#isProdSearchExcludeVariants()
 	 * @see #getProductStore()
 	 * @generated
 	 */
 	EAttribute getProductStore_ProdSearchExcludeVariants();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStore#getProrateShipping <em>Prorate Shipping</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStore#isProrateShipping <em>Prorate Shipping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Prorate Shipping</em>'.
-	 * @see org.abchip.mimo.biz.product.store.ProductStore#getProrateShipping()
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#isProrateShipping()
 	 * @see #getProductStore()
 	 * @generated
 	 */
 	EAttribute getProductStore_ProrateShipping();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStore#getProrateTaxes <em>Prorate Taxes</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStore#isProrateTaxes <em>Prorate Taxes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Prorate Taxes</em>'.
-	 * @see org.abchip.mimo.biz.product.store.ProductStore#getProrateTaxes()
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#isProrateTaxes()
 	 * @see #getProductStore()
 	 * @generated
 	 */
@@ -3889,59 +3880,59 @@ public interface StorePackage extends EPackage {
 	EAttribute getProductStore_VisualThemeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2GitHubs <em>OAuth2 Git Hubs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2GitHubs <em>OAuth2 Git Hubs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>OAuth2 Git Hubs</em>'.
+	 * @return the meta object for the reference list '<em>OAuth2 Git Hubs</em>'.
 	 * @see org.abchip.mimo.biz.product.store.ProductStore#getOAuth2GitHubs()
 	 * @see #getProductStore()
 	 * @generated
 	 */
-	EAttribute getProductStore_OAuth2GitHubs();
+	EReference getProductStore_OAuth2GitHubs();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2Googles <em>OAuth2 Googles</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2Googles <em>OAuth2 Googles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>OAuth2 Googles</em>'.
+	 * @return the meta object for the reference list '<em>OAuth2 Googles</em>'.
 	 * @see org.abchip.mimo.biz.product.store.ProductStore#getOAuth2Googles()
 	 * @see #getProductStore()
 	 * @generated
 	 */
-	EAttribute getProductStore_OAuth2Googles();
+	EReference getProductStore_OAuth2Googles();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2LinkedIns <em>OAuth2 Linked Ins</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2LinkedIns <em>OAuth2 Linked Ins</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>OAuth2 Linked Ins</em>'.
+	 * @return the meta object for the reference list '<em>OAuth2 Linked Ins</em>'.
 	 * @see org.abchip.mimo.biz.product.store.ProductStore#getOAuth2LinkedIns()
 	 * @see #getProductStore()
 	 * @generated
 	 */
-	EAttribute getProductStore_OAuth2LinkedIns();
+	EReference getProductStore_OAuth2LinkedIns();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.store.ProductStore#getProductStoreEmailSettings <em>Product Store Email Settings</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.store.ProductStore#getProductStoreEmailSettings <em>Product Store Email Settings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Store Email Settings</em>'.
+	 * @return the meta object for the reference list '<em>Product Store Email Settings</em>'.
 	 * @see org.abchip.mimo.biz.product.store.ProductStore#getProductStoreEmailSettings()
 	 * @see #getProductStore()
 	 * @generated
 	 */
-	EAttribute getProductStore_ProductStoreEmailSettings();
+	EReference getProductStore_ProductStoreEmailSettings();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.store.ProductStore#getProductStoreFinActSettings <em>Product Store Fin Act Settings</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.store.ProductStore#getProductStoreFinActSettings <em>Product Store Fin Act Settings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Store Fin Act Settings</em>'.
+	 * @return the meta object for the reference list '<em>Product Store Fin Act Settings</em>'.
 	 * @see org.abchip.mimo.biz.product.store.ProductStore#getProductStoreFinActSettings()
 	 * @see #getProductStore()
 	 * @generated
 	 */
-	EAttribute getProductStore_ProductStoreFinActSettings();
+	EReference getProductStore_ProductStoreFinActSettings();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.store.ProductStoreCatalog <em>Product Store Catalog</em>}'.
@@ -4845,11 +4836,11 @@ public interface StorePackage extends EPackage {
 	EAttribute getProductStorePromoAppl_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getManualOnly <em>Manual Only</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#isManualOnly <em>Manual Only</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Manual Only</em>'.
-	 * @see org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getManualOnly()
+	 * @see org.abchip.mimo.biz.product.store.ProductStorePromoAppl#isManualOnly()
 	 * @see #getProductStorePromoAppl()
 	 * @generated
 	 */
@@ -6202,44 +6193,44 @@ public interface StorePackage extends EPackage {
 		EAttribute PRODUCT_STORE__VISUAL_THEME_ID = eINSTANCE.getProductStore_VisualThemeId();
 
 		/**
-		 * The meta object literal for the '<em><b>OAuth2 Git Hubs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>OAuth2 Git Hubs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_STORE__OAUTH2_GIT_HUBS = eINSTANCE.getProductStore_OAuth2GitHubs();
+		EReference PRODUCT_STORE__OAUTH2_GIT_HUBS = eINSTANCE.getProductStore_OAuth2GitHubs();
 
 		/**
-		 * The meta object literal for the '<em><b>OAuth2 Googles</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>OAuth2 Googles</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_STORE__OAUTH2_GOOGLES = eINSTANCE.getProductStore_OAuth2Googles();
+		EReference PRODUCT_STORE__OAUTH2_GOOGLES = eINSTANCE.getProductStore_OAuth2Googles();
 
 		/**
-		 * The meta object literal for the '<em><b>OAuth2 Linked Ins</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>OAuth2 Linked Ins</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_STORE__OAUTH2_LINKED_INS = eINSTANCE.getProductStore_OAuth2LinkedIns();
+		EReference PRODUCT_STORE__OAUTH2_LINKED_INS = eINSTANCE.getProductStore_OAuth2LinkedIns();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Store Email Settings</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Store Email Settings</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_STORE__PRODUCT_STORE_EMAIL_SETTINGS = eINSTANCE.getProductStore_ProductStoreEmailSettings();
+		EReference PRODUCT_STORE__PRODUCT_STORE_EMAIL_SETTINGS = eINSTANCE.getProductStore_ProductStoreEmailSettings();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Store Fin Act Settings</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Store Fin Act Settings</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_STORE__PRODUCT_STORE_FIN_ACT_SETTINGS = eINSTANCE.getProductStore_ProductStoreFinActSettings();
+		EReference PRODUCT_STORE__PRODUCT_STORE_FIN_ACT_SETTINGS = eINSTANCE.getProductStore_ProductStoreFinActSettings();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreCatalogImpl <em>Product Store Catalog</em>}' class.

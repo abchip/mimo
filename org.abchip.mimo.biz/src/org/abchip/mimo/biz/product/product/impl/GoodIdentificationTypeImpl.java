@@ -124,8 +124,8 @@ public class GoodIdentificationTypeImpl extends BizEntityTypeImpl<GoodIdentifica
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getGoodIdentifications() {
-		return (List<String>)eGet(ProductPackage.Literals.GOOD_IDENTIFICATION_TYPE__GOOD_IDENTIFICATIONS, true);
+	public List<GoodIdentification> getGoodIdentifications() {
+		return (List<GoodIdentification>)eGet(ProductPackage.Literals.GOOD_IDENTIFICATION_TYPE__GOOD_IDENTIFICATIONS, true);
 	}
 
 	/**
@@ -134,7 +134,7 @@ public class GoodIdentificationTypeImpl extends BizEntityTypeImpl<GoodIdentifica
 	 * @generated
 	 */
 	@Override
-	public List<String> childGoodIdentificationTypes() {
+	public List<GoodIdentificationType> childGoodIdentificationTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

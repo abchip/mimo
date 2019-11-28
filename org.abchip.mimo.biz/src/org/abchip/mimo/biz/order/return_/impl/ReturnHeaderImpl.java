@@ -15,14 +15,19 @@ import org.abchip.mimo.biz.accounting.payment.BillingAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.return_.CommunicationEventReturn;
+import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnHeaderType;
+import org.abchip.mimo.biz.order.return_.ReturnItem;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
+import org.abchip.mimo.biz.order.return_.ReturnStatus;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -54,7 +59,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> implements ReturnHeader {
+public class ReturnHeaderImpl extends BizEntityImpl implements ReturnHeader {
 	/**
 	 * 
 	 */
@@ -386,8 +391,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCommunicationEventReturns() {
-		return (List<String>)eGet(ReturnPackage.Literals.RETURN_HEADER__COMMUNICATION_EVENT_RETURNS, true);
+	public List<CommunicationEventReturn> getCommunicationEventReturns() {
+		return (List<CommunicationEventReturn>)eGet(ReturnPackage.Literals.RETURN_HEADER__COMMUNICATION_EVENT_RETURNS, true);
 	}
 
 	/**
@@ -397,8 +402,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getReturnItems() {
-		return (List<String>)eGet(ReturnPackage.Literals.RETURN_HEADER__RETURN_ITEMS, true);
+	public List<ReturnItem> getReturnItems() {
+		return (List<ReturnItem>)eGet(ReturnPackage.Literals.RETURN_HEADER__RETURN_ITEMS, true);
 	}
 
 	/**
@@ -407,7 +412,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> primaryShipments() {
+	public List<Shipment> primaryShipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -419,7 +424,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> returnAdjustments() {
+	public List<ReturnAdjustment> returnAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -431,7 +436,7 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> returnStatuss() {
+	public List<ReturnStatus> returnStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

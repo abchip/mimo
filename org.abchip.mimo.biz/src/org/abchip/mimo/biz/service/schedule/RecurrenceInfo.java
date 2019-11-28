@@ -11,6 +11,9 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -222,41 +225,37 @@ public interface RecurrenceInfo extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='recurrenceInfoId'"
 	 * @generated
 	 */
-	List<String> invoices();
+	List<Invoice> invoices();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobSandbox' route='recurrenceInfoId'"
 	 * @generated
 	 */
-	List<String> jobSandboxs();
+	List<JobSandbox> jobSandboxs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='recurrenceInfoId'"
 	 * @generated
 	 */
-	List<String> shoppingLists();
+	List<ShoppingList> shoppingLists();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='recurrenceInfoId'"
 	 * @generated
 	 */
-	List<String> workEfforts();
+	List<WorkEffort> workEfforts();
 
 } // RecurrenceInfo

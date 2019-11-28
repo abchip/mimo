@@ -441,41 +441,38 @@ public interface SalesForecast extends BizEntity {
 	void setSalesForecastId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Sales Forecast Details</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Sales Forecast Details</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sales Forecast Details</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sales Forecast Details</em>' attribute list.
+	 * @return the value of the '<em>Sales Forecast Details</em>' reference list.
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_SalesForecastDetails()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastDetail'"
 	 * @generated
 	 */
-	List<String> getSalesForecastDetails();
+	List<SalesForecastDetail> getSalesForecastDetails();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecast' route='parentSalesForecastId'"
 	 * @generated
 	 */
-	List<String> childSalesForecasts();
+	List<SalesForecast> childSalesForecasts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastHistory' route='salesForecastId'"
 	 * @generated
 	 */
-	List<String> salesForecastHistories();
+	List<SalesForecastHistory> salesForecastHistories();
 
 } // SalesForecast

@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.accounting.ledger;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap;
+import org.abchip.mimo.biz.product.cost.CostComponentCalc;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,82 +113,75 @@ public interface GlAccountType extends BizEntityType<GlAccount> {
 	void setParentTypeId(GlAccountType value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Type Defaults</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Gl Account Type Defaults</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.GlAccountTypeDefault}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Type Defaults</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Type Defaults</em>' attribute list.
+	 * @return the value of the '<em>Gl Account Type Defaults</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountType_GlAccountTypeDefaults()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountTypeDefault'"
 	 * @generated
 	 */
-	List<String> getGlAccountTypeDefaults();
+	List<GlAccountTypeDefault> getGlAccountTypeDefaults();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='glAccountTypeId'"
 	 * @generated
 	 */
-	List<String> acctgTransEntries();
+	List<AcctgTransEntry> acctgTransEntries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childGlAccountTypes();
+	List<GlAccountType> childGlAccountTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponentCalc' route='costGlAccountTypeId'"
 	 * @generated
 	 */
-	List<String> costCostComponentCalcs();
+	List<CostComponentCalc> costCostComponentCalcs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccount' route='glAccountTypeId'"
 	 * @generated
 	 */
-	List<String> glAccounts();
+	List<GlAccount> glAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponentCalc' route='offsettingGlAccountTypeId'"
 	 * @generated
 	 */
-	List<String> offsettingCostComponentCalcs();
+	List<CostComponentCalc> offsettingCostComponentCalcs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGlAccountTypeMap' route='glAccountTypeId'"
 	 * @generated
 	 */
-	List<String> paymentGlAccountTypeMaps();
+	List<PaymentGlAccountTypeMap> paymentGlAccountTypeMaps();
 
 	/**
 	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' attribute.

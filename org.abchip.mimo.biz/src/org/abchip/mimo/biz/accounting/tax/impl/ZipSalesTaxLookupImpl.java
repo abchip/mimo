@@ -35,15 +35,15 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getCityUseTax <em>City Use Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getComboSalesTax <em>Combo Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getComboUseTax <em>Combo Use Tax</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getCountyDefault <em>County Default</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#isCountyDefault <em>County Default</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getCountyFips <em>County Fips</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getCountyLocalSalesTax <em>County Local Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getCountyLocalUseTax <em>County Local Use Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getCountySalesTax <em>County Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getCountyUseTax <em>County Use Tax</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getGeneralDefault <em>General Default</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#isGeneralDefault <em>General Default</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getGeoCode <em>Geo Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getInsideCity <em>Inside City</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#isInsideCity <em>Inside City</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getStateSalesTax <em>State Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.ZipSalesTaxLookupImpl#getStateUseTax <em>State Use Tax</em>}</li>
  * </ul>
@@ -220,8 +220,8 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 * @generated
 	 */
 	@Override
-	public char getCountyDefault() {
-		return (Character)eGet(TaxPackage.Literals.ZIP_SALES_TAX_LOOKUP__COUNTY_DEFAULT, true);
+	public boolean isCountyDefault() {
+		return (Boolean)eGet(TaxPackage.Literals.ZIP_SALES_TAX_LOOKUP__COUNTY_DEFAULT, true);
 	}
 
 	/**
@@ -230,7 +230,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 * @generated
 	 */
 	@Override
-	public void setCountyDefault(char newCountyDefault) {
+	public void setCountyDefault(boolean newCountyDefault) {
 		eSet(TaxPackage.Literals.ZIP_SALES_TAX_LOOKUP__COUNTY_DEFAULT, newCountyDefault);
 	}
 
@@ -360,8 +360,8 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 * @generated
 	 */
 	@Override
-	public char getGeneralDefault() {
-		return (Character)eGet(TaxPackage.Literals.ZIP_SALES_TAX_LOOKUP__GENERAL_DEFAULT, true);
+	public boolean isGeneralDefault() {
+		return (Boolean)eGet(TaxPackage.Literals.ZIP_SALES_TAX_LOOKUP__GENERAL_DEFAULT, true);
 	}
 
 	/**
@@ -370,7 +370,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 * @generated
 	 */
 	@Override
-	public void setGeneralDefault(char newGeneralDefault) {
+	public void setGeneralDefault(boolean newGeneralDefault) {
 		eSet(TaxPackage.Literals.ZIP_SALES_TAX_LOOKUP__GENERAL_DEFAULT, newGeneralDefault);
 	}
 
@@ -420,8 +420,8 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 * @generated
 	 */
 	@Override
-	public char getInsideCity() {
-		return (Character)eGet(TaxPackage.Literals.ZIP_SALES_TAX_LOOKUP__INSIDE_CITY, true);
+	public boolean isInsideCity() {
+		return (Boolean)eGet(TaxPackage.Literals.ZIP_SALES_TAX_LOOKUP__INSIDE_CITY, true);
 	}
 
 	/**
@@ -430,7 +430,7 @@ public class ZipSalesTaxLookupImpl extends BizEntityImpl implements ZipSalesTaxL
 	 * @generated
 	 */
 	@Override
-	public void setInsideCity(char newInsideCity) {
+	public void setInsideCity(boolean newInsideCity) {
 		eSet(TaxPackage.Literals.ZIP_SALES_TAX_LOOKUP__INSIDE_CITY, newInsideCity);
 	}
 

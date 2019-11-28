@@ -14,6 +14,9 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.order.order.OrderAdjustment;
+import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
+import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
@@ -414,72 +417,66 @@ public interface ProductPromo extends BizEntity {
 	void setUserEntered(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Rules</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Promo Rules</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.promo.ProductPromoRule}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Rules</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Rules</em>' attribute list.
+	 * @return the value of the '<em>Product Promo Rules</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_ProductPromoRules()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoRule'"
 	 * @generated
 	 */
-	List<String> getProductPromoRules();
+	List<ProductPromoRule> getProductPromoRules();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='productPromoId'"
 	 * @generated
 	 */
-	List<String> orderAdjustments();
+	List<OrderAdjustment> orderAdjustments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoCode' route='productPromoId'"
 	 * @generated
 	 */
-	List<String> productPromoCodes();
+	List<ProductPromoCode> productPromoCodes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoUse' route='productPromoId'"
 	 * @generated
 	 */
-	List<String> productPromoUses();
+	List<ProductPromoUse> productPromoUses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='productPromoId'"
 	 * @generated
 	 */
-	List<String> quoteAdjustments();
+	List<QuoteAdjustment> quoteAdjustments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='productPromoId'"
 	 * @generated
 	 */
-	List<String> returnAdjustments();
+	List<ReturnAdjustment> returnAdjustments();
 
 	/**
 	 * Returns the value of the '<em><b>Product Promo Id</b></em>' attribute.

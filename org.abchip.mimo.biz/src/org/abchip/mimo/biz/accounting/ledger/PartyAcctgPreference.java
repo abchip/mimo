@@ -631,12 +631,11 @@ public interface PartyAcctgPreference extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyPrefDocTypeTpl' route='partyId'"
 	 * @generated
 	 */
-	List<String> partyPrefDocTypeTpls();
+	List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls();
 
 	/**
 	 * Returns the value of the '<em><b>Error Gl Journal Id</b></em>' reference.

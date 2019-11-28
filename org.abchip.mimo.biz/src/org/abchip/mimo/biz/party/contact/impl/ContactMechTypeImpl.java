@@ -10,9 +10,15 @@ package org.abchip.mimo.biz.party.contact.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.marketing.contact.ContactList;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.party.communication.CommunicationEventType;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
+import org.abchip.mimo.biz.party.contact.ContactMechTypeAttr;
+import org.abchip.mimo.biz.party.contact.ContactMechTypePurpose;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
+import org.abchip.mimo.biz.party.contact.ValidContactMechRole;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -124,8 +130,8 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getContactMechTypeAttrs() {
-		return (List<String>)eGet(ContactPackage.Literals.CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_ATTRS, true);
+	public List<ContactMechTypeAttr> getContactMechTypeAttrs() {
+		return (List<ContactMechTypeAttr>)eGet(ContactPackage.Literals.CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -135,8 +141,8 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getContactMechTypePurposes() {
-		return (List<String>)eGet(ContactPackage.Literals.CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_PURPOSES, true);
+	public List<ContactMechTypePurpose> getContactMechTypePurposes() {
+		return (List<ContactMechTypePurpose>)eGet(ContactPackage.Literals.CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_PURPOSES, true);
 	}
 
 	/**
@@ -145,7 +151,7 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> childContactMechTypes() {
+	public List<ContactMechType> childContactMechTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -157,7 +163,7 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> communicationEvents() {
+	public List<CommunicationEvent> communicationEvents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -169,7 +175,7 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> contacMechTypeCommunicationEventTypes() {
+	public List<CommunicationEventType> contacMechTypeCommunicationEventTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -181,7 +187,7 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> contactLists() {
+	public List<ContactList> contactLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -193,7 +199,7 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> contactMechs() {
+	public List<ContactMech> contactMechs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -205,7 +211,7 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> validContactMechRoles() {
+	public List<ValidContactMechRole> validContactMechRoles() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.humanres.ability;
 
 import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -112,12 +111,11 @@ public interface ResponsibilityType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ResponsibilityType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childResponsibilityTypes();
+	List<ResponsibilityType> childResponsibilityTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Responsibility Type Id</b></em>' attribute.

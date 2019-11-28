@@ -10,10 +10,18 @@ package org.abchip.mimo.biz.common.note.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.invoice.InvoiceNote;
 import org.abchip.mimo.biz.common.note.NoteData;
 import org.abchip.mimo.biz.common.note.NotePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote;
+import org.abchip.mimo.biz.order.order.OrderHeaderNote;
+import org.abchip.mimo.biz.order.quote.QuoteNote;
+import org.abchip.mimo.biz.order.request.CustRequestNote;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.PartyNote;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -226,7 +234,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequestNotes() {
+	public List<CustRequestNote> custRequestNotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -238,7 +246,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceNotes() {
+	public List<InvoiceNote> invoiceNotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -250,7 +258,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 * @generated
 	 */
 	@Override
-	public List<String> marketingCampaignNotes() {
+	public List<MarketingCampaignNote> marketingCampaignNotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -262,7 +270,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 * @generated
 	 */
 	@Override
-	public List<String> orderHeaderNotes() {
+	public List<OrderHeaderNote> orderHeaderNotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -274,7 +282,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 * @generated
 	 */
 	@Override
-	public List<String> partyNotes() {
+	public List<PartyNote> partyNotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -286,7 +294,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteNotes() {
+	public List<QuoteNote> quoteNotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -298,7 +306,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 * @generated
 	 */
 	@Override
-	public List<String> workEffortNotes() {
+	public List<WorkEffortNote> workEffortNotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -310,7 +318,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 * @generated
 	 */
 	@Override
-	public List<String> workEfforts() {
+	public List<WorkEffort> workEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

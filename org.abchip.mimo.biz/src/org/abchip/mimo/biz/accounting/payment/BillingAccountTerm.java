@@ -143,22 +143,21 @@ public interface BillingAccountTerm extends BizEntity {
 	void setUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Billing Account Term Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Billing Account Term Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Billing Account Term Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Billing Account Term Attrs</em>' attribute list.
+	 * @return the value of the '<em>Billing Account Term Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTerm_BillingAccountTermAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BillingAccountTermAttr'"
 	 * @generated
 	 */
-	List<String> getBillingAccountTermAttrs();
+	List<BillingAccountTermAttr> getBillingAccountTermAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Billing Account Id</b></em>' reference.

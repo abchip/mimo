@@ -13,6 +13,7 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.ledger.GlJournal;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
+import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
@@ -525,7 +526,7 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public List<String> partyPrefDocTypeTpls() {
+	public List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

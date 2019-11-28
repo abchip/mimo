@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.product.store;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
-public interface ProductStoreGroup extends BizEntityTyped<ProductStoreGroupType> {
+public interface ProductStoreGroup extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -113,12 +113,11 @@ public interface ProductStoreGroup extends BizEntityTyped<ProductStoreGroupType>
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='primaryStoreGroupId'"
 	 * @generated
 	 */
-	List<String> primaryProductStores();
+	List<ProductStore> primaryProductStores();
 
 	/**
 	 * Returns the value of the '<em><b>Primary Parent Group Id</b></em>' reference.

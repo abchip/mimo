@@ -10,6 +10,23 @@ package org.abchip.mimo.biz.party.contact;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.payment.BillingAccount;
+import org.abchip.mimo.biz.accounting.payment.CheckAccount;
+import org.abchip.mimo.biz.accounting.payment.CreditCard;
+import org.abchip.mimo.biz.accounting.payment.EftAccount;
+import org.abchip.mimo.biz.accounting.payment.GiftCard;
+import org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod;
+import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
+import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,260 +76,236 @@ public interface ContactMech extends BizEntityTyped<ContactMechType> {
 	void setInfoString(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Contact Mech Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.ContactMechAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Attributes</em>' attribute list.
+	 * @return the value of the '<em>Contact Mech Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMech_ContactMechAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechAttribute'"
 	 * @generated
 	 */
-	List<String> getContactMechAttributes();
+	List<ContactMechAttribute> getContactMechAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>From Contact Mech Links</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>From Contact Mech Links</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.ContactMechLink}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>From Contact Mech Links</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From Contact Mech Links</em>' attribute list.
+	 * @return the value of the '<em>From Contact Mech Links</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMech_FromContactMechLinks()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechLink'"
 	 * @generated
 	 */
-	List<String> getFromContactMechLinks();
+	List<ContactMechLink> getFromContactMechLinks();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BillingAccount' route='contactMechId'"
 	 * @generated
 	 */
-	List<String> billingAccounts();
+	List<BillingAccount> billingAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CheckAccount' route='contactMechId'"
 	 * @generated
 	 */
-	List<String> checkAccounts();
+	List<CheckAccount> checkAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CreditCard' route='contactMechId'"
 	 * @generated
 	 */
-	List<String> creditCards();
+	List<CreditCard> creditCards();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='destContactMechId'"
 	 * @generated
 	 */
-	List<String> destShipmentRouteSegments();
+	List<ShipmentRouteSegment> destShipmentRouteSegments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='destinationContactMechId'"
 	 * @generated
 	 */
-	List<String> destShipments();
+	List<Shipment> destShipments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EftAccount' route='contactMechId'"
 	 * @generated
 	 */
-	List<String> eftAccounts();
+	List<EftAccount> eftAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='contactMechIdFrom'"
 	 * @generated
 	 */
-	List<String> fromCommunicationEvents();
+	List<CommunicationEvent> fromCommunicationEvents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequest' route='fulfillContactMechId'"
 	 * @generated
 	 */
-	List<String> fulfillCustRequests();
+	List<CustRequest> fulfillCustRequests();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GiftCard' route='contactMechId'"
 	 * @generated
 	 */
-	List<String> giftCards();
+	List<GiftCard> giftCards();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='contactMechId'"
 	 * @generated
 	 */
-	List<String> invoices();
+	List<Invoice> invoices();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='contactMechId'"
 	 * @generated
 	 */
-	List<String> orderItemShipGroups();
+	List<OrderItemShipGroup> orderItemShipGroups();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='originContactMechId'"
 	 * @generated
 	 */
-	List<String> originShipmentRouteSegments();
+	List<ShipmentRouteSegment> originShipmentRouteSegments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='originContactMechId'"
 	 * @generated
 	 */
-	List<String> originShipments();
+	List<Shipment> originShipments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PayPalPaymentMethod' route='contactMechId'"
 	 * @generated
 	 */
-	List<String> payPalPaymentMethods();
+	List<PayPalPaymentMethod> payPalPaymentMethods();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='originContactMechId'"
 	 * @generated
 	 */
-	List<String> returnHeaders();
+	List<ReturnHeader> returnHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentContactMech' route='contactMechId'"
 	 * @generated
 	 */
-	List<String> shipmentContactMechs();
+	List<ShipmentContactMech> shipmentContactMechs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='contactMechId'"
 	 * @generated
 	 */
-	List<String> shoppingLists();
+	List<ShoppingList> shoppingLists();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='contactMechId'"
 	 * @generated
 	 */
-	List<String> subscriptions();
+	List<Subscription> subscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='telecomContactMechId'"
 	 * @generated
 	 */
-	List<String> telecomOrderItemShipGroups();
+	List<OrderItemShipGroup> telecomOrderItemShipGroups();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='contactMechIdTo'"
 	 * @generated
 	 */
-	List<String> toCommunicationEvents();
+	List<CommunicationEvent> toCommunicationEvents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechLink' route='contactMechIdTo'"
 	 * @generated
 	 */
-	List<String> toContactMechLinks();
+	List<ContactMechLink> toContactMechLinks();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortEventReminder' route='contactMechId'"
 	 * @generated
 	 */
-	List<String> workEffortEventReminders();
+	List<WorkEffortEventReminder> workEffortEventReminders();
 
 	/**
 	 * Returns the value of the '<em><b>Contact Mech Type Id</b></em>' reference.

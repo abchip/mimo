@@ -10,6 +10,11 @@ package org.abchip.mimo.biz.product.category;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
+import org.abchip.mimo.biz.product.subscription.Subscription;
 
 /**
  * <!-- begin-user-doc -->
@@ -248,82 +253,75 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	void setShowInSelect(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Category Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Category Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.category.ProductCategoryAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Category Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Category Attributes</em>' attribute list.
+	 * @return the value of the '<em>Product Category Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_ProductCategoryAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductCategoryAttribute'"
 	 * @generated
 	 */
-	List<String> getProductCategoryAttributes();
+	List<ProductCategoryAttribute> getProductCategoryAttributes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductCategory' route='primaryParentCategoryId'"
 	 * @generated
 	 */
-	List<String> primaryChildProductCategories();
+	List<ProductCategory> primaryChildProductCategories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='primaryProductCategoryId'"
 	 * @generated
 	 */
-	List<String> primaryProducts();
+	List<Product> primaryProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreSurveyAppl' route='productCategoryId'"
 	 * @generated
 	 */
-	List<String> productStoreSurveyAppls();
+	List<ProductStoreSurveyAppl> productStoreSurveyAppls();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastDetail' route='productCategoryId'"
 	 * @generated
 	 */
-	List<String> salesForecastDetails();
+	List<SalesForecastDetail> salesForecastDetails();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='productCategoryId'"
 	 * @generated
 	 */
-	List<String> subscriptions();
+	List<Subscription> subscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TaxAuthorityRateProduct' route='productCategoryId'"
 	 * @generated
 	 */
-	List<String> taxAuthorityRateProducts();
+	List<TaxAuthorityRateProduct> taxAuthorityRateProducts();
 
 	/**
 	 * Returns the value of the '<em><b>Product Category Type Id</b></em>' reference.

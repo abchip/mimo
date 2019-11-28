@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.content.website;
 
-import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.webapp.website.WebSite;
 
 /**
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.webapp.website.WebSite;
  * @model annotation="mimo-ent-frame title='Web Analytics Configuration'"
  * @generated
  */
-public interface WebAnalyticsConfig extends BizEntity {
+public interface WebAnalyticsConfig extends BizEntityTyped<WebAnalyticsType> {
 	/**
 	 * Returns the value of the '<em><b>Web Analytics Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->

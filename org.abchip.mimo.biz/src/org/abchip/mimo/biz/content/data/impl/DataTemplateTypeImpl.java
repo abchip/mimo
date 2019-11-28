@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.content.data.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.content.data.DataPackage;
+import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.DataTemplateType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -120,7 +121,7 @@ public class DataTemplateTypeImpl extends BizEntityImpl implements DataTemplateT
 	 * @generated
 	 */
 	@Override
-	public List<String> dataResources() {
+	public List<DataResource> dataResources() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

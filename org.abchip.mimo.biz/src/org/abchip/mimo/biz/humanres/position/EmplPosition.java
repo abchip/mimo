@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
 import org.abchip.mimo.biz.party.party.Party;
 
 /**
@@ -413,11 +414,10 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='emplPositionId'"
 	 * @generated
 	 */
-	List<String> employmentApps();
+	List<EmploymentApp> employmentApps();
 
 } // EmplPosition

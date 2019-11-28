@@ -144,7 +144,7 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	 * @generated
 	 */
 	@Override
-	public List<String> childCommunicationEventTypes() {
+	public List<CommunicationEventType> childCommunicationEventTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -156,7 +156,7 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	 * @generated
 	 */
 	@Override
-	public List<String> communicationEvents() {
+	public List<CommunicationEvent> communicationEvents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

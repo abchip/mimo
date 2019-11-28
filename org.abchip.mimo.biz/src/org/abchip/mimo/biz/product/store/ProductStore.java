@@ -10,11 +10,26 @@ package org.abchip.mimo.biz.product.store;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.quote.Quote;
+import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.PartyProfileDefault;
+import org.abchip.mimo.biz.passport.GitHubUser;
+import org.abchip.mimo.biz.passport.GoogleUser;
+import org.abchip.mimo.biz.passport.LinkedInUser;
+import org.abchip.mimo.biz.passport.OAuth2GitHub;
+import org.abchip.mimo.biz.passport.OAuth2Google;
+import org.abchip.mimo.biz.passport.OAuth2LinkedIn;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.product.ProductReview;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 
 /**
  * <!-- begin-user-doc -->
@@ -75,16 +90,16 @@ import org.abchip.mimo.biz.product.facility.Facility;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOldHeaderMiddleBackground <em>Old Header Middle Background</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOldHeaderRightBackground <em>Old Header Right Background</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOldStyleSheet <em>Old Style Sheet</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOneInventoryFacility <em>One Inventory Facility</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isOneInventoryFacility <em>One Inventory Facility</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOrderNumberPrefix <em>Order Number Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getPayToPartyId <em>Pay To Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getPrimaryStoreGroupId <em>Primary Store Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getProductStoreEmailSettings <em>Product Store Email Settings</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getProductStoreFinActSettings <em>Product Store Fin Act Settings</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getProrateShipping <em>Prorate Shipping</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getProrateTaxes <em>Prorate Taxes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isProrateShipping <em>Prorate Shipping</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isProrateTaxes <em>Prorate Taxes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isReqReturnInventoryReceive <em>Req Return Inventory Receive</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isReqShipAddrForDigItems <em>Req Ship Addr For Dig Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isRequireCustomerRole <em>Require Customer Role</em>}</li>
@@ -1197,6 +1212,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>One Inventory Facility</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>One Inventory Facility</em>' attribute isn't clear,
@@ -1204,22 +1220,23 @@ public interface ProductStore extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>One Inventory Facility</em>' attribute.
-	 * @see #setOneInventoryFacility(char)
+	 * @see #setOneInventoryFacility(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OneInventoryFacility()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getOneInventoryFacility();
+	boolean isOneInventoryFacility();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getOneInventoryFacility <em>One Inventory Facility</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#isOneInventoryFacility <em>One Inventory Facility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>One Inventory Facility</em>' attribute.
-	 * @see #getOneInventoryFacility()
+	 * @see #isOneInventoryFacility()
 	 * @generated
 	 */
-	void setOneInventoryFacility(char value);
+	void setOneInventoryFacility(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Decimal Quantity</b></em>' attribute.
@@ -1273,85 +1290,6 @@ public interface ProductStore extends BizEntity {
 	 * @generated
 	 */
 	void setOrderNumberPrefix(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Prod Search Exclude Variants</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Prod Search Exclude Variants</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Prod Search Exclude Variants</em>' attribute.
-	 * @see #setProdSearchExcludeVariants(char)
-	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProdSearchExcludeVariants()
-	 * @model annotation="mimo-ent-slot help='default Y; if set to Y an additional constraint will of isVariant!=Y will be added to all product searches for the store'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
-	 * @generated
-	 */
-	char getProdSearchExcludeVariants();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prod Search Exclude Variants</em>' attribute.
-	 * @see #getProdSearchExcludeVariants()
-	 * @generated
-	 */
-	void setProdSearchExcludeVariants(char value);
-
-	/**
-	 * Returns the value of the '<em><b>Prorate Shipping</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Prorate Shipping</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Prorate Shipping</em>' attribute.
-	 * @see #setProrateShipping(char)
-	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProrateShipping()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
-	 * @generated
-	 */
-	char getProrateShipping();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getProrateShipping <em>Prorate Shipping</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prorate Shipping</em>' attribute.
-	 * @see #getProrateShipping()
-	 * @generated
-	 */
-	void setProrateShipping(char value);
-
-	/**
-	 * Returns the value of the '<em><b>Prorate Taxes</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Prorate Taxes</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Prorate Taxes</em>' attribute.
-	 * @see #setProrateTaxes(char)
-	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProrateTaxes()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
-	 * @generated
-	 */
-	char getProrateTaxes();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getProrateTaxes <em>Prorate Taxes</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prorate Taxes</em>' attribute.
-	 * @see #getProrateTaxes()
-	 * @generated
-	 */
-	void setProrateTaxes(char value);
 
 	/**
 	 * Returns the value of the '<em><b>Req Return Inventory Receive</b></em>' attribute.
@@ -2066,224 +2004,262 @@ public interface ProductStore extends BizEntity {
 	void setVisualThemeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>OAuth2 Git Hubs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>OAuth2 Git Hubs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.passport.OAuth2GitHub}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>OAuth2 Git Hubs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>OAuth2 Git Hubs</em>' attribute list.
+	 * @return the value of the '<em>OAuth2 Git Hubs</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OAuth2GitHubs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OAuth2GitHub'"
 	 * @generated
 	 */
-	List<String> getOAuth2GitHubs();
+	List<OAuth2GitHub> getOAuth2GitHubs();
 
 	/**
-	 * Returns the value of the '<em><b>OAuth2 Googles</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>OAuth2 Googles</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.passport.OAuth2Google}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>OAuth2 Googles</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>OAuth2 Googles</em>' attribute list.
+	 * @return the value of the '<em>OAuth2 Googles</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OAuth2Googles()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OAuth2Google'"
 	 * @generated
 	 */
-	List<String> getOAuth2Googles();
+	List<OAuth2Google> getOAuth2Googles();
 
 	/**
-	 * Returns the value of the '<em><b>OAuth2 Linked Ins</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>OAuth2 Linked Ins</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.passport.OAuth2LinkedIn}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>OAuth2 Linked Ins</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>OAuth2 Linked Ins</em>' attribute list.
+	 * @return the value of the '<em>OAuth2 Linked Ins</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OAuth2LinkedIns()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OAuth2LinkedIn'"
 	 * @generated
 	 */
-	List<String> getOAuth2LinkedIns();
+	List<OAuth2LinkedIn> getOAuth2LinkedIns();
 
 	/**
-	 * Returns the value of the '<em><b>Product Store Email Settings</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Store Email Settings</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Store Email Settings</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Email Settings</em>' attribute list.
+	 * @return the value of the '<em>Product Store Email Settings</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProductStoreEmailSettings()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreEmailSetting'"
 	 * @generated
 	 */
-	List<String> getProductStoreEmailSettings();
+	List<ProductStoreEmailSetting> getProductStoreEmailSettings();
 
 	/**
-	 * Returns the value of the '<em><b>Product Store Fin Act Settings</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Store Fin Act Settings</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Store Fin Act Settings</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Fin Act Settings</em>' attribute list.
+	 * @return the value of the '<em>Product Store Fin Act Settings</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProductStoreFinActSettings()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreFinActSetting'"
 	 * @generated
 	 */
-	List<String> getProductStoreFinActSettings();
+	List<ProductStoreFinActSetting> getProductStoreFinActSettings();
+
+	/**
+	 * Returns the value of the '<em><b>Prorate Shipping</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Prorate Shipping</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Prorate Shipping</em>' attribute.
+	 * @see #setProrateShipping(boolean)
+	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProrateShipping()
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isProrateShipping();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#isProrateShipping <em>Prorate Shipping</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Prorate Shipping</em>' attribute.
+	 * @see #isProrateShipping()
+	 * @generated
+	 */
+	void setProrateShipping(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Prorate Taxes</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Prorate Taxes</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Prorate Taxes</em>' attribute.
+	 * @see #setProrateTaxes(boolean)
+	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProrateTaxes()
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isProrateTaxes();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#isProrateTaxes <em>Prorate Taxes</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Prorate Taxes</em>' attribute.
+	 * @see #isProrateTaxes()
+	 * @generated
+	 */
+	void setProrateTaxes(boolean value);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequest' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> custRequests();
+	List<CustRequest> custRequests();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GitHubUser' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> gitHubUsers();
+	List<GitHubUser> gitHubUsers();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GoogleUser' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> googleUsers();
+	List<GoogleUser> googleUsers();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='LinkedInUser' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> linkedInUsers();
+	List<LinkedInUser> linkedInUsers();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> orderHeaders();
+	List<OrderHeader> orderHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyProfileDefault' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> partyProfileDefaults();
+	List<PartyProfileDefault> partyProfileDefaults();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductReview' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> productReviews();
+	List<ProductReview> productReviews();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreSurveyAppl' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> productStoreSurveyAppls();
+	List<ProductStoreSurveyAppl> productStoreSurveyAppls();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Quote' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> quotes();
+	List<Quote> quotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SegmentGroup' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> segmentGroups();
+	List<SegmentGroup> segmentGroups();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> shoppingLists();
+	List<ShoppingList> shoppingLists();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TaxAuthorityRateProduct' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> taxAuthorityRateProducts();
+	List<TaxAuthorityRateProduct> taxAuthorityRateProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WebSite' route='productStoreId'"
 	 * @generated
 	 */
-	List<String> webSites();
+	List<WebSite> webSites();
 
 	/**
 	 * Returns the value of the '<em><b>Primary Store Group Id</b></em>' reference.
@@ -2310,6 +2286,35 @@ public interface ProductStore extends BizEntity {
 	 * @generated
 	 */
 	void setPrimaryStoreGroupId(ProductStoreGroup value);
+
+	/**
+	 * Returns the value of the '<em><b>Prod Search Exclude Variants</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Prod Search Exclude Variants</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Prod Search Exclude Variants</em>' attribute.
+	 * @see #setProdSearchExcludeVariants(boolean)
+	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProdSearchExcludeVariants()
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='default Y; if set to Y an additional constraint will of isVariant!=Y will be added to all product searches for the store'"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isProdSearchExcludeVariants();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#isProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Prod Search Exclude Variants</em>' attribute.
+	 * @see #isProdSearchExcludeVariants()
+	 * @generated
+	 */
+	void setProdSearchExcludeVariants(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Inventory Facility Id</b></em>' reference.

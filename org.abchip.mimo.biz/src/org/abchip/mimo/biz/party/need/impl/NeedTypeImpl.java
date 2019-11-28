@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.need.NeedPackage;
 import org.abchip.mimo.biz.party.need.NeedType;
+import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -78,7 +79,7 @@ public class NeedTypeImpl extends BizEntityImpl implements NeedType {
 	 * @generated
 	 */
 	@Override
-	public List<String> subscriptions() {
+	public List<Subscription> subscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

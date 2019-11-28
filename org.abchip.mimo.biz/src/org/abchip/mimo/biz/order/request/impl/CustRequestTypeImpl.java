@@ -11,7 +11,10 @@ import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.order.request.CustRequestCategory;
+import org.abchip.mimo.biz.order.request.CustRequestResolution;
 import org.abchip.mimo.biz.order.request.CustRequestType;
+import org.abchip.mimo.biz.order.request.CustRequestTypeAttr;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
@@ -166,8 +169,8 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCustRequestTypeAttrs() {
-		return (List<String>)eGet(RequestPackage.Literals.CUST_REQUEST_TYPE__CUST_REQUEST_TYPE_ATTRS, true);
+	public List<CustRequestTypeAttr> getCustRequestTypeAttrs() {
+		return (List<CustRequestTypeAttr>)eGet(RequestPackage.Literals.CUST_REQUEST_TYPE__CUST_REQUEST_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -176,7 +179,7 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> childCustRequestTypes() {
+	public List<CustRequestType> childCustRequestTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -188,7 +191,7 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequestCategories() {
+	public List<CustRequestCategory> custRequestCategories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -200,7 +203,7 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequestResolutions() {
+	public List<CustRequestResolution> custRequestResolutions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -212,7 +215,7 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequests() {
+	public List<CustRequest> custRequests() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

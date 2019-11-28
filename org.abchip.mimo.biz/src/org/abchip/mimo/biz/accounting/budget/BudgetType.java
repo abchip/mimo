@@ -111,42 +111,39 @@ public interface BudgetType extends BizEntityType<Budget> {
 	void setParentTypeId(BudgetType value);
 
 	/**
-	 * Returns the value of the '<em><b>Budget Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Budget Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Budget Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetType_BudgetTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetTypeAttr'"
 	 * @generated
 	 */
-	List<String> getBudgetTypeAttrs();
+	List<BudgetTypeAttr> getBudgetTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Budget' route='budgetTypeId'"
 	 * @generated
 	 */
-	List<String> budgets();
+	List<Budget> budgets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childBudgetTypes();
+	List<BudgetType> childBudgetTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Budget Type Id</b></em>' attribute.

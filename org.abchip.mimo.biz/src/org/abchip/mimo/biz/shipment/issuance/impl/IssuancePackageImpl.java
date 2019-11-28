@@ -943,9 +943,9 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		getItemIssuance_ShipmentId().getEKeys().add(theShipment_Package.getShipment_ShipmentId());
 		initEAttribute(getItemIssuance_ShipmentItemSeqId(), ecorePackage.getEString(), "shipmentItemSeqId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(itemIssuanceEClass, ecorePackage.getEString(), "inventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(itemIssuanceEClass, theInventoryPackage.getInventoryItemDetail(), "inventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(itemIssuanceEClass, ecorePackage.getEString(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(itemIssuanceEClass, theInventoryPackage.getInventoryTransfer(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(itemIssuanceRoleEClass, ItemIssuanceRole.class, "ItemIssuanceRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getItemIssuanceRole_ItemIssuanceId(), this.getItemIssuance(), null, "itemIssuanceId", null, 1, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -955,12 +955,12 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		initEAttribute(getItemIssuanceRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -971,20 +971,6 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 */
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
-		addAnnotation
-		  (itemIssuanceEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (itemIssuanceEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
 		addAnnotation
 		  (getItemIssuance_ItemIssuanceId(),
 		   source,

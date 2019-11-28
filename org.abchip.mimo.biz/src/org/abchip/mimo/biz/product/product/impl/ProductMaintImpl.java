@@ -10,7 +10,7 @@ package org.abchip.mimo.biz.product.product.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductMaint;
 import org.abchip.mimo.biz.product.product.ProductMaintType;
@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> implements ProductMaint {
+public class ProductMaintImpl extends BizEntityImpl implements ProductMaint {
 	/**
 	 * 
 	 */

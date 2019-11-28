@@ -138,41 +138,38 @@ public interface ContentType extends BizEntityType<Content> {
 	void setParentTypeId(ContentType value);
 
 	/**
-	 * Returns the value of the '<em><b>Content Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Content Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Content Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentType_ContentTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentTypeAttr'"
 	 * @generated
 	 */
-	List<String> getContentTypeAttrs();
+	List<ContentTypeAttr> getContentTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childContentTypes();
+	List<ContentType> childContentTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='contentTypeId'"
 	 * @generated
 	 */
-	List<String> contents();
+	List<Content> contents();
 
 } // ContentType

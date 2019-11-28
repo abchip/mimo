@@ -160,7 +160,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int ACCOMMODATION_MAP__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -169,7 +169,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int ACCOMMODATION_MAP__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -178,7 +178,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int ACCOMMODATION_MAP__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -187,7 +187,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int ACCOMMODATION_MAP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Accommodation Map Id</b></em>' attribute.
@@ -196,7 +196,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP__ACCOMMODATION_MAP_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int ACCOMMODATION_MAP__ACCOMMODATION_MAP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Accommodation Class Id</b></em>' reference.
@@ -205,7 +205,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP__ACCOMMODATION_CLASS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int ACCOMMODATION_MAP__ACCOMMODATION_CLASS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Accommodation Map Type Id</b></em>' reference.
@@ -214,7 +214,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Asset Id</b></em>' reference.
@@ -223,7 +223,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int ACCOMMODATION_MAP__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Spaces</b></em>' attribute.
@@ -232,7 +232,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP__NUMBER_OF_SPACES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int ACCOMMODATION_MAP__NUMBER_OF_SPACES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Accommodation Map</em>' class.
@@ -241,7 +241,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int ACCOMMODATION_MAP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.AccommodationMapTypeImpl <em>Accommodation Map Type</em>}' class.
@@ -254,22 +254,13 @@ public interface FixedassetPackage extends EPackage {
 	int ACCOMMODATION_MAP_TYPE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOMMODATION_MAP_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int ACCOMMODATION_MAP_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -278,7 +269,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int ACCOMMODATION_MAP_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -287,7 +278,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int ACCOMMODATION_MAP_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -296,7 +287,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int ACCOMMODATION_MAP_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Accommodation Map Type Id</b></em>' attribute.
@@ -305,7 +296,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP_TYPE__ACCOMMODATION_MAP_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int ACCOMMODATION_MAP_TYPE__ACCOMMODATION_MAP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -314,7 +305,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int ACCOMMODATION_MAP_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Accommodation Map Type</em>' class.
@@ -323,7 +314,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_MAP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int ACCOMMODATION_MAP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl <em>Fixed Asset</em>}' class.
@@ -471,7 +462,7 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET__EXPECTED_END_OF_LIFE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Fixed Asset Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Fixed Asset Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -480,7 +471,7 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET__FIXED_ASSET_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Fixed Asset Idents</b></em>' attribute list.
+	 * The feature id for the '<em><b>Fixed Asset Idents</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -489,7 +480,7 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET__FIXED_ASSET_IDENTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
-	 * The feature id for the '<em><b>Fixed Asset Maints</b></em>' attribute list.
+	 * The feature id for the '<em><b>Fixed Asset Maints</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -507,7 +498,7 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET__FIXED_ASSET_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
-	 * The feature id for the '<em><b>Fixed Asset Registrations</b></em>' attribute list.
+	 * The feature id for the '<em><b>Fixed Asset Registrations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -931,7 +922,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int FIXED_ASSET_IDENT__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -940,7 +931,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int FIXED_ASSET_IDENT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -949,7 +940,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int FIXED_ASSET_IDENT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -958,7 +949,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int FIXED_ASSET_IDENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Asset Id</b></em>' reference.
@@ -967,7 +958,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int FIXED_ASSET_IDENT__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Asset Ident Type Id</b></em>' reference.
@@ -976,7 +967,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Id Value</b></em>' attribute.
@@ -985,7 +976,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT__ID_VALUE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int FIXED_ASSET_IDENT__ID_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Fixed Asset Ident</em>' class.
@@ -994,7 +985,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int FIXED_ASSET_IDENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetIdentTypeImpl <em>Fixed Asset Ident Type</em>}' class.
@@ -1007,22 +998,13 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET_IDENT_TYPE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIXED_ASSET_IDENT_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int FIXED_ASSET_IDENT_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1031,7 +1013,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int FIXED_ASSET_IDENT_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1040,7 +1022,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int FIXED_ASSET_IDENT_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1049,7 +1031,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int FIXED_ASSET_IDENT_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Asset Ident Type Id</b></em>' attribute.
@@ -1058,7 +1040,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT_TYPE__FIXED_ASSET_IDENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int FIXED_ASSET_IDENT_TYPE__FIXED_ASSET_IDENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1067,7 +1049,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int FIXED_ASSET_IDENT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Fixed Asset Ident Type</em>' class.
@@ -1076,7 +1058,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_IDENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int FIXED_ASSET_IDENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl <em>Fixed Asset Maint</em>}' class.
@@ -1449,7 +1431,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int FIXED_ASSET_PRODUCT__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1458,7 +1440,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int FIXED_ASSET_PRODUCT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1467,7 +1449,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int FIXED_ASSET_PRODUCT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1476,7 +1458,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int FIXED_ASSET_PRODUCT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Product Id</b></em>' reference.
@@ -1485,7 +1467,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__PRODUCT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int FIXED_ASSET_PRODUCT__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Asset Id</b></em>' reference.
@@ -1494,7 +1476,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int FIXED_ASSET_PRODUCT__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Asset Product Type Id</b></em>' reference.
@@ -1503,7 +1485,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -1512,7 +1494,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int FIXED_ASSET_PRODUCT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -1521,7 +1503,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__COMMENTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int FIXED_ASSET_PRODUCT__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -1530,7 +1512,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int FIXED_ASSET_PRODUCT__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Quantity Uom Id</b></em>' reference.
@@ -1539,7 +1521,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -1548,7 +1530,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int FIXED_ASSET_PRODUCT__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1557,7 +1539,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int FIXED_ASSET_PRODUCT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Fixed Asset Product</em>' class.
@@ -1566,7 +1548,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int FIXED_ASSET_PRODUCT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductTypeImpl <em>Fixed Asset Product Type</em>}' class.
@@ -1579,22 +1561,13 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET_PRODUCT_TYPE = 13;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIXED_ASSET_PRODUCT_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int FIXED_ASSET_PRODUCT_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1603,7 +1576,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int FIXED_ASSET_PRODUCT_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1612,7 +1585,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int FIXED_ASSET_PRODUCT_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1621,7 +1594,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int FIXED_ASSET_PRODUCT_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Asset Product Type Id</b></em>' attribute.
@@ -1630,7 +1603,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT_TYPE__FIXED_ASSET_PRODUCT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int FIXED_ASSET_PRODUCT_TYPE__FIXED_ASSET_PRODUCT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1639,7 +1612,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int FIXED_ASSET_PRODUCT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Fixed Asset Product Type</em>' class.
@@ -1648,7 +1621,7 @@ public interface FixedassetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIXED_ASSET_PRODUCT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int FIXED_ASSET_PRODUCT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetRegistrationImpl <em>Fixed Asset Registration</em>}' class.
@@ -2051,7 +2024,7 @@ public interface FixedassetPackage extends EPackage {
 	int FIXED_ASSET_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Fixed Asset Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Fixed Asset Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2849,48 +2822,48 @@ public interface FixedassetPackage extends EPackage {
 	EReference getFixedAsset_UomId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetAttributes <em>Fixed Asset Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetAttributes <em>Fixed Asset Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Fixed Asset Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Fixed Asset Attributes</em>'.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetAttributes()
 	 * @see #getFixedAsset()
 	 * @generated
 	 */
-	EAttribute getFixedAsset_FixedAssetAttributes();
+	EReference getFixedAsset_FixedAssetAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetIdents <em>Fixed Asset Idents</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetIdents <em>Fixed Asset Idents</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Fixed Asset Idents</em>'.
+	 * @return the meta object for the reference list '<em>Fixed Asset Idents</em>'.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetIdents()
 	 * @see #getFixedAsset()
 	 * @generated
 	 */
-	EAttribute getFixedAsset_FixedAssetIdents();
+	EReference getFixedAsset_FixedAssetIdents();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetMaints <em>Fixed Asset Maints</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetMaints <em>Fixed Asset Maints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Fixed Asset Maints</em>'.
+	 * @return the meta object for the reference list '<em>Fixed Asset Maints</em>'.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetMaints()
 	 * @see #getFixedAsset()
 	 * @generated
 	 */
-	EAttribute getFixedAsset_FixedAssetMaints();
+	EReference getFixedAsset_FixedAssetMaints();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetRegistrations <em>Fixed Asset Registrations</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetRegistrations <em>Fixed Asset Registrations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Fixed Asset Registrations</em>'.
+	 * @return the meta object for the reference list '<em>Fixed Asset Registrations</em>'.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetRegistrations()
 	 * @see #getFixedAsset()
 	 * @generated
 	 */
-	EAttribute getFixedAsset_FixedAssetRegistrations();
+	EReference getFixedAsset_FixedAssetRegistrations();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetAttribute <em>Fixed Asset Attribute</em>}'.
@@ -3803,15 +3776,15 @@ public interface FixedassetPackage extends EPackage {
 	EReference getFixedAssetType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#getFixedAssetTypeAttrs <em>Fixed Asset Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#getFixedAssetTypeAttrs <em>Fixed Asset Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Fixed Asset Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Fixed Asset Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType#getFixedAssetTypeAttrs()
 	 * @see #getFixedAssetType()
 	 * @generated
 	 */
-	EAttribute getFixedAssetType_FixedAssetTypeAttrs();
+	EReference getFixedAssetType_FixedAssetTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeAttr <em>Fixed Asset Type Attr</em>}'.
@@ -4395,36 +4368,36 @@ public interface FixedassetPackage extends EPackage {
 		EReference FIXED_ASSET__UOM_ID = eINSTANCE.getFixedAsset_UomId();
 
 		/**
-		 * The meta object literal for the '<em><b>Fixed Asset Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Fixed Asset Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FIXED_ASSET__FIXED_ASSET_ATTRIBUTES = eINSTANCE.getFixedAsset_FixedAssetAttributes();
+		EReference FIXED_ASSET__FIXED_ASSET_ATTRIBUTES = eINSTANCE.getFixedAsset_FixedAssetAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Fixed Asset Idents</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Fixed Asset Idents</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FIXED_ASSET__FIXED_ASSET_IDENTS = eINSTANCE.getFixedAsset_FixedAssetIdents();
+		EReference FIXED_ASSET__FIXED_ASSET_IDENTS = eINSTANCE.getFixedAsset_FixedAssetIdents();
 
 		/**
-		 * The meta object literal for the '<em><b>Fixed Asset Maints</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Fixed Asset Maints</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FIXED_ASSET__FIXED_ASSET_MAINTS = eINSTANCE.getFixedAsset_FixedAssetMaints();
+		EReference FIXED_ASSET__FIXED_ASSET_MAINTS = eINSTANCE.getFixedAsset_FixedAssetMaints();
 
 		/**
-		 * The meta object literal for the '<em><b>Fixed Asset Registrations</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Fixed Asset Registrations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FIXED_ASSET__FIXED_ASSET_REGISTRATIONS = eINSTANCE.getFixedAsset_FixedAssetRegistrations();
+		EReference FIXED_ASSET__FIXED_ASSET_REGISTRATIONS = eINSTANCE.getFixedAsset_FixedAssetRegistrations();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetAttributeImpl <em>Fixed Asset Attribute</em>}' class.
@@ -5127,12 +5100,12 @@ public interface FixedassetPackage extends EPackage {
 		EReference FIXED_ASSET_TYPE__PARENT_TYPE_ID = eINSTANCE.getFixedAssetType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Fixed Asset Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Fixed Asset Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS = eINSTANCE.getFixedAssetType_FixedAssetTypeAttrs();
+		EReference FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS = eINSTANCE.getFixedAssetType_FixedAssetTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeAttrImpl <em>Fixed Asset Type Attr</em>}' class.

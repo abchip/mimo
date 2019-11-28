@@ -9,8 +9,11 @@ package org.abchip.mimo.biz.manufacturing.techdata.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar;
+import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay;
+import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -124,8 +127,8 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getTechDataCalendarExcDaies() {
-		return (List<String>)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_DAIES, true);
+	public List<TechDataCalendarExcDay> getTechDataCalendarExcDaies() {
+		return (List<TechDataCalendarExcDay>)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_DAIES, true);
 	}
 
 	/**
@@ -135,8 +138,8 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getTechDataCalendarExcWeeks() {
-		return (List<String>)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_WEEKS, true);
+	public List<TechDataCalendarExcWeek> getTechDataCalendarExcWeeks() {
+		return (List<TechDataCalendarExcWeek>)eGet(TechdataPackage.Literals.TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_WEEKS, true);
 	}
 
 	/**
@@ -145,7 +148,7 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 	 * @generated
 	 */
 	@Override
-	public List<String> fixedAssets() {
+	public List<FixedAsset> fixedAssets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

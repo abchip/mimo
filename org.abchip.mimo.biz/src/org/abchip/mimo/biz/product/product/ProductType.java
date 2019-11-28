@@ -192,41 +192,38 @@ public interface ProductType extends BizEntityType<Product> {
 	void setProductTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.ProductTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Product Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductType_ProductTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductTypeAttr'"
 	 * @generated
 	 */
-	List<String> getProductTypeAttrs();
+	List<ProductTypeAttr> getProductTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childProductTypes();
+	List<ProductType> childProductTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='productTypeId'"
 	 * @generated
 	 */
-	List<String> products();
+	List<Product> products();
 
 } // ProductType

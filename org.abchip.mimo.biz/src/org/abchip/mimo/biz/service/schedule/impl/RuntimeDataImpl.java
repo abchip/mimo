@@ -10,8 +10,11 @@ package org.abchip.mimo.biz.service.schedule.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.service.schedule.JobSandbox;
 import org.abchip.mimo.biz.service.schedule.RuntimeData;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
+import org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -99,7 +102,7 @@ public class RuntimeDataImpl extends BizEntityImpl implements RuntimeData {
 	 * @generated
 	 */
 	@Override
-	public List<String> applicationSandboxs() {
+	public List<ApplicationSandbox> applicationSandboxs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -111,7 +114,7 @@ public class RuntimeDataImpl extends BizEntityImpl implements RuntimeData {
 	 * @generated
 	 */
 	@Override
-	public List<String> jobSandboxs() {
+	public List<JobSandbox> jobSandboxs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -123,7 +126,7 @@ public class RuntimeDataImpl extends BizEntityImpl implements RuntimeData {
 	 * @generated
 	 */
 	@Override
-	public List<String> workEfforts() {
+	public List<WorkEffort> workEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

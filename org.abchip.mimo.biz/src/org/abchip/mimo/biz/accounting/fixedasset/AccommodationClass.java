@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.fixedasset;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,32 +86,29 @@ public interface AccommodationClass extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AccommodationMap' route='accommodationClassId'"
 	 * @generated
 	 */
-	List<String> accommodationMaps();
+	List<AccommodationMap> accommodationMaps();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AccommodationSpot' route='accommodationClassId'"
 	 * @generated
 	 */
-	List<String> accommodationSpots();
+	List<AccommodationSpot> accommodationSpots();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AccommodationClass' route='parentClassId'"
 	 * @generated
 	 */
-	List<String> childAccommodationClasses();
+	List<AccommodationClass> childAccommodationClasses();
 
 	/**
 	 * Returns the value of the '<em><b>Accommodation Class Id</b></em>' attribute.

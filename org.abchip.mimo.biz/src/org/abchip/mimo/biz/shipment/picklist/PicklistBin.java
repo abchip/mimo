@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 
 /**
  * <!-- begin-user-doc -->
@@ -167,11 +168,10 @@ public interface PicklistBin extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='picklistBinId'"
 	 * @generated
 	 */
-	List<String> shipments();
+	List<Shipment> shipments();
 
 } // PicklistBin

@@ -117,7 +117,7 @@ public interface LedgerPackage extends EPackage {
 	int ACCTG_TRANS__ACCTG_TRANS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Acctg Trans Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Acctg Trans Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -126,7 +126,7 @@ public interface LedgerPackage extends EPackage {
 	int ACCTG_TRANS__ACCTG_TRANS_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Acctg Trans Entries</b></em>' attribute list.
+	 * The feature id for the '<em><b>Acctg Trans Entries</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -922,7 +922,7 @@ public interface LedgerPackage extends EPackage {
 	int ACCTG_TRANS_TYPE__ACCTG_TRANS_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Acctg Trans Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Acctg Trans Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1149,7 +1149,7 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT__GL_ACCOUNT_CLASS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Gl Account Group Members</b></em>' attribute list.
+	 * The feature id for the '<em><b>Gl Account Group Members</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1158,7 +1158,7 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT__GL_ACCOUNT_GROUP_MEMBERS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Gl Account Organizations</b></em>' attribute list.
+	 * The feature id for the '<em><b>Gl Account Organizations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1237,7 +1237,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int GL_ACCOUNT_CATEGORY__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1246,7 +1246,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int GL_ACCOUNT_CATEGORY__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1255,7 +1255,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int GL_ACCOUNT_CATEGORY__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1264,7 +1264,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int GL_ACCOUNT_CATEGORY__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Gl Account Category Id</b></em>' attribute.
@@ -1273,7 +1273,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY__GL_ACCOUNT_CATEGORY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int GL_ACCOUNT_CATEGORY__GL_ACCOUNT_CATEGORY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1282,7 +1282,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int GL_ACCOUNT_CATEGORY__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Gl Account Category Type Id</b></em>' reference.
@@ -1291,7 +1291,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY__GL_ACCOUNT_CATEGORY_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int GL_ACCOUNT_CATEGORY__GL_ACCOUNT_CATEGORY_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Gl Account Category</em>' class.
@@ -1300,7 +1300,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int GL_ACCOUNT_CATEGORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl <em>Gl Account Category Member</em>}' class.
@@ -1413,22 +1413,13 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT_CATEGORY_TYPE = 9;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GL_ACCOUNT_CATEGORY_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int GL_ACCOUNT_CATEGORY_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1437,7 +1428,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int GL_ACCOUNT_CATEGORY_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1446,7 +1437,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int GL_ACCOUNT_CATEGORY_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1455,7 +1446,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int GL_ACCOUNT_CATEGORY_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Gl Account Category Type Id</b></em>' attribute.
@@ -1464,7 +1455,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY_TYPE__GL_ACCOUNT_CATEGORY_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int GL_ACCOUNT_CATEGORY_TYPE__GL_ACCOUNT_CATEGORY_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1473,7 +1464,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int GL_ACCOUNT_CATEGORY_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Gl Account Category Type</em>' class.
@@ -1482,7 +1473,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_CATEGORY_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int GL_ACCOUNT_CATEGORY_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountClassImpl <em>Gl Account Class</em>}' class.
@@ -1601,7 +1592,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int GL_ACCOUNT_GROUP__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1610,7 +1601,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int GL_ACCOUNT_GROUP__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1619,7 +1610,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int GL_ACCOUNT_GROUP__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1628,7 +1619,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int GL_ACCOUNT_GROUP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Gl Account Group Id</b></em>' attribute.
@@ -1637,7 +1628,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1646,7 +1637,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int GL_ACCOUNT_GROUP__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Gl Account Group Type Id</b></em>' reference.
@@ -1655,7 +1646,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Gl Account Group</em>' class.
@@ -1664,7 +1655,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int GL_ACCOUNT_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountGroupMemberImpl <em>Gl Account Group Member</em>}' class.
@@ -1759,22 +1750,13 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT_GROUP_TYPE = 13;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GL_ACCOUNT_GROUP_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int GL_ACCOUNT_GROUP_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1783,7 +1765,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int GL_ACCOUNT_GROUP_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1792,7 +1774,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int GL_ACCOUNT_GROUP_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1801,7 +1783,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int GL_ACCOUNT_GROUP_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Gl Account Group Type Id</b></em>' attribute.
@@ -1810,7 +1792,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP_TYPE__GL_ACCOUNT_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int GL_ACCOUNT_GROUP_TYPE__GL_ACCOUNT_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1819,7 +1801,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int GL_ACCOUNT_GROUP_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Gl Account Group Type</em>' class.
@@ -1828,7 +1810,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GL_ACCOUNT_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int GL_ACCOUNT_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountHistoryImpl <em>Gl Account History</em>}' class.
@@ -2222,7 +2204,7 @@ public interface LedgerPackage extends EPackage {
 	int GL_ACCOUNT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Gl Account Type Defaults</b></em>' attribute list.
+	 * The feature id for the '<em><b>Gl Account Type Defaults</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4221,26 +4203,26 @@ public interface LedgerPackage extends EPackage {
 	EReference getAcctgTrans_WorkEffortId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransAttributes <em>Acctg Trans Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransAttributes <em>Acctg Trans Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Acctg Trans Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Acctg Trans Attributes</em>'.
 	 * @see org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransAttributes()
 	 * @see #getAcctgTrans()
 	 * @generated
 	 */
-	EAttribute getAcctgTrans_AcctgTransAttributes();
+	EReference getAcctgTrans_AcctgTransAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransEntries <em>Acctg Trans Entries</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransEntries <em>Acctg Trans Entries</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Acctg Trans Entries</em>'.
+	 * @return the meta object for the reference list '<em>Acctg Trans Entries</em>'.
 	 * @see org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransEntries()
 	 * @see #getAcctgTrans()
 	 * @generated
 	 */
-	EAttribute getAcctgTrans_AcctgTransEntries();
+	EReference getAcctgTrans_AcctgTransEntries();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransAttribute <em>Acctg Trans Attribute</em>}'.
@@ -4690,15 +4672,15 @@ public interface LedgerPackage extends EPackage {
 	EReference getAcctgTransType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#getAcctgTransTypeAttrs <em>Acctg Trans Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#getAcctgTransTypeAttrs <em>Acctg Trans Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Acctg Trans Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Acctg Trans Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.accounting.ledger.AcctgTransType#getAcctgTransTypeAttrs()
 	 * @see #getAcctgTransType()
 	 * @generated
 	 */
-	EAttribute getAcctgTransType_AcctgTransTypeAttrs();
+	EReference getAcctgTransType_AcctgTransTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransTypeAttr <em>Acctg Trans Type Attr</em>}'.
@@ -4875,26 +4857,26 @@ public interface LedgerPackage extends EPackage {
 	EAttribute getGlAccount_ProductId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountGroupMembers <em>Gl Account Group Members</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountGroupMembers <em>Gl Account Group Members</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Gl Account Group Members</em>'.
+	 * @return the meta object for the reference list '<em>Gl Account Group Members</em>'.
 	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountGroupMembers()
 	 * @see #getGlAccount()
 	 * @generated
 	 */
-	EAttribute getGlAccount_GlAccountGroupMembers();
+	EReference getGlAccount_GlAccountGroupMembers();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountOrganizations <em>Gl Account Organizations</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountOrganizations <em>Gl Account Organizations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Gl Account Organizations</em>'.
+	 * @return the meta object for the reference list '<em>Gl Account Organizations</em>'.
 	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountOrganizations()
 	 * @see #getGlAccount()
 	 * @generated
 	 */
-	EAttribute getGlAccount_GlAccountOrganizations();
+	EReference getGlAccount_GlAccountOrganizations();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategory <em>Gl Account Category</em>}'.
@@ -5491,15 +5473,15 @@ public interface LedgerPackage extends EPackage {
 	EReference getGlAccountType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#getGlAccountTypeDefaults <em>Gl Account Type Defaults</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#getGlAccountTypeDefaults <em>Gl Account Type Defaults</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Gl Account Type Defaults</em>'.
+	 * @return the meta object for the reference list '<em>Gl Account Type Defaults</em>'.
 	 * @see org.abchip.mimo.biz.accounting.ledger.GlAccountType#getGlAccountTypeDefaults()
 	 * @see #getGlAccountType()
 	 * @generated
 	 */
-	EAttribute getGlAccountType_GlAccountTypeDefaults();
+	EReference getGlAccountType_GlAccountTypeDefaults();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountTypeDefault <em>Gl Account Type Default</em>}'.
@@ -6898,20 +6880,20 @@ public interface LedgerPackage extends EPackage {
 		EReference ACCTG_TRANS__WORK_EFFORT_ID = eINSTANCE.getAcctgTrans_WorkEffortId();
 
 		/**
-		 * The meta object literal for the '<em><b>Acctg Trans Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Acctg Trans Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACCTG_TRANS__ACCTG_TRANS_ATTRIBUTES = eINSTANCE.getAcctgTrans_AcctgTransAttributes();
+		EReference ACCTG_TRANS__ACCTG_TRANS_ATTRIBUTES = eINSTANCE.getAcctgTrans_AcctgTransAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Acctg Trans Entries</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Acctg Trans Entries</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACCTG_TRANS__ACCTG_TRANS_ENTRIES = eINSTANCE.getAcctgTrans_AcctgTransEntries();
+		EReference ACCTG_TRANS__ACCTG_TRANS_ENTRIES = eINSTANCE.getAcctgTrans_AcctgTransEntries();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransAttributeImpl <em>Acctg Trans Attribute</em>}' class.
@@ -7250,12 +7232,12 @@ public interface LedgerPackage extends EPackage {
 		EReference ACCTG_TRANS_TYPE__PARENT_TYPE_ID = eINSTANCE.getAcctgTransType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Acctg Trans Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Acctg Trans Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACCTG_TRANS_TYPE__ACCTG_TRANS_TYPE_ATTRS = eINSTANCE.getAcctgTransType_AcctgTransTypeAttrs();
+		EReference ACCTG_TRANS_TYPE__ACCTG_TRANS_TYPE_ATTRS = eINSTANCE.getAcctgTransType_AcctgTransTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeAttrImpl <em>Acctg Trans Type Attr</em>}' class.
@@ -7390,20 +7372,20 @@ public interface LedgerPackage extends EPackage {
 		EAttribute GL_ACCOUNT__PRODUCT_ID = eINSTANCE.getGlAccount_ProductId();
 
 		/**
-		 * The meta object literal for the '<em><b>Gl Account Group Members</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Gl Account Group Members</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GL_ACCOUNT__GL_ACCOUNT_GROUP_MEMBERS = eINSTANCE.getGlAccount_GlAccountGroupMembers();
+		EReference GL_ACCOUNT__GL_ACCOUNT_GROUP_MEMBERS = eINSTANCE.getGlAccount_GlAccountGroupMembers();
 
 		/**
-		 * The meta object literal for the '<em><b>Gl Account Organizations</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Gl Account Organizations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GL_ACCOUNT__GL_ACCOUNT_ORGANIZATIONS = eINSTANCE.getGlAccount_GlAccountOrganizations();
+		EReference GL_ACCOUNT__GL_ACCOUNT_ORGANIZATIONS = eINSTANCE.getGlAccount_GlAccountOrganizations();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryImpl <em>Gl Account Category</em>}' class.
@@ -7868,12 +7850,12 @@ public interface LedgerPackage extends EPackage {
 		EReference GL_ACCOUNT_TYPE__PARENT_TYPE_ID = eINSTANCE.getGlAccountType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Gl Account Type Defaults</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Gl Account Type Defaults</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GL_ACCOUNT_TYPE__GL_ACCOUNT_TYPE_DEFAULTS = eINSTANCE.getGlAccountType_GlAccountTypeDefaults();
+		EReference GL_ACCOUNT_TYPE__GL_ACCOUNT_TYPE_DEFAULTS = eINSTANCE.getGlAccountType_GlAccountTypeDefaults();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountTypeDefaultImpl <em>Gl Account Type Default</em>}' class.

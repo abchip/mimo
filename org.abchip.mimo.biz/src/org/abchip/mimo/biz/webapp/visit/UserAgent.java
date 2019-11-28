@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.webapp.visit;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +32,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * @model
  * @generated
  */
-public interface UserAgent extends BizEntityTyped<UserAgentType> {
+public interface UserAgent extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>User Agent Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -193,11 +193,10 @@ public interface UserAgent extends BizEntityTyped<UserAgentType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Visit' route='userAgentId'"
 	 * @generated
 	 */
-	List<String> visits();
+	List<Visit> visits();
 
 } // UserAgent

@@ -14,13 +14,16 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
 import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
 
@@ -323,8 +326,8 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFinAccountTransAttributes() {
-		return (List<String>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_ATTRIBUTES, true);
+	public List<FinAccountTransAttribute> getFinAccountTransAttributes() {
+		return (List<FinAccountTransAttribute>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_ATTRIBUTES, true);
 	}
 
 	/**
@@ -333,7 +336,7 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -345,7 +348,7 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public List<String> returnItemResponses() {
+	public List<ReturnItemResponse> returnItemResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

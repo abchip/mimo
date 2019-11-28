@@ -121,7 +121,7 @@ public class InvoiceItemAssocTypeImpl extends BizEntityTypeImpl<InvoiceItemAssoc
 	 * @generated
 	 */
 	@Override
-	public List<String> childInvoiceItemAssocTypes() {
+	public List<InvoiceItemAssocType> childInvoiceItemAssocTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

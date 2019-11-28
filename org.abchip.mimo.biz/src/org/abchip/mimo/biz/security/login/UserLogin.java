@@ -12,7 +12,41 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.budget.BudgetStatus;
+import org.abchip.mimo.biz.common.user.UserPreference;
+import org.abchip.mimo.biz.content.content.Content;
+import org.abchip.mimo.biz.content.data.DataResource;
+import org.abchip.mimo.biz.entity.test.TestingStatus;
+import org.abchip.mimo.biz.marketing.contact.ContactList;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory;
+import org.abchip.mimo.biz.order.order.OrderAdjustment;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.order.OrderItem;
+import org.abchip.mimo.biz.order.order.OrderItemChange;
+import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
+import org.abchip.mimo.biz.order.order.OrderStatus;
+import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
+import org.abchip.mimo.biz.order.request.CustRequestStatus;
+import org.abchip.mimo.biz.order.requirement.RequirementStatus;
+import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
+import org.abchip.mimo.biz.order.return_.ReturnStatus;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.price.ProductPriceChange;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.product.ProductReview;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
+import org.abchip.mimo.biz.product.promo.ProductPromoCode;
+import org.abchip.mimo.biz.service.schedule.JobSandbox;
+import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
+import org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentStatus;
+import org.abchip.mimo.biz.webapp.visit.Visitor;
+import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
 
 /**
  * <!-- begin-user-doc -->
@@ -469,507 +503,459 @@ public interface UserLogin extends BizEntity {
 	void setUserLoginId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>User Login Histories</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>User Login Histories</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.security.login.UserLoginHistory}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>User Login Histories</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Login Histories</em>' attribute list.
+	 * @return the value of the '<em>User Login Histories</em>' reference list.
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserLoginHistories()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginHistory'"
 	 * @generated
 	 */
-	List<String> getUserLoginHistories();
+	List<UserLoginHistory> getUserLoginHistories();
 
 	/**
-	 * Returns the value of the '<em><b>User Login Password Histories</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>User Login Password Histories</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.security.login.UserLoginPasswordHistory}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>User Login Password Histories</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Login Password Histories</em>' attribute list.
+	 * @return the value of the '<em>User Login Password Histories</em>' reference list.
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserLoginPasswordHistories()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginPasswordHistory'"
 	 * @generated
 	 */
-	List<String> getUserLoginPasswordHistories();
+	List<UserLoginPasswordHistory> getUserLoginPasswordHistories();
 
 	/**
-	 * Returns the value of the '<em><b>User Preferences</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>User Preferences</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.common.user.UserPreference}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>User Preferences</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Preferences</em>' attribute list.
+	 * @return the value of the '<em>User Preferences</em>' reference list.
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserPreferences()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserPreference'"
 	 * @generated
 	 */
-	List<String> getUserPreferences();
+	List<UserPreference> getUserPreferences();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Timesheet' route='approvedByUserLoginId'"
 	 * @generated
 	 */
-	List<String> approvedByTimesheets();
+	List<Timesheet> approvedByTimesheets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobSandbox' route='authUserLoginId'"
 	 * @generated
 	 */
-	List<String> authJobSandboxs();
+	List<JobSandbox> authJobSandboxs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetStatus' route='changeByUserLoginId'"
 	 * @generated
 	 */
-	List<String> changeByBudgetStatuss();
+	List<BudgetStatus> changeByBudgetStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestStatus' route='changeByUserLoginId'"
 	 * @generated
 	 */
-	List<String> changeByCustRequestStatuss();
+	List<CustRequestStatus> changeByCustRequestStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='changeByUserLoginId'"
 	 * @generated
 	 */
-	List<String> changeByOrderItems();
+	List<OrderItem> changeByOrderItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementStatus' route='changeByUserLoginId'"
 	 * @generated
 	 */
-	List<String> changeByRequirementStatuss();
+	List<RequirementStatus> changeByRequirementStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnStatus' route='changeByUserLoginId'"
 	 * @generated
 	 */
-	List<String> changeByReturnStatuss();
+	List<ReturnStatus> changeByReturnStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentStatus' route='changeByUserLoginId'"
 	 * @generated
 	 */
-	List<String> changeByShipmentStatuss();
+	List<ShipmentStatus> changeByShipmentStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TestingStatus' route='changeByUserLoginId'"
 	 * @generated
 	 */
-	List<String> changeByTestingStatuss();
+	List<TestingStatus> changeByTestingStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PicklistStatusHistory' route='changeUserLoginId'"
 	 * @generated
 	 */
-	List<String> changePicklistStatusHistories();
+	List<PicklistStatusHistory> changePicklistStatusHistories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPriceChange' route='changedByUserLogin'"
 	 * @generated
 	 */
-	List<String> changedByProductPriceChanges();
+	List<ProductPriceChange> changedByProductPriceChanges();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactList' route='createdByUserLogin'"
 	 * @generated
 	 */
-	List<String> createdByContactLists();
+	List<ContactList> createdByContactLists();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='createdByUserLogin'"
 	 * @generated
 	 */
-	List<String> createdByContents();
+	List<Content> createdByContents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='createdByUserLogin'"
 	 * @generated
 	 */
-	List<String> createdByDataResources();
+	List<DataResource> createdByDataResources();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='createdBy'"
 	 * @generated
 	 */
-	List<String> createdByOrderHeaders();
+	List<OrderHeader> createdByOrderHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Party' route='createdByUserLogin'"
 	 * @generated
 	 */
-	List<String> createdByParties();
+	List<Party> createdByParties();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoCode' route='createdByUserLogin'"
 	 * @generated
 	 */
-	List<String> createdByProductPromoCodes();
+	List<ProductPromoCode> createdByProductPromoCodes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromo' route='createdByUserLogin'"
 	 * @generated
 	 */
-	List<String> createdByProductPromos();
+	List<ProductPromo> createdByProductPromos();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='createdByUserLogin'"
 	 * @generated
 	 */
-	List<String> createdByProducts();
+	List<Product> createdByProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecast' route='createdByUserLoginId'"
 	 * @generated
 	 */
-	List<String> createdBySalesForecasts();
+	List<SalesForecast> createdBySalesForecasts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='dontCancelSetUserLogin'"
 	 * @generated
 	 */
-	List<String> dontCancelSetOrderItems();
+	List<OrderItem> dontCancelSetOrderItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ItemIssuance' route='issuedByUserLoginId'"
 	 * @generated
 	 */
-	List<String> issuedByItemIssuances();
+	List<ItemIssuance> issuedByItemIssuances();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactList' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
-	List<String> lastModifiedByContactLists();
+	List<ContactList> lastModifiedByContactLists();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
-	List<String> lastModifiedByContents();
+	List<Content> lastModifiedByContents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
-	List<String> lastModifiedByDataResources();
+	List<DataResource> lastModifiedByDataResources();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Party' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
-	List<String> lastModifiedByParties();
+	List<Party> lastModifiedByParties();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoCode' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
-	List<String> lastModifiedByProductPromoCodes();
+	List<ProductPromoCode> lastModifiedByProductPromoCodes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromo' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
-	List<String> lastModifiedByProductPromos();
+	List<ProductPromo> lastModifiedByProductPromos();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='lastModifiedByUserLogin'"
 	 * @generated
 	 */
-	List<String> lastModifiedByProducts();
+	List<Product> lastModifiedByProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastHistory' route='modifiedByUserLoginId'"
 	 * @generated
 	 */
-	List<String> modifiedBySalesForecastHistories();
+	List<SalesForecastHistory> modifiedBySalesForecastHistories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecast' route='modifiedByUserLoginId'"
 	 * @generated
 	 */
-	List<String> modifiedBySalesForecasts();
+	List<SalesForecast> modifiedBySalesForecasts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='createdByUserLogin'"
 	 * @generated
 	 */
-	List<String> orderAdjustments();
+	List<OrderAdjustment> orderAdjustments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemChange' route='changeUserLogin'"
 	 * @generated
 	 */
-	List<String> orderItemChanges();
+	List<OrderItemChange> orderItemChanges();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderPaymentPreference' route='createdByUserLogin'"
 	 * @generated
 	 */
-	List<String> orderPaymentPreferences();
+	List<OrderPaymentPreference> orderPaymentPreferences();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderStatus' route='statusUserLogin'"
 	 * @generated
 	 */
-	List<String> orderStatuss();
+	List<OrderStatus> orderStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductReview' route='userLoginId'"
 	 * @generated
 	 */
-	List<String> productReviews();
+	List<ProductReview> productReviews();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='createdByUserLogin'"
 	 * @generated
 	 */
-	List<String> quoteAdjustments();
+	List<QuoteAdjustment> quoteAdjustments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='createdByUserLogin'"
 	 * @generated
 	 */
-	List<String> returnAdjustments();
+	List<ReturnAdjustment> returnAdjustments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='createdBy'"
 	 * @generated
 	 */
-	List<String> returnHeaders();
+	List<ReturnHeader> returnHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobSandbox' route='runAsUser'"
 	 * @generated
 	 */
-	List<String> runAsJobSandboxs();
+	List<JobSandbox> runAsJobSandboxs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunity' route='createdByUserLogin'"
 	 * @generated
 	 */
-	List<String> salesOpportunities();
+	List<SalesOpportunity> salesOpportunities();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityHistory' route='modifiedByUserLogin'"
 	 * @generated
 	 */
-	List<String> salesOpportunityHistories();
+	List<SalesOpportunityHistory> salesOpportunityHistories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentReceipt' route='receivedByUserLoginId'"
 	 * @generated
 	 */
-	List<String> shipmentReceipts();
+	List<ShipmentReceipt> shipmentReceipts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginSecurityQuestion' route='userLoginId'"
 	 * @generated
 	 */
-	List<String> userLoginSecurityQuestions();
+	List<UserLoginSecurityQuestion> userLoginSecurityQuestions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Visitor' route='userLoginId'"
 	 * @generated
 	 */
-	List<String> visitors();
+	List<Visitor> visitors();
 
 } // UserLogin

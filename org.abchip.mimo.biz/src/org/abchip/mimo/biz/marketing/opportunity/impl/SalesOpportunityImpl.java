@@ -12,13 +12,20 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityCompetitor;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityQuote;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityTrckCode;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityWorkEffort;
+import org.abchip.mimo.biz.order.order.OrderItem;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.ecore.EClass;
 
@@ -364,8 +371,8 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSalesOpportunityCompetitors() {
-		return (List<String>)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY__SALES_OPPORTUNITY_COMPETITORS, true);
+	public List<SalesOpportunityCompetitor> getSalesOpportunityCompetitors() {
+		return (List<SalesOpportunityCompetitor>)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY__SALES_OPPORTUNITY_COMPETITORS, true);
 	}
 
 	/**
@@ -375,8 +382,8 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSalesOpportunityQuotes() {
-		return (List<String>)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY__SALES_OPPORTUNITY_QUOTES, true);
+	public List<SalesOpportunityQuote> getSalesOpportunityQuotes() {
+		return (List<SalesOpportunityQuote>)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY__SALES_OPPORTUNITY_QUOTES, true);
 	}
 
 	/**
@@ -386,8 +393,8 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSalesOpportunityTrckCodes() {
-		return (List<String>)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY__SALES_OPPORTUNITY_TRCK_CODES, true);
+	public List<SalesOpportunityTrckCode> getSalesOpportunityTrckCodes() {
+		return (List<SalesOpportunityTrckCode>)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY__SALES_OPPORTUNITY_TRCK_CODES, true);
 	}
 
 	/**
@@ -397,8 +404,8 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSalesOpportunityWorkEfforts() {
-		return (List<String>)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY__SALES_OPPORTUNITY_WORK_EFFORTS, true);
+	public List<SalesOpportunityWorkEffort> getSalesOpportunityWorkEfforts() {
+		return (List<SalesOpportunityWorkEffort>)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY__SALES_OPPORTUNITY_WORK_EFFORTS, true);
 	}
 
 	/**
@@ -407,7 +414,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceItems() {
+	public List<InvoiceItem> invoiceItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -419,7 +426,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public List<String> orderItems() {
+	public List<OrderItem> orderItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -431,7 +438,7 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public List<String> salesOpportunityHistories() {
+	public List<SalesOpportunityHistory> salesOpportunityHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

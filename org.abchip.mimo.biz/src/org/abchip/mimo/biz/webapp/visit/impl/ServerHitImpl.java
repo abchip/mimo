@@ -10,7 +10,7 @@ package org.abchip.mimo.biz.webapp.visit.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.content.content.Content;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.webapp.visit.ServerHit;
@@ -47,7 +47,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements ServerHit {
+public class ServerHitImpl extends BizEntityImpl implements ServerHit {
 	/**
 	 * 
 	 */

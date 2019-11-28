@@ -13,8 +13,9 @@ import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionCategory;
+import org.abchip.mimo.biz.content.survey.SurveyQuestionOption;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionType;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -39,7 +40,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> implements SurveyQuestion {
+public class SurveyQuestionImpl extends BizEntityImpl implements SurveyQuestion {
 	/**
 	 * 
 	 */
@@ -251,8 +252,8 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSurveyQuestionOptions() {
-		return (List<String>)eGet(SurveyPackage.Literals.SURVEY_QUESTION__SURVEY_QUESTION_OPTIONS, true);
+	public List<SurveyQuestionOption> getSurveyQuestionOptions() {
+		return (List<SurveyQuestionOption>)eGet(SurveyPackage.Literals.SURVEY_QUESTION__SURVEY_QUESTION_OPTIONS, true);
 	}
 
 } //SurveyQuestionImpl

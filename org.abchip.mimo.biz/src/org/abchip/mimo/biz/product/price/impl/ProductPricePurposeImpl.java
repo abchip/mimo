@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.price.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPricePurpose;
 import org.eclipse.emf.ecore.EClass;
@@ -79,7 +80,7 @@ public class ProductPricePurposeImpl extends BizEntityImpl implements ProductPri
 	 * @generated
 	 */
 	@Override
-	public List<String> orderPaymentPreferences() {
+	public List<OrderPaymentPreference> orderPaymentPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

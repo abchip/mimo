@@ -595,7 +595,7 @@ public interface SubscriptionPackage extends EPackage {
 	int SUBSCRIPTION__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 28;
 
 	/**
-	 * The feature id for the '<em><b>Subscription Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Subscription Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -604,7 +604,7 @@ public interface SubscriptionPackage extends EPackage {
 	int SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 29;
 
 	/**
-	 * The feature id for the '<em><b>Subscription Comm Events</b></em>' attribute list.
+	 * The feature id for the '<em><b>Subscription Comm Events</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -749,7 +749,7 @@ public interface SubscriptionPackage extends EPackage {
 	int SUBSCRIPTION_ACTIVITY__DATE_SENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Subscription Fulfillment Pieces</b></em>' attribute list.
+	 * The feature id for the '<em><b>Subscription Fulfillment Pieces</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1204,7 +1204,7 @@ public interface SubscriptionPackage extends EPackage {
 	int SUBSCRIPTION_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Subscription Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Subscription Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1919,26 +1919,26 @@ public interface SubscriptionPackage extends EPackage {
 	EReference getSubscription_UseTimeUomId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionAttributes <em>Subscription Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionAttributes <em>Subscription Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Subscription Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Subscription Attributes</em>'.
 	 * @see org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionAttributes()
 	 * @see #getSubscription()
 	 * @generated
 	 */
-	EAttribute getSubscription_SubscriptionAttributes();
+	EReference getSubscription_SubscriptionAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionCommEvents <em>Subscription Comm Events</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionCommEvents <em>Subscription Comm Events</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Subscription Comm Events</em>'.
+	 * @return the meta object for the reference list '<em>Subscription Comm Events</em>'.
 	 * @see org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionCommEvents()
 	 * @see #getSubscription()
 	 * @generated
 	 */
-	EAttribute getSubscription_SubscriptionCommEvents();
+	EReference getSubscription_SubscriptionCommEvents();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.subscription.SubscriptionActivity <em>Activity</em>}'.
@@ -1984,15 +1984,15 @@ public interface SubscriptionPackage extends EPackage {
 	EAttribute getSubscriptionActivity_DateSent();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.subscription.SubscriptionActivity#getSubscriptionFulfillmentPieces <em>Subscription Fulfillment Pieces</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.subscription.SubscriptionActivity#getSubscriptionFulfillmentPieces <em>Subscription Fulfillment Pieces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Subscription Fulfillment Pieces</em>'.
+	 * @return the meta object for the reference list '<em>Subscription Fulfillment Pieces</em>'.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionActivity#getSubscriptionFulfillmentPieces()
 	 * @see #getSubscriptionActivity()
 	 * @generated
 	 */
-	EAttribute getSubscriptionActivity_SubscriptionFulfillmentPieces();
+	EReference getSubscriptionActivity_SubscriptionFulfillmentPieces();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute <em>Attribute</em>}'.
@@ -2243,15 +2243,15 @@ public interface SubscriptionPackage extends EPackage {
 	EReference getSubscriptionType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.subscription.SubscriptionType#getSubscriptionTypeAttrs <em>Subscription Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.subscription.SubscriptionType#getSubscriptionTypeAttrs <em>Subscription Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Subscription Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Subscription Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionType#getSubscriptionTypeAttrs()
 	 * @see #getSubscriptionType()
 	 * @generated
 	 */
-	EAttribute getSubscriptionType_SubscriptionTypeAttrs();
+	EReference getSubscriptionType_SubscriptionTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr <em>Type Attr</em>}'.
@@ -2771,20 +2771,20 @@ public interface SubscriptionPackage extends EPackage {
 		EReference SUBSCRIPTION__USE_TIME_UOM_ID = eINSTANCE.getSubscription_UseTimeUomId();
 
 		/**
-		 * The meta object literal for the '<em><b>Subscription Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Subscription Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES = eINSTANCE.getSubscription_SubscriptionAttributes();
+		EReference SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES = eINSTANCE.getSubscription_SubscriptionAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Subscription Comm Events</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Subscription Comm Events</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SUBSCRIPTION__SUBSCRIPTION_COMM_EVENTS = eINSTANCE.getSubscription_SubscriptionCommEvents();
+		EReference SUBSCRIPTION__SUBSCRIPTION_COMM_EVENTS = eINSTANCE.getSubscription_SubscriptionCommEvents();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionActivityImpl <em>Activity</em>}' class.
@@ -2821,12 +2821,12 @@ public interface SubscriptionPackage extends EPackage {
 		EAttribute SUBSCRIPTION_ACTIVITY__DATE_SENT = eINSTANCE.getSubscriptionActivity_DateSent();
 
 		/**
-		 * The meta object literal for the '<em><b>Subscription Fulfillment Pieces</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Subscription Fulfillment Pieces</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SUBSCRIPTION_ACTIVITY__SUBSCRIPTION_FULFILLMENT_PIECES = eINSTANCE.getSubscriptionActivity_SubscriptionFulfillmentPieces();
+		EReference SUBSCRIPTION_ACTIVITY__SUBSCRIPTION_FULFILLMENT_PIECES = eINSTANCE.getSubscriptionActivity_SubscriptionFulfillmentPieces();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionAttributeImpl <em>Attribute</em>}' class.
@@ -3023,12 +3023,12 @@ public interface SubscriptionPackage extends EPackage {
 		EReference SUBSCRIPTION_TYPE__PARENT_TYPE_ID = eINSTANCE.getSubscriptionType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Subscription Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Subscription Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SUBSCRIPTION_TYPE__SUBSCRIPTION_TYPE_ATTRS = eINSTANCE.getSubscriptionType_SubscriptionTypeAttrs();
+		EReference SUBSCRIPTION_TYPE__SUBSCRIPTION_TYPE_ATTRS = eINSTANCE.getSubscriptionType_SubscriptionTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionTypeAttrImpl <em>Type Attr</em>}' class.

@@ -13,6 +13,8 @@ import java.util.List;
 
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.humanres.ability.SkillType;
+import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
+import org.abchip.mimo.biz.humanres.recruitment.JobInterview;
 import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
 import org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -355,7 +357,7 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @generated
 	 */
 	@Override
-	public List<String> employmentApps() {
+	public List<EmploymentApp> employmentApps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -367,7 +369,7 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @generated
 	 */
 	@Override
-	public List<String> jobInterviews() {
+	public List<JobInterview> jobInterviews() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

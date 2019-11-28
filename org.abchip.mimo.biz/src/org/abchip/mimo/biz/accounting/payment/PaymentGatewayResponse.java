@@ -552,22 +552,20 @@ public interface PaymentGatewayResponse extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGatewayRespMsg' route='paymentGatewayResponseId'"
 	 * @generated
 	 */
-	List<String> paymentGatewayRespMsgs();
+	List<PaymentGatewayRespMsg> paymentGatewayRespMsgs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='paymentGatewayResponseId'"
 	 * @generated
 	 */
-	List<String> payments();
+	List<Payment> payments();
 
 	/**
 	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' reference.

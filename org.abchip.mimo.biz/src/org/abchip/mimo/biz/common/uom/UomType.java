@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.common.uom;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,32 +113,29 @@ public interface UomType extends BizEntityType<Uom> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='amountUomTypeId'"
 	 * @generated
 	 */
-	List<String> amountProducts();
+	List<Product> amountProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UomType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childUomTypes();
+	List<UomType> childUomTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Uom' route='uomTypeId'"
 	 * @generated
 	 */
-	List<String> uoms();
+	List<Uom> uoms();
 
 	/**
 	 * Returns the value of the '<em><b>Uom Type Id</b></em>' attribute.

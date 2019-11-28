@@ -16,6 +16,9 @@ import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.marketing.contact.ContactList;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
 
 /**
  * <!-- begin-user-doc -->
@@ -549,61 +552,56 @@ public interface MarketingCampaign extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Marketing Campaign Notes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Marketing Campaign Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Marketing Campaign Notes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Marketing Campaign Notes</em>' attribute list.
+	 * @return the value of the '<em>Marketing Campaign Notes</em>' reference list.
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_MarketingCampaignNotes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='MarketingCampaignNote'"
 	 * @generated
 	 */
-	List<String> getMarketingCampaignNotes();
+	List<MarketingCampaignNote> getMarketingCampaignNotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='MarketingCampaign' route='parentCampaignId'"
 	 * @generated
 	 */
-	List<String> childMarketingCampaigns();
+	List<MarketingCampaign> childMarketingCampaigns();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactList' route='marketingCampaignId'"
 	 * @generated
 	 */
-	List<String> contactLists();
+	List<ContactList> contactLists();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunity' route='marketingCampaignId'"
 	 * @generated
 	 */
-	List<String> salesOpportunities();
+	List<SalesOpportunity> salesOpportunities();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TrackingCode' route='marketingCampaignId'"
 	 * @generated
 	 */
-	List<String> trackingCodes();
+	List<TrackingCode> trackingCodes();
 
 } // MarketingCampaign

@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.marketing.contact;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame dictionary='MarketingEntityLabels' formula='description'"
  * @generated
  */
-public interface ContactListType extends BizEntityType<ContactList> {
+public interface ContactListType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Contact List Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,11 +85,10 @@ public interface ContactListType extends BizEntityType<ContactList> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactList' route='contactListTypeId'"
 	 * @generated
 	 */
-	List<String> contactLists();
+	List<ContactList> contactLists();
 
 } // ContactListType

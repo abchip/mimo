@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.product.facility;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
-public interface ContainerType extends BizEntityType<Container> {
+public interface ContainerType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,12 +58,11 @@ public interface ContainerType extends BizEntityType<Container> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Container' route='containerTypeId'"
 	 * @generated
 	 */
-	List<String> containers();
+	List<Container> containers();
 
 	/**
 	 * Returns the value of the '<em><b>Container Type Id</b></em>' attribute.

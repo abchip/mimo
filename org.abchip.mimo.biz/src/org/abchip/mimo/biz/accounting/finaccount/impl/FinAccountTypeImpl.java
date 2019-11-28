@@ -11,9 +11,12 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeAttr;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -147,8 +150,8 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFinAccountTypeAttrs() {
-		return (List<String>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS, true);
+	public List<FinAccountTypeAttr> getFinAccountTypeAttrs() {
+		return (List<FinAccountTypeAttr>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -158,8 +161,8 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFinAccountTypeGlAccounts() {
-		return (List<String>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS, true);
+	public List<FinAccountTypeGlAccount> getFinAccountTypeGlAccounts() {
+		return (List<FinAccountTypeGlAccount>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS, true);
 	}
 
 	/**
@@ -168,7 +171,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> childFinAccountTypes() {
+	public List<FinAccountType> childFinAccountTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -180,7 +183,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> finAccounts() {
+	public List<FinAccount> finAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -192,7 +195,7 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> productStoreFinActSettings() {
+	public List<ProductStoreFinActSetting> productStoreFinActSettings() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

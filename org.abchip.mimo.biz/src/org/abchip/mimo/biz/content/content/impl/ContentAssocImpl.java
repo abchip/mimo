@@ -15,7 +15,7 @@ import org.abchip.mimo.biz.content.content.ContentAssoc;
 import org.abchip.mimo.biz.content.content.ContentAssocPredicate;
 import org.abchip.mimo.biz.content.content.ContentAssocType;
 import org.abchip.mimo.biz.content.content.ContentPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.ecore.EClass;
 
@@ -46,7 +46,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> implements ContentAssoc {
+public class ContentAssocImpl extends BizEntityImpl implements ContentAssoc {
 	/**
 	 * 
 	 */

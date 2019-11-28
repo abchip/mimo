@@ -10,6 +10,9 @@ package org.abchip.mimo.biz.party.contact;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.marketing.contact.ContactList;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.party.communication.CommunicationEventType;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,100 +115,92 @@ public interface ContactMechType extends BizEntityType<ContactMech> {
 	void setParentTypeId(ContactMechType value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Contact Mech Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.ContactMechTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Contact Mech Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechType_ContactMechTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechTypeAttr'"
 	 * @generated
 	 */
-	List<String> getContactMechTypeAttrs();
+	List<ContactMechTypeAttr> getContactMechTypeAttrs();
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Type Purposes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Contact Mech Type Purposes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.ContactMechTypePurpose}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Type Purposes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Type Purposes</em>' attribute list.
+	 * @return the value of the '<em>Contact Mech Type Purposes</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechType_ContactMechTypePurposes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechTypePurpose'"
 	 * @generated
 	 */
-	List<String> getContactMechTypePurposes();
+	List<ContactMechTypePurpose> getContactMechTypePurposes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMechType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childContactMechTypes();
+	List<ContactMechType> childContactMechTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='contactMechTypeId'"
 	 * @generated
 	 */
-	List<String> communicationEvents();
+	List<CommunicationEvent> communicationEvents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventType' route='contactMechTypeId'"
 	 * @generated
 	 */
-	List<String> contacMechTypeCommunicationEventTypes();
+	List<CommunicationEventType> contacMechTypeCommunicationEventTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactList' route='contactMechTypeId'"
 	 * @generated
 	 */
-	List<String> contactLists();
+	List<ContactList> contactLists();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactMech' route='contactMechTypeId'"
 	 * @generated
 	 */
-	List<String> contactMechs();
+	List<ContactMech> contactMechs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ValidContactMechRole' route='contactMechTypeId'"
 	 * @generated
 	 */
-	List<String> validContactMechRoles();
+	List<ValidContactMechRole> validContactMechRoles();
 
 	/**
 	 * Returns the value of the '<em><b>Contact Mech Type Id</b></em>' attribute.

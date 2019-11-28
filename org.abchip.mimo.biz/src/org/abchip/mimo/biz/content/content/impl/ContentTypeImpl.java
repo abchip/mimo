@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentType;
+import org.abchip.mimo.biz.content.content.ContentTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -144,8 +145,8 @@ public class ContentTypeImpl extends BizEntityTypeImpl<Content> implements Conte
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getContentTypeAttrs() {
-		return (List<String>)eGet(ContentPackage.Literals.CONTENT_TYPE__CONTENT_TYPE_ATTRS, true);
+	public List<ContentTypeAttr> getContentTypeAttrs() {
+		return (List<ContentTypeAttr>)eGet(ContentPackage.Literals.CONTENT_TYPE__CONTENT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +155,7 @@ public class ContentTypeImpl extends BizEntityTypeImpl<Content> implements Conte
 	 * @generated
 	 */
 	@Override
-	public List<String> childContentTypes() {
+	public List<ContentType> childContentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +167,7 @@ public class ContentTypeImpl extends BizEntityTypeImpl<Content> implements Conte
 	 * @generated
 	 */
 	@Override
-	public List<String> contents() {
+	public List<Content> contents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

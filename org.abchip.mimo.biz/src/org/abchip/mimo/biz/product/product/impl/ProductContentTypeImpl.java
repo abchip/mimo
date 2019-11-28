@@ -122,7 +122,7 @@ public class ProductContentTypeImpl extends BizEntityTypeImpl<ProductContent> im
 	 * @generated
 	 */
 	@Override
-	public List<String> childProductContentTypes() {
+	public List<ProductContentType> childProductContentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

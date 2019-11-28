@@ -14,6 +14,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.common.status.StatusItem;
@@ -21,6 +23,8 @@ import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
+import org.abchip.mimo.biz.order.order.OrderStatus;
+import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.product.price.ProductPricePurpose;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.ecore.EClass;
@@ -572,7 +576,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 * @generated
 	 */
 	@Override
-	public List<String> orderStatuss() {
+	public List<OrderStatus> orderStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -584,7 +588,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentGatewayResponses() {
+	public List<PaymentGatewayResponse> paymentGatewayResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -596,7 +600,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 * @generated
 	 */
 	@Override
-	public List<String> payments() {
+	public List<Payment> payments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -608,7 +612,7 @@ public class OrderPaymentPreferenceImpl extends BizEntityImpl implements OrderPa
 	 * @generated
 	 */
 	@Override
-	public List<String> returnItemResponses() {
+	public List<ReturnItemResponse> returnItemResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

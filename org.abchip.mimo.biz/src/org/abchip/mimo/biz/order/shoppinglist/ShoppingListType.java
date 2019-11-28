@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.order.shoppinglist;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
-public interface ShoppingListType extends BizEntityType<ShoppingList> {
+public interface ShoppingListType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,12 +58,11 @@ public interface ShoppingListType extends BizEntityType<ShoppingList> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='shoppingListTypeId'"
 	 * @generated
 	 */
-	List<String> shoppingLists();
+	List<ShoppingList> shoppingLists();
 
 	/**
 	 * Returns the value of the '<em><b>Shopping List Type Id</b></em>' attribute.

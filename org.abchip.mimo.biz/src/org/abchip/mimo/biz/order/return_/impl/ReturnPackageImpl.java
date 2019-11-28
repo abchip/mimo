@@ -1365,8 +1365,8 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getReturnHeader_CommunicationEventReturns() {
-		return (EAttribute)returnHeaderEClass.getEStructuralFeatures().get(2);
+	public EReference getReturnHeader_CommunicationEventReturns() {
+		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1375,8 +1375,8 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getReturnHeader_ReturnItems() {
-		return (EAttribute)returnHeaderEClass.getEStructuralFeatures().get(13);
+	public EReference getReturnHeader_ReturnItems() {
+		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -2119,7 +2119,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		returnHeaderEClass = createEClass(RETURN_HEADER);
 		createEAttribute(returnHeaderEClass, RETURN_HEADER__RETURN_ID);
 		createEReference(returnHeaderEClass, RETURN_HEADER__BILLING_ACCOUNT_ID);
-		createEAttribute(returnHeaderEClass, RETURN_HEADER__COMMUNICATION_EVENT_RETURNS);
+		createEReference(returnHeaderEClass, RETURN_HEADER__COMMUNICATION_EVENT_RETURNS);
 		createEReference(returnHeaderEClass, RETURN_HEADER__CREATED_BY);
 		createEReference(returnHeaderEClass, RETURN_HEADER__CURRENCY_UOM_ID);
 		createEReference(returnHeaderEClass, RETURN_HEADER__DESTINATION_FACILITY_ID);
@@ -2130,7 +2130,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		createEReference(returnHeaderEClass, RETURN_HEADER__ORIGIN_CONTACT_MECH_ID);
 		createEReference(returnHeaderEClass, RETURN_HEADER__PAYMENT_METHOD_ID);
 		createEReference(returnHeaderEClass, RETURN_HEADER__RETURN_HEADER_TYPE_ID);
-		createEAttribute(returnHeaderEClass, RETURN_HEADER__RETURN_ITEMS);
+		createEReference(returnHeaderEClass, RETURN_HEADER__RETURN_ITEMS);
 		createEReference(returnHeaderEClass, RETURN_HEADER__STATUS_ID);
 		createEAttribute(returnHeaderEClass, RETURN_HEADER__SUPPLIER_RMA_ID);
 		createEReference(returnHeaderEClass, RETURN_HEADER__TO_PARTY_ID);
@@ -2251,10 +2251,10 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		FinaccountPackage theFinaccountPackage = (FinaccountPackage)EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
+		Shipment_Package theShipment_Package = (Shipment_Package)EPackage.Registry.INSTANCE.getEPackage(Shipment_Package.eNS_URI);
 		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 		InvoicePackage theInvoicePackage = (InvoicePackage)EPackage.Registry.INSTANCE.getEPackage(InvoicePackage.eNS_URI);
 		ReceiptPackage theReceiptPackage = (ReceiptPackage)EPackage.Registry.INSTANCE.getEPackage(ReceiptPackage.eNS_URI);
-		Shipment_Package theShipment_Package = (Shipment_Package)EPackage.Registry.INSTANCE.getEPackage(Shipment_Package.eNS_URI);
 
 		// Create type parameters
 
@@ -2271,25 +2271,13 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		g1.getETypeArguments().add(g2);
 		returnAdjustmentTypeEClass.getEGenericSuperTypes().add(g1);
 		returnContactMechEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		g2 = createEGenericType(this.getReturnHeaderType());
-		g1.getETypeArguments().add(g2);
-		returnHeaderEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getReturnHeader());
-		g1.getETypeArguments().add(g2);
-		returnHeaderTypeEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		g2 = createEGenericType(this.getReturnItemType());
-		g1.getETypeArguments().add(g2);
-		returnItemEClass.getEGenericSuperTypes().add(g1);
+		returnHeaderEClass.getESuperTypes().add(theBizPackage.getBizEntity());
+		returnHeaderTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
+		returnItemEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		returnItemBillingEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		returnItemResponseEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		returnItemShipmentEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getReturnItem());
-		g1.getETypeArguments().add(g2);
-		returnItemTypeEClass.getEGenericSuperTypes().add(g1);
+		returnItemTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		returnItemTypeMapEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		returnReasonEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		returnStatusEClass.getESuperTypes().add(theBizPackage.getBizEntity());
@@ -2352,11 +2340,11 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		initEReference(getReturnAdjustmentType_ParentTypeId(), this.getReturnAdjustmentType(), null, "parentTypeId", null, 0, 1, ReturnAdjustmentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getReturnAdjustmentType_ParentTypeId().getEKeys().add(this.getReturnAdjustmentType_ReturnAdjustmentTypeId());
 
-		addEOperation(returnAdjustmentTypeEClass, ecorePackage.getEString(), "childReturnAdjustmentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnAdjustmentTypeEClass, this.getReturnAdjustmentType(), "childReturnAdjustmentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(returnAdjustmentTypeEClass, ecorePackage.getEString(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnAdjustmentTypeEClass, this.getReturnAdjustment(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(returnAdjustmentTypeEClass, ecorePackage.getEString(), "returnItemTypeMaps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnAdjustmentTypeEClass, this.getReturnItemTypeMap(), "returnItemTypeMaps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(returnContactMechEClass, ReturnContactMech.class, "ReturnContactMech", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReturnContactMech_ReturnId(), this.getReturnHeader(), null, "returnId", null, 1, 1, ReturnContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2370,7 +2358,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		initEAttribute(getReturnHeader_ReturnId(), ecorePackage.getEString(), "returnId", null, 1, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReturnHeader_BillingAccountId(), thePaymentPackage.getBillingAccount(), null, "billingAccountId", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getReturnHeader_BillingAccountId().getEKeys().add(thePaymentPackage.getBillingAccount_BillingAccountId());
-		initEAttribute(getReturnHeader_CommunicationEventReturns(), ecorePackage.getEString(), "communicationEventReturns", null, 0, -1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReturnHeader_CommunicationEventReturns(), this.getCommunicationEventReturn(), null, "communicationEventReturns", null, 0, -1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReturnHeader_CreatedBy(), theLoginPackage.getUserLogin(), null, "createdBy", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getReturnHeader_CreatedBy().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 		initEReference(getReturnHeader_CurrencyUomId(), theUomPackage.getUom(), null, "currencyUomId", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2389,18 +2377,18 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		getReturnHeader_PaymentMethodId().getEKeys().add(thePaymentPackage.getPaymentMethod_PaymentMethodId());
 		initEReference(getReturnHeader_ReturnHeaderTypeId(), this.getReturnHeaderType(), null, "returnHeaderTypeId", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getReturnHeader_ReturnHeaderTypeId().getEKeys().add(this.getReturnHeaderType_ReturnHeaderTypeId());
-		initEAttribute(getReturnHeader_ReturnItems(), ecorePackage.getEString(), "returnItems", null, 0, -1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReturnHeader_ReturnItems(), this.getReturnItem(), null, "returnItems", null, 0, -1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReturnHeader_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getReturnHeader_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEAttribute(getReturnHeader_SupplierRmaId(), ecorePackage.getEString(), "supplierRmaId", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReturnHeader_ToPartyId(), thePartyPackage.getParty(), null, "toPartyId", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getReturnHeader_ToPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
-		addEOperation(returnHeaderEClass, ecorePackage.getEString(), "primaryShipments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnHeaderEClass, theShipment_Package.getShipment(), "primaryShipments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(returnHeaderEClass, ecorePackage.getEString(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnHeaderEClass, this.getReturnAdjustment(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(returnHeaderEClass, ecorePackage.getEString(), "returnStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnHeaderEClass, this.getReturnStatus(), "returnStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(returnHeaderTypeEClass, ReturnHeaderType.class, "ReturnHeaderType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReturnHeaderType_ReturnHeaderTypeId(), ecorePackage.getEString(), "returnHeaderTypeId", null, 1, 1, ReturnHeaderType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2408,11 +2396,11 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		initEReference(getReturnHeaderType_ParentTypeId(), this.getReturnHeaderType(), null, "parentTypeId", null, 0, 1, ReturnHeaderType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getReturnHeaderType_ParentTypeId().getEKeys().add(this.getReturnHeaderType_ReturnHeaderTypeId());
 
-		addEOperation(returnHeaderTypeEClass, ecorePackage.getEString(), "childReturnHeaderTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnHeaderTypeEClass, this.getReturnHeaderType(), "childReturnHeaderTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(returnHeaderTypeEClass, ecorePackage.getEString(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnHeaderTypeEClass, this.getReturnHeader(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(returnHeaderTypeEClass, ecorePackage.getEString(), "returnItemTypeMaps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnHeaderTypeEClass, this.getReturnItemTypeMap(), "returnItemTypeMaps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(returnItemEClass, ReturnItem.class, "ReturnItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReturnItem_ReturnId(), this.getReturnHeader(), null, "returnId", null, 1, 1, ReturnItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2467,7 +2455,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		initEAttribute(getReturnItemResponse_ResponseAmount(), ecorePackage.getEBigDecimal(), "responseAmount", null, 0, 1, ReturnItemResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReturnItemResponse_ResponseDate(), ecorePackage.getEDate(), "responseDate", null, 0, 1, ReturnItemResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(returnItemResponseEClass, ecorePackage.getEString(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnItemResponseEClass, this.getReturnItem(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(returnItemShipmentEClass, ReturnItemShipment.class, "ReturnItemShipment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReturnItemShipment_ReturnId(), this.getReturnHeader(), null, "returnId", null, 1, 1, ReturnItemShipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2484,11 +2472,11 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		initEReference(getReturnItemType_ParentTypeId(), this.getReturnItemType(), null, "parentTypeId", null, 0, 1, ReturnItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getReturnItemType_ParentTypeId().getEKeys().add(this.getReturnItemType_ReturnItemTypeId());
 
-		addEOperation(returnItemTypeEClass, ecorePackage.getEString(), "childReturnItemTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnItemTypeEClass, this.getReturnItemType(), "childReturnItemTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(returnItemTypeEClass, ecorePackage.getEString(), "returnItemTypeMaps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnItemTypeEClass, this.getReturnItemTypeMap(), "returnItemTypeMaps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(returnItemTypeEClass, ecorePackage.getEString(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnItemTypeEClass, this.getReturnItem(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(returnItemTypeMapEClass, ReturnItemTypeMap.class, "ReturnItemTypeMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReturnItemTypeMap_ReturnHeaderTypeId(), this.getReturnHeaderType(), null, "returnHeaderTypeId", null, 1, 1, ReturnItemTypeMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2502,7 +2490,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		initEAttribute(getReturnReason_Description(), ecorePackage.getEString(), "description", null, 0, 1, ReturnReason.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReturnReason_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 0, 1, ReturnReason.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(returnReasonEClass, ecorePackage.getEString(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnReasonEClass, this.getReturnItem(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(returnStatusEClass, ReturnStatus.class, "ReturnStatus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReturnStatus_ReturnStatusId(), ecorePackage.getEString(), "returnStatusId", null, 1, 1, ReturnStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2520,9 +2508,9 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		initEAttribute(getReturnType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ReturnType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReturnType_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 0, 1, ReturnType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(returnTypeEClass, ecorePackage.getEString(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnTypeEClass, this.getReturnAdjustment(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(returnTypeEClass, ecorePackage.getEString(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(returnTypeEClass, this.getReturnItem(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-slot
@@ -3240,27 +3228,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (returnAdjustmentTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (returnAdjustmentTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (returnAdjustmentTypeEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnAdjustmentType_ReturnAdjustmentTypeId(),
 		   source,
 		   new String[] {
@@ -3282,35 +3249,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (returnHeaderEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (returnHeaderEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (returnHeaderEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnHeader_ReturnId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getReturnHeader_CommunicationEventReturns(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3330,35 +3269,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (getReturnHeader_ReturnItems(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnHeader_SupplierRmaId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (returnHeaderTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (returnHeaderTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (returnHeaderTypeEClass.getEOperations().get(2),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3454,13 +3365,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (returnItemResponseEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnItemResponse_ReturnItemResponseId(),
 		   source,
 		   new String[] {
@@ -3504,27 +3408,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (returnItemTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (returnItemTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (returnItemTypeEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getReturnItemType_ReturnItemTypeId(),
 		   source,
 		   new String[] {
@@ -3540,13 +3423,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		   });
 		addAnnotation
 		  (getReturnItemTypeMap_ReturnItemMapKey(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (returnReasonEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -3592,20 +3468,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (returnTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (returnTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getReturnType_ReturnTypeId(),

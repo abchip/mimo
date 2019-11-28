@@ -234,7 +234,7 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
-	 * The feature id for the '<em><b>Inventory Item Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Inventory Item Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -243,7 +243,7 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM__INVENTORY_ITEM_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
-	 * The feature id for the '<em><b>Inventory Item Details</b></em>' attribute list.
+	 * The feature id for the '<em><b>Inventory Item Details</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -252,7 +252,7 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM__INVENTORY_ITEM_DETAILS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
 
 	/**
-	 * The feature id for the '<em><b>Inventory Item Label Appls</b></em>' attribute list.
+	 * The feature id for the '<em><b>Inventory Item Label Appls</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -270,7 +270,7 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
 
 	/**
-	 * The feature id for the '<em><b>Inventory Item Variances</b></em>' attribute list.
+	 * The feature id for the '<em><b>Inventory Item Variances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1322,7 +1322,7 @@ public interface InventoryPackage extends EPackage {
 	int INVENTORY_ITEM_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Inventory Item Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Inventory Item Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1958,7 +1958,7 @@ public interface InventoryPackage extends EPackage {
 	int VARIANCE_REASON__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Variance Reason Gl Accounts</b></em>' attribute list.
+	 * The feature id for the '<em><b>Variance Reason Gl Accounts</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2295,48 +2295,48 @@ public interface InventoryPackage extends EPackage {
 	EReference getInventoryItem_UomId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemAttributes <em>Inventory Item Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemAttributes <em>Inventory Item Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Inventory Item Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Inventory Item Attributes</em>'.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemAttributes()
 	 * @see #getInventoryItem()
 	 * @generated
 	 */
-	EAttribute getInventoryItem_InventoryItemAttributes();
+	EReference getInventoryItem_InventoryItemAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemDetails <em>Inventory Item Details</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemDetails <em>Inventory Item Details</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Inventory Item Details</em>'.
+	 * @return the meta object for the reference list '<em>Inventory Item Details</em>'.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemDetails()
 	 * @see #getInventoryItem()
 	 * @generated
 	 */
-	EAttribute getInventoryItem_InventoryItemDetails();
+	EReference getInventoryItem_InventoryItemDetails();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemLabelAppls <em>Inventory Item Label Appls</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemLabelAppls <em>Inventory Item Label Appls</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Inventory Item Label Appls</em>'.
+	 * @return the meta object for the reference list '<em>Inventory Item Label Appls</em>'.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemLabelAppls()
 	 * @see #getInventoryItem()
 	 * @generated
 	 */
-	EAttribute getInventoryItem_InventoryItemLabelAppls();
+	EReference getInventoryItem_InventoryItemLabelAppls();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemVariances <em>Inventory Item Variances</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemVariances <em>Inventory Item Variances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Inventory Item Variances</em>'.
+	 * @return the meta object for the reference list '<em>Inventory Item Variances</em>'.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemVariances()
 	 * @see #getInventoryItem()
 	 * @generated
 	 */
-	EAttribute getInventoryItem_InventoryItemVariances();
+	EReference getInventoryItem_InventoryItemVariances();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.inventory.InventoryItemAttribute <em>Item Attribute</em>}'.
@@ -3002,15 +3002,15 @@ public interface InventoryPackage extends EPackage {
 	EReference getInventoryItemType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#getInventoryItemTypeAttrs <em>Inventory Item Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#getInventoryItemTypeAttrs <em>Inventory Item Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Inventory Item Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Inventory Item Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryItemType#getInventoryItemTypeAttrs()
 	 * @see #getInventoryItemType()
 	 * @generated
 	 */
-	EAttribute getInventoryItemType_InventoryItemTypeAttrs();
+	EReference getInventoryItemType_InventoryItemTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr <em>Item Type Attr</em>}'.
@@ -3425,15 +3425,15 @@ public interface InventoryPackage extends EPackage {
 	EAttribute getVarianceReason_Description();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.inventory.VarianceReason#getVarianceReasonGlAccounts <em>Variance Reason Gl Accounts</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.inventory.VarianceReason#getVarianceReasonGlAccounts <em>Variance Reason Gl Accounts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Variance Reason Gl Accounts</em>'.
+	 * @return the meta object for the reference list '<em>Variance Reason Gl Accounts</em>'.
 	 * @see org.abchip.mimo.biz.product.inventory.VarianceReason#getVarianceReasonGlAccounts()
 	 * @see #getVarianceReason()
 	 * @generated
 	 */
-	EAttribute getVarianceReason_VarianceReasonGlAccounts();
+	EReference getVarianceReason_VarianceReasonGlAccounts();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3692,36 +3692,36 @@ public interface InventoryPackage extends EPackage {
 		EReference INVENTORY_ITEM__UOM_ID = eINSTANCE.getInventoryItem_UomId();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Item Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Inventory Item Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INVENTORY_ITEM__INVENTORY_ITEM_ATTRIBUTES = eINSTANCE.getInventoryItem_InventoryItemAttributes();
+		EReference INVENTORY_ITEM__INVENTORY_ITEM_ATTRIBUTES = eINSTANCE.getInventoryItem_InventoryItemAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Item Details</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Inventory Item Details</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INVENTORY_ITEM__INVENTORY_ITEM_DETAILS = eINSTANCE.getInventoryItem_InventoryItemDetails();
+		EReference INVENTORY_ITEM__INVENTORY_ITEM_DETAILS = eINSTANCE.getInventoryItem_InventoryItemDetails();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Item Label Appls</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Inventory Item Label Appls</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INVENTORY_ITEM__INVENTORY_ITEM_LABEL_APPLS = eINSTANCE.getInventoryItem_InventoryItemLabelAppls();
+		EReference INVENTORY_ITEM__INVENTORY_ITEM_LABEL_APPLS = eINSTANCE.getInventoryItem_InventoryItemLabelAppls();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Item Variances</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Inventory Item Variances</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INVENTORY_ITEM__INVENTORY_ITEM_VARIANCES = eINSTANCE.getInventoryItem_InventoryItemVariances();
+		EReference INVENTORY_ITEM__INVENTORY_ITEM_VARIANCES = eINSTANCE.getInventoryItem_InventoryItemVariances();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemAttributeImpl <em>Item Attribute</em>}' class.
@@ -4228,12 +4228,12 @@ public interface InventoryPackage extends EPackage {
 		EReference INVENTORY_ITEM_TYPE__PARENT_TYPE_ID = eINSTANCE.getInventoryItemType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventory Item Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Inventory Item Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INVENTORY_ITEM_TYPE__INVENTORY_ITEM_TYPE_ATTRS = eINSTANCE.getInventoryItemType_InventoryItemTypeAttrs();
+		EReference INVENTORY_ITEM_TYPE__INVENTORY_ITEM_TYPE_ATTRS = eINSTANCE.getInventoryItemType_InventoryItemTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemTypeAttrImpl <em>Item Type Attr</em>}' class.
@@ -4552,12 +4552,12 @@ public interface InventoryPackage extends EPackage {
 		EAttribute VARIANCE_REASON__DESCRIPTION = eINSTANCE.getVarianceReason_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Variance Reason Gl Accounts</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Variance Reason Gl Accounts</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VARIANCE_REASON__VARIANCE_REASON_GL_ACCOUNTS = eINSTANCE.getVarianceReason_VarianceReasonGlAccounts();
+		EReference VARIANCE_REASON__VARIANCE_REASON_GL_ACCOUNTS = eINSTANCE.getVarianceReason_VarianceReasonGlAccounts();
 
 	}
 

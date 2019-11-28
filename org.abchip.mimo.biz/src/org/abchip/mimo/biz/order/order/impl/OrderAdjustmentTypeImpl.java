@@ -12,7 +12,9 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderAdjustment;
 import org.abchip.mimo.biz.order.order.OrderAdjustmentType;
+import org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -144,8 +146,8 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOrderAdjustmentTypeAttrs() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_ADJUSTMENT_TYPE__ORDER_ADJUSTMENT_TYPE_ATTRS, true);
+	public List<OrderAdjustmentTypeAttr> getOrderAdjustmentTypeAttrs() {
+		return (List<OrderAdjustmentTypeAttr>)eGet(OrderPackage.Literals.ORDER_ADJUSTMENT_TYPE__ORDER_ADJUSTMENT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +156,7 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	 * @generated
 	 */
 	@Override
-	public List<String> childOrderAdjustmentTypes() {
+	public List<OrderAdjustmentType> childOrderAdjustmentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +168,7 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	 * @generated
 	 */
 	@Override
-	public List<String> orderAdjustments() {
+	public List<OrderAdjustment> orderAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -178,7 +180,7 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteAdjustments() {
+	public List<QuoteAdjustment> quoteAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

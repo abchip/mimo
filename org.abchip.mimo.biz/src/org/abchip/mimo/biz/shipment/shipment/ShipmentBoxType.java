@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -249,41 +250,38 @@ public interface ShipmentBoxType extends BizEntity {
 	void setWeightUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Carrier Shipment Box Types</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Carrier Shipment Box Types</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Carrier Shipment Box Types</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Carrier Shipment Box Types</em>' attribute list.
+	 * @return the value of the '<em>Carrier Shipment Box Types</em>' reference list.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentBoxType_CarrierShipmentBoxTypes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CarrierShipmentBoxType'"
 	 * @generated
 	 */
-	List<String> getCarrierShipmentBoxTypes();
+	List<CarrierShipmentBoxType> getCarrierShipmentBoxTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='defaultShipmentBoxTypeId'"
 	 * @generated
 	 */
-	List<String> defaultProducts();
+	List<Product> defaultProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentPackage' route='shipmentBoxTypeId'"
 	 * @generated
 	 */
-	List<String> shipmentPackages();
+	List<ShipmentPackage> shipmentPackages();
 
 } // ShipmentBoxType

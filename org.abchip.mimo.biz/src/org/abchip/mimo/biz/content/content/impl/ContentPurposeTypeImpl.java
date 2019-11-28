@@ -12,7 +12,8 @@ import java.util.List;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentPurpose;
 import org.abchip.mimo.biz.content.content.ContentPurposeType;
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.content.data.DataResourcePurpose;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ContentPurposeTypeImpl extends BizEntityTypeImpl<ContentPurpose> implements ContentPurposeType {
+public class ContentPurposeTypeImpl extends BizEntityImpl implements ContentPurposeType {
 	/**
 	 * 
 	 */
@@ -100,7 +101,7 @@ public class ContentPurposeTypeImpl extends BizEntityTypeImpl<ContentPurpose> im
 	 * @generated
 	 */
 	@Override
-	public List<String> contentPurposes() {
+	public List<ContentPurpose> contentPurposes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -112,7 +113,7 @@ public class ContentPurposeTypeImpl extends BizEntityTypeImpl<ContentPurpose> im
 	 * @generated
 	 */
 	@Override
-	public List<String> dataResourcePurposes() {
+	public List<DataResourcePurpose> dataResourcePurposes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

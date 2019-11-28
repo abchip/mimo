@@ -121,7 +121,7 @@ public class StatusTypeImpl extends BizEntityTypeImpl<StatusItem> implements Sta
 	 * @generated
 	 */
 	@Override
-	public List<String> childStatusTypes() {
+	public List<StatusType> childStatusTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +133,7 @@ public class StatusTypeImpl extends BizEntityTypeImpl<StatusItem> implements Sta
 	 * @generated
 	 */
 	@Override
-	public List<String> statusItems() {
+	public List<StatusItem> statusItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

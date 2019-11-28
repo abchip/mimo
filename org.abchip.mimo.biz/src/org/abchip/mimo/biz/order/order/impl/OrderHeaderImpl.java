@@ -11,19 +11,46 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
+import org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder;
+import org.abchip.mimo.biz.order.order.CommunicationEventOrder;
+import org.abchip.mimo.biz.order.order.OrderAdjustment;
+import org.abchip.mimo.biz.order.order.OrderAttribute;
+import org.abchip.mimo.biz.order.order.OrderDeliverySchedule;
 import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.order.OrderHeaderNote;
+import org.abchip.mimo.biz.order.order.OrderHeaderWorkEffort;
+import org.abchip.mimo.biz.order.order.OrderItem;
+import org.abchip.mimo.biz.order.order.OrderItemChange;
+import org.abchip.mimo.biz.order.order.OrderItemGroup;
+import org.abchip.mimo.biz.order.order.OrderItemPriceInfo;
+import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
+import org.abchip.mimo.biz.order.order.OrderNotification;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
+import org.abchip.mimo.biz.order.order.OrderProductPromoCode;
 import org.abchip.mimo.biz.order.order.OrderStatus;
 import org.abchip.mimo.biz.order.order.OrderType;
+import org.abchip.mimo.biz.order.return_.ReturnItem;
+import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.promo.ProductPromoUse;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
+import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.eclipse.emf.ecore.EClass;
 
@@ -46,7 +73,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getFirstAttemptOrderId <em>First Attempt Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getGrandTotal <em>Grand Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getInternalCode <em>Internal Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getInvoicePerShipment <em>Invoice Per Shipment</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isInvoicePerShipment <em>Invoice Per Shipment</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isIsRushOrder <em>Is Rush Order</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isIsViewed <em>Is Viewed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isNeedsInventoryIssuance <em>Needs Inventory Issuance</em>}</li>
@@ -283,20 +310,22 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public char getInvoicePerShipment() {
-		return (Character)eGet(OrderPackage.Literals.ORDER_HEADER__INVOICE_PER_SHIPMENT, true);
+	public boolean isInvoicePerShipment() {
+		return (Boolean)eGet(OrderPackage.Literals.ORDER_HEADER__INVOICE_PER_SHIPMENT, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public void setInvoicePerShipment(char newInvoicePerShipment) {
+	public void setInvoicePerShipment(boolean newInvoicePerShipment) {
 		eSet(OrderPackage.Literals.ORDER_HEADER__INVOICE_PER_SHIPMENT, newInvoicePerShipment);
 	}
 
@@ -648,8 +677,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCommunicationEventOrders() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS, true);
+	public List<CommunicationEventOrder> getCommunicationEventOrders() {
+		return (List<CommunicationEventOrder>)eGet(OrderPackage.Literals.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS, true);
 	}
 
 	/**
@@ -658,8 +687,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOrderAttributes() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ATTRIBUTES, true);
+	public List<OrderAttribute> getOrderAttributes() {
+		return (List<OrderAttribute>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ATTRIBUTES, true);
 	}
 
 	/**
@@ -668,8 +697,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOrderDeliverySchedules() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_DELIVERY_SCHEDULES, true);
+	public List<OrderDeliverySchedule> getOrderDeliverySchedules() {
+		return (List<OrderDeliverySchedule>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_DELIVERY_SCHEDULES, true);
 	}
 
 	/**
@@ -678,8 +707,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOrderHeaderNotes() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_HEADER_NOTES, true);
+	public List<OrderHeaderNote> getOrderHeaderNotes() {
+		return (List<OrderHeaderNote>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_HEADER_NOTES, true);
 	}
 
 	/**
@@ -688,8 +717,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOrderHeaderWorkEfforts() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS, true);
+	public List<OrderHeaderWorkEffort> getOrderHeaderWorkEfforts() {
+		return (List<OrderHeaderWorkEffort>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS, true);
 	}
 
 	/**
@@ -698,8 +727,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOrderItems() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEMS, true);
+	public List<OrderItem> getOrderItems() {
+		return (List<OrderItem>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEMS, true);
 	}
 
 	/**
@@ -708,8 +737,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOrderItemGroups() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEM_GROUPS, true);
+	public List<OrderItemGroup> getOrderItemGroups() {
+		return (List<OrderItemGroup>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEM_GROUPS, true);
 	}
 
 	/**
@@ -718,8 +747,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOrderItemShipGroups() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS, true);
+	public List<OrderItemShipGroup> getOrderItemShipGroups() {
+		return (List<OrderItemShipGroup>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS, true);
 	}
 
 	/**
@@ -728,8 +757,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOrderProductPromoCodes() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES, true);
+	public List<OrderProductPromoCode> getOrderProductPromoCodes() {
+		return (List<OrderProductPromoCode>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES, true);
 	}
 
 	/**
@@ -738,8 +767,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductPromoUses() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__PRODUCT_PROMO_USES, true);
+	public List<ProductPromoUse> getProductPromoUses() {
+		return (List<ProductPromoUse>)eGet(OrderPackage.Literals.ORDER_HEADER__PRODUCT_PROMO_USES, true);
 	}
 
 	/**
@@ -748,8 +777,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getTrackingCodeOrders() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_HEADER__TRACKING_CODE_ORDERS, true);
+	public List<TrackingCodeOrder> getTrackingCodeOrders() {
+		return (List<TrackingCodeOrder>)eGet(OrderPackage.Literals.ORDER_HEADER__TRACKING_CODE_ORDERS, true);
 	}
 
 	/**
@@ -757,7 +786,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> acquireFixedAssets() {
+	public List<FixedAsset> acquireFixedAssets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -768,7 +797,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> giftCardFulfillments() {
+	public List<GiftCardFulfillment> giftCardFulfillments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -779,7 +808,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> itemIssuances() {
+	public List<ItemIssuance> itemIssuances() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -790,7 +819,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> orderAdjustments() {
+	public List<OrderAdjustment> orderAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -801,7 +830,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> orderItemChanges() {
+	public List<OrderItemChange> orderItemChanges() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -812,7 +841,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> orderItemPriceInfos() {
+	public List<OrderItemPriceInfo> orderItemPriceInfos() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -823,7 +852,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> orderNotifications() {
+	public List<OrderNotification> orderNotifications() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -834,7 +863,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> orderPaymentPreferences() {
+	public List<OrderPaymentPreference> orderPaymentPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -845,7 +874,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> orderStatuss() {
+	public List<OrderStatus> orderStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -856,7 +885,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> primaryPicklistBins() {
+	public List<PicklistBin> primaryPicklistBins() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -867,7 +896,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> primaryShipments() {
+	public List<Shipment> primaryShipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -878,7 +907,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> purchaseFixedAssetMaints() {
+	public List<FixedAssetMaint> purchaseFixedAssetMaints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -889,7 +918,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> replacementReturnItemResponses() {
+	public List<ReturnItemResponse> replacementReturnItemResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -900,7 +929,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> returnItems() {
+	public List<ReturnItem> returnItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -911,7 +940,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentReceipts() {
+	public List<ShipmentReceipt> shipmentReceipts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -922,7 +951,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> subscriptions() {
+	public List<Subscription> subscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -933,7 +962,7 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public List<String> surveyResponses() {
+	public List<SurveyResponse> surveyResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -9,11 +9,12 @@ package org.abchip.mimo.biz.marketing.contact.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.contact.ContactList;
 import org.abchip.mimo.biz.marketing.contact.ContactListType;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ContactListImpl extends BizEntityTypedImpl<ContactListType> implements ContactList {
+public class ContactListImpl extends BizEntityImpl implements ContactList {
 	/**
 	 * 
 	 */
@@ -419,7 +420,7 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> communicationEvents() {
+	public List<CommunicationEvent> communicationEvents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

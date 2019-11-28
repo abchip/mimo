@@ -9,8 +9,10 @@ package org.abchip.mimo.biz.product.product.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.ProductMaint;
 import org.abchip.mimo.biz.product.product.ProductMeter;
 import org.abchip.mimo.biz.product.product.ProductMeterType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
@@ -31,7 +33,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implements ProductMeterType {
+public class ProductMeterTypeImpl extends BizEntityImpl implements ProductMeterType {
 	/**
 	 * 
 	 */
@@ -102,7 +104,7 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> intervalFixedAssetMaints() {
+	public List<FixedAssetMaint> intervalFixedAssetMaints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -114,7 +116,7 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> intervalProductMaints() {
+	public List<ProductMaint> intervalProductMaints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -126,7 +128,7 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> productMeters() {
+	public List<ProductMeter> productMeters() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

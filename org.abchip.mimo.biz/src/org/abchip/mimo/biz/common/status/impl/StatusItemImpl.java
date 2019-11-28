@@ -9,10 +9,59 @@ package org.abchip.mimo.biz.common.status.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.budget.BudgetStatus;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
+import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
+import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.status.StatusPackage;
 import org.abchip.mimo.biz.common.status.StatusType;
+import org.abchip.mimo.biz.common.status.StatusValidChange;
+import org.abchip.mimo.biz.content.content.Content;
+import org.abchip.mimo.biz.content.content.ContentApproval;
+import org.abchip.mimo.biz.content.data.DataResource;
+import org.abchip.mimo.biz.content.survey.SurveyResponse;
+import org.abchip.mimo.biz.entity.test.TestingStatus;
+import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
+import org.abchip.mimo.biz.humanres.employment.UnemploymentClaim;
+import org.abchip.mimo.biz.humanres.position.EmplPosition;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
+import org.abchip.mimo.biz.order.order.OrderDeliverySchedule;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.order.OrderItem;
+import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
+import org.abchip.mimo.biz.order.order.OrderStatus;
+import org.abchip.mimo.biz.order.quote.Quote;
+import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.order.request.CustRequestItem;
+import org.abchip.mimo.biz.order.request.CustRequestStatus;
+import org.abchip.mimo.biz.order.requirement.Requirement;
+import org.abchip.mimo.biz.order.requirement.RequirementStatus;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
+import org.abchip.mimo.biz.order.return_.ReturnItem;
+import org.abchip.mimo.biz.order.return_.ReturnStatus;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.PartyInvitation;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
+import org.abchip.mimo.biz.product.product.ProductGroupOrder;
+import org.abchip.mimo.biz.product.product.ProductReview;
+import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.service.schedule.JobSandbox;
+import org.abchip.mimo.biz.shipment.picklist.Picklist;
+import org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentStatus;
+import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -145,8 +194,8 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getShipmentStatuss() {
-		return (List<String>)eGet(StatusPackage.Literals.STATUS_ITEM__SHIPMENT_STATUSS, true);
+	public List<ShipmentStatus> getShipmentStatuss() {
+		return (List<ShipmentStatus>)eGet(StatusPackage.Literals.STATUS_ITEM__SHIPMENT_STATUSS, true);
 	}
 
 	/**
@@ -156,8 +205,8 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getMainStatusValidChanges() {
-		return (List<String>)eGet(StatusPackage.Literals.STATUS_ITEM__MAIN_STATUS_VALID_CHANGES, true);
+	public List<StatusValidChange> getMainStatusValidChanges() {
+		return (List<StatusValidChange>)eGet(StatusPackage.Literals.STATUS_ITEM__MAIN_STATUS_VALID_CHANGES, true);
 	}
 
 	/**
@@ -166,7 +215,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTransEntries() {
+	public List<AcctgTransEntry> acctgTransEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -178,7 +227,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -190,7 +239,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> approvalContentApprovals() {
+	public List<ContentApproval> approvalContentApprovals() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -202,7 +251,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> budgetStatuss() {
+	public List<BudgetStatus> budgetStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -214,7 +263,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> carrierServiceShipmentRouteSegments() {
+	public List<ShipmentRouteSegment> carrierServiceShipmentRouteSegments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -226,7 +275,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> communicationEvents() {
+	public List<CommunicationEvent> communicationEvents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -238,7 +287,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> contents() {
+	public List<Content> contents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -250,7 +299,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> currentWorkEfforts() {
+	public List<WorkEffort> currentWorkEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -262,7 +311,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequestItems() {
+	public List<CustRequestItem> custRequestItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -274,7 +323,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequestStatuss() {
+	public List<CustRequestStatus> custRequestStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -286,7 +335,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequests() {
+	public List<CustRequest> custRequests() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -298,7 +347,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> dataResources() {
+	public List<DataResource> dataResources() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -310,7 +359,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> digitalItemApprovedProductStores() {
+	public List<ProductStore> digitalItemApprovedProductStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -322,7 +371,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> emplPositions() {
+	public List<EmplPosition> emplPositions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -334,7 +383,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> employmentApps() {
+	public List<EmploymentApp> employmentApps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -346,7 +395,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> finAccountTranss() {
+	public List<FinAccountTrans> finAccountTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -358,7 +407,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> fixedAssetMaints() {
+	public List<FixedAssetMaint> fixedAssetMaints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -370,7 +419,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> glReconciliations() {
+	public List<GlReconciliation> glReconciliations() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -382,7 +431,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> headerApprovedProductStores() {
+	public List<ProductStore> headerApprovedProductStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -394,7 +443,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> headerCancelProductStores() {
+	public List<ProductStore> headerCancelProductStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -406,7 +455,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> headerDeclinedProductStores() {
+	public List<ProductStore> headerDeclinedProductStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -418,7 +467,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryItems() {
+	public List<InventoryItem> inventoryItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -430,7 +479,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryReturnItems() {
+	public List<ReturnItem> inventoryReturnItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -442,7 +491,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryTransfers() {
+	public List<InventoryTransfer> inventoryTransfers() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -454,7 +503,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> invoices() {
+	public List<Invoice> invoices() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -466,7 +515,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> itemApprovedProductStores() {
+	public List<ProductStore> itemApprovedProductStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -478,7 +527,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> itemCancelProductStores() {
+	public List<ProductStore> itemCancelProductStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -490,7 +539,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> itemDeclinedProductStores() {
+	public List<ProductStore> itemDeclinedProductStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -502,7 +551,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> jobSandboxs() {
+	public List<JobSandbox> jobSandboxs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -514,7 +563,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> marketingCampaigns() {
+	public List<MarketingCampaign> marketingCampaigns() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -526,7 +575,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> orderDeliverySchedules() {
+	public List<OrderDeliverySchedule> orderDeliverySchedules() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -538,7 +587,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> orderHeaders() {
+	public List<OrderHeader> orderHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -550,7 +599,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> orderItems() {
+	public List<OrderItem> orderItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -562,7 +611,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> orderPaymentPreferences() {
+	public List<OrderPaymentPreference> orderPaymentPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -574,7 +623,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> orderStatuss() {
+	public List<OrderStatus> orderStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -586,7 +635,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> parties() {
+	public List<Party> parties() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -598,7 +647,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> partyInvitations() {
+	public List<PartyInvitation> partyInvitations() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -610,7 +659,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> payments() {
+	public List<Payment> payments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -622,7 +671,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> picklistStatusHistories() {
+	public List<PicklistStatusHistory> picklistStatusHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -634,7 +683,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> picklists() {
+	public List<Picklist> picklists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -646,7 +695,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> productGroupOrders() {
+	public List<ProductGroupOrder> productGroupOrders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -658,7 +707,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> productReviews() {
+	public List<ProductReview> productReviews() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -670,7 +719,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> quotes() {
+	public List<Quote> quotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -682,7 +731,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> requirementStatuss() {
+	public List<RequirementStatus> requirementStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -694,7 +743,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> requirements() {
+	public List<Requirement> requirements() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -706,7 +755,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> returnHeaders() {
+	public List<ReturnHeader> returnHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -718,7 +767,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> returnItems() {
+	public List<ReturnItem> returnItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -730,7 +779,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> returnStatuss() {
+	public List<ReturnStatus> returnStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -742,7 +791,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> shipments() {
+	public List<Shipment> shipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -754,7 +803,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> surveyResponses() {
+	public List<SurveyResponse> surveyResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -766,7 +815,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> syncOrderHeaders() {
+	public List<OrderHeader> syncOrderHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -778,7 +827,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> syncOrderItems() {
+	public List<OrderItem> syncOrderItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -790,7 +839,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> testingStatuss() {
+	public List<TestingStatus> testingStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -802,7 +851,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> timesheets() {
+	public List<Timesheet> timesheets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -814,7 +863,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> toPicklistStatusHistories() {
+	public List<PicklistStatusHistory> toPicklistStatusHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -826,7 +875,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> toStatusValidChanges() {
+	public List<StatusValidChange> toStatusValidChanges() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -838,7 +887,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> unemploymentClaims() {
+	public List<UnemploymentClaim> unemploymentClaims() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -850,7 +899,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public List<String> workEffortInventoryAssigns() {
+	public List<WorkEffortInventoryAssign> workEffortInventoryAssigns() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

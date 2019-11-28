@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.product.product.ProductGroupOrder;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
@@ -657,11 +658,10 @@ public interface JobSandbox extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductGroupOrder' route='jobId'"
 	 * @generated
 	 */
-	List<String> productGroupOrders();
+	List<ProductGroupOrder> productGroupOrders();
 
 } // JobSandbox

@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.product.catalog;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame title='Catalog Category Association Type' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
-public interface ProdCatalogCategoryType extends BizEntityType<ProdCatalogCategory> {
+public interface ProdCatalogCategoryType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,12 +85,11 @@ public interface ProdCatalogCategoryType extends BizEntityType<ProdCatalogCatego
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProdCatalogCategoryType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childProdCatalogCategoryTypes();
+	List<ProdCatalogCategoryType> childProdCatalogCategoryTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Prod Catalog Category Type Id</b></em>' attribute.

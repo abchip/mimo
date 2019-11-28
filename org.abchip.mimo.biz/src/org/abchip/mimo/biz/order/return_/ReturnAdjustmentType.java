@@ -112,32 +112,29 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustmentType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childReturnAdjustmentTypes();
+	List<ReturnAdjustmentType> childReturnAdjustmentTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='returnAdjustmentTypeId'"
 	 * @generated
 	 */
-	List<String> returnAdjustments();
+	List<ReturnAdjustment> returnAdjustments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItemTypeMap' route='returnItemTypeId'"
 	 * @generated
 	 */
-	List<String> returnItemTypeMaps();
+	List<ReturnItemTypeMap> returnItemTypeMaps();
 
 	/**
 	 * Returns the value of the '<em><b>Return Adjustment Type Id</b></em>' attribute.

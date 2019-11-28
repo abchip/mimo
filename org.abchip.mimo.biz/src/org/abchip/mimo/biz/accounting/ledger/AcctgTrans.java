@@ -617,40 +617,38 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	void setWorkEffortId(WorkEffort value);
 
 	/**
-	 * Returns the value of the '<em><b>Acctg Trans Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Acctg Trans Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.AcctgTransAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Acctg Trans Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Acctg Trans Attributes</em>' attribute list.
+	 * @return the value of the '<em>Acctg Trans Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_AcctgTransAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransAttribute'"
 	 * @generated
 	 */
-	List<String> getAcctgTransAttributes();
+	List<AcctgTransAttribute> getAcctgTransAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Acctg Trans Entries</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Acctg Trans Entries</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Acctg Trans Entries</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Acctg Trans Entries</em>' attribute list.
+	 * @return the value of the '<em>Acctg Trans Entries</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_AcctgTransEntries()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry'"
 	 * @generated
 	 */
-	List<String> getAcctgTransEntries();
+	List<AcctgTransEntry> getAcctgTransEntries();
 
 	/**
 	 * Returns the value of the '<em><b>Gl Journal Id</b></em>' reference.

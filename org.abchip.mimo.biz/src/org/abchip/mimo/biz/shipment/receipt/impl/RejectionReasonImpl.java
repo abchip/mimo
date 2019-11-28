@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.receipt.ReceiptPackage;
 import org.abchip.mimo.biz.shipment.receipt.RejectionReason;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -79,7 +80,7 @@ public class RejectionReasonImpl extends BizEntityImpl implements RejectionReaso
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentReceipts() {
+	public List<ShipmentReceipt> shipmentReceipts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -10,7 +10,7 @@ package org.abchip.mimo.biz.accounting.ledger.impl;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountCategory;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class GlAccountCategoryImpl extends BizEntityTypedImpl<GlAccountCategoryType> implements GlAccountCategory {
+public class GlAccountCategoryImpl extends BizEntityImpl implements GlAccountCategory {
 	/**
 	 * 
 	 */

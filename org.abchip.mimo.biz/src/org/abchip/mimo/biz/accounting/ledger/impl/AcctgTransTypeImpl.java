@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransType;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransTypeAttr;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -123,8 +124,8 @@ public class AcctgTransTypeImpl extends BizEntityTypeImpl<AcctgTrans> implements
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getAcctgTransTypeAttrs() {
-		return (List<String>)eGet(LedgerPackage.Literals.ACCTG_TRANS_TYPE__ACCTG_TRANS_TYPE_ATTRS, true);
+	public List<AcctgTransTypeAttr> getAcctgTransTypeAttrs() {
+		return (List<AcctgTransTypeAttr>)eGet(LedgerPackage.Literals.ACCTG_TRANS_TYPE__ACCTG_TRANS_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -133,7 +134,7 @@ public class AcctgTransTypeImpl extends BizEntityTypeImpl<AcctgTrans> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +146,7 @@ public class AcctgTransTypeImpl extends BizEntityTypeImpl<AcctgTrans> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> childAcctgTransTypes() {
+	public List<AcctgTransType> childAcctgTransTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

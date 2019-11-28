@@ -1148,8 +1148,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacility_FacilityAttributes() {
-		return (EAttribute)facilityEClass.getEStructuralFeatures().get(7);
+	public EReference getFacility_FacilityAttributes() {
+		return (EReference)facilityEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1158,8 +1158,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacility_FacilityLocations() {
-		return (EAttribute)facilityEClass.getEStructuralFeatures().get(8);
+	public EReference getFacility_FacilityLocations() {
+		return (EReference)facilityEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2068,8 +2068,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFacilityType_FacilityTypeAttrs() {
-		return (EAttribute)facilityTypeEClass.getEStructuralFeatures().get(2);
+	public EReference getFacilityType_FacilityTypeAttrs() {
+		return (EReference)facilityTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2305,8 +2305,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		createEReference(facilityEClass, FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID);
 		createEReference(facilityEClass, FACILITY__DEFAULT_WEIGHT_UOM_ID);
 		createEAttribute(facilityEClass, FACILITY__DESCRIPTION);
-		createEAttribute(facilityEClass, FACILITY__FACILITY_ATTRIBUTES);
-		createEAttribute(facilityEClass, FACILITY__FACILITY_LOCATIONS);
+		createEReference(facilityEClass, FACILITY__FACILITY_ATTRIBUTES);
+		createEReference(facilityEClass, FACILITY__FACILITY_LOCATIONS);
 		createEAttribute(facilityEClass, FACILITY__FACILITY_NAME);
 		createEAttribute(facilityEClass, FACILITY__FACILITY_SIZE);
 		createEReference(facilityEClass, FACILITY__FACILITY_SIZE_UOM_ID);
@@ -2422,7 +2422,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		facilityTypeEClass = createEClass(FACILITY_TYPE);
 		createEAttribute(facilityTypeEClass, FACILITY_TYPE__FACILITY_TYPE_ID);
 		createEAttribute(facilityTypeEClass, FACILITY_TYPE__DESCRIPTION);
-		createEAttribute(facilityTypeEClass, FACILITY_TYPE__FACILITY_TYPE_ATTRS);
+		createEReference(facilityTypeEClass, FACILITY_TYPE__FACILITY_TYPE_ATTRS);
 		createEAttribute(facilityTypeEClass, FACILITY_TYPE__HAS_TABLE);
 		createEReference(facilityTypeEClass, FACILITY_TYPE__PARENT_TYPE_ID);
 
@@ -2473,59 +2473,48 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		InventoryPackage theInventoryPackage = (InventoryPackage)EPackage.Registry.INSTANCE.getEPackage(InventoryPackage.eNS_URI);
 		GeoPackage theGeoPackage = (GeoPackage)EPackage.Registry.INSTANCE.getEPackage(GeoPackage.eNS_URI);
 		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
-		InventoryPackage theInventoryPackage = (InventoryPackage)EPackage.Registry.INSTANCE.getEPackage(InventoryPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
 		Shipment_Package theShipment_Package = (Shipment_Package)EPackage.Registry.INSTANCE.getEPackage(Shipment_Package.eNS_URI);
+		FixedassetPackage theFixedassetPackage = (FixedassetPackage)EPackage.Registry.INSTANCE.getEPackage(FixedassetPackage.eNS_URI);
+		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
+		PicklistPackage thePicklistPackage = (PicklistPackage)EPackage.Registry.INSTANCE.getEPackage(PicklistPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
+		SupplierPackage theSupplierPackage = (SupplierPackage)EPackage.Registry.INSTANCE.getEPackage(SupplierPackage.eNS_URI);
+		RequirementPackage theRequirementPackage = (RequirementPackage)EPackage.Registry.INSTANCE.getEPackage(RequirementPackage.eNS_URI);
+		ReturnPackage theReturnPackage = (ReturnPackage)EPackage.Registry.INSTANCE.getEPackage(ReturnPackage.eNS_URI);
+		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
 		org.abchip.mimo.biz.party.contact.ContactPackage theContactPackage_1 = (org.abchip.mimo.biz.party.contact.ContactPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.contact.ContactPackage.eNS_URI);
 		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
 		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
-		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		EGenericType g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		EGenericType g2 = createEGenericType(this.getContainerType());
-		g1.getETypeArguments().add(g2);
-		containerEClass.getEGenericSuperTypes().add(g1);
+		containerEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		containerGeoPointEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getContainer());
-		g1.getETypeArguments().add(g2);
-		containerTypeEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		g2 = createEGenericType(this.getFacilityType());
+		containerTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
+		EGenericType g1 = createEGenericType(theBizPackage.getBizEntityTyped());
+		EGenericType g2 = createEGenericType(this.getFacilityType());
 		g1.getETypeArguments().add(g2);
 		facilityEClass.getEGenericSuperTypes().add(g1);
 		facilityAttributeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		g2 = createEGenericType(this.getFacilityCalendarType());
-		g1.getETypeArguments().add(g2);
-		facilityCalendarEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getFacilityCalendar());
-		g1.getETypeArguments().add(g2);
-		facilityCalendarTypeEClass.getEGenericSuperTypes().add(g1);
+		facilityCalendarEClass.getESuperTypes().add(theBizPackage.getBizEntity());
+		facilityCalendarTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		facilityCarrierShipmentEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		facilityContactMechEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		facilityContactMechPurposeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		facilityContentEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		g2 = createEGenericType(this.getFacilityGroupType());
-		g1.getETypeArguments().add(g2);
-		facilityGroupEClass.getEGenericSuperTypes().add(g1);
+		facilityGroupEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		facilityGroupMemberEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		facilityGroupRoleEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		facilityGroupRollupEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getFacilityGroup());
-		g1.getETypeArguments().add(g2);
-		facilityGroupTypeEClass.getEGenericSuperTypes().add(g1);
+		facilityGroupTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		facilityLocationEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		facilityLocationGeoPointEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		facilityPartyEClass.getESuperTypes().add(theBizPackage.getBizEntity());
@@ -2546,11 +2535,11 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		initEReference(getContainer_FacilityId(), this.getFacility(), null, "facilityId", null, 0, 1, org.abchip.mimo.biz.product.facility.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getContainer_FacilityId().getEKeys().add(this.getFacility_FacilityId());
 
-		addEOperation(containerEClass, ecorePackage.getEString(), "inventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(containerEClass, theInventoryPackage.getInventoryItem(), "inventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(containerEClass, ecorePackage.getEString(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(containerEClass, theInventoryPackage.getInventoryTransfer(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(containerEClass, ecorePackage.getEString(), "toInventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(containerEClass, theInventoryPackage.getInventoryTransfer(), "toInventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(containerGeoPointEClass, ContainerGeoPoint.class, "ContainerGeoPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContainerGeoPoint_ContainerId(), this.getContainer(), null, "containerId", null, 1, 1, ContainerGeoPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2564,7 +2553,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		initEAttribute(getContainerType_ContainerTypeId(), ecorePackage.getEString(), "containerTypeId", null, 1, 1, ContainerType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContainerType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ContainerType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(containerTypeEClass, ecorePackage.getEString(), "containers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(containerTypeEClass, this.getContainer(), "containers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(facilityEClass, Facility.class, "Facility", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFacility_FacilityId(), ecorePackage.getEString(), "facilityId", null, 1, 1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2577,8 +2566,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		initEReference(getFacility_DefaultWeightUomId(), theUomPackage.getUom(), null, "defaultWeightUomId", null, 0, 1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacility_DefaultWeightUomId().getEKeys().add(theUomPackage.getUom_UomId());
 		initEAttribute(getFacility_Description(), ecorePackage.getEString(), "description", null, 0, 1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFacility_FacilityAttributes(), ecorePackage.getEString(), "facilityAttributes", null, 0, -1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFacility_FacilityLocations(), ecorePackage.getEString(), "facilityLocations", null, 0, -1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacility_FacilityAttributes(), this.getFacilityAttribute(), null, "facilityAttributes", null, 0, -1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacility_FacilityLocations(), this.getFacilityLocation(), null, "facilityLocations", null, 0, -1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacility_FacilityName(), ecorePackage.getEString(), "facilityName", null, 0, 1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacility_FacilitySize(), ecorePackage.getEBigDecimal(), "facilitySize", null, 0, 1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFacility_FacilitySizeUomId(), theUomPackage.getUom(), null, "facilitySizeUomId", null, 0, 1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2598,47 +2587,47 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		initEReference(getFacility_ProductStoreId(), theStorePackage.getProductStore(), null, "productStoreId", null, 0, 1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacility_ProductStoreId().getEKeys().add(theStorePackage.getProductStore_ProductStoreId());
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "childFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, this.getFacility(), "childFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "containers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, this.getContainer(), "containers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "destDeliveries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theShipment_Package.getDelivery(), "destDeliveries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "destShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theShipment_Package.getShipmentRouteSegment(), "destShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "destinationShipments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theShipment_Package.getShipment(), "destinationShipments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "inventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theInventoryPackage.getInventoryItem(), "inventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theInventoryPackage.getInventoryTransfer(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "locatedAtFixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theFixedassetPackage.getFixedAsset(), "locatedAtFixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "orderItemShipGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theOrderPackage.getOrderItemShipGroup(), "orderItemShipGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "originDeliveries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theShipment_Package.getDelivery(), "originDeliveries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "originOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theOrderPackage.getOrderHeader(), "originOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "originShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theShipment_Package.getShipmentRouteSegment(), "originShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "originShipments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theShipment_Package.getShipment(), "originShipments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "picklists", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, thePicklistPackage.getPicklist(), "picklists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "productFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, this.getProductFacility(), "productFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "products", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theProductPackage.getProduct(), "products", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "reorderGuidelines", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theSupplierPackage.getReorderGuideline(), "reorderGuidelines", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theRequirementPackage.getRequirement(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theReturnPackage.getReturnHeader(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "toInventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theInventoryPackage.getInventoryTransfer(), "toInventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityEClass, theWorkeffortPackage.getWorkEffort(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(facilityAttributeEClass, FacilityAttribute.class, "FacilityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFacilityAttribute_FacilityId(), this.getFacility(), null, "facilityId", null, 1, 1, FacilityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2707,7 +2696,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		initEReference(getFacilityGroup_PrimaryParentGroupId(), this.getFacilityGroup(), null, "primaryParentGroupId", null, 0, 1, FacilityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityGroup_PrimaryParentGroupId().getEKeys().add(this.getFacilityGroup_FacilityGroupId());
 
-		addEOperation(facilityGroupEClass, ecorePackage.getEString(), "facilities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityGroupEClass, this.getFacility(), "facilities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(facilityGroupMemberEClass, FacilityGroupMember.class, "FacilityGroupMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFacilityGroupMember_FacilityId(), this.getFacility(), null, "facilityId", null, 1, 1, FacilityGroupMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2739,7 +2728,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		initEAttribute(getFacilityGroupType_FacilityGroupTypeId(), ecorePackage.getEString(), "facilityGroupTypeId", null, 1, 1, FacilityGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityGroupType_Description(), ecorePackage.getEString(), "description", null, 0, 1, FacilityGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(facilityGroupTypeEClass, ecorePackage.getEString(), "facilityGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityGroupTypeEClass, this.getFacilityGroup(), "facilityGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(facilityLocationEClass, FacilityLocation.class, "FacilityLocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFacilityLocation_FacilityId(), this.getFacility(), null, "facilityId", null, 1, 1, FacilityLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2776,14 +2765,14 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		initEClass(facilityTypeEClass, FacilityType.class, "FacilityType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFacilityType_FacilityTypeId(), ecorePackage.getEString(), "facilityTypeId", null, 1, 1, FacilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityType_Description(), ecorePackage.getEString(), "description", null, 0, 1, FacilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFacilityType_FacilityTypeAttrs(), ecorePackage.getEString(), "facilityTypeAttrs", null, 0, -1, FacilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacilityType_FacilityTypeAttrs(), this.getFacilityTypeAttr(), null, "facilityTypeAttrs", null, 0, -1, FacilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, FacilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFacilityType_ParentTypeId(), this.getFacilityType(), null, "parentTypeId", null, 0, 1, FacilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityType_ParentTypeId().getEKeys().add(this.getFacilityType_FacilityTypeId());
 
-		addEOperation(facilityTypeEClass, ecorePackage.getEString(), "childFacilityTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityTypeEClass, this.getFacilityType(), "childFacilityTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(facilityTypeEClass, ecorePackage.getEString(), "facilities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(facilityTypeEClass, this.getFacility(), "facilities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(facilityTypeAttrEClass, FacilityTypeAttr.class, "FacilityTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFacilityTypeAttr_FacilityTypeId(), this.getFacilityType(), null, "facilityTypeId", null, 1, 1, FacilityTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2815,12 +2804,12 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -2996,27 +2985,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (containerEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (containerEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (containerEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContainer_ContainerId(),
 		   source,
 		   new String[] {
@@ -3043,13 +3011,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (containerTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContainerType_ContainerTypeId(),
 		   source,
 		   new String[] {
@@ -3062,153 +3023,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(8),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(9),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(10),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(11),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(12),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(13),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(14),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(15),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(16),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(17),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(18),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(19),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityEClass.getEOperations().get(20),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFacility_FacilityId(),
@@ -3237,20 +3051,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getFacility_FacilityAttributes(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getFacility_FacilityLocations(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFacility_FacilityName(),
@@ -3400,13 +3200,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (facilityGroupEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFacilityGroup_FacilityGroupId(),
 		   source,
 		   new String[] {
@@ -3466,13 +3259,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (facilityGroupTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFacilityGroupType_FacilityGroupTypeId(),
@@ -3569,20 +3355,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (facilityTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (facilityTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getFacilityType_FacilityTypeId(),
 		   source,
 		   new String[] {
@@ -3595,13 +3367,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getFacilityType_FacilityTypeAttrs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getFacilityType_HasTable(),

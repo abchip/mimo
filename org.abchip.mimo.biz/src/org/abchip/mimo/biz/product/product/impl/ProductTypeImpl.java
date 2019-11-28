@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductType;
+import org.abchip.mimo.biz.product.product.ProductTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -186,8 +187,8 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductTypeAttrs() {
-		return (List<String>)eGet(ProductPackage.Literals.PRODUCT_TYPE__PRODUCT_TYPE_ATTRS, true);
+	public List<ProductTypeAttr> getProductTypeAttrs() {
+		return (List<ProductTypeAttr>)eGet(ProductPackage.Literals.PRODUCT_TYPE__PRODUCT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -196,7 +197,7 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	 * @generated
 	 */
 	@Override
-	public List<String> childProductTypes() {
+	public List<ProductType> childProductTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -208,7 +209,7 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	 * @generated
 	 */
 	@Override
-	public List<String> products() {
+	public List<Product> products() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

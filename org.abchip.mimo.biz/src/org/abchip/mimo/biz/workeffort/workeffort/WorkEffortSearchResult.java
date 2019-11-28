@@ -221,21 +221,20 @@ public interface WorkEffortSearchResult extends BizEntity {
 	void setIsAscending(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Search Constraints</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Work Effort Search Constraints</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Search Constraints</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Search Constraints</em>' attribute list.
+	 * @return the value of the '<em>Work Effort Search Constraints</em>' reference list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult_WorkEffortSearchConstraints()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortSearchConstraint'"
 	 * @generated
 	 */
-	List<String> getWorkEffortSearchConstraints();
+	List<WorkEffortSearchConstraint> getWorkEffortSearchConstraints();
 
 } // WorkEffortSearchResult

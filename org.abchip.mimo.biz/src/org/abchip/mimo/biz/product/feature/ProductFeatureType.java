@@ -112,22 +112,20 @@ public interface ProductFeatureType extends BizEntityType<ProductFeature> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeatureType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childProductFeatureTypes();
+	List<ProductFeatureType> childProductFeatureTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeature' route='productFeatureTypeId'"
 	 * @generated
 	 */
-	List<String> productFeatures();
+	List<ProductFeature> productFeatures();
 
 	/**
 	 * Returns the value of the '<em><b>Product Feature Type Id</b></em>' attribute.

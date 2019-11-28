@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.party;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.marketing.segment.SegmentGroupClassification;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,22 +113,20 @@ public interface PartyClassificationGroup extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyClassificationGroup' route='parentGroupId'"
 	 * @generated
 	 */
-	List<String> childPartyClassificationGroups();
+	List<PartyClassificationGroup> childPartyClassificationGroups();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SegmentGroupClassification' route='partyClassificationGroupId'"
 	 * @generated
 	 */
-	List<String> segmentGroupClassifications();
+	List<SegmentGroupClassification> segmentGroupClassifications();
 
 	/**
 	 * Returns the value of the '<em><b>Party Classification Group Id</b></em>' attribute.

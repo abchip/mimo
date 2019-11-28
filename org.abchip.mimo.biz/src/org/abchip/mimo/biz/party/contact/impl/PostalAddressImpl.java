@@ -13,6 +13,8 @@ import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.PostalAddressBoundary;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -416,8 +418,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPostalAddressBoundaries() {
-		return (List<String>)eGet(ContactPackage.Literals.POSTAL_ADDRESS__POSTAL_ADDRESS_BOUNDARIES, true);
+	public List<PostalAddressBoundary> getPostalAddressBoundaries() {
+		return (List<PostalAddressBoundary>)eGet(ContactPackage.Literals.POSTAL_ADDRESS__POSTAL_ADDRESS_BOUNDARIES, true);
 	}
 
 	/**
@@ -426,7 +428,7 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public List<String> destinationShipments() {
+	public List<Shipment> destinationShipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

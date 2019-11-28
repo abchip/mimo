@@ -8,8 +8,7 @@
 package org.abchip.mimo.biz.humanres.employment;
 
 import java.util.Date;
-
-import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.party.party.Party;
 
 /**
@@ -35,7 +34,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * @model
  * @generated
  */
-public interface Employment extends BizEntity {
+public interface Employment extends BizEntityTyped<TerminationType> {
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->

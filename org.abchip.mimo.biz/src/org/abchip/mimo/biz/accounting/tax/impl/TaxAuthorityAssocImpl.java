@@ -12,7 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssoc;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssocType;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocType> implements TaxAuthorityAssoc {
+public class TaxAuthorityAssocImpl extends BizEntityImpl implements TaxAuthorityAssoc {
 	/**
 	 * 
 	 */

@@ -10,8 +10,9 @@ package org.abchip.mimo.biz.humanres.ability.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
+import org.abchip.mimo.biz.humanres.ability.PersonTraining;
 import org.abchip.mimo.biz.humanres.ability.TrainingClassType;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TrainingClassTypeImpl extends BizEntityImpl implements TrainingClassType {
+public class TrainingClassTypeImpl extends BizEntityTypeImpl<PersonTraining> implements TrainingClassType {
 	/**
 	 * 
 	 */
@@ -121,7 +122,7 @@ public class TrainingClassTypeImpl extends BizEntityImpl implements TrainingClas
 	 * @generated
 	 */
 	@Override
-	public List<String> childTrainingClassTypes() {
+	public List<TrainingClassType> childTrainingClassTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

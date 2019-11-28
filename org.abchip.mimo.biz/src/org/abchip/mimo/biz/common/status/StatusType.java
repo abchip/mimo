@@ -112,22 +112,20 @@ public interface StatusType extends BizEntityType<StatusItem> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='StatusType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childStatusTypes();
+	List<StatusType> childStatusTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='StatusItem' route='statusTypeId'"
 	 * @generated
 	 */
-	List<String> statusItems();
+	List<StatusItem> statusItems();
 
 	/**
 	 * Returns the value of the '<em><b>Status Type Id</b></em>' attribute.

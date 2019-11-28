@@ -10,7 +10,10 @@ package org.abchip.mimo.biz.product.inventory.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.inventory.InventoryItemDetail;
+import org.abchip.mimo.biz.product.inventory.InventoryItemVariance;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.PhysicalInventory;
 import org.eclipse.emf.ecore.EClass;
@@ -122,7 +125,7 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -134,7 +137,7 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryItemDetails() {
+	public List<InventoryItemDetail> inventoryItemDetails() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -146,7 +149,7 @@ public class PhysicalInventoryImpl extends BizEntityImpl implements PhysicalInve
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryItemVariances() {
+	public List<InventoryItemVariance> inventoryItemVariances() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

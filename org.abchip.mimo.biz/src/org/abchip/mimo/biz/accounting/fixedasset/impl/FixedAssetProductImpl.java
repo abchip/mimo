@@ -16,7 +16,7 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProductType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.ecore.EClass;
 
@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductType> implements FixedAssetProduct {
+public class FixedAssetProductImpl extends BizEntityImpl implements FixedAssetProduct {
 	/**
 	 * 
 	 */

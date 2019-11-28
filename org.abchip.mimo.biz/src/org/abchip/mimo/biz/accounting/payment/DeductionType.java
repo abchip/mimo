@@ -112,22 +112,20 @@ public interface DeductionType extends BizEntityType<Deduction> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DeductionType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childDeductionTypes();
+	List<DeductionType> childDeductionTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Deduction' route='deductionTypeId'"
 	 * @generated
 	 */
-	List<String> deductions();
+	List<Deduction> deductions();
 
 	/**
 	 * Returns the value of the '<em><b>Deduction Type Id</b></em>' attribute.

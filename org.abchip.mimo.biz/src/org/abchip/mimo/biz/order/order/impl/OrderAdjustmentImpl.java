@@ -16,9 +16,11 @@ import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.order.OrderAdjustment;
+import org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute;
 import org.abchip.mimo.biz.order.order.OrderAdjustmentType;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.ecore.EClass;
@@ -803,8 +805,8 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOrderAdjustmentAttributes() {
-		return (List<String>)eGet(OrderPackage.Literals.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_ATTRIBUTES, true);
+	public List<OrderAdjustmentAttribute> getOrderAdjustmentAttributes() {
+		return (List<OrderAdjustmentAttribute>)eGet(OrderPackage.Literals.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_ATTRIBUTES, true);
 	}
 
 	/**
@@ -813,7 +815,7 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public List<String> returnAdjustments() {
+	public List<ReturnAdjustment> returnAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

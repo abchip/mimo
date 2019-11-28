@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.webapp.visit;
 
 import java.util.Date;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
@@ -45,7 +45,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * @model
  * @generated
  */
-public interface ServerHit extends BizEntityTyped<ServerHitType> {
+public interface ServerHit extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Visit Id</b></em>' reference.
 	 * <!-- begin-user-doc -->

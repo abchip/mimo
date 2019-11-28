@@ -7,10 +7,9 @@
  */
 package org.abchip.mimo.biz.accounting.tax.impl;
 
-import org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssoc;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssocType;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -27,7 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TaxAuthorityAssocTypeImpl extends BizEntityTypeImpl<TaxAuthorityAssoc> implements TaxAuthorityAssocType {
+public class TaxAuthorityAssocTypeImpl extends BizEntityImpl implements TaxAuthorityAssocType {
 	/**
 	 * 
 	 */

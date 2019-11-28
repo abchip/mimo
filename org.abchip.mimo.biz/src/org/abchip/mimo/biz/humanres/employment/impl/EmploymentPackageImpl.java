@@ -2161,9 +2161,12 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		benefitTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		EGenericType g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		EGenericType g2 = createEGenericType(this.getEmplLeaveType());
+		EGenericType g1 = createEGenericType(theBizPackage.getBizEntityType());
+		EGenericType g2 = createEGenericType(this.getPartyBenefit());
+		g1.getETypeArguments().add(g2);
+		benefitTypeEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theBizPackage.getBizEntityTyped());
+		g2 = createEGenericType(this.getEmplLeaveType());
 		g1.getETypeArguments().add(g2);
 		emplLeaveEClass.getEGenericSuperTypes().add(g1);
 		emplLeaveReasonTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
@@ -2171,16 +2174,31 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		g2 = createEGenericType(this.getEmplLeave());
 		g1.getETypeArguments().add(g2);
 		emplLeaveTypeEClass.getEGenericSuperTypes().add(g1);
-		employmentEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		employmentAppEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		employmentAppSourceTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		partyBenefitEClass.getESuperTypes().add(theBizPackage.getBizEntity());
+		g1 = createEGenericType(theBizPackage.getBizEntityTyped());
+		g2 = createEGenericType(this.getTerminationType());
+		g1.getETypeArguments().add(g2);
+		employmentEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theBizPackage.getBizEntityTyped());
+		g2 = createEGenericType(this.getEmploymentAppSourceType());
+		g1.getETypeArguments().add(g2);
+		employmentAppEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theBizPackage.getBizEntityType());
+		g2 = createEGenericType(this.getEmploymentApp());
+		g1.getETypeArguments().add(g2);
+		employmentAppSourceTypeEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theBizPackage.getBizEntityTyped());
+		g2 = createEGenericType(this.getBenefitType());
+		g1.getETypeArguments().add(g2);
+		partyBenefitEClass.getEGenericSuperTypes().add(g1);
 		payGradeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		payHistoryEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		payrollPreferenceEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		salaryStepEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		terminationReasonEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		terminationTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
+		g1 = createEGenericType(theBizPackage.getBizEntityType());
+		g2 = createEGenericType(this.getEmployment());
+		g1.getETypeArguments().add(g2);
+		terminationTypeEClass.getEGenericSuperTypes().add(g1);
 		unemploymentClaimEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
 		// Initialize classes and features; add operations and parameters
@@ -2193,7 +2211,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getBenefitType_ParentTypeId(), this.getBenefitType(), null, "parentTypeId", null, 0, 1, BenefitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getBenefitType_ParentTypeId().getEKeys().add(this.getBenefitType_BenefitTypeId());
 
-		addEOperation(benefitTypeEClass, ecorePackage.getEString(), "childBenefitTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(benefitTypeEClass, this.getBenefitType(), "childBenefitTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplLeaveEClass, EmplLeave.class, "EmplLeave", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEmplLeave_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2217,7 +2235,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getEmplLeaveReasonType_ParentTypeId(), this.getEmplLeaveReasonType(), null, "parentTypeId", null, 0, 1, EmplLeaveReasonType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeaveReasonType_ParentTypeId().getEKeys().add(this.getEmplLeaveReasonType_EmplLeaveReasonTypeId());
 
-		addEOperation(emplLeaveReasonTypeEClass, ecorePackage.getEString(), "childEmplLeaveReasonTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(emplLeaveReasonTypeEClass, this.getEmplLeaveReasonType(), "childEmplLeaveReasonTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplLeaveTypeEClass, EmplLeaveType.class, "EmplLeaveType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmplLeaveType_LeaveTypeId(), ecorePackage.getEString(), "leaveTypeId", null, 1, 1, EmplLeaveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2226,7 +2244,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getEmplLeaveType_ParentTypeId(), this.getEmplLeaveType(), null, "parentTypeId", null, 0, 1, EmplLeaveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeaveType_ParentTypeId().getEKeys().add(this.getEmplLeaveType_LeaveTypeId());
 
-		addEOperation(emplLeaveTypeEClass, ecorePackage.getEString(), "childEmplLeaveTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(emplLeaveTypeEClass, this.getEmplLeaveType(), "childEmplLeaveTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(employmentEClass, Employment.class, "Employment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEmployment_PartyIdTo(), thePartyPackage.getParty(), null, "partyIdTo", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2267,9 +2285,9 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getEmploymentAppSourceType_ParentTypeId(), this.getEmploymentAppSourceType(), null, "parentTypeId", null, 0, 1, EmploymentAppSourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmploymentAppSourceType_ParentTypeId().getEKeys().add(this.getEmploymentAppSourceType_EmploymentAppSourceTypeId());
 
-		addEOperation(employmentAppSourceTypeEClass, ecorePackage.getEString(), "childEmploymentAppSourceTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(employmentAppSourceTypeEClass, this.getEmploymentAppSourceType(), "childEmploymentAppSourceTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(employmentAppSourceTypeEClass, ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(employmentAppSourceTypeEClass, this.getEmploymentApp(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(partyBenefitEClass, PartyBenefit.class, "PartyBenefit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPartyBenefit_PartyIdTo(), thePartyPackage.getParty(), null, "partyIdTo", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2349,7 +2367,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getTerminationType_ParentTypeId(), this.getTerminationType(), null, "parentTypeId", null, 0, 1, TerminationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTerminationType_ParentTypeId().getEKeys().add(this.getTerminationType_TerminationTypeId());
 
-		addEOperation(terminationTypeEClass, ecorePackage.getEString(), "childTerminationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(terminationTypeEClass, this.getTerminationType(), "childTerminationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(unemploymentClaimEClass, UnemploymentClaim.class, "UnemploymentClaim", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnemploymentClaim_UnemploymentClaimId(), ecorePackage.getEString(), "unemploymentClaimId", null, 1, 1, UnemploymentClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2367,12 +2385,12 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -2454,13 +2472,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (benefitTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getBenefitType_BenefitTypeId(),
 		   source,
 		   new String[] {
@@ -2514,13 +2525,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (emplLeaveReasonTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getEmplLeaveReasonType_EmplLeaveReasonTypeId(),
 		   source,
 		   new String[] {
@@ -2540,13 +2544,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (emplLeaveTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmplLeaveType_LeaveTypeId(),
@@ -2607,20 +2604,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (employmentAppSourceTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (employmentAppSourceTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmploymentAppSourceType_EmploymentAppSourceTypeId(),
@@ -2895,13 +2878,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (terminationTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getTerminationType_TerminationTypeId(),

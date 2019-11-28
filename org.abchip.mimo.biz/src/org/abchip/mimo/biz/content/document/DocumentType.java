@@ -138,41 +138,38 @@ public interface DocumentType extends BizEntityType<Document> {
 	void setParentTypeId(DocumentType value);
 
 	/**
-	 * Returns the value of the '<em><b>Document Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Document Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.document.DocumentTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Document Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Document Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Document Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentType_DocumentTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DocumentTypeAttr'"
 	 * @generated
 	 */
-	List<String> getDocumentTypeAttrs();
+	List<DocumentTypeAttr> getDocumentTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DocumentType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childDocumentTypes();
+	List<DocumentType> childDocumentTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Document' route='documentTypeId'"
 	 * @generated
 	 */
-	List<String> documents();
+	List<Document> documents();
 
 } // DocumentType

@@ -14,10 +14,12 @@ import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
+import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 
@@ -370,72 +372,66 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Payment Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.payment.PaymentAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Attributes</em>' attribute list.
+	 * @return the value of the '<em>Payment Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentAttribute'"
 	 * @generated
 	 */
-	List<String> getPaymentAttributes();
+	List<PaymentAttribute> getPaymentAttributes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='paymentId'"
 	 * @generated
 	 */
-	List<String> acctgTranss();
+	List<AcctgTrans> acctgTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Deduction' route='paymentId'"
 	 * @generated
 	 */
-	List<String> deductions();
+	List<Deduction> deductions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentApplication' route='paymentId'"
 	 * @generated
 	 */
-	List<String> paymentApplications();
+	List<PaymentApplication> paymentApplications();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItemResponse' route='paymentId'"
 	 * @generated
 	 */
-	List<String> returnItemResponses();
+	List<ReturnItemResponse> returnItemResponses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentApplication' route='toPaymentId'"
 	 * @generated
 	 */
-	List<String> toPaymentApplications();
+	List<PaymentApplication> toPaymentApplications();
 
 	/**
 	 * Returns the value of the '<em><b>Payment Type Id</b></em>' reference.

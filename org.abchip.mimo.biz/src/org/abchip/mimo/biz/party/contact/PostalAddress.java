@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.contact;
 import java.util.List;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 
 /**
  * <!-- begin-user-doc -->
@@ -488,31 +489,29 @@ public interface PostalAddress extends ContactMech {
 	void setToName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Postal Address Boundaries</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Postal Address Boundaries</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.PostalAddressBoundary}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Postal Address Boundaries</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Postal Address Boundaries</em>' attribute list.
+	 * @return the value of the '<em>Postal Address Boundaries</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_PostalAddressBoundaries()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PostalAddressBoundary'"
 	 * @generated
 	 */
-	List<String> getPostalAddressBoundaries();
+	List<PostalAddressBoundary> getPostalAddressBoundaries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='destinationContactMechId'"
 	 * @generated
 	 */
-	List<String> destinationShipments();
+	List<Shipment> destinationShipments();
 
 } // PostalAddress

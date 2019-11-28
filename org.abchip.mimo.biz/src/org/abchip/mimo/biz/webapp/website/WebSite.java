@@ -11,7 +11,10 @@ import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.theme.VisualThemeSet;
+import org.abchip.mimo.biz.content.website.WebAnalyticsConfig;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
 
 /**
  * <!-- begin-user-doc -->
@@ -496,51 +499,47 @@ public interface WebSite extends BizEntity {
 	void setWebappPath(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Web Analytics Configs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Web Analytics Configs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Web Analytics Configs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Web Analytics Configs</em>' attribute list.
+	 * @return the value of the '<em>Web Analytics Configs</em>' reference list.
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_WebAnalyticsConfigs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WebAnalyticsConfig'"
 	 * @generated
 	 */
-	List<String> getWebAnalyticsConfigs();
+	List<WebAnalyticsConfig> getWebAnalyticsConfigs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='webSiteId'"
 	 * @generated
 	 */
-	List<String> orderHeaders();
+	List<OrderHeader> orderHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionResource' route='webSiteId'"
 	 * @generated
 	 */
-	List<String> subscriptionResources();
+	List<SubscriptionResource> subscriptionResources();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WebPage' route='webSiteId'"
 	 * @generated
 	 */
-	List<String> webPages();
+	List<WebPage> webPages();
 
 } // WebSite

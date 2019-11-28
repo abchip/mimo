@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.product.Product;
@@ -306,70 +307,65 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Agreement Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.AgreementAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Attributes</em>' attribute list.
+	 * @return the value of the '<em>Agreement Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementAttribute'"
 	 * @generated
 	 */
-	List<String> getAgreementAttributes();
+	List<AgreementAttribute> getAgreementAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Items</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Agreement Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.AgreementItem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Items</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Items</em>' attribute list.
+	 * @return the value of the '<em>Agreement Items</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementItems()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementItem'"
 	 * @generated
 	 */
-	List<String> getAgreementItems();
+	List<AgreementItem> getAgreementItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Addendum' route='agreementId'"
 	 * @generated
 	 */
-	List<String> addendums();
+	List<Addendum> addendums();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementTerm' route='agreementId'"
 	 * @generated
 	 */
-	List<String> agreementTerms();
+	List<AgreementTerm> agreementTerms();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='supplierAgreementId'"
 	 * @generated
 	 */
-	List<String> supplierOrderItemShipGroups();
+	List<OrderItemShipGroup> supplierOrderItemShipGroups();
 
 	/**
 	 * Returns the value of the '<em><b>Agreement Type Id</b></em>' reference.

@@ -10,6 +10,51 @@ package org.abchip.mimo.biz.common.uom;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
+import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
+import org.abchip.mimo.biz.accounting.payment.BillingAccount;
+import org.abchip.mimo.biz.accounting.payment.BillingAccountTerm;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
+import org.abchip.mimo.biz.common.geo.GeoPoint;
+import org.abchip.mimo.biz.common.period.PeriodType;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory;
+import org.abchip.mimo.biz.order.order.OrderDeliverySchedule;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.order.OrderItem;
+import org.abchip.mimo.biz.order.quote.Quote;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
+import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.cost.CostComponent;
+import org.abchip.mimo.biz.product.cost.CostComponentCalc;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.product.ProductMaint;
+import org.abchip.mimo.biz.product.product.ProductMeter;
+import org.abchip.mimo.biz.product.product.ProductMeterType;
+import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.product.supplier.SupplierProductFeature;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentPackage;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,702 +183,633 @@ public interface Uom extends BizEntityTyped<UomType> {
 	void setUomTypeId(UomType value);
 
 	/**
-	 * Returns the value of the '<em><b>Main Uom Conversions</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Main Uom Conversions</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.common.uom.UomConversion}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Main Uom Conversions</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Main Uom Conversions</em>' attribute list.
+	 * @return the value of the '<em>Main Uom Conversions</em>' reference list.
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUom_MainUomConversions()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UomConversion'"
 	 * @generated
 	 */
-	List<String> getMainUomConversions();
+	List<UomConversion> getMainUomConversions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='actualCurrencyUomId'"
 	 * @generated
 	 */
-	List<String> actualCurrencyPayments();
+	List<Payment> actualCurrencyPayments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='availableTimeUomId'"
 	 * @generated
 	 */
-	List<String> availableTimeSubscriptions();
+	List<Subscription> availableTimeSubscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BillingAccountTerm' route='uomId'"
 	 * @generated
 	 */
-	List<String> billingAccountTerms();
+	List<BillingAccountTerm> billingAccountTerms();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BillingAccount' route='accountCurrencyUomId'"
 	 * @generated
 	 */
-	List<String> billingAccounts();
+	List<BillingAccount> billingAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='billingWeightUomId'"
 	 * @generated
 	 */
-	List<String> billingWeightShipmentRouteSegments();
+	List<ShipmentRouteSegment> billingWeightShipmentRouteSegments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='canclAutmExtTimeUomId'"
 	 * @generated
 	 */
-	List<String> cancelTimeSubscriptions();
+	List<Subscription> cancelTimeSubscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UomConversion' route='uomIdTo'"
 	 * @generated
 	 */
-	List<String> convToUomConversions();
+	List<UomConversion> convToUomConversions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponentCalc' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> costComponentCalcs();
+	List<CostComponentCalc> costComponentCalcs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> currencyAcctgTransEntries();
+	List<AcctgTransEntry> currencyAcctgTransEntries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponent' route='costUomId'"
 	 * @generated
 	 */
-	List<String> currencyCostComponents();
+	List<CostComponent> currencyCostComponents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequest' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> currencyCustRequests();
+	List<CustRequest> currencyCustRequests();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccount' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> currencyFinAccounts();
+	List<FinAccount> currencyFinAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> currencyInventoryItems();
+	List<InventoryItem> currencyInventoryItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> currencyInvoices();
+	List<Invoice> currencyInvoices();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> currencyPayments();
+	List<Payment> currencyPayments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> currencyShipmentRouteSegments();
+	List<ShipmentRouteSegment> currencyShipmentRouteSegments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> currencyShipments();
+	List<Shipment> currencyShipments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMeterType' route='defaultUomId'"
 	 * @generated
 	 */
-	List<String> defaultProductMeterTypes();
+	List<ProductMeterType> defaultProductMeterTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='depthUomId'"
 	 * @generated
 	 */
-	List<String> depthProducts();
+	List<Product> depthProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='diameterUomId'"
 	 * @generated
 	 */
-	List<String> diameterProducts();
+	List<Product> diameterProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Facility' route='defaultDimensionUomId'"
 	 * @generated
 	 */
-	List<String> dimensionFacilities();
+	List<Facility> dimensionFacilities();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentBoxType' route='dimensionUomId'"
 	 * @generated
 	 */
-	List<String> dimensionShipmentBoxTypes();
+	List<ShipmentBoxType> dimensionShipmentBoxTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentPackage' route='dimensionUomId'"
 	 * @generated
 	 */
-	List<String> dimensionShipmentPackages();
+	List<ShipmentPackage> dimensionShipmentPackages();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GeoPoint' route='elevationUomId'"
 	 * @generated
 	 */
-	List<String> elevationGeoPoints();
+	List<GeoPoint> elevationGeoPoints();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Facility' route='facilitySizeUomId'"
 	 * @generated
 	 */
-	List<String> facilitySizeFacilities();
+	List<Facility> facilitySizeFacilities();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAsset' route='uomId'"
 	 * @generated
 	 */
-	List<String> fixedAssets();
+	List<FixedAsset> fixedAssets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='gracePeriodOnExpiryUomId'"
 	 * @generated
 	 */
-	List<String> gracePeriodSubscriptions();
+	List<Subscription> gracePeriodSubscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='heightUomId'"
 	 * @generated
 	 */
-	List<String> heightProducts();
+	List<Product> heightProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetMaint' route='intervalUomId'"
 	 * @generated
 	 */
-	List<String> intervalFixedAssetMaints();
+	List<FixedAssetMaint> intervalFixedAssetMaints();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMaint' route='intervalUomId'"
 	 * @generated
 	 */
-	List<String> intervalProductMaints();
+	List<ProductMaint> intervalProductMaints();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='uomId'"
 	 * @generated
 	 */
-	List<String> inventoryItems();
+	List<InventoryItem> inventoryItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='uomId'"
 	 * @generated
 	 */
-	List<String> invoiceItems();
+	List<InvoiceItem> invoiceItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='MarketingCampaign' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> marketingCampaigns();
+	List<MarketingCampaign> marketingCampaigns();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='maxLifeTimeUomId'"
 	 * @generated
 	 */
-	List<String> maxLifeTimeSubscriptions();
+	List<Subscription> maxLifeTimeSubscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequest' route='maximumAmountUomId'"
 	 * @generated
 	 */
-	List<String> maximumAmountCustRequests();
+	List<CustRequest> maximumAmountCustRequests();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMeter' route='meterUomId'"
 	 * @generated
 	 */
-	List<String> meterProductMeters();
+	List<ProductMeter> meterProductMeters();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='moneyUomId'"
 	 * @generated
 	 */
-	List<String> moneyWorkEfforts();
+	List<WorkEffort> moneyWorkEfforts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='currencyUom'"
 	 * @generated
 	 */
-	List<String> orderHeaders();
+	List<OrderHeader> orderHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='origCurrencyUomId'"
 	 * @generated
 	 */
-	List<String> origCurrencyAcctgTransEntries();
+	List<AcctgTransEntry> origCurrencyAcctgTransEntries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Party' route='preferredCurrencyUomId'"
 	 * @generated
 	 */
-	List<String> parties();
+	List<Party> parties();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='baseCurrencyUomId'"
 	 * @generated
 	 */
-	List<String> partyAcctgPreferences();
+	List<PartyAcctgPreference> partyAcctgPreferences();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGatewayResponse' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> paymentGatewayResponses();
+	List<PaymentGatewayResponse> paymentGatewayResponses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PeriodType' route='uomId'"
 	 * @generated
 	 */
-	List<String> periodTypes();
+	List<PeriodType> periodTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='priceUomId'"
 	 * @generated
 	 */
-	List<String> priceShipmentCostEstimates();
+	List<ShipmentCostEstimate> priceShipmentCostEstimates();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeature' route='uomId'"
 	 * @generated
 	 */
-	List<String> productFeatures();
+	List<ProductFeature> productFeatures();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='defaultCurrencyUomId'"
 	 * @generated
 	 */
-	List<String> productStores();
+	List<ProductStore> productStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='quantityUomId'"
 	 * @generated
 	 */
-	List<String> quantityProducts();
+	List<Product> quantityProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastDetail' route='quantityUomId'"
 	 * @generated
 	 */
-	List<String> quantitySalesForecastDetails();
+	List<SalesForecastDetail> quantitySalesForecastDetails();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='quantityUomId'"
 	 * @generated
 	 */
-	List<String> quantityShipmentCostEstimates();
+	List<ShipmentCostEstimate> quantityShipmentCostEstimates();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteItem' route='uomId'"
 	 * @generated
 	 */
-	List<String> quoteItems();
+	List<QuoteItem> quoteItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Quote' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> quotes();
+	List<Quote> quotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='recurringFreqUomId'"
 	 * @generated
 	 */
-	List<String> recurringFreqOrderItems();
+	List<OrderItem> recurringFreqOrderItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> returnHeaders();
+	List<ReturnHeader> returnHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastHistory' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> salesForecastHistories();
+	List<SalesForecastHistory> salesForecastHistories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecast' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> salesForecasts();
+	List<SalesForecast> salesForecasts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunity' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> salesOpportunities();
+	List<SalesOpportunity> salesOpportunities();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityHistory' route='currencyUomId'"
 	 * @generated
 	 */
-	List<String> salesOpportunityHistories();
+	List<SalesOpportunityHistory> salesOpportunityHistories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SupplierProductFeature' route='uomId'"
 	 * @generated
 	 */
-	List<String> supplierProductFeatures();
+	List<SupplierProductFeature> supplierProductFeatures();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderDeliverySchedule' route='totalCubicUomId'"
 	 * @generated
 	 */
-	List<String> totalCubicOrderDeliverySchedules();
+	List<OrderDeliverySchedule> totalCubicOrderDeliverySchedules();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderDeliverySchedule' route='totalWeightUomId'"
 	 * @generated
 	 */
-	List<String> totalWeightOrderDeliverySchedules();
+	List<OrderDeliverySchedule> totalWeightOrderDeliverySchedules();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UomGroup' route='uomId'"
 	 * @generated
 	 */
-	List<String> uomGroups();
+	List<UomGroup> uomGroups();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='useTimeUomId'"
 	 * @generated
 	 */
-	List<String> useTimeSubscriptions();
+	List<Subscription> useTimeSubscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Facility' route='defaultWeightUomId'"
 	 * @generated
 	 */
-	List<String> weightFacilities();
+	List<Facility> weightFacilities();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='weightUomId'"
 	 * @generated
 	 */
-	List<String> weightProducts();
+	List<Product> weightProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentBoxType' route='weightUomId'"
 	 * @generated
 	 */
-	List<String> weightShipmentBoxTypes();
+	List<ShipmentBoxType> weightShipmentBoxTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='weightUomId'"
 	 * @generated
 	 */
-	List<String> weightShipmentCostEstimates();
+	List<ShipmentCostEstimate> weightShipmentCostEstimates();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentPackage' route='weightUomId'"
 	 * @generated
 	 */
-	List<String> weightShipmentPackages();
+	List<ShipmentPackage> weightShipmentPackages();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='widthUomId'"
 	 * @generated
 	 */
-	List<String> widthProducts();
+	List<Product> widthProducts();
 
 	/**
 	 * Returns the value of the '<em><b>Uom Id</b></em>' attribute.

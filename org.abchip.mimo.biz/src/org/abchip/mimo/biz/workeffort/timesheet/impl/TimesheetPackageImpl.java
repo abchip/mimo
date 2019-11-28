@@ -1044,7 +1044,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		getTimesheet_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEAttribute(getTimesheet_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(timesheetEClass, ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(timesheetEClass, this.getTimeEntry(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(timesheetRoleEClass, TimesheetRole.class, "TimesheetRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTimesheetRole_TimesheetId(), this.getTimesheet(), null, "timesheetId", null, 1, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1109,13 +1109,6 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (timesheetEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getTimesheet_TimesheetId(),

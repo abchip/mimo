@@ -863,9 +863,9 @@ public class ScreenPackageImpl extends EPackageImpl implements ScreenPackage {
 		initEAttribute(getCustomScreenType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, CustomScreenType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomScreenType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, CustomScreenType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(customScreenTypeEClass, ecorePackage.getEString(), "childCustomScreenTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customScreenTypeEClass, this.getCustomScreenType(), "childCustomScreenTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customScreenTypeEClass, ecorePackage.getEString(), "customScreens", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customScreenTypeEClass, this.getCustomScreen(), "customScreens", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -936,20 +936,6 @@ public class ScreenPackageImpl extends EPackageImpl implements ScreenPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (customScreenTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customScreenTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getCustomScreenType_CustomScreenTypeId(),

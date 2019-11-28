@@ -142,7 +142,7 @@ public class EmplPositionTypeImpl extends BizEntityTypeImpl<EmplPosition> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> childEmplPositionTypes() {
+	public List<EmplPositionType> childEmplPositionTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -154,7 +154,7 @@ public class EmplPositionTypeImpl extends BizEntityTypeImpl<EmplPosition> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> emplPositions() {
+	public List<EmplPosition> emplPositions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

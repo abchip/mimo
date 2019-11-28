@@ -9,8 +9,10 @@ package org.abchip.mimo.biz.marketing.segment.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
+import org.abchip.mimo.biz.marketing.segment.SegmentGroupClassification;
+import org.abchip.mimo.biz.marketing.segment.SegmentGroupGeo;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupType;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
 import org.abchip.mimo.biz.product.store.ProductStore;
@@ -34,7 +36,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> implements SegmentGroup {
+public class SegmentGroupImpl extends BizEntityImpl implements SegmentGroup {
 	/**
 	 * 
 	 */
@@ -146,8 +148,8 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSegmentGroupClassifications() {
-		return (List<String>)eGet(SegmentPackage.Literals.SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS, true);
+	public List<SegmentGroupClassification> getSegmentGroupClassifications() {
+		return (List<SegmentGroupClassification>)eGet(SegmentPackage.Literals.SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS, true);
 	}
 
 	/**
@@ -157,8 +159,8 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSegmentGroupGeos() {
-		return (List<String>)eGet(SegmentPackage.Literals.SEGMENT_GROUP__SEGMENT_GROUP_GEOS, true);
+	public List<SegmentGroupGeo> getSegmentGroupGeos() {
+		return (List<SegmentGroupGeo>)eGet(SegmentPackage.Literals.SEGMENT_GROUP__SEGMENT_GROUP_GEOS, true);
 	}
 
 } //SegmentGroupImpl

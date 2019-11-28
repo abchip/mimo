@@ -792,8 +792,8 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSecurityGroup_ProtectedViews() {
-		return (EAttribute)securityGroupEClass.getEStructuralFeatures().get(3);
+	public EReference getSecurityGroup_ProtectedViews() {
+		return (EReference)securityGroupEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1006,7 +1006,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__GROUP_ID);
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__DESCRIPTION);
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__GROUP_NAME);
-		createEAttribute(securityGroupEClass, SECURITY_GROUP__PROTECTED_VIEWS);
+		createEReference(securityGroupEClass, SECURITY_GROUP__PROTECTED_VIEWS);
 
 		securityGroupPermissionEClass = createEClass(SECURITY_GROUP_PERMISSION);
 		createEReference(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__GROUP_ID);
@@ -1055,6 +1055,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		PortalPackage thePortalPackage = (PortalPackage)EPackage.Registry.INSTANCE.getEPackage(PortalPackage.eNS_URI);
 		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 
 		// Create type parameters
@@ -1082,9 +1083,9 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		initEAttribute(getSecurityGroup_GroupId(), ecorePackage.getEString(), "groupId", null, 1, 1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSecurityGroup_Description(), ecorePackage.getEString(), "description", null, 0, 1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSecurityGroup_GroupName(), ecorePackage.getEString(), "groupName", null, 0, 1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSecurityGroup_ProtectedViews(), ecorePackage.getEString(), "protectedViews", null, 0, -1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSecurityGroup_ProtectedViews(), this.getProtectedView(), null, "protectedViews", null, 0, -1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(securityGroupEClass, ecorePackage.getEString(), "portalPages", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(securityGroupEClass, thePortalPackage.getPortalPage(), "portalPages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(securityGroupPermissionEClass, SecurityGroupPermission.class, "SecurityGroupPermission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSecurityGroupPermission_GroupId(), this.getSecurityGroup(), null, "groupId", null, 1, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1162,13 +1163,6 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (securityGroupEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getSecurityGroup_GroupId(),
 		   source,
 		   new String[] {
@@ -1188,13 +1182,6 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getSecurityGroup_ProtectedViews(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getSecurityGroupPermission_FromDate(),

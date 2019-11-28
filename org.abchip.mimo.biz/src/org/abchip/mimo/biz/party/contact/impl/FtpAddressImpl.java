@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getBinaryTransfer <em>Binary Transfer</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#isBinaryTransfer <em>Binary Transfer</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getDefaultTimeout <em>Default Timeout</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getFilePath <em>File Path</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getFtpPassword <em>Ftp Password</em>}</li>
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getPassiveMode <em>Passive Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getPort <em>Port</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getUsername <em>Username</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getZipFile <em>Zip File</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#isZipFile <em>Zip File</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,8 +63,8 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 * @generated
 	 */
 	@Override
-	public char getBinaryTransfer() {
-		return (Character)eGet(ContactPackage.Literals.FTP_ADDRESS__BINARY_TRANSFER, true);
+	public boolean isBinaryTransfer() {
+		return (Boolean)eGet(ContactPackage.Literals.FTP_ADDRESS__BINARY_TRANSFER, true);
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 * @generated
 	 */
 	@Override
-	public void setBinaryTransfer(char newBinaryTransfer) {
+	public void setBinaryTransfer(boolean newBinaryTransfer) {
 		eSet(ContactPackage.Literals.FTP_ADDRESS__BINARY_TRANSFER, newBinaryTransfer);
 	}
 
@@ -223,8 +223,8 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 * @generated
 	 */
 	@Override
-	public char getZipFile() {
-		return (Character)eGet(ContactPackage.Literals.FTP_ADDRESS__ZIP_FILE, true);
+	public boolean isZipFile() {
+		return (Boolean)eGet(ContactPackage.Literals.FTP_ADDRESS__ZIP_FILE, true);
 	}
 
 	/**
@@ -233,7 +233,7 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 * @generated
 	 */
 	@Override
-	public void setZipFile(char newZipFile) {
+	public void setZipFile(boolean newZipFile) {
 		eSet(ContactPackage.Literals.FTP_ADDRESS__ZIP_FILE, newZipFile);
 	}
 

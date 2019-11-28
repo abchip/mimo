@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.common.geo;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame title='Geographic Boundary Association' dictionary='CommonEntityLabels' formula='description'"
  * @generated
  */
-public interface GeoAssocType extends BizEntityType<GeoAssoc> {
+public interface GeoAssocType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,22 +58,20 @@ public interface GeoAssocType extends BizEntityType<GeoAssoc> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CountryAddressFormat' route='geoAssocTypeId'"
 	 * @generated
 	 */
-	List<String> countryAddressFormats();
+	List<CountryAddressFormat> countryAddressFormats();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GeoAssoc' route='geoAssocTypeId'"
 	 * @generated
 	 */
-	List<String> geoAssocs();
+	List<GeoAssoc> geoAssocs();
 
 	/**
 	 * Returns the value of the '<em><b>Geo Assoc Type Id</b></em>' attribute.

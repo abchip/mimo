@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.product.price.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.QuantityBreak;
 import org.abchip.mimo.biz.product.price.QuantityBreakType;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class QuantityBreakTypeImpl extends BizEntityTypeImpl<QuantityBreak> implements QuantityBreakType {
+public class QuantityBreakTypeImpl extends BizEntityImpl implements QuantityBreakType {
 	/**
 	 * 
 	 */
@@ -80,7 +80,7 @@ public class QuantityBreakTypeImpl extends BizEntityTypeImpl<QuantityBreak> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> quantityBreaks() {
+	public List<QuantityBreak> quantityBreaks() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

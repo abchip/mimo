@@ -12,6 +12,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.order.order.OrderProductPromoCode;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
@@ -305,70 +307,65 @@ public interface ProductPromoCode extends BizEntity {
 	void setUserEntered(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Code Emails</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Promo Code Emails</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.promo.ProductPromoCodeEmail}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Code Emails</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Code Emails</em>' attribute list.
+	 * @return the value of the '<em>Product Promo Code Emails</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_ProductPromoCodeEmails()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoCodeEmail'"
 	 * @generated
 	 */
-	List<String> getProductPromoCodeEmails();
+	List<ProductPromoCodeEmail> getProductPromoCodeEmails();
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Code Parties</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Promo Code Parties</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.promo.ProductPromoCodeParty}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Code Parties</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Code Parties</em>' attribute list.
+	 * @return the value of the '<em>Product Promo Code Parties</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_ProductPromoCodeParties()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoCodeParty'"
 	 * @generated
 	 */
-	List<String> getProductPromoCodeParties();
+	List<ProductPromoCodeParty> getProductPromoCodeParties();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderProductPromoCode' route='productPromoCodeId'"
 	 * @generated
 	 */
-	List<String> orderProductPromoCodes();
+	List<OrderProductPromoCode> orderProductPromoCodes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoUse' route='productPromoCodeId'"
 	 * @generated
 	 */
-	List<String> productPromoUses();
+	List<ProductPromoUse> productPromoUses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='productPromoCodeId'"
 	 * @generated
 	 */
-	List<String> shoppingLists();
+	List<ShoppingList> shoppingLists();
 
 	/**
 	 * Returns the value of the '<em><b>Product Promo Id</b></em>' reference.

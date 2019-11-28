@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementType;
+import org.abchip.mimo.biz.party.agreement.AgreementTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -123,8 +124,8 @@ public class AgreementTypeImpl extends BizEntityTypeImpl<Agreement> implements A
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getAgreementTypeAttrs() {
-		return (List<String>)eGet(AgreementPackage.Literals.AGREEMENT_TYPE__AGREEMENT_TYPE_ATTRS, true);
+	public List<AgreementTypeAttr> getAgreementTypeAttrs() {
+		return (List<AgreementTypeAttr>)eGet(AgreementPackage.Literals.AGREEMENT_TYPE__AGREEMENT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -133,7 +134,7 @@ public class AgreementTypeImpl extends BizEntityTypeImpl<Agreement> implements A
 	 * @generated
 	 */
 	@Override
-	public List<String> agreements() {
+	public List<Agreement> agreements() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +146,7 @@ public class AgreementTypeImpl extends BizEntityTypeImpl<Agreement> implements A
 	 * @generated
 	 */
 	@Override
-	public List<String> childAgreementTypes() {
+	public List<AgreementType> childAgreementTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

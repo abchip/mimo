@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
@@ -20,8 +21,16 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.TelecomNumber;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
 import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentAttribute;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentItem;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentPackage;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentStatus;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
@@ -706,8 +715,8 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getShipmentAttributes() {
-		return (List<String>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_ATTRIBUTES, true);
+	public List<ShipmentAttribute> getShipmentAttributes() {
+		return (List<ShipmentAttribute>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_ATTRIBUTES, true);
 	}
 
 	/**
@@ -717,8 +726,8 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getShipmentContactMechs() {
-		return (List<String>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_CONTACT_MECHS, true);
+	public List<ShipmentContactMech> getShipmentContactMechs() {
+		return (List<ShipmentContactMech>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_CONTACT_MECHS, true);
 	}
 
 	/**
@@ -728,8 +737,8 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getShipmentItems() {
-		return (List<String>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_ITEMS, true);
+	public List<ShipmentItem> getShipmentItems() {
+		return (List<ShipmentItem>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_ITEMS, true);
 	}
 
 	/**
@@ -739,8 +748,8 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getShipmentPackages() {
-		return (List<String>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_PACKAGES, true);
+	public List<ShipmentPackage> getShipmentPackages() {
+		return (List<ShipmentPackage>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_PACKAGES, true);
 	}
 
 	/**
@@ -750,8 +759,8 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getShipmentRouteSegments() {
-		return (List<String>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_ROUTE_SEGMENTS, true);
+	public List<ShipmentRouteSegment> getShipmentRouteSegments() {
+		return (List<ShipmentRouteSegment>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_ROUTE_SEGMENTS, true);
 	}
 
 	/**
@@ -760,7 +769,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -772,7 +781,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 * @generated
 	 */
 	@Override
-	public List<String> itemIssuances() {
+	public List<ItemIssuance> itemIssuances() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -784,7 +793,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentReceipts() {
+	public List<ShipmentReceipt> shipmentReceipts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -796,7 +805,7 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentStatuss() {
+	public List<ShipmentStatus> shipmentStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -9,8 +9,9 @@ package org.abchip.mimo.biz.marketing.tracking.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
+import org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeType;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TrackingCodeTypeImpl extends BizEntityTypeImpl<TrackingCode> implements TrackingCodeType {
+public class TrackingCodeTypeImpl extends BizEntityImpl implements TrackingCodeType {
 	/**
 	 * 
 	 */
@@ -80,7 +81,7 @@ public class TrackingCodeTypeImpl extends BizEntityTypeImpl<TrackingCode> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> trackingCodeOrders() {
+	public List<TrackingCodeOrder> trackingCodeOrders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -92,7 +93,7 @@ public class TrackingCodeTypeImpl extends BizEntityTypeImpl<TrackingCode> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> trackingCodes() {
+	public List<TrackingCode> trackingCodes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

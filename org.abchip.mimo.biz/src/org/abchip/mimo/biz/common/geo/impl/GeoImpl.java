@@ -9,10 +9,27 @@ package org.abchip.mimo.biz.common.geo.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
+import org.abchip.mimo.biz.accounting.payment.PaymentApplication;
+import org.abchip.mimo.biz.accounting.tax.TaxAuthority;
 import org.abchip.mimo.biz.common.geo.Geo;
+import org.abchip.mimo.biz.common.geo.GeoAssoc;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoType;
+import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.segment.SegmentGroupGeo;
+import org.abchip.mimo.biz.order.order.OrderAdjustment;
+import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
+import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.PostalAddressBoundary;
+import org.abchip.mimo.biz.product.cost.CostComponent;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.product.ProductGeo;
+import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
+import org.abchip.mimo.biz.product.supplier.ReorderGuideline;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -167,8 +184,8 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getMainGeoAssocs() {
-		return (List<String>)eGet(GeoPackage.Literals.GEO__MAIN_GEO_ASSOCS, true);
+	public List<GeoAssoc> getMainGeoAssocs() {
+		return (List<GeoAssoc>)eGet(GeoPackage.Literals.GEO__MAIN_GEO_ASSOCS, true);
 	}
 
 	/**
@@ -178,8 +195,8 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getTaxAuthTaxAuthorities() {
-		return (List<String>)eGet(GeoPackage.Literals.GEO__TAX_AUTH_TAX_AUTHORITIES, true);
+	public List<TaxAuthority> getTaxAuthTaxAuthorities() {
+		return (List<TaxAuthority>)eGet(GeoPackage.Literals.GEO__TAX_AUTH_TAX_AUTHORITIES, true);
 	}
 
 	/**
@@ -188,7 +205,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> assocGeoAssocs() {
+	public List<GeoAssoc> assocGeoAssocs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -200,7 +217,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> cityPostalAddresses() {
+	public List<PostalAddress> cityPostalAddresses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -212,7 +229,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> costComponents() {
+	public List<CostComponent> costComponents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -224,7 +241,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> countryPostalAddresses() {
+	public List<PostalAddress> countryPostalAddresses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -236,7 +253,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> countyPostalAddresses() {
+	public List<PostalAddress> countyPostalAddresses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -248,7 +265,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> excludeProductStoreShipmentMeths() {
+	public List<ProductStoreShipmentMeth> excludeProductStoreShipmentMeths() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -260,7 +277,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> fromShipmentCostEstimates() {
+	public List<ShipmentCostEstimate> fromShipmentCostEstimates() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -272,7 +289,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> includeProductStoreShipmentMeths() {
+	public List<ProductStoreShipmentMeth> includeProductStoreShipmentMeths() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -284,7 +301,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> municipalityPostalAddresses() {
+	public List<PostalAddress> municipalityPostalAddresses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -296,7 +313,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> originProducts() {
+	public List<Product> originProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -308,7 +325,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentApplications() {
+	public List<PaymentApplication> paymentApplications() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -320,7 +337,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> postalAddressBoundaries() {
+	public List<PostalAddressBoundary> postalAddressBoundaries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -332,7 +349,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> postalCodePostalAddresses() {
+	public List<PostalAddress> postalCodePostalAddresses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -344,7 +361,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> primaryOrderAdjustments() {
+	public List<OrderAdjustment> primaryOrderAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -356,7 +373,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> primaryQuoteAdjustments() {
+	public List<QuoteAdjustment> primaryQuoteAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -368,7 +385,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> primaryReturnAdjustments() {
+	public List<ReturnAdjustment> primaryReturnAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -380,7 +397,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> productGeos() {
+	public List<ProductGeo> productGeos() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -392,7 +409,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> reorderGuidelines() {
+	public List<ReorderGuideline> reorderGuidelines() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -404,7 +421,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> secondaryOrderAdjustments() {
+	public List<OrderAdjustment> secondaryOrderAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -416,7 +433,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> secondaryQuoteAdjustments() {
+	public List<QuoteAdjustment> secondaryQuoteAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -428,7 +445,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> secondaryReturnAdjustments() {
+	public List<ReturnAdjustment> secondaryReturnAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -440,7 +457,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> segmentGroupGeos() {
+	public List<SegmentGroupGeo> segmentGroupGeos() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -452,7 +469,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> stateProvincePostalAddresses() {
+	public List<PostalAddress> stateProvincePostalAddresses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -464,7 +481,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> surveyQuestions() {
+	public List<SurveyQuestion> surveyQuestions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -476,7 +493,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> taxInvoiceItems() {
+	public List<InvoiceItem> taxInvoiceItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -488,7 +505,7 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public List<String> toShipmentCostEstimates() {
+	public List<ShipmentCostEstimate> toShipmentCostEstimates() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

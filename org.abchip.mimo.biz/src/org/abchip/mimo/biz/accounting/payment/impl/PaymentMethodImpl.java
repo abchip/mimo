@@ -12,10 +12,16 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
 
@@ -39,7 +45,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> implements PaymentMethod {
+public class PaymentMethodImpl extends BizEntityImpl implements PaymentMethod {
 	/**
 	 * 
 	 */
@@ -149,7 +155,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> orderPaymentPreferences() {
+	public List<OrderPaymentPreference> orderPaymentPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -161,7 +167,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> partyAcctgPreferences() {
+	public List<PartyAcctgPreference> partyAcctgPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -173,7 +179,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentGatewayResponses() {
+	public List<PaymentGatewayResponse> paymentGatewayResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -185,7 +191,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> payments() {
+	public List<Payment> payments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -197,7 +203,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> replenishFinAccounts() {
+	public List<FinAccount> replenishFinAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -209,7 +215,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> returnHeaders() {
+	public List<ReturnHeader> returnHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -221,7 +227,7 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> shoppingLists() {
+	public List<ShoppingList> shoppingLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

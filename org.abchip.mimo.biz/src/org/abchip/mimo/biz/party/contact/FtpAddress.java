@@ -16,7 +16,7 @@ package org.abchip.mimo.biz.party.contact;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getBinaryTransfer <em>Binary Transfer</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#isBinaryTransfer <em>Binary Transfer</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getDefaultTimeout <em>Default Timeout</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getFilePath <em>File Path</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getFtpPassword <em>Ftp Password</em>}</li>
@@ -24,7 +24,7 @@ package org.abchip.mimo.biz.party.contact;
  *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getPassiveMode <em>Passive Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getPort <em>Port</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getUsername <em>Username</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getZipFile <em>Zip File</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#isZipFile <em>Zip File</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress()
@@ -34,6 +34,7 @@ package org.abchip.mimo.biz.party.contact;
 public interface FtpAddress extends ContactMech {
 	/**
 	 * Returns the value of the '<em><b>Binary Transfer</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Binary Transfer</em>' attribute isn't clear,
@@ -41,22 +42,23 @@ public interface FtpAddress extends ContactMech {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Binary Transfer</em>' attribute.
-	 * @see #setBinaryTransfer(char)
+	 * @see #setBinaryTransfer(boolean)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress_BinaryTransfer()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getBinaryTransfer();
+	boolean isBinaryTransfer();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.FtpAddress#getBinaryTransfer <em>Binary Transfer</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.FtpAddress#isBinaryTransfer <em>Binary Transfer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Binary Transfer</em>' attribute.
-	 * @see #getBinaryTransfer()
+	 * @see #isBinaryTransfer()
 	 * @generated
 	 */
-	void setBinaryTransfer(char value);
+	void setBinaryTransfer(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Timeout</b></em>' attribute.
@@ -243,6 +245,7 @@ public interface FtpAddress extends ContactMech {
 
 	/**
 	 * Returns the value of the '<em><b>Zip File</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Zip File</em>' attribute isn't clear,
@@ -250,21 +253,22 @@ public interface FtpAddress extends ContactMech {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Zip File</em>' attribute.
-	 * @see #setZipFile(char)
+	 * @see #setZipFile(boolean)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress_ZipFile()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getZipFile();
+	boolean isZipFile();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.FtpAddress#getZipFile <em>Zip File</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.FtpAddress#isZipFile <em>Zip File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Zip File</em>' attribute.
-	 * @see #getZipFile()
+	 * @see #isZipFile()
 	 * @generated
 	 */
-	void setZipFile(char value);
+	void setZipFile(boolean value);
 
 } // FtpAddress

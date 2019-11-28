@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTransTypeAttr;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -123,8 +124,8 @@ public class FinAccountTransTypeImpl extends BizEntityTypeImpl<FinAccountTrans> 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFinAccountTransTypeAttrs() {
-		return (List<String>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TRANS_TYPE__FIN_ACCOUNT_TRANS_TYPE_ATTRS, true);
+	public List<FinAccountTransTypeAttr> getFinAccountTransTypeAttrs() {
+		return (List<FinAccountTransTypeAttr>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TRANS_TYPE__FIN_ACCOUNT_TRANS_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -133,7 +134,7 @@ public class FinAccountTransTypeImpl extends BizEntityTypeImpl<FinAccountTrans> 
 	 * @generated
 	 */
 	@Override
-	public List<String> childFinAccountTransTypes() {
+	public List<FinAccountTransType> childFinAccountTransTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +146,7 @@ public class FinAccountTransTypeImpl extends BizEntityTypeImpl<FinAccountTrans> 
 	 * @generated
 	 */
 	@Override
-	public List<String> finAccountTranss() {
+	public List<FinAccountTrans> finAccountTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

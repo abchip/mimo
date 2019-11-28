@@ -11,9 +11,12 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListType;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingListWorkEffort;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
@@ -56,7 +59,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> implements ShoppingList {
+public class ShoppingListImpl extends BizEntityImpl implements ShoppingList {
 	/**
 	 * 
 	 */
@@ -488,8 +491,8 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getShoppingListItems() {
-		return (List<String>)eGet(ShoppinglistPackage.Literals.SHOPPING_LIST__SHOPPING_LIST_ITEMS, true);
+	public List<ShoppingListItem> getShoppingListItems() {
+		return (List<ShoppingListItem>)eGet(ShoppinglistPackage.Literals.SHOPPING_LIST__SHOPPING_LIST_ITEMS, true);
 	}
 
 	/**
@@ -499,8 +502,8 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getShoppingListWorkEfforts() {
-		return (List<String>)eGet(ShoppinglistPackage.Literals.SHOPPING_LIST__SHOPPING_LIST_WORK_EFFORTS, true);
+	public List<ShoppingListWorkEffort> getShoppingListWorkEfforts() {
+		return (List<ShoppingListWorkEffort>)eGet(ShoppinglistPackage.Literals.SHOPPING_LIST__SHOPPING_LIST_WORK_EFFORTS, true);
 	}
 
 	/**
@@ -509,7 +512,7 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> autoOrderOrderHeaders() {
+	public List<OrderHeader> autoOrderOrderHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -521,7 +524,7 @@ public class ShoppingListImpl extends BizEntityTypedImpl<ShoppingListType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> childShoppingLists() {
+	public List<ShoppingList> childShoppingLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

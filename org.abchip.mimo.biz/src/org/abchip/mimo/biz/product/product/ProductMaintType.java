@@ -9,7 +9,8 @@ package org.abchip.mimo.biz.product.product;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +30,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame help='This is for both scheduled and unscheduled maintenance; use ProductMaint to track details for scheduled maintenance' title='Product Maintenance Type' dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
-public interface ProductMaintType extends BizEntityType<ProductMaint> {
+public interface ProductMaintType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,32 +86,29 @@ public interface ProductMaintType extends BizEntityType<ProductMaint> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMaintType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childProductMaintTypes();
+	List<ProductMaintType> childProductMaintTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetMaint' route='productMaintTypeId'"
 	 * @generated
 	 */
-	List<String> fixedAssetMaints();
+	List<FixedAssetMaint> fixedAssetMaints();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMaint' route='productMaintTypeId'"
 	 * @generated
 	 */
-	List<String> productMaints();
+	List<ProductMaint> productMaints();
 
 	/**
 	 * Returns the value of the '<em><b>Product Maint Type Id</b></em>' attribute.

@@ -7,8 +7,7 @@
  */
 package org.abchip.mimo.biz.product.facility.impl;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.abchip.mimo.biz.product.facility.FacilityCalendar;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.FacilityCalendarType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -28,7 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class FacilityCalendarTypeImpl extends BizEntityTypeImpl<FacilityCalendar> implements FacilityCalendarType {
+public class FacilityCalendarTypeImpl extends BizEntityImpl implements FacilityCalendarType {
 	/**
 	 * 
 	 */

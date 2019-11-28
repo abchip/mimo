@@ -112,22 +112,20 @@ public interface PaymentGroupType extends BizEntityType<PaymentGroup> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGroupType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childPaymentGroupTypes();
+	List<PaymentGroupType> childPaymentGroupTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGroup' route='paymentGroupTypeId'"
 	 * @generated
 	 */
-	List<String> paymentGroups();
+	List<PaymentGroup> paymentGroups();
 
 	/**
 	 * Returns the value of the '<em><b>Payment Group Type Id</b></em>' attribute.

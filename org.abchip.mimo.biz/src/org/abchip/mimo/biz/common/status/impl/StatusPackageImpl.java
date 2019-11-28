@@ -729,8 +729,8 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStatusItem_ShipmentStatuss() {
-		return (EAttribute)statusItemEClass.getEStructuralFeatures().get(4);
+	public EReference getStatusItem_ShipmentStatuss() {
+		return (EReference)statusItemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -739,8 +739,8 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStatusItem_MainStatusValidChanges() {
-		return (EAttribute)statusItemEClass.getEStructuralFeatures().get(2);
+	public EReference getStatusItem_MainStatusValidChanges() {
+		return (EReference)statusItemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -875,9 +875,9 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		statusItemEClass = createEClass(STATUS_ITEM);
 		createEAttribute(statusItemEClass, STATUS_ITEM__STATUS_ID);
 		createEAttribute(statusItemEClass, STATUS_ITEM__DESCRIPTION);
-		createEAttribute(statusItemEClass, STATUS_ITEM__MAIN_STATUS_VALID_CHANGES);
+		createEReference(statusItemEClass, STATUS_ITEM__MAIN_STATUS_VALID_CHANGES);
 		createEAttribute(statusItemEClass, STATUS_ITEM__SEQUENCE_ID);
-		createEAttribute(statusItemEClass, STATUS_ITEM__SHIPMENT_STATUSS);
+		createEReference(statusItemEClass, STATUS_ITEM__SHIPMENT_STATUSS);
 		createEAttribute(statusItemEClass, STATUS_ITEM__STATUS_CODE);
 		createEReference(statusItemEClass, STATUS_ITEM__STATUS_TYPE_ID);
 
@@ -919,6 +919,34 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		Shipment_Package theShipment_Package = (Shipment_Package)EPackage.Registry.INSTANCE.getEPackage(Shipment_Package.eNS_URI);
+		LedgerPackage theLedgerPackage = (LedgerPackage)EPackage.Registry.INSTANCE.getEPackage(LedgerPackage.eNS_URI);
+		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
+		BudgetPackage theBudgetPackage = (BudgetPackage)EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
+		CommunicationPackage theCommunicationPackage = (CommunicationPackage)EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
+		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
+		RequestPackage theRequestPackage = (RequestPackage)EPackage.Registry.INSTANCE.getEPackage(RequestPackage.eNS_URI);
+		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
+		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
+		PositionPackage thePositionPackage = (PositionPackage)EPackage.Registry.INSTANCE.getEPackage(PositionPackage.eNS_URI);
+		EmploymentPackage theEmploymentPackage = (EmploymentPackage)EPackage.Registry.INSTANCE.getEPackage(EmploymentPackage.eNS_URI);
+		FinaccountPackage theFinaccountPackage = (FinaccountPackage)EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
+		FixedassetPackage theFixedassetPackage = (FixedassetPackage)EPackage.Registry.INSTANCE.getEPackage(FixedassetPackage.eNS_URI);
+		InventoryPackage theInventoryPackage = (InventoryPackage)EPackage.Registry.INSTANCE.getEPackage(InventoryPackage.eNS_URI);
+		ReturnPackage theReturnPackage = (ReturnPackage)EPackage.Registry.INSTANCE.getEPackage(ReturnPackage.eNS_URI);
+		InvoicePackage theInvoicePackage = (InvoicePackage)EPackage.Registry.INSTANCE.getEPackage(InvoicePackage.eNS_URI);
+		SchedulePackage theSchedulePackage = (SchedulePackage)EPackage.Registry.INSTANCE.getEPackage(SchedulePackage.eNS_URI);
+		CampaignPackage theCampaignPackage = (CampaignPackage)EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		PaymentPackage thePaymentPackage = (PaymentPackage)EPackage.Registry.INSTANCE.getEPackage(PaymentPackage.eNS_URI);
+		PicklistPackage thePicklistPackage = (PicklistPackage)EPackage.Registry.INSTANCE.getEPackage(PicklistPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
+		QuotePackage theQuotePackage = (QuotePackage)EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
+		RequirementPackage theRequirementPackage = (RequirementPackage)EPackage.Registry.INSTANCE.getEPackage(RequirementPackage.eNS_URI);
+		SurveyPackage theSurveyPackage = (SurveyPackage)EPackage.Registry.INSTANCE.getEPackage(SurveyPackage.eNS_URI);
+		TestPackage theTestPackage = (TestPackage)EPackage.Registry.INSTANCE.getEPackage(TestPackage.eNS_URI);
+		TimesheetPackage theTimesheetPackage = (TimesheetPackage)EPackage.Registry.INSTANCE.getEPackage(TimesheetPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -939,128 +967,128 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		initEClass(statusItemEClass, StatusItem.class, "StatusItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatusItem_StatusId(), ecorePackage.getEString(), "statusId", null, 1, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_Description(), ecorePackage.getEString(), "description", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStatusItem_MainStatusValidChanges(), ecorePackage.getEString(), "mainStatusValidChanges", null, 0, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStatusItem_MainStatusValidChanges(), this.getStatusValidChange(), null, "mainStatusValidChanges", null, 0, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStatusItem_ShipmentStatuss(), ecorePackage.getEString(), "shipmentStatuss", null, 0, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStatusItem_ShipmentStatuss(), theShipment_Package.getShipmentStatus(), null, "shipmentStatuss", null, 0, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_StatusCode(), ecorePackage.getEString(), "statusCode", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStatusItem_StatusTypeId(), this.getStatusType(), null, "statusTypeId", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getStatusItem_StatusTypeId().getEKeys().add(this.getStatusType_StatusTypeId());
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theLedgerPackage.getAcctgTransEntry(), "acctgTransEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theLedgerPackage.getAcctgTrans(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "approvalContentApprovals", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theContentPackage.getContentApproval(), "approvalContentApprovals", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "budgetStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theBudgetPackage.getBudgetStatus(), "budgetStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "carrierServiceShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theShipment_Package.getShipmentRouteSegment(), "carrierServiceShipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theCommunicationPackage.getCommunicationEvent(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theContentPackage.getContent(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "currentWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theWorkeffortPackage.getWorkEffort(), "currentWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "custRequestItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theRequestPackage.getCustRequestItem(), "custRequestItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "custRequestStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theRequestPackage.getCustRequestStatus(), "custRequestStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "custRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theRequestPackage.getCustRequest(), "custRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theDataPackage.getDataResource(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "digitalItemApprovedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theStorePackage.getProductStore(), "digitalItemApprovedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "emplPositions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, thePositionPackage.getEmplPosition(), "emplPositions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theEmploymentPackage.getEmploymentApp(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "finAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theFinaccountPackage.getFinAccountTrans(), "finAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "fixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theFixedassetPackage.getFixedAssetMaint(), "fixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "glReconciliations", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theLedgerPackage.getGlReconciliation(), "glReconciliations", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "headerApprovedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theStorePackage.getProductStore(), "headerApprovedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "headerCancelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theStorePackage.getProductStore(), "headerCancelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "headerDeclinedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theStorePackage.getProductStore(), "headerDeclinedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "inventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theInventoryPackage.getInventoryItem(), "inventoryItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "inventoryReturnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theReturnPackage.getReturnItem(), "inventoryReturnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theInventoryPackage.getInventoryTransfer(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "invoices", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theInvoicePackage.getInvoice(), "invoices", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "itemApprovedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theStorePackage.getProductStore(), "itemApprovedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "itemCancelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theStorePackage.getProductStore(), "itemCancelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "itemDeclinedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theStorePackage.getProductStore(), "itemDeclinedProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "jobSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theSchedulePackage.getJobSandbox(), "jobSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "marketingCampaigns", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theCampaignPackage.getMarketingCampaign(), "marketingCampaigns", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "orderDeliverySchedules", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theOrderPackage.getOrderDeliverySchedule(), "orderDeliverySchedules", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theOrderPackage.getOrderHeader(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "orderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theOrderPackage.getOrderItem(), "orderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "orderPaymentPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theOrderPackage.getOrderPaymentPreference(), "orderPaymentPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "orderStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theOrderPackage.getOrderStatus(), "orderStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "parties", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, thePartyPackage.getParty(), "parties", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "partyInvitations", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, thePartyPackage.getPartyInvitation(), "partyInvitations", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, thePaymentPackage.getPayment(), "payments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "picklistStatusHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, thePicklistPackage.getPicklistStatusHistory(), "picklistStatusHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "picklists", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, thePicklistPackage.getPicklist(), "picklists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "productGroupOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theProductPackage.getProductGroupOrder(), "productGroupOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "productReviews", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theProductPackage.getProductReview(), "productReviews", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "quotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theQuotePackage.getQuote(), "quotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "requirementStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theRequirementPackage.getRequirementStatus(), "requirementStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theRequirementPackage.getRequirement(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theReturnPackage.getReturnHeader(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theReturnPackage.getReturnItem(), "returnItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "returnStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theReturnPackage.getReturnStatus(), "returnStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "shipments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theShipment_Package.getShipment(), "shipments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "surveyResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theSurveyPackage.getSurveyResponse(), "surveyResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "syncOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theOrderPackage.getOrderHeader(), "syncOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "syncOrderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theOrderPackage.getOrderItem(), "syncOrderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "testingStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theTestPackage.getTestingStatus(), "testingStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "timesheets", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theTimesheetPackage.getTimesheet(), "timesheets", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "toPicklistStatusHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, thePicklistPackage.getPicklistStatusHistory(), "toPicklistStatusHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "toStatusValidChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, this.getStatusValidChange(), "toStatusValidChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "unemploymentClaims", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theEmploymentPackage.getUnemploymentClaim(), "unemploymentClaims", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusItemEClass, ecorePackage.getEString(), "workEffortInventoryAssigns", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusItemEClass, theWorkeffortPackage.getWorkEffortInventoryAssign(), "workEffortInventoryAssigns", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(statusTypeEClass, StatusType.class, "StatusType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatusType_StatusTypeId(), ecorePackage.getEString(), "statusTypeId", null, 1, 1, StatusType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1069,9 +1097,9 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		initEReference(getStatusType_ParentTypeId(), this.getStatusType(), null, "parentTypeId", null, 0, 1, StatusType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getStatusType_ParentTypeId().getEKeys().add(this.getStatusType_StatusTypeId());
 
-		addEOperation(statusTypeEClass, ecorePackage.getEString(), "childStatusTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusTypeEClass, this.getStatusType(), "childStatusTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(statusTypeEClass, ecorePackage.getEString(), "statusItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(statusTypeEClass, this.getStatusItem(), "statusItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(statusValidChangeEClass, StatusValidChange.class, "StatusValidChange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStatusValidChange_StatusId(), this.getStatusItem(), null, "statusId", null, 1, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1084,12 +1112,12 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -1132,412 +1160,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (statusItemEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(8),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(9),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(10),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(11),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(12),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(13),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(14),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(15),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(16),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(17),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(18),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(19),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(20),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(21),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(22),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(23),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(24),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(25),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(26),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(27),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(28),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(29),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(30),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(31),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(32),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(33),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(34),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(35),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(36),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(37),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(38),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(39),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(40),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(41),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(42),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(43),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(44),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(45),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(46),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(47),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(48),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(49),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(50),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(51),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(52),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(53),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(54),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(55),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(56),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusItemEClass.getEOperations().get(57),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getStatusItem_StatusId(),
 		   source,
 		   new String[] {
@@ -1552,21 +1174,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getStatusItem_MainStatusValidChanges(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getStatusItem_SequenceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getStatusItem_ShipmentStatuss(),
 		   source,
 		   new String[] {
 			   "type", "id",
@@ -1578,20 +1186,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "type", "short-varchar",
 			   "length", "60"
-		   });
-		addAnnotation
-		  (statusTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (statusTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getStatusType_StatusTypeId(),

@@ -10,6 +10,9 @@ package org.abchip.mimo.biz.shipment.shipment;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
+import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
+import org.abchip.mimo.biz.shipment.picklist.Picklist;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,42 +88,38 @@ public interface ShipmentMethodType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='shipmentMethodTypeId'"
 	 * @generated
 	 */
-	List<String> orderItemShipGroups();
+	List<OrderItemShipGroup> orderItemShipGroups();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Picklist' route='shipmentMethodTypeId'"
 	 * @generated
 	 */
-	List<String> picklists();
+	List<Picklist> picklists();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreShipmentMeth' route='shipmentMethodTypeId'"
 	 * @generated
 	 */
-	List<String> productStoreShipmentMeths();
+	List<ProductStoreShipmentMeth> productStoreShipmentMeths();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='shipmentMethodTypeId'"
 	 * @generated
 	 */
-	List<String> shipmentRouteSegments();
+	List<ShipmentRouteSegment> shipmentRouteSegments();
 
 	/**
 	 * Returns the value of the '<em><b>Shipment Method Type Id</b></em>' attribute.

@@ -15,6 +15,8 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.ecore.EClass;
@@ -379,8 +381,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSalesForecastDetails() {
-		return (List<String>)eGet(OpportunityPackage.Literals.SALES_FORECAST__SALES_FORECAST_DETAILS, true);
+	public List<SalesForecastDetail> getSalesForecastDetails() {
+		return (List<SalesForecastDetail>)eGet(OpportunityPackage.Literals.SALES_FORECAST__SALES_FORECAST_DETAILS, true);
 	}
 
 	/**
@@ -389,7 +391,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public List<String> childSalesForecasts() {
+	public List<SalesForecast> childSalesForecasts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -401,7 +403,7 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public List<String> salesForecastHistories() {
+	public List<SalesForecastHistory> salesForecastHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.order.return_.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
+import org.abchip.mimo.biz.order.return_.ReturnItem;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.order.return_.ReturnType;
 import org.eclipse.emf.ecore.EClass;
@@ -120,7 +122,7 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 	 * @generated
 	 */
 	@Override
-	public List<String> returnAdjustments() {
+	public List<ReturnAdjustment> returnAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -132,7 +134,7 @@ public class ReturnTypeImpl extends BizEntityImpl implements ReturnType {
 	 * @generated
 	 */
 	@Override
-	public List<String> returnItems() {
+	public List<ReturnItem> returnItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

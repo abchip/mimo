@@ -810,50 +810,47 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	void setUseTimeUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Subscription Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Subscription Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subscription Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscription Attributes</em>' attribute list.
+	 * @return the value of the '<em>Subscription Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_SubscriptionAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionAttribute'"
 	 * @generated
 	 */
-	List<String> getSubscriptionAttributes();
+	List<SubscriptionAttribute> getSubscriptionAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Subscription Comm Events</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Subscription Comm Events</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subscription Comm Events</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscription Comm Events</em>' attribute list.
+	 * @return the value of the '<em>Subscription Comm Events</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_SubscriptionCommEvents()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionCommEvent'"
 	 * @generated
 	 */
-	List<String> getSubscriptionCommEvents();
+	List<SubscriptionCommEvent> getSubscriptionCommEvents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionFulfillmentPiece' route='subscriptionId'"
 	 * @generated
 	 */
-	List<String> subscriptionFulfillmentPieces();
+	List<SubscriptionFulfillmentPiece> subscriptionFulfillmentPieces();
 
 	/**
 	 * Returns the value of the '<em><b>Subscription Resource Id</b></em>' reference.

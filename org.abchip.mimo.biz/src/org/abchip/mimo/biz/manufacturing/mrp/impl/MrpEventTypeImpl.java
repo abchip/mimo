@@ -7,8 +7,7 @@
  */
 package org.abchip.mimo.biz.manufacturing.mrp.impl;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.abchip.mimo.biz.manufacturing.mrp.MrpEvent;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.manufacturing.mrp.MrpEventType;
 import org.abchip.mimo.biz.manufacturing.mrp.MrpPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -27,7 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class MrpEventTypeImpl extends BizEntityTypeImpl<MrpEvent> implements MrpEventType {
+public class MrpEventTypeImpl extends BizEntityImpl implements MrpEventType {
 	/**
 	 * 
 	 */

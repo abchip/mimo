@@ -11,10 +11,13 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateType;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderAdjustment;
+import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.eclipse.emf.ecore.EClass;
@@ -39,8 +42,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTaxAuthorityRateTypeId <em>Tax Authority Rate Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTaxPercentage <em>Tax Percentage</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTaxPromotions <em>Tax Promotions</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTaxShipping <em>Tax Shipping</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#isTaxPromotions <em>Tax Promotions</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#isTaxShipping <em>Tax Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityRateProductImpl#getTitleTransferEnumId <em>Title Transfer Enum Id</em>}</li>
  * </ul>
@@ -277,8 +280,8 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 * @generated
 	 */
 	@Override
-	public char getTaxPromotions() {
-		return (Character)eGet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TAX_PROMOTIONS, true);
+	public boolean isTaxPromotions() {
+		return (Boolean)eGet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TAX_PROMOTIONS, true);
 	}
 
 	/**
@@ -287,7 +290,7 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 * @generated
 	 */
 	@Override
-	public void setTaxPromotions(char newTaxPromotions) {
+	public void setTaxPromotions(boolean newTaxPromotions) {
 		eSet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TAX_PROMOTIONS, newTaxPromotions);
 	}
 
@@ -297,8 +300,8 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 * @generated
 	 */
 	@Override
-	public char getTaxShipping() {
-		return (Character)eGet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TAX_SHIPPING, true);
+	public boolean isTaxShipping() {
+		return (Boolean)eGet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TAX_SHIPPING, true);
 	}
 
 	/**
@@ -307,7 +310,7 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 * @generated
 	 */
 	@Override
-	public void setTaxShipping(char newTaxShipping) {
+	public void setTaxShipping(boolean newTaxShipping) {
 		eSet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TAX_SHIPPING, newTaxShipping);
 	}
 
@@ -357,7 +360,7 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceItems() {
+	public List<InvoiceItem> invoiceItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -369,7 +372,7 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 * @generated
 	 */
 	@Override
-	public List<String> orderAdjustments() {
+	public List<OrderAdjustment> orderAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -381,7 +384,7 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	 * @generated
 	 */
 	@Override
-	public List<String> returnAdjustments() {
+	public List<ReturnAdjustment> returnAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

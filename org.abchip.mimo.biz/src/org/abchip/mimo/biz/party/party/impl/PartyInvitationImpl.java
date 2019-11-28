@@ -15,6 +15,8 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyInvitation;
+import org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc;
+import org.abchip.mimo.biz.party.party.PartyInvitationRoleAssoc;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -170,8 +172,8 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPartyInvitationGroupAssocs() {
-		return (List<String>)eGet(PartyPackage.Literals.PARTY_INVITATION__PARTY_INVITATION_GROUP_ASSOCS, true);
+	public List<PartyInvitationGroupAssoc> getPartyInvitationGroupAssocs() {
+		return (List<PartyInvitationGroupAssoc>)eGet(PartyPackage.Literals.PARTY_INVITATION__PARTY_INVITATION_GROUP_ASSOCS, true);
 	}
 
 	/**
@@ -181,8 +183,8 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPartyInvitationRoleAssocs() {
-		return (List<String>)eGet(PartyPackage.Literals.PARTY_INVITATION__PARTY_INVITATION_ROLE_ASSOCS, true);
+	public List<PartyInvitationRoleAssoc> getPartyInvitationRoleAssocs() {
+		return (List<PartyInvitationRoleAssoc>)eGet(PartyPackage.Literals.PARTY_INVITATION__PARTY_INVITATION_ROLE_ASSOCS, true);
 	}
 
 	/**

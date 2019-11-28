@@ -13,7 +13,7 @@ import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PersonTraining;
 import org.abchip.mimo.biz.humanres.ability.TrainingClassType;
 import org.abchip.mimo.biz.humanres.trainings.TrainingRequest;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PersonTrainingImpl extends BizEntityImpl implements PersonTraining {
+public class PersonTrainingImpl extends BizEntityTypedImpl<TrainingClassType> implements PersonTraining {
 	/**
 	 * 
 	 */

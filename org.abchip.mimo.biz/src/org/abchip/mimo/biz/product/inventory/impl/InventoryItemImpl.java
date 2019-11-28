@@ -12,16 +12,30 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.order.OrderItem;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.inventory.InventoryItemAttribute;
+import org.abchip.mimo.biz.product.inventory.InventoryItemDetail;
+import org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
+import org.abchip.mimo.biz.product.inventory.InventoryItemVariance;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
+import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
 import org.abchip.mimo.biz.product.inventory.Lot;
 import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryProduced;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -560,8 +574,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getInventoryItemAttributes() {
-		return (List<String>)eGet(InventoryPackage.Literals.INVENTORY_ITEM__INVENTORY_ITEM_ATTRIBUTES, true);
+	public List<InventoryItemAttribute> getInventoryItemAttributes() {
+		return (List<InventoryItemAttribute>)eGet(InventoryPackage.Literals.INVENTORY_ITEM__INVENTORY_ITEM_ATTRIBUTES, true);
 	}
 
 	/**
@@ -571,8 +585,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getInventoryItemDetails() {
-		return (List<String>)eGet(InventoryPackage.Literals.INVENTORY_ITEM__INVENTORY_ITEM_DETAILS, true);
+	public List<InventoryItemDetail> getInventoryItemDetails() {
+		return (List<InventoryItemDetail>)eGet(InventoryPackage.Literals.INVENTORY_ITEM__INVENTORY_ITEM_DETAILS, true);
 	}
 
 	/**
@@ -582,8 +596,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getInventoryItemLabelAppls() {
-		return (List<String>)eGet(InventoryPackage.Literals.INVENTORY_ITEM__INVENTORY_ITEM_LABEL_APPLS, true);
+	public List<InventoryItemLabelAppl> getInventoryItemLabelAppls() {
+		return (List<InventoryItemLabelAppl>)eGet(InventoryPackage.Literals.INVENTORY_ITEM__INVENTORY_ITEM_LABEL_APPLS, true);
 	}
 
 	/**
@@ -593,8 +607,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getInventoryItemVariances() {
-		return (List<String>)eGet(InventoryPackage.Literals.INVENTORY_ITEM__INVENTORY_ITEM_VARIANCES, true);
+	public List<InventoryItemVariance> getInventoryItemVariances() {
+		return (List<InventoryItemVariance>)eGet(InventoryPackage.Literals.INVENTORY_ITEM__INVENTORY_ITEM_VARIANCES, true);
 	}
 
 	/**
@@ -603,7 +617,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTransEntries() {
+	public List<AcctgTransEntry> acctgTransEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -615,7 +629,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -627,7 +641,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> fromOrderItems() {
+	public List<OrderItem> fromOrderItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -639,7 +653,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryTransfers() {
+	public List<InventoryTransfer> inventoryTransfers() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -651,7 +665,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceItems() {
+	public List<InvoiceItem> invoiceItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -663,7 +677,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> itemIssuances() {
+	public List<ItemIssuance> itemIssuances() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -675,7 +689,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentReceipts() {
+	public List<ShipmentReceipt> shipmentReceipts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -687,7 +701,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> subscriptions() {
+	public List<Subscription> subscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -699,7 +713,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> workEffortInventoryAssigns() {
+	public List<WorkEffortInventoryAssign> workEffortInventoryAssigns() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -711,7 +725,7 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> workEffortInventoryProduceds() {
+	public List<WorkEffortInventoryProduced> workEffortInventoryProduceds() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

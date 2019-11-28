@@ -11,8 +11,13 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
+import org.abchip.mimo.biz.party.agreement.Addendum;
 import org.abchip.mimo.biz.party.agreement.Agreement;
+import org.abchip.mimo.biz.party.agreement.AgreementAttribute;
+import org.abchip.mimo.biz.party.agreement.AgreementItem;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
+import org.abchip.mimo.biz.party.agreement.AgreementTerm;
 import org.abchip.mimo.biz.party.agreement.AgreementType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
@@ -276,8 +281,8 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getAgreementAttributes() {
-		return (List<String>)eGet(AgreementPackage.Literals.AGREEMENT__AGREEMENT_ATTRIBUTES, true);
+	public List<AgreementAttribute> getAgreementAttributes() {
+		return (List<AgreementAttribute>)eGet(AgreementPackage.Literals.AGREEMENT__AGREEMENT_ATTRIBUTES, true);
 	}
 
 	/**
@@ -287,8 +292,8 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getAgreementItems() {
-		return (List<String>)eGet(AgreementPackage.Literals.AGREEMENT__AGREEMENT_ITEMS, true);
+	public List<AgreementItem> getAgreementItems() {
+		return (List<AgreementItem>)eGet(AgreementPackage.Literals.AGREEMENT__AGREEMENT_ITEMS, true);
 	}
 
 	/**
@@ -297,7 +302,7 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> addendums() {
+	public List<Addendum> addendums() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -309,7 +314,7 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> agreementTerms() {
+	public List<AgreementTerm> agreementTerms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -321,7 +326,7 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> supplierOrderItemShipGroups() {
+	public List<OrderItemShipGroup> supplierOrderItemShipGroups() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

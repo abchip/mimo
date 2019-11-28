@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.rate;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.workeffort.timesheet.TimeEntry;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,12 +59,11 @@ public interface RateType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TimeEntry' route='rateTypeId'"
 	 * @generated
 	 */
-	List<String> timeEntries();
+	List<TimeEntry> timeEntries();
 
 	/**
 	 * Returns the value of the '<em><b>Rate Type Id</b></em>' attribute.

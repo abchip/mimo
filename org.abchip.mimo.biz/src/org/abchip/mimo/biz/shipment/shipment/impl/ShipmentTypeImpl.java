@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentType;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.ecore.EClass;
 
@@ -144,8 +145,8 @@ public class ShipmentTypeImpl extends BizEntityTypeImpl<Shipment> implements Shi
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getShipmentTypeAttrs() {
-		return (List<String>)eGet(Shipment_Package.Literals.SHIPMENT_TYPE__SHIPMENT_TYPE_ATTRS, true);
+	public List<ShipmentTypeAttr> getShipmentTypeAttrs() {
+		return (List<ShipmentTypeAttr>)eGet(Shipment_Package.Literals.SHIPMENT_TYPE__SHIPMENT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +155,7 @@ public class ShipmentTypeImpl extends BizEntityTypeImpl<Shipment> implements Shi
 	 * @generated
 	 */
 	@Override
-	public List<String> childShipmentTypes() {
+	public List<ShipmentType> childShipmentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +167,7 @@ public class ShipmentTypeImpl extends BizEntityTypeImpl<Shipment> implements Shi
 	 * @generated
 	 */
 	@Override
-	public List<String> shipments() {
+	public List<Shipment> shipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

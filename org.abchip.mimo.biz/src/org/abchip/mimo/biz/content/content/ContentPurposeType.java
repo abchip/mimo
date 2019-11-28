@@ -9,7 +9,8 @@ package org.abchip.mimo.biz.content.content;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.content.data.DataResourcePurpose;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +29,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame dictionary='ContentEntityLabels' formula='description'"
  * @generated
  */
-public interface ContentPurposeType extends BizEntityType<ContentPurpose> {
+public interface ContentPurposeType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Content Purpose Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,21 +86,19 @@ public interface ContentPurposeType extends BizEntityType<ContentPurpose> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentPurpose' route='contentPurposeTypeId'"
 	 * @generated
 	 */
-	List<String> contentPurposes();
+	List<ContentPurpose> contentPurposes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourcePurpose' route='contentPurposeTypeId'"
 	 * @generated
 	 */
-	List<String> dataResourcePurposes();
+	List<DataResourcePurpose> dataResourcePurposes();
 
 } // ContentPurposeType

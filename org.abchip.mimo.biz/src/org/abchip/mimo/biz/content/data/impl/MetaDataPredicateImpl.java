@@ -9,7 +9,9 @@ package org.abchip.mimo.biz.content.data.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.content.content.ContentMetaData;
 import org.abchip.mimo.biz.content.data.DataPackage;
+import org.abchip.mimo.biz.content.data.DataResourceMetaData;
 import org.abchip.mimo.biz.content.data.MetaDataPredicate;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -79,7 +81,7 @@ public class MetaDataPredicateImpl extends BizEntityImpl implements MetaDataPred
 	 * @generated
 	 */
 	@Override
-	public List<String> contentMetaDatas() {
+	public List<ContentMetaData> contentMetaDatas() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -91,7 +93,7 @@ public class MetaDataPredicateImpl extends BizEntityImpl implements MetaDataPred
 	 * @generated
 	 */
 	@Override
-	public List<String> dataResourceMetaDatas() {
+	public List<DataResourceMetaData> dataResourceMetaDatas() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

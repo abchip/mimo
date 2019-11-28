@@ -14,19 +14,43 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.note.NoteData;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityWorkEffort;
+import org.abchip.mimo.biz.order.order.OrderHeaderWorkEffort;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
+import org.abchip.mimo.biz.order.quote.QuoteWorkEffort;
+import org.abchip.mimo.biz.order.request.CustRequestWorkEffort;
+import org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment;
 import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingListWorkEffort;
+import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.inventory.InventoryItemDetail;
+import org.abchip.mimo.biz.product.product.ProductMaint;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 import org.abchip.mimo.biz.service.schedule.RuntimeData;
 import org.abchip.mimo.biz.service.schedule.TemporalExpression;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.abchip.mimo.biz.workeffort.timesheet.TimeEntry;
+import org.abchip.mimo.biz.workeffort.workeffort.CommunicationEventWorkEff;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAttribute;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortDeliverableProd;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryProduced;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortKeyword;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPurposeType;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -1156,8 +1180,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCommunicationEventWorkEffs() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__COMMUNICATION_EVENT_WORK_EFFS, true);
+	public List<CommunicationEventWorkEff> getCommunicationEventWorkEffs() {
+		return (List<CommunicationEventWorkEff>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__COMMUNICATION_EVENT_WORK_EFFS, true);
 	}
 
 	/**
@@ -1167,8 +1191,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkEffortAttributes() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_ATTRIBUTES, true);
+	public List<WorkEffortAttribute> getWorkEffortAttributes() {
+		return (List<WorkEffortAttribute>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_ATTRIBUTES, true);
 	}
 
 	/**
@@ -1178,8 +1202,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkEffortDeliverableProds() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_DELIVERABLE_PRODS, true);
+	public List<WorkEffortDeliverableProd> getWorkEffortDeliverableProds() {
+		return (List<WorkEffortDeliverableProd>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_DELIVERABLE_PRODS, true);
 	}
 
 	/**
@@ -1189,8 +1213,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkEffortEventReminders() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_EVENT_REMINDERS, true);
+	public List<WorkEffortEventReminder> getWorkEffortEventReminders() {
+		return (List<WorkEffortEventReminder>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_EVENT_REMINDERS, true);
 	}
 
 	/**
@@ -1200,8 +1224,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkEffortFixedAssetStds() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_FIXED_ASSET_STDS, true);
+	public List<WorkEffortFixedAssetStd> getWorkEffortFixedAssetStds() {
+		return (List<WorkEffortFixedAssetStd>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_FIXED_ASSET_STDS, true);
 	}
 
 	/**
@@ -1211,8 +1235,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkEffortInventoryAssigns() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_INVENTORY_ASSIGNS, true);
+	public List<WorkEffortInventoryAssign> getWorkEffortInventoryAssigns() {
+		return (List<WorkEffortInventoryAssign>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_INVENTORY_ASSIGNS, true);
 	}
 
 	/**
@@ -1222,8 +1246,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkEffortInventoryProduceds() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_INVENTORY_PRODUCEDS, true);
+	public List<WorkEffortInventoryProduced> getWorkEffortInventoryProduceds() {
+		return (List<WorkEffortInventoryProduced>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_INVENTORY_PRODUCEDS, true);
 	}
 
 	/**
@@ -1233,8 +1257,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkEffortKeywords() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_KEYWORDS, true);
+	public List<WorkEffortKeyword> getWorkEffortKeywords() {
+		return (List<WorkEffortKeyword>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_KEYWORDS, true);
 	}
 
 	/**
@@ -1244,8 +1268,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkEffortNotes() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_NOTES, true);
+	public List<WorkEffortNote> getWorkEffortNotes() {
+		return (List<WorkEffortNote>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_NOTES, true);
 	}
 
 	/**
@@ -1255,8 +1279,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkEffortSkillStandards() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_SKILL_STANDARDS, true);
+	public List<WorkEffortSkillStandard> getWorkEffortSkillStandards() {
+		return (List<WorkEffortSkillStandard>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_SKILL_STANDARDS, true);
 	}
 
 	/**
@@ -1265,7 +1289,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1277,7 +1301,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> childWorkEfforts() {
+	public List<WorkEffort> childWorkEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1289,7 +1313,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> costComponents() {
+	public List<CostComponent> costComponents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1301,7 +1325,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequestWorkEfforts() {
+	public List<CustRequestWorkEffort> custRequestWorkEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1313,7 +1337,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> estimatedArrivalShipments() {
+	public List<Shipment> estimatedArrivalShipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1325,7 +1349,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> estimatedShipShipments() {
+	public List<Shipment> estimatedShipShipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1337,7 +1361,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryItemDetails() {
+	public List<InventoryItemDetail> inventoryItemDetails() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1349,7 +1373,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> maintTemplateProductMaints() {
+	public List<ProductMaint> maintTemplateProductMaints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1361,7 +1385,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> orderHeaderWorkEfforts() {
+	public List<OrderHeaderWorkEffort> orderHeaderWorkEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1373,7 +1397,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteItems() {
+	public List<QuoteItem> quoteItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1385,7 +1409,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteWorkEfforts() {
+	public List<QuoteWorkEffort> quoteWorkEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1397,7 +1421,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> salesOpportunityWorkEfforts() {
+	public List<SalesOpportunityWorkEffort> salesOpportunityWorkEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1409,7 +1433,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> scheduleFixedAssetMaints() {
+	public List<FixedAssetMaint> scheduleFixedAssetMaints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1421,7 +1445,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> shoppingListWorkEfforts() {
+	public List<ShoppingListWorkEffort> shoppingListWorkEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1433,7 +1457,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> timeEntries() {
+	public List<TimeEntry> timeEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1445,7 +1469,7 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> workRequirementFulfillments() {
+	public List<WorkRequirementFulfillment> workRequirementFulfillments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

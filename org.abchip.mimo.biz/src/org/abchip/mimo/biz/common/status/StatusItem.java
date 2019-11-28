@@ -10,6 +10,54 @@ package org.abchip.mimo.biz.common.status;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.budget.BudgetStatus;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
+import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.content.content.Content;
+import org.abchip.mimo.biz.content.content.ContentApproval;
+import org.abchip.mimo.biz.content.data.DataResource;
+import org.abchip.mimo.biz.content.survey.SurveyResponse;
+import org.abchip.mimo.biz.entity.test.TestingStatus;
+import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
+import org.abchip.mimo.biz.humanres.employment.UnemploymentClaim;
+import org.abchip.mimo.biz.humanres.position.EmplPosition;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
+import org.abchip.mimo.biz.order.order.OrderDeliverySchedule;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.order.OrderItem;
+import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
+import org.abchip.mimo.biz.order.order.OrderStatus;
+import org.abchip.mimo.biz.order.quote.Quote;
+import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.order.request.CustRequestItem;
+import org.abchip.mimo.biz.order.request.CustRequestStatus;
+import org.abchip.mimo.biz.order.requirement.Requirement;
+import org.abchip.mimo.biz.order.requirement.RequirementStatus;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
+import org.abchip.mimo.biz.order.return_.ReturnItem;
+import org.abchip.mimo.biz.order.return_.ReturnStatus;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.PartyInvitation;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
+import org.abchip.mimo.biz.product.product.ProductGroupOrder;
+import org.abchip.mimo.biz.product.product.ProductReview;
+import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.service.schedule.JobSandbox;
+import org.abchip.mimo.biz.shipment.picklist.Picklist;
+import org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentStatus;
+import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,620 +187,560 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	void setStatusTypeId(StatusType value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Statuss</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Shipment Statuss</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Statuss</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Statuss</em>' attribute list.
+	 * @return the value of the '<em>Shipment Statuss</em>' reference list.
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_ShipmentStatuss()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentStatus'"
 	 * @generated
 	 */
-	List<String> getShipmentStatuss();
+	List<ShipmentStatus> getShipmentStatuss();
 
 	/**
-	 * Returns the value of the '<em><b>Main Status Valid Changes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Main Status Valid Changes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.common.status.StatusValidChange}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Main Status Valid Changes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Main Status Valid Changes</em>' attribute list.
+	 * @return the value of the '<em>Main Status Valid Changes</em>' reference list.
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_MainStatusValidChanges()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='StatusValidChange'"
 	 * @generated
 	 */
-	List<String> getMainStatusValidChanges();
+	List<StatusValidChange> getMainStatusValidChanges();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='reconcileStatusId'"
 	 * @generated
 	 */
-	List<String> acctgTransEntries();
+	List<AcctgTransEntry> acctgTransEntries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='groupStatusId'"
 	 * @generated
 	 */
-	List<String> acctgTranss();
+	List<AcctgTrans> acctgTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentApproval' route='approvalStatusId'"
 	 * @generated
 	 */
-	List<String> approvalContentApprovals();
+	List<ContentApproval> approvalContentApprovals();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetStatus' route='statusId'"
 	 * @generated
 	 */
-	List<String> budgetStatuss();
+	List<BudgetStatus> budgetStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='carrierServiceStatusId'"
 	 * @generated
 	 */
-	List<String> carrierServiceShipmentRouteSegments();
+	List<ShipmentRouteSegment> carrierServiceShipmentRouteSegments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='statusId'"
 	 * @generated
 	 */
-	List<String> communicationEvents();
+	List<CommunicationEvent> communicationEvents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='statusId'"
 	 * @generated
 	 */
-	List<String> contents();
+	List<Content> contents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='currentStatusId'"
 	 * @generated
 	 */
-	List<String> currentWorkEfforts();
+	List<WorkEffort> currentWorkEfforts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestItem' route='statusId'"
 	 * @generated
 	 */
-	List<String> custRequestItems();
+	List<CustRequestItem> custRequestItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestStatus' route='statusId'"
 	 * @generated
 	 */
-	List<String> custRequestStatuss();
+	List<CustRequestStatus> custRequestStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequest' route='statusId'"
 	 * @generated
 	 */
-	List<String> custRequests();
+	List<CustRequest> custRequests();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='statusId'"
 	 * @generated
 	 */
-	List<String> dataResources();
+	List<DataResource> dataResources();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='digitalItemApprovedStatus'"
 	 * @generated
 	 */
-	List<String> digitalItemApprovedProductStores();
+	List<ProductStore> digitalItemApprovedProductStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmplPosition' route='statusId'"
 	 * @generated
 	 */
-	List<String> emplPositions();
+	List<EmplPosition> emplPositions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='statusId'"
 	 * @generated
 	 */
-	List<String> employmentApps();
+	List<EmploymentApp> employmentApps();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='statusId'"
 	 * @generated
 	 */
-	List<String> finAccountTranss();
+	List<FinAccountTrans> finAccountTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetMaint' route='statusId'"
 	 * @generated
 	 */
-	List<String> fixedAssetMaints();
+	List<FixedAssetMaint> fixedAssetMaints();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlReconciliation' route='statusId'"
 	 * @generated
 	 */
-	List<String> glReconciliations();
+	List<GlReconciliation> glReconciliations();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='headerApprovedStatus'"
 	 * @generated
 	 */
-	List<String> headerApprovedProductStores();
+	List<ProductStore> headerApprovedProductStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='headerCancelStatus'"
 	 * @generated
 	 */
-	List<String> headerCancelProductStores();
+	List<ProductStore> headerCancelProductStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='headerDeclinedStatus'"
 	 * @generated
 	 */
-	List<String> headerDeclinedProductStores();
+	List<ProductStore> headerDeclinedProductStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='statusId'"
 	 * @generated
 	 */
-	List<String> inventoryItems();
+	List<InventoryItem> inventoryItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItem' route='expectedItemStatus'"
 	 * @generated
 	 */
-	List<String> inventoryReturnItems();
+	List<ReturnItem> inventoryReturnItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='statusId'"
 	 * @generated
 	 */
-	List<String> inventoryTransfers();
+	List<InventoryTransfer> inventoryTransfers();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='statusId'"
 	 * @generated
 	 */
-	List<String> invoices();
+	List<Invoice> invoices();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='itemApprovedStatus'"
 	 * @generated
 	 */
-	List<String> itemApprovedProductStores();
+	List<ProductStore> itemApprovedProductStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='itemCancelStatus'"
 	 * @generated
 	 */
-	List<String> itemCancelProductStores();
+	List<ProductStore> itemCancelProductStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='itemDeclinedStatus'"
 	 * @generated
 	 */
-	List<String> itemDeclinedProductStores();
+	List<ProductStore> itemDeclinedProductStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobSandbox' route='statusId'"
 	 * @generated
 	 */
-	List<String> jobSandboxs();
+	List<JobSandbox> jobSandboxs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='MarketingCampaign' route='statusId'"
 	 * @generated
 	 */
-	List<String> marketingCampaigns();
+	List<MarketingCampaign> marketingCampaigns();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderDeliverySchedule' route='statusId'"
 	 * @generated
 	 */
-	List<String> orderDeliverySchedules();
+	List<OrderDeliverySchedule> orderDeliverySchedules();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='statusId'"
 	 * @generated
 	 */
-	List<String> orderHeaders();
+	List<OrderHeader> orderHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='statusId'"
 	 * @generated
 	 */
-	List<String> orderItems();
+	List<OrderItem> orderItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderPaymentPreference' route='statusId'"
 	 * @generated
 	 */
-	List<String> orderPaymentPreferences();
+	List<OrderPaymentPreference> orderPaymentPreferences();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderStatus' route='statusId'"
 	 * @generated
 	 */
-	List<String> orderStatuss();
+	List<OrderStatus> orderStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Party' route='statusId'"
 	 * @generated
 	 */
-	List<String> parties();
+	List<Party> parties();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitation' route='statusId'"
 	 * @generated
 	 */
-	List<String> partyInvitations();
+	List<PartyInvitation> partyInvitations();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='statusId'"
 	 * @generated
 	 */
-	List<String> payments();
+	List<Payment> payments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PicklistStatusHistory' route='statusId'"
 	 * @generated
 	 */
-	List<String> picklistStatusHistories();
+	List<PicklistStatusHistory> picklistStatusHistories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Picklist' route='statusId'"
 	 * @generated
 	 */
-	List<String> picklists();
+	List<Picklist> picklists();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductGroupOrder' route='statusId'"
 	 * @generated
 	 */
-	List<String> productGroupOrders();
+	List<ProductGroupOrder> productGroupOrders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductReview' route='statusId'"
 	 * @generated
 	 */
-	List<String> productReviews();
+	List<ProductReview> productReviews();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Quote' route='statusId'"
 	 * @generated
 	 */
-	List<String> quotes();
+	List<Quote> quotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementStatus' route='statusId'"
 	 * @generated
 	 */
-	List<String> requirementStatuss();
+	List<RequirementStatus> requirementStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Requirement' route='statusId'"
 	 * @generated
 	 */
-	List<String> requirements();
+	List<Requirement> requirements();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='statusId'"
 	 * @generated
 	 */
-	List<String> returnHeaders();
+	List<ReturnHeader> returnHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItem' route='statusId'"
 	 * @generated
 	 */
-	List<String> returnItems();
+	List<ReturnItem> returnItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnStatus' route='statusId'"
 	 * @generated
 	 */
-	List<String> returnStatuss();
+	List<ReturnStatus> returnStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='statusId'"
 	 * @generated
 	 */
-	List<String> shipments();
+	List<Shipment> shipments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyResponse' route='statusId'"
 	 * @generated
 	 */
-	List<String> surveyResponses();
+	List<SurveyResponse> surveyResponses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='syncStatusId'"
 	 * @generated
 	 */
-	List<String> syncOrderHeaders();
+	List<OrderHeader> syncOrderHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='syncStatusId'"
 	 * @generated
 	 */
-	List<String> syncOrderItems();
+	List<OrderItem> syncOrderItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TestingStatus' route='statusId'"
 	 * @generated
 	 */
-	List<String> testingStatuss();
+	List<TestingStatus> testingStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Timesheet' route='statusId'"
 	 * @generated
 	 */
-	List<String> timesheets();
+	List<Timesheet> timesheets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PicklistStatusHistory' route='statusIdTo'"
 	 * @generated
 	 */
-	List<String> toPicklistStatusHistories();
+	List<PicklistStatusHistory> toPicklistStatusHistories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='StatusValidChange' route='statusIdTo'"
 	 * @generated
 	 */
-	List<String> toStatusValidChanges();
+	List<StatusValidChange> toStatusValidChanges();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UnemploymentClaim' route='statusId'"
 	 * @generated
 	 */
-	List<String> unemploymentClaims();
+	List<UnemploymentClaim> unemploymentClaims();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortInventoryAssign' route='statusId'"
 	 * @generated
 	 */
-	List<String> workEffortInventoryAssigns();
+	List<WorkEffortInventoryAssign> workEffortInventoryAssigns();
 
 	/**
 	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.

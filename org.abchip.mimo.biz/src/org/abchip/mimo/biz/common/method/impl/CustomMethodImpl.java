@@ -9,10 +9,17 @@ package org.abchip.mimo.biz.common.method.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod;
+import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.method.CustomMethodType;
 import org.abchip.mimo.biz.common.method.MethodPackage;
+import org.abchip.mimo.biz.common.uom.UomConversion;
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.product.cost.CostComponentCalc;
+import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -123,8 +130,8 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFixedAssetDepMethods() {
-		return (List<String>)eGet(MethodPackage.Literals.CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS, true);
+	public List<FixedAssetDepMethod> getFixedAssetDepMethods() {
+		return (List<FixedAssetDepMethod>)eGet(MethodPackage.Literals.CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS, true);
 	}
 
 	/**
@@ -133,7 +140,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> contents() {
+	public List<Content> contents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +152,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> costComponentCalcs() {
+	public List<CostComponentCalc> costComponentCalcs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -157,7 +164,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> invoicePartyAcctgPreferences() {
+	public List<PartyAcctgPreference> invoicePartyAcctgPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -169,7 +176,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> orderPartyAcctgPreferences() {
+	public List<PartyAcctgPreference> orderPartyAcctgPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -181,7 +188,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> productStoreShipmentMeths() {
+	public List<ProductStoreShipmentMeth> productStoreShipmentMeths() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -193,7 +200,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> quotePartyAcctgPreferences() {
+	public List<PartyAcctgPreference> quotePartyAcctgPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -205,7 +212,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> uomCustomMethodUomConversions() {
+	public List<UomConversion> uomCustomMethodUomConversions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -217,7 +224,7 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> workEfforts() {
+	public List<WorkEffort> workEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

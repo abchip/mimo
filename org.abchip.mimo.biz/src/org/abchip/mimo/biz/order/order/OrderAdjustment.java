@@ -16,6 +16,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
 import org.abchip.mimo.biz.common.geo.Geo;
+import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
@@ -992,31 +993,29 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	void setTaxAuthorityRateSeqId(TaxAuthorityRateProduct value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Adjustment Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Order Adjustment Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Adjustment Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Adjustment Attributes</em>' attribute list.
+	 * @return the value of the '<em>Order Adjustment Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderAdjustmentAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustmentAttribute'"
 	 * @generated
 	 */
-	List<String> getOrderAdjustmentAttributes();
+	List<OrderAdjustmentAttribute> getOrderAdjustmentAttributes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='orderAdjustmentId'"
 	 * @generated
 	 */
-	List<String> returnAdjustments();
+	List<ReturnAdjustment> returnAdjustments();
 
 } // OrderAdjustment

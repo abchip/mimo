@@ -706,7 +706,7 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT__PRIMARY_SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 27;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Shipment Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -715,7 +715,7 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT__SHIPMENT_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 28;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Contact Mechs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Shipment Contact Mechs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -724,7 +724,7 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT__SHIPMENT_CONTACT_MECHS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 29;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Items</b></em>' attribute list.
+	 * The feature id for the '<em><b>Shipment Items</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -733,7 +733,7 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT__SHIPMENT_ITEMS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 30;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Packages</b></em>' attribute list.
+	 * The feature id for the '<em><b>Shipment Packages</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -742,7 +742,7 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT__SHIPMENT_PACKAGES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 31;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Route Segments</b></em>' attribute list.
+	 * The feature id for the '<em><b>Shipment Route Segments</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -960,7 +960,7 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_BOX_TYPE__BOX_WIDTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Carrier Shipment Box Types</b></em>' attribute list.
+	 * The feature id for the '<em><b>Carrier Shipment Box Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1021,7 +1021,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int SHIPMENT_CONTACT_MECH__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1030,7 +1030,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int SHIPMENT_CONTACT_MECH__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1039,7 +1039,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int SHIPMENT_CONTACT_MECH__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1048,7 +1048,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int SHIPMENT_CONTACT_MECH__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
@@ -1057,7 +1057,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH__SHIPMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int SHIPMENT_CONTACT_MECH__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Contact Mech Type Id</b></em>' reference.
@@ -1066,7 +1066,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
@@ -1075,7 +1075,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Shipment Contact Mech</em>' class.
@@ -1084,7 +1084,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int SHIPMENT_CONTACT_MECH_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentContactMechTypeImpl <em>Shipment Contact Mech Type</em>}' class.
@@ -1097,22 +1097,13 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_CONTACT_MECH_TYPE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHIPMENT_CONTACT_MECH_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int SHIPMENT_CONTACT_MECH_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1121,7 +1112,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int SHIPMENT_CONTACT_MECH_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1130,7 +1121,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int SHIPMENT_CONTACT_MECH_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1139,7 +1130,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int SHIPMENT_CONTACT_MECH_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Shipment Contact Mech Type Id</b></em>' attribute.
@@ -1148,7 +1139,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH_TYPE__SHIPMENT_CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int SHIPMENT_CONTACT_MECH_TYPE__SHIPMENT_CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1157,7 +1148,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int SHIPMENT_CONTACT_MECH_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Shipment Contact Mech Type</em>' class.
@@ -1166,7 +1157,7 @@ public interface Shipment_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIPMENT_CONTACT_MECH_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int SHIPMENT_CONTACT_MECH_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentCostEstimateImpl <em>Shipment Cost Estimate</em>}' class.
@@ -3959,7 +3950,7 @@ public interface Shipment_Package extends EPackage {
 	int SHIPMENT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Shipment Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4132,7 +4123,7 @@ public interface Shipment_Package extends EPackage {
 	int SHIPPING_DOCUMENT__DATE_CREATED = DocumentPackage.DOCUMENT__DATE_CREATED;
 
 	/**
-	 * The feature id for the '<em><b>Document Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Document Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4813,59 +4804,59 @@ public interface Shipment_Package extends EPackage {
 	EReference getShipment_StatusId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentAttributes <em>Shipment Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentAttributes <em>Shipment Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Shipment Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Shipment Attributes</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentAttributes()
 	 * @see #getShipment()
 	 * @generated
 	 */
-	EAttribute getShipment_ShipmentAttributes();
+	EReference getShipment_ShipmentAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentContactMechs <em>Shipment Contact Mechs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentContactMechs <em>Shipment Contact Mechs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Shipment Contact Mechs</em>'.
+	 * @return the meta object for the reference list '<em>Shipment Contact Mechs</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentContactMechs()
 	 * @see #getShipment()
 	 * @generated
 	 */
-	EAttribute getShipment_ShipmentContactMechs();
+	EReference getShipment_ShipmentContactMechs();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentItems <em>Shipment Items</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentItems <em>Shipment Items</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Shipment Items</em>'.
+	 * @return the meta object for the reference list '<em>Shipment Items</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentItems()
 	 * @see #getShipment()
 	 * @generated
 	 */
-	EAttribute getShipment_ShipmentItems();
+	EReference getShipment_ShipmentItems();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentPackages <em>Shipment Packages</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentPackages <em>Shipment Packages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Shipment Packages</em>'.
+	 * @return the meta object for the reference list '<em>Shipment Packages</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentPackages()
 	 * @see #getShipment()
 	 * @generated
 	 */
-	EAttribute getShipment_ShipmentPackages();
+	EReference getShipment_ShipmentPackages();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentRouteSegments <em>Shipment Route Segments</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentRouteSegments <em>Shipment Route Segments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Shipment Route Segments</em>'.
+	 * @return the meta object for the reference list '<em>Shipment Route Segments</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentRouteSegments()
 	 * @see #getShipment()
 	 * @generated
 	 */
-	EAttribute getShipment_ShipmentRouteSegments();
+	EReference getShipment_ShipmentRouteSegments();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentAttribute <em>Shipment Attribute</em>}'.
@@ -5020,15 +5011,15 @@ public interface Shipment_Package extends EPackage {
 	EReference getShipmentBoxType_WeightUomId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType#getCarrierShipmentBoxTypes <em>Carrier Shipment Box Types</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType#getCarrierShipmentBoxTypes <em>Carrier Shipment Box Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Carrier Shipment Box Types</em>'.
+	 * @return the meta object for the reference list '<em>Carrier Shipment Box Types</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType#getCarrierShipmentBoxTypes()
 	 * @see #getShipmentBoxType()
 	 * @generated
 	 */
-	EAttribute getShipmentBoxType_CarrierShipmentBoxTypes();
+	EReference getShipmentBoxType_CarrierShipmentBoxTypes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech <em>Shipment Contact Mech</em>}'.
@@ -7343,15 +7334,15 @@ public interface Shipment_Package extends EPackage {
 	EReference getShipmentType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentType#getShipmentTypeAttrs <em>Shipment Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentType#getShipmentTypeAttrs <em>Shipment Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Shipment Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Shipment Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.shipment.shipment.ShipmentType#getShipmentTypeAttrs()
 	 * @see #getShipmentType()
 	 * @generated
 	 */
-	EAttribute getShipmentType_ShipmentTypeAttrs();
+	EReference getShipmentType_ShipmentTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr <em>Shipment Type Attr</em>}'.
@@ -7913,44 +7904,44 @@ public interface Shipment_Package extends EPackage {
 		EReference SHIPMENT__STATUS_ID = eINSTANCE.getShipment_StatusId();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Shipment Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT__SHIPMENT_ATTRIBUTES = eINSTANCE.getShipment_ShipmentAttributes();
+		EReference SHIPMENT__SHIPMENT_ATTRIBUTES = eINSTANCE.getShipment_ShipmentAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Contact Mechs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Shipment Contact Mechs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT__SHIPMENT_CONTACT_MECHS = eINSTANCE.getShipment_ShipmentContactMechs();
+		EReference SHIPMENT__SHIPMENT_CONTACT_MECHS = eINSTANCE.getShipment_ShipmentContactMechs();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Items</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Shipment Items</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT__SHIPMENT_ITEMS = eINSTANCE.getShipment_ShipmentItems();
+		EReference SHIPMENT__SHIPMENT_ITEMS = eINSTANCE.getShipment_ShipmentItems();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Packages</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Shipment Packages</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT__SHIPMENT_PACKAGES = eINSTANCE.getShipment_ShipmentPackages();
+		EReference SHIPMENT__SHIPMENT_PACKAGES = eINSTANCE.getShipment_ShipmentPackages();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Route Segments</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Shipment Route Segments</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT__SHIPMENT_ROUTE_SEGMENTS = eINSTANCE.getShipment_ShipmentRouteSegments();
+		EReference SHIPMENT__SHIPMENT_ROUTE_SEGMENTS = eINSTANCE.getShipment_ShipmentRouteSegments();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentAttributeImpl <em>Shipment Attribute</em>}' class.
@@ -8069,12 +8060,12 @@ public interface Shipment_Package extends EPackage {
 		EReference SHIPMENT_BOX_TYPE__WEIGHT_UOM_ID = eINSTANCE.getShipmentBoxType_WeightUomId();
 
 		/**
-		 * The meta object literal for the '<em><b>Carrier Shipment Box Types</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Carrier Shipment Box Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_BOX_TYPE__CARRIER_SHIPMENT_BOX_TYPES = eINSTANCE.getShipmentBoxType_CarrierShipmentBoxTypes();
+		EReference SHIPMENT_BOX_TYPE__CARRIER_SHIPMENT_BOX_TYPES = eINSTANCE.getShipmentBoxType_CarrierShipmentBoxTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentContactMechImpl <em>Shipment Contact Mech</em>}' class.
@@ -9813,12 +9804,12 @@ public interface Shipment_Package extends EPackage {
 		EReference SHIPMENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getShipmentType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Shipment Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SHIPMENT_TYPE__SHIPMENT_TYPE_ATTRS = eINSTANCE.getShipmentType_ShipmentTypeAttrs();
+		EReference SHIPMENT_TYPE__SHIPMENT_TYPE_ATTRS = eINSTANCE.getShipmentType_ShipmentTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTypeAttrImpl <em>Shipment Type Attr</em>}' class.

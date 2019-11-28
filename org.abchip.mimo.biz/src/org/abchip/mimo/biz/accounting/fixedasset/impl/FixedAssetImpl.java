@@ -12,18 +12,31 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetAttribute;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar;
 import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.requirement.Requirement;
+import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.shipment.shipment.Delivery;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -538,8 +551,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFixedAssetAttributes() {
-		return (List<String>)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_ATTRIBUTES, true);
+	public List<FixedAssetAttribute> getFixedAssetAttributes() {
+		return (List<FixedAssetAttribute>)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_ATTRIBUTES, true);
 	}
 
 	/**
@@ -549,8 +562,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFixedAssetIdents() {
-		return (List<String>)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_IDENTS, true);
+	public List<FixedAssetIdent> getFixedAssetIdents() {
+		return (List<FixedAssetIdent>)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_IDENTS, true);
 	}
 
 	/**
@@ -560,8 +573,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFixedAssetMaints() {
-		return (List<String>)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_MAINTS, true);
+	public List<FixedAssetMaint> getFixedAssetMaints() {
+		return (List<FixedAssetMaint>)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_MAINTS, true);
 	}
 
 	/**
@@ -571,8 +584,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFixedAssetRegistrations() {
-		return (List<String>)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_REGISTRATIONS, true);
+	public List<FixedAssetRegistration> getFixedAssetRegistrations() {
+		return (List<FixedAssetRegistration>)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_REGISTRATIONS, true);
 	}
 
 	/**
@@ -581,7 +594,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> accommodationMaps() {
+	public List<AccommodationMap> accommodationMaps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -593,7 +606,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> accommodationSpots() {
+	public List<AccommodationSpot> accommodationSpots() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -605,7 +618,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -617,7 +630,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> childFixedAssets() {
+	public List<FixedAsset> childFixedAssets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -629,7 +642,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> costComponents() {
+	public List<CostComponent> costComponents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -641,7 +654,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> deliveries() {
+	public List<Delivery> deliveries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -653,7 +666,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> fixedAssetDepMethods() {
+	public List<FixedAssetDepMethod> fixedAssetDepMethods() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -665,7 +678,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> fixedAssetInventoryItems() {
+	public List<InventoryItem> fixedAssetInventoryItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -677,7 +690,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> requirements() {
+	public List<Requirement> requirements() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -689,7 +702,7 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> workEfforts() {
+	public List<WorkEffort> workEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

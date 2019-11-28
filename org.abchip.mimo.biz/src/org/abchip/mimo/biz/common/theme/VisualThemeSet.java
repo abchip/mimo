@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.common.theme;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,22 +59,20 @@ public interface VisualThemeSet extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='VisualTheme' route='visualThemeSetId'"
 	 * @generated
 	 */
-	List<String> visualThemes();
+	List<VisualTheme> visualThemes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WebSite' route='visualThemeSetId'"
 	 * @generated
 	 */
-	List<String> webSites();
+	List<WebSite> webSites();
 
 	/**
 	 * Returns the value of the '<em><b>Visual Theme Set Id</b></em>' attribute.

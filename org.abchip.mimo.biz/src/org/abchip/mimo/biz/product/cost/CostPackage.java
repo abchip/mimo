@@ -126,7 +126,7 @@ public interface CostPackage extends EPackage {
 	int COST_COMPONENT__COST = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Cost Component Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Cost Component Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -534,7 +534,7 @@ public interface CostPackage extends EPackage {
 	int COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Cost Component Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Cost Component Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -924,15 +924,15 @@ public interface CostPackage extends EPackage {
 	EReference getCostComponent_WorkEffortId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentAttributes <em>Cost Component Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentAttributes <em>Cost Component Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Cost Component Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Cost Component Attributes</em>'.
 	 * @see org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentAttributes()
 	 * @see #getCostComponent()
 	 * @generated
 	 */
-	EAttribute getCostComponent_CostComponentAttributes();
+	EReference getCostComponent_CostComponentAttributes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute <em>Component Attribute</em>}'.
@@ -1152,15 +1152,15 @@ public interface CostPackage extends EPackage {
 	EReference getCostComponentType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.cost.CostComponentType#getCostComponentTypeAttrs <em>Cost Component Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.cost.CostComponentType#getCostComponentTypeAttrs <em>Cost Component Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Cost Component Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Cost Component Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.product.cost.CostComponentType#getCostComponentTypeAttrs()
 	 * @see #getCostComponentType()
 	 * @generated
 	 */
-	EAttribute getCostComponentType_CostComponentTypeAttrs();
+	EReference getCostComponentType_CostComponentTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.cost.CostComponentTypeAttr <em>Component Type Attr</em>}'.
@@ -1418,12 +1418,12 @@ public interface CostPackage extends EPackage {
 		EReference COST_COMPONENT__WORK_EFFORT_ID = eINSTANCE.getCostComponent_WorkEffortId();
 
 		/**
-		 * The meta object literal for the '<em><b>Cost Component Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Cost Component Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COST_COMPONENT__COST_COMPONENT_ATTRIBUTES = eINSTANCE.getCostComponent_CostComponentAttributes();
+		EReference COST_COMPONENT__COST_COMPONENT_ATTRIBUTES = eINSTANCE.getCostComponent_CostComponentAttributes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.cost.impl.CostComponentAttributeImpl <em>Component Attribute</em>}' class.
@@ -1592,12 +1592,12 @@ public interface CostPackage extends EPackage {
 		EReference COST_COMPONENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getCostComponentType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Cost Component Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Cost Component Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS = eINSTANCE.getCostComponentType_CostComponentTypeAttrs();
+		EReference COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS = eINSTANCE.getCostComponentType_CostComponentTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.cost.impl.CostComponentTypeAttrImpl <em>Component Type Attr</em>}' class.

@@ -8,11 +8,10 @@
 package org.abchip.mimo.biz.common.datasource.impl;
 
 import java.util.List;
-
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.datasource.DataSourceType;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +28,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class DataSourceTypeImpl extends BizEntityTypeImpl<DataSource> implements DataSourceType {
+public class DataSourceTypeImpl extends BizEntityImpl implements DataSourceType {
 	/**
 	 * 
 	 */
@@ -80,7 +79,7 @@ public class DataSourceTypeImpl extends BizEntityTypeImpl<DataSource> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> dataSources() {
+	public List<DataSource> dataSources() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

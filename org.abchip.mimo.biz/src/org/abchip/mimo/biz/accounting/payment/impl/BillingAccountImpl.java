@@ -11,10 +11,16 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
+import org.abchip.mimo.biz.accounting.payment.BillingAccountTerm;
+import org.abchip.mimo.biz.accounting.payment.PaymentApplication;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
+import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.eclipse.emf.ecore.EClass;
 
@@ -208,7 +214,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 * @generated
 	 */
 	@Override
-	public List<String> billingAccountTerms() {
+	public List<BillingAccountTerm> billingAccountTerms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -220,7 +226,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 * @generated
 	 */
 	@Override
-	public List<String> invoices() {
+	public List<Invoice> invoices() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -232,7 +238,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 * @generated
 	 */
 	@Override
-	public List<String> orderHeaders() {
+	public List<OrderHeader> orderHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -244,7 +250,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentApplications() {
+	public List<PaymentApplication> paymentApplications() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -256,7 +262,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 * @generated
 	 */
 	@Override
-	public List<String> returnHeaders() {
+	public List<ReturnHeader> returnHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -268,7 +274,7 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 * @generated
 	 */
 	@Override
-	public List<String> returnItemResponses() {
+	public List<ReturnItemResponse> returnItemResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

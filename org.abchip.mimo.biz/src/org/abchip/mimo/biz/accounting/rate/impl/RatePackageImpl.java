@@ -945,6 +945,7 @@ public class RatePackageImpl extends EPackageImpl implements RatePackage {
 		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
 		PositionPackage thePositionPackage = (PositionPackage)EPackage.Registry.INSTANCE.getEPackage(PositionPackage.eNS_URI);
 		PeriodPackage thePeriodPackage = (PeriodPackage)EPackage.Registry.INSTANCE.getEPackage(PeriodPackage.eNS_URI);
+		TimesheetPackage theTimesheetPackage = (TimesheetPackage)EPackage.Registry.INSTANCE.getEPackage(TimesheetPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -987,7 +988,7 @@ public class RatePackageImpl extends EPackageImpl implements RatePackage {
 		initEAttribute(getRateType_RateTypeId(), ecorePackage.getEString(), "rateTypeId", null, 1, 1, RateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRateType_Description(), ecorePackage.getEString(), "description", null, 0, 1, RateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(rateTypeEClass, ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(rateTypeEClass, theTimesheetPackage.getTimeEntry(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-slot
@@ -1052,13 +1053,6 @@ public class RatePackageImpl extends EPackageImpl implements RatePackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (rateTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getRateType_RateTypeId(),

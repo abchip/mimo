@@ -8,10 +8,25 @@
 package org.abchip.mimo.biz.party.party.impl;
 
 import java.util.List;
-
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.content.content.ContentApproval;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.agreement.Agreement;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.party.contact.ValidContactMechRole;
+import org.abchip.mimo.biz.party.party.PartyInvitationRoleAssoc;
 import org.abchip.mimo.biz.party.party.PartyPackage;
+import org.abchip.mimo.biz.party.party.PartyRelationshipType;
+import org.abchip.mimo.biz.party.party.PartyRole;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.party.party.RoleTypeAttr;
+import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -143,8 +158,8 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getRoleTypeAttrs() {
-		return (List<String>)eGet(PartyPackage.Literals.ROLE_TYPE__ROLE_TYPE_ATTRS, true);
+	public List<RoleTypeAttr> getRoleTypeAttrs() {
+		return (List<RoleTypeAttr>)eGet(PartyPackage.Literals.ROLE_TYPE__ROLE_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,8 +169,8 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getValidContactMechRoles() {
-		return (List<String>)eGet(PartyPackage.Literals.ROLE_TYPE__VALID_CONTACT_MECH_ROLES, true);
+	public List<ValidContactMechRole> getValidContactMechRoles() {
+		return (List<ValidContactMechRole>)eGet(PartyPackage.Literals.ROLE_TYPE__VALID_CONTACT_MECH_ROLES, true);
 	}
 
 	/**
@@ -164,7 +179,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTransEntries() {
+	public List<AcctgTransEntry> acctgTransEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -176,7 +191,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -188,7 +203,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> childRoleTypes() {
+	public List<RoleType> childRoleTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -200,7 +215,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> contentApprovals() {
+	public List<ContentApproval> contentApprovals() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -212,7 +227,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> fixedAssets() {
+	public List<FixedAsset> fixedAssets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -224,7 +239,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> fromAgreements() {
+	public List<Agreement> fromAgreements() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -236,7 +251,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> fromCommunicationEvents() {
+	public List<CommunicationEvent> fromCommunicationEvents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -248,7 +263,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> glAccountOrganizations() {
+	public List<GlAccountOrganization> glAccountOrganizations() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -260,7 +275,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> invoices() {
+	public List<Invoice> invoices() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -272,7 +287,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> originatedFromSubscriptions() {
+	public List<Subscription> originatedFromSubscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -284,7 +299,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> partyInvitationRoleAssocs() {
+	public List<PartyInvitationRoleAssoc> partyInvitationRoleAssocs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -296,7 +311,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> partyRoles() {
+	public List<PartyRole> partyRoles() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -308,7 +323,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentCostEstimates() {
+	public List<ShipmentCostEstimate> shipmentCostEstimates() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -320,7 +335,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> subscriptions() {
+	public List<Subscription> subscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -332,7 +347,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> toAgreements() {
+	public List<Agreement> toAgreements() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -344,7 +359,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> toCommunicationEvents() {
+	public List<CommunicationEvent> toCommunicationEvents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -356,7 +371,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> toPayments() {
+	public List<Payment> toPayments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -368,7 +383,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> validFromPartyRelationshipTypes() {
+	public List<PartyRelationshipType> validFromPartyRelationshipTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -380,7 +395,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public List<String> validToPartyRelationshipTypes() {
+	public List<PartyRelationshipType> validToPartyRelationshipTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

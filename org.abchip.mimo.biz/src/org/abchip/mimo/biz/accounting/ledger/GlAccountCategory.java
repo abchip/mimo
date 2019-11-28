@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.ledger;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * @model annotation="mimo-ent-frame title='General Ledger Account Category' formula='description'"
  * @generated
  */
-public interface GlAccountCategory extends BizEntityTyped<GlAccountCategoryType> {
+public interface GlAccountCategory extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->

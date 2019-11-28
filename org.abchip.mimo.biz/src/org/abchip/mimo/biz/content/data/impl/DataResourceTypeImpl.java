@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.DataResourceType;
+import org.abchip.mimo.biz.content.data.DataResourceTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -144,8 +145,8 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getDataResourceTypeAttrs() {
-		return (List<String>)eGet(DataPackage.Literals.DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ATTRS, true);
+	public List<DataResourceTypeAttr> getDataResourceTypeAttrs() {
+		return (List<DataResourceTypeAttr>)eGet(DataPackage.Literals.DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +155,7 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> childDataResourceTypes() {
+	public List<DataResourceType> childDataResourceTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +167,7 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> dataResources() {
+	public List<DataResource> dataResources() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

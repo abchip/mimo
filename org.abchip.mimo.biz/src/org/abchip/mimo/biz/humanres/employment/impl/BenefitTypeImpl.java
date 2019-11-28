@@ -11,7 +11,8 @@ import java.util.List;
 
 import org.abchip.mimo.biz.humanres.employment.BenefitType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.humanres.employment.PartyBenefit;
+import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
+public class BenefitTypeImpl extends BizEntityTypeImpl<PartyBenefit> implements BenefitType {
 	/**
 	 * 
 	 */
@@ -183,7 +184,7 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 	 * @generated
 	 */
 	@Override
-	public List<String> childBenefitTypes() {
+	public List<BenefitType> childBenefitTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -10,8 +10,11 @@ package org.abchip.mimo.biz.accounting.invoice.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr;
+import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -123,8 +126,8 @@ public class InvoiceTypeImpl extends BizEntityTypeImpl<Invoice> implements Invoi
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getInvoiceTypeAttrs() {
-		return (List<String>)eGet(InvoicePackage.Literals.INVOICE_TYPE__INVOICE_TYPE_ATTRS, true);
+	public List<InvoiceTypeAttr> getInvoiceTypeAttrs() {
+		return (List<InvoiceTypeAttr>)eGet(InvoicePackage.Literals.INVOICE_TYPE__INVOICE_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -133,7 +136,7 @@ public class InvoiceTypeImpl extends BizEntityTypeImpl<Invoice> implements Invoi
 	 * @generated
 	 */
 	@Override
-	public List<String> childInvoiceTypes() {
+	public List<InvoiceType> childInvoiceTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +148,7 @@ public class InvoiceTypeImpl extends BizEntityTypeImpl<Invoice> implements Invoi
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceItemTypeMaps() {
+	public List<InvoiceItemTypeMap> invoiceItemTypeMaps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -157,7 +160,7 @@ public class InvoiceTypeImpl extends BizEntityTypeImpl<Invoice> implements Invoi
 	 * @generated
 	 */
 	@Override
-	public List<String> invoices() {
+	public List<Invoice> invoices() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -169,7 +172,7 @@ public class InvoiceTypeImpl extends BizEntityTypeImpl<Invoice> implements Invoi
 	 * @generated
 	 */
 	@Override
-	public List<String> partyPrefDocTypeTpls() {
+	public List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

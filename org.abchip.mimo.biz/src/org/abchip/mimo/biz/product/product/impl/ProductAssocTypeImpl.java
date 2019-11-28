@@ -122,7 +122,7 @@ public class ProductAssocTypeImpl extends BizEntityTypeImpl<ProductAssoc> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> childProductAssocTypes() {
+	public List<ProductAssocType> childProductAssocTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

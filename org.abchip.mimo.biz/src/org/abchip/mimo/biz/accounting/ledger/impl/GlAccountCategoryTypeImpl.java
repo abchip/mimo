@@ -8,11 +8,10 @@
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import java.util.List;
-
 import org.abchip.mimo.biz.accounting.ledger.GlAccountCategory;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +28,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class GlAccountCategoryTypeImpl extends BizEntityTypeImpl<GlAccountCategory> implements GlAccountCategoryType {
+public class GlAccountCategoryTypeImpl extends BizEntityImpl implements GlAccountCategoryType {
 	/**
 	 * 
 	 */
@@ -79,7 +78,7 @@ public class GlAccountCategoryTypeImpl extends BizEntityTypeImpl<GlAccountCatego
 	 * @generated
 	 */
 	@Override
-	public List<String> glAccountCategories() {
+	public List<GlAccountCategory> glAccountCategories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

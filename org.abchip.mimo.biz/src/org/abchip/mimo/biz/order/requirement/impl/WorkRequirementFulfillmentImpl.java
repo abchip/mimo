@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.order.requirement.impl;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.WorkReqFulfType;
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFulfType> implements WorkRequirementFulfillment {
+public class WorkRequirementFulfillmentImpl extends BizEntityImpl implements WorkRequirementFulfillment {
 	/**
 	 * 
 	 */

@@ -10,9 +10,13 @@ package org.abchip.mimo.biz.accounting.payment;
 import java.util.Date;
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
+import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.party.party.Party;
 
 /**
@@ -38,7 +42,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface PaymentMethod extends BizEntityTyped<PaymentMethodType> {
+public interface PaymentMethod extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -146,72 +150,65 @@ public interface PaymentMethod extends BizEntityTyped<PaymentMethodType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderPaymentPreference' route='paymentMethodId'"
 	 * @generated
 	 */
-	List<String> orderPaymentPreferences();
+	List<OrderPaymentPreference> orderPaymentPreferences();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='refundPaymentMethodId'"
 	 * @generated
 	 */
-	List<String> partyAcctgPreferences();
+	List<PartyAcctgPreference> partyAcctgPreferences();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGatewayResponse' route='paymentMethodId'"
 	 * @generated
 	 */
-	List<String> paymentGatewayResponses();
+	List<PaymentGatewayResponse> paymentGatewayResponses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='paymentMethodId'"
 	 * @generated
 	 */
-	List<String> payments();
+	List<Payment> payments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccount' route='replenishPaymentId'"
 	 * @generated
 	 */
-	List<String> replenishFinAccounts();
+	List<FinAccount> replenishFinAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='paymentMethodId'"
 	 * @generated
 	 */
-	List<String> returnHeaders();
+	List<ReturnHeader> returnHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='paymentMethodId'"
 	 * @generated
 	 */
-	List<String> shoppingLists();
+	List<ShoppingList> shoppingLists();
 
 	/**
 	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' reference.

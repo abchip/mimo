@@ -526,67 +526,63 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	void setUseCase(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Requirement Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.requirement.RequirementAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Attributes</em>' attribute list.
+	 * @return the value of the '<em>Requirement Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_RequirementAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementAttribute'"
 	 * @generated
 	 */
-	List<String> getRequirementAttributes();
+	List<RequirementAttribute> getRequirementAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Requirement Statuss</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Requirement Statuss</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.requirement.RequirementStatus}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Statuss</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Statuss</em>' attribute list.
+	 * @return the value of the '<em>Requirement Statuss</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_RequirementStatuss()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementStatus'"
 	 * @generated
 	 */
-	List<String> getRequirementStatuss();
+	List<RequirementStatus> getRequirementStatuss();
 
 	/**
-	 * Returns the value of the '<em><b>Work Requirement Fulfillments</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Work Requirement Fulfillments</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Requirement Fulfillments</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Requirement Fulfillments</em>' attribute list.
+	 * @return the value of the '<em>Work Requirement Fulfillments</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_WorkRequirementFulfillments()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkRequirementFulfillment'"
 	 * @generated
 	 */
-	List<String> getWorkRequirementFulfillments();
+	List<WorkRequirementFulfillment> getWorkRequirementFulfillments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DesiredFeature' route='requirementId'"
 	 * @generated
 	 */
-	List<String> desiredFeatures();
+	List<DesiredFeature> desiredFeatures();
 
 } // Requirement

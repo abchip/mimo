@@ -9,8 +9,7 @@ package org.abchip.mimo.biz.party.party.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.abchip.mimo.biz.party.party.PartyContent;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyContentType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -30,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implements PartyContentType {
+public class PartyContentTypeImpl extends BizEntityImpl implements PartyContentType {
 	/**
 	 * 
 	 */
@@ -100,7 +99,7 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> childPartyContentTypes() {
+	public List<PartyContentType> childPartyContentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

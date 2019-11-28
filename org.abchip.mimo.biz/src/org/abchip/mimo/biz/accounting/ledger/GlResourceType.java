@@ -58,12 +58,11 @@ public interface GlResourceType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccount' route='glResourceTypeId'"
 	 * @generated
 	 */
-	List<String> glAccounts();
+	List<GlAccount> glAccounts();
 
 	/**
 	 * Returns the value of the '<em><b>Gl Resource Type Id</b></em>' attribute.

@@ -167,61 +167,56 @@ public interface CustRequestType extends BizEntityType<CustRequest> {
 	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Cust Request Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Cust Request Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cust Request Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cust Request Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Cust Request Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestType_CustRequestTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestTypeAttr'"
 	 * @generated
 	 */
-	List<String> getCustRequestTypeAttrs();
+	List<CustRequestTypeAttr> getCustRequestTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childCustRequestTypes();
+	List<CustRequestType> childCustRequestTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestCategory' route='custRequestTypeId'"
 	 * @generated
 	 */
-	List<String> custRequestCategories();
+	List<CustRequestCategory> custRequestCategories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestResolution' route='custRequestTypeId'"
 	 * @generated
 	 */
-	List<String> custRequestResolutions();
+	List<CustRequestResolution> custRequestResolutions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequest' route='custRequestTypeId'"
 	 * @generated
 	 */
-	List<String> custRequests();
+	List<CustRequest> custRequests();
 
 } // CustRequestType

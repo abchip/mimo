@@ -10,10 +10,14 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -32,7 +36,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> implements PaymentMethodType {
+public class PaymentMethodTypeImpl extends BizEntityImpl implements PaymentMethodType {
 	/**
 	 * 
 	 */
@@ -123,8 +127,8 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPaymentMethodTypeGlAccounts() {
-		return (List<String>)eGet(PaymentPackage.Literals.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_GL_ACCOUNTS, true);
+	public List<PaymentMethodTypeGlAccount> getPaymentMethodTypeGlAccounts() {
+		return (List<PaymentMethodTypeGlAccount>)eGet(PaymentPackage.Literals.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_GL_ACCOUNTS, true);
 	}
 
 	/**
@@ -133,7 +137,7 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> orderPaymentPreferences() {
+	public List<OrderPaymentPreference> orderPaymentPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +149,7 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentGatewayResponses() {
+	public List<PaymentGatewayResponse> paymentGatewayResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -157,7 +161,7 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentMethods() {
+	public List<PaymentMethod> paymentMethods() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -169,7 +173,7 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> payments() {
+	public List<Payment> payments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

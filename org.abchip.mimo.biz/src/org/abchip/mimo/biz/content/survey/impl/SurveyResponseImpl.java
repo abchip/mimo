@@ -11,7 +11,9 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment;
 import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyResponse;
@@ -253,7 +255,7 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 * @generated
 	 */
 	@Override
-	public List<String> dataResources() {
+	public List<DataResource> dataResources() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -265,7 +267,7 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 * @generated
 	 */
 	@Override
-	public List<String> giftCardFulfillments() {
+	public List<GiftCardFulfillment> giftCardFulfillments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

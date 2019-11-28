@@ -877,6 +877,8 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		BudgetPackage theBudgetPackage = (BudgetPackage)EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
+		OpportunityPackage theOpportunityPackage = (OpportunityPackage)EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
 		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
 
 		// Create type parameters
@@ -902,13 +904,13 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		getCustomTimePeriod_PeriodTypeId().getEKeys().add(this.getPeriodType_PeriodTypeId());
 		initEAttribute(getCustomTimePeriod_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(customTimePeriodEClass, ecorePackage.getEString(), "budgets", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customTimePeriodEClass, theBudgetPackage.getBudget(), "budgets", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customTimePeriodEClass, ecorePackage.getEString(), "childCustomTimePeriods", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customTimePeriodEClass, this.getCustomTimePeriod(), "childCustomTimePeriods", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customTimePeriodEClass, ecorePackage.getEString(), "salesForecastHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customTimePeriodEClass, theOpportunityPackage.getSalesForecastHistory(), "salesForecastHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customTimePeriodEClass, ecorePackage.getEString(), "salesForecasts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customTimePeriodEClass, theOpportunityPackage.getSalesForecast(), "salesForecasts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(periodTypeEClass, PeriodType.class, "PeriodType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPeriodType_PeriodTypeId(), ecorePackage.getEString(), "periodTypeId", null, 1, 1, PeriodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -917,15 +919,15 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		initEReference(getPeriodType_UomId(), theUomPackage.getUom(), null, "uomId", null, 0, 1, PeriodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPeriodType_UomId().getEKeys().add(theUomPackage.getUom_UomId());
 
-		addEOperation(periodTypeEClass, ecorePackage.getEString(), "customTimePeriods", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(periodTypeEClass, this.getCustomTimePeriod(), "customTimePeriods", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
 	}
@@ -938,34 +940,6 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 	 */
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
-		addAnnotation
-		  (customTimePeriodEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customTimePeriodEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customTimePeriodEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customTimePeriodEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
 		addAnnotation
 		  (getCustomTimePeriod_CustomTimePeriodId(),
 		   source,
@@ -1006,13 +980,6 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (periodTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getPeriodType_PeriodTypeId(),

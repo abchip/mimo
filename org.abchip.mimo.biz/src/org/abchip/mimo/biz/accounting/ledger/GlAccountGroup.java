@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.accounting.ledger;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * @model annotation="mimo-ent-frame title='General Ledger Account Group' formula='description'"
  * @generated
  */
-public interface GlAccountGroup extends BizEntityTyped<GlAccountGroupType> {
+public interface GlAccountGroup extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,12 +85,11 @@ public interface GlAccountGroup extends BizEntityTyped<GlAccountGroupType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountGroupMember' route='glAccountGroupId'"
 	 * @generated
 	 */
-	List<String> glAccountGroupMembers();
+	List<GlAccountGroupMember> glAccountGroupMembers();
 
 	/**
 	 * Returns the value of the '<em><b>Gl Account Group Id</b></em>' attribute.

@@ -12,7 +12,10 @@ import java.util.List;
 
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentPackage;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.ecore.EClass;
 
@@ -229,8 +232,8 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCarrierShipmentBoxTypes() {
-		return (List<String>)eGet(Shipment_Package.Literals.SHIPMENT_BOX_TYPE__CARRIER_SHIPMENT_BOX_TYPES, true);
+	public List<CarrierShipmentBoxType> getCarrierShipmentBoxTypes() {
+		return (List<CarrierShipmentBoxType>)eGet(Shipment_Package.Literals.SHIPMENT_BOX_TYPE__CARRIER_SHIPMENT_BOX_TYPES, true);
 	}
 
 	/**
@@ -239,7 +242,7 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 * @generated
 	 */
 	@Override
-	public List<String> defaultProducts() {
+	public List<Product> defaultProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -251,7 +254,7 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentPackages() {
+	public List<ShipmentPackage> shipmentPackages() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

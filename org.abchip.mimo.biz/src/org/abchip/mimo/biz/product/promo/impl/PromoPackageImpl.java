@@ -892,8 +892,8 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductPromo_ProductPromoRules() {
-		return (EAttribute)productPromoEClass.getEStructuralFeatures().get(7);
+	public EReference getProductPromo_ProductPromoRules() {
+		return (EReference)productPromoEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1252,8 +1252,8 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductPromoCode_ProductPromoCodeEmails() {
-		return (EAttribute)productPromoCodeEClass.getEStructuralFeatures().get(6);
+	public EReference getProductPromoCode_ProductPromoCodeEmails() {
+		return (EReference)productPromoCodeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1262,8 +1262,8 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductPromoCode_ProductPromoCodeParties() {
-		return (EAttribute)productPromoCodeEClass.getEStructuralFeatures().get(7);
+	public EReference getProductPromoCode_ProductPromoCodeParties() {
+		return (EReference)productPromoCodeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1703,7 +1703,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		createEReference(productPromoEClass, PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN);
 		createEAttribute(productPromoEClass, PRODUCT_PROMO__LAST_MODIFIED_DATE);
 		createEReference(productPromoEClass, PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID);
-		createEAttribute(productPromoEClass, PRODUCT_PROMO__PRODUCT_PROMO_RULES);
+		createEReference(productPromoEClass, PRODUCT_PROMO__PRODUCT_PROMO_RULES);
 		createEAttribute(productPromoEClass, PRODUCT_PROMO__PROMO_NAME);
 		createEAttribute(productPromoEClass, PRODUCT_PROMO__PROMO_TEXT);
 		createEAttribute(productPromoEClass, PRODUCT_PROMO__REQUIRE_CODE);
@@ -1744,8 +1744,8 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		createEAttribute(productPromoCodeEClass, PRODUCT_PROMO_CODE__FROM_DATE);
 		createEReference(productPromoCodeEClass, PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN);
 		createEAttribute(productPromoCodeEClass, PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE);
-		createEAttribute(productPromoCodeEClass, PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS);
-		createEAttribute(productPromoCodeEClass, PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES);
+		createEReference(productPromoCodeEClass, PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS);
+		createEReference(productPromoCodeEClass, PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES);
 		createEReference(productPromoCodeEClass, PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID);
 		createEAttribute(productPromoCodeEClass, PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY);
 		createEAttribute(productPromoCodeEClass, PRODUCT_PROMO_CODE__THRU_DATE);
@@ -1828,10 +1828,13 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		MethodPackage theMethodPackage = (MethodPackage)EPackage.Registry.INSTANCE.getEPackage(MethodPackage.eNS_URI);
 		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
+		QuotePackage theQuotePackage = (QuotePackage)EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
+		ReturnPackage theReturnPackage = (ReturnPackage)EPackage.Registry.INSTANCE.getEPackage(ReturnPackage.eNS_URI);
+		MethodPackage theMethodPackage = (MethodPackage)EPackage.Registry.INSTANCE.getEPackage(MethodPackage.eNS_URI);
 		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
 		CategoryPackage theCategoryPackage = (CategoryPackage)EPackage.Registry.INSTANCE.getEPackage(CategoryPackage.eNS_URI);
+		ShoppinglistPackage theShoppinglistPackage = (ShoppinglistPackage)EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
 		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 
@@ -1864,7 +1867,7 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		initEAttribute(getProductPromo_LastModifiedDate(), ecorePackage.getEDate(), "lastModifiedDate", null, 0, 1, ProductPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProductPromo_OverrideOrgPartyId(), thePartyPackage.getParty(), null, "overrideOrgPartyId", null, 0, 1, ProductPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductPromo_OverrideOrgPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEAttribute(getProductPromo_ProductPromoRules(), ecorePackage.getEString(), "productPromoRules", null, 0, -1, ProductPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductPromo_ProductPromoRules(), this.getProductPromoRule(), null, "productPromoRules", null, 0, -1, ProductPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductPromo_PromoName(), ecorePackage.getEString(), "promoName", null, 0, 1, ProductPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductPromo_PromoText(), ecorePackage.getEString(), "promoText", null, 0, 1, ProductPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductPromo_RequireCode(), ecorePackage.getEBoolean(), "requireCode", null, 0, 1, ProductPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1874,15 +1877,15 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		initEAttribute(getProductPromo_UseLimitPerPromotion(), ecorePackage.getELong(), "useLimitPerPromotion", null, 0, 1, ProductPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductPromo_UserEntered(), ecorePackage.getEBoolean(), "userEntered", null, 0, 1, ProductPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(productPromoEClass, ecorePackage.getEString(), "orderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productPromoEClass, theOrderPackage.getOrderAdjustment(), "orderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productPromoEClass, ecorePackage.getEString(), "productPromoCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productPromoEClass, this.getProductPromoCode(), "productPromoCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productPromoEClass, ecorePackage.getEString(), "productPromoUses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productPromoEClass, this.getProductPromoUse(), "productPromoUses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productPromoEClass, ecorePackage.getEString(), "quoteAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productPromoEClass, theQuotePackage.getQuoteAdjustment(), "quoteAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productPromoEClass, ecorePackage.getEString(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productPromoEClass, theReturnPackage.getReturnAdjustment(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productPromoActionEClass, ProductPromoAction.class, "ProductPromoAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProductPromoAction_ProductPromoId(), this.getProductPromo(), null, "productPromoId", null, 1, 1, ProductPromoAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1924,8 +1927,8 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		initEReference(getProductPromoCode_LastModifiedByUserLogin(), theLoginPackage.getUserLogin(), null, "lastModifiedByUserLogin", null, 0, 1, ProductPromoCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductPromoCode_LastModifiedByUserLogin().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 		initEAttribute(getProductPromoCode_LastModifiedDate(), ecorePackage.getEDate(), "lastModifiedDate", null, 0, 1, ProductPromoCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductPromoCode_ProductPromoCodeEmails(), ecorePackage.getEString(), "productPromoCodeEmails", null, 0, -1, ProductPromoCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductPromoCode_ProductPromoCodeParties(), ecorePackage.getEString(), "productPromoCodeParties", null, 0, -1, ProductPromoCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductPromoCode_ProductPromoCodeEmails(), this.getProductPromoCodeEmail(), null, "productPromoCodeEmails", null, 0, -1, ProductPromoCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductPromoCode_ProductPromoCodeParties(), this.getProductPromoCodeParty(), null, "productPromoCodeParties", null, 0, -1, ProductPromoCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProductPromoCode_ProductPromoId(), this.getProductPromo(), null, "productPromoId", null, 0, 1, ProductPromoCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductPromoCode_ProductPromoId().getEKeys().add(this.getProductPromo_ProductPromoId());
 		initEAttribute(getProductPromoCode_RequireEmailOrParty(), ecorePackage.getEBoolean(), "requireEmailOrParty", null, 0, 1, ProductPromoCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1934,11 +1937,11 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		initEAttribute(getProductPromoCode_UseLimitPerCustomer(), ecorePackage.getELong(), "useLimitPerCustomer", null, 0, 1, ProductPromoCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductPromoCode_UserEntered(), ecorePackage.getEBoolean(), "userEntered", null, 0, 1, ProductPromoCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(productPromoCodeEClass, ecorePackage.getEString(), "orderProductPromoCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productPromoCodeEClass, theOrderPackage.getOrderProductPromoCode(), "orderProductPromoCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productPromoCodeEClass, ecorePackage.getEString(), "productPromoUses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productPromoCodeEClass, this.getProductPromoUse(), "productPromoUses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(productPromoCodeEClass, ecorePackage.getEString(), "shoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(productPromoCodeEClass, theShoppinglistPackage.getShoppingList(), "shoppingLists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productPromoCodeEmailEClass, ProductPromoCodeEmail.class, "ProductPromoCodeEmail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProductPromoCodeEmail_ProductPromoCodeId(), this.getProductPromoCode(), null, "productPromoCodeId", null, 1, 1, ProductPromoCodeEmail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2008,12 +2011,12 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -2111,41 +2114,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (productPromoEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (productPromoEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (productPromoEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (productPromoEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (productPromoEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductPromo_ProductPromoId(),
 		   source,
 		   new String[] {
@@ -2171,13 +2139,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductPromo_ProductPromoRules(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductPromo_PromoName(),
@@ -2332,27 +2293,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 			   "length", "1"
 		   });
 		addAnnotation
-		  (productPromoCodeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (productPromoCodeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (productPromoCodeEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getProductPromoCode_ProductPromoCodeId(),
 		   source,
 		   new String[] {
@@ -2376,20 +2316,6 @@ public class PromoPackageImpl extends EPackageImpl implements PromoPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductPromoCode_ProductPromoCodeEmails(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getProductPromoCode_ProductPromoCodeParties(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductPromoCode_RequireEmailOrParty(),

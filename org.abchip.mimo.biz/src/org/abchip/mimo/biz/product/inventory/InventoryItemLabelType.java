@@ -112,32 +112,29 @@ public interface InventoryItemLabelType extends BizEntityType<InventoryItemLabel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemLabelType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childInventoryItemLabelTypes();
+	List<InventoryItemLabelType> childInventoryItemLabelTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemLabelAppl' route='inventoryItemLabelTypeId'"
 	 * @generated
 	 */
-	List<String> inventoryItemLabelAppls();
+	List<InventoryItemLabelAppl> inventoryItemLabelAppls();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemLabel' route='inventoryItemLabelTypeId'"
 	 * @generated
 	 */
-	List<String> inventoryItemLabels();
+	List<InventoryItemLabel> inventoryItemLabels();
 
 	/**
 	 * Returns the value of the '<em><b>Inventory Item Label Type Id</b></em>' attribute.

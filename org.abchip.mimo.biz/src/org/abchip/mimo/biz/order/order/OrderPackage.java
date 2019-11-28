@@ -334,7 +334,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ADJUSTMENT__OLD_PERCENTAGE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
 
 	/**
-	 * The feature id for the '<em><b>Order Adjustment Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Order Adjustment Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -778,7 +778,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ADJUSTMENT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Order Adjustment Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Order Adjustment Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -994,7 +994,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int ORDER_BLACKLIST__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1003,7 +1003,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int ORDER_BLACKLIST__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1012,7 +1012,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int ORDER_BLACKLIST__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1021,7 +1021,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int ORDER_BLACKLIST__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Order Blacklist Type Id</b></em>' reference.
@@ -1030,7 +1030,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST__ORDER_BLACKLIST_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int ORDER_BLACKLIST__ORDER_BLACKLIST_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Blacklist String</b></em>' attribute.
@@ -1039,7 +1039,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST__BLACKLIST_STRING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int ORDER_BLACKLIST__BLACKLIST_STRING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Blacklist</em>' class.
@@ -1048,7 +1048,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int ORDER_BLACKLIST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderBlacklistTypeImpl <em>Blacklist Type</em>}' class.
@@ -1061,22 +1061,13 @@ public interface OrderPackage extends EPackage {
 	int ORDER_BLACKLIST_TYPE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORDER_BLACKLIST_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int ORDER_BLACKLIST_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1085,7 +1076,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int ORDER_BLACKLIST_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1094,7 +1085,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int ORDER_BLACKLIST_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1103,7 +1094,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int ORDER_BLACKLIST_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Order Blacklist Type Id</b></em>' attribute.
@@ -1112,7 +1103,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST_TYPE__ORDER_BLACKLIST_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int ORDER_BLACKLIST_TYPE__ORDER_BLACKLIST_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1121,7 +1112,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int ORDER_BLACKLIST_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Blacklist Type</em>' class.
@@ -1130,7 +1121,7 @@ public interface OrderPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_BLACKLIST_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int ORDER_BLACKLIST_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.order.impl.OrderContactMechImpl <em>Contact Mech</em>}' class.
@@ -1660,7 +1651,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Communication Event Orders</b></em>' attribute list.
+	 * The feature id for the '<em><b>Communication Event Orders</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1768,7 +1759,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER__NEEDS_INVENTORY_ISSUANCE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
 
 	/**
-	 * The feature id for the '<em><b>Order Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Order Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1786,7 +1777,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER__ORDER_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
 
 	/**
-	 * The feature id for the '<em><b>Order Delivery Schedules</b></em>' attribute list.
+	 * The feature id for the '<em><b>Order Delivery Schedules</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1795,7 +1786,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER__ORDER_DELIVERY_SCHEDULES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
 
 	/**
-	 * The feature id for the '<em><b>Order Header Notes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Order Header Notes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1804,7 +1795,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER__ORDER_HEADER_NOTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
 
 	/**
-	 * The feature id for the '<em><b>Order Header Work Efforts</b></em>' attribute list.
+	 * The feature id for the '<em><b>Order Header Work Efforts</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1813,7 +1804,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
 
 	/**
-	 * The feature id for the '<em><b>Order Item Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Order Item Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1822,7 +1813,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER__ORDER_ITEM_GROUPS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 21;
 
 	/**
-	 * The feature id for the '<em><b>Order Item Ship Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Order Item Ship Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1831,7 +1822,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
 
 	/**
-	 * The feature id for the '<em><b>Order Items</b></em>' attribute list.
+	 * The feature id for the '<em><b>Order Items</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1849,7 +1840,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER__ORDER_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 24;
 
 	/**
-	 * The feature id for the '<em><b>Order Product Promo Codes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Order Product Promo Codes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1894,7 +1885,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER__PRIORITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 29;
 
 	/**
-	 * The feature id for the '<em><b>Product Promo Uses</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Promo Uses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1957,7 +1948,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_HEADER__TERMINAL_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 36;
 
 	/**
-	 * The feature id for the '<em><b>Tracking Code Orders</b></em>' attribute list.
+	 * The feature id for the '<em><b>Tracking Code Orders</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4332,7 +4323,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_ITEM_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Order Item Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Order Item Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5630,7 +5621,7 @@ public interface OrderPackage extends EPackage {
 	int ORDER_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Order Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Order Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -6358,15 +6349,15 @@ public interface OrderPackage extends EPackage {
 	EReference getOrderAdjustment_TaxAuthorityRateSeqId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentAttributes <em>Order Adjustment Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentAttributes <em>Order Adjustment Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Order Adjustment Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Order Adjustment Attributes</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentAttributes()
 	 * @see #getOrderAdjustment()
 	 * @generated
 	 */
-	EAttribute getOrderAdjustment_OrderAdjustmentAttributes();
+	EReference getOrderAdjustment_OrderAdjustmentAttributes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute <em>Adjustment Attribute</em>}'.
@@ -6531,15 +6522,15 @@ public interface OrderPackage extends EPackage {
 	EReference getOrderAdjustmentType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getOrderAdjustmentTypeAttrs <em>Order Adjustment Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getOrderAdjustmentTypeAttrs <em>Order Adjustment Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Order Adjustment Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Order Adjustment Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderAdjustmentType#getOrderAdjustmentTypeAttrs()
 	 * @see #getOrderAdjustmentType()
 	 * @generated
 	 */
-	EAttribute getOrderAdjustmentType_OrderAdjustmentTypeAttrs();
+	EReference getOrderAdjustmentType_OrderAdjustmentTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr <em>Adjustment Type Attr</em>}'.
@@ -7138,11 +7129,11 @@ public interface OrderPackage extends EPackage {
 	EAttribute getOrderHeader_InternalCode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeader#getInvoicePerShipment <em>Invoice Per Shipment</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeader#isInvoicePerShipment <em>Invoice Per Shipment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Invoice Per Shipment</em>'.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getInvoicePerShipment()
+	 * @see org.abchip.mimo.biz.order.order.OrderHeader#isInvoicePerShipment()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
@@ -7347,125 +7338,125 @@ public interface OrderPackage extends EPackage {
 	EReference getOrderHeader_WebSiteId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getCommunicationEventOrders <em>Communication Event Orders</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getCommunicationEventOrders <em>Communication Event Orders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Communication Event Orders</em>'.
+	 * @return the meta object for the reference list '<em>Communication Event Orders</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getCommunicationEventOrders()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
-	EAttribute getOrderHeader_CommunicationEventOrders();
+	EReference getOrderHeader_CommunicationEventOrders();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderAttributes <em>Order Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderAttributes <em>Order Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Order Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Order Attributes</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getOrderAttributes()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
-	EAttribute getOrderHeader_OrderAttributes();
+	EReference getOrderHeader_OrderAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderDeliverySchedules <em>Order Delivery Schedules</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderDeliverySchedules <em>Order Delivery Schedules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Order Delivery Schedules</em>'.
+	 * @return the meta object for the reference list '<em>Order Delivery Schedules</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getOrderDeliverySchedules()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
-	EAttribute getOrderHeader_OrderDeliverySchedules();
+	EReference getOrderHeader_OrderDeliverySchedules();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderHeaderNotes <em>Order Header Notes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderHeaderNotes <em>Order Header Notes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Order Header Notes</em>'.
+	 * @return the meta object for the reference list '<em>Order Header Notes</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getOrderHeaderNotes()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
-	EAttribute getOrderHeader_OrderHeaderNotes();
+	EReference getOrderHeader_OrderHeaderNotes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderHeaderWorkEfforts <em>Order Header Work Efforts</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderHeaderWorkEfforts <em>Order Header Work Efforts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Order Header Work Efforts</em>'.
+	 * @return the meta object for the reference list '<em>Order Header Work Efforts</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getOrderHeaderWorkEfforts()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
-	EAttribute getOrderHeader_OrderHeaderWorkEfforts();
+	EReference getOrderHeader_OrderHeaderWorkEfforts();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderItems <em>Order Items</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderItems <em>Order Items</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Order Items</em>'.
+	 * @return the meta object for the reference list '<em>Order Items</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getOrderItems()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
-	EAttribute getOrderHeader_OrderItems();
+	EReference getOrderHeader_OrderItems();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderItemGroups <em>Order Item Groups</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderItemGroups <em>Order Item Groups</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Order Item Groups</em>'.
+	 * @return the meta object for the reference list '<em>Order Item Groups</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getOrderItemGroups()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
-	EAttribute getOrderHeader_OrderItemGroups();
+	EReference getOrderHeader_OrderItemGroups();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderItemShipGroups <em>Order Item Ship Groups</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderItemShipGroups <em>Order Item Ship Groups</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Order Item Ship Groups</em>'.
+	 * @return the meta object for the reference list '<em>Order Item Ship Groups</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getOrderItemShipGroups()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
-	EAttribute getOrderHeader_OrderItemShipGroups();
+	EReference getOrderHeader_OrderItemShipGroups();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderProductPromoCodes <em>Order Product Promo Codes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderProductPromoCodes <em>Order Product Promo Codes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Order Product Promo Codes</em>'.
+	 * @return the meta object for the reference list '<em>Order Product Promo Codes</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getOrderProductPromoCodes()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
-	EAttribute getOrderHeader_OrderProductPromoCodes();
+	EReference getOrderHeader_OrderProductPromoCodes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getProductPromoUses <em>Product Promo Uses</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getProductPromoUses <em>Product Promo Uses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Promo Uses</em>'.
+	 * @return the meta object for the reference list '<em>Product Promo Uses</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getProductPromoUses()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
-	EAttribute getOrderHeader_ProductPromoUses();
+	EReference getOrderHeader_ProductPromoUses();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getTrackingCodeOrders <em>Tracking Code Orders</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderHeader#getTrackingCodeOrders <em>Tracking Code Orders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Tracking Code Orders</em>'.
+	 * @return the meta object for the reference list '<em>Tracking Code Orders</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderHeader#getTrackingCodeOrders()
 	 * @see #getOrderHeader()
 	 * @generated
 	 */
-	EAttribute getOrderHeader_TrackingCodeOrders();
+	EReference getOrderHeader_TrackingCodeOrders();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderHeaderNote <em>Header Note</em>}'.
@@ -7489,11 +7480,11 @@ public interface OrderPackage extends EPackage {
 	EReference getOrderHeaderNote_OrderId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeaderNote#getInternalNote <em>Internal Note</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.order.OrderHeaderNote#isInternalNote <em>Internal Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Internal Note</em>'.
-	 * @see org.abchip.mimo.biz.order.order.OrderHeaderNote#getInternalNote()
+	 * @see org.abchip.mimo.biz.order.order.OrderHeaderNote#isInternalNote()
 	 * @see #getOrderHeaderNote()
 	 * @generated
 	 */
@@ -9332,15 +9323,15 @@ public interface OrderPackage extends EPackage {
 	EReference getOrderItemType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderItemType#getOrderItemTypeAttrs <em>Order Item Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderItemType#getOrderItemTypeAttrs <em>Order Item Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Order Item Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Order Item Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderItemType#getOrderItemTypeAttrs()
 	 * @see #getOrderItemType()
 	 * @generated
 	 */
-	EAttribute getOrderItemType_OrderItemTypeAttrs();
+	EReference getOrderItemType_OrderItemTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderItemTypeAttr <em>Item Type Attr</em>}'.
@@ -10278,15 +10269,15 @@ public interface OrderPackage extends EPackage {
 	EReference getOrderType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.order.OrderType#getOrderTypeAttrs <em>Order Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.order.OrderType#getOrderTypeAttrs <em>Order Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Order Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Order Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.order.order.OrderType#getOrderTypeAttrs()
 	 * @see #getOrderType()
 	 * @generated
 	 */
-	EAttribute getOrderType_OrderTypeAttrs();
+	EReference getOrderType_OrderTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.order.OrderTypeAttr <em>Type Attr</em>}'.
@@ -10789,12 +10780,12 @@ public interface OrderPackage extends EPackage {
 		EReference ORDER_ADJUSTMENT__TAX_AUTHORITY_RATE_SEQ_ID = eINSTANCE.getOrderAdjustment_TaxAuthorityRateSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Adjustment Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Order Adjustment Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_ATTRIBUTES = eINSTANCE.getOrderAdjustment_OrderAdjustmentAttributes();
+		EReference ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_ATTRIBUTES = eINSTANCE.getOrderAdjustment_OrderAdjustmentAttributes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentAttributeImpl <em>Adjustment Attribute</em>}' class.
@@ -10923,12 +10914,12 @@ public interface OrderPackage extends EPackage {
 		EReference ORDER_ADJUSTMENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getOrderAdjustmentType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Adjustment Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Order Adjustment Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ADJUSTMENT_TYPE__ORDER_ADJUSTMENT_TYPE_ATTRS = eINSTANCE.getOrderAdjustmentType_OrderAdjustmentTypeAttrs();
+		EReference ORDER_ADJUSTMENT_TYPE__ORDER_ADJUSTMENT_TYPE_ATTRS = eINSTANCE.getOrderAdjustmentType_OrderAdjustmentTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentTypeAttrImpl <em>Adjustment Type Attr</em>}' class.
@@ -11541,92 +11532,92 @@ public interface OrderPackage extends EPackage {
 		EReference ORDER_HEADER__WEB_SITE_ID = eINSTANCE.getOrderHeader_WebSiteId();
 
 		/**
-		 * The meta object literal for the '<em><b>Communication Event Orders</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Communication Event Orders</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER__COMMUNICATION_EVENT_ORDERS = eINSTANCE.getOrderHeader_CommunicationEventOrders();
+		EReference ORDER_HEADER__COMMUNICATION_EVENT_ORDERS = eINSTANCE.getOrderHeader_CommunicationEventOrders();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Order Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER__ORDER_ATTRIBUTES = eINSTANCE.getOrderHeader_OrderAttributes();
+		EReference ORDER_HEADER__ORDER_ATTRIBUTES = eINSTANCE.getOrderHeader_OrderAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Delivery Schedules</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Order Delivery Schedules</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER__ORDER_DELIVERY_SCHEDULES = eINSTANCE.getOrderHeader_OrderDeliverySchedules();
+		EReference ORDER_HEADER__ORDER_DELIVERY_SCHEDULES = eINSTANCE.getOrderHeader_OrderDeliverySchedules();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Header Notes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Order Header Notes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER__ORDER_HEADER_NOTES = eINSTANCE.getOrderHeader_OrderHeaderNotes();
+		EReference ORDER_HEADER__ORDER_HEADER_NOTES = eINSTANCE.getOrderHeader_OrderHeaderNotes();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Header Work Efforts</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Order Header Work Efforts</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS = eINSTANCE.getOrderHeader_OrderHeaderWorkEfforts();
+		EReference ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS = eINSTANCE.getOrderHeader_OrderHeaderWorkEfforts();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Items</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Order Items</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER__ORDER_ITEMS = eINSTANCE.getOrderHeader_OrderItems();
+		EReference ORDER_HEADER__ORDER_ITEMS = eINSTANCE.getOrderHeader_OrderItems();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Item Groups</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Order Item Groups</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER__ORDER_ITEM_GROUPS = eINSTANCE.getOrderHeader_OrderItemGroups();
+		EReference ORDER_HEADER__ORDER_ITEM_GROUPS = eINSTANCE.getOrderHeader_OrderItemGroups();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Item Ship Groups</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Order Item Ship Groups</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS = eINSTANCE.getOrderHeader_OrderItemShipGroups();
+		EReference ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS = eINSTANCE.getOrderHeader_OrderItemShipGroups();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Product Promo Codes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Order Product Promo Codes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES = eINSTANCE.getOrderHeader_OrderProductPromoCodes();
+		EReference ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES = eINSTANCE.getOrderHeader_OrderProductPromoCodes();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Uses</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Promo Uses</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER__PRODUCT_PROMO_USES = eINSTANCE.getOrderHeader_ProductPromoUses();
+		EReference ORDER_HEADER__PRODUCT_PROMO_USES = eINSTANCE.getOrderHeader_ProductPromoUses();
 
 		/**
-		 * The meta object literal for the '<em><b>Tracking Code Orders</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Tracking Code Orders</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_HEADER__TRACKING_CODE_ORDERS = eINSTANCE.getOrderHeader_TrackingCodeOrders();
+		EReference ORDER_HEADER__TRACKING_CODE_ORDERS = eINSTANCE.getOrderHeader_TrackingCodeOrders();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderNoteImpl <em>Header Note</em>}' class.
@@ -13031,12 +13022,12 @@ public interface OrderPackage extends EPackage {
 		EReference ORDER_ITEM_TYPE__PARENT_TYPE_ID = eINSTANCE.getOrderItemType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Item Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Order Item Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS = eINSTANCE.getOrderItemType_OrderItemTypeAttrs();
+		EReference ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS = eINSTANCE.getOrderItemType_OrderItemTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderItemTypeAttrImpl <em>Item Type Attr</em>}' class.
@@ -13749,12 +13740,12 @@ public interface OrderPackage extends EPackage {
 		EReference ORDER_TYPE__PARENT_TYPE_ID = eINSTANCE.getOrderType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Order Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ORDER_TYPE__ORDER_TYPE_ATTRS = eINSTANCE.getOrderType_OrderTypeAttrs();
+		EReference ORDER_TYPE__ORDER_TYPE_ATTRS = eINSTANCE.getOrderType_OrderTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.order.impl.OrderTypeAttrImpl <em>Type Attr</em>}' class.

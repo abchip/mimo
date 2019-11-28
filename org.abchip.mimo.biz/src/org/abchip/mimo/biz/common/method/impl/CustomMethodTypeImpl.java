@@ -121,7 +121,7 @@ public class CustomMethodTypeImpl extends BizEntityTypeImpl<CustomMethod> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> childCustomMethodTypes() {
+	public List<CustomMethodType> childCustomMethodTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +133,7 @@ public class CustomMethodTypeImpl extends BizEntityTypeImpl<CustomMethod> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> customMethods() {
+	public List<CustomMethod> customMethods() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

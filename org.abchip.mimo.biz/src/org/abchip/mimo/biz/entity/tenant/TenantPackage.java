@@ -126,7 +126,7 @@ public interface TenantPackage extends EPackage {
 	int COMPONENT__ROOT_LOCATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Tenant Components</b></em>' attribute list.
+	 * The feature id for the '<em><b>Tenant Components</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -217,7 +217,7 @@ public interface TenantPackage extends EPackage {
 	int TENANT__INITIAL_PATH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Tenant Data Sources</b></em>' attribute list.
+	 * The feature id for the '<em><b>Tenant Data Sources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -605,15 +605,15 @@ public interface TenantPackage extends EPackage {
 	EAttribute getComponent_RootLocation();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.entity.tenant.Component#getTenantComponents <em>Tenant Components</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.entity.tenant.Component#getTenantComponents <em>Tenant Components</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Tenant Components</em>'.
+	 * @return the meta object for the reference list '<em>Tenant Components</em>'.
 	 * @see org.abchip.mimo.biz.entity.tenant.Component#getTenantComponents()
 	 * @see #getComponent()
 	 * @generated
 	 */
-	EAttribute getComponent_TenantComponents();
+	EReference getComponent_TenantComponents();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.tenant.Tenant <em>Tenant</em>}'.
@@ -670,15 +670,15 @@ public interface TenantPackage extends EPackage {
 	EAttribute getTenant_TenantName();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantDataSources <em>Tenant Data Sources</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantDataSources <em>Tenant Data Sources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Tenant Data Sources</em>'.
+	 * @return the meta object for the reference list '<em>Tenant Data Sources</em>'.
 	 * @see org.abchip.mimo.biz.entity.tenant.Tenant#getTenantDataSources()
 	 * @see #getTenant()
 	 * @generated
 	 */
-	EAttribute getTenant_TenantDataSources();
+	EReference getTenant_TenantDataSources();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.tenant.TenantComponent <em>Component</em>}'.
@@ -901,12 +901,12 @@ public interface TenantPackage extends EPackage {
 		EAttribute COMPONENT__ROOT_LOCATION = eINSTANCE.getComponent_RootLocation();
 
 		/**
-		 * The meta object literal for the '<em><b>Tenant Components</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Tenant Components</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPONENT__TENANT_COMPONENTS = eINSTANCE.getComponent_TenantComponents();
+		EReference COMPONENT__TENANT_COMPONENTS = eINSTANCE.getComponent_TenantComponents();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl <em>Tenant</em>}' class.
@@ -951,12 +951,12 @@ public interface TenantPackage extends EPackage {
 		EAttribute TENANT__TENANT_NAME = eINSTANCE.getTenant_TenantName();
 
 		/**
-		 * The meta object literal for the '<em><b>Tenant Data Sources</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Tenant Data Sources</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TENANT__TENANT_DATA_SOURCES = eINSTANCE.getTenant_TenantDataSources();
+		EReference TENANT__TENANT_DATA_SOURCES = eINSTANCE.getTenant_TenantDataSources();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.tenant.impl.TenantComponentImpl <em>Component</em>}' class.

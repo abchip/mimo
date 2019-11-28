@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.order.shoppinglist.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListType;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ShoppingListTypeImpl extends BizEntityTypeImpl<ShoppingList> implements ShoppingListType {
+public class ShoppingListTypeImpl extends BizEntityImpl implements ShoppingListType {
 	/**
 	 * 
 	 */
@@ -80,7 +80,7 @@ public class ShoppingListTypeImpl extends BizEntityTypeImpl<ShoppingList> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> shoppingLists() {
+	public List<ShoppingList> shoppingLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

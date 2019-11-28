@@ -33,15 +33,15 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCityUseTax <em>City Use Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getComboSalesTax <em>Combo Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getComboUseTax <em>Combo Use Tax</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyDefault <em>County Default</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isCountyDefault <em>County Default</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyFips <em>County Fips</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyLocalSalesTax <em>County Local Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyLocalUseTax <em>County Local Use Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountySalesTax <em>County Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyUseTax <em>County Use Tax</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getGeneralDefault <em>General Default</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isGeneralDefault <em>General Default</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getGeoCode <em>Geo Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getInsideCity <em>Inside City</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isInsideCity <em>Inside City</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getStateSalesTax <em>State Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getStateUseTax <em>State Use Tax</em>}</li>
  * </ul>
@@ -237,6 +237,7 @@ public interface ZipSalesTaxLookup extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>County Default</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>County Default</em>' attribute isn't clear,
@@ -244,22 +245,23 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>County Default</em>' attribute.
-	 * @see #setCountyDefault(char)
+	 * @see #setCountyDefault(boolean)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_CountyDefault()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getCountyDefault();
+	boolean isCountyDefault();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyDefault <em>County Default</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isCountyDefault <em>County Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>County Default</em>' attribute.
-	 * @see #getCountyDefault()
+	 * @see #isCountyDefault()
 	 * @generated
 	 */
-	void setCountyDefault(char value);
+	void setCountyDefault(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>County</b></em>' attribute.
@@ -421,6 +423,7 @@ public interface ZipSalesTaxLookup extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>General Default</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>General Default</em>' attribute isn't clear,
@@ -428,22 +431,23 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>General Default</em>' attribute.
-	 * @see #setGeneralDefault(char)
+	 * @see #setGeneralDefault(boolean)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_GeneralDefault()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getGeneralDefault();
+	boolean isGeneralDefault();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getGeneralDefault <em>General Default</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isGeneralDefault <em>General Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>General Default</em>' attribute.
-	 * @see #getGeneralDefault()
+	 * @see #isGeneralDefault()
 	 * @generated
 	 */
-	void setGeneralDefault(char value);
+	void setGeneralDefault(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
@@ -501,6 +505,7 @@ public interface ZipSalesTaxLookup extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Inside City</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inside City</em>' attribute isn't clear,
@@ -508,22 +513,23 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inside City</em>' attribute.
-	 * @see #setInsideCity(char)
+	 * @see #setInsideCity(boolean)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_InsideCity()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getInsideCity();
+	boolean isInsideCity();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getInsideCity <em>Inside City</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isInsideCity <em>Inside City</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Inside City</em>' attribute.
-	 * @see #getInsideCity()
+	 * @see #isInsideCity()
 	 * @generated
 	 */
-	void setInsideCity(char value);
+	void setInsideCity(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>State Code</b></em>' attribute.

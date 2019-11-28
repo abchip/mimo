@@ -14,6 +14,7 @@ import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.cost.CostComponentCalc;
 import org.abchip.mimo.biz.product.cost.CostPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -230,7 +231,7 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 * @generated
 	 */
 	@Override
-	public List<String> costComponents() {
+	public List<CostComponent> costComponents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

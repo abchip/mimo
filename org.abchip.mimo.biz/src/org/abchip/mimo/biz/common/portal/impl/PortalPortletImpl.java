@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.common.portal.PortalPackage;
 import org.abchip.mimo.biz.common.portal.PortalPortlet;
+import org.abchip.mimo.biz.common.portal.PortletPortletCategory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -248,8 +249,8 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPortletPortletCategories() {
-		return (List<String>)eGet(PortalPackage.Literals.PORTAL_PORTLET__PORTLET_PORTLET_CATEGORIES, true);
+	public List<PortletPortletCategory> getPortletPortletCategories() {
+		return (List<PortletPortletCategory>)eGet(PortalPackage.Literals.PORTAL_PORTLET__PORTLET_PORTLET_CATEGORIES, true);
 	}
 
 	/**

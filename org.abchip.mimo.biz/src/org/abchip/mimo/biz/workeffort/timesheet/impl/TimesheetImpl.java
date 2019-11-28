@@ -15,6 +15,7 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.workeffort.timesheet.TimeEntry;
 import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
 import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -210,7 +211,7 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 * @generated
 	 */
 	@Override
-	public List<String> timeEntries() {
+	public List<TimeEntry> timeEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

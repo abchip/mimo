@@ -138,41 +138,38 @@ public interface DataResourceType extends BizEntityType<DataResource> {
 	void setParentTypeId(DataResourceType value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Resource Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Data Resource Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Resource Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Data Resource Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceType_DataResourceTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourceTypeAttr'"
 	 * @generated
 	 */
-	List<String> getDataResourceTypeAttrs();
+	List<DataResourceTypeAttr> getDataResourceTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourceType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childDataResourceTypes();
+	List<DataResourceType> childDataResourceTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='dataResourceTypeId'"
 	 * @generated
 	 */
-	List<String> dataResources();
+	List<DataResource> dataResources();
 
 } // DataResourceType

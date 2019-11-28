@@ -138,41 +138,38 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	void setRequirementTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Requirement Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Requirement Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType_RequirementTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementTypeAttr'"
 	 * @generated
 	 */
-	List<String> getRequirementTypeAttrs();
+	List<RequirementTypeAttr> getRequirementTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RequirementType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childRequirementTypes();
+	List<RequirementType> childRequirementTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Requirement' route='requirementTypeId'"
 	 * @generated
 	 */
-	List<String> requirements();
+	List<Requirement> requirements();
 
 } // RequirementType

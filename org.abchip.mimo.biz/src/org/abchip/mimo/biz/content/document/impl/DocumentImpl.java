@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.content.document.Document;
+import org.abchip.mimo.biz.content.document.DocumentAttribute;
 import org.abchip.mimo.biz.content.document.DocumentPackage;
 import org.abchip.mimo.biz.content.document.DocumentType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
@@ -209,8 +210,8 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getDocumentAttributes() {
-		return (List<String>)eGet(DocumentPackage.Literals.DOCUMENT__DOCUMENT_ATTRIBUTES, true);
+	public List<DocumentAttribute> getDocumentAttributes() {
+		return (List<DocumentAttribute>)eGet(DocumentPackage.Literals.DOCUMENT__DOCUMENT_ATTRIBUTES, true);
 	}
 
 } //DocumentImpl

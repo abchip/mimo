@@ -126,7 +126,7 @@ public interface StatusPackage extends EPackage {
 	int STATUS_ITEM__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Main Status Valid Changes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Main Status Valid Changes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -144,7 +144,7 @@ public interface StatusPackage extends EPackage {
 	int STATUS_ITEM__SEQUENCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Statuss</b></em>' attribute list.
+	 * The feature id for the '<em><b>Shipment Statuss</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -437,26 +437,26 @@ public interface StatusPackage extends EPackage {
 	EReference getStatusItem_StatusTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.common.status.StatusItem#getShipmentStatuss <em>Shipment Statuss</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.status.StatusItem#getShipmentStatuss <em>Shipment Statuss</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Shipment Statuss</em>'.
+	 * @return the meta object for the reference list '<em>Shipment Statuss</em>'.
 	 * @see org.abchip.mimo.biz.common.status.StatusItem#getShipmentStatuss()
 	 * @see #getStatusItem()
 	 * @generated
 	 */
-	EAttribute getStatusItem_ShipmentStatuss();
+	EReference getStatusItem_ShipmentStatuss();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.common.status.StatusItem#getMainStatusValidChanges <em>Main Status Valid Changes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.status.StatusItem#getMainStatusValidChanges <em>Main Status Valid Changes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Main Status Valid Changes</em>'.
+	 * @return the meta object for the reference list '<em>Main Status Valid Changes</em>'.
 	 * @see org.abchip.mimo.biz.common.status.StatusItem#getMainStatusValidChanges()
 	 * @see #getStatusItem()
 	 * @generated
 	 */
-	EAttribute getStatusItem_MainStatusValidChanges();
+	EReference getStatusItem_MainStatusValidChanges();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.status.StatusType <em>Type</em>}'.
@@ -639,20 +639,20 @@ public interface StatusPackage extends EPackage {
 		EReference STATUS_ITEM__STATUS_TYPE_ID = eINSTANCE.getStatusItem_StatusTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Statuss</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Shipment Statuss</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STATUS_ITEM__SHIPMENT_STATUSS = eINSTANCE.getStatusItem_ShipmentStatuss();
+		EReference STATUS_ITEM__SHIPMENT_STATUSS = eINSTANCE.getStatusItem_ShipmentStatuss();
 
 		/**
-		 * The meta object literal for the '<em><b>Main Status Valid Changes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Main Status Valid Changes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STATUS_ITEM__MAIN_STATUS_VALID_CHANGES = eINSTANCE.getStatusItem_MainStatusValidChanges();
+		EReference STATUS_ITEM__MAIN_STATUS_VALID_CHANGES = eINSTANCE.getStatusItem_MainStatusValidChanges();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.status.impl.StatusTypeImpl <em>Type</em>}' class.

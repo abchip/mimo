@@ -14,6 +14,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityQuote;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.store.ProductStore;
 
@@ -364,113 +365,106 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	void setValidThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Quote Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Quote Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Attributes</em>' attribute list.
+	 * @return the value of the '<em>Quote Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAttribute'"
 	 * @generated
 	 */
-	List<String> getQuoteAttributes();
+	List<QuoteAttribute> getQuoteAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Quote Coefficients</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Quote Coefficients</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteCoefficient}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Coefficients</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Coefficients</em>' attribute list.
+	 * @return the value of the '<em>Quote Coefficients</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteCoefficients()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteCoefficient'"
 	 * @generated
 	 */
-	List<String> getQuoteCoefficients();
+	List<QuoteCoefficient> getQuoteCoefficients();
 
 	/**
-	 * Returns the value of the '<em><b>Quote Items</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Quote Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteItem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Items</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Items</em>' attribute list.
+	 * @return the value of the '<em>Quote Items</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteItems()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteItem'"
 	 * @generated
 	 */
-	List<String> getQuoteItems();
+	List<QuoteItem> getQuoteItems();
 
 	/**
-	 * Returns the value of the '<em><b>Quote Notes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Quote Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteNote}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Notes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Notes</em>' attribute list.
+	 * @return the value of the '<em>Quote Notes</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteNotes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteNote'"
 	 * @generated
 	 */
-	List<String> getQuoteNotes();
+	List<QuoteNote> getQuoteNotes();
 
 	/**
-	 * Returns the value of the '<em><b>Quote Work Efforts</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Quote Work Efforts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteWorkEffort}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Work Efforts</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Work Efforts</em>' attribute list.
+	 * @return the value of the '<em>Quote Work Efforts</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteWorkEfforts()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteWorkEffort'"
 	 * @generated
 	 */
-	List<String> getQuoteWorkEfforts();
+	List<QuoteWorkEffort> getQuoteWorkEfforts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='quoteId'"
 	 * @generated
 	 */
-	List<String> quoteAdjustments();
+	List<QuoteAdjustment> quoteAdjustments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityQuote' route='quoteId'"
 	 * @generated
 	 */
-	List<String> salesOpportunityQuotes();
+	List<SalesOpportunityQuote> salesOpportunityQuotes();
 
 } // Quote

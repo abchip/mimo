@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -208,8 +209,8 @@ public class WorkEffortSearchResultImpl extends BizEntityImpl implements WorkEff
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkEffortSearchConstraints() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_RESULT__WORK_EFFORT_SEARCH_CONSTRAINTS, true);
+	public List<WorkEffortSearchConstraint> getWorkEffortSearchConstraints() {
+		return (List<WorkEffortSearchConstraint>)eGet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_RESULT__WORK_EFFORT_SEARCH_CONSTRAINTS, true);
 	}
 
 } //WorkEffortSearchResultImpl

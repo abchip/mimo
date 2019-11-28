@@ -464,21 +464,19 @@ public interface TechDataCalendarWeek extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TechDataCalendarExcWeek' route='calendarWeekId'"
 	 * @generated
 	 */
-	List<String> techDataCalendarExcWeeks();
+	List<TechDataCalendarExcWeek> techDataCalendarExcWeeks();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TechDataCalendar' route='calendarWeekId'"
 	 * @generated
 	 */
-	List<String> techDataCalendars();
+	List<TechDataCalendar> techDataCalendars();
 
 } // TechDataCalendarWeek

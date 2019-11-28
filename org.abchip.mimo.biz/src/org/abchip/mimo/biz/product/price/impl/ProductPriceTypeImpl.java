@@ -7,9 +7,8 @@
  */
 package org.abchip.mimo.biz.product.price.impl;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
-import org.abchip.mimo.biz.product.price.ProductPrice;
 import org.abchip.mimo.biz.product.price.ProductPriceType;
 import org.eclipse.emf.ecore.EClass;
 
@@ -27,7 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ProductPriceTypeImpl extends BizEntityTypeImpl<ProductPrice> implements ProductPriceType {
+public class ProductPriceTypeImpl extends BizEntityImpl implements ProductPriceType {
 	/**
 	 * 
 	 */

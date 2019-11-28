@@ -139,41 +139,38 @@ public interface Tenant extends BizEntity {
 	void setTenantName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Tenant Data Sources</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Tenant Data Sources</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.tenant.TenantDataSource}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tenant Data Sources</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tenant Data Sources</em>' attribute list.
+	 * @return the value of the '<em>Tenant Data Sources</em>' reference list.
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_TenantDataSources()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TenantDataSource'"
 	 * @generated
 	 */
-	List<String> getTenantDataSources();
+	List<TenantDataSource> getTenantDataSources();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TenantComponent' route='tenantId'"
 	 * @generated
 	 */
-	List<String> tenantComponents();
+	List<TenantComponent> tenantComponents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TenantDomainName' route='tenantId'"
 	 * @generated
 	 */
-	List<String> tenantDomainNames();
+	List<TenantDomainName> tenantDomainNames();
 
 } // Tenant

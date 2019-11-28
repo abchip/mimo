@@ -12,6 +12,9 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.entity.synchronization.EntitySync;
+import org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory;
+import org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude;
+import org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -356,8 +359,8 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getEntitySyncHistories() {
-		return (List<String>)eGet(SynchronizationPackage.Literals.ENTITY_SYNC__ENTITY_SYNC_HISTORIES, true);
+	public List<EntitySyncHistory> getEntitySyncHistories() {
+		return (List<EntitySyncHistory>)eGet(SynchronizationPackage.Literals.ENTITY_SYNC__ENTITY_SYNC_HISTORIES, true);
 	}
 
 	/**
@@ -367,8 +370,8 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getEntitySyncIncludes() {
-		return (List<String>)eGet(SynchronizationPackage.Literals.ENTITY_SYNC__ENTITY_SYNC_INCLUDES, true);
+	public List<EntitySyncInclude> getEntitySyncIncludes() {
+		return (List<EntitySyncInclude>)eGet(SynchronizationPackage.Literals.ENTITY_SYNC__ENTITY_SYNC_INCLUDES, true);
 	}
 
 	/**
@@ -378,8 +381,8 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getEntitySyncIncludeGroups() {
-		return (List<String>)eGet(SynchronizationPackage.Literals.ENTITY_SYNC__ENTITY_SYNC_INCLUDE_GROUPS, true);
+	public List<EntitySyncIncludeGroup> getEntitySyncIncludeGroups() {
+		return (List<EntitySyncIncludeGroup>)eGet(SynchronizationPackage.Literals.ENTITY_SYNC__ENTITY_SYNC_INCLUDE_GROUPS, true);
 	}
 
 } //EntitySyncImpl

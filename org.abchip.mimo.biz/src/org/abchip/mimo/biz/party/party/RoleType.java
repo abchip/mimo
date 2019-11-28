@@ -8,8 +8,19 @@
 package org.abchip.mimo.biz.party.party;
 
 import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.content.content.ContentApproval;
+import org.abchip.mimo.biz.party.agreement.Agreement;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.party.contact.ValidContactMechRole;
+import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,229 +150,208 @@ public interface RoleType extends BizEntity {
 	void setRoleTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Role Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.RoleTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Role Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_RoleTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RoleTypeAttr'"
 	 * @generated
 	 */
-	List<String> getRoleTypeAttrs();
+	List<RoleTypeAttr> getRoleTypeAttrs();
 
 	/**
-	 * Returns the value of the '<em><b>Valid Contact Mech Roles</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Valid Contact Mech Roles</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.ValidContactMechRole}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Valid Contact Mech Roles</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Valid Contact Mech Roles</em>' attribute list.
+	 * @return the value of the '<em>Valid Contact Mech Roles</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_ValidContactMechRoles()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ValidContactMechRole'"
 	 * @generated
 	 */
-	List<String> getValidContactMechRoles();
+	List<ValidContactMechRole> getValidContactMechRoles();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='roleTypeId'"
 	 * @generated
 	 */
-	List<String> acctgTransEntries();
+	List<AcctgTransEntry> acctgTransEntries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='roleTypeId'"
 	 * @generated
 	 */
-	List<String> acctgTranss();
+	List<AcctgTrans> acctgTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RoleType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childRoleTypes();
+	List<RoleType> childRoleTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentApproval' route='roleTypeId'"
 	 * @generated
 	 */
-	List<String> contentApprovals();
+	List<ContentApproval> contentApprovals();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAsset' route='roleTypeId'"
 	 * @generated
 	 */
-	List<String> fixedAssets();
+	List<FixedAsset> fixedAssets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Agreement' route='roleTypeIdFrom'"
 	 * @generated
 	 */
-	List<String> fromAgreements();
+	List<Agreement> fromAgreements();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='roleTypeIdFrom'"
 	 * @generated
 	 */
-	List<String> fromCommunicationEvents();
+	List<CommunicationEvent> fromCommunicationEvents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountOrganization' route='roleTypeId'"
 	 * @generated
 	 */
-	List<String> glAccountOrganizations();
+	List<GlAccountOrganization> glAccountOrganizations();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='roleTypeId'"
 	 * @generated
 	 */
-	List<String> invoices();
+	List<Invoice> invoices();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='originatedFromRoleTypeId'"
 	 * @generated
 	 */
-	List<String> originatedFromSubscriptions();
+	List<Subscription> originatedFromSubscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitationRoleAssoc' route='roleTypeId'"
 	 * @generated
 	 */
-	List<String> partyInvitationRoleAssocs();
+	List<PartyInvitationRoleAssoc> partyInvitationRoleAssocs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyRole' route='roleTypeId'"
 	 * @generated
 	 */
-	List<String> partyRoles();
+	List<PartyRole> partyRoles();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='roleTypeId'"
 	 * @generated
 	 */
-	List<String> shipmentCostEstimates();
+	List<ShipmentCostEstimate> shipmentCostEstimates();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='roleTypeId'"
 	 * @generated
 	 */
-	List<String> subscriptions();
+	List<Subscription> subscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Agreement' route='roleTypeIdTo'"
 	 * @generated
 	 */
-	List<String> toAgreements();
+	List<Agreement> toAgreements();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='roleTypeIdTo'"
 	 * @generated
 	 */
-	List<String> toCommunicationEvents();
+	List<CommunicationEvent> toCommunicationEvents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='roleTypeIdTo'"
 	 * @generated
 	 */
-	List<String> toPayments();
+	List<Payment> toPayments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyRelationshipType' route='roleTypeIdValidFrom'"
 	 * @generated
 	 */
-	List<String> validFromPartyRelationshipTypes();
+	List<PartyRelationshipType> validFromPartyRelationshipTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyRelationshipType' route='roleTypeIdValidTo'"
 	 * @generated
 	 */
-	List<String> validToPartyRelationshipTypes();
+	List<PartyRelationshipType> validToPartyRelationshipTypes();
 
 } // RoleType

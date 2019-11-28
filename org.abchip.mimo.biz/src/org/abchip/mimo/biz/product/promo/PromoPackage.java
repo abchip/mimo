@@ -171,7 +171,7 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Product Promo Rules</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Promo Rules</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -651,7 +651,7 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Product Promo Code Emails</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Promo Code Emails</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -660,7 +660,7 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Product Promo Code Parties</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Promo Code Parties</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1590,15 +1590,15 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromo_UserEntered();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.promo.ProductPromo#getProductPromoRules <em>Product Promo Rules</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.promo.ProductPromo#getProductPromoRules <em>Product Promo Rules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Promo Rules</em>'.
+	 * @return the meta object for the reference list '<em>Product Promo Rules</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromo#getProductPromoRules()
 	 * @see #getProductPromo()
 	 * @generated
 	 */
-	EAttribute getProductPromo_ProductPromoRules();
+	EReference getProductPromo_ProductPromoRules();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.promo.ProductPromoAction <em>Product Promo Action</em>}'.
@@ -1983,26 +1983,26 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoCode_UserEntered();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoCodeEmails <em>Product Promo Code Emails</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoCodeEmails <em>Product Promo Code Emails</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Promo Code Emails</em>'.
+	 * @return the meta object for the reference list '<em>Product Promo Code Emails</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoCodeEmails()
 	 * @see #getProductPromoCode()
 	 * @generated
 	 */
-	EAttribute getProductPromoCode_ProductPromoCodeEmails();
+	EReference getProductPromoCode_ProductPromoCodeEmails();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoCodeParties <em>Product Promo Code Parties</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoCodeParties <em>Product Promo Code Parties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Promo Code Parties</em>'.
+	 * @return the meta object for the reference list '<em>Product Promo Code Parties</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoCodeParties()
 	 * @see #getProductPromoCode()
 	 * @generated
 	 */
-	EAttribute getProductPromoCode_ProductPromoCodeParties();
+	EReference getProductPromoCode_ProductPromoCodeParties();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.promo.ProductPromoCodeEmail <em>Product Promo Code Email</em>}'.
@@ -2590,12 +2590,12 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO__USER_ENTERED = eINSTANCE.getProductPromo_UserEntered();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Rules</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Promo Rules</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO__PRODUCT_PROMO_RULES = eINSTANCE.getProductPromo_ProductPromoRules();
+		EReference PRODUCT_PROMO__PRODUCT_PROMO_RULES = eINSTANCE.getProductPromo_ProductPromoRules();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoActionImpl <em>Product Promo Action</em>}' class.
@@ -2884,20 +2884,20 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_CODE__USER_ENTERED = eINSTANCE.getProductPromoCode_UserEntered();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Code Emails</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Promo Code Emails</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS = eINSTANCE.getProductPromoCode_ProductPromoCodeEmails();
+		EReference PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS = eINSTANCE.getProductPromoCode_ProductPromoCodeEmails();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Code Parties</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Promo Code Parties</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES = eINSTANCE.getProductPromoCode_ProductPromoCodeParties();
+		EReference PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES = eINSTANCE.getProductPromoCode_ProductPromoCodeParties();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeEmailImpl <em>Product Promo Code Email</em>}' class.

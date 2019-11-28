@@ -10,6 +10,20 @@ package org.abchip.mimo.biz.accounting.ledger;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeGlAccount;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentApplication;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount;
+import org.abchip.mimo.biz.order.order.OrderAdjustment;
+import org.abchip.mimo.biz.order.order.OrderItem;
+import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
+import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 
 /**
  * <!-- begin-user-doc -->
@@ -172,230 +186,209 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	void setProductId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Group Members</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Gl Account Group Members</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Group Members</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Group Members</em>' attribute list.
+	 * @return the value of the '<em>Gl Account Group Members</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountGroupMembers()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountGroupMember'"
 	 * @generated
 	 */
-	List<String> getGlAccountGroupMembers();
+	List<GlAccountGroupMember> getGlAccountGroupMembers();
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Organizations</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Gl Account Organizations</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Organizations</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Organizations</em>' attribute list.
+	 * @return the value of the '<em>Gl Account Organizations</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountOrganizations()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountOrganization'"
 	 * @generated
 	 */
-	List<String> getGlAccountOrganizations();
+	List<GlAccountOrganization> getGlAccountOrganizations();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='glAccountId'"
 	 * @generated
 	 */
-	List<String> acctgTransEntries();
+	List<AcctgTransEntry> acctgTransEntries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccount' route='parentGlAccountId'"
 	 * @generated
 	 */
-	List<String> childGlAccounts();
+	List<GlAccount> childGlAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItemType' route='defaultGlAccountId'"
 	 * @generated
 	 */
-	List<String> defaultInvoiceItemTypes();
+	List<InvoiceItemType> defaultInvoiceItemTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentMethodType' route='defaultGlAccountId'"
 	 * @generated
 	 */
-	List<String> defaultPaymentMethodTypes();
+	List<PaymentMethodType> defaultPaymentMethodTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTypeGlAccount' route='glAccountId'"
 	 * @generated
 	 */
-	List<String> finAccountTypeGlAccounts();
+	List<FinAccountTypeGlAccount> finAccountTypeGlAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountTypeDefault' route='glAccountId'"
 	 * @generated
 	 */
-	List<String> glAccountTypeDefaults();
+	List<GlAccountTypeDefault> glAccountTypeDefaults();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlReconciliation' route='glAccountId'"
 	 * @generated
 	 */
-	List<String> glReconciliations();
+	List<GlReconciliation> glReconciliations();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItemTypeGlAccount' route='glAccountId'"
 	 * @generated
 	 */
-	List<String> invoiceItemTypeGlAccounts();
+	List<InvoiceItemTypeGlAccount> invoiceItemTypeGlAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='overrideGlAccountId'"
 	 * @generated
 	 */
-	List<String> overrideInvoiceItems();
+	List<InvoiceItem> overrideInvoiceItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='overrideGlAccountId'"
 	 * @generated
 	 */
-	List<String> overrideOrderAdjustments();
+	List<OrderAdjustment> overrideOrderAdjustments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='overrideGlAccountId'"
 	 * @generated
 	 */
-	List<String> overrideOrderItems();
+	List<OrderItem> overrideOrderItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='overrideGlAccountId'"
 	 * @generated
 	 */
-	List<String> overrideQuoteAdjustments();
+	List<QuoteAdjustment> overrideQuoteAdjustments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='overrideGlAccountId'"
 	 * @generated
 	 */
-	List<String> overrideReturnAdjustments();
+	List<ReturnAdjustment> overrideReturnAdjustments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentApplication' route='overrideGlAccountId'"
 	 * @generated
 	 */
-	List<String> paymentApplications();
+	List<PaymentApplication> paymentApplications();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentMethodTypeGlAccount' route='glAccountId'"
 	 * @generated
 	 */
-	List<String> paymentMethodTypeGlAccounts();
+	List<PaymentMethodTypeGlAccount> paymentMethodTypeGlAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentMethod' route='glAccountId'"
 	 * @generated
 	 */
-	List<String> paymentMethods();
+	List<PaymentMethod> paymentMethods();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='overrideGlAccountId'"
 	 * @generated
 	 */
-	List<String> payments();
+	List<Payment> payments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccount' route='postToGlAccountId'"
 	 * @generated
 	 */
-	List<String> postToFinAccounts();
+	List<FinAccount> postToFinAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='VarianceReasonGlAccount' route='glAccountId'"
 	 * @generated
 	 */
-	List<String> varianceReasonGlAccounts();
+	List<VarianceReasonGlAccount> varianceReasonGlAccounts();
 
 	/**
 	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' reference.

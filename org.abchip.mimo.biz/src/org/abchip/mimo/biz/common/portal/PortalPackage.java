@@ -162,7 +162,7 @@ public interface PortalPackage extends EPackage {
 	int PORTAL_PAGE__PARENT_PORTAL_PAGE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Portal Page Columns</b></em>' attribute list.
+	 * The feature id for the '<em><b>Portal Page Columns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -489,7 +489,7 @@ public interface PortalPackage extends EPackage {
 	int PORTAL_PORTLET__PORTLET_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Portlet Portlet Categories</b></em>' attribute list.
+	 * The feature id for the '<em><b>Portlet Portlet Categories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -926,15 +926,15 @@ public interface PortalPackage extends EPackage {
 	EAttribute getPortalPage_SequenceNum();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageColumns <em>Portal Page Columns</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageColumns <em>Portal Page Columns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Portal Page Columns</em>'.
+	 * @return the meta object for the reference list '<em>Portal Page Columns</em>'.
 	 * @see org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageColumns()
 	 * @see #getPortalPage()
 	 * @generated
 	 */
-	EAttribute getPortalPage_PortalPageColumns();
+	EReference getPortalPage_PortalPageColumns();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.portal.PortalPageColumn <em>Page Column</em>}'.
@@ -1176,15 +1176,15 @@ public interface PortalPackage extends EPackage {
 	EAttribute getPortalPortlet_SecurityServiceName();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.common.portal.PortalPortlet#getPortletPortletCategories <em>Portlet Portlet Categories</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.portal.PortalPortlet#getPortletPortletCategories <em>Portlet Portlet Categories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Portlet Portlet Categories</em>'.
+	 * @return the meta object for the reference list '<em>Portlet Portlet Categories</em>'.
 	 * @see org.abchip.mimo.biz.common.portal.PortalPortlet#getPortletPortletCategories()
 	 * @see #getPortalPortlet()
 	 * @generated
 	 */
-	EAttribute getPortalPortlet_PortletPortletCategories();
+	EReference getPortalPortlet_PortletPortletCategories();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.portal.PortletAttribute <em>Portlet Attribute</em>}'.
@@ -1442,12 +1442,12 @@ public interface PortalPackage extends EPackage {
 		EAttribute PORTAL_PAGE__SEQUENCE_NUM = eINSTANCE.getPortalPage_SequenceNum();
 
 		/**
-		 * The meta object literal for the '<em><b>Portal Page Columns</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Portal Page Columns</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PORTAL_PAGE__PORTAL_PAGE_COLUMNS = eINSTANCE.getPortalPage_PortalPageColumns();
+		EReference PORTAL_PAGE__PORTAL_PAGE_COLUMNS = eINSTANCE.getPortalPage_PortalPageColumns();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.portal.impl.PortalPageColumnImpl <em>Page Column</em>}' class.
@@ -1632,12 +1632,12 @@ public interface PortalPackage extends EPackage {
 		EAttribute PORTAL_PORTLET__SECURITY_SERVICE_NAME = eINSTANCE.getPortalPortlet_SecurityServiceName();
 
 		/**
-		 * The meta object literal for the '<em><b>Portlet Portlet Categories</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Portlet Portlet Categories</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PORTAL_PORTLET__PORTLET_PORTLET_CATEGORIES = eINSTANCE.getPortalPortlet_PortletPortletCategories();
+		EReference PORTAL_PORTLET__PORTLET_PORTLET_CATEGORIES = eINSTANCE.getPortalPortlet_PortletPortletCategories();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.portal.impl.PortletAttributeImpl <em>Portlet Attribute</em>}' class.

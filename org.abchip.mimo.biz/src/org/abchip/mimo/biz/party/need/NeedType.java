@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.need;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.subscription.Subscription;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,12 +59,11 @@ public interface NeedType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='needTypeId'"
 	 * @generated
 	 */
-	List<String> subscriptions();
+	List<Subscription> subscriptions();
 
 	/**
 	 * Returns the value of the '<em><b>Need Type Id</b></em>' attribute.

@@ -416,7 +416,7 @@ public interface RequirementPackage extends EPackage {
 	int REQUIREMENT__REQUIRED_BY_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
-	 * The feature id for the '<em><b>Requirement Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Requirement Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -434,7 +434,7 @@ public interface RequirementPackage extends EPackage {
 	int REQUIREMENT__REQUIREMENT_START_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
 
 	/**
-	 * The feature id for the '<em><b>Requirement Statuss</b></em>' attribute list.
+	 * The feature id for the '<em><b>Requirement Statuss</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -470,7 +470,7 @@ public interface RequirementPackage extends EPackage {
 	int REQUIREMENT__USE_CASE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
 
 	/**
-	 * The feature id for the '<em><b>Work Requirement Fulfillments</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Requirement Fulfillments</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1034,7 +1034,7 @@ public interface RequirementPackage extends EPackage {
 	int REQUIREMENT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Requirement Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Requirement Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1144,22 +1144,13 @@ public interface RequirementPackage extends EPackage {
 	int WORK_REQ_FULF_TYPE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_REQ_FULF_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQ_FULF_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int WORK_REQ_FULF_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1168,7 +1159,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQ_FULF_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int WORK_REQ_FULF_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1177,7 +1168,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQ_FULF_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int WORK_REQ_FULF_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1186,7 +1177,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQ_FULF_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int WORK_REQ_FULF_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Work Req Fulf Type Id</b></em>' attribute.
@@ -1195,7 +1186,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQ_FULF_TYPE__WORK_REQ_FULF_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int WORK_REQ_FULF_TYPE__WORK_REQ_FULF_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1204,7 +1195,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQ_FULF_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int WORK_REQ_FULF_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Work Req Fulf Type</em>' class.
@@ -1213,7 +1204,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQ_FULF_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int WORK_REQ_FULF_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.requirement.impl.WorkRequirementFulfillmentImpl <em>Work Requirement Fulfillment</em>}' class.
@@ -1232,7 +1223,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQUIREMENT_FULFILLMENT__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int WORK_REQUIREMENT_FULFILLMENT__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1241,7 +1232,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQUIREMENT_FULFILLMENT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int WORK_REQUIREMENT_FULFILLMENT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1250,7 +1241,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQUIREMENT_FULFILLMENT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int WORK_REQUIREMENT_FULFILLMENT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1259,7 +1250,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQUIREMENT_FULFILLMENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int WORK_REQUIREMENT_FULFILLMENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Requirement Id</b></em>' reference.
@@ -1268,7 +1259,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Work Effort Id</b></em>' reference.
@@ -1277,7 +1268,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Work Req Fulf Type Id</b></em>' reference.
@@ -1286,7 +1277,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQUIREMENT_FULFILLMENT__WORK_REQ_FULF_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int WORK_REQUIREMENT_FULFILLMENT__WORK_REQ_FULF_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Work Requirement Fulfillment</em>' class.
@@ -1295,7 +1286,7 @@ public interface RequirementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_REQUIREMENT_FULFILLMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int WORK_REQUIREMENT_FULFILLMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 
 	/**
@@ -1331,11 +1322,11 @@ public interface RequirementPackage extends EPackage {
 	EReference getDesiredFeature_RequirementId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getOptionalInd <em>Optional Ind</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#isOptionalInd <em>Optional Ind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Optional Ind</em>'.
-	 * @see org.abchip.mimo.biz.order.requirement.DesiredFeature#getOptionalInd()
+	 * @see org.abchip.mimo.biz.order.requirement.DesiredFeature#isOptionalInd()
 	 * @see #getDesiredFeature()
 	 * @generated
 	 */
@@ -1615,37 +1606,37 @@ public interface RequirementPackage extends EPackage {
 	EAttribute getRequirement_UseCase();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementAttributes <em>Requirement Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementAttributes <em>Requirement Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Requirement Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Requirement Attributes</em>'.
 	 * @see org.abchip.mimo.biz.order.requirement.Requirement#getRequirementAttributes()
 	 * @see #getRequirement()
 	 * @generated
 	 */
-	EAttribute getRequirement_RequirementAttributes();
+	EReference getRequirement_RequirementAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementStatuss <em>Requirement Statuss</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementStatuss <em>Requirement Statuss</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Requirement Statuss</em>'.
+	 * @return the meta object for the reference list '<em>Requirement Statuss</em>'.
 	 * @see org.abchip.mimo.biz.order.requirement.Requirement#getRequirementStatuss()
 	 * @see #getRequirement()
 	 * @generated
 	 */
-	EAttribute getRequirement_RequirementStatuss();
+	EReference getRequirement_RequirementStatuss();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.requirement.Requirement#getWorkRequirementFulfillments <em>Work Requirement Fulfillments</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.requirement.Requirement#getWorkRequirementFulfillments <em>Work Requirement Fulfillments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Requirement Fulfillments</em>'.
+	 * @return the meta object for the reference list '<em>Work Requirement Fulfillments</em>'.
 	 * @see org.abchip.mimo.biz.order.requirement.Requirement#getWorkRequirementFulfillments()
 	 * @see #getRequirement()
 	 * @generated
 	 */
-	EAttribute getRequirement_WorkRequirementFulfillments();
+	EReference getRequirement_WorkRequirementFulfillments();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.requirement.RequirementAttribute <em>Attribute</em>}'.
@@ -1972,15 +1963,15 @@ public interface RequirementPackage extends EPackage {
 	EReference getRequirementType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.requirement.RequirementType#getRequirementTypeAttrs <em>Requirement Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.requirement.RequirementType#getRequirementTypeAttrs <em>Requirement Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Requirement Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Requirement Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementType#getRequirementTypeAttrs()
 	 * @see #getRequirementType()
 	 * @generated
 	 */
-	EAttribute getRequirementType_RequirementTypeAttrs();
+	EReference getRequirementType_RequirementTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr <em>Type Attr</em>}'.
@@ -2361,28 +2352,28 @@ public interface RequirementPackage extends EPackage {
 		EAttribute REQUIREMENT__USE_CASE = eINSTANCE.getRequirement_UseCase();
 
 		/**
-		 * The meta object literal for the '<em><b>Requirement Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Requirement Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REQUIREMENT__REQUIREMENT_ATTRIBUTES = eINSTANCE.getRequirement_RequirementAttributes();
+		EReference REQUIREMENT__REQUIREMENT_ATTRIBUTES = eINSTANCE.getRequirement_RequirementAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Requirement Statuss</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Requirement Statuss</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REQUIREMENT__REQUIREMENT_STATUSS = eINSTANCE.getRequirement_RequirementStatuss();
+		EReference REQUIREMENT__REQUIREMENT_STATUSS = eINSTANCE.getRequirement_RequirementStatuss();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Requirement Fulfillments</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Requirement Fulfillments</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REQUIREMENT__WORK_REQUIREMENT_FULFILLMENTS = eINSTANCE.getRequirement_WorkRequirementFulfillments();
+		EReference REQUIREMENT__WORK_REQUIREMENT_FULFILLMENTS = eINSTANCE.getRequirement_WorkRequirementFulfillments();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.requirement.impl.RequirementAttributeImpl <em>Attribute</em>}' class.
@@ -2637,12 +2628,12 @@ public interface RequirementPackage extends EPackage {
 		EReference REQUIREMENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getRequirementType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Requirement Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Requirement Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REQUIREMENT_TYPE__REQUIREMENT_TYPE_ATTRS = eINSTANCE.getRequirementType_RequirementTypeAttrs();
+		EReference REQUIREMENT_TYPE__REQUIREMENT_TYPE_ATTRS = eINSTANCE.getRequirementType_RequirementTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.requirement.impl.RequirementTypeAttrImpl <em>Type Attr</em>}' class.

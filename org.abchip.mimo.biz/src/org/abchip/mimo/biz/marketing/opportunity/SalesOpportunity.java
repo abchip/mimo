@@ -14,9 +14,11 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
+import org.abchip.mimo.biz.order.order.OrderItem;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
@@ -419,105 +421,98 @@ public interface SalesOpportunity extends BizEntity {
 	void setTypeEnumId(Enumeration value);
 
 	/**
-	 * Returns the value of the '<em><b>Sales Opportunity Competitors</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Sales Opportunity Competitors</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityCompetitor}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sales Opportunity Competitors</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sales Opportunity Competitors</em>' attribute list.
+	 * @return the value of the '<em>Sales Opportunity Competitors</em>' reference list.
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityCompetitors()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityCompetitor'"
 	 * @generated
 	 */
-	List<String> getSalesOpportunityCompetitors();
+	List<SalesOpportunityCompetitor> getSalesOpportunityCompetitors();
 
 	/**
-	 * Returns the value of the '<em><b>Sales Opportunity Quotes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Sales Opportunity Quotes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityQuote}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sales Opportunity Quotes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sales Opportunity Quotes</em>' attribute list.
+	 * @return the value of the '<em>Sales Opportunity Quotes</em>' reference list.
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityQuotes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityQuote'"
 	 * @generated
 	 */
-	List<String> getSalesOpportunityQuotes();
+	List<SalesOpportunityQuote> getSalesOpportunityQuotes();
 
 	/**
-	 * Returns the value of the '<em><b>Sales Opportunity Trck Codes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Sales Opportunity Trck Codes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityTrckCode}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sales Opportunity Trck Codes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sales Opportunity Trck Codes</em>' attribute list.
+	 * @return the value of the '<em>Sales Opportunity Trck Codes</em>' reference list.
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityTrckCodes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityTrckCode'"
 	 * @generated
 	 */
-	List<String> getSalesOpportunityTrckCodes();
+	List<SalesOpportunityTrckCode> getSalesOpportunityTrckCodes();
 
 	/**
-	 * Returns the value of the '<em><b>Sales Opportunity Work Efforts</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Sales Opportunity Work Efforts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityWorkEffort}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sales Opportunity Work Efforts</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sales Opportunity Work Efforts</em>' attribute list.
+	 * @return the value of the '<em>Sales Opportunity Work Efforts</em>' reference list.
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityWorkEfforts()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityWorkEffort'"
 	 * @generated
 	 */
-	List<String> getSalesOpportunityWorkEfforts();
+	List<SalesOpportunityWorkEffort> getSalesOpportunityWorkEfforts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='salesOpportunityId'"
 	 * @generated
 	 */
-	List<String> invoiceItems();
+	List<InvoiceItem> invoiceItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='salesOpportunityId'"
 	 * @generated
 	 */
-	List<String> orderItems();
+	List<OrderItem> orderItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityHistory' route='salesOpportunityId'"
 	 * @generated
 	 */
-	List<String> salesOpportunityHistories();
+	List<SalesOpportunityHistory> salesOpportunityHistories();
 
 } // SalesOpportunity

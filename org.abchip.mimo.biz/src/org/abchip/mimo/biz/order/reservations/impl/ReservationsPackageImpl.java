@@ -769,6 +769,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		FixedassetPackage theFixedassetPackage = (FixedassetPackage)EPackage.Registry.INSTANCE.getEPackage(FixedassetPackage.eNS_URI);
+		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -787,17 +788,17 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		getAccommodationSpot_FixedAssetId().getEKeys().add(theFixedassetPackage.getFixedAsset_FixedAssetId());
 		initEAttribute(getAccommodationSpot_NumberOfSpaces(), ecorePackage.getELong(), "numberOfSpaces", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(accommodationSpotEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(accommodationSpotEClass, theWorkeffortPackage.getWorkEffort(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -824,13 +825,6 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 	 */
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
-		addAnnotation
-		  (accommodationSpotEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
 		addAnnotation
 		  (getAccommodationSpot_AccommodationSpotId(),
 		   source,

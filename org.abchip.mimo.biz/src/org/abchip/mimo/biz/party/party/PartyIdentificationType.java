@@ -112,22 +112,20 @@ public interface PartyIdentificationType extends BizEntityType<PartyIdentificati
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyIdentificationType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childPartyIdentificationTypes();
+	List<PartyIdentificationType> childPartyIdentificationTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyIdentification' route='partyIdentificationTypeId'"
 	 * @generated
 	 */
-	List<String> partyIdentifications();
+	List<PartyIdentification> partyIdentifications();
 
 	/**
 	 * Returns the value of the '<em><b>Party Identification Type Id</b></em>' attribute.

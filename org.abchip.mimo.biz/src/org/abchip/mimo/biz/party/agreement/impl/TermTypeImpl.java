@@ -8,10 +8,13 @@
 package org.abchip.mimo.biz.party.agreement.impl;
 
 import java.util.List;
-
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceTerm;
+import org.abchip.mimo.biz.accounting.payment.BillingAccountTerm;
+import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
+import org.abchip.mimo.biz.party.agreement.AgreementTerm;
 import org.abchip.mimo.biz.party.agreement.TermType;
+import org.abchip.mimo.biz.party.agreement.TermTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -31,7 +34,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TermTypeImpl extends BizEntityImpl implements TermType {
+public class TermTypeImpl extends BizEntityTypeImpl<AgreementTerm> implements TermType {
 	/**
 	 * 
 	 */
@@ -143,8 +146,8 @@ public class TermTypeImpl extends BizEntityImpl implements TermType {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getTermTypeAttrs() {
-		return (List<String>)eGet(AgreementPackage.Literals.TERM_TYPE__TERM_TYPE_ATTRS, true);
+	public List<TermTypeAttr> getTermTypeAttrs() {
+		return (List<TermTypeAttr>)eGet(AgreementPackage.Literals.TERM_TYPE__TERM_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -153,7 +156,7 @@ public class TermTypeImpl extends BizEntityImpl implements TermType {
 	 * @generated
 	 */
 	@Override
-	public List<String> agreementTerms() {
+	public List<AgreementTerm> agreementTerms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -165,7 +168,7 @@ public class TermTypeImpl extends BizEntityImpl implements TermType {
 	 * @generated
 	 */
 	@Override
-	public List<String> billingAccountTerms() {
+	public List<BillingAccountTerm> billingAccountTerms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -177,7 +180,7 @@ public class TermTypeImpl extends BizEntityImpl implements TermType {
 	 * @generated
 	 */
 	@Override
-	public List<String> childTermTypes() {
+	public List<TermType> childTermTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -189,7 +192,7 @@ public class TermTypeImpl extends BizEntityImpl implements TermType {
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceTerms() {
+	public List<InvoiceTerm> invoiceTerms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

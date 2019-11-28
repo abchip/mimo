@@ -14,7 +14,8 @@ import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMapType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -34,7 +35,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapType> implements AccommodationMap {
+public class AccommodationMapImpl extends BizEntityImpl implements AccommodationMap {
 	/**
 	 * 
 	 */
@@ -104,7 +105,7 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 	 * @generated
 	 */
 	@Override
-	public List<String> workEfforts() {
+	public List<WorkEffort> workEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

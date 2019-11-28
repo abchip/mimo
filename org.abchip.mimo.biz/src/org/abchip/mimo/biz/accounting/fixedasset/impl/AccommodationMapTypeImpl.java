@@ -8,11 +8,10 @@
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
 import java.util.List;
-
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMapType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +28,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AccommodationMapTypeImpl extends BizEntityTypeImpl<AccommodationMap> implements AccommodationMapType {
+public class AccommodationMapTypeImpl extends BizEntityImpl implements AccommodationMapType {
 	/**
 	 * 
 	 */
@@ -79,7 +78,7 @@ public class AccommodationMapTypeImpl extends BizEntityTypeImpl<AccommodationMap
 	 * @generated
 	 */
 	@Override
-	public List<String> accommodationMaps() {
+	public List<AccommodationMap> accommodationMaps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

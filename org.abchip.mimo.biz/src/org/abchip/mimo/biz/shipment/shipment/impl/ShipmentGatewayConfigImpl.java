@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfigType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
@@ -101,7 +102,7 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 	 * @generated
 	 */
 	@Override
-	public List<String> productStoreShipmentMeths() {
+	public List<ProductStoreShipmentMeth> productStoreShipmentMeths() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -9,7 +9,9 @@ package org.abchip.mimo.biz.product.facility;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +32,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
-public interface Container extends BizEntityTyped<ContainerType> {
+public interface Container extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,32 +114,29 @@ public interface Container extends BizEntityTyped<ContainerType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='containerId'"
 	 * @generated
 	 */
-	List<String> inventoryItems();
+	List<InventoryItem> inventoryItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='containerId'"
 	 * @generated
 	 */
-	List<String> inventoryTransfers();
+	List<InventoryTransfer> inventoryTransfers();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='containerIdTo'"
 	 * @generated
 	 */
-	List<String> toInventoryTransfers();
+	List<InventoryTransfer> toInventoryTransfers();
 
 	/**
 	 * Returns the value of the '<em><b>Container Id</b></em>' attribute.

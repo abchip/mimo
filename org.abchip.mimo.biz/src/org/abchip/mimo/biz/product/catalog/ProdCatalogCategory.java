@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.product.catalog;
 
 import java.util.Date;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 
 /**
@@ -33,7 +33,7 @@ import org.abchip.mimo.biz.product.category.ProductCategory;
  * @model annotation="mimo-ent-frame title='Catalog Category Association' dictionary='ProductEntityLabels'"
  * @generated
  */
-public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryType> {
+public interface ProdCatalogCategory extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->

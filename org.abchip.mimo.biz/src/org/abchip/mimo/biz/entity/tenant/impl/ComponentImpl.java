@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.entity.tenant.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.entity.tenant.Component;
+import org.abchip.mimo.biz.entity.tenant.TenantComponent;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -100,8 +101,8 @@ public class ComponentImpl extends BizEntityImpl implements Component {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getTenantComponents() {
-		return (List<String>)eGet(TenantPackage.Literals.COMPONENT__TENANT_COMPONENTS, true);
+	public List<TenantComponent> getTenantComponents() {
+		return (List<TenantComponent>)eGet(TenantPackage.Literals.COMPONENT__TENANT_COMPONENTS, true);
 	}
 
 } //ComponentImpl

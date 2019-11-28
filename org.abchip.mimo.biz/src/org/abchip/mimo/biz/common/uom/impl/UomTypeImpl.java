@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.common.uom.UomType;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -121,7 +122,7 @@ public class UomTypeImpl extends BizEntityTypeImpl<Uom> implements UomType {
 	 * @generated
 	 */
 	@Override
-	public List<String> amountProducts() {
+	public List<Product> amountProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +134,7 @@ public class UomTypeImpl extends BizEntityTypeImpl<Uom> implements UomType {
 	 * @generated
 	 */
 	@Override
-	public List<String> childUomTypes() {
+	public List<UomType> childUomTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +146,7 @@ public class UomTypeImpl extends BizEntityTypeImpl<Uom> implements UomType {
 	 * @generated
 	 */
 	@Override
-	public List<String> uoms() {
+	public List<Uom> uoms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

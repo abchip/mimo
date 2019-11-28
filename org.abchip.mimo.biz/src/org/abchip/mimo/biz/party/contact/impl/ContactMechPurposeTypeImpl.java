@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
+import org.abchip.mimo.biz.party.contact.ContactMechTypePurpose;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -78,7 +79,7 @@ public class ContactMechPurposeTypeImpl extends BizEntityImpl implements Contact
 	 * @generated
 	 */
 	@Override
-	public List<String> contactMechTypePurposes() {
+	public List<ContactMechTypePurpose> contactMechTypePurposes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -721,8 +721,8 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEnumeration_UserLoginSecurityQuestions() {
-		return (EAttribute)enumerationEClass.getEStructuralFeatures().get(5);
+	public EReference getEnumeration_UserLoginSecurityQuestions() {
+		return (EReference)enumerationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -810,7 +810,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		createEAttribute(enumerationEClass, ENUMERATION__ENUM_CODE);
 		createEReference(enumerationEClass, ENUMERATION__ENUM_TYPE_ID);
 		createEAttribute(enumerationEClass, ENUMERATION__SEQUENCE_ID);
-		createEAttribute(enumerationEClass, ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS);
+		createEReference(enumerationEClass, ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS);
 
 		enumerationTypeEClass = createEClass(ENUMERATION_TYPE);
 		createEAttribute(enumerationTypeEClass, ENUMERATION_TYPE__ENUM_TYPE_ID);
@@ -844,6 +844,29 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
+		FixedassetPackage theFixedassetPackage = (FixedassetPackage)EPackage.Registry.INSTANCE.getEPackage(FixedassetPackage.eNS_URI);
+		LedgerPackage theLedgerPackage = (LedgerPackage)EPackage.Registry.INSTANCE.getEPackage(LedgerPackage.eNS_URI);
+		CommunicationPackage theCommunicationPackage = (CommunicationPackage)EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
+		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
+		EmailPackage theEmailPackage = (EmailPackage)EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		RecruitmentPackage theRecruitmentPackage = (RecruitmentPackage)EPackage.Registry.INSTANCE.getEPackage(RecruitmentPackage.eNS_URI);
+		GeoPackage theGeoPackage = (GeoPackage)EPackage.Registry.INSTANCE.getEPackage(GeoPackage.eNS_URI);
+		PaymentPackage thePaymentPackage = (PaymentPackage)EPackage.Registry.INSTANCE.getEPackage(PaymentPackage.eNS_URI);
+		PricePackage thePricePackage = (PricePackage)EPackage.Registry.INSTANCE.getEPackage(PricePackage.eNS_URI);
+		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
+		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
+		FinaccountPackage theFinaccountPackage = (FinaccountPackage)EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
+		InventoryPackage theInventoryPackage = (InventoryPackage)EPackage.Registry.INSTANCE.getEPackage(InventoryPackage.eNS_URI);
+		SchedulePackage theSchedulePackage = (SchedulePackage)EPackage.Registry.INSTANCE.getEPackage(SchedulePackage.eNS_URI);
+		KeywordPackage theKeywordPackage = (KeywordPackage)EPackage.Registry.INSTANCE.getEPackage(KeywordPackage.eNS_URI);
+		FacilityPackage theFacilityPackage = (FacilityPackage)EPackage.Registry.INSTANCE.getEPackage(FacilityPackage.eNS_URI);
+		RequestPackage theRequestPackage = (RequestPackage)EPackage.Registry.INSTANCE.getEPackage(RequestPackage.eNS_URI);
+		QuotePackage theQuotePackage = (QuotePackage)EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
+		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
+		OpportunityPackage theOpportunityPackage = (OpportunityPackage)EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -867,97 +890,97 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		initEReference(getEnumeration_EnumTypeId(), this.getEnumerationType(), null, "enumTypeId", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEnumeration_EnumTypeId().getEKeys().add(this.getEnumerationType_EnumTypeId());
 		initEAttribute(getEnumeration_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEnumeration_UserLoginSecurityQuestions(), ecorePackage.getEString(), "userLoginSecurityQuestions", null, 0, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnumeration_UserLoginSecurityQuestions(), theLoginPackage.getUserLoginSecurityQuestion(), null, "userLoginSecurityQuestions", null, 0, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "classFixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theFixedassetPackage.getFixedAsset(), "classFixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "cogsPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theLedgerPackage.getPartyAcctgPreference(), "cogsPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theCommunicationPackage.getCommunicationEvent(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "defaultSalesChannelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theStorePackage.getProductStore(), "defaultSalesChannelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "emailTemplateSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theEmailPackage.getEmailTemplateSetting(), "emailTemplateSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "employmentStatusPersons", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, thePartyPackage.getPerson(), "employmentStatusPersons", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "examTypeJobRequisitions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theRecruitmentPackage.getJobRequisition(), "examTypeJobRequisitions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "geoPointTypeGeoPoints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theGeoPackage.getGeoPoint(), "geoPointTypeGeoPoints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "giftCardFulfillments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, thePaymentPackage.getGiftCardFulfillment(), "giftCardFulfillments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "inputParamProductPriceConds", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, thePricePackage.getProductPriceCond(), "inputParamProductPriceConds", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "invoiceSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theLedgerPackage.getPartyAcctgPreference(), "invoiceSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theRecruitmentPackage.getJobInterview(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "jobPostingTypeJobRequisitions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theRecruitmentPackage.getJobRequisition(), "jobPostingTypeJobRequisitions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "operatorProductPriceConds", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, thePricePackage.getProductPriceCond(), "operatorProductPriceConds", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "orderItemChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theOrderPackage.getOrderItemChange(), "orderItemChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "orderNotifications", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theOrderPackage.getOrderNotification(), "orderNotifications", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "orderSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theLedgerPackage.getPartyAcctgPreference(), "orderSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "privilegeContents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theContentPackage.getContent(), "privilegeContents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "productGeos", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theProductPackage.getProductGeo(), "productGeos", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "productStoreEmailSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theStorePackage.getProductStoreEmailSetting(), "productStoreEmailSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "quoteSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theLedgerPackage.getPartyAcctgPreference(), "quoteSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "ratingProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theProductPackage.getProduct(), "ratingProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "reasonFinAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theFinaccountPackage.getFinAccountTrans(), "reasonFinAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "reasonInventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theInventoryPackage.getInventoryItemDetail(), "reasonInventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "reasonJobManagerLocks", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theSchedulePackage.getJobManagerLock(), "reasonJobManagerLocks", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "reasonOrderItemChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theOrderPackage.getOrderItemChange(), "reasonOrderItemChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "relationshipKeywordThesauruss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theKeywordPackage.getKeywordThesaurus(), "relationshipKeywordThesauruss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "replenishFinAccountTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theFinaccountPackage.getFinAccountType(), "replenishFinAccountTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "replenishMethodProductStoreFinActSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theStorePackage.getProductStoreFinActSetting(), "replenishMethodProductStoreFinActSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "requirementMethodProductFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theFacilityPackage.getProductFacility(), "requirementMethodProductFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "requirementMethodProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theStorePackage.getProductStore(), "requirementMethodProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "requirementMethodProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theProductPackage.getProduct(), "requirementMethodProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "reserveOrderProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theStorePackage.getProductStore(), "reserveOrderProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "residenceStatusPersons", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, thePartyPackage.getPerson(), "residenceStatusPersons", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "salesChannelCustRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theRequestPackage.getCustRequest(), "salesChannelCustRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "salesChannelOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theOrderPackage.getOrderHeader(), "salesChannelOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "salesChannelQuotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theQuotePackage.getQuote(), "salesChannelQuotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "scopeWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theWorkeffortPackage.getWorkEffort(), "scopeWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "serviceTypePaymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, thePaymentPackage.getPaymentGatewayResponse(), "serviceTypePaymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "storeCreditAccountProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theStorePackage.getProductStore(), "storeCreditAccountProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "taxFormPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theLedgerPackage.getPartyAcctgPreference(), "taxFormPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "tranCodePaymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, thePaymentPackage.getPaymentGatewayResponse(), "tranCodePaymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "typeFacilityLocations", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theFacilityPackage.getFacilityLocation(), "typeFacilityLocations", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "typeSalesOpportunities", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theOpportunityPackage.getSalesOpportunity(), "typeSalesOpportunities", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationEClass, ecorePackage.getEString(), "virtualVariantMethodProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationEClass, theProductPackage.getProduct(), "virtualVariantMethodProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(enumerationTypeEClass, EnumerationType.class, "EnumerationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnumerationType_EnumTypeId(), ecorePackage.getEString(), "enumTypeId", null, 1, 1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -966,19 +989,19 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		initEReference(getEnumerationType_ParentTypeId(), this.getEnumerationType(), null, "parentTypeId", null, 0, 1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEnumerationType_ParentTypeId().getEKeys().add(this.getEnumerationType_EnumTypeId());
 
-		addEOperation(enumerationTypeEClass, ecorePackage.getEString(), "childEnumerationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationTypeEClass, this.getEnumerationType(), "childEnumerationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(enumerationTypeEClass, ecorePackage.getEString(), "enumerations", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(enumerationTypeEClass, this.getEnumeration(), "enumerations", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -1014,321 +1037,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (enumerationEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(8),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(9),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(10),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(11),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(12),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(13),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(14),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(15),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(16),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(17),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(18),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(19),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(20),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(21),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(22),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(23),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(24),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(25),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(26),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(27),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(28),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(29),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(30),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(31),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(32),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(33),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(34),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(35),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(36),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(37),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(38),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(39),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(40),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(41),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(42),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(43),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(44),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getEnumeration_EnumId(),
 		   source,
 		   new String[] {
@@ -1351,27 +1059,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   });
 		addAnnotation
 		  (getEnumeration_SequenceId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getEnumeration_UserLoginSecurityQuestions(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (enumerationTypeEClass.getEOperations().get(1),
 		   source,
 		   new String[] {
 			   "type", "id",

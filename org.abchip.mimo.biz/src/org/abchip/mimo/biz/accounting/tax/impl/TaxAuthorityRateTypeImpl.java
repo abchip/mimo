@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.tax.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateType;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -78,7 +79,7 @@ public class TaxAuthorityRateTypeImpl extends BizEntityImpl implements TaxAuthor
 	 * @generated
 	 */
 	@Override
-	public List<String> taxAuthorityRateProducts() {
+	public List<TaxAuthorityRateProduct> taxAuthorityRateProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

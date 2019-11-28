@@ -112,12 +112,11 @@ public interface AgreementContentType extends BizEntityType<AgreementContent> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementContentType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childAgreementContentTypes();
+	List<AgreementContentType> childAgreementContentTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Agreement Content Type Id</b></em>' attribute.

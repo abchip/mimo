@@ -580,7 +580,7 @@ public interface GeoPackage extends EPackage {
 	int GEO__GEO_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Main Geo Assocs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Main Geo Assocs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -589,7 +589,7 @@ public interface GeoPackage extends EPackage {
 	int GEO__MAIN_GEO_ASSOCS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Tax Auth Tax Authorities</b></em>' attribute list.
+	 * The feature id for the '<em><b>Tax Auth Tax Authorities</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -632,7 +632,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int GEO_ASSOC__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -641,7 +641,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int GEO_ASSOC__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -650,7 +650,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int GEO_ASSOC__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -659,7 +659,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int GEO_ASSOC__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Geo Id</b></em>' reference.
@@ -668,7 +668,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC__GEO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int GEO_ASSOC__GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Geo Id To</b></em>' reference.
@@ -677,7 +677,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC__GEO_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int GEO_ASSOC__GEO_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Geo Assoc Type Id</b></em>' reference.
@@ -686,7 +686,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC__GEO_ASSOC_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int GEO_ASSOC__GEO_ASSOC_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Assoc</em>' class.
@@ -695,7 +695,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int GEO_ASSOC_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.common.geo.impl.GeoAssocTypeImpl <em>Assoc Type</em>}' class.
@@ -708,22 +708,13 @@ public interface GeoPackage extends EPackage {
 	int GEO_ASSOC_TYPE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GEO_ASSOC_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int GEO_ASSOC_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -732,7 +723,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int GEO_ASSOC_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -741,7 +732,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int GEO_ASSOC_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -750,7 +741,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int GEO_ASSOC_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Geo Assoc Type Id</b></em>' attribute.
@@ -759,7 +750,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC_TYPE__GEO_ASSOC_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int GEO_ASSOC_TYPE__GEO_ASSOC_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -768,7 +759,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int GEO_ASSOC_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Assoc Type</em>' class.
@@ -777,7 +768,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_ASSOC_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int GEO_ASSOC_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl <em>Point</em>}' class.
@@ -1298,26 +1289,26 @@ public interface GeoPackage extends EPackage {
 	EAttribute getGeo_WellKnownText();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.common.geo.Geo#getMainGeoAssocs <em>Main Geo Assocs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.geo.Geo#getMainGeoAssocs <em>Main Geo Assocs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Main Geo Assocs</em>'.
+	 * @return the meta object for the reference list '<em>Main Geo Assocs</em>'.
 	 * @see org.abchip.mimo.biz.common.geo.Geo#getMainGeoAssocs()
 	 * @see #getGeo()
 	 * @generated
 	 */
-	EAttribute getGeo_MainGeoAssocs();
+	EReference getGeo_MainGeoAssocs();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.common.geo.Geo#getTaxAuthTaxAuthorities <em>Tax Auth Tax Authorities</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.geo.Geo#getTaxAuthTaxAuthorities <em>Tax Auth Tax Authorities</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Tax Auth Tax Authorities</em>'.
+	 * @return the meta object for the reference list '<em>Tax Auth Tax Authorities</em>'.
 	 * @see org.abchip.mimo.biz.common.geo.Geo#getTaxAuthTaxAuthorities()
 	 * @see #getGeo()
 	 * @generated
 	 */
-	EAttribute getGeo_TaxAuthTaxAuthorities();
+	EReference getGeo_TaxAuthTaxAuthorities();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.geo.GeoAssoc <em>Assoc</em>}'.
@@ -1798,20 +1789,20 @@ public interface GeoPackage extends EPackage {
 		EAttribute GEO__WELL_KNOWN_TEXT = eINSTANCE.getGeo_WellKnownText();
 
 		/**
-		 * The meta object literal for the '<em><b>Main Geo Assocs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Main Geo Assocs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GEO__MAIN_GEO_ASSOCS = eINSTANCE.getGeo_MainGeoAssocs();
+		EReference GEO__MAIN_GEO_ASSOCS = eINSTANCE.getGeo_MainGeoAssocs();
 
 		/**
-		 * The meta object literal for the '<em><b>Tax Auth Tax Authorities</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Tax Auth Tax Authorities</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GEO__TAX_AUTH_TAX_AUTHORITIES = eINSTANCE.getGeo_TaxAuthTaxAuthorities();
+		EReference GEO__TAX_AUTH_TAX_AUTHORITIES = eINSTANCE.getGeo_TaxAuthTaxAuthorities();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.geo.impl.GeoAssocImpl <em>Assoc</em>}' class.

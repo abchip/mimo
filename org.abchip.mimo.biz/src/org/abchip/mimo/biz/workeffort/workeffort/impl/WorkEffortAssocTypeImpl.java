@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -144,8 +145,8 @@ public class WorkEffortAssocTypeImpl extends BizEntityTypeImpl<WorkEffortAssoc> 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkEffortAssocTypeAttrs() {
-		return (List<String>)eGet(WorkeffortPackage.Literals.WORK_EFFORT_ASSOC_TYPE__WORK_EFFORT_ASSOC_TYPE_ATTRS, true);
+	public List<WorkEffortAssocTypeAttr> getWorkEffortAssocTypeAttrs() {
+		return (List<WorkEffortAssocTypeAttr>)eGet(WorkeffortPackage.Literals.WORK_EFFORT_ASSOC_TYPE__WORK_EFFORT_ASSOC_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +155,7 @@ public class WorkEffortAssocTypeImpl extends BizEntityTypeImpl<WorkEffortAssoc> 
 	 * @generated
 	 */
 	@Override
-	public List<String> childWorkEffortAssocTypes() {
+	public List<WorkEffortAssocType> childWorkEffortAssocTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

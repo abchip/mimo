@@ -10,6 +10,9 @@ package org.abchip.mimo.biz.content.survey;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.content.data.DataResource;
+import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
+import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
 
 /**
  * <!-- begin-user-doc -->
@@ -305,79 +308,73 @@ public interface Survey extends BizEntity {
 	void setSurveyName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Survey Multi Resps</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Survey Multi Resps</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.survey.SurveyMultiResp}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Survey Multi Resps</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Multi Resps</em>' attribute list.
+	 * @return the value of the '<em>Survey Multi Resps</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SurveyMultiResps()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyMultiResp'"
 	 * @generated
 	 */
-	List<String> getSurveyMultiResps();
+	List<SurveyMultiResp> getSurveyMultiResps();
 
 	/**
-	 * Returns the value of the '<em><b>Survey Pages</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Survey Pages</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.survey.SurveyPage}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Survey Pages</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Pages</em>' attribute list.
+	 * @return the value of the '<em>Survey Pages</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SurveyPages()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyPage'"
 	 * @generated
 	 */
-	List<String> getSurveyPages();
+	List<SurveyPage> getSurveyPages();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='surveyId'"
 	 * @generated
 	 */
-	List<String> dataResources();
+	List<DataResource> dataResources();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreFinActSetting' route='purchaseSurveyId'"
 	 * @generated
 	 */
-	List<String> productStoreFinActSettings();
+	List<ProductStoreFinActSetting> productStoreFinActSettings();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreSurveyAppl' route='surveyId'"
 	 * @generated
 	 */
-	List<String> productStoreSurveyAppls();
+	List<ProductStoreSurveyAppl> productStoreSurveyAppls();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyResponse' route='surveyId'"
 	 * @generated
 	 */
-	List<String> surveyResponses();
+	List<SurveyResponse> surveyResponses();
 
 } // Survey

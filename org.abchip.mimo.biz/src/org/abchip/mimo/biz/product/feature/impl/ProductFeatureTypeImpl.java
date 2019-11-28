@@ -122,7 +122,7 @@ public class ProductFeatureTypeImpl extends BizEntityTypeImpl<ProductFeature> im
 	 * @generated
 	 */
 	@Override
-	public List<String> childProductFeatureTypes() {
+	public List<ProductFeatureType> childProductFeatureTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -134,7 +134,7 @@ public class ProductFeatureTypeImpl extends BizEntityTypeImpl<ProductFeature> im
 	 * @generated
 	 */
 	@Override
-	public List<String> productFeatures() {
+	public List<ProductFeature> productFeatures() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

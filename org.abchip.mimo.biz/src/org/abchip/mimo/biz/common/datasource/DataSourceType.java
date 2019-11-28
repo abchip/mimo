@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.common.datasource;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface DataSourceType extends BizEntityType<DataSource> {
+public interface DataSourceType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,12 +58,11 @@ public interface DataSourceType extends BizEntityType<DataSource> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataSource' route='dataSourceTypeId'"
 	 * @generated
 	 */
-	List<String> dataSources();
+	List<DataSource> dataSources();
 
 	/**
 	 * Returns the value of the '<em><b>Data Source Type Id</b></em>' attribute.

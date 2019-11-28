@@ -84,21 +84,20 @@ public interface Component extends BizEntity {
 	void setRootLocation(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Tenant Components</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Tenant Components</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.tenant.TenantComponent}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tenant Components</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tenant Components</em>' attribute list.
+	 * @return the value of the '<em>Tenant Components</em>' reference list.
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getComponent_TenantComponents()
-	 * @model annotation="mimo-ent-format type='name' length='100'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TenantComponent'"
 	 * @generated
 	 */
-	List<String> getTenantComponents();
+	List<TenantComponent> getTenantComponents();
 
 } // Component

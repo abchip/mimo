@@ -9,10 +9,12 @@ package org.abchip.mimo.biz.order.quote.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteType;
+import org.abchip.mimo.biz.order.quote.QuoteTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -144,8 +146,8 @@ public class QuoteTypeImpl extends BizEntityTypeImpl<Quote> implements QuoteType
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getQuoteTypeAttrs() {
-		return (List<String>)eGet(QuotePackage.Literals.QUOTE_TYPE__QUOTE_TYPE_ATTRS, true);
+	public List<QuoteTypeAttr> getQuoteTypeAttrs() {
+		return (List<QuoteTypeAttr>)eGet(QuotePackage.Literals.QUOTE_TYPE__QUOTE_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +156,7 @@ public class QuoteTypeImpl extends BizEntityTypeImpl<Quote> implements QuoteType
 	 * @generated
 	 */
 	@Override
-	public List<String> childQuoteTypes() {
+	public List<QuoteType> childQuoteTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +168,7 @@ public class QuoteTypeImpl extends BizEntityTypeImpl<Quote> implements QuoteType
 	 * @generated
 	 */
 	@Override
-	public List<String> partyPrefDocTypeTpls() {
+	public List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -178,7 +180,7 @@ public class QuoteTypeImpl extends BizEntityTypeImpl<Quote> implements QuoteType
 	 * @generated
 	 */
 	@Override
-	public List<String> quotes() {
+	public List<Quote> quotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

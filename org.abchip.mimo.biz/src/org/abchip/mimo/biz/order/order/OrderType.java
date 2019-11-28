@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.order;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,51 +139,47 @@ public interface OrderType extends BizEntityType<OrderHeader> {
 	void setParentTypeId(OrderType value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Order Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Order Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderType_OrderTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderTypeAttr'"
 	 * @generated
 	 */
-	List<String> getOrderTypeAttrs();
+	List<OrderTypeAttr> getOrderTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childOrderTypes();
+	List<OrderType> childOrderTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='orderTypeId'"
 	 * @generated
 	 */
-	List<String> orderHeaders();
+	List<OrderHeader> orderHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyPrefDocTypeTpl' route='orderTypeId'"
 	 * @generated
 	 */
-	List<String> partyPrefDocTypeTpls();
+	List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls();
 
 } // OrderType

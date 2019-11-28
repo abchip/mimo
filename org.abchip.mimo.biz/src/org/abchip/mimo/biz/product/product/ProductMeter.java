@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.product.product;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.uom.Uom;
 
 /**
@@ -29,7 +29,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
  * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
-public interface ProductMeter extends BizEntityTyped<ProductMeterType> {
+public interface ProductMeter extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Meter Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

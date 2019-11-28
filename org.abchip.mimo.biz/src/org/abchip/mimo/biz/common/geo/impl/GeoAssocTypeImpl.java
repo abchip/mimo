@@ -8,11 +8,11 @@
 package org.abchip.mimo.biz.common.geo.impl;
 
 import java.util.List;
-
+import org.abchip.mimo.biz.common.geo.CountryAddressFormat;
 import org.abchip.mimo.biz.common.geo.GeoAssoc;
 import org.abchip.mimo.biz.common.geo.GeoAssocType;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class GeoAssocTypeImpl extends BizEntityTypeImpl<GeoAssoc> implements GeoAssocType {
+public class GeoAssocTypeImpl extends BizEntityImpl implements GeoAssocType {
 	/**
 	 * 
 	 */
@@ -79,7 +79,7 @@ public class GeoAssocTypeImpl extends BizEntityTypeImpl<GeoAssoc> implements Geo
 	 * @generated
 	 */
 	@Override
-	public List<String> countryAddressFormats() {
+	public List<CountryAddressFormat> countryAddressFormats() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -91,7 +91,7 @@ public class GeoAssocTypeImpl extends BizEntityTypeImpl<GeoAssoc> implements Geo
 	 * @generated
 	 */
 	@Override
-	public List<String> geoAssocs() {
+	public List<GeoAssoc> geoAssocs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

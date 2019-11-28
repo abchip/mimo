@@ -112,22 +112,20 @@ public interface AcctgTransEntryType extends BizEntityType<AcctgTransEntry> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='acctgTransEntryTypeId'"
 	 * @generated
 	 */
-	List<String> acctgTransEntries();
+	List<AcctgTransEntry> acctgTransEntries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntryType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childAcctgTransEntryTypes();
+	List<AcctgTransEntryType> childAcctgTransEntryTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Acctg Trans Entry Type Id</b></em>' attribute.

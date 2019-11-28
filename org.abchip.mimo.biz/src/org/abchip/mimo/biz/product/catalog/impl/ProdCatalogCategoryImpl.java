@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.product.catalog.impl;
 
 import java.util.Date;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.catalog.CatalogPackage;
 import org.abchip.mimo.biz.product.catalog.ProdCatalog;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogCategory;
@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCategoryType> implements ProdCatalogCategory {
+public class ProdCatalogCategoryImpl extends BizEntityImpl implements ProdCatalogCategory {
 	/**
 	 * 
 	 */

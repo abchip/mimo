@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.abchip.mimo.biz.product.product.ProductSearchConstraint;
 import org.abchip.mimo.biz.product.product.ProductSearchResult;
 import org.eclipse.emf.ecore.EClass;
 
@@ -168,8 +169,8 @@ public class ProductSearchResultImpl extends BizEntityImpl implements ProductSea
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductSearchConstraints() {
-		return (List<String>)eGet(ProductPackage.Literals.PRODUCT_SEARCH_RESULT__PRODUCT_SEARCH_CONSTRAINTS, true);
+	public List<ProductSearchConstraint> getProductSearchConstraints() {
+		return (List<ProductSearchConstraint>)eGet(ProductPackage.Literals.PRODUCT_SEARCH_RESULT__PRODUCT_SEARCH_CONSTRAINTS, true);
 	}
 
 	/**

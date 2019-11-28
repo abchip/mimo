@@ -9,7 +9,9 @@ package org.abchip.mimo.biz.product.inventory.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.inventory.InventoryItemVariance;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.VarianceReason;
 import org.eclipse.emf.ecore.EClass;
@@ -101,8 +103,8 @@ public class VarianceReasonImpl extends BizEntityImpl implements VarianceReason 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getVarianceReasonGlAccounts() {
-		return (List<String>)eGet(InventoryPackage.Literals.VARIANCE_REASON__VARIANCE_REASON_GL_ACCOUNTS, true);
+	public List<VarianceReasonGlAccount> getVarianceReasonGlAccounts() {
+		return (List<VarianceReasonGlAccount>)eGet(InventoryPackage.Literals.VARIANCE_REASON__VARIANCE_REASON_GL_ACCOUNTS, true);
 	}
 
 	/**
@@ -111,7 +113,7 @@ public class VarianceReasonImpl extends BizEntityImpl implements VarianceReason 
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryItemVariances() {
+	public List<InventoryItemVariance> inventoryItemVariances() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

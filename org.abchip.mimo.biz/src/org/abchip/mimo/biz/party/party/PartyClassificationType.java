@@ -112,22 +112,20 @@ public interface PartyClassificationType extends BizEntityType<PartyClassificati
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyClassificationType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childPartyClassificationTypes();
+	List<PartyClassificationType> childPartyClassificationTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyClassificationGroup' route='partyClassificationTypeId'"
 	 * @generated
 	 */
-	List<String> partyClassificationGroups();
+	List<PartyClassificationGroup> partyClassificationGroups();
 
 	/**
 	 * Returns the value of the '<em><b>Party Classification Type Id</b></em>' attribute.

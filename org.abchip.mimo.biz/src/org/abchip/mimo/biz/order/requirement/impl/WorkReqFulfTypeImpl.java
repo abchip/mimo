@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.order.requirement.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.WorkReqFulfType;
 import org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class WorkReqFulfTypeImpl extends BizEntityTypeImpl<WorkRequirementFulfillment> implements WorkReqFulfType {
+public class WorkReqFulfTypeImpl extends BizEntityImpl implements WorkReqFulfType {
 	/**
 	 * 
 	 */
@@ -80,7 +80,7 @@ public class WorkReqFulfTypeImpl extends BizEntityTypeImpl<WorkRequirementFulfil
 	 * @generated
 	 */
 	@Override
-	public List<String> workRequirementFulfillments() {
+	public List<WorkRequirementFulfillment> workRequirementFulfillments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

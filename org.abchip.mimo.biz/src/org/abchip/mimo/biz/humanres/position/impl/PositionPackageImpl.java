@@ -1470,6 +1470,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
+		EmploymentPackage theEmploymentPackage = (EmploymentPackage)EPackage.Registry.INSTANCE.getEPackage(EmploymentPackage.eNS_URI);
 		AbilityPackage theAbilityPackage = (AbilityPackage)EPackage.Registry.INSTANCE.getEPackage(AbilityPackage.eNS_URI);
 		RatePackage theRatePackage = (RatePackage)EPackage.Registry.INSTANCE.getEPackage(RatePackage.eNS_URI);
 
@@ -1514,7 +1515,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		getEmplPosition_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEAttribute(getEmplPosition_TemporaryFlag(), ecorePackage.getEChar(), "temporaryFlag", null, 0, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(emplPositionEClass, ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(emplPositionEClass, theEmploymentPackage.getEmploymentApp(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplPositionClassTypeEClass, EmplPositionClassType.class, "EmplPositionClassType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmplPositionClassType_EmplPositionClassTypeId(), ecorePackage.getEString(), "emplPositionClassTypeId", null, 1, 1, EmplPositionClassType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1523,7 +1524,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		initEReference(getEmplPositionClassType_ParentTypeId(), this.getEmplPositionClassType(), null, "parentTypeId", null, 0, 1, EmplPositionClassType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplPositionClassType_ParentTypeId().getEKeys().add(this.getEmplPositionClassType_EmplPositionClassTypeId());
 
-		addEOperation(emplPositionClassTypeEClass, ecorePackage.getEString(), "childEmplPositionClassTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(emplPositionClassTypeEClass, this.getEmplPositionClassType(), "childEmplPositionClassTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplPositionFulfillmentEClass, EmplPositionFulfillment.class, "EmplPositionFulfillment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEmplPositionFulfillment_EmplPositionId(), this.getEmplPosition(), null, "emplPositionId", null, 1, 1, EmplPositionFulfillment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1560,9 +1561,9 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		initEReference(getEmplPositionType_ParentTypeId(), this.getEmplPositionType(), null, "parentTypeId", null, 0, 1, EmplPositionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplPositionType_ParentTypeId().getEKeys().add(this.getEmplPositionType_EmplPositionTypeId());
 
-		addEOperation(emplPositionTypeEClass, ecorePackage.getEString(), "childEmplPositionTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(emplPositionTypeEClass, this.getEmplPositionType(), "childEmplPositionTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(emplPositionTypeEClass, ecorePackage.getEString(), "emplPositions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(emplPositionTypeEClass, this.getEmplPosition(), "emplPositions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplPositionTypeClassEClass, EmplPositionTypeClass.class, "EmplPositionTypeClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEmplPositionTypeClass_EmplPositionTypeId(), this.getEmplPositionType(), null, "emplPositionTypeId", null, 1, 1, EmplPositionTypeClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1593,12 +1594,12 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		initEAttribute(getValidResponsibility_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ValidResponsibility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
 	}
@@ -1611,13 +1612,6 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 	 */
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
-		addAnnotation
-		  (emplPositionEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
 		addAnnotation
 		  (getEmplPosition_EmplPositionId(),
 		   source,
@@ -1690,13 +1684,6 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		   new String[] {
 			   "type", "indicator",
 			   "length", "1"
-		   });
-		addAnnotation
-		  (emplPositionClassTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmplPositionClassType_EmplPositionClassTypeId(),
@@ -1782,20 +1769,6 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (emplPositionTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (emplPositionTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmplPositionType_EmplPositionTypeId(),

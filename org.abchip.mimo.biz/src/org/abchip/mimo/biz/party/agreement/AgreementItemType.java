@@ -111,42 +111,39 @@ public interface AgreementItemType extends BizEntityType<AgreementItem> {
 	void setParentTypeId(AgreementItemType value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Item Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Agreement Item Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Item Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Item Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Agreement Item Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItemType_AgreementItemTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementItemTypeAttr'"
 	 * @generated
 	 */
-	List<String> getAgreementItemTypeAttrs();
+	List<AgreementItemTypeAttr> getAgreementItemTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementItem' route='agreementItemTypeId'"
 	 * @generated
 	 */
-	List<String> agreementItems();
+	List<AgreementItem> agreementItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementItemType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childAgreementItemTypes();
+	List<AgreementItemType> childAgreementItemTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Agreement Item Type Id</b></em>' attribute.

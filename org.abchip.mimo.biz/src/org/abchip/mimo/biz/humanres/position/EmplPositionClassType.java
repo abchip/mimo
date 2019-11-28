@@ -8,7 +8,6 @@
 package org.abchip.mimo.biz.humanres.position;
 
 import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -139,11 +138,10 @@ public interface EmplPositionClassType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmplPositionClassType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childEmplPositionClassTypes();
+	List<EmplPositionClassType> childEmplPositionClassTypes();
 
 } // EmplPositionClassType

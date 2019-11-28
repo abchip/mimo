@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProductConfigItem;
+import org.abchip.mimo.biz.product.config.ProductConfigOption;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -165,8 +166,8 @@ public class ProductConfigItemImpl extends BizEntityImpl implements ProductConfi
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getConfigItemProductConfigOptions() {
-		return (List<String>)eGet(ConfigPackage.Literals.PRODUCT_CONFIG_ITEM__CONFIG_ITEM_PRODUCT_CONFIG_OPTIONS, true);
+	public List<ProductConfigOption> getConfigItemProductConfigOptions() {
+		return (List<ProductConfigOption>)eGet(ConfigPackage.Literals.PRODUCT_CONFIG_ITEM__CONFIG_ITEM_PRODUCT_CONFIG_OPTIONS, true);
 	}
 
 	/**

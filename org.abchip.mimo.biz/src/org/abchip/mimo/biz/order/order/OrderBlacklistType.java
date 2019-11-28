@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.order.order;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
-public interface OrderBlacklistType extends BizEntityType<OrderBlacklist> {
+public interface OrderBlacklistType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,12 +58,11 @@ public interface OrderBlacklistType extends BizEntityType<OrderBlacklist> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderBlacklist' route='orderBlacklistTypeId'"
 	 * @generated
 	 */
-	List<String> orderBlacklists();
+	List<OrderBlacklist> orderBlacklists();
 
 	/**
 	 * Returns the value of the '<em><b>Order Blacklist Type Id</b></em>' attribute.

@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.webapp.visit.Visit;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.abchip.mimo.biz.webapp.visit.Visitor;
 import org.eclipse.emf.ecore.EClass;
@@ -121,7 +122,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 * @generated
 	 */
 	@Override
-	public List<String> visits() {
+	public List<Visit> visits() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

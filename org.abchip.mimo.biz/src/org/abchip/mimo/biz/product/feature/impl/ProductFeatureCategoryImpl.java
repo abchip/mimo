@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureCategory;
 import org.eclipse.emf.ecore.EClass;
 
@@ -100,7 +101,7 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 	 * @generated
 	 */
 	@Override
-	public List<String> childProductFeatureCategories() {
+	public List<ProductFeatureCategory> childProductFeatureCategories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -112,7 +113,7 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 	 * @generated
 	 */
 	@Override
-	public List<String> productFeatures() {
+	public List<ProductFeature> productFeatures() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

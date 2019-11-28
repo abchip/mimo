@@ -10,6 +10,38 @@ package org.abchip.mimo.biz.common.enum_;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
+import org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
+import org.abchip.mimo.biz.common.email.EmailTemplateSetting;
+import org.abchip.mimo.biz.common.geo.GeoPoint;
+import org.abchip.mimo.biz.common.keyword.KeywordThesaurus;
+import org.abchip.mimo.biz.content.content.Content;
+import org.abchip.mimo.biz.humanres.recruitment.JobInterview;
+import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.order.OrderItemChange;
+import org.abchip.mimo.biz.order.order.OrderNotification;
+import org.abchip.mimo.biz.order.quote.Quote;
+import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.party.party.Person;
+import org.abchip.mimo.biz.product.facility.FacilityLocation;
+import org.abchip.mimo.biz.product.facility.ProductFacility;
+import org.abchip.mimo.biz.product.inventory.InventoryItemDetail;
+import org.abchip.mimo.biz.product.price.ProductPriceCond;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.product.ProductGeo;
+import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.store.ProductStoreEmailSetting;
+import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
+import org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion;
+import org.abchip.mimo.biz.service.schedule.JobManagerLock;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,472 +144,426 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	void setSequenceId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>User Login Security Questions</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>User Login Security Questions</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>User Login Security Questions</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Login Security Questions</em>' attribute list.
+	 * @return the value of the '<em>User Login Security Questions</em>' reference list.
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration_UserLoginSecurityQuestions()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginSecurityQuestion'"
 	 * @generated
 	 */
-	List<String> getUserLoginSecurityQuestions();
+	List<UserLoginSecurityQuestion> getUserLoginSecurityQuestions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAsset' route='classEnumId'"
 	 * @generated
 	 */
-	List<String> classFixedAssets();
+	List<FixedAsset> classFixedAssets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='cogsMethodId'"
 	 * @generated
 	 */
-	List<String> cogsPartyAcctgPreferences();
+	List<PartyAcctgPreference> cogsPartyAcctgPreferences();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='reasonEnumId'"
 	 * @generated
 	 */
-	List<String> communicationEvents();
+	List<CommunicationEvent> communicationEvents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='defaultSalesChannelEnumId'"
 	 * @generated
 	 */
-	List<String> defaultSalesChannelProductStores();
+	List<ProductStore> defaultSalesChannelProductStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmailTemplateSetting' route='emailType'"
 	 * @generated
 	 */
-	List<String> emailTemplateSettings();
+	List<EmailTemplateSetting> emailTemplateSettings();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Person' route='employmentStatusEnumId'"
 	 * @generated
 	 */
-	List<String> employmentStatusPersons();
+	List<Person> employmentStatusPersons();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobRequisition' route='examTypeEnumId'"
 	 * @generated
 	 */
-	List<String> examTypeJobRequisitions();
+	List<JobRequisition> examTypeJobRequisitions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GeoPoint' route='geoPointTypeEnumId'"
 	 * @generated
 	 */
-	List<String> geoPointTypeGeoPoints();
+	List<GeoPoint> geoPointTypeGeoPoints();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GiftCardFulfillment' route='typeEnumId'"
 	 * @generated
 	 */
-	List<String> giftCardFulfillments();
+	List<GiftCardFulfillment> giftCardFulfillments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPriceCond' route='inputParamEnumId'"
 	 * @generated
 	 */
-	List<String> inputParamProductPriceConds();
+	List<ProductPriceCond> inputParamProductPriceConds();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='oldInvoiceSequenceEnumId'"
 	 * @generated
 	 */
-	List<String> invoiceSequencePartyAcctgPreferences();
+	List<PartyAcctgPreference> invoiceSequencePartyAcctgPreferences();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobInterview' route='gradeSecuredEnumId'"
 	 * @generated
 	 */
-	List<String> jobInterviews();
+	List<JobInterview> jobInterviews();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobRequisition' route='jobPostingTypeEnumId'"
 	 * @generated
 	 */
-	List<String> jobPostingTypeJobRequisitions();
+	List<JobRequisition> jobPostingTypeJobRequisitions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPriceCond' route='operatorEnumId'"
 	 * @generated
 	 */
-	List<String> operatorProductPriceConds();
+	List<ProductPriceCond> operatorProductPriceConds();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemChange' route='changeTypeEnumId'"
 	 * @generated
 	 */
-	List<String> orderItemChanges();
+	List<OrderItemChange> orderItemChanges();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderNotification' route='emailType'"
 	 * @generated
 	 */
-	List<String> orderNotifications();
+	List<OrderNotification> orderNotifications();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='oldOrderSequenceEnumId'"
 	 * @generated
 	 */
-	List<String> orderSequencePartyAcctgPreferences();
+	List<PartyAcctgPreference> orderSequencePartyAcctgPreferences();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='privilegeEnumId'"
 	 * @generated
 	 */
-	List<String> privilegeContents();
+	List<Content> privilegeContents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductGeo' route='productGeoEnumId'"
 	 * @generated
 	 */
-	List<String> productGeos();
+	List<ProductGeo> productGeos();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreEmailSetting' route='emailType'"
 	 * @generated
 	 */
-	List<String> productStoreEmailSettings();
+	List<ProductStoreEmailSetting> productStoreEmailSettings();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='oldQuoteSequenceEnumId'"
 	 * @generated
 	 */
-	List<String> quoteSequencePartyAcctgPreferences();
+	List<PartyAcctgPreference> quoteSequencePartyAcctgPreferences();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='ratingTypeEnum'"
 	 * @generated
 	 */
-	List<String> ratingProducts();
+	List<Product> ratingProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='reasonEnumId'"
 	 * @generated
 	 */
-	List<String> reasonFinAccountTranss();
+	List<FinAccountTrans> reasonFinAccountTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemDetail' route='reasonEnumId'"
 	 * @generated
 	 */
-	List<String> reasonInventoryItemDetails();
+	List<InventoryItemDetail> reasonInventoryItemDetails();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobManagerLock' route='reasonEnumId'"
 	 * @generated
 	 */
-	List<String> reasonJobManagerLocks();
+	List<JobManagerLock> reasonJobManagerLocks();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemChange' route='reasonEnumId'"
 	 * @generated
 	 */
-	List<String> reasonOrderItemChanges();
+	List<OrderItemChange> reasonOrderItemChanges();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='KeywordThesaurus' route='relationshipEnumId'"
 	 * @generated
 	 */
-	List<String> relationshipKeywordThesauruss();
+	List<KeywordThesaurus> relationshipKeywordThesauruss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountType' route='replenishEnumId'"
 	 * @generated
 	 */
-	List<String> replenishFinAccountTypes();
+	List<FinAccountType> replenishFinAccountTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreFinActSetting' route='replenishMethodEnumId'"
 	 * @generated
 	 */
-	List<String> replenishMethodProductStoreFinActSettings();
+	List<ProductStoreFinActSetting> replenishMethodProductStoreFinActSettings();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFacility' route='requirementMethodEnumId'"
 	 * @generated
 	 */
-	List<String> requirementMethodProductFacilities();
+	List<ProductFacility> requirementMethodProductFacilities();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='requirementMethodEnumId'"
 	 * @generated
 	 */
-	List<String> requirementMethodProductStores();
+	List<ProductStore> requirementMethodProductStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='requirementMethodEnumId'"
 	 * @generated
 	 */
-	List<String> requirementMethodProducts();
+	List<Product> requirementMethodProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='reserveOrderEnumId'"
 	 * @generated
 	 */
-	List<String> reserveOrderProductStores();
+	List<ProductStore> reserveOrderProductStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Person' route='residenceStatusEnumId'"
 	 * @generated
 	 */
-	List<String> residenceStatusPersons();
+	List<Person> residenceStatusPersons();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequest' route='salesChannelEnumId'"
 	 * @generated
 	 */
-	List<String> salesChannelCustRequests();
+	List<CustRequest> salesChannelCustRequests();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeader' route='salesChannelEnumId'"
 	 * @generated
 	 */
-	List<String> salesChannelOrderHeaders();
+	List<OrderHeader> salesChannelOrderHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Quote' route='salesChannelEnumId'"
 	 * @generated
 	 */
-	List<String> salesChannelQuotes();
+	List<Quote> salesChannelQuotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='scopeEnumId'"
 	 * @generated
 	 */
-	List<String> scopeWorkEfforts();
+	List<WorkEffort> scopeWorkEfforts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGatewayResponse' route='paymentServiceTypeEnumId'"
 	 * @generated
 	 */
-	List<String> serviceTypePaymentGatewayResponses();
+	List<PaymentGatewayResponse> serviceTypePaymentGatewayResponses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='storeCreditAccountEnumId'"
 	 * @generated
 	 */
-	List<String> storeCreditAccountProductStores();
+	List<ProductStore> storeCreditAccountProductStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='taxFormId'"
 	 * @generated
 	 */
-	List<String> taxFormPartyAcctgPreferences();
+	List<PartyAcctgPreference> taxFormPartyAcctgPreferences();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGatewayResponse' route='transCodeEnumId'"
 	 * @generated
 	 */
-	List<String> tranCodePaymentGatewayResponses();
+	List<PaymentGatewayResponse> tranCodePaymentGatewayResponses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FacilityLocation' route='locationTypeEnumId'"
 	 * @generated
 	 */
-	List<String> typeFacilityLocations();
+	List<FacilityLocation> typeFacilityLocations();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunity' route='typeEnumId'"
 	 * @generated
 	 */
-	List<String> typeSalesOpportunities();
+	List<SalesOpportunity> typeSalesOpportunities();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='virtualVariantMethodEnum'"
 	 * @generated
 	 */
-	List<String> virtualVariantMethodProducts();
+	List<Product> virtualVariantMethodProducts();
 
 	/**
 	 * Returns the value of the '<em><b>Enum Type Id</b></em>' reference.

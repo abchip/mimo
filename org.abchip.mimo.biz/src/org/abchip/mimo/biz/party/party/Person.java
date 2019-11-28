@@ -31,7 +31,7 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getHeight <em>Height</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getLastName <em>Last Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getLastNameLocal <em>Last Name Local</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.Person#getMaritalStatus <em>Marital Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Person#isMaritalStatus <em>Marital Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getMemberId <em>Member Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getMiddleName <em>Middle Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getMiddleNameLocal <em>Middle Name Local</em>}</li>
@@ -371,6 +371,7 @@ public interface Person extends Party {
 
 	/**
 	 * Returns the value of the '<em><b>Marital Status</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Marital Status</em>' attribute isn't clear,
@@ -378,22 +379,23 @@ public interface Person extends Party {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Marital Status</em>' attribute.
-	 * @see #setMaritalStatus(char)
+	 * @see #setMaritalStatus(boolean)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_MaritalStatus()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getMaritalStatus();
+	boolean isMaritalStatus();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Person#getMaritalStatus <em>Marital Status</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Person#isMaritalStatus <em>Marital Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Marital Status</em>' attribute.
-	 * @see #getMaritalStatus()
+	 * @see #isMaritalStatus()
 	 * @generated
 	 */
-	void setMaritalStatus(char value);
+	void setMaritalStatus(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Member Id</b></em>' attribute.

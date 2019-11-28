@@ -8,11 +8,10 @@
 package org.abchip.mimo.biz.humanres.recruitment.impl;
 
 import java.util.List;
-
 import org.abchip.mimo.biz.humanres.recruitment.JobInterview;
 import org.abchip.mimo.biz.humanres.recruitment.JobInterviewType;
 import org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +28,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class JobInterviewTypeImpl extends BizEntityTypeImpl<JobInterview> implements JobInterviewType {
+public class JobInterviewTypeImpl extends BizEntityImpl implements JobInterviewType {
 	/**
 	 * 
 	 */
@@ -80,7 +79,7 @@ public class JobInterviewTypeImpl extends BizEntityTypeImpl<JobInterview> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> jobInterviews() {
+	public List<JobInterview> jobInterviews() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -17,6 +17,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.cost.CostComponent;
+import org.abchip.mimo.biz.product.cost.CostComponentAttribute;
 import org.abchip.mimo.biz.product.cost.CostComponentCalc;
 import org.abchip.mimo.biz.product.cost.CostComponentType;
 import org.abchip.mimo.biz.product.cost.CostPackage;
@@ -283,8 +284,8 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCostComponentAttributes() {
-		return (List<String>)eGet(CostPackage.Literals.COST_COMPONENT__COST_COMPONENT_ATTRIBUTES, true);
+	public List<CostComponentAttribute> getCostComponentAttributes() {
+		return (List<CostComponentAttribute>)eGet(CostPackage.Literals.COST_COMPONENT__COST_COMPONENT_ATTRIBUTES, true);
 	}
 
 	/**

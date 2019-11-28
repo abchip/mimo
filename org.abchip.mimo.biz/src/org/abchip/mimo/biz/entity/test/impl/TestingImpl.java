@@ -12,8 +12,9 @@ import java.util.List;
 
 import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.Testing;
+import org.abchip.mimo.biz.entity.test.TestingItem;
 import org.abchip.mimo.biz.entity.test.TestingType;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -36,7 +37,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Testing {
+public class TestingImpl extends BizEntityImpl implements Testing {
 	/**
 	 * 
 	 */
@@ -207,8 +208,8 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getTestingItems() {
-		return (List<String>)eGet(TestPackage.Literals.TESTING__TESTING_ITEMS, true);
+	public List<TestingItem> getTestingItems() {
+		return (List<TestingItem>)eGet(TestPackage.Literals.TESTING__TESTING_ITEMS, true);
 	}
 
 } //TestingImpl

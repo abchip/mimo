@@ -11,16 +11,33 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
+import org.abchip.mimo.biz.order.requirement.Requirement;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.facility.FacilityAttribute;
 import org.abchip.mimo.biz.product.facility.FacilityGroup;
+import org.abchip.mimo.biz.product.facility.FacilityLocation;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.FacilityType;
+import org.abchip.mimo.biz.product.facility.ProductFacility;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
+import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.supplier.ReorderGuideline;
+import org.abchip.mimo.biz.shipment.picklist.Picklist;
+import org.abchip.mimo.biz.shipment.shipment.Delivery;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -367,8 +384,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFacilityAttributes() {
-		return (List<String>)eGet(FacilityPackage.Literals.FACILITY__FACILITY_ATTRIBUTES, true);
+	public List<FacilityAttribute> getFacilityAttributes() {
+		return (List<FacilityAttribute>)eGet(FacilityPackage.Literals.FACILITY__FACILITY_ATTRIBUTES, true);
 	}
 
 	/**
@@ -378,8 +395,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFacilityLocations() {
-		return (List<String>)eGet(FacilityPackage.Literals.FACILITY__FACILITY_LOCATIONS, true);
+	public List<FacilityLocation> getFacilityLocations() {
+		return (List<FacilityLocation>)eGet(FacilityPackage.Literals.FACILITY__FACILITY_LOCATIONS, true);
 	}
 
 	/**
@@ -388,7 +405,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> childFacilities() {
+	public List<Facility> childFacilities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -400,7 +417,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> containers() {
+	public List<org.abchip.mimo.biz.product.facility.Container> containers() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -412,7 +429,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> destDeliveries() {
+	public List<Delivery> destDeliveries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -424,7 +441,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> destShipmentRouteSegments() {
+	public List<ShipmentRouteSegment> destShipmentRouteSegments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -436,7 +453,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> destinationShipments() {
+	public List<Shipment> destinationShipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -448,7 +465,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryItems() {
+	public List<InventoryItem> inventoryItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -460,7 +477,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryTransfers() {
+	public List<InventoryTransfer> inventoryTransfers() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -472,7 +489,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> locatedAtFixedAssets() {
+	public List<FixedAsset> locatedAtFixedAssets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -484,7 +501,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> orderItemShipGroups() {
+	public List<OrderItemShipGroup> orderItemShipGroups() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -496,7 +513,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> originDeliveries() {
+	public List<Delivery> originDeliveries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -508,7 +525,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> originOrderHeaders() {
+	public List<OrderHeader> originOrderHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -520,7 +537,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> originShipmentRouteSegments() {
+	public List<ShipmentRouteSegment> originShipmentRouteSegments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -532,7 +549,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> originShipments() {
+	public List<Shipment> originShipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -544,7 +561,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> picklists() {
+	public List<Picklist> picklists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -556,7 +573,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> productFacilities() {
+	public List<ProductFacility> productFacilities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -568,7 +585,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> products() {
+	public List<Product> products() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -580,7 +597,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> reorderGuidelines() {
+	public List<ReorderGuideline> reorderGuidelines() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -592,7 +609,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> requirements() {
+	public List<Requirement> requirements() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -604,7 +621,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> returnHeaders() {
+	public List<ReturnHeader> returnHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -616,7 +633,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> toInventoryTransfers() {
+	public List<InventoryTransfer> toInventoryTransfers() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -628,7 +645,7 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public List<String> workEfforts() {
+	public List<WorkEffort> workEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

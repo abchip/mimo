@@ -13,6 +13,8 @@ import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -143,7 +145,7 @@ public class SalesOpportunityStageImpl extends BizEntityImpl implements SalesOpp
 	 * @generated
 	 */
 	@Override
-	public List<String> salesOpportunities() {
+	public List<SalesOpportunity> salesOpportunities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -155,7 +157,7 @@ public class SalesOpportunityStageImpl extends BizEntityImpl implements SalesOpp
 	 * @generated
 	 */
 	@Override
-	public List<String> salesOpportunityHistories() {
+	public List<SalesOpportunityHistory> salesOpportunityHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

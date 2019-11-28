@@ -13,10 +13,12 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
 import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.party.party.Party;
 
 /**
@@ -365,42 +367,39 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	void setTransactionDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Fin Account Trans Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Fin Account Trans Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fin Account Trans Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Trans Attributes</em>' attribute list.
+	 * @return the value of the '<em>Fin Account Trans Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_FinAccountTransAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTransAttribute'"
 	 * @generated
 	 */
-	List<String> getFinAccountTransAttributes();
+	List<FinAccountTransAttribute> getFinAccountTransAttributes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='finAccountTransId'"
 	 * @generated
 	 */
-	List<String> acctgTranss();
+	List<AcctgTrans> acctgTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItemResponse' route='finAccountTransId'"
 	 * @generated
 	 */
-	List<String> returnItemResponses();
+	List<ReturnItemResponse> returnItemResponses();
 
 	/**
 	 * Returns the value of the '<em><b>Fin Account Trans Type Id</b></em>' reference.

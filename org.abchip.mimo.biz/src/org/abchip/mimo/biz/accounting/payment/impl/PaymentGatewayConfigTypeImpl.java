@@ -121,7 +121,7 @@ public class PaymentGatewayConfigTypeImpl extends BizEntityTypeImpl<PaymentGatew
 	 * @generated
 	 */
 	@Override
-	public List<String> childPaymentGatewayConfigTypes() {
+	public List<PaymentGatewayConfigType> childPaymentGatewayConfigTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +133,7 @@ public class PaymentGatewayConfigTypeImpl extends BizEntityTypeImpl<PaymentGatew
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentGatewayConfigs() {
+	public List<PaymentGatewayConfig> paymentGatewayConfigs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

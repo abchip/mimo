@@ -9,7 +9,9 @@ package org.abchip.mimo.biz.security.securitygroup.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.portal.PortalPage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.security.securitygroup.ProtectedView;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -123,8 +125,8 @@ public class SecurityGroupImpl extends BizEntityImpl implements SecurityGroup {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProtectedViews() {
-		return (List<String>)eGet(SecuritygroupPackage.Literals.SECURITY_GROUP__PROTECTED_VIEWS, true);
+	public List<ProtectedView> getProtectedViews() {
+		return (List<ProtectedView>)eGet(SecuritygroupPackage.Literals.SECURITY_GROUP__PROTECTED_VIEWS, true);
 	}
 
 	/**
@@ -133,7 +135,7 @@ public class SecurityGroupImpl extends BizEntityImpl implements SecurityGroup {
 	 * @generated
 	 */
 	@Override
-	public List<String> portalPages() {
+	public List<PortalPage> portalPages() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

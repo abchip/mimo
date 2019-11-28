@@ -13,10 +13,11 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementTerm;
+import org.abchip.mimo.biz.party.agreement.AgreementTermAttribute;
 import org.abchip.mimo.biz.party.agreement.TermType;
 import org.eclipse.emf.ecore.EClass;
 
@@ -46,7 +47,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
+public class AgreementTermImpl extends BizEntityTypedImpl<TermType> implements AgreementTerm {
 	/**
 	 * 
 	 */
@@ -277,8 +278,8 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getAgreementTermAttributes() {
-		return (List<String>)eGet(AgreementPackage.Literals.AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES, true);
+	public List<AgreementTermAttribute> getAgreementTermAttributes() {
+		return (List<AgreementTermAttribute>)eGet(AgreementPackage.Literals.AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES, true);
 	}
 
 	/**

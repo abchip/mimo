@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.order.order.OrderHeader;
@@ -21,7 +22,9 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.TelecomNumber;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
 import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
@@ -857,133 +860,124 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Shipment Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Attributes</em>' attribute list.
+	 * @return the value of the '<em>Shipment Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_ShipmentAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentAttribute'"
 	 * @generated
 	 */
-	List<String> getShipmentAttributes();
+	List<ShipmentAttribute> getShipmentAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Contact Mechs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Shipment Contact Mechs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Contact Mechs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Contact Mechs</em>' attribute list.
+	 * @return the value of the '<em>Shipment Contact Mechs</em>' reference list.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_ShipmentContactMechs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentContactMech'"
 	 * @generated
 	 */
-	List<String> getShipmentContactMechs();
+	List<ShipmentContactMech> getShipmentContactMechs();
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Items</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Shipment Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentItem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Items</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Items</em>' attribute list.
+	 * @return the value of the '<em>Shipment Items</em>' reference list.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_ShipmentItems()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentItem'"
 	 * @generated
 	 */
-	List<String> getShipmentItems();
+	List<ShipmentItem> getShipmentItems();
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Packages</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Shipment Packages</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Packages</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Packages</em>' attribute list.
+	 * @return the value of the '<em>Shipment Packages</em>' reference list.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_ShipmentPackages()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentPackage'"
 	 * @generated
 	 */
-	List<String> getShipmentPackages();
+	List<ShipmentPackage> getShipmentPackages();
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Route Segments</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Shipment Route Segments</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Route Segments</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Route Segments</em>' attribute list.
+	 * @return the value of the '<em>Shipment Route Segments</em>' reference list.
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_ShipmentRouteSegments()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment'"
 	 * @generated
 	 */
-	List<String> getShipmentRouteSegments();
+	List<ShipmentRouteSegment> getShipmentRouteSegments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='shipmentId'"
 	 * @generated
 	 */
-	List<String> acctgTranss();
+	List<AcctgTrans> acctgTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ItemIssuance' route='shipmentId'"
 	 * @generated
 	 */
-	List<String> itemIssuances();
+	List<ItemIssuance> itemIssuances();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentReceipt' route='shipmentId'"
 	 * @generated
 	 */
-	List<String> shipmentReceipts();
+	List<ShipmentReceipt> shipmentReceipts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentStatus' route='shipmentId'"
 	 * @generated
 	 */
-	List<String> shipmentStatuss();
+	List<ShipmentStatus> shipmentStatuss();
 
 } // Shipment

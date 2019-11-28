@@ -269,7 +269,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int DELIVERABLE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -278,7 +278,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int DELIVERABLE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -287,7 +287,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int DELIVERABLE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -296,7 +296,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int DELIVERABLE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Deliverable Id</b></em>' attribute.
@@ -305,7 +305,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE__DELIVERABLE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int DELIVERABLE__DELIVERABLE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Deliverable Name</b></em>' attribute.
@@ -314,7 +314,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE__DELIVERABLE_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int DELIVERABLE__DELIVERABLE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Deliverable Type Id</b></em>' reference.
@@ -323,7 +323,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE__DELIVERABLE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int DELIVERABLE__DELIVERABLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -332,7 +332,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int DELIVERABLE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Deliverable</em>' class.
@@ -341,7 +341,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int DELIVERABLE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.DeliverableTypeImpl <em>Deliverable Type</em>}' class.
@@ -354,22 +354,13 @@ public interface WorkeffortPackage extends EPackage {
 	int DELIVERABLE_TYPE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELIVERABLE_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int DELIVERABLE_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -378,7 +369,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int DELIVERABLE_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -387,7 +378,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int DELIVERABLE_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -396,7 +387,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int DELIVERABLE_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Deliverable Type Id</b></em>' attribute.
@@ -405,7 +396,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE_TYPE__DELIVERABLE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int DELIVERABLE_TYPE__DELIVERABLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -414,7 +405,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int DELIVERABLE_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Deliverable Type</em>' class.
@@ -423,7 +414,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int DELIVERABLE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl <em>Work Effort</em>}' class.
@@ -535,7 +526,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT__ACTUAL_START_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Communication Event Work Effs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Communication Event Work Effs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -904,7 +895,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT__UNIVERSAL_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 47;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Effort Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -913,7 +904,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT__WORK_EFFORT_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 48;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Deliverable Prods</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Effort Deliverable Prods</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -922,7 +913,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT__WORK_EFFORT_DELIVERABLE_PRODS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 49;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Event Reminders</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Effort Event Reminders</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -931,7 +922,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT__WORK_EFFORT_EVENT_REMINDERS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 50;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Fixed Asset Stds</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Effort Fixed Asset Stds</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -940,7 +931,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT__WORK_EFFORT_FIXED_ASSET_STDS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 51;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Inventory Assigns</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Effort Inventory Assigns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -949,7 +940,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT__WORK_EFFORT_INVENTORY_ASSIGNS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 52;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Inventory Produceds</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Effort Inventory Produceds</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -958,7 +949,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT__WORK_EFFORT_INVENTORY_PRODUCEDS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 53;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Keywords</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Effort Keywords</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -976,7 +967,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT__WORK_EFFORT_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 55;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Notes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Effort Notes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1003,7 +994,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT__WORK_EFFORT_PURPOSE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 58;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Skill Standards</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Effort Skill Standards</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1348,7 +1339,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_ASSOC_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Assoc Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Effort Assoc Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1746,7 +1737,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int WORK_EFFORT_CONTENT__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1755,7 +1746,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int WORK_EFFORT_CONTENT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1764,7 +1755,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int WORK_EFFORT_CONTENT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1773,7 +1764,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int WORK_EFFORT_CONTENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Work Effort Id</b></em>' reference.
@@ -1782,7 +1773,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int WORK_EFFORT_CONTENT__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Content Id</b></em>' reference.
@@ -1791,7 +1782,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT__CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int WORK_EFFORT_CONTENT__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Work Effort Content Type Id</b></em>' reference.
@@ -1800,7 +1791,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -1809,7 +1800,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int WORK_EFFORT_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1818,7 +1809,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int WORK_EFFORT_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Work Effort Content</em>' class.
@@ -1827,7 +1818,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int WORK_EFFORT_CONTENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentTypeImpl <em>Work Effort Content Type</em>}' class.
@@ -1840,22 +1831,13 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_CONTENT_TYPE = 13;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_EFFORT_CONTENT_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int WORK_EFFORT_CONTENT_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1864,7 +1846,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int WORK_EFFORT_CONTENT_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1873,7 +1855,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int WORK_EFFORT_CONTENT_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1882,7 +1864,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int WORK_EFFORT_CONTENT_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Work Effort Content Type Id</b></em>' attribute.
@@ -1891,7 +1873,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT_TYPE__WORK_EFFORT_CONTENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int WORK_EFFORT_CONTENT_TYPE__WORK_EFFORT_CONTENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1900,7 +1882,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int WORK_EFFORT_CONTENT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
@@ -1909,7 +1891,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int WORK_EFFORT_CONTENT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Work Effort Content Type</em>' class.
@@ -1918,7 +1900,7 @@ public interface WorkeffortPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_EFFORT_CONTENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
+	int WORK_EFFORT_CONTENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortCostCalcImpl <em>Work Effort Cost Calc</em>}' class.
@@ -3747,7 +3729,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_SEARCH_RESULT__VISIT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Search Constraints</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Effort Search Constraints</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4229,7 +4211,7 @@ public interface WorkeffortPackage extends EPackage {
 	int WORK_EFFORT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Work Effort Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5106,114 +5088,114 @@ public interface WorkeffortPackage extends EPackage {
 	EReference getWorkEffort_WorkEffortTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCommunicationEventWorkEffs <em>Communication Event Work Effs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCommunicationEventWorkEffs <em>Communication Event Work Effs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Communication Event Work Effs</em>'.
+	 * @return the meta object for the reference list '<em>Communication Event Work Effs</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCommunicationEventWorkEffs()
 	 * @see #getWorkEffort()
 	 * @generated
 	 */
-	EAttribute getWorkEffort_CommunicationEventWorkEffs();
+	EReference getWorkEffort_CommunicationEventWorkEffs();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortAttributes <em>Work Effort Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortAttributes <em>Work Effort Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Effort Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Work Effort Attributes</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortAttributes()
 	 * @see #getWorkEffort()
 	 * @generated
 	 */
-	EAttribute getWorkEffort_WorkEffortAttributes();
+	EReference getWorkEffort_WorkEffortAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortDeliverableProds <em>Work Effort Deliverable Prods</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortDeliverableProds <em>Work Effort Deliverable Prods</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Effort Deliverable Prods</em>'.
+	 * @return the meta object for the reference list '<em>Work Effort Deliverable Prods</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortDeliverableProds()
 	 * @see #getWorkEffort()
 	 * @generated
 	 */
-	EAttribute getWorkEffort_WorkEffortDeliverableProds();
+	EReference getWorkEffort_WorkEffortDeliverableProds();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortEventReminders <em>Work Effort Event Reminders</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortEventReminders <em>Work Effort Event Reminders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Effort Event Reminders</em>'.
+	 * @return the meta object for the reference list '<em>Work Effort Event Reminders</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortEventReminders()
 	 * @see #getWorkEffort()
 	 * @generated
 	 */
-	EAttribute getWorkEffort_WorkEffortEventReminders();
+	EReference getWorkEffort_WorkEffortEventReminders();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortFixedAssetStds <em>Work Effort Fixed Asset Stds</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortFixedAssetStds <em>Work Effort Fixed Asset Stds</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Effort Fixed Asset Stds</em>'.
+	 * @return the meta object for the reference list '<em>Work Effort Fixed Asset Stds</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortFixedAssetStds()
 	 * @see #getWorkEffort()
 	 * @generated
 	 */
-	EAttribute getWorkEffort_WorkEffortFixedAssetStds();
+	EReference getWorkEffort_WorkEffortFixedAssetStds();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortInventoryAssigns <em>Work Effort Inventory Assigns</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortInventoryAssigns <em>Work Effort Inventory Assigns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Effort Inventory Assigns</em>'.
+	 * @return the meta object for the reference list '<em>Work Effort Inventory Assigns</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortInventoryAssigns()
 	 * @see #getWorkEffort()
 	 * @generated
 	 */
-	EAttribute getWorkEffort_WorkEffortInventoryAssigns();
+	EReference getWorkEffort_WorkEffortInventoryAssigns();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortInventoryProduceds <em>Work Effort Inventory Produceds</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortInventoryProduceds <em>Work Effort Inventory Produceds</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Effort Inventory Produceds</em>'.
+	 * @return the meta object for the reference list '<em>Work Effort Inventory Produceds</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortInventoryProduceds()
 	 * @see #getWorkEffort()
 	 * @generated
 	 */
-	EAttribute getWorkEffort_WorkEffortInventoryProduceds();
+	EReference getWorkEffort_WorkEffortInventoryProduceds();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortKeywords <em>Work Effort Keywords</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortKeywords <em>Work Effort Keywords</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Effort Keywords</em>'.
+	 * @return the meta object for the reference list '<em>Work Effort Keywords</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortKeywords()
 	 * @see #getWorkEffort()
 	 * @generated
 	 */
-	EAttribute getWorkEffort_WorkEffortKeywords();
+	EReference getWorkEffort_WorkEffortKeywords();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortNotes <em>Work Effort Notes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortNotes <em>Work Effort Notes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Effort Notes</em>'.
+	 * @return the meta object for the reference list '<em>Work Effort Notes</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortNotes()
 	 * @see #getWorkEffort()
 	 * @generated
 	 */
-	EAttribute getWorkEffort_WorkEffortNotes();
+	EReference getWorkEffort_WorkEffortNotes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortSkillStandards <em>Work Effort Skill Standards</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortSkillStandards <em>Work Effort Skill Standards</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Effort Skill Standards</em>'.
+	 * @return the meta object for the reference list '<em>Work Effort Skill Standards</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortSkillStandards()
 	 * @see #getWorkEffort()
 	 * @generated
 	 */
-	EAttribute getWorkEffort_WorkEffortSkillStandards();
+	EReference getWorkEffort_WorkEffortSkillStandards();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc <em>Work Effort Assoc</em>}'.
@@ -5433,15 +5415,15 @@ public interface WorkeffortPackage extends EPackage {
 	EReference getWorkEffortAssocType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#getWorkEffortAssocTypeAttrs <em>Work Effort Assoc Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#getWorkEffortAssocTypeAttrs <em>Work Effort Assoc Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Effort Assoc Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Work Effort Assoc Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#getWorkEffortAssocTypeAttrs()
 	 * @see #getWorkEffortAssocType()
 	 * @generated
 	 */
-	EAttribute getWorkEffortAssocType_WorkEffortAssocTypeAttrs();
+	EReference getWorkEffortAssocType_WorkEffortAssocTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr <em>Work Effort Assoc Type Attr</em>}'.
@@ -6493,11 +6475,11 @@ public interface WorkeffortPackage extends EPackage {
 	EReference getWorkEffortNote_WorkEffortId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote#getInternalNote <em>Internal Note</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote#isInternalNote <em>Internal Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Internal Note</em>'.
-	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote#getInternalNote()
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote#isInternalNote()
 	 * @see #getWorkEffortNote()
 	 * @generated
 	 */
@@ -7016,15 +6998,15 @@ public interface WorkeffortPackage extends EPackage {
 	EAttribute getWorkEffortSearchResult_VisitId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult#getWorkEffortSearchConstraints <em>Work Effort Search Constraints</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult#getWorkEffortSearchConstraints <em>Work Effort Search Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Effort Search Constraints</em>'.
+	 * @return the meta object for the reference list '<em>Work Effort Search Constraints</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult#getWorkEffortSearchConstraints()
 	 * @see #getWorkEffortSearchResult()
 	 * @generated
 	 */
-	EAttribute getWorkEffortSearchResult_WorkEffortSearchConstraints();
+	EReference getWorkEffortSearchResult_WorkEffortSearchConstraints();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard <em>Work Effort Skill Standard</em>}'.
@@ -7308,15 +7290,15 @@ public interface WorkeffortPackage extends EPackage {
 	EReference getWorkEffortType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType#getWorkEffortTypeAttrs <em>Work Effort Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType#getWorkEffortTypeAttrs <em>Work Effort Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Work Effort Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Work Effort Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType#getWorkEffortTypeAttrs()
 	 * @see #getWorkEffortType()
 	 * @generated
 	 */
-	EAttribute getWorkEffortType_WorkEffortTypeAttrs();
+	EReference getWorkEffortType_WorkEffortTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr <em>Work Effort Type Attr</em>}'.
@@ -7962,84 +7944,84 @@ public interface WorkeffortPackage extends EPackage {
 		EReference WORK_EFFORT__WORK_EFFORT_TYPE_ID = eINSTANCE.getWorkEffort_WorkEffortTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Communication Event Work Effs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Communication Event Work Effs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT__COMMUNICATION_EVENT_WORK_EFFS = eINSTANCE.getWorkEffort_CommunicationEventWorkEffs();
+		EReference WORK_EFFORT__COMMUNICATION_EVENT_WORK_EFFS = eINSTANCE.getWorkEffort_CommunicationEventWorkEffs();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Effort Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT__WORK_EFFORT_ATTRIBUTES = eINSTANCE.getWorkEffort_WorkEffortAttributes();
+		EReference WORK_EFFORT__WORK_EFFORT_ATTRIBUTES = eINSTANCE.getWorkEffort_WorkEffortAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Deliverable Prods</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Effort Deliverable Prods</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT__WORK_EFFORT_DELIVERABLE_PRODS = eINSTANCE.getWorkEffort_WorkEffortDeliverableProds();
+		EReference WORK_EFFORT__WORK_EFFORT_DELIVERABLE_PRODS = eINSTANCE.getWorkEffort_WorkEffortDeliverableProds();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Event Reminders</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Effort Event Reminders</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT__WORK_EFFORT_EVENT_REMINDERS = eINSTANCE.getWorkEffort_WorkEffortEventReminders();
+		EReference WORK_EFFORT__WORK_EFFORT_EVENT_REMINDERS = eINSTANCE.getWorkEffort_WorkEffortEventReminders();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Fixed Asset Stds</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Effort Fixed Asset Stds</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT__WORK_EFFORT_FIXED_ASSET_STDS = eINSTANCE.getWorkEffort_WorkEffortFixedAssetStds();
+		EReference WORK_EFFORT__WORK_EFFORT_FIXED_ASSET_STDS = eINSTANCE.getWorkEffort_WorkEffortFixedAssetStds();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Inventory Assigns</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Effort Inventory Assigns</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT__WORK_EFFORT_INVENTORY_ASSIGNS = eINSTANCE.getWorkEffort_WorkEffortInventoryAssigns();
+		EReference WORK_EFFORT__WORK_EFFORT_INVENTORY_ASSIGNS = eINSTANCE.getWorkEffort_WorkEffortInventoryAssigns();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Inventory Produceds</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Effort Inventory Produceds</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT__WORK_EFFORT_INVENTORY_PRODUCEDS = eINSTANCE.getWorkEffort_WorkEffortInventoryProduceds();
+		EReference WORK_EFFORT__WORK_EFFORT_INVENTORY_PRODUCEDS = eINSTANCE.getWorkEffort_WorkEffortInventoryProduceds();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Keywords</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Effort Keywords</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT__WORK_EFFORT_KEYWORDS = eINSTANCE.getWorkEffort_WorkEffortKeywords();
+		EReference WORK_EFFORT__WORK_EFFORT_KEYWORDS = eINSTANCE.getWorkEffort_WorkEffortKeywords();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Notes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Effort Notes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT__WORK_EFFORT_NOTES = eINSTANCE.getWorkEffort_WorkEffortNotes();
+		EReference WORK_EFFORT__WORK_EFFORT_NOTES = eINSTANCE.getWorkEffort_WorkEffortNotes();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Skill Standards</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Effort Skill Standards</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT__WORK_EFFORT_SKILL_STANDARDS = eINSTANCE.getWorkEffort_WorkEffortSkillStandards();
+		EReference WORK_EFFORT__WORK_EFFORT_SKILL_STANDARDS = eINSTANCE.getWorkEffort_WorkEffortSkillStandards();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocImpl <em>Work Effort Assoc</em>}' class.
@@ -8208,12 +8190,12 @@ public interface WorkeffortPackage extends EPackage {
 		EReference WORK_EFFORT_ASSOC_TYPE__PARENT_TYPE_ID = eINSTANCE.getWorkEffortAssocType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Assoc Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Effort Assoc Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT_ASSOC_TYPE__WORK_EFFORT_ASSOC_TYPE_ATTRS = eINSTANCE.getWorkEffortAssocType_WorkEffortAssocTypeAttrs();
+		EReference WORK_EFFORT_ASSOC_TYPE__WORK_EFFORT_ASSOC_TYPE_ATTRS = eINSTANCE.getWorkEffortAssocType_WorkEffortAssocTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocTypeAttrImpl <em>Work Effort Assoc Type Attr</em>}' class.
@@ -9422,12 +9404,12 @@ public interface WorkeffortPackage extends EPackage {
 		EAttribute WORK_EFFORT_SEARCH_RESULT__VISIT_ID = eINSTANCE.getWorkEffortSearchResult_VisitId();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Search Constraints</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Effort Search Constraints</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT_SEARCH_RESULT__WORK_EFFORT_SEARCH_CONSTRAINTS = eINSTANCE.getWorkEffortSearchResult_WorkEffortSearchConstraints();
+		EReference WORK_EFFORT_SEARCH_RESULT__WORK_EFFORT_SEARCH_CONSTRAINTS = eINSTANCE.getWorkEffortSearchResult_WorkEffortSearchConstraints();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSkillStandardImpl <em>Work Effort Skill Standard</em>}' class.
@@ -9648,12 +9630,12 @@ public interface WorkeffortPackage extends EPackage {
 		EReference WORK_EFFORT_TYPE__PARENT_TYPE_ID = eINSTANCE.getWorkEffortType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Work Effort Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_EFFORT_TYPE__WORK_EFFORT_TYPE_ATTRS = eINSTANCE.getWorkEffortType_WorkEffortTypeAttrs();
+		EReference WORK_EFFORT_TYPE__WORK_EFFORT_TYPE_ATTRS = eINSTANCE.getWorkEffortType_WorkEffortTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTypeAttrImpl <em>Work Effort Type Attr</em>}' class.

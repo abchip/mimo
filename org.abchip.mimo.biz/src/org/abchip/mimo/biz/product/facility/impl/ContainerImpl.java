@@ -9,10 +9,12 @@ package org.abchip.mimo.biz.product.facility.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.ContainerType;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -31,7 +33,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements org.abchip.mimo.biz.product.facility.Container {
+public class ContainerImpl extends BizEntityImpl implements org.abchip.mimo.biz.product.facility.Container {
 	/**
 	 * 
 	 */
@@ -122,7 +124,7 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryItems() {
+	public List<InventoryItem> inventoryItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -134,7 +136,7 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryTransfers() {
+	public List<InventoryTransfer> inventoryTransfers() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -146,7 +148,7 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> toInventoryTransfers() {
+	public List<InventoryTransfer> toInventoryTransfers() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

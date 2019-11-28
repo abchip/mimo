@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.manufacturing.mrp;
 
 import java.util.Date;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
 
@@ -36,7 +36,7 @@ import org.abchip.mimo.biz.product.product.Product;
  * @model
  * @generated
  */
-public interface MrpEvent extends BizEntityTyped<MrpEventType> {
+public interface MrpEvent extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Mrp Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->

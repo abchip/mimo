@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.marketing.tracking;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame dictionary='MarketingEntityLabels' formula='description'"
  * @generated
  */
-public interface TrackingCodeType extends BizEntityType<TrackingCode> {
+public interface TrackingCodeType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,22 +58,20 @@ public interface TrackingCodeType extends BizEntityType<TrackingCode> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TrackingCodeOrder' route='trackingCodeTypeId'"
 	 * @generated
 	 */
-	List<String> trackingCodeOrders();
+	List<TrackingCodeOrder> trackingCodeOrders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TrackingCode' route='trackingCodeTypeId'"
 	 * @generated
 	 */
-	List<String> trackingCodes();
+	List<TrackingCode> trackingCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Tracking Code Type Id</b></em>' attribute.

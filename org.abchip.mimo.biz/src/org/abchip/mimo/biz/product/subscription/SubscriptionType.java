@@ -138,41 +138,38 @@ public interface SubscriptionType extends BizEntityType<Subscription> {
 	void setSubscriptionTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Subscription Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Subscription Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subscription Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscription Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Subscription Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionType_SubscriptionTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionTypeAttr'"
 	 * @generated
 	 */
-	List<String> getSubscriptionTypeAttrs();
+	List<SubscriptionTypeAttr> getSubscriptionTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childSubscriptionTypes();
+	List<SubscriptionType> childSubscriptionTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='subscriptionTypeId'"
 	 * @generated
 	 */
-	List<String> subscriptions();
+	List<Subscription> subscriptions();
 
 } // SubscriptionType

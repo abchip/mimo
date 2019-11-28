@@ -14,6 +14,7 @@ import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.shipment.picklist.Picklist;
 import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -164,7 +165,7 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 	 * @generated
 	 */
 	@Override
-	public List<String> shipments() {
+	public List<Shipment> shipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

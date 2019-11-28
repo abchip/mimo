@@ -10,8 +10,10 @@ package org.abchip.mimo.biz.accounting.fixedasset.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass;
+import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -99,7 +101,7 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 	 * @generated
 	 */
 	@Override
-	public List<String> accommodationMaps() {
+	public List<AccommodationMap> accommodationMaps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -111,7 +113,7 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 	 * @generated
 	 */
 	@Override
-	public List<String> accommodationSpots() {
+	public List<AccommodationSpot> accommodationSpots() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -123,7 +125,7 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 	 * @generated
 	 */
 	@Override
-	public List<String> childAccommodationClasses() {
+	public List<AccommodationClass> childAccommodationClasses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -202,7 +202,6 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -925,8 +924,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTesting_TestingItems() {
-		return (EAttribute)testingEClass.getEStructuralFeatures().get(4);
+	public EReference getTesting_TestingItems() {
+		return (EReference)testingEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1336,7 +1335,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(testingEClass, TESTING__COMMENTS);
 		createEAttribute(testingEClass, TESTING__DESCRIPTION);
 		createEAttribute(testingEClass, TESTING__TESTING_DATE);
-		createEAttribute(testingEClass, TESTING__TESTING_ITEMS);
+		createEReference(testingEClass, TESTING__TESTING_ITEMS);
 		createEAttribute(testingEClass, TESTING__TESTING_NAME);
 		createEAttribute(testingEClass, TESTING__TESTING_SIZE);
 		createEReference(testingEClass, TESTING__TESTING_TYPE_ID);
@@ -1420,10 +1419,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 		// Add supertypes to classes
 		testFieldTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		EGenericType g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		EGenericType g2 = createEGenericType(this.getTestingType());
-		g1.getETypeArguments().add(g2);
-		testingEClass.getEGenericSuperTypes().add(g1);
+		testingEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		testingCryptoEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		testingItemEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		testingNodeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
@@ -1431,10 +1427,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		testingRemoveAllEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		testingStatusEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		testingSubtypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getTesting());
-		g1.getETypeArguments().add(g2);
-		testingTypeEClass.getEGenericSuperTypes().add(g1);
+		testingTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(testFieldTypeEClass, TestFieldType.class, "TestFieldType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1455,7 +1448,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getTesting_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTesting_Description(), ecorePackage.getEString(), "description", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTesting_TestingDate(), ecorePackage.getEDate(), "testingDate", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTesting_TestingItems(), ecorePackage.getEString(), "testingItems", null, 0, -1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTesting_TestingItems(), this.getTestingItem(), null, "testingItems", null, 0, -1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTesting_TestingName(), ecorePackage.getEString(), "testingName", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTesting_TestingSize(), ecorePackage.getELong(), "testingSize", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTesting_TestingTypeId(), this.getTestingType(), null, "testingTypeId", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1480,7 +1473,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEReference(getTestingNode_PrimaryParentNodeId(), this.getTestingNode(), null, "primaryParentNodeId", null, 0, 1, TestingNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTestingNode_PrimaryParentNodeId().getEKeys().add(this.getTestingNode_TestingNodeId());
 
-		addEOperation(testingNodeEClass, ecorePackage.getEString(), "primaryChildTestingNodes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(testingNodeEClass, this.getTestingNode(), "primaryChildTestingNodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(testingNodeMemberEClass, TestingNodeMember.class, "TestingNodeMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTestingNodeMember_TestingId(), this.getTesting(), null, "testingId", null, 1, 1, TestingNodeMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1513,7 +1506,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getTestingType_TestingTypeId(), ecorePackage.getEString(), "testingTypeId", null, 1, 1, TestingType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestingType_Description(), ecorePackage.getEString(), "description", null, 0, 1, TestingType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(testingTypeEClass, ecorePackage.getEString(), "testings", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(testingTypeEClass, this.getTesting(), "testings", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -1633,13 +1626,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 			   "type", "date-time"
 		   });
 		addAnnotation
-		  (getTesting_TestingItems(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getTesting_TestingName(),
 		   source,
 		   new String[] {
@@ -1701,13 +1687,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		   source,
 		   new String[] {
 			   "type", "very-long"
-		   });
-		addAnnotation
-		  (testingNodeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getTestingNode_TestingNodeId(),
@@ -1794,13 +1773,6 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (testingTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getTestingType_TestingTypeId(),

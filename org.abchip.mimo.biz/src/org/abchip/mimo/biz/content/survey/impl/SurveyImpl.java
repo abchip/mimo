@@ -9,9 +9,15 @@ package org.abchip.mimo.biz.content.survey.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.survey.Survey;
+import org.abchip.mimo.biz.content.survey.SurveyMultiResp;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
+import org.abchip.mimo.biz.content.survey.SurveyPage;
+import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
+import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -270,8 +276,8 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSurveyMultiResps() {
-		return (List<String>)eGet(SurveyPackage.Literals.SURVEY__SURVEY_MULTI_RESPS, true);
+	public List<SurveyMultiResp> getSurveyMultiResps() {
+		return (List<SurveyMultiResp>)eGet(SurveyPackage.Literals.SURVEY__SURVEY_MULTI_RESPS, true);
 	}
 
 	/**
@@ -281,8 +287,8 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSurveyPages() {
-		return (List<String>)eGet(SurveyPackage.Literals.SURVEY__SURVEY_PAGES, true);
+	public List<SurveyPage> getSurveyPages() {
+		return (List<SurveyPage>)eGet(SurveyPackage.Literals.SURVEY__SURVEY_PAGES, true);
 	}
 
 	/**
@@ -291,7 +297,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 * @generated
 	 */
 	@Override
-	public List<String> dataResources() {
+	public List<DataResource> dataResources() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -303,7 +309,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 * @generated
 	 */
 	@Override
-	public List<String> productStoreFinActSettings() {
+	public List<ProductStoreFinActSetting> productStoreFinActSettings() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -315,7 +321,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 * @generated
 	 */
 	@Override
-	public List<String> productStoreSurveyAppls() {
+	public List<ProductStoreSurveyAppl> productStoreSurveyAppls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -327,7 +333,7 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	 * @generated
 	 */
 	@Override
-	public List<String> surveyResponses() {
+	public List<SurveyResponse> surveyResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

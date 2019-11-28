@@ -225,12 +225,11 @@ public interface Timesheet extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TimeEntry' route='timesheetId'"
 	 * @generated
 	 */
-	List<String> timeEntries();
+	List<TimeEntry> timeEntries();
 
 	/**
 	 * Returns the value of the '<em><b>Timesheet Id</b></em>' attribute.

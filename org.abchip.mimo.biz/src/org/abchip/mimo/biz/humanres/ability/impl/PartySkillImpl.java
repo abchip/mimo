@@ -12,7 +12,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PartySkill;
 import org.abchip.mimo.biz.humanres.ability.SkillType;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
 
@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PartySkillImpl extends BizEntityImpl implements PartySkill {
+public class PartySkillImpl extends BizEntityTypedImpl<SkillType> implements PartySkill {
 	/**
 	 * 
 	 */

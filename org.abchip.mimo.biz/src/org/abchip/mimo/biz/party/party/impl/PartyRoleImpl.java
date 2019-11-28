@@ -15,9 +15,8 @@ import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.ecore.EClass;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Party Role</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Party
+ * Role</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -33,9 +32,9 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected PartyRoleImpl() {
@@ -43,8 +42,7 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -53,8 +51,7 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -63,8 +60,7 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -73,8 +69,7 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -83,13 +78,11 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void setPartyId(Party newPartyId) {
 		eSet(PartyPackage.Literals.PARTY_ROLE__PARTY_ID, newPartyId);
 	}
-
-} //PartyRoleImpl
+} // PartyRoleImpl

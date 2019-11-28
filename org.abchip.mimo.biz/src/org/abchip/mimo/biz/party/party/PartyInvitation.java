@@ -170,40 +170,38 @@ public interface PartyInvitation extends BizEntity {
 	void setToName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Invitation Group Assocs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Party Invitation Group Assocs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Invitation Group Assocs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Invitation Group Assocs</em>' attribute list.
+	 * @return the value of the '<em>Party Invitation Group Assocs</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationGroupAssocs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitationGroupAssoc'"
 	 * @generated
 	 */
-	List<String> getPartyInvitationGroupAssocs();
+	List<PartyInvitationGroupAssoc> getPartyInvitationGroupAssocs();
 
 	/**
-	 * Returns the value of the '<em><b>Party Invitation Role Assocs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Party Invitation Role Assocs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyInvitationRoleAssoc}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Invitation Role Assocs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Invitation Role Assocs</em>' attribute list.
+	 * @return the value of the '<em>Party Invitation Role Assocs</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationRoleAssocs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitationRoleAssoc'"
 	 * @generated
 	 */
-	List<String> getPartyInvitationRoleAssocs();
+	List<PartyInvitationRoleAssoc> getPartyInvitationRoleAssocs();
 
 	/**
 	 * Returns the value of the '<em><b>Party Id From</b></em>' reference.

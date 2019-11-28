@@ -113,21 +113,20 @@ public interface SubscriptionActivity extends BizEntity {
 	void setSubscriptionActivityId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Subscription Fulfillment Pieces</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Subscription Fulfillment Pieces</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.subscription.SubscriptionFulfillmentPiece}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subscription Fulfillment Pieces</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscription Fulfillment Pieces</em>' attribute list.
+	 * @return the value of the '<em>Subscription Fulfillment Pieces</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionActivity_SubscriptionFulfillmentPieces()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionFulfillmentPiece'"
 	 * @generated
 	 */
-	List<String> getSubscriptionFulfillmentPieces();
+	List<SubscriptionFulfillmentPiece> getSubscriptionFulfillmentPieces();
 
 } // SubscriptionActivity

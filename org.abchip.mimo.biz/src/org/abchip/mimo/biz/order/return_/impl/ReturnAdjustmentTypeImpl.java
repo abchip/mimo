@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 import org.abchip.mimo.biz.order.return_.ReturnAdjustmentType;
+import org.abchip.mimo.biz.order.return_.ReturnItemTypeMap;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -122,7 +123,7 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 	 * @generated
 	 */
 	@Override
-	public List<String> childReturnAdjustmentTypes() {
+	public List<ReturnAdjustmentType> childReturnAdjustmentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -134,7 +135,7 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 	 * @generated
 	 */
 	@Override
-	public List<String> returnAdjustments() {
+	public List<ReturnAdjustment> returnAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -146,7 +147,7 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 	 * @generated
 	 */
 	@Override
-	public List<String> returnItemTypeMaps() {
+	public List<ReturnItemTypeMap> returnItemTypeMaps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

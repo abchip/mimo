@@ -802,6 +802,12 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		RequestPackage theRequestPackage = (RequestPackage)EPackage.Registry.INSTANCE.getEPackage(RequestPackage.eNS_URI);
+		InvoicePackage theInvoicePackage = (InvoicePackage)EPackage.Registry.INSTANCE.getEPackage(InvoicePackage.eNS_URI);
+		CampaignPackage theCampaignPackage = (CampaignPackage)EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
+		QuotePackage theQuotePackage = (QuotePackage)EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
+		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -822,29 +828,29 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 		initEReference(getNoteData_NoteParty(), thePartyPackage.getParty(), null, "noteParty", null, 0, 1, NoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getNoteData_NoteParty().getEKeys().add(thePartyPackage.getParty_PartyId());
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "custRequestNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, theRequestPackage.getCustRequestNote(), "custRequestNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "invoiceNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, theInvoicePackage.getInvoiceNote(), "invoiceNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "marketingCampaignNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, theCampaignPackage.getMarketingCampaignNote(), "marketingCampaignNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "orderHeaderNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, theOrderPackage.getOrderHeaderNote(), "orderHeaderNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "partyNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, thePartyPackage.getPartyNote(), "partyNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "quoteNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, theQuotePackage.getQuoteNote(), "quoteNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "workEffortNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, theWorkeffortPackage.getWorkEffortNote(), "workEffortNotes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(noteDataEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(noteDataEClass, theWorkeffortPackage.getWorkEffort(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -855,62 +861,6 @@ public class NotePackageImpl extends EPackageImpl implements NotePackage {
 	 */
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
-		addAnnotation
-		  (noteDataEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (noteDataEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (noteDataEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (noteDataEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (noteDataEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (noteDataEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (noteDataEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (noteDataEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
 		addAnnotation
 		  (getNoteData_NoteId(),
 		   source,

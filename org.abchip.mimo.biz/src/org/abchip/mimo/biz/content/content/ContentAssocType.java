@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.content.content;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +26,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame title='Content Association Type' dictionary='ContentEntityLabels' formula='description'"
  * @generated
  */
-public interface ContentAssocType extends BizEntityType<ContentAssoc> {
+public interface ContentAssocType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Content Assoc Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -1037,8 +1037,8 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContent_ContentAttributes() {
-		return (EAttribute)contentEClass.getEStructuralFeatures().get(4);
+	public EReference getContent_ContentAttributes() {
+		return (EReference)contentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1047,8 +1047,8 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContent_ContentKeywords() {
-		return (EAttribute)contentEClass.getEStructuralFeatures().get(5);
+	public EReference getContent_ContentKeywords() {
+		return (EReference)contentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1057,8 +1057,8 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContent_ContentMetaDatas() {
-		return (EAttribute)contentEClass.getEStructuralFeatures().get(6);
+	public EReference getContent_ContentMetaDatas() {
+		return (EReference)contentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1067,8 +1067,8 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContent_ContentPurposes() {
-		return (EAttribute)contentEClass.getEStructuralFeatures().get(8);
+	public EReference getContent_ContentPurposes() {
+		return (EReference)contentEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1077,8 +1077,8 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContent_ContentRevisions() {
-		return (EAttribute)contentEClass.getEStructuralFeatures().get(9);
+	public EReference getContent_ContentRevisions() {
+		return (EReference)contentEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2077,8 +2077,8 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContentSearchResult_ContentSearchConstraints() {
-		return (EAttribute)contentSearchResultEClass.getEStructuralFeatures().get(1);
+	public EReference getContentSearchResult_ContentSearchConstraints() {
+		return (EReference)contentSearchResultEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2137,8 +2137,8 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContentType_ContentTypeAttrs() {
-		return (EAttribute)contentTypeEClass.getEStructuralFeatures().get(1);
+	public EReference getContentType_ContentTypeAttrs() {
+		return (EReference)contentTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2215,12 +2215,12 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		createEReference(contentEClass, CONTENT__CHARACTER_SET_ID);
 		createEAttribute(contentEClass, CONTENT__CHILD_BRANCH_COUNT);
 		createEAttribute(contentEClass, CONTENT__CHILD_LEAF_COUNT);
-		createEAttribute(contentEClass, CONTENT__CONTENT_ATTRIBUTES);
-		createEAttribute(contentEClass, CONTENT__CONTENT_KEYWORDS);
-		createEAttribute(contentEClass, CONTENT__CONTENT_META_DATAS);
+		createEReference(contentEClass, CONTENT__CONTENT_ATTRIBUTES);
+		createEReference(contentEClass, CONTENT__CONTENT_KEYWORDS);
+		createEReference(contentEClass, CONTENT__CONTENT_META_DATAS);
 		createEAttribute(contentEClass, CONTENT__CONTENT_NAME);
-		createEAttribute(contentEClass, CONTENT__CONTENT_PURPOSES);
-		createEAttribute(contentEClass, CONTENT__CONTENT_REVISIONS);
+		createEReference(contentEClass, CONTENT__CONTENT_PURPOSES);
+		createEReference(contentEClass, CONTENT__CONTENT_REVISIONS);
 		createEReference(contentEClass, CONTENT__CONTENT_TYPE_ID);
 		createEReference(contentEClass, CONTENT__CREATED_BY_USER_LOGIN);
 		createEAttribute(contentEClass, CONTENT__CREATED_DATE);
@@ -2348,7 +2348,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 
 		contentSearchResultEClass = createEClass(CONTENT_SEARCH_RESULT);
 		createEAttribute(contentSearchResultEClass, CONTENT_SEARCH_RESULT__CONTENT_SEARCH_RESULT_ID);
-		createEAttribute(contentSearchResultEClass, CONTENT_SEARCH_RESULT__CONTENT_SEARCH_CONSTRAINTS);
+		createEReference(contentSearchResultEClass, CONTENT_SEARCH_RESULT__CONTENT_SEARCH_CONSTRAINTS);
 		createEAttribute(contentSearchResultEClass, CONTENT_SEARCH_RESULT__IS_ASCENDING);
 		createEAttribute(contentSearchResultEClass, CONTENT_SEARCH_RESULT__NUM_RESULTS);
 		createEAttribute(contentSearchResultEClass, CONTENT_SEARCH_RESULT__ORDER_BY_NAME);
@@ -2358,7 +2358,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 
 		contentTypeEClass = createEClass(CONTENT_TYPE);
 		createEAttribute(contentTypeEClass, CONTENT_TYPE__CONTENT_TYPE_ID);
-		createEAttribute(contentTypeEClass, CONTENT_TYPE__CONTENT_TYPE_ATTRS);
+		createEReference(contentTypeEClass, CONTENT_TYPE__CONTENT_TYPE_ATTRS);
 		createEAttribute(contentTypeEClass, CONTENT_TYPE__DESCRIPTION);
 		createEAttribute(contentTypeEClass, CONTENT_TYPE__HAS_TABLE);
 		createEReference(contentTypeEClass, CONTENT_TYPE__PARENT_TYPE_ID);
@@ -2400,6 +2400,11 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		DatasourcePackage theDatasourcePackage = (DatasourcePackage)EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
 		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
+		AbilityPackage theAbilityPackage = (AbilityPackage)EPackage.Registry.INSTANCE.getEPackage(AbilityPackage.eNS_URI);
+		PortalPackage thePortalPackage = (PortalPackage)EPackage.Registry.INSTANCE.getEPackage(PortalPackage.eNS_URI);
+		VisitPackage theVisitPackage = (VisitPackage)EPackage.Registry.INSTANCE.getEPackage(VisitPackage.eNS_URI);
+		SubscriptionPackage theSubscriptionPackage = (SubscriptionPackage)EPackage.Registry.INSTANCE.getEPackage(SubscriptionPackage.eNS_URI);
+		org.abchip.mimo.biz.webapp.website.WebsitePackage theWebsitePackage_1 = (org.abchip.mimo.biz.webapp.website.WebsitePackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.webapp.website.WebsitePackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 
 		// Create type parameters
@@ -2412,28 +2417,16 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		g1.getETypeArguments().add(g2);
 		contentEClass.getEGenericSuperTypes().add(g1);
 		contentApprovalEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		g2 = createEGenericType(this.getContentAssocType());
-		g1.getETypeArguments().add(g2);
-		contentAssocEClass.getEGenericSuperTypes().add(g1);
+		contentAssocEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		contentAssocPredicateEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getContentAssoc());
-		g1.getETypeArguments().add(g2);
-		contentAssocTypeEClass.getEGenericSuperTypes().add(g1);
+		contentAssocTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		contentAttributeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		contentKeywordEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		contentMetaDataEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		contentOperationEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		g2 = createEGenericType(this.getContentPurposeType());
-		g1.getETypeArguments().add(g2);
-		contentPurposeEClass.getEGenericSuperTypes().add(g1);
+		contentPurposeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		contentPurposeOperationEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getContentPurpose());
-		g1.getETypeArguments().add(g2);
-		contentPurposeTypeEClass.getEGenericSuperTypes().add(g1);
+		contentPurposeTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		contentRevisionEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		contentRevisionItemEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		contentRoleEClass.getESuperTypes().add(theBizPackage.getBizEntity());
@@ -2452,12 +2445,12 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		getContent_CharacterSetId().getEKeys().add(theDataPackage.getCharacterSet_CharacterSetId());
 		initEAttribute(getContent_ChildBranchCount(), ecorePackage.getELong(), "childBranchCount", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContent_ChildLeafCount(), ecorePackage.getELong(), "childLeafCount", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContent_ContentAttributes(), ecorePackage.getEString(), "contentAttributes", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContent_ContentKeywords(), ecorePackage.getEString(), "contentKeywords", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContent_ContentMetaDatas(), ecorePackage.getEString(), "contentMetaDatas", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContent_ContentAttributes(), this.getContentAttribute(), null, "contentAttributes", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContent_ContentKeywords(), this.getContentKeyword(), null, "contentKeywords", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContent_ContentMetaDatas(), this.getContentMetaData(), null, "contentMetaDatas", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContent_ContentName(), ecorePackage.getEString(), "contentName", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContent_ContentPurposes(), ecorePackage.getEString(), "contentPurposes", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContent_ContentRevisions(), ecorePackage.getEString(), "contentRevisions", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContent_ContentPurposes(), this.getContentPurpose(), null, "contentPurposes", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContent_ContentRevisions(), this.getContentRevision(), null, "contentRevisions", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContent_ContentTypeId(), this.getContentType(), null, "contentTypeId", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getContent_ContentTypeId().getEKeys().add(this.getContentType_ContentTypeId());
 		initEReference(getContent_CreatedByUserLogin(), theLoginPackage.getUserLogin(), null, "createdByUserLogin", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2490,17 +2483,17 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		initEReference(getContent_TemplateDataResourceId(), theDataPackage.getDataResource(), null, "templateDataResourceId", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getContent_TemplateDataResourceId().getEKeys().add(theDataPackage.getDataResource_DataResourceId());
 
-		addEOperation(contentEClass, ecorePackage.getEString(), "contentApprovals", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contentEClass, this.getContentApproval(), "contentApprovals", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentEClass, ecorePackage.getEString(), "partyResumes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contentEClass, theAbilityPackage.getPartyResume(), "partyResumes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentEClass, ecorePackage.getEString(), "portalPages", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contentEClass, thePortalPackage.getPortalPage(), "portalPages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentEClass, ecorePackage.getEString(), "serverHitBins", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contentEClass, theVisitPackage.getServerHitBin(), "serverHitBins", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentEClass, ecorePackage.getEString(), "subscriptionResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contentEClass, theSubscriptionPackage.getSubscriptionResource(), "subscriptionResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentEClass, ecorePackage.getEString(), "webPages", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contentEClass, theWebsitePackage_1.getWebPage(), "webPages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contentApprovalEClass, ContentApproval.class, "ContentApproval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContentApproval_ContentApprovalId(), ecorePackage.getEString(), "contentApprovalId", null, 1, 1, ContentApproval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2598,9 +2591,9 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		initEAttribute(getContentPurposeType_ContentPurposeTypeId(), ecorePackage.getEString(), "contentPurposeTypeId", null, 1, 1, ContentPurposeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentPurposeType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ContentPurposeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(contentPurposeTypeEClass, ecorePackage.getEString(), "contentPurposes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contentPurposeTypeEClass, this.getContentPurpose(), "contentPurposes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentPurposeTypeEClass, ecorePackage.getEString(), "dataResourcePurposes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contentPurposeTypeEClass, theDataPackage.getDataResourcePurpose(), "dataResourcePurposes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contentRevisionEClass, ContentRevision.class, "ContentRevision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContentRevision_ContentId(), this.getContent(), null, "contentId", null, 1, 1, ContentRevision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2644,7 +2637,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 
 		initEClass(contentSearchResultEClass, ContentSearchResult.class, "ContentSearchResult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContentSearchResult_ContentSearchResultId(), ecorePackage.getEString(), "contentSearchResultId", null, 1, 1, ContentSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContentSearchResult_ContentSearchConstraints(), ecorePackage.getEString(), "contentSearchConstraints", null, 0, -1, ContentSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContentSearchResult_ContentSearchConstraints(), this.getContentSearchConstraint(), null, "contentSearchConstraints", null, 0, -1, ContentSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentSearchResult_IsAscending(), ecorePackage.getEBoolean(), "isAscending", null, 0, 1, ContentSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentSearchResult_NumResults(), ecorePackage.getELong(), "numResults", null, 0, 1, ContentSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentSearchResult_OrderByName(), ecorePackage.getEString(), "orderByName", null, 0, 1, ContentSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2654,15 +2647,15 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 
 		initEClass(contentTypeEClass, ContentType.class, "ContentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContentType_ContentTypeId(), ecorePackage.getEString(), "contentTypeId", null, 1, 1, ContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContentType_ContentTypeAttrs(), ecorePackage.getEString(), "contentTypeAttrs", null, 0, -1, ContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContentType_ContentTypeAttrs(), this.getContentTypeAttr(), null, "contentTypeAttrs", null, 0, -1, ContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, ContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContentType_ParentTypeId(), this.getContentType(), null, "parentTypeId", null, 0, 1, ContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getContentType_ParentTypeId().getEKeys().add(this.getContentType_ContentTypeId());
 
-		addEOperation(contentTypeEClass, ecorePackage.getEString(), "childContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contentTypeEClass, this.getContentType(), "childContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contentTypeEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contentTypeEClass, this.getContent(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contentTypeAttrEClass, ContentTypeAttr.class, "ContentTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContentTypeAttr_ContentTypeId(), this.getContentType(), null, "contentTypeId", null, 1, 1, ContentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2673,12 +2666,12 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -2781,48 +2774,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (contentEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (contentEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (contentEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (contentEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (contentEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (contentEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContent_ContentId(),
 		   source,
 		   new String[] {
@@ -2846,46 +2797,11 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (getContent_ContentAttributes(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContent_ContentKeywords(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContent_ContentMetaDatas(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContent_ContentName(),
 		   source,
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getContent_ContentPurposes(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContent_ContentRevisions(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getContent_CreatedDate(),
@@ -3104,20 +3020,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "scale", "0"
 		   });
 		addAnnotation
-		  (contentPurposeTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (contentPurposeTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContentPurposeType_ContentPurposeTypeId(),
 		   source,
 		   new String[] {
@@ -3263,13 +3165,6 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (getContentSearchResult_ContentSearchConstraints(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContentSearchResult_IsAscending(),
 		   source,
 		   new String[] {
@@ -3311,28 +3206,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (contentTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (contentTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getContentType_ContentTypeId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (getContentType_ContentTypeAttrs(),
 		   source,
 		   new String[] {
 			   "type", "id",

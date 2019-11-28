@@ -111,42 +111,39 @@ public interface AcctgTransType extends BizEntityType<AcctgTrans> {
 	void setParentTypeId(AcctgTransType value);
 
 	/**
-	 * Returns the value of the '<em><b>Acctg Trans Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Acctg Trans Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.AcctgTransTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Acctg Trans Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Acctg Trans Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Acctg Trans Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransType_AcctgTransTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransTypeAttr'"
 	 * @generated
 	 */
-	List<String> getAcctgTransTypeAttrs();
+	List<AcctgTransTypeAttr> getAcctgTransTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='acctgTransTypeId'"
 	 * @generated
 	 */
-	List<String> acctgTranss();
+	List<AcctgTrans> acctgTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childAcctgTransTypes();
+	List<AcctgTransType> childAcctgTransTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Acctg Trans Type Id</b></em>' attribute.

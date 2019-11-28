@@ -13,14 +13,27 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
+import org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.content.survey.SurveyResponse;
+import org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder;
+import org.abchip.mimo.biz.order.return_.ReturnItem;
+import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.promo.ProductPromoUse;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
+import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.webapp.website.WebSite;
 
 /**
@@ -44,7 +57,7 @@ import org.abchip.mimo.biz.webapp.website.WebSite;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getFirstAttemptOrderId <em>First Attempt Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getGrandTotal <em>Grand Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getInternalCode <em>Internal Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getInvoicePerShipment <em>Invoice Per Shipment</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#isInvoicePerShipment <em>Invoice Per Shipment</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#isIsRushOrder <em>Is Rush Order</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#isIsViewed <em>Is Viewed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#isNeedsInventoryIssuance <em>Needs Inventory Issuance</em>}</li>
@@ -342,6 +355,7 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 
 	/**
 	 * Returns the value of the '<em><b>Invoice Per Shipment</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Per Shipment</em>' attribute isn't clear,
@@ -349,22 +363,23 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Invoice Per Shipment</em>' attribute.
-	 * @see #setInvoicePerShipment(char)
+	 * @see #setInvoicePerShipment(boolean)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_InvoicePerShipment()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getInvoicePerShipment();
+	boolean isInvoicePerShipment();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderHeader#getInvoicePerShipment <em>Invoice Per Shipment</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderHeader#isInvoicePerShipment <em>Invoice Per Shipment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Invoice Per Shipment</em>' attribute.
-	 * @see #getInvoicePerShipment()
+	 * @see #isInvoicePerShipment()
 	 * @generated
 	 */
-	void setInvoicePerShipment(char value);
+	void setInvoicePerShipment(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Is Rush Order</b></em>' attribute.
@@ -864,372 +879,344 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	void setWebSiteId(WebSite value);
 
 	/**
-	 * Returns the value of the '<em><b>Communication Event Orders</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Communication Event Orders</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.CommunicationEventOrder}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Communication Event Orders</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Event Orders</em>' attribute list.
+	 * @return the value of the '<em>Communication Event Orders</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_CommunicationEventOrders()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventOrder'"
 	 * @generated
 	 */
-	List<String> getCommunicationEventOrders();
+	List<CommunicationEventOrder> getCommunicationEventOrders();
 
 	/**
-	 * Returns the value of the '<em><b>Order Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Order Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Attributes</em>' attribute list.
+	 * @return the value of the '<em>Order Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAttribute'"
 	 * @generated
 	 */
-	List<String> getOrderAttributes();
+	List<OrderAttribute> getOrderAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Order Delivery Schedules</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Order Delivery Schedules</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Delivery Schedules</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Delivery Schedules</em>' attribute list.
+	 * @return the value of the '<em>Order Delivery Schedules</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderDeliverySchedules()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderDeliverySchedule'"
 	 * @generated
 	 */
-	List<String> getOrderDeliverySchedules();
+	List<OrderDeliverySchedule> getOrderDeliverySchedules();
 
 	/**
-	 * Returns the value of the '<em><b>Order Header Notes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Order Header Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderHeaderNote}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Header Notes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Header Notes</em>' attribute list.
+	 * @return the value of the '<em>Order Header Notes</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderHeaderNotes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeaderNote'"
 	 * @generated
 	 */
-	List<String> getOrderHeaderNotes();
+	List<OrderHeaderNote> getOrderHeaderNotes();
 
 	/**
-	 * Returns the value of the '<em><b>Order Header Work Efforts</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Order Header Work Efforts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderHeaderWorkEffort}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Header Work Efforts</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Header Work Efforts</em>' attribute list.
+	 * @return the value of the '<em>Order Header Work Efforts</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderHeaderWorkEfforts()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeaderWorkEffort'"
 	 * @generated
 	 */
-	List<String> getOrderHeaderWorkEfforts();
+	List<OrderHeaderWorkEffort> getOrderHeaderWorkEfforts();
 
 	/**
-	 * Returns the value of the '<em><b>Order Items</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Order Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderItem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Items</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Items</em>' attribute list.
+	 * @return the value of the '<em>Order Items</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderItems()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem'"
 	 * @generated
 	 */
-	List<String> getOrderItems();
+	List<OrderItem> getOrderItems();
 
 	/**
-	 * Returns the value of the '<em><b>Order Item Groups</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Order Item Groups</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderItemGroup}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Item Groups</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Item Groups</em>' attribute list.
+	 * @return the value of the '<em>Order Item Groups</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderItemGroups()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemGroup'"
 	 * @generated
 	 */
-	List<String> getOrderItemGroups();
+	List<OrderItemGroup> getOrderItemGroups();
 
 	/**
-	 * Returns the value of the '<em><b>Order Item Ship Groups</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Order Item Ship Groups</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderItemShipGroup}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Item Ship Groups</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Item Ship Groups</em>' attribute list.
+	 * @return the value of the '<em>Order Item Ship Groups</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderItemShipGroups()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup'"
 	 * @generated
 	 */
-	List<String> getOrderItemShipGroups();
+	List<OrderItemShipGroup> getOrderItemShipGroups();
 
 	/**
-	 * Returns the value of the '<em><b>Order Product Promo Codes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Order Product Promo Codes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderProductPromoCode}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Product Promo Codes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Product Promo Codes</em>' attribute list.
+	 * @return the value of the '<em>Order Product Promo Codes</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderProductPromoCodes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderProductPromoCode'"
 	 * @generated
 	 */
-	List<String> getOrderProductPromoCodes();
+	List<OrderProductPromoCode> getOrderProductPromoCodes();
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Uses</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Promo Uses</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.promo.ProductPromoUse}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Uses</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Uses</em>' attribute list.
+	 * @return the value of the '<em>Product Promo Uses</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_ProductPromoUses()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoUse'"
 	 * @generated
 	 */
-	List<String> getProductPromoUses();
+	List<ProductPromoUse> getProductPromoUses();
 
 	/**
-	 * Returns the value of the '<em><b>Tracking Code Orders</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Tracking Code Orders</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tracking Code Orders</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tracking Code Orders</em>' attribute list.
+	 * @return the value of the '<em>Tracking Code Orders</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_TrackingCodeOrders()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TrackingCodeOrder'"
 	 * @generated
 	 */
-	List<String> getTrackingCodeOrders();
+	List<TrackingCodeOrder> getTrackingCodeOrders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAsset' route='acquireOrderId'"
 	 * @generated
 	 */
-	List<String> acquireFixedAssets();
+	List<FixedAsset> acquireFixedAssets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GiftCardFulfillment' route='orderId'"
 	 * @generated
 	 */
-	List<String> giftCardFulfillments();
+	List<GiftCardFulfillment> giftCardFulfillments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ItemIssuance' route='orderId'"
 	 * @generated
 	 */
-	List<String> itemIssuances();
+	List<ItemIssuance> itemIssuances();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='orderId'"
 	 * @generated
 	 */
-	List<String> orderAdjustments();
+	List<OrderAdjustment> orderAdjustments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemChange' route='orderId'"
 	 * @generated
 	 */
-	List<String> orderItemChanges();
+	List<OrderItemChange> orderItemChanges();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemPriceInfo' route='orderId'"
 	 * @generated
 	 */
-	List<String> orderItemPriceInfos();
+	List<OrderItemPriceInfo> orderItemPriceInfos();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderNotification' route='orderId'"
 	 * @generated
 	 */
-	List<String> orderNotifications();
+	List<OrderNotification> orderNotifications();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderPaymentPreference' route='orderId'"
 	 * @generated
 	 */
-	List<String> orderPaymentPreferences();
+	List<OrderPaymentPreference> orderPaymentPreferences();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderStatus' route='orderId'"
 	 * @generated
 	 */
-	List<String> orderStatuss();
+	List<OrderStatus> orderStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PicklistBin' route='primaryOrderId'"
 	 * @generated
 	 */
-	List<String> primaryPicklistBins();
+	List<PicklistBin> primaryPicklistBins();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='primaryOrderId'"
 	 * @generated
 	 */
-	List<String> primaryShipments();
+	List<Shipment> primaryShipments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetMaint' route='purchaseOrderId'"
 	 * @generated
 	 */
-	List<String> purchaseFixedAssetMaints();
+	List<FixedAssetMaint> purchaseFixedAssetMaints();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItemResponse' route='replacementOrderId'"
 	 * @generated
 	 */
-	List<String> replacementReturnItemResponses();
+	List<ReturnItemResponse> replacementReturnItemResponses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItem' route='orderId'"
 	 * @generated
 	 */
-	List<String> returnItems();
+	List<ReturnItem> returnItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentReceipt' route='orderId'"
 	 * @generated
 	 */
-	List<String> shipmentReceipts();
+	List<ShipmentReceipt> shipmentReceipts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='orderId'"
 	 * @generated
 	 */
-	List<String> subscriptions();
+	List<Subscription> subscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyResponse' route='orderId'"
 	 * @generated
 	 */
-	List<String> surveyResponses();
+	List<SurveyResponse> surveyResponses();
 
 	/**
 	 * <!-- begin-user-doc -->

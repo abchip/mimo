@@ -113,11 +113,10 @@ public interface Visitor extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Visit' route='visitorId'"
 	 * @generated
 	 */
-	List<String> visits();
+	List<Visit> visits();
 
 } // Visitor

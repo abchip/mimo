@@ -12,7 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionType;
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SurveyQuestionTypeImpl extends BizEntityTypeImpl<SurveyQuestion> implements SurveyQuestionType {
+public class SurveyQuestionTypeImpl extends BizEntityImpl implements SurveyQuestionType {
 	/**
 	 * 
 	 */
@@ -80,7 +80,7 @@ public class SurveyQuestionTypeImpl extends BizEntityTypeImpl<SurveyQuestion> im
 	 * @generated
 	 */
 	@Override
-	public List<String> surveyQuestions() {
+	public List<SurveyQuestion> surveyQuestions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

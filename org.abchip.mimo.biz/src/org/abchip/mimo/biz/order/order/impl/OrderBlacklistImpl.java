@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderBlacklist;
 import org.abchip.mimo.biz.order.order.OrderBlacklistType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class OrderBlacklistImpl extends BizEntityTypedImpl<OrderBlacklistType> implements OrderBlacklist {
+public class OrderBlacklistImpl extends BizEntityImpl implements OrderBlacklist {
 	/**
 	 * 
 	 */

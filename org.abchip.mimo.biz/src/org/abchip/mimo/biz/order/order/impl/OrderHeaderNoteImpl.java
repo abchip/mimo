@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderNoteImpl#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderNoteImpl#getInternalNote <em>Internal Note</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderNoteImpl#isInternalNote <em>Internal Note</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,26 +58,6 @@ public class OrderHeaderNoteImpl extends BizEntityNoteImpl implements OrderHeade
 	 * @generated
 	 */
 	@Override
-	public char getInternalNote() {
-		return (Character)eGet(OrderPackage.Literals.ORDER_HEADER_NOTE__INTERNAL_NOTE, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setInternalNote(char newInternalNote) {
-		eSet(OrderPackage.Literals.ORDER_HEADER_NOTE__INTERNAL_NOTE, newInternalNote);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public OrderHeader getOrderId() {
 		return (OrderHeader)eGet(OrderPackage.Literals.ORDER_HEADER_NOTE__ORDER_ID, true);
 	}
@@ -90,6 +70,26 @@ public class OrderHeaderNoteImpl extends BizEntityNoteImpl implements OrderHeade
 	@Override
 	public void setOrderId(OrderHeader newOrderId) {
 		eSet(OrderPackage.Literals.ORDER_HEADER_NOTE__ORDER_ID, newOrderId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isInternalNote() {
+		return (Boolean)eGet(OrderPackage.Literals.ORDER_HEADER_NOTE__INTERNAL_NOTE, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setInternalNote(boolean newInternalNote) {
+		eSet(OrderPackage.Literals.ORDER_HEADER_NOTE__INTERNAL_NOTE, newInternalNote);
 	}
 
 } //OrderHeaderNoteImpl

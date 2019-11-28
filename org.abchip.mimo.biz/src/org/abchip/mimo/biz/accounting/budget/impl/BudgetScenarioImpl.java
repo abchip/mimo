@@ -11,6 +11,8 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetScenario;
+import org.abchip.mimo.biz.accounting.budget.BudgetScenarioApplication;
+import org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -80,8 +82,8 @@ public class BudgetScenarioImpl extends BizEntityImpl implements BudgetScenario 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getBudgetScenarioRules() {
-		return (List<String>)eGet(BudgetPackage.Literals.BUDGET_SCENARIO__BUDGET_SCENARIO_RULES, true);
+	public List<BudgetScenarioRule> getBudgetScenarioRules() {
+		return (List<BudgetScenarioRule>)eGet(BudgetPackage.Literals.BUDGET_SCENARIO__BUDGET_SCENARIO_RULES, true);
 	}
 
 	/**
@@ -90,7 +92,7 @@ public class BudgetScenarioImpl extends BizEntityImpl implements BudgetScenario 
 	 * @generated
 	 */
 	@Override
-	public List<String> budgetScenarioApplications() {
+	public List<BudgetScenarioApplication> budgetScenarioApplications() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

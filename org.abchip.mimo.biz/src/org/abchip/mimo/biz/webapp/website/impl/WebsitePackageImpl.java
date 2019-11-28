@@ -890,8 +890,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWebSite_WebAnalyticsConfigs() {
-		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(16);
+	public EReference getWebSite_WebAnalyticsConfigs() {
+		return (EReference)webSiteEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -946,7 +946,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(webSiteEClass, WEB_SITE__SITE_NAME);
 		createEAttribute(webSiteEClass, WEB_SITE__STANDARD_CONTENT_PREFIX);
 		createEReference(webSiteEClass, WEB_SITE__VISUAL_THEME_SET_ID);
-		createEAttribute(webSiteEClass, WEB_SITE__WEB_ANALYTICS_CONFIGS);
+		createEReference(webSiteEClass, WEB_SITE__WEB_ANALYTICS_CONFIGS);
 		createEAttribute(webSiteEClass, WEB_SITE__WEBAPP_PATH);
 	}
 
@@ -978,6 +978,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
 		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
 		ThemePackage theThemePackage = (ThemePackage)EPackage.Registry.INSTANCE.getEPackage(ThemePackage.eNS_URI);
+		org.abchip.mimo.biz.content.website.WebsitePackage theWebsitePackage_1 = (org.abchip.mimo.biz.content.website.WebsitePackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.content.website.WebsitePackage.eNS_URI);
+		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
+		SubscriptionPackage theSubscriptionPackage = (SubscriptionPackage)EPackage.Registry.INSTANCE.getEPackage(SubscriptionPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1015,14 +1018,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebSite_StandardContentPrefix(), ecorePackage.getEString(), "standardContentPrefix", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebSite_VisualThemeSetId(), theThemePackage.getVisualThemeSet(), null, "visualThemeSetId", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWebSite_VisualThemeSetId().getEKeys().add(theThemePackage.getVisualThemeSet_VisualThemeSetId());
-		initEAttribute(getWebSite_WebAnalyticsConfigs(), ecorePackage.getEString(), "webAnalyticsConfigs", null, 0, -1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebSite_WebAnalyticsConfigs(), theWebsitePackage_1.getWebAnalyticsConfig(), null, "webAnalyticsConfigs", null, 0, -1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSite_WebappPath(), ecorePackage.getEString(), "webappPath", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(webSiteEClass, ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(webSiteEClass, theOrderPackage.getOrderHeader(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(webSiteEClass, ecorePackage.getEString(), "subscriptionResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(webSiteEClass, theSubscriptionPackage.getSubscriptionResource(), "subscriptionResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(webSiteEClass, ecorePackage.getEString(), "webPages", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(webSiteEClass, this.getWebPage(), "webPages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-format
@@ -1054,27 +1057,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   new String[] {
 			   "type", "name",
 			   "length", "100"
-		   });
-		addAnnotation
-		  (webSiteEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (webSiteEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (webSiteEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWebSite_WebSiteId(),
@@ -1173,13 +1155,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   new String[] {
 			   "type", "url",
 			   "length", "2000"
-		   });
-		addAnnotation
-		  (getWebSite_WebAnalyticsConfigs(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWebSite_WebappPath(),

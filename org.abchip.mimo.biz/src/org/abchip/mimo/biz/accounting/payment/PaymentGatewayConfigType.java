@@ -112,22 +112,20 @@ public interface PaymentGatewayConfigType extends BizEntityType<PaymentGatewayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGatewayConfigType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childPaymentGatewayConfigTypes();
+	List<PaymentGatewayConfigType> childPaymentGatewayConfigTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGatewayConfig' route='paymentGatewayConfigTypeId'"
 	 * @generated
 	 */
-	List<String> paymentGatewayConfigs();
+	List<PaymentGatewayConfig> paymentGatewayConfigs();
 
 	/**
 	 * Returns the value of the '<em><b>Payment Gateway Config Type Id</b></em>' attribute.

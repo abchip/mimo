@@ -10,7 +10,12 @@ package org.abchip.mimo.biz.accounting.budget.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.budget.Budget;
+import org.abchip.mimo.biz.accounting.budget.BudgetAttribute;
+import org.abchip.mimo.biz.accounting.budget.BudgetItem;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
+import org.abchip.mimo.biz.accounting.budget.BudgetRevision;
+import org.abchip.mimo.biz.accounting.budget.BudgetScenarioApplication;
+import org.abchip.mimo.biz.accounting.budget.BudgetStatus;
 import org.abchip.mimo.biz.accounting.budget.BudgetType;
 import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
@@ -107,8 +112,8 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getBudgetAttributes() {
-		return (List<String>)eGet(BudgetPackage.Literals.BUDGET__BUDGET_ATTRIBUTES, true);
+	public List<BudgetAttribute> getBudgetAttributes() {
+		return (List<BudgetAttribute>)eGet(BudgetPackage.Literals.BUDGET__BUDGET_ATTRIBUTES, true);
 	}
 
 	/**
@@ -118,8 +123,8 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getBudgetItems() {
-		return (List<String>)eGet(BudgetPackage.Literals.BUDGET__BUDGET_ITEMS, true);
+	public List<BudgetItem> getBudgetItems() {
+		return (List<BudgetItem>)eGet(BudgetPackage.Literals.BUDGET__BUDGET_ITEMS, true);
 	}
 
 	/**
@@ -129,8 +134,8 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getBudgetRevisions() {
-		return (List<String>)eGet(BudgetPackage.Literals.BUDGET__BUDGET_REVISIONS, true);
+	public List<BudgetRevision> getBudgetRevisions() {
+		return (List<BudgetRevision>)eGet(BudgetPackage.Literals.BUDGET__BUDGET_REVISIONS, true);
 	}
 
 	/**
@@ -140,8 +145,8 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getBudgetStatuss() {
-		return (List<String>)eGet(BudgetPackage.Literals.BUDGET__BUDGET_STATUSS, true);
+	public List<BudgetStatus> getBudgetStatuss() {
+		return (List<BudgetStatus>)eGet(BudgetPackage.Literals.BUDGET__BUDGET_STATUSS, true);
 	}
 
 	/**
@@ -150,7 +155,7 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 * @generated
 	 */
 	@Override
-	public List<String> budgetScenarioApplications() {
+	public List<BudgetScenarioApplication> budgetScenarioApplications() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -121,7 +121,7 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 	 * @generated
 	 */
 	@Override
-	public List<String> childGeoTypes() {
+	public List<GeoType> childGeoTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +133,7 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 	 * @generated
 	 */
 	@Override
-	public List<String> geos() {
+	public List<Geo> geos() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

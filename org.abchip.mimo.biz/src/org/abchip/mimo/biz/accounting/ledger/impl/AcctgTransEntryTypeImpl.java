@@ -121,7 +121,7 @@ public class AcctgTransEntryTypeImpl extends BizEntityTypeImpl<AcctgTransEntry> 
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTransEntries() {
+	public List<AcctgTransEntry> acctgTransEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +133,7 @@ public class AcctgTransEntryTypeImpl extends BizEntityTypeImpl<AcctgTransEntry> 
 	 * @generated
 	 */
 	@Override
-	public List<String> childAcctgTransEntryTypes() {
+	public List<AcctgTransEntryType> childAcctgTransEntryTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.product.facility;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
-public interface FacilityGroup extends BizEntityTyped<FacilityGroupType> {
+public interface FacilityGroup extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -139,12 +139,11 @@ public interface FacilityGroup extends BizEntityTyped<FacilityGroupType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Facility' route='primaryFacilityGroupId'"
 	 * @generated
 	 */
-	List<String> facilities();
+	List<Facility> facilities();
 
 	/**
 	 * Returns the value of the '<em><b>Facility Group Id</b></em>' attribute.

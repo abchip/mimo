@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.FacilityType;
+import org.abchip.mimo.biz.product.facility.FacilityTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -124,8 +125,8 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFacilityTypeAttrs() {
-		return (List<String>)eGet(FacilityPackage.Literals.FACILITY_TYPE__FACILITY_TYPE_ATTRS, true);
+	public List<FacilityTypeAttr> getFacilityTypeAttrs() {
+		return (List<FacilityTypeAttr>)eGet(FacilityPackage.Literals.FACILITY_TYPE__FACILITY_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -134,7 +135,7 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 	 * @generated
 	 */
 	@Override
-	public List<String> childFacilityTypes() {
+	public List<FacilityType> childFacilityTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -146,7 +147,7 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 	 * @generated
 	 */
 	@Override
-	public List<String> facilities() {
+	public List<Facility> facilities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

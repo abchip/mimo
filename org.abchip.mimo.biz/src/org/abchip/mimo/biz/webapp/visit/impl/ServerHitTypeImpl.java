@@ -9,8 +9,8 @@ package org.abchip.mimo.biz.webapp.visit.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.abchip.mimo.biz.webapp.visit.ServerHit;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.webapp.visit.ServerHitBin;
 import org.abchip.mimo.biz.webapp.visit.ServerHitType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ServerHitTypeImpl extends BizEntityTypeImpl<ServerHit> implements ServerHitType {
+public class ServerHitTypeImpl extends BizEntityImpl implements ServerHitType {
 	/**
 	 * 
 	 */
@@ -100,7 +100,7 @@ public class ServerHitTypeImpl extends BizEntityTypeImpl<ServerHit> implements S
 	 * @generated
 	 */
 	@Override
-	public List<String> serverHitBins() {
+	public List<ServerHitBin> serverHitBins() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

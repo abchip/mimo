@@ -117,7 +117,7 @@ public interface SynchronizationPackage extends EPackage {
 	int ENTITY_SYNC__ENTITY_SYNC_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Entity Sync Histories</b></em>' attribute list.
+	 * The feature id for the '<em><b>Entity Sync Histories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -126,7 +126,7 @@ public interface SynchronizationPackage extends EPackage {
 	int ENTITY_SYNC__ENTITY_SYNC_HISTORIES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Entity Sync Include Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Entity Sync Include Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -135,7 +135,7 @@ public interface SynchronizationPackage extends EPackage {
 	int ENTITY_SYNC__ENTITY_SYNC_INCLUDE_GROUPS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Entity Sync Includes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Entity Sync Includes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -952,37 +952,37 @@ public interface SynchronizationPackage extends EPackage {
 	EAttribute getEntitySync_TargetServiceName();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncHistories <em>Entity Sync Histories</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncHistories <em>Entity Sync Histories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Entity Sync Histories</em>'.
+	 * @return the meta object for the reference list '<em>Entity Sync Histories</em>'.
 	 * @see org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncHistories()
 	 * @see #getEntitySync()
 	 * @generated
 	 */
-	EAttribute getEntitySync_EntitySyncHistories();
+	EReference getEntitySync_EntitySyncHistories();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncIncludes <em>Entity Sync Includes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncIncludes <em>Entity Sync Includes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Entity Sync Includes</em>'.
+	 * @return the meta object for the reference list '<em>Entity Sync Includes</em>'.
 	 * @see org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncIncludes()
 	 * @see #getEntitySync()
 	 * @generated
 	 */
-	EAttribute getEntitySync_EntitySyncIncludes();
+	EReference getEntitySync_EntitySyncIncludes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncIncludeGroups <em>Entity Sync Include Groups</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncIncludeGroups <em>Entity Sync Include Groups</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Entity Sync Include Groups</em>'.
+	 * @return the meta object for the reference list '<em>Entity Sync Include Groups</em>'.
 	 * @see org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncIncludeGroups()
 	 * @see #getEntitySync()
 	 * @generated
 	 */
-	EAttribute getEntitySync_EntitySyncIncludeGroups();
+	EReference getEntitySync_EntitySyncIncludeGroups();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory <em>Entity Sync History</em>}'.
@@ -1532,28 +1532,28 @@ public interface SynchronizationPackage extends EPackage {
 		EAttribute ENTITY_SYNC__TARGET_SERVICE_NAME = eINSTANCE.getEntitySync_TargetServiceName();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity Sync Histories</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Entity Sync Histories</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY_SYNC__ENTITY_SYNC_HISTORIES = eINSTANCE.getEntitySync_EntitySyncHistories();
+		EReference ENTITY_SYNC__ENTITY_SYNC_HISTORIES = eINSTANCE.getEntitySync_EntitySyncHistories();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity Sync Includes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Entity Sync Includes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY_SYNC__ENTITY_SYNC_INCLUDES = eINSTANCE.getEntitySync_EntitySyncIncludes();
+		EReference ENTITY_SYNC__ENTITY_SYNC_INCLUDES = eINSTANCE.getEntitySync_EntitySyncIncludes();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity Sync Include Groups</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Entity Sync Include Groups</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY_SYNC__ENTITY_SYNC_INCLUDE_GROUPS = eINSTANCE.getEntitySync_EntitySyncIncludeGroups();
+		EReference ENTITY_SYNC__ENTITY_SYNC_INCLUDE_GROUPS = eINSTANCE.getEntitySync_EntitySyncIncludeGroups();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncHistoryImpl <em>Entity Sync History</em>}' class.

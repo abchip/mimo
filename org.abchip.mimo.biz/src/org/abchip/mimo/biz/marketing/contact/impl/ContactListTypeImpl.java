@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.marketing.contact.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.contact.ContactList;
 import org.abchip.mimo.biz.marketing.contact.ContactListType;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ContactListTypeImpl extends BizEntityTypeImpl<ContactList> implements ContactListType {
+public class ContactListTypeImpl extends BizEntityImpl implements ContactListType {
 	/**
 	 * 
 	 */
@@ -101,7 +101,7 @@ public class ContactListTypeImpl extends BizEntityTypeImpl<ContactList> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> contactLists() {
+	public List<ContactList> contactLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -85,22 +85,20 @@ public interface SurveyQuestionCategory extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyQuestionCategory' route='parentCategoryId'"
 	 * @generated
 	 */
-	List<String> childSurveyQuestionCategories();
+	List<SurveyQuestionCategory> childSurveyQuestionCategories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyQuestion' route='surveyQuestionCategoryId'"
 	 * @generated
 	 */
-	List<String> surveyQuestions();
+	List<SurveyQuestion> surveyQuestions();
 
 	/**
 	 * Returns the value of the '<em><b>Survey Question Category Id</b></em>' attribute.

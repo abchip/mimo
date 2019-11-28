@@ -12,9 +12,15 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceAttribute;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceNote;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceTerm;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
+import org.abchip.mimo.biz.accounting.payment.PaymentApplication;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
@@ -22,6 +28,7 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
+import org.abchip.mimo.biz.workeffort.timesheet.TimeEntry;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -366,8 +373,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getInvoiceAttributes() {
-		return (List<String>)eGet(InvoicePackage.Literals.INVOICE__INVOICE_ATTRIBUTES, true);
+	public List<InvoiceAttribute> getInvoiceAttributes() {
+		return (List<InvoiceAttribute>)eGet(InvoicePackage.Literals.INVOICE__INVOICE_ATTRIBUTES, true);
 	}
 
 	/**
@@ -377,8 +384,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getInvoiceItems() {
-		return (List<String>)eGet(InvoicePackage.Literals.INVOICE__INVOICE_ITEMS, true);
+	public List<InvoiceItem> getInvoiceItems() {
+		return (List<InvoiceItem>)eGet(InvoicePackage.Literals.INVOICE__INVOICE_ITEMS, true);
 	}
 
 	/**
@@ -388,8 +395,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getInvoiceNotes() {
-		return (List<String>)eGet(InvoicePackage.Literals.INVOICE__INVOICE_NOTES, true);
+	public List<InvoiceNote> getInvoiceNotes() {
+		return (List<InvoiceNote>)eGet(InvoicePackage.Literals.INVOICE__INVOICE_NOTES, true);
 	}
 
 	/**
@@ -398,7 +405,7 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -410,7 +417,7 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceTerms() {
+	public List<InvoiceTerm> invoiceTerms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -422,7 +429,7 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentApplications() {
+	public List<PaymentApplication> paymentApplications() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -434,7 +441,7 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public List<String> timeEntries() {
+	public List<TimeEntry> timeEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

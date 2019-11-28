@@ -217,7 +217,7 @@ public interface ProductPackage extends EPackage {
 	int GOOD_IDENTIFICATION_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Good Identifications</b></em>' attribute list.
+	 * The feature id for the '<em><b>Good Identifications</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -362,7 +362,7 @@ public interface ProductPackage extends EPackage {
 	int PRODUCT__COMMENTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Communication Event Products</b></em>' attribute list.
+	 * The feature id for the '<em><b>Communication Event Products</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -659,7 +659,7 @@ public interface ProductPackage extends EPackage {
 	int PRODUCT__PRIMARY_PRODUCT_CATEGORY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 39;
 
 	/**
-	 * The feature id for the '<em><b>Product Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -686,7 +686,7 @@ public interface ProductPackage extends EPackage {
 	int PRODUCT__PRODUCT_DIAMETER = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 42;
 
 	/**
-	 * The feature id for the '<em><b>Product Facilities</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Facilities</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -695,7 +695,7 @@ public interface ProductPackage extends EPackage {
 	int PRODUCT__PRODUCT_FACILITIES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 43;
 
 	/**
-	 * The feature id for the '<em><b>Product Geos</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Geos</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -713,7 +713,7 @@ public interface ProductPackage extends EPackage {
 	int PRODUCT__PRODUCT_HEIGHT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 45;
 
 	/**
-	 * The feature id for the '<em><b>Product Maints</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Maints</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -722,7 +722,7 @@ public interface ProductPackage extends EPackage {
 	int PRODUCT__PRODUCT_MAINTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 46;
 
 	/**
-	 * The feature id for the '<em><b>Product Meters</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Meters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2143,7 +2143,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int PRODUCT_MAINT__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -2152,7 +2152,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int PRODUCT_MAINT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -2161,7 +2161,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int PRODUCT_MAINT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -2170,7 +2170,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int PRODUCT_MAINT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Product Id</b></em>' reference.
@@ -2179,7 +2179,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__PRODUCT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int PRODUCT_MAINT__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Product Maint Seq Id</b></em>' attribute.
@@ -2188,7 +2188,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__PRODUCT_MAINT_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int PRODUCT_MAINT__PRODUCT_MAINT_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Interval Meter Type Id</b></em>' reference.
@@ -2197,7 +2197,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__INTERVAL_METER_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int PRODUCT_MAINT__INTERVAL_METER_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Interval Quantity</b></em>' attribute.
@@ -2206,7 +2206,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__INTERVAL_QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int PRODUCT_MAINT__INTERVAL_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Interval Uom Id</b></em>' reference.
@@ -2215,7 +2215,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__INTERVAL_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int PRODUCT_MAINT__INTERVAL_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Maint Name</b></em>' attribute.
@@ -2224,7 +2224,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__MAINT_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int PRODUCT_MAINT__MAINT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Maint Template Work Effort Id</b></em>' reference.
@@ -2233,7 +2233,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Product Maint Type Id</b></em>' reference.
@@ -2242,7 +2242,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Repeat Count</b></em>' attribute.
@@ -2251,7 +2251,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT__REPEAT_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int PRODUCT_MAINT__REPEAT_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Maint</em>' class.
@@ -2260,7 +2260,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int PRODUCT_MAINT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.product.impl.ProductMaintTypeImpl <em>Maint Type</em>}' class.
@@ -2273,22 +2273,13 @@ public interface ProductPackage extends EPackage {
 	int PRODUCT_MAINT_TYPE = 14;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_MAINT_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int PRODUCT_MAINT_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -2297,7 +2288,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int PRODUCT_MAINT_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -2306,7 +2297,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int PRODUCT_MAINT_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -2315,7 +2306,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int PRODUCT_MAINT_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Product Maint Type Id</b></em>' attribute.
@@ -2324,7 +2315,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT_TYPE__PRODUCT_MAINT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int PRODUCT_MAINT_TYPE__PRODUCT_MAINT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2333,7 +2324,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int PRODUCT_MAINT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
@@ -2342,7 +2333,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int PRODUCT_MAINT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Maint Type</em>' class.
@@ -2351,7 +2342,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MAINT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
+	int PRODUCT_MAINT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.product.impl.ProductMeterImpl <em>Meter</em>}' class.
@@ -2370,7 +2361,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int PRODUCT_METER__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -2379,7 +2370,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int PRODUCT_METER__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -2388,7 +2379,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int PRODUCT_METER__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -2397,7 +2388,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int PRODUCT_METER__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Product Id</b></em>' reference.
@@ -2406,7 +2397,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER__PRODUCT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int PRODUCT_METER__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Product Meter Type Id</b></em>' reference.
@@ -2415,7 +2406,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER__PRODUCT_METER_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int PRODUCT_METER__PRODUCT_METER_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Meter Name</b></em>' attribute.
@@ -2424,7 +2415,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER__METER_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int PRODUCT_METER__METER_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Meter Uom Id</b></em>' reference.
@@ -2433,7 +2424,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER__METER_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int PRODUCT_METER__METER_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Meter</em>' class.
@@ -2442,7 +2433,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int PRODUCT_METER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.product.impl.ProductMeterTypeImpl <em>Meter Type</em>}' class.
@@ -2455,22 +2446,13 @@ public interface ProductPackage extends EPackage {
 	int PRODUCT_METER_TYPE = 16;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_METER_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int PRODUCT_METER_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -2479,7 +2461,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int PRODUCT_METER_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -2488,7 +2470,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int PRODUCT_METER_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -2497,7 +2479,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int PRODUCT_METER_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Product Meter Type Id</b></em>' attribute.
@@ -2506,7 +2488,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Default Uom Id</b></em>' reference.
@@ -2515,7 +2497,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER_TYPE__DEFAULT_UOM_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int PRODUCT_METER_TYPE__DEFAULT_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2524,7 +2506,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int PRODUCT_METER_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Meter Type</em>' class.
@@ -2533,7 +2515,7 @@ public interface ProductPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_METER_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
+	int PRODUCT_METER_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl <em>Review</em>}' class.
@@ -3026,7 +3008,7 @@ public interface ProductPackage extends EPackage {
 	int PRODUCT_SEARCH_RESULT__ORDER_BY_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Product Search Constraints</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Search Constraints</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3180,7 +3162,7 @@ public interface ProductPackage extends EPackage {
 	int PRODUCT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Product Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3460,15 +3442,15 @@ public interface ProductPackage extends EPackage {
 	EReference getGoodIdentificationType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.product.GoodIdentificationType#getGoodIdentifications <em>Good Identifications</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.product.GoodIdentificationType#getGoodIdentifications <em>Good Identifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Good Identifications</em>'.
+	 * @return the meta object for the reference list '<em>Good Identifications</em>'.
 	 * @see org.abchip.mimo.biz.product.product.GoodIdentificationType#getGoodIdentifications()
 	 * @see #getGoodIdentificationType()
 	 * @generated
 	 */
-	EAttribute getGoodIdentificationType_GoodIdentifications();
+	EReference getGoodIdentificationType_GoodIdentifications();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.product.Product <em>Product</em>}'.
@@ -3536,11 +3518,11 @@ public interface ProductPackage extends EPackage {
 	EAttribute getProduct_BrandName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.product.Product#getChargeShipping <em>Charge Shipping</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.product.Product#isChargeShipping <em>Charge Shipping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Charge Shipping</em>'.
-	 * @see org.abchip.mimo.biz.product.product.Product#getChargeShipping()
+	 * @see org.abchip.mimo.biz.product.product.Product#isChargeShipping()
 	 * @see #getProduct()
 	 * @generated
 	 */
@@ -4251,70 +4233,70 @@ public interface ProductPackage extends EPackage {
 	EReference getProduct_WidthUomId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.product.Product#getCommunicationEventProducts <em>Communication Event Products</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.product.Product#getCommunicationEventProducts <em>Communication Event Products</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Communication Event Products</em>'.
+	 * @return the meta object for the reference list '<em>Communication Event Products</em>'.
 	 * @see org.abchip.mimo.biz.product.product.Product#getCommunicationEventProducts()
 	 * @see #getProduct()
 	 * @generated
 	 */
-	EAttribute getProduct_CommunicationEventProducts();
+	EReference getProduct_CommunicationEventProducts();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.product.Product#getProductAttributes <em>Product Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.product.Product#getProductAttributes <em>Product Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Product Attributes</em>'.
 	 * @see org.abchip.mimo.biz.product.product.Product#getProductAttributes()
 	 * @see #getProduct()
 	 * @generated
 	 */
-	EAttribute getProduct_ProductAttributes();
+	EReference getProduct_ProductAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.product.Product#getProductFacilities <em>Product Facilities</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.product.Product#getProductFacilities <em>Product Facilities</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Facilities</em>'.
+	 * @return the meta object for the reference list '<em>Product Facilities</em>'.
 	 * @see org.abchip.mimo.biz.product.product.Product#getProductFacilities()
 	 * @see #getProduct()
 	 * @generated
 	 */
-	EAttribute getProduct_ProductFacilities();
+	EReference getProduct_ProductFacilities();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.product.Product#getProductGeos <em>Product Geos</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.product.Product#getProductGeos <em>Product Geos</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Geos</em>'.
+	 * @return the meta object for the reference list '<em>Product Geos</em>'.
 	 * @see org.abchip.mimo.biz.product.product.Product#getProductGeos()
 	 * @see #getProduct()
 	 * @generated
 	 */
-	EAttribute getProduct_ProductGeos();
+	EReference getProduct_ProductGeos();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.product.Product#getProductMaints <em>Product Maints</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.product.Product#getProductMaints <em>Product Maints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Maints</em>'.
+	 * @return the meta object for the reference list '<em>Product Maints</em>'.
 	 * @see org.abchip.mimo.biz.product.product.Product#getProductMaints()
 	 * @see #getProduct()
 	 * @generated
 	 */
-	EAttribute getProduct_ProductMaints();
+	EReference getProduct_ProductMaints();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.product.Product#getProductMeters <em>Product Meters</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.product.Product#getProductMeters <em>Product Meters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Meters</em>'.
+	 * @return the meta object for the reference list '<em>Product Meters</em>'.
 	 * @see org.abchip.mimo.biz.product.product.Product#getProductMeters()
 	 * @see #getProduct()
 	 * @generated
 	 */
-	EAttribute getProduct_ProductMeters();
+	EReference getProduct_ProductMeters();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.product.ProductAssoc <em>Assoc</em>}'.
@@ -5773,15 +5755,15 @@ public interface ProductPackage extends EPackage {
 	EAttribute getProductSearchResult_VisitId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getProductSearchConstraints <em>Product Search Constraints</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getProductSearchConstraints <em>Product Search Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Search Constraints</em>'.
+	 * @return the meta object for the reference list '<em>Product Search Constraints</em>'.
 	 * @see org.abchip.mimo.biz.product.product.ProductSearchResult#getProductSearchConstraints()
 	 * @see #getProductSearchResult()
 	 * @generated
 	 */
-	EAttribute getProductSearchResult_ProductSearchConstraints();
+	EReference getProductSearchResult_ProductSearchConstraints();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.product.ProductType <em>Type</em>}'.
@@ -5860,15 +5842,15 @@ public interface ProductPackage extends EPackage {
 	EReference getProductType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.product.ProductType#getProductTypeAttrs <em>Product Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.product.ProductType#getProductTypeAttrs <em>Product Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Product Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.product.product.ProductType#getProductTypeAttrs()
 	 * @see #getProductType()
 	 * @generated
 	 */
-	EAttribute getProductType_ProductTypeAttrs();
+	EReference getProductType_ProductTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.product.ProductTypeAttr <em>Type Attr</em>}'.
@@ -6055,12 +6037,12 @@ public interface ProductPackage extends EPackage {
 		EReference GOOD_IDENTIFICATION_TYPE__PARENT_TYPE_ID = eINSTANCE.getGoodIdentificationType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Good Identifications</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Good Identifications</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GOOD_IDENTIFICATION_TYPE__GOOD_IDENTIFICATIONS = eINSTANCE.getGoodIdentificationType_GoodIdentifications();
+		EReference GOOD_IDENTIFICATION_TYPE__GOOD_IDENTIFICATIONS = eINSTANCE.getGoodIdentificationType_GoodIdentifications();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.product.impl.ProductImpl <em>Product</em>}' class.
@@ -6633,52 +6615,52 @@ public interface ProductPackage extends EPackage {
 		EReference PRODUCT__WIDTH_UOM_ID = eINSTANCE.getProduct_WidthUomId();
 
 		/**
-		 * The meta object literal for the '<em><b>Communication Event Products</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Communication Event Products</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT__COMMUNICATION_EVENT_PRODUCTS = eINSTANCE.getProduct_CommunicationEventProducts();
+		EReference PRODUCT__COMMUNICATION_EVENT_PRODUCTS = eINSTANCE.getProduct_CommunicationEventProducts();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT__PRODUCT_ATTRIBUTES = eINSTANCE.getProduct_ProductAttributes();
+		EReference PRODUCT__PRODUCT_ATTRIBUTES = eINSTANCE.getProduct_ProductAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Facilities</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Facilities</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT__PRODUCT_FACILITIES = eINSTANCE.getProduct_ProductFacilities();
+		EReference PRODUCT__PRODUCT_FACILITIES = eINSTANCE.getProduct_ProductFacilities();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Geos</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Geos</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT__PRODUCT_GEOS = eINSTANCE.getProduct_ProductGeos();
+		EReference PRODUCT__PRODUCT_GEOS = eINSTANCE.getProduct_ProductGeos();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Maints</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Maints</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT__PRODUCT_MAINTS = eINSTANCE.getProduct_ProductMaints();
+		EReference PRODUCT__PRODUCT_MAINTS = eINSTANCE.getProduct_ProductMaints();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Meters</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Meters</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT__PRODUCT_METERS = eINSTANCE.getProduct_ProductMeters();
+		EReference PRODUCT__PRODUCT_METERS = eINSTANCE.getProduct_ProductMeters();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl <em>Assoc</em>}' class.
@@ -7789,12 +7771,12 @@ public interface ProductPackage extends EPackage {
 		EAttribute PRODUCT_SEARCH_RESULT__VISIT_ID = eINSTANCE.getProductSearchResult_VisitId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Search Constraints</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Search Constraints</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_SEARCH_RESULT__PRODUCT_SEARCH_CONSTRAINTS = eINSTANCE.getProductSearchResult_ProductSearchConstraints();
+		EReference PRODUCT_SEARCH_RESULT__PRODUCT_SEARCH_CONSTRAINTS = eINSTANCE.getProductSearchResult_ProductSearchConstraints();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.product.impl.ProductTypeImpl <em>Type</em>}' class.
@@ -7855,12 +7837,12 @@ public interface ProductPackage extends EPackage {
 		EReference PRODUCT_TYPE__PARENT_TYPE_ID = eINSTANCE.getProductType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_TYPE__PRODUCT_TYPE_ATTRS = eINSTANCE.getProductType_ProductTypeAttrs();
+		EReference PRODUCT_TYPE__PRODUCT_TYPE_ATTRS = eINSTANCE.getProductType_ProductTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.product.impl.ProductTypeAttrImpl <em>Type Attr</em>}' class.

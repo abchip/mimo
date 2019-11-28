@@ -9,7 +9,8 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
 import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
 import org.abchip.mimo.biz.workeffort.workeffort.DeliverableType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class DeliverableTypeImpl extends BizEntityTypeImpl<Deliverable> implements DeliverableType {
+public class DeliverableTypeImpl extends BizEntityImpl implements DeliverableType {
 	/**
 	 * 
 	 */
@@ -100,7 +101,7 @@ public class DeliverableTypeImpl extends BizEntityTypeImpl<Deliverable> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> deliverables() {
+	public List<Deliverable> deliverables() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -112,7 +113,7 @@ public class DeliverableTypeImpl extends BizEntityTypeImpl<Deliverable> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteItems() {
+	public List<QuoteItem> quoteItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

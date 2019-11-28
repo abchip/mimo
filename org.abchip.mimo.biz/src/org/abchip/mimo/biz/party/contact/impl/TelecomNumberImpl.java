@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.TelecomNumber;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -139,7 +140,7 @@ public class TelecomNumberImpl extends ContactMechImpl implements TelecomNumber 
 	 * @generated
 	 */
 	@Override
-	public List<String> destinationShipments() {
+	public List<Shipment> destinationShipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

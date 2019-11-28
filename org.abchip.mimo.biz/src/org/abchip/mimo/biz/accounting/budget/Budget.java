@@ -89,86 +89,81 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	void setCustomTimePeriodId(CustomTimePeriod value);
 
 	/**
-	 * Returns the value of the '<em><b>Budget Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Budget Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Attributes</em>' attribute list.
+	 * @return the value of the '<em>Budget Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetAttribute'"
 	 * @generated
 	 */
-	List<String> getBudgetAttributes();
+	List<BudgetAttribute> getBudgetAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Budget Items</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Budget Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetItem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Items</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Items</em>' attribute list.
+	 * @return the value of the '<em>Budget Items</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetItems()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetItem'"
 	 * @generated
 	 */
-	List<String> getBudgetItems();
+	List<BudgetItem> getBudgetItems();
 
 	/**
-	 * Returns the value of the '<em><b>Budget Revisions</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Budget Revisions</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetRevision}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Revisions</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Revisions</em>' attribute list.
+	 * @return the value of the '<em>Budget Revisions</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetRevisions()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetRevision'"
 	 * @generated
 	 */
-	List<String> getBudgetRevisions();
+	List<BudgetRevision> getBudgetRevisions();
 
 	/**
-	 * Returns the value of the '<em><b>Budget Statuss</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Budget Statuss</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetStatus}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Statuss</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Statuss</em>' attribute list.
+	 * @return the value of the '<em>Budget Statuss</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetStatuss()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetStatus'"
 	 * @generated
 	 */
-	List<String> getBudgetStatuss();
+	List<BudgetStatus> getBudgetStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BudgetScenarioApplication' route='budgetId'"
 	 * @generated
 	 */
-	List<String> budgetScenarioApplications();
+	List<BudgetScenarioApplication> budgetScenarioApplications();
 
 	/**
 	 * Returns the value of the '<em><b>Budget Type Id</b></em>' reference.

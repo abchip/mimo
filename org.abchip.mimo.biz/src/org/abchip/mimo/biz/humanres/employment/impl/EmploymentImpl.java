@@ -13,7 +13,7 @@ import org.abchip.mimo.biz.humanres.employment.Employment;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.TerminationReason;
 import org.abchip.mimo.biz.humanres.employment.TerminationType;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
 
@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class EmploymentImpl extends BizEntityImpl implements Employment {
+public class EmploymentImpl extends BizEntityTypedImpl<TerminationType> implements Employment {
 	/**
 	 * 
 	 */

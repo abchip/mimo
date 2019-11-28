@@ -162,7 +162,7 @@ public interface QuotePackage extends EPackage {
 	int QUOTE__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Quote Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Quote Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -171,7 +171,7 @@ public interface QuotePackage extends EPackage {
 	int QUOTE__QUOTE_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Quote Coefficients</b></em>' attribute list.
+	 * The feature id for the '<em><b>Quote Coefficients</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -180,7 +180,7 @@ public interface QuotePackage extends EPackage {
 	int QUOTE__QUOTE_COEFFICIENTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Quote Items</b></em>' attribute list.
+	 * The feature id for the '<em><b>Quote Items</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -198,7 +198,7 @@ public interface QuotePackage extends EPackage {
 	int QUOTE__QUOTE_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Quote Notes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Quote Notes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -216,7 +216,7 @@ public interface QuotePackage extends EPackage {
 	int QUOTE__QUOTE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Quote Work Efforts</b></em>' attribute list.
+	 * The feature id for the '<em><b>Quote Work Efforts</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1485,7 +1485,7 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Quote Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Quote Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1801,59 +1801,59 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuote_ValidThruDate();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteAttributes <em>Quote Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteAttributes <em>Quote Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Quote Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Quote Attributes</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.Quote#getQuoteAttributes()
 	 * @see #getQuote()
 	 * @generated
 	 */
-	EAttribute getQuote_QuoteAttributes();
+	EReference getQuote_QuoteAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteCoefficients <em>Quote Coefficients</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteCoefficients <em>Quote Coefficients</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Quote Coefficients</em>'.
+	 * @return the meta object for the reference list '<em>Quote Coefficients</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.Quote#getQuoteCoefficients()
 	 * @see #getQuote()
 	 * @generated
 	 */
-	EAttribute getQuote_QuoteCoefficients();
+	EReference getQuote_QuoteCoefficients();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteItems <em>Quote Items</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteItems <em>Quote Items</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Quote Items</em>'.
+	 * @return the meta object for the reference list '<em>Quote Items</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.Quote#getQuoteItems()
 	 * @see #getQuote()
 	 * @generated
 	 */
-	EAttribute getQuote_QuoteItems();
+	EReference getQuote_QuoteItems();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteNotes <em>Quote Notes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteNotes <em>Quote Notes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Quote Notes</em>'.
+	 * @return the meta object for the reference list '<em>Quote Notes</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.Quote#getQuoteNotes()
 	 * @see #getQuote()
 	 * @generated
 	 */
-	EAttribute getQuote_QuoteNotes();
+	EReference getQuote_QuoteNotes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteWorkEfforts <em>Quote Work Efforts</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteWorkEfforts <em>Quote Work Efforts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Quote Work Efforts</em>'.
+	 * @return the meta object for the reference list '<em>Quote Work Efforts</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.Quote#getQuoteWorkEfforts()
 	 * @see #getQuote()
 	 * @generated
 	 */
-	EAttribute getQuote_QuoteWorkEfforts();
+	EReference getQuote_QuoteWorkEfforts();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment <em>Adjustment</em>}'.
@@ -2815,15 +2815,15 @@ public interface QuotePackage extends EPackage {
 	EReference getQuoteType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.quote.QuoteType#getQuoteTypeAttrs <em>Quote Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.quote.QuoteType#getQuoteTypeAttrs <em>Quote Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Quote Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Quote Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteType#getQuoteTypeAttrs()
 	 * @see #getQuoteType()
 	 * @generated
 	 */
-	EAttribute getQuoteType_QuoteTypeAttrs();
+	EReference getQuoteType_QuoteTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr <em>Type Attr</em>}'.
@@ -3029,44 +3029,44 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE__VALID_THRU_DATE = eINSTANCE.getQuote_ValidThruDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Quote Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE__QUOTE_ATTRIBUTES = eINSTANCE.getQuote_QuoteAttributes();
+		EReference QUOTE__QUOTE_ATTRIBUTES = eINSTANCE.getQuote_QuoteAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Coefficients</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Quote Coefficients</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE__QUOTE_COEFFICIENTS = eINSTANCE.getQuote_QuoteCoefficients();
+		EReference QUOTE__QUOTE_COEFFICIENTS = eINSTANCE.getQuote_QuoteCoefficients();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Items</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Quote Items</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE__QUOTE_ITEMS = eINSTANCE.getQuote_QuoteItems();
+		EReference QUOTE__QUOTE_ITEMS = eINSTANCE.getQuote_QuoteItems();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Notes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Quote Notes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE__QUOTE_NOTES = eINSTANCE.getQuote_QuoteNotes();
+		EReference QUOTE__QUOTE_NOTES = eINSTANCE.getQuote_QuoteNotes();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Work Efforts</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Quote Work Efforts</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE__QUOTE_WORK_EFFORTS = eINSTANCE.getQuote_QuoteWorkEfforts();
+		EReference QUOTE__QUOTE_WORK_EFFORTS = eINSTANCE.getQuote_QuoteWorkEfforts();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.quote.impl.QuoteAdjustmentImpl <em>Adjustment</em>}' class.
@@ -3791,12 +3791,12 @@ public interface QuotePackage extends EPackage {
 		EReference QUOTE_TYPE__PARENT_TYPE_ID = eINSTANCE.getQuoteType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Quote Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_TYPE__QUOTE_TYPE_ATTRS = eINSTANCE.getQuoteType_QuoteTypeAttrs();
+		EReference QUOTE_TYPE__QUOTE_TYPE_ATTRS = eINSTANCE.getQuoteType_QuoteTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.quote.impl.QuoteTypeAttrImpl <em>Type Attr</em>}' class.

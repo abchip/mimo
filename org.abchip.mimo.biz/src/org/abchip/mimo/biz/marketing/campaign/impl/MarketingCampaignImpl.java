@@ -17,6 +17,10 @@ import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.campaign.CampaignPackage;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote;
+import org.abchip.mimo.biz.marketing.contact.ContactList;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -464,8 +468,8 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getMarketingCampaignNotes() {
-		return (List<String>)eGet(CampaignPackage.Literals.MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES, true);
+	public List<MarketingCampaignNote> getMarketingCampaignNotes() {
+		return (List<MarketingCampaignNote>)eGet(CampaignPackage.Literals.MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES, true);
 	}
 
 	/**
@@ -474,7 +478,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 * @generated
 	 */
 	@Override
-	public List<String> childMarketingCampaigns() {
+	public List<MarketingCampaign> childMarketingCampaigns() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -486,7 +490,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 * @generated
 	 */
 	@Override
-	public List<String> contactLists() {
+	public List<ContactList> contactLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -498,7 +502,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 * @generated
 	 */
 	@Override
-	public List<String> salesOpportunities() {
+	public List<SalesOpportunity> salesOpportunities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -510,7 +514,7 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 * @generated
 	 */
 	@Override
-	public List<String> trackingCodes() {
+	public List<TrackingCode> trackingCodes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

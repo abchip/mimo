@@ -275,22 +275,21 @@ public interface PortalPortlet extends BizEntity {
 	void setSecurityServiceName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Portlet Portlet Categories</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Portlet Portlet Categories</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.common.portal.PortletPortletCategory}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Portlet Portlet Categories</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Portlet Portlet Categories</em>' attribute list.
+	 * @return the value of the '<em>Portlet Portlet Categories</em>' reference list.
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_PortletPortletCategories()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PortletPortletCategory'"
 	 * @generated
 	 */
-	List<String> getPortletPortletCategories();
+	List<PortletPortletCategory> getPortletPortletCategories();
 
 	/**
 	 * Returns the value of the '<em><b>Portal Portlet Id</b></em>' attribute.

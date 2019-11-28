@@ -9,7 +9,8 @@ package org.abchip.mimo.biz.accounting.fixedasset;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * @model
  * @generated
  */
-public interface AccommodationMap extends BizEntityTyped<AccommodationMapType> {
+public interface AccommodationMap extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Accommodation Map Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -88,12 +89,11 @@ public interface AccommodationMap extends BizEntityTyped<AccommodationMapType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='accommodationMapId'"
 	 * @generated
 	 */
-	List<String> workEfforts();
+	List<WorkEffort> workEfforts();
 
 	/**
 	 * Returns the value of the '<em><b>Accommodation Class Id</b></em>' reference.

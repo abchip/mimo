@@ -9,7 +9,8 @@ package org.abchip.mimo.biz.product.facility.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityGroup;
 import org.abchip.mimo.biz.product.facility.FacilityGroupType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> implements FacilityGroup {
+public class FacilityGroupImpl extends BizEntityImpl implements FacilityGroup {
 	/**
 	 * 
 	 */
@@ -143,7 +144,7 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 	 * @generated
 	 */
 	@Override
-	public List<String> facilities() {
+	public List<Facility> facilities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

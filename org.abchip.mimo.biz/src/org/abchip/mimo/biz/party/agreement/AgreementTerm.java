@@ -12,8 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import java.util.List;
-
-import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
 
 /**
@@ -45,7 +44,7 @@ import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface AgreementTerm extends BizEntity {
+public interface AgreementTerm extends BizEntityTyped<TermType> {
 	/**
 	 * Returns the value of the '<em><b>Agreement Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -307,22 +306,21 @@ public interface AgreementTerm extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Term Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Agreement Term Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Term Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Term Attributes</em>' attribute list.
+	 * @return the value of the '<em>Agreement Term Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_AgreementTermAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementTermAttribute'"
 	 * @generated
 	 */
-	List<String> getAgreementTermAttributes();
+	List<AgreementTermAttribute> getAgreementTermAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Term Type Id</b></em>' reference.

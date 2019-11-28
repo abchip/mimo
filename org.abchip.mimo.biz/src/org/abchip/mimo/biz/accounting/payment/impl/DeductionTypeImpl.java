@@ -121,7 +121,7 @@ public class DeductionTypeImpl extends BizEntityTypeImpl<Deduction> implements D
 	 * @generated
 	 */
 	@Override
-	public List<String> childDeductionTypes() {
+	public List<DeductionType> childDeductionTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +133,7 @@ public class DeductionTypeImpl extends BizEntityTypeImpl<Deduction> implements D
 	 * @generated
 	 */
 	@Override
-	public List<String> deductions() {
+	public List<Deduction> deductions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

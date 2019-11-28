@@ -122,7 +122,7 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	 * @generated
 	 */
 	@Override
-	public List<String> childProdConfItemContentTypes() {
+	public List<ProdConfItemContentType> childProdConfItemContentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

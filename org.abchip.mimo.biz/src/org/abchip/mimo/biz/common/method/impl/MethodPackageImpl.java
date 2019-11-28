@@ -711,8 +711,8 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustomMethod_FixedAssetDepMethods() {
-		return (EAttribute)customMethodEClass.getEStructuralFeatures().get(4);
+	public EReference getCustomMethod_FixedAssetDepMethods() {
+		return (EReference)customMethodEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -799,7 +799,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_NAME);
 		createEReference(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID);
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__DESCRIPTION);
-		createEAttribute(customMethodEClass, CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS);
+		createEReference(customMethodEClass, CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS);
 
 		customMethodTypeEClass = createEClass(CUSTOM_METHOD_TYPE);
 		createEAttribute(customMethodTypeEClass, CUSTOM_METHOD_TYPE__CUSTOM_METHOD_TYPE_ID);
@@ -833,6 +833,13 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		FixedassetPackage theFixedassetPackage = (FixedassetPackage)EPackage.Registry.INSTANCE.getEPackage(FixedassetPackage.eNS_URI);
+		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
+		CostPackage theCostPackage = (CostPackage)EPackage.Registry.INSTANCE.getEPackage(CostPackage.eNS_URI);
+		LedgerPackage theLedgerPackage = (LedgerPackage)EPackage.Registry.INSTANCE.getEPackage(LedgerPackage.eNS_URI);
+		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
+		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
+		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -855,23 +862,23 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		initEReference(getCustomMethod_CustomMethodTypeId(), this.getCustomMethodType(), null, "customMethodTypeId", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustomMethod_CustomMethodTypeId().getEKeys().add(this.getCustomMethodType_CustomMethodTypeId());
 		initEAttribute(getCustomMethod_Description(), ecorePackage.getEString(), "description", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCustomMethod_FixedAssetDepMethods(), ecorePackage.getEString(), "fixedAssetDepMethods", null, 0, -1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomMethod_FixedAssetDepMethods(), theFixedassetPackage.getFixedAssetDepMethod(), null, "fixedAssetDepMethods", null, 0, -1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customMethodEClass, theContentPackage.getContent(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "costComponentCalcs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customMethodEClass, theCostPackage.getCostComponentCalc(), "costComponentCalcs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "invoicePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customMethodEClass, theLedgerPackage.getPartyAcctgPreference(), "invoicePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "orderPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customMethodEClass, theLedgerPackage.getPartyAcctgPreference(), "orderPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "productStoreShipmentMeths", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customMethodEClass, theStorePackage.getProductStoreShipmentMeth(), "productStoreShipmentMeths", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "quotePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customMethodEClass, theLedgerPackage.getPartyAcctgPreference(), "quotePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "uomCustomMethodUomConversions", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customMethodEClass, theUomPackage.getUomConversion(), "uomCustomMethodUomConversions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customMethodEClass, theWorkeffortPackage.getWorkEffort(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(customMethodTypeEClass, CustomMethodType.class, "CustomMethodType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomMethodType_CustomMethodTypeId(), ecorePackage.getEString(), "customMethodTypeId", null, 1, 1, CustomMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -880,19 +887,19 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		initEReference(getCustomMethodType_ParentTypeId(), this.getCustomMethodType(), null, "parentTypeId", null, 0, 1, CustomMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustomMethodType_ParentTypeId().getEKeys().add(this.getCustomMethodType_CustomMethodTypeId());
 
-		addEOperation(customMethodTypeEClass, ecorePackage.getEString(), "childCustomMethodTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customMethodTypeEClass, this.getCustomMethodType(), "childCustomMethodTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(customMethodTypeEClass, ecorePackage.getEString(), "customMethods", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(customMethodTypeEClass, this.getCustomMethod(), "customMethods", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -927,62 +934,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (customMethodEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getCustomMethod_CustomMethodId(),
 		   source,
 		   new String[] {
@@ -1002,27 +953,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getCustomMethod_FixedAssetDepMethods(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customMethodTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (customMethodTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getCustomMethodType_CustomMethodTypeId(),

@@ -11,19 +11,48 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail;
+import org.abchip.mimo.biz.order.order.OrderItem;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
+import org.abchip.mimo.biz.order.request.CustRequestItem;
+import org.abchip.mimo.biz.order.requirement.Requirement;
+import org.abchip.mimo.biz.order.return_.ReturnItem;
+import org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem;
+import org.abchip.mimo.biz.party.agreement.Agreement;
+import org.abchip.mimo.biz.party.communication.CommunicationEventProduct;
 import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.abchip.mimo.biz.product.config.ProductConfigStats;
+import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.facility.ProductFacility;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
+import org.abchip.mimo.biz.product.product.GoodIdentification;
 import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.product.ProductAttribute;
+import org.abchip.mimo.biz.product.product.ProductGeo;
+import org.abchip.mimo.biz.product.product.ProductGroupOrder;
+import org.abchip.mimo.biz.product.product.ProductMaint;
+import org.abchip.mimo.biz.product.product.ProductMeter;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.abchip.mimo.biz.product.product.ProductReview;
 import org.abchip.mimo.biz.product.product.ProductType;
+import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
+import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.product.supplier.ReorderGuideline;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentItem;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -39,7 +68,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isAutoCreateKeywords <em>Auto Create Keywords</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getBillOfMaterialLevel <em>Bill Of Material Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getBrandName <em>Brand Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getChargeShipping <em>Charge Shipping</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isChargeShipping <em>Charge Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCommunicationEventProducts <em>Communication Event Products</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getConfigId <em>Config Id</em>}</li>
@@ -205,8 +234,8 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public char getChargeShipping() {
-		return (Character)eGet(ProductPackage.Literals.PRODUCT__CHARGE_SHIPPING, true);
+	public boolean isChargeShipping() {
+		return (Boolean)eGet(ProductPackage.Literals.PRODUCT__CHARGE_SHIPPING, true);
 	}
 
 	/**
@@ -215,7 +244,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public void setChargeShipping(char newChargeShipping) {
+	public void setChargeShipping(boolean newChargeShipping) {
 		eSet(ProductPackage.Literals.PRODUCT__CHARGE_SHIPPING, newChargeShipping);
 	}
 
@@ -1426,8 +1455,8 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCommunicationEventProducts() {
-		return (List<String>)eGet(ProductPackage.Literals.PRODUCT__COMMUNICATION_EVENT_PRODUCTS, true);
+	public List<CommunicationEventProduct> getCommunicationEventProducts() {
+		return (List<CommunicationEventProduct>)eGet(ProductPackage.Literals.PRODUCT__COMMUNICATION_EVENT_PRODUCTS, true);
 	}
 
 	/**
@@ -1437,8 +1466,8 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductAttributes() {
-		return (List<String>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_ATTRIBUTES, true);
+	public List<ProductAttribute> getProductAttributes() {
+		return (List<ProductAttribute>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_ATTRIBUTES, true);
 	}
 
 	/**
@@ -1448,8 +1477,8 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductFacilities() {
-		return (List<String>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_FACILITIES, true);
+	public List<ProductFacility> getProductFacilities() {
+		return (List<ProductFacility>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_FACILITIES, true);
 	}
 
 	/**
@@ -1459,8 +1488,8 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductGeos() {
-		return (List<String>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_GEOS, true);
+	public List<ProductGeo> getProductGeos() {
+		return (List<ProductGeo>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_GEOS, true);
 	}
 
 	/**
@@ -1470,8 +1499,8 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductMaints() {
-		return (List<String>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_MAINTS, true);
+	public List<ProductMaint> getProductMaints() {
+		return (List<ProductMaint>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_MAINTS, true);
 	}
 
 	/**
@@ -1481,8 +1510,8 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductMeters() {
-		return (List<String>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_METERS, true);
+	public List<ProductMeter> getProductMeters() {
+		return (List<ProductMeter>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_METERS, true);
 	}
 
 	/**
@@ -1491,7 +1520,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> agreements() {
+	public List<Agreement> agreements() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1503,7 +1532,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> cartAbandonedLines() {
+	public List<CartAbandonedLine> cartAbandonedLines() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1515,7 +1544,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> costComponents() {
+	public List<CostComponent> costComponents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1527,7 +1556,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequestItems() {
+	public List<CustRequestItem> custRequestItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1539,7 +1568,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> goodIdentifications() {
+	public List<GoodIdentification> goodIdentifications() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1551,7 +1580,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> instanceOfFixedAssets() {
+	public List<FixedAsset> instanceOfFixedAssets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1563,7 +1592,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryItems() {
+	public List<InventoryItem> inventoryItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1575,7 +1604,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceItems() {
+	public List<InvoiceItem> invoiceItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1587,7 +1616,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> orderItems() {
+	public List<OrderItem> orderItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1599,7 +1628,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> productForProductManufacturingRules() {
+	public List<ProductManufacturingRule> productForProductManufacturingRules() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1611,7 +1640,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> productGroupOrders() {
+	public List<ProductGroupOrder> productGroupOrders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1623,7 +1652,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> productInProductManufacturingRules() {
+	public List<ProductManufacturingRule> productInProductManufacturingRules() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1635,7 +1664,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> productManufacturingRules() {
+	public List<ProductManufacturingRule> productManufacturingRules() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1647,7 +1676,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> productProductConfigStatss() {
+	public List<ProductConfigStats> productProductConfigStatss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1659,7 +1688,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> productReviews() {
+	public List<ProductReview> productReviews() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1671,7 +1700,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> productStoreSurveyAppls() {
+	public List<ProductStoreSurveyAppl> productStoreSurveyAppls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1683,7 +1712,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> productSubstProductManufacturingRules() {
+	public List<ProductManufacturingRule> productSubstProductManufacturingRules() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1695,7 +1724,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteItems() {
+	public List<QuoteItem> quoteItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1707,7 +1736,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> reorderGuidelines() {
+	public List<ReorderGuideline> reorderGuidelines() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1719,7 +1748,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> requirements() {
+	public List<Requirement> requirements() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1731,7 +1760,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> returnItems() {
+	public List<ReturnItem> returnItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1743,7 +1772,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> salesForecastDetails() {
+	public List<SalesForecastDetail> salesForecastDetails() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1755,7 +1784,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentItems() {
+	public List<ShipmentItem> shipmentItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1767,7 +1796,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentReceipts() {
+	public List<ShipmentReceipt> shipmentReceipts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1779,7 +1808,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> shoppingListItems() {
+	public List<ShoppingListItem> shoppingListItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1791,7 +1820,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public List<String> subscriptions() {
+	public List<Subscription> subscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

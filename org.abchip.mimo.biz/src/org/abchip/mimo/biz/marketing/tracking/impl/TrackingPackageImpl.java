@@ -197,7 +197,6 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -1255,16 +1254,10 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		EGenericType g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		EGenericType g2 = createEGenericType(this.getTrackingCodeType());
-		g1.getETypeArguments().add(g2);
-		trackingCodeEClass.getEGenericSuperTypes().add(g1);
+		trackingCodeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		trackingCodeOrderEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		trackingCodeOrderReturnEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getTrackingCode());
-		g1.getETypeArguments().add(g2);
-		trackingCodeTypeEClass.getEGenericSuperTypes().add(g1);
+		trackingCodeTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		trackingCodeVisitEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
 		// Initialize classes and features; add operations and parameters
@@ -1291,7 +1284,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		initEReference(getTrackingCode_TrackingCodeTypeId(), this.getTrackingCodeType(), null, "trackingCodeTypeId", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTrackingCode_TrackingCodeTypeId().getEKeys().add(this.getTrackingCodeType_TrackingCodeTypeId());
 
-		addEOperation(trackingCodeEClass, ecorePackage.getEString(), "trackingCodeOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(trackingCodeEClass, this.getTrackingCodeOrder(), "trackingCodeOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(trackingCodeOrderEClass, TrackingCodeOrder.class, "TrackingCodeOrder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTrackingCodeOrder_OrderId(), theOrderPackage.getOrderHeader(), null, "orderId", null, 1, 1, TrackingCodeOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1324,9 +1317,9 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		initEAttribute(getTrackingCodeType_TrackingCodeTypeId(), ecorePackage.getEString(), "trackingCodeTypeId", null, 1, 1, TrackingCodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCodeType_Description(), ecorePackage.getEString(), "description", null, 0, 1, TrackingCodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(trackingCodeTypeEClass, ecorePackage.getEString(), "trackingCodeOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(trackingCodeTypeEClass, this.getTrackingCodeOrder(), "trackingCodeOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(trackingCodeTypeEClass, ecorePackage.getEString(), "trackingCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(trackingCodeTypeEClass, this.getTrackingCode(), "trackingCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(trackingCodeVisitEClass, TrackingCodeVisit.class, "TrackingCodeVisit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTrackingCodeVisit_TrackingCodeId(), this.getTrackingCode(), null, "trackingCodeId", null, 1, 1, TrackingCodeVisit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1339,12 +1332,12 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -1390,13 +1383,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
-		addAnnotation
-		  (trackingCodeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
 		addAnnotation
 		  (getTrackingCode_TrackingCodeId(),
 		   source,
@@ -1574,20 +1560,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		   new String[] {
 			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (trackingCodeTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (trackingCodeTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getTrackingCodeType_TrackingCodeTypeId(),

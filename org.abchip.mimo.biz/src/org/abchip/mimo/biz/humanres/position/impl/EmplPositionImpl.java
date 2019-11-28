@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
 import org.abchip.mimo.biz.humanres.position.EmplPosition;
 import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
@@ -356,7 +357,7 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> employmentApps() {
+	public List<EmploymentApp> employmentApps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

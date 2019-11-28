@@ -197,7 +197,6 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -1113,6 +1112,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		ShoppingcartPackage theShoppingcartPackage = (ShoppingcartPackage)EPackage.Registry.INSTANCE.getEPackage(ShoppingcartPackage.eNS_URI);
 		CategoryPackage theCategoryPackage = (CategoryPackage)EPackage.Registry.INSTANCE.getEPackage(CategoryPackage.eNS_URI);
 		FacilityPackage theFacilityPackage = (FacilityPackage)EPackage.Registry.INSTANCE.getEPackage(FacilityPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
@@ -1123,14 +1123,8 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 
 		// Add supertypes to classes
 		prodCatalogEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		EGenericType g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		EGenericType g2 = createEGenericType(this.getProdCatalogCategoryType());
-		g1.getETypeArguments().add(g2);
-		prodCatalogCategoryEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getProdCatalogCategory());
-		g1.getETypeArguments().add(g2);
-		prodCatalogCategoryTypeEClass.getEGenericSuperTypes().add(g1);
+		prodCatalogCategoryEClass.getESuperTypes().add(theBizPackage.getBizEntity());
+		prodCatalogCategoryTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		prodCatalogInvFacilityEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		prodCatalogRoleEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
@@ -1146,7 +1140,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 		initEAttribute(getProdCatalog_UseQuickAdd(), ecorePackage.getEBoolean(), "useQuickAdd", null, 0, 1, ProdCatalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProdCatalog_ViewAllowPermReqd(), ecorePackage.getEBoolean(), "viewAllowPermReqd", null, 0, 1, ProdCatalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(prodCatalogEClass, ecorePackage.getEString(), "cartAbandonedLines", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(prodCatalogEClass, theShoppingcartPackage.getCartAbandonedLine(), "cartAbandonedLines", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(prodCatalogCategoryEClass, ProdCatalogCategory.class, "ProdCatalogCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProdCatalogCategory_ProdCatalogId(), this.getProdCatalog(), null, "prodCatalogId", null, 1, 1, ProdCatalogCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1165,7 +1159,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 		initEReference(getProdCatalogCategoryType_ParentTypeId(), this.getProdCatalogCategoryType(), null, "parentTypeId", null, 0, 1, ProdCatalogCategoryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProdCatalogCategoryType_ParentTypeId().getEKeys().add(this.getProdCatalogCategoryType_ProdCatalogCategoryTypeId());
 
-		addEOperation(prodCatalogCategoryTypeEClass, ecorePackage.getEString(), "childProdCatalogCategoryTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(prodCatalogCategoryTypeEClass, this.getProdCatalogCategoryType(), "childProdCatalogCategoryTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(prodCatalogInvFacilityEClass, ProdCatalogInvFacility.class, "ProdCatalogInvFacility", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProdCatalogInvFacility_ProdCatalogId(), this.getProdCatalog(), null, "prodCatalogId", null, 1, 1, ProdCatalogInvFacility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1190,12 +1184,12 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -1206,13 +1200,6 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 */
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
-		addAnnotation
-		  (prodCatalogEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
 		addAnnotation
 		  (getProdCatalog_ProdCatalogId(),
 		   source,
@@ -1295,13 +1282,6 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (prodCatalogCategoryTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getProdCatalogCategoryType_ProdCatalogCategoryTypeId(),

@@ -140,22 +140,20 @@ public interface CommunicationEventType extends BizEntityType<CommunicationEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childCommunicationEventTypes();
+	List<CommunicationEventType> childCommunicationEventTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='communicationEventTypeId'"
 	 * @generated
 	 */
-	List<String> communicationEvents();
+	List<CommunicationEvent> communicationEvents();
 
 	/**
 	 * Returns the value of the '<em><b>Communication Event Type Id</b></em>' attribute.

@@ -10,7 +10,7 @@ package org.abchip.mimo.biz.marketing.tracking;
 import java.util.Date;
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 
 /**
@@ -47,7 +47,7 @@ import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface TrackingCode extends BizEntityTyped<TrackingCodeType> {
+public interface TrackingCode extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Billable Lifetime</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -546,11 +546,10 @@ public interface TrackingCode extends BizEntityTyped<TrackingCodeType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TrackingCodeOrder' route='trackingCodeId'"
 	 * @generated
 	 */
-	List<String> trackingCodeOrders();
+	List<TrackingCodeOrder> trackingCodeOrders();
 
 } // TrackingCode

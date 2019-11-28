@@ -58,12 +58,11 @@ public interface TaxAuthorityRateType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TaxAuthorityRateProduct' route='taxAuthorityRateTypeId'"
 	 * @generated
 	 */
-	List<String> taxAuthorityRateProducts();
+	List<TaxAuthorityRateProduct> taxAuthorityRateProducts();
 
 	/**
 	 * Returns the value of the '<em><b>Tax Authority Rate Type Id</b></em>' attribute.

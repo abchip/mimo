@@ -113,12 +113,11 @@ public interface PeriodType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustomTimePeriod' route='periodTypeId'"
 	 * @generated
 	 */
-	List<String> customTimePeriods();
+	List<CustomTimePeriod> customTimePeriods();
 
 	/**
 	 * Returns the value of the '<em><b>Period Type Id</b></em>' attribute.

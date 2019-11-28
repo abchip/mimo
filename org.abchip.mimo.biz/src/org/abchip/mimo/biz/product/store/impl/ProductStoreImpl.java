@@ -9,15 +9,33 @@ package org.abchip.mimo.biz.product.store.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.quote.Quote;
+import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.PartyProfileDefault;
+import org.abchip.mimo.biz.passport.GitHubUser;
+import org.abchip.mimo.biz.passport.GoogleUser;
+import org.abchip.mimo.biz.passport.LinkedInUser;
+import org.abchip.mimo.biz.passport.OAuth2GitHub;
+import org.abchip.mimo.biz.passport.OAuth2Google;
+import org.abchip.mimo.biz.passport.OAuth2LinkedIn;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.product.ProductReview;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.store.ProductStoreEmailSetting;
+import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
+import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
 import org.abchip.mimo.biz.product.store.StorePackage;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -78,16 +96,16 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOldHeaderMiddleBackground <em>Old Header Middle Background</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOldHeaderRightBackground <em>Old Header Right Background</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOldStyleSheet <em>Old Style Sheet</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOneInventoryFacility <em>One Inventory Facility</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isOneInventoryFacility <em>One Inventory Facility</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOrderNumberPrefix <em>Order Number Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getPayToPartyId <em>Pay To Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getPrimaryStoreGroupId <em>Primary Store Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProductStoreEmailSettings <em>Product Store Email Settings</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProductStoreFinActSettings <em>Product Store Fin Act Settings</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProrateShipping <em>Prorate Shipping</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProrateTaxes <em>Prorate Taxes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isProrateShipping <em>Prorate Shipping</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isProrateTaxes <em>Prorate Taxes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isReqReturnInventoryReceive <em>Req Return Inventory Receive</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isReqShipAddrForDigItems <em>Req Ship Addr For Dig Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isRequireCustomerRole <em>Require Customer Role</em>}</li>
@@ -969,8 +987,8 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public char getOneInventoryFacility() {
-		return (Character)eGet(StorePackage.Literals.PRODUCT_STORE__ONE_INVENTORY_FACILITY, true);
+	public boolean isOneInventoryFacility() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__ONE_INVENTORY_FACILITY, true);
 	}
 
 	/**
@@ -979,7 +997,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public void setOneInventoryFacility(char newOneInventoryFacility) {
+	public void setOneInventoryFacility(boolean newOneInventoryFacility) {
 		eSet(StorePackage.Literals.PRODUCT_STORE__ONE_INVENTORY_FACILITY, newOneInventoryFacility);
 	}
 
@@ -1021,66 +1039,6 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public void setOrderNumberPrefix(String newOrderNumberPrefix) {
 		eSet(StorePackage.Literals.PRODUCT_STORE__ORDER_NUMBER_PREFIX, newOrderNumberPrefix);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public char getProdSearchExcludeVariants() {
-		return (Character)eGet(StorePackage.Literals.PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setProdSearchExcludeVariants(char newProdSearchExcludeVariants) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS, newProdSearchExcludeVariants);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public char getProrateShipping() {
-		return (Character)eGet(StorePackage.Literals.PRODUCT_STORE__PRORATE_SHIPPING, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setProrateShipping(char newProrateShipping) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__PRORATE_SHIPPING, newProrateShipping);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public char getProrateTaxes() {
-		return (Character)eGet(StorePackage.Literals.PRODUCT_STORE__PRORATE_TAXES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setProrateTaxes(char newProrateTaxes) {
-		eSet(StorePackage.Literals.PRODUCT_STORE__PRORATE_TAXES, newProrateTaxes);
 	}
 
 	/**
@@ -1630,8 +1588,8 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOAuth2GitHubs() {
-		return (List<String>)eGet(StorePackage.Literals.PRODUCT_STORE__OAUTH2_GIT_HUBS, true);
+	public List<OAuth2GitHub> getOAuth2GitHubs() {
+		return (List<OAuth2GitHub>)eGet(StorePackage.Literals.PRODUCT_STORE__OAUTH2_GIT_HUBS, true);
 	}
 
 	/**
@@ -1641,8 +1599,8 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOAuth2Googles() {
-		return (List<String>)eGet(StorePackage.Literals.PRODUCT_STORE__OAUTH2_GOOGLES, true);
+	public List<OAuth2Google> getOAuth2Googles() {
+		return (List<OAuth2Google>)eGet(StorePackage.Literals.PRODUCT_STORE__OAUTH2_GOOGLES, true);
 	}
 
 	/**
@@ -1652,8 +1610,8 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getOAuth2LinkedIns() {
-		return (List<String>)eGet(StorePackage.Literals.PRODUCT_STORE__OAUTH2_LINKED_INS, true);
+	public List<OAuth2LinkedIn> getOAuth2LinkedIns() {
+		return (List<OAuth2LinkedIn>)eGet(StorePackage.Literals.PRODUCT_STORE__OAUTH2_LINKED_INS, true);
 	}
 
 	/**
@@ -1663,8 +1621,8 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductStoreEmailSettings() {
-		return (List<String>)eGet(StorePackage.Literals.PRODUCT_STORE__PRODUCT_STORE_EMAIL_SETTINGS, true);
+	public List<ProductStoreEmailSetting> getProductStoreEmailSettings() {
+		return (List<ProductStoreEmailSetting>)eGet(StorePackage.Literals.PRODUCT_STORE__PRODUCT_STORE_EMAIL_SETTINGS, true);
 	}
 
 	/**
@@ -1674,8 +1632,8 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductStoreFinActSettings() {
-		return (List<String>)eGet(StorePackage.Literals.PRODUCT_STORE__PRODUCT_STORE_FIN_ACT_SETTINGS, true);
+	public List<ProductStoreFinActSetting> getProductStoreFinActSettings() {
+		return (List<ProductStoreFinActSetting>)eGet(StorePackage.Literals.PRODUCT_STORE__PRODUCT_STORE_FIN_ACT_SETTINGS, true);
 	}
 
 	/**
@@ -1684,7 +1642,47 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequests() {
+	public boolean isProrateShipping() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__PRORATE_SHIPPING, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProrateShipping(boolean newProrateShipping) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__PRORATE_SHIPPING, newProrateShipping);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isProrateTaxes() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__PRORATE_TAXES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProrateTaxes(boolean newProrateTaxes) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__PRORATE_TAXES, newProrateTaxes);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<CustRequest> custRequests() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1696,7 +1694,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> gitHubUsers() {
+	public List<GitHubUser> gitHubUsers() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1708,7 +1706,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> googleUsers() {
+	public List<GoogleUser> googleUsers() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1720,7 +1718,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> linkedInUsers() {
+	public List<LinkedInUser> linkedInUsers() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1732,7 +1730,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> orderHeaders() {
+	public List<OrderHeader> orderHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1744,7 +1742,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> partyProfileDefaults() {
+	public List<PartyProfileDefault> partyProfileDefaults() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1756,7 +1754,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> productReviews() {
+	public List<ProductReview> productReviews() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1768,7 +1766,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> productStoreSurveyAppls() {
+	public List<ProductStoreSurveyAppl> productStoreSurveyAppls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1780,7 +1778,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> quotes() {
+	public List<Quote> quotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1792,7 +1790,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> segmentGroups() {
+	public List<SegmentGroup> segmentGroups() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1804,7 +1802,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> shoppingLists() {
+	public List<ShoppingList> shoppingLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1816,7 +1814,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> taxAuthorityRateProducts() {
+	public List<TaxAuthorityRateProduct> taxAuthorityRateProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1828,7 +1826,7 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	 * @generated
 	 */
 	@Override
-	public List<String> webSites() {
+	public List<WebSite> webSites() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1852,6 +1850,26 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public void setPrimaryStoreGroupId(ProductStoreGroup newPrimaryStoreGroupId) {
 		eSet(StorePackage.Literals.PRODUCT_STORE__PRIMARY_STORE_GROUP_ID, newPrimaryStoreGroupId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isProdSearchExcludeVariants() {
+		return (Boolean)eGet(StorePackage.Literals.PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProdSearchExcludeVariants(boolean newProdSearchExcludeVariants) {
+		eSet(StorePackage.Literals.PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS, newProdSearchExcludeVariants);
 	}
 
 	/**

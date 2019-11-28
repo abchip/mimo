@@ -15,6 +15,8 @@ import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransAttribute;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransType;
 import org.abchip.mimo.biz.accounting.ledger.GlFiscalType;
 import org.abchip.mimo.biz.accounting.ledger.GlJournal;
@@ -524,8 +526,8 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getAcctgTransAttributes() {
-		return (List<String>)eGet(LedgerPackage.Literals.ACCTG_TRANS__ACCTG_TRANS_ATTRIBUTES, true);
+	public List<AcctgTransAttribute> getAcctgTransAttributes() {
+		return (List<AcctgTransAttribute>)eGet(LedgerPackage.Literals.ACCTG_TRANS__ACCTG_TRANS_ATTRIBUTES, true);
 	}
 
 	/**
@@ -535,8 +537,8 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getAcctgTransEntries() {
-		return (List<String>)eGet(LedgerPackage.Literals.ACCTG_TRANS__ACCTG_TRANS_ENTRIES, true);
+	public List<AcctgTransEntry> getAcctgTransEntries() {
+		return (List<AcctgTransEntry>)eGet(LedgerPackage.Literals.ACCTG_TRANS__ACCTG_TRANS_ENTRIES, true);
 	}
 
 	/**

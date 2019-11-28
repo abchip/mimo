@@ -112,22 +112,20 @@ public interface ShipmentGatewayConfigType extends BizEntityType<ShipmentGateway
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentGatewayConfigType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childShipmentGatewayConfigTypes();
+	List<ShipmentGatewayConfigType> childShipmentGatewayConfigTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentGatewayConfig' route='shipmentGatewayConfTypeId'"
 	 * @generated
 	 */
-	List<String> shipmentGatewayConfigs();
+	List<ShipmentGatewayConfig> shipmentGatewayConfigs();
 
 	/**
 	 * Returns the value of the '<em><b>Shipment Gateway Conf Type Id</b></em>' attribute.

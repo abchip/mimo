@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.content.survey;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame dictionary='ContentEntityLabels' formula='description'"
  * @generated
  */
-public interface SurveyQuestionType extends BizEntityType<SurveyQuestion> {
+public interface SurveyQuestionType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,12 +58,11 @@ public interface SurveyQuestionType extends BizEntityType<SurveyQuestion> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyQuestion' route='surveyQuestionTypeId'"
 	 * @generated
 	 */
-	List<String> surveyQuestions();
+	List<SurveyQuestion> surveyQuestions();
 
 	/**
 	 * Returns the value of the '<em><b>Survey Question Type Id</b></em>' attribute.

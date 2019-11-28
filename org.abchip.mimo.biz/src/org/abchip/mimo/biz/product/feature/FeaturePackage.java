@@ -162,7 +162,7 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE__ID_CODE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Main Product Feature Iactns</b></em>' attribute list.
+	 * The feature id for the '<em><b>Main Product Feature Iactns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1465,15 +1465,15 @@ public interface FeaturePackage extends EPackage {
 	EReference getProductFeature_UomId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.product.feature.ProductFeature#getMainProductFeatureIactns <em>Main Product Feature Iactns</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.feature.ProductFeature#getMainProductFeatureIactns <em>Main Product Feature Iactns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Main Product Feature Iactns</em>'.
+	 * @return the meta object for the reference list '<em>Main Product Feature Iactns</em>'.
 	 * @see org.abchip.mimo.biz.product.feature.ProductFeature#getMainProductFeatureIactns()
 	 * @see #getProductFeature()
 	 * @generated
 	 */
-	EAttribute getProductFeature_MainProductFeatureIactns();
+	EReference getProductFeature_MainProductFeatureIactns();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl <em>Product Feature Appl</em>}'.
@@ -2247,12 +2247,12 @@ public interface FeaturePackage extends EPackage {
 		EReference PRODUCT_FEATURE__UOM_ID = eINSTANCE.getProductFeature_UomId();
 
 		/**
-		 * The meta object literal for the '<em><b>Main Product Feature Iactns</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Main Product Feature Iactns</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS = eINSTANCE.getProductFeature_MainProductFeatureIactns();
+		EReference PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS = eINSTANCE.getProductFeature_MainProductFeatureIactns();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl <em>Product Feature Appl</em>}' class.

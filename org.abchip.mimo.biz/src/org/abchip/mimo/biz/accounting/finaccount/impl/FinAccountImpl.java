@@ -13,12 +13,17 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountAuth;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
 
@@ -383,8 +388,8 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFinAccountAttributes() {
-		return (List<String>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT__FIN_ACCOUNT_ATTRIBUTES, true);
+	public List<FinAccountAttribute> getFinAccountAttributes() {
+		return (List<FinAccountAttribute>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT__FIN_ACCOUNT_ATTRIBUTES, true);
 	}
 
 	/**
@@ -393,7 +398,7 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> finAccountAuths() {
+	public List<FinAccountAuth> finAccountAuths() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -405,7 +410,7 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> finAccountTranss() {
+	public List<FinAccountTrans> finAccountTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -417,7 +422,7 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> orderPaymentPreferences() {
+	public List<OrderPaymentPreference> orderPaymentPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -429,7 +434,7 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentMethods() {
+	public List<PaymentMethod> paymentMethods() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -441,7 +446,7 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> returnHeaders() {
+	public List<ReturnHeader> returnHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

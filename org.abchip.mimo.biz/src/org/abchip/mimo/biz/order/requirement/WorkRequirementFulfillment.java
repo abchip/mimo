@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.order.requirement;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * @model
  * @generated
  */
-public interface WorkRequirementFulfillment extends BizEntityTyped<WorkReqFulfType> {
+public interface WorkRequirementFulfillment extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Requirement Id</b></em>' reference.
 	 * <!-- begin-user-doc -->

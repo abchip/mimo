@@ -12,7 +12,9 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment;
 import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.party.party.Party;
 
@@ -279,22 +281,20 @@ public interface SurveyResponse extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResource' route='surveyResponseId'"
 	 * @generated
 	 */
-	List<String> dataResources();
+	List<DataResource> dataResources();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GiftCardFulfillment' route='surveyResponseId'"
 	 * @generated
 	 */
-	List<String> giftCardFulfillments();
+	List<GiftCardFulfillment> giftCardFulfillments();
 
 	/**
 	 * Returns the value of the '<em><b>Survey Response Id</b></em>' attribute.

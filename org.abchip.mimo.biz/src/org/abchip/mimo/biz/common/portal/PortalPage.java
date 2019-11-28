@@ -224,32 +224,30 @@ public interface PortalPage extends BizEntity {
 	void setSequenceNum(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Portal Page Columns</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Portal Page Columns</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.common.portal.PortalPageColumn}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Portal Page Columns</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Portal Page Columns</em>' attribute list.
+	 * @return the value of the '<em>Portal Page Columns</em>' reference list.
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_PortalPageColumns()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PortalPageColumn'"
 	 * @generated
 	 */
-	List<String> getPortalPageColumns();
+	List<PortalPageColumn> getPortalPageColumns();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PortalPage' route='parentPortalPageId'"
 	 * @generated
 	 */
-	List<String> childPortalPages();
+	List<PortalPage> childPortalPages();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Portal Page Id</b></em>' reference.

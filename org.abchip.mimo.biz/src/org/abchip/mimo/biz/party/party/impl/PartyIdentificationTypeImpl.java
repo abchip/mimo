@@ -121,7 +121,7 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 	 * @generated
 	 */
 	@Override
-	public List<String> childPartyIdentificationTypes() {
+	public List<PartyIdentificationType> childPartyIdentificationTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +133,7 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 	 * @generated
 	 */
 	@Override
-	public List<String> partyIdentifications() {
+	public List<PartyIdentification> partyIdentifications() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

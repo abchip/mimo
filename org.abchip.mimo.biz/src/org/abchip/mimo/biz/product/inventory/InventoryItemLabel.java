@@ -85,12 +85,11 @@ public interface InventoryItemLabel extends BizEntityTyped<InventoryItemLabelTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemLabelAppl' route='inventoryItemLabelId'"
 	 * @generated
 	 */
-	List<String> inventoryItemLabelAppls();
+	List<InventoryItemLabelAppl> inventoryItemLabelAppls();
 
 	/**
 	 * Returns the value of the '<em><b>Inventory Item Label Id</b></em>' attribute.

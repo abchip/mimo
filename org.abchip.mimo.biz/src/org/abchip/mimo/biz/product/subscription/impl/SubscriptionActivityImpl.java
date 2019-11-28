@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.subscription.SubscriptionActivity;
+import org.abchip.mimo.biz.product.subscription.SubscriptionFulfillmentPiece;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -124,8 +125,8 @@ public class SubscriptionActivityImpl extends BizEntityImpl implements Subscript
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSubscriptionFulfillmentPieces() {
-		return (List<String>)eGet(SubscriptionPackage.Literals.SUBSCRIPTION_ACTIVITY__SUBSCRIPTION_FULFILLMENT_PIECES, true);
+	public List<SubscriptionFulfillmentPiece> getSubscriptionFulfillmentPieces() {
+		return (List<SubscriptionFulfillmentPiece>)eGet(SubscriptionPackage.Literals.SUBSCRIPTION_ACTIVITY__SUBSCRIPTION_FULFILLMENT_PIECES, true);
 	}
 
 } //SubscriptionActivityImpl

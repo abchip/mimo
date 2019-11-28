@@ -72,13 +72,22 @@ public interface EmploymentPackage extends EPackage {
 	int BENEFIT_TYPE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BENEFIT_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
+
+	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BENEFIT_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
+	int BENEFIT_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -87,7 +96,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENEFIT_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
+	int BENEFIT_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -96,7 +105,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENEFIT_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
+	int BENEFIT_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -105,7 +114,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENEFIT_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
+	int BENEFIT_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Benefit Type Id</b></em>' attribute.
@@ -114,7 +123,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENEFIT_TYPE__BENEFIT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int BENEFIT_TYPE__BENEFIT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Benefit Name</b></em>' attribute.
@@ -123,7 +132,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENEFIT_TYPE__BENEFIT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int BENEFIT_TYPE__BENEFIT_NAME = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -132,7 +141,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENEFIT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BENEFIT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Employer Paid Percentage</b></em>' attribute.
@@ -141,7 +150,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENEFIT_TYPE__EMPLOYER_PAID_PERCENTAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int BENEFIT_TYPE__EMPLOYER_PAID_PERCENTAGE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Has Table</b></em>' attribute.
@@ -150,7 +159,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENEFIT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int BENEFIT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
@@ -159,7 +168,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENEFIT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int BENEFIT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Benefit Type</em>' class.
@@ -168,7 +177,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BENEFIT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int BENEFIT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl <em>Empl Leave</em>}' class.
@@ -505,7 +514,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
+	int EMPLOYMENT__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -514,7 +523,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
+	int EMPLOYMENT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -523,7 +532,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
+	int EMPLOYMENT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -532,7 +541,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
+	int EMPLOYMENT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Party Id To</b></em>' reference.
@@ -541,7 +550,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__PARTY_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int EMPLOYMENT__PARTY_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Party Id From</b></em>' reference.
@@ -550,7 +559,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int EMPLOYMENT__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -559,7 +568,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int EMPLOYMENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Role Type Id From</b></em>' attribute.
@@ -568,7 +577,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__ROLE_TYPE_ID_FROM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int EMPLOYMENT__ROLE_TYPE_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Role Type Id To</b></em>' attribute.
@@ -577,7 +586,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__ROLE_TYPE_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int EMPLOYMENT__ROLE_TYPE_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Termination Reason Id</b></em>' reference.
@@ -586,7 +595,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__TERMINATION_REASON_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int EMPLOYMENT__TERMINATION_REASON_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Termination Type Id</b></em>' reference.
@@ -595,7 +604,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__TERMINATION_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int EMPLOYMENT__TERMINATION_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -604,7 +613,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int EMPLOYMENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Employment</em>' class.
@@ -613,7 +622,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int EMPLOYMENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl <em>App</em>}' class.
@@ -632,7 +641,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
+	int EMPLOYMENT_APP__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -641,7 +650,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
+	int EMPLOYMENT_APP__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -650,7 +659,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
+	int EMPLOYMENT_APP__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -659,7 +668,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
+	int EMPLOYMENT_APP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Application Id</b></em>' attribute.
@@ -668,7 +677,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__APPLICATION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int EMPLOYMENT_APP__APPLICATION_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Application Date</b></em>' attribute.
@@ -677,7 +686,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__APPLICATION_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int EMPLOYMENT_APP__APPLICATION_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Applying Party Id</b></em>' reference.
@@ -686,7 +695,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__APPLYING_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int EMPLOYMENT_APP__APPLYING_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Approver Party Id</b></em>' reference.
@@ -695,7 +704,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__APPROVER_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int EMPLOYMENT_APP__APPROVER_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Empl Position Id</b></em>' reference.
@@ -704,7 +713,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__EMPL_POSITION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int EMPLOYMENT_APP__EMPL_POSITION_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Employment App Source Type Id</b></em>' reference.
@@ -713,7 +722,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Job Requisition Id</b></em>' reference.
@@ -722,7 +731,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__JOB_REQUISITION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int EMPLOYMENT_APP__JOB_REQUISITION_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Referred By Party Id</b></em>' reference.
@@ -731,7 +740,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__REFERRED_BY_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int EMPLOYMENT_APP__REFERRED_BY_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' reference.
@@ -740,7 +749,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int EMPLOYMENT_APP__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>App</em>' class.
@@ -749,7 +758,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int EMPLOYMENT_APP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppSourceTypeImpl <em>App Source Type</em>}' class.
@@ -762,13 +771,22 @@ public interface EmploymentPackage extends EPackage {
 	int EMPLOYMENT_APP_SOURCE_TYPE = 6;
 
 	/**
+	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPLOYMENT_APP_SOURCE_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
+
+	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP_SOURCE_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
+	int EMPLOYMENT_APP_SOURCE_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -777,7 +795,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP_SOURCE_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
+	int EMPLOYMENT_APP_SOURCE_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -786,7 +804,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP_SOURCE_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
+	int EMPLOYMENT_APP_SOURCE_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -795,7 +813,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP_SOURCE_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
+	int EMPLOYMENT_APP_SOURCE_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Employment App Source Type Id</b></em>' attribute.
@@ -804,7 +822,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP_SOURCE_TYPE__EMPLOYMENT_APP_SOURCE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int EMPLOYMENT_APP_SOURCE_TYPE__EMPLOYMENT_APP_SOURCE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -813,7 +831,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP_SOURCE_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int EMPLOYMENT_APP_SOURCE_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Has Table</b></em>' attribute.
@@ -822,7 +840,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP_SOURCE_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int EMPLOYMENT_APP_SOURCE_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
@@ -831,7 +849,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP_SOURCE_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int EMPLOYMENT_APP_SOURCE_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>App Source Type</em>' class.
@@ -840,7 +858,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP_SOURCE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int EMPLOYMENT_APP_SOURCE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.employment.impl.PartyBenefitImpl <em>Party Benefit</em>}' class.
@@ -859,7 +877,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
+	int PARTY_BENEFIT__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -868,7 +886,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
+	int PARTY_BENEFIT__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -877,7 +895,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
+	int PARTY_BENEFIT__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -886,7 +904,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
+	int PARTY_BENEFIT__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Party Id To</b></em>' reference.
@@ -895,7 +913,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__PARTY_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int PARTY_BENEFIT__PARTY_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Party Id From</b></em>' reference.
@@ -904,7 +922,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int PARTY_BENEFIT__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Benefit Type Id</b></em>' reference.
@@ -913,7 +931,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__BENEFIT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PARTY_BENEFIT__BENEFIT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -922,7 +940,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PARTY_BENEFIT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Role Type Id From</b></em>' attribute.
@@ -931,7 +949,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__ROLE_TYPE_ID_FROM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PARTY_BENEFIT__ROLE_TYPE_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Role Type Id To</b></em>' attribute.
@@ -940,7 +958,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__ROLE_TYPE_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PARTY_BENEFIT__ROLE_TYPE_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Actual Employer Paid Percent</b></em>' attribute.
@@ -949,7 +967,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__ACTUAL_EMPLOYER_PAID_PERCENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PARTY_BENEFIT__ACTUAL_EMPLOYER_PAID_PERCENT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Available Time</b></em>' attribute.
@@ -958,7 +976,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__AVAILABLE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PARTY_BENEFIT__AVAILABLE_TIME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Cost</b></em>' attribute.
@@ -967,7 +985,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PARTY_BENEFIT__COST = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Period Type Id</b></em>' reference.
@@ -976,7 +994,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__PERIOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PARTY_BENEFIT__PERIOD_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -985,7 +1003,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PARTY_BENEFIT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Party Benefit</em>' class.
@@ -994,7 +1012,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PARTY_BENEFIT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.employment.impl.PayGradeImpl <em>Pay Grade</em>}' class.
@@ -1615,13 +1633,22 @@ public interface EmploymentPackage extends EPackage {
 	int TERMINATION_TYPE = 13;
 
 	/**
+	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINATION_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
+
+	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINATION_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
+	int TERMINATION_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1630,7 +1657,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINATION_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
+	int TERMINATION_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1639,7 +1666,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINATION_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
+	int TERMINATION_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1648,7 +1675,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINATION_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
+	int TERMINATION_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Termination Type Id</b></em>' attribute.
@@ -1657,7 +1684,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINATION_TYPE__TERMINATION_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int TERMINATION_TYPE__TERMINATION_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1666,7 +1693,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINATION_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int TERMINATION_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Has Table</b></em>' attribute.
@@ -1675,7 +1702,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINATION_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TERMINATION_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
@@ -1684,7 +1711,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINATION_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int TERMINATION_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Termination Type</em>' class.
@@ -1693,7 +1720,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINATION_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int TERMINATION_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl <em>Unemployment Claim</em>}' class.

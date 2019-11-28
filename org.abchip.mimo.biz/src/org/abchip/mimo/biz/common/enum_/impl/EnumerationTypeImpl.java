@@ -121,7 +121,7 @@ public class EnumerationTypeImpl extends BizEntityTypeImpl<Enumeration> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> childEnumerationTypes() {
+	public List<EnumerationType> childEnumerationTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +133,7 @@ public class EnumerationTypeImpl extends BizEntityTypeImpl<Enumeration> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> enumerations() {
+	public List<Enumeration> enumerations() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

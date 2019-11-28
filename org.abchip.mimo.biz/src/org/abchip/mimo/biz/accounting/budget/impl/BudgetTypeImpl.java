@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetType;
+import org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -124,8 +125,8 @@ public class BudgetTypeImpl extends BizEntityTypeImpl<Budget> implements BudgetT
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getBudgetTypeAttrs() {
-		return (List<String>)eGet(BudgetPackage.Literals.BUDGET_TYPE__BUDGET_TYPE_ATTRS, true);
+	public List<BudgetTypeAttr> getBudgetTypeAttrs() {
+		return (List<BudgetTypeAttr>)eGet(BudgetPackage.Literals.BUDGET_TYPE__BUDGET_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -134,7 +135,7 @@ public class BudgetTypeImpl extends BizEntityTypeImpl<Budget> implements BudgetT
 	 * @generated
 	 */
 	@Override
-	public List<String> budgets() {
+	public List<Budget> budgets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -146,7 +147,7 @@ public class BudgetTypeImpl extends BizEntityTypeImpl<Budget> implements BudgetT
 	 * @generated
 	 */
 	@Override
-	public List<String> childBudgetTypes() {
+	public List<BudgetType> childBudgetTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

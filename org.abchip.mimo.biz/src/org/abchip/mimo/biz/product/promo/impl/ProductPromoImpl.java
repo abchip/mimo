@@ -13,8 +13,14 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderAdjustment;
+import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
+import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
+import org.abchip.mimo.biz.product.promo.ProductPromoCode;
+import org.abchip.mimo.biz.product.promo.ProductPromoRule;
+import org.abchip.mimo.biz.product.promo.ProductPromoUse;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.ecore.EClass;
@@ -359,8 +365,8 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductPromoRules() {
-		return (List<String>)eGet(PromoPackage.Literals.PRODUCT_PROMO__PRODUCT_PROMO_RULES, true);
+	public List<ProductPromoRule> getProductPromoRules() {
+		return (List<ProductPromoRule>)eGet(PromoPackage.Literals.PRODUCT_PROMO__PRODUCT_PROMO_RULES, true);
 	}
 
 	/**
@@ -369,7 +375,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 * @generated
 	 */
 	@Override
-	public List<String> orderAdjustments() {
+	public List<OrderAdjustment> orderAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -381,7 +387,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 * @generated
 	 */
 	@Override
-	public List<String> productPromoCodes() {
+	public List<ProductPromoCode> productPromoCodes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -393,7 +399,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 * @generated
 	 */
 	@Override
-	public List<String> productPromoUses() {
+	public List<ProductPromoUse> productPromoUses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -405,7 +411,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteAdjustments() {
+	public List<QuoteAdjustment> quoteAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -417,7 +423,7 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 * @generated
 	 */
 	@Override
-	public List<String> returnAdjustments() {
+	public List<ReturnAdjustment> returnAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

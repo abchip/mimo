@@ -165,22 +165,21 @@ public interface ProductConfigItem extends BizEntity {
 	void setLongDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Config Item Product Config Options</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Config Item Product Config Options</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.config.ProductConfigOption}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Config Item Product Config Options</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Config Item Product Config Options</em>' attribute list.
+	 * @return the value of the '<em>Config Item Product Config Options</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem_ConfigItemProductConfigOptions()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductConfigOption'"
 	 * @generated
 	 */
-	List<String> getConfigItemProductConfigOptions();
+	List<ProductConfigOption> getConfigItemProductConfigOptions();
 
 	/**
 	 * Returns the value of the '<em><b>Config Item Id</b></em>' attribute.

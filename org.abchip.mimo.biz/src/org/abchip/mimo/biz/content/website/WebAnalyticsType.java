@@ -8,8 +8,7 @@
 package org.abchip.mimo.biz.content.website;
 
 import java.util.List;
-
-import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.BizEntityType;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +29,7 @@ import org.abchip.mimo.biz.BizEntity;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface WebAnalyticsType extends BizEntity {
+public interface WebAnalyticsType extends BizEntityType<WebAnalyticsConfig> {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,22 +111,20 @@ public interface WebAnalyticsType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WebAnalyticsType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childWebAnalyticsTypes();
+	List<WebAnalyticsType> childWebAnalyticsTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WebAnalyticsConfig' route='webAnalyticsTypeId'"
 	 * @generated
 	 */
-	List<String> webAnalyticsConfigs();
+	List<WebAnalyticsConfig> webAnalyticsConfigs();
 
 	/**
 	 * Returns the value of the '<em><b>Web Analytics Type Id</b></em>' attribute.

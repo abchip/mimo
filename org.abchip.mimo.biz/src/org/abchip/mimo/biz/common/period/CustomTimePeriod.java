@@ -12,6 +12,9 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.budget.Budget;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory;
 import org.abchip.mimo.biz.party.party.Party;
 
 /**
@@ -198,42 +201,38 @@ public interface CustomTimePeriod extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Budget' route='customTimePeriodId'"
 	 * @generated
 	 */
-	List<String> budgets();
+	List<Budget> budgets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustomTimePeriod' route='parentPeriodId'"
 	 * @generated
 	 */
-	List<String> childCustomTimePeriods();
+	List<CustomTimePeriod> childCustomTimePeriods();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastHistory' route='customTimePeriodId'"
 	 * @generated
 	 */
-	List<String> salesForecastHistories();
+	List<SalesForecastHistory> salesForecastHistories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecast' route='customTimePeriodId'"
 	 * @generated
 	 */
-	List<String> salesForecasts();
+	List<SalesForecast> salesForecasts();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Period Id</b></em>' reference.

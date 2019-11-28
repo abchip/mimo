@@ -10,14 +10,84 @@ package org.abchip.mimo.biz.party.party.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeGlAccount;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountTypeDefault;
+import org.abchip.mimo.biz.accounting.ledger.GlJournal;
+import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
+import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
+import org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount;
+import org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount;
+import org.abchip.mimo.biz.accounting.tax.TaxAuthority;
 import org.abchip.mimo.biz.common.datasource.DataSource;
+import org.abchip.mimo.biz.common.note.NoteData;
+import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.content.content.ContentApproval;
+import org.abchip.mimo.biz.content.content.ContentRevision;
+import org.abchip.mimo.biz.content.survey.SurveyResponse;
+import org.abchip.mimo.biz.humanres.ability.PartyResume;
+import org.abchip.mimo.biz.humanres.ability.PartySkill;
+import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
+import org.abchip.mimo.biz.humanres.position.EmplPosition;
+import org.abchip.mimo.biz.humanres.recruitment.JobInterview;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.contact.ContactList;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory;
+import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
+import org.abchip.mimo.biz.order.quote.Quote;
+import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.order.request.CustRequestType;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
+import org.abchip.mimo.biz.party.agreement.Agreement;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.PartyAttribute;
+import org.abchip.mimo.biz.party.party.PartyIdentification;
+import org.abchip.mimo.biz.party.party.PartyInvitation;
+import org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc;
+import org.abchip.mimo.biz.party.party.PartyNameHistory;
+import org.abchip.mimo.biz.party.party.PartyNote;
 import org.abchip.mimo.biz.party.party.PartyPackage;
+import org.abchip.mimo.biz.party.party.PartyProfileDefault;
+import org.abchip.mimo.biz.party.party.PartyRole;
 import org.abchip.mimo.biz.party.party.PartyType;
+import org.abchip.mimo.biz.product.cost.CostComponent;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
+import org.abchip.mimo.biz.product.promo.ProductPromoCodeParty;
+import org.abchip.mimo.biz.product.promo.ProductPromoUse;
+import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
+import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.product.supplier.ReorderGuideline;
+import org.abchip.mimo.biz.product.supplier.SupplierProductFeature;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.security.login.UserLoginHistory;
+import org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
+import org.abchip.mimo.biz.workeffort.timesheet.TimeEntry;
+import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -283,8 +353,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPartyAttributes() {
-		return (List<String>)eGet(PartyPackage.Literals.PARTY__PARTY_ATTRIBUTES, true);
+	public List<PartyAttribute> getPartyAttributes() {
+		return (List<PartyAttribute>)eGet(PartyPackage.Literals.PARTY__PARTY_ATTRIBUTES, true);
 	}
 
 	/**
@@ -294,8 +364,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPartyIdentifications() {
-		return (List<String>)eGet(PartyPackage.Literals.PARTY__PARTY_IDENTIFICATIONS, true);
+	public List<PartyIdentification> getPartyIdentifications() {
+		return (List<PartyIdentification>)eGet(PartyPackage.Literals.PARTY__PARTY_IDENTIFICATIONS, true);
 	}
 
 	/**
@@ -305,8 +375,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPartyNameHistories() {
-		return (List<String>)eGet(PartyPackage.Literals.PARTY__PARTY_NAME_HISTORIES, true);
+	public List<PartyNameHistory> getPartyNameHistories() {
+		return (List<PartyNameHistory>)eGet(PartyPackage.Literals.PARTY__PARTY_NAME_HISTORIES, true);
 	}
 
 	/**
@@ -316,8 +386,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPartyNotes() {
-		return (List<String>)eGet(PartyPackage.Literals.PARTY__PARTY_NOTES, true);
+	public List<PartyNote> getPartyNotes() {
+		return (List<PartyNote>)eGet(PartyPackage.Literals.PARTY__PARTY_NOTES, true);
 	}
 
 	/**
@@ -327,8 +397,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPartyProfileDefaults() {
-		return (List<String>)eGet(PartyPackage.Literals.PARTY__PARTY_PROFILE_DEFAULTS, true);
+	public List<PartyProfileDefault> getPartyProfileDefaults() {
+		return (List<PartyProfileDefault>)eGet(PartyPackage.Literals.PARTY__PARTY_PROFILE_DEFAULTS, true);
 	}
 
 	/**
@@ -338,8 +408,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPartyRoles() {
-		return (List<String>)eGet(PartyPackage.Literals.PARTY__PARTY_ROLES, true);
+	public List<PartyRole> getPartyRoles() {
+		return (List<PartyRole>)eGet(PartyPackage.Literals.PARTY__PARTY_ROLES, true);
 	}
 
 	/**
@@ -349,8 +419,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPartySkills() {
-		return (List<String>)eGet(PartyPackage.Literals.PARTY__PARTY_SKILLS, true);
+	public List<PartySkill> getPartySkills() {
+		return (List<PartySkill>)eGet(PartyPackage.Literals.PARTY__PARTY_SKILLS, true);
 	}
 
 	/**
@@ -360,8 +430,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSupplierProductFeatures() {
-		return (List<String>)eGet(PartyPackage.Literals.PARTY__SUPPLIER_PRODUCT_FEATURES, true);
+	public List<SupplierProductFeature> getSupplierProductFeatures() {
+		return (List<SupplierProductFeature>)eGet(PartyPackage.Literals.PARTY__SUPPLIER_PRODUCT_FEATURES, true);
 	}
 
 	/**
@@ -370,7 +440,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTransEntries() {
+	public List<AcctgTransEntry> acctgTransEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -382,7 +452,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -394,7 +464,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> applyingEmploymentApps() {
+	public List<EmploymentApp> applyingEmploymentApps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -406,7 +476,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> approverEmploymentApps() {
+	public List<EmploymentApp> approverEmploymentApps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -418,7 +488,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> carrierOrderItemShipGroups() {
+	public List<OrderItemShipGroup> carrierOrderItemShipGroups() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -430,7 +500,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> carrierShipmentBoxTypes() {
+	public List<CarrierShipmentBoxType> carrierShipmentBoxTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -442,7 +512,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> carrierShipmentRouteSegments() {
+	public List<ShipmentRouteSegment> carrierShipmentRouteSegments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -454,7 +524,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> clientTimesheets() {
+	public List<Timesheet> clientTimesheets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -466,7 +536,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> committedByContentRevisions() {
+	public List<ContentRevision> committedByContentRevisions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -478,7 +548,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> contentApprovals() {
+	public List<ContentApproval> contentApprovals() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -490,7 +560,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> costComponents() {
+	public List<CostComponent> costComponents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -502,7 +572,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequestTypes() {
+	public List<CustRequestType> custRequestTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -514,7 +584,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> emplPositions() {
+	public List<EmplPosition> emplPositions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -526,7 +596,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> finAccountTranss() {
+	public List<FinAccountTrans> finAccountTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -538,7 +608,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> fixedAssets() {
+	public List<FixedAsset> fixedAssets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -550,7 +620,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> fromAgreements() {
+	public List<Agreement> fromAgreements() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -562,7 +632,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> fromCommunicationEvents() {
+	public List<CommunicationEvent> fromCommunicationEvents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -574,7 +644,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> fromCustRequests() {
+	public List<CustRequest> fromCustRequests() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -586,7 +656,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> fromInvoices() {
+	public List<Invoice> fromInvoices() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -598,7 +668,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> fromPayments() {
+	public List<Payment> fromPayments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -610,7 +680,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> fromShipments() {
+	public List<Shipment> fromShipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -622,7 +692,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> giftCardFulfillments() {
+	public List<GiftCardFulfillment> giftCardFulfillments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -634,7 +704,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> glAccountOrganizations() {
+	public List<GlAccountOrganization> glAccountOrganizations() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -646,7 +716,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> glJournals() {
+	public List<GlJournal> glJournals() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -658,7 +728,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> glReconciliations() {
+	public List<GlReconciliation> glReconciliations() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -670,7 +740,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> govAgencyFixedAssetRegistrations() {
+	public List<FixedAssetRegistration> govAgencyFixedAssetRegistrations() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -682,7 +752,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> internalSalesForecastHistories() {
+	public List<SalesForecastHistory> internalSalesForecastHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -694,7 +764,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> internalSalesForecasts() {
+	public List<SalesForecast> internalSalesForecasts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -706,7 +776,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> intervieweeJobInterviews() {
+	public List<JobInterview> intervieweeJobInterviews() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -718,7 +788,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> interviewerJobInterviews() {
+	public List<JobInterview> interviewerJobInterviews() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -730,7 +800,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryItems() {
+	public List<InventoryItem> inventoryItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -742,7 +812,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> invoices() {
+	public List<Invoice> invoices() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -754,7 +824,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> noteNoteDatas() {
+	public List<NoteData> noteNoteDatas() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -766,7 +836,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> organizationCustomTimePeriods() {
+	public List<CustomTimePeriod> organizationCustomTimePeriods() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -778,7 +848,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> organizationFinAccountTypeGlAccounts() {
+	public List<FinAccountTypeGlAccount> organizationFinAccountTypeGlAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -790,7 +860,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> organizationFinAccounts() {
+	public List<FinAccount> organizationFinAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -802,7 +872,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> organizationGlAccountTypeDefaults() {
+	public List<GlAccountTypeDefault> organizationGlAccountTypeDefaults() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -814,7 +884,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> organizationInvoiceItemTypeGlAccounts() {
+	public List<InvoiceItemTypeGlAccount> organizationInvoiceItemTypeGlAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -826,7 +896,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> organizationPaymentMethodTypeGlAccounts() {
+	public List<PaymentMethodTypeGlAccount> organizationPaymentMethodTypeGlAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -838,7 +908,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> organizationSalesForecastHistories() {
+	public List<SalesForecastHistory> organizationSalesForecastHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -850,7 +920,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> organizationSalesForecasts() {
+	public List<SalesForecast> organizationSalesForecasts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -862,7 +932,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> organizationVarianceReasonGlAccounts() {
+	public List<VarianceReasonGlAccount> organizationVarianceReasonGlAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -874,7 +944,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> originatedFromSubscriptions() {
+	public List<Subscription> originatedFromSubscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -886,7 +956,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> overrideOrgInvoiceItems() {
+	public List<InvoiceItem> overrideOrgInvoiceItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -898,7 +968,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> ownerContactLists() {
+	public List<ContactList> ownerContactLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -910,7 +980,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> ownerFacilities() {
+	public List<Facility> ownerFacilities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -922,7 +992,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> ownerFinAccounts() {
+	public List<FinAccount> ownerFinAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -934,7 +1004,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> ownerInventoryItems() {
+	public List<InventoryItem> ownerInventoryItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -946,7 +1016,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> partyInvitations() {
+	public List<PartyInvitation> partyInvitations() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -958,7 +1028,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> partyPrefDocTypeTpls() {
+	public List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -970,7 +1040,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> partyResumes() {
+	public List<PartyResume> partyResumes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -982,7 +1052,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentGlAccountTypeMaps() {
+	public List<PaymentGlAccountTypeMap> paymentGlAccountTypeMaps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -994,7 +1064,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentMethods() {
+	public List<PaymentMethod> paymentMethods() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1006,7 +1076,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> performedByFinAccountTranss() {
+	public List<FinAccountTrans> performedByFinAccountTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1018,7 +1088,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> productPromoCodeParties() {
+	public List<ProductPromoCodeParty> productPromoCodeParties() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1030,7 +1100,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> productPromoUses() {
+	public List<ProductPromoUse> productPromoUses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1042,7 +1112,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> productPromos() {
+	public List<ProductPromo> productPromos() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1054,7 +1124,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> productStoreShipmentMeths() {
+	public List<ProductStoreShipmentMeth> productStoreShipmentMeths() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1066,7 +1136,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> productStores() {
+	public List<ProductStore> productStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1078,7 +1148,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> quotes() {
+	public List<Quote> quotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1090,7 +1160,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> referredByEmploymentApps() {
+	public List<EmploymentApp> referredByEmploymentApps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1102,7 +1172,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> reorderGuidelines() {
+	public List<ReorderGuideline> reorderGuidelines() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1114,7 +1184,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> returnHeaders() {
+	public List<ReturnHeader> returnHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1126,7 +1196,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentCostEstimates() {
+	public List<ShipmentCostEstimate> shipmentCostEstimates() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1138,7 +1208,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> shoppingLists() {
+	public List<ShoppingList> shoppingLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1150,7 +1220,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> subscriptions() {
+	public List<Subscription> subscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1162,7 +1232,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> supplierOrderItemShipGroups() {
+	public List<OrderItemShipGroup> supplierOrderItemShipGroups() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1174,7 +1244,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> surveyResponses() {
+	public List<SurveyResponse> surveyResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1186,7 +1256,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> taxAuthTaxAuthorities() {
+	public List<TaxAuthority> taxAuthTaxAuthorities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1198,7 +1268,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> taxAuthorityInvoiceItems() {
+	public List<InvoiceItem> taxAuthorityInvoiceItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1210,7 +1280,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> timeEntries() {
+	public List<TimeEntry> timeEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1222,7 +1292,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> timesheets() {
+	public List<Timesheet> timesheets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1234,7 +1304,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> toAgreements() {
+	public List<Agreement> toAgreements() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1246,7 +1316,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> toCommunicationEvents() {
+	public List<CommunicationEvent> toCommunicationEvents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1258,7 +1328,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> toPartyInvitationGroupAssocs() {
+	public List<PartyInvitationGroupAssoc> toPartyInvitationGroupAssocs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1270,7 +1340,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> toPayments() {
+	public List<Payment> toPayments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1282,7 +1352,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> toReturnHeaders() {
+	public List<ReturnHeader> toReturnHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1294,7 +1364,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> toShipments() {
+	public List<Shipment> toShipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1306,7 +1376,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> userLoginHistories() {
+	public List<UserLoginHistory> userLoginHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1318,7 +1388,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> userLogins() {
+	public List<UserLogin> userLogins() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1330,7 +1400,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> vendorOrderItemShipGroups() {
+	public List<OrderItemShipGroup> vendorOrderItemShipGroups() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1342,7 +1412,7 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public List<String> workEffortEventReminders() {
+	public List<WorkEffortEventReminder> workEffortEventReminders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

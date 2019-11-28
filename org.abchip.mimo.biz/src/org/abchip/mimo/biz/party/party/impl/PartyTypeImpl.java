@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyType;
+import org.abchip.mimo.biz.party.party.PartyTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -143,8 +144,8 @@ public class PartyTypeImpl extends BizEntityTypeImpl<Party> implements PartyType
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPartyTypeAttrs() {
-		return (List<String>)eGet(PartyPackage.Literals.PARTY_TYPE__PARTY_TYPE_ATTRS, true);
+	public List<PartyTypeAttr> getPartyTypeAttrs() {
+		return (List<PartyTypeAttr>)eGet(PartyPackage.Literals.PARTY_TYPE__PARTY_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -153,7 +154,7 @@ public class PartyTypeImpl extends BizEntityTypeImpl<Party> implements PartyType
 	 * @generated
 	 */
 	@Override
-	public List<String> childPartyTypes() {
+	public List<PartyType> childPartyTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -165,7 +166,7 @@ public class PartyTypeImpl extends BizEntityTypeImpl<Party> implements PartyType
 	 * @generated
 	 */
 	@Override
-	public List<String> parties() {
+	public List<Party> parties() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

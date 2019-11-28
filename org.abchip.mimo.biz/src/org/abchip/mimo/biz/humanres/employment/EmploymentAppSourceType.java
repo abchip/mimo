@@ -8,8 +8,7 @@
 package org.abchip.mimo.biz.humanres.employment;
 
 import java.util.List;
-
-import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.BizEntityType;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +29,7 @@ import org.abchip.mimo.biz.BizEntity;
  * @model annotation="mimo-ent-frame title='Employment Application Source Type' formula='description'"
  * @generated
  */
-public interface EmploymentAppSourceType extends BizEntity {
+public interface EmploymentAppSourceType extends BizEntityType<EmploymentApp> {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -139,21 +138,19 @@ public interface EmploymentAppSourceType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmploymentAppSourceType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childEmploymentAppSourceTypes();
+	List<EmploymentAppSourceType> childEmploymentAppSourceTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='employmentAppSourceTypeId'"
 	 * @generated
 	 */
-	List<String> employmentApps();
+	List<EmploymentApp> employmentApps();
 
 } // EmploymentAppSourceType

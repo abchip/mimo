@@ -20,7 +20,7 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getAuthMode <em>Auth Mode</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getFixContact <em>Fix Contact</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isFixContact <em>Fix Contact</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isHideContact <em>Hide Contact</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isHideCurrency <em>Hide Currency</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getInstId <em>Inst Id</em>}</li>
@@ -65,6 +65,7 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Fix Contact</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fix Contact</em>' attribute isn't clear,
@@ -72,23 +73,24 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fix Contact</em>' attribute.
-	 * @see #setFixContact(char)
+	 * @see #setFixContact(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_FixContact()
-	 * @model annotation="mimo-ent-slot help='Will displace contact info on WorldPay in non-editable format'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='Will displace contact info on WorldPay in non-editable format'"
 	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getFixContact();
+	boolean isFixContact();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getFixContact <em>Fix Contact</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#isFixContact <em>Fix Contact</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Fix Contact</em>' attribute.
-	 * @see #getFixContact()
+	 * @see #isFixContact()
 	 * @generated
 	 */
-	void setFixContact(char value);
+	void setFixContact(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Hide Contact</b></em>' attribute.

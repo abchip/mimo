@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.product.inventory;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,62 +113,57 @@ public interface InventoryItemType extends BizEntityType<InventoryItem> {
 	void setParentTypeId(InventoryItemType value);
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Inventory Item Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Inventory Item Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemType_InventoryItemTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemTypeAttr'"
 	 * @generated
 	 */
-	List<String> getInventoryItemTypeAttrs();
+	List<InventoryItemTypeAttr> getInventoryItemTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItemType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childInventoryItemTypes();
+	List<InventoryItemType> childInventoryItemTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Facility' route='defaultInventoryItemTypeId'"
 	 * @generated
 	 */
-	List<String> defaultFacilities();
+	List<Facility> defaultFacilities();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='inventoryItemTypeId'"
 	 * @generated
 	 */
-	List<String> inventoryItems();
+	List<InventoryItem> inventoryItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Product' route='inventoryItemTypeId'"
 	 * @generated
 	 */
-	List<String> products();
+	List<Product> products();
 
 	/**
 	 * Returns the value of the '<em><b>Inventory Item Type Id</b></em>' attribute.

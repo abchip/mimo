@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.content.survey.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
+import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionCategory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -100,7 +101,7 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 	 * @generated
 	 */
 	@Override
-	public List<String> childSurveyQuestionCategories() {
+	public List<SurveyQuestionCategory> childSurveyQuestionCategories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -112,7 +113,7 @@ public class SurveyQuestionCategoryImpl extends BizEntityImpl implements SurveyQ
 	 * @generated
 	 */
 	@Override
-	public List<String> surveyQuestions() {
+	public List<SurveyQuestion> surveyQuestions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

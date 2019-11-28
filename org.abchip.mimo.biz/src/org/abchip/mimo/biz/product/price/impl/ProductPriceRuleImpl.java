@@ -12,7 +12,10 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderItemPriceInfo;
 import org.abchip.mimo.biz.product.price.PricePackage;
+import org.abchip.mimo.biz.product.price.ProductPriceAction;
+import org.abchip.mimo.biz.product.price.ProductPriceCond;
 import org.abchip.mimo.biz.product.price.ProductPriceRule;
 import org.eclipse.emf.ecore.EClass;
 
@@ -168,8 +171,8 @@ public class ProductPriceRuleImpl extends BizEntityImpl implements ProductPriceR
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductPriceActions() {
-		return (List<String>)eGet(PricePackage.Literals.PRODUCT_PRICE_RULE__PRODUCT_PRICE_ACTIONS, true);
+	public List<ProductPriceAction> getProductPriceActions() {
+		return (List<ProductPriceAction>)eGet(PricePackage.Literals.PRODUCT_PRICE_RULE__PRODUCT_PRICE_ACTIONS, true);
 	}
 
 	/**
@@ -179,8 +182,8 @@ public class ProductPriceRuleImpl extends BizEntityImpl implements ProductPriceR
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductPriceConds() {
-		return (List<String>)eGet(PricePackage.Literals.PRODUCT_PRICE_RULE__PRODUCT_PRICE_CONDS, true);
+	public List<ProductPriceCond> getProductPriceConds() {
+		return (List<ProductPriceCond>)eGet(PricePackage.Literals.PRODUCT_PRICE_RULE__PRODUCT_PRICE_CONDS, true);
 	}
 
 	/**
@@ -189,7 +192,7 @@ public class ProductPriceRuleImpl extends BizEntityImpl implements ProductPriceR
 	 * @generated
 	 */
 	@Override
-	public List<String> orderItemPriceInfos() {
+	public List<OrderItemPriceInfo> orderItemPriceInfos() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

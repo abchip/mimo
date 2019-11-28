@@ -9,7 +9,8 @@ package org.abchip.mimo.biz.product.product.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.ProductMaint;
 import org.abchip.mimo.biz.product.product.ProductMaintType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implements ProductMaintType {
+public class ProductMaintTypeImpl extends BizEntityImpl implements ProductMaintType {
 	/**
 	 * 
 	 */
@@ -101,7 +102,7 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> childProductMaintTypes() {
+	public List<ProductMaintType> childProductMaintTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -113,7 +114,7 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> fixedAssetMaints() {
+	public List<FixedAssetMaint> fixedAssetMaints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -125,7 +126,7 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> productMaints() {
+	public List<ProductMaint> productMaints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

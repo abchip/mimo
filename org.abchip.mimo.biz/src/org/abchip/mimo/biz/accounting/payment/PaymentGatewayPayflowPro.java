@@ -30,7 +30,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getLoggingLevel <em>Logging Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getMaxLogFileSize <em>Max Log File Size</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getPartner <em>Partner</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getPreAuth <em>Pre Auth</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#isPreAuth <em>Pre Auth</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getProxyAddress <em>Proxy Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getProxyLogon <em>Proxy Logon</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getProxyPassword <em>Proxy Password</em>}</li>
@@ -348,6 +348,7 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Pre Auth</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pre Auth</em>' attribute isn't clear,
@@ -355,23 +356,24 @@ public interface PaymentGatewayPayflowPro extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Pre Auth</em>' attribute.
-	 * @see #setPreAuth(char)
+	 * @see #setPreAuth(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayPayflowPro_PreAuth()
-	 * @model annotation="mimo-ent-slot help='Pre-Authorize Payments (if set to N will auto-capture)'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='Pre-Authorize Payments (if set to N will auto-capture)'"
 	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getPreAuth();
+	boolean isPreAuth();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#getPreAuth <em>Pre Auth</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayPayflowPro#isPreAuth <em>Pre Auth</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Pre Auth</em>' attribute.
-	 * @see #getPreAuth()
+	 * @see #isPreAuth()
 	 * @generated
 	 */
-	void setPreAuth(char value);
+	void setPreAuth(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Payment Gateway Config Id</b></em>' attribute.

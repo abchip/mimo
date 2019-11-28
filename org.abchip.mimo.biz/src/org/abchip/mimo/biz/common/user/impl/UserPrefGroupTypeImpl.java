@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.common.user.UserPackage;
 import org.abchip.mimo.biz.common.user.UserPrefGroupType;
+import org.abchip.mimo.biz.common.user.UserPreference;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -78,7 +79,7 @@ public class UserPrefGroupTypeImpl extends BizEntityImpl implements UserPrefGrou
 	 * @generated
 	 */
 	@Override
-	public List<String> userPreferences() {
+	public List<UserPreference> userPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

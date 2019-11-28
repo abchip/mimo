@@ -78,7 +78,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
+	int SEGMENT_GROUP__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -87,7 +87,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
+	int SEGMENT_GROUP__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -96,7 +96,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
+	int SEGMENT_GROUP__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -105,7 +105,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
+	int SEGMENT_GROUP__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Segment Group Id</b></em>' attribute.
@@ -114,7 +114,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP__SEGMENT_GROUP_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
+	int SEGMENT_GROUP__SEGMENT_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -123,7 +123,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+	int SEGMENT_GROUP__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
@@ -132,25 +132,25 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int SEGMENT_GROUP__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Segment Group Classifications</b></em>' attribute list.
+	 * The feature id for the '<em><b>Segment Group Classifications</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Segment Group Geos</b></em>' attribute list.
+	 * The feature id for the '<em><b>Segment Group Geos</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP__SEGMENT_GROUP_GEOS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int SEGMENT_GROUP__SEGMENT_GROUP_GEOS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Segment Group Type Id</b></em>' reference.
@@ -159,7 +159,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Group</em>' class.
@@ -168,7 +168,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int SEGMENT_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupClassificationImpl <em>Group Classification</em>}' class.
@@ -409,22 +409,13 @@ public interface SegmentPackage extends EPackage {
 	int SEGMENT_GROUP_TYPE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEGMENT_GROUP_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
-
-	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
+	int SEGMENT_GROUP_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -433,7 +424,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
+	int SEGMENT_GROUP_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -442,7 +433,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
+	int SEGMENT_GROUP_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -451,7 +442,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
+	int SEGMENT_GROUP_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Segment Group Type Id</b></em>' attribute.
@@ -460,7 +451,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP_TYPE__SEGMENT_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
+	int SEGMENT_GROUP_TYPE__SEGMENT_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -469,7 +460,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int SEGMENT_GROUP_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Group Type</em>' class.
@@ -478,7 +469,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int SEGMENT_GROUP_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 
 	/**
@@ -536,26 +527,26 @@ public interface SegmentPackage extends EPackage {
 	EReference getSegmentGroup_SegmentGroupTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupClassifications <em>Segment Group Classifications</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupClassifications <em>Segment Group Classifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Segment Group Classifications</em>'.
+	 * @return the meta object for the reference list '<em>Segment Group Classifications</em>'.
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupClassifications()
 	 * @see #getSegmentGroup()
 	 * @generated
 	 */
-	EAttribute getSegmentGroup_SegmentGroupClassifications();
+	EReference getSegmentGroup_SegmentGroupClassifications();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupGeos <em>Segment Group Geos</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupGeos <em>Segment Group Geos</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Segment Group Geos</em>'.
+	 * @return the meta object for the reference list '<em>Segment Group Geos</em>'.
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupGeos()
 	 * @see #getSegmentGroup()
 	 * @generated
 	 */
-	EAttribute getSegmentGroup_SegmentGroupGeos();
+	EReference getSegmentGroup_SegmentGroupGeos();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroupClassification <em>Group Classification</em>}'.
@@ -761,20 +752,20 @@ public interface SegmentPackage extends EPackage {
 		EReference SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID = eINSTANCE.getSegmentGroup_SegmentGroupTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Segment Group Classifications</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Segment Group Classifications</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS = eINSTANCE.getSegmentGroup_SegmentGroupClassifications();
+		EReference SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS = eINSTANCE.getSegmentGroup_SegmentGroupClassifications();
 
 		/**
-		 * The meta object literal for the '<em><b>Segment Group Geos</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Segment Group Geos</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SEGMENT_GROUP__SEGMENT_GROUP_GEOS = eINSTANCE.getSegmentGroup_SegmentGroupGeos();
+		EReference SEGMENT_GROUP__SEGMENT_GROUP_GEOS = eINSTANCE.getSegmentGroup_SegmentGroupGeos();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupClassificationImpl <em>Group Classification</em>}' class.

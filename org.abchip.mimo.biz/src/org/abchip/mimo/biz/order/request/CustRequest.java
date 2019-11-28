@@ -14,6 +14,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.store.ProductStore;
@@ -669,113 +670,106 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Cust Request Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Cust Request Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cust Request Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cust Request Attributes</em>' attribute list.
+	 * @return the value of the '<em>Cust Request Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestAttribute'"
 	 * @generated
 	 */
-	List<String> getCustRequestAttributes();
+	List<CustRequestAttribute> getCustRequestAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Cust Request Comm Events</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Cust Request Comm Events</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestCommEvent}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cust Request Comm Events</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cust Request Comm Events</em>' attribute list.
+	 * @return the value of the '<em>Cust Request Comm Events</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestCommEvents()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestCommEvent'"
 	 * @generated
 	 */
-	List<String> getCustRequestCommEvents();
+	List<CustRequestCommEvent> getCustRequestCommEvents();
 
 	/**
-	 * Returns the value of the '<em><b>Cust Request Items</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Cust Request Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestItem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cust Request Items</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cust Request Items</em>' attribute list.
+	 * @return the value of the '<em>Cust Request Items</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestItems()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestItem'"
 	 * @generated
 	 */
-	List<String> getCustRequestItems();
+	List<CustRequestItem> getCustRequestItems();
 
 	/**
-	 * Returns the value of the '<em><b>Cust Request Notes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Cust Request Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestNote}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cust Request Notes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cust Request Notes</em>' attribute list.
+	 * @return the value of the '<em>Cust Request Notes</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestNotes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestNote'"
 	 * @generated
 	 */
-	List<String> getCustRequestNotes();
+	List<CustRequestNote> getCustRequestNotes();
 
 	/**
-	 * Returns the value of the '<em><b>Cust Request Work Efforts</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Cust Request Work Efforts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestWorkEffort}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cust Request Work Efforts</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cust Request Work Efforts</em>' attribute list.
+	 * @return the value of the '<em>Cust Request Work Efforts</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestWorkEfforts()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestWorkEffort'"
 	 * @generated
 	 */
-	List<String> getCustRequestWorkEfforts();
+	List<CustRequestWorkEffort> getCustRequestWorkEfforts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestStatus' route='custRequestId'"
 	 * @generated
 	 */
-	List<String> custRequestStatuss();
+	List<CustRequestStatus> custRequestStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteItem' route='custRequestId'"
 	 * @generated
 	 */
-	List<String> quoteItems();
+	List<QuoteItem> quoteItems();
 
 } // CustRequest

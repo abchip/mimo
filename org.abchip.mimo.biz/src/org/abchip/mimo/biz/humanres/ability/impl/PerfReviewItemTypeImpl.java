@@ -122,7 +122,7 @@ public class PerfReviewItemTypeImpl extends BizEntityTypeImpl<PerfReviewItem> im
 	 * @generated
 	 */
 	@Override
-	public List<String> childPerfReviewItemTypes() {
+	public List<PerfReviewItemType> childPerfReviewItemTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

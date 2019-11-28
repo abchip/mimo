@@ -989,6 +989,7 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 		Shipment_Package theShipment_Package = (Shipment_Package)EPackage.Registry.INSTANCE.getEPackage(Shipment_Package.eNS_URI);
+		LedgerPackage theLedgerPackage = (LedgerPackage)EPackage.Registry.INSTANCE.getEPackage(LedgerPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 
 		// Create type parameters
@@ -1005,7 +1006,7 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		initEAttribute(getRejectionReason_RejectionId(), ecorePackage.getEString(), "rejectionId", null, 1, 1, RejectionReason.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRejectionReason_Description(), ecorePackage.getEString(), "description", null, 0, 1, RejectionReason.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(rejectionReasonEClass, ecorePackage.getEString(), "shipmentReceipts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(rejectionReasonEClass, this.getShipmentReceipt(), "shipmentReceipts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shipmentReceiptEClass, ShipmentReceipt.class, "ShipmentReceipt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getShipmentReceipt_ReceiptId(), ecorePackage.getEString(), "receiptId", null, 1, 1, ShipmentReceipt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1031,9 +1032,9 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		initEAttribute(getShipmentReceipt_ShipmentItemSeqId(), ecorePackage.getEString(), "shipmentItemSeqId", null, 0, 1, ShipmentReceipt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentReceipt_ShipmentPackageSeqId(), ecorePackage.getEString(), "shipmentPackageSeqId", null, 0, 1, ShipmentReceipt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(shipmentReceiptEClass, ecorePackage.getEString(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(shipmentReceiptEClass, theLedgerPackage.getAcctgTrans(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(shipmentReceiptEClass, ecorePackage.getEString(), "inventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(shipmentReceiptEClass, theInventoryPackage.getInventoryItemDetail(), "inventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shipmentReceiptRoleEClass, ShipmentReceiptRole.class, "ShipmentReceiptRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getShipmentReceiptRole_ReceiptId(), this.getShipmentReceipt(), null, "receiptId", null, 1, 1, ShipmentReceiptRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1045,12 +1046,12 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -1079,13 +1080,6 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (rejectionReasonEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getRejectionReason_RejectionId(),
 		   source,
 		   new String[] {
@@ -1098,20 +1092,6 @@ public class ReceiptPackageImpl extends EPackageImpl implements ReceiptPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (shipmentReceiptEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (shipmentReceiptEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getShipmentReceipt_ReceiptId(),

@@ -21,7 +21,7 @@ import org.abchip.mimo.biz.product.feature.ProductFeature;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getDesiredFeatureId <em>Desired Feature Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getOptionalInd <em>Optional Ind</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#isOptionalInd <em>Optional Ind</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getProductFeatureId <em>Product Feature Id</em>}</li>
  * </ul>
  *
@@ -60,6 +60,7 @@ public interface DesiredFeature extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Optional Ind</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Optional Ind</em>' attribute isn't clear,
@@ -67,22 +68,23 @@ public interface DesiredFeature extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Optional Ind</em>' attribute.
-	 * @see #setOptionalInd(char)
+	 * @see #setOptionalInd(boolean)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_OptionalInd()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getOptionalInd();
+	boolean isOptionalInd();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getOptionalInd <em>Optional Ind</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#isOptionalInd <em>Optional Ind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Optional Ind</em>' attribute.
-	 * @see #getOptionalInd()
+	 * @see #isOptionalInd()
 	 * @generated
 	 */
-	void setOptionalInd(char value);
+	void setOptionalInd(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Feature Id</b></em>' reference.

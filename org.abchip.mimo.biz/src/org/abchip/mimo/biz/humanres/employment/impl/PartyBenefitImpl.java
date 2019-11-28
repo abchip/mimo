@@ -15,7 +15,7 @@ import org.abchip.mimo.biz.common.period.PeriodType;
 import org.abchip.mimo.biz.humanres.employment.BenefitType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.PartyBenefit;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
 
@@ -42,7 +42,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PartyBenefitImpl extends BizEntityImpl implements PartyBenefit {
+public class PartyBenefitImpl extends BizEntityTypedImpl<BenefitType> implements PartyBenefit {
 	/**
 	 * 
 	 */

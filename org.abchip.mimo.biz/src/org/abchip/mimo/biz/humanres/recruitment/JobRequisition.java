@@ -14,6 +14,7 @@ import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.humanres.ability.SkillType;
+import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
 
 /**
  * <!-- begin-user-doc -->
@@ -413,21 +414,19 @@ public interface JobRequisition extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='jobRequisitionId'"
 	 * @generated
 	 */
-	List<String> employmentApps();
+	List<EmploymentApp> employmentApps();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobInterview' route='jobRequisitionId'"
 	 * @generated
 	 */
-	List<String> jobInterviews();
+	List<JobInterview> jobInterviews();
 
 } // JobRequisition

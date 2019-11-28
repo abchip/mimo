@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.quote;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -138,51 +139,47 @@ public interface QuoteType extends BizEntityType<Quote> {
 	void setQuoteTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Quote Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Quote Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Quote Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteType_QuoteTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteTypeAttr'"
 	 * @generated
 	 */
-	List<String> getQuoteTypeAttrs();
+	List<QuoteTypeAttr> getQuoteTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childQuoteTypes();
+	List<QuoteType> childQuoteTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyPrefDocTypeTpl' route='quoteTypeId'"
 	 * @generated
 	 */
-	List<String> partyPrefDocTypeTpls();
+	List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Quote' route='quoteTypeId'"
 	 * @generated
 	 */
-	List<String> quotes();
+	List<Quote> quotes();
 
 } // QuoteType

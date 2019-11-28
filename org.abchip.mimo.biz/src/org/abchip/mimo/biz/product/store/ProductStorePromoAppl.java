@@ -24,7 +24,7 @@ import org.abchip.mimo.biz.product.promo.ProductPromo;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getManualOnly <em>Manual Only</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#isManualOnly <em>Manual Only</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
@@ -64,6 +64,7 @@ public interface ProductStorePromoAppl extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Manual Only</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Manual Only</em>' attribute isn't clear,
@@ -71,23 +72,24 @@ public interface ProductStorePromoAppl extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Manual Only</em>' attribute.
-	 * @see #setManualOnly(char)
+	 * @see #setManualOnly(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl_ManualOnly()
-	 * @model annotation="mimo-ent-slot help='If set to Y then the promotion is not automatically evaluated, but only if it\n              is manually added to the cart.'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='If set to Y then the promotion is not automatically evaluated, but only if it\n              is manually added to the cart.'"
 	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getManualOnly();
+	boolean isManualOnly();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getManualOnly <em>Manual Only</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#isManualOnly <em>Manual Only</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Manual Only</em>' attribute.
-	 * @see #getManualOnly()
+	 * @see #isManualOnly()
 	 * @generated
 	 */
-	void setManualOnly(char value);
+	void setManualOnly(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.

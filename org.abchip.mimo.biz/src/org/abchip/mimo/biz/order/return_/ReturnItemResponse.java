@@ -229,12 +229,11 @@ public interface ReturnItemResponse extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItem' route='returnItemResponseId'"
 	 * @generated
 	 */
-	List<String> returnItems();
+	List<ReturnItem> returnItems();
 
 	/**
 	 * Returns the value of the '<em><b>Return Item Response Id</b></em>' attribute.

@@ -11,6 +11,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
@@ -465,7 +467,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentGatewayRespMsgs() {
+	public List<PaymentGatewayRespMsg> paymentGatewayRespMsgs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -477,7 +479,7 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public List<String> payments() {
+	public List<Payment> payments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

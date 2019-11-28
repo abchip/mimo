@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech;
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ShipmentContactMechImpl extends BizEntityTypedImpl<ShipmentContactMechType> implements ShipmentContactMech {
+public class ShipmentContactMechImpl extends BizEntityImpl implements ShipmentContactMech {
 	/**
 	 * 
 	 */

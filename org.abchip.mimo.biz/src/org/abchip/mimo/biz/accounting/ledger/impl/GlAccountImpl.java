@@ -9,13 +9,33 @@ package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeGlAccount;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountClass;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountTypeDefault;
+import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
 import org.abchip.mimo.biz.accounting.ledger.GlResourceType;
 import org.abchip.mimo.biz.accounting.ledger.GlXbrlClass;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
+import org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentApplication;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.order.OrderAdjustment;
+import org.abchip.mimo.biz.order.order.OrderItem;
+import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
+import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -174,8 +194,8 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getGlAccountGroupMembers() {
-		return (List<String>)eGet(LedgerPackage.Literals.GL_ACCOUNT__GL_ACCOUNT_GROUP_MEMBERS, true);
+	public List<GlAccountGroupMember> getGlAccountGroupMembers() {
+		return (List<GlAccountGroupMember>)eGet(LedgerPackage.Literals.GL_ACCOUNT__GL_ACCOUNT_GROUP_MEMBERS, true);
 	}
 
 	/**
@@ -185,8 +205,8 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getGlAccountOrganizations() {
-		return (List<String>)eGet(LedgerPackage.Literals.GL_ACCOUNT__GL_ACCOUNT_ORGANIZATIONS, true);
+	public List<GlAccountOrganization> getGlAccountOrganizations() {
+		return (List<GlAccountOrganization>)eGet(LedgerPackage.Literals.GL_ACCOUNT__GL_ACCOUNT_ORGANIZATIONS, true);
 	}
 
 	/**
@@ -195,7 +215,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTransEntries() {
+	public List<AcctgTransEntry> acctgTransEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -207,7 +227,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> childGlAccounts() {
+	public List<GlAccount> childGlAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -219,7 +239,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> defaultInvoiceItemTypes() {
+	public List<InvoiceItemType> defaultInvoiceItemTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -231,7 +251,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> defaultPaymentMethodTypes() {
+	public List<PaymentMethodType> defaultPaymentMethodTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -243,7 +263,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> finAccountTypeGlAccounts() {
+	public List<FinAccountTypeGlAccount> finAccountTypeGlAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -255,7 +275,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> glAccountTypeDefaults() {
+	public List<GlAccountTypeDefault> glAccountTypeDefaults() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -267,7 +287,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> glReconciliations() {
+	public List<GlReconciliation> glReconciliations() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -279,7 +299,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceItemTypeGlAccounts() {
+	public List<InvoiceItemTypeGlAccount> invoiceItemTypeGlAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -291,7 +311,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> overrideInvoiceItems() {
+	public List<InvoiceItem> overrideInvoiceItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -303,7 +323,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> overrideOrderAdjustments() {
+	public List<OrderAdjustment> overrideOrderAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -315,7 +335,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> overrideOrderItems() {
+	public List<OrderItem> overrideOrderItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -327,7 +347,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> overrideQuoteAdjustments() {
+	public List<QuoteAdjustment> overrideQuoteAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -339,7 +359,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> overrideReturnAdjustments() {
+	public List<ReturnAdjustment> overrideReturnAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -351,7 +371,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentApplications() {
+	public List<PaymentApplication> paymentApplications() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -363,7 +383,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentMethodTypeGlAccounts() {
+	public List<PaymentMethodTypeGlAccount> paymentMethodTypeGlAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -375,7 +395,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentMethods() {
+	public List<PaymentMethod> paymentMethods() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -387,7 +407,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> payments() {
+	public List<Payment> payments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -399,7 +419,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> postToFinAccounts() {
+	public List<FinAccount> postToFinAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -411,7 +431,7 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> varianceReasonGlAccounts() {
+	public List<VarianceReasonGlAccount> varianceReasonGlAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

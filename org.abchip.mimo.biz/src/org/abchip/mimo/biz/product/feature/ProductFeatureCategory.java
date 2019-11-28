@@ -85,22 +85,20 @@ public interface ProductFeatureCategory extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeatureCategory' route='parentCategoryId'"
 	 * @generated
 	 */
-	List<String> childProductFeatureCategories();
+	List<ProductFeatureCategory> childProductFeatureCategories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeature' route='productFeatureCategoryId'"
 	 * @generated
 	 */
-	List<String> productFeatures();
+	List<ProductFeature> productFeatures();
 
 	/**
 	 * Returns the value of the '<em><b>Product Feature Category Id</b></em>' attribute.

@@ -9,7 +9,8 @@ package org.abchip.mimo.biz.product.product;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
 import org.abchip.mimo.biz.common.uom.Uom;
 
 /**
@@ -30,7 +31,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
  * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels' formula='description'"
  * @generated
  */
-public interface ProductMeterType extends BizEntityType<ProductMeter> {
+public interface ProductMeterType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Default Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -87,32 +88,29 @@ public interface ProductMeterType extends BizEntityType<ProductMeter> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetMaint' route='intervalMeterTypeId'"
 	 * @generated
 	 */
-	List<String> intervalFixedAssetMaints();
+	List<FixedAssetMaint> intervalFixedAssetMaints();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMaint' route='intervalMeterTypeId'"
 	 * @generated
 	 */
-	List<String> intervalProductMaints();
+	List<ProductMaint> intervalProductMaints();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMeter' route='productMeterTypeId'"
 	 * @generated
 	 */
-	List<String> productMeters();
+	List<ProductMeter> productMeters();
 
 	/**
 	 * Returns the value of the '<em><b>Product Meter Type Id</b></em>' attribute.

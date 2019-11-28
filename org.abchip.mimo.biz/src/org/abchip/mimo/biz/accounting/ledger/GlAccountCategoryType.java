@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.accounting.ledger;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame title='General Ledger Account Category Type' formula='description'"
  * @generated
  */
-public interface GlAccountCategoryType extends BizEntityType<GlAccountCategory> {
+public interface GlAccountCategoryType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,12 +58,11 @@ public interface GlAccountCategoryType extends BizEntityType<GlAccountCategory> 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountCategory' route='glAccountCategoryTypeId'"
 	 * @generated
 	 */
-	List<String> glAccountCategories();
+	List<GlAccountCategory> glAccountCategories();
 
 	/**
 	 * Returns the value of the '<em><b>Gl Account Category Type Id</b></em>' attribute.

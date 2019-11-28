@@ -9,9 +9,11 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
 import org.abchip.mimo.biz.workeffort.workeffort.DeliverableType;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortDeliverableProd;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -31,7 +33,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> implements Deliverable {
+public class DeliverableImpl extends BizEntityImpl implements Deliverable {
 	/**
 	 * 
 	 */
@@ -142,7 +144,7 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> requirements() {
+	public List<Requirement> requirements() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -154,7 +156,7 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> workEffortDeliverableProds() {
+	public List<WorkEffortDeliverableProd> workEffortDeliverableProds() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

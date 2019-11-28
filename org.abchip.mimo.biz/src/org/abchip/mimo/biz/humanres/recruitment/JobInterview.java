@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.humanres.recruitment;
 
 import java.util.Date;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.party.party.Party;
 
@@ -36,7 +36,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * @model annotation="mimo-ent-frame title='Entity for storing data about Interviews conducted'"
  * @generated
  */
-public interface JobInterview extends BizEntityTyped<JobInterviewType> {
+public interface JobInterview extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Grade Secured Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -8,8 +8,7 @@
 package org.abchip.mimo.biz.humanres.ability;
 
 import java.util.List;
-
-import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.BizEntityType;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +29,7 @@ import org.abchip.mimo.biz.BizEntity;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface TrainingClassType extends BizEntity {
+public interface TrainingClassType extends BizEntityType<PersonTraining> {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,12 +111,11 @@ public interface TrainingClassType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TrainingClassType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childTrainingClassTypes();
+	List<TrainingClassType> childTrainingClassTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Training Class Type Id</b></em>' attribute.

@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementItem;
 import org.abchip.mimo.biz.party.agreement.AgreementItemType;
+import org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -123,8 +124,8 @@ public class AgreementItemTypeImpl extends BizEntityTypeImpl<AgreementItem> impl
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getAgreementItemTypeAttrs() {
-		return (List<String>)eGet(AgreementPackage.Literals.AGREEMENT_ITEM_TYPE__AGREEMENT_ITEM_TYPE_ATTRS, true);
+	public List<AgreementItemTypeAttr> getAgreementItemTypeAttrs() {
+		return (List<AgreementItemTypeAttr>)eGet(AgreementPackage.Literals.AGREEMENT_ITEM_TYPE__AGREEMENT_ITEM_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -133,7 +134,7 @@ public class AgreementItemTypeImpl extends BizEntityTypeImpl<AgreementItem> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> agreementItems() {
+	public List<AgreementItem> agreementItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +146,7 @@ public class AgreementItemTypeImpl extends BizEntityTypeImpl<AgreementItem> impl
 	 * @generated
 	 */
 	@Override
-	public List<String> childAgreementItemTypes() {
+	public List<AgreementItemType> childAgreementItemTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

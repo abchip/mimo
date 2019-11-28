@@ -13,6 +13,7 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceTerm;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceTermAttribute;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.TermType;
 import org.eclipse.emf.ecore.EClass;
@@ -210,8 +211,8 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getInvoiceTermAttributes() {
-		return (List<String>)eGet(InvoicePackage.Literals.INVOICE_TERM__INVOICE_TERM_ATTRIBUTES, true);
+	public List<InvoiceTermAttribute> getInvoiceTermAttributes() {
+		return (List<InvoiceTermAttribute>)eGet(InvoicePackage.Literals.INVOICE_TERM__INVOICE_TERM_ATTRIBUTES, true);
 	}
 
 	/**

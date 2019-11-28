@@ -162,7 +162,7 @@ public interface PicklistPackage extends EPackage {
 	int PICKLIST__PICKLIST_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Picklist Status Histories</b></em>' attribute list.
+	 * The feature id for the '<em><b>Picklist Status Histories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -733,15 +733,15 @@ public interface PicklistPackage extends EPackage {
 	EReference getPicklist_StatusId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getPicklistStatusHistories <em>Picklist Status Histories</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getPicklistStatusHistories <em>Picklist Status Histories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Picklist Status Histories</em>'.
+	 * @return the meta object for the reference list '<em>Picklist Status Histories</em>'.
 	 * @see org.abchip.mimo.biz.shipment.picklist.Picklist#getPicklistStatusHistories()
 	 * @see #getPicklist()
 	 * @generated
 	 */
-	EAttribute getPicklist_PicklistStatusHistories();
+	EReference getPicklist_PicklistStatusHistories();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin <em>Bin</em>}'.
@@ -1144,12 +1144,12 @@ public interface PicklistPackage extends EPackage {
 		EReference PICKLIST__STATUS_ID = eINSTANCE.getPicklist_StatusId();
 
 		/**
-		 * The meta object literal for the '<em><b>Picklist Status Histories</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Picklist Status Histories</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PICKLIST__PICKLIST_STATUS_HISTORIES = eINSTANCE.getPicklist_PicklistStatusHistories();
+		EReference PICKLIST__PICKLIST_STATUS_HISTORIES = eINSTANCE.getPicklist_PicklistStatusHistories();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistBinImpl <em>Bin</em>}' class.

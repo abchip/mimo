@@ -10,8 +10,12 @@ package org.abchip.mimo.biz.webapp.website.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.theme.VisualThemeSet;
+import org.abchip.mimo.biz.content.website.WebAnalyticsConfig;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
+import org.abchip.mimo.biz.webapp.website.WebPage;
 import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.abchip.mimo.biz.webapp.website.WebsitePackage;
 import org.eclipse.emf.ecore.EClass;
@@ -418,8 +422,8 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWebAnalyticsConfigs() {
-		return (List<String>)eGet(WebsitePackage.Literals.WEB_SITE__WEB_ANALYTICS_CONFIGS, true);
+	public List<WebAnalyticsConfig> getWebAnalyticsConfigs() {
+		return (List<WebAnalyticsConfig>)eGet(WebsitePackage.Literals.WEB_SITE__WEB_ANALYTICS_CONFIGS, true);
 	}
 
 	/**
@@ -428,7 +432,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 * @generated
 	 */
 	@Override
-	public List<String> orderHeaders() {
+	public List<OrderHeader> orderHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -440,7 +444,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 * @generated
 	 */
 	@Override
-	public List<String> subscriptionResources() {
+	public List<SubscriptionResource> subscriptionResources() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -452,7 +456,7 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 * @generated
 	 */
 	@Override
-	public List<String> webPages() {
+	public List<WebPage> webPages() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

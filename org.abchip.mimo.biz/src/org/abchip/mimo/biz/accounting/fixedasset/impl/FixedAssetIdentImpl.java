@@ -11,7 +11,7 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdentType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType> implements FixedAssetIdent {
+public class FixedAssetIdentImpl extends BizEntityImpl implements FixedAssetIdent {
 	/**
 	 * 
 	 */

@@ -226,7 +226,7 @@ public interface AgreementPackage extends EPackage {
 	int AGREEMENT__AGREEMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Agreement Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Agreement Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -244,7 +244,7 @@ public interface AgreementPackage extends EPackage {
 	int AGREEMENT__AGREEMENT_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Agreement Items</b></em>' attribute list.
+	 * The feature id for the '<em><b>Agreement Items</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1225,7 +1225,7 @@ public interface AgreementPackage extends EPackage {
 	int AGREEMENT_ITEM_TYPE__AGREEMENT_ITEM_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Agreement Item Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Agreement Item Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1732,7 +1732,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
+	int AGREEMENT_TERM__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -1741,7 +1741,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
+	int AGREEMENT_TERM__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -1750,7 +1750,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
+	int AGREEMENT_TERM__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -1759,7 +1759,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
+	int AGREEMENT_TERM__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Agreement Term Id</b></em>' attribute.
@@ -1768,7 +1768,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__AGREEMENT_TERM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int AGREEMENT_TERM__AGREEMENT_TERM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Agreement Id</b></em>' reference.
@@ -1777,7 +1777,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__AGREEMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int AGREEMENT_TERM__AGREEMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Agreement Item Seq Id</b></em>' attribute.
@@ -1786,16 +1786,16 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__AGREEMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int AGREEMENT_TERM__AGREEMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Agreement Term Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Agreement Term Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1804,7 +1804,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int AGREEMENT_TERM__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -1813,7 +1813,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int AGREEMENT_TERM__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Invoice Item Type Id</b></em>' reference.
@@ -1822,7 +1822,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Max Quantity</b></em>' attribute.
@@ -1831,7 +1831,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__MAX_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int AGREEMENT_TERM__MAX_QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Min Quantity</b></em>' attribute.
@@ -1840,7 +1840,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__MIN_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int AGREEMENT_TERM__MIN_QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Term Days</b></em>' attribute.
@@ -1849,7 +1849,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__TERM_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int AGREEMENT_TERM__TERM_DAYS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Term Type Id</b></em>' reference.
@@ -1858,7 +1858,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int AGREEMENT_TERM__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Term Value</b></em>' attribute.
@@ -1867,7 +1867,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__TERM_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int AGREEMENT_TERM__TERM_VALUE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Text Value</b></em>' attribute.
@@ -1876,7 +1876,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__TEXT_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int AGREEMENT_TERM__TEXT_VALUE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1885,7 +1885,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int AGREEMENT_TERM__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Term</em>' class.
@@ -1894,7 +1894,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int AGREEMENT_TERM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermAttributeImpl <em>Term Attribute</em>}' class.
@@ -2052,7 +2052,7 @@ public interface AgreementPackage extends EPackage {
 	int AGREEMENT_TYPE__AGREEMENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Agreement Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Agreement Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2271,13 +2271,22 @@ public interface AgreementPackage extends EPackage {
 	int TERM_TYPE = 21;
 
 	/**
+	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM_TYPE__SLOTS = BizPackage.BIZ_ENTITY_TYPE__SLOTS;
+
+	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY__CREATED_STAMP;
+	int TERM_TYPE__CREATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -2286,7 +2295,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY__CREATED_TX_STAMP;
+	int TERM_TYPE__CREATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__CREATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -2295,7 +2304,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_STAMP;
+	int TERM_TYPE__LAST_UPDATED_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -2304,7 +2313,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
+	int TERM_TYPE__LAST_UPDATED_TX_STAMP = BizPackage.BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP;
 
 	/**
 	 * The feature id for the '<em><b>Term Type Id</b></em>' attribute.
@@ -2313,7 +2322,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_TYPE__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
+	int TERM_TYPE__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2322,7 +2331,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int TERM_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Has Table</b></em>' attribute.
@@ -2331,7 +2340,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TERM_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
@@ -2340,16 +2349,16 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int TERM_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Term Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Term Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_TYPE__TERM_TYPE_ATTRS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int TERM_TYPE__TERM_TYPE_ATTRS = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Term Type</em>' class.
@@ -2358,7 +2367,7 @@ public interface AgreementPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int TERM_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.agreement.impl.TermTypeAttrImpl <em>Term Type Attr</em>}' class.
@@ -2662,26 +2671,26 @@ public interface AgreementPackage extends EPackage {
 	EAttribute getAgreement_ThruDate();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementAttributes <em>Agreement Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementAttributes <em>Agreement Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Agreement Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Agreement Attributes</em>'.
 	 * @see org.abchip.mimo.biz.party.agreement.Agreement#getAgreementAttributes()
 	 * @see #getAgreement()
 	 * @generated
 	 */
-	EAttribute getAgreement_AgreementAttributes();
+	EReference getAgreement_AgreementAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementItems <em>Agreement Items</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementItems <em>Agreement Items</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Agreement Items</em>'.
+	 * @return the meta object for the reference list '<em>Agreement Items</em>'.
 	 * @see org.abchip.mimo.biz.party.agreement.Agreement#getAgreementItems()
 	 * @see #getAgreement()
 	 * @generated
 	 */
-	EAttribute getAgreement_AgreementItems();
+	EReference getAgreement_AgreementItems();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.agreement.AgreementAttribute <em>Attribute</em>}'.
@@ -3258,15 +3267,15 @@ public interface AgreementPackage extends EPackage {
 	EReference getAgreementItemType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.agreement.AgreementItemType#getAgreementItemTypeAttrs <em>Agreement Item Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.party.agreement.AgreementItemType#getAgreementItemTypeAttrs <em>Agreement Item Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Agreement Item Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Agreement Item Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementItemType#getAgreementItemTypeAttrs()
 	 * @see #getAgreementItemType()
 	 * @generated
 	 */
-	EAttribute getAgreementItemType_AgreementItemTypeAttrs();
+	EReference getAgreementItemType_AgreementItemTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr <em>Item Type Attr</em>}'.
@@ -3681,15 +3690,15 @@ public interface AgreementPackage extends EPackage {
 	EAttribute getAgreementTerm_ThruDate();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.agreement.AgreementTerm#getAgreementTermAttributes <em>Agreement Term Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.party.agreement.AgreementTerm#getAgreementTermAttributes <em>Agreement Term Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Agreement Term Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Agreement Term Attributes</em>'.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementTerm#getAgreementTermAttributes()
 	 * @see #getAgreementTerm()
 	 * @generated
 	 */
-	EAttribute getAgreementTerm_AgreementTermAttributes();
+	EReference getAgreementTerm_AgreementTermAttributes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute <em>Term Attribute</em>}'.
@@ -3800,15 +3809,15 @@ public interface AgreementPackage extends EPackage {
 	EReference getAgreementType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.agreement.AgreementType#getAgreementTypeAttrs <em>Agreement Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.party.agreement.AgreementType#getAgreementTypeAttrs <em>Agreement Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Agreement Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Agreement Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementType#getAgreementTypeAttrs()
 	 * @see #getAgreementType()
 	 * @generated
 	 */
-	EAttribute getAgreementType_AgreementTypeAttrs();
+	EReference getAgreementType_AgreementTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.agreement.AgreementTypeAttr <em>Type Attr</em>}'.
@@ -3951,15 +3960,15 @@ public interface AgreementPackage extends EPackage {
 	EReference getTermType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.agreement.TermType#getTermTypeAttrs <em>Term Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.party.agreement.TermType#getTermTypeAttrs <em>Term Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Term Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Term Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.party.agreement.TermType#getTermTypeAttrs()
 	 * @see #getTermType()
 	 * @generated
 	 */
-	EAttribute getTermType_TermTypeAttrs();
+	EReference getTermType_TermTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.agreement.TermTypeAttr <em>Term Type Attr</em>}'.
@@ -4191,20 +4200,20 @@ public interface AgreementPackage extends EPackage {
 		EAttribute AGREEMENT__THRU_DATE = eINSTANCE.getAgreement_ThruDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Agreement Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Agreement Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute AGREEMENT__AGREEMENT_ATTRIBUTES = eINSTANCE.getAgreement_AgreementAttributes();
+		EReference AGREEMENT__AGREEMENT_ATTRIBUTES = eINSTANCE.getAgreement_AgreementAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Agreement Items</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Agreement Items</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute AGREEMENT__AGREEMENT_ITEMS = eINSTANCE.getAgreement_AgreementItems();
+		EReference AGREEMENT__AGREEMENT_ITEMS = eINSTANCE.getAgreement_AgreementItems();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.agreement.impl.AgreementAttributeImpl <em>Attribute</em>}' class.
@@ -4649,12 +4658,12 @@ public interface AgreementPackage extends EPackage {
 		EReference AGREEMENT_ITEM_TYPE__PARENT_TYPE_ID = eINSTANCE.getAgreementItemType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Agreement Item Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Agreement Item Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute AGREEMENT_ITEM_TYPE__AGREEMENT_ITEM_TYPE_ATTRS = eINSTANCE.getAgreementItemType_AgreementItemTypeAttrs();
+		EReference AGREEMENT_ITEM_TYPE__AGREEMENT_ITEM_TYPE_ATTRS = eINSTANCE.getAgreementItemType_AgreementItemTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemTypeAttrImpl <em>Item Type Attr</em>}' class.
@@ -4973,12 +4982,12 @@ public interface AgreementPackage extends EPackage {
 		EAttribute AGREEMENT_TERM__THRU_DATE = eINSTANCE.getAgreementTerm_ThruDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Agreement Term Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Agreement Term Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES = eINSTANCE.getAgreementTerm_AgreementTermAttributes();
+		EReference AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES = eINSTANCE.getAgreementTerm_AgreementTermAttributes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermAttributeImpl <em>Term Attribute</em>}' class.
@@ -5065,12 +5074,12 @@ public interface AgreementPackage extends EPackage {
 		EReference AGREEMENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getAgreementType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Agreement Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Agreement Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute AGREEMENT_TYPE__AGREEMENT_TYPE_ATTRS = eINSTANCE.getAgreementType_AgreementTypeAttrs();
+		EReference AGREEMENT_TYPE__AGREEMENT_TYPE_ATTRS = eINSTANCE.getAgreementType_AgreementTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTypeAttrImpl <em>Type Attr</em>}' class.
@@ -5183,12 +5192,12 @@ public interface AgreementPackage extends EPackage {
 		EReference TERM_TYPE__PARENT_TYPE_ID = eINSTANCE.getTermType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Term Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Term Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TERM_TYPE__TERM_TYPE_ATTRS = eINSTANCE.getTermType_TermTypeAttrs();
+		EReference TERM_TYPE__TERM_TYPE_ATTRS = eINSTANCE.getTermType_TermTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.agreement.impl.TermTypeAttrImpl <em>Term Type Attr</em>}' class.

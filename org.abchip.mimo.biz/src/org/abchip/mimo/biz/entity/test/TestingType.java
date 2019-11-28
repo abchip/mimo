@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.entity.test;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame title='Testing Entity Type' formula='description'"
  * @generated
  */
-public interface TestingType extends BizEntityType<Testing> {
+public interface TestingType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,12 +58,11 @@ public interface TestingType extends BizEntityType<Testing> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Testing' route='testingTypeId'"
 	 * @generated
 	 */
-	List<String> testings();
+	List<Testing> testings();
 
 	/**
 	 * Returns the value of the '<em><b>Testing Type Id</b></em>' attribute.

@@ -10,8 +10,10 @@ package org.abchip.mimo.biz.common.theme.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.common.theme.ThemePackage;
+import org.abchip.mimo.biz.common.theme.VisualTheme;
 import org.abchip.mimo.biz.common.theme.VisualThemeSet;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -78,7 +80,7 @@ public class VisualThemeSetImpl extends BizEntityImpl implements VisualThemeSet 
 	 * @generated
 	 */
 	@Override
-	public List<String> visualThemes() {
+	public List<VisualTheme> visualThemes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -90,7 +92,7 @@ public class VisualThemeSetImpl extends BizEntityImpl implements VisualThemeSet 
 	 * @generated
 	 */
 	@Override
-	public List<String> webSites() {
+	public List<WebSite> webSites() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

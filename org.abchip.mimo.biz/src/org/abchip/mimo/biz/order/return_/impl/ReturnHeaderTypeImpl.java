@@ -9,9 +9,10 @@ package org.abchip.mimo.biz.order.return_.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnHeaderType;
+import org.abchip.mimo.biz.order.return_.ReturnItemTypeMap;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ReturnHeaderTypeImpl extends BizEntityTypeImpl<ReturnHeader> implements ReturnHeaderType {
+public class ReturnHeaderTypeImpl extends BizEntityImpl implements ReturnHeaderType {
 	/**
 	 * 
 	 */
@@ -101,7 +102,7 @@ public class ReturnHeaderTypeImpl extends BizEntityTypeImpl<ReturnHeader> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> childReturnHeaderTypes() {
+	public List<ReturnHeaderType> childReturnHeaderTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -113,7 +114,7 @@ public class ReturnHeaderTypeImpl extends BizEntityTypeImpl<ReturnHeader> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> returnHeaders() {
+	public List<ReturnHeader> returnHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -125,7 +126,7 @@ public class ReturnHeaderTypeImpl extends BizEntityTypeImpl<ReturnHeader> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> returnItemTypeMaps() {
+	public List<ReturnItemTypeMap> returnItemTypeMaps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

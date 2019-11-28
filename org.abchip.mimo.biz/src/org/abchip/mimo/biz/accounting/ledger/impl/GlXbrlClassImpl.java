@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlXbrlClass;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -78,7 +79,7 @@ public class GlXbrlClassImpl extends BizEntityImpl implements GlXbrlClass {
 	 * @generated
 	 */
 	@Override
-	public List<String> glAccounts() {
+	public List<GlAccount> glAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

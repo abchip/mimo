@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPurposeType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -100,7 +101,7 @@ public class WorkEffortPurposeTypeImpl extends BizEntityImpl implements WorkEffo
 	 * @generated
 	 */
 	@Override
-	public List<String> childWorkEffortPurposeTypes() {
+	public List<WorkEffortPurposeType> childWorkEffortPurposeTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -112,7 +113,7 @@ public class WorkEffortPurposeTypeImpl extends BizEntityImpl implements WorkEffo
 	 * @generated
 	 */
 	@Override
-	public List<String> workEfforts() {
+	public List<WorkEffort> workEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

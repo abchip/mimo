@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.party.communication.impl;
 
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp;
 import org.abchip.mimo.biz.party.communication.CommunicationEventPurpose;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class CommunicationEventPurposeImpl extends BizEntityImpl implements CommunicationEventPurpose {
+public class CommunicationEventPurposeImpl extends BizEntityTypedImpl<CommunicationEventPrpTyp> implements CommunicationEventPurpose {
 	/**
 	 * 
 	 */

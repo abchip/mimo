@@ -112,22 +112,20 @@ public interface CustomMethodType extends BizEntityType<CustomMethod> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustomMethodType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childCustomMethodTypes();
+	List<CustomMethodType> childCustomMethodTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustomMethod' route='customMethodTypeId'"
 	 * @generated
 	 */
-	List<String> customMethods();
+	List<CustomMethod> customMethods();
 
 	/**
 	 * Returns the value of the '<em><b>Custom Method Type Id</b></em>' attribute.

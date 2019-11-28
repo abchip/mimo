@@ -10,7 +10,7 @@ package org.abchip.mimo.biz.entity.test;
 import java.util.Date;
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface Testing extends BizEntityTyped<TestingType> {
+public interface Testing extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -221,21 +221,20 @@ public interface Testing extends BizEntityTyped<TestingType> {
 	void setTestingTypeId(TestingType value);
 
 	/**
-	 * Returns the value of the '<em><b>Testing Items</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Testing Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.test.TestingItem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Testing Items</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Testing Items</em>' attribute list.
+	 * @return the value of the '<em>Testing Items</em>' reference list.
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTesting_TestingItems()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TestingItem'"
 	 * @generated
 	 */
-	List<String> getTestingItems();
+	List<TestingItem> getTestingItems();
 
 } // Testing

@@ -412,57 +412,54 @@ public interface EntitySync extends BizEntity {
 	void setTargetServiceName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Entity Sync Histories</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Entity Sync Histories</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entity Sync Histories</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity Sync Histories</em>' attribute list.
+	 * @return the value of the '<em>Entity Sync Histories</em>' reference list.
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncHistories()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntitySyncHistory'"
 	 * @generated
 	 */
-	List<String> getEntitySyncHistories();
+	List<EntitySyncHistory> getEntitySyncHistories();
 
 	/**
-	 * Returns the value of the '<em><b>Entity Sync Includes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Entity Sync Includes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entity Sync Includes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity Sync Includes</em>' attribute list.
+	 * @return the value of the '<em>Entity Sync Includes</em>' reference list.
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncIncludes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntitySyncInclude'"
 	 * @generated
 	 */
-	List<String> getEntitySyncIncludes();
+	List<EntitySyncInclude> getEntitySyncIncludes();
 
 	/**
-	 * Returns the value of the '<em><b>Entity Sync Include Groups</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Entity Sync Include Groups</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entity Sync Include Groups</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity Sync Include Groups</em>' attribute list.
+	 * @return the value of the '<em>Entity Sync Include Groups</em>' reference list.
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncIncludeGroups()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntitySyncIncludeGroup'"
 	 * @generated
 	 */
-	List<String> getEntitySyncIncludeGroups();
+	List<EntitySyncIncludeGroup> getEntitySyncIncludeGroups();
 
 } // EntitySync

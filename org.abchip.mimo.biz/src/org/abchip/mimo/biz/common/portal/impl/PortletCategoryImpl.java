@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.common.portal.PortalPackage;
 import org.abchip.mimo.biz.common.portal.PortletCategory;
+import org.abchip.mimo.biz.common.portal.PortletPortletCategory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -78,7 +79,7 @@ public class PortletCategoryImpl extends BizEntityImpl implements PortletCategor
 	 * @generated
 	 */
 	@Override
-	public List<String> portletPortletCategories() {
+	public List<PortletPortletCategory> portletPortletCategories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

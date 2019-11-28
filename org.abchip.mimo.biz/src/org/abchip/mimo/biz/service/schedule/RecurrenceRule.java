@@ -464,21 +464,19 @@ public interface RecurrenceRule extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RecurrenceInfo' route='exceptionRuleId'"
 	 * @generated
 	 */
-	List<String> exceptionRecurrenceInfos();
+	List<RecurrenceInfo> exceptionRecurrenceInfos();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='RecurrenceInfo' route='recurrenceRuleId'"
 	 * @generated
 	 */
-	List<String> recurrenceInfos();
+	List<RecurrenceInfo> recurrenceInfos();
 
 } // RecurrenceRule

@@ -9,9 +9,10 @@ package org.abchip.mimo.biz.content.website.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.content.website.WebAnalyticsConfig;
 import org.abchip.mimo.biz.content.website.WebAnalyticsType;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class WebAnalyticsTypeImpl extends BizEntityImpl implements WebAnalyticsType {
+public class WebAnalyticsTypeImpl extends BizEntityTypeImpl<WebAnalyticsConfig> implements WebAnalyticsType {
 	/**
 	 * 
 	 */
@@ -121,7 +122,7 @@ public class WebAnalyticsTypeImpl extends BizEntityImpl implements WebAnalyticsT
 	 * @generated
 	 */
 	@Override
-	public List<String> childWebAnalyticsTypes() {
+	public List<WebAnalyticsType> childWebAnalyticsTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +134,7 @@ public class WebAnalyticsTypeImpl extends BizEntityImpl implements WebAnalyticsT
 	 * @generated
 	 */
 	@Override
-	public List<String> webAnalyticsConfigs() {
+	public List<WebAnalyticsConfig> webAnalyticsConfigs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

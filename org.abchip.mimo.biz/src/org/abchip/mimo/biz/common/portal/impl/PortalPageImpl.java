@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.common.portal.PortalPackage;
 import org.abchip.mimo.biz.common.portal.PortalPage;
+import org.abchip.mimo.biz.common.portal.PortalPageColumn;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
@@ -209,8 +210,8 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPortalPageColumns() {
-		return (List<String>)eGet(PortalPackage.Literals.PORTAL_PAGE__PORTAL_PAGE_COLUMNS, true);
+	public List<PortalPageColumn> getPortalPageColumns() {
+		return (List<PortalPageColumn>)eGet(PortalPackage.Literals.PORTAL_PAGE__PORTAL_PAGE_COLUMNS, true);
 	}
 
 	/**
@@ -219,7 +220,7 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 * @generated
 	 */
 	@Override
-	public List<String> childPortalPages() {
+	public List<PortalPage> childPortalPages() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

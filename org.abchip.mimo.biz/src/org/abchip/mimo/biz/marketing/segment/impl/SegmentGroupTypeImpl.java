@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.marketing.segment.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupType;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SegmentGroupTypeImpl extends BizEntityTypeImpl<SegmentGroup> implements SegmentGroupType {
+public class SegmentGroupTypeImpl extends BizEntityImpl implements SegmentGroupType {
 	/**
 	 * 
 	 */
@@ -80,7 +80,7 @@ public class SegmentGroupTypeImpl extends BizEntityTypeImpl<SegmentGroup> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> segmentGroups() {
+	public List<SegmentGroup> segmentGroups() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

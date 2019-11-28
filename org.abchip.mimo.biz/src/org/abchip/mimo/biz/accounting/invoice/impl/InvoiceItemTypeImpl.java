@@ -11,9 +11,13 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeAttr;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeGlAccount;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.party.agreement.AgreementTerm;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -146,8 +150,8 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getInvoiceItemTypeAttrs() {
-		return (List<String>)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS, true);
+	public List<InvoiceItemTypeAttr> getInvoiceItemTypeAttrs() {
+		return (List<InvoiceItemTypeAttr>)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -157,8 +161,8 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getInvoiceItemTypeGlAccounts() {
-		return (List<String>)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS, true);
+	public List<InvoiceItemTypeGlAccount> getInvoiceItemTypeGlAccounts() {
+		return (List<InvoiceItemTypeGlAccount>)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS, true);
 	}
 
 	/**
@@ -167,7 +171,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> agreementTerms() {
+	public List<AgreementTerm> agreementTerms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -179,7 +183,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> childInvoiceItemTypes() {
+	public List<InvoiceItemType> childInvoiceItemTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -191,7 +195,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceItemTypeMaps() {
+	public List<InvoiceItemTypeMap> invoiceItemTypeMaps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -203,7 +207,7 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceItems() {
+	public List<InvoiceItem> invoiceItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

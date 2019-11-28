@@ -117,7 +117,7 @@ public interface GroupPackage extends EPackage {
 	int ENTITY_GROUP__ENTITY_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Entity Group Entries</b></em>' attribute list.
+	 * The feature id for the '<em><b>Entity Group Entries</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -259,15 +259,15 @@ public interface GroupPackage extends EPackage {
 	EAttribute getEntityGroup_EntityGroupName();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupEntries <em>Entity Group Entries</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupEntries <em>Entity Group Entries</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Entity Group Entries</em>'.
+	 * @return the meta object for the reference list '<em>Entity Group Entries</em>'.
 	 * @see org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupEntries()
 	 * @see #getEntityGroup()
 	 * @generated
 	 */
-	EAttribute getEntityGroup_EntityGroupEntries();
+	EReference getEntityGroup_EntityGroupEntries();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry <em>Entity Group Entry</em>}'.
@@ -361,12 +361,12 @@ public interface GroupPackage extends EPackage {
 		EAttribute ENTITY_GROUP__ENTITY_GROUP_NAME = eINSTANCE.getEntityGroup_EntityGroupName();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity Group Entries</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Entity Group Entries</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY_GROUP__ENTITY_GROUP_ENTRIES = eINSTANCE.getEntityGroup_EntityGroupEntries();
+		EReference ENTITY_GROUP__ENTITY_GROUP_ENTRIES = eINSTANCE.getEntityGroup_EntityGroupEntries();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupEntryImpl <em>Entity Group Entry</em>}' class.

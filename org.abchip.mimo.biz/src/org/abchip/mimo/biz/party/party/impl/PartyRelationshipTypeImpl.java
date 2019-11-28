@@ -185,7 +185,7 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 	 * @generated
 	 */
 	@Override
-	public List<String> childPartyRelationshipTypes() {
+	public List<PartyRelationshipType> childPartyRelationshipTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

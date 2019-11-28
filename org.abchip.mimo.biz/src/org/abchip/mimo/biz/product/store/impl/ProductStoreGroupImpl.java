@@ -9,7 +9,8 @@ package org.abchip.mimo.biz.product.store.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.ProductStoreGroupType;
 import org.abchip.mimo.biz.product.store.StorePackage;
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupType> implements ProductStoreGroup {
+public class ProductStoreGroupImpl extends BizEntityImpl implements ProductStoreGroup {
 	/**
 	 * 
 	 */
@@ -123,7 +124,7 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 	 * @generated
 	 */
 	@Override
-	public List<String> primaryProductStores() {
+	public List<ProductStore> primaryProductStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

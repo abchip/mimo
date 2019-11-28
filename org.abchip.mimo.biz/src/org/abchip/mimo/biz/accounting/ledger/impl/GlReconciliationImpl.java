@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -294,7 +295,7 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 * @generated
 	 */
 	@Override
-	public List<String> finAccountTranss() {
+	public List<FinAccountTrans> finAccountTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

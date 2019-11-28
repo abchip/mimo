@@ -139,22 +139,20 @@ public interface GlAccountClass extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountClass' route='parentClassId'"
 	 * @generated
 	 */
-	List<String> childGlAccountClasses();
+	List<GlAccountClass> childGlAccountClasses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccount' route='glAccountClassId'"
 	 * @generated
 	 */
-	List<String> glAccounts();
+	List<GlAccount> glAccounts();
 
 	/**
 	 * Returns the value of the '<em><b>Gl Account Class Id</b></em>' attribute.

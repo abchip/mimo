@@ -9,7 +9,8 @@ package org.abchip.mimo.biz.workeffort.workeffort;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.order.requirement.Requirement;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +31,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface Deliverable extends BizEntityTyped<DeliverableType> {
+public interface Deliverable extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Deliverable Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -139,21 +140,19 @@ public interface Deliverable extends BizEntityTyped<DeliverableType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Requirement' route='deliverableId'"
 	 * @generated
 	 */
-	List<String> requirements();
+	List<Requirement> requirements();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortDeliverableProd' route='deliverableId'"
 	 * @generated
 	 */
-	List<String> workEffortDeliverableProds();
+	List<WorkEffortDeliverableProd> workEffortDeliverableProds();
 
 } // Deliverable

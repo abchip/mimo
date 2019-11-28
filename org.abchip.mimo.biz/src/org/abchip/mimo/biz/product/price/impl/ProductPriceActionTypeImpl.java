@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.product.price.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPriceAction;
 import org.abchip.mimo.biz.product.price.ProductPriceActionType;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ProductPriceActionTypeImpl extends BizEntityTypeImpl<ProductPriceAction> implements ProductPriceActionType {
+public class ProductPriceActionTypeImpl extends BizEntityImpl implements ProductPriceActionType {
 	/**
 	 * 
 	 */
@@ -80,7 +80,7 @@ public class ProductPriceActionTypeImpl extends BizEntityTypeImpl<ProductPriceAc
 	 * @generated
 	 */
 	@Override
-	public List<String> productPriceActions() {
+	public List<ProductPriceAction> productPriceActions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

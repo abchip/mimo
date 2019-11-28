@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.entity.group;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,31 +85,29 @@ public interface EntityGroup extends BizEntity {
 	void setEntityGroupName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Entity Group Entries</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Entity Group Entries</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.group.EntityGroupEntry}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entity Group Entries</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity Group Entries</em>' attribute list.
+	 * @return the value of the '<em>Entity Group Entries</em>' reference list.
 	 * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroup_EntityGroupEntries()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntityGroupEntry'"
 	 * @generated
 	 */
-	List<String> getEntityGroupEntries();
+	List<EntityGroupEntry> getEntityGroupEntries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EntitySyncIncludeGroup' route='entityGroupId'"
 	 * @generated
 	 */
-	List<String> entitySyncIncludeGroups();
+	List<EntitySyncIncludeGroup> entitySyncIncludeGroups();
 
 } // EntityGroup

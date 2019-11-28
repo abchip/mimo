@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityType;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,70 +142,65 @@ public interface FinAccountType extends BizEntityType<FinAccount> {
 	void setReplenishEnumId(Enumeration value);
 
 	/**
-	 * Returns the value of the '<em><b>Fin Account Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Fin Account Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fin Account Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Fin Account Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_FinAccountTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTypeAttr'"
 	 * @generated
 	 */
-	List<String> getFinAccountTypeAttrs();
+	List<FinAccountTypeAttr> getFinAccountTypeAttrs();
 
 	/**
-	 * Returns the value of the '<em><b>Fin Account Type Gl Accounts</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Fin Account Type Gl Accounts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fin Account Type Gl Accounts</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Type Gl Accounts</em>' attribute list.
+	 * @return the value of the '<em>Fin Account Type Gl Accounts</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_FinAccountTypeGlAccounts()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTypeGlAccount'"
 	 * @generated
 	 */
-	List<String> getFinAccountTypeGlAccounts();
+	List<FinAccountTypeGlAccount> getFinAccountTypeGlAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childFinAccountTypes();
+	List<FinAccountType> childFinAccountTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccount' route='finAccountTypeId'"
 	 * @generated
 	 */
-	List<String> finAccounts();
+	List<FinAccount> finAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreFinActSetting' route='finAccountTypeId'"
 	 * @generated
 	 */
-	List<String> productStoreFinActSettings();
+	List<ProductStoreFinActSetting> productStoreFinActSettings();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.

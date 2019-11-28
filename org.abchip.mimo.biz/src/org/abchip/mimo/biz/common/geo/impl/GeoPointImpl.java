@@ -17,6 +17,9 @@ import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.facility.FacilityLocation;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -210,7 +213,7 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 * @generated
 	 */
 	@Override
-	public List<String> facilities() {
+	public List<Facility> facilities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -222,7 +225,7 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 * @generated
 	 */
 	@Override
-	public List<String> facilityLocations() {
+	public List<FacilityLocation> facilityLocations() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -234,7 +237,7 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 * @generated
 	 */
 	@Override
-	public List<String> postalAddresses() {
+	public List<PostalAddress> postalAddresses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

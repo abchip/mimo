@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getHeight <em>Height</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getLastName <em>Last Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getLastNameLocal <em>Last Name Local</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getMaritalStatus <em>Marital Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#isMaritalStatus <em>Marital Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getMemberId <em>Member Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getMiddleName <em>Middle Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getMiddleNameLocal <em>Middle Name Local</em>}</li>
@@ -327,8 +327,8 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public char getMaritalStatus() {
-		return (Character)eGet(PartyPackage.Literals.PERSON__MARITAL_STATUS, true);
+	public boolean isMaritalStatus() {
+		return (Boolean)eGet(PartyPackage.Literals.PERSON__MARITAL_STATUS, true);
 	}
 
 	/**
@@ -337,7 +337,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public void setMaritalStatus(char newMaritalStatus) {
+	public void setMaritalStatus(boolean newMaritalStatus) {
 		eSet(PartyPackage.Literals.PERSON__MARITAL_STATUS, newMaritalStatus);
 	}
 

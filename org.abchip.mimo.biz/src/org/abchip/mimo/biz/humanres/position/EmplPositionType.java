@@ -139,21 +139,19 @@ public interface EmplPositionType extends BizEntityType<EmplPosition> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmplPositionType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childEmplPositionTypes();
+	List<EmplPositionType> childEmplPositionTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmplPosition' route='emplPositionTypeId'"
 	 * @generated
 	 */
-	List<String> emplPositions();
+	List<EmplPosition> emplPositions();
 
 } // EmplPositionType

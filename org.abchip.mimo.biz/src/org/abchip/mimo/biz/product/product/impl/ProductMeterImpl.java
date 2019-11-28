@@ -8,7 +8,7 @@
 package org.abchip.mimo.biz.product.product.impl;
 
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductMeter;
 import org.abchip.mimo.biz.product.product.ProductMeterType;
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> implements ProductMeter {
+public class ProductMeterImpl extends BizEntityImpl implements ProductMeter {
 	/**
 	 * 
 	 */

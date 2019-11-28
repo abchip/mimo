@@ -9,10 +9,16 @@ package org.abchip.mimo.biz.product.category.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.abchip.mimo.biz.product.category.ProductCategoryAttribute;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
+import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -231,8 +237,8 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductCategoryAttributes() {
-		return (List<String>)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY__PRODUCT_CATEGORY_ATTRIBUTES, true);
+	public List<ProductCategoryAttribute> getProductCategoryAttributes() {
+		return (List<ProductCategoryAttribute>)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY__PRODUCT_CATEGORY_ATTRIBUTES, true);
 	}
 
 	/**
@@ -241,7 +247,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * @generated
 	 */
 	@Override
-	public List<String> primaryChildProductCategories() {
+	public List<ProductCategory> primaryChildProductCategories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -253,7 +259,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * @generated
 	 */
 	@Override
-	public List<String> primaryProducts() {
+	public List<Product> primaryProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -265,7 +271,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * @generated
 	 */
 	@Override
-	public List<String> productStoreSurveyAppls() {
+	public List<ProductStoreSurveyAppl> productStoreSurveyAppls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -277,7 +283,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * @generated
 	 */
 	@Override
-	public List<String> salesForecastDetails() {
+	public List<SalesForecastDetail> salesForecastDetails() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -289,7 +295,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * @generated
 	 */
 	@Override
-	public List<String> subscriptions() {
+	public List<Subscription> subscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -301,7 +307,7 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * @generated
 	 */
 	@Override
-	public List<String> taxAuthorityRateProducts() {
+	public List<TaxAuthorityRateProduct> taxAuthorityRateProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

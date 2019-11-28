@@ -111,42 +111,39 @@ public interface CostComponentType extends BizEntityType<CostComponent> {
 	void setParentTypeId(CostComponentType value);
 
 	/**
-	 * Returns the value of the '<em><b>Cost Component Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Cost Component Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.cost.CostComponentTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cost Component Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cost Component Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Cost Component Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentType_CostComponentTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponentTypeAttr'"
 	 * @generated
 	 */
-	List<String> getCostComponentTypeAttrs();
+	List<CostComponentTypeAttr> getCostComponentTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponentType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childCostComponentTypes();
+	List<CostComponentType> childCostComponentTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponent' route='costComponentTypeId'"
 	 * @generated
 	 */
-	List<String> costComponents();
+	List<CostComponent> costComponents();
 
 	/**
 	 * Returns the value of the '<em><b>Cost Component Type Id</b></em>' attribute.

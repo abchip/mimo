@@ -9,9 +9,8 @@ package org.abchip.mimo.biz.product.catalog.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.catalog.CatalogPackage;
-import org.abchip.mimo.biz.product.catalog.ProdCatalogCategory;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogCategoryType;
 import org.eclipse.emf.ecore.EClass;
 
@@ -30,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCategory> implements ProdCatalogCategoryType {
+public class ProdCatalogCategoryTypeImpl extends BizEntityImpl implements ProdCatalogCategoryType {
 	/**
 	 * 
 	 */
@@ -101,7 +100,7 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityTypeImpl<ProdCatalogCa
 	 * @generated
 	 */
 	@Override
-	public List<String> childProdCatalogCategoryTypes() {
+	public List<ProdCatalogCategoryType> childProdCatalogCategoryTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

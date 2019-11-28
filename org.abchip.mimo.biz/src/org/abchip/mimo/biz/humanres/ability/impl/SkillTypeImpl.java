@@ -10,8 +10,12 @@ package org.abchip.mimo.biz.humanres.ability.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
+import org.abchip.mimo.biz.humanres.ability.PartySkill;
 import org.abchip.mimo.biz.humanres.ability.SkillType;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
+import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -30,7 +34,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SkillTypeImpl extends BizEntityImpl implements SkillType {
+public class SkillTypeImpl extends BizEntityTypeImpl<PartySkill> implements SkillType {
 	/**
 	 * 
 	 */
@@ -121,7 +125,7 @@ public class SkillTypeImpl extends BizEntityImpl implements SkillType {
 	 * @generated
 	 */
 	@Override
-	public List<String> childSkillTypes() {
+	public List<SkillType> childSkillTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +137,7 @@ public class SkillTypeImpl extends BizEntityImpl implements SkillType {
 	 * @generated
 	 */
 	@Override
-	public List<String> jobRequisitions() {
+	public List<JobRequisition> jobRequisitions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +149,7 @@ public class SkillTypeImpl extends BizEntityImpl implements SkillType {
 	 * @generated
 	 */
 	@Override
-	public List<String> partySkills() {
+	public List<PartySkill> partySkills() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -157,7 +161,7 @@ public class SkillTypeImpl extends BizEntityImpl implements SkillType {
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteItems() {
+	public List<QuoteItem> quoteItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -169,7 +173,7 @@ public class SkillTypeImpl extends BizEntityImpl implements SkillType {
 	 * @generated
 	 */
 	@Override
-	public List<String> workEffortSkillStandards() {
+	public List<WorkEffortSkillStandard> workEffortSkillStandards() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

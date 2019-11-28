@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.order.order.OrderItemPriceInfo;
 
 /**
  * <!-- begin-user-doc -->
@@ -168,50 +169,47 @@ public interface ProductPriceRule extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Price Actions</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Price Actions</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.price.ProductPriceAction}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Price Actions</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Price Actions</em>' attribute list.
+	 * @return the value of the '<em>Product Price Actions</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ProductPriceActions()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPriceAction'"
 	 * @generated
 	 */
-	List<String> getProductPriceActions();
+	List<ProductPriceAction> getProductPriceActions();
 
 	/**
-	 * Returns the value of the '<em><b>Product Price Conds</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Price Conds</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.price.ProductPriceCond}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Price Conds</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Price Conds</em>' attribute list.
+	 * @return the value of the '<em>Product Price Conds</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ProductPriceConds()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPriceCond'"
 	 * @generated
 	 */
-	List<String> getProductPriceConds();
+	List<ProductPriceCond> getProductPriceConds();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemPriceInfo' route='productPriceRuleId'"
 	 * @generated
 	 */
-	List<String> orderItemPriceInfos();
+	List<OrderItemPriceInfo> orderItemPriceInfos();
 
 	/**
 	 * Returns the value of the '<em><b>Product Price Rule Id</b></em>' attribute.

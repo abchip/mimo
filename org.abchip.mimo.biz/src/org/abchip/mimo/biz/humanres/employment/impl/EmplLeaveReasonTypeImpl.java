@@ -141,7 +141,7 @@ public class EmplLeaveReasonTypeImpl extends BizEntityImpl implements EmplLeaveR
 	 * @generated
 	 */
 	@Override
-	public List<String> childEmplLeaveReasonTypes() {
+	public List<EmplLeaveReasonType> childEmplLeaveReasonTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

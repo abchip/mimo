@@ -138,41 +138,38 @@ public interface WorkEffortType extends BizEntityType<WorkEffort> {
 	void setWorkEffortTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Work Effort Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Work Effort Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortType_WorkEffortTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortTypeAttr'"
 	 * @generated
 	 */
-	List<String> getWorkEffortTypeAttrs();
+	List<WorkEffortTypeAttr> getWorkEffortTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childWorkEffortTypes();
+	List<WorkEffortType> childWorkEffortTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='workEffortTypeId'"
 	 * @generated
 	 */
-	List<String> workEfforts();
+	List<WorkEffort> workEfforts();
 
 } // WorkEffortType

@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortNoteImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortNoteImpl#getInternalNote <em>Internal Note</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortNoteImpl#isInternalNote <em>Internal Note</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,26 +58,6 @@ public class WorkEffortNoteImpl extends BizEntityNoteImpl implements WorkEffortN
 	 * @generated
 	 */
 	@Override
-	public char getInternalNote() {
-		return (Character)eGet(WorkeffortPackage.Literals.WORK_EFFORT_NOTE__INTERNAL_NOTE, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setInternalNote(char newInternalNote) {
-		eSet(WorkeffortPackage.Literals.WORK_EFFORT_NOTE__INTERNAL_NOTE, newInternalNote);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public WorkEffort getWorkEffortId() {
 		return (WorkEffort)eGet(WorkeffortPackage.Literals.WORK_EFFORT_NOTE__WORK_EFFORT_ID, true);
 	}
@@ -90,6 +70,26 @@ public class WorkEffortNoteImpl extends BizEntityNoteImpl implements WorkEffortN
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT_NOTE__WORK_EFFORT_ID, newWorkEffortId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isInternalNote() {
+		return (Boolean)eGet(WorkeffortPackage.Literals.WORK_EFFORT_NOTE__INTERNAL_NOTE, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setInternalNote(boolean newInternalNote) {
+		eSet(WorkeffortPackage.Literals.WORK_EFFORT_NOTE__INTERNAL_NOTE, newInternalNote);
 	}
 
 } //WorkEffortNoteImpl

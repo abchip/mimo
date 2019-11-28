@@ -112,12 +112,11 @@ public interface PaymentContentType extends BizEntityType<PaymentContent> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentContentType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childPaymentContentTypes();
+	List<PaymentContentType> childPaymentContentTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Payment Content Type Id</b></em>' attribute.

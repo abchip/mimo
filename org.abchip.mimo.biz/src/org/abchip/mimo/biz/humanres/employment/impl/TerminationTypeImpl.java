@@ -9,9 +9,10 @@ package org.abchip.mimo.biz.humanres.employment.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.humanres.employment.Employment;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.TerminationType;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TerminationTypeImpl extends BizEntityImpl implements TerminationType {
+public class TerminationTypeImpl extends BizEntityTypeImpl<Employment> implements TerminationType {
 	/**
 	 * 
 	 */
@@ -121,7 +122,7 @@ public class TerminationTypeImpl extends BizEntityImpl implements TerminationTyp
 	 * @generated
 	 */
 	@Override
-	public List<String> childTerminationTypes() {
+	public List<TerminationType> childTerminationTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

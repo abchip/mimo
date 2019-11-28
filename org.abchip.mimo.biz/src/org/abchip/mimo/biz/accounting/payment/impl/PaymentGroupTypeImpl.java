@@ -121,7 +121,7 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> childPaymentGroupTypes() {
+	public List<PaymentGroupType> childPaymentGroupTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +133,7 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentGroups() {
+	public List<PaymentGroup> paymentGroups() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

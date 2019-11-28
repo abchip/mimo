@@ -11,10 +11,47 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.budget.BudgetStatus;
+import org.abchip.mimo.biz.common.user.UserPreference;
+import org.abchip.mimo.biz.content.content.Content;
+import org.abchip.mimo.biz.content.data.DataResource;
+import org.abchip.mimo.biz.entity.test.TestingStatus;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.marketing.contact.ContactList;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory;
+import org.abchip.mimo.biz.order.order.OrderAdjustment;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.order.OrderItem;
+import org.abchip.mimo.biz.order.order.OrderItemChange;
+import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
+import org.abchip.mimo.biz.order.order.OrderStatus;
+import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
+import org.abchip.mimo.biz.order.request.CustRequestStatus;
+import org.abchip.mimo.biz.order.requirement.RequirementStatus;
+import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
+import org.abchip.mimo.biz.order.return_.ReturnStatus;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.price.ProductPriceChange;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.product.ProductReview;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
+import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.abchip.mimo.biz.security.login.LoginPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.security.login.UserLoginHistory;
+import org.abchip.mimo.biz.security.login.UserLoginPasswordHistory;
+import org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion;
+import org.abchip.mimo.biz.service.schedule.JobSandbox;
+import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
+import org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentStatus;
+import org.abchip.mimo.biz.webapp.visit.Visitor;
+import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -401,8 +438,8 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getUserLoginHistories() {
-		return (List<String>)eGet(LoginPackage.Literals.USER_LOGIN__USER_LOGIN_HISTORIES, true);
+	public List<UserLoginHistory> getUserLoginHistories() {
+		return (List<UserLoginHistory>)eGet(LoginPackage.Literals.USER_LOGIN__USER_LOGIN_HISTORIES, true);
 	}
 
 	/**
@@ -412,8 +449,8 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getUserLoginPasswordHistories() {
-		return (List<String>)eGet(LoginPackage.Literals.USER_LOGIN__USER_LOGIN_PASSWORD_HISTORIES, true);
+	public List<UserLoginPasswordHistory> getUserLoginPasswordHistories() {
+		return (List<UserLoginPasswordHistory>)eGet(LoginPackage.Literals.USER_LOGIN__USER_LOGIN_PASSWORD_HISTORIES, true);
 	}
 
 	/**
@@ -423,8 +460,8 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getUserPreferences() {
-		return (List<String>)eGet(LoginPackage.Literals.USER_LOGIN__USER_PREFERENCES, true);
+	public List<UserPreference> getUserPreferences() {
+		return (List<UserPreference>)eGet(LoginPackage.Literals.USER_LOGIN__USER_PREFERENCES, true);
 	}
 
 	/**
@@ -433,7 +470,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> approvedByTimesheets() {
+	public List<Timesheet> approvedByTimesheets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -445,7 +482,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> authJobSandboxs() {
+	public List<JobSandbox> authJobSandboxs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -457,7 +494,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> changeByBudgetStatuss() {
+	public List<BudgetStatus> changeByBudgetStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -469,7 +506,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> changeByCustRequestStatuss() {
+	public List<CustRequestStatus> changeByCustRequestStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -481,7 +518,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> changeByOrderItems() {
+	public List<OrderItem> changeByOrderItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -493,7 +530,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> changeByRequirementStatuss() {
+	public List<RequirementStatus> changeByRequirementStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -505,7 +542,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> changeByReturnStatuss() {
+	public List<ReturnStatus> changeByReturnStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -517,7 +554,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> changeByShipmentStatuss() {
+	public List<ShipmentStatus> changeByShipmentStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -529,7 +566,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> changeByTestingStatuss() {
+	public List<TestingStatus> changeByTestingStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -541,7 +578,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> changePicklistStatusHistories() {
+	public List<PicklistStatusHistory> changePicklistStatusHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -553,7 +590,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> changedByProductPriceChanges() {
+	public List<ProductPriceChange> changedByProductPriceChanges() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -565,7 +602,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> createdByContactLists() {
+	public List<ContactList> createdByContactLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -577,7 +614,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> createdByContents() {
+	public List<Content> createdByContents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -589,7 +626,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> createdByDataResources() {
+	public List<DataResource> createdByDataResources() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -601,7 +638,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> createdByOrderHeaders() {
+	public List<OrderHeader> createdByOrderHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -613,7 +650,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> createdByParties() {
+	public List<Party> createdByParties() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -625,7 +662,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> createdByProductPromoCodes() {
+	public List<ProductPromoCode> createdByProductPromoCodes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -637,7 +674,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> createdByProductPromos() {
+	public List<ProductPromo> createdByProductPromos() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -649,7 +686,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> createdByProducts() {
+	public List<Product> createdByProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -661,7 +698,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> createdBySalesForecasts() {
+	public List<SalesForecast> createdBySalesForecasts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -673,7 +710,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> dontCancelSetOrderItems() {
+	public List<OrderItem> dontCancelSetOrderItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -685,7 +722,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> issuedByItemIssuances() {
+	public List<ItemIssuance> issuedByItemIssuances() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -697,7 +734,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> lastModifiedByContactLists() {
+	public List<ContactList> lastModifiedByContactLists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -709,7 +746,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> lastModifiedByContents() {
+	public List<Content> lastModifiedByContents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -721,7 +758,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> lastModifiedByDataResources() {
+	public List<DataResource> lastModifiedByDataResources() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -733,7 +770,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> lastModifiedByParties() {
+	public List<Party> lastModifiedByParties() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -745,7 +782,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> lastModifiedByProductPromoCodes() {
+	public List<ProductPromoCode> lastModifiedByProductPromoCodes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -757,7 +794,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> lastModifiedByProductPromos() {
+	public List<ProductPromo> lastModifiedByProductPromos() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -769,7 +806,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> lastModifiedByProducts() {
+	public List<Product> lastModifiedByProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -781,7 +818,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> modifiedBySalesForecastHistories() {
+	public List<SalesForecastHistory> modifiedBySalesForecastHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -793,7 +830,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> modifiedBySalesForecasts() {
+	public List<SalesForecast> modifiedBySalesForecasts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -805,7 +842,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> orderAdjustments() {
+	public List<OrderAdjustment> orderAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -817,7 +854,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> orderItemChanges() {
+	public List<OrderItemChange> orderItemChanges() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -829,7 +866,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> orderPaymentPreferences() {
+	public List<OrderPaymentPreference> orderPaymentPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -841,7 +878,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> orderStatuss() {
+	public List<OrderStatus> orderStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -853,7 +890,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> productReviews() {
+	public List<ProductReview> productReviews() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -865,7 +902,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteAdjustments() {
+	public List<QuoteAdjustment> quoteAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -877,7 +914,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> returnAdjustments() {
+	public List<ReturnAdjustment> returnAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -889,7 +926,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> returnHeaders() {
+	public List<ReturnHeader> returnHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -901,7 +938,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> runAsJobSandboxs() {
+	public List<JobSandbox> runAsJobSandboxs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -913,7 +950,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> salesOpportunities() {
+	public List<SalesOpportunity> salesOpportunities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -925,7 +962,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> salesOpportunityHistories() {
+	public List<SalesOpportunityHistory> salesOpportunityHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -937,7 +974,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentReceipts() {
+	public List<ShipmentReceipt> shipmentReceipts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -949,7 +986,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> userLoginSecurityQuestions() {
+	public List<UserLoginSecurityQuestion> userLoginSecurityQuestions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -961,7 +998,7 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public List<String> visitors() {
+	public List<Visitor> visitors() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

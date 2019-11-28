@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -274,51 +275,47 @@ public interface TemporalExpression extends BizEntity {
 	void setTempExprTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>From Temporal Expression Assocs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>From Temporal Expression Assocs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>From Temporal Expression Assocs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From Temporal Expression Assocs</em>' attribute list.
+	 * @return the value of the '<em>From Temporal Expression Assocs</em>' reference list.
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpression_FromTemporalExpressionAssocs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TemporalExpressionAssoc'"
 	 * @generated
 	 */
-	List<String> getFromTemporalExpressionAssocs();
+	List<TemporalExpressionAssoc> getFromTemporalExpressionAssocs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobSandbox' route='tempExprId'"
 	 * @generated
 	 */
-	List<String> jobSandboxs();
+	List<JobSandbox> jobSandboxs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TemporalExpressionAssoc' route='toTempExprId'"
 	 * @generated
 	 */
-	List<String> toTemporalExpressionAssocs();
+	List<TemporalExpressionAssoc> toTemporalExpressionAssocs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='tempExprId'"
 	 * @generated
 	 */
-	List<String> workEfforts();
+	List<WorkEffort> workEfforts();
 
 } // TemporalExpression

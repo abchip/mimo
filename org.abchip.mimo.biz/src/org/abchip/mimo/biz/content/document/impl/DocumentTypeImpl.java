@@ -12,6 +12,7 @@ import java.util.List;
 import org.abchip.mimo.biz.content.document.Document;
 import org.abchip.mimo.biz.content.document.DocumentPackage;
 import org.abchip.mimo.biz.content.document.DocumentType;
+import org.abchip.mimo.biz.content.document.DocumentTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -144,8 +145,8 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getDocumentTypeAttrs() {
-		return (List<String>)eGet(DocumentPackage.Literals.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS, true);
+	public List<DocumentTypeAttr> getDocumentTypeAttrs() {
+		return (List<DocumentTypeAttr>)eGet(DocumentPackage.Literals.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +155,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 * @generated
 	 */
 	@Override
-	public List<String> childDocumentTypes() {
+	public List<DocumentType> childDocumentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +167,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 * @generated
 	 */
 	@Override
-	public List<String> documents() {
+	public List<Document> documents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

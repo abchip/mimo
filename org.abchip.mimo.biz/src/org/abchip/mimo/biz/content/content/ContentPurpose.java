@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.content.content;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * @model
  * @generated
  */
-public interface ContentPurpose extends BizEntityTyped<ContentPurposeType> {
+public interface ContentPurpose extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Content Id</b></em>' reference.
 	 * <!-- begin-user-doc -->

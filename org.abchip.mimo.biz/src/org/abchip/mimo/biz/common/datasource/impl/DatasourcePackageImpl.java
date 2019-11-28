@@ -194,7 +194,6 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -789,20 +788,18 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
+		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
+		GeoPackage theGeoPackage = (GeoPackage)EPackage.Registry.INSTANCE.getEPackage(GeoPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		EGenericType g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		EGenericType g2 = createEGenericType(this.getDataSourceType());
-		g1.getETypeArguments().add(g2);
-		dataSourceEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getDataSource());
-		g1.getETypeArguments().add(g2);
-		dataSourceTypeEClass.getEGenericSuperTypes().add(g1);
+		dataSourceEClass.getESuperTypes().add(theBizPackage.getBizEntity());
+		dataSourceTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(dataSourceEClass, DataSource.class, "DataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -811,33 +808,33 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		getDataSource_DataSourceTypeId().getEKeys().add(this.getDataSourceType_DataSourceTypeId());
 		initEAttribute(getDataSource_Description(), ecorePackage.getEString(), "description", null, 0, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(dataSourceEClass, ecorePackage.getEString(), "contentMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceEClass, theContentPackage.getContentMetaData(), "contentMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(dataSourceEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceEClass, theContentPackage.getContent(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(dataSourceEClass, ecorePackage.getEString(), "dataResourceMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceEClass, theDataPackage.getDataResourceMetaData(), "dataResourceMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(dataSourceEClass, ecorePackage.getEString(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceEClass, theDataPackage.getDataResource(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(dataSourceEClass, ecorePackage.getEString(), "geoPoints", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceEClass, theGeoPackage.getGeoPoint(), "geoPoints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(dataSourceEClass, ecorePackage.getEString(), "parties", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceEClass, thePartyPackage.getParty(), "parties", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataSourceTypeEClass, DataSourceType.class, "DataSourceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataSourceType_DataSourceTypeId(), ecorePackage.getEString(), "dataSourceTypeId", null, 1, 1, DataSourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSourceType_Description(), ecorePackage.getEString(), "description", null, 0, 1, DataSourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(dataSourceTypeEClass, ecorePackage.getEString(), "dataSources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(dataSourceTypeEClass, this.getDataSource(), "dataSources", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-format
-		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
 		// mimo-ent-domain
 		createMimoentdomainAnnotations();
+		// mimo-ent-format
+		createMimoentformatAnnotations();
 	}
 
 	/**
@@ -872,48 +869,6 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 	protected void createMimoentformatAnnotations() {
 		String source = "mimo-ent-format";
 		addAnnotation
-		  (dataSourceEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (dataSourceEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (dataSourceEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (dataSourceEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (dataSourceEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (dataSourceEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getDataSource_DataSourceId(),
 		   source,
 		   new String[] {
@@ -926,13 +881,6 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (dataSourceTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getDataSourceType_DataSourceTypeId(),

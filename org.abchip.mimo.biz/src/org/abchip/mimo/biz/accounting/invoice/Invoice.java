@@ -11,13 +11,16 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
+import org.abchip.mimo.biz.accounting.payment.PaymentApplication;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
+import org.abchip.mimo.biz.workeffort.timesheet.TimeEntry;
 
 /**
  * <!-- begin-user-doc -->
@@ -419,98 +422,91 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Invoice Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.invoice.InvoiceAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Attributes</em>' attribute list.
+	 * @return the value of the '<em>Invoice Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceAttribute'"
 	 * @generated
 	 */
-	List<String> getInvoiceAttributes();
+	List<InvoiceAttribute> getInvoiceAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Items</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Invoice Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.invoice.InvoiceItem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Items</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Items</em>' attribute list.
+	 * @return the value of the '<em>Invoice Items</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceItems()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem'"
 	 * @generated
 	 */
-	List<String> getInvoiceItems();
+	List<InvoiceItem> getInvoiceItems();
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Notes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Invoice Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.invoice.InvoiceNote}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Notes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Notes</em>' attribute list.
+	 * @return the value of the '<em>Invoice Notes</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceNotes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceNote'"
 	 * @generated
 	 */
-	List<String> getInvoiceNotes();
+	List<InvoiceNote> getInvoiceNotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='invoiceId'"
 	 * @generated
 	 */
-	List<String> acctgTranss();
+	List<AcctgTrans> acctgTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceTerm' route='invoiceId'"
 	 * @generated
 	 */
-	List<String> invoiceTerms();
+	List<InvoiceTerm> invoiceTerms();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentApplication' route='invoiceId'"
 	 * @generated
 	 */
-	List<String> paymentApplications();
+	List<PaymentApplication> paymentApplications();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TimeEntry' route='invoiceId'"
 	 * @generated
 	 */
-	List<String> timeEntries();
+	List<TimeEntry> timeEntries();
 
 	/**
 	 * Returns the value of the '<em><b>Invoice Type Id</b></em>' reference.

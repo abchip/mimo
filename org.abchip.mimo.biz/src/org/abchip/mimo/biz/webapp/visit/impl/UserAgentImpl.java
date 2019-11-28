@@ -9,13 +9,14 @@ package org.abchip.mimo.biz.webapp.visit.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.visit.BrowserType;
 import org.abchip.mimo.biz.webapp.visit.PlatformType;
 import org.abchip.mimo.biz.webapp.visit.ProtocolType;
 import org.abchip.mimo.biz.webapp.visit.UserAgent;
 import org.abchip.mimo.biz.webapp.visit.UserAgentMethodType;
 import org.abchip.mimo.biz.webapp.visit.UserAgentType;
+import org.abchip.mimo.biz.webapp.visit.Visit;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -37,7 +38,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements UserAgent {
+public class UserAgentImpl extends BizEntityImpl implements UserAgent {
 	/**
 	 * 
 	 */
@@ -188,7 +189,7 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 * @generated
 	 */
 	@Override
-	public List<String> visits() {
+	public List<Visit> visits() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

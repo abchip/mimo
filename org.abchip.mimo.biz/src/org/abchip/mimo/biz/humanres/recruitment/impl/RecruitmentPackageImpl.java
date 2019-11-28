@@ -195,7 +195,6 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -1021,20 +1020,15 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
 		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		AbilityPackage theAbilityPackage = (AbilityPackage)EPackage.Registry.INSTANCE.getEPackage(AbilityPackage.eNS_URI);
+		EmploymentPackage theEmploymentPackage = (EmploymentPackage)EPackage.Registry.INSTANCE.getEPackage(EmploymentPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		EGenericType g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		EGenericType g2 = createEGenericType(this.getJobInterviewType());
-		g1.getETypeArguments().add(g2);
-		jobInterviewEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getJobInterview());
-		g1.getETypeArguments().add(g2);
-		jobInterviewTypeEClass.getEGenericSuperTypes().add(g1);
+		jobInterviewEClass.getESuperTypes().add(theBizPackage.getBizEntity());
+		jobInterviewTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		jobRequisitionEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 
 		// Initialize classes and features; add operations and parameters
@@ -1057,7 +1051,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		initEAttribute(getJobInterviewType_JobInterviewTypeId(), ecorePackage.getEString(), "jobInterviewTypeId", null, 1, 1, JobInterviewType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobInterviewType_Description(), ecorePackage.getEString(), "description", null, 0, 1, JobInterviewType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(jobInterviewTypeEClass, ecorePackage.getEString(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(jobInterviewTypeEClass, this.getJobInterview(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(jobRequisitionEClass, JobRequisition.class, "JobRequisition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJobRequisition_JobRequisitionId(), ecorePackage.getEString(), "jobRequisitionId", null, 1, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1078,9 +1072,9 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		initEReference(getJobRequisition_SkillTypeId(), theAbilityPackage.getSkillType(), null, "skillTypeId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getJobRequisition_SkillTypeId().getEKeys().add(theAbilityPackage.getSkillType_SkillTypeId());
 
-		addEOperation(jobRequisitionEClass, ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(jobRequisitionEClass, theEmploymentPackage.getEmploymentApp(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(jobRequisitionEClass, ecorePackage.getEString(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(jobRequisitionEClass, this.getJobInterview(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -1122,13 +1116,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 			   "length", "20"
 		   });
 		addAnnotation
-		  (jobInterviewTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getJobInterviewType_JobInterviewTypeId(),
 		   source,
 		   new String[] {
@@ -1141,20 +1128,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (jobRequisitionEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (jobRequisitionEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getJobRequisition_JobRequisitionId(),

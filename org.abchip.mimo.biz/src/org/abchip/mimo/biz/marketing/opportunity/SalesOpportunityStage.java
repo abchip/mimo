@@ -141,21 +141,19 @@ public interface SalesOpportunityStage extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunity' route='opportunityStageId'"
 	 * @generated
 	 */
-	List<String> salesOpportunities();
+	List<SalesOpportunity> salesOpportunities();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesOpportunityHistory' route='opportunityStageId'"
 	 * @generated
 	 */
-	List<String> salesOpportunityHistories();
+	List<SalesOpportunityHistory> salesOpportunityHistories();
 
 } // SalesOpportunityStage

@@ -19,7 +19,7 @@ import org.abchip.mimo.biz.BizEntityNote;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote#getInternalNote <em>Internal Note</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote#isInternalNote <em>Internal Note</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortNote()
@@ -27,32 +27,6 @@ import org.abchip.mimo.biz.BizEntityNote;
  * @generated
  */
 public interface WorkEffortNote extends BizEntityNote {
-	/**
-	 * Returns the value of the '<em><b>Internal Note</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Internal Note</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Internal Note</em>' attribute.
-	 * @see #setInternalNote(char)
-	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortNote_InternalNote()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
-	 * @generated
-	 */
-	char getInternalNote();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote#getInternalNote <em>Internal Note</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Internal Note</em>' attribute.
-	 * @see #getInternalNote()
-	 * @generated
-	 */
-	void setInternalNote(char value);
-
 	/**
 	 * Returns the value of the '<em><b>Work Effort Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -79,5 +53,33 @@ public interface WorkEffortNote extends BizEntityNote {
 	 * @generated
 	 */
 	void setWorkEffortId(WorkEffort value);
+
+	/**
+	 * Returns the value of the '<em><b>Internal Note</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Internal Note</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Internal Note</em>' attribute.
+	 * @see #setInternalNote(boolean)
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortNote_InternalNote()
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @generated
+	 */
+	boolean isInternalNote();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote#isInternalNote <em>Internal Note</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Internal Note</em>' attribute.
+	 * @see #isInternalNote()
+	 * @generated
+	 */
+	void setInternalNote(boolean value);
 
 } // WorkEffortNote

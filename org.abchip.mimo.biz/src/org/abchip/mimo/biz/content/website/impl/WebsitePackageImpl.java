@@ -1185,10 +1185,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		webAnalyticsConfigEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		webAnalyticsTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		EGenericType g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		EGenericType g2 = createEGenericType(this.getWebSiteContentType());
+		EGenericType g2 = createEGenericType(this.getWebAnalyticsType());
+		g1.getETypeArguments().add(g2);
+		webAnalyticsConfigEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theBizPackage.getBizEntityType());
+		g2 = createEGenericType(this.getWebAnalyticsConfig());
+		g1.getETypeArguments().add(g2);
+		webAnalyticsTypeEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theBizPackage.getBizEntityTyped());
+		g2 = createEGenericType(this.getWebSiteContentType());
 		g1.getETypeArguments().add(g2);
 		webSiteContentEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theBizPackage.getBizEntityType());
@@ -1213,9 +1219,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getWebAnalyticsType_ParentTypeId(), this.getWebAnalyticsType(), null, "parentTypeId", null, 0, 1, WebAnalyticsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWebAnalyticsType_ParentTypeId().getEKeys().add(this.getWebAnalyticsType_WebAnalyticsTypeId());
 
-		addEOperation(webAnalyticsTypeEClass, ecorePackage.getEString(), "childWebAnalyticsTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(webAnalyticsTypeEClass, this.getWebAnalyticsType(), "childWebAnalyticsTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(webAnalyticsTypeEClass, ecorePackage.getEString(), "webAnalyticsConfigs", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(webAnalyticsTypeEClass, this.getWebAnalyticsConfig(), "webAnalyticsConfigs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(webSiteContentEClass, WebSiteContent.class, "WebSiteContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWebSiteContent_WebSiteId(), theWebsitePackage_1.getWebSite(), null, "webSiteId", null, 1, 1, WebSiteContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1234,7 +1240,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getWebSiteContentType_ParentTypeId(), this.getWebSiteContentType(), null, "parentTypeId", null, 0, 1, WebSiteContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWebSiteContentType_ParentTypeId().getEKeys().add(this.getWebSiteContentType_WebSiteContentTypeId());
 
-		addEOperation(webSiteContentTypeEClass, ecorePackage.getEString(), "childWebSiteContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(webSiteContentTypeEClass, this.getWebSiteContentType(), "childWebSiteContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(webSitePathAliasEClass, WebSitePathAlias.class, "WebSitePathAlias", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWebSitePathAlias_WebSiteId(), theWebsitePackage_1.getWebSite(), null, "webSiteId", null, 1, 1, WebSitePathAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1285,20 +1291,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			   "type", "very-long"
 		   });
 		addAnnotation
-		  (webAnalyticsTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (webAnalyticsTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getWebAnalyticsType_WebAnalyticsTypeId(),
 		   source,
 		   new String[] {
@@ -1330,13 +1322,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source,
 		   new String[] {
 			   "type", "date-time"
-		   });
-		addAnnotation
-		  (webSiteContentTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getWebSiteContentType_WebSiteContentTypeId(),

@@ -121,7 +121,7 @@ public class ResponsibilityTypeImpl extends BizEntityImpl implements Responsibil
 	 * @generated
 	 */
 	@Override
-	public List<String> childResponsibilityTypes() {
+	public List<ResponsibilityType> childResponsibilityTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

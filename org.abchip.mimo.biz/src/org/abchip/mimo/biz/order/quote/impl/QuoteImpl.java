@@ -14,9 +14,16 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityQuote;
 import org.abchip.mimo.biz.order.quote.Quote;
+import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
+import org.abchip.mimo.biz.order.quote.QuoteAttribute;
+import org.abchip.mimo.biz.order.quote.QuoteCoefficient;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
+import org.abchip.mimo.biz.order.quote.QuoteNote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteType;
+import org.abchip.mimo.biz.order.quote.QuoteWorkEffort;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.eclipse.emf.ecore.EClass;
@@ -322,8 +329,8 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getQuoteAttributes() {
-		return (List<String>)eGet(QuotePackage.Literals.QUOTE__QUOTE_ATTRIBUTES, true);
+	public List<QuoteAttribute> getQuoteAttributes() {
+		return (List<QuoteAttribute>)eGet(QuotePackage.Literals.QUOTE__QUOTE_ATTRIBUTES, true);
 	}
 
 	/**
@@ -333,8 +340,8 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getQuoteCoefficients() {
-		return (List<String>)eGet(QuotePackage.Literals.QUOTE__QUOTE_COEFFICIENTS, true);
+	public List<QuoteCoefficient> getQuoteCoefficients() {
+		return (List<QuoteCoefficient>)eGet(QuotePackage.Literals.QUOTE__QUOTE_COEFFICIENTS, true);
 	}
 
 	/**
@@ -344,8 +351,8 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getQuoteItems() {
-		return (List<String>)eGet(QuotePackage.Literals.QUOTE__QUOTE_ITEMS, true);
+	public List<QuoteItem> getQuoteItems() {
+		return (List<QuoteItem>)eGet(QuotePackage.Literals.QUOTE__QUOTE_ITEMS, true);
 	}
 
 	/**
@@ -355,8 +362,8 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getQuoteNotes() {
-		return (List<String>)eGet(QuotePackage.Literals.QUOTE__QUOTE_NOTES, true);
+	public List<QuoteNote> getQuoteNotes() {
+		return (List<QuoteNote>)eGet(QuotePackage.Literals.QUOTE__QUOTE_NOTES, true);
 	}
 
 	/**
@@ -366,8 +373,8 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getQuoteWorkEfforts() {
-		return (List<String>)eGet(QuotePackage.Literals.QUOTE__QUOTE_WORK_EFFORTS, true);
+	public List<QuoteWorkEffort> getQuoteWorkEfforts() {
+		return (List<QuoteWorkEffort>)eGet(QuotePackage.Literals.QUOTE__QUOTE_WORK_EFFORTS, true);
 	}
 
 	/**
@@ -376,7 +383,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteAdjustments() {
+	public List<QuoteAdjustment> quoteAdjustments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -388,7 +395,7 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public List<String> salesOpportunityQuotes() {
+	public List<SalesOpportunityQuote> salesOpportunityQuotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

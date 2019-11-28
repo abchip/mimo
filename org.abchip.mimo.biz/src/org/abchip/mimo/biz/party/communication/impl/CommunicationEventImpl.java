@@ -15,13 +15,20 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.marketing.contact.ContactList;
+import org.abchip.mimo.biz.order.order.CommunicationEventOrder;
+import org.abchip.mimo.biz.order.request.CustRequestCommEvent;
+import org.abchip.mimo.biz.order.return_.CommunicationEventReturn;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.party.communication.CommunicationEventProduct;
+import org.abchip.mimo.biz.party.communication.CommunicationEventPurpose;
 import org.abchip.mimo.biz.party.communication.CommunicationEventType;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent;
+import org.abchip.mimo.biz.workeffort.workeffort.CommunicationEventWorkEff;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -593,7 +600,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public List<String> communicationEventOrders() {
+	public List<CommunicationEventOrder> communicationEventOrders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -605,7 +612,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public List<String> communicationEventProducts() {
+	public List<CommunicationEventProduct> communicationEventProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -617,7 +624,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public List<String> communicationEventPurposes() {
+	public List<CommunicationEventPurpose> communicationEventPurposes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -629,7 +636,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public List<String> communicationEventReturns() {
+	public List<CommunicationEventReturn> communicationEventReturns() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -641,7 +648,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public List<String> communicationEventWorkEffs() {
+	public List<CommunicationEventWorkEff> communicationEventWorkEffs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -653,7 +660,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequestCommEvents() {
+	public List<CustRequestCommEvent> custRequestCommEvents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -665,7 +672,7 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public List<String> subscriptionCommEvents() {
+	public List<SubscriptionCommEvent> subscriptionCommEvents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

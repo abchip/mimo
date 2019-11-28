@@ -142,7 +142,7 @@ public class CustomScreenTypeImpl extends BizEntityTypeImpl<CustomScreen> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> childCustomScreenTypes() {
+	public List<CustomScreenType> childCustomScreenTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -154,7 +154,7 @@ public class CustomScreenTypeImpl extends BizEntityTypeImpl<CustomScreen> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> customScreens() {
+	public List<CustomScreen> customScreens() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

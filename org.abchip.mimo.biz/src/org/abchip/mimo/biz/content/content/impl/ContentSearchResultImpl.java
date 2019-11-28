@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.content.content.ContentPackage;
+import org.abchip.mimo.biz.content.content.ContentSearchConstraint;
 import org.abchip.mimo.biz.content.content.ContentSearchResult;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -208,8 +209,8 @@ public class ContentSearchResultImpl extends BizEntityImpl implements ContentSea
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getContentSearchConstraints() {
-		return (List<String>)eGet(ContentPackage.Literals.CONTENT_SEARCH_RESULT__CONTENT_SEARCH_CONSTRAINTS, true);
+	public List<ContentSearchConstraint> getContentSearchConstraints() {
+		return (List<ContentSearchConstraint>)eGet(ContentPackage.Literals.CONTENT_SEARCH_RESULT__CONTENT_SEARCH_CONSTRAINTS, true);
 	}
 
 } //ContentSearchResultImpl

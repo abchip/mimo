@@ -121,7 +121,7 @@ public class ProductAverageCostTypeImpl extends BizEntityTypeImpl<ProductAverage
 	 * @generated
 	 */
 	@Override
-	public List<String> childProductAverageCostTypes() {
+	public List<ProductAverageCostType> childProductAverageCostTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

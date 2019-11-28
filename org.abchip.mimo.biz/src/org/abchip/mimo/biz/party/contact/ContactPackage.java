@@ -117,7 +117,7 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Contact Mech Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -135,7 +135,7 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH__CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>From Contact Mech Links</b></em>' attribute list.
+	 * The feature id for the '<em><b>From Contact Mech Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -463,7 +463,7 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Contact Mech Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -472,7 +472,7 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_ATTRS = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Type Purposes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Contact Mech Type Purposes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -809,7 +809,7 @@ public interface ContactPackage extends EPackage {
 	int FTP_ADDRESS__CONTACT_MECH_ID = CONTACT_MECH__CONTACT_MECH_ID;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Contact Mech Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -827,7 +827,7 @@ public interface ContactPackage extends EPackage {
 	int FTP_ADDRESS__CONTACT_MECH_TYPE_ID = CONTACT_MECH__CONTACT_MECH_TYPE_ID;
 
 	/**
-	 * The feature id for the '<em><b>From Contact Mech Links</b></em>' attribute list.
+	 * The feature id for the '<em><b>From Contact Mech Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1244,7 +1244,7 @@ public interface ContactPackage extends EPackage {
 	int POSTAL_ADDRESS__CONTACT_MECH_ID = CONTACT_MECH__CONTACT_MECH_ID;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Contact Mech Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1262,7 +1262,7 @@ public interface ContactPackage extends EPackage {
 	int POSTAL_ADDRESS__CONTACT_MECH_TYPE_ID = CONTACT_MECH__CONTACT_MECH_TYPE_ID;
 
 	/**
-	 * The feature id for the '<em><b>From Contact Mech Links</b></em>' attribute list.
+	 * The feature id for the '<em><b>From Contact Mech Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1388,7 +1388,7 @@ public interface ContactPackage extends EPackage {
 	int POSTAL_ADDRESS__MUNICIPALITY_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Postal Address Boundaries</b></em>' attribute list.
+	 * The feature id for the '<em><b>Postal Address Boundaries</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1579,7 +1579,7 @@ public interface ContactPackage extends EPackage {
 	int TELECOM_NUMBER__CONTACT_MECH_ID = CONTACT_MECH__CONTACT_MECH_ID;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Contact Mech Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1597,7 +1597,7 @@ public interface ContactPackage extends EPackage {
 	int TELECOM_NUMBER__CONTACT_MECH_TYPE_ID = CONTACT_MECH__CONTACT_MECH_TYPE_ID;
 
 	/**
-	 * The feature id for the '<em><b>From Contact Mech Links</b></em>' attribute list.
+	 * The feature id for the '<em><b>From Contact Mech Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1777,26 +1777,26 @@ public interface ContactPackage extends EPackage {
 	EAttribute getContactMech_InfoString();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.contact.ContactMech#getContactMechAttributes <em>Contact Mech Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.party.contact.ContactMech#getContactMechAttributes <em>Contact Mech Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Contact Mech Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Contact Mech Attributes</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.ContactMech#getContactMechAttributes()
 	 * @see #getContactMech()
 	 * @generated
 	 */
-	EAttribute getContactMech_ContactMechAttributes();
+	EReference getContactMech_ContactMechAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.contact.ContactMech#getFromContactMechLinks <em>From Contact Mech Links</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.party.contact.ContactMech#getFromContactMechLinks <em>From Contact Mech Links</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>From Contact Mech Links</em>'.
+	 * @return the meta object for the reference list '<em>From Contact Mech Links</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.ContactMech#getFromContactMechLinks()
 	 * @see #getContactMech()
 	 * @generated
 	 */
-	EAttribute getContactMech_FromContactMechLinks();
+	EReference getContactMech_FromContactMechLinks();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.contact.ContactMechAttribute <em>Mech Attribute</em>}'.
@@ -1971,26 +1971,26 @@ public interface ContactPackage extends EPackage {
 	EReference getContactMechType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypeAttrs <em>Contact Mech Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypeAttrs <em>Contact Mech Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Contact Mech Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Contact Mech Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypeAttrs()
 	 * @see #getContactMechType()
 	 * @generated
 	 */
-	EAttribute getContactMechType_ContactMechTypeAttrs();
+	EReference getContactMechType_ContactMechTypeAttrs();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypePurposes <em>Contact Mech Type Purposes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypePurposes <em>Contact Mech Type Purposes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Contact Mech Type Purposes</em>'.
+	 * @return the meta object for the reference list '<em>Contact Mech Type Purposes</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypePurposes()
 	 * @see #getContactMechType()
 	 * @generated
 	 */
-	EAttribute getContactMechType_ContactMechTypePurposes();
+	EReference getContactMechType_ContactMechTypePurposes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.contact.ContactMechTypeAttr <em>Mech Type Attr</em>}'.
@@ -2121,11 +2121,11 @@ public interface ContactPackage extends EPackage {
 	EClass getFtpAddress();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.FtpAddress#getBinaryTransfer <em>Binary Transfer</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.FtpAddress#isBinaryTransfer <em>Binary Transfer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Binary Transfer</em>'.
-	 * @see org.abchip.mimo.biz.party.contact.FtpAddress#getBinaryTransfer()
+	 * @see org.abchip.mimo.biz.party.contact.FtpAddress#isBinaryTransfer()
 	 * @see #getFtpAddress()
 	 * @generated
 	 */
@@ -2209,11 +2209,11 @@ public interface ContactPackage extends EPackage {
 	EAttribute getFtpAddress_Username();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.FtpAddress#getZipFile <em>Zip File</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.FtpAddress#isZipFile <em>Zip File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Zip File</em>'.
-	 * @see org.abchip.mimo.biz.party.contact.FtpAddress#getZipFile()
+	 * @see org.abchip.mimo.biz.party.contact.FtpAddress#isZipFile()
 	 * @see #getFtpAddress()
 	 * @generated
 	 */
@@ -2613,15 +2613,15 @@ public interface ContactPackage extends EPackage {
 	EAttribute getPostalAddress_ToName();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalAddressBoundaries <em>Postal Address Boundaries</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalAddressBoundaries <em>Postal Address Boundaries</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Postal Address Boundaries</em>'.
+	 * @return the meta object for the reference list '<em>Postal Address Boundaries</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PostalAddress#getPostalAddressBoundaries()
 	 * @see #getPostalAddress()
 	 * @generated
 	 */
-	EAttribute getPostalAddress_PostalAddressBoundaries();
+	EReference getPostalAddress_PostalAddressBoundaries();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.contact.PostalAddressBoundary <em>Postal Address Boundary</em>}'.
@@ -2798,20 +2798,20 @@ public interface ContactPackage extends EPackage {
 		EAttribute CONTACT_MECH__INFO_STRING = eINSTANCE.getContactMech_InfoString();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Contact Mech Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTACT_MECH__CONTACT_MECH_ATTRIBUTES = eINSTANCE.getContactMech_ContactMechAttributes();
+		EReference CONTACT_MECH__CONTACT_MECH_ATTRIBUTES = eINSTANCE.getContactMech_ContactMechAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>From Contact Mech Links</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>From Contact Mech Links</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTACT_MECH__FROM_CONTACT_MECH_LINKS = eINSTANCE.getContactMech_FromContactMechLinks();
+		EReference CONTACT_MECH__FROM_CONTACT_MECH_LINKS = eINSTANCE.getContactMech_FromContactMechLinks();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.contact.impl.ContactMechAttributeImpl <em>Mech Attribute</em>}' class.
@@ -2950,20 +2950,20 @@ public interface ContactPackage extends EPackage {
 		EReference CONTACT_MECH_TYPE__PARENT_TYPE_ID = eINSTANCE.getContactMechType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Contact Mech Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_ATTRS = eINSTANCE.getContactMechType_ContactMechTypeAttrs();
+		EReference CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_ATTRS = eINSTANCE.getContactMechType_ContactMechTypeAttrs();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Type Purposes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Contact Mech Type Purposes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_PURPOSES = eINSTANCE.getContactMechType_ContactMechTypePurposes();
+		EReference CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_PURPOSES = eINSTANCE.getContactMechType_ContactMechTypePurposes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.contact.impl.ContactMechTypeAttrImpl <em>Mech Type Attr</em>}' class.
@@ -3436,12 +3436,12 @@ public interface ContactPackage extends EPackage {
 		EAttribute POSTAL_ADDRESS__TO_NAME = eINSTANCE.getPostalAddress_ToName();
 
 		/**
-		 * The meta object literal for the '<em><b>Postal Address Boundaries</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Postal Address Boundaries</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POSTAL_ADDRESS__POSTAL_ADDRESS_BOUNDARIES = eINSTANCE.getPostalAddress_PostalAddressBoundaries();
+		EReference POSTAL_ADDRESS__POSTAL_ADDRESS_BOUNDARIES = eINSTANCE.getPostalAddress_PostalAddressBoundaries();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressBoundaryImpl <em>Postal Address Boundary</em>}' class.

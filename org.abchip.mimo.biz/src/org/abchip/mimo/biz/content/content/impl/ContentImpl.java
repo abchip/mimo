@@ -14,15 +14,26 @@ import java.util.List;
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
+import org.abchip.mimo.biz.common.portal.PortalPage;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.content.content.Content;
+import org.abchip.mimo.biz.content.content.ContentApproval;
+import org.abchip.mimo.biz.content.content.ContentAttribute;
+import org.abchip.mimo.biz.content.content.ContentKeyword;
+import org.abchip.mimo.biz.content.content.ContentMetaData;
 import org.abchip.mimo.biz.content.content.ContentPackage;
+import org.abchip.mimo.biz.content.content.ContentPurpose;
+import org.abchip.mimo.biz.content.content.ContentRevision;
 import org.abchip.mimo.biz.content.content.ContentType;
 import org.abchip.mimo.biz.content.data.CharacterSet;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.MimeType;
+import org.abchip.mimo.biz.humanres.ability.PartyResume;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.webapp.visit.ServerHitBin;
+import org.abchip.mimo.biz.webapp.website.WebPage;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -557,8 +568,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getContentAttributes() {
-		return (List<String>)eGet(ContentPackage.Literals.CONTENT__CONTENT_ATTRIBUTES, true);
+	public List<ContentAttribute> getContentAttributes() {
+		return (List<ContentAttribute>)eGet(ContentPackage.Literals.CONTENT__CONTENT_ATTRIBUTES, true);
 	}
 
 	/**
@@ -568,8 +579,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getContentKeywords() {
-		return (List<String>)eGet(ContentPackage.Literals.CONTENT__CONTENT_KEYWORDS, true);
+	public List<ContentKeyword> getContentKeywords() {
+		return (List<ContentKeyword>)eGet(ContentPackage.Literals.CONTENT__CONTENT_KEYWORDS, true);
 	}
 
 	/**
@@ -579,8 +590,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getContentMetaDatas() {
-		return (List<String>)eGet(ContentPackage.Literals.CONTENT__CONTENT_META_DATAS, true);
+	public List<ContentMetaData> getContentMetaDatas() {
+		return (List<ContentMetaData>)eGet(ContentPackage.Literals.CONTENT__CONTENT_META_DATAS, true);
 	}
 
 	/**
@@ -590,8 +601,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getContentPurposes() {
-		return (List<String>)eGet(ContentPackage.Literals.CONTENT__CONTENT_PURPOSES, true);
+	public List<ContentPurpose> getContentPurposes() {
+		return (List<ContentPurpose>)eGet(ContentPackage.Literals.CONTENT__CONTENT_PURPOSES, true);
 	}
 
 	/**
@@ -601,8 +612,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getContentRevisions() {
-		return (List<String>)eGet(ContentPackage.Literals.CONTENT__CONTENT_REVISIONS, true);
+	public List<ContentRevision> getContentRevisions() {
+		return (List<ContentRevision>)eGet(ContentPackage.Literals.CONTENT__CONTENT_REVISIONS, true);
 	}
 
 	/**
@@ -611,7 +622,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public List<String> contentApprovals() {
+	public List<ContentApproval> contentApprovals() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -623,7 +634,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public List<String> partyResumes() {
+	public List<PartyResume> partyResumes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -635,7 +646,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public List<String> portalPages() {
+	public List<PortalPage> portalPages() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -647,7 +658,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public List<String> serverHitBins() {
+	public List<ServerHitBin> serverHitBins() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -659,7 +670,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public List<String> subscriptionResources() {
+	public List<SubscriptionResource> subscriptionResources() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -671,7 +682,7 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public List<String> webPages() {
+	public List<WebPage> webPages() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

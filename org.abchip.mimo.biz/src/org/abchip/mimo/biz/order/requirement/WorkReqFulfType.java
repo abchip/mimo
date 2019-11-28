@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.order.requirement;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame title='Work Requirement Fulfillment Type' dictionary='OrderEntityLabels' formula='description'"
  * @generated
  */
-public interface WorkReqFulfType extends BizEntityType<WorkRequirementFulfillment> {
+public interface WorkReqFulfType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,12 +58,11 @@ public interface WorkReqFulfType extends BizEntityType<WorkRequirementFulfillmen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkRequirementFulfillment' route='workReqFulfTypeId'"
 	 * @generated
 	 */
-	List<String> workRequirementFulfillments();
+	List<WorkRequirementFulfillment> workRequirementFulfillments();
 
 	/**
 	 * Returns the value of the '<em><b>Work Req Fulf Type Id</b></em>' attribute.

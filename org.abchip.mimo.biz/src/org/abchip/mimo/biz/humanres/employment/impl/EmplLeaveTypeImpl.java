@@ -142,7 +142,7 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	 * @generated
 	 */
 	@Override
-	public List<String> childEmplLeaveTypes() {
+	public List<EmplLeaveType> childEmplLeaveTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

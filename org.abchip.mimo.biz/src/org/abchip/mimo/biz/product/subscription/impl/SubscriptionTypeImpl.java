@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionType;
+import org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -144,8 +145,8 @@ public class SubscriptionTypeImpl extends BizEntityTypeImpl<Subscription> implem
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSubscriptionTypeAttrs() {
-		return (List<String>)eGet(SubscriptionPackage.Literals.SUBSCRIPTION_TYPE__SUBSCRIPTION_TYPE_ATTRS, true);
+	public List<SubscriptionTypeAttr> getSubscriptionTypeAttrs() {
+		return (List<SubscriptionTypeAttr>)eGet(SubscriptionPackage.Literals.SUBSCRIPTION_TYPE__SUBSCRIPTION_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +155,7 @@ public class SubscriptionTypeImpl extends BizEntityTypeImpl<Subscription> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> childSubscriptionTypes() {
+	public List<SubscriptionType> childSubscriptionTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +167,7 @@ public class SubscriptionTypeImpl extends BizEntityTypeImpl<Subscription> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> subscriptions() {
+	public List<Subscription> subscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

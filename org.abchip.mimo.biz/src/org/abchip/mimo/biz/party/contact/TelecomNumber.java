@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.party.contact;
 
 import java.util.List;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 
 /**
  * <!-- begin-user-doc -->
@@ -136,11 +137,10 @@ public interface TelecomNumber extends ContactMech {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='destinationTelecomNumberId'"
 	 * @generated
 	 */
-	List<String> destinationShipments();
+	List<Shipment> destinationShipments();
 
 } // TelecomNumber

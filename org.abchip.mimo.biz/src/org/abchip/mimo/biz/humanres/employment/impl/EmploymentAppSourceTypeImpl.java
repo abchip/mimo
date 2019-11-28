@@ -9,9 +9,10 @@ package org.abchip.mimo.biz.humanres.employment.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
 import org.abchip.mimo.biz.humanres.employment.EmploymentAppSourceType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class EmploymentAppSourceTypeImpl extends BizEntityImpl implements EmploymentAppSourceType {
+public class EmploymentAppSourceTypeImpl extends BizEntityTypeImpl<EmploymentApp> implements EmploymentAppSourceType {
 	/**
 	 * 
 	 */
@@ -141,7 +142,7 @@ public class EmploymentAppSourceTypeImpl extends BizEntityImpl implements Employ
 	 * @generated
 	 */
 	@Override
-	public List<String> childEmploymentAppSourceTypes() {
+	public List<EmploymentAppSourceType> childEmploymentAppSourceTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -153,7 +154,7 @@ public class EmploymentAppSourceTypeImpl extends BizEntityImpl implements Employ
 	 * @generated
 	 */
 	@Override
-	public List<String> employmentApps() {
+	public List<EmploymentApp> employmentApps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

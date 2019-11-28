@@ -8,8 +8,7 @@
 package org.abchip.mimo.biz.humanres.employment;
 
 import java.util.Date;
-
-import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.humanres.position.EmplPosition;
 import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
@@ -39,7 +38,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * @model annotation="mimo-ent-frame title='Employment Application'"
  * @generated
  */
-public interface EmploymentApp extends BizEntity {
+public interface EmploymentApp extends BizEntityTyped<EmploymentAppSourceType> {
 	/**
 	 * Returns the value of the '<em><b>Application Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->

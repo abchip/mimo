@@ -14,11 +14,16 @@ import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
+import org.abchip.mimo.biz.common.portal.PortalPage;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.content.data.CharacterSet;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.MimeType;
+import org.abchip.mimo.biz.humanres.ability.PartyResume;
+import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.webapp.visit.ServerHitBin;
+import org.abchip.mimo.biz.webapp.website.WebPage;
 
 /**
  * <!-- begin-user-doc -->
@@ -666,153 +671,142 @@ public interface Content extends BizEntityTyped<ContentType> {
 	void setTemplateDataResourceId(DataResource value);
 
 	/**
-	 * Returns the value of the '<em><b>Content Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Content Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Attributes</em>' attribute list.
+	 * @return the value of the '<em>Content Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentAttribute'"
 	 * @generated
 	 */
-	List<String> getContentAttributes();
+	List<ContentAttribute> getContentAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Content Keywords</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Content Keywords</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentKeyword}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Keywords</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Keywords</em>' attribute list.
+	 * @return the value of the '<em>Content Keywords</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentKeywords()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentKeyword'"
 	 * @generated
 	 */
-	List<String> getContentKeywords();
+	List<ContentKeyword> getContentKeywords();
 
 	/**
-	 * Returns the value of the '<em><b>Content Meta Datas</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Content Meta Datas</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentMetaData}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Meta Datas</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Meta Datas</em>' attribute list.
+	 * @return the value of the '<em>Content Meta Datas</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentMetaDatas()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentMetaData'"
 	 * @generated
 	 */
-	List<String> getContentMetaDatas();
+	List<ContentMetaData> getContentMetaDatas();
 
 	/**
-	 * Returns the value of the '<em><b>Content Purposes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Content Purposes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentPurpose}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Purposes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Purposes</em>' attribute list.
+	 * @return the value of the '<em>Content Purposes</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentPurposes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentPurpose'"
 	 * @generated
 	 */
-	List<String> getContentPurposes();
+	List<ContentPurpose> getContentPurposes();
 
 	/**
-	 * Returns the value of the '<em><b>Content Revisions</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Content Revisions</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentRevision}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Revisions</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Revisions</em>' attribute list.
+	 * @return the value of the '<em>Content Revisions</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentRevisions()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentRevision'"
 	 * @generated
 	 */
-	List<String> getContentRevisions();
+	List<ContentRevision> getContentRevisions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentApproval' route='contentId'"
 	 * @generated
 	 */
-	List<String> contentApprovals();
+	List<ContentApproval> contentApprovals();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyResume' route='contentId'"
 	 * @generated
 	 */
-	List<String> partyResumes();
+	List<PartyResume> partyResumes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PortalPage' route='helpContentId'"
 	 * @generated
 	 */
-	List<String> portalPages();
+	List<PortalPage> portalPages();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ServerHitBin' route='internalContentId'"
 	 * @generated
 	 */
-	List<String> serverHitBins();
+	List<ServerHitBin> serverHitBins();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionResource' route='contentId'"
 	 * @generated
 	 */
-	List<String> subscriptionResources();
+	List<SubscriptionResource> subscriptionResources();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WebPage' route='contentId'"
 	 * @generated
 	 */
-	List<String> webPages();
+	List<WebPage> webPages();
 
 } // Content

@@ -11,7 +11,9 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.budget.BudgetItem;
 import org.abchip.mimo.biz.accounting.budget.BudgetItemType;
+import org.abchip.mimo.biz.accounting.budget.BudgetItemTypeAttr;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
+import org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -123,8 +125,8 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getBudgetItemTypeAttrs() {
-		return (List<String>)eGet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS, true);
+	public List<BudgetItemTypeAttr> getBudgetItemTypeAttrs() {
+		return (List<BudgetItemTypeAttr>)eGet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -133,7 +135,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> budgetItems() {
+	public List<BudgetItem> budgetItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +147,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> budgetScenarioRules() {
+	public List<BudgetScenarioRule> budgetScenarioRules() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -157,7 +159,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> childBudgetItemTypes() {
+	public List<BudgetItemType> childBudgetItemTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

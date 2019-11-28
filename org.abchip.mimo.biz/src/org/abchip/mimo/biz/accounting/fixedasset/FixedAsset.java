@@ -13,14 +13,21 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar;
 import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.requirement.Requirement;
+import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.shipment.shipment.Delivery;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -640,176 +647,162 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	void setUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Fixed Asset Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Attributes</em>' attribute list.
+	 * @return the value of the '<em>Fixed Asset Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetAttribute'"
 	 * @generated
 	 */
-	List<String> getFixedAssetAttributes();
+	List<FixedAssetAttribute> getFixedAssetAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Idents</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Fixed Asset Idents</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Idents</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Idents</em>' attribute list.
+	 * @return the value of the '<em>Fixed Asset Idents</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetIdents()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetIdent'"
 	 * @generated
 	 */
-	List<String> getFixedAssetIdents();
+	List<FixedAssetIdent> getFixedAssetIdents();
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Maints</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Fixed Asset Maints</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Maints</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Maints</em>' attribute list.
+	 * @return the value of the '<em>Fixed Asset Maints</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetMaints()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetMaint'"
 	 * @generated
 	 */
-	List<String> getFixedAssetMaints();
+	List<FixedAssetMaint> getFixedAssetMaints();
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Registrations</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Fixed Asset Registrations</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Registrations</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Registrations</em>' attribute list.
+	 * @return the value of the '<em>Fixed Asset Registrations</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetRegistrations()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetRegistration'"
 	 * @generated
 	 */
-	List<String> getFixedAssetRegistrations();
+	List<FixedAssetRegistration> getFixedAssetRegistrations();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AccommodationMap' route='fixedAssetId'"
 	 * @generated
 	 */
-	List<String> accommodationMaps();
+	List<AccommodationMap> accommodationMaps();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AccommodationSpot' route='fixedAssetId'"
 	 * @generated
 	 */
-	List<String> accommodationSpots();
+	List<AccommodationSpot> accommodationSpots();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='fixedAssetId'"
 	 * @generated
 	 */
-	List<String> acctgTranss();
+	List<AcctgTrans> acctgTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAsset' route='parentFixedAssetId'"
 	 * @generated
 	 */
-	List<String> childFixedAssets();
+	List<FixedAsset> childFixedAssets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponent' route='fixedAssetId'"
 	 * @generated
 	 */
-	List<String> costComponents();
+	List<CostComponent> costComponents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Delivery' route='fixedAssetId'"
 	 * @generated
 	 */
-	List<String> deliveries();
+	List<Delivery> deliveries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetDepMethod' route='fixedAssetId'"
 	 * @generated
 	 */
-	List<String> fixedAssetDepMethods();
+	List<FixedAssetDepMethod> fixedAssetDepMethods();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='fixedAssetId'"
 	 * @generated
 	 */
-	List<String> fixedAssetInventoryItems();
+	List<InventoryItem> fixedAssetInventoryItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Requirement' route='fixedAssetId'"
 	 * @generated
 	 */
-	List<String> requirements();
+	List<Requirement> requirements();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='fixedAssetId'"
 	 * @generated
 	 */
-	List<String> workEfforts();
+	List<WorkEffort> workEfforts();
 
 	/**
 	 * Returns the value of the '<em><b>Fixed Asset Type Id</b></em>' reference.

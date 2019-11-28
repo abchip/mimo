@@ -15,10 +15,15 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.marketing.contact.ContactList;
+import org.abchip.mimo.biz.order.order.CommunicationEventOrder;
+import org.abchip.mimo.biz.order.request.CustRequestCommEvent;
+import org.abchip.mimo.biz.order.return_.CommunicationEventReturn;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent;
+import org.abchip.mimo.biz.workeffort.workeffort.CommunicationEventWorkEff;
 
 /**
  * <!-- begin-user-doc -->
@@ -716,72 +721,65 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventOrder' route='communicationEventId'"
 	 * @generated
 	 */
-	List<String> communicationEventOrders();
+	List<CommunicationEventOrder> communicationEventOrders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventProduct' route='communicationEventId'"
 	 * @generated
 	 */
-	List<String> communicationEventProducts();
+	List<CommunicationEventProduct> communicationEventProducts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventPurpose' route='communicationEventId'"
 	 * @generated
 	 */
-	List<String> communicationEventPurposes();
+	List<CommunicationEventPurpose> communicationEventPurposes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventReturn' route='communicationEventId'"
 	 * @generated
 	 */
-	List<String> communicationEventReturns();
+	List<CommunicationEventReturn> communicationEventReturns();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventWorkEff' route='communicationEventId'"
 	 * @generated
 	 */
-	List<String> communicationEventWorkEffs();
+	List<CommunicationEventWorkEff> communicationEventWorkEffs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestCommEvent' route='communicationEventId'"
 	 * @generated
 	 */
-	List<String> custRequestCommEvents();
+	List<CustRequestCommEvent> custRequestCommEvents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SubscriptionCommEvent' route='communicationEventId'"
 	 * @generated
 	 */
-	List<String> subscriptionCommEvents();
+	List<SubscriptionCommEvent> subscriptionCommEvents();
 
 	/**
 	 * Returns the value of the '<em><b>Communication Event Type Id</b></em>' reference.

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.content.data;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.content.content.ContentMetaData;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,22 +59,20 @@ public interface MetaDataPredicate extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentMetaData' route='metaDataPredicateId'"
 	 * @generated
 	 */
-	List<String> contentMetaDatas();
+	List<ContentMetaData> contentMetaDatas();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourceMetaData' route='metaDataPredicateId'"
 	 * @generated
 	 */
-	List<String> dataResourceMetaDatas();
+	List<DataResourceMetaData> dataResourceMetaDatas();
 
 	/**
 	 * Returns the value of the '<em><b>Meta Data Predicate Id</b></em>' attribute.

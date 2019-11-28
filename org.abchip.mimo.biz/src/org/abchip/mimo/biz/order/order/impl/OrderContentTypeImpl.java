@@ -142,7 +142,7 @@ public class OrderContentTypeImpl extends BizEntityTypeImpl<OrderContent> implem
 	 * @generated
 	 */
 	@Override
-	public List<String> childOrderContentTypes() {
+	public List<OrderContentType> childOrderContentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -58,12 +58,11 @@ public interface UserPrefGroupType extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserPreference' route='userPrefGroupTypeId'"
 	 * @generated
 	 */
-	List<String> userPreferences();
+	List<UserPreference> userPreferences();
 
 	/**
 	 * Returns the value of the '<em><b>User Pref Group Type Id</b></em>' attribute.

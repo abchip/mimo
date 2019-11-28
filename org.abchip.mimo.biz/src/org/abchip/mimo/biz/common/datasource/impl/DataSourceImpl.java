@@ -12,7 +12,13 @@ import java.util.List;
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.datasource.DataSourceType;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.common.geo.GeoPoint;
+import org.abchip.mimo.biz.content.content.Content;
+import org.abchip.mimo.biz.content.content.ContentMetaData;
+import org.abchip.mimo.biz.content.data.DataResource;
+import org.abchip.mimo.biz.content.data.DataResourceMetaData;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -30,7 +36,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implements DataSource {
+public class DataSourceImpl extends BizEntityImpl implements DataSource {
 	/**
 	 * 
 	 */
@@ -100,7 +106,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> contentMetaDatas() {
+	public List<ContentMetaData> contentMetaDatas() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -112,7 +118,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> contents() {
+	public List<Content> contents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -124,7 +130,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> dataResourceMetaDatas() {
+	public List<DataResourceMetaData> dataResourceMetaDatas() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -136,7 +142,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> dataResources() {
+	public List<DataResource> dataResources() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -148,7 +154,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> geoPoints() {
+	public List<GeoPoint> geoPoints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -160,7 +166,7 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 * @generated
 	 */
 	@Override
-	public List<String> parties() {
+	public List<Party> parties() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

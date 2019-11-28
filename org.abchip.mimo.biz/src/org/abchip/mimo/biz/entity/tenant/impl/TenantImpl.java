@@ -10,6 +10,9 @@ package org.abchip.mimo.biz.entity.tenant.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.entity.tenant.Tenant;
+import org.abchip.mimo.biz.entity.tenant.TenantComponent;
+import org.abchip.mimo.biz.entity.tenant.TenantDataSource;
+import org.abchip.mimo.biz.entity.tenant.TenantDomainName;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -142,8 +145,8 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getTenantDataSources() {
-		return (List<String>)eGet(TenantPackage.Literals.TENANT__TENANT_DATA_SOURCES, true);
+	public List<TenantDataSource> getTenantDataSources() {
+		return (List<TenantDataSource>)eGet(TenantPackage.Literals.TENANT__TENANT_DATA_SOURCES, true);
 	}
 
 	/**
@@ -152,7 +155,7 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 * @generated
 	 */
 	@Override
-	public List<String> tenantComponents() {
+	public List<TenantComponent> tenantComponents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -164,7 +167,7 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	 * @generated
 	 */
 	@Override
-	public List<String> tenantDomainNames() {
+	public List<TenantDomainName> tenantDomainNames() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

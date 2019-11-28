@@ -343,7 +343,7 @@ public interface WebsitePackage extends EPackage {
 	int WEB_SITE__VISUAL_THEME_SET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
-	 * The feature id for the '<em><b>Web Analytics Configs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Web Analytics Configs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -622,15 +622,15 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebSite_WebappPath();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.webapp.website.WebSite#getWebAnalyticsConfigs <em>Web Analytics Configs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.webapp.website.WebSite#getWebAnalyticsConfigs <em>Web Analytics Configs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Web Analytics Configs</em>'.
+	 * @return the meta object for the reference list '<em>Web Analytics Configs</em>'.
 	 * @see org.abchip.mimo.biz.webapp.website.WebSite#getWebAnalyticsConfigs()
 	 * @see #getWebSite()
 	 * @generated
 	 */
-	EAttribute getWebSite_WebAnalyticsConfigs();
+	EReference getWebSite_WebAnalyticsConfigs();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -843,12 +843,12 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEB_SITE__WEBAPP_PATH = eINSTANCE.getWebSite_WebappPath();
 
 		/**
-		 * The meta object literal for the '<em><b>Web Analytics Configs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Web Analytics Configs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WEB_SITE__WEB_ANALYTICS_CONFIGS = eINSTANCE.getWebSite_WebAnalyticsConfigs();
+		EReference WEB_SITE__WEB_ANALYTICS_CONFIGS = eINSTANCE.getWebSite_WebAnalyticsConfigs();
 
 	}
 

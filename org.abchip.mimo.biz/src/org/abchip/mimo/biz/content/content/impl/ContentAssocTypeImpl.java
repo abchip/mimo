@@ -7,10 +7,9 @@
  */
 package org.abchip.mimo.biz.content.content.impl;
 
-import org.abchip.mimo.biz.content.content.ContentAssoc;
 import org.abchip.mimo.biz.content.content.ContentAssocType;
 import org.abchip.mimo.biz.content.content.ContentPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -27,7 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ContentAssocTypeImpl extends BizEntityTypeImpl<ContentAssoc> implements ContentAssocType {
+public class ContentAssocTypeImpl extends BizEntityImpl implements ContentAssocType {
 	/**
 	 * 
 	 */

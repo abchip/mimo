@@ -8,8 +8,9 @@
 package org.abchip.mimo.biz.party.agreement;
 
 import java.util.List;
-
-import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceTerm;
+import org.abchip.mimo.biz.accounting.payment.BillingAccountTerm;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,7 @@ import org.abchip.mimo.biz.BizEntity;
  * @model annotation="mimo-ent-frame dictionary='PartyEntityLabels' formula='description'"
  * @generated
  */
-public interface TermType extends BizEntity {
+public interface TermType extends BizEntityType<AgreementTerm> {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -138,61 +139,56 @@ public interface TermType extends BizEntity {
 	void setTermTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Term Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Term Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.TermTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Term Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Term Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Term Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermType_TermTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TermTypeAttr'"
 	 * @generated
 	 */
-	List<String> getTermTypeAttrs();
+	List<TermTypeAttr> getTermTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementTerm' route='termTypeId'"
 	 * @generated
 	 */
-	List<String> agreementTerms();
+	List<AgreementTerm> agreementTerms();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='BillingAccountTerm' route='termTypeId'"
 	 * @generated
 	 */
-	List<String> billingAccountTerms();
+	List<BillingAccountTerm> billingAccountTerms();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TermType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childTermTypes();
+	List<TermType> childTermTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceTerm' route='termTypeId'"
 	 * @generated
 	 */
-	List<String> invoiceTerms();
+	List<InvoiceTerm> invoiceTerms();
 
 } // TermType

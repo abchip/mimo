@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.ProductGroupOrder;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.service.schedule.JobSandbox;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
@@ -546,7 +547,7 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public List<String> productGroupOrders() {
+	public List<ProductGroupOrder> productGroupOrders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

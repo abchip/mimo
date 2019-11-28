@@ -121,7 +121,7 @@ public class InvoiceContentTypeImpl extends BizEntityTypeImpl<InvoiceContent> im
 	 * @generated
 	 */
 	@Override
-	public List<String> childInvoiceContentTypes() {
+	public List<InvoiceContentType> childInvoiceContentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

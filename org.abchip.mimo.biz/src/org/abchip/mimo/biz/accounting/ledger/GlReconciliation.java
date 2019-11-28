@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.party.party.Party;
 
@@ -334,12 +335,11 @@ public interface GlReconciliation extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='glReconciliationId'"
 	 * @generated
 	 */
-	List<String> finAccountTranss();
+	List<FinAccountTrans> finAccountTranss();
 
 	/**
 	 * Returns the value of the '<em><b>Gl Account Id</b></em>' reference.

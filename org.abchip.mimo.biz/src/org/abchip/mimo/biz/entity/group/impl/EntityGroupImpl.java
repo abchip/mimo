@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.entity.group.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.entity.group.EntityGroup;
+import org.abchip.mimo.biz.entity.group.EntityGroupEntry;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
+import org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -100,8 +102,8 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getEntityGroupEntries() {
-		return (List<String>)eGet(GroupPackage.Literals.ENTITY_GROUP__ENTITY_GROUP_ENTRIES, true);
+	public List<EntityGroupEntry> getEntityGroupEntries() {
+		return (List<EntityGroupEntry>)eGet(GroupPackage.Literals.ENTITY_GROUP__ENTITY_GROUP_ENTRIES, true);
 	}
 
 	/**
@@ -110,7 +112,7 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 	 * @generated
 	 */
 	@Override
-	public List<String> entitySyncIncludeGroups() {
+	public List<EntitySyncIncludeGroup> entitySyncIncludeGroups() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
 import org.abchip.mimo.biz.accounting.payment.BillingAccountTerm;
+import org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -148,8 +149,8 @@ public class BillingAccountTermImpl extends BizEntityImpl implements BillingAcco
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getBillingAccountTermAttrs() {
-		return (List<String>)eGet(PaymentPackage.Literals.BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_TERM_ATTRS, true);
+	public List<BillingAccountTermAttr> getBillingAccountTermAttrs() {
+		return (List<BillingAccountTermAttr>)eGet(PaymentPackage.Literals.BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_TERM_ATTRS, true);
 	}
 
 	/**

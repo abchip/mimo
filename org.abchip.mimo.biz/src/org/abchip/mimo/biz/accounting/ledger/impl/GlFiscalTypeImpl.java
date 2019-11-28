@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlFiscalType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -78,7 +79,7 @@ public class GlFiscalTypeImpl extends BizEntityImpl implements GlFiscalType {
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

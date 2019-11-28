@@ -13,8 +13,12 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.payment.Deduction;
 import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentApplication;
+import org.abchip.mimo.biz.accounting.payment.PaymentAttribute;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
@@ -24,6 +28,7 @@ import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
+import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.ecore.EClass;
@@ -331,8 +336,8 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getPaymentAttributes() {
-		return (List<String>)eGet(PaymentPackage.Literals.PAYMENT__PAYMENT_ATTRIBUTES, true);
+	public List<PaymentAttribute> getPaymentAttributes() {
+		return (List<PaymentAttribute>)eGet(PaymentPackage.Literals.PAYMENT__PAYMENT_ATTRIBUTES, true);
 	}
 
 	/**
@@ -341,7 +346,7 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -353,7 +358,7 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 * @generated
 	 */
 	@Override
-	public List<String> deductions() {
+	public List<Deduction> deductions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -365,7 +370,7 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentApplications() {
+	public List<PaymentApplication> paymentApplications() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -377,7 +382,7 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 * @generated
 	 */
 	@Override
-	public List<String> returnItemResponses() {
+	public List<ReturnItemResponse> returnItemResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -389,7 +394,7 @@ public class PaymentImpl extends BizEntityTypedImpl<PaymentType> implements Paym
 	 * @generated
 	 */
 	@Override
-	public List<String> toPaymentApplications() {
+	public List<PaymentApplication> toPaymentApplications() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

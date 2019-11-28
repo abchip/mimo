@@ -13,15 +13,37 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomType;
+import org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail;
+import org.abchip.mimo.biz.order.order.OrderItem;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
+import org.abchip.mimo.biz.order.request.CustRequestItem;
+import org.abchip.mimo.biz.order.requirement.Requirement;
+import org.abchip.mimo.biz.order.return_.ReturnItem;
+import org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem;
+import org.abchip.mimo.biz.party.agreement.Agreement;
+import org.abchip.mimo.biz.party.communication.CommunicationEventProduct;
 import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.abchip.mimo.biz.product.config.ProductConfigStats;
+import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.facility.ProductFacility;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
+import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
+import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.product.supplier.ReorderGuideline;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentItem;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +59,7 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isAutoCreateKeywords <em>Auto Create Keywords</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getBillOfMaterialLevel <em>Bill Of Material Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getBrandName <em>Brand Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getChargeShipping <em>Charge Shipping</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#isChargeShipping <em>Charge Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCommunicationEventProducts <em>Communication Event Products</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getConfigId <em>Config Id</em>}</li>
@@ -195,6 +217,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 
 	/**
 	 * Returns the value of the '<em><b>Charge Shipping</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Charge Shipping</em>' attribute isn't clear,
@@ -202,22 +225,23 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Charge Shipping</em>' attribute.
-	 * @see #setChargeShipping(char)
+	 * @see #setChargeShipping(boolean)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ChargeShipping()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getChargeShipping();
+	boolean isChargeShipping();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getChargeShipping <em>Charge Shipping</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#isChargeShipping <em>Charge Shipping</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Charge Shipping</em>' attribute.
-	 * @see #getChargeShipping()
+	 * @see #isChargeShipping()
 	 * @generated
 	 */
-	void setChargeShipping(char value);
+	void setChargeShipping(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Comments</b></em>' attribute.
@@ -1790,372 +1814,340 @@ public interface Product extends BizEntityTyped<ProductType> {
 	void setWidthUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Communication Event Products</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Communication Event Products</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.communication.CommunicationEventProduct}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Communication Event Products</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Event Products</em>' attribute list.
+	 * @return the value of the '<em>Communication Event Products</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_CommunicationEventProducts()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventProduct'"
 	 * @generated
 	 */
-	List<String> getCommunicationEventProducts();
+	List<CommunicationEventProduct> getCommunicationEventProducts();
 
 	/**
-	 * Returns the value of the '<em><b>Product Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.ProductAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Attributes</em>' attribute list.
+	 * @return the value of the '<em>Product Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductAttribute'"
 	 * @generated
 	 */
-	List<String> getProductAttributes();
+	List<ProductAttribute> getProductAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Product Facilities</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Facilities</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.facility.ProductFacility}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Facilities</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Facilities</em>' attribute list.
+	 * @return the value of the '<em>Product Facilities</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductFacilities()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFacility'"
 	 * @generated
 	 */
-	List<String> getProductFacilities();
+	List<ProductFacility> getProductFacilities();
 
 	/**
-	 * Returns the value of the '<em><b>Product Geos</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Geos</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.ProductGeo}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Geos</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Geos</em>' attribute list.
+	 * @return the value of the '<em>Product Geos</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductGeos()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductGeo'"
 	 * @generated
 	 */
-	List<String> getProductGeos();
+	List<ProductGeo> getProductGeos();
 
 	/**
-	 * Returns the value of the '<em><b>Product Maints</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Maints</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.ProductMaint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Maints</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Maints</em>' attribute list.
+	 * @return the value of the '<em>Product Maints</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductMaints()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMaint'"
 	 * @generated
 	 */
-	List<String> getProductMaints();
+	List<ProductMaint> getProductMaints();
 
 	/**
-	 * Returns the value of the '<em><b>Product Meters</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Meters</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.ProductMeter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Meters</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Meters</em>' attribute list.
+	 * @return the value of the '<em>Product Meters</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductMeters()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductMeter'"
 	 * @generated
 	 */
-	List<String> getProductMeters();
+	List<ProductMeter> getProductMeters();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Agreement' route='productId'"
 	 * @generated
 	 */
-	List<String> agreements();
+	List<Agreement> agreements();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CartAbandonedLine' route='productId'"
 	 * @generated
 	 */
-	List<String> cartAbandonedLines();
+	List<CartAbandonedLine> cartAbandonedLines();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponent' route='productId'"
 	 * @generated
 	 */
-	List<String> costComponents();
+	List<CostComponent> costComponents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestItem' route='productId'"
 	 * @generated
 	 */
-	List<String> custRequestItems();
+	List<CustRequestItem> custRequestItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GoodIdentification' route='productId'"
 	 * @generated
 	 */
-	List<String> goodIdentifications();
+	List<GoodIdentification> goodIdentifications();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAsset' route='instanceOfProductId'"
 	 * @generated
 	 */
-	List<String> instanceOfFixedAssets();
+	List<FixedAsset> instanceOfFixedAssets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='productId'"
 	 * @generated
 	 */
-	List<String> inventoryItems();
+	List<InventoryItem> inventoryItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='productId'"
 	 * @generated
 	 */
-	List<String> invoiceItems();
+	List<InvoiceItem> invoiceItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItem' route='productId'"
 	 * @generated
 	 */
-	List<String> orderItems();
+	List<OrderItem> orderItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductManufacturingRule' route='productIdFor'"
 	 * @generated
 	 */
-	List<String> productForProductManufacturingRules();
+	List<ProductManufacturingRule> productForProductManufacturingRules();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductGroupOrder' route='productId'"
 	 * @generated
 	 */
-	List<String> productGroupOrders();
+	List<ProductGroupOrder> productGroupOrders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductManufacturingRule' route='productIdIn'"
 	 * @generated
 	 */
-	List<String> productInProductManufacturingRules();
+	List<ProductManufacturingRule> productInProductManufacturingRules();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductManufacturingRule' route='productId'"
 	 * @generated
 	 */
-	List<String> productManufacturingRules();
+	List<ProductManufacturingRule> productManufacturingRules();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductConfigStats' route='productId'"
 	 * @generated
 	 */
-	List<String> productProductConfigStatss();
+	List<ProductConfigStats> productProductConfigStatss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductReview' route='productId'"
 	 * @generated
 	 */
-	List<String> productReviews();
+	List<ProductReview> productReviews();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreSurveyAppl' route='productId'"
 	 * @generated
 	 */
-	List<String> productStoreSurveyAppls();
+	List<ProductStoreSurveyAppl> productStoreSurveyAppls();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductManufacturingRule' route='productIdInSubst'"
 	 * @generated
 	 */
-	List<String> productSubstProductManufacturingRules();
+	List<ProductManufacturingRule> productSubstProductManufacturingRules();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteItem' route='productId'"
 	 * @generated
 	 */
-	List<String> quoteItems();
+	List<QuoteItem> quoteItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReorderGuideline' route='productId'"
 	 * @generated
 	 */
-	List<String> reorderGuidelines();
+	List<ReorderGuideline> reorderGuidelines();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Requirement' route='productId'"
 	 * @generated
 	 */
-	List<String> requirements();
+	List<Requirement> requirements();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItem' route='productId'"
 	 * @generated
 	 */
-	List<String> returnItems();
+	List<ReturnItem> returnItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastDetail' route='productId'"
 	 * @generated
 	 */
-	List<String> salesForecastDetails();
+	List<SalesForecastDetail> salesForecastDetails();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentItem' route='productId'"
 	 * @generated
 	 */
-	List<String> shipmentItems();
+	List<ShipmentItem> shipmentItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentReceipt' route='productId'"
 	 * @generated
 	 */
-	List<String> shipmentReceipts();
+	List<ShipmentReceipt> shipmentReceipts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingListItem' route='productId'"
 	 * @generated
 	 */
-	List<String> shoppingListItems();
+	List<ShoppingListItem> shoppingListItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='productId'"
 	 * @generated
 	 */
-	List<String> subscriptions();
+	List<Subscription> subscriptions();
 
 	/**
 	 * Returns the value of the '<em><b>Product Type Id</b></em>' reference.

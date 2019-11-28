@@ -13,6 +13,7 @@ import javax.inject.Inject;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.base.BaseCommandProviderImpl;
 import org.abchip.mimo.language.Language;
+import org.abchip.mimo.language.LanguageManager;
 import org.abchip.mimo.language.LanguagePlanet;
 import org.abchip.mimo.resource.ResourceManager;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
@@ -21,11 +22,15 @@ public class BaseLanguageCommandProviderImpl extends BaseCommandProviderImpl {
 
 	@Inject
 	private ResourceManager resourceManager;
-
+	@Inject
+	private LanguageManager languageManager;
+	
 	public void _lang(CommandInterpreter interpreter) throws Exception {
 
 		try (Context context = this.createContext(null)) {
 
+			System.out.println(languageManager.translate(context, "eng", "man", "ita"));
+			
 			for (Language language : resourceManager.getResourceReader(context, Language.class).find()) {
 				System.out.println(language);
 

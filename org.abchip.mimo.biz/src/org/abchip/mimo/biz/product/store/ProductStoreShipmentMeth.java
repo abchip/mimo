@@ -14,6 +14,7 @@ import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 
@@ -793,11 +794,10 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='productStoreShipMethId'"
 	 * @generated
 	 */
-	List<String> shipmentCostEstimates();
+	List<ShipmentCostEstimate> shipmentCostEstimates();
 
 } // ProductStoreShipmentMeth

@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.shipment.shipment;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 
 /**
@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
  * @model annotation="mimo-ent-frame title='Shipment Contact Mechanism'"
  * @generated
  */
-public interface ShipmentContactMech extends BizEntityTyped<ShipmentContactMechType> {
+public interface ShipmentContactMech extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->

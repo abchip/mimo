@@ -9,10 +9,57 @@ package org.abchip.mimo.biz.common.uom.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
+import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
+import org.abchip.mimo.biz.accounting.payment.BillingAccount;
+import org.abchip.mimo.biz.accounting.payment.BillingAccountTerm;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
+import org.abchip.mimo.biz.common.geo.GeoPoint;
+import org.abchip.mimo.biz.common.period.PeriodType;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.common.uom.UomConversion;
+import org.abchip.mimo.biz.common.uom.UomGroup;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.common.uom.UomType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory;
+import org.abchip.mimo.biz.order.order.OrderDeliverySchedule;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.order.OrderItem;
+import org.abchip.mimo.biz.order.quote.Quote;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
+import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.cost.CostComponent;
+import org.abchip.mimo.biz.product.cost.CostComponentCalc;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.product.ProductMaint;
+import org.abchip.mimo.biz.product.product.ProductMeter;
+import org.abchip.mimo.biz.product.product.ProductMeterType;
+import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.product.supplier.SupplierProductFeature;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentPackage;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -144,8 +191,8 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getMainUomConversions() {
-		return (List<String>)eGet(UomPackage.Literals.UOM__MAIN_UOM_CONVERSIONS, true);
+	public List<UomConversion> getMainUomConversions() {
+		return (List<UomConversion>)eGet(UomPackage.Literals.UOM__MAIN_UOM_CONVERSIONS, true);
 	}
 
 	/**
@@ -154,7 +201,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> actualCurrencyPayments() {
+	public List<Payment> actualCurrencyPayments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +213,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> availableTimeSubscriptions() {
+	public List<Subscription> availableTimeSubscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -178,7 +225,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> billingAccountTerms() {
+	public List<BillingAccountTerm> billingAccountTerms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -190,7 +237,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> billingAccounts() {
+	public List<BillingAccount> billingAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -202,7 +249,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> billingWeightShipmentRouteSegments() {
+	public List<ShipmentRouteSegment> billingWeightShipmentRouteSegments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -214,7 +261,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> cancelTimeSubscriptions() {
+	public List<Subscription> cancelTimeSubscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -226,7 +273,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> convToUomConversions() {
+	public List<UomConversion> convToUomConversions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -238,7 +285,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> costComponentCalcs() {
+	public List<CostComponentCalc> costComponentCalcs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -250,7 +297,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> currencyAcctgTransEntries() {
+	public List<AcctgTransEntry> currencyAcctgTransEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -262,7 +309,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> currencyCostComponents() {
+	public List<CostComponent> currencyCostComponents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -274,7 +321,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> currencyCustRequests() {
+	public List<CustRequest> currencyCustRequests() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -286,7 +333,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> currencyFinAccounts() {
+	public List<FinAccount> currencyFinAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -298,7 +345,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> currencyInventoryItems() {
+	public List<InventoryItem> currencyInventoryItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -310,7 +357,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> currencyInvoices() {
+	public List<Invoice> currencyInvoices() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -322,7 +369,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> currencyPayments() {
+	public List<Payment> currencyPayments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -334,7 +381,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> currencyShipmentRouteSegments() {
+	public List<ShipmentRouteSegment> currencyShipmentRouteSegments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -346,7 +393,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> currencyShipments() {
+	public List<Shipment> currencyShipments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -358,7 +405,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> defaultProductMeterTypes() {
+	public List<ProductMeterType> defaultProductMeterTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -370,7 +417,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> depthProducts() {
+	public List<Product> depthProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -382,7 +429,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> diameterProducts() {
+	public List<Product> diameterProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -394,7 +441,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> dimensionFacilities() {
+	public List<Facility> dimensionFacilities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -406,7 +453,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> dimensionShipmentBoxTypes() {
+	public List<ShipmentBoxType> dimensionShipmentBoxTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -418,7 +465,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> dimensionShipmentPackages() {
+	public List<ShipmentPackage> dimensionShipmentPackages() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -430,7 +477,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> elevationGeoPoints() {
+	public List<GeoPoint> elevationGeoPoints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -442,7 +489,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> facilitySizeFacilities() {
+	public List<Facility> facilitySizeFacilities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -454,7 +501,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> fixedAssets() {
+	public List<FixedAsset> fixedAssets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -466,7 +513,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> gracePeriodSubscriptions() {
+	public List<Subscription> gracePeriodSubscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -478,7 +525,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> heightProducts() {
+	public List<Product> heightProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -490,7 +537,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> intervalFixedAssetMaints() {
+	public List<FixedAssetMaint> intervalFixedAssetMaints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -502,7 +549,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> intervalProductMaints() {
+	public List<ProductMaint> intervalProductMaints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -514,7 +561,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryItems() {
+	public List<InventoryItem> inventoryItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -526,7 +573,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceItems() {
+	public List<InvoiceItem> invoiceItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -538,7 +585,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> marketingCampaigns() {
+	public List<MarketingCampaign> marketingCampaigns() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -550,7 +597,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> maxLifeTimeSubscriptions() {
+	public List<Subscription> maxLifeTimeSubscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -562,7 +609,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> maximumAmountCustRequests() {
+	public List<CustRequest> maximumAmountCustRequests() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -574,7 +621,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> meterProductMeters() {
+	public List<ProductMeter> meterProductMeters() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -586,7 +633,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> moneyWorkEfforts() {
+	public List<WorkEffort> moneyWorkEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -598,7 +645,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> orderHeaders() {
+	public List<OrderHeader> orderHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -610,7 +657,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> origCurrencyAcctgTransEntries() {
+	public List<AcctgTransEntry> origCurrencyAcctgTransEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -622,7 +669,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> parties() {
+	public List<Party> parties() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -634,7 +681,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> partyAcctgPreferences() {
+	public List<PartyAcctgPreference> partyAcctgPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -646,7 +693,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentGatewayResponses() {
+	public List<PaymentGatewayResponse> paymentGatewayResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -658,7 +705,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> periodTypes() {
+	public List<PeriodType> periodTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -670,7 +717,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> priceShipmentCostEstimates() {
+	public List<ShipmentCostEstimate> priceShipmentCostEstimates() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -682,7 +729,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> productFeatures() {
+	public List<ProductFeature> productFeatures() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -694,7 +741,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> productStores() {
+	public List<ProductStore> productStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -706,7 +753,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> quantityProducts() {
+	public List<Product> quantityProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -718,7 +765,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> quantitySalesForecastDetails() {
+	public List<SalesForecastDetail> quantitySalesForecastDetails() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -730,7 +777,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> quantityShipmentCostEstimates() {
+	public List<ShipmentCostEstimate> quantityShipmentCostEstimates() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -742,7 +789,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteItems() {
+	public List<QuoteItem> quoteItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -754,7 +801,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> quotes() {
+	public List<Quote> quotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -766,7 +813,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> recurringFreqOrderItems() {
+	public List<OrderItem> recurringFreqOrderItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -778,7 +825,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> returnHeaders() {
+	public List<ReturnHeader> returnHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -790,7 +837,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> salesForecastHistories() {
+	public List<SalesForecastHistory> salesForecastHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -802,7 +849,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> salesForecasts() {
+	public List<SalesForecast> salesForecasts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -814,7 +861,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> salesOpportunities() {
+	public List<SalesOpportunity> salesOpportunities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -826,7 +873,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> salesOpportunityHistories() {
+	public List<SalesOpportunityHistory> salesOpportunityHistories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -838,7 +885,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> supplierProductFeatures() {
+	public List<SupplierProductFeature> supplierProductFeatures() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -850,7 +897,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> totalCubicOrderDeliverySchedules() {
+	public List<OrderDeliverySchedule> totalCubicOrderDeliverySchedules() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -862,7 +909,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> totalWeightOrderDeliverySchedules() {
+	public List<OrderDeliverySchedule> totalWeightOrderDeliverySchedules() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -874,7 +921,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> uomGroups() {
+	public List<UomGroup> uomGroups() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -886,7 +933,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> useTimeSubscriptions() {
+	public List<Subscription> useTimeSubscriptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -898,7 +945,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> weightFacilities() {
+	public List<Facility> weightFacilities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -910,7 +957,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> weightProducts() {
+	public List<Product> weightProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -922,7 +969,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> weightShipmentBoxTypes() {
+	public List<ShipmentBoxType> weightShipmentBoxTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -934,7 +981,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> weightShipmentCostEstimates() {
+	public List<ShipmentCostEstimate> weightShipmentCostEstimates() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -946,7 +993,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> weightShipmentPackages() {
+	public List<ShipmentPackage> weightShipmentPackages() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -958,7 +1005,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public List<String> widthProducts() {
+	public List<Product> widthProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

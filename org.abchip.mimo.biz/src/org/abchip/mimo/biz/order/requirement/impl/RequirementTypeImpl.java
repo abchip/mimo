@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.RequirementType;
+import org.abchip.mimo.biz.order.requirement.RequirementTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -144,8 +145,8 @@ public class RequirementTypeImpl extends BizEntityTypeImpl<Requirement> implemen
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getRequirementTypeAttrs() {
-		return (List<String>)eGet(RequirementPackage.Literals.REQUIREMENT_TYPE__REQUIREMENT_TYPE_ATTRS, true);
+	public List<RequirementTypeAttr> getRequirementTypeAttrs() {
+		return (List<RequirementTypeAttr>)eGet(RequirementPackage.Literals.REQUIREMENT_TYPE__REQUIREMENT_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +155,7 @@ public class RequirementTypeImpl extends BizEntityTypeImpl<Requirement> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> childRequirementTypes() {
+	public List<RequirementType> childRequirementTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +167,7 @@ public class RequirementTypeImpl extends BizEntityTypeImpl<Requirement> implemen
 	 * @generated
 	 */
 	@Override
-	public List<String> requirements() {
+	public List<Requirement> requirements() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

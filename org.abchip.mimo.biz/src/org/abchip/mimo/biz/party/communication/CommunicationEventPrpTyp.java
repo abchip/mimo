@@ -8,8 +8,7 @@
 package org.abchip.mimo.biz.party.communication;
 
 import java.util.List;
-
-import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.BizEntityType;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +30,7 @@ import org.abchip.mimo.biz.BizEntity;
  * @model annotation="mimo-ent-frame title='Communication Event Purpose Type' dictionary='PartyEntityLabels' formula='description'"
  * @generated
  */
-public interface CommunicationEventPrpTyp extends BizEntity {
+public interface CommunicationEventPrpTyp extends BizEntityType<CommunicationEventPurpose> {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -111,32 +110,30 @@ public interface CommunicationEventPrpTyp extends BizEntity {
 	void setParentTypeId(CommunicationEventPrpTyp value);
 
 	/**
-	 * Returns the value of the '<em><b>Communication Event Purposes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Communication Event Purposes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Communication Event Purposes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Event Purposes</em>' attribute list.
+	 * @return the value of the '<em>Communication Event Purposes</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventPrpTyp_CommunicationEventPurposes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventPurpose'"
 	 * @generated
 	 */
-	List<String> getCommunicationEventPurposes();
+	List<CommunicationEventPurpose> getCommunicationEventPurposes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEventPrpTyp' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childCommunicationEventPrpTyps();
+	List<CommunicationEventPrpTyp> childCommunicationEventPrpTyps();
 
 	/**
 	 * Returns the value of the '<em><b>Communication Event Prp Typ Id</b></em>' attribute.

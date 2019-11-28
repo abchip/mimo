@@ -9,8 +9,7 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContent;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContentType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -30,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class WorkEffortContentTypeImpl extends BizEntityTypeImpl<WorkEffortContent> implements WorkEffortContentType {
+public class WorkEffortContentTypeImpl extends BizEntityImpl implements WorkEffortContentType {
 	/**
 	 * 
 	 */
@@ -101,7 +100,7 @@ public class WorkEffortContentTypeImpl extends BizEntityTypeImpl<WorkEffortConte
 	 * @generated
 	 */
 	@Override
-	public List<String> childWorkEffortContentTypes() {
+	public List<WorkEffortContentType> childWorkEffortContentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

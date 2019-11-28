@@ -11,10 +11,72 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeGlAccount;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountTypeDefault;
+import org.abchip.mimo.biz.accounting.ledger.GlJournal;
+import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
+import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
+import org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount;
+import org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount;
+import org.abchip.mimo.biz.accounting.tax.TaxAuthority;
 import org.abchip.mimo.biz.common.datasource.DataSource;
+import org.abchip.mimo.biz.common.note.NoteData;
+import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.content.content.ContentApproval;
+import org.abchip.mimo.biz.content.content.ContentRevision;
+import org.abchip.mimo.biz.content.survey.SurveyResponse;
+import org.abchip.mimo.biz.humanres.ability.PartyResume;
+import org.abchip.mimo.biz.humanres.ability.PartySkill;
+import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
+import org.abchip.mimo.biz.humanres.position.EmplPosition;
+import org.abchip.mimo.biz.humanres.recruitment.JobInterview;
+import org.abchip.mimo.biz.marketing.contact.ContactList;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
+import org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory;
+import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
+import org.abchip.mimo.biz.order.quote.Quote;
+import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.order.request.CustRequestType;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
+import org.abchip.mimo.biz.party.agreement.Agreement;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.product.cost.CostComponent;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
+import org.abchip.mimo.biz.product.promo.ProductPromoCodeParty;
+import org.abchip.mimo.biz.product.promo.ProductPromoUse;
+import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
+import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.product.supplier.ReorderGuideline;
+import org.abchip.mimo.biz.product.supplier.SupplierProductFeature;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.security.login.UserLoginHistory;
+import org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
+import org.abchip.mimo.biz.workeffort.timesheet.TimeEntry;
+import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder;
 
 /**
  * <!-- begin-user-doc -->
@@ -313,968 +375,878 @@ public interface Party extends BizEntityTyped<PartyType> {
 	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Party Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Attributes</em>' attribute list.
+	 * @return the value of the '<em>Party Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyAttribute'"
 	 * @generated
 	 */
-	List<String> getPartyAttributes();
+	List<PartyAttribute> getPartyAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Party Identifications</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Party Identifications</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyIdentification}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Identifications</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Identifications</em>' attribute list.
+	 * @return the value of the '<em>Party Identifications</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyIdentifications()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyIdentification'"
 	 * @generated
 	 */
-	List<String> getPartyIdentifications();
+	List<PartyIdentification> getPartyIdentifications();
 
 	/**
-	 * Returns the value of the '<em><b>Party Name Histories</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Party Name Histories</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyNameHistory}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Name Histories</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Name Histories</em>' attribute list.
+	 * @return the value of the '<em>Party Name Histories</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyNameHistories()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyNameHistory'"
 	 * @generated
 	 */
-	List<String> getPartyNameHistories();
+	List<PartyNameHistory> getPartyNameHistories();
 
 	/**
-	 * Returns the value of the '<em><b>Party Notes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Party Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyNote}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Notes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Notes</em>' attribute list.
+	 * @return the value of the '<em>Party Notes</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyNotes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyNote'"
 	 * @generated
 	 */
-	List<String> getPartyNotes();
+	List<PartyNote> getPartyNotes();
 
 	/**
-	 * Returns the value of the '<em><b>Party Profile Defaults</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Party Profile Defaults</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyProfileDefault}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Profile Defaults</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Profile Defaults</em>' attribute list.
+	 * @return the value of the '<em>Party Profile Defaults</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyProfileDefaults()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyProfileDefault'"
 	 * @generated
 	 */
-	List<String> getPartyProfileDefaults();
+	List<PartyProfileDefault> getPartyProfileDefaults();
 
 	/**
-	 * Returns the value of the '<em><b>Party Roles</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Party Roles</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyRole}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Roles</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Roles</em>' attribute list.
+	 * @return the value of the '<em>Party Roles</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyRoles()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyRole'"
 	 * @generated
 	 */
-	List<String> getPartyRoles();
+	List<PartyRole> getPartyRoles();
 
 	/**
-	 * Returns the value of the '<em><b>Party Skills</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Party Skills</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.humanres.ability.PartySkill}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Skills</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Skills</em>' attribute list.
+	 * @return the value of the '<em>Party Skills</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartySkills()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartySkill'"
 	 * @generated
 	 */
-	List<String> getPartySkills();
+	List<PartySkill> getPartySkills();
 
 	/**
-	 * Returns the value of the '<em><b>Supplier Product Features</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Supplier Product Features</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Supplier Product Features</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Supplier Product Features</em>' attribute list.
+	 * @return the value of the '<em>Supplier Product Features</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_SupplierProductFeatures()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SupplierProductFeature'"
 	 * @generated
 	 */
-	List<String> getSupplierProductFeatures();
+	List<SupplierProductFeature> getSupplierProductFeatures();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='partyId'"
 	 * @generated
 	 */
-	List<String> acctgTransEntries();
+	List<AcctgTransEntry> acctgTransEntries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='partyId'"
 	 * @generated
 	 */
-	List<String> acctgTranss();
+	List<AcctgTrans> acctgTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='applyingPartyId'"
 	 * @generated
 	 */
-	List<String> applyingEmploymentApps();
+	List<EmploymentApp> applyingEmploymentApps();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='approverPartyId'"
 	 * @generated
 	 */
-	List<String> approverEmploymentApps();
+	List<EmploymentApp> approverEmploymentApps();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='carrierPartyId'"
 	 * @generated
 	 */
-	List<String> carrierOrderItemShipGroups();
+	List<OrderItemShipGroup> carrierOrderItemShipGroups();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CarrierShipmentBoxType' route='partyId'"
 	 * @generated
 	 */
-	List<String> carrierShipmentBoxTypes();
+	List<CarrierShipmentBoxType> carrierShipmentBoxTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='carrierPartyId'"
 	 * @generated
 	 */
-	List<String> carrierShipmentRouteSegments();
+	List<ShipmentRouteSegment> carrierShipmentRouteSegments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Timesheet' route='clientPartyId'"
 	 * @generated
 	 */
-	List<String> clientTimesheets();
+	List<Timesheet> clientTimesheets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentRevision' route='committedByPartyId'"
 	 * @generated
 	 */
-	List<String> committedByContentRevisions();
+	List<ContentRevision> committedByContentRevisions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContentApproval' route='partyId'"
 	 * @generated
 	 */
-	List<String> contentApprovals();
+	List<ContentApproval> contentApprovals();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CostComponent' route='partyId'"
 	 * @generated
 	 */
-	List<String> costComponents();
+	List<CostComponent> costComponents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestType' route='partyId'"
 	 * @generated
 	 */
-	List<String> custRequestTypes();
+	List<CustRequestType> custRequestTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmplPosition' route='partyId'"
 	 * @generated
 	 */
-	List<String> emplPositions();
+	List<EmplPosition> emplPositions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='partyId'"
 	 * @generated
 	 */
-	List<String> finAccountTranss();
+	List<FinAccountTrans> finAccountTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAsset' route='partyId'"
 	 * @generated
 	 */
-	List<String> fixedAssets();
+	List<FixedAsset> fixedAssets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Agreement' route='partyIdFrom'"
 	 * @generated
 	 */
-	List<String> fromAgreements();
+	List<Agreement> fromAgreements();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='partyIdFrom'"
 	 * @generated
 	 */
-	List<String> fromCommunicationEvents();
+	List<CommunicationEvent> fromCommunicationEvents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequest' route='fromPartyId'"
 	 * @generated
 	 */
-	List<String> fromCustRequests();
+	List<CustRequest> fromCustRequests();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='partyIdFrom'"
 	 * @generated
 	 */
-	List<String> fromInvoices();
+	List<Invoice> fromInvoices();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='partyIdFrom'"
 	 * @generated
 	 */
-	List<String> fromPayments();
+	List<Payment> fromPayments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='partyIdFrom'"
 	 * @generated
 	 */
-	List<String> fromShipments();
+	List<Shipment> fromShipments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GiftCardFulfillment' route='partyId'"
 	 * @generated
 	 */
-	List<String> giftCardFulfillments();
+	List<GiftCardFulfillment> giftCardFulfillments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountOrganization' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> glAccountOrganizations();
+	List<GlAccountOrganization> glAccountOrganizations();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlJournal' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> glJournals();
+	List<GlJournal> glJournals();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlReconciliation' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> glReconciliations();
+	List<GlReconciliation> glReconciliations();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FixedAssetRegistration' route='govAgencyPartyId'"
 	 * @generated
 	 */
-	List<String> govAgencyFixedAssetRegistrations();
+	List<FixedAssetRegistration> govAgencyFixedAssetRegistrations();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastHistory' route='internalPartyId'"
 	 * @generated
 	 */
-	List<String> internalSalesForecastHistories();
+	List<SalesForecastHistory> internalSalesForecastHistories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecast' route='internalPartyId'"
 	 * @generated
 	 */
-	List<String> internalSalesForecasts();
+	List<SalesForecast> internalSalesForecasts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobInterview' route='jobIntervieweePartyId'"
 	 * @generated
 	 */
-	List<String> intervieweeJobInterviews();
+	List<JobInterview> intervieweeJobInterviews();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='JobInterview' route='jobInterviewerPartyId'"
 	 * @generated
 	 */
-	List<String> interviewerJobInterviews();
+	List<JobInterview> interviewerJobInterviews();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='partyId'"
 	 * @generated
 	 */
-	List<String> inventoryItems();
+	List<InventoryItem> inventoryItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Invoice' route='partyId'"
 	 * @generated
 	 */
-	List<String> invoices();
+	List<Invoice> invoices();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='NoteData' route='noteParty'"
 	 * @generated
 	 */
-	List<String> noteNoteDatas();
+	List<NoteData> noteNoteDatas();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustomTimePeriod' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> organizationCustomTimePeriods();
+	List<CustomTimePeriod> organizationCustomTimePeriods();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTypeGlAccount' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> organizationFinAccountTypeGlAccounts();
+	List<FinAccountTypeGlAccount> organizationFinAccountTypeGlAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccount' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> organizationFinAccounts();
+	List<FinAccount> organizationFinAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GlAccountTypeDefault' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> organizationGlAccountTypeDefaults();
+	List<GlAccountTypeDefault> organizationGlAccountTypeDefaults();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItemTypeGlAccount' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> organizationInvoiceItemTypeGlAccounts();
+	List<InvoiceItemTypeGlAccount> organizationInvoiceItemTypeGlAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentMethodTypeGlAccount' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> organizationPaymentMethodTypeGlAccounts();
+	List<PaymentMethodTypeGlAccount> organizationPaymentMethodTypeGlAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecastHistory' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> organizationSalesForecastHistories();
+	List<SalesForecastHistory> organizationSalesForecastHistories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SalesForecast' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> organizationSalesForecasts();
+	List<SalesForecast> organizationSalesForecasts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='VarianceReasonGlAccount' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> organizationVarianceReasonGlAccounts();
+	List<VarianceReasonGlAccount> organizationVarianceReasonGlAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='originatedFromPartyId'"
 	 * @generated
 	 */
-	List<String> originatedFromSubscriptions();
+	List<Subscription> originatedFromSubscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='overrideOrgPartyId'"
 	 * @generated
 	 */
-	List<String> overrideOrgInvoiceItems();
+	List<InvoiceItem> overrideOrgInvoiceItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ContactList' route='ownerPartyId'"
 	 * @generated
 	 */
-	List<String> ownerContactLists();
+	List<ContactList> ownerContactLists();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Facility' route='ownerPartyId'"
 	 * @generated
 	 */
-	List<String> ownerFacilities();
+	List<Facility> ownerFacilities();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccount' route='ownerPartyId'"
 	 * @generated
 	 */
-	List<String> ownerFinAccounts();
+	List<FinAccount> ownerFinAccounts();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InventoryItem' route='ownerPartyId'"
 	 * @generated
 	 */
-	List<String> ownerInventoryItems();
+	List<InventoryItem> ownerInventoryItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitation' route='partyIdFrom'"
 	 * @generated
 	 */
-	List<String> partyInvitations();
+	List<PartyInvitation> partyInvitations();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyPrefDocTypeTpl' route='partyId'"
 	 * @generated
 	 */
-	List<String> partyPrefDocTypeTpls();
+	List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyResume' route='partyId'"
 	 * @generated
 	 */
-	List<String> partyResumes();
+	List<PartyResume> partyResumes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGlAccountTypeMap' route='organizationPartyId'"
 	 * @generated
 	 */
-	List<String> paymentGlAccountTypeMaps();
+	List<PaymentGlAccountTypeMap> paymentGlAccountTypeMaps();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentMethod' route='partyId'"
 	 * @generated
 	 */
-	List<String> paymentMethods();
+	List<PaymentMethod> paymentMethods();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='performedByPartyId'"
 	 * @generated
 	 */
-	List<String> performedByFinAccountTranss();
+	List<FinAccountTrans> performedByFinAccountTranss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoCodeParty' route='partyId'"
 	 * @generated
 	 */
-	List<String> productPromoCodeParties();
+	List<ProductPromoCodeParty> productPromoCodeParties();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromoUse' route='partyId'"
 	 * @generated
 	 */
-	List<String> productPromoUses();
+	List<ProductPromoUse> productPromoUses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductPromo' route='overrideOrgPartyId'"
 	 * @generated
 	 */
-	List<String> productPromos();
+	List<ProductPromo> productPromos();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStoreShipmentMeth' route='companyPartyId'"
 	 * @generated
 	 */
-	List<String> productStoreShipmentMeths();
+	List<ProductStoreShipmentMeth> productStoreShipmentMeths();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductStore' route='payToPartyId'"
 	 * @generated
 	 */
-	List<String> productStores();
+	List<ProductStore> productStores();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Quote' route='partyId'"
 	 * @generated
 	 */
-	List<String> quotes();
+	List<Quote> quotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='referredByPartyId'"
 	 * @generated
 	 */
-	List<String> referredByEmploymentApps();
+	List<EmploymentApp> referredByEmploymentApps();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReorderGuideline' route='partyId'"
 	 * @generated
 	 */
-	List<String> reorderGuidelines();
+	List<ReorderGuideline> reorderGuidelines();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='fromPartyId'"
 	 * @generated
 	 */
-	List<String> returnHeaders();
+	List<ReturnHeader> returnHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='partyId'"
 	 * @generated
 	 */
-	List<String> shipmentCostEstimates();
+	List<ShipmentCostEstimate> shipmentCostEstimates();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShoppingList' route='partyId'"
 	 * @generated
 	 */
-	List<String> shoppingLists();
+	List<ShoppingList> shoppingLists();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Subscription' route='partyId'"
 	 * @generated
 	 */
-	List<String> subscriptions();
+	List<Subscription> subscriptions();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='supplierPartyId'"
 	 * @generated
 	 */
-	List<String> supplierOrderItemShipGroups();
+	List<OrderItemShipGroup> supplierOrderItemShipGroups();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyResponse' route='partyId'"
 	 * @generated
 	 */
-	List<String> surveyResponses();
+	List<SurveyResponse> surveyResponses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TaxAuthority' route='taxAuthPartyId'"
 	 * @generated
 	 */
-	List<String> taxAuthTaxAuthorities();
+	List<TaxAuthority> taxAuthTaxAuthorities();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='taxAuthPartyId'"
 	 * @generated
 	 */
-	List<String> taxAuthorityInvoiceItems();
+	List<InvoiceItem> taxAuthorityInvoiceItems();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='TimeEntry' route='partyId'"
 	 * @generated
 	 */
-	List<String> timeEntries();
+	List<TimeEntry> timeEntries();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Timesheet' route='partyId'"
 	 * @generated
 	 */
-	List<String> timesheets();
+	List<Timesheet> timesheets();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Agreement' route='partyIdTo'"
 	 * @generated
 	 */
-	List<String> toAgreements();
+	List<Agreement> toAgreements();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='partyIdTo'"
 	 * @generated
 	 */
-	List<String> toCommunicationEvents();
+	List<CommunicationEvent> toCommunicationEvents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyInvitationGroupAssoc' route='partyIdTo'"
 	 * @generated
 	 */
-	List<String> toPartyInvitationGroupAssocs();
+	List<PartyInvitationGroupAssoc> toPartyInvitationGroupAssocs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='partyIdTo'"
 	 * @generated
 	 */
-	List<String> toPayments();
+	List<Payment> toPayments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='toPartyId'"
 	 * @generated
 	 */
-	List<String> toReturnHeaders();
+	List<ReturnHeader> toReturnHeaders();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Shipment' route='partyIdTo'"
 	 * @generated
 	 */
-	List<String> toShipments();
+	List<Shipment> toShipments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLoginHistory' route='partyId'"
 	 * @generated
 	 */
-	List<String> userLoginHistories();
+	List<UserLoginHistory> userLoginHistories();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='UserLogin' route='partyId'"
 	 * @generated
 	 */
-	List<String> userLogins();
+	List<UserLogin> userLogins();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='vendorPartyId'"
 	 * @generated
 	 */
-	List<String> vendorOrderItemShipGroups();
+	List<OrderItemShipGroup> vendorOrderItemShipGroups();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortEventReminder' route='partyId'"
 	 * @generated
 	 */
-	List<String> workEffortEventReminders();
+	List<WorkEffortEventReminder> workEffortEventReminders();
 
 	/**
 	 * Returns the value of the '<em><b>Party Type Id</b></em>' reference.

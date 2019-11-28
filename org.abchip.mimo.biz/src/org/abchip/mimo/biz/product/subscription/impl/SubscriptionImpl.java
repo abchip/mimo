@@ -21,6 +21,9 @@ import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.product.subscription.SubscriptionAttribute;
+import org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent;
+import org.abchip.mimo.biz.product.subscription.SubscriptionFulfillmentPiece;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
 import org.abchip.mimo.biz.product.subscription.SubscriptionType;
@@ -667,8 +670,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSubscriptionAttributes() {
-		return (List<String>)eGet(SubscriptionPackage.Literals.SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES, true);
+	public List<SubscriptionAttribute> getSubscriptionAttributes() {
+		return (List<SubscriptionAttribute>)eGet(SubscriptionPackage.Literals.SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES, true);
 	}
 
 	/**
@@ -678,8 +681,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getSubscriptionCommEvents() {
-		return (List<String>)eGet(SubscriptionPackage.Literals.SUBSCRIPTION__SUBSCRIPTION_COMM_EVENTS, true);
+	public List<SubscriptionCommEvent> getSubscriptionCommEvents() {
+		return (List<SubscriptionCommEvent>)eGet(SubscriptionPackage.Literals.SUBSCRIPTION__SUBSCRIPTION_COMM_EVENTS, true);
 	}
 
 	/**
@@ -688,7 +691,7 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public List<String> subscriptionFulfillmentPieces() {
+	public List<SubscriptionFulfillmentPiece> subscriptionFulfillmentPieces() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

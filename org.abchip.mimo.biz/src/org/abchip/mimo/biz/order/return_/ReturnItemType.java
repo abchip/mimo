@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.order.return_;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.BizEntity;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * @model annotation="mimo-ent-frame help='ReturnItemType records the type of a ReturnItem' formula='description'"
  * @generated
  */
-public interface ReturnItemType extends BizEntityType<ReturnItem> {
+public interface ReturnItemType extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,32 +85,29 @@ public interface ReturnItemType extends BizEntityType<ReturnItem> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItemType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childReturnItemTypes();
+	List<ReturnItemType> childReturnItemTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItemTypeMap' route='returnItemTypeId'"
 	 * @generated
 	 */
-	List<String> returnItemTypeMaps();
+	List<ReturnItemTypeMap> returnItemTypeMaps();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItem' route='returnItemTypeId'"
 	 * @generated
 	 */
-	List<String> returnItems();
+	List<ReturnItem> returnItems();
 
 	/**
 	 * Returns the value of the '<em><b>Return Item Type Id</b></em>' attribute.

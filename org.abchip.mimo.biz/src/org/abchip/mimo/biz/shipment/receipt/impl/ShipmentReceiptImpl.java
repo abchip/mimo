@@ -13,9 +13,11 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.inventory.InventoryItemDetail;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.receipt.ReceiptPackage;
@@ -403,7 +405,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTranss() {
+	public List<AcctgTrans> acctgTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -415,7 +417,7 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public List<String> inventoryItemDetails() {
+	public List<InventoryItemDetail> inventoryItemDetails() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

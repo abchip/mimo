@@ -15,7 +15,7 @@ import org.abchip.mimo.biz.humanres.employment.EmploymentAppSourceType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.position.EmplPosition;
 import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
 
@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
+public class EmploymentAppImpl extends BizEntityTypedImpl<EmploymentAppSourceType> implements EmploymentApp {
 	/**
 	 * 
 	 */

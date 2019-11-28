@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMechType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ShipmentContactMechTypeImpl extends BizEntityTypeImpl<ShipmentContactMech> implements ShipmentContactMechType {
+public class ShipmentContactMechTypeImpl extends BizEntityImpl implements ShipmentContactMechType {
 	/**
 	 * 
 	 */
@@ -80,7 +80,7 @@ public class ShipmentContactMechTypeImpl extends BizEntityTypeImpl<ShipmentConta
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentContactMechs() {
+	public List<ShipmentContactMech> shipmentContactMechs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

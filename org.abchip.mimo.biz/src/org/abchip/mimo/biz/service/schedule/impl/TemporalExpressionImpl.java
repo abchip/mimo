@@ -11,8 +11,11 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.service.schedule.JobSandbox;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
 import org.abchip.mimo.biz.service.schedule.TemporalExpression;
+import org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -249,8 +252,8 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFromTemporalExpressionAssocs() {
-		return (List<String>)eGet(SchedulePackage.Literals.TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS, true);
+	public List<TemporalExpressionAssoc> getFromTemporalExpressionAssocs() {
+		return (List<TemporalExpressionAssoc>)eGet(SchedulePackage.Literals.TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS, true);
 	}
 
 	/**
@@ -259,7 +262,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 * @generated
 	 */
 	@Override
-	public List<String> jobSandboxs() {
+	public List<JobSandbox> jobSandboxs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -271,7 +274,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 * @generated
 	 */
 	@Override
-	public List<String> toTemporalExpressionAssocs() {
+	public List<TemporalExpressionAssoc> toTemporalExpressionAssocs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -283,7 +286,7 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	 * @generated
 	 */
 	@Override
-	public List<String> workEfforts() {
+	public List<WorkEffort> workEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.content.survey;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.geo.Geo;
 
 /**
@@ -37,7 +37,7 @@ import org.abchip.mimo.biz.common.geo.Geo;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface SurveyQuestion extends BizEntityTyped<SurveyQuestionType> {
+public interface SurveyQuestion extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -274,21 +274,20 @@ public interface SurveyQuestion extends BizEntityTyped<SurveyQuestionType> {
 	void setSurveyQuestionTypeId(SurveyQuestionType value);
 
 	/**
-	 * Returns the value of the '<em><b>Survey Question Options</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Survey Question Options</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Survey Question Options</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Question Options</em>' attribute list.
+	 * @return the value of the '<em>Survey Question Options</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestion_SurveyQuestionOptions()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SurveyQuestionOption'"
 	 * @generated
 	 */
-	List<String> getSurveyQuestionOptions();
+	List<SurveyQuestionOption> getSurveyQuestionOptions();
 
 } // SurveyQuestion

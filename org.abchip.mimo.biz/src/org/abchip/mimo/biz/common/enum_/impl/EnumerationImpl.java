@@ -9,10 +9,42 @@ package org.abchip.mimo.biz.common.enum_.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
+import org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
+import org.abchip.mimo.biz.common.email.EmailTemplateSetting;
 import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.enum_.EnumerationType;
+import org.abchip.mimo.biz.common.geo.GeoPoint;
+import org.abchip.mimo.biz.common.keyword.KeywordThesaurus;
+import org.abchip.mimo.biz.content.content.Content;
+import org.abchip.mimo.biz.humanres.recruitment.JobInterview;
+import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.order.OrderItemChange;
+import org.abchip.mimo.biz.order.order.OrderNotification;
+import org.abchip.mimo.biz.order.quote.Quote;
+import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.party.party.Person;
+import org.abchip.mimo.biz.product.facility.FacilityLocation;
+import org.abchip.mimo.biz.product.facility.ProductFacility;
+import org.abchip.mimo.biz.product.inventory.InventoryItemDetail;
+import org.abchip.mimo.biz.product.price.ProductPriceCond;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.product.ProductGeo;
+import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.store.ProductStoreEmailSetting;
+import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
+import org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion;
+import org.abchip.mimo.biz.service.schedule.JobManagerLock;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -124,8 +156,8 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getUserLoginSecurityQuestions() {
-		return (List<String>)eGet(EnumPackage.Literals.ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS, true);
+	public List<UserLoginSecurityQuestion> getUserLoginSecurityQuestions() {
+		return (List<UserLoginSecurityQuestion>)eGet(EnumPackage.Literals.ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS, true);
 	}
 
 	/**
@@ -134,7 +166,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> classFixedAssets() {
+	public List<FixedAsset> classFixedAssets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -146,7 +178,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> cogsPartyAcctgPreferences() {
+	public List<PartyAcctgPreference> cogsPartyAcctgPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -158,7 +190,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> communicationEvents() {
+	public List<CommunicationEvent> communicationEvents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -170,7 +202,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> defaultSalesChannelProductStores() {
+	public List<ProductStore> defaultSalesChannelProductStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -182,7 +214,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> emailTemplateSettings() {
+	public List<EmailTemplateSetting> emailTemplateSettings() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -194,7 +226,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> employmentStatusPersons() {
+	public List<Person> employmentStatusPersons() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -206,7 +238,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> examTypeJobRequisitions() {
+	public List<JobRequisition> examTypeJobRequisitions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -218,7 +250,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> geoPointTypeGeoPoints() {
+	public List<GeoPoint> geoPointTypeGeoPoints() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -230,7 +262,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> giftCardFulfillments() {
+	public List<GiftCardFulfillment> giftCardFulfillments() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -242,7 +274,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> inputParamProductPriceConds() {
+	public List<ProductPriceCond> inputParamProductPriceConds() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -254,7 +286,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceSequencePartyAcctgPreferences() {
+	public List<PartyAcctgPreference> invoiceSequencePartyAcctgPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -266,7 +298,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> jobInterviews() {
+	public List<JobInterview> jobInterviews() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -278,7 +310,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> jobPostingTypeJobRequisitions() {
+	public List<JobRequisition> jobPostingTypeJobRequisitions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -290,7 +322,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> operatorProductPriceConds() {
+	public List<ProductPriceCond> operatorProductPriceConds() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -302,7 +334,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> orderItemChanges() {
+	public List<OrderItemChange> orderItemChanges() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -314,7 +346,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> orderNotifications() {
+	public List<OrderNotification> orderNotifications() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -326,7 +358,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> orderSequencePartyAcctgPreferences() {
+	public List<PartyAcctgPreference> orderSequencePartyAcctgPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -338,7 +370,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> privilegeContents() {
+	public List<Content> privilegeContents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -350,7 +382,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> productGeos() {
+	public List<ProductGeo> productGeos() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -362,7 +394,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> productStoreEmailSettings() {
+	public List<ProductStoreEmailSetting> productStoreEmailSettings() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -374,7 +406,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteSequencePartyAcctgPreferences() {
+	public List<PartyAcctgPreference> quoteSequencePartyAcctgPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -386,7 +418,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> ratingProducts() {
+	public List<Product> ratingProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -398,7 +430,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> reasonFinAccountTranss() {
+	public List<FinAccountTrans> reasonFinAccountTranss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -410,7 +442,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> reasonInventoryItemDetails() {
+	public List<InventoryItemDetail> reasonInventoryItemDetails() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -422,7 +454,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> reasonJobManagerLocks() {
+	public List<JobManagerLock> reasonJobManagerLocks() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -434,7 +466,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> reasonOrderItemChanges() {
+	public List<OrderItemChange> reasonOrderItemChanges() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -446,7 +478,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> relationshipKeywordThesauruss() {
+	public List<KeywordThesaurus> relationshipKeywordThesauruss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -458,7 +490,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> replenishFinAccountTypes() {
+	public List<FinAccountType> replenishFinAccountTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -470,7 +502,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> replenishMethodProductStoreFinActSettings() {
+	public List<ProductStoreFinActSetting> replenishMethodProductStoreFinActSettings() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -482,7 +514,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> requirementMethodProductFacilities() {
+	public List<ProductFacility> requirementMethodProductFacilities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -494,7 +526,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> requirementMethodProductStores() {
+	public List<ProductStore> requirementMethodProductStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -506,7 +538,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> requirementMethodProducts() {
+	public List<Product> requirementMethodProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -518,7 +550,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> reserveOrderProductStores() {
+	public List<ProductStore> reserveOrderProductStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -530,7 +562,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> residenceStatusPersons() {
+	public List<Person> residenceStatusPersons() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -542,7 +574,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> salesChannelCustRequests() {
+	public List<CustRequest> salesChannelCustRequests() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -554,7 +586,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> salesChannelOrderHeaders() {
+	public List<OrderHeader> salesChannelOrderHeaders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -566,7 +598,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> salesChannelQuotes() {
+	public List<Quote> salesChannelQuotes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -578,7 +610,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> scopeWorkEfforts() {
+	public List<WorkEffort> scopeWorkEfforts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -590,7 +622,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> serviceTypePaymentGatewayResponses() {
+	public List<PaymentGatewayResponse> serviceTypePaymentGatewayResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -602,7 +634,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> storeCreditAccountProductStores() {
+	public List<ProductStore> storeCreditAccountProductStores() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -614,7 +646,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> taxFormPartyAcctgPreferences() {
+	public List<PartyAcctgPreference> taxFormPartyAcctgPreferences() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -626,7 +658,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> tranCodePaymentGatewayResponses() {
+	public List<PaymentGatewayResponse> tranCodePaymentGatewayResponses() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -638,7 +670,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> typeFacilityLocations() {
+	public List<FacilityLocation> typeFacilityLocations() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -650,7 +682,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> typeSalesOpportunities() {
+	public List<SalesOpportunity> typeSalesOpportunities() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -662,7 +694,7 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> virtualVariantMethodProducts() {
+	public List<Product> virtualVariantMethodProducts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

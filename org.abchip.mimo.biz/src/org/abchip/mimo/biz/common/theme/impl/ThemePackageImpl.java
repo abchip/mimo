@@ -853,6 +853,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
+		org.abchip.mimo.biz.webapp.website.WebsitePackage theWebsitePackage_1 = (org.abchip.mimo.biz.webapp.website.WebsitePackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.webapp.website.WebsitePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -882,9 +883,9 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		initEAttribute(getVisualThemeSet_VisualThemeSetId(), ecorePackage.getEString(), "visualThemeSetId", null, 1, 1, VisualThemeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualThemeSet_Description(), ecorePackage.getEString(), "description", null, 0, 1, VisualThemeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(visualThemeSetEClass, ecorePackage.getEString(), "visualThemes", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(visualThemeSetEClass, this.getVisualTheme(), "visualThemes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(visualThemeSetEClass, ecorePackage.getEString(), "webSites", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(visualThemeSetEClass, theWebsitePackage_1.getWebSite(), "webSites", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -966,20 +967,6 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		   new String[] {
 			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (visualThemeSetEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (visualThemeSetEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
 		   });
 		addAnnotation
 		  (getVisualThemeSet_VisualThemeSetId(),

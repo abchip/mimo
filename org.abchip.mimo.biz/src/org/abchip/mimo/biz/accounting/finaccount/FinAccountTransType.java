@@ -111,42 +111,39 @@ public interface FinAccountTransType extends BizEntityType<FinAccountTrans> {
 	void setParentTypeId(FinAccountTransType value);
 
 	/**
-	 * Returns the value of the '<em><b>Fin Account Trans Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Fin Account Trans Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fin Account Trans Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Trans Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Fin Account Trans Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransType_FinAccountTransTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTransTypeAttr'"
 	 * @generated
 	 */
-	List<String> getFinAccountTransTypeAttrs();
+	List<FinAccountTransTypeAttr> getFinAccountTransTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTransType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childFinAccountTransTypes();
+	List<FinAccountTransType> childFinAccountTransTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='finAccountTransTypeId'"
 	 * @generated
 	 */
-	List<String> finAccountTranss();
+	List<FinAccountTrans> finAccountTranss();
 
 	/**
 	 * Returns the value of the '<em><b>Fin Account Trans Type Id</b></em>' attribute.

@@ -11,7 +11,15 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceNote;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote;
+import org.abchip.mimo.biz.order.order.OrderHeaderNote;
+import org.abchip.mimo.biz.order.quote.QuoteNote;
+import org.abchip.mimo.biz.order.request.CustRequestNote;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.PartyNote;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote;
 
 /**
  * <!-- begin-user-doc -->
@@ -253,81 +261,73 @@ public interface NoteData extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustRequestNote' route='noteId'"
 	 * @generated
 	 */
-	List<String> custRequestNotes();
+	List<CustRequestNote> custRequestNotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='InvoiceNote' route='noteId'"
 	 * @generated
 	 */
-	List<String> invoiceNotes();
+	List<InvoiceNote> invoiceNotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='MarketingCampaignNote' route='noteId'"
 	 * @generated
 	 */
-	List<String> marketingCampaignNotes();
+	List<MarketingCampaignNote> marketingCampaignNotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderHeaderNote' route='noteId'"
 	 * @generated
 	 */
-	List<String> orderHeaderNotes();
+	List<OrderHeaderNote> orderHeaderNotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PartyNote' route='noteId'"
 	 * @generated
 	 */
-	List<String> partyNotes();
+	List<PartyNote> partyNotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='QuoteNote' route='noteId'"
 	 * @generated
 	 */
-	List<String> quoteNotes();
+	List<QuoteNote> quoteNotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffortNote' route='noteId'"
 	 * @generated
 	 */
-	List<String> workEffortNotes();
+	List<WorkEffortNote> workEffortNotes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='WorkEffort' route='noteId'"
 	 * @generated
 	 */
-	List<String> workEfforts();
+	List<WorkEffort> workEfforts();
 
 } // NoteData

@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.biz.party.communication;
 
-import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.BizEntityTyped;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ import org.abchip.mimo.biz.BizEntity;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface CommunicationEventPurpose extends BizEntity {
+public interface CommunicationEventPurpose extends BizEntityTyped<CommunicationEventPrpTyp> {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->

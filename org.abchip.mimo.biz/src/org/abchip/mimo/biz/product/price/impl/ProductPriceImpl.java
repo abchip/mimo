@@ -14,7 +14,7 @@ import java.util.Date;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPrice;
@@ -58,7 +58,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> implements ProductPrice {
+public class ProductPriceImpl extends BizEntityImpl implements ProductPrice {
 	/**
 	 * 
 	 */

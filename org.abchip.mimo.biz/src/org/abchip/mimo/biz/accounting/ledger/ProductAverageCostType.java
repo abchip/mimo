@@ -112,12 +112,11 @@ public interface ProductAverageCostType extends BizEntityType<ProductAverageCost
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductAverageCostType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childProductAverageCostTypes();
+	List<ProductAverageCostType> childProductAverageCostTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Product Average Cost Type Id</b></em>' attribute.

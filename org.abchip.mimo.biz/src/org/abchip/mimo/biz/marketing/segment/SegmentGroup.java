@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.marketing.segment;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.product.store.ProductStore;
 
 /**
@@ -33,7 +33,7 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
+public interface SegmentGroup extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -140,39 +140,37 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	void setSegmentGroupTypeId(SegmentGroupType value);
 
 	/**
-	 * Returns the value of the '<em><b>Segment Group Classifications</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Segment Group Classifications</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.segment.SegmentGroupClassification}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Segment Group Classifications</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Segment Group Classifications</em>' attribute list.
+	 * @return the value of the '<em>Segment Group Classifications</em>' reference list.
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupClassifications()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SegmentGroupClassification'"
 	 * @generated
 	 */
-	List<String> getSegmentGroupClassifications();
+	List<SegmentGroupClassification> getSegmentGroupClassifications();
 
 	/**
-	 * Returns the value of the '<em><b>Segment Group Geos</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Segment Group Geos</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.segment.SegmentGroupGeo}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Segment Group Geos</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Segment Group Geos</em>' attribute list.
+	 * @return the value of the '<em>Segment Group Geos</em>' reference list.
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupGeos()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='SegmentGroupGeo'"
 	 * @generated
 	 */
-	List<String> getSegmentGroupGeos();
+	List<SegmentGroupGeo> getSegmentGroupGeos();
 
 } // SegmentGroup

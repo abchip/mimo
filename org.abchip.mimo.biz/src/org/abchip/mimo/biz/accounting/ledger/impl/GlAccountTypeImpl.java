@@ -9,10 +9,14 @@ package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountTypeDefault;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
+import org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.product.cost.CostComponentCalc;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -123,8 +127,8 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getGlAccountTypeDefaults() {
-		return (List<String>)eGet(LedgerPackage.Literals.GL_ACCOUNT_TYPE__GL_ACCOUNT_TYPE_DEFAULTS, true);
+	public List<GlAccountTypeDefault> getGlAccountTypeDefaults() {
+		return (List<GlAccountTypeDefault>)eGet(LedgerPackage.Literals.GL_ACCOUNT_TYPE__GL_ACCOUNT_TYPE_DEFAULTS, true);
 	}
 
 	/**
@@ -133,7 +137,7 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 * @generated
 	 */
 	@Override
-	public List<String> acctgTransEntries() {
+	public List<AcctgTransEntry> acctgTransEntries() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +149,7 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 * @generated
 	 */
 	@Override
-	public List<String> childGlAccountTypes() {
+	public List<GlAccountType> childGlAccountTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -157,7 +161,7 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 * @generated
 	 */
 	@Override
-	public List<String> costCostComponentCalcs() {
+	public List<CostComponentCalc> costCostComponentCalcs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -169,7 +173,7 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 * @generated
 	 */
 	@Override
-	public List<String> glAccounts() {
+	public List<GlAccount> glAccounts() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -181,7 +185,7 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 * @generated
 	 */
 	@Override
-	public List<String> offsettingCostComponentCalcs() {
+	public List<CostComponentCalc> offsettingCostComponentCalcs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -193,7 +197,7 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 * @generated
 	 */
 	@Override
-	public List<String> paymentGlAccountTypeMaps() {
+	public List<PaymentGlAccountTypeMap> paymentGlAccountTypeMaps() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

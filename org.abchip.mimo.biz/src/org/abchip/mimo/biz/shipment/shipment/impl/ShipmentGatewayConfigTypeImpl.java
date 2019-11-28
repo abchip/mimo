@@ -122,7 +122,7 @@ public class ShipmentGatewayConfigTypeImpl extends BizEntityTypeImpl<ShipmentGat
 	 * @generated
 	 */
 	@Override
-	public List<String> childShipmentGatewayConfigTypes() {
+	public List<ShipmentGatewayConfigType> childShipmentGatewayConfigTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -134,7 +134,7 @@ public class ShipmentGatewayConfigTypeImpl extends BizEntityTypeImpl<ShipmentGat
 	 * @generated
 	 */
 	@Override
-	public List<String> shipmentGatewayConfigs() {
+	public List<ShipmentGatewayConfig> shipmentGatewayConfigs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

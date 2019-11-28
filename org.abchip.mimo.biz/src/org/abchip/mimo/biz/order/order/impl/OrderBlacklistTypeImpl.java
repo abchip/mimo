@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.order.order.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderBlacklist;
 import org.abchip.mimo.biz.order.order.OrderBlacklistType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class OrderBlacklistTypeImpl extends BizEntityTypeImpl<OrderBlacklist> implements OrderBlacklistType {
+public class OrderBlacklistTypeImpl extends BizEntityImpl implements OrderBlacklistType {
 	/**
 	 * 
 	 */
@@ -80,7 +80,7 @@ public class OrderBlacklistTypeImpl extends BizEntityTypeImpl<OrderBlacklist> im
 	 * @generated
 	 */
 	@Override
-	public List<String> orderBlacklists() {
+	public List<OrderBlacklist> orderBlacklists() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

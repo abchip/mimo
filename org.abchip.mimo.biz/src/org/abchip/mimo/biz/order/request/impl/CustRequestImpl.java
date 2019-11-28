@@ -14,9 +14,16 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
 import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.order.request.CustRequestAttribute;
 import org.abchip.mimo.biz.order.request.CustRequestCategory;
+import org.abchip.mimo.biz.order.request.CustRequestCommEvent;
+import org.abchip.mimo.biz.order.request.CustRequestItem;
+import org.abchip.mimo.biz.order.request.CustRequestNote;
+import org.abchip.mimo.biz.order.request.CustRequestStatus;
 import org.abchip.mimo.biz.order.request.CustRequestType;
+import org.abchip.mimo.biz.order.request.CustRequestWorkEffort;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
@@ -555,8 +562,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCustRequestAttributes() {
-		return (List<String>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_ATTRIBUTES, true);
+	public List<CustRequestAttribute> getCustRequestAttributes() {
+		return (List<CustRequestAttribute>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_ATTRIBUTES, true);
 	}
 
 	/**
@@ -566,8 +573,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCustRequestCommEvents() {
-		return (List<String>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_COMM_EVENTS, true);
+	public List<CustRequestCommEvent> getCustRequestCommEvents() {
+		return (List<CustRequestCommEvent>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_COMM_EVENTS, true);
 	}
 
 	/**
@@ -577,8 +584,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCustRequestItems() {
-		return (List<String>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_ITEMS, true);
+	public List<CustRequestItem> getCustRequestItems() {
+		return (List<CustRequestItem>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_ITEMS, true);
 	}
 
 	/**
@@ -588,8 +595,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCustRequestNotes() {
-		return (List<String>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_NOTES, true);
+	public List<CustRequestNote> getCustRequestNotes() {
+		return (List<CustRequestNote>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_NOTES, true);
 	}
 
 	/**
@@ -599,8 +606,8 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getCustRequestWorkEfforts() {
-		return (List<String>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_WORK_EFFORTS, true);
+	public List<CustRequestWorkEffort> getCustRequestWorkEfforts() {
+		return (List<CustRequestWorkEffort>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_WORK_EFFORTS, true);
 	}
 
 	/**
@@ -609,7 +616,7 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequestStatuss() {
+	public List<CustRequestStatus> custRequestStatuss() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -621,7 +628,7 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteItems() {
+	public List<QuoteItem> quoteItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

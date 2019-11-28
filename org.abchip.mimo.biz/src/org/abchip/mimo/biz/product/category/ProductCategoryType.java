@@ -138,41 +138,38 @@ public interface ProductCategoryType extends BizEntityType<ProductCategory> {
 	void setProductCategoryTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Category Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Category Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Category Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Category Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Product Category Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryType_ProductCategoryTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductCategoryTypeAttr'"
 	 * @generated
 	 */
-	List<String> getProductCategoryTypeAttrs();
+	List<ProductCategoryTypeAttr> getProductCategoryTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductCategoryType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childProductCategoryTypes();
+	List<ProductCategoryType> childProductCategoryTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductCategory' route='productCategoryTypeId'"
 	 * @generated
 	 */
-	List<String> productCategories();
+	List<ProductCategory> productCategories();
 
 } // ProductCategoryType

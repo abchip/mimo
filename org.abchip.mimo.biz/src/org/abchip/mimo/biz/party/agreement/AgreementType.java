@@ -111,42 +111,39 @@ public interface AgreementType extends BizEntityType<Agreement> {
 	void setParentTypeId(AgreementType value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Type Attrs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Agreement Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.AgreementTypeAttr}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Type Attrs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Type Attrs</em>' attribute list.
+	 * @return the value of the '<em>Agreement Type Attrs</em>' reference list.
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementType_AgreementTypeAttrs()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementTypeAttr'"
 	 * @generated
 	 */
-	List<String> getAgreementTypeAttrs();
+	List<AgreementTypeAttr> getAgreementTypeAttrs();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Agreement' route='agreementTypeId'"
 	 * @generated
 	 */
-	List<String> agreements();
+	List<Agreement> agreements();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='AgreementType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childAgreementTypes();
+	List<AgreementType> childAgreementTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Agreement Type Id</b></em>' attribute.

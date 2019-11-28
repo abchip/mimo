@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.order.return_;
 
 import java.math.BigDecimal;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.product.product.Product;
@@ -44,7 +44,7 @@ import org.abchip.mimo.biz.product.product.Product;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface ReturnItem extends BizEntityTyped<ReturnItemType> {
+public interface ReturnItem extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->

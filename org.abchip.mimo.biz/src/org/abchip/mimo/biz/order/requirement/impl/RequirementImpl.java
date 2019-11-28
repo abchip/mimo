@@ -14,9 +14,13 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.requirement.DesiredFeature;
 import org.abchip.mimo.biz.order.requirement.Requirement;
+import org.abchip.mimo.biz.order.requirement.RequirementAttribute;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
+import org.abchip.mimo.biz.order.requirement.RequirementStatus;
 import org.abchip.mimo.biz.order.requirement.RequirementType;
+import org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
@@ -447,8 +451,8 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getRequirementAttributes() {
-		return (List<String>)eGet(RequirementPackage.Literals.REQUIREMENT__REQUIREMENT_ATTRIBUTES, true);
+	public List<RequirementAttribute> getRequirementAttributes() {
+		return (List<RequirementAttribute>)eGet(RequirementPackage.Literals.REQUIREMENT__REQUIREMENT_ATTRIBUTES, true);
 	}
 
 	/**
@@ -458,8 +462,8 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getRequirementStatuss() {
-		return (List<String>)eGet(RequirementPackage.Literals.REQUIREMENT__REQUIREMENT_STATUSS, true);
+	public List<RequirementStatus> getRequirementStatuss() {
+		return (List<RequirementStatus>)eGet(RequirementPackage.Literals.REQUIREMENT__REQUIREMENT_STATUSS, true);
 	}
 
 	/**
@@ -469,8 +473,8 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getWorkRequirementFulfillments() {
-		return (List<String>)eGet(RequirementPackage.Literals.REQUIREMENT__WORK_REQUIREMENT_FULFILLMENTS, true);
+	public List<WorkRequirementFulfillment> getWorkRequirementFulfillments() {
+		return (List<WorkRequirementFulfillment>)eGet(RequirementPackage.Literals.REQUIREMENT__WORK_REQUIREMENT_FULFILLMENTS, true);
 	}
 
 	/**
@@ -479,7 +483,7 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public List<String> desiredFeatures() {
+	public List<DesiredFeature> desiredFeatures() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -10,7 +10,7 @@ package org.abchip.mimo.biz.content.website.impl;
 import org.abchip.mimo.biz.content.website.WebAnalyticsConfig;
 import org.abchip.mimo.biz.content.website.WebAnalyticsType;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
-import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.eclipse.emf.ecore.EClass;
 
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class WebAnalyticsConfigImpl extends BizEntityImpl implements WebAnalyticsConfig {
+public class WebAnalyticsConfigImpl extends BizEntityTypedImpl<WebAnalyticsType> implements WebAnalyticsConfig {
 	/**
 	 * 
 	 */

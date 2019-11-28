@@ -13,6 +13,7 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
+import org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -144,8 +145,8 @@ public class ProductCategoryTypeImpl extends BizEntityTypeImpl<ProductCategory> 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getProductCategoryTypeAttrs() {
-		return (List<String>)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_TYPE__PRODUCT_CATEGORY_TYPE_ATTRS, true);
+	public List<ProductCategoryTypeAttr> getProductCategoryTypeAttrs() {
+		return (List<ProductCategoryTypeAttr>)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_TYPE__PRODUCT_CATEGORY_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -154,7 +155,7 @@ public class ProductCategoryTypeImpl extends BizEntityTypeImpl<ProductCategory> 
 	 * @generated
 	 */
 	@Override
-	public List<String> childProductCategoryTypes() {
+	public List<ProductCategoryType> childProductCategoryTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -166,7 +167,7 @@ public class ProductCategoryTypeImpl extends BizEntityTypeImpl<ProductCategory> 
 	 * @generated
 	 */
 	@Override
-	public List<String> productCategories() {
+	public List<ProductCategory> productCategories() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

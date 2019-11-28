@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.manufacturing.mrp.impl;
 
 import java.util.Date;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.manufacturing.mrp.MrpEvent;
 import org.abchip.mimo.biz.manufacturing.mrp.MrpEventType;
 import org.abchip.mimo.biz.manufacturing.mrp.MrpPackage;
@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements MrpEvent {
+public class MrpEventImpl extends BizEntityImpl implements MrpEvent {
 	/**
 	 * 
 	 */

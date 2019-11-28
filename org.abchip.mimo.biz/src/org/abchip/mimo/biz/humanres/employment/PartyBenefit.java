@@ -10,8 +10,7 @@ package org.abchip.mimo.biz.humanres.employment;
 import java.math.BigDecimal;
 
 import java.util.Date;
-
-import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.period.PeriodType;
 import org.abchip.mimo.biz.party.party.Party;
 
@@ -41,7 +40,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * @model
  * @generated
  */
-public interface PartyBenefit extends BizEntity {
+public interface PartyBenefit extends BizEntityTyped<BenefitType> {
 	/**
 	 * Returns the value of the '<em><b>Actual Employer Paid Percent</b></em>' attribute.
 	 * <!-- begin-user-doc -->

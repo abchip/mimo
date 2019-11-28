@@ -11,7 +11,7 @@ import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentPurpose;
 import org.abchip.mimo.biz.content.content.ContentPurposeType;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> implements ContentPurpose {
+public class ContentPurposeImpl extends BizEntityImpl implements ContentPurpose {
 	/**
 	 * 
 	 */

@@ -112,12 +112,11 @@ public interface ProdConfItemContentType extends BizEntityType<ProdConfItemConte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProdConfItemContentType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childProdConfItemContentTypes();
+	List<ProdConfItemContentType> childProdConfItemContentTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Conf Item Content Type Id</b></em>' attribute.

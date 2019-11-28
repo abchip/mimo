@@ -381,7 +381,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE__DATA_CATEGORY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data Resource Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -390,7 +390,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Meta Datas</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data Resource Meta Datas</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -408,7 +408,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE__DATA_RESOURCE_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Purposes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data Resource Purposes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -498,7 +498,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE__OBJECT_INFO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
 
 	/**
-	 * The feature id for the '<em><b>Product Feature Data Resources</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Feature Data Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -971,7 +971,7 @@ public interface DataPackage extends EPackage {
 	int DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Type Attrs</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data Resource Type Attrs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1271,7 +1271,7 @@ public interface DataPackage extends EPackage {
 	int ELECTRONIC_TEXT__DATA_CATEGORY_ID = DATA_RESOURCE__DATA_CATEGORY_ID;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Attributes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data Resource Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1280,7 +1280,7 @@ public interface DataPackage extends EPackage {
 	int ELECTRONIC_TEXT__DATA_RESOURCE_ATTRIBUTES = DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Meta Datas</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data Resource Meta Datas</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1298,7 +1298,7 @@ public interface DataPackage extends EPackage {
 	int ELECTRONIC_TEXT__DATA_RESOURCE_NAME = DATA_RESOURCE__DATA_RESOURCE_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Data Resource Purposes</b></em>' attribute list.
+	 * The feature id for the '<em><b>Data Resource Purposes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1388,7 +1388,7 @@ public interface DataPackage extends EPackage {
 	int ELECTRONIC_TEXT__OBJECT_INFO = DATA_RESOURCE__OBJECT_INFO;
 
 	/**
-	 * The feature id for the '<em><b>Product Feature Data Resources</b></em>' attribute list.
+	 * The feature id for the '<em><b>Product Feature Data Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2289,48 +2289,48 @@ public interface DataPackage extends EPackage {
 	EReference getDataResource_SurveyResponseId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceAttributes <em>Data Resource Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceAttributes <em>Data Resource Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Data Resource Attributes</em>'.
+	 * @return the meta object for the reference list '<em>Data Resource Attributes</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResource#getDataResourceAttributes()
 	 * @see #getDataResource()
 	 * @generated
 	 */
-	EAttribute getDataResource_DataResourceAttributes();
+	EReference getDataResource_DataResourceAttributes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceMetaDatas <em>Data Resource Meta Datas</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceMetaDatas <em>Data Resource Meta Datas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Data Resource Meta Datas</em>'.
+	 * @return the meta object for the reference list '<em>Data Resource Meta Datas</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResource#getDataResourceMetaDatas()
 	 * @see #getDataResource()
 	 * @generated
 	 */
-	EAttribute getDataResource_DataResourceMetaDatas();
+	EReference getDataResource_DataResourceMetaDatas();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourcePurposes <em>Data Resource Purposes</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourcePurposes <em>Data Resource Purposes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Data Resource Purposes</em>'.
+	 * @return the meta object for the reference list '<em>Data Resource Purposes</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResource#getDataResourcePurposes()
 	 * @see #getDataResource()
 	 * @generated
 	 */
-	EAttribute getDataResource_DataResourcePurposes();
+	EReference getDataResource_DataResourcePurposes();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResource#getProductFeatureDataResources <em>Product Feature Data Resources</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.content.data.DataResource#getProductFeatureDataResources <em>Product Feature Data Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Product Feature Data Resources</em>'.
+	 * @return the meta object for the reference list '<em>Product Feature Data Resources</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResource#getProductFeatureDataResources()
 	 * @see #getDataResource()
 	 * @generated
 	 */
-	EAttribute getDataResource_ProductFeatureDataResources();
+	EReference getDataResource_ProductFeatureDataResources();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceAttribute <em>Resource Attribute</em>}'.
@@ -2592,15 +2592,15 @@ public interface DataPackage extends EPackage {
 	EReference getDataResourceType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.data.DataResourceType#getDataResourceTypeAttrs <em>Data Resource Type Attrs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.content.data.DataResourceType#getDataResourceTypeAttrs <em>Data Resource Type Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Data Resource Type Attrs</em>'.
+	 * @return the meta object for the reference list '<em>Data Resource Type Attrs</em>'.
 	 * @see org.abchip.mimo.biz.content.data.DataResourceType#getDataResourceTypeAttrs()
 	 * @see #getDataResourceType()
 	 * @generated
 	 */
-	EAttribute getDataResourceType_DataResourceTypeAttrs();
+	EReference getDataResourceType_DataResourceTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr <em>Resource Type Attr</em>}'.
@@ -3204,36 +3204,36 @@ public interface DataPackage extends EPackage {
 		EReference DATA_RESOURCE__SURVEY_RESPONSE_ID = eINSTANCE.getDataResource_SurveyResponseId();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Attributes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Data Resource Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES = eINSTANCE.getDataResource_DataResourceAttributes();
+		EReference DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES = eINSTANCE.getDataResource_DataResourceAttributes();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Meta Datas</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Data Resource Meta Datas</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATA_RESOURCE__DATA_RESOURCE_META_DATAS = eINSTANCE.getDataResource_DataResourceMetaDatas();
+		EReference DATA_RESOURCE__DATA_RESOURCE_META_DATAS = eINSTANCE.getDataResource_DataResourceMetaDatas();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Purposes</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Data Resource Purposes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATA_RESOURCE__DATA_RESOURCE_PURPOSES = eINSTANCE.getDataResource_DataResourcePurposes();
+		EReference DATA_RESOURCE__DATA_RESOURCE_PURPOSES = eINSTANCE.getDataResource_DataResourcePurposes();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Feature Data Resources</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Product Feature Data Resources</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATA_RESOURCE__PRODUCT_FEATURE_DATA_RESOURCES = eINSTANCE.getDataResource_ProductFeatureDataResources();
+		EReference DATA_RESOURCE__PRODUCT_FEATURE_DATA_RESOURCES = eINSTANCE.getDataResource_ProductFeatureDataResources();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceAttributeImpl <em>Resource Attribute</em>}' class.
@@ -3438,12 +3438,12 @@ public interface DataPackage extends EPackage {
 		EReference DATA_RESOURCE_TYPE__PARENT_TYPE_ID = eINSTANCE.getDataResourceType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Resource Type Attrs</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Data Resource Type Attrs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ATTRS = eINSTANCE.getDataResourceType_DataResourceTypeAttrs();
+		EReference DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ATTRS = eINSTANCE.getDataResourceType_DataResourceTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeAttrImpl <em>Resource Type Attr</em>}' class.

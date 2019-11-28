@@ -135,7 +135,7 @@ public interface UomPackage extends EPackage {
 	int UOM__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Main Uom Conversions</b></em>' attribute list.
+	 * The feature id for the '<em><b>Main Uom Conversions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -655,15 +655,15 @@ public interface UomPackage extends EPackage {
 	EReference getUom_UomTypeId();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.common.uom.Uom#getMainUomConversions <em>Main Uom Conversions</em>}'.
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.uom.Uom#getMainUomConversions <em>Main Uom Conversions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Main Uom Conversions</em>'.
+	 * @return the meta object for the reference list '<em>Main Uom Conversions</em>'.
 	 * @see org.abchip.mimo.biz.common.uom.Uom#getMainUomConversions()
 	 * @see #getUom()
 	 * @generated
 	 */
-	EAttribute getUom_MainUomConversions();
+	EReference getUom_MainUomConversions();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.uom.UomConversion <em>Conversion</em>}'.
@@ -1009,12 +1009,12 @@ public interface UomPackage extends EPackage {
 		EReference UOM__UOM_TYPE_ID = eINSTANCE.getUom_UomTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Main Uom Conversions</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Main Uom Conversions</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute UOM__MAIN_UOM_CONVERSIONS = eINSTANCE.getUom_MainUomConversions();
+		EReference UOM__MAIN_UOM_CONVERSIONS = eINSTANCE.getUom_MainUomConversions();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.uom.impl.UomConversionImpl <em>Conversion</em>}' class.

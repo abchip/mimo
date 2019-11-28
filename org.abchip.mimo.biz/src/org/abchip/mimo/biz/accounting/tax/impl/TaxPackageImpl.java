@@ -202,7 +202,6 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -1735,6 +1734,9 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 		CategoryPackage theCategoryPackage = (CategoryPackage)EPackage.Registry.INSTANCE.getEPackage(CategoryPackage.eNS_URI);
 		LedgerPackage theLedgerPackage = (LedgerPackage)EPackage.Registry.INSTANCE.getEPackage(LedgerPackage.eNS_URI);
 		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
+		InvoicePackage theInvoicePackage = (InvoicePackage)EPackage.Registry.INSTANCE.getEPackage(InvoicePackage.eNS_URI);
+		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
+		ReturnPackage theReturnPackage = (ReturnPackage)EPackage.Registry.INSTANCE.getEPackage(ReturnPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1743,14 +1745,8 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 		// Add supertypes to classes
 		partyTaxAuthInfoEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		taxAuthorityEClass.getESuperTypes().add(theBizPackage.getBizEntity());
-		EGenericType g1 = createEGenericType(theBizPackage.getBizEntityTyped());
-		EGenericType g2 = createEGenericType(this.getTaxAuthorityAssocType());
-		g1.getETypeArguments().add(g2);
-		taxAuthorityAssocEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theBizPackage.getBizEntityType());
-		g2 = createEGenericType(this.getTaxAuthorityAssoc());
-		g1.getETypeArguments().add(g2);
-		taxAuthorityAssocTypeEClass.getEGenericSuperTypes().add(g1);
+		taxAuthorityAssocEClass.getESuperTypes().add(theBizPackage.getBizEntity());
+		taxAuthorityAssocTypeEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		taxAuthorityCategoryEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		taxAuthorityGlAccountEClass.getESuperTypes().add(theBizPackage.getBizEntity());
 		taxAuthorityRateProductEClass.getESuperTypes().add(theBizPackage.getBizEntity());
@@ -1823,22 +1819,22 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 		initEReference(getTaxAuthorityRateProduct_TaxAuthorityRateTypeId(), this.getTaxAuthorityRateType(), null, "taxAuthorityRateTypeId", null, 0, 1, TaxAuthorityRateProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTaxAuthorityRateProduct_TaxAuthorityRateTypeId().getEKeys().add(this.getTaxAuthorityRateType_TaxAuthorityRateTypeId());
 		initEAttribute(getTaxAuthorityRateProduct_TaxPercentage(), ecorePackage.getEBigDecimal(), "taxPercentage", null, 0, 1, TaxAuthorityRateProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTaxAuthorityRateProduct_TaxPromotions(), ecorePackage.getEChar(), "taxPromotions", null, 0, 1, TaxAuthorityRateProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTaxAuthorityRateProduct_TaxShipping(), ecorePackage.getEChar(), "taxShipping", null, 0, 1, TaxAuthorityRateProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTaxAuthorityRateProduct_TaxPromotions(), ecorePackage.getEBoolean(), "taxPromotions", "true", 1, 1, TaxAuthorityRateProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTaxAuthorityRateProduct_TaxShipping(), ecorePackage.getEBoolean(), "taxShipping", "true", 1, 1, TaxAuthorityRateProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTaxAuthorityRateProduct_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, TaxAuthorityRateProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTaxAuthorityRateProduct_TitleTransferEnumId(), ecorePackage.getEString(), "titleTransferEnumId", null, 0, 1, TaxAuthorityRateProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(taxAuthorityRateProductEClass, ecorePackage.getEString(), "invoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(taxAuthorityRateProductEClass, theInvoicePackage.getInvoiceItem(), "invoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(taxAuthorityRateProductEClass, ecorePackage.getEString(), "orderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(taxAuthorityRateProductEClass, theOrderPackage.getOrderAdjustment(), "orderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(taxAuthorityRateProductEClass, ecorePackage.getEString(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(taxAuthorityRateProductEClass, theReturnPackage.getReturnAdjustment(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(taxAuthorityRateTypeEClass, TaxAuthorityRateType.class, "TaxAuthorityRateType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTaxAuthorityRateType_TaxAuthorityRateTypeId(), ecorePackage.getEString(), "taxAuthorityRateTypeId", null, 1, 1, TaxAuthorityRateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTaxAuthorityRateType_Description(), ecorePackage.getEString(), "description", null, 0, 1, TaxAuthorityRateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(taxAuthorityRateTypeEClass, ecorePackage.getEString(), "taxAuthorityRateProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(taxAuthorityRateTypeEClass, this.getTaxAuthorityRateProduct(), "taxAuthorityRateProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(zipSalesRuleLookupEClass, ZipSalesRuleLookup.class, "ZipSalesRuleLookup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getZipSalesRuleLookup_City(), ecorePackage.getEString(), "city", null, 1, 1, ZipSalesRuleLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1861,15 +1857,15 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 		initEAttribute(getZipSalesTaxLookup_CityUseTax(), ecorePackage.getEBigDecimal(), "cityUseTax", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getZipSalesTaxLookup_ComboSalesTax(), ecorePackage.getEBigDecimal(), "comboSalesTax", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getZipSalesTaxLookup_ComboUseTax(), ecorePackage.getEBigDecimal(), "comboUseTax", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getZipSalesTaxLookup_CountyDefault(), ecorePackage.getEChar(), "countyDefault", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getZipSalesTaxLookup_CountyDefault(), ecorePackage.getEBoolean(), "countyDefault", "true", 1, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getZipSalesTaxLookup_CountyFips(), ecorePackage.getEString(), "countyFips", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getZipSalesTaxLookup_CountyLocalSalesTax(), ecorePackage.getEBigDecimal(), "countyLocalSalesTax", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getZipSalesTaxLookup_CountyLocalUseTax(), ecorePackage.getEBigDecimal(), "countyLocalUseTax", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getZipSalesTaxLookup_CountySalesTax(), ecorePackage.getEBigDecimal(), "countySalesTax", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getZipSalesTaxLookup_CountyUseTax(), ecorePackage.getEBigDecimal(), "countyUseTax", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getZipSalesTaxLookup_GeneralDefault(), ecorePackage.getEChar(), "generalDefault", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getZipSalesTaxLookup_GeneralDefault(), ecorePackage.getEBoolean(), "generalDefault", "true", 1, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getZipSalesTaxLookup_GeoCode(), ecorePackage.getEString(), "geoCode", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getZipSalesTaxLookup_InsideCity(), ecorePackage.getEChar(), "insideCity", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getZipSalesTaxLookup_InsideCity(), ecorePackage.getEBoolean(), "insideCity", "true", 1, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getZipSalesTaxLookup_StateSalesTax(), ecorePackage.getEBigDecimal(), "stateSalesTax", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getZipSalesTaxLookup_StateUseTax(), ecorePackage.getEBigDecimal(), "stateUseTax", null, 0, 1, ZipSalesTaxLookup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2043,27 +2039,6 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 			   "length", "20"
 		   });
 		addAnnotation
-		  (taxAuthorityRateProductEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (taxAuthorityRateProductEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (taxAuthorityRateProductEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
 		  (getTaxAuthorityRateProduct_TaxAuthorityRateSeqId(),
 		   source,
 		   new String[] {
@@ -2150,13 +2125,6 @@ public class TaxPackageImpl extends EPackageImpl implements TaxPackage {
 		   });
 		addAnnotation
 		  (getTaxAuthorityRateProduct_TitleTransferEnumId(),
-		   source,
-		   new String[] {
-			   "type", "id",
-			   "length", "20"
-		   });
-		addAnnotation
-		  (taxAuthorityRateTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "type", "id",

@@ -19,6 +19,7 @@ import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
+import org.abchip.mimo.biz.order.return_.ReturnItem;
 import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -214,7 +215,7 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	 * @generated
 	 */
 	@Override
-	public List<String> returnItems() {
+	public List<ReturnItem> returnItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -111,32 +111,30 @@ public interface GoodIdentificationType extends BizEntityType<GoodIdentification
 	void setParentTypeId(GoodIdentificationType value);
 
 	/**
-	 * Returns the value of the '<em><b>Good Identifications</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Good Identifications</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.GoodIdentification}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Good Identifications</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Good Identifications</em>' attribute list.
+	 * @return the value of the '<em>Good Identifications</em>' reference list.
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getGoodIdentificationType_GoodIdentifications()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GoodIdentification'"
 	 * @generated
 	 */
-	List<String> getGoodIdentifications();
+	List<GoodIdentification> getGoodIdentifications();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='GoodIdentificationType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childGoodIdentificationTypes();
+	List<GoodIdentificationType> childGoodIdentificationTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Good Identification Type Id</b></em>' attribute.

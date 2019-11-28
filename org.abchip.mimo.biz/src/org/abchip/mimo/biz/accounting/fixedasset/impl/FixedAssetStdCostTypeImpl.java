@@ -121,7 +121,7 @@ public class FixedAssetStdCostTypeImpl extends BizEntityTypeImpl<FixedAssetStdCo
 	 * @generated
 	 */
 	@Override
-	public List<String> childFixedAssetStdCostTypes() {
+	public List<FixedAssetStdCostType> childFixedAssetStdCostTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

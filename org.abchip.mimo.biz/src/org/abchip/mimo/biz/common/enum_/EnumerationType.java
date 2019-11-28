@@ -112,22 +112,20 @@ public interface EnumerationType extends BizEntityType<Enumeration> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='EnumerationType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childEnumerationTypes();
+	List<EnumerationType> childEnumerationTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Enumeration' route='enumTypeId'"
 	 * @generated
 	 */
-	List<String> enumerations();
+	List<Enumeration> enumerations();
 
 	/**
 	 * Returns the value of the '<em><b>Enum Type Id</b></em>' attribute.

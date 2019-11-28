@@ -11,8 +11,10 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeAttr;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -123,8 +125,8 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getFixedAssetTypeAttrs() {
-		return (List<String>)eGet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS, true);
+	public List<FixedAssetTypeAttr> getFixedAssetTypeAttrs() {
+		return (List<FixedAssetTypeAttr>)eGet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS, true);
 	}
 
 	/**
@@ -133,7 +135,7 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> childFixedAssetTypes() {
+	public List<FixedAssetType> childFixedAssetTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +147,7 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> fixedAssets() {
+	public List<FixedAsset> fixedAssets() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -157,7 +159,7 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	 * @generated
 	 */
 	@Override
-	public List<String> workEffortFixedAssetStds() {
+	public List<WorkEffortFixedAssetStd> workEffortFixedAssetStds() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

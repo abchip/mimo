@@ -14,7 +14,7 @@ import org.abchip.mimo.biz.humanres.recruitment.JobInterview;
 import org.abchip.mimo.biz.humanres.recruitment.JobInterviewType;
 import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
 import org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
 
@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> implements JobInterview {
+public class JobInterviewImpl extends BizEntityImpl implements JobInterview {
 	/**
 	 * 
 	 */

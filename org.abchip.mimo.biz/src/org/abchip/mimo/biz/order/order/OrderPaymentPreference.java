@@ -15,9 +15,12 @@ import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.product.price.ProductPricePurpose;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
@@ -692,41 +695,37 @@ public interface OrderPaymentPreference extends BizEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='OrderStatus' route='orderPaymentPreferenceId'"
 	 * @generated
 	 */
-	List<String> orderStatuss();
+	List<OrderStatus> orderStatuss();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='PaymentGatewayResponse' route='orderPaymentPreferenceId'"
 	 * @generated
 	 */
-	List<String> paymentGatewayResponses();
+	List<PaymentGatewayResponse> paymentGatewayResponses();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Payment' route='paymentPreferenceId'"
 	 * @generated
 	 */
-	List<String> payments();
+	List<Payment> payments();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ReturnItemResponse' route='orderPaymentPreferenceId'"
 	 * @generated
 	 */
-	List<String> returnItemResponses();
+	List<ReturnItemResponse> returnItemResponses();
 
 } // OrderPaymentPreference

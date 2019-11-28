@@ -139,21 +139,19 @@ public interface CustomScreenType extends BizEntityType<CustomScreen> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustomScreenType' route='parentTypeId'"
 	 * @generated
 	 */
-	List<String> childCustomScreenTypes();
+	List<CustomScreenType> childCustomScreenTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CustomScreen' route='customScreenTypeId'"
 	 * @generated
 	 */
-	List<String> customScreens();
+	List<CustomScreen> customScreens();
 
 } // CustomScreenType

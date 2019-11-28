@@ -9,7 +9,7 @@ package org.abchip.mimo.biz.product.price.impl;
 
 import java.math.BigDecimal;
 
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPriceAction;
 import org.abchip.mimo.biz.product.price.ProductPriceActionType;
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActionType> implements ProductPriceAction {
+public class ProductPriceActionImpl extends BizEntityImpl implements ProductPriceAction {
 	/**
 	 * 
 	 */

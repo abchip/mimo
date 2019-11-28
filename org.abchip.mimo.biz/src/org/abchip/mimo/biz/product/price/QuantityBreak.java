@@ -10,7 +10,8 @@ package org.abchip.mimo.biz.product.price;
 import java.math.BigDecimal;
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
-public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
+public interface QuantityBreak extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>From Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -114,32 +115,29 @@ public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='priceBreakId'"
 	 * @generated
 	 */
-	List<String> priceShipmentCostEstimates();
+	List<ShipmentCostEstimate> priceShipmentCostEstimates();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='quantityBreakId'"
 	 * @generated
 	 */
-	List<String> quantityShipmentCostEstimates();
+	List<ShipmentCostEstimate> quantityShipmentCostEstimates();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='weightBreakId'"
 	 * @generated
 	 */
-	List<String> weightShipmentCostEstimates();
+	List<ShipmentCostEstimate> weightShipmentCostEstimates();
 
 	/**
 	 * Returns the value of the '<em><b>Quantity Break Type Id</b></em>' reference.

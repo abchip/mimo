@@ -10,7 +10,7 @@ package org.abchip.mimo.biz.party.party.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.content.content.Content;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyContent;
 import org.abchip.mimo.biz.party.party.PartyContentType;
@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> implements PartyContent {
+public class PartyContentImpl extends BizEntityImpl implements PartyContent {
 	/**
 	 * 
 	 */

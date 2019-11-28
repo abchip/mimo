@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.uom.Uom;
@@ -56,7 +56,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * @model annotation="mimo-ent-frame dictionary='ProductEntityLabels'"
  * @generated
  */
-public interface ProductPrice extends BizEntityTyped<ProductPriceType> {
+public interface ProductPrice extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Created By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->

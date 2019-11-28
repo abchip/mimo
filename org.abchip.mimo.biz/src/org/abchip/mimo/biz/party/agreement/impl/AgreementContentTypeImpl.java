@@ -121,7 +121,7 @@ public class AgreementContentTypeImpl extends BizEntityTypeImpl<AgreementContent
 	 * @generated
 	 */
 	@Override
-	public List<String> childAgreementContentTypes() {
+	public List<AgreementContentType> childAgreementContentTypes() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

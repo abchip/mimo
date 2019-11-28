@@ -9,8 +9,9 @@ package org.abchip.mimo.biz.marketing.contact;
 
 import java.util.List;
 
-import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
@@ -47,7 +48,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * @model annotation="mimo-ent-frame formula='description'"
  * @generated
  */
-public interface ContactList extends BizEntityTyped<ContactListType> {
+public interface ContactList extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -495,11 +496,10 @@ public interface ContactList extends BizEntityTyped<ContactListType> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='contactListId'"
 	 * @generated
 	 */
-	List<String> communicationEvents();
+	List<CommunicationEvent> communicationEvents();
 
 } // ContactList

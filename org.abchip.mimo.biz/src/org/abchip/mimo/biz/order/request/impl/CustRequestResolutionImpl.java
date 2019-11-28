@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.request.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.request.CustRequestItem;
 import org.abchip.mimo.biz.order.request.CustRequestResolution;
 import org.abchip.mimo.biz.order.request.CustRequestType;
 import org.abchip.mimo.biz.order.request.RequestPackage;
@@ -121,7 +122,7 @@ public class CustRequestResolutionImpl extends BizEntityImpl implements CustRequ
 	 * @generated
 	 */
 	@Override
-	public List<String> custRequestItems() {
+	public List<CustRequestItem> custRequestItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

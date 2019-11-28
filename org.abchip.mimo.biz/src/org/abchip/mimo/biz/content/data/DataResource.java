@@ -13,8 +13,10 @@ import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyResponse;
+import org.abchip.mimo.biz.product.feature.ProductFeatureDataResource;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
@@ -555,95 +557,89 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	void setSurveyResponseId(SurveyResponse value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Resource Attributes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Data Resource Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.data.DataResourceAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Resource Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Attributes</em>' attribute list.
+	 * @return the value of the '<em>Data Resource Attributes</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceAttributes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourceAttribute'"
 	 * @generated
 	 */
-	List<String> getDataResourceAttributes();
+	List<DataResourceAttribute> getDataResourceAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Data Resource Meta Datas</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Data Resource Meta Datas</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.data.DataResourceMetaData}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Resource Meta Datas</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Meta Datas</em>' attribute list.
+	 * @return the value of the '<em>Data Resource Meta Datas</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceMetaDatas()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourceMetaData'"
 	 * @generated
 	 */
-	List<String> getDataResourceMetaDatas();
+	List<DataResourceMetaData> getDataResourceMetaDatas();
 
 	/**
-	 * Returns the value of the '<em><b>Data Resource Purposes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Data Resource Purposes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.data.DataResourcePurpose}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Resource Purposes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Purposes</em>' attribute list.
+	 * @return the value of the '<em>Data Resource Purposes</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourcePurposes()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='DataResourcePurpose'"
 	 * @generated
 	 */
-	List<String> getDataResourcePurposes();
+	List<DataResourcePurpose> getDataResourcePurposes();
 
 	/**
-	 * Returns the value of the '<em><b>Product Feature Data Resources</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Product Feature Data Resources</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.feature.ProductFeatureDataResource}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Feature Data Resources</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature Data Resources</em>' attribute list.
+	 * @return the value of the '<em>Product Feature Data Resources</em>' reference list.
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_ProductFeatureDataResources()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='ProductFeatureDataResource'"
 	 * @generated
 	 */
-	List<String> getProductFeatureDataResources();
+	List<ProductFeatureDataResource> getProductFeatureDataResources();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='dataResourceId'"
 	 * @generated
 	 */
-	List<String> contents();
+	List<Content> contents();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-format type='id' length='20'"
-	 *        annotation="mimo-ent-slot derived='true'"
+	 * @model annotation="mimo-ent-slot derived='true'"
 	 *        annotation="mimo-ent-domain frame='Content' route='templateDataResourceId'"
 	 * @generated
 	 */
-	List<String> templateContents();
+	List<Content> templateContents();
 
 } // DataResource

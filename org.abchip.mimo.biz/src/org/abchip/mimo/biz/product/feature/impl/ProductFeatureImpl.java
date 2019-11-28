@@ -10,12 +10,20 @@ package org.abchip.mimo.biz.product.feature.impl;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule;
+import org.abchip.mimo.biz.order.quote.QuoteItem;
+import org.abchip.mimo.biz.order.requirement.DesiredFeature;
+import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureCategory;
+import org.abchip.mimo.biz.product.feature.ProductFeatureDataResource;
+import org.abchip.mimo.biz.product.feature.ProductFeatureIactn;
 import org.abchip.mimo.biz.product.feature.ProductFeatureType;
+import org.abchip.mimo.biz.product.supplier.SupplierProductFeature;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -213,8 +221,8 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getMainProductFeatureIactns() {
-		return (List<String>)eGet(FeaturePackage.Literals.PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS, true);
+	public List<ProductFeatureIactn> getMainProductFeatureIactns() {
+		return (List<ProductFeatureIactn>)eGet(FeaturePackage.Literals.PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS, true);
 	}
 
 	/**
@@ -223,7 +231,7 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public List<String> assocProductFeatureIactns() {
+	public List<ProductFeatureIactn> assocProductFeatureIactns() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -235,7 +243,7 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public List<String> costComponents() {
+	public List<CostComponent> costComponents() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -247,7 +255,7 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public List<String> desiredFeatures() {
+	public List<DesiredFeature> desiredFeatures() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -259,7 +267,7 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public List<String> invoiceItems() {
+	public List<InvoiceItem> invoiceItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -271,7 +279,7 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public List<String> productFeatureDataResources() {
+	public List<ProductFeatureDataResource> productFeatureDataResources() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -283,7 +291,7 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public List<String> productManufacturingRules() {
+	public List<ProductManufacturingRule> productManufacturingRules() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -295,7 +303,7 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public List<String> quoteItems() {
+	public List<QuoteItem> quoteItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -307,7 +315,7 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public List<String> supplierProductFeatures() {
+	public List<SupplierProductFeature> supplierProductFeatures() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#getAuthMode <em>Auth Mode</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#getFixContact <em>Fix Contact</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#isFixContact <em>Fix Contact</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#isHideContact <em>Hide Contact</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#isHideCurrency <em>Hide Currency</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayWorldPayImpl#getInstId <em>Inst Id</em>}</li>
@@ -85,8 +85,8 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public char getFixContact() {
-		return (Character)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT, true);
+	public boolean isFixContact() {
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT, true);
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public void setFixContact(char newFixContact) {
+	public void setFixContact(boolean newFixContact) {
 		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__FIX_CONTACT, newFixContact);
 	}
 

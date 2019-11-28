@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.return_.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.return_.ReturnItem;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.order.return_.ReturnReason;
 import org.eclipse.emf.ecore.EClass;
@@ -120,7 +121,7 @@ public class ReturnReasonImpl extends BizEntityImpl implements ReturnReason {
 	 * @generated
 	 */
 	@Override
-	public List<String> returnItems() {
+	public List<ReturnItem> returnItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

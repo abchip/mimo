@@ -10,9 +10,10 @@ package org.abchip.mimo.biz.accounting.ledger.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.ledger.GlAccountGroup;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountGroupType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
-import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> implements GlAccountGroup {
+public class GlAccountGroupImpl extends BizEntityImpl implements GlAccountGroup {
 	/**
 	 * 
 	 */
@@ -100,7 +101,7 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 	 * @generated
 	 */
 	@Override
-	public List<String> glAccountGroupMembers() {
+	public List<GlAccountGroupMember> glAccountGroupMembers() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
