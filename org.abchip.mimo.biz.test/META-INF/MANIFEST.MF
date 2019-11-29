@@ -9,3 +9,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.abchip.mimo.biz,
  org.abchip.mimo.tester,
  org.abchip.mimo.tester.base
+Export-Package: org.abchip.mimo.biz.test,
+ org.abchip.mimo.biz.test.runner

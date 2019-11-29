@@ -35,7 +35,7 @@ public class BaseTestManagerImpl implements TestManager {
 
 		Class<?> testClass = null;
 		try {
-			testClass = bundle.loadClass(classURI);
+			testClass = bundle.loadClass(klass.getName());
 		} catch (ClassNotFoundException e) {
 		}
 		if (testClass == null)
