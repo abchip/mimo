@@ -20,7 +20,7 @@ import java.util.Map;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface URIs {
+public interface URIs extends Singleton<URIs> {
 
 	URIs qINSTANCE = null;
 

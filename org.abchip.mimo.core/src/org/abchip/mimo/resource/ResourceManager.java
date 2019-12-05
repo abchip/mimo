@@ -30,7 +30,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceSerializer<E> createResourceSerializer(Context context, Class<E> klass, org.abchip.mimo.resource.SerializationType serializationType);
+	<E extends Entity> ResourceSerializer<E> createResourceSerializer(Context context, Class<E> klass, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceSerializer<E> createResourceSerializer(Context context, Frame<E> frame, org.abchip.mimo.resource.SerializationType serializationType);
+	<E extends Entity> ResourceSerializer<E> createResourceSerializer(Context context, Frame<E> frame, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" frameRequired="true" serializationTypeRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> ResourceSerializer<E> createResourceSerializer(Context context, String frame, org.abchip.mimo.resource.SerializationType serializationType);
+	<E extends Entity> ResourceSerializer<E> createResourceSerializer(Context context, String frame, SerializationType serializationType);
 
 	/**
 	 * <!-- begin-user-doc -->

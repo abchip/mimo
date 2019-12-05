@@ -104,8 +104,5 @@ public class PartyTest {
 		}
 
 		// Eseguire letture
-
-		// close
-		testRunner.getContext().close();
 	}
 }

@@ -407,7 +407,7 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UR_IS_FEATURE_COUNT = 0;
+	int UR_IS_FEATURE_COUNT = SINGLETON_FEATURE_COUNT + 0;
 
 
 	/**

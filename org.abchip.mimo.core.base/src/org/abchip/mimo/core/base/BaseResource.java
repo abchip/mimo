@@ -14,8 +14,8 @@ import javax.inject.Inject;
 import org.abchip.mimo.MimoResourceFactoryImpl;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.MimoResourceSetImpl;
-import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -59,11 +59,11 @@ public class BaseResource {
 
 		// check frame authorization
 	}
-	
+
 	protected <E extends EntityIdentifiable> Frame<E> getFrame(Context context, Class<E> klass) {
 		return getFrame(context, klass, null);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	protected <E extends EntityIdentifiable> Frame<E> getFrame(Context context, Class<E> klass, String tenant) {
 		return (Frame<E>) getFrame(context, klass.getSimpleName(), tenant);
@@ -77,10 +77,17 @@ public class BaseResource {
 		MimoResourceImpl<Frame<?>> internal = getInternalResource(context, Frame.class.getSimpleName(), tenant);
 		return internal.getResource().read(frame, null, false);
 	}
-	
+
 	protected <E extends EntityIdentifiable> MimoResourceImpl<E> getInternalResource(Context context, String frame, String tenant) {
 
-		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame }, null, null);
+		String query = null;
+		if (tenant != null)
+			query = "tenant=" + tenant;
+		else if (context.getContextDescription().isTenant()) {
+			query = "tenant=" + context.getContextDescription().getTenant();
+		}
+
+		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame }, query, null);
 		@SuppressWarnings("unchecked")
 		MimoResourceImpl<E> internal = (MimoResourceImpl<E>) getResourceSet(context).getResource(uri, true);
 

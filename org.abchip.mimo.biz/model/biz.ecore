@@ -362,8 +362,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="budgetReviewResultTypeId"
-            lowerBound="1" eType="#//accounting/budget/BudgetReviewResultType"
-            eKeys="#//accounting/budget/BudgetReviewResultType/budgetReviewResultTypeId">
+            lowerBound="1" eType="#//accounting/budget/BudgetReviewResultType" eKeys="#//accounting/budget/BudgetReviewResultType/budgetReviewResultTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -1099,8 +1098,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTransTypeId"
-            eType="#//accounting/finaccount/FinAccountTransType"
-            eKeys="#//accounting/finaccount/FinAccountTransType/finAccountTransTypeId"/>
+            eType="#//accounting/finaccount/FinAccountTransType" eKeys="#//accounting/finaccount/FinAccountTransType/finAccountTransTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="glReconciliationId"
             eType="#//accounting/ledger/GlReconciliation" eKeys="#//accounting/ledger/GlReconciliation/glReconciliationId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -1142,8 +1140,7 @@
           <details key="title" value="Financial Account Transaction Attribute"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTransId"
-            lowerBound="1" eType="#//accounting/finaccount/FinAccountTrans"
-            eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId">
+            lowerBound="1" eType="#//accounting/finaccount/FinAccountTrans" eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -1236,8 +1233,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTransTypeId"
-            lowerBound="1" eType="#//accounting/finaccount/FinAccountTransType"
-            eKeys="#//accounting/finaccount/FinAccountTransType/finAccountTransTypeId">
+            lowerBound="1" eType="#//accounting/finaccount/FinAccountTransType" eKeys="#//accounting/finaccount/FinAccountTransType/finAccountTransTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -1350,8 +1346,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTypeId" lowerBound="1"
-            eType="#//accounting/finaccount/FinAccountType"
-            eKeys="#//accounting/finaccount/FinAccountType/finAccountTypeId">
+            eType="#//accounting/finaccount/FinAccountType" eKeys="#//accounting/finaccount/FinAccountType/finAccountTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -1384,8 +1379,7 @@
           <details key="title" value="Financial Account Type GL Account"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTypeId" lowerBound="1"
-            eType="#//accounting/finaccount/FinAccountType"
-            eKeys="#//accounting/finaccount/FinAccountType/finAccountTypeId">
+            eType="#//accounting/finaccount/FinAccountType" eKeys="#//accounting/finaccount/FinAccountType/finAccountTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -1469,11 +1463,9 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="accommodationClassId"
-            eType="#//accounting/fixedasset/AccommodationClass"
-            eKeys="#//accounting/fixedasset/AccommodationClass/accommodationClassId"/>
+            eType="#//accounting/fixedasset/AccommodationClass" eKeys="#//accounting/fixedasset/AccommodationClass/accommodationClassId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="accommodationMapTypeId"
-            eType="#//accounting/fixedasset/AccommodationMapType"
-            eKeys="#//accounting/fixedasset/AccommodationMapType/accommodationMapTypeId"/>
+            eType="#//accounting/fixedasset/AccommodationMapType" eKeys="#//accounting/fixedasset/AccommodationMapType/accommodationMapTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetId" eType="#//accounting/fixedasset/FixedAsset"
             eKeys="#//accounting/fixedasset/FixedAsset/fixedAssetId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfSpaces" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
@@ -1794,8 +1786,7 @@
           <details key="title" value="Fixed Asset Depreciation Method"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="depreciationCustomMethodId"
-            lowerBound="1" eType="#//common/method/CustomMethod"
-            eKeys="#//common/method/CustomMethod/customMethodId">
+            lowerBound="1" eType="#//common/method/CustomMethod" eKeys="#//common/method/CustomMethod/customMethodId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -1859,8 +1850,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetIdentTypeId"
-            lowerBound="1" eType="#//accounting/fixedasset/FixedAssetIdentType"
-            eKeys="#//accounting/fixedasset/FixedAssetIdentType/fixedAssetIdentTypeId">
+            lowerBound="1" eType="#//accounting/fixedasset/FixedAssetIdentType" eKeys="#//accounting/fixedasset/FixedAssetIdentType/fixedAssetIdentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -2007,8 +1997,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="FixedAssetMeter" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="productMeterTypeId"
-            lowerBound="1" eType="#//product/product/ProductMeterType"
-            eKeys="#//product/product/ProductMeterType/productMeterTypeId">
+            lowerBound="1" eType="#//product/product/ProductMeterType" eKeys="#//product/product/ProductMeterType/productMeterTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -2339,8 +2328,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetTypeId" lowerBound="1"
-            eType="#//accounting/fixedasset/FixedAssetType"
-            eKeys="#//accounting/fixedasset/FixedAssetType/fixedAssetTypeId">
+            eType="#//accounting/fixedasset/FixedAssetType" eKeys="#//accounting/fixedasset/FixedAssetType/fixedAssetTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -2367,8 +2355,7 @@
           <details key="title" value="Gl Account Mapping For Fixed Asset Or Fixed Asset Types"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetTypeId" lowerBound="1"
-            eType="#//accounting/fixedasset/FixedAssetType"
-            eKeys="#//accounting/fixedasset/FixedAssetType/fixedAssetTypeId">
+            eType="#//accounting/fixedasset/FixedAssetType" eKeys="#//accounting/fixedasset/FixedAssetType/fixedAssetTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
             <details key="help" value="The fixed asset type for the mappings. This field can be set to _NA_ in order to define a mapping for all types or for a specific asset (specified by the id in the fixedAssetId field)."/>
@@ -2645,8 +2632,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            lowerBound="1" eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
+            lowerBound="1" eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -2666,8 +2652,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="invoiceContentTypeId"
-            lowerBound="1" eType="#//accounting/invoice/InvoiceContentType"
-            eKeys="#//accounting/invoice/InvoiceContentType/invoiceContentTypeId">
+            lowerBound="1" eType="#//accounting/invoice/InvoiceContentType" eKeys="#//accounting/invoice/InvoiceContentType/invoiceContentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -2803,15 +2788,13 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
+            eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="taxAuthGeoId" eType="#//common/geo/Geo"
             eKeys="#//common/geo/Geo/geoId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="taxAuthPartyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="taxAuthorityRateSeqId"
-            eType="#//accounting/tax/TaxAuthorityRateProduct"
-            eKeys="#//accounting/tax/TaxAuthorityRateProduct/taxAuthorityRateSeqId"/>
+            eType="#//accounting/tax/TaxAuthorityRateProduct" eKeys="#//accounting/tax/TaxAuthorityRateProduct/taxAuthorityRateSeqId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="taxableFlag" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="indicator"/>
@@ -2829,8 +2812,7 @@
           <details key="title" value="Invoice Item Association"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="invoiceItemAssocTypeId"
-            lowerBound="1" eType="#//accounting/invoice/InvoiceItemAssocType"
-            eKeys="#//accounting/invoice/InvoiceItemAssocType/invoiceItemAssocTypeId">
+            lowerBound="1" eType="#//accounting/invoice/InvoiceItemAssocType" eKeys="#//accounting/invoice/InvoiceItemAssocType/invoiceItemAssocTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -3087,8 +3069,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="invoiceItemTypeId"
-            lowerBound="1" eType="#//accounting/invoice/InvoiceItemType"
-            eKeys="#//accounting/invoice/InvoiceItemType/invoiceItemTypeId">
+            lowerBound="1" eType="#//accounting/invoice/InvoiceItemType" eKeys="#//accounting/invoice/InvoiceItemType/invoiceItemTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -3112,8 +3093,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="InvoiceItemTypeGlAccount" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="invoiceItemTypeId"
-            lowerBound="1" eType="#//accounting/invoice/InvoiceItemType"
-            eKeys="#//accounting/invoice/InvoiceItemType/invoiceItemTypeId">
+            lowerBound="1" eType="#//accounting/invoice/InvoiceItemType" eKeys="#//accounting/invoice/InvoiceItemType/invoiceItemTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -3466,8 +3446,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTransId"
-            eType="#//accounting/finaccount/FinAccountTrans"
-            eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
+            eType="#//accounting/finaccount/FinAccountTrans" eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetId" eType="#//accounting/fixedasset/FixedAsset"
             eKeys="#//accounting/fixedasset/FixedAsset/fixedAssetId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="glFiscalTypeId" eType="#//accounting/ledger/GlFiscalType"
@@ -3605,8 +3584,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="acctgTransEntryTypeId"
-            eType="#//accounting/ledger/AcctgTransEntryType"
-            eKeys="#//accounting/ledger/AcctgTransEntryType/acctgTransEntryTypeId"/>
+            eType="#//accounting/ledger/AcctgTransEntryType" eKeys="#//accounting/ledger/AcctgTransEntryType/acctgTransEntryTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="currency-amount"/>
@@ -4114,8 +4092,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="glAccountCategoryTypeId"
-            eType="#//accounting/ledger/GlAccountCategoryType"
-            eKeys="#//accounting/ledger/GlAccountCategoryType/glAccountCategoryTypeId"/>
+            eType="#//accounting/ledger/GlAccountCategoryType" eKeys="#//accounting/ledger/GlAccountCategoryType/glAccountCategoryTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="GlAccountCategoryMember" eSuperTypes="#//BizEntity">
         <eAnnotations source="mimo-ent-frame">
@@ -4128,8 +4105,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="glAccountCategoryId"
-            lowerBound="1" eType="#//accounting/ledger/GlAccountCategory"
-            eKeys="#//accounting/ledger/GlAccountCategory/glAccountCategoryId">
+            lowerBound="1" eType="#//accounting/ledger/GlAccountCategory" eKeys="#//accounting/ledger/GlAccountCategory/glAccountCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -4268,8 +4244,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="glAccountGroupTypeId"
-            eType="#//accounting/ledger/GlAccountGroupType"
-            eKeys="#//accounting/ledger/GlAccountGroupType/glAccountGroupTypeId"/>
+            eType="#//accounting/ledger/GlAccountGroupType" eKeys="#//accounting/ledger/GlAccountGroupType/glAccountGroupTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="GlAccountGroupMember" eSuperTypes="#//BizEntity">
         <eAnnotations source="mimo-ent-frame">
@@ -4282,8 +4257,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="glAccountGroupTypeId"
-            lowerBound="1" eType="#//accounting/ledger/GlAccountGroupType"
-            eKeys="#//accounting/ledger/GlAccountGroupType/glAccountGroupTypeId">
+            lowerBound="1" eType="#//accounting/ledger/GlAccountGroupType" eKeys="#//accounting/ledger/GlAccountGroupType/glAccountGroupTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -4343,8 +4317,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="customTimePeriodId"
-            lowerBound="1" eType="#//common/period/CustomTimePeriod"
-            eKeys="#//common/period/CustomTimePeriod/customTimePeriodId">
+            lowerBound="1" eType="#//common/period/CustomTimePeriod" eKeys="#//common/period/CustomTimePeriod/customTimePeriodId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -4762,8 +4735,7 @@
           <details key="title" value="General Ledger Reconciliation Entry"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="glReconciliationId"
-            lowerBound="1" eType="#//accounting/ledger/GlReconciliation"
-            eKeys="#//accounting/ledger/GlReconciliation/glReconciliationId">
+            lowerBound="1" eType="#//accounting/ledger/GlReconciliation" eKeys="#//accounting/ledger/GlReconciliation/glReconciliationId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -5045,8 +5017,7 @@
           <details key="title" value="Running tally of average cost"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productAverageCostTypeId"
-            lowerBound="1" eType="#//accounting/ledger/ProductAverageCostType"
-            eKeys="#//accounting/ledger/ProductAverageCostType/productAverageCostTypeId">
+            lowerBound="1" eType="#//accounting/ledger/ProductAverageCostType" eKeys="#//accounting/ledger/ProductAverageCostType/productAverageCostTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -5374,8 +5345,7 @@
           <details key="title" value="Billing Account Term Attribute"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="billingAccountTermId"
-            lowerBound="1" eType="#//accounting/payment/BillingAccountTerm"
-            eKeys="#//accounting/payment/BillingAccountTerm/billingAccountTermId">
+            lowerBound="1" eType="#//accounting/payment/BillingAccountTerm" eKeys="#//accounting/payment/BillingAccountTerm/billingAccountTermId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -5989,8 +5959,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTransId"
-            eType="#//accounting/finaccount/FinAccountTrans"
-            eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
+            eType="#//accounting/finaccount/FinAccountTrans" eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="overrideGlAccountId"
             eType="#//accounting/ledger/GlAccount" eKeys="#//accounting/ledger/GlAccount/glAccountId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyIdFrom" eType="#//party/party/Party"
@@ -6007,13 +5976,11 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayResponseId"
-            eType="#//accounting/payment/PaymentGatewayResponse"
-            eKeys="#//accounting/payment/PaymentGatewayResponse/paymentGatewayResponseId"/>
+            eType="#//accounting/payment/PaymentGatewayResponse" eKeys="#//accounting/payment/PaymentGatewayResponse/paymentGatewayResponseId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodId" eType="#//accounting/payment/PaymentMethod"
             eKeys="#//accounting/payment/PaymentMethod/paymentMethodId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentPreferenceId"
             eType="#//order/order/OrderPaymentPreference" eKeys="#//order/order/OrderPaymentPreference/orderPaymentPreferenceId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="paymentRefNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -6146,8 +6113,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentContentTypeId"
-            lowerBound="1" eType="#//accounting/payment/PaymentContentType"
-            eKeys="#//accounting/payment/PaymentContentType/paymentContentTypeId">
+            lowerBound="1" eType="#//accounting/payment/PaymentContentType" eKeys="#//accounting/payment/PaymentContentType/paymentContentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -6510,8 +6476,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigTypeId"
-            eType="#//accounting/payment/PaymentGatewayConfigType"
-            eKeys="#//accounting/payment/PaymentGatewayConfigType/paymentGatewayConfigTypeId"/>
+            eType="#//accounting/payment/PaymentGatewayConfigType" eKeys="#//accounting/payment/PaymentGatewayConfigType/paymentGatewayConfigTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//accounting/payment/PaymentGatewayConfigType"/>
         </eGenericSuperTypes>
@@ -7307,8 +7272,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayResponseId"
-            eType="#//accounting/payment/PaymentGatewayResponse"
-            eKeys="#//accounting/payment/PaymentGatewayResponse/paymentGatewayResponseId"/>
+            eType="#//accounting/payment/PaymentGatewayResponse" eKeys="#//accounting/payment/PaymentGatewayResponse/paymentGatewayResponseId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="pgrMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="very-long"/>
@@ -7399,8 +7363,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodId" eType="#//accounting/payment/PaymentMethod"
             eKeys="#//accounting/payment/PaymentMethod/paymentMethodId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentServiceTypeEnumId"
             eType="#//common/enum/Enumeration" eKeys="#//common/enum/Enumeration/enumId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="referenceNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -7972,8 +7935,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyId" eType="#//party/party/Party"
             eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="date-time"/>
@@ -8049,8 +8011,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PaymentMethodTypeGlAccount" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            lowerBound="1" eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId">
+            lowerBound="1" eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -8313,8 +8274,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="emplPositionTypeId"
-            lowerBound="1" eType="#//humanres/position/EmplPositionType"
-            eKeys="#//humanres/position/EmplPositionType/emplPositionTypeId">
+            lowerBound="1" eType="#//humanres/position/EmplPositionType" eKeys="#//humanres/position/EmplPositionType/emplPositionTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -8535,8 +8495,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="taxAuthorityAssocTypeId"
-            eType="#//accounting/tax/TaxAuthorityAssocType"
-            eKeys="#//accounting/tax/TaxAuthorityAssocType/taxAuthorityAssocTypeId"/>
+            eType="#//accounting/tax/TaxAuthorityAssocType" eKeys="#//accounting/tax/TaxAuthorityAssocType/taxAuthorityAssocTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="date-time"/>
@@ -8568,8 +8527,7 @@
           <details key="title" value="Tax Authority Product Category"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -11190,8 +11148,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="portletCategoryId"
-            lowerBound="1" eType="#//common/portal/PortletCategory"
-            eKeys="#//common/portal/PortletCategory/portletCategoryId">
+            lowerBound="1" eType="#//common/portal/PortletCategory" eKeys="#//common/portal/PortletCategory/portletCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -12031,8 +11988,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="resourceTypeEnumId"
-            lowerBound="1" eType="#//common/enum/Enumeration"
-            eKeys="#//common/enum/Enumeration/enumId">
+            lowerBound="1" eType="#//common/enum/Enumeration" eKeys="#//common/enum/Enumeration/enumId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -13275,8 +13231,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentAssocTypeId"
-            lowerBound="1" eType="#//content/content/ContentAssocType"
-            eKeys="#//content/content/ContentAssocType/contentAssocTypeId">
+            lowerBound="1" eType="#//content/content/ContentAssocType" eKeys="#//content/content/ContentAssocType/contentAssocTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -13291,8 +13246,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentAssocPredicateId"
-            eType="#//content/content/ContentAssocPredicate"
-            eKeys="#//content/content/ContentAssocPredicate/contentAssocPredicateId"/>
+            eType="#//content/content/ContentAssocPredicate" eKeys="#//content/content/ContentAssocPredicate/contentAssocPredicateId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="createdByUserLogin"
             eType="#//security/login/UserLogin" eKeys="#//security/login/UserLogin/userLoginId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="createdDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
@@ -13450,8 +13404,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="metaDataPredicateId"
-            lowerBound="1" eType="#//content/data/MetaDataPredicate"
-            eKeys="#//content/data/MetaDataPredicate/metaDataPredicateId">
+            lowerBound="1" eType="#//content/data/MetaDataPredicate" eKeys="#//content/data/MetaDataPredicate/metaDataPredicateId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -13493,8 +13446,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentPurposeTypeId"
-            lowerBound="1" eType="#//content/content/ContentPurposeType"
-            eKeys="#//content/content/ContentPurposeType/contentPurposeTypeId">
+            lowerBound="1" eType="#//content/content/ContentPurposeType" eKeys="#//content/content/ContentPurposeType/contentPurposeTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -13512,15 +13464,13 @@
           <details key="title" value="Content Purpose"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentPurposeTypeId"
-            lowerBound="1" eType="#//content/content/ContentPurposeType"
-            eKeys="#//content/content/ContentPurposeType/contentPurposeTypeId">
+            lowerBound="1" eType="#//content/content/ContentPurposeType" eKeys="#//content/content/ContentPurposeType/contentPurposeTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentOperationId"
-            lowerBound="1" eType="#//content/content/ContentOperation"
-            eKeys="#//content/content/ContentOperation/contentOperationId">
+            lowerBound="1" eType="#//content/content/ContentOperation" eKeys="#//content/content/ContentOperation/contentOperationId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -13690,8 +13640,7 @@
           <details key="title" value="Content Search Result Constraint"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentSearchResultId"
-            lowerBound="1" eType="#//content/content/ContentSearchResult"
-            eKeys="#//content/content/ContentSearchResult/contentSearchResultId">
+            lowerBound="1" eType="#//content/content/ContentSearchResult" eKeys="#//content/content/ContentSearchResult/contentSearchResultId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -14185,8 +14134,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="metaDataPredicateId"
-            lowerBound="1" eType="#//content/data/MetaDataPredicate"
-            eKeys="#//content/data/MetaDataPredicate/metaDataPredicateId">
+            lowerBound="1" eType="#//content/data/MetaDataPredicate" eKeys="#//content/data/MetaDataPredicate/metaDataPredicateId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -14211,8 +14159,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contentPurposeTypeId"
-            lowerBound="1" eType="#//content/content/ContentPurposeType"
-            eKeys="#//content/content/ContentPurposeType/contentPurposeTypeId">
+            lowerBound="1" eType="#//content/content/ContentPurposeType" eKeys="#//content/content/ContentPurposeType/contentPurposeTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -14321,8 +14268,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="dataResourceTypeId"
-            lowerBound="1" eType="#//content/data/DataResourceType"
-            eKeys="#//content/data/DataResourceType/dataResourceTypeId">
+            lowerBound="1" eType="#//content/data/DataResourceType" eKeys="#//content/data/DataResourceType/dataResourceTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -14763,8 +14709,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="WebUserPreference" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="webPreferenceTypeId"
-            lowerBound="1" eType="#//content/preference/WebPreferenceType"
-            eKeys="#//content/preference/WebPreferenceType/webPreferenceTypeId">
+            lowerBound="1" eType="#//content/preference/WebPreferenceType" eKeys="#//content/preference/WebPreferenceType/webPreferenceTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -15119,8 +15064,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="surveyQuestionCategoryId"
-            eType="#//content/survey/SurveyQuestionCategory"
-            eKeys="#//content/survey/SurveyQuestionCategory/surveyQuestionCategoryId"/>
+            eType="#//content/survey/SurveyQuestionCategory" eKeys="#//content/survey/SurveyQuestionCategory/surveyQuestionCategoryId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="surveyQuestionOptions"
             upperBound="-1" eType="#//content/survey/SurveyQuestionOption">
           <eAnnotations source="mimo-ent-slot">
@@ -15575,8 +15519,7 @@
           <details key="title" value="Web Analytics Configuration"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="webAnalyticsTypeId"
-            lowerBound="1" eType="#//content/website/WebAnalyticsType"
-            eKeys="#//content/website/WebAnalyticsType/webAnalyticsTypeId">
+            lowerBound="1" eType="#//content/website/WebAnalyticsType" eKeys="#//content/website/WebAnalyticsType/webAnalyticsTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -15664,8 +15607,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="webSiteContentTypeId"
-            lowerBound="1" eType="#//content/website/WebSiteContentType"
-            eKeys="#//content/website/WebSiteContentType/webSiteContentTypeId">
+            lowerBound="1" eType="#//content/website/WebSiteContentType" eKeys="#//content/website/WebSiteContentType/webSiteContentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -17386,8 +17328,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="trainingClassTypeId"
-            lowerBound="1" eType="#//humanres/ability/TrainingClassType"
-            eKeys="#//humanres/ability/TrainingClassType/trainingClassTypeId">
+            lowerBound="1" eType="#//humanres/ability/TrainingClassType" eKeys="#//humanres/ability/TrainingClassType/trainingClassTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -17667,8 +17608,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="emplLeaveReasonTypeId"
-            eType="#//humanres/employment/EmplLeaveReasonType"
-            eKeys="#//humanres/employment/EmplLeaveReasonType/emplLeaveReasonTypeId"/>
+            eType="#//humanres/employment/EmplLeaveReasonType" eKeys="#//humanres/employment/EmplLeaveReasonType/emplLeaveReasonTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="leaveStatus" eType="#//common/status/StatusItem"
             eKeys="#//common/status/StatusItem/statusId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
@@ -17802,8 +17742,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="terminationReasonId"
-            eType="#//humanres/employment/TerminationReason"
-            eKeys="#//humanres/employment/TerminationReason/terminationReasonId"/>
+            eType="#//humanres/employment/TerminationReason" eKeys="#//humanres/employment/TerminationReason/terminationReasonId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="terminationTypeId"
             eType="#//humanres/employment/TerminationType" eKeys="#//humanres/employment/TerminationType/terminationTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
@@ -17839,8 +17778,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="emplPositionId" eType="#//humanres/position/EmplPosition"
             eKeys="#//humanres/position/EmplPosition/emplPositionId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="employmentAppSourceTypeId"
-            eType="#//humanres/employment/EmploymentAppSourceType"
-            eKeys="#//humanres/employment/EmploymentAppSourceType/employmentAppSourceTypeId"/>
+            eType="#//humanres/employment/EmploymentAppSourceType" eKeys="#//humanres/employment/EmploymentAppSourceType/employmentAppSourceTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="jobRequisitionId" eType="#//humanres/recruitment/JobRequisition"
             eKeys="#//humanres/recruitment/JobRequisition/jobRequisitionId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="referredByPartyId"
@@ -18134,8 +18072,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="percentage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="floating-point"/>
@@ -18500,15 +18437,13 @@
           <details key="title" value="EmplPosition Reporting Structure"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="emplPositionIdReportingTo"
-            lowerBound="1" eType="#//humanres/position/EmplPosition"
-            eKeys="#//humanres/position/EmplPosition/emplPositionId">
+            lowerBound="1" eType="#//humanres/position/EmplPosition" eKeys="#//humanres/position/EmplPosition/emplPositionId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="emplPositionIdManagedBy"
-            lowerBound="1" eType="#//humanres/position/EmplPosition"
-            eKeys="#//humanres/position/EmplPosition/emplPositionId">
+            lowerBound="1" eType="#//humanres/position/EmplPosition" eKeys="#//humanres/position/EmplPosition/emplPositionId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -18548,8 +18483,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="responsibilityTypeId"
-            lowerBound="1" eType="#//humanres/ability/ResponsibilityType"
-            eKeys="#//humanres/ability/ResponsibilityType/responsibilityTypeId">
+            lowerBound="1" eType="#//humanres/ability/ResponsibilityType" eKeys="#//humanres/ability/ResponsibilityType/responsibilityTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -18625,15 +18559,13 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="EmplPositionTypeClass" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="emplPositionTypeId"
-            lowerBound="1" eType="#//humanres/position/EmplPositionType"
-            eKeys="#//humanres/position/EmplPositionType/emplPositionTypeId">
+            lowerBound="1" eType="#//humanres/position/EmplPositionType" eKeys="#//humanres/position/EmplPositionType/emplPositionTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="emplPositionClassTypeId"
-            lowerBound="1" eType="#//humanres/position/EmplPositionClassType"
-            eKeys="#//humanres/position/EmplPositionClassType/emplPositionClassTypeId">
+            lowerBound="1" eType="#//humanres/position/EmplPositionClassType" eKeys="#//humanres/position/EmplPositionClassType/emplPositionClassTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -18661,8 +18593,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="EmplPositionTypeRate" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="emplPositionTypeId"
-            lowerBound="1" eType="#//humanres/position/EmplPositionType"
-            eKeys="#//humanres/position/EmplPositionType/emplPositionTypeId">
+            lowerBound="1" eType="#//humanres/position/EmplPositionType" eKeys="#//humanres/position/EmplPositionType/emplPositionTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -18702,15 +18633,13 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ValidResponsibility" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="emplPositionTypeId"
-            lowerBound="1" eType="#//humanres/position/EmplPositionType"
-            eKeys="#//humanres/position/EmplPositionType/emplPositionTypeId">
+            lowerBound="1" eType="#//humanres/position/EmplPositionType" eKeys="#//humanres/position/EmplPositionType/emplPositionTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="responsibilityTypeId"
-            lowerBound="1" eType="#//humanres/ability/ResponsibilityType"
-            eKeys="#//humanres/ability/ResponsibilityType/responsibilityTypeId">
+            lowerBound="1" eType="#//humanres/ability/ResponsibilityType" eKeys="#//humanres/ability/ResponsibilityType/responsibilityTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -18766,8 +18695,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="jobInterviewTypeId"
-            eType="#//humanres/recruitment/JobInterviewType"
-            eKeys="#//humanres/recruitment/JobInterviewType/jobInterviewTypeId"/>
+            eType="#//humanres/recruitment/JobInterviewType" eKeys="#//humanres/recruitment/JobInterviewType/jobInterviewTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="jobIntervieweePartyId"
             eType="#//party/party/Party" eKeys="#//party/party/Party/partyId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="jobInterviewerPartyId"
@@ -19116,8 +19044,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="calendarId" lowerBound="1"
-            eType="#//manufacturing/techdata/TechDataCalendar"
-            eKeys="#//manufacturing/techdata/TechDataCalendar/calendarId">
+            eType="#//manufacturing/techdata/TechDataCalendar" eKeys="#//manufacturing/techdata/TechDataCalendar/calendarId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -19160,8 +19087,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="calendarId" lowerBound="1"
-            eType="#//manufacturing/techdata/TechDataCalendar"
-            eKeys="#//manufacturing/techdata/TechDataCalendar/calendarId">
+            eType="#//manufacturing/techdata/TechDataCalendar" eKeys="#//manufacturing/techdata/TechDataCalendar/calendarId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -19460,8 +19386,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="MarketingCampaignNote" eSuperTypes="#//BizEntityNote">
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            lowerBound="1" eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId">
+            lowerBound="1" eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -19469,15 +19394,13 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="MarketingCampaignPrice" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            lowerBound="1" eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId">
+            lowerBound="1" eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPriceRuleId"
-            lowerBound="1" eType="#//product/price/ProductPriceRule"
-            eKeys="#//product/price/ProductPriceRule/productPriceRuleId">
+            lowerBound="1" eType="#//product/price/ProductPriceRule" eKeys="#//product/price/ProductPriceRule/productPriceRuleId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -19499,8 +19422,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="MarketingCampaignPromo" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            lowerBound="1" eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId">
+            lowerBound="1" eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -19528,8 +19450,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="MarketingCampaignRole" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            lowerBound="1" eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId">
+            lowerBound="1" eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -19618,8 +19539,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="lastModifiedByUserLogin"
             eType="#//security/login/UserLogin" eKeys="#//security/login/UserLogin/userLoginId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
+            eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="optOutScreen" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="long-varchar"/>
@@ -19676,8 +19596,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            lowerBound="1" eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId">
+            lowerBound="1" eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -20164,8 +20083,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
+            eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextStep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="very-long"/>
@@ -20183,8 +20101,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="opportunityStageId"
-            eType="#//marketing/opportunity/SalesOpportunityStage"
-            eKeys="#//marketing/opportunity/SalesOpportunityStage/opportunityStageId"/>
+            eType="#//marketing/opportunity/SalesOpportunityStage" eKeys="#//marketing/opportunity/SalesOpportunityStage/opportunityStageId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityCompetitors"
             upperBound="-1" eType="#//marketing/opportunity/SalesOpportunityCompetitor">
           <eAnnotations source="mimo-ent-slot">
@@ -20229,8 +20146,7 @@
           <details key="title" value="Sales opportunity competitors record"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            lowerBound="1" eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId">
+            lowerBound="1" eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -20325,19 +20241,16 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="opportunityStageId"
-            eType="#//marketing/opportunity/SalesOpportunityStage"
-            eKeys="#//marketing/opportunity/SalesOpportunityStage/opportunityStageId"/>
+            eType="#//marketing/opportunity/SalesOpportunityStage" eKeys="#//marketing/opportunity/SalesOpportunityStage/opportunityStageId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
+            eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SalesOpportunityQuote" eSuperTypes="#//BizEntity">
         <eAnnotations source="mimo-ent-frame">
           <details key="title" value="Relates sales opportunities to their quotes."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            lowerBound="1" eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId">
+            lowerBound="1" eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -20354,8 +20267,7 @@
           <details key="title" value="Describes roles of different parties involved in a sales opportunity"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            lowerBound="1" eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId">
+            lowerBound="1" eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -20431,8 +20343,7 @@
           <details key="title" value="Sales opportunity traking code"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            lowerBound="1" eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId">
+            lowerBound="1" eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -20458,8 +20369,7 @@
           <details key="title" value="Relates sales opportunities to their work efforts."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            lowerBound="1" eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId">
+            lowerBound="1" eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -20523,8 +20433,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyClassificationGroupId"
-            lowerBound="1" eType="#//party/party/PartyClassificationGroup"
-            eKeys="#//party/party/PartyClassificationGroup/partyClassificationGroupId">
+            lowerBound="1" eType="#//party/party/PartyClassificationGroup" eKeys="#//party/party/PartyClassificationGroup/partyClassificationGroupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -20672,8 +20581,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="marketingCampaignId"
-            eType="#//marketing/campaign/MarketingCampaign"
-            eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
+            eType="#//marketing/campaign/MarketingCampaign" eKeys="#//marketing/campaign/MarketingCampaign/marketingCampaignId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="overrideCss" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="url"/>
@@ -20731,8 +20639,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="trackingCodeTypeId"
-            lowerBound="1" eType="#//marketing/tracking/TrackingCodeType"
-            eKeys="#//marketing/tracking/TrackingCodeType/trackingCodeTypeId">
+            lowerBound="1" eType="#//marketing/tracking/TrackingCodeType" eKeys="#//marketing/tracking/TrackingCodeType/trackingCodeTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -20781,8 +20688,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="trackingCodeTypeId"
-            lowerBound="1" eType="#//marketing/tracking/TrackingCodeType"
-            eKeys="#//marketing/tracking/TrackingCodeType/trackingCodeTypeId">
+            lowerBound="1" eType="#//marketing/tracking/TrackingCodeType" eKeys="#//marketing/tracking/TrackingCodeType/trackingCodeTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -20900,8 +20806,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            lowerBound="1" eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId">
+            lowerBound="1" eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -21148,16 +21053,14 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="taxAuthorityRateSeqId"
-            eType="#//accounting/tax/TaxAuthorityRateProduct"
-            eKeys="#//accounting/tax/TaxAuthorityRateProduct/taxAuthorityRateSeqId"/>
+            eType="#//accounting/tax/TaxAuthorityRateProduct" eKeys="#//accounting/tax/TaxAuthorityRateProduct/taxAuthorityRateSeqId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//order/order/OrderAdjustmentType"/>
         </eGenericSuperTypes>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="OrderAdjustmentAttribute" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="orderAdjustmentId"
-            lowerBound="1" eType="#//order/order/OrderAdjustment"
-            eKeys="#//order/order/OrderAdjustment/orderAdjustmentId">
+            lowerBound="1" eType="#//order/order/OrderAdjustment" eKeys="#//order/order/OrderAdjustment/orderAdjustmentId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -21187,8 +21090,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="OrderAdjustmentBilling" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="orderAdjustmentId"
-            lowerBound="1" eType="#//order/order/OrderAdjustment"
-            eKeys="#//order/order/OrderAdjustment/orderAdjustmentId">
+            lowerBound="1" eType="#//order/order/OrderAdjustment" eKeys="#//order/order/OrderAdjustment/orderAdjustmentId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -21290,8 +21192,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="orderAdjustmentTypeId"
-            lowerBound="1" eType="#//order/order/OrderAdjustmentType"
-            eKeys="#//order/order/OrderAdjustmentType/orderAdjustmentTypeId">
+            lowerBound="1" eType="#//order/order/OrderAdjustmentType" eKeys="#//order/order/OrderAdjustmentType/orderAdjustmentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -21345,8 +21246,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="OrderBlacklist" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="orderBlacklistTypeId"
-            lowerBound="1" eType="#//order/order/OrderBlacklistType"
-            eKeys="#//order/order/OrderBlacklistType/orderBlacklistTypeId">
+            lowerBound="1" eType="#//order/order/OrderBlacklistType" eKeys="#//order/order/OrderBlacklistType/orderBlacklistTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -21408,8 +21308,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            lowerBound="1" eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
+            lowerBound="1" eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -21432,8 +21331,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="orderContentTypeId"
-            lowerBound="1" eType="#//order/order/OrderContentType"
-            eKeys="#//order/order/OrderContentType/orderContentTypeId">
+            lowerBound="1" eType="#//order/order/OrderContentType" eKeys="#//order/order/OrderContentType/orderContentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -22204,8 +22102,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="salesOpportunityId"
-            eType="#//marketing/opportunity/SalesOpportunity"
-            eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
+            eType="#//marketing/opportunity/SalesOpportunity" eKeys="#//marketing/opportunity/SalesOpportunity/salesOpportunityId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="selectedAmount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="fixed-point"/>
@@ -22291,8 +22188,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="OrderItemAssoc">
         <eStructuralFeatures xsi:type="ecore:EReference" name="orderItemAssocTypeId"
-            lowerBound="1" eType="#//order/order/OrderItemAssocType"
-            eKeys="#//order/order/OrderItemAssocType/orderItemAssocTypeId">
+            lowerBound="1" eType="#//order/order/OrderItemAssocType" eKeys="#//order/order/OrderItemAssocType/orderItemAssocTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -22568,8 +22464,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            lowerBound="1" eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
+            lowerBound="1" eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -22799,8 +22694,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId">
+            eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="audit" value="true"/>
           </eAnnotations>
@@ -23210,8 +23104,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodId" eType="#//accounting/payment/PaymentMethod"
             eKeys="#//accounting/payment/PaymentMethod/paymentMethodId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
+            eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="presentFlag" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="indicator"/>
@@ -23270,8 +23163,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPromoCodeId"
-            lowerBound="1" eType="#//product/promo/ProductPromoCode"
-            eKeys="#//product/promo/ProductPromoCode/productPromoCodeId">
+            lowerBound="1" eType="#//product/promo/ProductPromoCode" eKeys="#//product/promo/ProductPromoCode/productPromoCodeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -24062,8 +23954,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deliverableTypeId"
-            eType="#//workeffort/workeffort/DeliverableType"
-            eKeys="#//workeffort/workeffort/DeliverableType/deliverableTypeId"/>
+            eType="#//workeffort/workeffort/DeliverableType" eKeys="#//workeffort/workeffort/DeliverableType/deliverableTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="estimatedDeliveryDate"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
           <eAnnotations source="mimo-ent-format">
@@ -24668,8 +24559,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            lowerBound="1" eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId">
+            lowerBound="1" eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -25059,8 +24949,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="custRequestTypeId"
-            lowerBound="1" eType="#//order/request/CustRequestType"
-            eKeys="#//order/request/CustRequestType/custRequestTypeId">
+            lowerBound="1" eType="#//order/request/CustRequestType" eKeys="#//order/request/CustRequestType/custRequestTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -25530,8 +25419,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="requirementTypeId"
-            lowerBound="1" eType="#//order/requirement/RequirementType"
-            eKeys="#//order/requirement/RequirementType/requirementTypeId">
+            lowerBound="1" eType="#//order/requirement/RequirementType" eKeys="#//order/requirement/RequirementType/requirementTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -25624,8 +25512,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="accommodationClassId"
-            eType="#//accounting/fixedasset/AccommodationClass"
-            eKeys="#//accounting/fixedasset/AccommodationClass/accommodationClassId"/>
+            eType="#//accounting/fixedasset/AccommodationClass" eKeys="#//accounting/fixedasset/AccommodationClass/accommodationClassId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="description"/>
@@ -25653,8 +25540,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            lowerBound="1" eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId">
+            lowerBound="1" eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -25848,8 +25734,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="taxAuthorityRateSeqId"
-            eType="#//accounting/tax/TaxAuthorityRateProduct"
-            eKeys="#//accounting/tax/TaxAuthorityRateProduct/taxAuthorityRateSeqId"/>
+            eType="#//accounting/tax/TaxAuthorityRateProduct" eKeys="#//accounting/tax/TaxAuthorityRateProduct/taxAuthorityRateSeqId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//order/return/ReturnAdjustmentType"/>
         </eGenericSuperTypes>
@@ -25929,8 +25814,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            lowerBound="1" eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
+            lowerBound="1" eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -26259,8 +26143,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="billingAccountId" eType="#//accounting/payment/BillingAccount"
             eKeys="#//accounting/payment/BillingAccount/billingAccountId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTransId"
-            eType="#//accounting/finaccount/FinAccountTrans"
-            eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
+            eType="#//accounting/finaccount/FinAccountTrans" eKeys="#//accounting/finaccount/FinAccountTrans/finAccountTransId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="orderPaymentPreferenceId"
             eType="#//order/order/OrderPaymentPreference" eKeys="#//order/order/OrderPaymentPreference/orderPaymentPreferenceId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentId" eType="#//accounting/payment/Payment"
@@ -26378,8 +26261,7 @@
           <details key="help" value="Mapping between productTypeId and returnItemTypeId for product order items, orderItemTypeId and returnItemTypeId for other&#xA;          order items, or orderAdjustmentTypeId and returnAdjustmentTypeId.  Separate mappings for different types of returns (customer vs. vendor)"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="returnHeaderTypeId"
-            lowerBound="1" eType="#//order/return/ReturnHeaderType"
-            eKeys="#//order/return/ReturnHeaderType/returnHeaderTypeId">
+            lowerBound="1" eType="#//order/return/ReturnHeaderType" eKeys="#//order/return/ReturnHeaderType/returnHeaderTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -27062,8 +26944,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="agreementContentTypeId"
-            lowerBound="1" eType="#//party/agreement/AgreementContentType"
-            eKeys="#//party/agreement/AgreementContentType/agreementContentTypeId">
+            lowerBound="1" eType="#//party/agreement/AgreementContentType" eKeys="#//party/agreement/AgreementContentType/agreementContentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -27420,8 +27301,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="agreementItemTypeId"
-            lowerBound="1" eType="#//party/agreement/AgreementItemType"
-            eKeys="#//party/agreement/AgreementItemType/agreementItemTypeId">
+            lowerBound="1" eType="#//party/agreement/AgreementItemType" eKeys="#//party/agreement/AgreementItemType/agreementItemTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -27937,8 +27817,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            lowerBound="1" eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId">
+            lowerBound="1" eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -27953,8 +27832,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="commContentAssocTypeId"
-            eType="#//party/communication/CommContentAssocType"
-            eKeys="#//party/communication/CommContentAssocType/commContentAssocTypeId"/>
+            eType="#//party/communication/CommContentAssocType" eKeys="#//party/communication/CommContentAssocType/commContentAssocTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="sequenceNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="numeric"/>
@@ -28051,8 +27929,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventTypeId"
-            eType="#//party/communication/CommunicationEventType"
-            eKeys="#//party/communication/CommunicationEventType/communicationEventTypeId"/>
+            eType="#//party/communication/CommunicationEventType" eKeys="#//party/communication/CommunicationEventType/communicationEventTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactListId" eType="#//marketing/contact/ContactList"
             eKeys="#//marketing/contact/ContactList/contactListId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechIdFrom"
@@ -28153,8 +28030,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            lowerBound="1" eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId">
+            lowerBound="1" eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -28215,8 +28091,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            lowerBound="1" eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId">
+            lowerBound="1" eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -28243,8 +28118,7 @@
           <details key="title" value="Communication Event Role Entity showing all participants of the communication event."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            lowerBound="1" eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId">
+            lowerBound="1" eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -28602,8 +28476,7 @@
           <details key="title" value="Contact Mechanism Link"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechIdFrom"
-            lowerBound="1" eType="#//party/contact/ContactMech"
-            eKeys="#//party/contact/ContactMech/contactMechId">
+            lowerBound="1" eType="#//party/contact/ContactMech" eKeys="#//party/contact/ContactMech/contactMechId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -28756,8 +28629,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechTypeId"
-            lowerBound="1" eType="#//party/contact/ContactMechType"
-            eKeys="#//party/contact/ContactMechType/contactMechTypeId">
+            lowerBound="1" eType="#//party/contact/ContactMechType" eKeys="#//party/contact/ContactMechType/contactMechTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -28785,15 +28657,13 @@
           <details key="title" value="Contact Mechanism Type Purpose"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechTypeId"
-            lowerBound="1" eType="#//party/contact/ContactMechType"
-            eKeys="#//party/contact/ContactMechType/contactMechTypeId">
+            lowerBound="1" eType="#//party/contact/ContactMechType" eKeys="#//party/contact/ContactMechType/contactMechTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            lowerBound="1" eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
+            lowerBound="1" eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -28970,8 +28840,7 @@
           <details key="title" value="Party Contact Mechanism Purpose"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            lowerBound="1" eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
+            lowerBound="1" eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -29161,8 +29030,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechTypeId"
-            lowerBound="1" eType="#//party/contact/ContactMechType"
-            eKeys="#//party/contact/ContactMechType/contactMechTypeId">
+            lowerBound="1" eType="#//party/contact/ContactMechType" eKeys="#//party/contact/ContactMechType/contactMechTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -29225,8 +29093,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
+            eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="datetimeRecorded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="date-time"/>
@@ -30287,8 +30154,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyClassificationGroupId"
-            lowerBound="1" eType="#//party/party/PartyClassificationGroup"
-            eKeys="#//party/party/PartyClassificationGroup/partyClassificationGroupId">
+            lowerBound="1" eType="#//party/party/PartyClassificationGroup" eKeys="#//party/party/PartyClassificationGroup/partyClassificationGroupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -30418,8 +30284,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyContentTypeId"
-            lowerBound="1" eType="#//party/party/PartyContentType"
-            eKeys="#//party/party/PartyContentType/partyContentTypeId">
+            lowerBound="1" eType="#//party/party/PartyContentType" eKeys="#//party/party/PartyContentType/partyContentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -30615,8 +30480,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PartyIdentification">
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyIdentificationTypeId"
-            lowerBound="1" eType="#//party/party/PartyIdentificationType"
-            eKeys="#//party/party/PartyIdentificationType/partyIdentificationTypeId">
+            lowerBound="1" eType="#//party/party/PartyIdentificationType" eKeys="#//party/party/PartyIdentificationType/partyIdentificationTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -30749,8 +30613,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyInvitationId"
-            lowerBound="1" eType="#//party/party/PartyInvitation"
-            eKeys="#//party/party/PartyInvitation/partyInvitationId">
+            lowerBound="1" eType="#//party/party/PartyInvitation" eKeys="#//party/party/PartyInvitation/partyInvitationId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -30764,8 +30627,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyInvitationId"
-            lowerBound="1" eType="#//party/party/PartyInvitation"
-            eKeys="#//party/party/PartyInvitation/partyInvitationId">
+            lowerBound="1" eType="#//party/party/PartyInvitation" eKeys="#//party/party/PartyInvitation/partyInvitationId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -32093,15 +31955,13 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="prodCatalogCategoryTypeId"
-            lowerBound="1" eType="#//product/catalog/ProdCatalogCategoryType"
-            eKeys="#//product/catalog/ProdCatalogCategoryType/prodCatalogCategoryTypeId">
+            lowerBound="1" eType="#//product/catalog/ProdCatalogCategoryType" eKeys="#//product/catalog/ProdCatalogCategoryType/prodCatalogCategoryTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -32367,8 +32227,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryTypeId"
-            eType="#//product/category/ProductCategoryType"
-            eKeys="#//product/category/ProductCategoryType/productCategoryTypeId"/>
+            eType="#//product/category/ProductCategoryType" eKeys="#//product/category/ProductCategoryType/productCategoryTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="showInSelect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="indicator"/>
@@ -32384,8 +32243,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -32419,8 +32277,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -32525,8 +32382,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -32551,8 +32407,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -32652,8 +32507,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -32710,8 +32564,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -32742,15 +32595,13 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="parentProductCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
             <details key="help" value="The parent category; it should be one of productCategoryId already setup in ProductCategory or ProductCategoryRollup"/>
@@ -32843,8 +32694,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryTypeId"
-            lowerBound="1" eType="#//product/category/ProductCategoryType"
-            eKeys="#//product/category/ProductCategoryType/productCategoryTypeId">
+            lowerBound="1" eType="#//product/category/ProductCategoryType" eKeys="#//product/category/ProductCategoryType/productCategoryTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -32957,8 +32807,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="confItemContentTypeId"
-            lowerBound="1" eType="#//product/config/ProdConfItemContentType"
-            eKeys="#//product/config/ProdConfItemContentType/confItemContentTypeId">
+            lowerBound="1" eType="#//product/config/ProdConfItemContentType" eKeys="#//product/config/ProdConfItemContentType/confItemContentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -33610,8 +33459,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="costComponentTypeId"
-            lowerBound="1" eType="#//product/cost/CostComponentType"
-            eKeys="#//product/cost/CostComponentType/costComponentTypeId">
+            lowerBound="1" eType="#//product/cost/CostComponentType" eKeys="#//product/cost/CostComponentType/costComponentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -33645,8 +33493,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="costComponentTypeId"
-            lowerBound="1" eType="#//product/cost/CostComponentType"
-            eKeys="#//product/cost/CostComponentType/costComponentTypeId">
+            lowerBound="1" eType="#//product/cost/CostComponentType" eKeys="#//product/cost/CostComponentType/costComponentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -34129,8 +33976,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="facilityCalendarTypeId"
-            lowerBound="1" eType="#//product/facility/FacilityCalendarType"
-            eKeys="#//product/facility/FacilityCalendarType/facilityCalendarTypeId">
+            lowerBound="1" eType="#//product/facility/FacilityCalendarType" eKeys="#//product/facility/FacilityCalendarType/facilityCalendarTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -34204,8 +34050,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            lowerBound="1" eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId">
+            lowerBound="1" eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -34271,8 +34116,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="contactMechPurposeTypeId"
-            lowerBound="1" eType="#//party/contact/ContactMechPurposeType"
-            eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
+            lowerBound="1" eType="#//party/contact/ContactMechPurposeType" eKeys="#//party/contact/ContactMechPurposeType/contactMechPurposeTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -34448,8 +34292,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="parentFacilityGroupId"
-            lowerBound="1" eType="#//product/facility/FacilityGroup"
-            eKeys="#//product/facility/FacilityGroup/facilityGroupId">
+            lowerBound="1" eType="#//product/facility/FacilityGroup" eKeys="#//product/facility/FacilityGroup/facilityGroupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -34961,8 +34804,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureCategoryId"
-            eType="#//product/feature/ProductFeatureCategory"
-            eKeys="#//product/feature/ProductFeatureCategory/productFeatureCategoryId"/>
+            eType="#//product/feature/ProductFeatureCategory" eKeys="#//product/feature/ProductFeatureCategory/productFeatureCategoryId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureTypeId"
             eType="#//product/feature/ProductFeatureType" eKeys="#//product/feature/ProductFeatureType/productFeatureTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="uomId" eType="#//common/uom/Uom"
@@ -35005,8 +34847,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureApplTypeId"
-            eType="#//product/feature/ProductFeatureApplType"
-            eKeys="#//product/feature/ProductFeatureApplType/productFeatureApplTypeId"/>
+            eType="#//product/feature/ProductFeatureApplType" eKeys="#//product/feature/ProductFeatureApplType/productFeatureApplTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="recurringAmount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="currency-amount"/>
@@ -35120,15 +34961,13 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureGroupId"
-            lowerBound="1" eType="#//product/feature/ProductFeatureGroup"
-            eKeys="#//product/feature/ProductFeatureGroup/productFeatureGroupId">
+            lowerBound="1" eType="#//product/feature/ProductFeatureGroup" eKeys="#//product/feature/ProductFeatureGroup/productFeatureGroupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -35194,15 +35033,13 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureCategoryId"
-            lowerBound="1" eType="#//product/feature/ProductFeatureCategory"
-            eKeys="#//product/feature/ProductFeatureCategory/productFeatureCategoryId">
+            lowerBound="1" eType="#//product/feature/ProductFeatureCategory" eKeys="#//product/feature/ProductFeatureCategory/productFeatureCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -35265,8 +35102,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureGroupId"
-            lowerBound="1" eType="#//product/feature/ProductFeatureGroup"
-            eKeys="#//product/feature/ProductFeatureGroup/productFeatureGroupId">
+            lowerBound="1" eType="#//product/feature/ProductFeatureGroup" eKeys="#//product/feature/ProductFeatureGroup/productFeatureGroupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -35311,15 +35147,13 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureIdTo"
-            lowerBound="1" eType="#//product/feature/ProductFeature"
-            eKeys="#//product/feature/ProductFeature/productFeatureId">
+            lowerBound="1" eType="#//product/feature/ProductFeature" eKeys="#//product/feature/ProductFeature/productFeatureId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productFeatureIactnTypeId"
-            eType="#//product/feature/ProductFeatureIactnType"
-            eKeys="#//product/feature/ProductFeatureIactnType/productFeatureIactnTypeId"/>
+            eType="#//product/feature/ProductFeatureIactnType" eKeys="#//product/feature/ProductFeatureIactnType/productFeatureIactnTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="productId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="id"/>
@@ -35903,8 +35737,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="inventoryItemLabelTypeId"
-            eType="#//product/inventory/InventoryItemLabelType"
-            eKeys="#//product/inventory/InventoryItemLabelType/inventoryItemLabelTypeId"/>
+            eType="#//product/inventory/InventoryItemLabelType" eKeys="#//product/inventory/InventoryItemLabelType/inventoryItemLabelTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//product/inventory/InventoryItemLabelType"/>
         </eGenericSuperTypes>
@@ -35921,15 +35754,13 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="inventoryItemLabelTypeId"
-            lowerBound="1" eType="#//product/inventory/InventoryItemLabelType"
-            eKeys="#//product/inventory/InventoryItemLabelType/inventoryItemLabelTypeId">
+            lowerBound="1" eType="#//product/inventory/InventoryItemLabelType" eKeys="#//product/inventory/InventoryItemLabelType/inventoryItemLabelTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="inventoryItemLabelId"
-            eType="#//product/inventory/InventoryItemLabel"
-            eKeys="#//product/inventory/InventoryItemLabel/inventoryItemLabelId"/>
+            eType="#//product/inventory/InventoryItemLabel" eKeys="#//product/inventory/InventoryItemLabel/inventoryItemLabelId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="sequenceNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="numeric"/>
@@ -36172,8 +36003,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="inventoryItemTypeId"
-            lowerBound="1" eType="#//product/inventory/InventoryItemType"
-            eKeys="#//product/inventory/InventoryItemType/inventoryItemTypeId">
+            lowerBound="1" eType="#//product/inventory/InventoryItemType" eKeys="#//product/inventory/InventoryItemType/inventoryItemTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -36200,8 +36030,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="physicalInventoryId"
-            lowerBound="1" eType="#//product/inventory/PhysicalInventory"
-            eKeys="#//product/inventory/PhysicalInventory/physicalInventoryId">
+            lowerBound="1" eType="#//product/inventory/PhysicalInventory" eKeys="#//product/inventory/PhysicalInventory/physicalInventoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -36435,8 +36264,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPriceTypeId"
-            lowerBound="1" eType="#//product/price/ProductPriceType"
-            eKeys="#//product/price/ProductPriceType/productPriceTypeId">
+            lowerBound="1" eType="#//product/price/ProductPriceType" eKeys="#//product/price/ProductPriceType/productPriceTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -36504,15 +36332,13 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            lowerBound="1" eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId">
+            lowerBound="1" eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPricePurposeId"
-            lowerBound="1" eType="#//product/price/ProductPricePurpose"
-            eKeys="#//product/price/ProductPricePurpose/productPricePurposeId">
+            lowerBound="1" eType="#//product/price/ProductPricePurpose" eKeys="#//product/price/ProductPricePurpose/productPricePurposeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -36550,15 +36376,13 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPriceTypeId"
-            lowerBound="1" eType="#//product/price/ProductPriceType"
-            eKeys="#//product/price/ProductPriceType/productPriceTypeId">
+            lowerBound="1" eType="#//product/price/ProductPriceType" eKeys="#//product/price/ProductPriceType/productPriceTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPricePurposeId"
-            lowerBound="1" eType="#//product/price/ProductPricePurpose"
-            eKeys="#//product/price/ProductPricePurpose/productPricePurposeId">
+            lowerBound="1" eType="#//product/price/ProductPricePurpose" eKeys="#//product/price/ProductPricePurpose/productPricePurposeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -36570,8 +36394,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productStoreGroupId"
-            lowerBound="1" eType="#//product/store/ProductStoreGroup"
-            eKeys="#//product/store/ProductStoreGroup/productStoreGroupId">
+            lowerBound="1" eType="#//product/store/ProductStoreGroup" eKeys="#//product/store/ProductStoreGroup/productStoreGroupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -36676,8 +36499,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPriceRuleId"
-            lowerBound="1" eType="#//product/price/ProductPriceRule"
-            eKeys="#//product/price/ProductPriceRule/productPriceRuleId">
+            lowerBound="1" eType="#//product/price/ProductPriceRule" eKeys="#//product/price/ProductPriceRule/productPriceRuleId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -36700,8 +36522,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPriceActionTypeId"
-            eType="#//product/price/ProductPriceActionType"
-            eKeys="#//product/price/ProductPriceActionType/productPriceActionTypeId"/>
+            eType="#//product/price/ProductPriceActionType" eKeys="#//product/price/ProductPriceActionType/productPriceActionTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="rateCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="short-varchar"/>
@@ -36858,8 +36679,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPriceRuleId"
-            lowerBound="1" eType="#//product/price/ProductPriceRule"
-            eKeys="#//product/price/ProductPriceRule/productPriceRuleId">
+            lowerBound="1" eType="#//product/price/ProductPriceRule" eKeys="#//product/price/ProductPriceRule/productPriceRuleId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -37117,8 +36937,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="goodIdentificationTypeId"
-            lowerBound="1" eType="#//product/product/GoodIdentificationType"
-            eKeys="#//product/product/GoodIdentificationType/goodIdentificationTypeId">
+            lowerBound="1" eType="#//product/product/GoodIdentificationType" eKeys="#//product/product/GoodIdentificationType/goodIdentificationTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -37896,8 +37715,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productAssocTypeId"
-            lowerBound="1" eType="#//product/product/ProductAssocType"
-            eKeys="#//product/product/ProductAssocType/productAssocTypeId">
+            lowerBound="1" eType="#//product/product/ProductAssocType" eKeys="#//product/product/ProductAssocType/productAssocTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -38105,8 +37923,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productContentTypeId"
-            lowerBound="1" eType="#//product/product/ProductContentType"
-            eKeys="#//product/product/ProductContentType/productContentTypeId">
+            lowerBound="1" eType="#//product/product/ProductContentType" eKeys="#//product/product/ProductContentType/productContentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -38462,8 +38279,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productMeterTypeId"
-            lowerBound="1" eType="#//product/product/ProductMeterType"
-            eKeys="#//product/product/ProductMeterType/productMeterTypeId">
+            lowerBound="1" eType="#//product/product/ProductMeterType" eKeys="#//product/product/ProductMeterType/productMeterTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
             <details key="help" value="Part of the primary key as different meters on a machine should have distinct types"/>
@@ -38638,8 +38454,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productSearchResultId"
-            lowerBound="1" eType="#//product/product/ProductSearchResult"
-            eKeys="#//product/product/ProductSearchResult/productSearchResultId">
+            lowerBound="1" eType="#//product/product/ProductSearchResult" eKeys="#//product/product/ProductSearchResult/productSearchResultId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -38884,8 +38699,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productStoreGroupId"
-            lowerBound="1" eType="#//product/store/ProductStoreGroup"
-            eKeys="#//product/store/ProductStoreGroup/productStoreGroupId">
+            lowerBound="1" eType="#//product/store/ProductStoreGroup" eKeys="#//product/store/ProductStoreGroup/productStoreGroupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -39126,8 +38940,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -39301,8 +39114,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPromoCodeId"
-            lowerBound="1" eType="#//product/promo/ProductPromoCode"
-            eKeys="#//product/promo/ProductPromoCode/productPromoCodeId">
+            lowerBound="1" eType="#//product/promo/ProductPromoCode" eKeys="#//product/promo/ProductPromoCode/productPromoCodeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -39324,8 +39136,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPromoCodeId"
-            lowerBound="1" eType="#//product/promo/ProductPromoCode"
-            eKeys="#//product/promo/ProductPromoCode/productPromoCodeId">
+            lowerBound="1" eType="#//product/promo/ProductPromoCode" eKeys="#//product/promo/ProductPromoCode/productPromoCodeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -39404,8 +39215,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productPromoContentTypeId"
-            lowerBound="1" eType="#//product/product/ProductContentType"
-            eKeys="#//product/product/ProductContentType/productContentTypeId">
+            lowerBound="1" eType="#//product/product/ProductContentType" eKeys="#//product/product/ProductContentType/productContentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -40431,8 +40241,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="finAccountTypeId" lowerBound="1"
-            eType="#//accounting/finaccount/FinAccountType"
-            eKeys="#//accounting/finaccount/FinAccountType/finAccountTypeId">
+            eType="#//accounting/finaccount/FinAccountType" eKeys="#//accounting/finaccount/FinAccountType/finAccountTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -40600,8 +40409,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productStoreGroupId"
-            lowerBound="1" eType="#//product/store/ProductStoreGroup"
-            eKeys="#//product/store/ProductStoreGroup/productStoreGroupId">
+            lowerBound="1" eType="#//product/store/ProductStoreGroup" eKeys="#//product/store/ProductStoreGroup/productStoreGroupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -40633,8 +40441,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productStoreGroupId"
-            lowerBound="1" eType="#//product/store/ProductStoreGroup"
-            eKeys="#//product/store/ProductStoreGroup/productStoreGroupId">
+            lowerBound="1" eType="#//product/store/ProductStoreGroup" eKeys="#//product/store/ProductStoreGroup/productStoreGroupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -40657,8 +40464,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productStoreGroupId"
-            lowerBound="1" eType="#//product/store/ProductStoreGroup"
-            eKeys="#//product/store/ProductStoreGroup/productStoreGroupId">
+            lowerBound="1" eType="#//product/store/ProductStoreGroup" eKeys="#//product/store/ProductStoreGroup/productStoreGroupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -40776,15 +40582,13 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            lowerBound="1" eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId">
+            lowerBound="1" eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentServiceTypeEnumId"
-            lowerBound="1" eType="#//common/enum/Enumeration"
-            eKeys="#//common/enum/Enumeration/enumId">
+            lowerBound="1" eType="#//common/enum/Enumeration" eKeys="#//common/enum/Enumeration/enumId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -40799,8 +40603,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentCustomMethodId"
             eType="#//common/method/CustomMethod" eKeys="#//common/method/CustomMethod/customMethodId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentGatewayConfigId"
-            eType="#//accounting/payment/PaymentGatewayConfig"
-            eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
+            eType="#//accounting/payment/PaymentGatewayConfig" eKeys="#//accounting/payment/PaymentGatewayConfig/paymentGatewayConfigId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="paymentPropertiesPath"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
@@ -41080,11 +40883,9 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentCustomMethodId"
             eType="#//common/method/CustomMethod" eKeys="#//common/method/CustomMethod/customMethodId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentGatewayConfigId"
-            eType="#//shipment/shipment/ShipmentGatewayConfig"
-            eKeys="#//shipment/shipment/ShipmentGatewayConfig/shipmentGatewayConfigId"/>
+            eType="#//shipment/shipment/ShipmentGatewayConfig" eKeys="#//shipment/shipment/ShipmentGatewayConfig/shipmentGatewayConfigId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
+            eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ProductStoreSurveyAppl" eSuperTypes="#//BizEntity">
         <eAnnotations source="mimo-ent-frame">
@@ -41163,8 +40964,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMethodTypeId"
-            lowerBound="1" eType="#//accounting/payment/PaymentMethodType"
-            eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId">
+            lowerBound="1" eType="#//accounting/payment/PaymentMethodType" eKeys="#//accounting/payment/PaymentMethodType/paymentMethodTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -41195,8 +40995,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            lowerBound="1" eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId">
+            lowerBound="1" eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -41222,8 +41021,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subscriptionResourceId"
-            lowerBound="1" eType="#//product/subscription/SubscriptionResource"
-            eKeys="#//product/subscription/SubscriptionResource/subscriptionResourceId">
+            lowerBound="1" eType="#//product/subscription/SubscriptionResource" eKeys="#//product/subscription/SubscriptionResource/subscriptionResourceId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -41520,11 +41318,9 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subscriptionResourceId"
-            eType="#//product/subscription/SubscriptionResource"
-            eKeys="#//product/subscription/SubscriptionResource/subscriptionResourceId"/>
+            eType="#//product/subscription/SubscriptionResource" eKeys="#//product/subscription/SubscriptionResource/subscriptionResourceId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subscriptionTypeId"
-            eType="#//product/subscription/SubscriptionType"
-            eKeys="#//product/subscription/SubscriptionType/subscriptionTypeId"/>
+            eType="#//product/subscription/SubscriptionType" eKeys="#//product/subscription/SubscriptionType/subscriptionTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thruDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="date-time"/>
@@ -41622,8 +41418,7 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            lowerBound="1" eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId">
+            lowerBound="1" eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -41646,8 +41441,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subscriptionActivityId"
-            lowerBound="1" eType="#//product/subscription/SubscriptionActivity"
-            eKeys="#//product/subscription/SubscriptionActivity/subscriptionActivityId">
+            lowerBound="1" eType="#//product/subscription/SubscriptionActivity" eKeys="#//product/subscription/SubscriptionActivity/subscriptionActivityId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -41780,8 +41574,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subscriptionTypeId"
-            lowerBound="1" eType="#//product/subscription/SubscriptionType"
-            eKeys="#//product/subscription/SubscriptionType/subscriptionTypeId">
+            lowerBound="1" eType="#//product/subscription/SubscriptionType" eKeys="#//product/subscription/SubscriptionType/subscriptionTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -41811,15 +41604,13 @@
           <details key="dictionary" value="ProductEntityLabels"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productCategoryId"
-            lowerBound="1" eType="#//product/category/ProductCategory"
-            eKeys="#//product/category/ProductCategory/productCategoryId">
+            lowerBound="1" eType="#//product/category/ProductCategory" eKeys="#//product/category/ProductCategory/productCategoryId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="partyClassificationGroupId"
-            lowerBound="1" eType="#//party/party/PartyClassificationGroup"
-            eKeys="#//party/party/PartyClassificationGroup/partyClassificationGroupId">
+            lowerBound="1" eType="#//party/party/PartyClassificationGroup" eKeys="#//party/party/PartyClassificationGroup/partyClassificationGroupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -42824,8 +42615,7 @@
           <details key="title" value="Security Component - Protected View"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="groupId" lowerBound="1"
-            eType="#//security/securitygroup/SecurityGroup"
-            eKeys="#//security/securitygroup/SecurityGroup/groupId">
+            eType="#//security/securitygroup/SecurityGroup" eKeys="#//security/securitygroup/SecurityGroup/groupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -42923,15 +42713,13 @@
           <details key="title" value="Security Component - Security Group Permission"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="groupId" lowerBound="1"
-            eType="#//security/securitygroup/SecurityGroup"
-            eKeys="#//security/securitygroup/SecurityGroup/groupId">
+            eType="#//security/securitygroup/SecurityGroup" eKeys="#//security/securitygroup/SecurityGroup/groupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="permissionId" lowerBound="1"
-            eType="#//security/securitygroup/SecurityPermission"
-            eKeys="#//security/securitygroup/SecurityPermission/permissionId">
+            eType="#//security/securitygroup/SecurityPermission" eKeys="#//security/securitygroup/SecurityPermission/permissionId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -43022,8 +42810,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="groupId" lowerBound="1"
-            eType="#//security/securitygroup/SecurityGroup"
-            eKeys="#//security/securitygroup/SecurityGroup/groupId">
+            eType="#//security/securitygroup/SecurityGroup" eKeys="#//security/securitygroup/SecurityGroup/groupId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -43813,8 +43600,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
+            eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="statusId" eType="#//common/status/StatusItem"
             eKeys="#//common/status/StatusItem/statusId"/>
       </eClassifiers>
@@ -44137,8 +43923,7 @@
           <details key="title" value="Carrier Shipment Method"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentBoxTypeId"
-            lowerBound="1" eType="#//shipment/shipment/ShipmentBoxType"
-            eKeys="#//shipment/shipment/ShipmentBoxType/shipmentBoxTypeId">
+            lowerBound="1" eType="#//shipment/shipment/ShipmentBoxType" eKeys="#//shipment/shipment/ShipmentBoxType/shipmentBoxTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -44165,8 +43950,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CarrierShipmentMethod" eSuperTypes="#//BizEntity">
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            lowerBound="1" eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId">
+            lowerBound="1" eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -44601,8 +44385,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentContactMechTypeId"
-            lowerBound="1" eType="#//shipment/shipment/ShipmentContactMechType"
-            eKeys="#//shipment/shipment/ShipmentContactMechType/shipmentContactMechTypeId">
+            lowerBound="1" eType="#//shipment/shipment/ShipmentContactMechType" eKeys="#//shipment/shipment/ShipmentContactMechType/shipmentContactMechTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -44743,8 +44526,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="productStoreShipMethId"
-            eType="#//product/store/ProductStoreShipmentMeth"
-            eKeys="#//product/store/ProductStoreShipmentMeth/productStoreShipMethId"/>
+            eType="#//product/store/ProductStoreShipmentMeth" eKeys="#//product/store/ProductStoreShipmentMeth/productStoreShipMethId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="quantityBreakId" eType="#//product/price/QuantityBreak"
             eKeys="#//product/price/QuantityBreak/quantityBreakId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantityUnitPrice"
@@ -44814,8 +44596,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentGatewayConfTypeId"
-            eType="#//shipment/shipment/ShipmentGatewayConfigType"
-            eKeys="#//shipment/shipment/ShipmentGatewayConfigType/shipmentGatewayConfTypeId"/>
+            eType="#//shipment/shipment/ShipmentGatewayConfigType" eKeys="#//shipment/shipment/ShipmentGatewayConfigType/shipmentGatewayConfTypeId"/>
         <eGenericSuperTypes eClassifier="#//BizEntityTyped">
           <eTypeArguments eClassifier="#//shipment/shipment/ShipmentGatewayConfigType"/>
         </eGenericSuperTypes>
@@ -45904,8 +45685,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="originTelecomNumberId"
             eType="#//party/contact/TelecomNumber" eKeys="#//party/contact/ContactMech/contactMechId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="shipmentMethodTypeId"
-            eType="#//shipment/shipment/ShipmentMethodType"
-            eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
+            eType="#//shipment/shipment/ShipmentMethodType" eKeys="#//shipment/shipment/ShipmentMethodType/shipmentMethodTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="thirdPartyAccountNumber"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
@@ -47061,8 +46841,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="communicationEventId"
-            lowerBound="1" eType="#//party/communication/CommunicationEvent"
-            eKeys="#//party/communication/CommunicationEvent/communicationEventId">
+            lowerBound="1" eType="#//party/communication/CommunicationEvent" eKeys="#//party/communication/CommunicationEvent/communicationEventId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -47111,8 +46890,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deliverableTypeId"
-            eType="#//workeffort/workeffort/DeliverableType"
-            eKeys="#//workeffort/workeffort/DeliverableType/deliverableTypeId"/>
+            eType="#//workeffort/workeffort/DeliverableType" eKeys="#//workeffort/workeffort/DeliverableType/deliverableTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="mimo-ent-format">
             <details key="type" value="description"/>
@@ -47314,11 +47092,9 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="accommodationMapId"
-            eType="#//accounting/fixedasset/AccommodationMap"
-            eKeys="#//accounting/fixedasset/AccommodationMap/accommodationMapId"/>
+            eType="#//accounting/fixedasset/AccommodationMap" eKeys="#//accounting/fixedasset/AccommodationMap/accommodationMapId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="accommodationSpotId"
-            eType="#//order/reservations/AccommodationSpot"
-            eKeys="#//order/reservations/AccommodationSpot/accommodationSpotId"/>
+            eType="#//order/reservations/AccommodationSpot" eKeys="#//order/reservations/AccommodationSpot/accommodationSpotId"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="actualCompletionDate"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
           <eAnnotations source="mimo-ent-format">
@@ -47671,8 +47447,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortPurposeTypeId"
-            eType="#//workeffort/workeffort/WorkEffortPurposeType"
-            eKeys="#//workeffort/workeffort/WorkEffortPurposeType/workEffortPurposeTypeId"/>
+            eType="#//workeffort/workeffort/WorkEffortPurposeType" eKeys="#//workeffort/workeffort/WorkEffortPurposeType/workEffortPurposeTypeId"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortSkillStandards"
             upperBound="-1" eType="#//workeffort/workeffort/WorkEffortSkillStandard">
           <eAnnotations source="mimo-ent-slot">
@@ -47693,8 +47468,7 @@
           <details key="title" value="Work Effort Association"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortAssocTypeId"
-            lowerBound="1" eType="#//workeffort/workeffort/WorkEffortAssocType"
-            eKeys="#//workeffort/workeffort/WorkEffortAssocType/workEffortAssocTypeId">
+            lowerBound="1" eType="#//workeffort/workeffort/WorkEffortAssocType" eKeys="#//workeffort/workeffort/WorkEffortAssocType/workEffortAssocTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -47855,8 +47629,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortAssocTypeId"
-            lowerBound="1" eType="#//workeffort/workeffort/WorkEffortAssocType"
-            eKeys="#//workeffort/workeffort/WorkEffortAssocType/workEffortAssocTypeId">
+            lowerBound="1" eType="#//workeffort/workeffort/WorkEffortAssocType" eKeys="#//workeffort/workeffort/WorkEffortAssocType/workEffortAssocTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -48050,8 +47823,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="costComponentTypeId"
-            lowerBound="1" eType="#//product/cost/CostComponentType"
-            eKeys="#//product/cost/CostComponentType/costComponentTypeId">
+            lowerBound="1" eType="#//product/cost/CostComponentType" eKeys="#//product/cost/CostComponentType/costComponentTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -48230,8 +48002,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="fixedAssetTypeId" lowerBound="1"
-            eType="#//accounting/fixedasset/FixedAssetType"
-            eKeys="#//accounting/fixedasset/FixedAssetType/fixedAssetTypeId">
+            eType="#//accounting/fixedasset/FixedAssetType" eKeys="#//accounting/fixedasset/FixedAssetType/fixedAssetTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -48836,8 +48607,7 @@
           <details key="title" value="Work Effort Transition Box"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="processWorkEffortId"
-            lowerBound="1" eType="#//workeffort/workeffort/WorkEffort"
-            eKeys="#//workeffort/workeffort/WorkEffort/workEffortId">
+            lowerBound="1" eType="#//workeffort/workeffort/WorkEffort" eKeys="#//workeffort/workeffort/WorkEffort/workEffortId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>
@@ -48927,8 +48697,7 @@
           <details key="formula" value="description"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="workEffortTypeId" lowerBound="1"
-            eType="#//workeffort/workeffort/WorkEffortType"
-            eKeys="#//workeffort/workeffort/WorkEffortType/workEffortTypeId">
+            eType="#//workeffort/workeffort/WorkEffortType" eKeys="#//workeffort/workeffort/WorkEffortType/workEffortTypeId">
           <eAnnotations source="mimo-ent-slot">
             <details key="key" value="true"/>
           </eAnnotations>

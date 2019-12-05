@@ -2014,6 +2014,9 @@
         </eGenericType>
         <eParameters name="query" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
+      <eGenericSuperTypes eClassifier="#//util/Singleton">
+        <eTypeArguments eClassifier="#//util/URIs"/>
+      </eGenericSuperTypes>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

@@ -621,6 +621,10 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		g2 = createEGenericType(this.getThreadManager());
 		g1.getETypeArguments().add(g2);
 		threadManagerEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getSingleton());
+		g2 = createEGenericType(this.getURIs());
+		g1.getETypeArguments().add(g2);
+		urIsEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(classesEClass, Classes.class, "Classes", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
