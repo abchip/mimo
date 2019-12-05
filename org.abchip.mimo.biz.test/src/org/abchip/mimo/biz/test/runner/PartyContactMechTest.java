@@ -37,5 +37,8 @@ public class PartyContactMechTest {
 		
 		PostalAddress postalAddress = ContactMechServices.getLatestPostaAddress(testRunner.getContext(), partyId);		
 		testAsserter.assertNotNull("PostalAddress '" + partyId + "' exist", postalAddress);
+
+		String eMail = ContactMechServices.getLatestEmail(testRunner.getContext(), partyId);		
+		testAsserter.assertNotNull("Email '" + partyId + "' exist", eMail);
 	}
 }

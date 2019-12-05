@@ -46,7 +46,7 @@ public class ProductTest {
 			testAsserter.assertNotNull("Product '" + productId + "' exist", productTest);
 			
 			if(productTest != null) {
-				testAsserter.assertEquals("Product description", "ProductCanary description", productTest.getDescription());
+				testAsserter.assertEquals("Product description", "ProductCanary description", productTest.getProductName());
 				testAsserter.assertEquals("Product type id", "DIGITAL_GOOD", productTest.getProductTypeId().getProductTypeId());
 			} else {
 				testAsserter.assertEquals("Product description", "ProductCanary description", "");
@@ -66,9 +66,11 @@ public class ProductTest {
 			testAsserter.assertNotNull("ProductPrice '" + productId + "' exist", productPriceTest);
 			
 			if(productPriceTest != null) {
-				testAsserter.assertEquals("Product price", 1, productPriceTest.getPrice());
+				testAsserter.assertEquals("ProductPrice price", "1.000", productPriceTest.getPrice().toString());
+				testAsserter.assertEquals("ProductPrice price", "PURCHASE", productPriceTest.getProductPricePurposeId().getProductPricePurposeId());
 			} else {
 				testAsserter.assertEquals("ProductPrice price", 1, 0);
+				testAsserter.assertEquals("ProductPrice price", "PURCHASE", "");
 			}
 		}
 	}
