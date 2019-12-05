@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.test.runner;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.biz.base.service.ContactMechServices;
 import org.abchip.mimo.biz.party.contact.ContactFactory;
 import org.abchip.mimo.biz.party.contact.PartyContactMech;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
+import org.abchip.mimo.tester.TestRunner;
 import org.abchip.mimo.tester.TestStarted;
 
 @Test(entity = "PartyContactMech")
@@ -21,11 +24,18 @@ public class PartyContactMechTest {
 
 	@Inject
 	public transient TestAsserter testAsserter;
+	@Inject
+	private TestRunner testRunner;
+
 	
 	@TestStarted
 	public void doTest() {
+		String partyId = "Company";
 
-		PartyContactMech party = ContactFactory.eINSTANCE.createPartyContactMech();
-		testAsserter.assertNotNull("Frame PartyContactMech creation", party);
+		PartyContactMech partyContactMech = ContactFactory.eINSTANCE.createPartyContactMech();
+		testAsserter.assertNotNull("Frame PartyContactMech creation", partyContactMech);
+		
+		PostalAddress postalAddress = ContactMechServices.getLatestPostaAddress(testRunner.getContext(), partyId);		
+		testAsserter.assertNotNull("PostalAddress '" + partyId + "' exist", postalAddress);
 	}
 }

@@ -10,16 +10,13 @@ package org.abchip.mimo.biz.test.runner;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.biz.common.status.StatusItem;
-import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyFactory;
 import org.abchip.mimo.biz.party.party.PartyGroup;
-import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
-import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;
@@ -42,67 +39,78 @@ public class PartyTest {
 		Party party = PartyFactory.eINSTANCE.createParty();
 		testAsserter.assertNotNull("Frame Party creation", party);
 
+		// Person
+		String personId = "PersonCanary";
+
 		ResourceReader<Party> partyReader = resourceManager.getResourceReader(testRunner.getContext(), Party.class);
 		testAsserter.assertNotNull("Party Reader", partyReader);
 		if (partyReader != null) {
-			Party partyTest = partyReader.lookup("party-test");
-			testAsserter.assertNotNull("Party 'user-test' exist", partyTest);
-
-			Party partyCanary = partyReader.lookup("party-canary");
-			testAsserter.assertNull("Party 'party-canary' not exixst", partyCanary);
+			Party partyTest = partyReader.lookup(personId);
+			testAsserter.assertNotNull("Party '" + personId + "' exist", partyTest);
+			if(partyTest != null) {
+				testAsserter.assertEquals("Party type", "PERSON", partyTest.getPartyTypeId().getPartyTypeId());
+			} else {
+				testAsserter.assertEquals("Party type", "PERSON", "");
+			}
 		}
-
-		// Person
+		
 		ResourceReader<Person> personReader = resourceManager.getResourceReader(testRunner.getContext(), Person.class);
 		testAsserter.assertNotNull("Person Reader", personReader);
 		if (personReader != null) {
-			Person personTest = personReader.lookup("party-test");
-			testAsserter.assertNotNull("Person 'party-test' exist", personTest);
-		}
-
-		// test hacker
-		// Write Person
-		String partyId = "party-test-01";
-
-		ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(testRunner.getContext(), Person.class);
-		testAsserter.assertNotNull("Person Writer", personWriter);
-		if (personWriter != null) {
-			Person person = PartyFactory.eINSTANCE.createPerson();
-			person.setPreferredCurrencyUomId(resourceManager.getFrame(testRunner.getContext(), Uom.class).createProxy("EUR"));
-			person.setStatusId(resourceManager.getFrame(testRunner.getContext(), StatusItem.class).createProxy("PARTY_ENABLED"));
-			person.setPartyTypeId(resourceManager.getFrame(testRunner.getContext(), PartyType.class).createProxy("PERSON"));
-			person.setPartyId(partyId);
-			person.setFirstName("Test hacker party person");
-			personWriter.create(person);
-
-			if (personReader != null) {
-				Person personTest = personReader.lookup(partyId);
-				testAsserter.assertNotNull("Person '" + partyId + "' exist", personTest);
+			Person personTest = personReader.lookup(personId);
+			testAsserter.assertNotNull("Person '" + personId + "' exist", personTest);
+			if(personTest != null) {
+				testAsserter.assertEquals("Group name", "First name", personTest.getFirstName());
+				testAsserter.assertEquals("Group name", "Last name", personTest.getLastName());
+			} else {
+				testAsserter.assertEquals("Group name", "First name", "");
+				testAsserter.assertEquals("Group name", "Last name", "");
 			}
 		}
 
-		// Write PartyGroup
-		ResourceReader<PartyGroup> groupReader = resourceManager.getResourceReader(testRunner.getContext(), PartyGroup.class);
-		testAsserter.assertNotNull("Party Group Reader", groupReader);
+		// PartyGroup
+		String partyGroupId = "Company";
 
-		ResourceWriter<PartyGroup> groupWriter = resourceManager.getResourceWriter(testRunner.getContext(), PartyGroup.class);
-		testAsserter.assertNotNull("Party Group Writer", groupWriter);
-
-		if (groupWriter != null) {
-			PartyGroup partyGroup = PartyFactory.eINSTANCE.createPartyGroup();
-			partyGroup.setPreferredCurrencyUomId(resourceManager.getFrame(testRunner.getContext(), Uom.class).createProxy("EUR"));
-			partyGroup.setStatusId(resourceManager.getFrame(testRunner.getContext(), StatusItem.class).createProxy("PARTY_ENABLED"));
-			partyGroup.setPartyTypeId(resourceManager.getFrame(testRunner.getContext(), PartyType.class).createProxy("PARTY_GROUP"));
-			partyGroup.setPartyId(partyId);
-			partyGroup.setGroupName("Test hacker party group");
-			groupWriter.create(partyGroup);
-
-			if (groupReader != null) {
-				PartyGroup partyGrouTest = groupReader.lookup(partyId);
-				testAsserter.assertNull("Party Group '" + partyId + "' not exist", partyGrouTest);
+		if (partyReader != null) {
+			Party partyTest = partyReader.lookup(partyGroupId);
+			testAsserter.assertNotNull("Party '" + partyGroupId + "' exist", partyTest);
+			if(partyTest != null) {
+				testAsserter.assertEquals("Party type", "PARTY_GROUP", partyTest.getPartyTypeId().getPartyTypeId());
+			} else {
+				testAsserter.assertEquals("Party type", "PARTY_GROUP", "");
+			}
+		}
+		
+		ResourceReader<PartyGroup> partyGroupReader = resourceManager.getResourceReader(testRunner.getContext(), PartyGroup.class);
+		testAsserter.assertNotNull("PartyGroup Reader", partyGroupReader);
+		if (partyGroupReader != null) {
+			PartyGroup partyGroupTest = partyGroupReader.lookup(partyGroupId);
+			testAsserter.assertNotNull("PartyGroup '" + partyGroupId + "' exist", partyGroupTest);
+			if(partyGroupTest != null) {
+				testAsserter.assertEquals("Group name", "ABChip Test", partyGroupTest.getGroupName());
+			} else {
+				testAsserter.assertEquals("Group name", "ABChip Test", "");
 			}
 		}
 
-		// Eseguire letture
+		// Select first party
+		if (partyReader != null) {
+			Party partyTest = partyReader.first();
+			testAsserter.assertNotNull("Select first party", partyTest);
+		} else {
+			testAsserter.assertNotNull("Select first party", null);
+		}
+
+		// Select first party with find 
+		if (partyReader != null) {
+			try (EntityIterator<Party> partyIteratorTest = partyReader.find(null, null, "partyId", 1)){
+				if(partyIteratorTest.hasNext()) {
+					Party partyTest = partyIteratorTest.next();
+					testAsserter.assertNotNull("Select first party with find", partyTest);
+				} else {
+					testAsserter.assertNotNull("Select first party with find", null);
+				}
+			}
+		}
 	}
 }

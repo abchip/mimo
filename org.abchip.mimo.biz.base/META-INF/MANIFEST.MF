@@ -21,3 +21,4 @@ Bundle-ClassPath: lib/poi-4.0.1.jar,
 Import-Package: javax.servlet,
  javax.servlet.http,
  org.apache.commons.io
+Export-Package: org.abchip.mimo.biz.base.service
