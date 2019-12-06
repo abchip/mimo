@@ -11,9 +11,7 @@ import org.abchip.mimo.entity.EntityPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -201,26 +199,6 @@ public interface BizPackage extends EPackage {
 	 * @generated
 	 */
 	int BIZ_ENTITY_TYPE = 4;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.impl.BizProviderConfigImpl <em>Provider Config</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.biz.impl.BizProviderConfigImpl
-	 * @see org.abchip.mimo.biz.impl.BizPackageImpl#getBizProviderConfig()
-	 * @generated
-	 */
-	int BIZ_PROVIDER_CONFIG = 5;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.impl.BizProviderUserImpl <em>Provider User</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.biz.impl.BizProviderUserImpl
-	 * @see org.abchip.mimo.biz.impl.BizPackageImpl#getBizProviderUser()
-	 * @generated
-	 */
-	int BIZ_PROVIDER_USER = 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.impl.BizEntityNoteDataImpl <em>Entity Note Data</em>}' class.
@@ -449,125 +427,6 @@ public interface BizPackage extends EPackage {
 	int BIZ_ENTITY_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Login Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_CONFIG__LOGIN_TYPE = EntityPackage.ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_CONFIG__URL = EntityPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Public User</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_CONFIG__PUBLIC_USER = EntityPackage.ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>System User</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_CONFIG__SYSTEM_USER = EntityPackage.ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Provider Config</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER__CREATED_STAMP = BIZ_ENTITY__CREATED_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER__CREATED_TX_STAMP = BIZ_ENTITY__CREATED_TX_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER__LAST_UPDATED_STAMP = BIZ_ENTITY__LAST_UPDATED_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER__LAST_UPDATED_TX_STAMP = BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>User</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER__USER = BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Password</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER__PASSWORD = BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Provider User</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER_FEATURE_COUNT = BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.biz.BizLoginType <em>Login Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.biz.BizLoginType
-	 * @see org.abchip.mimo.biz.impl.BizPackageImpl#getBizLoginType()
-	 * @generated
-	 */
-	int BIZ_LOGIN_TYPE = 7;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.BizEntity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -617,92 +476,6 @@ public interface BizPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBizEntityType();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.BizProviderConfig <em>Provider Config</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Provider Config</em>'.
-	 * @see org.abchip.mimo.biz.BizProviderConfig
-	 * @generated
-	 */
-	EClass getBizProviderConfig();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.BizProviderConfig#getLoginType <em>Login Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Login Type</em>'.
-	 * @see org.abchip.mimo.biz.BizProviderConfig#getLoginType()
-	 * @see #getBizProviderConfig()
-	 * @generated
-	 */
-	EAttribute getBizProviderConfig_LoginType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.BizProviderConfig#getUrl <em>Url</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Url</em>'.
-	 * @see org.abchip.mimo.biz.BizProviderConfig#getUrl()
-	 * @see #getBizProviderConfig()
-	 * @generated
-	 */
-	EAttribute getBizProviderConfig_Url();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.biz.BizProviderConfig#getPublicUser <em>Public User</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Public User</em>'.
-	 * @see org.abchip.mimo.biz.BizProviderConfig#getPublicUser()
-	 * @see #getBizProviderConfig()
-	 * @generated
-	 */
-	EReference getBizProviderConfig_PublicUser();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.biz.BizProviderConfig#getSystemUser <em>System User</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>System User</em>'.
-	 * @see org.abchip.mimo.biz.BizProviderConfig#getSystemUser()
-	 * @see #getBizProviderConfig()
-	 * @generated
-	 */
-	EReference getBizProviderConfig_SystemUser();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.biz.BizProviderUser <em>Provider User</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Provider User</em>'.
-	 * @see org.abchip.mimo.biz.BizProviderUser
-	 * @generated
-	 */
-	EClass getBizProviderUser();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.BizProviderUser#getUser <em>User</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>User</em>'.
-	 * @see org.abchip.mimo.biz.BizProviderUser#getUser()
-	 * @see #getBizProviderUser()
-	 * @generated
-	 */
-	EAttribute getBizProviderUser_User();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.BizProviderUser#getPassword <em>Password</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Password</em>'.
-	 * @see org.abchip.mimo.biz.BizProviderUser#getPassword()
-	 * @see #getBizProviderUser()
-	 * @generated
-	 */
-	EAttribute getBizProviderUser_Password();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.BizEntityNoteData <em>Entity Note Data</em>}'.
@@ -803,16 +576,6 @@ public interface BizPackage extends EPackage {
 	EAttribute getBizEntityNoteData_NoteParty();
 
 	/**
-	 * Returns the meta object for enum '{@link org.abchip.mimo.biz.BizLoginType <em>Login Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Login Type</em>'.
-	 * @see org.abchip.mimo.biz.BizLoginType
-	 * @generated
-	 */
-	EEnum getBizLoginType();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -881,74 +644,6 @@ public interface BizPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BIZ_ENTITY_TYPE = eINSTANCE.getBizEntityType();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.impl.BizProviderConfigImpl <em>Provider Config</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.biz.impl.BizProviderConfigImpl
-		 * @see org.abchip.mimo.biz.impl.BizPackageImpl#getBizProviderConfig()
-		 * @generated
-		 */
-		EClass BIZ_PROVIDER_CONFIG = eINSTANCE.getBizProviderConfig();
-
-		/**
-		 * The meta object literal for the '<em><b>Login Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BIZ_PROVIDER_CONFIG__LOGIN_TYPE = eINSTANCE.getBizProviderConfig_LoginType();
-
-		/**
-		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BIZ_PROVIDER_CONFIG__URL = eINSTANCE.getBizProviderConfig_Url();
-
-		/**
-		 * The meta object literal for the '<em><b>Public User</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BIZ_PROVIDER_CONFIG__PUBLIC_USER = eINSTANCE.getBizProviderConfig_PublicUser();
-
-		/**
-		 * The meta object literal for the '<em><b>System User</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BIZ_PROVIDER_CONFIG__SYSTEM_USER = eINSTANCE.getBizProviderConfig_SystemUser();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.impl.BizProviderUserImpl <em>Provider User</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.biz.impl.BizProviderUserImpl
-		 * @see org.abchip.mimo.biz.impl.BizPackageImpl#getBizProviderUser()
-		 * @generated
-		 */
-		EClass BIZ_PROVIDER_USER = eINSTANCE.getBizProviderUser();
-
-		/**
-		 * The meta object literal for the '<em><b>User</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BIZ_PROVIDER_USER__USER = eINSTANCE.getBizProviderUser_User();
-
-		/**
-		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BIZ_PROVIDER_USER__PASSWORD = eINSTANCE.getBizProviderUser_Password();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.impl.BizEntityNoteDataImpl <em>Entity Note Data</em>}' class.
@@ -1023,16 +718,6 @@ public interface BizPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BIZ_ENTITY_NOTE_DATA__NOTE_PARTY = eINSTANCE.getBizEntityNoteData_NoteParty();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.biz.BizLoginType <em>Login Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.biz.BizLoginType
-		 * @see org.abchip.mimo.biz.impl.BizPackageImpl#getBizLoginType()
-		 * @generated
-		 */
-		EEnum BIZ_LOGIN_TYPE = eINSTANCE.getBizLoginType();
 
 	}
 

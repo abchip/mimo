@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.biz;
+package org.abchip.mimo.context;
 
 import org.abchip.mimo.entity.Entity;
 
@@ -18,17 +18,17 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.biz.BizProviderConfig#getLoginType <em>Login Type</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.BizProviderConfig#getUrl <em>Url</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.BizProviderConfig#getPublicUser <em>Public User</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.BizProviderConfig#getSystemUser <em>System User</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ProviderConfig#getLoginType <em>Login Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ProviderConfig#getUrl <em>Url</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ProviderConfig#getPublicUser <em>Public User</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ProviderConfig#getSystemUser <em>System User</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.biz.BizPackage#getBizProviderConfig()
+ * @see org.abchip.mimo.context.ContextPackage#getProviderConfig()
  * @model
  * @generated
  */
-public interface BizProviderConfig extends Entity {
+public interface ProviderConfig extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Url</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -39,14 +39,14 @@ public interface BizProviderConfig extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Url</em>' attribute.
 	 * @see #setUrl(String)
-	 * @see org.abchip.mimo.biz.BizPackage#getBizProviderConfig_Url()
+	 * @see org.abchip.mimo.context.ContextPackage#getProviderConfig_Url()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getUrl();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.BizProviderConfig#getUrl <em>Url</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ProviderConfig#getUrl <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Url</em>' attribute.
@@ -64,22 +64,22 @@ public interface BizProviderConfig extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Public User</em>' containment reference.
-	 * @see #setPublicUser(BizProviderUser)
-	 * @see org.abchip.mimo.biz.BizPackage#getBizProviderConfig_PublicUser()
+	 * @see #setPublicUser(ProviderUser)
+	 * @see org.abchip.mimo.context.ContextPackage#getProviderConfig_PublicUser()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	BizProviderUser getPublicUser();
+	ProviderUser getPublicUser();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.BizProviderConfig#getPublicUser <em>Public User</em>}' containment reference.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ProviderConfig#getPublicUser <em>Public User</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Public User</em>' containment reference.
 	 * @see #getPublicUser()
 	 * @generated
 	 */
-	void setPublicUser(BizProviderUser value);
+	void setPublicUser(ProviderUser value);
 
 	/**
 	 * Returns the value of the '<em><b>System User</b></em>' containment reference.
@@ -90,26 +90,26 @@ public interface BizProviderConfig extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>System User</em>' containment reference.
-	 * @see #setSystemUser(BizProviderUser)
-	 * @see org.abchip.mimo.biz.BizPackage#getBizProviderConfig_SystemUser()
+	 * @see #setSystemUser(ProviderUser)
+	 * @see org.abchip.mimo.context.ContextPackage#getProviderConfig_SystemUser()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	BizProviderUser getSystemUser();
+	ProviderUser getSystemUser();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.BizProviderConfig#getSystemUser <em>System User</em>}' containment reference.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ProviderConfig#getSystemUser <em>System User</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>System User</em>' containment reference.
 	 * @see #getSystemUser()
 	 * @generated
 	 */
-	void setSystemUser(BizProviderUser value);
+	void setSystemUser(ProviderUser value);
 
 	/**
 	 * Returns the value of the '<em><b>Login Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.abchip.mimo.biz.BizLoginType}.
+	 * The literals are from the enumeration {@link org.abchip.mimo.context.LoginType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Login Type</em>' attribute isn't clear,
@@ -117,23 +117,23 @@ public interface BizProviderConfig extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Login Type</em>' attribute.
-	 * @see org.abchip.mimo.biz.BizLoginType
-	 * @see #setLoginType(BizLoginType)
-	 * @see org.abchip.mimo.biz.BizPackage#getBizProviderConfig_LoginType()
+	 * @see org.abchip.mimo.context.LoginType
+	 * @see #setLoginType(LoginType)
+	 * @see org.abchip.mimo.context.ContextPackage#getProviderConfig_LoginType()
 	 * @model required="true"
 	 * @generated
 	 */
-	BizLoginType getLoginType();
+	LoginType getLoginType();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.BizProviderConfig#getLoginType <em>Login Type</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ProviderConfig#getLoginType <em>Login Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Login Type</em>' attribute.
-	 * @see org.abchip.mimo.biz.BizLoginType
+	 * @see org.abchip.mimo.context.LoginType
 	 * @see #getLoginType()
 	 * @generated
 	 */
-	void setLoginType(BizLoginType value);
+	void setLoginType(LoginType value);
 
-} // BizProviderConfig
+} // ProviderConfig

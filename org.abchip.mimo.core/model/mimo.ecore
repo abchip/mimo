@@ -506,6 +506,10 @@
         <eParameters name="throwable" lowerBound="1" eType="#//java/JavaThrowable"/>
       </eOperations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="LoginType">
+      <eLiterals name="ExternalKey" value="10" literal="EXTK"/>
+      <eLiterals name="JsonWebToken" value="20" literal="JWT"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="MessageVariableList" instanceClassName="java.lang.Object[]"/>
     <eClassifiers xsi:type="ecore:EClass" name="MessageDescription" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
@@ -547,6 +551,22 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProviderConfig" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="loginType" lowerBound="1"
+          eType="#//context/LoginType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="publicUser" eType="#//context/ProviderUser"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="systemUser" eType="#//context/ProviderUser"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProviderUser" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Registry" abstract="true" interface="true">

@@ -27,24 +27,6 @@ public interface BizFactory extends EFactory {
 	BizFactory eINSTANCE = org.abchip.mimo.biz.impl.BizFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Provider Config</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Provider Config</em>'.
-	 * @generated
-	 */
-	BizProviderConfig createBizProviderConfig();
-
-	/**
-	 * Returns a new object of class '<em>Provider User</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Provider User</em>'.
-	 * @generated
-	 */
-	BizProviderUser createBizProviderUser();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

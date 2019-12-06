@@ -102,6 +102,24 @@ public interface ContextFactory extends EFactory {
 	MessageFile createMessageFile();
 
 	/**
+	 * Returns a new object of class '<em>Provider Config</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Provider Config</em>'.
+	 * @generated
+	 */
+	ProviderConfig createProviderConfig();
+
+	/**
+	 * Returns a new object of class '<em>Provider User</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Provider User</em>'.
+	 * @generated
+	 */
+	ProviderUser createProviderUser();
+
+	/**
 	 * Returns a new object of class '<em>User Profile</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

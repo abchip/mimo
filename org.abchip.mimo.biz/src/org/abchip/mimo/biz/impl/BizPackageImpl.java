@@ -14,10 +14,7 @@ import org.abchip.mimo.biz.BizEntityNoteData;
 import org.abchip.mimo.biz.BizEntityType;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.BizFactory;
-import org.abchip.mimo.biz.BizLoginType;
 import org.abchip.mimo.biz.BizPackage;
-import org.abchip.mimo.biz.BizProviderConfig;
-import org.abchip.mimo.biz.BizProviderUser;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
@@ -202,10 +199,8 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -250,28 +245,7 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass bizProviderConfigEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass bizProviderUserEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass bizEntityNoteDataEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum bizLoginTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -763,86 +737,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getBizProviderConfig() {
-		return bizProviderConfigEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBizProviderConfig_LoginType() {
-		return (EAttribute)bizProviderConfigEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBizProviderConfig_Url() {
-		return (EAttribute)bizProviderConfigEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBizProviderConfig_PublicUser() {
-		return (EReference)bizProviderConfigEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBizProviderConfig_SystemUser() {
-		return (EReference)bizProviderConfigEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getBizProviderUser() {
-		return bizProviderUserEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBizProviderUser_User() {
-		return (EAttribute)bizProviderUserEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBizProviderUser_Password() {
-		return (EAttribute)bizProviderUserEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getBizEntityNoteData() {
 		return bizEntityNoteDataEClass;
 	}
@@ -933,16 +827,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getBizLoginType() {
-		return bizLoginTypeEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public BizFactory getBizFactory() {
 		return (BizFactory)getEFactoryInstance();
 	}
@@ -984,19 +868,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		bizEntityTypedEClass = createEClass(BIZ_ENTITY_TYPED);
 
 		bizEntityTypeEClass = createEClass(BIZ_ENTITY_TYPE);
-
-		bizProviderConfigEClass = createEClass(BIZ_PROVIDER_CONFIG);
-		createEAttribute(bizProviderConfigEClass, BIZ_PROVIDER_CONFIG__LOGIN_TYPE);
-		createEAttribute(bizProviderConfigEClass, BIZ_PROVIDER_CONFIG__URL);
-		createEReference(bizProviderConfigEClass, BIZ_PROVIDER_CONFIG__PUBLIC_USER);
-		createEReference(bizProviderConfigEClass, BIZ_PROVIDER_CONFIG__SYSTEM_USER);
-
-		bizProviderUserEClass = createEClass(BIZ_PROVIDER_USER);
-		createEAttribute(bizProviderUserEClass, BIZ_PROVIDER_USER__USER);
-		createEAttribute(bizProviderUserEClass, BIZ_PROVIDER_USER__PASSWORD);
-
-		// Create enums
-		bizLoginTypeEEnum = createEEnum(BIZ_LOGIN_TYPE);
 	}
 
 	/**
@@ -1228,8 +1099,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		bizEntityTypeEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getBizEntity());
 		bizEntityTypeEClass.getEGenericSuperTypes().add(g1);
-		bizProviderConfigEClass.getESuperTypes().add(theEntityPackage_1.getEntity());
-		bizProviderUserEClass.getESuperTypes().add(this.getBizEntity());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(bizEntityEClass, BizEntity.class, "BizEntity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1250,21 +1119,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		initEClass(bizEntityTypedEClass, BizEntityTyped.class, "BizEntityTyped", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(bizEntityTypeEClass, BizEntityType.class, "BizEntityType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(bizProviderConfigEClass, BizProviderConfig.class, "BizProviderConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBizProviderConfig_LoginType(), this.getBizLoginType(), "loginType", null, 1, 1, BizProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBizProviderConfig_Url(), ecorePackage.getEString(), "url", null, 1, 1, BizProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBizProviderConfig_PublicUser(), this.getBizProviderUser(), null, "publicUser", null, 0, 1, BizProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBizProviderConfig_SystemUser(), this.getBizProviderUser(), null, "systemUser", null, 0, 1, BizProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(bizProviderUserEClass, BizProviderUser.class, "BizProviderUser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBizProviderUser_User(), ecorePackage.getEString(), "user", null, 1, 1, BizProviderUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBizProviderUser_Password(), ecorePackage.getEString(), "password", null, 1, 1, BizProviderUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Initialize enums and add enum literals
-		initEEnum(bizLoginTypeEEnum, BizLoginType.class, "BizLoginType");
-		addEEnumLiteral(bizLoginTypeEEnum, BizLoginType.EXTERNAL_KEY);
-		addEEnumLiteral(bizLoginTypeEEnum, BizLoginType.JSON_WEB_TOKEN);
 
 		// Create resource
 		createResource(eNS_URI);

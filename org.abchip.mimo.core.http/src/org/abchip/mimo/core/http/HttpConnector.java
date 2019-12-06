@@ -6,9 +6,9 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.biz.base.connector;
+package org.abchip.mimo.core.http;
 
-import org.abchip.mimo.biz.BizProviderConfig;
+import org.abchip.mimo.context.ProviderConfig;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -17,11 +17,11 @@ import org.apache.http.impl.client.CloseableHttpClient;
 
 public class HttpConnector {
 
-	private BizProviderConfig providerConfig;
+	private ProviderConfig providerConfig;
 	private CloseableHttpClient httpClient;
 	private final String token;
 
-	protected HttpConnector(BizProviderConfig providerConfig, CloseableHttpClient httpClient, String token) {
+	protected HttpConnector(ProviderConfig providerConfig, CloseableHttpClient httpClient, String token) {
 		this.providerConfig = providerConfig;
 		this.httpClient = httpClient;
 		this.token = token;
@@ -31,7 +31,7 @@ public class HttpConnector {
 		return token;
 	}
 
-	protected CloseableHttpResponse execute(String url, HttpEntity httpEntity) throws Exception {
+	public CloseableHttpResponse execute(String url, HttpEntity httpEntity) throws Exception {
 
 		HttpPost httpPost = null;
 		switch (providerConfig.getLoginType()) {

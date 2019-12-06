@@ -100,6 +100,10 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/Read"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/Write"/>
       </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/LoginType">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LoginType/ExternalKey"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LoginType/JsonWebToken"/>
+      </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/UserClass">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/UserClass/User"/>
       </genEnums>
@@ -386,6 +390,16 @@
           <genParameters ecoreParameter="mimo.ecore#//context/MessageFile/lookup/name"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/MessageFile/lookup/E"/>
         </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//context/ProviderConfig">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderConfig/loginType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderConfig/url"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//context/ProviderConfig/publicUser"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//context/ProviderConfig/systemUser"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//context/ProviderUser">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderUser/user"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderUser/password"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/Registry">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Registry/S"/>

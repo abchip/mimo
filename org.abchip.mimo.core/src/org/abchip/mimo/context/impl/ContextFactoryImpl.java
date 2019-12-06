@@ -73,6 +73,8 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 			case ContextPackage.MESSAGE_DESCRIPTION: return (EObject)createMessageDescription();
 			case ContextPackage.MESSAGE_DATA_FIELD: return (EObject)createMessageDataField();
 			case ContextPackage.MESSAGE_FILE: return (EObject)createMessageFile();
+			case ContextPackage.PROVIDER_CONFIG: return (EObject)createProviderConfig();
+			case ContextPackage.PROVIDER_USER: return (EObject)createProviderUser();
 			case ContextPackage.USER_PROFILE: return (EObject)createUserProfile();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -91,6 +93,8 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 				return createCapabilityRightFromString(eDataType, initialValue);
 			case ContextPackage.LOCK_TYPE:
 				return createLockTypeFromString(eDataType, initialValue);
+			case ContextPackage.LOGIN_TYPE:
+				return createLoginTypeFromString(eDataType, initialValue);
 			case ContextPackage.USER_CLASS:
 				return createUserClassFromString(eDataType, initialValue);
 			case ContextPackage.MESSAGE_VARIABLE_LIST:
@@ -114,6 +118,8 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 				return convertCapabilityRightToString(eDataType, instanceValue);
 			case ContextPackage.LOCK_TYPE:
 				return convertLockTypeToString(eDataType, instanceValue);
+			case ContextPackage.LOGIN_TYPE:
+				return convertLoginTypeToString(eDataType, instanceValue);
 			case ContextPackage.USER_CLASS:
 				return convertUserClassToString(eDataType, instanceValue);
 			case ContextPackage.MESSAGE_VARIABLE_LIST:
@@ -219,6 +225,28 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * @generated
 	 */
 	@Override
+	public ProviderConfig createProviderConfig() {
+		ProviderConfigImpl providerConfig = new ProviderConfigImpl();
+		return providerConfig;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ProviderUser createProviderUser() {
+		ProviderUserImpl providerUser = new ProviderUserImpl();
+		return providerUser;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public UserProfile createUserProfile() {
 		UserProfileImpl userProfile = new UserProfileImpl();
 		return userProfile;
@@ -261,6 +289,26 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * @generated
 	 */
 	public String convertLockTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LoginType createLoginTypeFromString(EDataType eDataType, String initialValue) {
+		LoginType result = LoginType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLoginTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

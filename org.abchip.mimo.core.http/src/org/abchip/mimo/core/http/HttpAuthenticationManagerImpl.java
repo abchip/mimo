@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.biz.base.connector;
+package org.abchip.mimo.core.http;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -31,13 +31,13 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.biz.BizProviderConfig;
-import org.abchip.mimo.biz.BizProviderUser;
 import org.abchip.mimo.context.Authentication;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.AuthenticationUserToken;
+import org.abchip.mimo.context.ProviderConfig;
+import org.abchip.mimo.context.ProviderUser;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
@@ -69,7 +69,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	@Inject
 	private ContextRoot contextRoot;
 	@Inject
-	private BizProviderConfig providerConfig;
+	private ProviderConfig providerConfig;
 
 	private static final RequestConfig StandardRequestConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build();
 
@@ -383,7 +383,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	@Override
 	public Context login(String contextId, AuthenticationAnonymous authentication) {
 
-		BizProviderUser user = this.providerConfig.getPublicUser();
+		ProviderUser user = this.providerConfig.getPublicUser();
 		if (user == null)
 			return null;
 

@@ -47,25 +47,6 @@
     </eGenericSuperTypes>
     <eGenericSuperTypes eClassifier="#//BizEntity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="BizLoginType">
-    <eLiterals name="ExternalKey" value="10" literal="EXTK"/>
-    <eLiterals name="JsonWebToken" value="20" literal="JWT"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BizProviderConfig" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="loginType" lowerBound="1"
-        eType="#//BizLoginType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="publicUser" eType="#//BizProviderUser"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="systemUser" eType="#//BizProviderUser"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BizProviderUser" eSuperTypes="#//BizEntity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eSubpackages name="accounting" nsURI="http://www.abchip.org/mimo/biz/accounting"
       nsPrefix="biz-accounting">
     <eSubpackages name="budget" nsURI="http://www.abchip.org/mimo/biz/accounting/budget"

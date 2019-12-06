@@ -5,12 +5,11 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.biz;
+package org.abchip.mimo.context;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
@@ -18,11 +17,11 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Biz Login Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.abchip.mimo.biz.BizPackage#getBizLoginType()
+ * @see org.abchip.mimo.context.ContextPackage#getLoginType()
  * @model
  * @generated
  */
-public enum BizLoginType implements Enumerator {
+public enum LoginType implements Enumerator {
 	/**
 	 * The '<em><b>External Key</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -79,8 +78,8 @@ public enum BizLoginType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final BizLoginType[] VALUES_ARRAY =
-		new BizLoginType[] {
+	private static final LoginType[] VALUES_ARRAY =
+		new LoginType[] {
 			EXTERNAL_KEY,
 			JSON_WEB_TOKEN,
 		};
@@ -91,7 +90,7 @@ public enum BizLoginType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<BizLoginType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<LoginType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Login Type</b></em>' literal with the specified literal value.
@@ -101,9 +100,9 @@ public enum BizLoginType implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static BizLoginType get(String literal) {
+	public static LoginType get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			BizLoginType result = VALUES_ARRAY[i];
+			LoginType result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -119,9 +118,9 @@ public enum BizLoginType implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static BizLoginType getByName(String name) {
+	public static LoginType getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			BizLoginType result = VALUES_ARRAY[i];
+			LoginType result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -137,7 +136,7 @@ public enum BizLoginType implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static BizLoginType get(int value) {
+	public static LoginType get(int value) {
 		switch (value) {
 			case EXTERNAL_KEY_VALUE: return EXTERNAL_KEY;
 			case JSON_WEB_TOKEN_VALUE: return JSON_WEB_TOKEN;
@@ -172,7 +171,7 @@ public enum BizLoginType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private BizLoginType(int value, String name, String literal) {
+	private LoginType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -219,4 +218,4 @@ public enum BizLoginType implements Enumerator {
 		return literal;
 	}
 	
-} //BizLoginType
+} //LoginType

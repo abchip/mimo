@@ -12,10 +12,6 @@
   <foreignModel>biz.ecore</foreignModel>
   <genPackages prefix="Biz" basePackage="org.abchip.mimo" disposableProviderFactory="true"
       adapterFactory="false" ecorePackage="biz.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="biz.ecore#//BizLoginType">
-      <genEnumLiterals ecoreEnumLiteral="biz.ecore#//BizLoginType/ExternalKey"/>
-      <genEnumLiterals ecoreEnumLiteral="biz.ecore#//BizLoginType/JsonWebToken"/>
-    </genEnums>
     <genClasses ecoreClass="biz.ecore#//BizEntity"/>
     <genClasses ecoreClass="biz.ecore#//BizEntityNote">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//BizEntityNote/noteId"/>
@@ -36,26 +32,16 @@
     <genClasses ecoreClass="biz.ecore#//BizEntityType">
       <genTypeParameters ecoreTypeParameter="biz.ecore#//BizEntityType/E"/>
     </genClasses>
-    <genClasses ecoreClass="biz.ecore#//BizProviderConfig">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//BizProviderConfig/loginType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//BizProviderConfig/url"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference biz.ecore#//BizProviderConfig/publicUser"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference biz.ecore#//BizProviderConfig/systemUser"/>
-    </genClasses>
-    <genClasses ecoreClass="biz.ecore#//BizProviderUser">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//BizProviderUser/user"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//BizProviderUser/password"/>
-    </genClasses>
     <nestedGenPackages prefix="Accounting" basePackage="org.abchip.mimo.biz" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="biz.ecore#//accounting">
       <nestedGenPackages prefix="Budget" basePackage="org.abchip.mimo.biz.accounting"
           disposableProviderFactory="true" adapterFactory="false" ecorePackage="biz.ecore#//accounting/budget">
         <genClasses ecoreClass="biz.ecore#//accounting/budget/Budget">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/Budget/budgetId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/Budget/budgetAttributes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/Budget/budgetItems"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/Budget/budgetRevisions"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/Budget/budgetStatuss"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/budget/Budget/budgetAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/budget/Budget/budgetItems"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/budget/Budget/budgetRevisions"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/budget/Budget/budgetStatuss"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/budget/Budget/budgetTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/Budget/comments"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/budget/Budget/customTimePeriodId"/>
@@ -84,7 +70,7 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/budget/BudgetItemType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/BudgetItemType/budgetItemTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/BudgetItemType/budgetItemTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/budget/BudgetItemType/budgetItemTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/BudgetItemType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/BudgetItemType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/budget/BudgetItemType/parentTypeId"/>
@@ -129,7 +115,7 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/budget/BudgetScenario">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/BudgetScenario/budgetScenarioId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/BudgetScenario/budgetScenarioRules"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/budget/BudgetScenario/budgetScenarioRules"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/BudgetScenario/description"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/budget/BudgetScenario/budgetScenarioApplications"/>
         </genClasses>
@@ -156,7 +142,7 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/budget/BudgetType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/BudgetType/budgetTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/BudgetType/budgetTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/budget/BudgetType/budgetTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/BudgetType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/budget/BudgetType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/budget/BudgetType/parentTypeId"/>
@@ -176,7 +162,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccount/actualBalance"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccount/availableBalance"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/finaccount/FinAccount/currencyUomId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccount/finAccountAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/finaccount/FinAccount/finAccountAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccount/finAccountCode"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccount/finAccountName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccount/finAccountPin"/>
@@ -231,7 +217,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountTrans/comments"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountTrans/entryDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/finaccount/FinAccountTrans/finAccountId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountTrans/finAccountTransAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/finaccount/FinAccountTrans/finAccountTransAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/finaccount/FinAccountTrans/finAccountTransTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/finaccount/FinAccountTrans/glReconciliationId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountTrans/orderId"/>
@@ -254,7 +240,7 @@
         <genClasses ecoreClass="biz.ecore#//accounting/finaccount/FinAccountTransType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountTransType/finAccountTransTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountTransType/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountTransType/finAccountTransTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/finaccount/FinAccountTransType/finAccountTransTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountTransType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/finaccount/FinAccountTransType/parentTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/finaccount/FinAccountTransType/childFinAccountTransTypes"/>
@@ -268,8 +254,8 @@
         <genClasses ecoreClass="biz.ecore#//accounting/finaccount/FinAccountType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountType/finAccountTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountType/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountType/finAccountTypeAttrs"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountType/finAccountTypeGlAccounts"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/finaccount/FinAccountType/finAccountTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/finaccount/FinAccountType/finAccountTypeGlAccounts"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/finaccount/FinAccountType/isRefundable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/finaccount/FinAccountType/parentTypeId"/>
@@ -325,11 +311,11 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/fixedasset/FixedAsset/dateNextService"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/fixedasset/FixedAsset/depreciation"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/fixedasset/FixedAsset/expectedEndOfLife"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/fixedasset/FixedAsset/fixedAssetAttributes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/fixedasset/FixedAsset/fixedAssetIdents"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/fixedasset/FixedAsset/fixedAssetMaints"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/fixedasset/FixedAsset/fixedAssetAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/fixedasset/FixedAsset/fixedAssetIdents"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/fixedasset/FixedAsset/fixedAssetMaints"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/fixedasset/FixedAsset/fixedAssetName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/fixedasset/FixedAsset/fixedAssetRegistrations"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/fixedasset/FixedAsset/fixedAssetRegistrations"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/fixedasset/FixedAsset/fixedAssetTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/fixedasset/FixedAsset/instanceOfProductId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/fixedasset/FixedAsset/locatedAtFacilityId"/>
@@ -451,7 +437,7 @@
         <genClasses ecoreClass="biz.ecore#//accounting/fixedasset/FixedAssetType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/fixedasset/FixedAssetType/fixedAssetTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/fixedasset/FixedAssetType/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/fixedasset/FixedAssetType/fixedAssetTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/fixedasset/FixedAssetType/fixedAssetTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/fixedasset/FixedAssetType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/fixedasset/FixedAssetType/parentTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/fixedasset/FixedAssetType/childFixedAssetTypes"/>
@@ -493,11 +479,11 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/Invoice/currencyUomId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/Invoice/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/Invoice/dueDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/Invoice/invoiceAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/Invoice/invoiceAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/Invoice/invoiceDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/Invoice/invoiceItems"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/Invoice/invoiceItems"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/Invoice/invoiceMessage"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/Invoice/invoiceNotes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/Invoice/invoiceNotes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/Invoice/invoiceTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/Invoice/paidDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/Invoice/partyId"/>
@@ -589,8 +575,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/InvoiceItemType/defaultGlAccountId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceItemType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceItemType/hasTable"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceItemType/invoiceItemTypeAttrs"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceItemType/invoiceItemTypeGlAccounts"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/InvoiceItemType/invoiceItemTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/InvoiceItemType/invoiceItemTypeGlAccounts"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/InvoiceItemType/parentTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/invoice/InvoiceItemType/agreementTerms"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/invoice/InvoiceItemType/childInvoiceItemTypes"/>
@@ -633,7 +619,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceTerm/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/InvoiceTerm/invoiceId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceTerm/invoiceItemSeqId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceTerm/invoiceTermAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/InvoiceTerm/invoiceTermAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceTerm/termDays"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/InvoiceTerm/termTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceTerm/termValue"/>
@@ -650,7 +636,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceType/invoiceTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceType/hasTable"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/invoice/InvoiceType/invoiceTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/InvoiceType/invoiceTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/invoice/InvoiceType/parentTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/invoice/InvoiceType/childInvoiceTypes"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/invoice/InvoiceType/invoiceItemTypeMaps"/>
@@ -667,8 +653,8 @@
           disposableProviderFactory="true" adapterFactory="false" ecorePackage="biz.ecore#//accounting/ledger">
         <genClasses ecoreClass="biz.ecore#//accounting/ledger/AcctgTrans">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/AcctgTrans/acctgTransId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/AcctgTrans/acctgTransAttributes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/AcctgTrans/acctgTransEntries"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/AcctgTrans/acctgTransAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/AcctgTrans/acctgTransEntries"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/AcctgTrans/acctgTransTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/AcctgTrans/createdByUserLogin"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/AcctgTrans/createdDate"/>
@@ -740,7 +726,7 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//accounting/ledger/AcctgTransType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/AcctgTransType/acctgTransTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/AcctgTransType/acctgTransTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/AcctgTransType/acctgTransTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/AcctgTransType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/AcctgTransType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/AcctgTransType/parentTypeId"/>
@@ -759,8 +745,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/GlAccount/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/GlAccount/externalId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/GlAccount/glAccountClassId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/GlAccount/glAccountGroupMembers"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/GlAccount/glAccountOrganizations"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/GlAccount/glAccountGroupMembers"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/GlAccount/glAccountOrganizations"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/GlAccount/glAccountTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/GlAccount/glResourceTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/GlAccount/glXbrlClassId"/>
@@ -855,7 +841,7 @@
         <genClasses ecoreClass="biz.ecore#//accounting/ledger/GlAccountType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/GlAccountType/glAccountTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/GlAccountType/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/GlAccountType/glAccountTypeDefaults"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/GlAccountType/glAccountTypeDefaults"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/ledger/GlAccountType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/ledger/GlAccountType/parentTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/ledger/GlAccountType/acctgTransEntries"/>
@@ -1023,7 +1009,7 @@
         <genClasses ecoreClass="biz.ecore#//accounting/payment/BillingAccountTerm">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/BillingAccountTerm/billingAccountTermId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/BillingAccountTerm/billingAccountId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/BillingAccountTerm/billingAccountTermAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/BillingAccountTerm/billingAccountTermAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/BillingAccountTerm/termDays"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/BillingAccountTerm/termTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/BillingAccountTerm/termValue"/>
@@ -1137,7 +1123,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/Payment/overrideGlAccountId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/Payment/partyIdFrom"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/Payment/partyIdTo"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/Payment/paymentAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/Payment/paymentAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/Payment/paymentGatewayResponseId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/Payment/paymentMethodId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/Payment/paymentMethodTypeId"/>
@@ -1438,7 +1424,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentMethodType/paymentMethodTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentMethodType/defaultGlAccountId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentMethodType/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentMethodType/paymentMethodTypeGlAccounts"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentMethodType/paymentMethodTypeGlAccounts"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/payment/PaymentMethodType/orderPaymentPreferences"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/payment/PaymentMethodType/paymentGatewayResponses"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/payment/PaymentMethodType/paymentMethods"/>
@@ -1454,8 +1440,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentType/parentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentType/paymentGlAccountTypeMaps"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//accounting/payment/PaymentType/paymentTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentType/paymentGlAccountTypeMaps"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//accounting/payment/PaymentType/paymentTypeAttrs"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/payment/PaymentType/childPaymentTypes"/>
           <genOperations ecoreOperation="biz.ecore#//accounting/payment/PaymentType/payments"/>
         </genClasses>
@@ -1669,7 +1655,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/enum/Enumeration/enumCode"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/enum/Enumeration/enumTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/enum/Enumeration/sequenceId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/enum/Enumeration/userLoginSecurityQuestions"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/enum/Enumeration/userLoginSecurityQuestions"/>
           <genOperations ecoreOperation="biz.ecore#//common/enum/Enumeration/classFixedAssets"/>
           <genOperations ecoreOperation="biz.ecore#//common/enum/Enumeration/cogsPartyAcctgPreferences"/>
           <genOperations ecoreOperation="biz.ecore#//common/enum/Enumeration/communicationEvents"/>
@@ -1756,8 +1742,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/geo/Geo/geoName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/geo/Geo/geoSecCode"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/geo/Geo/geoTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/geo/Geo/mainGeoAssocs"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/geo/Geo/taxAuthTaxAuthorities"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/geo/Geo/mainGeoAssocs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/geo/Geo/taxAuthTaxAuthorities"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/geo/Geo/wellKnownText"/>
           <genOperations ecoreOperation="biz.ecore#//common/geo/Geo/assocGeoAssocs"/>
           <genOperations ecoreOperation="biz.ecore#//common/geo/Geo/cityPostalAddresses"/>
@@ -1847,7 +1833,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/method/CustomMethod/customMethodName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/method/CustomMethod/customMethodTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/method/CustomMethod/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/method/CustomMethod/fixedAssetDepMethods"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/method/CustomMethod/fixedAssetDepMethods"/>
           <genOperations ecoreOperation="biz.ecore#//common/method/CustomMethod/contents"/>
           <genOperations ecoreOperation="biz.ecore#//common/method/CustomMethod/costComponentCalcs"/>
           <genOperations ecoreOperation="biz.ecore#//common/method/CustomMethod/invoicePartyAcctgPreferences"/>
@@ -1921,7 +1907,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/portal/PortalPage/originalPortalPageId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/portal/PortalPage/ownerUserLoginId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/portal/PortalPage/parentPortalPageId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/portal/PortalPage/portalPageColumns"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/portal/PortalPage/portalPageColumns"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/portal/PortalPage/portalPageName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/portal/PortalPage/securityGroupId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/portal/PortalPage/sequenceNum"/>
@@ -1946,7 +1932,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/portal/PortalPortlet/editFormLocation"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/portal/PortalPortlet/editFormName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/portal/PortalPortlet/portletName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/portal/PortalPortlet/portletPortletCategories"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/portal/PortalPortlet/portletPortletCategories"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/portal/PortalPortlet/screenLocation"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/portal/PortalPortlet/screenName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/portal/PortalPortlet/screenshot"/>
@@ -2004,9 +1990,9 @@
         <genClasses ecoreClass="biz.ecore#//common/status/StatusItem">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/status/StatusItem/statusId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/status/StatusItem/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/status/StatusItem/mainStatusValidChanges"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/status/StatusItem/mainStatusValidChanges"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/status/StatusItem/sequenceId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/status/StatusItem/shipmentStatuss"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/status/StatusItem/shipmentStatuss"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/status/StatusItem/statusCode"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/status/StatusItem/statusTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//common/status/StatusItem/acctgTransEntries"/>
@@ -2109,7 +2095,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/uom/Uom/uomId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/uom/Uom/abbreviation"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/uom/Uom/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/uom/Uom/mainUomConversions"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/uom/Uom/mainUomConversions"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//common/uom/Uom/numericCode"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//common/uom/Uom/uomTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//common/uom/Uom/actualCurrencyPayments"/>
@@ -2239,12 +2225,12 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/content/Content/characterSetId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/Content/childBranchCount"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/Content/childLeafCount"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/Content/contentAttributes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/Content/contentKeywords"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/Content/contentMetaDatas"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/content/Content/contentAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/content/Content/contentKeywords"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/content/Content/contentMetaDatas"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/Content/contentName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/Content/contentPurposes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/Content/contentRevisions"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/content/Content/contentPurposes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/content/Content/contentRevisions"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/content/Content/contentTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/content/Content/createdByUserLogin"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/Content/createdDate"/>
@@ -2380,7 +2366,7 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//content/content/ContentSearchResult">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/ContentSearchResult/contentSearchResultId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/ContentSearchResult/contentSearchConstraints"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/content/ContentSearchResult/contentSearchConstraints"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/ContentSearchResult/isAscending"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/ContentSearchResult/numResults"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/ContentSearchResult/orderByName"/>
@@ -2390,7 +2376,7 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//content/content/ContentType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/ContentType/contentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/ContentType/contentTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/content/ContentType/contentTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/ContentType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/content/ContentType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/content/ContentType/parentTypeId"/>
@@ -2428,10 +2414,10 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResource/createdByUserLogin"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResource/createdDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResource/dataCategoryId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResource/dataResourceAttributes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResource/dataResourceMetaDatas"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResource/dataResourceAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResource/dataResourceMetaDatas"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResource/dataResourceName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResource/dataResourcePurposes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResource/dataResourcePurposes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResource/dataResourceTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResource/dataSourceId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResource/dataTemplateTypeId"/>
@@ -2441,7 +2427,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResource/localeString"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResource/mimeTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResource/objectInfo"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResource/productFeatureDataResources"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResource/productFeatureDataResources"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResource/relatedDetailId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResource/statusId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResource/surveyId"/>
@@ -2474,7 +2460,7 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//content/data/DataResourceType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResourceType/dataResourceTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResourceType/dataResourceTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResourceType/dataResourceTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResourceType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/data/DataResourceType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/data/DataResourceType/parentTypeId"/>
@@ -2536,7 +2522,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/document/Document/documentId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/document/Document/comments"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/document/Document/dateCreated"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/document/Document/documentAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/document/Document/documentAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/document/Document/documentLocation"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/document/Document/documentText"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/document/Document/documentTypeId"/>
@@ -2551,7 +2537,7 @@
         <genClasses ecoreClass="biz.ecore#//content/document/DocumentType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/document/DocumentType/documentTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/document/DocumentType/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/document/DocumentType/documentTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/document/DocumentType/documentTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/document/DocumentType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/document/DocumentType/parentTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//content/document/DocumentType/childDocumentTypes"/>
@@ -2589,9 +2575,9 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/survey/Survey/isAnonymous"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/survey/Survey/responseService"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/survey/Survey/submitCaption"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/survey/Survey/surveyMultiResps"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/survey/Survey/surveyMultiResps"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/survey/Survey/surveyName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/survey/Survey/surveyPages"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/survey/Survey/surveyPages"/>
           <genOperations ecoreOperation="biz.ecore#//content/survey/Survey/dataResources"/>
           <genOperations ecoreOperation="biz.ecore#//content/survey/Survey/productStoreFinActSettings"/>
           <genOperations ecoreOperation="biz.ecore#//content/survey/Survey/productStoreSurveyAppls"/>
@@ -2629,7 +2615,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/survey/SurveyQuestion/hint"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/survey/SurveyQuestion/question"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/survey/SurveyQuestion/surveyQuestionCategoryId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//content/survey/SurveyQuestion/surveyQuestionOptions"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/survey/SurveyQuestion/surveyQuestionOptions"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//content/survey/SurveyQuestion/surveyQuestionTypeId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//content/survey/SurveyQuestionAppl">
@@ -2793,7 +2779,7 @@
           adapterFactory="false" ecorePackage="biz.ecore#//entity/group">
         <genClasses ecoreClass="biz.ecore#//entity/group/EntityGroup">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/group/EntityGroup/entityGroupId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/group/EntityGroup/entityGroupEntries"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//entity/group/EntityGroup/entityGroupEntries"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/group/EntityGroup/entityGroupName"/>
           <genOperations ecoreOperation="biz.ecore#//entity/group/EntityGroup/entitySyncIncludeGroups"/>
         </genClasses>
@@ -2815,9 +2801,9 @@
           disposableProviderFactory="true" adapterFactory="false" ecorePackage="biz.ecore#//entity/synchronization">
         <genClasses ecoreClass="biz.ecore#//entity/synchronization/EntitySync">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/synchronization/EntitySync/entitySyncId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/synchronization/EntitySync/entitySyncHistories"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/synchronization/EntitySync/entitySyncIncludeGroups"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/synchronization/EntitySync/entitySyncIncludes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//entity/synchronization/EntitySync/entitySyncHistories"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//entity/synchronization/EntitySync/entitySyncIncludeGroups"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//entity/synchronization/EntitySync/entitySyncIncludes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/synchronization/EntitySync/forPullOnly"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/synchronization/EntitySync/forPushOnly"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/synchronization/EntitySync/keepRemoveInfoHours"/>
@@ -2879,13 +2865,13 @@
         <genClasses ecoreClass="biz.ecore#//entity/tenant/Component">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/tenant/Component/componentName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/tenant/Component/rootLocation"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/tenant/Component/tenantComponents"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//entity/tenant/Component/tenantComponents"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//entity/tenant/Tenant">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/tenant/Tenant/tenantId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/tenant/Tenant/disabled"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/tenant/Tenant/initialPath"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/tenant/Tenant/tenantDataSources"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//entity/tenant/Tenant/tenantDataSources"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/tenant/Tenant/tenantName"/>
           <genOperations ecoreOperation="biz.ecore#//entity/tenant/Tenant/tenantComponents"/>
           <genOperations ecoreOperation="biz.ecore#//entity/tenant/Tenant/tenantDomainNames"/>
@@ -2931,7 +2917,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/test/Testing/comments"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/test/Testing/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/test/Testing/testingDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/test/Testing/testingItems"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//entity/test/Testing/testingItems"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/test/Testing/testingName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//entity/test/Testing/testingSize"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//entity/test/Testing/testingTypeId"/>
@@ -3408,8 +3394,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//manufacturing/techdata/TechDataCalendar/calendarId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//manufacturing/techdata/TechDataCalendar/calendarWeekId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//manufacturing/techdata/TechDataCalendar/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//manufacturing/techdata/TechDataCalendar/techDataCalendarExcDaies"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//manufacturing/techdata/TechDataCalendar/techDataCalendarExcWeeks"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//manufacturing/techdata/TechDataCalendar/techDataCalendarExcDaies"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//manufacturing/techdata/TechDataCalendar/techDataCalendarExcWeeks"/>
           <genOperations ecoreOperation="biz.ecore#//manufacturing/techdata/TechDataCalendar/fixedAssets"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//manufacturing/techdata/TechDataCalendarExcDay">
@@ -3466,7 +3452,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/campaign/MarketingCampaign/fromDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/campaign/MarketingCampaign/isActive"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/campaign/MarketingCampaign/lastModifiedByUserLogin"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/campaign/MarketingCampaign/marketingCampaignNotes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/campaign/MarketingCampaign/marketingCampaignNotes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/campaign/MarketingCampaign/numSent"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/campaign/MarketingCampaign/parentCampaignId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/campaign/MarketingCampaign/startDate"/>
@@ -3578,7 +3564,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/opportunity/SalesForecast/percentOfQuotaForecast"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/opportunity/SalesForecast/pipelineAmount"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/opportunity/SalesForecast/quotaAmount"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/opportunity/SalesForecast/salesForecastDetails"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/opportunity/SalesForecast/salesForecastDetails"/>
           <genOperations ecoreOperation="biz.ecore#//marketing/opportunity/SalesForecast/childSalesForecasts"/>
           <genOperations ecoreOperation="biz.ecore#//marketing/opportunity/SalesForecast/salesForecastHistories"/>
         </genClasses>
@@ -3623,10 +3609,10 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/opportunity/SalesOpportunity/nextStepDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/opportunity/SalesOpportunity/opportunityName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/opportunity/SalesOpportunity/opportunityStageId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/opportunity/SalesOpportunity/salesOpportunityCompetitors"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/opportunity/SalesOpportunity/salesOpportunityQuotes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/opportunity/SalesOpportunity/salesOpportunityTrckCodes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/opportunity/SalesOpportunity/salesOpportunityWorkEfforts"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/opportunity/SalesOpportunity/salesOpportunityCompetitors"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/opportunity/SalesOpportunity/salesOpportunityQuotes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/opportunity/SalesOpportunity/salesOpportunityTrckCodes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/opportunity/SalesOpportunity/salesOpportunityWorkEfforts"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/opportunity/SalesOpportunity/typeEnumId"/>
           <genOperations ecoreOperation="biz.ecore#//marketing/opportunity/SalesOpportunity/invoiceItems"/>
           <genOperations ecoreOperation="biz.ecore#//marketing/opportunity/SalesOpportunity/orderItems"/>
@@ -3686,8 +3672,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/segment/SegmentGroup/segmentGroupId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/segment/SegmentGroup/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/segment/SegmentGroup/productStoreId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/segment/SegmentGroup/segmentGroupClassifications"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//marketing/segment/SegmentGroup/segmentGroupGeos"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/segment/SegmentGroup/segmentGroupClassifications"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/segment/SegmentGroup/segmentGroupGeos"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//marketing/segment/SegmentGroup/segmentGroupTypeId"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//marketing/segment/SegmentGroupClassification">
@@ -3793,7 +3779,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderAdjustment/lastModifiedDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderAdjustment/oldAmountPerQuantity"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderAdjustment/oldPercentage"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderAdjustment/orderAdjustmentAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderAdjustment/orderAdjustmentAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderAdjustment/orderAdjustmentTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderAdjustment/orderId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderAdjustment/orderItemSeqId"/>
@@ -3830,7 +3816,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderAdjustmentType/orderAdjustmentTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderAdjustmentType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderAdjustmentType/hasTable"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderAdjustmentType/orderAdjustmentTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderAdjustmentType/orderAdjustmentTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderAdjustmentType/parentTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//order/order/OrderAdjustmentType/childOrderAdjustmentTypes"/>
           <genOperations ecoreOperation="biz.ecore#//order/order/OrderAdjustmentType/orderAdjustments"/>
@@ -3894,7 +3880,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/agreementId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/autoOrderShoppingListId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/billingAccountId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/communicationEventOrders"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/communicationEventOrders"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/createdBy"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/currencyUom"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/entryDate"/>
@@ -3906,28 +3892,28 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/isRushOrder"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/isViewed"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/needsInventoryIssuance"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/orderAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/orderAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/orderDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/orderDeliverySchedules"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/orderHeaderNotes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/orderHeaderWorkEfforts"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/orderItemGroups"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/orderItemShipGroups"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/orderItems"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/orderDeliverySchedules"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/orderHeaderNotes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/orderHeaderWorkEfforts"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/orderItemGroups"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/orderItemShipGroups"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/orderItems"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/orderName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/orderProductPromoCodes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/orderProductPromoCodes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/orderTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/originFacilityId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/pickSheetPrintedDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/priority"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/productPromoUses"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/productPromoUses"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/productStoreId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/remainingSubTotal"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/salesChannelEnumId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/statusId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/syncStatusId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/terminalId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/trackingCodeOrders"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/trackingCodeOrders"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/transactionId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderHeader/visitId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderHeader/webSiteId"/>
@@ -4136,7 +4122,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderItemType/orderItemTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderItemType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderItemType/hasTable"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderItemType/orderItemTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderItemType/orderItemTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderItemType/parentTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//order/order/OrderItemType/childOrderItemTypes"/>
           <genOperations ecoreOperation="biz.ecore#//order/order/OrderItemType/orderItems"/>
@@ -4240,7 +4226,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderType/orderTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderType/hasTable"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/order/OrderType/orderTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderType/orderTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/order/OrderType/parentTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//order/order/OrderType/childOrderTypes"/>
           <genOperations ecoreOperation="biz.ecore#//order/order/OrderType/orderHeaders"/>
@@ -4274,13 +4260,13 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/quote/Quote/issueDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/quote/Quote/partyId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/quote/Quote/productStoreId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/quote/Quote/quoteAttributes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/quote/Quote/quoteCoefficients"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/quote/Quote/quoteItems"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/quote/Quote/quoteAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/quote/Quote/quoteCoefficients"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/quote/Quote/quoteItems"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/quote/Quote/quoteName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/quote/Quote/quoteNotes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/quote/Quote/quoteNotes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/quote/Quote/quoteTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/quote/Quote/quoteWorkEfforts"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/quote/Quote/quoteWorkEfforts"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/quote/Quote/salesChannelEnumId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/quote/Quote/statusId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/quote/Quote/validFromDate"/>
@@ -4384,7 +4370,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/quote/QuoteType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/quote/QuoteType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/quote/QuoteType/parentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/quote/QuoteType/quoteTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/quote/QuoteType/quoteTypeAttrs"/>
           <genOperations ecoreOperation="biz.ecore#//order/quote/QuoteType/childQuoteTypes"/>
           <genOperations ecoreOperation="biz.ecore#//order/quote/QuoteType/partyPrefDocTypeTpls"/>
           <genOperations ecoreOperation="biz.ecore#//order/quote/QuoteType/quotes"/>
@@ -4407,15 +4393,15 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequest/createdByUserLogin"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequest/createdDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/request/CustRequest/currencyUomId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequest/custRequestAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/request/CustRequest/custRequestAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/request/CustRequest/custRequestCategoryId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequest/custRequestCommEvents"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/request/CustRequest/custRequestCommEvents"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequest/custRequestDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequest/custRequestItems"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/request/CustRequest/custRequestItems"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequest/custRequestName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequest/custRequestNotes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/request/CustRequest/custRequestNotes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/request/CustRequest/custRequestTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequest/custRequestWorkEfforts"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/request/CustRequest/custRequestWorkEfforts"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequest/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/request/CustRequest/fromPartyId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/request/CustRequest/fulfillContactMechId"/>
@@ -4509,7 +4495,7 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//order/request/CustRequestType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequestType/custRequestTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequestType/custRequestTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/request/CustRequestType/custRequestTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequestType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/request/CustRequestType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/request/CustRequestType/parentTypeId"/>
@@ -4565,13 +4551,13 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/requirement/Requirement/quantity"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/requirement/Requirement/reason"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/requirement/Requirement/requiredByDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/requirement/Requirement/requirementAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/requirement/Requirement/requirementAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/requirement/Requirement/requirementStartDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/requirement/Requirement/requirementStatuss"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/requirement/Requirement/requirementStatuss"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/requirement/Requirement/requirementTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/requirement/Requirement/statusId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/requirement/Requirement/useCase"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/requirement/Requirement/workRequirementFulfillments"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/requirement/Requirement/workRequirementFulfillments"/>
           <genOperations ecoreOperation="biz.ecore#//order/requirement/Requirement/desiredFeatures"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//order/requirement/RequirementAttribute">
@@ -4609,7 +4595,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/requirement/RequirementType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/requirement/RequirementType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/requirement/RequirementType/parentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/requirement/RequirementType/requirementTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/requirement/RequirementType/requirementTypeAttrs"/>
           <genOperations ecoreOperation="biz.ecore#//order/requirement/RequirementType/childRequirementTypes"/>
           <genOperations ecoreOperation="biz.ecore#//order/requirement/RequirementType/requirements"/>
         </genClasses>
@@ -4696,7 +4682,7 @@
         <genClasses ecoreClass="biz.ecore#//order/return/ReturnHeader">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/return/ReturnHeader/returnId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/return/ReturnHeader/billingAccountId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/return/ReturnHeader/communicationEventReturns"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/return/ReturnHeader/communicationEventReturns"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/return/ReturnHeader/createdBy"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/return/ReturnHeader/currencyUomId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/return/ReturnHeader/destinationFacilityId"/>
@@ -4707,7 +4693,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/return/ReturnHeader/originContactMechId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/return/ReturnHeader/paymentMethodId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/return/ReturnHeader/returnHeaderTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/return/ReturnHeader/returnItems"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/return/ReturnHeader/returnItems"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/return/ReturnHeader/statusId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/return/ReturnHeader/supplierRmaId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/return/ReturnHeader/toPartyId"/>
@@ -4842,9 +4828,9 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/shoppinglist/ShoppingList/productStoreId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/shoppinglist/ShoppingList/recurrenceInfoId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/shoppinglist/ShoppingList/shipmentMethodTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/shoppinglist/ShoppingList/shoppingListItems"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/shoppinglist/ShoppingList/shoppingListItems"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/shoppinglist/ShoppingList/shoppingListTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/shoppinglist/ShoppingList/shoppingListWorkEfforts"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//order/shoppinglist/ShoppingList/shoppingListWorkEfforts"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//order/shoppinglist/ShoppingList/visitorId"/>
           <genOperations ecoreOperation="biz.ecore#//order/shoppinglist/ShoppingList/autoOrderOrderHeaders"/>
           <genOperations ecoreOperation="biz.ecore#//order/shoppinglist/ShoppingList/childShoppingLists"/>
@@ -4891,9 +4877,9 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//party/agreement/Agreement">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/Agreement/agreementId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/Agreement/agreementAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/agreement/Agreement/agreementAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/Agreement/agreementDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/Agreement/agreementItems"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/agreement/Agreement/agreementItems"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/agreement/Agreement/agreementTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/Agreement/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/Agreement/fromDate"/>
@@ -4967,7 +4953,7 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//party/agreement/AgreementItemType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementItemType/agreementItemTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementItemType/agreementItemTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/agreement/AgreementItemType/agreementItemTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementItemType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementItemType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/agreement/AgreementItemType/parentTypeId"/>
@@ -5007,7 +4993,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementTerm/agreementTermId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/agreement/AgreementTerm/agreementId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementTerm/agreementItemSeqId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementTerm/agreementTermAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/agreement/AgreementTerm/agreementTermAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementTerm/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementTerm/fromDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/agreement/AgreementTerm/invoiceItemTypeId"/>
@@ -5027,7 +5013,7 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//party/agreement/AgreementType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementType/agreementTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementType/agreementTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/agreement/AgreementType/agreementTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/AgreementType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/agreement/AgreementType/parentTypeId"/>
@@ -5049,7 +5035,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/TermType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/TermType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/agreement/TermType/parentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/agreement/TermType/termTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/agreement/TermType/termTypeAttrs"/>
           <genOperations ecoreOperation="biz.ecore#//party/agreement/TermType/agreementTerms"/>
           <genOperations ecoreOperation="biz.ecore#//party/agreement/TermType/billingAccountTerms"/>
           <genOperations ecoreOperation="biz.ecore#//party/agreement/TermType/childTermTypes"/>
@@ -5117,7 +5103,7 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//party/communication/CommunicationEventPrpTyp">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/communication/CommunicationEventPrpTyp/communicationEventPrpTypId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/communication/CommunicationEventPrpTyp/communicationEventPurposes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/communication/CommunicationEventPrpTyp/communicationEventPurposes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/communication/CommunicationEventPrpTyp/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/communication/CommunicationEventPrpTyp/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/communication/CommunicationEventPrpTyp/parentTypeId"/>
@@ -5149,9 +5135,9 @@
           disposableProviderFactory="true" adapterFactory="false" ecorePackage="biz.ecore#//party/contact">
         <genClasses ecoreClass="biz.ecore#//party/contact/ContactMech">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/ContactMech/contactMechId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/ContactMech/contactMechAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/contact/ContactMech/contactMechAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/contact/ContactMech/contactMechTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/ContactMech/fromContactMechLinks"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/contact/ContactMech/fromContactMechLinks"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/ContactMech/infoString"/>
           <genOperations ecoreOperation="biz.ecore#//party/contact/ContactMech/billingAccounts"/>
           <genOperations ecoreOperation="biz.ecore#//party/contact/ContactMech/checkAccounts"/>
@@ -5193,8 +5179,8 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//party/contact/ContactMechType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/ContactMechType/contactMechTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/ContactMechType/contactMechTypeAttrs"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/ContactMechType/contactMechTypePurposes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/contact/ContactMechType/contactMechTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/contact/ContactMechType/contactMechTypePurposes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/ContactMechType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/ContactMechType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/contact/ContactMechType/parentTypeId"/>
@@ -5263,7 +5249,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/PostalAddress/houseNumber"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/PostalAddress/houseNumberExt"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/contact/PostalAddress/municipalityGeoId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/PostalAddress/postalAddressBoundaries"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/contact/PostalAddress/postalAddressBoundaries"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/PostalAddress/postalCode"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/contact/PostalAddress/postalCodeExt"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/contact/PostalAddress/postalCodeGeoId"/>
@@ -5336,17 +5322,17 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Party/isUnread"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Party/lastModifiedByUserLogin"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Party/lastModifiedDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Party/partyAttributes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Party/partyIdentifications"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Party/partyNameHistories"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Party/partyNotes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Party/partyProfileDefaults"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Party/partyRoles"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Party/partySkills"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Party/partyAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Party/partyIdentifications"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Party/partyNameHistories"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Party/partyNotes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Party/partyProfileDefaults"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Party/partyRoles"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Party/partySkills"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Party/partyTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Party/preferredCurrencyUomId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Party/statusId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/Party/supplierProductFeatures"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/Party/supplierProductFeatures"/>
           <genOperations ecoreOperation="biz.ecore#//party/party/Party/acctgTransEntries"/>
           <genOperations ecoreOperation="biz.ecore#//party/party/Party/acctgTranss"/>
           <genOperations ecoreOperation="biz.ecore#//party/party/Party/applyingEmploymentApps"/>
@@ -5525,8 +5511,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/PartyInvitation/lastInviteDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/PartyInvitation/partyId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/PartyInvitation/partyIdFrom"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/PartyInvitation/partyInvitationGroupAssocs"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/PartyInvitation/partyInvitationRoleAssocs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/PartyInvitation/partyInvitationGroupAssocs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/PartyInvitation/partyInvitationRoleAssocs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/PartyInvitation/statusId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/PartyInvitation/toName"/>
         </genClasses>
@@ -5600,7 +5586,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/PartyType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/PartyType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/PartyType/parentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/PartyType/partyTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/PartyType/partyTypeAttrs"/>
           <genOperations ecoreOperation="biz.ecore#//party/party/PartyType/childPartyTypes"/>
           <genOperations ecoreOperation="biz.ecore#//party/party/PartyType/parties"/>
         </genClasses>
@@ -5651,8 +5637,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/RoleType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/RoleType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/RoleType/parentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/RoleType/roleTypeAttrs"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//party/party/RoleType/validContactMechRoles"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/RoleType/roleTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//party/party/RoleType/validContactMechRoles"/>
           <genOperations ecoreOperation="biz.ecore#//party/party/RoleType/acctgTransEntries"/>
           <genOperations ecoreOperation="biz.ecore#//party/party/RoleType/acctgTranss"/>
           <genOperations ecoreOperation="biz.ecore#//party/party/RoleType/childRoleTypes"/>
@@ -5815,7 +5801,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/category/ProductCategory/linkTwoImageUrl"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/category/ProductCategory/longDescription"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/category/ProductCategory/primaryParentCategoryId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/category/ProductCategory/productCategoryAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/category/ProductCategory/productCategoryAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/category/ProductCategory/productCategoryTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/category/ProductCategory/showInSelect"/>
           <genOperations ecoreOperation="biz.ecore#//product/category/ProductCategory/primaryChildProductCategories"/>
@@ -5899,7 +5885,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/category/ProductCategoryType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/category/ProductCategoryType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/category/ProductCategoryType/parentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/category/ProductCategoryType/productCategoryTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/category/ProductCategoryType/productCategoryTypeAttrs"/>
           <genOperations ecoreOperation="biz.ecore#//product/category/ProductCategoryType/childProductCategoryTypes"/>
           <genOperations ecoreOperation="biz.ecore#//product/category/ProductCategoryType/productCategories"/>
         </genClasses>
@@ -5956,7 +5942,7 @@
         <genClasses ecoreClass="biz.ecore#//product/config/ProductConfigItem">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/config/ProductConfigItem/configItemId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/config/ProductConfigItem/configItemName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/config/ProductConfigItem/configItemProductConfigOptions"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/config/ProductConfigItem/configItemProductConfigOptions"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/config/ProductConfigItem/configItemTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/config/ProductConfigItem/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/config/ProductConfigItem/imageUrl"/>
@@ -5997,7 +5983,7 @@
         <genClasses ecoreClass="biz.ecore#//product/cost/CostComponent">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/cost/CostComponent/costComponentId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/cost/CostComponent/cost"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/cost/CostComponent/costComponentAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/cost/CostComponent/costComponentAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/cost/CostComponent/costComponentCalcId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/cost/CostComponent/costComponentTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/cost/CostComponent/costUomId"/>
@@ -6030,7 +6016,7 @@
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//product/cost/CostComponentType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/cost/CostComponentType/costComponentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/cost/CostComponentType/costComponentTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/cost/CostComponentType/costComponentTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/cost/CostComponentType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/cost/CostComponentType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/cost/CostComponentType/parentTypeId"/>
@@ -6081,8 +6067,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/facility/Facility/defaultInventoryItemTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/facility/Facility/defaultWeightUomId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/facility/Facility/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/facility/Facility/facilityAttributes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/facility/Facility/facilityLocations"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/facility/Facility/facilityAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/facility/Facility/facilityLocations"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/facility/Facility/facilityName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/facility/Facility/facilitySize"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/facility/Facility/facilitySizeUomId"/>
@@ -6221,7 +6207,7 @@
         <genClasses ecoreClass="biz.ecore#//product/facility/FacilityType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/facility/FacilityType/facilityTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/facility/FacilityType/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/facility/FacilityType/facilityTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/facility/FacilityType/facilityTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/facility/FacilityType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/facility/FacilityType/parentTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//product/facility/FacilityType/childFacilityTypes"/>
@@ -6258,7 +6244,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/feature/ProductFeature/defaultSequenceNum"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/feature/ProductFeature/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/feature/ProductFeature/idCode"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/feature/ProductFeature/mainProductFeatureIactns"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/feature/ProductFeature/mainProductFeatureIactns"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/feature/ProductFeature/numberSpecified"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/feature/ProductFeature/productFeatureCategoryId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/feature/ProductFeature/productFeatureTypeId"/>
@@ -6370,11 +6356,11 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/InventoryItem/expireDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/inventory/InventoryItem/facilityId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/inventory/InventoryItem/fixedAssetId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/InventoryItem/inventoryItemAttributes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/InventoryItem/inventoryItemDetails"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/InventoryItem/inventoryItemLabelAppls"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/inventory/InventoryItem/inventoryItemAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/inventory/InventoryItem/inventoryItemDetails"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/inventory/InventoryItem/inventoryItemLabelAppls"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/inventory/InventoryItem/inventoryItemTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/InventoryItem/inventoryItemVariances"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/inventory/InventoryItem/inventoryItemVariances"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/InventoryItem/locationSeqId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/inventory/InventoryItem/lotId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/InventoryItem/oldAvailableToPromise"/>
@@ -6470,7 +6456,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/InventoryItemType/inventoryItemTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/InventoryItemType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/InventoryItemType/hasTable"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/InventoryItemType/inventoryItemTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/inventory/InventoryItemType/inventoryItemTypeAttrs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/inventory/InventoryItemType/parentTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//product/inventory/InventoryItemType/childInventoryItemTypes"/>
           <genOperations ecoreOperation="biz.ecore#//product/inventory/InventoryItemType/defaultFacilities"/>
@@ -6524,7 +6510,7 @@
         <genClasses ecoreClass="biz.ecore#//product/inventory/VarianceReason">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/VarianceReason/varianceReasonId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/VarianceReason/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/inventory/VarianceReason/varianceReasonGlAccounts"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/inventory/VarianceReason/varianceReasonGlAccounts"/>
           <genOperations ecoreOperation="biz.ecore#//product/inventory/VarianceReason/inventoryItemVariances"/>
         </genClasses>
       </nestedGenPackages>
@@ -6623,8 +6609,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPriceRule/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPriceRule/fromDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPriceRule/isSale"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPriceRule/productPriceActions"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPriceRule/productPriceConds"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPriceRule/productPriceActions"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/price/ProductPriceRule/productPriceConds"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPriceRule/ruleName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/price/ProductPriceRule/thruDate"/>
           <genOperations ecoreOperation="biz.ecore#//product/price/ProductPriceRule/orderItemPriceInfos"/>
@@ -6662,7 +6648,7 @@
         <genClasses ecoreClass="biz.ecore#//product/product/GoodIdentificationType">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/GoodIdentificationType/goodIdentificationTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/GoodIdentificationType/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/GoodIdentificationType/goodIdentifications"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/GoodIdentificationType/goodIdentifications"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/GoodIdentificationType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/GoodIdentificationType/parentTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//product/product/GoodIdentificationType/childGoodIdentificationTypes"/>
@@ -6675,7 +6661,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/brandName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/chargeShipping"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/comments"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/communicationEventProducts"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/Product/communicationEventProducts"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/configId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/Product/createdByUserLogin"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/createdDate"/>
@@ -6708,14 +6694,14 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/piecesIncluded"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/priceDetailText"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/Product/primaryProductCategoryId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/productAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/Product/productAttributes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/productDepth"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/productDiameter"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/productFacilities"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/productGeos"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/Product/productFacilities"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/Product/productGeos"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/productHeight"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/productMaints"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/productMeters"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/Product/productMaints"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/Product/productMeters"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/productName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/Product/productRating"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/Product/productTypeId"/>
@@ -6927,7 +6913,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductSearchResult/isAscending"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductSearchResult/numResults"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductSearchResult/orderByName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductSearchResult/productSearchConstraints"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/ProductSearchResult/productSearchConstraints"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductSearchResult/searchDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductSearchResult/secondsTotal"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductSearchResult/visitId"/>
@@ -6939,7 +6925,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductType/isDigital"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductType/isPhysical"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/ProductType/parentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/product/ProductType/productTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/product/ProductType/productTypeAttrs"/>
           <genOperations ecoreOperation="biz.ecore#//product/product/ProductType/childProductTypes"/>
           <genOperations ecoreOperation="biz.ecore#//product/product/ProductType/products"/>
         </genClasses>
@@ -6964,7 +6950,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/promo/ProductPromo/lastModifiedByUserLogin"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/promo/ProductPromo/lastModifiedDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/promo/ProductPromo/overrideOrgPartyId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/promo/ProductPromo/productPromoRules"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/promo/ProductPromo/productPromoRules"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/promo/ProductPromo/promoName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/promo/ProductPromo/promoText"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/promo/ProductPromo/requireCode"/>
@@ -7010,8 +6996,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/promo/ProductPromoCode/fromDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/promo/ProductPromoCode/lastModifiedByUserLogin"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/promo/ProductPromoCode/lastModifiedDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/promo/ProductPromoCode/productPromoCodeEmails"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/promo/ProductPromoCode/productPromoCodeParties"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/promo/ProductPromoCode/productPromoCodeEmails"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/promo/ProductPromoCode/productPromoCodeParties"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/promo/ProductPromoCode/productPromoId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/promo/ProductPromoCode/requireEmailOrParty"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/promo/ProductPromoCode/thruDate"/>
@@ -7116,9 +7102,9 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/store/ProductStore/itemDeclinedStatus"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/managedByLot"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/manualAuthIsCapture"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/oAuth2GitHubs"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/oAuth2Googles"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/oAuth2LinkedIns"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/store/ProductStore/oAuth2GitHubs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/store/ProductStore/oAuth2Googles"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/store/ProductStore/oAuth2LinkedIns"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/oldHeaderLogo"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/oldHeaderMiddleBackground"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/oldHeaderRightBackground"/>
@@ -7129,8 +7115,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/store/ProductStore/payToPartyId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/store/ProductStore/primaryStoreGroupId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/prodSearchExcludeVariants"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/productStoreEmailSettings"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/productStoreFinActSettings"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/store/ProductStore/productStoreEmailSettings"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/store/ProductStore/productStoreFinActSettings"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/prorateShipping"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/prorateTaxes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/store/ProductStore/reqReturnInventoryReceive"/>
@@ -7392,8 +7378,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/subscription/Subscription/purchaseFromDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/subscription/Subscription/purchaseThruDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/subscription/Subscription/roleTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/subscription/Subscription/subscriptionAttributes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/subscription/Subscription/subscriptionCommEvents"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/subscription/Subscription/subscriptionAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/subscription/Subscription/subscriptionCommEvents"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/subscription/Subscription/subscriptionResourceId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/subscription/Subscription/subscriptionTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/subscription/Subscription/thruDate"/>
@@ -7406,7 +7392,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/subscription/SubscriptionActivity/subscriptionActivityId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/subscription/SubscriptionActivity/comments"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/subscription/SubscriptionActivity/dateSent"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/subscription/SubscriptionActivity/subscriptionFulfillmentPieces"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/subscription/SubscriptionActivity/subscriptionFulfillmentPieces"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//product/subscription/SubscriptionAttribute">
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/subscription/SubscriptionAttribute/subscriptionId"/>
@@ -7437,7 +7423,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/subscription/SubscriptionType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/subscription/SubscriptionType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/subscription/SubscriptionType/parentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//product/subscription/SubscriptionType/subscriptionTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//product/subscription/SubscriptionType/subscriptionTypeAttrs"/>
           <genOperations ecoreOperation="biz.ecore#//product/subscription/SubscriptionType/childSubscriptionTypes"/>
           <genOperations ecoreOperation="biz.ecore#//product/subscription/SubscriptionType/subscriptions"/>
         </genClasses>
@@ -7540,9 +7526,9 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/login/UserLogin/requirePasswordChange"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/login/UserLogin/successiveFailedLogins"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/login/UserLogin/userLdapDn"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/login/UserLogin/userLoginHistories"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/login/UserLogin/userLoginPasswordHistories"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/login/UserLogin/userPreferences"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//security/login/UserLogin/userLoginHistories"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//security/login/UserLogin/userLoginPasswordHistories"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//security/login/UserLogin/userPreferences"/>
           <genOperations ecoreOperation="biz.ecore#//security/login/UserLogin/approvedByTimesheets"/>
           <genOperations ecoreOperation="biz.ecore#//security/login/UserLogin/authJobSandboxs"/>
           <genOperations ecoreOperation="biz.ecore#//security/login/UserLogin/changeByBudgetStatuss"/>
@@ -7629,7 +7615,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/securitygroup/SecurityGroup/groupId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/securitygroup/SecurityGroup/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/securitygroup/SecurityGroup/groupName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//security/securitygroup/SecurityGroup/protectedViews"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//security/securitygroup/SecurityGroup/protectedViews"/>
           <genOperations ecoreOperation="biz.ecore#//security/securitygroup/SecurityGroup/portalPages"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//security/securitygroup/SecurityGroupPermission">
@@ -7741,7 +7727,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//service/schedule/TemporalExpression/date1"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//service/schedule/TemporalExpression/date2"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//service/schedule/TemporalExpression/description"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//service/schedule/TemporalExpression/fromTemporalExpressionAssocs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//service/schedule/TemporalExpression/fromTemporalExpressionAssocs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//service/schedule/TemporalExpression/integer1"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//service/schedule/TemporalExpression/integer2"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//service/schedule/TemporalExpression/string1"/>
@@ -7803,7 +7789,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/picklist/Picklist/facilityId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/picklist/Picklist/lastModifiedByUserLogin"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/picklist/Picklist/picklistDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/picklist/Picklist/picklistStatusHistories"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/picklist/Picklist/picklistStatusHistories"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/picklist/Picklist/shipmentMethodTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/picklist/Picklist/statusId"/>
           <genOperations ecoreOperation="biz.ecore#//shipment/picklist/Picklist/picklistBins"/>
@@ -7933,11 +7919,11 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/Shipment/primaryOrderId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/Shipment/primaryReturnId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/Shipment/primaryShipGroupSeqId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/Shipment/shipmentAttributes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/Shipment/shipmentContactMechs"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/Shipment/shipmentItems"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/Shipment/shipmentPackages"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/Shipment/shipmentRouteSegments"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/Shipment/shipmentAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/Shipment/shipmentContactMechs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/Shipment/shipmentItems"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/Shipment/shipmentPackages"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/Shipment/shipmentRouteSegments"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/Shipment/shipmentTypeId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/Shipment/statusId"/>
           <genOperations ecoreOperation="biz.ecore#//shipment/shipment/Shipment/acctgTranss"/>
@@ -7957,7 +7943,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/ShipmentBoxType/boxLength"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/ShipmentBoxType/boxWeight"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/ShipmentBoxType/boxWidth"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/ShipmentBoxType/carrierShipmentBoxTypes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/ShipmentBoxType/carrierShipmentBoxTypes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/ShipmentBoxType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/ShipmentBoxType/dimensionUomId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/ShipmentBoxType/weightUomId"/>
@@ -8203,7 +8189,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/ShipmentType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/ShipmentType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/ShipmentType/parentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//shipment/shipment/ShipmentType/shipmentTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//shipment/shipment/ShipmentType/shipmentTypeAttrs"/>
           <genOperations ecoreOperation="biz.ecore#//shipment/shipment/ShipmentType/childShipmentTypes"/>
           <genOperations ecoreOperation="biz.ecore#//shipment/shipment/ShipmentType/shipments"/>
         </genClasses>
@@ -8357,7 +8343,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//webapp/website/WebSite/siteName"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//webapp/website/WebSite/standardContentPrefix"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//webapp/website/WebSite/visualThemeSetId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//webapp/website/WebSite/webAnalyticsConfigs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//webapp/website/WebSite/webAnalyticsConfigs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//webapp/website/WebSite/webappPath"/>
           <genOperations ecoreOperation="biz.ecore#//webapp/website/WebSite/orderHeaders"/>
           <genOperations ecoreOperation="biz.ecore#//webapp/website/WebSite/subscriptionResources"/>
@@ -8436,7 +8422,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/actualMilliSeconds"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/actualSetupMillis"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/actualStartDate"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/communicationEventWorkEffs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/communicationEventWorkEffs"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/createdByUserLogin"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/createdDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/currentStatusId"/>
@@ -8477,18 +8463,18 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/totalMilliSecondsAllowed"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/totalMoneyAllowed"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/universalId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/workEffortAttributes"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/workEffortDeliverableProds"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/workEffortEventReminders"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/workEffortFixedAssetStds"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/workEffortInventoryAssigns"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/workEffortInventoryProduceds"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/workEffortKeywords"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/workEffortAttributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/workEffortDeliverableProds"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/workEffortEventReminders"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/workEffortFixedAssetStds"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/workEffortInventoryAssigns"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/workEffortInventoryProduceds"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/workEffortKeywords"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/workEffortName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/workEffortNotes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/workEffortNotes"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/workEffortParentId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/workEffortPurposeTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffort/workEffortSkillStandards"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/workEffortSkillStandards"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffort/workEffortTypeId"/>
           <genOperations ecoreOperation="biz.ecore#//workeffort/workeffort/WorkEffort/acctgTranss"/>
           <genOperations ecoreOperation="biz.ecore#//workeffort/workeffort/WorkEffort/childWorkEfforts"/>
@@ -8529,7 +8515,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffortAssocType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffortAssocType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffortAssocType/parentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffortAssocType/workEffortAssocTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffortAssocType/workEffortAssocTypeAttrs"/>
           <genOperations ecoreOperation="biz.ecore#//workeffort/workeffort/WorkEffortAssocType/childWorkEffortAssocTypes"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//workeffort/workeffort/WorkEffortAssocTypeAttr">
@@ -8703,7 +8689,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffortSearchResult/searchDate"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffortSearchResult/secondsTotal"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffortSearchResult/visitId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffortSearchResult/workEffortSearchConstraints"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffortSearchResult/workEffortSearchConstraints"/>
         </genClasses>
         <genClasses ecoreClass="biz.ecore#//workeffort/workeffort/WorkEffortSkillStandard">
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffortSkillStandard/workEffortId"/>
@@ -8735,7 +8721,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffortType/description"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffortType/hasTable"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffortType/parentTypeId"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute biz.ecore#//workeffort/workeffort/WorkEffortType/workEffortTypeAttrs"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference biz.ecore#//workeffort/workeffort/WorkEffortType/workEffortTypeAttrs"/>
           <genOperations ecoreOperation="biz.ecore#//workeffort/workeffort/WorkEffortType/childWorkEffortTypes"/>
           <genOperations ecoreOperation="biz.ecore#//workeffort/workeffort/WorkEffortType/workEfforts"/>
         </genClasses>

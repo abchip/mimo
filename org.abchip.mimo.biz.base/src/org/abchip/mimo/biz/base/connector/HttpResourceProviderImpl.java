@@ -17,6 +17,7 @@ import org.abchip.mimo.biz.BizEntityType;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.core.http.HttpConnector;
 import org.abchip.mimo.edi.entity.EdiFrameSetup;
 import org.abchip.mimo.edi.message.Message;
 import org.abchip.mimo.edi.message.MessageType;

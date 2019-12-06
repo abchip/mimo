@@ -661,6 +661,98 @@ public interface ContextPackage extends EPackage {
 	int MESSAGE_FILE_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.impl.ProviderConfigImpl <em>Provider Config</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.impl.ProviderConfigImpl
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getProviderConfig()
+	 * @generated
+	 */
+	int PROVIDER_CONFIG = 19;
+
+	/**
+	 * The feature id for the '<em><b>Login Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER_CONFIG__LOGIN_TYPE = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER_CONFIG__URL = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Public User</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER_CONFIG__PUBLIC_USER = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>System User</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER_CONFIG__SYSTEM_USER = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Provider Config</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.impl.ProviderUserImpl <em>Provider User</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.impl.ProviderUserImpl
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getProviderUser()
+	 * @generated
+	 */
+	int PROVIDER_USER = 20;
+
+	/**
+	 * The feature id for the '<em><b>User</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER_USER__USER = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER_USER__PASSWORD = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Provider User</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER_USER_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.Registry <em>Registry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -668,7 +760,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getRegistry()
 	 * @generated
 	 */
-	int REGISTRY = 19;
+	int REGISTRY = 21;
 
 	/**
 	 * The number of structural features of the '<em>Registry</em>' class.
@@ -687,7 +779,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getRegistryFactory()
 	 * @generated
 	 */
-	int REGISTRY_FACTORY = 20;
+	int REGISTRY_FACTORY = 22;
 
 	/**
 	 * The number of structural features of the '<em>Registry Factory</em>' class.
@@ -706,7 +798,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getUserProfile()
 	 * @generated
 	 */
-	int USER_PROFILE = 21;
+	int USER_PROFILE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Job Description</b></em>' attribute.
@@ -761,7 +853,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getCapabilityRight()
 	 * @generated
 	 */
-	int CAPABILITY_RIGHT = 22;
+	int CAPABILITY_RIGHT = 24;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.LockType <em>Lock Type</em>}' enum.
@@ -771,7 +863,17 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLockType()
 	 * @generated
 	 */
-	int LOCK_TYPE = 23;
+	int LOCK_TYPE = 25;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.LoginType <em>Login Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.LoginType
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLoginType()
+	 * @generated
+	 */
+	int LOGIN_TYPE = 26;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.UserClass <em>User Class</em>}' enum.
@@ -781,7 +883,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getUserClass()
 	 * @generated
 	 */
-	int USER_CLASS = 24;
+	int USER_CLASS = 27;
 
 	/**
 	 * The meta object id for the '<em>Message Variable List</em>' data type.
@@ -790,7 +892,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageVariableList()
 	 * @generated
 	 */
-	int MESSAGE_VARIABLE_LIST = 25;
+	int MESSAGE_VARIABLE_LIST = 28;
 
 	/**
 	 * The meta object id for the '<em>Message Exception</em>' data type.
@@ -800,7 +902,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageException()
 	 * @generated
 	 */
-	int MESSAGE_EXCEPTION = 26;
+	int MESSAGE_EXCEPTION = 29;
 
 
 	/**
@@ -1280,6 +1382,92 @@ public interface ContextPackage extends EPackage {
 	EAttribute getMessageFile_Text();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.context.ProviderConfig <em>Provider Config</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Provider Config</em>'.
+	 * @see org.abchip.mimo.context.ProviderConfig
+	 * @generated
+	 */
+	EClass getProviderConfig();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ProviderConfig#getLoginType <em>Login Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Login Type</em>'.
+	 * @see org.abchip.mimo.context.ProviderConfig#getLoginType()
+	 * @see #getProviderConfig()
+	 * @generated
+	 */
+	EAttribute getProviderConfig_LoginType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ProviderConfig#getUrl <em>Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Url</em>'.
+	 * @see org.abchip.mimo.context.ProviderConfig#getUrl()
+	 * @see #getProviderConfig()
+	 * @generated
+	 */
+	EAttribute getProviderConfig_Url();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.context.ProviderConfig#getPublicUser <em>Public User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Public User</em>'.
+	 * @see org.abchip.mimo.context.ProviderConfig#getPublicUser()
+	 * @see #getProviderConfig()
+	 * @generated
+	 */
+	EReference getProviderConfig_PublicUser();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.context.ProviderConfig#getSystemUser <em>System User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>System User</em>'.
+	 * @see org.abchip.mimo.context.ProviderConfig#getSystemUser()
+	 * @see #getProviderConfig()
+	 * @generated
+	 */
+	EReference getProviderConfig_SystemUser();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.context.ProviderUser <em>Provider User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Provider User</em>'.
+	 * @see org.abchip.mimo.context.ProviderUser
+	 * @generated
+	 */
+	EClass getProviderUser();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ProviderUser#getUser <em>User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>User</em>'.
+	 * @see org.abchip.mimo.context.ProviderUser#getUser()
+	 * @see #getProviderUser()
+	 * @generated
+	 */
+	EAttribute getProviderUser_User();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ProviderUser#getPassword <em>Password</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Password</em>'.
+	 * @see org.abchip.mimo.context.ProviderUser#getPassword()
+	 * @see #getProviderUser()
+	 * @generated
+	 */
+	EAttribute getProviderUser_Password();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.context.Registry <em>Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1372,6 +1560,16 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getLockType();
+
+	/**
+	 * Returns the meta object for enum '{@link org.abchip.mimo.context.LoginType <em>Login Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Login Type</em>'.
+	 * @see org.abchip.mimo.context.LoginType
+	 * @generated
+	 */
+	EEnum getLoginType();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.context.UserClass <em>User Class</em>}'.
@@ -1825,6 +2023,74 @@ public interface ContextPackage extends EPackage {
 		EAttribute MESSAGE_FILE__TEXT = eINSTANCE.getMessageFile_Text();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.ProviderConfigImpl <em>Provider Config</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.context.impl.ProviderConfigImpl
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getProviderConfig()
+		 * @generated
+		 */
+		EClass PROVIDER_CONFIG = eINSTANCE.getProviderConfig();
+
+		/**
+		 * The meta object literal for the '<em><b>Login Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROVIDER_CONFIG__LOGIN_TYPE = eINSTANCE.getProviderConfig_LoginType();
+
+		/**
+		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROVIDER_CONFIG__URL = eINSTANCE.getProviderConfig_Url();
+
+		/**
+		 * The meta object literal for the '<em><b>Public User</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROVIDER_CONFIG__PUBLIC_USER = eINSTANCE.getProviderConfig_PublicUser();
+
+		/**
+		 * The meta object literal for the '<em><b>System User</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROVIDER_CONFIG__SYSTEM_USER = eINSTANCE.getProviderConfig_SystemUser();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.ProviderUserImpl <em>Provider User</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.context.impl.ProviderUserImpl
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getProviderUser()
+		 * @generated
+		 */
+		EClass PROVIDER_USER = eINSTANCE.getProviderUser();
+
+		/**
+		 * The meta object literal for the '<em><b>User</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROVIDER_USER__USER = eINSTANCE.getProviderUser_User();
+
+		/**
+		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROVIDER_USER__PASSWORD = eINSTANCE.getProviderUser_Password();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.Registry <em>Registry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1905,6 +2171,16 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum LOCK_TYPE = eINSTANCE.getLockType();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.context.LoginType <em>Login Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.context.LoginType
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLoginType()
+		 * @generated
+		 */
+		EEnum LOGIN_TYPE = eINSTANCE.getLoginType();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.UserClass <em>User Class</em>}' enum.
