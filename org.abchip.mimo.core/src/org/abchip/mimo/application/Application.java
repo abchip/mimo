@@ -12,6 +12,7 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
 
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.resource.ResourceMapping;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +31,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  *   <li>{@link org.abchip.mimo.application.Application#getHooks <em>Hooks</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getPort <em>Port</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.Application#getResourceMapping <em>Resource Mapping</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -215,6 +217,32 @@ public interface Application extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setPort(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Resource Mapping</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Resource Mapping</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Resource Mapping</em>' containment reference.
+	 * @see #setResourceMapping(ResourceMapping)
+	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_ResourceMapping()
+	 * @model containment="true" resolveProxies="true" required="true"
+	 * @generated
+	 */
+	ResourceMapping getResourceMapping();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.application.Application#getResourceMapping <em>Resource Mapping</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Resource Mapping</em>' containment reference.
+	 * @see #getResourceMapping()
+	 * @generated
+	 */
+	void setResourceMapping(ResourceMapping value);
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.

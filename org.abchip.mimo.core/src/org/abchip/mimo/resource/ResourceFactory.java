@@ -38,6 +38,33 @@ public interface ResourceFactory extends EFactory {
 	ResourceConfig createResourceConfig();
 
 	/**
+	 * Returns a new object of class '<em>Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mapping</em>'.
+	 * @generated
+	 */
+	ResourceMapping createResourceMapping();
+
+	/**
+	 * Returns a new object of class '<em>Mapping Rule By Frame</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mapping Rule By Frame</em>'.
+	 * @generated
+	 */
+	ResourceMappingRuleByFrame createResourceMappingRuleByFrame();
+
+	/**
+	 * Returns a new object of class '<em>Mapping Rule By Package</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mapping Rule By Package</em>'.
+	 * @generated
+	 */
+	ResourceMappingRuleByPackage createResourceMappingRuleByPackage();
+
+	/**
 	 * Returns a new object of class '<em>Notifier</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

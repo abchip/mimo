@@ -20,6 +20,7 @@ import org.abchip.mimo.application.ServiceHook;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
+import org.abchip.mimo.resource.ResourceMapping;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -46,6 +47,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getHooks <em>Hooks</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getPort <em>Port</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getResourceMapping <em>Resource Mapping</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -142,6 +144,15 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * @ordered
 	 */
 	protected int port = PORT_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getResourceMapping() <em>Resource Mapping</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResourceMapping()
+	 * @generated
+	 * @ordered
+	 */
+	protected ResourceMapping resourceMapping;
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -342,6 +353,74 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * @generated
 	 */
 	@Override
+	public ResourceMapping getResourceMapping() {
+		if (resourceMapping != null && ((EObject)resourceMapping).eIsProxy()) {
+			InternalEObject oldResourceMapping = (InternalEObject)resourceMapping;
+			resourceMapping = (ResourceMapping)eResolveProxy(oldResourceMapping);
+			if (resourceMapping != oldResourceMapping) {
+				InternalEObject newResourceMapping = (InternalEObject)resourceMapping;
+				NotificationChain msgs = oldResourceMapping.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__RESOURCE_MAPPING, null, null);
+				if (newResourceMapping.eInternalContainer() == null) {
+					msgs = newResourceMapping.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__RESOURCE_MAPPING, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION__RESOURCE_MAPPING, oldResourceMapping, resourceMapping));
+			}
+		}
+		return resourceMapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResourceMapping basicGetResourceMapping() {
+		return resourceMapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetResourceMapping(ResourceMapping newResourceMapping, NotificationChain msgs) {
+		ResourceMapping oldResourceMapping = resourceMapping;
+		resourceMapping = newResourceMapping;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__RESOURCE_MAPPING, oldResourceMapping, newResourceMapping);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setResourceMapping(ResourceMapping newResourceMapping) {
+		if (newResourceMapping != resourceMapping) {
+			NotificationChain msgs = null;
+			if (resourceMapping != null)
+				msgs = ((InternalEObject)resourceMapping).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__RESOURCE_MAPPING, null, msgs);
+			if (newResourceMapping != null)
+				msgs = ((InternalEObject)newResourceMapping).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__RESOURCE_MAPPING, null, msgs);
+			msgs = basicSetResourceMapping(newResourceMapping, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__RESOURCE_MAPPING, newResourceMapping, newResourceMapping));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -380,6 +459,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return basicSetContextDescription(null, msgs);
 			case ApplicationPackage.APPLICATION__HOOKS:
 				return ((InternalEList<?>)getHooks()).basicRemove(otherEnd, msgs);
+			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
+				return basicSetResourceMapping(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -411,6 +492,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return getName();
 			case ApplicationPackage.APPLICATION__PORT:
 				return getPort();
+			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
+				if (resolve) return getResourceMapping();
+				return basicGetResourceMapping();
 			case ApplicationPackage.APPLICATION__TEXT:
 				return getText();
 		}
@@ -453,6 +537,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__PORT:
 				setPort((Integer)newValue);
 				return;
+			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
+				setResourceMapping((ResourceMapping)newValue);
+				return;
 			case ApplicationPackage.APPLICATION__TEXT:
 				setText((String)newValue);
 				return;
@@ -492,6 +579,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__PORT:
 				setPort(PORT_EDEFAULT);
 				return;
+			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
+				setResourceMapping((ResourceMapping)null);
+				return;
 			case ApplicationPackage.APPLICATION__TEXT:
 				setText(TEXT_EDEFAULT);
 				return;
@@ -523,6 +613,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ApplicationPackage.APPLICATION__PORT:
 				return port != PORT_EDEFAULT;
+			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
+				return resourceMapping != null;
 			case ApplicationPackage.APPLICATION__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}

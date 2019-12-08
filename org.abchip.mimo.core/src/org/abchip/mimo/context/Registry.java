@@ -17,20 +17,20 @@ import java.util.List;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface Registry<S> {
+public interface Registry<K> {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model required="true" nameRequired="true"
 	 * @generated
 	 */
-	S lookup(String name);
+	K lookup(String name);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model required="true"
 	 * @generated
 	 */
-	List<S> list();
+	List<K> list();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -38,13 +38,13 @@ public interface Registry<S> {
 	 * @model required="true" portRequired="true"
 	 * @generated
 	 */
-	S lookupByPort(int port);
+	K lookupByPort(int port);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model required="true" vendorRequired="true" versionRequired="true"
 	 * @generated
 	 */
-	S lookupByVendorVersion(String vendor, String version);
+	K lookupByVendorVersion(String vendor, String version);
 
 }

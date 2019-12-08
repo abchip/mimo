@@ -20,6 +20,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceMapping" lowerBound="1"
+          eType="#//resource/ResourceMapping" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ApplicationComponent" eSuperTypes="#//entity/EntityIdentifiable">
@@ -570,20 +572,20 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Registry" abstract="true" interface="true">
-      <eTypeParameters name="S"/>
+      <eTypeParameters name="K"/>
       <eOperations name="lookup" lowerBound="1">
-        <eGenericType eTypeParameter="#//context/Registry/S"/>
+        <eGenericType eTypeParameter="#//context/Registry/K"/>
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="list" lowerBound="1" upperBound="-1">
-        <eGenericType eTypeParameter="#//context/Registry/S"/>
+        <eGenericType eTypeParameter="#//context/Registry/K"/>
       </eOperations>
       <eOperations name="lookupByPort" lowerBound="1">
-        <eGenericType eTypeParameter="#//context/Registry/S"/>
+        <eGenericType eTypeParameter="#//context/Registry/K"/>
         <eParameters name="port" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
       <eOperations name="lookupByVendorVersion" lowerBound="1">
-        <eGenericType eTypeParameter="#//context/Registry/S"/>
+        <eGenericType eTypeParameter="#//context/Registry/K"/>
         <eParameters name="vendor" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="version" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
@@ -591,12 +593,12 @@
     <eClassifiers xsi:type="ecore:EClass" name="RegistryFactory" abstract="true" interface="true">
       <eOperations name="createRegistry" lowerBound="1">
         <eGenericType eClassifier="#//context/Registry">
-          <eTypeArguments eTypeParameter="#//context/RegistryFactory/createRegistry/S"/>
+          <eTypeArguments eTypeParameter="#//context/RegistryFactory/createRegistry/K"/>
         </eGenericType>
-        <eTypeParameters name="S"/>
+        <eTypeParameters name="K"/>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//context/RegistryFactory/createRegistry/S"/>
+            <eTypeArguments eTypeParameter="#//context/RegistryFactory/createRegistry/K"/>
           </eGenericType>
         </eParameters>
       </eOperations>
@@ -1018,6 +1020,10 @@
     <eClassifiers xsi:type="ecore:EDataType" name="JavaWriter" instanceClassName="java.io.Writer"/>
   </eSubpackages>
   <eSubpackages name="resource" nsURI="http://www.abchip.org/mimo/resource" nsPrefix="mimo-resource">
+    <eClassifiers xsi:type="ecore:EEnum" name="MappingType">
+      <eLiterals name="ByFrame" value="10" literal="BF"/>
+      <eLiterals name="ByPackage" value="20" literal="BP"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Resource" abstract="true" eSuperTypes="#//entity/Entity">
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/EntityIdentifiable"/>
@@ -1389,6 +1395,26 @@
           </eGenericType>
         </eParameters>
       </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceMapping" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
+          eType="#//resource/ResourceMappingRule" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceMappingRule" abstract="true"
+        eSuperTypes="#//entity/Entity">
+      <eOperations name="getMappingType" lowerBound="1" eType="#//resource/MappingType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="provider" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceMappingRuleByFrame" eSuperTypes="#//resource/ResourceMappingRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceMappingRuleByPackage" eSuperTypes="#//resource/ResourceMappingRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceNotifier">
       <eTypeParameters name="E">

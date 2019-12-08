@@ -196,6 +196,136 @@ public interface ResourcePackage extends EPackage {
 	int RESOURCE_MANAGER_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceMappingImpl <em>Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.resource.impl.ResourceMappingImpl
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMapping()
+	 * @generated
+	 */
+	int RESOURCE_MAPPING = 5;
+
+	/**
+	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING__RULES = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceMappingRuleImpl <em>Mapping Rule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.resource.impl.ResourceMappingRuleImpl
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingRule()
+	 * @generated
+	 */
+	int RESOURCE_MAPPING_RULE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Provider</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING_RULE__PROVIDER = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mapping Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING_RULE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceMappingRuleByFrameImpl <em>Mapping Rule By Frame</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.resource.impl.ResourceMappingRuleByFrameImpl
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingRuleByFrame()
+	 * @generated
+	 */
+	int RESOURCE_MAPPING_RULE_BY_FRAME = 7;
+
+	/**
+	 * The feature id for the '<em><b>Provider</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING_RULE_BY_FRAME__PROVIDER = RESOURCE_MAPPING_RULE__PROVIDER;
+
+	/**
+	 * The feature id for the '<em><b>Frame</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING_RULE_BY_FRAME__FRAME = RESOURCE_MAPPING_RULE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mapping Rule By Frame</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING_RULE_BY_FRAME_FEATURE_COUNT = RESOURCE_MAPPING_RULE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceMappingRuleByPackageImpl <em>Mapping Rule By Package</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.resource.impl.ResourceMappingRuleByPackageImpl
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingRuleByPackage()
+	 * @generated
+	 */
+	int RESOURCE_MAPPING_RULE_BY_PACKAGE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Provider</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING_RULE_BY_PACKAGE__PROVIDER = RESOURCE_MAPPING_RULE__PROVIDER;
+
+	/**
+	 * The feature id for the '<em><b>Package</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING_RULE_BY_PACKAGE__PACKAGE = RESOURCE_MAPPING_RULE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mapping Rule By Package</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MAPPING_RULE_BY_PACKAGE_FEATURE_COUNT = RESOURCE_MAPPING_RULE_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceNotifierImpl <em>Notifier</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -203,7 +333,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceNotifier()
 	 * @generated
 	 */
-	int RESOURCE_NOTIFIER = 5;
+	int RESOURCE_NOTIFIER = 9;
 
 	/**
 	 * The number of structural features of the '<em>Notifier</em>' class.
@@ -222,7 +352,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceProvider()
 	 * @generated
 	 */
-	int RESOURCE_PROVIDER = 6;
+	int RESOURCE_PROVIDER = 10;
 
 	/**
 	 * The number of structural features of the '<em>Provider</em>' class.
@@ -241,7 +371,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceProviderRegistry()
 	 * @generated
 	 */
-	int RESOURCE_PROVIDER_REGISTRY = 7;
+	int RESOURCE_PROVIDER_REGISTRY = 11;
 
 	/**
 	 * The number of structural features of the '<em>Provider Registry</em>' class.
@@ -260,7 +390,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceReader()
 	 * @generated
 	 */
-	int RESOURCE_READER = 8;
+	int RESOURCE_READER = 12;
 
 	/**
 	 * The feature id for the '<em><b>Notifier</b></em>' reference.
@@ -288,7 +418,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceSerializer()
 	 * @generated
 	 */
-	int RESOURCE_SERIALIZER = 9;
+	int RESOURCE_SERIALIZER = 13;
 
 	/**
 	 * The feature id for the '<em><b>Frame</b></em>' reference.
@@ -316,7 +446,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceWriter()
 	 * @generated
 	 */
-	int RESOURCE_WRITER = 10;
+	int RESOURCE_WRITER = 14;
 
 	/**
 	 * The feature id for the '<em><b>Notifier</b></em>' reference.
@@ -344,7 +474,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceEventType()
 	 * @generated
 	 */
-	int RESOURCE_EVENT_TYPE = 11;
+	int RESOURCE_EVENT_TYPE = 15;
 
 
 	/**
@@ -355,7 +485,18 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getSerializationType()
 	 * @generated
 	 */
-	int SERIALIZATION_TYPE = 12;
+	int SERIALIZATION_TYPE = 16;
+
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.resource.MappingType <em>Mapping Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.resource.MappingType
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getMappingType()
+	 * @generated
+	 */
+	int MAPPING_TYPE = 17;
 
 
 	/**
@@ -451,6 +592,90 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getResourceManager();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceMapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping</em>'.
+	 * @see org.abchip.mimo.resource.ResourceMapping
+	 * @generated
+	 */
+	EClass getResourceMapping();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.resource.ResourceMapping#getRules <em>Rules</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rules</em>'.
+	 * @see org.abchip.mimo.resource.ResourceMapping#getRules()
+	 * @see #getResourceMapping()
+	 * @generated
+	 */
+	EReference getResourceMapping_Rules();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceMappingRule <em>Mapping Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping Rule</em>'.
+	 * @see org.abchip.mimo.resource.ResourceMappingRule
+	 * @generated
+	 */
+	EClass getResourceMappingRule();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.ResourceMappingRule#getProvider <em>Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Provider</em>'.
+	 * @see org.abchip.mimo.resource.ResourceMappingRule#getProvider()
+	 * @see #getResourceMappingRule()
+	 * @generated
+	 */
+	EAttribute getResourceMappingRule_Provider();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceMappingRuleByFrame <em>Mapping Rule By Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping Rule By Frame</em>'.
+	 * @see org.abchip.mimo.resource.ResourceMappingRuleByFrame
+	 * @generated
+	 */
+	EClass getResourceMappingRuleByFrame();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.ResourceMappingRuleByFrame#getFrame <em>Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Frame</em>'.
+	 * @see org.abchip.mimo.resource.ResourceMappingRuleByFrame#getFrame()
+	 * @see #getResourceMappingRuleByFrame()
+	 * @generated
+	 */
+	EAttribute getResourceMappingRuleByFrame_Frame();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceMappingRuleByPackage <em>Mapping Rule By Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping Rule By Package</em>'.
+	 * @see org.abchip.mimo.resource.ResourceMappingRuleByPackage
+	 * @generated
+	 */
+	EClass getResourceMappingRuleByPackage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.ResourceMappingRuleByPackage#getPackage <em>Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Package</em>'.
+	 * @see org.abchip.mimo.resource.ResourceMappingRuleByPackage#getPackage()
+	 * @see #getResourceMappingRuleByPackage()
+	 * @generated
+	 */
+	EAttribute getResourceMappingRuleByPackage_Package();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceNotifier <em>Notifier</em>}'.
@@ -553,6 +778,16 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getSerializationType();
+
+	/**
+	 * Returns the meta object for enum '{@link org.abchip.mimo.resource.MappingType <em>Mapping Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Mapping Type</em>'.
+	 * @see org.abchip.mimo.resource.MappingType
+	 * @generated
+	 */
+	EEnum getMappingType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -659,6 +894,78 @@ public interface ResourcePackage extends EPackage {
 		EClass RESOURCE_MANAGER = eINSTANCE.getResourceManager();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceMappingImpl <em>Mapping</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.resource.impl.ResourceMappingImpl
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMapping()
+		 * @generated
+		 */
+		EClass RESOURCE_MAPPING = eINSTANCE.getResourceMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCE_MAPPING__RULES = eINSTANCE.getResourceMapping_Rules();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceMappingRuleImpl <em>Mapping Rule</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.resource.impl.ResourceMappingRuleImpl
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingRule()
+		 * @generated
+		 */
+		EClass RESOURCE_MAPPING_RULE = eINSTANCE.getResourceMappingRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Provider</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE_MAPPING_RULE__PROVIDER = eINSTANCE.getResourceMappingRule_Provider();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceMappingRuleByFrameImpl <em>Mapping Rule By Frame</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.resource.impl.ResourceMappingRuleByFrameImpl
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingRuleByFrame()
+		 * @generated
+		 */
+		EClass RESOURCE_MAPPING_RULE_BY_FRAME = eINSTANCE.getResourceMappingRuleByFrame();
+
+		/**
+		 * The meta object literal for the '<em><b>Frame</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE_MAPPING_RULE_BY_FRAME__FRAME = eINSTANCE.getResourceMappingRuleByFrame_Frame();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceMappingRuleByPackageImpl <em>Mapping Rule By Package</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.resource.impl.ResourceMappingRuleByPackageImpl
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingRuleByPackage()
+		 * @generated
+		 */
+		EClass RESOURCE_MAPPING_RULE_BY_PACKAGE = eINSTANCE.getResourceMappingRuleByPackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Package</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE_MAPPING_RULE_BY_PACKAGE__PACKAGE = eINSTANCE.getResourceMappingRuleByPackage_Package();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceNotifierImpl <em>Notifier</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -753,6 +1060,16 @@ public interface ResourcePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum SERIALIZATION_TYPE = eINSTANCE.getSerializationType();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.resource.MappingType <em>Mapping Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.resource.MappingType
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getMappingType()
+		 * @generated
+		 */
+		EEnum MAPPING_TYPE = eINSTANCE.getMappingType();
 
 	}
 

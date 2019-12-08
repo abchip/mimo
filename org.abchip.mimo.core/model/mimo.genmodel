@@ -25,6 +25,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/hooks"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/port"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/resourceMapping"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/text"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//application/ApplicationComponent">
@@ -402,7 +403,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderUser/password"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/Registry">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Registry/S"/>
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Registry/K"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Registry/lookup">
           <genParameters ecoreParameter="mimo.ecore#//context/Registry/lookup/name"/>
         </genOperations>
@@ -418,7 +419,7 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//context/RegistryFactory">
         <genOperations ecoreOperation="mimo.ecore#//context/RegistryFactory/createRegistry">
           <genParameters ecoreParameter="mimo.ecore#//context/RegistryFactory/createRegistry/klass"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/RegistryFactory/createRegistry/S"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/RegistryFactory/createRegistry/K"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//context/UserProfile">
@@ -702,6 +703,10 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/XML_Metadata_Interchange"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/JavaScript_Object_Notation"/>
       </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/MappingType">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/MappingType/ByFrame"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/MappingType/ByPackage"/>
+      </genEnums>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/Resource">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/Resource/E"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -874,6 +879,19 @@
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/registerListener.2/listener"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/registerListener.2/E"/>
         </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//resource/ResourceMapping">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//resource/ResourceMapping/rules"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceMappingRule">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/ResourceMappingRule/provider"/>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceMappingRule/getMappingType"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//resource/ResourceMappingRuleByFrame">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/ResourceMappingRuleByFrame/frame"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//resource/ResourceMappingRuleByPackage">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/ResourceMappingRuleByPackage/package"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//resource/ResourceNotifier">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceNotifier/E"/>

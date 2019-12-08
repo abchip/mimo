@@ -30,6 +30,7 @@ import org.abchip.mimo.impl.MimoPackageImpl;
 import org.abchip.mimo.java.JavaPackage;
 
 import org.abchip.mimo.java.impl.JavaPackageImpl;
+import org.abchip.mimo.resource.MappingType;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceEvent;
@@ -37,6 +38,10 @@ import org.abchip.mimo.resource.ResourceEventType;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceListener;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceMapping;
+import org.abchip.mimo.resource.ResourceMappingRule;
+import org.abchip.mimo.resource.ResourceMappingRuleByFrame;
+import org.abchip.mimo.resource.ResourceMappingRuleByPackage;
 import org.abchip.mimo.resource.ResourceNotifier;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceProvider;
@@ -108,6 +113,34 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass resourceMappingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass resourceMappingRuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass resourceMappingRuleByFrameEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass resourceMappingRuleByPackageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass resourceNotifierEClass = null;
 
 	/**
@@ -158,6 +191,13 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	private EEnum serializationTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum mappingTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -346,6 +386,86 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
+	public EClass getResourceMapping() {
+		return resourceMappingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getResourceMapping_Rules() {
+		return (EReference)resourceMappingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getResourceMappingRule() {
+		return resourceMappingRuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getResourceMappingRule_Provider() {
+		return (EAttribute)resourceMappingRuleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getResourceMappingRuleByFrame() {
+		return resourceMappingRuleByFrameEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getResourceMappingRuleByFrame_Frame() {
+		return (EAttribute)resourceMappingRuleByFrameEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getResourceMappingRuleByPackage() {
+		return resourceMappingRuleByPackageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getResourceMappingRuleByPackage_Package() {
+		return (EAttribute)resourceMappingRuleByPackageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getResourceNotifier() {
 		return resourceNotifierEClass;
 	}
@@ -446,6 +566,16 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
+	public EEnum getMappingType() {
+		return mappingTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ResourceFactory getResourceFactory() {
 		return (ResourceFactory)getEFactoryInstance();
 	}
@@ -483,6 +613,18 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		resourceManagerEClass = createEClass(RESOURCE_MANAGER);
 
+		resourceMappingEClass = createEClass(RESOURCE_MAPPING);
+		createEReference(resourceMappingEClass, RESOURCE_MAPPING__RULES);
+
+		resourceMappingRuleEClass = createEClass(RESOURCE_MAPPING_RULE);
+		createEAttribute(resourceMappingRuleEClass, RESOURCE_MAPPING_RULE__PROVIDER);
+
+		resourceMappingRuleByFrameEClass = createEClass(RESOURCE_MAPPING_RULE_BY_FRAME);
+		createEAttribute(resourceMappingRuleByFrameEClass, RESOURCE_MAPPING_RULE_BY_FRAME__FRAME);
+
+		resourceMappingRuleByPackageEClass = createEClass(RESOURCE_MAPPING_RULE_BY_PACKAGE);
+		createEAttribute(resourceMappingRuleByPackageEClass, RESOURCE_MAPPING_RULE_BY_PACKAGE__PACKAGE);
+
 		resourceNotifierEClass = createEClass(RESOURCE_NOTIFIER);
 
 		resourceProviderEClass = createEClass(RESOURCE_PROVIDER);
@@ -500,6 +642,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		// Create enums
 		resourceEventTypeEEnum = createEEnum(RESOURCE_EVENT_TYPE);
 		serializationTypeEEnum = createEEnum(SERIALIZATION_TYPE);
+		mappingTypeEEnum = createEEnum(MAPPING_TYPE);
 	}
 
 	/**
@@ -558,6 +701,10 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		// Add supertypes to classes
 		resourceEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		resourceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		resourceMappingEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		resourceMappingRuleEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		resourceMappingRuleByFrameEClass.getESuperTypes().add(this.getResourceMappingRule());
+		resourceMappingRuleByPackageEClass.getESuperTypes().add(this.getResourceMappingRule());
 		g1 = createEGenericType(theContextPackage.getRegistry());
 		EGenericType g2 = createEGenericType(this.getResourceProvider());
 		g1.getETypeArguments().add(g2);
@@ -928,6 +1075,20 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "listener", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(resourceMappingEClass, ResourceMapping.class, "ResourceMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getResourceMapping_Rules(), this.getResourceMappingRule(), null, "rules", null, 0, -1, ResourceMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(resourceMappingRuleEClass, ResourceMappingRule.class, "ResourceMappingRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getResourceMappingRule_Provider(), ecorePackage.getEString(), "provider", null, 1, 1, ResourceMappingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(resourceMappingRuleEClass, this.getMappingType(), "getMappingType", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(resourceMappingRuleByFrameEClass, ResourceMappingRuleByFrame.class, "ResourceMappingRuleByFrame", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getResourceMappingRuleByFrame_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, ResourceMappingRuleByFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(resourceMappingRuleByPackageEClass, ResourceMappingRuleByPackage.class, "ResourceMappingRuleByPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getResourceMappingRuleByPackage_Package(), ecorePackage.getEString(), "package", null, 1, 1, ResourceMappingRuleByPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(resourceNotifierEClass, ResourceNotifier.class, "ResourceNotifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(resourceNotifierEClass, null, "fireEvent", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1248,6 +1409,10 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.XML_METADATA_INTERCHANGE);
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+
+		initEEnum(mappingTypeEEnum, MappingType.class, "MappingType");
+		addEEnumLiteral(mappingTypeEEnum, MappingType.BY_FRAME);
+		addEEnumLiteral(mappingTypeEEnum, MappingType.BY_PACKAGE);
 	}
 
 } //ResourcePackageImpl

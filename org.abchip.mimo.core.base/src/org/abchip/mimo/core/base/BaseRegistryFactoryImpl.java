@@ -18,10 +18,9 @@ public class BaseRegistryFactoryImpl implements RegistryFactory {
 
 	@Inject
 	private ContextRoot contextRoot;
-	
-	@Override
-	public <T> Registry<T> createRegistry(Class<T> klass) {
-		return new BaseRegistryImpl<T>(contextRoot, klass);
-	}
 
+	@Override
+	public <K> Registry<K> createRegistry(Class<K> klass) {
+		return new BaseRegistryImpl<K>(contextRoot, klass);
+	}
 }

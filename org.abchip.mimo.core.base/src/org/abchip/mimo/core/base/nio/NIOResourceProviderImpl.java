@@ -18,15 +18,12 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceFactory;
-import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
 
 public class NIOResourceProviderImpl extends ResourceProviderImpl {
 
 	@Inject
 	private ContextRoot contextRoot;
-	@Inject
-	private ResourceProviderRegistry resourceProviderRegistry;
 
 	private NIOPathManager pathManager;
 
@@ -40,8 +37,6 @@ public class NIOResourceProviderImpl extends ResourceProviderImpl {
 		this.resourceConfig.setOrderSupport(true);
 
 		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getDataPath());
-
-		resourceProviderRegistry.registerProvider(contextRoot, EntityIdentifiable.class, this);
 	}
 
 	@Override

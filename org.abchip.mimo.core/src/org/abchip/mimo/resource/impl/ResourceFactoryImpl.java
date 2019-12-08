@@ -65,6 +65,9 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ResourcePackage.RESOURCE_CONFIG: return (EObject)createResourceConfig();
+			case ResourcePackage.RESOURCE_MAPPING: return (EObject)createResourceMapping();
+			case ResourcePackage.RESOURCE_MAPPING_RULE_BY_FRAME: return (EObject)createResourceMappingRuleByFrame();
+			case ResourcePackage.RESOURCE_MAPPING_RULE_BY_PACKAGE: return (EObject)createResourceMappingRuleByPackage();
 			case ResourcePackage.RESOURCE_NOTIFIER: return (EObject)createResourceNotifier();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -83,6 +86,8 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 				return createResourceEventTypeFromString(eDataType, initialValue);
 			case ResourcePackage.SERIALIZATION_TYPE:
 				return createSerializationTypeFromString(eDataType, initialValue);
+			case ResourcePackage.MAPPING_TYPE:
+				return createMappingTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -100,6 +105,8 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 				return convertResourceEventTypeToString(eDataType, instanceValue);
 			case ResourcePackage.SERIALIZATION_TYPE:
 				return convertSerializationTypeToString(eDataType, instanceValue);
+			case ResourcePackage.MAPPING_TYPE:
+				return convertMappingTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -114,6 +121,39 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 	public ResourceConfig createResourceConfig() {
 		ResourceConfigImpl resourceConfig = new ResourceConfigImpl();
 		return resourceConfig;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceMapping createResourceMapping() {
+		ResourceMappingImpl resourceMapping = new ResourceMappingImpl();
+		return resourceMapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceMappingRuleByFrame createResourceMappingRuleByFrame() {
+		ResourceMappingRuleByFrameImpl resourceMappingRuleByFrame = new ResourceMappingRuleByFrameImpl();
+		return resourceMappingRuleByFrame;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceMappingRuleByPackage createResourceMappingRuleByPackage() {
+		ResourceMappingRuleByPackageImpl resourceMappingRuleByPackage = new ResourceMappingRuleByPackageImpl();
+		return resourceMappingRuleByPackage;
 	}
 
 	/**
@@ -164,6 +204,26 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 	 * @generated
 	 */
 	public String convertSerializationTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MappingType createMappingTypeFromString(EDataType eDataType, String initialValue) {
+		MappingType result = MappingType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMappingTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

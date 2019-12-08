@@ -1202,7 +1202,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		ETypeParameter factoryEClass_S = addETypeParameter(factoryEClass, "S");
 		ETypeParameter identityEClass_T = addETypeParameter(identityEClass, "T");
 		ETypeParameter messageDataFieldEClass_DD = addETypeParameter(messageDataFieldEClass, "DD");
-		ETypeParameter registryEClass_S = addETypeParameter(registryEClass, "S");
+		ETypeParameter registryEClass_K = addETypeParameter(registryEClass, "K");
 
 		// Set bounds for type parameters
 		EGenericType g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
@@ -1641,28 +1641,28 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		op = addEOperation(registryEClass, null, "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(registryEClass_S);
+		g1 = createEGenericType(registryEClass_K);
 		initEOperation(op, g1);
 
 		op = addEOperation(registryEClass, null, "list", 1, -1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(registryEClass_S);
+		g1 = createEGenericType(registryEClass_K);
 		initEOperation(op, g1);
 
 		op = addEOperation(registryEClass, null, "lookupByPort", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "port", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(registryEClass_S);
+		g1 = createEGenericType(registryEClass_K);
 		initEOperation(op, g1);
 
 		op = addEOperation(registryEClass, null, "lookupByVendorVersion", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "vendor", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "version", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(registryEClass_S);
+		g1 = createEGenericType(registryEClass_K);
 		initEOperation(op, g1);
 
 		initEClass(registryFactoryEClass, RegistryFactory.class, "RegistryFactory", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(registryFactoryEClass, null, "createRegistry", 1, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "S");
+		t1 = addETypeParameter(op, "K");
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);

@@ -14,39 +14,39 @@ import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.Registry;
 
-public class BaseRegistryImpl<S> implements Registry<S> {
+public class BaseRegistryImpl<K> implements Registry<K> {
 
 	private ContextRoot contextRoot;
-	private Class<S> klass;
+	private Class<K> klass;
 
-	public BaseRegistryImpl(ContextRoot contextRoot, Class<S> klass) {
+	public BaseRegistryImpl(ContextRoot contextRoot, Class<K> klass) {
 		this.contextRoot = contextRoot;
 		this.klass = klass;
 	}
 
 	@Override
-	public S lookup(String name) {
+	public K lookup(String name) {
 
 		String filter = "(" + MimoConstants.REGISTRY_NAME + "=" + name + ")";
 		return contextRoot.get(klass, filter);
 	}
 
 	@Override
-	public S lookupByPort(int port) {
+	public K lookupByPort(int port) {
 
 		String filter = "(" + MimoConstants.APPLICATION_PORT + "=" + port + ")";
 		return contextRoot.get(klass, filter);
 	}
 
 	@Override
-	public List<S> list() {
+	public List<K> list() {
 
-		List<S> plugins = contextRoot.getAll(klass);
+		List<K> plugins = contextRoot.getAll(klass);
 		return plugins;
 	}
 
 	@Override
-	public S lookupByVendorVersion(String vendor, String version) {
+	public K lookupByVendorVersion(String vendor, String version) {
 
 		String filter = "(&(" + MimoConstants.REGISTRY_VENDOR + "=" + vendor + ")" + "(" + MimoConstants.REGISTRY_VERSION + "=" + version + "))";
 		return contextRoot.get(klass, filter);

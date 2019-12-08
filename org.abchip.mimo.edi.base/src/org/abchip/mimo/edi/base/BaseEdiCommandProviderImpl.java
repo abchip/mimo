@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.biz.base.command;
+package org.abchip.mimo.edi.base;
 
 import javax.inject.Inject;
 
@@ -20,7 +20,7 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
-public class EdiCommandProviderImpl extends BaseCommandProviderImpl {
+public class BaseEdiCommandProviderImpl extends BaseCommandProviderImpl {
 
 	@Inject
 	private ResourceManager resourceManager;

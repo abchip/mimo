@@ -147,13 +147,22 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION__PORT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Resource Mapping</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__RESOURCE_MAPPING = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
+
+	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
+	int APPLICATION__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Application</em>' class.
@@ -162,7 +171,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
+	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationComponentImpl <em>Component</em>}' class.
@@ -881,6 +890,17 @@ public interface ApplicationPackage extends EPackage {
 	EAttribute getApplication_Port();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.application.Application#getResourceMapping <em>Resource Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Resource Mapping</em>'.
+	 * @see org.abchip.mimo.application.Application#getResourceMapping()
+	 * @see #getApplication()
+	 * @generated
+	 */
+	EReference getApplication_ResourceMapping();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.Application#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1390,6 +1410,14 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute APPLICATION__PORT = eINSTANCE.getApplication_Port();
+
+		/**
+		 * The meta object literal for the '<em><b>Resource Mapping</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION__RESOURCE_MAPPING = eINSTANCE.getApplication_ResourceMapping();
 
 		/**
 		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.

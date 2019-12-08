@@ -15,21 +15,26 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.abchip.mimo.MimoConstants;
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Registry;
 import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.ResourceMapping;
+import org.abchip.mimo.resource.ResourceMappingRule;
 import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceProviderRegistry;
 
 public class BaseResourceProviderRegistryImpl extends BaseResource implements ResourceProviderRegistry {
 
 	private Registry<ResourceProvider> registry;
+	private ResourceMapping resourceMapping;
 
 	@Inject
-	public BaseResourceProviderRegistryImpl(RegistryFactory serviceRegistryFactory) {
+	public BaseResourceProviderRegistryImpl(RegistryFactory serviceRegistryFactory, Application application) {
 		this.registry = serviceRegistryFactory.createRegistry(ResourceProvider.class);
+		this.resourceMapping = application.getResourceMapping();
 	}
 
 	@Override
@@ -93,9 +98,27 @@ public class BaseResourceProviderRegistryImpl extends BaseResource implements Re
 	}
 
 	private ResourceProvider getProvider(Context context, Frame<?> frame) {
-		String filter = "(" + MimoConstants.PROVIDER_FRAME + "=" + frame.getName() + ")";
 
 		ResourceProvider resourceProvider = null;
+
+		for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
+			switch (mappingRule.getMappingType()) {
+			case BY_FRAME:
+				resourceProvider = getProviderByFrame(context, frame);
+				break;
+			case BY_PACKAGE:
+				break;
+			}
+		}
+
+		return resourceProvider;
+	}
+
+	private ResourceProvider getProviderByFrame(Context context, Frame<?> frame) {
+
+		ResourceProvider resourceProvider = null;
+
+		String filter = "(" + MimoConstants.PROVIDER_FRAME + "=" + frame.getName() + ")";
 
 		for (ResourceProvider rp : this.getContextRoot().getAll(ResourceProvider.class, filter)) {
 			resourceProvider = rp;

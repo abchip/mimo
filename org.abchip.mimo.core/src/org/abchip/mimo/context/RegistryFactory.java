@@ -24,6 +24,6 @@ public interface RegistryFactory {
 	 * @model required="true" klassRequired="true"
 	 * @generated
 	 */
-	<S> Registry<S> createRegistry(Class<S> klass);
+	<K> Registry<K> createRegistry(Class<K> klass);
 
 } // RegistryFactory
