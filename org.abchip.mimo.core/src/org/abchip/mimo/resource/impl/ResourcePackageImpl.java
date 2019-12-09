@@ -640,9 +640,9 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		resourceWriterEClass = createEClass(RESOURCE_WRITER);
 
 		// Create enums
+		mappingTypeEEnum = createEEnum(MAPPING_TYPE);
 		resourceEventTypeEEnum = createEEnum(RESOURCE_EVENT_TYPE);
 		serializationTypeEEnum = createEEnum(SERIALIZATION_TYPE);
-		mappingTypeEEnum = createEEnum(MAPPING_TYPE);
 	}
 
 	/**
@@ -1400,6 +1400,10 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
+		initEEnum(mappingTypeEEnum, MappingType.class, "MappingType");
+		addEEnumLiteral(mappingTypeEEnum, MappingType.BY_FRAME);
+		addEEnumLiteral(mappingTypeEEnum, MappingType.BY_PACKAGE);
+
 		initEEnum(resourceEventTypeEEnum, ResourceEventType.class, "ResourceEventType");
 		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.BEFORE_SAVE);
 		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.AFTER_SAVE);
@@ -1409,10 +1413,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.XML_METADATA_INTERCHANGE);
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
-
-		initEEnum(mappingTypeEEnum, MappingType.class, "MappingType");
-		addEEnumLiteral(mappingTypeEEnum, MappingType.BY_FRAME);
-		addEEnumLiteral(mappingTypeEEnum, MappingType.BY_PACKAGE);
 	}
 
 } //ResourcePackageImpl

@@ -197,4 +197,11 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	protected void finalize() throws Throwable {
+		super.finalize();
+		
+		this.close();
+	}
+
 } //ContextImpl

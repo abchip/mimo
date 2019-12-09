@@ -89,6 +89,14 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	E createProxy(String name);
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	String getPackageName();
+
+	/**
 	 * Returns the value of the '<em><b>Keys</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->

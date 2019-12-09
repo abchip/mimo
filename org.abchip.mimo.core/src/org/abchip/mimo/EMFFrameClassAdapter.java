@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -279,5 +280,22 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			return this.routesNumber;
 		}
 		return super.eGet(featureID, resolve, coreType);
+	}
+
+	@Override
+	public String getPackageName() {
+
+		StringBuffer sb = new StringBuffer();
+		EPackage ePackage = eClass.getEPackage();
+		while (ePackage != null) {
+			if (sb.length() == 0)
+				sb.insert(0, ePackage.getName());
+			else
+				sb.insert(0, ePackage.getName() + ".");
+
+			ePackage = ePackage.getESuperPackage();
+		}
+
+		return sb.toString();
 	}
 }

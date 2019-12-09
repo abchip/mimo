@@ -10,22 +10,44 @@ package org.abchip.mimo.core.base;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.application.Application;
+import org.abchip.mimo.context.AuthenticationManager;
+import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
-import org.abchip.mimo.context.ContextRoot;
 import org.eclipse.osgi.framework.console.CommandProvider;
 
 public abstract class BaseCommandProviderImpl implements CommandProvider {
 
 	@Inject
-	private ContextRoot contextRoot;
+	private Application application;
 
-	protected Context createContext(String tenantId) {
+	private ThreadLocal<Context> threadLocalContext = new ThreadLocal<Context>();
 
-		ContextDescription contextDescription = ContextFactory.eINSTANCE.createContextDescription();
-		contextDescription.setAnonymous(true);
+	@SuppressWarnings("resource")
+	protected void login(String user, String password) {
 
-		return contextRoot.createChildContext(contextDescription);
+		AuthenticationManager authenticationManager = application.getContext().get(AuthenticationManager.class);
+		if(authenticationManager == null)
+			return;
+			
+		AuthenticationUserPassword userPassword = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
+		userPassword.setUser(user);
+		userPassword.setPassword(password);
+
+		Context context = authenticationManager.login(null, userPassword);
+		if (context == null)
+			return;
+
+		threadLocalContext.set(context);
+	}
+
+	protected Context getContext() {
+
+		Context context = threadLocalContext.get();
+		if (context == null)
+			throw new RuntimeException("You need a login, please use command 'login' before execute any command");
+
+		return context;
 	}
 }

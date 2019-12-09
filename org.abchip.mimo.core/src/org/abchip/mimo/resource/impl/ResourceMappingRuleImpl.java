@@ -34,6 +34,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public abstract class ResourceMappingRuleImpl extends EntityImpl implements ResourceMappingRule {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The default value of the '{@link #getProvider() <em>Provider</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,14 +103,10 @@ public abstract class ResourceMappingRuleImpl extends EntityImpl implements Reso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public MappingType getMappingType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract MappingType getMappingType();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -24,24 +24,24 @@ public class BaseLanguageCommandProviderImpl extends BaseCommandProviderImpl {
 	private ResourceManager resourceManager;
 	@Inject
 	private LanguageManager languageManager;
-	
+
+	@SuppressWarnings("resource")
 	public void _lang(CommandInterpreter interpreter) throws Exception {
 
-		try (Context context = this.createContext(null)) {
+		Context context = this.getContext();
 
-			System.out.println(languageManager.translate(context, "eng", "man", "ita"));
-			
-			for (Language language : resourceManager.getResourceReader(context, Language.class).find()) {
-				System.out.println(language);
+		System.out.println(languageManager.translate(context, "eng", "man", "ita"));
 
-				LanguagePlanet mars = resourceManager.getFrame(context, LanguagePlanet.class).createProxy("mars");
-				language.getPlanets().add(mars);
-				language.getPlanets().get(0);
+		for (Language language : resourceManager.getResourceReader(context, Language.class).find()) {
+			System.out.println(language);
 
-				LanguagePlanet moon = resourceManager.getFrame(context, LanguagePlanet.class).createProxy("moon");
-				language.getPlanetsCont().add(moon);
-				language.getPlanetsCont().get(0);
-			}
+			LanguagePlanet mars = resourceManager.getFrame(context, LanguagePlanet.class).createProxy("mars");
+			language.getPlanets().add(mars);
+			language.getPlanets().get(0);
+
+			LanguagePlanet moon = resourceManager.getFrame(context, LanguagePlanet.class).createProxy("moon");
+			language.getPlanetsCont().add(moon);
+			language.getPlanetsCont().get(0);
 		}
 	}
 

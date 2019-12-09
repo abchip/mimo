@@ -291,6 +291,14 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public abstract String getPackageName();
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */

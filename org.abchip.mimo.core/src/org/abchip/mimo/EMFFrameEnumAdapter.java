@@ -78,4 +78,10 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	public E createEntity() {
 		throw new UnsupportedOperationException();
 	}
+
+	@Override
+	public String getPackageName() {
+		System.out.println(eEnum);
+		return null;
+	}
 }

@@ -474,7 +474,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceEventType()
 	 * @generated
 	 */
-	int RESOURCE_EVENT_TYPE = 15;
+	int RESOURCE_EVENT_TYPE = 16;
 
 
 	/**
@@ -485,7 +485,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getSerializationType()
 	 * @generated
 	 */
-	int SERIALIZATION_TYPE = 16;
+	int SERIALIZATION_TYPE = 17;
 
 
 	/**
@@ -496,7 +496,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getMappingType()
 	 * @generated
 	 */
-	int MAPPING_TYPE = 17;
+	int MAPPING_TYPE = 15;
 
 
 	/**

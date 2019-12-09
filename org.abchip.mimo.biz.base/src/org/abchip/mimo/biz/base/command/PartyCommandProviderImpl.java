@@ -31,53 +31,53 @@ public class PartyCommandProviderImpl extends BaseCommandProviderImpl {
 	@Inject
 	private ResourceManager resourceManager;
 
+	@SuppressWarnings("resource")
 	public <E extends EntityIdentifiable> void _testParty(CommandInterpreter interpreter) throws Exception {
 
-		try (Context context = this.createContext(null)) {
+		Context context = this.getContext();
 
-			ResourceReader<Party> partyReader = resourceManager.getResourceReader(context, Party.class);
-			Party party = partyReader.lookup("10000", true);
-			System.out.println(party.getID());
-			System.out.println(party.getURI());
-			System.out.println(party.getPartyId());
+		ResourceReader<Party> partyReader = resourceManager.getResourceReader(context, Party.class);
+		Party party = partyReader.lookup("10000", true);
+		System.out.println(party.getID());
+		System.out.println(party.getURI());
+		System.out.println(party.getPartyId());
 
-			for (PartyRole partyRole : party.getPartyRoles()) {
-				System.out.println(partyRole.getID());
-			}
-
-			System.out.println(party.getCreatedByUserLogin().getPartyId().getID());
-			System.out.println(party.getPartyTypeId().getID());
+		for (PartyRole partyRole : party.getPartyRoles()) {
+			System.out.println(partyRole.getID());
 		}
+
+		System.out.println(party.getCreatedByUserLogin().getPartyId().getID());
+		System.out.println(party.getPartyTypeId().getID());
 	}
 
+	@SuppressWarnings("resource")
 	public <E extends EntityIdentifiable> void _hackerParty(CommandInterpreter interpreter) throws Exception {
 
-		try (Context context = this.createContext(null)) {
+		Context context = this.getContext();
 
-			String id = interpreter.nextArgument();
+		String id = interpreter.nextArgument();
 
-			// Write Person
-			ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(context, Person.class);
+		// Write Person
+		ResourceWriter<Person> personWriter = resourceManager.getResourceWriter(context, Person.class);
 
-			Person person = PartyFactory.eINSTANCE.createPerson();
-			person.setPreferredCurrencyUomId(resourceManager.getFrame(context, Uom.class).createProxy("EUR"));
-			person.setStatusId(resourceManager.getFrame(context, StatusItem.class).createProxy("PARTY_ENABLED"));
-			person.setPartyTypeId(resourceManager.getFrame(context, PartyType.class).createProxy("PERSON"));
-			person.setPartyId(id);
-			person.setFirstName("Test hacker party person");
-			personWriter.create(person);
+		Person person = PartyFactory.eINSTANCE.createPerson();
+		person.setPreferredCurrencyUomId(resourceManager.getFrame(context, Uom.class).createProxy("EUR"));
+		person.setStatusId(resourceManager.getFrame(context, StatusItem.class).createProxy("PARTY_ENABLED"));
+		person.setPartyTypeId(resourceManager.getFrame(context, PartyType.class).createProxy("PERSON"));
+		person.setPartyId(id);
+		person.setFirstName("Test hacker party person");
+		personWriter.create(person);
 
-			// Write PartyGroup
-			ResourceWriter<PartyGroup> groupWriter = resourceManager.getResourceWriter(context, PartyGroup.class);
+		// Write PartyGroup
+		ResourceWriter<PartyGroup> groupWriter = resourceManager.getResourceWriter(context, PartyGroup.class);
 
-			PartyGroup partyGroup = PartyFactory.eINSTANCE.createPartyGroup();
-			partyGroup.setPreferredCurrencyUomId(resourceManager.getFrame(context, Uom.class).createProxy("EUR"));
-			partyGroup.setStatusId(resourceManager.getFrame(context, StatusItem.class).createProxy("PARTY_ENABLED"));
-			partyGroup.setPartyTypeId(resourceManager.getFrame(context, PartyType.class).createProxy("PARTY_GROUP"));
-			partyGroup.setPartyId(id);
-			partyGroup.setGroupName("Test hacker party group");
-			groupWriter.create(partyGroup);
-		}
+		PartyGroup partyGroup = PartyFactory.eINSTANCE.createPartyGroup();
+		partyGroup.setPreferredCurrencyUomId(resourceManager.getFrame(context, Uom.class).createProxy("EUR"));
+		partyGroup.setStatusId(resourceManager.getFrame(context, StatusItem.class).createProxy("PARTY_ENABLED"));
+		partyGroup.setPartyTypeId(resourceManager.getFrame(context, PartyType.class).createProxy("PARTY_GROUP"));
+		partyGroup.setPartyId(id);
+		partyGroup.setGroupName("Test hacker party group");
+		groupWriter.create(partyGroup);
 	}
 
 	@Override

@@ -8,11 +8,11 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.abchip.mimo.core,
  org.apache.commons.io,
  org.apache.commons.lang,
- org.eclipse.osgi,
  org.emfjson.jackson,
  com.fasterxml.jackson.core.jackson-databind,
  com.fasterxml.jackson.core.jackson-core,
- com.fasterxml.jackson.core.jackson-annotations
+ com.fasterxml.jackson.core.jackson-annotations,
+ org.eclipse.osgi
 Bundle-ClassPath: .
 Export-Package: org.abchip.mimo.core.base,
  org.abchip.mimo.core.base.app,

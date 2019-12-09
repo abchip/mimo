@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -39,14 +37,9 @@ public class LPClassifierImpl implements Classifier {
 	private ResourceManager resourceManager;
 
 	private ScoredClassifier<CharSequence> classifier;
-	private Map<String, Language> languages;
 
 	@PostConstruct
 	private void init() {
-
-		this.languages = new HashMap<String, Language>();
-
-		loadLanguages();
 		loadModels();
 	}
 
@@ -72,9 +65,14 @@ public class LPClassifierImpl implements Classifier {
 	@Override
 	public <E extends EntityIdentifiable> Evaluator buildEvaluator(Class<E> klass, Class<?> object) {
 
+		List<Language> languages = new ArrayList<Language>();
+		ResourceReader<Language> languageReader = resourceManager.getResourceReader(contextRoot, Language.class);
+		for (Language language : languageReader.find())
+			languages.add(language);
+
 		String[] categories = new String[languages.size()];
 		int i = 0;
-		for (Language language : languages.values()) {
+		for (Language language : languages) {
 			categories[i] = language.getText().toLowerCase();
 			i++;
 		}
@@ -91,9 +89,14 @@ public class LPClassifierImpl implements Classifier {
 
 		List<Classification<E>> classifications = new ArrayList<Classification<E>>();
 
+		List<Language> languages = new ArrayList<Language>();
+		ResourceReader<Language> languageReader = resourceManager.getResourceReader(contextRoot, Language.class);
+		for (Language language : languageReader.find())
+			languages.add(language);
+
 		for (int i = 0; i < lpClassification.size(); i++) {
 			E languageClassified = null;
-			for (Language language : languages.values()) {
+			for (Language language : languages) {
 				String category = lpClassification.category(i);
 				if (language.getText().equalsIgnoreCase(category)) {
 					languageClassified = (E) language;
@@ -108,12 +111,6 @@ public class LPClassifierImpl implements Classifier {
 		}
 
 		return classifications;
-	}
-
-	private void loadLanguages() {
-		ResourceReader<Language> languageReader = resourceManager.getResourceReader(contextRoot, Language.class);
-		for (Language language : languageReader.find())
-			languages.put(language.getName(), language);
 	}
 
 	@SuppressWarnings("unchecked")

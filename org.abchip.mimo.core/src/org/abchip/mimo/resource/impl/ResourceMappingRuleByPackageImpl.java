@@ -7,13 +7,11 @@
  */
 package org.abchip.mimo.resource.impl;
 
+import org.abchip.mimo.resource.MappingType;
 import org.abchip.mimo.resource.ResourceMappingRuleByPackage;
 import org.abchip.mimo.resource.ResourcePackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,6 +28,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ResourceMappingRuleByPackageImpl extends ResourceMappingRuleImpl implements ResourceMappingRuleByPackage {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The default value of the '{@link #getPackage() <em>Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -164,6 +167,11 @@ public class ResourceMappingRuleByPackageImpl extends ResourceMappingRuleImpl im
 		result.append(package_);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public MappingType getMappingType() {
+		return MappingType.BY_PACKAGE;
 	}
 
 } //ResourceMappingRuleByPackageImpl

@@ -1072,6 +1072,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1 = createEGenericType(frameEClass_E);
 		initEOperation(op, g1);
 
+		addEOperation(frameEClass, ecorePackage.getEString(), "getPackageName", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(frameEClass, this.getSlot(), "getSlot", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 

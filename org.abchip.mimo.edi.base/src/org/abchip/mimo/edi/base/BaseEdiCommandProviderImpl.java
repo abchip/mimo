@@ -25,31 +25,31 @@ public class BaseEdiCommandProviderImpl extends BaseCommandProviderImpl {
 	@Inject
 	private ResourceManager resourceManager;
 
+	@SuppressWarnings("resource")
 	public void _testEdi(CommandInterpreter interpreter) throws Exception {
 
-		try (Context context = this.createContext(null)) {
+		Context context = this.getContext();
 
-			ResourceWriter<MessageSent> messageSentWriter = resourceManager.getResourceWriter(context, MessageSent.class);
-			MessageSent messageSent = MessageFactory.eINSTANCE.createMessageSent();
-			messageSent.setMessageId("test-010");
-			messageSent.setEvent(EntityEvent.CREATE);
-			messageSent.setFrame("Party");
-			messageSent.setMessageType("T10");
-			messageSent.setSender("10000");
-			messageSent.setStatus(MessageStatus.TRASMITTED);
-			messageSentWriter.create(messageSent);
+		ResourceWriter<MessageSent> messageSentWriter = resourceManager.getResourceWriter(context, MessageSent.class);
+		MessageSent messageSent = MessageFactory.eINSTANCE.createMessageSent();
+		messageSent.setMessageId("test-010");
+		messageSent.setEvent(EntityEvent.CREATE);
+		messageSent.setFrame("Party");
+		messageSent.setMessageType("T10");
+		messageSent.setSender("10000");
+		messageSent.setStatus(MessageStatus.TRASMITTED);
+		messageSentWriter.create(messageSent);
 
-			if (messageSentWriter.lookup(messageSent.getMessageId(), true) != null) {
-				System.out.println(messageSent);
-				messageSentWriter.delete(messageSent);
-				if (messageSentWriter.lookup(messageSent.getMessageId(), true) != null)
-					System.err.println("MessageSent not deleted");
-			} else
-				System.err.println("MessageSent not found");
+		if (messageSentWriter.lookup(messageSent.getMessageId(), true) != null) {
+			System.out.println(messageSent);
+			messageSentWriter.delete(messageSent);
+			if (messageSentWriter.lookup(messageSent.getMessageId(), true) != null)
+				System.err.println("MessageSent not deleted");
+		} else
+			System.err.println("MessageSent not found");
 
-			for (MessageSent messageSent2 : messageSentWriter.find(null, null, null, 0, true)) {
-				System.out.println(messageSent2);
-			}
+		for (MessageSent messageSent2 : messageSentWriter.find(null, null, null, 0, true)) {
+			System.out.println(messageSent2);
 		}
 	}
 

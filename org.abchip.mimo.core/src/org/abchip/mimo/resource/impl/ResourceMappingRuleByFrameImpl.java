@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.resource.impl;
 
+import org.abchip.mimo.resource.MappingType;
 import org.abchip.mimo.resource.ResourceMappingRuleByFrame;
 import org.abchip.mimo.resource.ResourcePackage;
 
@@ -30,6 +31,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ResourceMappingRuleByFrameImpl extends ResourceMappingRuleImpl implements ResourceMappingRuleByFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The default value of the '{@link #getFrame() <em>Frame</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -164,6 +170,11 @@ public class ResourceMappingRuleByFrameImpl extends ResourceMappingRuleImpl impl
 		result.append(frame);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public MappingType getMappingType() {
+		return MappingType.BY_FRAME;
 	}
 
 } //ResourceMappingRuleByFrameImpl

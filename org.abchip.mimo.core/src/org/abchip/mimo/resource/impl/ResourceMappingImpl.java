@@ -41,6 +41,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ResourceMappingImpl extends EntityImpl implements ResourceMapping {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
 	 * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

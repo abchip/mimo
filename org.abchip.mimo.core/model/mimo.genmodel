@@ -605,6 +605,7 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/createProxy">
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/createProxy/name"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getPackageName"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlot">
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getSlot/name"/>
         </genOperations>
@@ -693,6 +694,10 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Resource" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="mimo.ecore#//resource">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/MappingType">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/MappingType/ByFrame"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/MappingType/ByPackage"/>
+      </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/ResourceEventType">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceEventType/Before_Save"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceEventType/After_Save"/>
@@ -702,10 +707,6 @@
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/SerializationType">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/XML_Metadata_Interchange"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/JavaScript_Object_Notation"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/MappingType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/MappingType/ByFrame"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/MappingType/ByPackage"/>
       </genEnums>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/Resource">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/Resource/E"/>

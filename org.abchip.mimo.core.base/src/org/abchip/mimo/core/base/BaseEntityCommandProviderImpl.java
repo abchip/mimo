@@ -22,39 +22,45 @@ public class BaseEntityCommandProviderImpl extends BaseCommandProviderImpl {
 	@Inject
 	private ResourceManager resourceManager;
 
+	public <E extends EntityIdentifiable> void _login(CommandInterpreter interpreter) throws Exception {
+		this.login(interpreter.nextArgument(), interpreter.nextArgument());
+	}
+
+	@SuppressWarnings("resource")
 	public <E extends EntityIdentifiable> void _find(CommandInterpreter interpreter) throws Exception {
 
-		try (Context context = this.createContext(null)) {
+		Context context = this.getContext();
 
-			String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
-			String order = interpreter.nextArgument();
+		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
+		String order = interpreter.nextArgument();
 
-			@SuppressWarnings("unchecked")
-			Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName);
-			if (frame == null)
-				interpreter.print("Frame not found: " + frameName);
+		@SuppressWarnings("unchecked")
+		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName);
+		if (frame == null) {
+			interpreter.print("Frame not found: " + frameName);
+			return;
+		}
 
-			for (E entity : resourceManager.getResourceReader(context, frame).find(null, null, order)) {
-				System.out.println(entity.getID());
-			}
+		for (E entity : resourceManager.getResourceReader(context, frame).find(null, null, order)) {
+			System.out.println(entity.getID());
 		}
 	}
 
+	@SuppressWarnings("resource")
 	public <E extends EntityIdentifiable> void _lookup(CommandInterpreter interpreter) throws Exception {
 
-		try (Context context = this.createContext(null)) {
+		Context context = this.getContext();
 
-			String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
-			@SuppressWarnings("unchecked")
-			Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName);
-			if (frame == null)
-				interpreter.print("Frame not found: " + frameName);
+		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
+		@SuppressWarnings("unchecked")
+		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName);
+		if (frame == null)
+			interpreter.print("Frame not found: " + frameName);
 
-			String entityName = interpreter.nextArgument();
+		String entityName = interpreter.nextArgument();
 
-			E entity = resourceManager.getResourceReader(context, frame).lookup(entityName);
-			System.out.println(entity);
-		}
+		E entity = resourceManager.getResourceReader(context, frame).lookup(entityName);
+		System.out.println(entity);
 	}
 
 	@Override

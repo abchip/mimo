@@ -23,6 +23,8 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceMapping;
 import org.abchip.mimo.resource.ResourceMappingRule;
+import org.abchip.mimo.resource.ResourceMappingRuleByFrame;
+import org.abchip.mimo.resource.ResourceMappingRuleByPackage;
 import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceProviderRegistry;
 
@@ -104,11 +106,20 @@ public class BaseResourceProviderRegistryImpl extends BaseResource implements Re
 		for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
 			switch (mappingRule.getMappingType()) {
 			case BY_FRAME:
-				resourceProvider = getProviderByFrame(context, frame);
+				ResourceMappingRuleByFrame ruleByFrame = (ResourceMappingRuleByFrame) mappingRule;
+				if (ruleByFrame.getFrame().equals(frame.getName()))
+					resourceProvider = this.lookup(ruleByFrame.getProvider());
+				else
+					resourceProvider = getProviderByFrame(context, frame);
 				break;
 			case BY_PACKAGE:
+				ResourceMappingRuleByPackage resourceMappingRuleByPackage = (ResourceMappingRuleByPackage) mappingRule;
+				if (frame.getPackageName().startsWith(resourceMappingRuleByPackage.getPackage()))
+					resourceProvider = this.lookup(resourceMappingRuleByPackage.getProvider());
 				break;
 			}
+			if (resourceProvider != null)
+				break;
 		}
 
 		return resourceProvider;
