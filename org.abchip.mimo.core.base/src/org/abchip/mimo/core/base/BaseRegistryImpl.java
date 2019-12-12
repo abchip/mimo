@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo.core.base;
 
+import java.nio.CharBuffer;
 import java.util.List;
 
 import org.abchip.mimo.MimoConstants;
@@ -26,7 +27,7 @@ public class BaseRegistryImpl<K> implements Registry<K> {
 
 	@Override
 	public K lookup(String name) {
-
+		name = escapeFilterCharacters(name);
 		String filter = "(" + MimoConstants.REGISTRY_NAME + "=" + name + ")";
 		return contextRoot.get(klass, filter);
 	}
@@ -47,8 +48,25 @@ public class BaseRegistryImpl<K> implements Registry<K> {
 
 	@Override
 	public K lookupByVendorVersion(String vendor, String version) {
-
+		
+		vendor = escapeFilterCharacters(vendor);
+		
 		String filter = "(&(" + MimoConstants.REGISTRY_VENDOR + "=" + vendor + ")" + "(" + MimoConstants.REGISTRY_VERSION + "=" + version + "))";
 		return contextRoot.get(klass, filter);
+	}
+	
+	private String escapeFilterCharacters(String value) {
+		
+		CharBuffer buffer = CharBuffer.allocate(value.length() * 2);
+		for ( char c : value.toCharArray()) {
+			switch (c) {
+				case '*'  : buffer.append('\\'); break;
+				case '\\' : buffer.append('\\'); break;
+				case '('  : buffer.append('\\'); break;
+				case ')'  : buffer.append('\\'); break;
+			}
+			buffer.append(c);
+		}
+		return buffer.flip().toString();
 	}
 }
