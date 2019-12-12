@@ -8,41 +8,37 @@
  */
 package org.abchip.mimo.core.http;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-import java.security.Principal;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import javax.management.remote.JMXPrincipal;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.Authentication;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.AuthenticationUserToken;
+import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
-import org.abchip.mimo.context.ContextFactory;
-import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.context.Identity;
-import org.abchip.mimo.context.impl.IdentityImpl;
+import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.SerializationType;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
@@ -68,6 +64,8 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 	@Inject
 	private ContextRoot contextRoot;
+	@Inject
+	private ResourceManager resourceManager;
 	@Inject
 	private ProviderConfig providerConfig;
 
@@ -107,18 +105,6 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		} catch (KeyManagementException | NoSuchAlgorithmException | KeyStoreException e) {
 			e.printStackTrace();
 		}
-	}
-
-	@Override
-	public Identity<Authentication> authenticate(Authentication authentication) {
-
-		if (authentication instanceof AuthenticationUserPassword) {
-			AuthenticationUserPassword authenticationUserPassword = (AuthenticationUserPassword) authentication;
-
-			Principal principal = new JMXPrincipal(authenticationUserPassword.getUser());
-			return new IdentityImpl<Authentication>(principal);
-		} else
-			return null;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -362,25 +348,6 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	}
 
 	@Override
-	public boolean isActive(Context context) {
-
-		if (context == null)
-			return false;
-
-		try {
-			String url = "/entityCheckStatus?set=1";
-			try (CloseableHttpResponse response = getConnector(context).execute(url, null)) {
-				if (response != null && response.getStatusLine().getStatusCode() == HttpServletResponse.SC_OK)
-					return true;
-			}
-		} catch (Exception e) {
-			return false;
-		}
-
-		return false;
-	}
-
-	@Override
 	public Context login(String contextId, AuthenticationAnonymous authentication) {
 
 		ProviderUser user = this.providerConfig.getPublicUser();
@@ -451,56 +418,21 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		return context;
 	}
 
-	@Override
-	public void logout(Context context) {
-
-		HttpConnector connector = getConnector(context);
-		try {
-			switch (providerConfig.getLoginType()) {
-			case JSON_WEB_TOKEN:
-				connector.execute("/entityLogout_jwt?exit=1", null);
-				break;
-			case EXTERNAL_KEY:
-				connector.execute("/entityLogout_extk?exit=1", null);
-				break;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		// TODO
-		context.set(HttpConnector.class, null);
-	}
-
-	private HttpConnector getConnector(Context context) {
-
-		HttpConnector connector = null;
-		if (context != null)
-			connector = context.get(HttpConnector.class);
-
-		return connector;
-	}
-
 	private HttpConnector connect(String user, String password, String tenant) {
 
+		List<NameValuePair> postParameters = new ArrayList<>();
+
+		if (tenant != null)
+			postParameters.add(new BasicNameValuePair("user", tenant + "/" + user));
+		else
+			postParameters.add(new BasicNameValuePair("user", user));
+
+		postParameters.add(new BasicNameValuePair("password", password));
+
+		String url = providerConfig.getUrl() + "/login";
+
 		HttpConnector connector = null;
-		String url = "";
-
-		switch (providerConfig.getLoginType()) {
-		case JSON_WEB_TOKEN:
-			url = providerConfig.getUrl() + "/entityLogin_jwt";
-			break;
-		case EXTERNAL_KEY:
-			url = providerConfig.getUrl() + "/entityLogin_extk";
-			break;
-		}
-
 		try {
-			List<NameValuePair> postParameters = new ArrayList<>();
-			postParameters.add(new BasicNameValuePair("USERNAME", user));
-			postParameters.add(new BasicNameValuePair("PASSWORD", password));
-			if (tenant != null)
-				postParameters.add(new BasicNameValuePair("userTenantId", tenant));
 
 			HttpPost httpPost = new HttpPost(url);
 			httpPost.setEntity(new UrlEncodedFormEntity(postParameters));
@@ -511,12 +443,13 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 				if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_OK) {
 
 					HttpEntity session = response.getEntity();
-					String token = "";
-					try (BufferedReader br = new BufferedReader(new InputStreamReader(session.getContent()))) {
-						token = br.lines().collect(Collectors.joining(System.lineSeparator()));
-					}
-					if (!token.isEmpty())
-						connector = new HttpConnector(providerConfig, client, token);
+
+					ResourceSerializer<ContextDescription> contextSerializer = resourceManager.createResourceSerializer(contextRoot, ContextDescription.class,
+							SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+					contextSerializer.load(session.getContent(), false);
+					ContextDescription contextDescription = contextSerializer.get();
+					if (contextDescription != null)
+						connector = new HttpConnector(providerConfig, client, contextDescription.getId());
 				}
 			}
 

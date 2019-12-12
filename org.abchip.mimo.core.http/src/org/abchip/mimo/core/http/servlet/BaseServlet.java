@@ -49,16 +49,8 @@ public abstract class BaseServlet extends HttpServlet {
 		@SuppressWarnings("resource")
 		Context context = ContextUtils.getContext(session.getId());
 
-		// invalid session
-		// if (context != null &&
-		// !this.getDefaultProvider().isActive(context)) {
-		// context = null;
-		// TODO reactivate context on provider
-		// }
-
 		// invalid access
 		if (context == null) {
-			ContextUtils.removeContext(session.getId());
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return;
 		}

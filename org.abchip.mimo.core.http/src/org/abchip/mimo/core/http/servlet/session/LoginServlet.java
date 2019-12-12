@@ -12,7 +12,6 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -59,12 +58,6 @@ public class LoginServlet extends HttpServlet {
 		String userField = request.getParameter("user");
 		String password = request.getParameter("password");
 
-		if (request.getCookies() != null) {
-			for (Cookie cookie : request.getCookies()) {
-				System.out.println(cookie.getName());
-			}
-		}
-
 		// Third part
 		if (provider != null) {
 
@@ -98,8 +91,6 @@ public class LoginServlet extends HttpServlet {
 				serializer.save(response.getOutputStream());
 
 				response.flushBuffer();
-
-				authenticationManager.logout(context);
 			}
 
 			return;
@@ -121,15 +112,9 @@ public class LoginServlet extends HttpServlet {
 		} else
 			user = fields[0];
 
-		// invalid session
-		if (context != null && !authenticationManager.isActive(context)) {
-			context = null;
-		}
-
 		// close previous
 		if (context != null) {
 			ContextUtils.removeContext(session.getId());
-			authenticationManager.logout(context);
 			context.close();
 			context = null;
 		}

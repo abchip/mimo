@@ -8,7 +8,6 @@
 */
 package org.abchip.mimo.core.http;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -27,7 +26,6 @@ import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.entity.InputStreamEntity;
 
 public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
@@ -56,7 +54,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	public String getTenant() {
 		return tenant;
 	}
-	
+
 	@Override
 	public Frame<E> getFrame() {
 		return this.resourceSerializer.getFrame();
@@ -83,11 +81,11 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 				this.resourceSerializer.clear();
 			}
 
-			String url = "/entityDelete?frame=" + getFrame().getName();
+			String query = "?frame=" + getFrame().getName() + "&id=" + entity.getID();
 			if (tenant != null)
-				url += "&tenant=" + this.tenant;
+				query += "&tenant=" + this.tenant;
 
-			try (CloseableHttpResponse response = this.connector.execute(url, new InputStreamEntity(new ByteArrayInputStream(baos.toByteArray())))) {
+			try (CloseableHttpResponse response = this.connector.execute("delete", query)) {
 			} catch (Exception e) {
 				logger.error(e);
 				throw new RuntimeException(e);
@@ -103,18 +101,18 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	}
 
 	@Override
-	public E read(String name, String fields, boolean proxy) {
+	public E read(String id, String fields, boolean proxy) {
 
 		synchronized (this.resourceSerializer) {
 			E entity = null;
 
-			String url = "/entityLookup?frame=" + getFrame().getName() + "&name=" + name.trim();
+			String query = "?frame=" + getFrame().getName() + "&id=" + id.trim();
 			if (tenant != null)
-				url += "&tenant=" + this.tenant;
+				query += "&tenant=" + this.tenant;
 			if (proxy)
-				url += "&proxy=" + proxy;
+				query += "&proxy=" + proxy;
 
-			try (CloseableHttpResponse response = this.connector.execute(url, null)) {
+			try (CloseableHttpResponse response = this.connector.execute("lookup", query)) {
 
 				if (response != null && response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
 					HttpEntity jsonEntity = response.getEntity();
@@ -137,27 +135,27 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		synchronized (this.resourceSerializer) {
 			List<E> entities = null;
 
-			String url = "/entityFind?frame=" + getFrame().getName();
+			String query = "?frame=" + getFrame().getName();
 			if (tenant != null)
-				url += "&tenant=" + this.tenant;
+				query += "&tenant=" + this.tenant;
 			if (proxy)
-				url += "&proxy=" + proxy;
+				query += "&proxy=" + proxy;
 			if (limit != 0)
-				url += "&limit=" + limit;
+				query += "&limit=" + limit;
 			if (filter != null) {
 				try {
-					url += "&filter=" + URLEncoder.encode(filter, "UTF-8");
+					query += "&filter=" + URLEncoder.encode(filter, "UTF-8");
 				} catch (UnsupportedEncodingException e1) {
 					e1.printStackTrace();
 					return null;
 				}
 			}
 			if (fields != null)
-				url += "&fields=" + fields;
+				query += "&fields=" + fields;
 			if (order != null)
-				url += "&order=" + order;
+				query += "&order=" + order;
 
-			try (CloseableHttpResponse response = this.connector.execute(url, null)) {
+			try (CloseableHttpResponse response = this.connector.execute("find", query)) {
 
 				if (response != null && (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND)) {
 					HttpEntity jsonEntities = response.getEntity();
@@ -194,11 +192,11 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 				this.resourceSerializer.clear();
 			}
 
-			String url = "/entitySave?frame=" + getFrame().getName() + "&replace=" + replace;
+			String query = "?frame=" + getFrame().getName() + "&replace=" + replace + "&json=" + baos.toString();
 			if (tenant != null)
-				url += "&tenant=" + this.tenant;
+				query += "&tenant=" + this.tenant;
 
-			try (CloseableHttpResponse response = connector.execute(url, new InputStreamEntity(new ByteArrayInputStream(baos.toByteArray())))) {
+			try (CloseableHttpResponse response = connector.execute("save", query)) {
 			} catch (Exception e) {
 				logger.error(e);
 				throw new RuntimeException(e);

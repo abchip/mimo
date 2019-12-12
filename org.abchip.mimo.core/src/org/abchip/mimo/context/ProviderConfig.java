@@ -18,7 +18,6 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.ProviderConfig#getLoginType <em>Login Type</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ProviderConfig#getUrl <em>Url</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ProviderConfig#getPublicUser <em>Public User</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ProviderConfig#getSystemUser <em>System User</em>}</li>
@@ -106,34 +105,5 @@ public interface ProviderConfig extends Entity {
 	 * @generated
 	 */
 	void setSystemUser(ProviderUser value);
-
-	/**
-	 * Returns the value of the '<em><b>Login Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.abchip.mimo.context.LoginType}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Login Type</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Login Type</em>' attribute.
-	 * @see org.abchip.mimo.context.LoginType
-	 * @see #setLoginType(LoginType)
-	 * @see org.abchip.mimo.context.ContextPackage#getProviderConfig_LoginType()
-	 * @model required="true"
-	 * @generated
-	 */
-	LoginType getLoginType();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.ProviderConfig#getLoginType <em>Login Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Login Type</em>' attribute.
-	 * @see org.abchip.mimo.context.LoginType
-	 * @see #getLoginType()
-	 * @generated
-	 */
-	void setLoginType(LoginType value);
 
 } // ProviderConfig

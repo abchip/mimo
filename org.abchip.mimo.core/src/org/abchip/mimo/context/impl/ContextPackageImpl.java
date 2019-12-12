@@ -33,7 +33,6 @@ import org.abchip.mimo.context.Identity;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
 import org.abchip.mimo.context.Logger;
-import org.abchip.mimo.context.LoginType;
 import org.abchip.mimo.context.MessageDataField;
 import org.abchip.mimo.context.MessageDescription;
 import org.abchip.mimo.context.MessageException;
@@ -265,13 +264,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	private EEnum lockTypeEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum loginTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -851,7 +843,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProviderConfig_LoginType() {
+	public EAttribute getProviderConfig_Url() {
 		return (EAttribute)providerConfigEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -861,18 +853,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProviderConfig_Url() {
-		return (EAttribute)providerConfigEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getProviderConfig_PublicUser() {
-		return (EReference)providerConfigEClass.getEStructuralFeatures().get(2);
+		return (EReference)providerConfigEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -882,7 +864,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 */
 	@Override
 	public EReference getProviderConfig_SystemUser() {
-		return (EReference)providerConfigEClass.getEStructuralFeatures().get(3);
+		return (EReference)providerConfigEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1011,16 +993,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getLoginType() {
-		return loginTypeEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getUserClass() {
 		return userClassEEnum;
 	}
@@ -1139,7 +1111,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEAttribute(messageFileEClass, MESSAGE_FILE__TEXT);
 
 		providerConfigEClass = createEClass(PROVIDER_CONFIG);
-		createEAttribute(providerConfigEClass, PROVIDER_CONFIG__LOGIN_TYPE);
 		createEAttribute(providerConfigEClass, PROVIDER_CONFIG__URL);
 		createEReference(providerConfigEClass, PROVIDER_CONFIG__PUBLIC_USER);
 		createEReference(providerConfigEClass, PROVIDER_CONFIG__SYSTEM_USER);
@@ -1161,7 +1132,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		// Create enums
 		capabilityRightEEnum = createEEnum(CAPABILITY_RIGHT);
 		lockTypeEEnum = createEEnum(LOCK_TYPE);
-		loginTypeEEnum = createEEnum(LOGIN_TYPE);
 		userClassEEnum = createEEnum(USER_CLASS);
 
 		// Create data types
@@ -1251,19 +1221,9 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(authenticationManagerEClass, AuthenticationManager.class, "AuthenticationManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(authenticationManagerEClass, null, "authenticate", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getAuthentication(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getIdentity());
-		g2 = createEGenericType(this.getAuthentication());
-		g1.getETypeArguments().add(g2);
-		initEOperation(op, g1);
-
 		op = addEOperation(authenticationManagerEClass, ecorePackage.getEBoolean(), "checkLogin", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "create", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(authenticationManagerEClass, ecorePackage.getEBoolean(), "isActive", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(authenticationManagerEClass, this.getContext(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1276,9 +1236,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		op = addEOperation(authenticationManagerEClass, this.getContext(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(authenticationManagerEClass, null, "logout", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(authenticationUserPasswordEClass, AuthenticationUserPassword.class, "AuthenticationUserPassword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthenticationUserPassword_User(), ecorePackage.getEString(), "user", null, 1, 1, AuthenticationUserPassword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1628,7 +1585,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(providerConfigEClass, ProviderConfig.class, "ProviderConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProviderConfig_LoginType(), this.getLoginType(), "loginType", null, 1, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProviderConfig_Url(), ecorePackage.getEString(), "url", null, 1, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProviderConfig_PublicUser(), this.getProviderUser(), null, "publicUser", null, 0, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProviderConfig_SystemUser(), this.getProviderUser(), null, "systemUser", null, 0, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1687,10 +1643,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEEnum(lockTypeEEnum, LockType.class, "LockType");
 		addEEnumLiteral(lockTypeEEnum, LockType.READ);
 		addEEnumLiteral(lockTypeEEnum, LockType.WRITE);
-
-		initEEnum(loginTypeEEnum, LoginType.class, "LoginType");
-		addEEnumLiteral(loginTypeEEnum, LoginType.EXTERNAL_KEY);
-		addEEnumLiteral(loginTypeEEnum, LoginType.JSON_WEB_TOKEN);
 
 		initEEnum(userClassEEnum, UserClass.class, "UserClass");
 		addEEnumLiteral(userClassEEnum, UserClass.USER);

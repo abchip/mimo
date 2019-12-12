@@ -40,7 +40,15 @@ public enum LoginType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	JSON_WEB_TOKEN(20, "JsonWebToken", "JWT");
+	JSON_WEB_TOKEN(20, "JsonWebToken", "JWT"), /**
+	 * The '<em><b>JSession Id</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #JSESSION_ID_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	JSESSION_ID(30, "JSessionId", "JSI");
 
 	/**
 	 * The '<em><b>External Key</b></em>' literal value.
@@ -73,6 +81,21 @@ public enum LoginType implements Enumerator {
 	public static final int JSON_WEB_TOKEN_VALUE = 20;
 
 	/**
+	 * The '<em><b>JSession Id</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>JSession Id</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #JSESSION_ID
+	 * @model name="JSessionId" literal="JSI"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int JSESSION_ID_VALUE = 30;
+
+	/**
 	 * An array of all the '<em><b>Login Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,6 +105,7 @@ public enum LoginType implements Enumerator {
 		new LoginType[] {
 			EXTERNAL_KEY,
 			JSON_WEB_TOKEN,
+			JSESSION_ID,
 		};
 
 	/**
@@ -140,6 +164,7 @@ public enum LoginType implements Enumerator {
 		switch (value) {
 			case EXTERNAL_KEY_VALUE: return EXTERNAL_KEY;
 			case JSON_WEB_TOKEN_VALUE: return JSON_WEB_TOKEN;
+			case JSESSION_ID_VALUE: return JSESSION_ID;
 		}
 		return null;
 	}

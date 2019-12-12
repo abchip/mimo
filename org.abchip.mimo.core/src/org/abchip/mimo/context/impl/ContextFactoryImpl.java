@@ -93,8 +93,6 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 				return createCapabilityRightFromString(eDataType, initialValue);
 			case ContextPackage.LOCK_TYPE:
 				return createLockTypeFromString(eDataType, initialValue);
-			case ContextPackage.LOGIN_TYPE:
-				return createLoginTypeFromString(eDataType, initialValue);
 			case ContextPackage.USER_CLASS:
 				return createUserClassFromString(eDataType, initialValue);
 			case ContextPackage.MESSAGE_VARIABLE_LIST:
@@ -118,8 +116,6 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 				return convertCapabilityRightToString(eDataType, instanceValue);
 			case ContextPackage.LOCK_TYPE:
 				return convertLockTypeToString(eDataType, instanceValue);
-			case ContextPackage.LOGIN_TYPE:
-				return convertLoginTypeToString(eDataType, instanceValue);
 			case ContextPackage.USER_CLASS:
 				return convertUserClassToString(eDataType, instanceValue);
 			case ContextPackage.MESSAGE_VARIABLE_LIST:
@@ -289,26 +285,6 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * @generated
 	 */
 	public String convertLockTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LoginType createLoginTypeFromString(EDataType eDataType, String initialValue) {
-		LoginType result = LoginType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertLoginTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

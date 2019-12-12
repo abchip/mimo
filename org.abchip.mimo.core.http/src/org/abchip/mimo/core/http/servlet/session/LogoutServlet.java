@@ -10,12 +10,10 @@ package org.abchip.mimo.core.http.servlet.session;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
@@ -23,16 +21,12 @@ import org.abchip.mimo.core.http.servlet.BaseServlet;
 public class LogoutServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
-
-	@Inject
-	private AuthenticationManager authenticationManager;
 	
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		HttpSession session = request.getSession();
 		
 		ContextUtils.removeContext(session.getId());
-		authenticationManager.logout(context);
 		context.close();
 		
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);

@@ -96,8 +96,6 @@ public class GoogleResponseServlet extends HttpServlet {
 			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
 			EntityIdentifiable oauth2Google = oauth2Reader.first();
 
-			authenticationManager.logout(context);
-
 			if (oauth2Google == null) {
 				response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! Google get OAuth2 configuration error");
 				return;

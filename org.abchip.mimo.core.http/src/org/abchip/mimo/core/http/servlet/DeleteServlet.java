@@ -16,9 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.util.Strings;
-import org.abchip.mimo.resource.ResourceManager;
 
 public class DeleteServlet extends BaseServlet {
 
@@ -33,17 +33,17 @@ public class DeleteServlet extends BaseServlet {
 
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
-		String name = request.getParameter("name");
+		String tenant = request.getParameter("tenant");
+		String frame = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
+		String id = request.getParameter("id");
 
 		try {
-			ResourceWriter<E> entityWriter = resourceManager.getResourceWriter(context, frameName);
-			E entity = entityWriter.lookup(name, true);		
+			ResourceWriter<E> entityWriter = resourceManager.getResourceWriter(context, frame, tenant);
+			E entity = entityWriter.lookup(id, true);
 			entityWriter.delete(entity);
-			
+
 			response.setStatus(HttpServletResponse.SC_OK);
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 		}
 	}

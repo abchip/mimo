@@ -95,8 +95,6 @@ public class GitHubResponseServlet extends HttpServlet {
 			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
 			EntityIdentifiable oauth2GitHub = oauth2Reader.first();
 
-			authenticationManager.logout(context);
-
 			if (oauth2GitHub == null) {
 				response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! GitHub get OAuth2 configuration error");
 				return;

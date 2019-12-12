@@ -58,8 +58,6 @@ public class GitHubRedirectServlet extends HttpServlet {
 			ResourceReader<EntityIdentifiable> oauth2Reader = resourceManager.getResourceReader(context, "OAuth2GitHub");
 			EntityIdentifiable oauth2GitHub = oauth2Reader.first();
 
-			authenticationManager.logout(context);
-
 			if (oauth2GitHub == null) {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 				return;

@@ -34,19 +34,25 @@ public class SaveServlet extends BaseServlet {
 
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+		String tenant = request.getParameter("tenant");
 		String frame = request.getParameter("frame");
-		String json = request.getParameter("json");
 
+		E entity = null;
 		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 
+		String json = request.getParameter("json");
 		if (!json.contains("\"eClass\""))
 			json = json.replaceFirst("\\{", "{\"eClass\":\"" + entitySerializer.getFrame().getURI() + "\",");
 
 		entitySerializer.load(json, false);
-		E entity = entitySerializer.get();
+		entity = entitySerializer.get();
 
-		ResourceWriter<E> entityWriter = resourceManager.getResourceWriter(context, frame);
-		entityWriter.create(entity, true);
+		String replace = request.getParameter("replace");
+		if (replace == null || replace.trim().isEmpty())
+			replace = "false";
+
+		ResourceWriter<E> entityWriter = resourceManager.getResourceWriter(context, frame, tenant);
+		entityWriter.create(entity, Boolean.parseBoolean(replace));
 
 		response.setStatus(HttpServletResponse.SC_OK);
 	}

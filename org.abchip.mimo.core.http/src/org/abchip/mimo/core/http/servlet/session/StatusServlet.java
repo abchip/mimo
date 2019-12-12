@@ -36,7 +36,7 @@ public class StatusServlet extends HttpServlet {
 	private ResourceManager resourceManager;
 	@Inject
 	private AuthenticationManager authenticationManager;
-	
+
 	@Override
 	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
@@ -51,15 +51,8 @@ public class StatusServlet extends HttpServlet {
 
 		Context context = ContextUtils.getContext(session.getId());
 
-		// invalid session
-		if (context != null && !authenticationManager.isActive(context)) {
-			context = null;
-			// TODO reactivate context on provider
-		}
-
 		// new session with anonymous user
 		if (context == null) {
-			ContextUtils.removeContext(session.getId());
 
 			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
 			context = authenticationManager.login(session.getId(), authentication);

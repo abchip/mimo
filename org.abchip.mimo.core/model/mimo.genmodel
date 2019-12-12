@@ -101,10 +101,6 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/Read"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/Write"/>
       </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/LoginType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LoginType/ExternalKey"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LoginType/JsonWebToken"/>
-      </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/UserClass">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/UserClass/User"/>
       </genEnums>
@@ -120,15 +116,9 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/Authentication"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationManager">
-        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/authenticate">
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/authenticate/authentication"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/checkLogin">
           <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/checkLogin/authentication"/>
           <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/checkLogin/create"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/isActive">
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/isActive/context"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/login">
           <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login/contextId"/>
@@ -141,9 +131,6 @@
         <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/login.2">
           <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.2/contextId"/>
           <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.2/authentication"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/logout">
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/logout/context"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationUserPassword">
@@ -393,7 +380,6 @@
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//context/ProviderConfig">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderConfig/loginType"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderConfig/url"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//context/ProviderConfig/publicUser"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//context/ProviderConfig/systemUser"/>

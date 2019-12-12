@@ -35,17 +35,21 @@ public class LookupServlet extends BaseServlet {
 
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
-		String name = request.getParameter("name");
+		String tenant = request.getParameter("tenant");
+		String frame = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
+		String id = request.getParameter("id");
+		String proxy = request.getParameter("proxy");
+		if (proxy == null || proxy.trim().isEmpty())
+			proxy = "false";
 
-		ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frameName);
-		E entity = entityReader.lookup(name);
+		ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame, tenant);
+		E entity = entityReader.lookup(id, Boolean.parseBoolean(proxy));
 		if (entity == null)
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 		else {
 			response.setStatus(HttpServletResponse.SC_FOUND);
 
-			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frameName, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 			entitySerializer.add(entity);
 			entitySerializer.save(response.getOutputStream());
 		}

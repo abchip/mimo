@@ -8,7 +8,6 @@
 package org.abchip.mimo.context.impl;
 
 import org.abchip.mimo.context.ContextPackage;
-import org.abchip.mimo.context.LoginType;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
 import org.abchip.mimo.entity.impl.EntityImpl;
@@ -27,7 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getLoginType <em>Login Type</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getPublicUser <em>Public User</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getSystemUser <em>System User</em>}</li>
@@ -36,24 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
-	/**
-	 * The default value of the '{@link #getLoginType() <em>Login Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLoginType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final LoginType LOGIN_TYPE_EDEFAULT = LoginType.EXTERNAL_KEY;
-	/**
-	 * The cached value of the '{@link #getLoginType() <em>Login Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLoginType()
-	 * @generated
-	 * @ordered
-	 */
-	protected LoginType loginType = LOGIN_TYPE_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -297,8 +277,6 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContextPackage.PROVIDER_CONFIG__LOGIN_TYPE:
-				return getLoginType();
 			case ContextPackage.PROVIDER_CONFIG__URL:
 				return getUrl();
 			case ContextPackage.PROVIDER_CONFIG__PUBLIC_USER:
@@ -319,9 +297,6 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContextPackage.PROVIDER_CONFIG__LOGIN_TYPE:
-				setLoginType((LoginType)newValue);
-				return;
 			case ContextPackage.PROVIDER_CONFIG__URL:
 				setUrl((String)newValue);
 				return;
@@ -343,9 +318,6 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContextPackage.PROVIDER_CONFIG__LOGIN_TYPE:
-				setLoginType(LOGIN_TYPE_EDEFAULT);
-				return;
 			case ContextPackage.PROVIDER_CONFIG__URL:
 				setUrl(URL_EDEFAULT);
 				return;
@@ -367,8 +339,6 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContextPackage.PROVIDER_CONFIG__LOGIN_TYPE:
-				return loginType != LOGIN_TYPE_EDEFAULT;
 			case ContextPackage.PROVIDER_CONFIG__URL:
 				return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
 			case ContextPackage.PROVIDER_CONFIG__PUBLIC_USER:
@@ -389,35 +359,10 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (loginType: ");
-		result.append(loginType);
-		result.append(", url: ");
+		result.append(" (url: ");
 		result.append(url);
 		result.append(')');
 		return result.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public LoginType getLoginType() {
-		return loginType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setLoginType(LoginType newLoginType) {
-		LoginType oldLoginType = loginType;
-		loginType = newLoginType == null ? LOGIN_TYPE_EDEFAULT : newLoginType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.PROVIDER_CONFIG__LOGIN_TYPE, oldLoginType, loginType));
 	}
 
 } //ProviderConfigImpl

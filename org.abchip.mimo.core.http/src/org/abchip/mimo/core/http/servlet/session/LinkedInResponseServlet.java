@@ -88,8 +88,6 @@ public class LinkedInResponseServlet extends HttpServlet {
 			String entityName = "OAuth2LinkedIn";
 			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
 			EntityIdentifiable oauth2LinkedIn = oauth2Reader.first();
-
-			this.authenticationManager.logout(context);
 			
 
 			if (oauth2LinkedIn == null) {

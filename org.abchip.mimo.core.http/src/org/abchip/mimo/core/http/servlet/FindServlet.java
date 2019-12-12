@@ -37,21 +37,22 @@ public class FindServlet extends BaseServlet {
 
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+		String tenant = request.getParameter("tenant");
 		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
-		String filter = request.getParameter("filter");
-		String fields = request.getParameter("fields");
-		String order = request.getParameter("order");
-		String limit = request.getParameter("limit");
-		if (limit == null)
-			limit = "0";
 		String proxy = request.getParameter("proxy");
 		if (proxy == null || proxy.trim().isEmpty())
 			proxy = "false";
+		String limit = request.getParameter("limit");
+		if (limit == null)
+			limit = "0";
+		String filter = request.getParameter("filter");
+		String fields = request.getParameter("fields");
+		String order = request.getParameter("order");
 
 		String[] keys = request.getParameterValues("keys");
 
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName);
+		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName, tenant);
 		if (frame == null)
 			return;
 		
@@ -78,7 +79,7 @@ public class FindServlet extends BaseServlet {
 
 		response.setStatus(HttpServletResponse.SC_FOUND);
 
-		ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame);
+		ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame, tenant);
 		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 		for (E entity : entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy)))
 			entitySerializer.add(entity);

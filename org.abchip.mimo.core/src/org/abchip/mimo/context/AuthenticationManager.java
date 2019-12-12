@@ -22,26 +22,10 @@ public interface AuthenticationManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model authenticationRequired="true"
-	 * @generated
-	 */
-	Identity<Authentication> authenticate(Authentication authentication);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model authenticationRequired="true" createRequired="true"
 	 * @generated
 	 */
 	boolean checkLogin(AuthenticationUserToken authentication, boolean create);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextRequired="true"
-	 * @generated
-	 */
-	boolean isActive(Context context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,13 +50,5 @@ public interface AuthenticationManager {
 	 * @generated
 	 */
 	Context login(String contextId, AuthenticationUserToken authentication);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextRequired="true"
-	 * @generated
-	 */
-	void logout(Context context);
 
 } // AuthenticationManager

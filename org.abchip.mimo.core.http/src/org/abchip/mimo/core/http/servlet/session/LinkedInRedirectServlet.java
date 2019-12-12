@@ -59,8 +59,6 @@ public class LinkedInRedirectServlet extends HttpServlet {
 			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, "OAuth2LinkedIn");
 			EntityIdentifiable oauth2LinkedIn = oauth2Reader.first();
 
-			authenticationManager.logout(context);
-
 			if (oauth2LinkedIn == null) {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 				return;
