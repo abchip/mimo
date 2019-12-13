@@ -262,6 +262,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 					userInfo = new ObjectMapper().readValue(responseString, HashMap.class);
 				}
 				// Get e-mail
+				ObjectMapper mapper = null;
 
 				if (userInfo != null) {
 					// retrieve email
@@ -277,7 +278,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 						String responseString = new BasicResponseHandler().handleResponse(getResponse);
 
 						if (getResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-							ObjectMapper mapper = new ObjectMapper();
+							mapper = new ObjectMapper();
 							JsonNode node = mapper.readTree(responseString);
 							JsonNode elements = node.get("elements");
 							if (elements.isArray()) {
@@ -310,9 +311,20 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 					getMethod.setConfig(StandardRequestConfig);
 					getMethod.setHeader("Accept", "application/json");
 
+					String responseString = "";
 					try (CloseableHttpResponse getResponse = client.execute(getMethod)) {
-						@SuppressWarnings("unused")
-						String responseString = new BasicResponseHandler().handleResponse(getResponse);
+						responseString = new BasicResponseHandler().handleResponse(getResponse);
+						
+						mapper = new ObjectMapper();
+						JsonNode node = mapper.readTree(responseString);
+						JsonNode profilePicture = node.get("profilePicture");
+						JsonNode displayImage = profilePicture.get("displayImage~");
+						JsonNode elements = displayImage.get("elements");
+						JsonNode element = elements.get(0);
+						JsonNode identifiers = element.get("identifiers");
+						picture = identifiers.get(0).get("identifier").asText();
+						if(picture != null)
+							userInfo.put("picture", picture);
 					}
 				}
 
@@ -333,6 +345,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 						return false;
 					}
 					authentication.setUser((String) userInfo.get("email"));
+					authentication.setPicture((String) userInfo.get("picture"));
 				}
 
 			} catch (IOException | URISyntaxException e) {
