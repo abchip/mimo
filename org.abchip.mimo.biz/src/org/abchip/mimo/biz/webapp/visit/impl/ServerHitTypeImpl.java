@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.webapp.visit.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.webapp.visit.ServerHitBin;
 import org.abchip.mimo.biz.webapp.visit.ServerHitType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -92,18 +89,6 @@ public class ServerHitTypeImpl extends BizEntityImpl implements ServerHitType {
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(VisitPackage.Literals.SERVER_HIT_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ServerHitBin> serverHitBins() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ServerHitTypeImpl

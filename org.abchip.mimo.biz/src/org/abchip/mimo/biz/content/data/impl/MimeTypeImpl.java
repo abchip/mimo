@@ -7,15 +7,9 @@
  */
 package org.abchip.mimo.biz.content.data.impl;
 
-import java.util.List;
-
-import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.data.DataPackage;
-import org.abchip.mimo.biz.content.data.DataResource;
-import org.abchip.mimo.biz.content.data.FileExtension;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -75,54 +69,6 @@ public class MimeTypeImpl extends BizEntityImpl implements MimeType {
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(DataPackage.Literals.MIME_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CommunicationEvent> communicationEvents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Content> contents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<DataResource> dataResources() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<FileExtension> fileExtensions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

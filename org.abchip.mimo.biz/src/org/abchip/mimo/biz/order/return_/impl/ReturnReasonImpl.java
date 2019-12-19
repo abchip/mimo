@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.order.return_.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.return_.ReturnItem;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.order.return_.ReturnReason;
 import org.eclipse.emf.ecore.EClass;
@@ -113,18 +110,6 @@ public class ReturnReasonImpl extends BizEntityImpl implements ReturnReason {
 	@Override
 	public void setSequenceId(String newSequenceId) {
 		eSet(ReturnPackage.Literals.RETURN_REASON__SEQUENCE_ID, newSequenceId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ReturnItem> returnItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ReturnReasonImpl

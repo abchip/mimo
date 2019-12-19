@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.order.request;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 import org.abchip.mimo.biz.party.party.Party;
 
@@ -22,7 +20,6 @@ import org.abchip.mimo.biz.party.party.Party;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestType#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestType#getCustRequestTypeAttrs <em>Cust Request Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -46,7 +43,7 @@ public interface CustRequestType extends BizEntityType<CustRequest> {
 	 * @see #setCustRequestTypeId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestType_CustRequestTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCustRequestTypeId();
@@ -98,7 +95,7 @@ public interface CustRequestType extends BizEntityType<CustRequest> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -165,58 +162,5 @@ public interface CustRequestType extends BizEntityType<CustRequest> {
 	 * @generated
 	 */
 	void setPartyId(Party value);
-
-	/**
-	 * Returns the value of the '<em><b>Cust Request Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cust Request Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cust Request Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestType_CustRequestTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustRequestTypeAttr'"
-	 * @generated
-	 */
-	List<CustRequestTypeAttr> getCustRequestTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustRequestType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<CustRequestType> childCustRequestTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustRequestCategory' route='custRequestTypeId'"
-	 * @generated
-	 */
-	List<CustRequestCategory> custRequestCategories();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustRequestResolution' route='custRequestTypeId'"
-	 * @generated
-	 */
-	List<CustRequestResolution> custRequestResolutions();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustRequest' route='custRequestTypeId'"
-	 * @generated
-	 */
-	List<CustRequest> custRequests();
 
 } // CustRequestType

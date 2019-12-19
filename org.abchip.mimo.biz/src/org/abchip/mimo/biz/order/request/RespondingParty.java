@@ -98,7 +98,7 @@ public interface RespondingParty extends BizEntity {
 	 * @return the value of the '<em>Date Sent</em>' attribute.
 	 * @see #setDateSent(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getRespondingParty_DateSent()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDateSent();
@@ -153,7 +153,7 @@ public interface RespondingParty extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getRespondingParty_RespondingPartySeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRespondingPartySeqId();

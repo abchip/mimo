@@ -580,31 +580,13 @@ public interface GeoPackage extends EPackage {
 	int GEO__GEO_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Main Geo Assocs</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GEO__MAIN_GEO_ASSOCS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Tax Auth Tax Authorities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GEO__TAX_AUTH_TAX_AUTHORITIES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Well Known Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GEO__WELL_KNOWN_TEXT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int GEO__WELL_KNOWN_TEXT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Geo</em>' class.
@@ -613,7 +595,7 @@ public interface GeoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEO_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int GEO_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.common.geo.impl.GeoAssocImpl <em>Assoc</em>}' class.
@@ -1289,28 +1271,6 @@ public interface GeoPackage extends EPackage {
 	EAttribute getGeo_WellKnownText();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.geo.Geo#getMainGeoAssocs <em>Main Geo Assocs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Main Geo Assocs</em>'.
-	 * @see org.abchip.mimo.biz.common.geo.Geo#getMainGeoAssocs()
-	 * @see #getGeo()
-	 * @generated
-	 */
-	EReference getGeo_MainGeoAssocs();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.geo.Geo#getTaxAuthTaxAuthorities <em>Tax Auth Tax Authorities</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Tax Auth Tax Authorities</em>'.
-	 * @see org.abchip.mimo.biz.common.geo.Geo#getTaxAuthTaxAuthorities()
-	 * @see #getGeo()
-	 * @generated
-	 */
-	EReference getGeo_TaxAuthTaxAuthorities();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.geo.GeoAssoc <em>Assoc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1787,22 +1747,6 @@ public interface GeoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GEO__WELL_KNOWN_TEXT = eINSTANCE.getGeo_WellKnownText();
-
-		/**
-		 * The meta object literal for the '<em><b>Main Geo Assocs</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GEO__MAIN_GEO_ASSOCS = eINSTANCE.getGeo_MainGeoAssocs();
-
-		/**
-		 * The meta object literal for the '<em><b>Tax Auth Tax Authorities</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GEO__TAX_AUTH_TAX_AUTHORITIES = eINSTANCE.getGeo_TaxAuthTaxAuthorities();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.geo.impl.GeoAssocImpl <em>Assoc</em>}' class.

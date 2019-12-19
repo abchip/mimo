@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.content.data;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.content.content.Content;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +39,7 @@ public interface CharacterSet extends BizEntity {
 	 * @see #setCharacterSetId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getCharacterSet_CharacterSetId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getCharacterSetId();
@@ -82,23 +79,5 @@ public interface CharacterSet extends BizEntity {
 	 * @generated
 	 */
 	void setDescription(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Content' route='characterSetId'"
-	 * @generated
-	 */
-	List<Content> contents();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResource' route='characterSetId'"
-	 * @generated
-	 */
-	List<DataResource> dataResources();
 
 } // CharacterSet

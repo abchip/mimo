@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
-import java.util.List;
-import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdentType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -70,18 +68,6 @@ public class FixedAssetIdentTypeImpl extends BizEntityImpl implements FixedAsset
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(FixedassetPackage.Literals.FIXED_ASSET_IDENT_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<FixedAssetIdent> fixedAssetIdents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

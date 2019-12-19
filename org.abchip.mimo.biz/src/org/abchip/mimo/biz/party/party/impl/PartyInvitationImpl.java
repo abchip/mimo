@@ -8,15 +8,10 @@
 package org.abchip.mimo.biz.party.party.impl;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyInvitation;
-import org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc;
-import org.abchip.mimo.biz.party.party.PartyInvitationRoleAssoc;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -33,8 +28,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getLastInviteDate <em>Last Invite Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getPartyInvitationGroupAssocs <em>Party Invitation Group Assocs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getPartyInvitationRoleAssocs <em>Party Invitation Role Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getToName <em>To Name</em>}</li>
  * </ul>
@@ -163,28 +156,6 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	@Override
 	public void setToName(String newToName) {
 		eSet(PartyPackage.Literals.PARTY_INVITATION__TO_NAME, newToName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<PartyInvitationGroupAssoc> getPartyInvitationGroupAssocs() {
-		return (List<PartyInvitationGroupAssoc>)eGet(PartyPackage.Literals.PARTY_INVITATION__PARTY_INVITATION_GROUP_ASSOCS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<PartyInvitationRoleAssoc> getPartyInvitationRoleAssocs() {
-		return (List<PartyInvitationRoleAssoc>)eGet(PartyPackage.Literals.PARTY_INVITATION__PARTY_INVITATION_ROLE_ASSOCS, true);
 	}
 
 	/**

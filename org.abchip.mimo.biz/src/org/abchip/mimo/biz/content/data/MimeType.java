@@ -7,11 +7,7 @@
  */
 package org.abchip.mimo.biz.content.data;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.content.content.Content;
-import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,42 +54,6 @@ public interface MimeType extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='contentMimeTypeId'"
-	 * @generated
-	 */
-	List<CommunicationEvent> communicationEvents();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Content' route='mimeTypeId'"
-	 * @generated
-	 */
-	List<Content> contents();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResource' route='mimeTypeId'"
-	 * @generated
-	 */
-	List<DataResource> dataResources();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FileExtension' route='mimeTypeId'"
-	 * @generated
-	 */
-	List<FileExtension> fileExtensions();
-
-	/**
 	 * Returns the value of the '<em><b>Mime Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -105,7 +65,7 @@ public interface MimeType extends BizEntity {
 	 * @see #setMimeTypeId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getMimeType_MimeTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getMimeTypeId();

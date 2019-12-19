@@ -7,12 +7,9 @@
  */
 package org.abchip.mimo.biz.party.agreement.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementItem;
 import org.abchip.mimo.biz.party.agreement.AgreementItemType;
-import org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -25,7 +22,6 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemTypeImpl#getAgreementItemTypeId <em>Agreement Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemTypeImpl#getAgreementItemTypeAttrs <em>Agreement Item Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -115,41 +111,6 @@ public class AgreementItemTypeImpl extends BizEntityTypeImpl<AgreementItem> impl
 	@Override
 	public void setParentTypeId(AgreementItemType newParentTypeId) {
 		eSet(AgreementPackage.Literals.AGREEMENT_ITEM_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<AgreementItemTypeAttr> getAgreementItemTypeAttrs() {
-		return (List<AgreementItemTypeAttr>)eGet(AgreementPackage.Literals.AGREEMENT_ITEM_TYPE__AGREEMENT_ITEM_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AgreementItem> agreementItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AgreementItemType> childAgreementItemTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

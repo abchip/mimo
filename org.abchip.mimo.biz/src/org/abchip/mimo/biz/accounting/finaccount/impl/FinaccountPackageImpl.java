@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.accounting.finaccount.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
@@ -27,6 +28,7 @@ import org.abchip.mimo.biz.accounting.finaccount.FinaccountFactory;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -39,6 +41,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -47,6 +50,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -354,6 +358,8 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FixedassetPackage.eNS_URI);
@@ -370,6 +376,8 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -472,6 +480,8 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -481,7 +491,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -540,6 +550,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		// Create package meta-data objects
 		theFinaccountPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
 		theInvoicePackage.createPackageContents();
@@ -548,6 +559,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -599,11 +611,12 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -635,6 +648,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		// Initialize created meta-data
 		theFinaccountPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
 		theInvoicePackage.initializePackageContents();
@@ -643,6 +657,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -694,11 +709,12 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -792,7 +808,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccount_FinAccountCode() {
-		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -802,7 +818,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccount_FinAccountName() {
-		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -812,7 +828,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccount_FinAccountPin() {
-		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -822,7 +838,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccount_FinAccountTypeId() {
-		return (EReference)finAccountEClass.getEStructuralFeatures().get(8);
+		return (EReference)finAccountEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -832,7 +848,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccount_FromDate() {
-		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -842,7 +858,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccount_IsRefundable() {
-		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -852,7 +868,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccount_OrganizationPartyId() {
-		return (EReference)finAccountEClass.getEStructuralFeatures().get(11);
+		return (EReference)finAccountEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -862,7 +878,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccount_OwnerPartyId() {
-		return (EReference)finAccountEClass.getEStructuralFeatures().get(12);
+		return (EReference)finAccountEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -872,7 +888,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccount_PostToGlAccountId() {
-		return (EReference)finAccountEClass.getEStructuralFeatures().get(13);
+		return (EReference)finAccountEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -882,7 +898,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccount_ReplenishLevel() {
-		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -892,7 +908,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccount_ReplenishPaymentId() {
-		return (EReference)finAccountEClass.getEStructuralFeatures().get(15);
+		return (EReference)finAccountEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -902,7 +918,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccount_StatusId() {
-		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -912,17 +928,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccount_ThruDate() {
-		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFinAccount_FinAccountAttributes() {
-		return (EReference)finAccountEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)finAccountEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -1242,7 +1248,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccountTrans_FinAccountTransTypeId() {
-		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(6);
+		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1252,7 +1258,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccountTrans_GlReconciliationId() {
-		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(7);
+		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1262,7 +1268,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccountTrans_OrderId() {
-		return (EAttribute)finAccountTransEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)finAccountTransEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1272,7 +1278,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccountTrans_OrderItemSeqId() {
-		return (EAttribute)finAccountTransEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)finAccountTransEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1282,7 +1288,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccountTrans_PartyId() {
-		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(10);
+		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1292,7 +1298,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccountTrans_PaymentId() {
-		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(11);
+		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1302,7 +1308,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccountTrans_PerformedByPartyId() {
-		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(12);
+		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1312,7 +1318,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccountTrans_ReasonEnumId() {
-		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(13);
+		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1322,7 +1328,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccountTrans_StatusId() {
-		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(14);
+		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -1332,17 +1338,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccountTrans_TransactionDate() {
-		return (EAttribute)finAccountTransEClass.getEStructuralFeatures().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFinAccountTrans_FinAccountTransAttributes() {
-		return (EReference)finAccountTransEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)finAccountTransEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -1432,7 +1428,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccountTransType_HasTable() {
-		return (EAttribute)finAccountTransTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)finAccountTransTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1442,17 +1438,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccountTransType_ParentTypeId() {
-		return (EReference)finAccountTransTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFinAccountTransType_FinAccountTransTypeAttrs() {
-		return (EReference)finAccountTransTypeEClass.getEStructuralFeatures().get(2);
+		return (EReference)finAccountTransTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1532,7 +1518,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccountType_HasTable() {
-		return (EAttribute)finAccountTypeEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)finAccountTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1542,7 +1528,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EAttribute getFinAccountType_IsRefundable() {
-		return (EAttribute)finAccountTypeEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)finAccountTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1552,7 +1538,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccountType_ParentTypeId() {
-		return (EReference)finAccountTypeEClass.getEStructuralFeatures().get(6);
+		return (EReference)finAccountTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1562,27 +1548,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	 */
 	@Override
 	public EReference getFinAccountType_ReplenishEnumId() {
-		return (EReference)finAccountTypeEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFinAccountType_FinAccountTypeAttrs() {
-		return (EReference)finAccountTypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFinAccountType_FinAccountTypeGlAccounts() {
-		return (EReference)finAccountTypeEClass.getEStructuralFeatures().get(3);
+		return (EReference)finAccountTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1709,7 +1675,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		createEAttribute(finAccountEClass, FIN_ACCOUNT__ACTUAL_BALANCE);
 		createEAttribute(finAccountEClass, FIN_ACCOUNT__AVAILABLE_BALANCE);
 		createEReference(finAccountEClass, FIN_ACCOUNT__CURRENCY_UOM_ID);
-		createEReference(finAccountEClass, FIN_ACCOUNT__FIN_ACCOUNT_ATTRIBUTES);
 		createEAttribute(finAccountEClass, FIN_ACCOUNT__FIN_ACCOUNT_CODE);
 		createEAttribute(finAccountEClass, FIN_ACCOUNT__FIN_ACCOUNT_NAME);
 		createEAttribute(finAccountEClass, FIN_ACCOUNT__FIN_ACCOUNT_PIN);
@@ -1759,7 +1724,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		createEAttribute(finAccountTransEClass, FIN_ACCOUNT_TRANS__COMMENTS);
 		createEAttribute(finAccountTransEClass, FIN_ACCOUNT_TRANS__ENTRY_DATE);
 		createEReference(finAccountTransEClass, FIN_ACCOUNT_TRANS__FIN_ACCOUNT_ID);
-		createEReference(finAccountTransEClass, FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_ATTRIBUTES);
 		createEReference(finAccountTransEClass, FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID);
 		createEReference(finAccountTransEClass, FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID);
 		createEAttribute(finAccountTransEClass, FIN_ACCOUNT_TRANS__ORDER_ID);
@@ -1780,7 +1744,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		finAccountTransTypeEClass = createEClass(FIN_ACCOUNT_TRANS_TYPE);
 		createEAttribute(finAccountTransTypeEClass, FIN_ACCOUNT_TRANS_TYPE__FIN_ACCOUNT_TRANS_TYPE_ID);
 		createEAttribute(finAccountTransTypeEClass, FIN_ACCOUNT_TRANS_TYPE__DESCRIPTION);
-		createEReference(finAccountTransTypeEClass, FIN_ACCOUNT_TRANS_TYPE__FIN_ACCOUNT_TRANS_TYPE_ATTRS);
 		createEAttribute(finAccountTransTypeEClass, FIN_ACCOUNT_TRANS_TYPE__HAS_TABLE);
 		createEReference(finAccountTransTypeEClass, FIN_ACCOUNT_TRANS_TYPE__PARENT_TYPE_ID);
 
@@ -1792,8 +1755,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		finAccountTypeEClass = createEClass(FIN_ACCOUNT_TYPE);
 		createEAttribute(finAccountTypeEClass, FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ID);
 		createEAttribute(finAccountTypeEClass, FIN_ACCOUNT_TYPE__DESCRIPTION);
-		createEReference(finAccountTypeEClass, FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS);
-		createEReference(finAccountTypeEClass, FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS);
 		createEAttribute(finAccountTypeEClass, FIN_ACCOUNT_TYPE__HAS_TABLE);
 		createEAttribute(finAccountTypeEClass, FIN_ACCOUNT_TYPE__IS_REFUNDABLE);
 		createEReference(finAccountTypeEClass, FIN_ACCOUNT_TYPE__PARENT_TYPE_ID);
@@ -1837,15 +1798,12 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
-		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		PartyPackage thePartyPackage_1 = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		LedgerPackage theLedgerPackage = (LedgerPackage)EPackage.Registry.INSTANCE.getEPackage(LedgerPackage.eNS_URI);
 		PaymentPackage thePaymentPackage = (PaymentPackage)EPackage.Registry.INSTANCE.getEPackage(PaymentPackage.eNS_URI);
-		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
-		ReturnPackage theReturnPackage = (ReturnPackage)EPackage.Registry.INSTANCE.getEPackage(ReturnPackage.eNS_URI);
 		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
 		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
-		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1884,18 +1842,17 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		initEAttribute(getFinAccount_AvailableBalance(), ecorePackage.getEBigDecimal(), "availableBalance", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFinAccount_CurrencyUomId(), theUomPackage.getUom(), null, "currencyUomId", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccount_CurrencyUomId().getEKeys().add(theUomPackage.getUom_UomId());
-		initEReference(getFinAccount_FinAccountAttributes(), this.getFinAccountAttribute(), null, "finAccountAttributes", null, 0, -1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFinAccount_FinAccountCode(), ecorePackage.getEString(), "finAccountCode", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFinAccount_FinAccountName(), ecorePackage.getEString(), "finAccountName", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFinAccount_FinAccountPin(), ecorePackage.getEString(), "finAccountPin", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFinAccount_FinAccountTypeId(), this.getFinAccountType(), null, "finAccountTypeId", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccount_FinAccountTypeId().getEKeys().add(this.getFinAccountType_FinAccountTypeId());
 		initEAttribute(getFinAccount_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFinAccount_IsRefundable(), ecorePackage.getEBoolean(), "isRefundable", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFinAccount_OrganizationPartyId(), thePartyPackage.getParty(), null, "organizationPartyId", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getFinAccount_OrganizationPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getFinAccount_OwnerPartyId(), thePartyPackage.getParty(), null, "ownerPartyId", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getFinAccount_OwnerPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEAttribute(getFinAccount_IsRefundable(), ecorePackage.getEBoolean(), "isRefundable", "true", 1, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFinAccount_OrganizationPartyId(), thePartyPackage_1.getParty(), null, "organizationPartyId", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFinAccount_OrganizationPartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
+		initEReference(getFinAccount_OwnerPartyId(), thePartyPackage_1.getParty(), null, "ownerPartyId", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFinAccount_OwnerPartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEReference(getFinAccount_PostToGlAccountId(), theLedgerPackage.getGlAccount(), null, "postToGlAccountId", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccount_PostToGlAccountId().getEKeys().add(theLedgerPackage.getGlAccount_GlAccountId());
 		initEAttribute(getFinAccount_ReplenishLevel(), ecorePackage.getEBigDecimal(), "replenishLevel", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1903,16 +1860,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		getFinAccount_ReplenishPaymentId().getEKeys().add(thePaymentPackage.getPaymentMethod_PaymentMethodId());
 		initEAttribute(getFinAccount_StatusId(), ecorePackage.getEString(), "statusId", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFinAccount_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, FinAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(finAccountEClass, this.getFinAccountAuth(), "finAccountAuths", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(finAccountEClass, this.getFinAccountTrans(), "finAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(finAccountEClass, theOrderPackage.getOrderPaymentPreference(), "orderPaymentPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(finAccountEClass, thePaymentPackage.getPaymentMethod(), "paymentMethods", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(finAccountEClass, theReturnPackage.getReturnHeader(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(finAccountAttributeEClass, FinAccountAttribute.class, "FinAccountAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFinAccountAttribute_FinAccountId(), this.getFinAccount(), null, "finAccountId", null, 1, 1, FinAccountAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1934,10 +1881,10 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		initEClass(finAccountRoleEClass, FinAccountRole.class, "FinAccountRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFinAccountRole_FinAccountId(), this.getFinAccount(), null, "finAccountId", null, 1, 1, FinAccountRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccountRole_FinAccountId().getEKeys().add(this.getFinAccount_FinAccountId());
-		initEReference(getFinAccountRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, FinAccountRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getFinAccountRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getFinAccountRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 1, 1, FinAccountRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getFinAccountRole_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
+		initEReference(getFinAccountRole_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 1, 1, FinAccountRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFinAccountRole_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
+		initEReference(getFinAccountRole_RoleTypeId(), thePartyPackage_1.getRoleType(), null, "roleTypeId", null, 1, 1, FinAccountRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFinAccountRole_RoleTypeId().getEKeys().add(thePartyPackage_1.getRoleType_RoleTypeId());
 		initEAttribute(getFinAccountRole_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, FinAccountRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFinAccountRole_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, FinAccountRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1958,28 +1905,23 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		initEAttribute(getFinAccountTrans_EntryDate(), ecorePackage.getEDate(), "entryDate", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFinAccountTrans_FinAccountId(), this.getFinAccount(), null, "finAccountId", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccountTrans_FinAccountId().getEKeys().add(this.getFinAccount_FinAccountId());
-		initEReference(getFinAccountTrans_FinAccountTransAttributes(), this.getFinAccountTransAttribute(), null, "finAccountTransAttributes", null, 0, -1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFinAccountTrans_FinAccountTransTypeId(), this.getFinAccountTransType(), null, "finAccountTransTypeId", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccountTrans_FinAccountTransTypeId().getEKeys().add(this.getFinAccountTransType_FinAccountTransTypeId());
 		initEReference(getFinAccountTrans_GlReconciliationId(), theLedgerPackage.getGlReconciliation(), null, "glReconciliationId", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccountTrans_GlReconciliationId().getEKeys().add(theLedgerPackage.getGlReconciliation_GlReconciliationId());
 		initEAttribute(getFinAccountTrans_OrderId(), ecorePackage.getEString(), "orderId", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFinAccountTrans_OrderItemSeqId(), ecorePackage.getEString(), "orderItemSeqId", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFinAccountTrans_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getFinAccountTrans_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getFinAccountTrans_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFinAccountTrans_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEReference(getFinAccountTrans_PaymentId(), thePaymentPackage.getPayment(), null, "paymentId", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccountTrans_PaymentId().getEKeys().add(thePaymentPackage.getPayment_PaymentId());
-		initEReference(getFinAccountTrans_PerformedByPartyId(), thePartyPackage.getParty(), null, "performedByPartyId", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getFinAccountTrans_PerformedByPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getFinAccountTrans_PerformedByPartyId(), thePartyPackage_1.getParty(), null, "performedByPartyId", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFinAccountTrans_PerformedByPartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEReference(getFinAccountTrans_ReasonEnumId(), theEnumPackage.getEnumeration(), null, "reasonEnumId", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccountTrans_ReasonEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 		initEReference(getFinAccountTrans_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccountTrans_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEAttribute(getFinAccountTrans_TransactionDate(), ecorePackage.getEDate(), "transactionDate", null, 0, 1, FinAccountTrans.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(finAccountTransEClass, theLedgerPackage.getAcctgTrans(), "acctgTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(finAccountTransEClass, theReturnPackage.getReturnItemResponse(), "returnItemResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(finAccountTransAttributeEClass, FinAccountTransAttribute.class, "FinAccountTransAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFinAccountTransAttribute_FinAccountTransId(), this.getFinAccountTrans(), null, "finAccountTransId", null, 1, 1, FinAccountTransAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1991,14 +1933,9 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		initEClass(finAccountTransTypeEClass, FinAccountTransType.class, "FinAccountTransType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFinAccountTransType_FinAccountTransTypeId(), ecorePackage.getEString(), "finAccountTransTypeId", null, 1, 1, FinAccountTransType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFinAccountTransType_Description(), ecorePackage.getEString(), "description", null, 0, 1, FinAccountTransType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFinAccountTransType_FinAccountTransTypeAttrs(), this.getFinAccountTransTypeAttr(), null, "finAccountTransTypeAttrs", null, 0, -1, FinAccountTransType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFinAccountTransType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, FinAccountTransType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFinAccountTransType_ParentTypeId(), this.getFinAccountTransType(), null, "parentTypeId", null, 0, 1, FinAccountTransType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccountTransType_ParentTypeId().getEKeys().add(this.getFinAccountTransType_FinAccountTransTypeId());
-
-		addEOperation(finAccountTransTypeEClass, this.getFinAccountTransType(), "childFinAccountTransTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(finAccountTransTypeEClass, this.getFinAccountTrans(), "finAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(finAccountTransTypeAttrEClass, FinAccountTransTypeAttr.class, "FinAccountTransTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFinAccountTransTypeAttr_FinAccountTransTypeId(), this.getFinAccountTransType(), null, "finAccountTransTypeId", null, 1, 1, FinAccountTransTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2009,20 +1946,12 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		initEClass(finAccountTypeEClass, FinAccountType.class, "FinAccountType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFinAccountType_FinAccountTypeId(), ecorePackage.getEString(), "finAccountTypeId", null, 1, 1, FinAccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFinAccountType_Description(), ecorePackage.getEString(), "description", null, 0, 1, FinAccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFinAccountType_FinAccountTypeAttrs(), this.getFinAccountTypeAttr(), null, "finAccountTypeAttrs", null, 0, -1, FinAccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFinAccountType_FinAccountTypeGlAccounts(), this.getFinAccountTypeGlAccount(), null, "finAccountTypeGlAccounts", null, 0, -1, FinAccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFinAccountType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, FinAccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFinAccountType_IsRefundable(), ecorePackage.getEBoolean(), "isRefundable", null, 0, 1, FinAccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFinAccountType_ParentTypeId(), this.getFinAccountType(), null, "parentTypeId", null, 0, 1, FinAccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccountType_ParentTypeId().getEKeys().add(this.getFinAccountType_FinAccountTypeId());
 		initEReference(getFinAccountType_ReplenishEnumId(), theEnumPackage.getEnumeration(), null, "replenishEnumId", null, 0, 1, FinAccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccountType_ReplenishEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
-
-		addEOperation(finAccountTypeEClass, this.getFinAccountType(), "childFinAccountTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(finAccountTypeEClass, this.getFinAccount(), "finAccounts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(finAccountTypeEClass, theStorePackage.getProductStoreFinActSetting(), "productStoreFinActSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(finAccountTypeAttrEClass, FinAccountTypeAttr.class, "FinAccountTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFinAccountTypeAttr_FinAccountTypeId(), this.getFinAccountType(), null, "finAccountTypeId", null, 1, 1, FinAccountTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2034,20 +1963,18 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		initEClass(finAccountTypeGlAccountEClass, FinAccountTypeGlAccount.class, "FinAccountTypeGlAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFinAccountTypeGlAccount_FinAccountTypeId(), this.getFinAccountType(), null, "finAccountTypeId", null, 1, 1, FinAccountTypeGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccountTypeGlAccount_FinAccountTypeId().getEKeys().add(this.getFinAccountType_FinAccountTypeId());
-		initEReference(getFinAccountTypeGlAccount_OrganizationPartyId(), thePartyPackage.getParty(), null, "organizationPartyId", null, 1, 1, FinAccountTypeGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getFinAccountTypeGlAccount_OrganizationPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getFinAccountTypeGlAccount_OrganizationPartyId(), thePartyPackage_1.getParty(), null, "organizationPartyId", null, 1, 1, FinAccountTypeGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getFinAccountTypeGlAccount_OrganizationPartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEReference(getFinAccountTypeGlAccount_GlAccountId(), theLedgerPackage.getGlAccount(), null, "glAccountId", null, 0, 1, FinAccountTypeGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFinAccountTypeGlAccount_GlAccountId().getEKeys().add(theLedgerPackage.getGlAccount_GlAccountId());
 
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
 	}
 
 	/**
@@ -2062,7 +1989,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		  (getFinAccount_FinAccountId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2085,7 +2011,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		  (getFinAccount_FinAccountCode(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
@@ -2099,21 +2024,7 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		  (getFinAccount_FinAccountPin(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getFinAccount_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getFinAccount_IsRefundable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 		addAnnotation
 		  (getFinAccount_ReplenishLevel(),
@@ -2127,20 +2038,12 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		  (getFinAccount_StatusId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getFinAccount_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getFinAccountAttribute_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -2154,14 +2057,12 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		  (getFinAccountAttribute_AttrValue(),
 		   source,
 		   new String[] {
-			   "type", "value",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getFinAccountAuth_FinAccountAuthId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2173,59 +2074,15 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getFinAccountAuth_AuthorizationDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getFinAccountAuth_CurrencyUomId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getFinAccountAuth_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getFinAccountAuth_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getFinAccountRole_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getFinAccountRole_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getFinAccountStatus_StatusDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getFinAccountStatus_StatusEndDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getFinAccountTrans_FinAccountTransId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2244,36 +2101,21 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getFinAccountTrans_EntryDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getFinAccountTrans_OrderId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getFinAccountTrans_OrderItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getFinAccountTrans_TransactionDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getFinAccountTransAttribute_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -2287,14 +2129,12 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		  (getFinAccountTransAttribute_AttrValue(),
 		   source,
 		   new String[] {
-			   "type", "value",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getFinAccountTransType_FinAccountTransTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2305,17 +2145,9 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getFinAccountTransType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getFinAccountTransTypeAttr_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -2329,7 +2161,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		  (getFinAccountType_FinAccountTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2340,31 +2171,15 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getFinAccountType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getFinAccountType_IsRefundable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getFinAccountTypeAttr_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
 		  (getFinAccountTypeAttr_AttrValue(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
@@ -2385,36 +2200,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (finAccountEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (finAccountEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (finAccountEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (finAccountEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (finAccountEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getFinAccount_ActualBalance(),
 		   source,
 		   new String[] {
@@ -2425,12 +2210,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		   source,
 		   new String[] {
 			   "help", "Calculated as actualBalance minus sum of outstanding FinAccountAuth.amount"
-		   });
-		addAnnotation
-		  (getFinAccount_FinAccountAttributes(),
-		   source,
-		   new String[] {
-			   "derived", "true"
 		   });
 		addAnnotation
 		  (getFinAccount_FinAccountCode(),
@@ -2523,24 +2302,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (finAccountTransEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (finAccountTransEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getFinAccountTrans_FinAccountTransAttributes(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getFinAccountTrans_OrderItemSeqId(),
 		   source,
 		   new String[] {
@@ -2559,24 +2320,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 			   "key", "true"
 		   });
 		addAnnotation
-		  (finAccountTransTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (finAccountTransTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getFinAccountTransType_FinAccountTransTypeAttrs(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getFinAccountTransTypeAttr_FinAccountTransTypeId(),
 		   source,
 		   new String[] {
@@ -2587,36 +2330,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (finAccountTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (finAccountTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (finAccountTypeEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getFinAccountType_FinAccountTypeAttrs(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getFinAccountType_FinAccountTypeGlAccounts(),
-		   source,
-		   new String[] {
-			   "derived", "true"
 		   });
 		addAnnotation
 		  (getFinAccountTypeAttr_FinAccountTypeId(),
@@ -2641,130 +2354,6 @@ public class FinaccountPackageImpl extends EPackageImpl implements FinaccountPac
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (finAccountEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "FinAccountAuth",
-			   "route", "finAccountId"
-		   });
-		addAnnotation
-		  (finAccountEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "FinAccountTrans",
-			   "route", "finAccountId"
-		   });
-		addAnnotation
-		  (finAccountEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "frame", "OrderPaymentPreference",
-			   "route", "finAccountId"
-		   });
-		addAnnotation
-		  (finAccountEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "frame", "PaymentMethod",
-			   "route", "finAccountId"
-		   });
-		addAnnotation
-		  (finAccountEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "frame", "ReturnHeader",
-			   "route", "finAccountId"
-		   });
-		addAnnotation
-		  (getFinAccount_FinAccountAttributes(),
-		   source,
-		   new String[] {
-			   "frame", "FinAccountAttribute"
-		   });
-		addAnnotation
-		  (finAccountTransEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "AcctgTrans",
-			   "route", "finAccountTransId"
-		   });
-		addAnnotation
-		  (finAccountTransEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "ReturnItemResponse",
-			   "route", "finAccountTransId"
-		   });
-		addAnnotation
-		  (getFinAccountTrans_FinAccountTransAttributes(),
-		   source,
-		   new String[] {
-			   "frame", "FinAccountTransAttribute"
-		   });
-		addAnnotation
-		  (finAccountTransTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "FinAccountTransType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (finAccountTransTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "FinAccountTrans",
-			   "route", "finAccountTransTypeId"
-		   });
-		addAnnotation
-		  (getFinAccountTransType_FinAccountTransTypeAttrs(),
-		   source,
-		   new String[] {
-			   "frame", "FinAccountTransTypeAttr"
-		   });
-		addAnnotation
-		  (finAccountTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "FinAccountType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (finAccountTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "FinAccount",
-			   "route", "finAccountTypeId"
-		   });
-		addAnnotation
-		  (finAccountTypeEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "frame", "ProductStoreFinActSetting",
-			   "route", "finAccountTypeId"
-		   });
-		addAnnotation
-		  (getFinAccountType_FinAccountTypeAttrs(),
-		   source,
-		   new String[] {
-			   "frame", "FinAccountTypeAttr"
-		   });
-		addAnnotation
-		  (getFinAccountType_FinAccountTypeGlAccounts(),
-		   source,
-		   new String[] {
-			   "frame", "FinAccountTypeGlAccount"
 		   });
 	}
 

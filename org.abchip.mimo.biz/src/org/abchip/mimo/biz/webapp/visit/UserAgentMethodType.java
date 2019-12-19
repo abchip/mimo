@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.webapp.visit;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -41,7 +39,7 @@ public interface UserAgentMethodType extends BizEntity {
 	 * @see #setUserAgentMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgentMethodType_UserAgentMethodTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getUserAgentMethodTypeId();
@@ -81,14 +79,5 @@ public interface UserAgentMethodType extends BizEntity {
 	 * @generated
 	 */
 	void setDescription(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='UserAgent' route='userAgentMethodTypeId'"
-	 * @generated
-	 */
-	List<UserAgent> userAgents();
 
 } // UserAgentMethodType

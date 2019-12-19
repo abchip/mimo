@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.order.request.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestCategory;
 import org.abchip.mimo.biz.order.request.CustRequestType;
 import org.abchip.mimo.biz.order.request.RequestPackage;
@@ -114,18 +111,6 @@ public class CustRequestCategoryImpl extends BizEntityImpl implements CustReques
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(RequestPackage.Literals.CUST_REQUEST_CATEGORY__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CustRequest> custRequests() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //CustRequestCategoryImpl

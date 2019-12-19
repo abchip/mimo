@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.entity.test.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.TestingNode;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -91,18 +89,6 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 	@Override
 	public void setPrimaryParentNodeId(TestingNode newPrimaryParentNodeId) {
 		eSet(TestPackage.Literals.TESTING_NODE__PRIMARY_PARENT_NODE_ID, newPrimaryParentNodeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TestingNode> primaryChildTestingNodes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

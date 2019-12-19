@@ -53,7 +53,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @return the value of the '<em>Cartons</em>' attribute.
 	 * @see #setCartons(long)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_Cartons()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getCartons();
@@ -79,7 +79,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @return the value of the '<em>Estimated Ready Date</em>' attribute.
 	 * @see #setEstimatedReadyDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_EstimatedReadyDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getEstimatedReadyDate();
@@ -134,7 +134,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_OrderItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -160,7 +160,7 @@ public interface OrderDeliverySchedule extends BizEntity {
 	 * @return the value of the '<em>Skids Pallets</em>' attribute.
 	 * @see #setSkidsPallets(long)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderDeliverySchedule_SkidsPallets()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSkidsPallets();

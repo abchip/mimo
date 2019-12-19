@@ -8,16 +8,9 @@
 package org.abchip.mimo.biz.product.promo.impl;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.order.OrderProductPromoCode;
-import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
-import org.abchip.mimo.biz.product.promo.ProductPromoCodeEmail;
-import org.abchip.mimo.biz.product.promo.ProductPromoCodeParty;
-import org.abchip.mimo.biz.product.promo.ProductPromoUse;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.ecore.EClass;
@@ -36,8 +29,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getProductPromoCodeEmails <em>Product Promo Code Emails</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getProductPromoCodeParties <em>Product Promo Code Parties</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#isRequireEmailOrParty <em>Require Email Or Party</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getThruDate <em>Thru Date</em>}</li>
@@ -271,64 +262,6 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	@Override
 	public void setUserEntered(boolean newUserEntered) {
 		eSet(PromoPackage.Literals.PRODUCT_PROMO_CODE__USER_ENTERED, newUserEntered);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ProductPromoCodeEmail> getProductPromoCodeEmails() {
-		return (List<ProductPromoCodeEmail>)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ProductPromoCodeParty> getProductPromoCodeParties() {
-		return (List<ProductPromoCodeParty>)eGet(PromoPackage.Literals.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderProductPromoCode> orderProductPromoCodes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductPromoUse> productPromoUses() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShoppingList> shoppingLists() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

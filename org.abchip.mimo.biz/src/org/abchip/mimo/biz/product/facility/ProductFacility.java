@@ -47,7 +47,7 @@ public interface ProductFacility extends BizEntity {
 	 * @return the value of the '<em>Days To Ship</em>' attribute.
 	 * @see #setDaysToShip(long)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacility_DaysToShip()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDaysToShip();

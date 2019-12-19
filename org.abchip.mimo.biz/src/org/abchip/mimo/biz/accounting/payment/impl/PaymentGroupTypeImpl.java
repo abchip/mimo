@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.payment.PaymentGroup;
 import org.abchip.mimo.biz.accounting.payment.PaymentGroupType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
@@ -113,30 +111,6 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 	@Override
 	public void setParentTypeId(PaymentGroupType newParentTypeId) {
 		eSet(PaymentPackage.Literals.PAYMENT_GROUP_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PaymentGroupType> childPaymentGroupTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PaymentGroup> paymentGroups() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

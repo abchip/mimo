@@ -77,7 +77,6 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -156,7 +155,7 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -182,7 +181,7 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

@@ -10,8 +10,6 @@ package org.abchip.mimo.biz.product.cost;
 import java.math.BigDecimal;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.common.geo.Geo;
@@ -32,7 +30,6 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentId <em>Cost Component Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCost <em>Cost</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentAttributes <em>Cost Component Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostUomId <em>Cost Uom Id</em>}</li>
@@ -141,7 +138,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -271,7 +268,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -311,23 +308,6 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @generated
 	 */
 	void setWorkEffortId(WorkEffort value);
-
-	/**
-	 * Returns the value of the '<em><b>Cost Component Attributes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.cost.CostComponentAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cost Component Attributes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cost Component Attributes</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CostComponentAttribute'"
-	 * @generated
-	 */
-	List<CostComponentAttribute> getCostComponentAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Cost Component Type Id</b></em>' reference.
@@ -393,7 +373,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @see #setCostComponentId(String)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCostComponentId();

@@ -7,12 +7,8 @@
  */
 package org.abchip.mimo.biz.order.return_.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnHeaderType;
-import org.abchip.mimo.biz.order.return_.ReturnItemTypeMap;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -94,42 +90,6 @@ public class ReturnHeaderTypeImpl extends BizEntityImpl implements ReturnHeaderT
 	@Override
 	public void setParentTypeId(ReturnHeaderType newParentTypeId) {
 		eSet(ReturnPackage.Literals.RETURN_HEADER_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ReturnHeaderType> childReturnHeaderTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ReturnHeader> returnHeaders() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ReturnItemTypeMap> returnItemTypeMaps() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.webapp.visit;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -41,7 +39,7 @@ public interface ServerHitType extends BizEntity {
 	 * @see #setHitTypeId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitType_HitTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getHitTypeId();
@@ -81,14 +79,5 @@ public interface ServerHitType extends BizEntity {
 	 * @generated
 	 */
 	void setDescription(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ServerHitBin' route='hitTypeId'"
-	 * @generated
-	 */
-	List<ServerHitBin> serverHitBins();
 
 } // ServerHitType

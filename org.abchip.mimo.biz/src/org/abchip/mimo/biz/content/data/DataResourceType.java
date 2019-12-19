@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.content.data;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -21,7 +19,6 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceType#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceType#getDataResourceTypeAttrs <em>Data Resource Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -44,7 +41,7 @@ public interface DataResourceType extends BizEntityType<DataResource> {
 	 * @see #setDataResourceTypeId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceType_DataResourceTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDataResourceTypeId();
@@ -96,7 +93,7 @@ public interface DataResourceType extends BizEntityType<DataResource> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -136,40 +133,5 @@ public interface DataResourceType extends BizEntityType<DataResource> {
 	 * @generated
 	 */
 	void setParentTypeId(DataResourceType value);
-
-	/**
-	 * Returns the value of the '<em><b>Data Resource Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.content.data.DataResourceTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Data Resource Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceType_DataResourceTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResourceTypeAttr'"
-	 * @generated
-	 */
-	List<DataResourceTypeAttr> getDataResourceTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResourceType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<DataResourceType> childDataResourceTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResource' route='dataResourceTypeId'"
-	 * @generated
-	 */
-	List<DataResource> dataResources();
 
 } // DataResourceType

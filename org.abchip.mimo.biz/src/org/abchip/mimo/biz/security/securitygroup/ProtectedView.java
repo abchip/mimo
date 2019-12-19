@@ -69,7 +69,7 @@ public interface ProtectedView extends BizEntity {
 	 * @see #setMaxHits(long)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_MaxHits()
 	 * @model annotation="mimo-ent-slot help='number of hits before tarpitting a login for a view'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxHits();
@@ -96,7 +96,7 @@ public interface ProtectedView extends BizEntity {
 	 * @see #setMaxHitsDuration(long)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_MaxHitsDuration()
 	 * @model annotation="mimo-ent-slot help='period of time associated with maxHits (in seconds)'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxHitsDuration();
@@ -123,7 +123,7 @@ public interface ProtectedView extends BizEntity {
 	 * @see #setTarpitDuration(long)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_TarpitDuration()
 	 * @model annotation="mimo-ent-slot help='period of time a login will not be able to acces  this view again (in seconds)'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTarpitDuration();
@@ -151,7 +151,7 @@ public interface ProtectedView extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_ViewNameId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true' help='name of view to protect from data theft'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getViewNameId();

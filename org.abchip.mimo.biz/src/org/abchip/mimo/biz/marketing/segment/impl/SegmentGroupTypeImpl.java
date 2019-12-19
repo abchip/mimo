@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.marketing.segment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupType;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -72,18 +69,6 @@ public class SegmentGroupTypeImpl extends BizEntityImpl implements SegmentGroupT
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(SegmentPackage.Literals.SEGMENT_GROUP_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SegmentGroup> segmentGroups() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

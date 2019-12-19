@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.budget;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -21,7 +19,6 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenario#getBudgetScenarioId <em>Budget Scenario Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenario#getBudgetScenarioRules <em>Budget Scenario Rules</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenario#getDescription <em>Description</em>}</li>
  * </ul>
  *
@@ -57,32 +54,6 @@ public interface BudgetScenario extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Budget Scenario Rules</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Budget Scenario Rules</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Scenario Rules</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenario_BudgetScenarioRules()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='BudgetScenarioRule'"
-	 * @generated
-	 */
-	List<BudgetScenarioRule> getBudgetScenarioRules();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='BudgetScenarioApplication' route='budgetScenarioId'"
-	 * @generated
-	 */
-	List<BudgetScenarioApplication> budgetScenarioApplications();
-
-	/**
 	 * Returns the value of the '<em><b>Budget Scenario Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -94,7 +65,7 @@ public interface BudgetScenario extends BizEntity {
 	 * @see #setBudgetScenarioId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenario_BudgetScenarioId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBudgetScenarioId();

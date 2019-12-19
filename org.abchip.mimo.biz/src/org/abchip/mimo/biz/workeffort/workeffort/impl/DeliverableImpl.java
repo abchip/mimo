@@ -7,13 +7,9 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
 import org.abchip.mimo.biz.workeffort.workeffort.DeliverableType;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortDeliverableProd;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -136,30 +132,6 @@ public class DeliverableImpl extends BizEntityImpl implements Deliverable {
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(WorkeffortPackage.Literals.DELIVERABLE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Requirement> requirements() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WorkEffortDeliverableProd> workEffortDeliverableProds() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //DeliverableImpl

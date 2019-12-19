@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.ledger;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -56,15 +54,6 @@ public interface GlResourceType extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccount' route='glResourceTypeId'"
-	 * @generated
-	 */
-	List<GlAccount> glAccounts();
-
-	/**
 	 * Returns the value of the '<em><b>Gl Resource Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -76,7 +65,7 @@ public interface GlResourceType extends BizEntity {
 	 * @see #setGlResourceTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlResourceType_GlResourceTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGlResourceTypeId();

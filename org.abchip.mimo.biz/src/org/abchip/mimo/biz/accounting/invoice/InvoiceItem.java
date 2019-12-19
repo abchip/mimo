@@ -146,7 +146,7 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_InvoiceItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -226,7 +226,7 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @return the value of the '<em>Parent Invoice Id</em>' attribute.
 	 * @see #setParentInvoiceId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_ParentInvoiceId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getParentInvoiceId();
@@ -252,7 +252,7 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @return the value of the '<em>Parent Invoice Item Seq Id</em>' attribute.
 	 * @see #setParentInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_ParentInvoiceItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getParentInvoiceItemSeqId();
@@ -356,7 +356,7 @@ public interface InvoiceItem extends BizEntityTyped<InvoiceItemType> {
 	 * @return the value of the '<em>Taxable Flag</em>' attribute.
 	 * @see #setTaxableFlag(boolean)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItem_TaxableFlag()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isTaxableFlag();

@@ -9,7 +9,9 @@ package org.abchip.mimo.biz.party.party.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.Gender;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.party.MaritalStatus;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.Person;
 import org.eclipse.emf.ecore.EClass;
@@ -34,7 +36,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getHeight <em>Height</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getLastName <em>Last Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getLastNameLocal <em>Last Name Local</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#isMaritalStatus <em>Marital Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getMaritalStatus <em>Marital Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getMemberId <em>Member Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getMiddleName <em>Middle Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getMiddleNameLocal <em>Middle Name Local</em>}</li>
@@ -247,8 +249,8 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public char getGender() {
-		return (Character)eGet(PartyPackage.Literals.PERSON__GENDER, true);
+	public Gender getGender() {
+		return (Gender)eGet(PartyPackage.Literals.PERSON__GENDER, true);
 	}
 
 	/**
@@ -257,7 +259,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public void setGender(char newGender) {
+	public void setGender(Gender newGender) {
 		eSet(PartyPackage.Literals.PERSON__GENDER, newGender);
 	}
 
@@ -327,8 +329,8 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public boolean isMaritalStatus() {
-		return (Boolean)eGet(PartyPackage.Literals.PERSON__MARITAL_STATUS, true);
+	public MaritalStatus getMaritalStatus() {
+		return (MaritalStatus)eGet(PartyPackage.Literals.PERSON__MARITAL_STATUS, true);
 	}
 
 	/**
@@ -337,7 +339,7 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public void setMaritalStatus(boolean newMaritalStatus) {
+	public void setMaritalStatus(MaritalStatus newMaritalStatus) {
 		eSet(PartyPackage.Literals.PERSON__MARITAL_STATUS, newMaritalStatus);
 	}
 

@@ -8,12 +8,8 @@
 package org.abchip.mimo.biz.humanres.position;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.status.StatusItem;
-import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
 import org.abchip.mimo.biz.party.party.Party;
 
 /**
@@ -34,11 +30,11 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getEstimatedFromDate <em>Estimated From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getEstimatedThruDate <em>Estimated Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isExemptFlag <em>Exempt Flag</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getFulltimeFlag <em>Fulltime Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isFulltimeFlag <em>Fulltime Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getSalaryFlag <em>Salary Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isSalaryFlag <em>Salary Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getTemporaryFlag <em>Temporary Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isTemporaryFlag <em>Temporary Flag</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition()
@@ -57,7 +53,7 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @return the value of the '<em>Actual From Date</em>' attribute.
 	 * @see #setActualFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_ActualFromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getActualFromDate();
@@ -83,7 +79,7 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @return the value of the '<em>Actual Thru Date</em>' attribute.
 	 * @see #setActualThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_ActualThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getActualThruDate();
@@ -109,7 +105,7 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @return the value of the '<em>Budget Id</em>' attribute.
 	 * @see #setBudgetId(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_BudgetId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBudgetId();
@@ -135,7 +131,7 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @return the value of the '<em>Budget Item Seq Id</em>' attribute.
 	 * @see #setBudgetItemSeqId(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_BudgetItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBudgetItemSeqId();
@@ -162,7 +158,7 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @see #setEmplPositionId(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_EmplPositionId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getEmplPositionId();
@@ -214,7 +210,7 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @return the value of the '<em>Estimated From Date</em>' attribute.
 	 * @see #setEstimatedFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_EstimatedFromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getEstimatedFromDate();
@@ -240,7 +236,7 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @return the value of the '<em>Estimated Thru Date</em>' attribute.
 	 * @see #setEstimatedThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_EstimatedThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getEstimatedThruDate();
@@ -266,7 +262,7 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * @return the value of the '<em>Exempt Flag</em>' attribute.
 	 * @see #setExemptFlag(boolean)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_ExemptFlag()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isExemptFlag();
@@ -290,74 +286,22 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fulltime Flag</em>' attribute.
-	 * @see #setFulltimeFlag(char)
+	 * @see #setFulltimeFlag(boolean)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_FulltimeFlag()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
-	char getFulltimeFlag();
+	boolean isFulltimeFlag();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getFulltimeFlag <em>Fulltime Flag</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isFulltimeFlag <em>Fulltime Flag</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Fulltime Flag</em>' attribute.
-	 * @see #getFulltimeFlag()
+	 * @see #isFulltimeFlag()
 	 * @generated
 	 */
-	void setFulltimeFlag(char value);
-
-	/**
-	 * Returns the value of the '<em><b>Salary Flag</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Salary Flag</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Salary Flag</em>' attribute.
-	 * @see #setSalaryFlag(char)
-	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_SalaryFlag()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
-	 * @generated
-	 */
-	char getSalaryFlag();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getSalaryFlag <em>Salary Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Salary Flag</em>' attribute.
-	 * @see #getSalaryFlag()
-	 * @generated
-	 */
-	void setSalaryFlag(char value);
-
-	/**
-	 * Returns the value of the '<em><b>Temporary Flag</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Temporary Flag</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Temporary Flag</em>' attribute.
-	 * @see #setTemporaryFlag(char)
-	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_TemporaryFlag()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
-	 * @generated
-	 */
-	char getTemporaryFlag();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getTemporaryFlag <em>Temporary Flag</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Temporary Flag</em>' attribute.
-	 * @see #getTemporaryFlag()
-	 * @generated
-	 */
-	void setTemporaryFlag(char value);
+	void setFulltimeFlag(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
@@ -386,6 +330,32 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	void setPartyId(Party value);
 
 	/**
+	 * Returns the value of the '<em><b>Salary Flag</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Salary Flag</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Salary Flag</em>' attribute.
+	 * @see #setSalaryFlag(boolean)
+	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_SalaryFlag()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isSalaryFlag();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isSalaryFlag <em>Salary Flag</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Salary Flag</em>' attribute.
+	 * @see #isSalaryFlag()
+	 * @generated
+	 */
+	void setSalaryFlag(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -412,12 +382,29 @@ public interface EmplPosition extends BizEntityTyped<EmplPositionType> {
 	void setStatusId(StatusItem value);
 
 	/**
+	 * Returns the value of the '<em><b>Temporary Flag</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Temporary Flag</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='emplPositionId'"
+	 * @return the value of the '<em>Temporary Flag</em>' attribute.
+	 * @see #setTemporaryFlag(boolean)
+	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPosition_TemporaryFlag()
+	 * @model required="true"
 	 * @generated
 	 */
-	List<EmploymentApp> employmentApps();
+	boolean isTemporaryFlag();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isTemporaryFlag <em>Temporary Flag</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Temporary Flag</em>' attribute.
+	 * @see #isTemporaryFlag()
+	 * @generated
+	 */
+	void setTemporaryFlag(boolean value);
 
 } // EmplPosition

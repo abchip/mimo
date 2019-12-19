@@ -39,7 +39,7 @@ public interface TenantDomainName extends BizEntity {
 	 * @see #setDomainName(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDomainName_DomainName()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getDomainName();

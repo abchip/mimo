@@ -73,7 +73,7 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @see #setBodyScreenLocation(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_BodyScreenLocation()
 	 * @model annotation="mimo-ent-slot help='if empty defaults to a screen based on the emailType'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getBodyScreenLocation();
@@ -125,7 +125,7 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>Content Type</em>' attribute.
 	 * @see #setContentType(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_ContentType()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getContentType();
@@ -231,7 +231,7 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @see #setXslfoAttachScreenLocation(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_XslfoAttachScreenLocation()
 	 * @model annotation="mimo-ent-slot help='if specified is used to generate XSL:FO that is transformed to a PDF via Apache FOP and attached to the email'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getXslfoAttachScreenLocation();

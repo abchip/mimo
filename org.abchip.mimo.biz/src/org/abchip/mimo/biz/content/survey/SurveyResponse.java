@@ -8,13 +8,8 @@
 package org.abchip.mimo.biz.content.survey;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment;
 import org.abchip.mimo.biz.common.status.StatusItem;
-import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.party.party.Party;
 
@@ -55,7 +50,7 @@ public interface SurveyResponse extends BizEntity {
 	 * @return the value of the '<em>General Feedback</em>' attribute.
 	 * @see #setGeneralFeedback(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_GeneralFeedback()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getGeneralFeedback();
@@ -81,7 +76,7 @@ public interface SurveyResponse extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_LastModifiedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -133,7 +128,7 @@ public interface SurveyResponse extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_OrderItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -185,7 +180,7 @@ public interface SurveyResponse extends BizEntity {
 	 * @return the value of the '<em>Reference Id</em>' attribute.
 	 * @see #setReferenceId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_ReferenceId()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getReferenceId();
@@ -211,7 +206,7 @@ public interface SurveyResponse extends BizEntity {
 	 * @return the value of the '<em>Response Date</em>' attribute.
 	 * @see #setResponseDate(Date)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_ResponseDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getResponseDate();
@@ -279,24 +274,6 @@ public interface SurveyResponse extends BizEntity {
 	void setSurveyId(Survey value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResource' route='surveyResponseId'"
-	 * @generated
-	 */
-	List<DataResource> dataResources();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GiftCardFulfillment' route='surveyResponseId'"
-	 * @generated
-	 */
-	List<GiftCardFulfillment> giftCardFulfillments();
-
-	/**
 	 * Returns the value of the '<em><b>Survey Response Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -308,7 +285,7 @@ public interface SurveyResponse extends BizEntity {
 	 * @see #setSurveyResponseId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_SurveyResponseId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSurveyResponseId();

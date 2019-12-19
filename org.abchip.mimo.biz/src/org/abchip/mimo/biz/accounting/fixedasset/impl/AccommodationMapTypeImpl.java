@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
-import java.util.List;
-import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMapType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -70,18 +68,6 @@ public class AccommodationMapTypeImpl extends BizEntityImpl implements Accommoda
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(FixedassetPackage.Literals.ACCOMMODATION_MAP_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AccommodationMap> accommodationMaps() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -7,9 +7,6 @@
  */
 package org.abchip.mimo.biz.party.contact;
 
-import java.util.List;
-import org.abchip.mimo.biz.shipment.shipment.Shipment;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Telecom Number</b></em>'.
@@ -41,7 +38,7 @@ public interface TelecomNumber extends ContactMech {
 	 * @return the value of the '<em>Area Code</em>' attribute.
 	 * @see #setAreaCode(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getTelecomNumber_AreaCode()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getAreaCode();
@@ -93,7 +90,7 @@ public interface TelecomNumber extends ContactMech {
 	 * @return the value of the '<em>Contact Number</em>' attribute.
 	 * @see #setContactNumber(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getTelecomNumber_ContactNumber()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getContactNumber();
@@ -119,7 +116,7 @@ public interface TelecomNumber extends ContactMech {
 	 * @return the value of the '<em>Country Code</em>' attribute.
 	 * @see #setCountryCode(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getTelecomNumber_CountryCode()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getCountryCode();
@@ -133,14 +130,5 @@ public interface TelecomNumber extends ContactMech {
 	 * @generated
 	 */
 	void setCountryCode(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment' route='destinationTelecomNumberId'"
-	 * @generated
-	 */
-	List<Shipment> destinationShipments();
 
 } // TelecomNumber

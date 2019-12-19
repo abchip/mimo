@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.shipment.shipment;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -24,7 +22,6 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentType#getShipmentTypeAttrs <em>Shipment Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentType()
@@ -69,7 +66,7 @@ public interface ShipmentType extends BizEntityType<Shipment> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -122,7 +119,7 @@ public interface ShipmentType extends BizEntityType<Shipment> {
 	 * @see #setShipmentTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentType_ShipmentTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentTypeId();
@@ -136,40 +133,5 @@ public interface ShipmentType extends BizEntityType<Shipment> {
 	 * @generated
 	 */
 	void setShipmentTypeId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Shipment Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Shipment Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentType_ShipmentTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentTypeAttr'"
-	 * @generated
-	 */
-	List<ShipmentTypeAttr> getShipmentTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<ShipmentType> childShipmentTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment' route='shipmentTypeId'"
-	 * @generated
-	 */
-	List<Shipment> shipments();
 
 } // ShipmentType

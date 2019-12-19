@@ -7,14 +7,8 @@
  */
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
-import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
-import org.abchip.mimo.biz.shipment.picklist.Picklist;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.ecore.EClass;
 
@@ -96,54 +90,6 @@ public class ShipmentMethodTypeImpl extends BizEntityImpl implements ShipmentMet
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
 		eSet(Shipment_Package.Literals.SHIPMENT_METHOD_TYPE__SEQUENCE_NUM, newSequenceNum);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderItemShipGroup> orderItemShipGroups() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Picklist> picklists() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductStoreShipmentMeth> productStoreShipmentMeths() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentRouteSegment> shipmentRouteSegments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPurposeType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -93,30 +90,6 @@ public class WorkEffortPurposeTypeImpl extends BizEntityImpl implements WorkEffo
 	@Override
 	public void setParentTypeId(WorkEffortPurposeType newParentTypeId) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT_PURPOSE_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WorkEffortPurposeType> childWorkEffortPurposeTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WorkEffort> workEfforts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

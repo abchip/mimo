@@ -8,9 +8,6 @@
 package org.abchip.mimo.biz.content.content;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -23,7 +20,6 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getContentSearchResultId <em>Content Search Result Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getContentSearchConstraints <em>Content Search Constraints</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#isIsAscending <em>Is Ascending</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getNumResults <em>Num Results</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getOrderByName <em>Order By Name</em>}</li>
@@ -49,7 +45,7 @@ public interface ContentSearchResult extends BizEntity {
 	 * @see #setContentSearchResultId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchResult_ContentSearchResultId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getContentSearchResultId();
@@ -75,7 +71,7 @@ public interface ContentSearchResult extends BizEntity {
 	 * @return the value of the '<em>Is Ascending</em>' attribute.
 	 * @see #setIsAscending(boolean)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchResult_IsAscending()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsAscending();
@@ -101,7 +97,7 @@ public interface ContentSearchResult extends BizEntity {
 	 * @return the value of the '<em>Num Results</em>' attribute.
 	 * @see #setNumResults(long)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchResult_NumResults()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getNumResults();
@@ -127,7 +123,7 @@ public interface ContentSearchResult extends BizEntity {
 	 * @return the value of the '<em>Order By Name</em>' attribute.
 	 * @see #setOrderByName(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchResult_OrderByName()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getOrderByName();
@@ -153,7 +149,7 @@ public interface ContentSearchResult extends BizEntity {
 	 * @return the value of the '<em>Search Date</em>' attribute.
 	 * @see #setSearchDate(Date)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchResult_SearchDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getSearchDate();
@@ -179,7 +175,7 @@ public interface ContentSearchResult extends BizEntity {
 	 * @return the value of the '<em>Seconds Total</em>' attribute.
 	 * @see #setSecondsTotal(double)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchResult_SecondsTotal()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getSecondsTotal();
@@ -205,7 +201,7 @@ public interface ContentSearchResult extends BizEntity {
 	 * @return the value of the '<em>Visit Id</em>' attribute.
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchResult_VisitId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisitId();
@@ -219,22 +215,5 @@ public interface ContentSearchResult extends BizEntity {
 	 * @generated
 	 */
 	void setVisitId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Content Search Constraints</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentSearchConstraint}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Content Search Constraints</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Search Constraints</em>' reference list.
-	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchResult_ContentSearchConstraints()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContentSearchConstraint'"
-	 * @generated
-	 */
-	List<ContentSearchConstraint> getContentSearchConstraints();
 
 } // ContentSearchResult

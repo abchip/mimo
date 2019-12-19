@@ -7,14 +7,10 @@
  */
 package org.abchip.mimo.biz.product.facility.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.ContainerType;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
-import org.abchip.mimo.biz.product.inventory.InventoryItem;
-import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -116,42 +112,6 @@ public class ContainerImpl extends BizEntityImpl implements org.abchip.mimo.biz.
 	@Override
 	public void setFacilityId(Facility newFacilityId) {
 		eSet(FacilityPackage.Literals.CONTAINER__FACILITY_ID, newFacilityId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InventoryItem> inventoryItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InventoryTransfer> inventoryTransfers() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InventoryTransfer> toInventoryTransfers() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

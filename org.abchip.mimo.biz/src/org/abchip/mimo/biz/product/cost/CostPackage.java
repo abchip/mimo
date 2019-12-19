@@ -126,22 +126,13 @@ public interface CostPackage extends EPackage {
 	int COST_COMPONENT__COST = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Cost Component Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COST_COMPONENT__COST_COMPONENT_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Cost Component Calc Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT__COST_COMPONENT_CALC_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int COST_COMPONENT__COST_COMPONENT_CALC_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Cost Component Type Id</b></em>' reference.
@@ -150,7 +141,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT__COST_COMPONENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int COST_COMPONENT__COST_COMPONENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Cost Uom Id</b></em>' reference.
@@ -159,7 +150,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT__COST_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int COST_COMPONENT__COST_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Asset Id</b></em>' reference.
@@ -168,7 +159,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int COST_COMPONENT__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -177,7 +168,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int COST_COMPONENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Geo Id</b></em>' reference.
@@ -186,7 +177,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT__GEO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int COST_COMPONENT__GEO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -195,7 +186,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int COST_COMPONENT__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Product Feature Id</b></em>' reference.
@@ -204,7 +195,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT__PRODUCT_FEATURE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int COST_COMPONENT__PRODUCT_FEATURE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Product Id</b></em>' reference.
@@ -213,7 +204,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT__PRODUCT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int COST_COMPONENT__PRODUCT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -222,7 +213,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int COST_COMPONENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Work Effort Id</b></em>' reference.
@@ -231,7 +222,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int COST_COMPONENT__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -240,7 +231,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int COST_COMPONENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.cost.impl.CostComponentAttributeImpl <em>Component Attribute</em>}' class.
@@ -534,22 +525,13 @@ public interface CostPackage extends EPackage {
 	int COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Cost Component Type Attrs</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int COST_COMPONENT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Has Table</b></em>' attribute.
@@ -558,7 +540,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
+	int COST_COMPONENT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
@@ -567,7 +549,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+	int COST_COMPONENT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Component Type</em>' class.
@@ -576,7 +558,7 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COST_COMPONENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
+	int COST_COMPONENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.cost.impl.CostComponentTypeAttrImpl <em>Component Type Attr</em>}' class.
@@ -924,17 +906,6 @@ public interface CostPackage extends EPackage {
 	EReference getCostComponent_WorkEffortId();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentAttributes <em>Cost Component Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Cost Component Attributes</em>'.
-	 * @see org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentAttributes()
-	 * @see #getCostComponent()
-	 * @generated
-	 */
-	EReference getCostComponent_CostComponentAttributes();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.cost.CostComponentAttribute <em>Component Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1150,17 +1121,6 @@ public interface CostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCostComponentType_ParentTypeId();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.cost.CostComponentType#getCostComponentTypeAttrs <em>Cost Component Type Attrs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Cost Component Type Attrs</em>'.
-	 * @see org.abchip.mimo.biz.product.cost.CostComponentType#getCostComponentTypeAttrs()
-	 * @see #getCostComponentType()
-	 * @generated
-	 */
-	EReference getCostComponentType_CostComponentTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.cost.CostComponentTypeAttr <em>Component Type Attr</em>}'.
@@ -1418,14 +1378,6 @@ public interface CostPackage extends EPackage {
 		EReference COST_COMPONENT__WORK_EFFORT_ID = eINSTANCE.getCostComponent_WorkEffortId();
 
 		/**
-		 * The meta object literal for the '<em><b>Cost Component Attributes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COST_COMPONENT__COST_COMPONENT_ATTRIBUTES = eINSTANCE.getCostComponent_CostComponentAttributes();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.cost.impl.CostComponentAttributeImpl <em>Component Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1590,14 +1542,6 @@ public interface CostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COST_COMPONENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getCostComponentType_ParentTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Cost Component Type Attrs</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS = eINSTANCE.getCostComponentType_CostComponentTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.cost.impl.CostComponentTypeAttrImpl <em>Component Type Attr</em>}' class.

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.product.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.GoodIdentification;
 import org.abchip.mimo.biz.product.product.GoodIdentificationType;
@@ -25,7 +23,6 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.GoodIdentificationTypeImpl#getGoodIdentificationTypeId <em>Good Identification Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.GoodIdentificationTypeImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.GoodIdentificationTypeImpl#getGoodIdentifications <em>Good Identifications</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.GoodIdentificationTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.GoodIdentificationTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -115,29 +112,6 @@ public class GoodIdentificationTypeImpl extends BizEntityTypeImpl<GoodIdentifica
 	@Override
 	public void setParentTypeId(GoodIdentificationType newParentTypeId) {
 		eSet(ProductPackage.Literals.GOOD_IDENTIFICATION_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<GoodIdentification> getGoodIdentifications() {
-		return (List<GoodIdentification>)eGet(ProductPackage.Literals.GOOD_IDENTIFICATION_TYPE__GOOD_IDENTIFICATIONS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<GoodIdentificationType> childGoodIdentificationTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

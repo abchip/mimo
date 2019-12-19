@@ -84,7 +84,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @return the value of the '<em>Auth Code</em>' attribute.
 	 * @see #setAuthCode(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_AuthCode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getAuthCode();
@@ -111,7 +111,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @see #setCardNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_CardNumber()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCardNumber();
@@ -137,7 +137,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @return the value of the '<em>Fulfillment Date</em>' attribute.
 	 * @see #setFulfillmentDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_FulfillmentDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFulfillmentDate();
@@ -164,7 +164,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @see #setFulfillmentId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_FulfillmentId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFulfillmentId();
@@ -190,7 +190,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @return the value of the '<em>Merchant Id</em>' attribute.
 	 * @see #setMerchantId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_MerchantId()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getMerchantId();
@@ -242,7 +242,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_OrderItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -295,7 +295,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @see #setPinNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_PinNumber()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getPinNumber();
@@ -321,7 +321,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @return the value of the '<em>Reference Num</em>' attribute.
 	 * @see #setReferenceNum(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_ReferenceNum()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getReferenceNum();
@@ -347,7 +347,7 @@ public interface GiftCardFulfillment extends BizEntity {
 	 * @return the value of the '<em>Response Code</em>' attribute.
 	 * @see #setResponseCode(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCardFulfillment_ResponseCode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getResponseCode();

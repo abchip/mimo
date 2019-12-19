@@ -87,7 +87,6 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @see #setChangeNote(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_ChangeNote()
 	 * @model annotation="mimo-ent-slot help='Used to track a reason for this change'"
-	 *        annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getChangeNote();
@@ -269,7 +268,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @return the value of the '<em>Modified Timestamp</em>' attribute.
 	 * @see #setModifiedTimestamp(Date)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_ModifiedTimestamp()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getModifiedTimestamp();
@@ -321,7 +320,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @return the value of the '<em>Parent Sales Forecast Id</em>' attribute.
 	 * @see #setParentSalesForecastId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_ParentSalesForecastId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getParentSalesForecastId();
@@ -426,7 +425,7 @@ public interface SalesForecastHistory extends BizEntity {
 	 * @see #setSalesForecastHistoryId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastHistory_SalesForecastHistoryId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSalesForecastHistoryId();

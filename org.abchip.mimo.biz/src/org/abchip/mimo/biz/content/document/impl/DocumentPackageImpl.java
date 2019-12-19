@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.content.document.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -290,6 +294,8 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -308,6 +314,8 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -408,6 +416,8 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -417,7 +427,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -476,6 +486,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		// Create package meta-data objects
 		theDocumentPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -485,6 +496,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -535,11 +547,12 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -571,6 +584,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		// Initialize created meta-data
 		theDocumentPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -580,6 +594,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -630,11 +645,12 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -718,7 +734,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EAttribute getDocument_DocumentLocation() {
-		return (EAttribute)documentEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)documentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -728,7 +744,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EAttribute getDocument_DocumentText() {
-		return (EAttribute)documentEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)documentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -738,7 +754,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EReference getDocument_DocumentTypeId() {
-		return (EReference)documentEClass.getEStructuralFeatures().get(6);
+		return (EReference)documentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -748,17 +764,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EAttribute getDocument_ImageData() {
-		return (EAttribute)documentEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDocument_DocumentAttributes() {
-		return (EReference)documentEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)documentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -848,7 +854,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EAttribute getDocumentType_HasTable() {
-		return (EAttribute)documentTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)documentTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -858,17 +864,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EReference getDocumentType_ParentTypeId() {
-		return (EReference)documentTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDocumentType_DocumentTypeAttrs() {
-		return (EReference)documentTypeEClass.getEStructuralFeatures().get(2);
+		return (EReference)documentTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -944,7 +940,6 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		createEAttribute(documentEClass, DOCUMENT__DOCUMENT_ID);
 		createEAttribute(documentEClass, DOCUMENT__COMMENTS);
 		createEAttribute(documentEClass, DOCUMENT__DATE_CREATED);
-		createEReference(documentEClass, DOCUMENT__DOCUMENT_ATTRIBUTES);
 		createEAttribute(documentEClass, DOCUMENT__DOCUMENT_LOCATION);
 		createEAttribute(documentEClass, DOCUMENT__DOCUMENT_TEXT);
 		createEReference(documentEClass, DOCUMENT__DOCUMENT_TYPE_ID);
@@ -959,7 +954,6 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		documentTypeEClass = createEClass(DOCUMENT_TYPE);
 		createEAttribute(documentTypeEClass, DOCUMENT_TYPE__DOCUMENT_TYPE_ID);
 		createEAttribute(documentTypeEClass, DOCUMENT_TYPE__DESCRIPTION);
-		createEReference(documentTypeEClass, DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS);
 		createEAttribute(documentTypeEClass, DOCUMENT_TYPE__HAS_TABLE);
 		createEReference(documentTypeEClass, DOCUMENT_TYPE__PARENT_TYPE_ID);
 
@@ -1016,7 +1010,6 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		initEAttribute(getDocument_DocumentId(), ecorePackage.getEString(), "documentId", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_DateCreated(), ecorePackage.getEDate(), "dateCreated", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocument_DocumentAttributes(), this.getDocumentAttribute(), null, "documentAttributes", null, 0, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_DocumentLocation(), ecorePackage.getEString(), "documentLocation", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_DocumentText(), ecorePackage.getEString(), "documentText", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocument_DocumentTypeId(), this.getDocumentType(), null, "documentTypeId", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1033,14 +1026,9 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		initEClass(documentTypeEClass, DocumentType.class, "DocumentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentType_DocumentTypeId(), ecorePackage.getEString(), "documentTypeId", null, 1, 1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentType_Description(), ecorePackage.getEString(), "description", null, 0, 1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocumentType_DocumentTypeAttrs(), this.getDocumentTypeAttr(), null, "documentTypeAttrs", null, 0, -1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentType_ParentTypeId(), this.getDocumentType(), null, "parentTypeId", null, 0, 1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDocumentType_ParentTypeId().getEKeys().add(this.getDocumentType_DocumentTypeId());
-
-		addEOperation(documentTypeEClass, this.getDocumentType(), "childDocumentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(documentTypeEClass, this.getDocument(), "documents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(documentTypeAttrEClass, DocumentTypeAttr.class, "DocumentTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDocumentTypeAttr_DocumentTypeId(), this.getDocumentType(), null, "documentTypeId", null, 1, 1, DocumentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1053,8 +1041,6 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
 	}
@@ -1071,7 +1057,6 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		  (getDocument_DocumentId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1082,36 +1067,21 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getDocument_DateCreated(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getDocument_DocumentLocation(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getDocument_DocumentText(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getDocument_ImageData(),
-		   source,
-		   new String[] {
-			   "type", "object"
 		   });
 		addAnnotation
 		  (getDocumentAttribute_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -1125,14 +1095,12 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		  (getDocumentAttribute_AttrValue(),
 		   source,
 		   new String[] {
-			   "type", "value",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getDocumentType_DocumentTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1143,17 +1111,9 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getDocumentType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getDocumentTypeAttr_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -1174,12 +1134,6 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (getDocument_DocumentAttributes(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getDocumentAttribute_DocumentId(),
 		   source,
 		   new String[] {
@@ -1192,24 +1146,6 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (documentTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (documentTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getDocumentType_DocumentTypeAttrs(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getDocumentTypeAttr_DocumentTypeId(),
 		   source,
 		   new String[] {
@@ -1220,42 +1156,6 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (getDocument_DocumentAttributes(),
-		   source,
-		   new String[] {
-			   "frame", "DocumentAttribute"
-		   });
-		addAnnotation
-		  (documentTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "DocumentType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (documentTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "Document",
-			   "route", "documentTypeId"
-		   });
-		addAnnotation
-		  (getDocumentType_DocumentTypeAttrs(),
-		   source,
-		   new String[] {
-			   "frame", "DocumentTypeAttr"
 		   });
 	}
 

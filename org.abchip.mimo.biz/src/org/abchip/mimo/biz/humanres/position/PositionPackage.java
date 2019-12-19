@@ -1162,11 +1162,11 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPosition_ExemptFlag();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getFulltimeFlag <em>Fulltime Flag</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isFulltimeFlag <em>Fulltime Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Fulltime Flag</em>'.
-	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#getFulltimeFlag()
+	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#isFulltimeFlag()
 	 * @see #getEmplPosition()
 	 * @generated
 	 */
@@ -1184,11 +1184,11 @@ public interface PositionPackage extends EPackage {
 	EReference getEmplPosition_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getSalaryFlag <em>Salary Flag</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isSalaryFlag <em>Salary Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Salary Flag</em>'.
-	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#getSalaryFlag()
+	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#isSalaryFlag()
 	 * @see #getEmplPosition()
 	 * @generated
 	 */
@@ -1206,11 +1206,11 @@ public interface PositionPackage extends EPackage {
 	EReference getEmplPosition_StatusId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getTemporaryFlag <em>Temporary Flag</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isTemporaryFlag <em>Temporary Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Temporary Flag</em>'.
-	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#getTemporaryFlag()
+	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#isTemporaryFlag()
 	 * @see #getEmplPosition()
 	 * @generated
 	 */

@@ -69,7 +69,7 @@ public interface ProductCalculatedInfo extends BizEntity {
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductCalculatedInfo_ProductId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductId();
@@ -121,7 +121,7 @@ public interface ProductCalculatedInfo extends BizEntity {
 	 * @return the value of the '<em>Total Times Viewed</em>' attribute.
 	 * @see #setTotalTimesViewed(long)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductCalculatedInfo_TotalTimesViewed()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTotalTimesViewed();

@@ -82,7 +82,6 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -108,7 +107,7 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Permissions Enum Id</em>' attribute.
 	 * @see #setPermissionsEnumId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_PermissionsEnumId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPermissionsEnumId();
@@ -240,7 +239,7 @@ public interface PartyRelationship extends BizEntityTyped<PartyRelationshipType>
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationship_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

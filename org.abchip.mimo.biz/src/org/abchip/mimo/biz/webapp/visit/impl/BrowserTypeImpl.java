@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.webapp.visit.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.visit.BrowserType;
-import org.abchip.mimo.biz.webapp.visit.UserAgent;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -113,18 +110,6 @@ public class BrowserTypeImpl extends BizEntityImpl implements BrowserType {
 	@Override
 	public void setBrowserVersion(String newBrowserVersion) {
 		eSet(VisitPackage.Literals.BROWSER_TYPE__BROWSER_VERSION, newBrowserVersion);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<UserAgent> userAgents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //BrowserTypeImpl

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import org.abchip.mimo.biz.accounting.AuthMode;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -65,8 +66,8 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public char getAuthMode() {
-		return (Character)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE, true);
+	public AuthMode getAuthMode() {
+		return (AuthMode)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE, true);
 	}
 
 	/**
@@ -75,7 +76,7 @@ public class PaymentGatewayWorldPayImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public void setAuthMode(char newAuthMode) {
+	public void setAuthMode(AuthMode newAuthMode) {
 		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_WORLD_PAY__AUTH_MODE, newAuthMode);
 	}
 

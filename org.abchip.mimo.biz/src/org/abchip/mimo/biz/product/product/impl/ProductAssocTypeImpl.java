@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.product.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.ProductAssoc;
 import org.abchip.mimo.biz.product.product.ProductAssocType;
@@ -114,18 +112,6 @@ public class ProductAssocTypeImpl extends BizEntityTypeImpl<ProductAssoc> implem
 	@Override
 	public void setParentTypeId(ProductAssocType newParentTypeId) {
 		eSet(ProductPackage.Literals.PRODUCT_ASSOC_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductAssocType> childProductAssocTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

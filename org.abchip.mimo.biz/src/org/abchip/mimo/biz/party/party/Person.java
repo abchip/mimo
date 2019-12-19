@@ -8,7 +8,9 @@
 package org.abchip.mimo.biz.party.party;
 
 import java.util.Date;
+import org.abchip.mimo.biz.common.Gender;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.party.MaritalStatus;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +33,7 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getHeight <em>Height</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getLastName <em>Last Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getLastNameLocal <em>Last Name Local</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.Person#isMaritalStatus <em>Marital Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Person#getMaritalStatus <em>Marital Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getMemberId <em>Member Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getMiddleName <em>Middle Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getMiddleNameLocal <em>Middle Name Local</em>}</li>
@@ -68,7 +70,7 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Birth Date</em>' attribute.
 	 * @see #setBirthDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_BirthDate()
-	 * @model annotation="mimo-ent-format type='date'"
+	 * @model
 	 * @generated
 	 */
 	Date getBirthDate();
@@ -94,7 +96,7 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Card Id</em>' attribute.
 	 * @see #setCardId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_CardId()
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getCardId();
@@ -146,7 +148,7 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Deceased Date</em>' attribute.
 	 * @see #setDeceasedDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_DeceasedDate()
-	 * @model annotation="mimo-ent-format type='date'"
+	 * @model
 	 * @generated
 	 */
 	Date getDeceasedDate();
@@ -172,7 +174,7 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Existing Customer</em>' attribute.
 	 * @see #setExistingCustomer(boolean)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_ExistingCustomer()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isExistingCustomer();
@@ -267,6 +269,7 @@ public interface Person extends Party {
 
 	/**
 	 * Returns the value of the '<em><b>Gender</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.abchip.mimo.biz.common.Gender}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gender</em>' attribute isn't clear,
@@ -274,22 +277,24 @@ public interface Person extends Party {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gender</em>' attribute.
-	 * @see #setGender(char)
+	 * @see org.abchip.mimo.biz.common.Gender
+	 * @see #setGender(Gender)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_Gender()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
-	char getGender();
+	Gender getGender();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Person#getGender <em>Gender</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Gender</em>' attribute.
+	 * @see org.abchip.mimo.biz.common.Gender
 	 * @see #getGender()
 	 * @generated
 	 */
-	void setGender(char value);
+	void setGender(Gender value);
 
 	/**
 	 * Returns the value of the '<em><b>Height</b></em>' attribute.
@@ -302,7 +307,7 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Height</em>' attribute.
 	 * @see #setHeight(double)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_Height()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getHeight();
@@ -371,7 +376,7 @@ public interface Person extends Party {
 
 	/**
 	 * Returns the value of the '<em><b>Marital Status</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
+	 * The literals are from the enumeration {@link org.abchip.mimo.biz.party.MaritalStatus}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Marital Status</em>' attribute isn't clear,
@@ -379,23 +384,24 @@ public interface Person extends Party {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Marital Status</em>' attribute.
-	 * @see #setMaritalStatus(boolean)
+	 * @see org.abchip.mimo.biz.party.MaritalStatus
+	 * @see #setMaritalStatus(MaritalStatus)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_MaritalStatus()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
-	boolean isMaritalStatus();
+	MaritalStatus getMaritalStatus();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Person#isMaritalStatus <em>Marital Status</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Person#getMaritalStatus <em>Marital Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Marital Status</em>' attribute.
-	 * @see #isMaritalStatus()
+	 * @see org.abchip.mimo.biz.party.MaritalStatus
+	 * @see #getMaritalStatus()
 	 * @generated
 	 */
-	void setMaritalStatus(boolean value);
+	void setMaritalStatus(MaritalStatus value);
 
 	/**
 	 * Returns the value of the '<em><b>Member Id</b></em>' attribute.
@@ -408,7 +414,7 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Member Id</em>' attribute.
 	 * @see #setMemberId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_MemberId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getMemberId();
@@ -486,7 +492,7 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Months With Employer</em>' attribute.
 	 * @see #setMonthsWithEmployer(long)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_MonthsWithEmployer()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMonthsWithEmployer();
@@ -513,7 +519,7 @@ public interface Person extends Party {
 	 * @see #setMothersMaidenName(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_MothersMaidenName()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getMothersMaidenName();
@@ -617,7 +623,7 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Passport Expire Date</em>' attribute.
 	 * @see #setPassportExpireDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_PassportExpireDate()
-	 * @model annotation="mimo-ent-format type='date'"
+	 * @model
 	 * @generated
 	 */
 	Date getPassportExpireDate();
@@ -644,7 +650,7 @@ public interface Person extends Party {
 	 * @see #setPassportNumber(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_PassportNumber()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getPassportNumber();
@@ -749,7 +755,7 @@ public interface Person extends Party {
 	 * @see #setSocialSecurityNumber(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_SocialSecurityNumber()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getSocialSecurityNumber();
@@ -801,7 +807,7 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Total Years Work Experience</em>' attribute.
 	 * @see #setTotalYearsWorkExperience(double)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_TotalYearsWorkExperience()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getTotalYearsWorkExperience();
@@ -827,7 +833,7 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Weight</em>' attribute.
 	 * @see #setWeight(double)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_Weight()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getWeight();
@@ -853,7 +859,7 @@ public interface Person extends Party {
 	 * @return the value of the '<em>Years With Employer</em>' attribute.
 	 * @see #setYearsWithEmployer(long)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_YearsWithEmployer()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getYearsWithEmployer();

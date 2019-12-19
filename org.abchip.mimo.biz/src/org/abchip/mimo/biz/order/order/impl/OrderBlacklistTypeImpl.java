@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.order.OrderBlacklist;
 import org.abchip.mimo.biz.order.order.OrderBlacklistType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -72,18 +69,6 @@ public class OrderBlacklistTypeImpl extends BizEntityImpl implements OrderBlackl
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(OrderPackage.Literals.ORDER_BLACKLIST_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderBlacklist> orderBlacklists() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

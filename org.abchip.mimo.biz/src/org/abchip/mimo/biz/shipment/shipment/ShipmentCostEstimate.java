@@ -72,7 +72,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Carrier Party Id</em>' attribute.
 	 * @see #setCarrierPartyId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_CarrierPartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCarrierPartyId();
@@ -98,7 +98,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Carrier Role Type Id</em>' attribute.
 	 * @see #setCarrierRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_CarrierRoleTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCarrierRoleTypeId();
@@ -462,7 +462,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Product Feature Group Id</em>' attribute.
 	 * @see #setProductFeatureGroupId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_ProductFeatureGroupId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductFeatureGroupId();
@@ -488,7 +488,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' attribute.
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_ProductStoreId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductStoreId();
@@ -645,7 +645,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @see #setShipmentCostEstimateId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_ShipmentCostEstimateId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentCostEstimateId();
@@ -671,7 +671,7 @@ public interface ShipmentCostEstimate extends BizEntity {
 	 * @return the value of the '<em>Shipment Method Type Id</em>' attribute.
 	 * @see #setShipmentMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentCostEstimate_ShipmentMethodTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentMethodTypeId();

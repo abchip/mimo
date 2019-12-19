@@ -126,22 +126,13 @@ public interface TenantPackage extends EPackage {
 	int COMPONENT__ROOT_LOCATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Tenant Components</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__TENANT_COMPONENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int COMPONENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl <em>Tenant</em>}' class.
@@ -217,22 +208,13 @@ public interface TenantPackage extends EPackage {
 	int TENANT__INITIAL_PATH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Tenant Data Sources</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TENANT__TENANT_DATA_SOURCES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Tenant Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT__TENANT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int TENANT__TENANT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Tenant</em>' class.
@@ -241,7 +223,7 @@ public interface TenantPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int TENANT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.entity.tenant.impl.TenantComponentImpl <em>Component</em>}' class.
@@ -605,17 +587,6 @@ public interface TenantPackage extends EPackage {
 	EAttribute getComponent_RootLocation();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.entity.tenant.Component#getTenantComponents <em>Tenant Components</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Tenant Components</em>'.
-	 * @see org.abchip.mimo.biz.entity.tenant.Component#getTenantComponents()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_TenantComponents();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.tenant.Tenant <em>Tenant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -668,17 +639,6 @@ public interface TenantPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTenant_TenantName();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantDataSources <em>Tenant Data Sources</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Tenant Data Sources</em>'.
-	 * @see org.abchip.mimo.biz.entity.tenant.Tenant#getTenantDataSources()
-	 * @see #getTenant()
-	 * @generated
-	 */
-	EReference getTenant_TenantDataSources();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.tenant.TenantComponent <em>Component</em>}'.
@@ -901,14 +861,6 @@ public interface TenantPackage extends EPackage {
 		EAttribute COMPONENT__ROOT_LOCATION = eINSTANCE.getComponent_RootLocation();
 
 		/**
-		 * The meta object literal for the '<em><b>Tenant Components</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__TENANT_COMPONENTS = eINSTANCE.getComponent_TenantComponents();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl <em>Tenant</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -949,14 +901,6 @@ public interface TenantPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TENANT__TENANT_NAME = eINSTANCE.getTenant_TenantName();
-
-		/**
-		 * The meta object literal for the '<em><b>Tenant Data Sources</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TENANT__TENANT_DATA_SOURCES = eINSTANCE.getTenant_TenantDataSources();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.tenant.impl.TenantComponentImpl <em>Component</em>}' class.

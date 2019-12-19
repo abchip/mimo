@@ -32,6 +32,8 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 		this.enum_ = true;
 
 		eSet(EntityPackage.FRAME__NAME, this.eEnum.getName());
+		
+		this.setFrameText();
 	}
 
 	@Override
@@ -83,5 +85,13 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	public String getPackageName() {
 		System.out.println(eEnum);
 		return null;
+	}
+
+	private void setFrameText() {
+
+		String text = MimoUtils.firstToUpper(this.getName());
+
+		if (text != null)
+			eSet(EntityPackage.FRAME__TEXT, text);
 	}
 }

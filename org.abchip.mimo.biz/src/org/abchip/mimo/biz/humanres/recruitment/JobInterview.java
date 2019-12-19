@@ -74,7 +74,7 @@ public interface JobInterview extends BizEntity {
 	 * @return the value of the '<em>Job Interview Date</em>' attribute.
 	 * @see #setJobInterviewDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterview_JobInterviewDate()
-	 * @model annotation="mimo-ent-format type='date'"
+	 * @model
 	 * @generated
 	 */
 	Date getJobInterviewDate();
@@ -101,7 +101,7 @@ public interface JobInterview extends BizEntity {
 	 * @see #setJobInterviewId(String)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterview_JobInterviewId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getJobInterviewId();
@@ -127,7 +127,7 @@ public interface JobInterview extends BizEntity {
 	 * @return the value of the '<em>Job Interview Result</em>' attribute.
 	 * @see #setJobInterviewResult(String)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterview_JobInterviewResult()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getJobInterviewResult();

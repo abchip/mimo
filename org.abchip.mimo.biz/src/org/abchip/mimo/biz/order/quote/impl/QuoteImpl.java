@@ -8,22 +8,13 @@
 package org.abchip.mimo.biz.order.quote.impl;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityQuote;
 import org.abchip.mimo.biz.order.quote.Quote;
-import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
-import org.abchip.mimo.biz.order.quote.QuoteAttribute;
-import org.abchip.mimo.biz.order.quote.QuoteCoefficient;
-import org.abchip.mimo.biz.order.quote.QuoteItem;
-import org.abchip.mimo.biz.order.quote.QuoteNote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteType;
-import org.abchip.mimo.biz.order.quote.QuoteWorkEffort;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.eclipse.emf.ecore.EClass;
@@ -42,13 +33,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getIssueDate <em>Issue Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteAttributes <em>Quote Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteCoefficients <em>Quote Coefficients</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteItems <em>Quote Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteName <em>Quote Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteNotes <em>Quote Notes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteTypeId <em>Quote Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteWorkEfforts <em>Quote Work Efforts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getValidFromDate <em>Valid From Date</em>}</li>
@@ -320,85 +306,6 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	@Override
 	public void setValidThruDate(Date newValidThruDate) {
 		eSet(QuotePackage.Literals.QUOTE__VALID_THRU_DATE, newValidThruDate);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<QuoteAttribute> getQuoteAttributes() {
-		return (List<QuoteAttribute>)eGet(QuotePackage.Literals.QUOTE__QUOTE_ATTRIBUTES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<QuoteCoefficient> getQuoteCoefficients() {
-		return (List<QuoteCoefficient>)eGet(QuotePackage.Literals.QUOTE__QUOTE_COEFFICIENTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<QuoteItem> getQuoteItems() {
-		return (List<QuoteItem>)eGet(QuotePackage.Literals.QUOTE__QUOTE_ITEMS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<QuoteNote> getQuoteNotes() {
-		return (List<QuoteNote>)eGet(QuotePackage.Literals.QUOTE__QUOTE_NOTES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<QuoteWorkEffort> getQuoteWorkEfforts() {
-		return (List<QuoteWorkEffort>)eGet(QuotePackage.Literals.QUOTE__QUOTE_WORK_EFFORTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<QuoteAdjustment> quoteAdjustments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SalesOpportunityQuote> salesOpportunityQuotes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //QuoteImpl

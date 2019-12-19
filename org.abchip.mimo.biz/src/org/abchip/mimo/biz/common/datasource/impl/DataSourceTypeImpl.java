@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.datasource.impl;
 
-import java.util.List;
-import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.datasource.DataSourceType;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -71,18 +69,6 @@ public class DataSourceTypeImpl extends BizEntityImpl implements DataSourceType 
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(DatasourcePackage.Literals.DATA_SOURCE_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<DataSource> dataSources() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

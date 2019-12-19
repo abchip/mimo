@@ -92,7 +92,7 @@ public interface GlAccountCategory extends BizEntity {
 	 * @see #setGlAccountCategoryId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountCategory_GlAccountCategoryId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGlAccountCategoryId();

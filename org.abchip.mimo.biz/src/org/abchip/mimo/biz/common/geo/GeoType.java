@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.geo;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface GeoType extends BizEntityType<Geo> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -110,24 +108,6 @@ public interface GeoType extends BizEntityType<Geo> {
 	void setParentTypeId(GeoType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GeoType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<GeoType> childGeoTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Geo' route='geoTypeId'"
-	 * @generated
-	 */
-	List<Geo> geos();
-
-	/**
 	 * Returns the value of the '<em><b>Geo Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -139,7 +119,7 @@ public interface GeoType extends BizEntityType<Geo> {
 	 * @see #setGeoTypeId(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoType_GeoTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGeoTypeId();

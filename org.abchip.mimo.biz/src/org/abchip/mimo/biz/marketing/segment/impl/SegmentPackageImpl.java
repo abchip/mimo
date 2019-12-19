@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.marketing.segment.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -297,6 +301,8 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -315,6 +321,8 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -415,6 +423,8 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -424,7 +434,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -483,6 +493,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		// Create package meta-data objects
 		theSegmentPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -492,6 +503,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -542,11 +554,12 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -578,6 +591,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		// Initialize created meta-data
 		theSegmentPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -587,6 +601,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -637,11 +652,12 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -725,27 +741,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 	 */
 	@Override
 	public EReference getSegmentGroup_SegmentGroupTypeId() {
-		return (EReference)segmentGroupEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSegmentGroup_SegmentGroupClassifications() {
 		return (EReference)segmentGroupEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSegmentGroup_SegmentGroupGeos() {
-		return (EReference)segmentGroupEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -911,8 +907,6 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		createEAttribute(segmentGroupEClass, SEGMENT_GROUP__SEGMENT_GROUP_ID);
 		createEAttribute(segmentGroupEClass, SEGMENT_GROUP__DESCRIPTION);
 		createEReference(segmentGroupEClass, SEGMENT_GROUP__PRODUCT_STORE_ID);
-		createEReference(segmentGroupEClass, SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS);
-		createEReference(segmentGroupEClass, SEGMENT_GROUP__SEGMENT_GROUP_GEOS);
 		createEReference(segmentGroupEClass, SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID);
 
 		segmentGroupClassificationEClass = createEClass(SEGMENT_GROUP_CLASSIFICATION);
@@ -959,7 +953,7 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
-		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		PartyPackage thePartyPackage_1 = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		GeoPackage theGeoPackage = (GeoPackage)EPackage.Registry.INSTANCE.getEPackage(GeoPackage.eNS_URI);
 
 		// Create type parameters
@@ -979,16 +973,14 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		initEAttribute(getSegmentGroup_Description(), ecorePackage.getEString(), "description", null, 0, 1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSegmentGroup_ProductStoreId(), theStorePackage.getProductStore(), null, "productStoreId", null, 0, 1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSegmentGroup_ProductStoreId().getEKeys().add(theStorePackage.getProductStore_ProductStoreId());
-		initEReference(getSegmentGroup_SegmentGroupClassifications(), this.getSegmentGroupClassification(), null, "segmentGroupClassifications", null, 0, -1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSegmentGroup_SegmentGroupGeos(), this.getSegmentGroupGeo(), null, "segmentGroupGeos", null, 0, -1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSegmentGroup_SegmentGroupTypeId(), this.getSegmentGroupType(), null, "segmentGroupTypeId", null, 0, 1, SegmentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSegmentGroup_SegmentGroupTypeId().getEKeys().add(this.getSegmentGroupType_SegmentGroupTypeId());
 
 		initEClass(segmentGroupClassificationEClass, SegmentGroupClassification.class, "SegmentGroupClassification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSegmentGroupClassification_SegmentGroupId(), this.getSegmentGroup(), null, "segmentGroupId", null, 1, 1, SegmentGroupClassification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSegmentGroupClassification_SegmentGroupId().getEKeys().add(this.getSegmentGroup_SegmentGroupId());
-		initEReference(getSegmentGroupClassification_PartyClassificationGroupId(), thePartyPackage.getPartyClassificationGroup(), null, "partyClassificationGroupId", null, 1, 1, SegmentGroupClassification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSegmentGroupClassification_PartyClassificationGroupId().getEKeys().add(thePartyPackage.getPartyClassificationGroup_PartyClassificationGroupId());
+		initEReference(getSegmentGroupClassification_PartyClassificationGroupId(), thePartyPackage_1.getPartyClassificationGroup(), null, "partyClassificationGroupId", null, 1, 1, SegmentGroupClassification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSegmentGroupClassification_PartyClassificationGroupId().getEKeys().add(thePartyPackage_1.getPartyClassificationGroup_PartyClassificationGroupId());
 
 		initEClass(segmentGroupGeoEClass, SegmentGroupGeo.class, "SegmentGroupGeo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSegmentGroupGeo_SegmentGroupId(), this.getSegmentGroup(), null, "segmentGroupId", null, 1, 1, SegmentGroupGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -999,16 +991,14 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		initEClass(segmentGroupRoleEClass, SegmentGroupRole.class, "SegmentGroupRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSegmentGroupRole_SegmentGroupId(), this.getSegmentGroup(), null, "segmentGroupId", null, 1, 1, SegmentGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSegmentGroupRole_SegmentGroupId().getEKeys().add(this.getSegmentGroup_SegmentGroupId());
-		initEReference(getSegmentGroupRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, SegmentGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSegmentGroupRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getSegmentGroupRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 1, 1, SegmentGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSegmentGroupRole_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
+		initEReference(getSegmentGroupRole_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 1, 1, SegmentGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSegmentGroupRole_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
+		initEReference(getSegmentGroupRole_RoleTypeId(), thePartyPackage_1.getRoleType(), null, "roleTypeId", null, 1, 1, SegmentGroupRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSegmentGroupRole_RoleTypeId().getEKeys().add(thePartyPackage_1.getRoleType_RoleTypeId());
 
 		initEClass(segmentGroupTypeEClass, SegmentGroupType.class, "SegmentGroupType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSegmentGroupType_SegmentGroupTypeId(), ecorePackage.getEString(), "segmentGroupTypeId", null, 1, 1, SegmentGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSegmentGroupType_Description(), ecorePackage.getEString(), "description", null, 0, 1, SegmentGroupType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(segmentGroupTypeEClass, this.getSegmentGroup(), "segmentGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -1017,8 +1007,6 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 	}
 
 	/**
@@ -1056,7 +1044,6 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		  (getSegmentGroup_SegmentGroupId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1070,7 +1057,6 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		  (getSegmentGroupType_SegmentGroupTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1090,18 +1076,6 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getSegmentGroup_SegmentGroupClassifications(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getSegmentGroup_SegmentGroupGeos(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
 		addAnnotation
 		  (getSegmentGroupClassification_SegmentGroupId(),
 		   source,
@@ -1143,41 +1117,6 @@ public class SegmentPackageImpl extends EPackageImpl implements SegmentPackage {
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (segmentGroupTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (getSegmentGroup_SegmentGroupClassifications(),
-		   source,
-		   new String[] {
-			   "frame", "SegmentGroupClassification"
-		   });
-		addAnnotation
-		  (getSegmentGroup_SegmentGroupGeos(),
-		   source,
-		   new String[] {
-			   "frame", "SegmentGroupGeo"
-		   });
-		addAnnotation
-		  (segmentGroupTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "SegmentGroup",
-			   "route", "segmentGroupTypeId"
 		   });
 	}
 

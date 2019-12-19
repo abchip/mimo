@@ -46,7 +46,7 @@ public interface BudgetRevisionImpact extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevisionImpact_BudgetItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBudgetItemSeqId();
@@ -98,7 +98,7 @@ public interface BudgetRevisionImpact extends BizEntity {
 	 * @return the value of the '<em>Revision Reason</em>' attribute.
 	 * @see #setRevisionReason(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevisionImpact_RevisionReason()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getRevisionReason();
@@ -126,7 +126,7 @@ public interface BudgetRevisionImpact extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevisionImpact_RevisionSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRevisionSeqId();
@@ -152,7 +152,7 @@ public interface BudgetRevisionImpact extends BizEntity {
 	 * @return the value of the '<em>Add Delete Flag</em>' attribute.
 	 * @see #setAddDeleteFlag(boolean)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevisionImpact_AddDeleteFlag()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isAddDeleteFlag();

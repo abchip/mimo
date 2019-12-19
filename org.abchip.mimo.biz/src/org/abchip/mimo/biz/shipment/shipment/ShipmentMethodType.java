@@ -7,12 +7,7 @@
  */
 package org.abchip.mimo.biz.shipment.shipment;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
-import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
-import org.abchip.mimo.biz.shipment.picklist.Picklist;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,7 +65,7 @@ public interface ShipmentMethodType extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentMethodType_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -86,42 +81,6 @@ public interface ShipmentMethodType extends BizEntity {
 	void setSequenceNum(long value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='shipmentMethodTypeId'"
-	 * @generated
-	 */
-	List<OrderItemShipGroup> orderItemShipGroups();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Picklist' route='shipmentMethodTypeId'"
-	 * @generated
-	 */
-	List<Picklist> picklists();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreShipmentMeth' route='shipmentMethodTypeId'"
-	 * @generated
-	 */
-	List<ProductStoreShipmentMeth> productStoreShipmentMeths();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='shipmentMethodTypeId'"
-	 * @generated
-	 */
-	List<ShipmentRouteSegment> shipmentRouteSegments();
-
-	/**
 	 * Returns the value of the '<em><b>Shipment Method Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -133,7 +92,7 @@ public interface ShipmentMethodType extends BizEntity {
 	 * @see #setShipmentMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentMethodType_ShipmentMethodTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentMethodTypeId();

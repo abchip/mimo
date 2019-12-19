@@ -495,40 +495,13 @@ public interface StorePackage extends EPackage {
 	int PRODUCT_STORE__MANUAL_AUTH_IS_CAPTURE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 42;
 
 	/**
-	 * The feature id for the '<em><b>OAuth2 Git Hubs</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_STORE__OAUTH2_GIT_HUBS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 43;
-
-	/**
-	 * The feature id for the '<em><b>OAuth2 Googles</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_STORE__OAUTH2_GOOGLES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 44;
-
-	/**
-	 * The feature id for the '<em><b>OAuth2 Linked Ins</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_STORE__OAUTH2_LINKED_INS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 45;
-
-	/**
 	 * The feature id for the '<em><b>Old Header Logo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__OLD_HEADER_LOGO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 46;
+	int PRODUCT_STORE__OLD_HEADER_LOGO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Old Header Middle Background</b></em>' attribute.
@@ -537,7 +510,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__OLD_HEADER_MIDDLE_BACKGROUND = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 47;
+	int PRODUCT_STORE__OLD_HEADER_MIDDLE_BACKGROUND = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Old Header Right Background</b></em>' attribute.
@@ -546,7 +519,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__OLD_HEADER_RIGHT_BACKGROUND = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 48;
+	int PRODUCT_STORE__OLD_HEADER_RIGHT_BACKGROUND = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Old Style Sheet</b></em>' attribute.
@@ -555,7 +528,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__OLD_STYLE_SHEET = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 49;
+	int PRODUCT_STORE__OLD_STYLE_SHEET = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>One Inventory Facility</b></em>' attribute.
@@ -564,7 +537,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__ONE_INVENTORY_FACILITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 50;
+	int PRODUCT_STORE__ONE_INVENTORY_FACILITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Order Decimal Quantity</b></em>' attribute.
@@ -573,7 +546,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__ORDER_DECIMAL_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 51;
+	int PRODUCT_STORE__ORDER_DECIMAL_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Order Number Prefix</b></em>' attribute.
@@ -582,7 +555,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__ORDER_NUMBER_PREFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 52;
+	int PRODUCT_STORE__ORDER_NUMBER_PREFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Pay To Party Id</b></em>' reference.
@@ -591,7 +564,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__PAY_TO_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 53;
+	int PRODUCT_STORE__PAY_TO_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Primary Store Group Id</b></em>' reference.
@@ -600,7 +573,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__PRIMARY_STORE_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 54;
+	int PRODUCT_STORE__PRIMARY_STORE_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Prod Search Exclude Variants</b></em>' attribute.
@@ -609,25 +582,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 55;
-
-	/**
-	 * The feature id for the '<em><b>Product Store Email Settings</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_STORE__PRODUCT_STORE_EMAIL_SETTINGS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 56;
-
-	/**
-	 * The feature id for the '<em><b>Product Store Fin Act Settings</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_STORE__PRODUCT_STORE_FIN_ACT_SETTINGS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 57;
+	int PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Prorate Shipping</b></em>' attribute.
@@ -636,7 +591,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__PRORATE_SHIPPING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 58;
+	int PRODUCT_STORE__PRORATE_SHIPPING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Prorate Taxes</b></em>' attribute.
@@ -645,7 +600,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__PRORATE_TAXES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 59;
+	int PRODUCT_STORE__PRORATE_TAXES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Req Return Inventory Receive</b></em>' attribute.
@@ -654,7 +609,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__REQ_RETURN_INVENTORY_RECEIVE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 60;
+	int PRODUCT_STORE__REQ_RETURN_INVENTORY_RECEIVE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Req Ship Addr For Dig Items</b></em>' attribute.
@@ -663,7 +618,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__REQ_SHIP_ADDR_FOR_DIG_ITEMS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 61;
+	int PRODUCT_STORE__REQ_SHIP_ADDR_FOR_DIG_ITEMS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Require Customer Role</b></em>' attribute.
@@ -672,7 +627,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__REQUIRE_CUSTOMER_ROLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 62;
+	int PRODUCT_STORE__REQUIRE_CUSTOMER_ROLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Require Inventory</b></em>' attribute.
@@ -681,7 +636,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__REQUIRE_INVENTORY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 63;
+	int PRODUCT_STORE__REQUIRE_INVENTORY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Requirement Method Enum Id</b></em>' reference.
@@ -690,7 +645,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__REQUIREMENT_METHOD_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 64;
+	int PRODUCT_STORE__REQUIREMENT_METHOD_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Reserve Inventory</b></em>' attribute.
@@ -699,7 +654,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__RESERVE_INVENTORY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 65;
+	int PRODUCT_STORE__RESERVE_INVENTORY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Reserve Order Enum Id</b></em>' reference.
@@ -708,7 +663,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__RESERVE_ORDER_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 66;
+	int PRODUCT_STORE__RESERVE_ORDER_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Retry Failed Auths</b></em>' attribute.
@@ -717,7 +672,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__RETRY_FAILED_AUTHS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 67;
+	int PRODUCT_STORE__RETRY_FAILED_AUTHS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>Select Payment Type Per Item</b></em>' attribute.
@@ -726,7 +681,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__SELECT_PAYMENT_TYPE_PER_ITEM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 68;
+	int PRODUCT_STORE__SELECT_PAYMENT_TYPE_PER_ITEM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Set Owner Upon Issuance</b></em>' attribute.
@@ -735,7 +690,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__SET_OWNER_UPON_ISSUANCE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 69;
+	int PRODUCT_STORE__SET_OWNER_UPON_ISSUANCE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Ship If Capture Fails</b></em>' attribute.
@@ -744,7 +699,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__SHIP_IF_CAPTURE_FAILS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 70;
+	int PRODUCT_STORE__SHIP_IF_CAPTURE_FAILS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Show Checkout Gift Options</b></em>' attribute.
@@ -753,7 +708,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__SHOW_CHECKOUT_GIFT_OPTIONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 71;
+	int PRODUCT_STORE__SHOW_CHECKOUT_GIFT_OPTIONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Show Out Of Stock Products</b></em>' attribute.
@@ -762,7 +717,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__SHOW_OUT_OF_STOCK_PRODUCTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 72;
+	int PRODUCT_STORE__SHOW_OUT_OF_STOCK_PRODUCTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>Show Prices With Vat Tax</b></em>' attribute.
@@ -771,7 +726,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__SHOW_PRICES_WITH_VAT_TAX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 73;
+	int PRODUCT_STORE__SHOW_PRICES_WITH_VAT_TAX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Show Tax Is Exempt</b></em>' attribute.
@@ -780,7 +735,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__SHOW_TAX_IS_EXEMPT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 74;
+	int PRODUCT_STORE__SHOW_TAX_IS_EXEMPT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Split Pay Pref Per Shp Grp</b></em>' attribute.
@@ -789,7 +744,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__SPLIT_PAY_PREF_PER_SHP_GRP = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 75;
+	int PRODUCT_STORE__SPLIT_PAY_PREF_PER_SHP_GRP = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Store Credit Account Enum Id</b></em>' reference.
@@ -798,7 +753,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__STORE_CREDIT_ACCOUNT_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 76;
+	int PRODUCT_STORE__STORE_CREDIT_ACCOUNT_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Store Credit Valid Days</b></em>' attribute.
@@ -807,7 +762,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__STORE_CREDIT_VALID_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 77;
+	int PRODUCT_STORE__STORE_CREDIT_VALID_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Store Name</b></em>' attribute.
@@ -816,7 +771,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__STORE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 78;
+	int PRODUCT_STORE__STORE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>Subtitle</b></em>' attribute.
@@ -825,7 +780,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__SUBTITLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 79;
+	int PRODUCT_STORE__SUBTITLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -834,7 +789,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__TITLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 80;
+	int PRODUCT_STORE__TITLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 75;
 
 	/**
 	 * The feature id for the '<em><b>Use Primary Email Username</b></em>' attribute.
@@ -843,7 +798,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__USE_PRIMARY_EMAIL_USERNAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 81;
+	int PRODUCT_STORE__USE_PRIMARY_EMAIL_USERNAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 76;
 
 	/**
 	 * The feature id for the '<em><b>Vat Tax Auth Geo Id</b></em>' attribute.
@@ -852,7 +807,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__VAT_TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 82;
+	int PRODUCT_STORE__VAT_TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 77;
 
 	/**
 	 * The feature id for the '<em><b>Vat Tax Auth Party Id</b></em>' attribute.
@@ -861,7 +816,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__VAT_TAX_AUTH_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 83;
+	int PRODUCT_STORE__VAT_TAX_AUTH_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 78;
 
 	/**
 	 * The feature id for the '<em><b>View Cart On Add</b></em>' attribute.
@@ -870,7 +825,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__VIEW_CART_ON_ADD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 84;
+	int PRODUCT_STORE__VIEW_CART_ON_ADD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 79;
 
 	/**
 	 * The feature id for the '<em><b>Visual Theme Id</b></em>' attribute.
@@ -879,7 +834,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE__VISUAL_THEME_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 85;
+	int PRODUCT_STORE__VISUAL_THEME_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 80;
 
 	/**
 	 * The number of structural features of the '<em>Product Store</em>' class.
@@ -888,7 +843,7 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_STORE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 86;
+	int PRODUCT_STORE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 81;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreCatalogImpl <em>Product Store Catalog</em>}' class.
@@ -3517,11 +3472,11 @@ public interface StorePackage extends EPackage {
 	EAttribute getProductStore_OneInventoryFacility();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStore#getOrderDecimalQuantity <em>Order Decimal Quantity</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.store.ProductStore#isOrderDecimalQuantity <em>Order Decimal Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Order Decimal Quantity</em>'.
-	 * @see org.abchip.mimo.biz.product.store.ProductStore#getOrderDecimalQuantity()
+	 * @see org.abchip.mimo.biz.product.store.ProductStore#isOrderDecimalQuantity()
 	 * @see #getProductStore()
 	 * @generated
 	 */
@@ -3878,61 +3833,6 @@ public interface StorePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProductStore_VisualThemeId();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2GitHubs <em>OAuth2 Git Hubs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>OAuth2 Git Hubs</em>'.
-	 * @see org.abchip.mimo.biz.product.store.ProductStore#getOAuth2GitHubs()
-	 * @see #getProductStore()
-	 * @generated
-	 */
-	EReference getProductStore_OAuth2GitHubs();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2Googles <em>OAuth2 Googles</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>OAuth2 Googles</em>'.
-	 * @see org.abchip.mimo.biz.product.store.ProductStore#getOAuth2Googles()
-	 * @see #getProductStore()
-	 * @generated
-	 */
-	EReference getProductStore_OAuth2Googles();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2LinkedIns <em>OAuth2 Linked Ins</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>OAuth2 Linked Ins</em>'.
-	 * @see org.abchip.mimo.biz.product.store.ProductStore#getOAuth2LinkedIns()
-	 * @see #getProductStore()
-	 * @generated
-	 */
-	EReference getProductStore_OAuth2LinkedIns();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.store.ProductStore#getProductStoreEmailSettings <em>Product Store Email Settings</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Product Store Email Settings</em>'.
-	 * @see org.abchip.mimo.biz.product.store.ProductStore#getProductStoreEmailSettings()
-	 * @see #getProductStore()
-	 * @generated
-	 */
-	EReference getProductStore_ProductStoreEmailSettings();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.store.ProductStore#getProductStoreFinActSettings <em>Product Store Fin Act Settings</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Product Store Fin Act Settings</em>'.
-	 * @see org.abchip.mimo.biz.product.store.ProductStore#getProductStoreFinActSettings()
-	 * @see #getProductStore()
-	 * @generated
-	 */
-	EReference getProductStore_ProductStoreFinActSettings();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.store.ProductStoreCatalog <em>Product Store Catalog</em>}'.
@@ -6191,46 +6091,6 @@ public interface StorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PRODUCT_STORE__VISUAL_THEME_ID = eINSTANCE.getProductStore_VisualThemeId();
-
-		/**
-		 * The meta object literal for the '<em><b>OAuth2 Git Hubs</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PRODUCT_STORE__OAUTH2_GIT_HUBS = eINSTANCE.getProductStore_OAuth2GitHubs();
-
-		/**
-		 * The meta object literal for the '<em><b>OAuth2 Googles</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PRODUCT_STORE__OAUTH2_GOOGLES = eINSTANCE.getProductStore_OAuth2Googles();
-
-		/**
-		 * The meta object literal for the '<em><b>OAuth2 Linked Ins</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PRODUCT_STORE__OAUTH2_LINKED_INS = eINSTANCE.getProductStore_OAuth2LinkedIns();
-
-		/**
-		 * The meta object literal for the '<em><b>Product Store Email Settings</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PRODUCT_STORE__PRODUCT_STORE_EMAIL_SETTINGS = eINSTANCE.getProductStore_ProductStoreEmailSettings();
-
-		/**
-		 * The meta object literal for the '<em><b>Product Store Fin Act Settings</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PRODUCT_STORE__PRODUCT_STORE_FIN_ACT_SETTINGS = eINSTANCE.getProductStore_ProductStoreFinActSettings();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.store.impl.ProductStoreCatalogImpl <em>Product Store Catalog</em>}' class.

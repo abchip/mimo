@@ -70,7 +70,7 @@ public interface ShipmentItemBilling extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItemBilling_InvoiceItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -125,7 +125,7 @@ public interface ShipmentItemBilling extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItemBilling_ShipmentItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();

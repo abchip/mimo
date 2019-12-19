@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.payment;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface PaymentGatewayConfigType extends BizEntityType<PaymentGatewayCo
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayConfigType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -110,24 +108,6 @@ public interface PaymentGatewayConfigType extends BizEntityType<PaymentGatewayCo
 	void setParentTypeId(PaymentGatewayConfigType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentGatewayConfigType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<PaymentGatewayConfigType> childPaymentGatewayConfigTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentGatewayConfig' route='paymentGatewayConfigTypeId'"
-	 * @generated
-	 */
-	List<PaymentGatewayConfig> paymentGatewayConfigs();
-
-	/**
 	 * Returns the value of the '<em><b>Payment Gateway Config Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -139,7 +119,7 @@ public interface PaymentGatewayConfigType extends BizEntityType<PaymentGatewayCo
 	 * @see #setPaymentGatewayConfigTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayConfigType_PaymentGatewayConfigTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentGatewayConfigTypeId();

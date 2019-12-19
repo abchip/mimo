@@ -9,9 +9,6 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
@@ -21,16 +18,8 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.TelecomNumber;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
-import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
 import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
-import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentAttribute;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentItem;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentPackage;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentStatus;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
@@ -72,11 +61,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentImpl#getPrimaryOrderId <em>Primary Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentImpl#getPrimaryReturnId <em>Primary Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentImpl#getPrimaryShipGroupSeqId <em>Primary Ship Group Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentImpl#getShipmentAttributes <em>Shipment Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentImpl#getShipmentContactMechs <em>Shipment Contact Mechs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentImpl#getShipmentItems <em>Shipment Items</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentImpl#getShipmentPackages <em>Shipment Packages</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentImpl#getShipmentRouteSegments <em>Shipment Route Segments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentImpl#getShipmentTypeId <em>Shipment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
@@ -706,109 +690,6 @@ public class ShipmentImpl extends BizEntityTypedImpl<ShipmentType> implements Sh
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
 		eSet(Shipment_Package.Literals.SHIPMENT__STATUS_ID, newStatusId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ShipmentAttribute> getShipmentAttributes() {
-		return (List<ShipmentAttribute>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_ATTRIBUTES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ShipmentContactMech> getShipmentContactMechs() {
-		return (List<ShipmentContactMech>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_CONTACT_MECHS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ShipmentItem> getShipmentItems() {
-		return (List<ShipmentItem>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_ITEMS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ShipmentPackage> getShipmentPackages() {
-		return (List<ShipmentPackage>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_PACKAGES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ShipmentRouteSegment> getShipmentRouteSegments() {
-		return (List<ShipmentRouteSegment>)eGet(Shipment_Package.Literals.SHIPMENT__SHIPMENT_ROUTE_SEGMENTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AcctgTrans> acctgTranss() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ItemIssuance> itemIssuances() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentReceipt> shipmentReceipts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentStatus> shipmentStatuss() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ShipmentImpl

@@ -45,7 +45,6 @@ public interface MarketingCampaignPrice extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPrice_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -125,7 +124,7 @@ public interface MarketingCampaignPrice extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPrice_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

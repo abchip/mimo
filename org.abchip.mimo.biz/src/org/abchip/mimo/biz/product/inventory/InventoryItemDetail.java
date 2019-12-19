@@ -144,7 +144,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Effective Date</em>' attribute.
 	 * @see #setEffectiveDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_EffectiveDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getEffectiveDate();
@@ -170,7 +170,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
 	 * @see #setFixedAssetId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_FixedAssetId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFixedAssetId();
@@ -198,7 +198,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_InventoryItemDetailSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getInventoryItemDetailSeqId();
@@ -250,7 +250,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Maint Hist Seq Id</em>' attribute.
 	 * @see #setMaintHistSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_MaintHistSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getMaintHistSeqId();
@@ -276,7 +276,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' attribute.
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_OrderId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -302,7 +302,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_OrderItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -406,7 +406,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Return Id</em>' attribute.
 	 * @see #setReturnId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ReturnId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReturnId();
@@ -432,7 +432,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Return Item Seq Id</em>' attribute.
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ReturnItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReturnItemSeqId();
@@ -458,7 +458,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Ship Group Seq Id</em>' attribute.
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ShipGroupSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipGroupSeqId();
@@ -484,7 +484,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Shipment Id</em>' attribute.
 	 * @see #setShipmentId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ShipmentId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentId();
@@ -510,7 +510,7 @@ public interface InventoryItemDetail extends BizEntity {
 	 * @return the value of the '<em>Shipment Item Seq Id</em>' attribute.
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemDetail_ShipmentItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();

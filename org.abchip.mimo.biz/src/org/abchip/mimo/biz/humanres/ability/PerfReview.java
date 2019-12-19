@@ -132,7 +132,7 @@ public interface PerfReview extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_EmployeeRoleTypeId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getEmployeeRoleTypeId();
@@ -158,7 +158,7 @@ public interface PerfReview extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -210,7 +210,7 @@ public interface PerfReview extends BizEntity {
 	 * @return the value of the '<em>Manager Role Type Id</em>' attribute.
 	 * @see #setManagerRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_ManagerRoleTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getManagerRoleTypeId();
@@ -264,7 +264,7 @@ public interface PerfReview extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_PerfReviewId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPerfReviewId();
@@ -290,7 +290,7 @@ public interface PerfReview extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

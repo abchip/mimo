@@ -7,9 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.accounting.ledger.SettlementTerm;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -113,18 +110,6 @@ public class SettlementTermImpl extends BizEntityImpl implements SettlementTerm 
 	@Override
 	public void setUomId(String newUomId) {
 		eSet(LedgerPackage.Literals.SETTLEMENT_TERM__UOM_ID, newUomId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AcctgTransEntry> acctgTransEntries() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

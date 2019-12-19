@@ -83,7 +83,6 @@ public interface RateAmount extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true' help='Describes when a rate amount will be valid. If null, valid immediately.'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -217,7 +216,6 @@ public interface RateAmount extends BizEntity {
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateAmount_ThruDate()
 	 * @model annotation="mimo-ent-slot help='Describes when a rate amount will be valid untl. If null, valid indefinitly.'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();

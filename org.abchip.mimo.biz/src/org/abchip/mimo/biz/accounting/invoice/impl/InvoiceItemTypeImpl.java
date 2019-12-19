@@ -7,17 +7,11 @@
  */
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeAttr;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeGlAccount;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.abchip.mimo.biz.party.agreement.AgreementTerm;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -32,8 +26,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#getDefaultGlAccountId <em>Default Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#getInvoiceItemTypeAttrs <em>Invoice Item Type Attrs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#getInvoiceItemTypeGlAccounts <em>Invoice Item Type Gl Accounts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -141,76 +133,6 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	@Override
 	public void setParentTypeId(InvoiceItemType newParentTypeId) {
 		eSet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<InvoiceItemTypeAttr> getInvoiceItemTypeAttrs() {
-		return (List<InvoiceItemTypeAttr>)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<InvoiceItemTypeGlAccount> getInvoiceItemTypeGlAccounts() {
-		return (List<InvoiceItemTypeGlAccount>)eGet(InvoicePackage.Literals.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AgreementTerm> agreementTerms() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InvoiceItemType> childInvoiceItemTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InvoiceItemTypeMap> invoiceItemTypeMaps() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InvoiceItem> invoiceItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

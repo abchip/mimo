@@ -41,8 +41,6 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	private EClass eClass;
 	private Map<String, Slot> slots = null;
 
-	int routesNumber = 0;
-
 	private Map<String, E> entities = null;
 
 	public EMFFrameClassAdapter(Map<String, E> entities, EClass eClass) {
@@ -53,6 +51,8 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 		eSet(EntityPackage.FRAME__NAME, this.eClass.getName());
 		eSet(EntityPackage.FRAME__ABSTRACT, eClass.isAbstract());
+
+		this.setFrameText();
 
 		for (Frame<?> superFrame : getSuperFrames())
 			getSuperNames().add(superFrame.getName());
@@ -113,7 +113,6 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 			// other operation
 			this.getSlots().add(new EMFSlotAdapter(this, operation));
-			routesNumber++;
 		}
 
 		this.slots = new HashMap<String, Slot>();
@@ -272,17 +271,6 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case EntityPackage.FRAME__SLOTS_NUMBER:
-			return this.getSlots().size() - this.routesNumber;
-		case EntityPackage.FRAME__ROUTES_NUMBER:
-			return this.routesNumber;
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	@Override
 	public String getPackageName() {
 
 		StringBuffer sb = new StringBuffer();
@@ -297,5 +285,13 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		}
 
 		return sb.toString();
+	}
+
+	private void setFrameText() {
+
+		String text = MimoUtils.firstToUpper(this.getName());
+
+		if (text != null)
+			eSet(EntityPackage.FRAME__TEXT, text);
 	}
 }

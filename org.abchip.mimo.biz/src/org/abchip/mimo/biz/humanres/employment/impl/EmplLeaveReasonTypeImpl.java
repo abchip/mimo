@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.employment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.humanres.employment.EmplLeaveReasonType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -133,18 +131,6 @@ public class EmplLeaveReasonTypeImpl extends BizEntityImpl implements EmplLeaveR
 	@Override
 	public void setParentTypeId(EmplLeaveReasonType newParentTypeId) {
 		eSet(EmploymentPackage.Literals.EMPL_LEAVE_REASON_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<EmplLeaveReasonType> childEmplLeaveReasonTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //EmplLeaveReasonTypeImpl

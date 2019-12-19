@@ -135,31 +135,13 @@ public interface TechdataPackage extends EPackage {
 	int TECH_DATA_CALENDAR__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Tech Data Calendar Exc Daies</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_DAIES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Tech Data Calendar Exc Weeks</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_WEEKS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The number of structural features of the '<em>Tech Data Calendar</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TECH_DATA_CALENDAR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int TECH_DATA_CALENDAR_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarExcDayImpl <em>Tech Data Calendar Exc Day</em>}' class.
@@ -596,28 +578,6 @@ public interface TechdataPackage extends EPackage {
 	EAttribute getTechDataCalendar_Description();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getTechDataCalendarExcDaies <em>Tech Data Calendar Exc Daies</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Tech Data Calendar Exc Daies</em>'.
-	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getTechDataCalendarExcDaies()
-	 * @see #getTechDataCalendar()
-	 * @generated
-	 */
-	EReference getTechDataCalendar_TechDataCalendarExcDaies();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getTechDataCalendarExcWeeks <em>Tech Data Calendar Exc Weeks</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Tech Data Calendar Exc Weeks</em>'.
-	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getTechDataCalendarExcWeeks()
-	 * @see #getTechDataCalendar()
-	 * @generated
-	 */
-	EReference getTechDataCalendar_TechDataCalendarExcWeeks();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay <em>Tech Data Calendar Exc Day</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -977,22 +937,6 @@ public interface TechdataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TECH_DATA_CALENDAR__DESCRIPTION = eINSTANCE.getTechDataCalendar_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Tech Data Calendar Exc Daies</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_DAIES = eINSTANCE.getTechDataCalendar_TechDataCalendarExcDaies();
-
-		/**
-		 * The meta object literal for the '<em><b>Tech Data Calendar Exc Weeks</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_WEEKS = eINSTANCE.getTechDataCalendar_TechDataCalendarExcWeeks();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarExcDayImpl <em>Tech Data Calendar Exc Day</em>}' class.

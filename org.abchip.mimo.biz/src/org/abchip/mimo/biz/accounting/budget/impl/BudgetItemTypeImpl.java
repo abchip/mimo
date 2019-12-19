@@ -7,13 +7,9 @@
  */
 package org.abchip.mimo.biz.accounting.budget.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.budget.BudgetItem;
 import org.abchip.mimo.biz.accounting.budget.BudgetItemType;
-import org.abchip.mimo.biz.accounting.budget.BudgetItemTypeAttr;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
-import org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -26,7 +22,6 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetItemTypeImpl#getBudgetItemTypeId <em>Budget Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetItemTypeImpl#getBudgetItemTypeAttrs <em>Budget Item Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetItemTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetItemTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetItemTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -116,53 +111,6 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	@Override
 	public void setParentTypeId(BudgetItemType newParentTypeId) {
 		eSet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<BudgetItemTypeAttr> getBudgetItemTypeAttrs() {
-		return (List<BudgetItemTypeAttr>)eGet(BudgetPackage.Literals.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<BudgetItem> budgetItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<BudgetScenarioRule> budgetScenarioRules() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<BudgetItemType> childBudgetItemTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

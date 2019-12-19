@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.payment.PaymentContent;
 import org.abchip.mimo.biz.accounting.payment.PaymentContentType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
@@ -113,18 +111,6 @@ public class PaymentContentTypeImpl extends BizEntityTypeImpl<PaymentContent> im
 	@Override
 	public void setParentTypeId(PaymentContentType newParentTypeId) {
 		eSet(PaymentPackage.Literals.PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PaymentContentType> childPaymentContentTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

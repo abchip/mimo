@@ -48,7 +48,6 @@ public interface FixedAssetRegistration extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -100,7 +99,7 @@ public interface FixedAssetRegistration extends BizEntity {
 	 * @return the value of the '<em>License Number</em>' attribute.
 	 * @see #setLicenseNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_LicenseNumber()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getLicenseNumber();
@@ -126,7 +125,7 @@ public interface FixedAssetRegistration extends BizEntity {
 	 * @return the value of the '<em>Registration Date</em>' attribute.
 	 * @see #setRegistrationDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_RegistrationDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getRegistrationDate();
@@ -152,7 +151,7 @@ public interface FixedAssetRegistration extends BizEntity {
 	 * @return the value of the '<em>Registration Number</em>' attribute.
 	 * @see #setRegistrationNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_RegistrationNumber()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getRegistrationNumber();
@@ -178,7 +177,7 @@ public interface FixedAssetRegistration extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

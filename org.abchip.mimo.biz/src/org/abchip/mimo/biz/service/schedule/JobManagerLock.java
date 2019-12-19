@@ -50,7 +50,7 @@ public interface JobManagerLock extends BizEntity {
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock_InstanceId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getInstanceId();
@@ -78,7 +78,6 @@ public interface JobManagerLock extends BizEntity {
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -130,7 +129,7 @@ public interface JobManagerLock extends BizEntity {
 	 * @return the value of the '<em>Created By User Login</em>' attribute.
 	 * @see #setCreatedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock_CreatedByUserLogin()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCreatedByUserLogin();
@@ -156,7 +155,7 @@ public interface JobManagerLock extends BizEntity {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock_CreatedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -182,7 +181,7 @@ public interface JobManagerLock extends BizEntity {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock_LastModifiedByUserLogin()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -208,7 +207,7 @@ public interface JobManagerLock extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock_LastModifiedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -260,7 +259,7 @@ public interface JobManagerLock extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

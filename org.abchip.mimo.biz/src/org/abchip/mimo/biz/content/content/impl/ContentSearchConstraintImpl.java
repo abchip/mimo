@@ -107,8 +107,8 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public char getAnyPrefix() {
-		return (Character)eGet(ContentPackage.Literals.CONTENT_SEARCH_CONSTRAINT__ANY_PREFIX, true);
+	public String getAnyPrefix() {
+		return (String)eGet(ContentPackage.Literals.CONTENT_SEARCH_CONSTRAINT__ANY_PREFIX, true);
 	}
 
 	/**
@@ -117,7 +117,7 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public void setAnyPrefix(char newAnyPrefix) {
+	public void setAnyPrefix(String newAnyPrefix) {
 		eSet(ContentPackage.Literals.CONTENT_SEARCH_CONSTRAINT__ANY_PREFIX, newAnyPrefix);
 	}
 
@@ -127,8 +127,8 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public char getAnySuffix() {
-		return (Character)eGet(ContentPackage.Literals.CONTENT_SEARCH_CONSTRAINT__ANY_SUFFIX, true);
+	public String getAnySuffix() {
+		return (String)eGet(ContentPackage.Literals.CONTENT_SEARCH_CONSTRAINT__ANY_SUFFIX, true);
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class ContentSearchConstraintImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public void setAnySuffix(char newAnySuffix) {
+	public void setAnySuffix(String newAnySuffix) {
 		eSet(ContentPackage.Literals.CONTENT_SEARCH_CONSTRAINT__ANY_SUFFIX, newAnySuffix);
 	}
 

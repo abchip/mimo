@@ -8,13 +8,8 @@
 package org.abchip.mimo.biz.marketing.opportunity.impl;
 
 import java.math.BigDecimal;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
-import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
-import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -137,30 +132,6 @@ public class SalesOpportunityStageImpl extends BizEntityImpl implements SalesOpp
 	@Override
 	public void setSequenceNum(long newSequenceNum) {
 		eSet(OpportunityPackage.Literals.SALES_OPPORTUNITY_STAGE__SEQUENCE_NUM, newSequenceNum);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SalesOpportunity> salesOpportunities() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SalesOpportunityHistory> salesOpportunityHistories() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //SalesOpportunityStageImpl

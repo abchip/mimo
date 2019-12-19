@@ -74,7 +74,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @see #setBodyScreenLocation(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_BodyScreenLocation()
 	 * @model annotation="mimo-ent-slot help='if empty defaults to a screen based on the emailType'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getBodyScreenLocation();
@@ -126,7 +126,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @return the value of the '<em>Content Type</em>' attribute.
 	 * @see #setContentType(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_ContentType()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getContentType();
@@ -179,7 +179,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @see #setEmailTemplateSettingId(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_EmailTemplateSettingId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getEmailTemplateSettingId();
@@ -284,7 +284,7 @@ public interface EmailTemplateSetting extends BizEntity {
 	 * @see #setXslfoAttachScreenLocation(String)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_XslfoAttachScreenLocation()
 	 * @model annotation="mimo-ent-slot help='if specified is used to generate XSL:FO that is transformed to a PDF via Apache FOP and attached to the email'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getXslfoAttachScreenLocation();

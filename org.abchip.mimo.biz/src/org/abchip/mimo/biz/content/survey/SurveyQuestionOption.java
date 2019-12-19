@@ -73,7 +73,7 @@ public interface SurveyQuestionOption extends BizEntity {
 	 * @return the value of the '<em>Amount Base Uom Id</em>' attribute.
 	 * @see #setAmountBaseUomId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionOption_AmountBaseUomId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getAmountBaseUomId();
@@ -125,7 +125,7 @@ public interface SurveyQuestionOption extends BizEntity {
 	 * @return the value of the '<em>Duration</em>' attribute.
 	 * @see #setDuration(long)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionOption_Duration()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDuration();
@@ -151,7 +151,7 @@ public interface SurveyQuestionOption extends BizEntity {
 	 * @return the value of the '<em>Duration Uom Id</em>' attribute.
 	 * @see #setDurationUomId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionOption_DurationUomId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDurationUomId();
@@ -177,7 +177,7 @@ public interface SurveyQuestionOption extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionOption_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -205,7 +205,7 @@ public interface SurveyQuestionOption extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionOption_SurveyOptionSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSurveyOptionSeqId();
@@ -258,7 +258,7 @@ public interface SurveyQuestionOption extends BizEntity {
 	 * @return the value of the '<em>Weight Factor</em>' attribute.
 	 * @see #setWeightFactor(double)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionOption_WeightFactor()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getWeightFactor();

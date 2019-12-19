@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.party.party.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyRelationship;
@@ -177,18 +175,6 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 	@Override
 	public void setRoleTypeIdValidTo(RoleType newRoleTypeIdValidTo) {
 		eSet(PartyPackage.Literals.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_TO, newRoleTypeIdValidTo);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyRelationshipType> childPartyRelationshipTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

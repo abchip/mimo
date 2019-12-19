@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.humanres.position.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -330,6 +334,8 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -348,6 +354,8 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -448,6 +456,8 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -457,7 +467,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -516,6 +526,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		// Create package meta-data objects
 		thePositionPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -525,6 +536,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -575,11 +587,12 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -611,6 +624,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		// Initialize created meta-data
 		thePositionPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -620,6 +634,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -670,11 +685,12 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -1468,9 +1484,8 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		PartyPackage thePartyPackage_1 = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
-		EmploymentPackage theEmploymentPackage = (EmploymentPackage)EPackage.Registry.INSTANCE.getEPackage(EmploymentPackage.eNS_URI);
 		AbilityPackage theAbilityPackage = (AbilityPackage)EPackage.Registry.INSTANCE.getEPackage(AbilityPackage.eNS_URI);
 		RatePackage theRatePackage = (RatePackage)EPackage.Registry.INSTANCE.getEPackage(RatePackage.eNS_URI);
 
@@ -1506,16 +1521,14 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		getEmplPosition_EmplPositionTypeId().getEKeys().add(this.getEmplPositionType_EmplPositionTypeId());
 		initEAttribute(getEmplPosition_EstimatedFromDate(), ecorePackage.getEDate(), "estimatedFromDate", null, 0, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmplPosition_EstimatedThruDate(), ecorePackage.getEDate(), "estimatedThruDate", null, 0, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEmplPosition_ExemptFlag(), ecorePackage.getEBoolean(), "exemptFlag", null, 0, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEmplPosition_FulltimeFlag(), ecorePackage.getEChar(), "fulltimeFlag", null, 0, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEmplPosition_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmplPosition_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEAttribute(getEmplPosition_SalaryFlag(), ecorePackage.getEChar(), "salaryFlag", null, 0, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEmplPosition_ExemptFlag(), ecorePackage.getEBoolean(), "exemptFlag", null, 1, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEmplPosition_FulltimeFlag(), ecorePackage.getEBoolean(), "fulltimeFlag", null, 1, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEmplPosition_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 0, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmplPosition_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
+		initEAttribute(getEmplPosition_SalaryFlag(), ecorePackage.getEBoolean(), "salaryFlag", null, 1, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEmplPosition_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplPosition_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
-		initEAttribute(getEmplPosition_TemporaryFlag(), ecorePackage.getEChar(), "temporaryFlag", null, 0, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(emplPositionEClass, theEmploymentPackage.getEmploymentApp(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
+		initEAttribute(getEmplPosition_TemporaryFlag(), ecorePackage.getEBoolean(), "temporaryFlag", null, 1, 1, EmplPosition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(emplPositionClassTypeEClass, EmplPositionClassType.class, "EmplPositionClassType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmplPositionClassType_EmplPositionClassTypeId(), ecorePackage.getEString(), "emplPositionClassTypeId", null, 1, 1, EmplPositionClassType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1524,13 +1537,11 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		initEReference(getEmplPositionClassType_ParentTypeId(), this.getEmplPositionClassType(), null, "parentTypeId", null, 0, 1, EmplPositionClassType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplPositionClassType_ParentTypeId().getEKeys().add(this.getEmplPositionClassType_EmplPositionClassTypeId());
 
-		addEOperation(emplPositionClassTypeEClass, this.getEmplPositionClassType(), "childEmplPositionClassTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(emplPositionFulfillmentEClass, EmplPositionFulfillment.class, "EmplPositionFulfillment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEmplPositionFulfillment_EmplPositionId(), this.getEmplPosition(), null, "emplPositionId", null, 1, 1, EmplPositionFulfillment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplPositionFulfillment_EmplPositionId().getEKeys().add(this.getEmplPosition_EmplPositionId());
-		initEReference(getEmplPositionFulfillment_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, EmplPositionFulfillment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmplPositionFulfillment_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getEmplPositionFulfillment_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 1, 1, EmplPositionFulfillment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmplPositionFulfillment_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEAttribute(getEmplPositionFulfillment_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, EmplPositionFulfillment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmplPositionFulfillment_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, EmplPositionFulfillment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmplPositionFulfillment_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, EmplPositionFulfillment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1542,7 +1553,7 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		getEmplPositionReportingStruct_EmplPositionIdManagedBy().getEKeys().add(this.getEmplPosition_EmplPositionId());
 		initEAttribute(getEmplPositionReportingStruct_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, EmplPositionReportingStruct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmplPositionReportingStruct_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, EmplPositionReportingStruct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEmplPositionReportingStruct_PrimaryFlag(), ecorePackage.getEChar(), "primaryFlag", null, 0, 1, EmplPositionReportingStruct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEmplPositionReportingStruct_PrimaryFlag(), ecorePackage.getEString(), "primaryFlag", null, 0, 1, EmplPositionReportingStruct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmplPositionReportingStruct_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, EmplPositionReportingStruct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(emplPositionResponsibilityEClass, EmplPositionResponsibility.class, "EmplPositionResponsibility", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1560,10 +1571,6 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		initEAttribute(getEmplPositionType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, EmplPositionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEmplPositionType_ParentTypeId(), this.getEmplPositionType(), null, "parentTypeId", null, 0, 1, EmplPositionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplPositionType_ParentTypeId().getEKeys().add(this.getEmplPositionType_EmplPositionTypeId());
-
-		addEOperation(emplPositionTypeEClass, this.getEmplPositionType(), "childEmplPositionTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(emplPositionTypeEClass, this.getEmplPosition(), "emplPositions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(emplPositionTypeClassEClass, EmplPositionTypeClass.class, "EmplPositionTypeClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEmplPositionTypeClass_EmplPositionTypeId(), this.getEmplPositionType(), null, "emplPositionTypeId", null, 1, 1, EmplPositionTypeClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1594,14 +1601,12 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		initEAttribute(getValidResponsibility_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ValidResponsibility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
 	}
 
 	/**
@@ -1616,80 +1621,24 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		  (getEmplPosition_EmplPositionId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmplPosition_ActualFromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getEmplPosition_ActualThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getEmplPosition_BudgetId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmplPosition_BudgetItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmplPosition_EstimatedFromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getEmplPosition_EstimatedThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getEmplPosition_ExemptFlag(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getEmplPosition_FulltimeFlag(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getEmplPosition_SalaryFlag(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getEmplPosition_TemporaryFlag(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 		addAnnotation
 		  (getEmplPositionClassType_EmplPositionClassTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1700,36 +1649,11 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getEmplPositionClassType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getEmplPositionFulfillment_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getEmplPositionFulfillment_Comments(),
 		   source,
 		   new String[] {
 			   "type", "comment",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getEmplPositionFulfillment_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getEmplPositionReportingStruct_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getEmplPositionReportingStruct_Comments(),
@@ -1739,25 +1663,6 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getEmplPositionReportingStruct_PrimaryFlag(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getEmplPositionReportingStruct_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getEmplPositionResponsibility_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getEmplPositionResponsibility_Comments(),
 		   source,
 		   new String[] {
@@ -1765,16 +1670,9 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getEmplPositionResponsibility_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getEmplPositionType_EmplPositionTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1785,61 +1683,16 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getEmplPositionType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getEmplPositionTypeClass_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getEmplPositionTypeClass_StandardHoursPerWeek(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getEmplPositionTypeClass_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getEmplPositionTypeRate_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getEmplPositionTypeRate_PayGradeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmplPositionTypeRate_SalaryStepSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmplPositionTypeRate_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getValidResponsibility_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getValidResponsibility_Comments(),
@@ -1847,12 +1700,6 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		   new String[] {
 			   "type", "comment",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getValidResponsibility_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 	}
 
@@ -1864,18 +1711,6 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (emplPositionEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (emplPositionClassTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
 		addAnnotation
 		  (getEmplPositionFulfillment_EmplPositionId(),
 		   source,
@@ -1931,18 +1766,6 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (emplPositionTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (emplPositionTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getEmplPositionTypeClass_EmplPositionTypeId(),
 		   source,
 		   new String[] {
@@ -1995,44 +1818,6 @@ public class PositionPackageImpl extends EPackageImpl implements PositionPackage
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (emplPositionEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "EmploymentApp",
-			   "route", "emplPositionId"
-		   });
-		addAnnotation
-		  (emplPositionClassTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "EmplPositionClassType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (emplPositionTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "EmplPositionType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (emplPositionTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "EmplPosition",
-			   "route", "emplPositionTypeId"
 		   });
 	}
 

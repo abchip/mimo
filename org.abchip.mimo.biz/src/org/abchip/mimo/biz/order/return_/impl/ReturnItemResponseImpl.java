@@ -10,16 +10,12 @@ package org.abchip.mimo.biz.order.return_.impl;
 import java.math.BigDecimal;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
 import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
-import org.abchip.mimo.biz.order.return_.ReturnItem;
 import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -207,18 +203,6 @@ public class ReturnItemResponseImpl extends BizEntityImpl implements ReturnItemR
 	@Override
 	public void setResponseDate(Date newResponseDate) {
 		eSet(ReturnPackage.Literals.RETURN_ITEM_RESPONSE__RESPONSE_DATE, newResponseDate);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ReturnItem> returnItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

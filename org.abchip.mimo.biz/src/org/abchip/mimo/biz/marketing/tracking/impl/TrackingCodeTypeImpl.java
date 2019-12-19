@@ -7,11 +7,7 @@
  */
 package org.abchip.mimo.biz.marketing.tracking.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
-import org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeType;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -73,30 +69,6 @@ public class TrackingCodeTypeImpl extends BizEntityImpl implements TrackingCodeT
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(TrackingPackage.Literals.TRACKING_CODE_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TrackingCodeOrder> trackingCodeOrders() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TrackingCode> trackingCodes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

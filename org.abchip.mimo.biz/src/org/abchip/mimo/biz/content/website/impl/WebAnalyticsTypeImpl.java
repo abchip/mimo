@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.content.website.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.content.website.WebAnalyticsConfig;
 import org.abchip.mimo.biz.content.website.WebAnalyticsType;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
@@ -114,30 +112,6 @@ public class WebAnalyticsTypeImpl extends BizEntityTypeImpl<WebAnalyticsConfig> 
 	@Override
 	public void setParentTypeId(WebAnalyticsType newParentTypeId) {
 		eSet(WebsitePackage.Literals.WEB_ANALYTICS_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WebAnalyticsType> childWebAnalyticsTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WebAnalyticsConfig> webAnalyticsConfigs() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

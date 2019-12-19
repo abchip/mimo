@@ -43,7 +43,7 @@ public interface StandardLanguage extends BizEntity {
 	 * @return the value of the '<em>Lang Charset</em>' attribute.
 	 * @see #setLangCharset(String)
 	 * @see org.abchip.mimo.biz.common.language.LanguagePackage#getStandardLanguage_LangCharset()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getLangCharset();
@@ -69,7 +69,7 @@ public interface StandardLanguage extends BizEntity {
 	 * @return the value of the '<em>Lang Code2</em>' attribute.
 	 * @see #setLangCode2(String)
 	 * @see org.abchip.mimo.biz.common.language.LanguagePackage#getStandardLanguage_LangCode2()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getLangCode2();
@@ -95,7 +95,7 @@ public interface StandardLanguage extends BizEntity {
 	 * @return the value of the '<em>Lang Code3b</em>' attribute.
 	 * @see #setLangCode3b(String)
 	 * @see org.abchip.mimo.biz.common.language.LanguagePackage#getStandardLanguage_LangCode3b()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getLangCode3b();
@@ -121,7 +121,7 @@ public interface StandardLanguage extends BizEntity {
 	 * @return the value of the '<em>Lang Code3t</em>' attribute.
 	 * @see #setLangCode3t(String)
 	 * @see org.abchip.mimo.biz.common.language.LanguagePackage#getStandardLanguage_LangCode3t()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getLangCode3t();
@@ -147,7 +147,7 @@ public interface StandardLanguage extends BizEntity {
 	 * @return the value of the '<em>Lang Family</em>' attribute.
 	 * @see #setLangFamily(String)
 	 * @see org.abchip.mimo.biz.common.language.LanguagePackage#getStandardLanguage_LangFamily()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getLangFamily();
@@ -173,7 +173,7 @@ public interface StandardLanguage extends BizEntity {
 	 * @return the value of the '<em>Lang Name</em>' attribute.
 	 * @see #setLangName(String)
 	 * @see org.abchip.mimo.biz.common.language.LanguagePackage#getStandardLanguage_LangName()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getLangName();
@@ -200,7 +200,7 @@ public interface StandardLanguage extends BizEntity {
 	 * @see #setStandardLanguageId(String)
 	 * @see org.abchip.mimo.biz.common.language.LanguagePackage#getStandardLanguage_StandardLanguageId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getStandardLanguageId();

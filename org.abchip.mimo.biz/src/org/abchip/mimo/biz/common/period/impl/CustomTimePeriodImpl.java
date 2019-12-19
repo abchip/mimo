@@ -8,16 +8,10 @@
 package org.abchip.mimo.biz.common.period.impl;
 
 import java.util.Date;
-
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 import org.abchip.mimo.biz.common.period.PeriodPackage;
 import org.abchip.mimo.biz.common.period.PeriodType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
-import org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
 
@@ -184,54 +178,6 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	@Override
 	public void setThruDate(Date newThruDate) {
 		eSet(PeriodPackage.Literals.CUSTOM_TIME_PERIOD__THRU_DATE, newThruDate);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Budget> budgets() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CustomTimePeriod> childCustomTimePeriods() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SalesForecastHistory> salesForecastHistories() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SalesForecast> salesForecasts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

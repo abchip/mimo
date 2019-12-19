@@ -71,7 +71,7 @@ public interface ProductPriceAction extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction_ProductPriceActionSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductPriceActionSeqId();
@@ -97,7 +97,7 @@ public interface ProductPriceAction extends BizEntity {
 	 * @return the value of the '<em>Rate Code</em>' attribute.
 	 * @see #setRateCode(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAction_RateCode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getRateCode();

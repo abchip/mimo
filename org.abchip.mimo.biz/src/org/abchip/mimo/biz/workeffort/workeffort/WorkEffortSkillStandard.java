@@ -70,7 +70,7 @@ public interface WorkEffortSkillStandard extends BizEntity {
 	 * @return the value of the '<em>Estimated Duration</em>' attribute.
 	 * @see #setEstimatedDuration(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSkillStandard_EstimatedDuration()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getEstimatedDuration();
@@ -96,7 +96,7 @@ public interface WorkEffortSkillStandard extends BizEntity {
 	 * @return the value of the '<em>Estimated Num People</em>' attribute.
 	 * @see #setEstimatedNumPeople(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSkillStandard_EstimatedNumPeople()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getEstimatedNumPeople();

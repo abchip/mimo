@@ -8,26 +8,18 @@
 package org.abchip.mimo.biz.content.data.impl;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.status.StatusItem;
-import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.data.CharacterSet;
 import org.abchip.mimo.biz.content.data.DataCategory;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
-import org.abchip.mimo.biz.content.data.DataResourceAttribute;
-import org.abchip.mimo.biz.content.data.DataResourceMetaData;
-import org.abchip.mimo.biz.content.data.DataResourcePurpose;
 import org.abchip.mimo.biz.content.data.DataResourceType;
 import org.abchip.mimo.biz.content.data.DataTemplateType;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.abchip.mimo.biz.product.feature.ProductFeatureDataResource;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.ecore.EClass;
 
@@ -44,10 +36,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataCategoryId <em>Data Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceAttributes <em>Data Resource Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceMetaDatas <em>Data Resource Meta Datas</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceName <em>Data Resource Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourcePurposes <em>Data Resource Purposes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataTemplateTypeId <em>Data Template Type Id</em>}</li>
@@ -57,7 +46,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getLocaleString <em>Locale String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getMimeTypeId <em>Mime Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getObjectInfo <em>Object Info</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getProductFeatureDataResources <em>Product Feature Data Resources</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getRelatedDetailId <em>Related Detail Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getSurveyId <em>Survey Id</em>}</li>
@@ -469,74 +457,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	@Override
 	public void setSurveyResponseId(SurveyResponse newSurveyResponseId) {
 		eSet(DataPackage.Literals.DATA_RESOURCE__SURVEY_RESPONSE_ID, newSurveyResponseId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<DataResourceAttribute> getDataResourceAttributes() {
-		return (List<DataResourceAttribute>)eGet(DataPackage.Literals.DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<DataResourceMetaData> getDataResourceMetaDatas() {
-		return (List<DataResourceMetaData>)eGet(DataPackage.Literals.DATA_RESOURCE__DATA_RESOURCE_META_DATAS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<DataResourcePurpose> getDataResourcePurposes() {
-		return (List<DataResourcePurpose>)eGet(DataPackage.Literals.DATA_RESOURCE__DATA_RESOURCE_PURPOSES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ProductFeatureDataResource> getProductFeatureDataResources() {
-		return (List<ProductFeatureDataResource>)eGet(DataPackage.Literals.DATA_RESOURCE__PRODUCT_FEATURE_DATA_RESOURCES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Content> contents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Content> templateContents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //DataResourceImpl

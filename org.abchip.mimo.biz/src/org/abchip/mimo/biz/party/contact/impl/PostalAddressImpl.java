@@ -7,14 +7,10 @@
  */
 package org.abchip.mimo.biz.party.contact.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.PostalAddress;
-import org.abchip.mimo.biz.party.contact.PostalAddressBoundary;
-import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -37,7 +33,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getHouseNumber <em>House Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getHouseNumberExt <em>House Number Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getMunicipalityGeoId <em>Municipality Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalAddressBoundaries <em>Postal Address Boundaries</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalCode <em>Postal Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalCodeExt <em>Postal Code Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalCodeGeoId <em>Postal Code Geo Id</em>}</li>
@@ -409,29 +404,6 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	@Override
 	public void setToName(String newToName) {
 		eSet(ContactPackage.Literals.POSTAL_ADDRESS__TO_NAME, newToName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<PostalAddressBoundary> getPostalAddressBoundaries() {
-		return (List<PostalAddressBoundary>)eGet(ContactPackage.Literals.POSTAL_ADDRESS__POSTAL_ADDRESS_BOUNDARIES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Shipment> destinationShipments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //PostalAddressImpl

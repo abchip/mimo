@@ -8,16 +8,10 @@
 package org.abchip.mimo.biz.common.geo;
 
 import java.math.BigDecimal;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
-import org.abchip.mimo.biz.product.facility.Facility;
-import org.abchip.mimo.biz.product.facility.FacilityLocation;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,7 +129,7 @@ public interface GeoPoint extends BizEntity {
 	 * @see #setGeoPointId(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_GeoPointId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGeoPointId();
@@ -189,7 +183,7 @@ public interface GeoPoint extends BizEntity {
 	 * @see #setLatitude(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Latitude()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getLatitude();
@@ -216,7 +210,7 @@ public interface GeoPoint extends BizEntity {
 	 * @see #setLongitude(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeoPoint_Longitude()
 	 * @model required="true"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getLongitude();
@@ -230,33 +224,6 @@ public interface GeoPoint extends BizEntity {
 	 * @generated
 	 */
 	void setLongitude(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Facility' route='geoPointId'"
-	 * @generated
-	 */
-	List<Facility> facilities();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FacilityLocation' route='geoPointId'"
-	 * @generated
-	 */
-	List<FacilityLocation> facilityLocations();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PostalAddress' route='geoPointId'"
-	 * @generated
-	 */
-	List<PostalAddress> postalAddresses();
 
 	/**
 	 * Returns the value of the '<em><b>Data Source Id</b></em>' reference.

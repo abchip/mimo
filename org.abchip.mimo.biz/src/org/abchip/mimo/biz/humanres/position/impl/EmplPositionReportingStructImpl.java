@@ -84,8 +84,8 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 * @generated
 	 */
 	@Override
-	public char getPrimaryFlag() {
-		return (Character)eGet(PositionPackage.Literals.EMPL_POSITION_REPORTING_STRUCT__PRIMARY_FLAG, true);
+	public String getPrimaryFlag() {
+		return (String)eGet(PositionPackage.Literals.EMPL_POSITION_REPORTING_STRUCT__PRIMARY_FLAG, true);
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class EmplPositionReportingStructImpl extends BizEntityImpl implements Em
 	 * @generated
 	 */
 	@Override
-	public void setPrimaryFlag(char newPrimaryFlag) {
+	public void setPrimaryFlag(String newPrimaryFlag) {
 		eSet(PositionPackage.Literals.EMPL_POSITION_REPORTING_STRUCT__PRIMARY_FLAG, newPrimaryFlag);
 	}
 

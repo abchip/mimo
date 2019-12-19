@@ -8,16 +8,11 @@
 package org.abchip.mimo.biz.shipment.picklist.impl;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.shipment.picklist.Picklist;
-import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
-import org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 import org.eclipse.emf.ecore.EClass;
 
@@ -35,7 +30,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getPicklistDate <em>Picklist Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getPicklistStatusHistories <em>Picklist Status Histories</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
@@ -225,29 +219,6 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
 		eSet(PicklistPackage.Literals.PICKLIST__STATUS_ID, newStatusId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<PicklistStatusHistory> getPicklistStatusHistories() {
-		return (List<PicklistStatusHistory>)eGet(PicklistPackage.Literals.PICKLIST__PICKLIST_STATUS_HISTORIES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PicklistBin> picklistBins() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //PicklistImpl

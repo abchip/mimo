@@ -36,7 +36,7 @@ public interface ElectronicText extends DataResource {
 	 * @return the value of the '<em>Text Data</em>' attribute.
 	 * @see #setTextData(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getElectronicText_TextData()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getTextData();

@@ -9,50 +9,19 @@ package org.abchip.mimo.biz.product.product.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule;
-import org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail;
-import org.abchip.mimo.biz.order.order.OrderItem;
-import org.abchip.mimo.biz.order.quote.QuoteItem;
-import org.abchip.mimo.biz.order.request.CustRequestItem;
-import org.abchip.mimo.biz.order.requirement.Requirement;
-import org.abchip.mimo.biz.order.return_.ReturnItem;
-import org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine;
-import org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem;
-import org.abchip.mimo.biz.party.agreement.Agreement;
-import org.abchip.mimo.biz.party.communication.CommunicationEventProduct;
 import org.abchip.mimo.biz.product.category.ProductCategory;
-import org.abchip.mimo.biz.product.config.ProductConfigStats;
-import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.facility.Facility;
-import org.abchip.mimo.biz.product.facility.ProductFacility;
-import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
-import org.abchip.mimo.biz.product.product.GoodIdentification;
 import org.abchip.mimo.biz.product.product.Product;
-import org.abchip.mimo.biz.product.product.ProductAttribute;
-import org.abchip.mimo.biz.product.product.ProductGeo;
-import org.abchip.mimo.biz.product.product.ProductGroupOrder;
-import org.abchip.mimo.biz.product.product.ProductMaint;
-import org.abchip.mimo.biz.product.product.ProductMeter;
 import org.abchip.mimo.biz.product.product.ProductPackage;
-import org.abchip.mimo.biz.product.product.ProductReview;
 import org.abchip.mimo.biz.product.product.ProductType;
-import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
-import org.abchip.mimo.biz.product.subscription.Subscription;
-import org.abchip.mimo.biz.product.supplier.ReorderGuideline;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentItem;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -70,7 +39,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getBrandName <em>Brand Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isChargeShipping <em>Charge Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCommunicationEventProducts <em>Communication Event Products</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getConfigId <em>Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCreatedDate <em>Created Date</em>}</li>
@@ -97,20 +65,15 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getLongDescription <em>Long Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getLotIdFilledIn <em>Lot Id Filled In</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getMediumImageUrl <em>Medium Image Url</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getOriginGeoId <em>Origin Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getOriginalImageUrl <em>Original Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getPiecesIncluded <em>Pieces Included</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getPriceDetailText <em>Price Detail Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getPrimaryProductCategoryId <em>Primary Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductAttributes <em>Product Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductDepth <em>Product Depth</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductDiameter <em>Product Diameter</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductFacilities <em>Product Facilities</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductGeos <em>Product Geos</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductHeight <em>Product Height</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductMaints <em>Product Maints</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductMeters <em>Product Meters</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductName <em>Product Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductRating <em>Product Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductTypeId <em>Product Type Id</em>}</li>
@@ -754,8 +717,8 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public char getOrderDecimalQuantity() {
-		return (Character)eGet(ProductPackage.Literals.PRODUCT__ORDER_DECIMAL_QUANTITY, true);
+	public boolean isOrderDecimalQuantity() {
+		return (Boolean)eGet(ProductPackage.Literals.PRODUCT__ORDER_DECIMAL_QUANTITY, true);
 	}
 
 	/**
@@ -764,7 +727,7 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * @generated
 	 */
 	@Override
-	public void setOrderDecimalQuantity(char newOrderDecimalQuantity) {
+	public void setOrderDecimalQuantity(boolean newOrderDecimalQuantity) {
 		eSet(ProductPackage.Literals.PRODUCT__ORDER_DECIMAL_QUANTITY, newOrderDecimalQuantity);
 	}
 
@@ -1446,384 +1409,6 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	@Override
 	public void setWidthUomId(Uom newWidthUomId) {
 		eSet(ProductPackage.Literals.PRODUCT__WIDTH_UOM_ID, newWidthUomId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<CommunicationEventProduct> getCommunicationEventProducts() {
-		return (List<CommunicationEventProduct>)eGet(ProductPackage.Literals.PRODUCT__COMMUNICATION_EVENT_PRODUCTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ProductAttribute> getProductAttributes() {
-		return (List<ProductAttribute>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_ATTRIBUTES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ProductFacility> getProductFacilities() {
-		return (List<ProductFacility>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_FACILITIES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ProductGeo> getProductGeos() {
-		return (List<ProductGeo>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_GEOS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ProductMaint> getProductMaints() {
-		return (List<ProductMaint>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_MAINTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ProductMeter> getProductMeters() {
-		return (List<ProductMeter>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_METERS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Agreement> agreements() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CartAbandonedLine> cartAbandonedLines() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CostComponent> costComponents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CustRequestItem> custRequestItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<GoodIdentification> goodIdentifications() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<FixedAsset> instanceOfFixedAssets() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InventoryItem> inventoryItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InvoiceItem> invoiceItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderItem> orderItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductManufacturingRule> productForProductManufacturingRules() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductGroupOrder> productGroupOrders() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductManufacturingRule> productInProductManufacturingRules() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductManufacturingRule> productManufacturingRules() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductConfigStats> productProductConfigStatss() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductReview> productReviews() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductStoreSurveyAppl> productStoreSurveyAppls() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductManufacturingRule> productSubstProductManufacturingRules() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<QuoteItem> quoteItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ReorderGuideline> reorderGuidelines() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Requirement> requirements() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ReturnItem> returnItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SalesForecastDetail> salesForecastDetails() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentItem> shipmentItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentReceipt> shipmentReceipts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShoppingListItem> shoppingListItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Subscription> subscriptions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.order.order;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
-import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +21,6 @@ import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getOrderTypeId <em>Order Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getOrderTypeAttrs <em>Order Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -70,7 +66,7 @@ public interface OrderType extends BizEntityType<OrderHeader> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -97,7 +93,7 @@ public interface OrderType extends BizEntityType<OrderHeader> {
 	 * @see #setOrderTypeId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderType_OrderTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderTypeId();
@@ -137,49 +133,5 @@ public interface OrderType extends BizEntityType<OrderHeader> {
 	 * @generated
 	 */
 	void setParentTypeId(OrderType value);
-
-	/**
-	 * Returns the value of the '<em><b>Order Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Order Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderType_OrderTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderTypeAttr'"
-	 * @generated
-	 */
-	List<OrderTypeAttr> getOrderTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<OrderType> childOrderTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader' route='orderTypeId'"
-	 * @generated
-	 */
-	List<OrderHeader> orderHeaders();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyPrefDocTypeTpl' route='orderTypeId'"
-	 * @generated
-	 */
-	List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls();
 
 } // OrderType

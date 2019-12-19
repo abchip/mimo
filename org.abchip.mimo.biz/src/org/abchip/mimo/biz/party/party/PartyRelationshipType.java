@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.party.party;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -71,7 +69,7 @@ public interface PartyRelationshipType extends BizEntityType<PartyRelationship> 
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationshipType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -191,15 +189,6 @@ public interface PartyRelationshipType extends BizEntityType<PartyRelationship> 
 	void setRoleTypeIdValidTo(RoleType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyRelationshipType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<PartyRelationshipType> childPartyRelationshipTypes();
-
-	/**
 	 * Returns the value of the '<em><b>Party Relationship Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -211,7 +200,7 @@ public interface PartyRelationshipType extends BizEntityType<PartyRelationship> 
 	 * @see #setPartyRelationshipTypeId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationshipType_PartyRelationshipTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyRelationshipTypeId();

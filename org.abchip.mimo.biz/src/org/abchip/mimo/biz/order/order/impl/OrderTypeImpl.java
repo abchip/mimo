@@ -7,14 +7,10 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderType;
-import org.abchip.mimo.biz.order.order.OrderTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -28,7 +24,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTypeImpl#getOrderTypeId <em>Order Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTypeImpl#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTypeImpl#getOrderTypeAttrs <em>Order Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -137,53 +132,6 @@ public class OrderTypeImpl extends BizEntityTypeImpl<OrderHeader> implements Ord
 	@Override
 	public void setParentTypeId(OrderType newParentTypeId) {
 		eSet(OrderPackage.Literals.ORDER_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<OrderTypeAttr> getOrderTypeAttrs() {
-		return (List<OrderTypeAttr>)eGet(OrderPackage.Literals.ORDER_TYPE__ORDER_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderType> childOrderTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderHeader> orderHeaders() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //OrderTypeImpl

@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.party.agreement;
 
-import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceTerm;
-import org.abchip.mimo.biz.accounting.payment.BillingAccountTerm;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +22,6 @@ import org.abchip.mimo.biz.accounting.payment.BillingAccountTerm;
  *   <li>{@link org.abchip.mimo.biz.party.agreement.TermType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.TermType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.TermType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.TermType#getTermTypeAttrs <em>Term Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermType()
@@ -70,7 +66,7 @@ public interface TermType extends BizEntityType<AgreementTerm> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -123,7 +119,7 @@ public interface TermType extends BizEntityType<AgreementTerm> {
 	 * @see #setTermTypeId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermType_TermTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTermTypeId();
@@ -137,58 +133,5 @@ public interface TermType extends BizEntityType<AgreementTerm> {
 	 * @generated
 	 */
 	void setTermTypeId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Term Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.TermTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Term Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Term Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermType_TermTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TermTypeAttr'"
-	 * @generated
-	 */
-	List<TermTypeAttr> getTermTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AgreementTerm' route='termTypeId'"
-	 * @generated
-	 */
-	List<AgreementTerm> agreementTerms();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='BillingAccountTerm' route='termTypeId'"
-	 * @generated
-	 */
-	List<BillingAccountTerm> billingAccountTerms();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TermType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<TermType> childTermTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceTerm' route='termTypeId'"
-	 * @generated
-	 */
-	List<InvoiceTerm> invoiceTerms();
 
 } // TermType

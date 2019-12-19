@@ -98,7 +98,7 @@ public interface ReturnStatus extends BizEntity {
 	 * @return the value of the '<em>Return Item Seq Id</em>' attribute.
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus_ReturnItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReturnItemSeqId();
@@ -125,7 +125,7 @@ public interface ReturnStatus extends BizEntity {
 	 * @see #setReturnStatusId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus_ReturnStatusId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReturnStatusId();
@@ -151,7 +151,7 @@ public interface ReturnStatus extends BizEntity {
 	 * @return the value of the '<em>Status Datetime</em>' attribute.
 	 * @see #setStatusDatetime(Date)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus_StatusDatetime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getStatusDatetime();

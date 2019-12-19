@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.order.requirement.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -354,6 +358,8 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -372,6 +378,8 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -472,6 +480,8 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -481,7 +491,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -540,6 +550,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		// Create package meta-data objects
 		theRequirementPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -549,6 +560,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -599,11 +611,12 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -635,6 +648,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		// Initialize created meta-data
 		theRequirementPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -644,6 +658,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -694,11 +709,12 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -992,7 +1008,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	 */
 	@Override
 	public EAttribute getRequirement_RequirementStartDate() {
-		return (EAttribute)requirementEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)requirementEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -1002,7 +1018,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	 */
 	@Override
 	public EReference getRequirement_RequirementTypeId() {
-		return (EReference)requirementEClass.getEStructuralFeatures().get(17);
+		return (EReference)requirementEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -1012,36 +1028,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	 */
 	@Override
 	public EReference getRequirement_StatusId() {
-		return (EReference)requirementEClass.getEStructuralFeatures().get(18);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getRequirement_UseCase() {
-		return (EAttribute)requirementEClass.getEStructuralFeatures().get(19);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRequirement_RequirementAttributes() {
-		return (EReference)requirementEClass.getEStructuralFeatures().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRequirement_RequirementStatuss() {
 		return (EReference)requirementEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -1051,8 +1037,8 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	 * @generated
 	 */
 	@Override
-	public EReference getRequirement_WorkRequirementFulfillments() {
-		return (EReference)requirementEClass.getEStructuralFeatures().get(20);
+	public EAttribute getRequirement_UseCase() {
+		return (EAttribute)requirementEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -1361,16 +1347,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	 * @generated
 	 */
 	@Override
-	public EReference getRequirementType_RequirementTypeAttrs() {
-		return (EReference)requirementTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getRequirementTypeAttr() {
 		return requirementTypeAttrEClass;
 	}
@@ -1531,13 +1507,10 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		createEAttribute(requirementEClass, REQUIREMENT__QUANTITY);
 		createEAttribute(requirementEClass, REQUIREMENT__REASON);
 		createEAttribute(requirementEClass, REQUIREMENT__REQUIRED_BY_DATE);
-		createEReference(requirementEClass, REQUIREMENT__REQUIREMENT_ATTRIBUTES);
 		createEAttribute(requirementEClass, REQUIREMENT__REQUIREMENT_START_DATE);
-		createEReference(requirementEClass, REQUIREMENT__REQUIREMENT_STATUSS);
 		createEReference(requirementEClass, REQUIREMENT__REQUIREMENT_TYPE_ID);
 		createEReference(requirementEClass, REQUIREMENT__STATUS_ID);
 		createEAttribute(requirementEClass, REQUIREMENT__USE_CASE);
-		createEReference(requirementEClass, REQUIREMENT__WORK_REQUIREMENT_FULFILLMENTS);
 
 		requirementAttributeEClass = createEClass(REQUIREMENT_ATTRIBUTE);
 		createEReference(requirementAttributeEClass, REQUIREMENT_ATTRIBUTE__REQUIREMENT_ID);
@@ -1574,7 +1547,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		createEAttribute(requirementTypeEClass, REQUIREMENT_TYPE__DESCRIPTION);
 		createEAttribute(requirementTypeEClass, REQUIREMENT_TYPE__HAS_TABLE);
 		createEReference(requirementTypeEClass, REQUIREMENT_TYPE__PARENT_TYPE_ID);
-		createEReference(requirementTypeEClass, REQUIREMENT_TYPE__REQUIREMENT_TYPE_ATTRS);
 
 		requirementTypeAttrEClass = createEClass(REQUIREMENT_TYPE_ATTR);
 		createEReference(requirementTypeAttrEClass, REQUIREMENT_TYPE_ATTR__REQUIREMENT_TYPE_ID);
@@ -1625,7 +1597,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
 		BudgetPackage theBudgetPackage = (BudgetPackage)EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		RequestPackage theRequestPackage = (RequestPackage)EPackage.Registry.INSTANCE.getEPackage(RequestPackage.eNS_URI);
-		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		PartyPackage thePartyPackage_1 = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 
 		// Create type parameters
@@ -1657,7 +1629,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		initEReference(getDesiredFeature_RequirementId(), this.getRequirement(), null, "requirementId", null, 1, 1, DesiredFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDesiredFeature_RequirementId().getEKeys().add(this.getRequirement_RequirementId());
 		initEAttribute(getDesiredFeature_DesiredFeatureId(), ecorePackage.getEString(), "desiredFeatureId", null, 1, 1, DesiredFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDesiredFeature_OptionalInd(), ecorePackage.getEBoolean(), "optionalInd", "true", 1, 1, DesiredFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDesiredFeature_OptionalInd(), ecorePackage.getEBoolean(), "optionalInd", null, 0, 1, DesiredFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDesiredFeature_ProductFeatureId(), theFeaturePackage.getProductFeature(), null, "productFeatureId", null, 0, 1, DesiredFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDesiredFeature_ProductFeatureId().getEKeys().add(theFeaturePackage.getProductFeature_ProductFeatureId());
 
@@ -1688,17 +1660,12 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		initEAttribute(getRequirement_Quantity(), ecorePackage.getEBigDecimal(), "quantity", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_Reason(), ecorePackage.getEString(), "reason", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_RequiredByDate(), ecorePackage.getEDate(), "requiredByDate", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequirement_RequirementAttributes(), this.getRequirementAttribute(), null, "requirementAttributes", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_RequirementStartDate(), ecorePackage.getEDate(), "requirementStartDate", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequirement_RequirementStatuss(), this.getRequirementStatus(), null, "requirementStatuss", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequirement_RequirementTypeId(), this.getRequirementType(), null, "requirementTypeId", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getRequirement_RequirementTypeId().getEKeys().add(this.getRequirementType_RequirementTypeId());
 		initEReference(getRequirement_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getRequirement_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEAttribute(getRequirement_UseCase(), ecorePackage.getEString(), "useCase", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequirement_WorkRequirementFulfillments(), this.getWorkRequirementFulfillment(), null, "workRequirementFulfillments", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(requirementEClass, this.getDesiredFeature(), "desiredFeatures", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(requirementAttributeEClass, RequirementAttribute.class, "RequirementAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRequirementAttribute_RequirementId(), this.getRequirement(), null, "requirementId", null, 1, 1, RequirementAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1725,8 +1692,8 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		initEClass(requirementRoleEClass, RequirementRole.class, "RequirementRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRequirementRole_RequirementId(), this.getRequirement(), null, "requirementId", null, 1, 1, RequirementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getRequirementRole_RequirementId().getEKeys().add(this.getRequirement_RequirementId());
-		initEReference(getRequirementRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, RequirementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getRequirementRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getRequirementRole_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 1, 1, RequirementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getRequirementRole_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEAttribute(getRequirementRole_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, RequirementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirementRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, RequirementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirementRole_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, RequirementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1746,11 +1713,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		initEAttribute(getRequirementType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequirementType_ParentTypeId(), this.getRequirementType(), null, "parentTypeId", null, 0, 1, RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getRequirementType_ParentTypeId().getEKeys().add(this.getRequirementType_RequirementTypeId());
-		initEReference(getRequirementType_RequirementTypeAttrs(), this.getRequirementTypeAttr(), null, "requirementTypeAttrs", null, 0, -1, RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(requirementTypeEClass, this.getRequirementType(), "childRequirementTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(requirementTypeEClass, this.getRequirement(), "requirements", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(requirementTypeAttrEClass, RequirementTypeAttr.class, "RequirementTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRequirementTypeAttr_RequirementTypeId(), this.getRequirementType(), null, "requirementTypeId", null, 1, 1, RequirementTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1761,8 +1723,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		initEClass(workReqFulfTypeEClass, WorkReqFulfType.class, "WorkReqFulfType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWorkReqFulfType_WorkReqFulfTypeId(), ecorePackage.getEString(), "workReqFulfTypeId", null, 1, 1, WorkReqFulfType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWorkReqFulfType_Description(), ecorePackage.getEString(), "description", null, 0, 1, WorkReqFulfType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(workReqFulfTypeEClass, this.getWorkRequirementFulfillment(), "workRequirementFulfillments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(workRequirementFulfillmentEClass, WorkRequirementFulfillment.class, "WorkRequirementFulfillment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkRequirementFulfillment_RequirementId(), this.getRequirement(), null, "requirementId", null, 1, 1, WorkRequirementFulfillment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1779,8 +1739,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		createMimoentformatAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 	}
 
 	/**
@@ -1795,21 +1753,12 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		  (getDesiredFeature_DesiredFeatureId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getDesiredFeature_OptionalInd(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 		addAnnotation
 		  (getOrderRequirementCommitment_OrderItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1824,21 +1773,13 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		  (getRequirement_RequirementId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getRequirement_CreatedByUserLogin(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getRequirement_CreatedDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getRequirement_Description(),
@@ -1859,14 +1800,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		  (getRequirement_LastModifiedByUserLogin(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getRequirement_LastModifiedDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getRequirement_Quantity(),
@@ -1880,32 +1814,12 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		  (getRequirement_Reason(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getRequirement_RequiredByDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getRequirement_RequirementStartDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getRequirement_UseCase(),
-		   source,
-		   new String[] {
-			   "type", "very-long"
 		   });
 		addAnnotation
 		  (getRequirementAttribute_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -1919,14 +1833,12 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		  (getRequirementAttribute_AttrValue(),
 		   source,
 		   new String[] {
-			   "type", "value",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getRequirementBudgetAllocation_BudgetItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1941,39 +1853,18 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		  (getRequirementCustRequest_CustRequestItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getRequirementRole_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getRequirementRole_RoleTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getRequirementRole_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getRequirementStatus_StatusDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getRequirementType_RequirementTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1984,17 +1875,9 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getRequirementType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getRequirementTypeAttr_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -2008,7 +1891,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		  (getWorkReqFulfType_WorkReqFulfTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2057,30 +1939,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (requirementEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getRequirement_RequirementAttributes(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getRequirement_RequirementStatuss(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getRequirement_WorkRequirementFulfillments(),
-		   source,
-		   new String[] {
-			   "derived", "true"
 		   });
 		addAnnotation
 		  (getRequirementAttribute_RequirementId(),
@@ -2167,24 +2025,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			   "key", "true"
 		   });
 		addAnnotation
-		  (requirementTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (requirementTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getRequirementType_RequirementTypeAttrs(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getRequirementTypeAttr_RequirementTypeId(),
 		   source,
 		   new String[] {
@@ -2197,12 +2037,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 			   "key", "true"
 		   });
 		addAnnotation
-		  (workReqFulfTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getWorkRequirementFulfillment_RequirementId(),
 		   source,
 		   new String[] {
@@ -2213,68 +2047,6 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (requirementEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "DesiredFeature",
-			   "route", "requirementId"
-		   });
-		addAnnotation
-		  (getRequirement_RequirementAttributes(),
-		   source,
-		   new String[] {
-			   "frame", "RequirementAttribute"
-		   });
-		addAnnotation
-		  (getRequirement_RequirementStatuss(),
-		   source,
-		   new String[] {
-			   "frame", "RequirementStatus"
-		   });
-		addAnnotation
-		  (getRequirement_WorkRequirementFulfillments(),
-		   source,
-		   new String[] {
-			   "frame", "WorkRequirementFulfillment"
-		   });
-		addAnnotation
-		  (requirementTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "RequirementType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (requirementTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "Requirement",
-			   "route", "requirementTypeId"
-		   });
-		addAnnotation
-		  (getRequirementType_RequirementTypeAttrs(),
-		   source,
-		   new String[] {
-			   "frame", "RequirementTypeAttr"
-		   });
-		addAnnotation
-		  (workReqFulfTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "WorkRequirementFulfillment",
-			   "route", "workReqFulfTypeId"
 		   });
 	}
 

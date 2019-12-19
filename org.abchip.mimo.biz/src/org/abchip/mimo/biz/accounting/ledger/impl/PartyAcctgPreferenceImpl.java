@@ -8,12 +8,9 @@
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.ledger.GlJournal;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
-import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
@@ -518,18 +515,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	@Override
 	public void setTaxFormId(Enumeration newTaxFormId) {
 		eSet(LedgerPackage.Literals.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID, newTaxFormId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

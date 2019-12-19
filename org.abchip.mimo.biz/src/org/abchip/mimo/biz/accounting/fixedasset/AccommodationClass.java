@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,33 +81,6 @@ public interface AccommodationClass extends BizEntity {
 	void setParentClassId(AccommodationClass value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AccommodationMap' route='accommodationClassId'"
-	 * @generated
-	 */
-	List<AccommodationMap> accommodationMaps();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AccommodationSpot' route='accommodationClassId'"
-	 * @generated
-	 */
-	List<AccommodationSpot> accommodationSpots();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AccommodationClass' route='parentClassId'"
-	 * @generated
-	 */
-	List<AccommodationClass> childAccommodationClasses();
-
-	/**
 	 * Returns the value of the '<em><b>Accommodation Class Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -122,7 +92,7 @@ public interface AccommodationClass extends BizEntity {
 	 * @see #setAccommodationClassId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getAccommodationClass_AccommodationClassId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getAccommodationClassId();

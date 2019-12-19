@@ -127,7 +127,7 @@ public interface InventoryItemTempRes extends BizEntity {
 	 * @return the value of the '<em>Reserved Date</em>' attribute.
 	 * @see #setReservedDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemTempRes_ReservedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getReservedDate();
@@ -155,7 +155,7 @@ public interface InventoryItemTempRes extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemTempRes_VisitId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisitId();

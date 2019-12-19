@@ -75,7 +75,7 @@ public interface UnemploymentClaim extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -101,7 +101,7 @@ public interface UnemploymentClaim extends BizEntity {
 	 * @return the value of the '<em>Party Id From</em>' attribute.
 	 * @see #setPartyIdFrom(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim_PartyIdFrom()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyIdFrom();
@@ -127,7 +127,7 @@ public interface UnemploymentClaim extends BizEntity {
 	 * @return the value of the '<em>Party Id To</em>' attribute.
 	 * @see #setPartyIdTo(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim_PartyIdTo()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyIdTo();
@@ -153,7 +153,7 @@ public interface UnemploymentClaim extends BizEntity {
 	 * @return the value of the '<em>Role Type Id From</em>' attribute.
 	 * @see #setRoleTypeIdFrom(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim_RoleTypeIdFrom()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRoleTypeIdFrom();
@@ -179,7 +179,7 @@ public interface UnemploymentClaim extends BizEntity {
 	 * @return the value of the '<em>Role Type Id To</em>' attribute.
 	 * @see #setRoleTypeIdTo(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim_RoleTypeIdTo()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRoleTypeIdTo();
@@ -231,7 +231,7 @@ public interface UnemploymentClaim extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -257,7 +257,7 @@ public interface UnemploymentClaim extends BizEntity {
 	 * @return the value of the '<em>Unemployment Claim Date</em>' attribute.
 	 * @see #setUnemploymentClaimDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim_UnemploymentClaimDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getUnemploymentClaimDate();
@@ -284,7 +284,7 @@ public interface UnemploymentClaim extends BizEntity {
 	 * @see #setUnemploymentClaimId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim_UnemploymentClaimId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getUnemploymentClaimId();

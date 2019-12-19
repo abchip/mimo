@@ -48,7 +48,6 @@ public interface Employment extends BizEntityTyped<TerminationType> {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -130,7 +129,7 @@ public interface Employment extends BizEntityTyped<TerminationType> {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_RoleTypeIdFrom()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRoleTypeIdFrom();
@@ -158,7 +157,7 @@ public interface Employment extends BizEntityTyped<TerminationType> {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_RoleTypeIdTo()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRoleTypeIdTo();
@@ -236,7 +235,7 @@ public interface Employment extends BizEntityTyped<TerminationType> {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

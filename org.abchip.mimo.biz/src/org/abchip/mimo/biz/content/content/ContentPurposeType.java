@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.content.content;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.content.data.DataResourcePurpose;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +39,7 @@ public interface ContentPurposeType extends BizEntity {
 	 * @see #setContentPurposeTypeId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurposeType_ContentPurposeTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getContentPurposeTypeId();
@@ -82,23 +79,5 @@ public interface ContentPurposeType extends BizEntity {
 	 * @generated
 	 */
 	void setDescription(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContentPurpose' route='contentPurposeTypeId'"
-	 * @generated
-	 */
-	List<ContentPurpose> contentPurposes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResourcePurpose' route='contentPurposeTypeId'"
-	 * @generated
-	 */
-	List<DataResourcePurpose> dataResourcePurposes();
 
 } // ContentPurposeType

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.screen.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.common.screen.CustomScreen;
 import org.abchip.mimo.biz.common.screen.CustomScreenType;
 import org.abchip.mimo.biz.common.screen.ScreenPackage;
@@ -134,30 +132,6 @@ public class CustomScreenTypeImpl extends BizEntityTypeImpl<CustomScreen> implem
 	@Override
 	public void setParentTypeId(String newParentTypeId) {
 		eSet(ScreenPackage.Literals.CUSTOM_SCREEN_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CustomScreenType> childCustomScreenTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CustomScreen> customScreens() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //CustomScreenTypeImpl

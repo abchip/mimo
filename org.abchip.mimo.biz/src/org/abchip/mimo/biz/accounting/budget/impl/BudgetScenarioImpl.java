@@ -7,12 +7,8 @@
  */
 package org.abchip.mimo.biz.accounting.budget.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetScenario;
-import org.abchip.mimo.biz.accounting.budget.BudgetScenarioApplication;
-import org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -25,7 +21,6 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetScenarioImpl#getBudgetScenarioId <em>Budget Scenario Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetScenarioImpl#getBudgetScenarioRules <em>Budget Scenario Rules</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetScenarioImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
@@ -73,29 +68,6 @@ public class BudgetScenarioImpl extends BizEntityImpl implements BudgetScenario 
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(BudgetPackage.Literals.BUDGET_SCENARIO__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<BudgetScenarioRule> getBudgetScenarioRules() {
-		return (List<BudgetScenarioRule>)eGet(BudgetPackage.Literals.BUDGET_SCENARIO__BUDGET_SCENARIO_RULES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<BudgetScenarioApplication> budgetScenarioApplications() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

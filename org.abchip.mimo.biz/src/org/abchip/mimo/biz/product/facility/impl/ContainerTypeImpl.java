@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.facility.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.ContainerType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
@@ -71,18 +69,6 @@ public class ContainerTypeImpl extends BizEntityImpl implements ContainerType {
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(FacilityPackage.Literals.CONTAINER_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<org.abchip.mimo.biz.product.facility.Container> containers() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

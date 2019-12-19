@@ -40,9 +40,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isHasToString <em>Has To String</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSlots <em>Slots</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSlotsNumber <em>Slots Number</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getRoutesNumber <em>Routes Number</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getSuperNames <em>Super Names</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getTextFormula <em>Text Formula</em>}</li>
  * </ul>
  *
@@ -152,38 +151,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	 */
 	protected EList<Slot> slots;
 	/**
-	 * The default value of the '{@link #getSlotsNumber() <em>Slots Number</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getSlotsNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int SLOTS_NUMBER_EDEFAULT = 0;
-	/**
-	 * The cached value of the '{@link #getSlotsNumber() <em>Slots Number</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getSlotsNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected int slotsNumber = SLOTS_NUMBER_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRoutesNumber() <em>Routes Number</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getRoutesNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int ROUTES_NUMBER_EDEFAULT = 0;
-	/**
-	 * The cached value of the '{@link #getRoutesNumber() <em>Routes Number</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getRoutesNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected int routesNumber = ROUTES_NUMBER_EDEFAULT;
-	/**
 	 * The cached value of the '{@link #getSuperNames() <em>Super Names</em>}' attribute list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSuperNames()
@@ -191,6 +158,24 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	 * @ordered
 	 */
 	protected EList<String> superNames;
+	/**
+	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEXT_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected String text = TEXT_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getTextFormula() <em>Text Formula</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -358,29 +343,34 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	 * @generated
 	 */
 	@Override
-	public int getSlotsNumber() {
-		return slotsNumber;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int getRoutesNumber() {
-		return routesNumber;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public List<String> getSuperNames() {
 		if (superNames == null) {
 			superNames = new EDataTypeUniqueEList<String>(String.class, this, EntityPackage.FRAME__SUPER_NAMES);
 		}
 		return superNames;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getText() {
+		return text;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setText(String newText) {
+		String oldText = text;
+		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__TEXT, oldText, text));
 	}
 
 	/**
@@ -476,12 +466,10 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 				return getName();
 			case EntityPackage.FRAME__SLOTS:
 				return getSlots();
-			case EntityPackage.FRAME__SLOTS_NUMBER:
-				return getSlotsNumber();
-			case EntityPackage.FRAME__ROUTES_NUMBER:
-				return getRoutesNumber();
 			case EntityPackage.FRAME__SUPER_NAMES:
 				return getSuperNames();
+			case EntityPackage.FRAME__TEXT:
+				return getText();
 			case EntityPackage.FRAME__TEXT_FORMULA:
 				return getTextFormula();
 		}
@@ -519,6 +507,9 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 				getSlots().clear();
 				getSlots().addAll((Collection<? extends Slot>)newValue);
 				return;
+			case EntityPackage.FRAME__TEXT:
+				setText((String)newValue);
+				return;
 			case EntityPackage.FRAME__TEXT_FORMULA:
 				setTextFormula((String)newValue);
 				return;
@@ -554,6 +545,9 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 			case EntityPackage.FRAME__SLOTS:
 				getSlots().clear();
 				return;
+			case EntityPackage.FRAME__TEXT:
+				setText(TEXT_EDEFAULT);
+				return;
 			case EntityPackage.FRAME__TEXT_FORMULA:
 				setTextFormula(TEXT_FORMULA_EDEFAULT);
 				return;
@@ -582,12 +576,10 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EntityPackage.FRAME__SLOTS:
 				return slots != null && !slots.isEmpty();
-			case EntityPackage.FRAME__SLOTS_NUMBER:
-				return slotsNumber != SLOTS_NUMBER_EDEFAULT;
-			case EntityPackage.FRAME__ROUTES_NUMBER:
-				return routesNumber != ROUTES_NUMBER_EDEFAULT;
 			case EntityPackage.FRAME__SUPER_NAMES:
 				return superNames != null && !superNames.isEmpty();
+			case EntityPackage.FRAME__TEXT:
+				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case EntityPackage.FRAME__TEXT_FORMULA:
 				return TEXT_FORMULA_EDEFAULT == null ? textFormula != null : !TEXT_FORMULA_EDEFAULT.equals(textFormula);
 		}
@@ -615,12 +607,10 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 		result.append(hasToString);
 		result.append(", name: ");
 		result.append(name);
-		result.append(", slotsNumber: ");
-		result.append(slotsNumber);
-		result.append(", routesNumber: ");
-		result.append(routesNumber);
 		result.append(", superNames: ");
 		result.append(superNames);
+		result.append(", text: ");
+		result.append(text);
 		result.append(", textFormula: ");
 		result.append(textFormula);
 		result.append(')');

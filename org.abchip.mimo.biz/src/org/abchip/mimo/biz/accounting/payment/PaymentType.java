@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.payment;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -24,8 +22,6 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentType#getPaymentGlAccountTypeMaps <em>Payment Gl Account Type Maps</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentType#getPaymentTypeAttrs <em>Payment Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType()
@@ -70,7 +66,7 @@ public interface PaymentType extends BizEntityType<Payment> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -123,7 +119,7 @@ public interface PaymentType extends BizEntityType<Payment> {
 	 * @see #setPaymentTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType_PaymentTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentTypeId();
@@ -137,57 +133,5 @@ public interface PaymentType extends BizEntityType<Payment> {
 	 * @generated
 	 */
 	void setPaymentTypeId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Payment Gl Account Type Maps</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Payment Gl Account Type Maps</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Gl Account Type Maps</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType_PaymentGlAccountTypeMaps()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentGlAccountTypeMap'"
-	 * @generated
-	 */
-	List<PaymentGlAccountTypeMap> getPaymentGlAccountTypeMaps();
-
-	/**
-	 * Returns the value of the '<em><b>Payment Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.payment.PaymentTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Payment Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType_PaymentTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentTypeAttr'"
-	 * @generated
-	 */
-	List<PaymentTypeAttr> getPaymentTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<PaymentType> childPaymentTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Payment' route='paymentTypeId'"
-	 * @generated
-	 */
-	List<Payment> payments();
 
 } // PaymentType

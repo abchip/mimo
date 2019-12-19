@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.position.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.humanres.position.EmplPositionClassType;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -133,18 +131,6 @@ public class EmplPositionClassTypeImpl extends BizEntityImpl implements EmplPosi
 	@Override
 	public void setParentTypeId(EmplPositionClassType newParentTypeId) {
 		eSet(PositionPackage.Literals.EMPL_POSITION_CLASS_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<EmplPositionClassType> childEmplPositionClassTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //EmplPositionClassTypeImpl

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.config.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProdConfItemContent;
@@ -114,18 +112,6 @@ public class ProdConfItemContentTypeImpl extends BizEntityTypeImpl<ProdConfItemC
 	@Override
 	public void setParentTypeId(ProdConfItemContentType newParentTypeId) {
 		eSet(ConfigPackage.Literals.PROD_CONF_ITEM_CONTENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProdConfItemContentType> childProdConfItemContentTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

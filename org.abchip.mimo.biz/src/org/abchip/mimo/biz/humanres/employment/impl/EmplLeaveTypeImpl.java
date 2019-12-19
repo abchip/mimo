@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.employment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.humanres.employment.EmplLeave;
 import org.abchip.mimo.biz.humanres.employment.EmplLeaveType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
@@ -134,18 +132,6 @@ public class EmplLeaveTypeImpl extends BizEntityTypeImpl<EmplLeave> implements E
 	@Override
 	public void setParentTypeId(EmplLeaveType newParentTypeId) {
 		eSet(EmploymentPackage.Literals.EMPL_LEAVE_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<EmplLeaveType> childEmplLeaveTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //EmplLeaveTypeImpl

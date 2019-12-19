@@ -10,16 +10,12 @@ package org.abchip.mimo.biz.accounting.payment;
 import java.math.BigDecimal;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
-import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
-import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
 
@@ -43,7 +39,6 @@ import org.abchip.mimo.biz.party.party.RoleType;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdFrom <em>Party Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdTo <em>Party Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentAttributes <em>Payment Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
@@ -200,7 +195,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @return the value of the '<em>Effective Date</em>' attribute.
 	 * @see #setEffectiveDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_EffectiveDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getEffectiveDate();
@@ -304,7 +299,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @return the value of the '<em>Payment Ref Num</em>' attribute.
 	 * @see #setPaymentRefNum(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentRefNum()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getPaymentRefNum();
@@ -370,68 +365,6 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @generated
 	 */
 	void setStatusId(StatusItem value);
-
-	/**
-	 * Returns the value of the '<em><b>Payment Attributes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.payment.PaymentAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Payment Attributes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Attributes</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentAttribute'"
-	 * @generated
-	 */
-	List<PaymentAttribute> getPaymentAttributes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='paymentId'"
-	 * @generated
-	 */
-	List<AcctgTrans> acctgTranss();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Deduction' route='paymentId'"
-	 * @generated
-	 */
-	List<Deduction> deductions();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentApplication' route='paymentId'"
-	 * @generated
-	 */
-	List<PaymentApplication> paymentApplications();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnItemResponse' route='paymentId'"
-	 * @generated
-	 */
-	List<ReturnItemResponse> returnItemResponses();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentApplication' route='toPaymentId'"
-	 * @generated
-	 */
-	List<PaymentApplication> toPaymentApplications();
 
 	/**
 	 * Returns the value of the '<em><b>Payment Type Id</b></em>' reference.
@@ -601,7 +534,7 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @see #setPaymentId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentId();

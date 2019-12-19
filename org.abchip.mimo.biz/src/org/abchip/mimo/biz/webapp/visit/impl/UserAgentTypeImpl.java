@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.webapp.visit.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.webapp.visit.UserAgent;
 import org.abchip.mimo.biz.webapp.visit.UserAgentType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -92,18 +89,6 @@ public class UserAgentTypeImpl extends BizEntityImpl implements UserAgentType {
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(VisitPackage.Literals.USER_AGENT_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<UserAgent> userAgents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //UserAgentTypeImpl

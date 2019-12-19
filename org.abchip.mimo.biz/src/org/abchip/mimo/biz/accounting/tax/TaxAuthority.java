@@ -43,7 +43,7 @@ public interface TaxAuthority extends BizEntity {
 	 * @return the value of the '<em>Include Tax In Price</em>' attribute.
 	 * @see #setIncludeTaxInPrice(boolean)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthority_IncludeTaxInPrice()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isIncludeTaxInPrice();
@@ -60,6 +60,7 @@ public interface TaxAuthority extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Require Tax Id For Exemption</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Require Tax Id For Exemption</em>' attribute isn't clear,
@@ -69,7 +70,7 @@ public interface TaxAuthority extends BizEntity {
 	 * @return the value of the '<em>Require Tax Id For Exemption</em>' attribute.
 	 * @see #setRequireTaxIdForExemption(boolean)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthority_RequireTaxIdForExemption()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isRequireTaxIdForExemption();
@@ -149,7 +150,7 @@ public interface TaxAuthority extends BizEntity {
 	 * @return the value of the '<em>Tax Id Format Pattern</em>' attribute.
 	 * @see #setTaxIdFormatPattern(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthority_TaxIdFormatPattern()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getTaxIdFormatPattern();

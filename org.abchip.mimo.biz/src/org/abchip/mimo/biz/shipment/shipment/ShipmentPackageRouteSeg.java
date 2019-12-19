@@ -55,7 +55,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Box Number</em>' attribute.
 	 * @see #setBoxNumber(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_BoxNumber()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getBoxNumber();
@@ -159,7 +159,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>International Invoice</em>' attribute.
 	 * @see #setInternationalInvoice(byte[])
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_InternationalInvoice()
-	 * @model annotation="mimo-ent-format type='byte-array'"
+	 * @model
 	 * @generated
 	 */
 	byte[] getInternationalInvoice();
@@ -185,7 +185,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Label Html</em>' attribute.
 	 * @see #setLabelHtml(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_LabelHtml()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getLabelHtml();
@@ -211,7 +211,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Label Image</em>' attribute.
 	 * @see #setLabelImage(byte[])
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_LabelImage()
-	 * @model annotation="mimo-ent-format type='byte-array'"
+	 * @model
 	 * @generated
 	 */
 	byte[] getLabelImage();
@@ -237,7 +237,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Label Intl Sign Image</em>' attribute.
 	 * @see #setLabelIntlSignImage(byte[])
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_LabelIntlSignImage()
-	 * @model annotation="mimo-ent-format type='byte-array'"
+	 * @model
 	 * @generated
 	 */
 	byte[] getLabelIntlSignImage();
@@ -263,7 +263,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Label Printed</em>' attribute.
 	 * @see #setLabelPrinted(boolean)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_LabelPrinted()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isLabelPrinted();
@@ -396,7 +396,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_ShipmentPackageSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentPackageSeqId();
@@ -424,7 +424,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_ShipmentRouteSegmentId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentRouteSegmentId();
@@ -450,7 +450,7 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Tracking Code</em>' attribute.
 	 * @see #setTrackingCode(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_TrackingCode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getTrackingCode();

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.employment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
 import org.abchip.mimo.biz.humanres.employment.EmploymentAppSourceType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
@@ -134,30 +132,6 @@ public class EmploymentAppSourceTypeImpl extends BizEntityTypeImpl<EmploymentApp
 	@Override
 	public void setParentTypeId(EmploymentAppSourceType newParentTypeId) {
 		eSet(EmploymentPackage.Literals.EMPLOYMENT_APP_SOURCE_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<EmploymentAppSourceType> childEmploymentAppSourceTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<EmploymentApp> employmentApps() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //EmploymentAppSourceTypeImpl

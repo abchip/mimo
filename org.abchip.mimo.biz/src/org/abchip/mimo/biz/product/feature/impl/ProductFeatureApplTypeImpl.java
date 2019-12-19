@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.feature.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeatureAppl;
@@ -114,18 +112,6 @@ public class ProductFeatureApplTypeImpl extends BizEntityTypeImpl<ProductFeature
 	@Override
 	public void setParentTypeId(ProductFeatureApplType newParentTypeId) {
 		eSet(FeaturePackage.Literals.PRODUCT_FEATURE_APPL_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductFeatureApplType> childProductFeatureApplTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

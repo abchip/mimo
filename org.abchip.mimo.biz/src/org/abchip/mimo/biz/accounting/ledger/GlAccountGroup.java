@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.ledger;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -83,15 +81,6 @@ public interface GlAccountGroup extends BizEntity {
 	void setGlAccountGroupTypeId(GlAccountGroupType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccountGroupMember' route='glAccountGroupId'"
-	 * @generated
-	 */
-	List<GlAccountGroupMember> glAccountGroupMembers();
-
-	/**
 	 * Returns the value of the '<em><b>Gl Account Group Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -103,7 +92,7 @@ public interface GlAccountGroup extends BizEntity {
 	 * @see #setGlAccountGroupId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroup_GlAccountGroupId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGlAccountGroupId();

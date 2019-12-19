@@ -9,23 +9,13 @@ package org.abchip.mimo.biz.marketing.opportunity.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
-
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
-import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityCompetitor;
-import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory;
-import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityQuote;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage;
-import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityTrckCode;
-import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityWorkEffort;
-import org.abchip.mimo.biz.order.order.OrderItem;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.ecore.EClass;
 
@@ -50,10 +40,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getNextStepDate <em>Next Step Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getOpportunityName <em>Opportunity Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getOpportunityStageId <em>Opportunity Stage Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getSalesOpportunityCompetitors <em>Sales Opportunity Competitors</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getSalesOpportunityQuotes <em>Sales Opportunity Quotes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getSalesOpportunityTrckCodes <em>Sales Opportunity Trck Codes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getSalesOpportunityWorkEfforts <em>Sales Opportunity Work Efforts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getTypeEnumId <em>Type Enum Id</em>}</li>
  * </ul>
  *
@@ -362,86 +348,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	@Override
 	public void setTypeEnumId(Enumeration newTypeEnumId) {
 		eSet(OpportunityPackage.Literals.SALES_OPPORTUNITY__TYPE_ENUM_ID, newTypeEnumId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<SalesOpportunityCompetitor> getSalesOpportunityCompetitors() {
-		return (List<SalesOpportunityCompetitor>)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY__SALES_OPPORTUNITY_COMPETITORS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<SalesOpportunityQuote> getSalesOpportunityQuotes() {
-		return (List<SalesOpportunityQuote>)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY__SALES_OPPORTUNITY_QUOTES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<SalesOpportunityTrckCode> getSalesOpportunityTrckCodes() {
-		return (List<SalesOpportunityTrckCode>)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY__SALES_OPPORTUNITY_TRCK_CODES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<SalesOpportunityWorkEffort> getSalesOpportunityWorkEfforts() {
-		return (List<SalesOpportunityWorkEffort>)eGet(OpportunityPackage.Literals.SALES_OPPORTUNITY__SALES_OPPORTUNITY_WORK_EFFORTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InvoiceItem> invoiceItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderItem> orderItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SalesOpportunityHistory> salesOpportunityHistories() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //SalesOpportunityImpl

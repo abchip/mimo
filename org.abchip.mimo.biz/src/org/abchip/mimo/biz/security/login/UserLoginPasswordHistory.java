@@ -42,7 +42,7 @@ public interface UserLoginPasswordHistory extends BizEntity {
 	 * @return the value of the '<em>Current Password</em>' attribute.
 	 * @see #setCurrentPassword(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginPasswordHistory_CurrentPassword()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCurrentPassword();
@@ -70,7 +70,6 @@ public interface UserLoginPasswordHistory extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginPasswordHistory_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -96,7 +95,7 @@ public interface UserLoginPasswordHistory extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginPasswordHistory_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

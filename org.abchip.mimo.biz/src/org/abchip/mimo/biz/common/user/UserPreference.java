@@ -70,7 +70,7 @@ public interface UserPreference extends BizEntity {
 	 * @see #setUserPrefDataType(String)
 	 * @see org.abchip.mimo.biz.common.user.UserPackage#getUserPreference_UserPrefDataType()
 	 * @model annotation="mimo-ent-slot help='The java data type of this preference (empty = java.lang.String)'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getUserPrefDataType();
@@ -125,7 +125,7 @@ public interface UserPreference extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.user.UserPackage#getUserPreference_UserPrefTypeId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true' help='A unique identifier for this preference'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getUserPrefTypeId();
@@ -152,7 +152,7 @@ public interface UserPreference extends BizEntity {
 	 * @see #setUserPrefValue(String)
 	 * @see org.abchip.mimo.biz.common.user.UserPackage#getUserPreference_UserPrefValue()
 	 * @model annotation="mimo-ent-slot help='Contains the value of this preference'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getUserPrefValue();

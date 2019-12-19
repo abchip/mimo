@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
@@ -44,7 +45,9 @@ public class EMFSlotAdapter extends SlotImpl {
 		if (element instanceof EStructuralFeature) {
 			EStructuralFeature eStructuralFeature = ((EStructuralFeature) this.element);
 			eSet(EntityPackage.SLOT__DEFAULT_VALUE, eStructuralFeature.getDefaultValueLiteral());
-		}
+			eSet(EntityPackage.SLOT__DERIVED, eStructuralFeature.isDerived());
+		} else if (element instanceof EOperation)
+			eSet(EntityPackage.SLOT__DERIVED, true);
 
 		this.setSlotText(frame);
 
@@ -56,12 +59,10 @@ public class EMFSlotAdapter extends SlotImpl {
 		EAnnotation eAnnotation = element.getEAnnotation(Slot.NS_PREFIX_SLOT);
 		if (eAnnotation != null) {
 			for (String key : eAnnotation.getDetails().keySet()) {
-				if (key.equals("derived"))
-					eSet(EntityPackage.SLOT__DERIVED, true);
-				else if (key.equals("key"))
+				if (key.equals("key"))
 					eSet(EntityPackage.SLOT__KEY, true);
 				else if (key.equals("toString"))
-					eSet(EntityPackage.SLOT__TO_STRING, true);				
+					eSet(EntityPackage.SLOT__TO_STRING, true);
 				else if (key.equals("group"))
 					eSet(EntityPackage.SLOT__GROUP, eAnnotation.getDetails().get(key));
 			}
@@ -134,53 +135,22 @@ public class EMFSlotAdapter extends SlotImpl {
 
 		Domain domain = null;
 
-		EAnnotation eAnnotation = this.getETypedElement().getEAnnotation(Slot.NS_PREFIX_DOMAIN);
-		if (eAnnotation != null) {
-			EObject eObject = EcoreUtil.create(EntityPackage.eINSTANCE.getDomain());
+		// reference
+		if (element instanceof EReference) {
+			domain = EntityFactory.eINSTANCE.createDomain();
+			domain.setFrame(element.getEType().getName());
 
-			for (String key : eAnnotation.getDetails().keySet()) {
-				EStructuralFeature dataDefFeature = eObject.eClass().getEStructuralFeature(key);
-				if (dataDefFeature == null)
-					continue;
-				if (dataDefFeature.getDefaultValue() instanceof Number)
-					eObject.eSet(dataDefFeature, Integer.parseInt(eAnnotation.getDetails().get(key)));
-				else
-					eObject.eSet(dataDefFeature, eAnnotation.getDetails().get(key));
-			}
-
-			domain = (Domain) eObject;
+			if (((EReference) element).isContainment())
+				eSet(EntityPackage.SLOT__CONTAINMENT, true);
+		}
+		// enum
+		else if (element.getEType() instanceof EEnum) {
+			domain = EntityFactory.eINSTANCE.createDomain();
+			domain.setFrame(element.getEType().getName());
 		}
 
-		if (domain == null || domain.getFrame() == null) {
-
-			// reference
-			if (element instanceof EReference) {
-				if (domain == null)
-					domain = EntityFactory.eINSTANCE.createDomain();
-				if (domain.getFrame() == null)
-					domain.setFrame(element.getEType().getName());
-
-				if (((EReference) element).isContainment())
-					eSet(EntityPackage.SLOT__CONTAINMENT, true);
-			}
-			// enum
-			else if (element.getEType() instanceof EEnum) {
-				if (domain == null)
-					domain = EntityFactory.eINSTANCE.createDomain();
-				if (domain.getFrame() == null)
-					domain.setFrame(element.getEType().getName());
-			} else if (element instanceof EAttribute) {
-
-			} else
-				"".toString();
-		}
-
-		if (domain != null) {
+		if (domain != null) 
 			eSet(EntityPackage.SLOT__DOMAIN, domain);
-
-			if (domain.getRoute() != null)
-				eSet(EntityPackage.SLOT__ROUTE, true);
-		}
 	}
 
 	@Override

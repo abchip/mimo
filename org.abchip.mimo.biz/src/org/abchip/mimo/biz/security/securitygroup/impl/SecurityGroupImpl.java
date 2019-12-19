@@ -7,11 +7,7 @@
  */
 package org.abchip.mimo.biz.security.securitygroup.impl;
 
-import java.util.List;
-
-import org.abchip.mimo.biz.common.portal.PortalPage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.security.securitygroup.ProtectedView;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -27,7 +23,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupImpl#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupImpl#getGroupName <em>Group Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupImpl#getProtectedViews <em>Protected Views</em>}</li>
  * </ul>
  *
  * @generated
@@ -116,29 +111,6 @@ public class SecurityGroupImpl extends BizEntityImpl implements SecurityGroup {
 	@Override
 	public void setGroupName(String newGroupName) {
 		eSet(SecuritygroupPackage.Literals.SECURITY_GROUP__GROUP_NAME, newGroupName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ProtectedView> getProtectedViews() {
-		return (List<ProtectedView>)eGet(SecuritygroupPackage.Literals.SECURITY_GROUP__PROTECTED_VIEWS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PortalPage> portalPages() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //SecurityGroupImpl

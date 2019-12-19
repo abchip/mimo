@@ -8,10 +8,7 @@
 package org.abchip.mimo.biz.product.inventory;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,7 +67,7 @@ public interface PhysicalInventory extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getPhysicalInventory_PartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -96,7 +93,7 @@ public interface PhysicalInventory extends BizEntity {
 	 * @return the value of the '<em>Physical Inventory Date</em>' attribute.
 	 * @see #setPhysicalInventoryDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getPhysicalInventory_PhysicalInventoryDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getPhysicalInventoryDate();
@@ -112,33 +109,6 @@ public interface PhysicalInventory extends BizEntity {
 	void setPhysicalInventoryDate(Date value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='physicalInventoryId'"
-	 * @generated
-	 */
-	List<AcctgTrans> acctgTranss();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemDetail' route='physicalInventoryId'"
-	 * @generated
-	 */
-	List<InventoryItemDetail> inventoryItemDetails();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemVariance' route='physicalInventoryId'"
-	 * @generated
-	 */
-	List<InventoryItemVariance> inventoryItemVariances();
-
-	/**
 	 * Returns the value of the '<em><b>Physical Inventory Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -150,7 +120,7 @@ public interface PhysicalInventory extends BizEntity {
 	 * @see #setPhysicalInventoryId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getPhysicalInventory_PhysicalInventoryId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPhysicalInventoryId();

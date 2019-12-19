@@ -42,7 +42,7 @@ public interface WebPage extends BizEntity {
 	 * @see #setWebPageId(String)
 	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebPage_WebPageId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getWebPageId();

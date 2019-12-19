@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.common.uom;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
-import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,7 +66,7 @@ public interface UomType extends BizEntityType<Uom> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -111,33 +108,6 @@ public interface UomType extends BizEntityType<Uom> {
 	void setParentTypeId(UomType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Product' route='amountUomTypeId'"
-	 * @generated
-	 */
-	List<Product> amountProducts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='UomType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<UomType> childUomTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Uom' route='uomTypeId'"
-	 * @generated
-	 */
-	List<Uom> uoms();
-
-	/**
 	 * Returns the value of the '<em><b>Uom Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -149,7 +119,7 @@ public interface UomType extends BizEntityType<Uom> {
 	 * @see #setUomTypeId(String)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomType_UomTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getUomTypeId();

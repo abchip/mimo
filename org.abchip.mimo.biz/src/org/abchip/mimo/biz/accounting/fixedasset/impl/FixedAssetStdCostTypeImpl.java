@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCostType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
@@ -113,18 +111,6 @@ public class FixedAssetStdCostTypeImpl extends BizEntityTypeImpl<FixedAssetStdCo
 	@Override
 	public void setParentTypeId(FixedAssetStdCostType newParentTypeId) {
 		eSet(FixedassetPackage.Literals.FIXED_ASSET_STD_COST_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<FixedAssetStdCostType> childFixedAssetStdCostTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

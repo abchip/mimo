@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.humanres.employment.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -378,6 +382,8 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -396,6 +402,8 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -496,6 +504,8 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -505,7 +515,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -564,6 +574,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		// Create package meta-data objects
 		theEmploymentPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -573,6 +584,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -623,11 +635,12 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -659,6 +672,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		// Initialize created meta-data
 		theEmploymentPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -668,6 +682,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -718,11 +733,12 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -2149,7 +2165,7 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		PartyPackage thePartyPackage_1 = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
 		PositionPackage thePositionPackage = (PositionPackage)EPackage.Registry.INSTANCE.getEPackage(PositionPackage.eNS_URI);
 		RecruitmentPackage theRecruitmentPackage = (RecruitmentPackage)EPackage.Registry.INSTANCE.getEPackage(RecruitmentPackage.eNS_URI);
@@ -2211,16 +2227,14 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getBenefitType_ParentTypeId(), this.getBenefitType(), null, "parentTypeId", null, 0, 1, BenefitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getBenefitType_ParentTypeId().getEKeys().add(this.getBenefitType_BenefitTypeId());
 
-		addEOperation(benefitTypeEClass, this.getBenefitType(), "childBenefitTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(emplLeaveEClass, EmplLeave.class, "EmplLeave", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEmplLeave_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmplLeave_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getEmplLeave_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 1, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmplLeave_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEReference(getEmplLeave_LeaveTypeId(), this.getEmplLeaveType(), null, "leaveTypeId", null, 1, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeave_LeaveTypeId().getEKeys().add(this.getEmplLeaveType_LeaveTypeId());
 		initEAttribute(getEmplLeave_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEmplLeave_ApproverPartyId(), thePartyPackage.getParty(), null, "approverPartyId", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmplLeave_ApproverPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getEmplLeave_ApproverPartyId(), thePartyPackage_1.getParty(), null, "approverPartyId", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmplLeave_ApproverPartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEAttribute(getEmplLeave_Description(), ecorePackage.getEString(), "description", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEmplLeave_EmplLeaveReasonTypeId(), this.getEmplLeaveReasonType(), null, "emplLeaveReasonTypeId", null, 0, 1, EmplLeave.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeave_EmplLeaveReasonTypeId().getEKeys().add(this.getEmplLeaveReasonType_EmplLeaveReasonTypeId());
@@ -2235,8 +2249,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getEmplLeaveReasonType_ParentTypeId(), this.getEmplLeaveReasonType(), null, "parentTypeId", null, 0, 1, EmplLeaveReasonType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeaveReasonType_ParentTypeId().getEKeys().add(this.getEmplLeaveReasonType_EmplLeaveReasonTypeId());
 
-		addEOperation(emplLeaveReasonTypeEClass, this.getEmplLeaveReasonType(), "childEmplLeaveReasonTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(emplLeaveTypeEClass, EmplLeaveType.class, "EmplLeaveType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmplLeaveType_LeaveTypeId(), ecorePackage.getEString(), "leaveTypeId", null, 1, 1, EmplLeaveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmplLeaveType_Description(), ecorePackage.getEString(), "description", null, 0, 1, EmplLeaveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2244,13 +2256,11 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getEmplLeaveType_ParentTypeId(), this.getEmplLeaveType(), null, "parentTypeId", null, 0, 1, EmplLeaveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmplLeaveType_ParentTypeId().getEKeys().add(this.getEmplLeaveType_LeaveTypeId());
 
-		addEOperation(emplLeaveTypeEClass, this.getEmplLeaveType(), "childEmplLeaveTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(employmentEClass, Employment.class, "Employment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEmployment_PartyIdTo(), thePartyPackage.getParty(), null, "partyIdTo", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmployment_PartyIdTo().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getEmployment_PartyIdFrom(), thePartyPackage.getParty(), null, "partyIdFrom", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmployment_PartyIdFrom().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getEmployment_PartyIdTo(), thePartyPackage_1.getParty(), null, "partyIdTo", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmployment_PartyIdTo().getEKeys().add(thePartyPackage_1.getParty_PartyId());
+		initEReference(getEmployment_PartyIdFrom(), thePartyPackage_1.getParty(), null, "partyIdFrom", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmployment_PartyIdFrom().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEAttribute(getEmployment_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmployment_RoleTypeIdFrom(), ecorePackage.getEString(), "roleTypeIdFrom", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmployment_RoleTypeIdTo(), ecorePackage.getEString(), "roleTypeIdTo", null, 1, 1, Employment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2263,18 +2273,18 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEClass(employmentAppEClass, EmploymentApp.class, "EmploymentApp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmploymentApp_ApplicationId(), ecorePackage.getEString(), "applicationId", null, 1, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmploymentApp_ApplicationDate(), ecorePackage.getEDate(), "applicationDate", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEmploymentApp_ApplyingPartyId(), thePartyPackage.getParty(), null, "applyingPartyId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmploymentApp_ApplyingPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getEmploymentApp_ApproverPartyId(), thePartyPackage.getParty(), null, "approverPartyId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmploymentApp_ApproverPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getEmploymentApp_ApplyingPartyId(), thePartyPackage_1.getParty(), null, "applyingPartyId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmploymentApp_ApplyingPartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
+		initEReference(getEmploymentApp_ApproverPartyId(), thePartyPackage_1.getParty(), null, "approverPartyId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmploymentApp_ApproverPartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEReference(getEmploymentApp_EmplPositionId(), thePositionPackage.getEmplPosition(), null, "emplPositionId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmploymentApp_EmplPositionId().getEKeys().add(thePositionPackage.getEmplPosition_EmplPositionId());
 		initEReference(getEmploymentApp_EmploymentAppSourceTypeId(), this.getEmploymentAppSourceType(), null, "employmentAppSourceTypeId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmploymentApp_EmploymentAppSourceTypeId().getEKeys().add(this.getEmploymentAppSourceType_EmploymentAppSourceTypeId());
 		initEReference(getEmploymentApp_JobRequisitionId(), theRecruitmentPackage.getJobRequisition(), null, "jobRequisitionId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmploymentApp_JobRequisitionId().getEKeys().add(theRecruitmentPackage.getJobRequisition_JobRequisitionId());
-		initEReference(getEmploymentApp_ReferredByPartyId(), thePartyPackage.getParty(), null, "referredByPartyId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getEmploymentApp_ReferredByPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getEmploymentApp_ReferredByPartyId(), thePartyPackage_1.getParty(), null, "referredByPartyId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEmploymentApp_ReferredByPartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEReference(getEmploymentApp_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, EmploymentApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmploymentApp_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 
@@ -2285,15 +2295,11 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getEmploymentAppSourceType_ParentTypeId(), this.getEmploymentAppSourceType(), null, "parentTypeId", null, 0, 1, EmploymentAppSourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEmploymentAppSourceType_ParentTypeId().getEKeys().add(this.getEmploymentAppSourceType_EmploymentAppSourceTypeId());
 
-		addEOperation(employmentAppSourceTypeEClass, this.getEmploymentAppSourceType(), "childEmploymentAppSourceTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(employmentAppSourceTypeEClass, this.getEmploymentApp(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(partyBenefitEClass, PartyBenefit.class, "PartyBenefit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPartyBenefit_PartyIdTo(), thePartyPackage.getParty(), null, "partyIdTo", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPartyBenefit_PartyIdTo().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getPartyBenefit_PartyIdFrom(), thePartyPackage.getParty(), null, "partyIdFrom", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPartyBenefit_PartyIdFrom().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getPartyBenefit_PartyIdTo(), thePartyPackage_1.getParty(), null, "partyIdTo", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPartyBenefit_PartyIdTo().getEKeys().add(thePartyPackage_1.getParty_PartyId());
+		initEReference(getPartyBenefit_PartyIdFrom(), thePartyPackage_1.getParty(), null, "partyIdFrom", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPartyBenefit_PartyIdFrom().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEReference(getPartyBenefit_BenefitTypeId(), this.getBenefitType(), null, "benefitTypeId", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPartyBenefit_BenefitTypeId().getEKeys().add(this.getBenefitType_BenefitTypeId());
 		initEAttribute(getPartyBenefit_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, PartyBenefit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2327,8 +2333,8 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEAttribute(getPayHistory_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, PayHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(payrollPreferenceEClass, PayrollPreference.class, "PayrollPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPayrollPreference_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getPayrollPreference_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getPayrollPreference_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 1, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPayrollPreference_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEAttribute(getPayrollPreference_PayrollPreferenceSeqId(), ecorePackage.getEString(), "payrollPreferenceSeqId", null, 1, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayrollPreference_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPayrollPreference_AccountNumber(), ecorePackage.getEString(), "accountNumber", null, 0, 1, PayrollPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2367,8 +2373,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		initEReference(getTerminationType_ParentTypeId(), this.getTerminationType(), null, "parentTypeId", null, 0, 1, TerminationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTerminationType_ParentTypeId().getEKeys().add(this.getTerminationType_TerminationTypeId());
 
-		addEOperation(terminationTypeEClass, this.getTerminationType(), "childTerminationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(unemploymentClaimEClass, UnemploymentClaim.class, "UnemploymentClaim", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnemploymentClaim_UnemploymentClaimId(), ecorePackage.getEString(), "unemploymentClaimId", null, 1, 1, UnemploymentClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnemploymentClaim_Description(), ecorePackage.getEString(), "description", null, 0, 1, UnemploymentClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2385,12 +2389,10 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
 	}
 
 	/**
@@ -2475,7 +2477,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		  (getBenefitType_BenefitTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2493,25 +2494,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getBenefitType_EmployerPaidPercentage(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getBenefitType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getEmplLeave_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getEmplLeave_Description(),
 		   source,
 		   new String[] {
@@ -2519,16 +2501,9 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getEmplLeave_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getEmplLeaveReasonType_EmplLeaveReasonTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2539,17 +2514,9 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getEmplLeaveReasonType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getEmplLeaveType_LeaveTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2560,56 +2527,27 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getEmplLeaveType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getEmployment_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getEmployment_RoleTypeIdFrom(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getEmployment_RoleTypeIdTo(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmployment_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getEmploymentApp_ApplicationId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getEmploymentApp_ApplicationDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getEmploymentAppSourceType_EmploymentAppSourceTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2620,43 +2558,21 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getEmploymentAppSourceType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getPartyBenefit_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getPartyBenefit_RoleTypeIdFrom(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getPartyBenefit_RoleTypeIdTo(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getPartyBenefit_ActualEmployerPaidPercent(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
 		   });
 		addAnnotation
 		  (getPartyBenefit_AvailableTime(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2669,16 +2585,9 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getPartyBenefit_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getPayGrade_PayGradeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2696,37 +2605,27 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "100"
 		   });
 		addAnnotation
-		  (getPayHistory_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getPayHistory_PartyIdFrom(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getPayHistory_PartyIdTo(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getPayHistory_RoleTypeIdFrom(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getPayHistory_RoleTypeIdTo(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2748,34 +2647,24 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		  (getPayHistory_SalaryStepSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getPayHistory_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getPayrollPreference_PayrollPreferenceSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getPayrollPreference_RoleTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getPayrollPreference_AccountNumber(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -2794,41 +2683,15 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "scale", "2"
 		   });
 		addAnnotation
-		  (getPayrollPreference_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getPayrollPreference_Percentage(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
 		  (getPayrollPreference_RoutingNumber(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
-		   });
-		addAnnotation
-		  (getPayrollPreference_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getSalaryStep_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getSalaryStep_SalaryStepSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2843,33 +2706,18 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		  (getSalaryStep_CreatedByUserLogin(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getSalaryStep_DateModified(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getSalaryStep_LastModifiedByUserLogin(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getSalaryStep_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getTerminationReason_TerminationReasonId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2883,7 +2731,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		  (getTerminationType_TerminationTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2894,17 +2741,9 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getTerminationType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getUnemploymentClaim_UnemploymentClaimId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2915,50 +2754,28 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getUnemploymentClaim_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getUnemploymentClaim_PartyIdFrom(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getUnemploymentClaim_PartyIdTo(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getUnemploymentClaim_RoleTypeIdFrom(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getUnemploymentClaim_RoleTypeIdTo(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getUnemploymentClaim_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getUnemploymentClaim_UnemploymentClaimDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 	}
 
@@ -2970,12 +2787,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (benefitTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
 		addAnnotation
 		  (getEmplLeave_PartyId(),
 		   source,
@@ -2993,18 +2804,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (emplLeaveReasonTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (emplLeaveTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
 		   });
 		addAnnotation
 		  (getEmployment_PartyIdTo(),
@@ -3035,18 +2834,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (employmentAppSourceTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (employmentAppSourceTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
 		   });
 		addAnnotation
 		  (getPartyBenefit_PartyIdTo(),
@@ -3155,64 +2942,6 @@ public class EmploymentPackageImpl extends EPackageImpl implements EmploymentPac
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (terminationTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (benefitTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "BenefitType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (emplLeaveReasonTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "EmplLeaveReasonType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (emplLeaveTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "EmplLeaveType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (employmentAppSourceTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "EmploymentAppSourceType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (employmentAppSourceTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "EmploymentApp",
-			   "route", "employmentAppSourceTypeId"
-		   });
-		addAnnotation
-		  (terminationTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "TerminationType",
-			   "route", "parentTypeId"
 		   });
 	}
 

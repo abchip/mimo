@@ -8,15 +8,11 @@
 package org.abchip.mimo.biz.marketing.opportunity.impl;
 
 import java.math.BigDecimal;
-import java.util.List;
-
 import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
-import org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail;
-import org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.ecore.EClass;
@@ -44,7 +40,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getPercentOfQuotaForecast <em>Percent Of Quota Forecast</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getPipelineAmount <em>Pipeline Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getQuotaAmount <em>Quota Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getSalesForecastDetails <em>Sales Forecast Details</em>}</li>
  * </ul>
  *
  * @generated
@@ -372,41 +367,6 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	@Override
 	public void setSalesForecastId(String newSalesForecastId) {
 		eSet(OpportunityPackage.Literals.SALES_FORECAST__SALES_FORECAST_ID, newSalesForecastId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<SalesForecastDetail> getSalesForecastDetails() {
-		return (List<SalesForecastDetail>)eGet(OpportunityPackage.Literals.SALES_FORECAST__SALES_FORECAST_DETAILS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SalesForecast> childSalesForecasts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SalesForecastHistory> salesForecastHistories() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //SalesForecastImpl

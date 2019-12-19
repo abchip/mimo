@@ -71,7 +71,7 @@ public interface PartyDataSource extends BizEntity {
 	 * @return the value of the '<em>Is Create</em>' attribute.
 	 * @see #setIsCreate(boolean)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyDataSource_IsCreate()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsCreate();
@@ -126,7 +126,6 @@ public interface PartyDataSource extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyDataSource_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -152,7 +151,7 @@ public interface PartyDataSource extends BizEntity {
 	 * @return the value of the '<em>Visit Id</em>' attribute.
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyDataSource_VisitId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisitId();

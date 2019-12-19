@@ -99,7 +99,7 @@ public interface Affiliate extends BizEntity {
 	 * @return the value of the '<em>Date Time Approved</em>' attribute.
 	 * @see #setDateTimeApproved(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_DateTimeApproved()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDateTimeApproved();
@@ -125,7 +125,7 @@ public interface Affiliate extends BizEntity {
 	 * @return the value of the '<em>Date Time Created</em>' attribute.
 	 * @see #setDateTimeCreated(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_DateTimeCreated()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDateTimeCreated();
@@ -152,7 +152,7 @@ public interface Affiliate extends BizEntity {
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_PartyId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -256,7 +256,7 @@ public interface Affiliate extends BizEntity {
 	 * @return the value of the '<em>Year Established</em>' attribute.
 	 * @see #setYearEstablished(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAffiliate_YearEstablished()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getYearEstablished();

@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.entity.group;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +19,6 @@ import org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupId <em>Entity Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupEntries <em>Entity Group Entries</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupName <em>Entity Group Name</em>}</li>
  * </ul>
  *
@@ -43,7 +39,7 @@ public interface EntityGroup extends BizEntity {
 	 * @see #setEntityGroupId(String)
 	 * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroup_EntityGroupId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getEntityGroupId();
@@ -83,31 +79,5 @@ public interface EntityGroup extends BizEntity {
 	 * @generated
 	 */
 	void setEntityGroupName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Entity Group Entries</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.entity.group.EntityGroupEntry}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entity Group Entries</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity Group Entries</em>' reference list.
-	 * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroup_EntityGroupEntries()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='EntityGroupEntry'"
-	 * @generated
-	 */
-	List<EntityGroupEntry> getEntityGroupEntries();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='EntitySyncIncludeGroup' route='entityGroupId'"
-	 * @generated
-	 */
-	List<EntitySyncIncludeGroup> entitySyncIncludeGroups();
 
 } // EntityGroup

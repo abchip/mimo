@@ -45,7 +45,6 @@ public interface TrackingCodeVisit extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -126,7 +125,7 @@ public interface TrackingCodeVisit extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_VisitId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisitId();

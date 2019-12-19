@@ -65,7 +65,7 @@ public interface SupplierRatingType extends BizEntity {
 	 * @see #setSupplierRatingTypeId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierRatingType_SupplierRatingTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSupplierRatingTypeId();

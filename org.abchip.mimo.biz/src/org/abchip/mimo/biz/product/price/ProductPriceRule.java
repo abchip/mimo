@@ -8,11 +8,7 @@
 package org.abchip.mimo.biz.product.price;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.order.order.OrderItemPriceInfo;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,8 +23,6 @@ import org.abchip.mimo.biz.order.order.OrderItemPriceInfo;
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#isIsSale <em>Is Sale</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getProductPriceActions <em>Product Price Actions</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getProductPriceConds <em>Product Price Conds</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getRuleName <em>Rule Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getThruDate <em>Thru Date</em>}</li>
  * </ul>
@@ -75,7 +69,7 @@ public interface ProductPriceRule extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -101,7 +95,7 @@ public interface ProductPriceRule extends BizEntity {
 	 * @return the value of the '<em>Is Sale</em>' attribute.
 	 * @see #setIsSale(boolean)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_IsSale()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isIsSale();
@@ -153,7 +147,7 @@ public interface ProductPriceRule extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -169,49 +163,6 @@ public interface ProductPriceRule extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Price Actions</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.price.ProductPriceAction}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Product Price Actions</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Price Actions</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ProductPriceActions()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductPriceAction'"
-	 * @generated
-	 */
-	List<ProductPriceAction> getProductPriceActions();
-
-	/**
-	 * Returns the value of the '<em><b>Product Price Conds</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.price.ProductPriceCond}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Product Price Conds</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Price Conds</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ProductPriceConds()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductPriceCond'"
-	 * @generated
-	 */
-	List<ProductPriceCond> getProductPriceConds();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderItemPriceInfo' route='productPriceRuleId'"
-	 * @generated
-	 */
-	List<OrderItemPriceInfo> orderItemPriceInfos();
-
-	/**
 	 * Returns the value of the '<em><b>Product Price Rule Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -223,7 +174,7 @@ public interface ProductPriceRule extends BizEntity {
 	 * @see #setProductPriceRuleId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ProductPriceRuleId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductPriceRuleId();

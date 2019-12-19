@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#getAvsDeclineCodes <em>Avs Decline Codes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#isDisableBillAvs <em>Disable Bill Avs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#isEnableDav <em>Enable Dav</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#getFraudScore <em>Fraud Score</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#isFraudScore <em>Fraud Score</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#getIgnoreAvs <em>Ignore Avs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#getKeysDir <em>Keys Dir</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl#getKeysFile <em>Keys File</em>}</li>
@@ -172,8 +172,8 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 * @generated
 	 */
 	@Override
-	public char getFraudScore() {
-		return (Character)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_CYBER_SOURCE__FRAUD_SCORE, true);
+	public boolean isFraudScore() {
+		return (Boolean)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_CYBER_SOURCE__FRAUD_SCORE, true);
 	}
 
 	/**
@@ -182,7 +182,7 @@ public class PaymentGatewayCyberSourceImpl extends BizEntityImpl implements Paym
 	 * @generated
 	 */
 	@Override
-	public void setFraudScore(char newFraudScore) {
+	public void setFraudScore(boolean newFraudScore) {
 		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_CYBER_SOURCE__FRAUD_SCORE, newFraudScore);
 	}
 

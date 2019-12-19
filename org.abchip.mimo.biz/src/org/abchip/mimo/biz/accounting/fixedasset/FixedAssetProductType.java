@@ -65,7 +65,7 @@ public interface FixedAssetProductType extends BizEntity {
 	 * @see #setFixedAssetProductTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetProductType_FixedAssetProductTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFixedAssetProductTypeId();

@@ -8,15 +8,9 @@
 package org.abchip.mimo.biz.accounting.payment;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
-import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
-import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
-import org.abchip.mimo.biz.order.return_.ReturnHeader;
-import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.party.party.Party;
 
 /**
@@ -80,7 +74,7 @@ public interface PaymentMethod extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentMethod_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -132,7 +126,7 @@ public interface PaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentMethod_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -146,69 +140,6 @@ public interface PaymentMethod extends BizEntity {
 	 * @generated
 	 */
 	void setThruDate(Date value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderPaymentPreference' route='paymentMethodId'"
-	 * @generated
-	 */
-	List<OrderPaymentPreference> orderPaymentPreferences();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='refundPaymentMethodId'"
-	 * @generated
-	 */
-	List<PartyAcctgPreference> partyAcctgPreferences();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentGatewayResponse' route='paymentMethodId'"
-	 * @generated
-	 */
-	List<PaymentGatewayResponse> paymentGatewayResponses();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Payment' route='paymentMethodId'"
-	 * @generated
-	 */
-	List<Payment> payments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccount' route='replenishPaymentId'"
-	 * @generated
-	 */
-	List<FinAccount> replenishFinAccounts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='paymentMethodId'"
-	 * @generated
-	 */
-	List<ReturnHeader> returnHeaders();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShoppingList' route='paymentMethodId'"
-	 * @generated
-	 */
-	List<ShoppingList> shoppingLists();
 
 	/**
 	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' reference.
@@ -300,7 +231,7 @@ public interface PaymentMethod extends BizEntity {
 	 * @see #setPaymentMethodId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentMethod_PaymentMethodId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentMethodId();

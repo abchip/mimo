@@ -8,14 +8,9 @@
 package org.abchip.mimo.biz.service.schedule.impl;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.service.schedule.JobSandbox;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
 import org.abchip.mimo.biz.service.schedule.TemporalExpression;
-import org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -30,7 +25,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getDate1 <em>Date1</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getDate2 <em>Date2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getFromTemporalExpressionAssocs <em>From Temporal Expression Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getInteger1 <em>Integer1</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getInteger2 <em>Integer2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getString1 <em>String1</em>}</li>
@@ -243,53 +237,6 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	@Override
 	public void setTempExprTypeId(String newTempExprTypeId) {
 		eSet(SchedulePackage.Literals.TEMPORAL_EXPRESSION__TEMP_EXPR_TYPE_ID, newTempExprTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<TemporalExpressionAssoc> getFromTemporalExpressionAssocs() {
-		return (List<TemporalExpressionAssoc>)eGet(SchedulePackage.Literals.TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<JobSandbox> jobSandboxs() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TemporalExpressionAssoc> toTemporalExpressionAssocs() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WorkEffort> workEfforts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //TemporalExpressionImpl

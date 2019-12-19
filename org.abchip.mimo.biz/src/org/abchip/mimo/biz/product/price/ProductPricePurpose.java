@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.product.price;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,15 +54,6 @@ public interface ProductPricePurpose extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderPaymentPreference' route='productPricePurposeId'"
-	 * @generated
-	 */
-	List<OrderPaymentPreference> orderPaymentPreferences();
-
-	/**
 	 * Returns the value of the '<em><b>Product Price Purpose Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -77,7 +65,7 @@ public interface ProductPricePurpose extends BizEntity {
 	 * @see #setProductPricePurposeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPricePurpose_ProductPricePurposeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductPricePurposeId();

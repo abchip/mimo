@@ -41,7 +41,6 @@ public interface WebAnalyticsConfig extends BizEntityTyped<WebAnalyticsType> {
 	 * @see #setWebAnalyticsCode(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig_WebAnalyticsCode()
 	 * @model annotation="mimo-ent-slot help='copy in here the analitics javascript code without the beginning- and end&lt;script&gt; tags'"
-	 *        annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getWebAnalyticsCode();

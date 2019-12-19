@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.method.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.method.CustomMethodType;
 import org.abchip.mimo.biz.common.method.MethodPackage;
@@ -113,30 +111,6 @@ public class CustomMethodTypeImpl extends BizEntityTypeImpl<CustomMethod> implem
 	@Override
 	public void setParentTypeId(CustomMethodType newParentTypeId) {
 		eSet(MethodPackage.Literals.CUSTOM_METHOD_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CustomMethodType> childCustomMethodTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CustomMethod> customMethods() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfigType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
@@ -113,30 +111,6 @@ public class PaymentGatewayConfigTypeImpl extends BizEntityTypeImpl<PaymentGatew
 	@Override
 	public void setParentTypeId(PaymentGatewayConfigType newParentTypeId) {
 		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_CONFIG_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PaymentGatewayConfigType> childPaymentGatewayConfigTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PaymentGatewayConfig> paymentGatewayConfigs() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

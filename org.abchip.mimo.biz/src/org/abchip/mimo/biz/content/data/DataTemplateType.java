@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.content.data;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -42,7 +40,7 @@ public interface DataTemplateType extends BizEntity {
 	 * @see #setDataTemplateTypeId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataTemplateType_DataTemplateTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDataTemplateTypeId();
@@ -94,7 +92,7 @@ public interface DataTemplateType extends BizEntity {
 	 * @return the value of the '<em>Extension</em>' attribute.
 	 * @see #setExtension(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataTemplateType_Extension()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getExtension();
@@ -108,14 +106,5 @@ public interface DataTemplateType extends BizEntity {
 	 * @generated
 	 */
 	void setExtension(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResource' route='dataTemplateTypeId'"
-	 * @generated
-	 */
-	List<DataResource> dataResources();
 
 } // DataTemplateType

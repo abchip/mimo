@@ -35,7 +35,7 @@ public interface CountryTeleCode extends CountryCode {
 	 * @return the value of the '<em>Tele Code</em>' attribute.
 	 * @see #setTeleCode(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryTeleCode_TeleCode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getTeleCode();

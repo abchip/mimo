@@ -50,7 +50,7 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -77,7 +77,7 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @see #setGroupOrderId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_GroupOrderId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGroupOrderId();
@@ -207,7 +207,7 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

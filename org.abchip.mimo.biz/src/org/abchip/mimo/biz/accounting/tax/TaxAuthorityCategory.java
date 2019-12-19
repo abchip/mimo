@@ -69,7 +69,7 @@ public interface TaxAuthorityCategory extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityCategory_TaxAuthGeoId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -97,7 +97,7 @@ public interface TaxAuthorityCategory extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityCategory_TaxAuthPartyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTaxAuthPartyId();

@@ -71,7 +71,7 @@ public interface PerformanceNote extends BizEntity {
 	 * @return the value of the '<em>Communication Date</em>' attribute.
 	 * @see #setCommunicationDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerformanceNote_CommunicationDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getCommunicationDate();
@@ -99,7 +99,6 @@ public interface PerformanceNote extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerformanceNote_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -154,7 +153,7 @@ public interface PerformanceNote extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerformanceNote_RoleTypeId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRoleTypeId();
@@ -180,7 +179,7 @@ public interface PerformanceNote extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerformanceNote_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

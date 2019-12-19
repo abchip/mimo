@@ -68,7 +68,7 @@ public interface SystemProperty extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.property.PropertyPackage#getSystemProperty_SystemPropertyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getSystemPropertyId();
@@ -94,7 +94,7 @@ public interface SystemProperty extends BizEntity {
 	 * @return the value of the '<em>System Property Value</em>' attribute.
 	 * @see #setSystemPropertyValue(String)
 	 * @see org.abchip.mimo.biz.common.property.PropertyPackage#getSystemProperty_SystemPropertyValue()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getSystemPropertyValue();
@@ -122,7 +122,7 @@ public interface SystemProperty extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.property.PropertyPackage#getSystemProperty_SystemResourceId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getSystemResourceId();

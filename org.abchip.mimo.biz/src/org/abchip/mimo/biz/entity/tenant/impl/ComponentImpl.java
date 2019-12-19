@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.entity.tenant.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.entity.tenant.Component;
-import org.abchip.mimo.biz.entity.tenant.TenantComponent;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -25,7 +22,6 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.ComponentImpl#getComponentName <em>Component Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.ComponentImpl#getRootLocation <em>Root Location</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.ComponentImpl#getTenantComponents <em>Tenant Components</em>}</li>
  * </ul>
  *
  * @generated
@@ -92,17 +88,6 @@ public class ComponentImpl extends BizEntityImpl implements Component {
 	@Override
 	public void setRootLocation(String newRootLocation) {
 		eSet(TenantPackage.Literals.COMPONENT__ROOT_LOCATION, newRootLocation);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<TenantComponent> getTenantComponents() {
-		return (List<TenantComponent>)eGet(TenantPackage.Literals.COMPONENT__TENANT_COMPONENTS, true);
 	}
 
 } //ComponentImpl

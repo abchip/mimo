@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.party.communication;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 
@@ -96,7 +94,7 @@ public interface CommunicationEventType extends BizEntityType<CommunicationEvent
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -138,24 +136,6 @@ public interface CommunicationEventType extends BizEntityType<CommunicationEvent
 	void setParentTypeId(CommunicationEventType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEventType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<CommunicationEventType> childCommunicationEventTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='communicationEventTypeId'"
-	 * @generated
-	 */
-	List<CommunicationEvent> communicationEvents();
-
-	/**
 	 * Returns the value of the '<em><b>Communication Event Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -167,7 +147,7 @@ public interface CommunicationEventType extends BizEntityType<CommunicationEvent
 	 * @see #setCommunicationEventTypeId(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventType_CommunicationEventTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCommunicationEventTypeId();

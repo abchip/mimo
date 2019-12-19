@@ -7,12 +7,9 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderItem;
 import org.abchip.mimo.biz.order.order.OrderItemType;
-import org.abchip.mimo.biz.order.order.OrderItemTypeAttr;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -27,7 +24,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemTypeImpl#getOrderItemTypeId <em>Order Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemTypeImpl#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemTypeImpl#getOrderItemTypeAttrs <em>Order Item Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -136,41 +132,6 @@ public class OrderItemTypeImpl extends BizEntityTypeImpl<OrderItem> implements O
 	@Override
 	public void setParentTypeId(OrderItemType newParentTypeId) {
 		eSet(OrderPackage.Literals.ORDER_ITEM_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<OrderItemTypeAttr> getOrderItemTypeAttrs() {
-		return (List<OrderItemTypeAttr>)eGet(OrderPackage.Literals.ORDER_ITEM_TYPE__ORDER_ITEM_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderItemType> childOrderItemTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderItem> orderItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //OrderItemTypeImpl

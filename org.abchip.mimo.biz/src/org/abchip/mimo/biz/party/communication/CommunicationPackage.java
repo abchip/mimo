@@ -679,22 +679,13 @@ public interface CommunicationPackage extends EPackage {
 	int COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PRP_TYP_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Communication Event Purposes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT_PRP_TYP__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int COMMUNICATION_EVENT_PRP_TYP__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Has Table</b></em>' attribute.
@@ -703,7 +694,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT_PRP_TYP__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
+	int COMMUNICATION_EVENT_PRP_TYP__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
@@ -712,7 +703,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+	int COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Event Prp Typ</em>' class.
@@ -721,7 +712,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT_PRP_TYP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
+	int COMMUNICATION_EVENT_PRP_TYP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPurposeImpl <em>Event Purpose</em>}' class.
@@ -1517,17 +1508,6 @@ public interface CommunicationPackage extends EPackage {
 	EReference getCommunicationEventPrpTyp_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#getCommunicationEventPurposes <em>Communication Event Purposes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Communication Event Purposes</em>'.
-	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#getCommunicationEventPurposes()
-	 * @see #getCommunicationEventPrpTyp()
-	 * @generated
-	 */
-	EReference getCommunicationEventPrpTyp_CommunicationEventPurposes();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose <em>Event Purpose</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2099,14 +2079,6 @@ public interface CommunicationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID = eINSTANCE.getCommunicationEventPrpTyp_ParentTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Communication Event Purposes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES = eINSTANCE.getCommunicationEventPrpTyp_CommunicationEventPurposes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPurposeImpl <em>Event Purpose</em>}' class.

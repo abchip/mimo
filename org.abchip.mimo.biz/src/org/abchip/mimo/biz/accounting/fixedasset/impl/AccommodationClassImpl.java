@@ -7,13 +7,9 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass;
-import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -93,42 +89,6 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 	@Override
 	public void setParentClassId(AccommodationClass newParentClassId) {
 		eSet(FixedassetPackage.Literals.ACCOMMODATION_CLASS__PARENT_CLASS_ID, newParentClassId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AccommodationMap> accommodationMaps() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AccommodationSpot> accommodationSpots() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AccommodationClass> childAccommodationClasses() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

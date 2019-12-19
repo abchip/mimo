@@ -47,7 +47,6 @@ public interface PicklistStatusHistory extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistStatusHistory_ChangeDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getChangeDate();

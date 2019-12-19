@@ -8,11 +8,8 @@
 package org.abchip.mimo.biz.accounting.payment.impl;
 
 import java.math.BigDecimal;
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
 import org.abchip.mimo.biz.accounting.payment.BillingAccountTerm;
-import org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -29,7 +26,6 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getBillingAccountTermId <em>Billing Account Term Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getBillingAccountTermAttrs <em>Billing Account Term Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getTermDays <em>Term Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountTermImpl#getTermValue <em>Term Value</em>}</li>
@@ -140,17 +136,6 @@ public class BillingAccountTermImpl extends BizEntityImpl implements BillingAcco
 	@Override
 	public void setUomId(Uom newUomId) {
 		eSet(PaymentPackage.Literals.BILLING_ACCOUNT_TERM__UOM_ID, newUomId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<BillingAccountTermAttr> getBillingAccountTermAttrs() {
-		return (List<BillingAccountTermAttr>)eGet(PaymentPackage.Literals.BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_TERM_ATTRS, true);
 	}
 
 	/**

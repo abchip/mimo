@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.shipment.picklist;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.order.order.OrderHeader;
-import org.abchip.mimo.biz.shipment.shipment.Shipment;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,7 +42,7 @@ public interface PicklistBin extends BizEntity {
 	 * @return the value of the '<em>Bin Location Number</em>' attribute.
 	 * @see #setBinLocationNumber(long)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin_BinLocationNumber()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getBinLocationNumber();
@@ -72,7 +69,7 @@ public interface PicklistBin extends BizEntity {
 	 * @see #setPicklistBinId(String)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin_PicklistBinId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPicklistBinId();
@@ -150,7 +147,7 @@ public interface PicklistBin extends BizEntity {
 	 * @return the value of the '<em>Primary Ship Group Seq Id</em>' attribute.
 	 * @see #setPrimaryShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin_PrimaryShipGroupSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPrimaryShipGroupSeqId();
@@ -164,14 +161,5 @@ public interface PicklistBin extends BizEntity {
 	 * @generated
 	 */
 	void setPrimaryShipGroupSeqId(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment' route='picklistBinId'"
-	 * @generated
-	 */
-	List<Shipment> shipments();
 
 } // PicklistBin

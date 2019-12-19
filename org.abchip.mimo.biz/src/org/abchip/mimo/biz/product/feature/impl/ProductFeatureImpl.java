@@ -8,22 +8,12 @@
 package org.abchip.mimo.biz.product.feature.impl;
 
 import java.math.BigDecimal;
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule;
-import org.abchip.mimo.biz.order.quote.QuoteItem;
-import org.abchip.mimo.biz.order.requirement.DesiredFeature;
-import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureCategory;
-import org.abchip.mimo.biz.product.feature.ProductFeatureDataResource;
-import org.abchip.mimo.biz.product.feature.ProductFeatureIactn;
 import org.abchip.mimo.biz.product.feature.ProductFeatureType;
-import org.abchip.mimo.biz.product.supplier.SupplierProductFeature;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -40,7 +30,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureImpl#getDefaultSequenceNum <em>Default Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureImpl#getIdCode <em>Id Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureImpl#getMainProductFeatureIactns <em>Main Product Feature Iactns</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureImpl#getNumberSpecified <em>Number Specified</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureImpl#getProductFeatureCategoryId <em>Product Feature Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureImpl#getProductFeatureTypeId <em>Product Feature Type Id</em>}</li>
@@ -212,113 +201,6 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	@Override
 	public void setUomId(Uom newUomId) {
 		eSet(FeaturePackage.Literals.PRODUCT_FEATURE__UOM_ID, newUomId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ProductFeatureIactn> getMainProductFeatureIactns() {
-		return (List<ProductFeatureIactn>)eGet(FeaturePackage.Literals.PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductFeatureIactn> assocProductFeatureIactns() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CostComponent> costComponents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<DesiredFeature> desiredFeatures() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InvoiceItem> invoiceItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductFeatureDataResource> productFeatureDataResources() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductManufacturingRule> productManufacturingRules() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<QuoteItem> quoteItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SupplierProductFeature> supplierProductFeatures() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

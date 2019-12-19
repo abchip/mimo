@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.order.return_;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -68,7 +66,7 @@ public interface ReturnType extends BizEntity {
 	 * @see #setReturnTypeId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnType_ReturnTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReturnTypeId();
@@ -94,7 +92,7 @@ public interface ReturnType extends BizEntity {
 	 * @return the value of the '<em>Sequence Id</em>' attribute.
 	 * @see #setSequenceId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnType_SequenceId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSequenceId();
@@ -108,23 +106,5 @@ public interface ReturnType extends BizEntity {
 	 * @generated
 	 */
 	void setSequenceId(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='returnTypeId'"
-	 * @generated
-	 */
-	List<ReturnAdjustment> returnAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnItem' route='returnTypeId'"
-	 * @generated
-	 */
-	List<ReturnItem> returnItems();
 
 } // ReturnType

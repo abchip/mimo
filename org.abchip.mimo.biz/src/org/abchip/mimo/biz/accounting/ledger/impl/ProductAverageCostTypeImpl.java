@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.accounting.ledger.ProductAverageCost;
 import org.abchip.mimo.biz.accounting.ledger.ProductAverageCostType;
@@ -113,18 +111,6 @@ public class ProductAverageCostTypeImpl extends BizEntityTypeImpl<ProductAverage
 	@Override
 	public void setParentTypeId(ProductAverageCostType newParentTypeId) {
 		eSet(LedgerPackage.Literals.PRODUCT_AVERAGE_COST_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductAverageCostType> childProductAverageCostTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

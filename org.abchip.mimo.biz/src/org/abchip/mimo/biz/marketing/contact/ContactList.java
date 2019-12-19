@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.marketing.contact;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
-import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
@@ -87,7 +84,7 @@ public interface ContactList extends BizEntity {
 	 * @see #setContactListId(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_ContactListId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getContactListId();
@@ -243,7 +240,7 @@ public interface ContactList extends BizEntity {
 	 * @return the value of the '<em>Is Public</em>' attribute.
 	 * @see #setIsPublic(boolean)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_IsPublic()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsPublic();
@@ -321,7 +318,7 @@ public interface ContactList extends BizEntity {
 	 * @return the value of the '<em>Opt Out Screen</em>' attribute.
 	 * @see #setOptOutScreen(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_OptOutScreen()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getOptOutScreen();
@@ -348,7 +345,6 @@ public interface ContactList extends BizEntity {
 	 * @see #setSingleUse(boolean)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_SingleUse()
 	 * @model annotation="mimo-ent-slot help='Whether members of the list should be contacted only once.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isSingleUse();
@@ -400,7 +396,7 @@ public interface ContactList extends BizEntity {
 	 * @return the value of the '<em>Verify Email From</em>' attribute.
 	 * @see #setVerifyEmailFrom(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_VerifyEmailFrom()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getVerifyEmailFrom();
@@ -426,7 +422,7 @@ public interface ContactList extends BizEntity {
 	 * @return the value of the '<em>Verify Email Screen</em>' attribute.
 	 * @see #setVerifyEmailScreen(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_VerifyEmailScreen()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getVerifyEmailScreen();
@@ -452,7 +448,7 @@ public interface ContactList extends BizEntity {
 	 * @return the value of the '<em>Verify Email Subject</em>' attribute.
 	 * @see #setVerifyEmailSubject(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_VerifyEmailSubject()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getVerifyEmailSubject();
@@ -478,7 +474,7 @@ public interface ContactList extends BizEntity {
 	 * @return the value of the '<em>Verify Email Web Site Id</em>' attribute.
 	 * @see #setVerifyEmailWebSiteId(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactList_VerifyEmailWebSiteId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVerifyEmailWebSiteId();
@@ -492,14 +488,5 @@ public interface ContactList extends BizEntity {
 	 * @generated
 	 */
 	void setVerifyEmailWebSiteId(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='contactListId'"
-	 * @generated
-	 */
-	List<CommunicationEvent> communicationEvents();
 
 } // ContactList

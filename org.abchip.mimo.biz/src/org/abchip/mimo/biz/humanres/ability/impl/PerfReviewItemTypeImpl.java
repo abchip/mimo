@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.ability.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PerfReviewItem;
 import org.abchip.mimo.biz.humanres.ability.PerfReviewItemType;
@@ -114,18 +112,6 @@ public class PerfReviewItemTypeImpl extends BizEntityTypeImpl<PerfReviewItem> im
 	@Override
 	public void setParentTypeId(PerfReviewItemType newParentTypeId) {
 		eSet(AbilityPackage.Literals.PERF_REVIEW_ITEM_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PerfReviewItemType> childPerfReviewItemTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

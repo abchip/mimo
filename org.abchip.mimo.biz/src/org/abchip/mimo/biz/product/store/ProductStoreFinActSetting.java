@@ -57,7 +57,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see #setAccountCodeLength(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_AccountCodeLength()
 	 * @model annotation="mimo-ent-slot help='length of auto-generated account code'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAccountCodeLength();
@@ -84,7 +84,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see #setAccountValidDays(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_AccountValidDays()
 	 * @model annotation="mimo-ent-slot help='number of days an account of this type would be valid for'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAccountValidDays();
@@ -110,7 +110,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Allow Auth To Negative</em>' attribute.
 	 * @see #setAllowAuthToNegative(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_AllowAuthToNegative()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isAllowAuthToNegative();
@@ -137,7 +137,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see #setAuthValidDays(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_AuthValidDays()
 	 * @model annotation="mimo-ent-slot help='number of days an authorization of this type would be valid for'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAuthValidDays();
@@ -217,7 +217,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see #setPinCodeLength(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_PinCodeLength()
 	 * @model annotation="mimo-ent-slot help='length of auto-generated pin code, if it is required'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPinCodeLength();
@@ -244,7 +244,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see #setPurchSurveyCopyMe(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_PurchSurveyCopyMe()
 	 * @model annotation="mimo-ent-slot help='Whether the BCC on ProductStoreEmailSetting should be copied for email notifications'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPurchSurveyCopyMe();
@@ -271,7 +271,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see #setPurchSurveySendTo(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_PurchSurveySendTo()
 	 * @model annotation="mimo-ent-slot help='Field name on the purchase survey with the send to email address'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPurchSurveySendTo();
@@ -377,7 +377,7 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Require Pin Code</em>' attribute.
 	 * @see #setRequirePinCode(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_RequirePinCode()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isRequirePinCode();
@@ -404,7 +404,6 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @see #setValidateGCFinAcct(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_ValidateGCFinAcct()
 	 * @model annotation="mimo-ent-slot help='determines whether the store should validate gift card numbers against the gift certificate codes stored in FinAccount.\n              Set to N if using external gift card provider.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isValidateGCFinAcct();

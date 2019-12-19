@@ -8,12 +8,7 @@
 package org.abchip.mimo.biz.content.survey.impl;
 
 import java.util.Date;
-
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment;
 import org.abchip.mimo.biz.common.status.StatusItem;
-import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyResponse;
@@ -247,30 +242,6 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	@Override
 	public void setSurveyId(Survey newSurveyId) {
 		eSet(SurveyPackage.Literals.SURVEY_RESPONSE__SURVEY_ID, newSurveyId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<DataResource> dataResources() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<GiftCardFulfillment> giftCardFulfillments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

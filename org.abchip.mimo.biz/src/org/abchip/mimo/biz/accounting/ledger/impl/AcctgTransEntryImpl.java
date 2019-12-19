@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.DebitCreditFlag;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntryType;
@@ -133,8 +134,8 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 * @generated
 	 */
 	@Override
-	public char getDebitCreditFlag() {
-		return (Character)eGet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__DEBIT_CREDIT_FLAG, true);
+	public DebitCreditFlag getDebitCreditFlag() {
+		return (DebitCreditFlag)eGet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__DEBIT_CREDIT_FLAG, true);
 	}
 
 	/**
@@ -143,7 +144,7 @@ public class AcctgTransEntryImpl extends BizEntityTypedImpl<AcctgTransEntryType>
 	 * @generated
 	 */
 	@Override
-	public void setDebitCreditFlag(char newDebitCreditFlag) {
+	public void setDebitCreditFlag(DebitCreditFlag newDebitCreditFlag) {
 		eSet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY__DEBIT_CREDIT_FLAG, newDebitCreditFlag);
 	}
 

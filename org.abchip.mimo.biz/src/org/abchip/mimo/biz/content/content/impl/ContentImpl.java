@@ -8,32 +8,18 @@
 package org.abchip.mimo.biz.content.content.impl;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
-import org.abchip.mimo.biz.common.portal.PortalPage;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.content.content.Content;
-import org.abchip.mimo.biz.content.content.ContentApproval;
-import org.abchip.mimo.biz.content.content.ContentAttribute;
-import org.abchip.mimo.biz.content.content.ContentKeyword;
-import org.abchip.mimo.biz.content.content.ContentMetaData;
 import org.abchip.mimo.biz.content.content.ContentPackage;
-import org.abchip.mimo.biz.content.content.ContentPurpose;
-import org.abchip.mimo.biz.content.content.ContentRevision;
 import org.abchip.mimo.biz.content.content.ContentType;
 import org.abchip.mimo.biz.content.data.CharacterSet;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.MimeType;
-import org.abchip.mimo.biz.humanres.ability.PartyResume;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.abchip.mimo.biz.webapp.visit.ServerHitBin;
-import org.abchip.mimo.biz.webapp.website.WebPage;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -48,12 +34,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCharacterSetId <em>Character Set Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getChildBranchCount <em>Child Branch Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getChildLeafCount <em>Child Leaf Count</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentAttributes <em>Content Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentKeywords <em>Content Keywords</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentMetaDatas <em>Content Meta Datas</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentName <em>Content Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentPurposes <em>Content Purposes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentRevisions <em>Content Revisions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentTypeId <em>Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCreatedDate <em>Created Date</em>}</li>
@@ -559,133 +540,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	@Override
 	public void setTemplateDataResourceId(DataResource newTemplateDataResourceId) {
 		eSet(ContentPackage.Literals.CONTENT__TEMPLATE_DATA_RESOURCE_ID, newTemplateDataResourceId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ContentAttribute> getContentAttributes() {
-		return (List<ContentAttribute>)eGet(ContentPackage.Literals.CONTENT__CONTENT_ATTRIBUTES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ContentKeyword> getContentKeywords() {
-		return (List<ContentKeyword>)eGet(ContentPackage.Literals.CONTENT__CONTENT_KEYWORDS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ContentMetaData> getContentMetaDatas() {
-		return (List<ContentMetaData>)eGet(ContentPackage.Literals.CONTENT__CONTENT_META_DATAS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ContentPurpose> getContentPurposes() {
-		return (List<ContentPurpose>)eGet(ContentPackage.Literals.CONTENT__CONTENT_PURPOSES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ContentRevision> getContentRevisions() {
-		return (List<ContentRevision>)eGet(ContentPackage.Literals.CONTENT__CONTENT_REVISIONS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ContentApproval> contentApprovals() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyResume> partyResumes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PortalPage> portalPages() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ServerHitBin> serverHitBins() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SubscriptionResource> subscriptionResources() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WebPage> webPages() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ContentImpl

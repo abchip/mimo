@@ -7,10 +7,8 @@
  */
 package org.abchip.mimo.biz.party.contact;
 
-import java.util.List;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
-import org.abchip.mimo.biz.shipment.shipment.Shipment;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +31,6 @@ import org.abchip.mimo.biz.shipment.shipment.Shipment;
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getHouseNumber <em>House Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getHouseNumberExt <em>House Number Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getMunicipalityGeoId <em>Municipality Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalAddressBoundaries <em>Postal Address Boundaries</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCode <em>Postal Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeExt <em>Postal Code Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeGeoId <em>Postal Code Geo Id</em>}</li>
@@ -57,7 +54,7 @@ public interface PostalAddress extends ContactMech {
 	 * @return the value of the '<em>Address1</em>' attribute.
 	 * @see #setAddress1(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_Address1()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAddress1();
@@ -83,7 +80,7 @@ public interface PostalAddress extends ContactMech {
 	 * @return the value of the '<em>Address2</em>' attribute.
 	 * @see #setAddress2(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_Address2()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAddress2();
@@ -239,7 +236,7 @@ public interface PostalAddress extends ContactMech {
 	 * @return the value of the '<em>Directions</em>' attribute.
 	 * @see #setDirections(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_Directions()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getDirections();
@@ -291,7 +288,7 @@ public interface PostalAddress extends ContactMech {
 	 * @return the value of the '<em>House Number</em>' attribute.
 	 * @see #setHouseNumber(long)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_HouseNumber()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getHouseNumber();
@@ -317,7 +314,7 @@ public interface PostalAddress extends ContactMech {
 	 * @return the value of the '<em>House Number Ext</em>' attribute.
 	 * @see #setHouseNumberExt(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_HouseNumberExt()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getHouseNumberExt();
@@ -369,7 +366,7 @@ public interface PostalAddress extends ContactMech {
 	 * @return the value of the '<em>Postal Code</em>' attribute.
 	 * @see #setPostalCode(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_PostalCode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getPostalCode();
@@ -395,7 +392,7 @@ public interface PostalAddress extends ContactMech {
 	 * @return the value of the '<em>Postal Code Ext</em>' attribute.
 	 * @see #setPostalCodeExt(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_PostalCodeExt()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getPostalCodeExt();
@@ -487,31 +484,5 @@ public interface PostalAddress extends ContactMech {
 	 * @generated
 	 */
 	void setToName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Postal Address Boundaries</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.PostalAddressBoundary}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Postal Address Boundaries</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Postal Address Boundaries</em>' reference list.
-	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_PostalAddressBoundaries()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PostalAddressBoundary'"
-	 * @generated
-	 */
-	List<PostalAddressBoundary> getPostalAddressBoundaries();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment' route='destinationContactMechId'"
-	 * @generated
-	 */
-	List<Shipment> destinationShipments();
 
 } // PostalAddress

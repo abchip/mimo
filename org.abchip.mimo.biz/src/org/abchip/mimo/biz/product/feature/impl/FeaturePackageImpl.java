@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.product.feature.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -362,6 +366,8 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -380,6 +386,8 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -482,6 +490,8 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -491,7 +501,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -548,6 +558,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		// Create package meta-data objects
 		theFeaturePackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -557,6 +568,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -608,11 +620,12 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -643,6 +656,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		// Initialize created meta-data
 		theFeaturePackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -652,6 +666,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -703,11 +718,12 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -820,7 +836,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 	 */
 	@Override
 	public EAttribute getProductFeature_NumberSpecified() {
-		return (EAttribute)productFeatureEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)productFeatureEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -830,7 +846,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 	 */
 	@Override
 	public EReference getProductFeature_ProductFeatureCategoryId() {
-		return (EReference)productFeatureEClass.getEStructuralFeatures().get(8);
+		return (EReference)productFeatureEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -840,7 +856,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 	 */
 	@Override
 	public EReference getProductFeature_ProductFeatureTypeId() {
-		return (EReference)productFeatureEClass.getEStructuralFeatures().get(9);
+		return (EReference)productFeatureEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -850,17 +866,7 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 	 */
 	@Override
 	public EReference getProductFeature_UomId() {
-		return (EReference)productFeatureEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getProductFeature_MainProductFeatureIactns() {
-		return (EReference)productFeatureEClass.getEStructuralFeatures().get(6);
+		return (EReference)productFeatureEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1509,7 +1515,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		createEAttribute(productFeatureEClass, PRODUCT_FEATURE__DEFAULT_SEQUENCE_NUM);
 		createEAttribute(productFeatureEClass, PRODUCT_FEATURE__DESCRIPTION);
 		createEAttribute(productFeatureEClass, PRODUCT_FEATURE__ID_CODE);
-		createEReference(productFeatureEClass, PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS);
 		createEAttribute(productFeatureEClass, PRODUCT_FEATURE__NUMBER_SPECIFIED);
 		createEReference(productFeatureEClass, PRODUCT_FEATURE__PRODUCT_FEATURE_CATEGORY_ID);
 		createEReference(productFeatureEClass, PRODUCT_FEATURE__PRODUCT_FEATURE_TYPE_ID);
@@ -1615,12 +1620,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
-		CostPackage theCostPackage = (CostPackage)EPackage.Registry.INSTANCE.getEPackage(CostPackage.eNS_URI);
-		RequirementPackage theRequirementPackage = (RequirementPackage)EPackage.Registry.INSTANCE.getEPackage(RequirementPackage.eNS_URI);
-		InvoicePackage theInvoicePackage = (InvoicePackage)EPackage.Registry.INSTANCE.getEPackage(InvoicePackage.eNS_URI);
-		BomPackage theBomPackage = (BomPackage)EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		QuotePackage theQuotePackage = (QuotePackage)EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
-		SupplierPackage theSupplierPackage = (SupplierPackage)EPackage.Registry.INSTANCE.getEPackage(SupplierPackage.eNS_URI);
 		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
 		CategoryPackage theCategoryPackage = (CategoryPackage)EPackage.Registry.INSTANCE.getEPackage(CategoryPackage.eNS_URI);
 		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
@@ -1670,7 +1669,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		initEAttribute(getProductFeature_DefaultSequenceNum(), ecorePackage.getELong(), "defaultSequenceNum", null, 0, 1, ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductFeature_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductFeature_IdCode(), ecorePackage.getEString(), "idCode", null, 0, 1, ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProductFeature_MainProductFeatureIactns(), this.getProductFeatureIactn(), null, "mainProductFeatureIactns", null, 0, -1, ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductFeature_NumberSpecified(), ecorePackage.getEBigDecimal(), "numberSpecified", null, 0, 1, ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProductFeature_ProductFeatureCategoryId(), this.getProductFeatureCategory(), null, "productFeatureCategoryId", null, 0, 1, ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductFeature_ProductFeatureCategoryId().getEKeys().add(this.getProductFeatureCategory_ProductFeatureCategoryId());
@@ -1678,22 +1676,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		getProductFeature_ProductFeatureTypeId().getEKeys().add(this.getProductFeatureType_ProductFeatureTypeId());
 		initEReference(getProductFeature_UomId(), theUomPackage.getUom(), null, "uomId", null, 0, 1, ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductFeature_UomId().getEKeys().add(theUomPackage.getUom_UomId());
-
-		addEOperation(productFeatureEClass, this.getProductFeatureIactn(), "assocProductFeatureIactns", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(productFeatureEClass, theCostPackage.getCostComponent(), "costComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(productFeatureEClass, theRequirementPackage.getDesiredFeature(), "desiredFeatures", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(productFeatureEClass, theInvoicePackage.getInvoiceItem(), "invoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(productFeatureEClass, this.getProductFeatureDataResource(), "productFeatureDataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(productFeatureEClass, theBomPackage.getProductManufacturingRule(), "productManufacturingRules", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(productFeatureEClass, theQuotePackage.getQuoteItem(), "quoteItems", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(productFeatureEClass, theSupplierPackage.getSupplierProductFeature(), "supplierProductFeatures", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productFeatureApplEClass, ProductFeatureAppl.class, "ProductFeatureAppl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProductFeatureAppl_ProductId(), theProductPackage.getProduct(), null, "productId", null, 1, 1, ProductFeatureAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1724,8 +1706,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		initEReference(getProductFeatureApplType_ParentTypeId(), this.getProductFeatureApplType(), null, "parentTypeId", null, 0, 1, ProductFeatureApplType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductFeatureApplType_ParentTypeId().getEKeys().add(this.getProductFeatureApplType_ProductFeatureApplTypeId());
 
-		addEOperation(productFeatureApplTypeEClass, this.getProductFeatureApplType(), "childProductFeatureApplTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(productFeatureCatGrpApplEClass, ProductFeatureCatGrpAppl.class, "ProductFeatureCatGrpAppl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProductFeatureCatGrpAppl_ProductCategoryId(), theCategoryPackage.getProductCategory(), null, "productCategoryId", null, 1, 1, ProductFeatureCatGrpAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductFeatureCatGrpAppl_ProductCategoryId().getEKeys().add(theCategoryPackage.getProductCategory_ProductCategoryId());
@@ -1739,10 +1719,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		initEAttribute(getProductFeatureCategory_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductFeatureCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProductFeatureCategory_ParentCategoryId(), this.getProductFeatureCategory(), null, "parentCategoryId", null, 0, 1, ProductFeatureCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductFeatureCategory_ParentCategoryId().getEKeys().add(this.getProductFeatureCategory_ProductFeatureCategoryId());
-
-		addEOperation(productFeatureCategoryEClass, this.getProductFeatureCategory(), "childProductFeatureCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(productFeatureCategoryEClass, this.getProductFeature(), "productFeatures", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productFeatureCategoryApplEClass, ProductFeatureCategoryAppl.class, "ProductFeatureCategoryAppl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProductFeatureCategoryAppl_ProductCategoryId(), theCategoryPackage.getProductCategory(), null, "productCategoryId", null, 1, 1, ProductFeatureCategoryAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1787,10 +1763,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		initEReference(getProductFeatureIactnType_ParentTypeId(), this.getProductFeatureIactnType(), null, "parentTypeId", null, 0, 1, ProductFeatureIactnType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductFeatureIactnType_ParentTypeId().getEKeys().add(this.getProductFeatureIactnType_ProductFeatureIactnTypeId());
 
-		addEOperation(productFeatureIactnTypeEClass, this.getProductFeatureIactnType(), "childProductFeatureIactnTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(productFeatureIactnTypeEClass, this.getProductFeatureIactn(), "productFeatureIactns", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(productFeatureTypeEClass, ProductFeatureType.class, "ProductFeatureType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductFeatureType_ProductFeatureTypeId(), ecorePackage.getEString(), "productFeatureTypeId", null, 1, 1, ProductFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductFeatureType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1798,19 +1770,13 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		initEReference(getProductFeatureType_ParentTypeId(), this.getProductFeatureType(), null, "parentTypeId", null, 0, 1, ProductFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductFeatureType_ParentTypeId().getEKeys().add(this.getProductFeatureType_ProductFeatureTypeId());
 
-		addEOperation(productFeatureTypeEClass, this.getProductFeatureType(), "childProductFeatureTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(productFeatureTypeEClass, this.getProductFeature(), "productFeatures", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
 	}
 
 	/**
@@ -1927,14 +1893,12 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		  (getProductFeature_ProductFeatureId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductFeature_Abbrev(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1949,7 +1913,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		  (getProductFeature_DefaultSequenceNum(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1964,7 +1927,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		  (getProductFeature_IdCode(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -1974,12 +1936,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "type", "fixed-point",
 			   "precision", "18",
 			   "scale", "6"
-		   });
-		addAnnotation
-		  (getProductFeatureAppl_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getProductFeatureAppl_Amount(),
@@ -2001,41 +1957,25 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		  (getProductFeatureAppl_SequenceNum(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getProductFeatureAppl_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getProductFeatureApplAttr_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
-		   });
-		addAnnotation
-		  (getProductFeatureApplAttr_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getProductFeatureApplAttr_AttrValue(),
 		   source,
 		   new String[] {
-			   "type", "value",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getProductFeatureApplType_ProductFeatureApplTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2046,29 +1986,9 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductFeatureApplType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getProductFeatureCatGrpAppl_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductFeatureCatGrpAppl_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getProductFeatureCategory_ProductFeatureCategoryId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2079,22 +1999,9 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductFeatureCategoryAppl_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getProductFeatureCategoryAppl_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getProductFeatureGroup_ProductFeatureGroupId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2105,37 +2012,22 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductFeatureGroupAppl_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getProductFeatureGroupAppl_SequenceNum(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getProductFeatureGroupAppl_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getProductFeatureIactn_ProductId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getProductFeatureIactnType_ProductFeatureIactnTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2146,17 +2038,9 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getProductFeatureIactnType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getProductFeatureType_ProductFeatureTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2165,13 +2049,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getProductFeatureType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 	}
 
@@ -2183,60 +2060,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getProductFeature_MainProductFeatureIactns(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
 		addAnnotation
 		  (getProductFeatureAppl_ProductId(),
 		   source,
@@ -2280,12 +2103,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (productFeatureApplTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getProductFeatureCatGrpAppl_ProductCategoryId(),
 		   source,
 		   new String[] {
@@ -2302,18 +2119,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (productFeatureCategoryEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (productFeatureCategoryEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
 		   });
 		addAnnotation
 		  (getProductFeatureCategoryAppl_ProductCategoryId(),
@@ -2374,151 +2179,6 @@ public class FeaturePackageImpl extends EPackageImpl implements FeaturePackage {
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (productFeatureIactnTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (productFeatureIactnTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (productFeatureTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (productFeatureTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "ProductFeatureIactn",
-			   "route", "productFeatureIdTo"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "CostComponent",
-			   "route", "productFeatureId"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "frame", "DesiredFeature",
-			   "route", "productFeatureId"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "frame", "InvoiceItem",
-			   "route", "productFeatureId"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "frame", "ProductFeatureDataResource",
-			   "route", "productFeatureId"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "frame", "ProductManufacturingRule",
-			   "route", "productFeature"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "frame", "QuoteItem",
-			   "route", "productFeatureId"
-		   });
-		addAnnotation
-		  (productFeatureEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "frame", "SupplierProductFeature",
-			   "route", "productFeatureId"
-		   });
-		addAnnotation
-		  (getProductFeature_MainProductFeatureIactns(),
-		   source,
-		   new String[] {
-			   "frame", "ProductFeatureIactn"
-		   });
-		addAnnotation
-		  (productFeatureApplTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "ProductFeatureApplType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (productFeatureCategoryEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "ProductFeatureCategory",
-			   "route", "parentCategoryId"
-		   });
-		addAnnotation
-		  (productFeatureCategoryEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "ProductFeature",
-			   "route", "productFeatureCategoryId"
-		   });
-		addAnnotation
-		  (productFeatureIactnTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "ProductFeatureIactnType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (productFeatureIactnTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "ProductFeatureIactn",
-			   "route", "productFeatureIactnTypeId"
-		   });
-		addAnnotation
-		  (productFeatureTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "ProductFeatureType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (productFeatureTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "ProductFeature",
-			   "route", "productFeatureTypeId"
 		   });
 	}
 

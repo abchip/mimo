@@ -10,9 +10,6 @@ package org.abchip.mimo.biz.order.return_;
 import java.math.BigDecimal;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
@@ -211,7 +208,7 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @return the value of the '<em>Response Date</em>' attribute.
 	 * @see #setResponseDate(Date)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_ResponseDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getResponseDate();
@@ -227,15 +224,6 @@ public interface ReturnItemResponse extends BizEntity {
 	void setResponseDate(Date value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnItem' route='returnItemResponseId'"
-	 * @generated
-	 */
-	List<ReturnItem> returnItems();
-
-	/**
 	 * Returns the value of the '<em><b>Return Item Response Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -247,7 +235,7 @@ public interface ReturnItemResponse extends BizEntity {
 	 * @see #setReturnItemResponseId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemResponse_ReturnItemResponseId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReturnItemResponseId();

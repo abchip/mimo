@@ -8,9 +8,6 @@
 package org.abchip.mimo.biz.product.subscription;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -25,7 +22,6 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionActivity#getSubscriptionActivityId <em>Subscription Activity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionActivity#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionActivity#getDateSent <em>Date Sent</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionActivity#getSubscriptionFulfillmentPieces <em>Subscription Fulfillment Pieces</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionActivity()
@@ -70,7 +66,7 @@ public interface SubscriptionActivity extends BizEntity {
 	 * @return the value of the '<em>Date Sent</em>' attribute.
 	 * @see #setDateSent(Date)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionActivity_DateSent()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDateSent();
@@ -97,7 +93,7 @@ public interface SubscriptionActivity extends BizEntity {
 	 * @see #setSubscriptionActivityId(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionActivity_SubscriptionActivityId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSubscriptionActivityId();
@@ -111,22 +107,5 @@ public interface SubscriptionActivity extends BizEntity {
 	 * @generated
 	 */
 	void setSubscriptionActivityId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Subscription Fulfillment Pieces</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.subscription.SubscriptionFulfillmentPiece}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Subscription Fulfillment Pieces</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscription Fulfillment Pieces</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionActivity_SubscriptionFulfillmentPieces()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SubscriptionFulfillmentPiece'"
-	 * @generated
-	 */
-	List<SubscriptionFulfillmentPiece> getSubscriptionFulfillmentPieces();
 
 } // SubscriptionActivity

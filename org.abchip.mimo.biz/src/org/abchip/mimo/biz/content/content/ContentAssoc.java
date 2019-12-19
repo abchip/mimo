@@ -188,7 +188,7 @@ public interface ContentAssoc extends BizEntity {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_CreatedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -242,7 +242,6 @@ public interface ContentAssoc extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -294,7 +293,7 @@ public interface ContentAssoc extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_LastModifiedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -320,7 +319,7 @@ public interface ContentAssoc extends BizEntity {
 	 * @return the value of the '<em>Left Coordinate</em>' attribute.
 	 * @see #setLeftCoordinate(long)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_LeftCoordinate()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getLeftCoordinate();
@@ -372,7 +371,7 @@ public interface ContentAssoc extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -398,7 +397,7 @@ public interface ContentAssoc extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -424,7 +423,7 @@ public interface ContentAssoc extends BizEntity {
 	 * @return the value of the '<em>Upper Coordinate</em>' attribute.
 	 * @see #setUpperCoordinate(long)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAssoc_UpperCoordinate()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getUpperCoordinate();

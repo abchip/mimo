@@ -8,14 +8,9 @@
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import java.math.BigDecimal;
-import java.util.List;
-
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.product.product.Product;
-import org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentPackage;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.ecore.EClass;
 
@@ -32,7 +27,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getBoxLength <em>Box Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getBoxWeight <em>Box Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getBoxWidth <em>Box Width</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getCarrierShipmentBoxTypes <em>Carrier Shipment Box Types</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getDimensionUomId <em>Dimension Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getWeightUomId <em>Weight Uom Id</em>}</li>
@@ -223,41 +217,6 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	@Override
 	public void setWeightUomId(Uom newWeightUomId) {
 		eSet(Shipment_Package.Literals.SHIPMENT_BOX_TYPE__WEIGHT_UOM_ID, newWeightUomId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<CarrierShipmentBoxType> getCarrierShipmentBoxTypes() {
-		return (List<CarrierShipmentBoxType>)eGet(Shipment_Package.Literals.SHIPMENT_BOX_TYPE__CARRIER_SHIPMENT_BOX_TYPES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Product> defaultProducts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentPackage> shipmentPackages() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ShipmentBoxTypeImpl

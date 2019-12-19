@@ -40,7 +40,7 @@ public interface PaymentGatewayRespMsg extends BizEntity {
 	 * @see #setPaymentGatewayRespMsgId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayRespMsg_PaymentGatewayRespMsgId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentGatewayRespMsgId();
@@ -66,7 +66,7 @@ public interface PaymentGatewayRespMsg extends BizEntity {
 	 * @return the value of the '<em>Pgr Message</em>' attribute.
 	 * @see #setPgrMessage(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayRespMsg_PgrMessage()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getPgrMessage();

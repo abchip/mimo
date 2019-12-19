@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.webapp.visit;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
@@ -43,7 +41,7 @@ public interface Visitor extends BizEntity {
 	 * @see #setVisitorId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisitor_VisitorId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisitorId();
@@ -69,7 +67,7 @@ public interface Visitor extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisitor_PartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -109,14 +107,5 @@ public interface Visitor extends BizEntity {
 	 * @generated
 	 */
 	void setUserLoginId(UserLogin value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Visit' route='visitorId'"
-	 * @generated
-	 */
-	List<Visit> visits();
 
 } // Visitor

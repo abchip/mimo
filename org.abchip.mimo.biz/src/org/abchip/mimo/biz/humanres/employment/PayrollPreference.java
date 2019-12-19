@@ -57,7 +57,7 @@ public interface PayrollPreference extends BizEntity {
 	 * @return the value of the '<em>Account Number</em>' attribute.
 	 * @see #setAccountNumber(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_AccountNumber()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getAccountNumber();
@@ -161,7 +161,7 @@ public interface PayrollPreference extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -242,7 +242,7 @@ public interface PayrollPreference extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_PayrollPreferenceSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPayrollPreferenceSeqId();
@@ -268,7 +268,7 @@ public interface PayrollPreference extends BizEntity {
 	 * @return the value of the '<em>Percentage</em>' attribute.
 	 * @see #setPercentage(double)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_Percentage()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getPercentage();
@@ -322,7 +322,7 @@ public interface PayrollPreference extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_RoleTypeId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRoleTypeId();
@@ -349,7 +349,7 @@ public interface PayrollPreference extends BizEntity {
 	 * @see #setRoutingNumber(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_RoutingNumber()
 	 * @model annotation="mimo-ent-slot help='See https://en.wikipedia.org/wiki/Bank_code'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getRoutingNumber();
@@ -375,7 +375,7 @@ public interface PayrollPreference extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

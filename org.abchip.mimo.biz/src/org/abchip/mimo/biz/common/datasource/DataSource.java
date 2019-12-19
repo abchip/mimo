@@ -7,15 +7,7 @@
  */
 package org.abchip.mimo.biz.common.datasource;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.common.geo.GeoPoint;
-import org.abchip.mimo.biz.content.content.Content;
-import org.abchip.mimo.biz.content.content.ContentMetaData;
-import org.abchip.mimo.biz.content.data.DataResource;
-import org.abchip.mimo.biz.content.data.DataResourceMetaData;
-import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +40,7 @@ public interface DataSource extends BizEntity {
 	 * @see #setDataSourceId(String)
 	 * @see org.abchip.mimo.biz.common.datasource.DatasourcePackage#getDataSource_DataSourceId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDataSourceId();
@@ -88,60 +80,6 @@ public interface DataSource extends BizEntity {
 	 * @generated
 	 */
 	void setDescription(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContentMetaData' route='dataSourceId'"
-	 * @generated
-	 */
-	List<ContentMetaData> contentMetaDatas();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Content' route='dataSourceId'"
-	 * @generated
-	 */
-	List<Content> contents();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResourceMetaData' route='dataSourceId'"
-	 * @generated
-	 */
-	List<DataResourceMetaData> dataResourceMetaDatas();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResource' route='dataSourceId'"
-	 * @generated
-	 */
-	List<DataResource> dataResources();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GeoPoint' route='dataSourceId'"
-	 * @generated
-	 */
-	List<GeoPoint> geoPoints();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Party' route='dataSourceId'"
-	 * @generated
-	 */
-	List<Party> parties();
 
 	/**
 	 * Returns the value of the '<em><b>Data Source Type Id</b></em>' reference.

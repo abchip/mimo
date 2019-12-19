@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.payment;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface PaymentContentType extends BizEntityType<PaymentContent> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContentType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -110,15 +108,6 @@ public interface PaymentContentType extends BizEntityType<PaymentContent> {
 	void setParentTypeId(PaymentContentType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentContentType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<PaymentContentType> childPaymentContentTypes();
-
-	/**
 	 * Returns the value of the '<em><b>Payment Content Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -130,7 +119,7 @@ public interface PaymentContentType extends BizEntityType<PaymentContent> {
 	 * @see #setPaymentContentTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContentType_PaymentContentTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentContentTypeId();

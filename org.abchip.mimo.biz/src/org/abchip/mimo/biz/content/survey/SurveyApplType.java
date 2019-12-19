@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.content.survey;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,15 +54,6 @@ public interface SurveyApplType extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreSurveyAppl' route='surveyApplTypeId'"
-	 * @generated
-	 */
-	List<ProductStoreSurveyAppl> productStoreSurveyAppls();
-
-	/**
 	 * Returns the value of the '<em><b>Survey Appl Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -77,7 +65,7 @@ public interface SurveyApplType extends BizEntity {
 	 * @see #setSurveyApplTypeId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyApplType_SurveyApplTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSurveyApplTypeId();

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfigType;
@@ -114,30 +112,6 @@ public class ShipmentGatewayConfigTypeImpl extends BizEntityTypeImpl<ShipmentGat
 	@Override
 	public void setParentTypeId(ShipmentGatewayConfigType newParentTypeId) {
 		eSet(Shipment_Package.Literals.SHIPMENT_GATEWAY_CONFIG_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentGatewayConfigType> childShipmentGatewayConfigTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentGatewayConfig> shipmentGatewayConfigs() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

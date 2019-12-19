@@ -46,7 +46,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @see #setAccessAccountNbr(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_AccessAccountNbr()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='Your DHL ShipIT Account Number'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccessAccountNbr();
@@ -73,7 +73,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @see #setAccessPassword(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_AccessPassword()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='Your DHL ShipIT Access Password'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccessPassword();
@@ -100,7 +100,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @see #setAccessShippingKey(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_AccessShippingKey()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='Your DHL ShipIT Shipping Key'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccessShippingKey();
@@ -127,7 +127,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @see #setAccessUserId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_AccessUserId()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='Your DHL ShipIT User Id'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccessUserId();
@@ -154,7 +154,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @see #setConnectTimeout(long)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_ConnectTimeout()
 	 * @model annotation="mimo-ent-slot help='Timeout in seconds'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getConnectTimeout();
@@ -181,7 +181,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @see #setConnectUrl(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_ConnectUrl()
 	 * @model annotation="mimo-ent-slot help='DHL Connection URL'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getConnectUrl();
@@ -208,7 +208,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @see #setHeadAction(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_HeadAction()
 	 * @model annotation="mimo-ent-slot help='Head action attribute'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getHeadAction();
@@ -235,7 +235,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @see #setHeadVersion(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_HeadVersion()
 	 * @model annotation="mimo-ent-slot help='Head version attribute'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getHeadVersion();
@@ -262,7 +262,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @see #setLabelImageFormat(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_LabelImageFormat()
 	 * @model annotation="mimo-ent-slot help='Label image format'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getLabelImageFormat();
@@ -289,7 +289,7 @@ public interface ShipmentGatewayDhl extends ShipmentGatewayConfig {
 	 * @see #setRateEstimateTemplate(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayDhl_RateEstimateTemplate()
 	 * @model annotation="mimo-ent-slot help='API Schema Templates'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getRateEstimateTemplate();

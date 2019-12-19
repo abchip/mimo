@@ -7,18 +7,10 @@
  */
 package org.abchip.mimo.biz.party.contact.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.abchip.mimo.biz.marketing.contact.ContactList;
-import org.abchip.mimo.biz.party.communication.CommunicationEvent;
-import org.abchip.mimo.biz.party.communication.CommunicationEventType;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
-import org.abchip.mimo.biz.party.contact.ContactMechTypeAttr;
-import org.abchip.mimo.biz.party.contact.ContactMechTypePurpose;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
-import org.abchip.mimo.biz.party.contact.ValidContactMechRole;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -30,8 +22,6 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechTypeImpl#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechTypeImpl#getContactMechTypeAttrs <em>Contact Mech Type Attrs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechTypeImpl#getContactMechTypePurposes <em>Contact Mech Type Purposes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -121,100 +111,6 @@ public class ContactMechTypeImpl extends BizEntityTypeImpl<ContactMech> implemen
 	@Override
 	public void setParentTypeId(ContactMechType newParentTypeId) {
 		eSet(ContactPackage.Literals.CONTACT_MECH_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ContactMechTypeAttr> getContactMechTypeAttrs() {
-		return (List<ContactMechTypeAttr>)eGet(ContactPackage.Literals.CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ContactMechTypePurpose> getContactMechTypePurposes() {
-		return (List<ContactMechTypePurpose>)eGet(ContactPackage.Literals.CONTACT_MECH_TYPE__CONTACT_MECH_TYPE_PURPOSES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ContactMechType> childContactMechTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CommunicationEvent> communicationEvents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CommunicationEventType> contacMechTypeCommunicationEventTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ContactList> contactLists() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ContactMech> contactMechs() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ValidContactMechRole> validContactMechRoles() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

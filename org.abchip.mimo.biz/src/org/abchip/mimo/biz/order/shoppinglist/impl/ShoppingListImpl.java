@@ -8,15 +8,10 @@
 package org.abchip.mimo.biz.order.shoppinglist.impl;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
-import org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListType;
-import org.abchip.mimo.biz.order.shoppinglist.ShoppingListWorkEffort;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
@@ -51,9 +46,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListImpl#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListImpl#getShoppingListItems <em>Shopping List Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListImpl#getShoppingListTypeId <em>Shopping List Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListImpl#getShoppingListWorkEfforts <em>Shopping List Work Efforts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListImpl#getVisitorId <em>Visitor Id</em>}</li>
  * </ul>
  *
@@ -482,52 +475,6 @@ public class ShoppingListImpl extends BizEntityImpl implements ShoppingList {
 	@Override
 	public void setVisitorId(String newVisitorId) {
 		eSet(ShoppinglistPackage.Literals.SHOPPING_LIST__VISITOR_ID, newVisitorId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ShoppingListItem> getShoppingListItems() {
-		return (List<ShoppingListItem>)eGet(ShoppinglistPackage.Literals.SHOPPING_LIST__SHOPPING_LIST_ITEMS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ShoppingListWorkEffort> getShoppingListWorkEfforts() {
-		return (List<ShoppingListWorkEffort>)eGet(ShoppinglistPackage.Literals.SHOPPING_LIST__SHOPPING_LIST_WORK_EFFORTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderHeader> autoOrderOrderHeaders() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShoppingList> childShoppingLists() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ShoppingListImpl

@@ -49,7 +49,6 @@ public interface PartyTaxAuthInfo extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getPartyTaxAuthInfo_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -66,6 +65,7 @@ public interface PartyTaxAuthInfo extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Is Exempt</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Exempt</em>' attribute isn't clear,
@@ -75,7 +75,7 @@ public interface PartyTaxAuthInfo extends BizEntity {
 	 * @return the value of the '<em>Is Exempt</em>' attribute.
 	 * @see #setIsExempt(boolean)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getPartyTaxAuthInfo_IsExempt()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isIsExempt();
@@ -92,6 +92,7 @@ public interface PartyTaxAuthInfo extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Is Nexus</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Nexus</em>' attribute isn't clear,
@@ -101,7 +102,7 @@ public interface PartyTaxAuthInfo extends BizEntity {
 	 * @return the value of the '<em>Is Nexus</em>' attribute.
 	 * @see #setIsNexus(boolean)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getPartyTaxAuthInfo_IsNexus()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isIsNexus();
@@ -154,7 +155,7 @@ public interface PartyTaxAuthInfo extends BizEntity {
 	 * @return the value of the '<em>Party Tax Id</em>' attribute.
 	 * @see #setPartyTaxId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getPartyTaxAuthInfo_PartyTaxId()
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getPartyTaxId();
@@ -182,7 +183,7 @@ public interface PartyTaxAuthInfo extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getPartyTaxAuthInfo_TaxAuthGeoId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -210,7 +211,7 @@ public interface PartyTaxAuthInfo extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getPartyTaxAuthInfo_TaxAuthPartyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTaxAuthPartyId();
@@ -236,7 +237,7 @@ public interface PartyTaxAuthInfo extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getPartyTaxAuthInfo_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

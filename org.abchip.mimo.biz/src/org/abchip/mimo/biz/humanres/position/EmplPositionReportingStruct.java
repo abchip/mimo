@@ -68,12 +68,12 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Primary Flag</em>' attribute.
-	 * @see #setPrimaryFlag(char)
+	 * @see #setPrimaryFlag(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_PrimaryFlag()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
-	char getPrimaryFlag();
+	String getPrimaryFlag();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getPrimaryFlag <em>Primary Flag</em>}' attribute.
@@ -83,7 +83,7 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @see #getPrimaryFlag()
 	 * @generated
 	 */
-	void setPrimaryFlag(char value);
+	void setPrimaryFlag(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Empl Position Id Managed By</b></em>' reference.
@@ -152,7 +152,6 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -178,7 +177,7 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

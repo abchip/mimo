@@ -70,7 +70,7 @@ public interface WorkOrderItemFulfillment extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getWorkOrderItemFulfillment_OrderItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -96,7 +96,7 @@ public interface WorkOrderItemFulfillment extends BizEntity {
 	 * @return the value of the '<em>Ship Group Seq Id</em>' attribute.
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getWorkOrderItemFulfillment_ShipGroupSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipGroupSeqId();

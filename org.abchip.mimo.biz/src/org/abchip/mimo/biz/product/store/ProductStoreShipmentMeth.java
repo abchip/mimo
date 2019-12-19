@@ -8,13 +8,10 @@
 package org.abchip.mimo.biz.product.store;
 
 import java.math.BigDecimal;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.party.party.Party;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 
@@ -125,7 +122,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Config Props</em>' attribute.
 	 * @see #setConfigProps(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ConfigProps()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getConfigProps();
@@ -151,7 +148,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Exclude Feature Group</em>' attribute.
 	 * @see #setExcludeFeatureGroup(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ExcludeFeatureGroup()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getExcludeFeatureGroup();
@@ -203,7 +200,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Include Feature Group</em>' attribute.
 	 * @see #setIncludeFeatureGroup(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_IncludeFeatureGroup()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getIncludeFeatureGroup();
@@ -220,6 +217,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Include No Charge Items</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Include No Charge Items</em>' attribute isn't clear,
@@ -229,7 +227,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Include No Charge Items</em>' attribute.
 	 * @see #setIncludeNoChargeItems(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_IncludeNoChargeItems()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isIncludeNoChargeItems();
@@ -463,7 +461,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_PartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -489,7 +487,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' attribute.
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ProductStoreId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductStoreId();
@@ -515,7 +513,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Require Company Addr</em>' attribute.
 	 * @see #setRequireCompanyAddr(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_RequireCompanyAddr()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isRequireCompanyAddr();
@@ -541,7 +539,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Require Usps Addr</em>' attribute.
 	 * @see #setRequireUspsAddr(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_RequireUspsAddr()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isRequireUspsAddr();
@@ -568,7 +566,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @see #setProductStoreShipMethId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ProductStoreShipMethId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductStoreShipMethId();
@@ -585,6 +583,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Allow Company Addr</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Allow Company Addr</em>' attribute isn't clear,
@@ -594,7 +593,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Allow Company Addr</em>' attribute.
 	 * @see #setAllowCompanyAddr(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_AllowCompanyAddr()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isAllowCompanyAddr();
@@ -611,6 +610,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Allow Usps Addr</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Allow Usps Addr</em>' attribute isn't clear,
@@ -620,7 +620,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Allow Usps Addr</em>' attribute.
 	 * @see #setAllowUspsAddr(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_AllowUspsAddr()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isAllowUspsAddr();
@@ -646,7 +646,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' attribute.
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_RoleTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRoleTypeId();
@@ -672,7 +672,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Sequence Number</em>' attribute.
 	 * @see #setSequenceNumber(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_SequenceNumber()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNumber();
@@ -698,7 +698,7 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @return the value of the '<em>Service Name</em>' attribute.
 	 * @see #setServiceName(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreShipmentMeth_ServiceName()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getServiceName();
@@ -790,14 +790,5 @@ public interface ProductStoreShipmentMeth extends BizEntity {
 	 * @generated
 	 */
 	void setShipmentMethodTypeId(ShipmentMethodType value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='productStoreShipMethId'"
-	 * @generated
-	 */
-	List<ShipmentCostEstimate> shipmentCostEstimates();
 
 } // ProductStoreShipmentMeth

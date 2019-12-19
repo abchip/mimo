@@ -56,7 +56,6 @@ public interface WorkEffortNote extends BizEntityNote {
 
 	/**
 	 * Returns the value of the '<em><b>Internal Note</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Internal Note</em>' attribute isn't clear,
@@ -66,8 +65,7 @@ public interface WorkEffortNote extends BizEntityNote {
 	 * @return the value of the '<em>Internal Note</em>' attribute.
 	 * @see #setInternalNote(boolean)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortNote_InternalNote()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isInternalNote();

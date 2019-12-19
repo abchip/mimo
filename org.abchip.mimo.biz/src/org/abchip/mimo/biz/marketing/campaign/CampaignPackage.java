@@ -234,22 +234,13 @@ public interface CampaignPackage extends EPackage {
 	int MARKETING_CAMPAIGN__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
-	 * The feature id for the '<em><b>Marketing Campaign Notes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
-
-	/**
 	 * The feature id for the '<em><b>Num Sent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__NUM_SENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int MARKETING_CAMPAIGN__NUM_SENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Parent Campaign Id</b></em>' reference.
@@ -258,7 +249,7 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
@@ -267,7 +258,7 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__START_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+	int MARKETING_CAMPAIGN__START_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' reference.
@@ -276,7 +267,7 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+	int MARKETING_CAMPAIGN__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -285,7 +276,7 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+	int MARKETING_CAMPAIGN__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
 	 * The number of structural features of the '<em>Marketing Campaign</em>' class.
@@ -294,7 +285,7 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+	int MARKETING_CAMPAIGN_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignNoteImpl <em>Marketing Campaign Note</em>}' class.
@@ -872,17 +863,6 @@ public interface CampaignPackage extends EPackage {
 	EAttribute getMarketingCampaign_ThruDate();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getMarketingCampaignNotes <em>Marketing Campaign Notes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Marketing Campaign Notes</em>'.
-	 * @see org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getMarketingCampaignNotes()
-	 * @see #getMarketingCampaign()
-	 * @generated
-	 */
-	EReference getMarketingCampaign_MarketingCampaignNotes();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote <em>Marketing Campaign Note</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1259,14 +1239,6 @@ public interface CampaignPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MARKETING_CAMPAIGN__THRU_DATE = eINSTANCE.getMarketingCampaign_ThruDate();
-
-		/**
-		 * The meta object literal for the '<em><b>Marketing Campaign Notes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES = eINSTANCE.getMarketingCampaign_MarketingCampaignNotes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignNoteImpl <em>Marketing Campaign Note</em>}' class.

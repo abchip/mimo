@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.entity.synchronization.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -297,6 +301,8 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -315,6 +321,8 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -415,6 +423,8 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -424,7 +434,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -483,6 +493,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		// Create package meta-data objects
 		theSynchronizationPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -492,6 +503,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -542,11 +554,12 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -578,6 +591,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		// Initialize created meta-data
 		theSynchronizationPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -587,6 +601,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -637,11 +652,12 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -705,7 +721,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_ForPullOnly() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -715,7 +731,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_ForPushOnly() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -725,7 +741,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_KeepRemoveInfoHours() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -735,7 +751,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_LastHistoryStartDate() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -745,7 +761,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_LastSuccessfulSynchTime() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -755,7 +771,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_MaxRunningNoUpdateMillis() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -765,7 +781,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_OfflineSyncSplitMillis() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -775,7 +791,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_PreOfflineSynchTime() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -785,7 +801,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_RunStatusId() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -795,7 +811,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_SyncEndBufferMillis() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -805,7 +821,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_SyncSplitMillis() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -815,7 +831,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_TargetDelegatorName() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -825,37 +841,7 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	@Override
 	public EAttribute getEntitySync_TargetServiceName() {
-		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEntitySync_EntitySyncHistories() {
-		return (EReference)entitySyncEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEntitySync_EntitySyncIncludes() {
-		return (EReference)entitySyncEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEntitySync_EntitySyncIncludeGroups() {
-		return (EReference)entitySyncEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)entitySyncEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -1259,9 +1245,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		// Create classes and their features
 		entitySyncEClass = createEClass(ENTITY_SYNC);
 		createEAttribute(entitySyncEClass, ENTITY_SYNC__ENTITY_SYNC_ID);
-		createEReference(entitySyncEClass, ENTITY_SYNC__ENTITY_SYNC_HISTORIES);
-		createEReference(entitySyncEClass, ENTITY_SYNC__ENTITY_SYNC_INCLUDE_GROUPS);
-		createEReference(entitySyncEClass, ENTITY_SYNC__ENTITY_SYNC_INCLUDES);
 		createEAttribute(entitySyncEClass, ENTITY_SYNC__FOR_PULL_ONLY);
 		createEAttribute(entitySyncEClass, ENTITY_SYNC__FOR_PUSH_ONLY);
 		createEAttribute(entitySyncEClass, ENTITY_SYNC__KEEP_REMOVE_INFO_HOURS);
@@ -1359,9 +1342,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		// Initialize classes and features; add operations and parameters
 		initEClass(entitySyncEClass, EntitySync.class, "EntitySync", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntitySync_EntitySyncId(), ecorePackage.getEString(), "entitySyncId", null, 1, 1, EntitySync.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntitySync_EntitySyncHistories(), this.getEntitySyncHistory(), null, "entitySyncHistories", null, 0, -1, EntitySync.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntitySync_EntitySyncIncludeGroups(), this.getEntitySyncIncludeGroup(), null, "entitySyncIncludeGroups", null, 0, -1, EntitySync.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntitySync_EntitySyncIncludes(), this.getEntitySyncInclude(), null, "entitySyncIncludes", null, 0, -1, EntitySync.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntitySync_ForPullOnly(), ecorePackage.getEBoolean(), "forPullOnly", null, 0, 1, EntitySync.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntitySync_ForPushOnly(), ecorePackage.getEBoolean(), "forPushOnly", null, 0, 1, EntitySync.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntitySync_KeepRemoveInfoHours(), ecorePackage.getEDouble(), "keepRemoveInfoHours", null, 0, 1, EntitySync.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1428,8 +1408,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 	}
 
 	/**
@@ -1484,46 +1462,12 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySync_EntitySyncId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getEntitySync_ForPullOnly(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getEntitySync_ForPushOnly(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getEntitySync_KeepRemoveInfoHours(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getEntitySync_LastHistoryStartDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getEntitySync_LastSuccessfulSynchTime(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getEntitySync_MaxRunningNoUpdateMillis(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1531,28 +1475,19 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySync_OfflineSyncSplitMillis(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getEntitySync_PreOfflineSynchTime(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getEntitySync_RunStatusId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getEntitySync_SyncEndBufferMillis(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1560,7 +1495,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySync_SyncSplitMillis(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1568,53 +1502,25 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySync_TargetDelegatorName(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getEntitySync_TargetServiceName(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getEntitySyncHistory_StartDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getEntitySyncHistory_BeginningSynchTime(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getEntitySyncHistory_LastCandidateEndTime(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getEntitySyncHistory_LastSplitStartTime(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getEntitySyncHistory_LastSuccessfulSynchTime(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getEntitySyncHistory_PerSplitMaxItems(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1622,7 +1528,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_PerSplitMaxMillis(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1630,7 +1535,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_PerSplitMinItems(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1638,7 +1542,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_PerSplitMinMillis(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1646,14 +1549,12 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_RunStatusId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getEntitySyncHistory_RunningTimeMillis(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1661,7 +1562,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_ToCreateInserted(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1669,7 +1569,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_ToCreateNotUpdated(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1677,7 +1576,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_ToCreateUpdated(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1685,7 +1583,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_ToRemoveAlreadyDeleted(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1693,7 +1590,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_ToRemoveDeleted(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1701,7 +1597,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_ToStoreInserted(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1709,7 +1604,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_ToStoreNotUpdated(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1717,7 +1611,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_ToStoreUpdated(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1725,7 +1618,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_TotalRowsExported(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1733,7 +1625,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_TotalRowsToCreate(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1741,7 +1632,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_TotalRowsToRemove(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1749,7 +1639,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_TotalRowsToStore(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1757,7 +1646,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_TotalSplits(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1765,7 +1653,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncHistory_TotalStoreCalls(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1773,28 +1660,19 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		  (getEntitySyncInclude_EntityOrPackage(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getEntitySyncInclude_ApplEnumId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getEntitySyncRemove_EntitySyncRemoveId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getEntitySyncRemove_PrimaryKeyRemoved(),
-		   source,
-		   new String[] {
-			   "type", "very-long"
 		   });
 	}
 
@@ -1806,24 +1684,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (getEntitySync_EntitySyncHistories(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getEntitySync_EntitySyncIncludeGroups(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getEntitySync_EntitySyncIncludes(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
 		addAnnotation
 		  (getEntitySyncHistory_EntitySyncId(),
 		   source,
@@ -1859,34 +1719,6 @@ public class SynchronizationPackageImpl extends EPackageImpl implements Synchron
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (getEntitySync_EntitySyncHistories(),
-		   source,
-		   new String[] {
-			   "frame", "EntitySyncHistory"
-		   });
-		addAnnotation
-		  (getEntitySync_EntitySyncIncludeGroups(),
-		   source,
-		   new String[] {
-			   "frame", "EntitySyncIncludeGroup"
-		   });
-		addAnnotation
-		  (getEntitySync_EntitySyncIncludes(),
-		   source,
-		   new String[] {
-			   "frame", "EntitySyncInclude"
 		   });
 	}
 

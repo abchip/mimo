@@ -46,7 +46,7 @@ public interface FacilityLocationGeoPoint extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint_FacilityId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFacilityId();
@@ -74,7 +74,6 @@ public interface FacilityLocationGeoPoint extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -129,7 +128,7 @@ public interface FacilityLocationGeoPoint extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint_LocationSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getLocationSeqId();
@@ -155,7 +154,7 @@ public interface FacilityLocationGeoPoint extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

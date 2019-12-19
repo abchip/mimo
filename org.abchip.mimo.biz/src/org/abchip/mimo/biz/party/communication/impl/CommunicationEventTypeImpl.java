@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.party.communication.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.communication.CommunicationEventType;
@@ -136,30 +134,6 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	@Override
 	public void setParentTypeId(CommunicationEventType newParentTypeId) {
 		eSet(CommunicationPackage.Literals.COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CommunicationEventType> childCommunicationEventTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CommunicationEvent> communicationEvents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

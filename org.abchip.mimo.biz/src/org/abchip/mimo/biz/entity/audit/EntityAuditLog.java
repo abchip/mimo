@@ -49,7 +49,7 @@ public interface EntityAuditLog extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.audit.AuditPackage#getEntityAuditLog_AuditHistorySeqId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot help='Sequenced primary key'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getAuditHistorySeqId();
@@ -76,7 +76,7 @@ public interface EntityAuditLog extends BizEntity {
 	 * @see #setChangedByInfo(String)
 	 * @see org.abchip.mimo.biz.entity.audit.AuditPackage#getEntityAuditLog_ChangedByInfo()
 	 * @model annotation="mimo-ent-slot help='This should contain whatever information is available about the user or system that changed the value. This could be a userLoginId, but could be something else too, so there is no foreign key.'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getChangedByInfo();
@@ -102,7 +102,7 @@ public interface EntityAuditLog extends BizEntity {
 	 * @return the value of the '<em>Changed Date</em>' attribute.
 	 * @see #setChangedDate(Date)
 	 * @see org.abchip.mimo.biz.entity.audit.AuditPackage#getEntityAuditLog_ChangedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getChangedDate();
@@ -128,7 +128,7 @@ public interface EntityAuditLog extends BizEntity {
 	 * @return the value of the '<em>Changed Entity Name</em>' attribute.
 	 * @see #setChangedEntityName(String)
 	 * @see org.abchip.mimo.biz.entity.audit.AuditPackage#getEntityAuditLog_ChangedEntityName()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getChangedEntityName();
@@ -154,7 +154,7 @@ public interface EntityAuditLog extends BizEntity {
 	 * @return the value of the '<em>Changed Field Name</em>' attribute.
 	 * @see #setChangedFieldName(String)
 	 * @see org.abchip.mimo.biz.entity.audit.AuditPackage#getEntityAuditLog_ChangedFieldName()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getChangedFieldName();
@@ -181,7 +181,7 @@ public interface EntityAuditLog extends BizEntity {
 	 * @see #setChangedSessionInfo(String)
 	 * @see org.abchip.mimo.biz.entity.audit.AuditPackage#getEntityAuditLog_ChangedSessionInfo()
 	 * @model annotation="mimo-ent-slot help='This should contain whatever information is available about the session during which the value was changed. This could be a visitId, but could be something else too, so there is no foreign key.'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getChangedSessionInfo();
@@ -207,7 +207,7 @@ public interface EntityAuditLog extends BizEntity {
 	 * @return the value of the '<em>New Value Text</em>' attribute.
 	 * @see #setNewValueText(String)
 	 * @see org.abchip.mimo.biz.entity.audit.AuditPackage#getEntityAuditLog_NewValueText()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getNewValueText();
@@ -233,7 +233,7 @@ public interface EntityAuditLog extends BizEntity {
 	 * @return the value of the '<em>Old Value Text</em>' attribute.
 	 * @see #setOldValueText(String)
 	 * @see org.abchip.mimo.biz.entity.audit.AuditPackage#getEntityAuditLog_OldValueText()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getOldValueText();
@@ -259,7 +259,7 @@ public interface EntityAuditLog extends BizEntity {
 	 * @return the value of the '<em>Pk Combined Value Text</em>' attribute.
 	 * @see #setPkCombinedValueText(String)
 	 * @see org.abchip.mimo.biz.entity.audit.AuditPackage#getEntityAuditLog_PkCombinedValueText()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getPkCombinedValueText();

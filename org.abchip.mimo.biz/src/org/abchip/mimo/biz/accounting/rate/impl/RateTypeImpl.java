@@ -7,12 +7,9 @@
  */
 package org.abchip.mimo.biz.accounting.rate.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.rate.RatePackage;
 import org.abchip.mimo.biz.accounting.rate.RateType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.workeffort.timesheet.TimeEntry;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -71,18 +68,6 @@ public class RateTypeImpl extends BizEntityImpl implements RateType {
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(RatePackage.Literals.RATE_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TimeEntry> timeEntries() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

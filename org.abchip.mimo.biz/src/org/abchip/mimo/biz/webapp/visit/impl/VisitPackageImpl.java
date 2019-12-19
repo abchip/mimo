@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.webapp.visit.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -345,6 +349,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -363,6 +369,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -465,6 +473,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -474,7 +484,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -531,6 +541,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		// Create package meta-data objects
 		theVisitPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -540,6 +551,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -591,11 +603,12 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -626,6 +639,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		// Initialize created meta-data
 		theVisitPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -635,6 +649,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -686,11 +701,12 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -1762,7 +1778,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		org.abchip.mimo.biz.party.contact.ContactPackage theContactPackage_1 = (org.abchip.mimo.biz.party.contact.ContactPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.contact.ContactPackage.eNS_URI);
 		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
-		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		PartyPackage thePartyPackage_1 = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 
 		// Create type parameters
@@ -1788,20 +1804,14 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		initEAttribute(getBrowserType_BrowserName(), ecorePackage.getEString(), "browserName", null, 0, 1, BrowserType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBrowserType_BrowserVersion(), ecorePackage.getEString(), "browserVersion", null, 0, 1, BrowserType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(browserTypeEClass, this.getUserAgent(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(platformTypeEClass, PlatformType.class, "PlatformType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPlatformType_PlatformTypeId(), ecorePackage.getEString(), "platformTypeId", null, 1, 1, PlatformType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlatformType_PlatformName(), ecorePackage.getEString(), "platformName", null, 0, 1, PlatformType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlatformType_PlatformVersion(), ecorePackage.getEString(), "platformVersion", null, 0, 1, PlatformType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(platformTypeEClass, this.getUserAgent(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(protocolTypeEClass, ProtocolType.class, "ProtocolType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProtocolType_ProtocolTypeId(), ecorePackage.getEString(), "protocolTypeId", null, 1, 1, ProtocolType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProtocolType_ProtocolName(), ecorePackage.getEString(), "protocolName", null, 0, 1, ProtocolType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(protocolTypeEClass, this.getUserAgent(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(serverHitEClass, ServerHit.class, "ServerHit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServerHit_HitTypeId(), this.getServerHitType(), null, "hitTypeId", null, 1, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1815,8 +1825,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		initEReference(getServerHit_InternalContentId(), theContentPackage.getContent(), null, "internalContentId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getServerHit_InternalContentId().getEKeys().add(theContentPackage.getContent_ContentId());
 		initEAttribute(getServerHit_NumOfBytes(), ecorePackage.getELong(), "numOfBytes", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServerHit_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getServerHit_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getServerHit_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getServerHit_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEReference(getServerHit_RefByWebContactMechId(), theContactPackage_1.getContactMech(), null, "refByWebContactMechId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getServerHit_RefByWebContactMechId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
 		initEAttribute(getServerHit_ReferrerUrl(), ecorePackage.getEString(), "referrerUrl", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1847,8 +1857,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		initEAttribute(getServerHitType_HitTypeId(), ecorePackage.getEString(), "hitTypeId", null, 1, 1, ServerHitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHitType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ServerHitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(serverHitTypeEClass, this.getServerHitBin(), "serverHitBins", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(userAgentEClass, UserAgent.class, "UserAgent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserAgent_UserAgentId(), ecorePackage.getEString(), "userAgentId", null, 1, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUserAgent_BrowserTypeId(), this.getBrowserType(), null, "browserTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1862,19 +1870,13 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		initEReference(getUserAgent_UserAgentTypeId(), this.getUserAgentType(), null, "userAgentTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUserAgent_UserAgentTypeId().getEKeys().add(this.getUserAgentType_UserAgentTypeId());
 
-		addEOperation(userAgentEClass, this.getVisit(), "visits", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(userAgentMethodTypeEClass, UserAgentMethodType.class, "UserAgentMethodType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserAgentMethodType_UserAgentMethodTypeId(), ecorePackage.getEString(), "userAgentMethodTypeId", null, 1, 1, UserAgentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserAgentMethodType_Description(), ecorePackage.getEString(), "description", null, 0, 1, UserAgentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(userAgentMethodTypeEClass, this.getUserAgent(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(userAgentTypeEClass, UserAgentType.class, "UserAgentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserAgentType_UserAgentTypeId(), ecorePackage.getEString(), "userAgentTypeId", null, 1, 1, UserAgentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserAgentType_Description(), ecorePackage.getEString(), "description", null, 0, 1, UserAgentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(userAgentTypeEClass, this.getUserAgent(), "userAgents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(visitEClass, Visit.class, "Visit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisit_VisitId(), ecorePackage.getEString(), "visitId", null, 1, 1, Visit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1912,15 +1914,11 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		initEReference(getVisitor_UserLoginId(), theLoginPackage.getUserLogin(), null, "userLoginId", null, 0, 1, Visitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getVisitor_UserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 
-		addEOperation(visitorEClass, this.getVisit(), "visits", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		// Create annotations
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
 	}
@@ -1937,7 +1935,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getBrowserType_BrowserTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1951,14 +1948,12 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getBrowserType_BrowserVersion(),
 		   source,
 		   new String[] {
-			   "type", "very-short",
 			   "length", "10"
 		   });
 		addAnnotation
 		  (getPlatformType_PlatformTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1972,14 +1967,12 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getPlatformType_PlatformVersion(),
 		   source,
 		   new String[] {
-			   "type", "very-short",
 			   "length", "10"
 		   });
 		addAnnotation
 		  (getProtocolType_ProtocolTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1993,20 +1986,12 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getServerHit_ContentId(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getServerHit_HitStartDateTime(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getServerHit_NumOfBytes(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2028,7 +2013,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getServerHit_RunningTimeMillis(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2036,61 +2020,42 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getServerHit_ServerHostName(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getServerHit_ServerIpAddress(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getServerHit_StatusId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getServerHit_UserLoginId(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getServerHitBin_ServerHitBinId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getServerHitBin_BinEndDateTime(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getServerHitBin_BinStartDateTime(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getServerHitBin_ContentId(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getServerHitBin_MaxTimeMillis(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2098,7 +2063,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getServerHitBin_MinTimeMillis(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2106,7 +2070,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getServerHitBin_NumberHits(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2114,21 +2077,18 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getServerHitBin_ServerHostName(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getServerHitBin_ServerIpAddress(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getServerHitBin_TotalTimeMillis(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2136,7 +2096,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getServerHitType_HitTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2150,14 +2109,12 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getUserAgent_UserAgentId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getUserAgentMethodType_UserAgentMethodTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2171,7 +2128,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getUserAgentType_UserAgentTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2185,83 +2141,66 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getVisit_VisitId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getVisit_ClientHostName(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getVisit_ClientIpAddress(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
 		  (getVisit_ClientIpCountryGeoId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getVisit_ClientIpIspName(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
 		  (getVisit_ClientIpPostalCode(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
 		  (getVisit_ClientIpStateProvGeoId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getVisit_ClientUser(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
 		  (getVisit_ContactMechId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getVisit_Cookie(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
-		   });
-		addAnnotation
-		  (getVisit_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getVisit_InitialLocale(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -2282,83 +2221,60 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		  (getVisit_InitialUserAgent(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getVisit_PartyId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getVisit_RoleTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getVisit_ServerHostName(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getVisit_ServerIpAddress(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getVisit_SessionId(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getVisit_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getVisit_UserCreated(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 		addAnnotation
 		  (getVisit_UserLoginId(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getVisit_WebappName(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
 		  (getVisitor_VisitorId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getVisitor_PartyId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 	}
@@ -2371,24 +2287,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (browserTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (platformTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (protocolTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
 		addAnnotation
 		  (getServerHit_HitTypeId(),
 		   source,
@@ -2412,102 +2310,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (serverHitTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userAgentEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userAgentMethodTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userAgentTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (visitorEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (browserTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "UserAgent",
-			   "route", "browserTypeId"
-		   });
-		addAnnotation
-		  (platformTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "UserAgent",
-			   "route", "platformTypeId"
-		   });
-		addAnnotation
-		  (protocolTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "UserAgent",
-			   "route", "protocolTypeId"
-		   });
-		addAnnotation
-		  (serverHitTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "ServerHitBin",
-			   "route", "hitTypeId"
-		   });
-		addAnnotation
-		  (userAgentEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "Visit",
-			   "route", "userAgentId"
-		   });
-		addAnnotation
-		  (userAgentMethodTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "UserAgent",
-			   "route", "userAgentMethodTypeId"
-		   });
-		addAnnotation
-		  (userAgentTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "UserAgent",
-			   "route", "userAgentTypeId"
-		   });
-		addAnnotation
-		  (visitorEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "Visit",
-			   "route", "visitorId"
 		   });
 	}
 

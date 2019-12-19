@@ -9,15 +9,12 @@ package org.abchip.mimo.biz.product.cost.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.cost.CostComponent;
-import org.abchip.mimo.biz.product.cost.CostComponentAttribute;
 import org.abchip.mimo.biz.product.cost.CostComponentCalc;
 import org.abchip.mimo.biz.product.cost.CostComponentType;
 import org.abchip.mimo.biz.product.cost.CostPackage;
@@ -36,7 +33,6 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentImpl#getCostComponentId <em>Cost Component Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentImpl#getCost <em>Cost</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentImpl#getCostComponentAttributes <em>Cost Component Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentImpl#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentImpl#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentImpl#getCostUomId <em>Cost Uom Id</em>}</li>
@@ -275,17 +271,6 @@ public class CostComponentImpl extends BizEntityTypedImpl<CostComponentType> imp
 	@Override
 	public void setWorkEffortId(WorkEffort newWorkEffortId) {
 		eSet(CostPackage.Literals.COST_COMPONENT__WORK_EFFORT_ID, newWorkEffortId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<CostComponentAttribute> getCostComponentAttributes() {
-		return (List<CostComponentAttribute>)eGet(CostPackage.Literals.COST_COMPONENT__COST_COMPONENT_ATTRIBUTES, true);
 	}
 
 	/**

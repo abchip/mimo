@@ -8,13 +8,10 @@
 package org.abchip.mimo.biz.humanres.recruitment;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.Gender;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.humanres.ability.SkillType;
-import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +54,7 @@ public interface JobRequisition extends BizEntity {
 	 * @return the value of the '<em>Age</em>' attribute.
 	 * @see #setAge(long)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_Age()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAge();
@@ -83,7 +80,7 @@ public interface JobRequisition extends BizEntity {
 	 * @return the value of the '<em>Duration Months</em>' attribute.
 	 * @see #setDurationMonths(long)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_DurationMonths()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDurationMonths();
@@ -135,7 +132,7 @@ public interface JobRequisition extends BizEntity {
 	 * @return the value of the '<em>Experience Months</em>' attribute.
 	 * @see #setExperienceMonths(long)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_ExperienceMonths()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getExperienceMonths();
@@ -161,7 +158,7 @@ public interface JobRequisition extends BizEntity {
 	 * @return the value of the '<em>Experience Years</em>' attribute.
 	 * @see #setExperienceYears(long)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_ExperienceYears()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getExperienceYears();
@@ -178,6 +175,7 @@ public interface JobRequisition extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Gender</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.abchip.mimo.biz.common.Gender}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gender</em>' attribute isn't clear,
@@ -185,22 +183,24 @@ public interface JobRequisition extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gender</em>' attribute.
-	 * @see #setGender(char)
+	 * @see org.abchip.mimo.biz.common.Gender
+	 * @see #setGender(Gender)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_Gender()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
-	char getGender();
+	Gender getGender();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getGender <em>Gender</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Gender</em>' attribute.
+	 * @see org.abchip.mimo.biz.common.Gender
 	 * @see #getGender()
 	 * @generated
 	 */
-	void setGender(char value);
+	void setGender(Gender value);
 
 	/**
 	 * Returns the value of the '<em><b>Job Location</b></em>' attribute.
@@ -213,7 +213,7 @@ public interface JobRequisition extends BizEntity {
 	 * @return the value of the '<em>Job Location</em>' attribute.
 	 * @see #setJobLocation(String)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_JobLocation()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getJobLocation();
@@ -265,7 +265,7 @@ public interface JobRequisition extends BizEntity {
 	 * @return the value of the '<em>Job Requisition Date</em>' attribute.
 	 * @see #setJobRequisitionDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_JobRequisitionDate()
-	 * @model annotation="mimo-ent-format type='date'"
+	 * @model
 	 * @generated
 	 */
 	Date getJobRequisitionDate();
@@ -292,7 +292,7 @@ public interface JobRequisition extends BizEntity {
 	 * @see #setJobRequisitionId(String)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_JobRequisitionId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getJobRequisitionId();
@@ -318,7 +318,7 @@ public interface JobRequisition extends BizEntity {
 	 * @return the value of the '<em>No Of Resources</em>' attribute.
 	 * @see #setNoOfResources(long)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_NoOfResources()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getNoOfResources();
@@ -344,7 +344,7 @@ public interface JobRequisition extends BizEntity {
 	 * @return the value of the '<em>Qualification</em>' attribute.
 	 * @see #setQualification(String)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_Qualification()
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getQualification();
@@ -370,7 +370,7 @@ public interface JobRequisition extends BizEntity {
 	 * @return the value of the '<em>Required On Date</em>' attribute.
 	 * @see #setRequiredOnDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_RequiredOnDate()
-	 * @model annotation="mimo-ent-format type='date'"
+	 * @model
 	 * @generated
 	 */
 	Date getRequiredOnDate();
@@ -410,23 +410,5 @@ public interface JobRequisition extends BizEntity {
 	 * @generated
 	 */
 	void setSkillTypeId(SkillType value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='jobRequisitionId'"
-	 * @generated
-	 */
-	List<EmploymentApp> employmentApps();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='JobInterview' route='jobRequisitionId'"
-	 * @generated
-	 */
-	List<JobInterview> jobInterviews();
 
 } // JobRequisition

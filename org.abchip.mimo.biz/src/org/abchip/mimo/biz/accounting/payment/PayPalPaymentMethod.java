@@ -72,7 +72,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Correlation Id</em>' attribute.
 	 * @see #setCorrelationId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_CorrelationId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCorrelationId();
@@ -98,7 +98,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Express Checkout Token</em>' attribute.
 	 * @see #setExpressCheckoutToken(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_ExpressCheckoutToken()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getExpressCheckoutToken();
@@ -124,7 +124,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Payer Id</em>' attribute.
 	 * @see #setPayerId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_PayerId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPayerId();
@@ -150,7 +150,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Payer Status</em>' attribute.
 	 * @see #setPayerStatus(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_PayerStatus()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getPayerStatus();
@@ -177,7 +177,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @see #setPaymentMethodId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_PaymentMethodId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentMethodId();
@@ -194,7 +194,6 @@ public interface PayPalPaymentMethod extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Avs Addr</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Avs Addr</em>' attribute isn't clear,
@@ -204,8 +203,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Avs Addr</em>' attribute.
 	 * @see #setAvsAddr(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_AvsAddr()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isAvsAddr();
@@ -222,7 +220,6 @@ public interface PayPalPaymentMethod extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Avs Zip</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Avs Zip</em>' attribute isn't clear,
@@ -232,8 +229,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Avs Zip</em>' attribute.
 	 * @see #setAvsZip(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_AvsZip()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isAvsZip();
@@ -259,7 +255,7 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Transaction Id</em>' attribute.
 	 * @see #setTransactionId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_TransactionId()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getTransactionId();

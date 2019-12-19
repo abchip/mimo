@@ -7,12 +7,9 @@
  */
 package org.abchip.mimo.biz.content.survey.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.content.survey.SurveyApplType;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -72,18 +69,6 @@ public class SurveyApplTypeImpl extends BizEntityImpl implements SurveyApplType 
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(SurveyPackage.Literals.SURVEY_APPL_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductStoreSurveyAppl> productStoreSurveyAppls() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

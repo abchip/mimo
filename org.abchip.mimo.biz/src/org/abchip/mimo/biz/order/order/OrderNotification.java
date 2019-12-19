@@ -96,7 +96,7 @@ public interface OrderNotification extends BizEntity {
 	 * @return the value of the '<em>Notification Date</em>' attribute.
 	 * @see #setNotificationDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderNotification_NotificationDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getNotificationDate();
@@ -149,7 +149,7 @@ public interface OrderNotification extends BizEntity {
 	 * @see #setOrderNotificationId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderNotification_OrderNotificationId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderNotificationId();

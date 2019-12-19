@@ -49,7 +49,6 @@ public interface UserLoginHistory extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -128,7 +127,7 @@ public interface UserLoginHistory extends BizEntity {
 	 * @see #setPasswordUsed(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_PasswordUsed()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getPasswordUsed();
@@ -145,7 +144,6 @@ public interface UserLoginHistory extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Successful Login</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Successful Login</em>' attribute isn't clear,
@@ -155,8 +153,7 @@ public interface UserLoginHistory extends BizEntity {
 	 * @return the value of the '<em>Successful Login</em>' attribute.
 	 * @see #setSuccessfulLogin(boolean)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_SuccessfulLogin()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isSuccessfulLogin();
@@ -182,7 +179,7 @@ public interface UserLoginHistory extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -235,7 +232,7 @@ public interface UserLoginHistory extends BizEntity {
 	 * @return the value of the '<em>Visit Id</em>' attribute.
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_VisitId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisitId();

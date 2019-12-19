@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.security.login.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -297,6 +301,8 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -315,6 +321,8 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -417,6 +425,8 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -426,7 +436,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -483,6 +493,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		// Create package meta-data objects
 		theLoginPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -492,6 +503,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -543,11 +555,12 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -578,6 +591,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		// Initialize created meta-data
 		theLoginPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -587,6 +601,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -638,11 +653,12 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -846,36 +862,6 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	@Override
 	public EAttribute getUserLogin_UserLdapDn() {
 		return (EAttribute)userLoginEClass.getEStructuralFeatures().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getUserLogin_UserLoginHistories() {
-		return (EReference)userLoginEClass.getEStructuralFeatures().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getUserLogin_UserLoginPasswordHistories() {
-		return (EReference)userLoginEClass.getEStructuralFeatures().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getUserLogin_UserPreferences() {
-		return (EReference)userLoginEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -1144,9 +1130,6 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		createEAttribute(userLoginEClass, USER_LOGIN__REQUIRE_PASSWORD_CHANGE);
 		createEAttribute(userLoginEClass, USER_LOGIN__SUCCESSIVE_FAILED_LOGINS);
 		createEAttribute(userLoginEClass, USER_LOGIN__USER_LDAP_DN);
-		createEReference(userLoginEClass, USER_LOGIN__USER_LOGIN_HISTORIES);
-		createEReference(userLoginEClass, USER_LOGIN__USER_LOGIN_PASSWORD_HISTORIES);
-		createEReference(userLoginEClass, USER_LOGIN__USER_PREFERENCES);
 
 		userLoginHistoryEClass = createEClass(USER_LOGIN_HISTORY);
 		createEReference(userLoginHistoryEClass, USER_LOGIN_HISTORY__USER_LOGIN_ID);
@@ -1200,29 +1183,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		UserPackage theUserPackage = (UserPackage)EPackage.Registry.INSTANCE.getEPackage(UserPackage.eNS_URI);
-		TimesheetPackage theTimesheetPackage = (TimesheetPackage)EPackage.Registry.INSTANCE.getEPackage(TimesheetPackage.eNS_URI);
-		SchedulePackage theSchedulePackage = (SchedulePackage)EPackage.Registry.INSTANCE.getEPackage(SchedulePackage.eNS_URI);
-		BudgetPackage theBudgetPackage = (BudgetPackage)EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
-		RequestPackage theRequestPackage = (RequestPackage)EPackage.Registry.INSTANCE.getEPackage(RequestPackage.eNS_URI);
-		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
-		RequirementPackage theRequirementPackage = (RequirementPackage)EPackage.Registry.INSTANCE.getEPackage(RequirementPackage.eNS_URI);
-		ReturnPackage theReturnPackage = (ReturnPackage)EPackage.Registry.INSTANCE.getEPackage(ReturnPackage.eNS_URI);
-		Shipment_Package theShipment_Package = (Shipment_Package)EPackage.Registry.INSTANCE.getEPackage(Shipment_Package.eNS_URI);
-		TestPackage theTestPackage = (TestPackage)EPackage.Registry.INSTANCE.getEPackage(TestPackage.eNS_URI);
-		PicklistPackage thePicklistPackage = (PicklistPackage)EPackage.Registry.INSTANCE.getEPackage(PicklistPackage.eNS_URI);
-		PricePackage thePricePackage = (PricePackage)EPackage.Registry.INSTANCE.getEPackage(PricePackage.eNS_URI);
-		ContactPackage theContactPackage = (ContactPackage)EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
-		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
-		PromoPackage thePromoPackage = (PromoPackage)EPackage.Registry.INSTANCE.getEPackage(PromoPackage.eNS_URI);
-		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
-		OpportunityPackage theOpportunityPackage = (OpportunityPackage)EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		IssuancePackage theIssuancePackage = (IssuancePackage)EPackage.Registry.INSTANCE.getEPackage(IssuancePackage.eNS_URI);
-		QuotePackage theQuotePackage = (QuotePackage)EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
-		ReceiptPackage theReceiptPackage = (ReceiptPackage)EPackage.Registry.INSTANCE.getEPackage(ReceiptPackage.eNS_URI);
-		VisitPackage theVisitPackage = (VisitPackage)EPackage.Registry.INSTANCE.getEPackage(VisitPackage.eNS_URI);
+		PartyPackage thePartyPackage_1 = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
 
 		// Create type parameters
@@ -1249,105 +1210,12 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		initEAttribute(getUserLogin_LastCurrencyUom(), ecorePackage.getEString(), "lastCurrencyUom", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLogin_LastLocale(), ecorePackage.getEString(), "lastLocale", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLogin_LastTimeZone(), ecorePackage.getEString(), "lastTimeZone", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUserLogin_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getUserLogin_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getUserLogin_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserLogin_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEAttribute(getUserLogin_PasswordHint(), ecorePackage.getEString(), "passwordHint", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUserLogin_RequirePasswordChange(), ecorePackage.getEBoolean(), "requirePasswordChange", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUserLogin_RequirePasswordChange(), ecorePackage.getEBoolean(), "requirePasswordChange", null, 1, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLogin_SuccessiveFailedLogins(), ecorePackage.getELong(), "successiveFailedLogins", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLogin_UserLdapDn(), ecorePackage.getEString(), "userLdapDn", null, 0, 1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUserLogin_UserLoginHistories(), this.getUserLoginHistory(), null, "userLoginHistories", null, 0, -1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUserLogin_UserLoginPasswordHistories(), this.getUserLoginPasswordHistory(), null, "userLoginPasswordHistories", null, 0, -1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUserLogin_UserPreferences(), theUserPackage.getUserPreference(), null, "userPreferences", null, 0, -1, UserLogin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theTimesheetPackage.getTimesheet(), "approvedByTimesheets", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theSchedulePackage.getJobSandbox(), "authJobSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theBudgetPackage.getBudgetStatus(), "changeByBudgetStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theRequestPackage.getCustRequestStatus(), "changeByCustRequestStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theOrderPackage.getOrderItem(), "changeByOrderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theRequirementPackage.getRequirementStatus(), "changeByRequirementStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theReturnPackage.getReturnStatus(), "changeByReturnStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theShipment_Package.getShipmentStatus(), "changeByShipmentStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theTestPackage.getTestingStatus(), "changeByTestingStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, thePicklistPackage.getPicklistStatusHistory(), "changePicklistStatusHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, thePricePackage.getProductPriceChange(), "changedByProductPriceChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theContactPackage.getContactList(), "createdByContactLists", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theContentPackage.getContent(), "createdByContents", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theDataPackage.getDataResource(), "createdByDataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theOrderPackage.getOrderHeader(), "createdByOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, thePartyPackage.getParty(), "createdByParties", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, thePromoPackage.getProductPromoCode(), "createdByProductPromoCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, thePromoPackage.getProductPromo(), "createdByProductPromos", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theProductPackage.getProduct(), "createdByProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theOpportunityPackage.getSalesForecast(), "createdBySalesForecasts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theOrderPackage.getOrderItem(), "dontCancelSetOrderItems", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theIssuancePackage.getItemIssuance(), "issuedByItemIssuances", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theContactPackage.getContactList(), "lastModifiedByContactLists", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theContentPackage.getContent(), "lastModifiedByContents", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theDataPackage.getDataResource(), "lastModifiedByDataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, thePartyPackage.getParty(), "lastModifiedByParties", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, thePromoPackage.getProductPromoCode(), "lastModifiedByProductPromoCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, thePromoPackage.getProductPromo(), "lastModifiedByProductPromos", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theProductPackage.getProduct(), "lastModifiedByProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theOpportunityPackage.getSalesForecastHistory(), "modifiedBySalesForecastHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theOpportunityPackage.getSalesForecast(), "modifiedBySalesForecasts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theOrderPackage.getOrderAdjustment(), "orderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theOrderPackage.getOrderItemChange(), "orderItemChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theOrderPackage.getOrderPaymentPreference(), "orderPaymentPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theOrderPackage.getOrderStatus(), "orderStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theProductPackage.getProductReview(), "productReviews", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theQuotePackage.getQuoteAdjustment(), "quoteAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theReturnPackage.getReturnAdjustment(), "returnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theReturnPackage.getReturnHeader(), "returnHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theSchedulePackage.getJobSandbox(), "runAsJobSandboxs", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theOpportunityPackage.getSalesOpportunity(), "salesOpportunities", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theOpportunityPackage.getSalesOpportunityHistory(), "salesOpportunityHistories", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theReceiptPackage.getShipmentReceipt(), "shipmentReceipts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, this.getUserLoginSecurityQuestion(), "userLoginSecurityQuestions", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(userLoginEClass, theVisitPackage.getVisitor(), "visitors", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(userLoginHistoryEClass, UserLoginHistory.class, "UserLoginHistory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUserLoginHistory_UserLoginId(), this.getUserLogin(), null, "userLoginId", null, 1, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1355,10 +1223,10 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		initEAttribute(getUserLoginHistory_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUserLoginHistory_OriginUserLoginId(), this.getUserLogin(), null, "originUserLoginId", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getUserLoginHistory_OriginUserLoginId().getEKeys().add(this.getUserLogin_UserLoginId());
-		initEReference(getUserLoginHistory_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getUserLoginHistory_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getUserLoginHistory_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserLoginHistory_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEAttribute(getUserLoginHistory_PasswordUsed(), ecorePackage.getEString(), "passwordUsed", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUserLoginHistory_SuccessfulLogin(), ecorePackage.getEBoolean(), "successfulLogin", "true", 1, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUserLoginHistory_SuccessfulLogin(), ecorePackage.getEBoolean(), "successfulLogin", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginHistory_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginHistory_VisitId(), ecorePackage.getEString(), "visitId", null, 0, 1, UserLoginHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1382,12 +1250,10 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		initEAttribute(getUserLoginSession_SessionData(), ecorePackage.getEString(), "sessionData", null, 0, 1, UserLoginSession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
 	}
@@ -1404,76 +1270,42 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		  (getUserLogin_UserLoginId(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getUserLogin_CurrentPassword(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getUserLogin_DisabledBy(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getUserLogin_DisabledDateTime(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getUserLogin_Enabled(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 		addAnnotation
 		  (getUserLogin_ExternalAuthId(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getUserLogin_HasLoggedOut(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getUserLogin_IsSystem(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 		addAnnotation
 		  (getUserLogin_LastCurrencyUom(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getUserLogin_LastLocale(),
 		   source,
 		   new String[] {
-			   "type", "very-short",
 			   "length", "10"
 		   });
 		addAnnotation
 		  (getUserLogin_LastTimeZone(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -1484,17 +1316,9 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getUserLogin_RequirePasswordChange(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getUserLogin_SuccessiveFailedLogins(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -1502,60 +1326,25 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		  (getUserLogin_UserLdapDn(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getUserLoginHistory_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getUserLoginHistory_PasswordUsed(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getUserLoginHistory_SuccessfulLogin(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getUserLoginHistory_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getUserLoginHistory_VisitId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getUserLoginPasswordHistory_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getUserLoginPasswordHistory_CurrentPassword(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getUserLoginPasswordHistory_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getUserLoginSecurityQuestion_SecurityAnswer(),
@@ -1568,20 +1357,7 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		  (getUserLoginSession_UserLoginId(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getUserLoginSession_SavedDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getUserLoginSession_SessionData(),
-		   source,
-		   new String[] {
-			   "type", "very-long"
 		   });
 	}
 
@@ -1594,276 +1370,6 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
 		addAnnotation
-		  (userLoginEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(8),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(9),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(10),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(11),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(12),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(13),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(14),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(15),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(16),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(17),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(18),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(19),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(20),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(21),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(22),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(23),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(24),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(25),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(26),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(27),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(28),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(29),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(30),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(31),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(32),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(33),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(34),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(35),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(36),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(37),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(38),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(39),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(40),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(41),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(42),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(43),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(44),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getUserLogin_ExternalAuthId(),
 		   source,
 		   new String[] {
@@ -1874,24 +1380,6 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		   source,
 		   new String[] {
 			   "help", "The user\'s LDAP Distinguished Name - used for LDAP authentication"
-		   });
-		addAnnotation
-		  (getUserLogin_UserLoginHistories(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getUserLogin_UserLoginPasswordHistories(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getUserLogin_UserPreferences(),
-		   source,
-		   new String[] {
-			   "derived", "true"
 		   });
 		addAnnotation
 		  (getUserLoginHistory_UserLoginId(),
@@ -1934,349 +1422,6 @@ public class LoginPackageImpl extends EPackageImpl implements LoginPackage {
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "Timesheet",
-			   "route", "approvedByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "JobSandbox",
-			   "route", "authUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "frame", "BudgetStatus",
-			   "route", "changeByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "frame", "CustRequestStatus",
-			   "route", "changeByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "frame", "OrderItem",
-			   "route", "changeByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "frame", "RequirementStatus",
-			   "route", "changeByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "frame", "ReturnStatus",
-			   "route", "changeByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentStatus",
-			   "route", "changeByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(8),
-		   source,
-		   new String[] {
-			   "frame", "TestingStatus",
-			   "route", "changeByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(9),
-		   source,
-		   new String[] {
-			   "frame", "PicklistStatusHistory",
-			   "route", "changeUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(10),
-		   source,
-		   new String[] {
-			   "frame", "ProductPriceChange",
-			   "route", "changedByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(11),
-		   source,
-		   new String[] {
-			   "frame", "ContactList",
-			   "route", "createdByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(12),
-		   source,
-		   new String[] {
-			   "frame", "Content",
-			   "route", "createdByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(13),
-		   source,
-		   new String[] {
-			   "frame", "DataResource",
-			   "route", "createdByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(14),
-		   source,
-		   new String[] {
-			   "frame", "OrderHeader",
-			   "route", "createdBy"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(15),
-		   source,
-		   new String[] {
-			   "frame", "Party",
-			   "route", "createdByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(16),
-		   source,
-		   new String[] {
-			   "frame", "ProductPromoCode",
-			   "route", "createdByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(17),
-		   source,
-		   new String[] {
-			   "frame", "ProductPromo",
-			   "route", "createdByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(18),
-		   source,
-		   new String[] {
-			   "frame", "Product",
-			   "route", "createdByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(19),
-		   source,
-		   new String[] {
-			   "frame", "SalesForecast",
-			   "route", "createdByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(20),
-		   source,
-		   new String[] {
-			   "frame", "OrderItem",
-			   "route", "dontCancelSetUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(21),
-		   source,
-		   new String[] {
-			   "frame", "ItemIssuance",
-			   "route", "issuedByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(22),
-		   source,
-		   new String[] {
-			   "frame", "ContactList",
-			   "route", "lastModifiedByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(23),
-		   source,
-		   new String[] {
-			   "frame", "Content",
-			   "route", "lastModifiedByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(24),
-		   source,
-		   new String[] {
-			   "frame", "DataResource",
-			   "route", "lastModifiedByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(25),
-		   source,
-		   new String[] {
-			   "frame", "Party",
-			   "route", "lastModifiedByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(26),
-		   source,
-		   new String[] {
-			   "frame", "ProductPromoCode",
-			   "route", "lastModifiedByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(27),
-		   source,
-		   new String[] {
-			   "frame", "ProductPromo",
-			   "route", "lastModifiedByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(28),
-		   source,
-		   new String[] {
-			   "frame", "Product",
-			   "route", "lastModifiedByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(29),
-		   source,
-		   new String[] {
-			   "frame", "SalesForecastHistory",
-			   "route", "modifiedByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(30),
-		   source,
-		   new String[] {
-			   "frame", "SalesForecast",
-			   "route", "modifiedByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(31),
-		   source,
-		   new String[] {
-			   "frame", "OrderAdjustment",
-			   "route", "createdByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(32),
-		   source,
-		   new String[] {
-			   "frame", "OrderItemChange",
-			   "route", "changeUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(33),
-		   source,
-		   new String[] {
-			   "frame", "OrderPaymentPreference",
-			   "route", "createdByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(34),
-		   source,
-		   new String[] {
-			   "frame", "OrderStatus",
-			   "route", "statusUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(35),
-		   source,
-		   new String[] {
-			   "frame", "ProductReview",
-			   "route", "userLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(36),
-		   source,
-		   new String[] {
-			   "frame", "QuoteAdjustment",
-			   "route", "createdByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(37),
-		   source,
-		   new String[] {
-			   "frame", "ReturnAdjustment",
-			   "route", "createdByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(38),
-		   source,
-		   new String[] {
-			   "frame", "ReturnHeader",
-			   "route", "createdBy"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(39),
-		   source,
-		   new String[] {
-			   "frame", "JobSandbox",
-			   "route", "runAsUser"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(40),
-		   source,
-		   new String[] {
-			   "frame", "SalesOpportunity",
-			   "route", "createdByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(41),
-		   source,
-		   new String[] {
-			   "frame", "SalesOpportunityHistory",
-			   "route", "modifiedByUserLogin"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(42),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentReceipt",
-			   "route", "receivedByUserLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(43),
-		   source,
-		   new String[] {
-			   "frame", "UserLoginSecurityQuestion",
-			   "route", "userLoginId"
-		   });
-		addAnnotation
-		  (userLoginEClass.getEOperations().get(44),
-		   source,
-		   new String[] {
-			   "frame", "Visitor",
-			   "route", "userLoginId"
-		   });
-		addAnnotation
-		  (getUserLogin_UserLoginHistories(),
-		   source,
-		   new String[] {
-			   "frame", "UserLoginHistory"
-		   });
-		addAnnotation
-		  (getUserLogin_UserLoginPasswordHistories(),
-		   source,
-		   new String[] {
-			   "frame", "UserLoginPasswordHistory"
-		   });
-		addAnnotation
-		  (getUserLogin_UserPreferences(),
-		   source,
-		   new String[] {
-			   "frame", "UserPreference"
 		   });
 	}
 

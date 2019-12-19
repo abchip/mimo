@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.order.request;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -42,7 +40,7 @@ public interface CustRequestResolution extends BizEntity {
 	 * @see #setCustRequestResolutionId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestResolution_CustRequestResolutionId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCustRequestResolutionId();
@@ -108,14 +106,5 @@ public interface CustRequestResolution extends BizEntity {
 	 * @generated
 	 */
 	void setDescription(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustRequestItem' route='custRequestResolutionId'"
-	 * @generated
-	 */
-	List<CustRequestItem> custRequestItems();
 
 } // CustRequestResolution

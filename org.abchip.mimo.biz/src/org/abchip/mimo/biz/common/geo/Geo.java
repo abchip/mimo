@@ -7,25 +7,7 @@
  */
 package org.abchip.mimo.biz.common.geo;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
-import org.abchip.mimo.biz.accounting.payment.PaymentApplication;
-import org.abchip.mimo.biz.accounting.tax.TaxAuthority;
-import org.abchip.mimo.biz.content.survey.SurveyQuestion;
-import org.abchip.mimo.biz.marketing.segment.SegmentGroupGeo;
-import org.abchip.mimo.biz.order.order.OrderAdjustment;
-import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
-import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
-import org.abchip.mimo.biz.party.contact.PostalAddress;
-import org.abchip.mimo.biz.party.contact.PostalAddressBoundary;
-import org.abchip.mimo.biz.product.cost.CostComponent;
-import org.abchip.mimo.biz.product.product.Product;
-import org.abchip.mimo.biz.product.product.ProductGeo;
-import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
-import org.abchip.mimo.biz.product.supplier.ReorderGuideline;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,8 +24,6 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoName <em>Geo Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoSecCode <em>Geo Sec Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoTypeId <em>Geo Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getMainGeoAssocs <em>Main Geo Assocs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getTaxAuthTaxAuthorities <em>Tax Auth Tax Authorities</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getWellKnownText <em>Well Known Text</em>}</li>
  * </ul>
  *
@@ -63,7 +43,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @return the value of the '<em>Abbreviation</em>' attribute.
 	 * @see #setAbbreviation(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_Abbreviation()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getAbbreviation();
@@ -89,7 +69,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @return the value of the '<em>Geo Code</em>' attribute.
 	 * @see #setGeoCode(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_GeoCode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getGeoCode();
@@ -141,7 +121,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @return the value of the '<em>Geo Sec Code</em>' attribute.
 	 * @see #setGeoSecCode(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_GeoSecCode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getGeoSecCode();
@@ -167,7 +147,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @return the value of the '<em>Well Known Text</em>' attribute.
 	 * @see #setWellKnownText(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_WellKnownText()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getWellKnownText();
@@ -181,274 +161,6 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @generated
 	 */
 	void setWellKnownText(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Main Geo Assocs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.common.geo.GeoAssoc}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Main Geo Assocs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Main Geo Assocs</em>' reference list.
-	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_MainGeoAssocs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GeoAssoc'"
-	 * @generated
-	 */
-	List<GeoAssoc> getMainGeoAssocs();
-
-	/**
-	 * Returns the value of the '<em><b>Tax Auth Tax Authorities</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.tax.TaxAuthority}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tax Auth Tax Authorities</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tax Auth Tax Authorities</em>' reference list.
-	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_TaxAuthTaxAuthorities()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TaxAuthority'"
-	 * @generated
-	 */
-	List<TaxAuthority> getTaxAuthTaxAuthorities();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GeoAssoc' route='geoIdTo'"
-	 * @generated
-	 */
-	List<GeoAssoc> assocGeoAssocs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PostalAddress' route='cityGeoId'"
-	 * @generated
-	 */
-	List<PostalAddress> cityPostalAddresses();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CostComponent' route='geoId'"
-	 * @generated
-	 */
-	List<CostComponent> costComponents();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PostalAddress' route='countryGeoId'"
-	 * @generated
-	 */
-	List<PostalAddress> countryPostalAddresses();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PostalAddress' route='countyGeoId'"
-	 * @generated
-	 */
-	List<PostalAddress> countyPostalAddresses();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreShipmentMeth' route='excludeGeoId'"
-	 * @generated
-	 */
-	List<ProductStoreShipmentMeth> excludeProductStoreShipmentMeths();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='geoIdFrom'"
-	 * @generated
-	 */
-	List<ShipmentCostEstimate> fromShipmentCostEstimates();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreShipmentMeth' route='includeGeoId'"
-	 * @generated
-	 */
-	List<ProductStoreShipmentMeth> includeProductStoreShipmentMeths();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PostalAddress' route='municipalityGeoId'"
-	 * @generated
-	 */
-	List<PostalAddress> municipalityPostalAddresses();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Product' route='originGeoId'"
-	 * @generated
-	 */
-	List<Product> originProducts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentApplication' route='taxAuthGeoId'"
-	 * @generated
-	 */
-	List<PaymentApplication> paymentApplications();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PostalAddressBoundary' route='geoId'"
-	 * @generated
-	 */
-	List<PostalAddressBoundary> postalAddressBoundaries();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PostalAddress' route='postalCodeGeoId'"
-	 * @generated
-	 */
-	List<PostalAddress> postalCodePostalAddresses();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='primaryGeoId'"
-	 * @generated
-	 */
-	List<OrderAdjustment> primaryOrderAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='primaryGeoId'"
-	 * @generated
-	 */
-	List<QuoteAdjustment> primaryQuoteAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='primaryGeoId'"
-	 * @generated
-	 */
-	List<ReturnAdjustment> primaryReturnAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductGeo' route='geoId'"
-	 * @generated
-	 */
-	List<ProductGeo> productGeos();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReorderGuideline' route='geoId'"
-	 * @generated
-	 */
-	List<ReorderGuideline> reorderGuidelines();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='secondaryGeoId'"
-	 * @generated
-	 */
-	List<OrderAdjustment> secondaryOrderAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='secondaryGeoId'"
-	 * @generated
-	 */
-	List<QuoteAdjustment> secondaryQuoteAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='secondaryGeoId'"
-	 * @generated
-	 */
-	List<ReturnAdjustment> secondaryReturnAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SegmentGroupGeo' route='geoId'"
-	 * @generated
-	 */
-	List<SegmentGroupGeo> segmentGroupGeos();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PostalAddress' route='stateProvinceGeoId'"
-	 * @generated
-	 */
-	List<PostalAddress> stateProvincePostalAddresses();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SurveyQuestion' route='geoId'"
-	 * @generated
-	 */
-	List<SurveyQuestion> surveyQuestions();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='taxAuthGeoId'"
-	 * @generated
-	 */
-	List<InvoiceItem> taxInvoiceItems();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='geoIdTo'"
-	 * @generated
-	 */
-	List<ShipmentCostEstimate> toShipmentCostEstimates();
 
 	/**
 	 * Returns the value of the '<em><b>Geo Type Id</b></em>' reference.
@@ -488,7 +200,7 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @see #setGeoId(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_GeoId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGeoId();

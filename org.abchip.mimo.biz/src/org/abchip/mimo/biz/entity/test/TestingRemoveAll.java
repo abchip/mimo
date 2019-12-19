@@ -65,7 +65,7 @@ public interface TestingRemoveAll extends BizEntity {
 	 * @see #setTestingRemoveAllId(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingRemoveAll_TestingRemoveAllId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTestingRemoveAllId();

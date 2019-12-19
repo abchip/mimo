@@ -8,15 +8,11 @@
 package org.abchip.mimo.biz.content.data;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.status.StatusItem;
-import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyResponse;
-import org.abchip.mimo.biz.product.feature.ProductFeatureDataResource;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
@@ -33,10 +29,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataCategoryId <em>Data Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceAttributes <em>Data Resource Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceMetaDatas <em>Data Resource Meta Datas</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceName <em>Data Resource Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourcePurposes <em>Data Resource Purposes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataTemplateTypeId <em>Data Template Type Id</em>}</li>
@@ -46,7 +39,6 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getLocaleString <em>Locale String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getMimeTypeId <em>Mime Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getObjectInfo <em>Object Info</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getProductFeatureDataResources <em>Product Feature Data Resources</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getRelatedDetailId <em>Related Detail Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getSurveyId <em>Survey Id</em>}</li>
@@ -121,7 +113,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_CreatedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -174,7 +166,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setDataResourceId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDataResourceId();
@@ -200,7 +192,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @return the value of the '<em>Data Resource Name</em>' attribute.
 	 * @see #setDataResourceName(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceName()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getDataResourceName();
@@ -226,8 +218,8 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @return the value of the '<em>Is Public</em>' attribute.
 	 * @see #setIsPublic(boolean)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_IsPublic()
-	 * @model annotation="mimo-ent-slot help='If this is set to Y then anyone can download it, otherwise the download is restricted.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='If this is set to Y then anyone can download it, otherwise the download is restricted.'"
 	 * @generated
 	 */
 	boolean isIsPublic();
@@ -357,7 +349,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_LastModifiedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -383,7 +375,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @return the value of the '<em>Locale String</em>' attribute.
 	 * @see #setLocaleString(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_LocaleString()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getLocaleString();
@@ -436,7 +428,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setObjectInfo(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_ObjectInfo()
 	 * @model annotation="mimo-ent-slot help='For Short Text the text goes here.'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getObjectInfo();
@@ -463,7 +455,7 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see #setRelatedDetailId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_RelatedDetailId()
 	 * @model annotation="mimo-ent-slot help='Depending on the dataResourceTypeId this can point to other entities, like: Survey, SurveyResponse, etc.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRelatedDetailId();
@@ -555,91 +547,5 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @generated
 	 */
 	void setSurveyResponseId(SurveyResponse value);
-
-	/**
-	 * Returns the value of the '<em><b>Data Resource Attributes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.content.data.DataResourceAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Data Resource Attributes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Attributes</em>' reference list.
-	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResourceAttribute'"
-	 * @generated
-	 */
-	List<DataResourceAttribute> getDataResourceAttributes();
-
-	/**
-	 * Returns the value of the '<em><b>Data Resource Meta Datas</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.content.data.DataResourceMetaData}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Data Resource Meta Datas</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Meta Datas</em>' reference list.
-	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceMetaDatas()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResourceMetaData'"
-	 * @generated
-	 */
-	List<DataResourceMetaData> getDataResourceMetaDatas();
-
-	/**
-	 * Returns the value of the '<em><b>Data Resource Purposes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.content.data.DataResourcePurpose}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Data Resource Purposes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Purposes</em>' reference list.
-	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourcePurposes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResourcePurpose'"
-	 * @generated
-	 */
-	List<DataResourcePurpose> getDataResourcePurposes();
-
-	/**
-	 * Returns the value of the '<em><b>Product Feature Data Resources</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.feature.ProductFeatureDataResource}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Product Feature Data Resources</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature Data Resources</em>' reference list.
-	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_ProductFeatureDataResources()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductFeatureDataResource'"
-	 * @generated
-	 */
-	List<ProductFeatureDataResource> getProductFeatureDataResources();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Content' route='dataResourceId'"
-	 * @generated
-	 */
-	List<Content> contents();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Content' route='templateDataResourceId'"
-	 * @generated
-	 */
-	List<Content> templateContents();
 
 } // DataResource

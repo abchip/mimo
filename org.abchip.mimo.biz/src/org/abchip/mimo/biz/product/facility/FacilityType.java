@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.facility;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -22,7 +20,6 @@ import org.abchip.mimo.biz.BizEntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityType#getFacilityTypeId <em>Facility Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityType#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityType#getFacilityTypeAttrs <em>Facility Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -69,7 +66,7 @@ public interface FacilityType extends BizEntityType<Facility> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -111,41 +108,6 @@ public interface FacilityType extends BizEntityType<Facility> {
 	void setParentTypeId(FacilityType value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.facility.FacilityTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Facility Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityType_FacilityTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FacilityTypeAttr'"
-	 * @generated
-	 */
-	List<FacilityTypeAttr> getFacilityTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FacilityType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<FacilityType> childFacilityTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Facility' route='facilityTypeId'"
-	 * @generated
-	 */
-	List<Facility> facilities();
-
-	/**
 	 * Returns the value of the '<em><b>Facility Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -157,7 +119,7 @@ public interface FacilityType extends BizEntityType<Facility> {
 	 * @see #setFacilityTypeId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityType_FacilityTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFacilityTypeId();

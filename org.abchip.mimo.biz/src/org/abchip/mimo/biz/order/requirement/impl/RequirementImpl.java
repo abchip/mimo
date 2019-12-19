@@ -9,18 +9,12 @@ package org.abchip.mimo.biz.order.requirement.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.abchip.mimo.biz.order.requirement.DesiredFeature;
 import org.abchip.mimo.biz.order.requirement.Requirement;
-import org.abchip.mimo.biz.order.requirement.RequirementAttribute;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
-import org.abchip.mimo.biz.order.requirement.RequirementStatus;
 import org.abchip.mimo.biz.order.requirement.RequirementType;
-import org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
@@ -48,13 +42,10 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getReason <em>Reason</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getRequiredByDate <em>Required By Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getRequirementAttributes <em>Requirement Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getRequirementStartDate <em>Requirement Start Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getRequirementStatuss <em>Requirement Statuss</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getRequirementTypeId <em>Requirement Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getUseCase <em>Use Case</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getWorkRequirementFulfillments <em>Work Requirement Fulfillments</em>}</li>
  * </ul>
  *
  * @generated
@@ -442,51 +433,6 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	@Override
 	public void setUseCase(String newUseCase) {
 		eSet(RequirementPackage.Literals.REQUIREMENT__USE_CASE, newUseCase);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<RequirementAttribute> getRequirementAttributes() {
-		return (List<RequirementAttribute>)eGet(RequirementPackage.Literals.REQUIREMENT__REQUIREMENT_ATTRIBUTES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<RequirementStatus> getRequirementStatuss() {
-		return (List<RequirementStatus>)eGet(RequirementPackage.Literals.REQUIREMENT__REQUIREMENT_STATUSS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<WorkRequirementFulfillment> getWorkRequirementFulfillments() {
-		return (List<WorkRequirementFulfillment>)eGet(RequirementPackage.Literals.REQUIREMENT__WORK_REQUIREMENT_FULFILLMENTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<DesiredFeature> desiredFeatures() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //RequirementImpl

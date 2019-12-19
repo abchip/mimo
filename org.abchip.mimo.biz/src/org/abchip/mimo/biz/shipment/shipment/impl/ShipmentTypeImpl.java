@@ -7,12 +7,9 @@
  */
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentType;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentTypeAttr;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.ecore.EClass;
 
@@ -28,7 +25,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTypeImpl#getShipmentTypeAttrs <em>Shipment Type Attrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -136,41 +132,6 @@ public class ShipmentTypeImpl extends BizEntityTypeImpl<Shipment> implements Shi
 	@Override
 	public void setShipmentTypeId(String newShipmentTypeId) {
 		eSet(Shipment_Package.Literals.SHIPMENT_TYPE__SHIPMENT_TYPE_ID, newShipmentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ShipmentTypeAttr> getShipmentTypeAttrs() {
-		return (List<ShipmentTypeAttr>)eGet(Shipment_Package.Literals.SHIPMENT_TYPE__SHIPMENT_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentType> childShipmentTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Shipment> shipments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ShipmentTypeImpl

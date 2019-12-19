@@ -50,7 +50,6 @@ public interface OrderSummaryEntry extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderSummaryEntry_EntryDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date'"
 	 * @generated
 	 */
 	Date getEntryDate();

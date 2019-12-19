@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.content.data.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.content.data.DataCategory;
 import org.abchip.mimo.biz.content.data.DataPackage;
-import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -113,30 +110,6 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	@Override
 	public void setParentCategoryId(DataCategory newParentCategoryId) {
 		eSet(DataPackage.Literals.DATA_CATEGORY__PARENT_CATEGORY_ID, newParentCategoryId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<DataCategory> childDataCategories() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<DataResource> dataResources() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //DataCategoryImpl

@@ -35,7 +35,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isKey <em>Key</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isRoute <em>Route</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isToString <em>To String</em>}</li>
  * </ul>
@@ -170,24 +169,6 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	 */
 	protected String name = NAME_EDEFAULT;
 	/**
-	 * The default value of the '{@link #isRoute() <em>Route</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRoute()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ROUTE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isRoute() <em>Route</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRoute()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean route = ROUTE_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -267,29 +248,6 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isRoute() {
-		return route;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setRoute(boolean newRoute) {
-		boolean oldRoute = route;
-		route = newRoute;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__ROUTE, oldRoute, route));
 	}
 
 	/**
@@ -703,8 +661,6 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return isKey();
 			case EntityPackage.SLOT__NAME:
 				return getName();
-			case EntityPackage.SLOT__ROUTE:
-				return isRoute();
 			case EntityPackage.SLOT__TEXT:
 				return getText();
 			case EntityPackage.SLOT__TO_STRING:
@@ -744,9 +700,6 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return;
 			case EntityPackage.SLOT__NAME:
 				setName((String)newValue);
-				return;
-			case EntityPackage.SLOT__ROUTE:
-				setRoute((Boolean)newValue);
 				return;
 			case EntityPackage.SLOT__TEXT:
 				setText((String)newValue);
@@ -790,9 +743,6 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 			case EntityPackage.SLOT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case EntityPackage.SLOT__ROUTE:
-				setRoute(ROUTE_EDEFAULT);
-				return;
 			case EntityPackage.SLOT__TEXT:
 				setText(TEXT_EDEFAULT);
 				return;
@@ -827,8 +777,6 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return key != KEY_EDEFAULT;
 			case EntityPackage.SLOT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EntityPackage.SLOT__ROUTE:
-				return route != ROUTE_EDEFAULT;
 			case EntityPackage.SLOT__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case EntityPackage.SLOT__TO_STRING:
@@ -859,8 +807,6 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 		result.append(key);
 		result.append(", name: ");
 		result.append(name);
-		result.append(", route: ");
-		result.append(route);
 		result.append(", text: ");
 		result.append(text);
 		result.append(", toString: ");

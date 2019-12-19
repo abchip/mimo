@@ -42,7 +42,7 @@ public interface PaymentGatewayEway extends BizEntity {
 	 * @return the value of the '<em>Customer Id</em>' attribute.
 	 * @see #setCustomerId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayEway_CustomerId()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCustomerId();
@@ -68,7 +68,7 @@ public interface PaymentGatewayEway extends BizEntity {
 	 * @return the value of the '<em>Enable Beagle</em>' attribute.
 	 * @see #setEnableBeagle(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayEway_EnableBeagle()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getEnableBeagle();
@@ -94,7 +94,7 @@ public interface PaymentGatewayEway extends BizEntity {
 	 * @return the value of the '<em>Enable Cvn</em>' attribute.
 	 * @see #setEnableCvn(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayEway_EnableCvn()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getEnableCvn();
@@ -121,7 +121,7 @@ public interface PaymentGatewayEway extends BizEntity {
 	 * @see #setPaymentGatewayConfigId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayEway_PaymentGatewayConfigId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentGatewayConfigId();
@@ -148,7 +148,7 @@ public interface PaymentGatewayEway extends BizEntity {
 	 * @see #setRefundPwd(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayEway_RefundPwd()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getRefundPwd();
@@ -174,7 +174,7 @@ public interface PaymentGatewayEway extends BizEntity {
 	 * @return the value of the '<em>Test Mode</em>' attribute.
 	 * @see #setTestMode(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayEway_TestMode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getTestMode();

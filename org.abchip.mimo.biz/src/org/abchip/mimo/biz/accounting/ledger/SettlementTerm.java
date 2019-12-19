@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.ledger;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -68,7 +66,7 @@ public interface SettlementTerm extends BizEntity {
 	 * @return the value of the '<em>Term Value</em>' attribute.
 	 * @see #setTermValue(long)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getSettlementTerm_TermValue()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTermValue();
@@ -94,7 +92,7 @@ public interface SettlementTerm extends BizEntity {
 	 * @return the value of the '<em>Uom Id</em>' attribute.
 	 * @see #setUomId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getSettlementTerm_UomId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getUomId();
@@ -110,15 +108,6 @@ public interface SettlementTerm extends BizEntity {
 	void setUomId(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='settlementTermId'"
-	 * @generated
-	 */
-	List<AcctgTransEntry> acctgTransEntries();
-
-	/**
 	 * Returns the value of the '<em><b>Settlement Term Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -130,7 +119,7 @@ public interface SettlementTerm extends BizEntity {
 	 * @see #setSettlementTermId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getSettlementTerm_SettlementTermId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSettlementTermId();

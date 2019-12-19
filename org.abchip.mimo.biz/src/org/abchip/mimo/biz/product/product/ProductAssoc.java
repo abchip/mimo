@@ -84,7 +84,6 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -110,7 +109,7 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @return the value of the '<em>Instruction</em>' attribute.
 	 * @see #setInstruction(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_Instruction()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getInstruction();
@@ -162,7 +161,7 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @return the value of the '<em>Reason</em>' attribute.
 	 * @see #setReason(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_Reason()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getReason();
@@ -266,7 +265,7 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -292,7 +291,7 @@ public interface ProductAssoc extends BizEntityTyped<ProductAssocType> {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssoc_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

@@ -50,7 +50,7 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_FixedAssetId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFixedAssetId();
@@ -76,7 +76,7 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @return the value of the '<em>Maint Hist Seq Id</em>' attribute.
 	 * @see #setMaintHistSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_MaintHistSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getMaintHistSeqId();
@@ -157,7 +157,6 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_ReadingDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getReadingDate();
@@ -183,7 +182,7 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @return the value of the '<em>Reading Reason Enum Id</em>' attribute.
 	 * @see #setReadingReasonEnumId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_ReadingReasonEnumId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReadingReasonEnumId();
@@ -209,7 +208,7 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @return the value of the '<em>Work Effort Id</em>' attribute.
 	 * @see #setWorkEffortId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_WorkEffortId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getWorkEffortId();

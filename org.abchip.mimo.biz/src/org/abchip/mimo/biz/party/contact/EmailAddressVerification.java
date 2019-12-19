@@ -42,7 +42,7 @@ public interface EmailAddressVerification extends BizEntity {
 	 * @see #setEmailAddress(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getEmailAddressVerification_EmailAddress()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getEmailAddress();
@@ -68,7 +68,7 @@ public interface EmailAddressVerification extends BizEntity {
 	 * @return the value of the '<em>Expire Date</em>' attribute.
 	 * @see #setExpireDate(Date)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getEmailAddressVerification_ExpireDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getExpireDate();
@@ -94,7 +94,7 @@ public interface EmailAddressVerification extends BizEntity {
 	 * @return the value of the '<em>Verify Hash</em>' attribute.
 	 * @see #setVerifyHash(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getEmailAddressVerification_VerifyHash()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getVerifyHash();

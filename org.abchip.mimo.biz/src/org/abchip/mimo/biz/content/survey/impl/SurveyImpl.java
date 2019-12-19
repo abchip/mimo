@@ -7,17 +7,9 @@
  */
 package org.abchip.mimo.biz.content.survey.impl;
 
-import java.util.List;
-
-import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.survey.Survey;
-import org.abchip.mimo.biz.content.survey.SurveyMultiResp;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
-import org.abchip.mimo.biz.content.survey.SurveyPage;
-import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
-import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -37,9 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#isIsAnonymous <em>Is Anonymous</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#getResponseService <em>Response Service</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#getSubmitCaption <em>Submit Caption</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#getSurveyMultiResps <em>Survey Multi Resps</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#getSurveyName <em>Survey Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyImpl#getSurveyPages <em>Survey Pages</em>}</li>
  * </ul>
  *
  * @generated
@@ -267,76 +257,6 @@ public class SurveyImpl extends BizEntityImpl implements Survey {
 	@Override
 	public void setSurveyName(String newSurveyName) {
 		eSet(SurveyPackage.Literals.SURVEY__SURVEY_NAME, newSurveyName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<SurveyMultiResp> getSurveyMultiResps() {
-		return (List<SurveyMultiResp>)eGet(SurveyPackage.Literals.SURVEY__SURVEY_MULTI_RESPS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<SurveyPage> getSurveyPages() {
-		return (List<SurveyPage>)eGet(SurveyPackage.Literals.SURVEY__SURVEY_PAGES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<DataResource> dataResources() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductStoreFinActSetting> productStoreFinActSettings() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductStoreSurveyAppl> productStoreSurveyAppls() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SurveyResponse> surveyResponses() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //SurveyImpl

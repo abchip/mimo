@@ -69,7 +69,7 @@ public interface Deduction extends BizEntityTyped<DeductionType> {
 	 * @see #setDeductionId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getDeduction_DeductionId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDeductionId();

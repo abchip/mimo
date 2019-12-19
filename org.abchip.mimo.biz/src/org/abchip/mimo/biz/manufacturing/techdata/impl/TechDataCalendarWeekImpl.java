@@ -8,11 +8,7 @@
 package org.abchip.mimo.biz.manufacturing.techdata.impl;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar;
-import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -388,30 +384,6 @@ public class TechDataCalendarWeekImpl extends BizEntityImpl implements TechDataC
 	@Override
 	public void setWednesdayStartTime(Date newWednesdayStartTime) {
 		eSet(TechdataPackage.Literals.TECH_DATA_CALENDAR_WEEK__WEDNESDAY_START_TIME, newWednesdayStartTime);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TechDataCalendarExcWeek> techDataCalendarExcWeeks() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TechDataCalendar> techDataCalendars() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //TechDataCalendarWeekImpl

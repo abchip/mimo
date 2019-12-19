@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.manufacturing.techdata;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +21,6 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getCalendarId <em>Calendar Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getCalendarWeekId <em>Calendar Week Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getTechDataCalendarExcDaies <em>Tech Data Calendar Exc Daies</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getTechDataCalendarExcWeeks <em>Tech Data Calendar Exc Weeks</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendar()
@@ -45,7 +40,7 @@ public interface TechDataCalendar extends BizEntity {
 	 * @see #setCalendarId(String)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendar_CalendarId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCalendarId();
@@ -111,48 +106,5 @@ public interface TechDataCalendar extends BizEntity {
 	 * @generated
 	 */
 	void setDescription(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Tech Data Calendar Exc Daies</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcDay}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tech Data Calendar Exc Daies</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tech Data Calendar Exc Daies</em>' reference list.
-	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendar_TechDataCalendarExcDaies()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TechDataCalendarExcDay'"
-	 * @generated
-	 */
-	List<TechDataCalendarExcDay> getTechDataCalendarExcDaies();
-
-	/**
-	 * Returns the value of the '<em><b>Tech Data Calendar Exc Weeks</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarExcWeek}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tech Data Calendar Exc Weeks</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tech Data Calendar Exc Weeks</em>' reference list.
-	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendar_TechDataCalendarExcWeeks()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TechDataCalendarExcWeek'"
-	 * @generated
-	 */
-	List<TechDataCalendarExcWeek> getTechDataCalendarExcWeeks();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAsset' route='calendarId'"
-	 * @generated
-	 */
-	List<FixedAsset> fixedAssets();
 
 } // TechDataCalendar

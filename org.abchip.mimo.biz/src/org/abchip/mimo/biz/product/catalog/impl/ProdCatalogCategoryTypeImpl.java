@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.catalog.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.catalog.CatalogPackage;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogCategoryType;
@@ -92,18 +90,6 @@ public class ProdCatalogCategoryTypeImpl extends BizEntityImpl implements ProdCa
 	@Override
 	public void setParentTypeId(ProdCatalogCategoryType newParentTypeId) {
 		eSet(CatalogPackage.Literals.PROD_CATALOG_CATEGORY_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProdCatalogCategoryType> childProdCatalogCategoryTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.product.product;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
 import org.abchip.mimo.biz.common.uom.Uom;
 
 /**
@@ -86,33 +83,6 @@ public interface ProductMeterType extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAssetMaint' route='intervalMeterTypeId'"
-	 * @generated
-	 */
-	List<FixedAssetMaint> intervalFixedAssetMaints();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductMaint' route='intervalMeterTypeId'"
-	 * @generated
-	 */
-	List<ProductMaint> intervalProductMaints();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductMeter' route='productMeterTypeId'"
-	 * @generated
-	 */
-	List<ProductMeter> productMeters();
-
-	/**
 	 * Returns the value of the '<em><b>Product Meter Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -124,7 +94,7 @@ public interface ProductMeterType extends BizEntity {
 	 * @see #setProductMeterTypeId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeterType_ProductMeterTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductMeterTypeId();

@@ -8,11 +8,8 @@
 package org.abchip.mimo.biz.service.schedule;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.status.StatusItem;
-import org.abchip.mimo.biz.product.product.ProductGroupOrder;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
@@ -66,7 +63,7 @@ public interface JobSandbox extends BizEntity {
 	 * @see #setJobId(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_JobId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getJobId();
@@ -118,7 +115,7 @@ public interface JobSandbox extends BizEntity {
 	 * @return the value of the '<em>Cancel Date Time</em>' attribute.
 	 * @see #setCancelDateTime(Date)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_CancelDateTime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getCancelDateTime();
@@ -144,7 +141,7 @@ public interface JobSandbox extends BizEntity {
 	 * @return the value of the '<em>Current Recurrence Count</em>' attribute.
 	 * @see #setCurrentRecurrenceCount(long)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_CurrentRecurrenceCount()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getCurrentRecurrenceCount();
@@ -170,7 +167,7 @@ public interface JobSandbox extends BizEntity {
 	 * @return the value of the '<em>Current Retry Count</em>' attribute.
 	 * @see #setCurrentRetryCount(long)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_CurrentRetryCount()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getCurrentRetryCount();
@@ -196,7 +193,7 @@ public interface JobSandbox extends BizEntity {
 	 * @return the value of the '<em>Finish Date Time</em>' attribute.
 	 * @see #setFinishDateTime(Date)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_FinishDateTime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFinishDateTime();
@@ -248,7 +245,7 @@ public interface JobSandbox extends BizEntity {
 	 * @return the value of the '<em>Job Result</em>' attribute.
 	 * @see #setJobResult(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_JobResult()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getJobResult();
@@ -300,7 +297,7 @@ public interface JobSandbox extends BizEntity {
 	 * @return the value of the '<em>Max Recurrence Count</em>' attribute.
 	 * @see #setMaxRecurrenceCount(long)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_MaxRecurrenceCount()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxRecurrenceCount();
@@ -326,7 +323,7 @@ public interface JobSandbox extends BizEntity {
 	 * @return the value of the '<em>Max Retry</em>' attribute.
 	 * @see #setMaxRetry(long)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_MaxRetry()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxRetry();
@@ -352,7 +349,7 @@ public interface JobSandbox extends BizEntity {
 	 * @return the value of the '<em>Parent Job Id</em>' attribute.
 	 * @see #setParentJobId(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_ParentJobId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getParentJobId();
@@ -404,7 +401,7 @@ public interface JobSandbox extends BizEntity {
 	 * @return the value of the '<em>Previous Job Id</em>' attribute.
 	 * @see #setPreviousJobId(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_PreviousJobId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPreviousJobId();
@@ -483,7 +480,7 @@ public interface JobSandbox extends BizEntity {
 	 * @return the value of the '<em>Run By Instance Id</em>' attribute.
 	 * @see #setRunByInstanceId(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RunByInstanceId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRunByInstanceId();
@@ -509,7 +506,7 @@ public interface JobSandbox extends BizEntity {
 	 * @return the value of the '<em>Run Time</em>' attribute.
 	 * @see #setRunTime(Date)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_RunTime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getRunTime();
@@ -587,7 +584,7 @@ public interface JobSandbox extends BizEntity {
 	 * @return the value of the '<em>Start Date Time</em>' attribute.
 	 * @see #setStartDateTime(Date)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobSandbox_StartDateTime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getStartDateTime();
@@ -654,14 +651,5 @@ public interface JobSandbox extends BizEntity {
 	 * @generated
 	 */
 	void setTempExprId(TemporalExpression value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductGroupOrder' route='jobId'"
-	 * @generated
-	 */
-	List<ProductGroupOrder> productGroupOrders();
 
 } // JobSandbox

@@ -41,7 +41,7 @@ public interface ProductPromoRule extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoRule_ProductPromoRuleId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductPromoRuleId();

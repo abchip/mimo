@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.party.agreement.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementContent;
 import org.abchip.mimo.biz.party.agreement.AgreementContentType;
@@ -113,18 +111,6 @@ public class AgreementContentTypeImpl extends BizEntityTypeImpl<AgreementContent
 	@Override
 	public void setParentTypeId(AgreementContentType newParentTypeId) {
 		eSet(AgreementPackage.Literals.AGREEMENT_CONTENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AgreementContentType> childAgreementContentTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

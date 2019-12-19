@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.screen;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -43,7 +41,7 @@ public interface CustomScreenType extends BizEntityType<CustomScreen> {
 	 * @see #setCustomScreenTypeId(String)
 	 * @see org.abchip.mimo.biz.common.screen.ScreenPackage#getCustomScreenType_CustomScreenTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCustomScreenTypeId();
@@ -95,7 +93,7 @@ public interface CustomScreenType extends BizEntityType<CustomScreen> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.common.screen.ScreenPackage#getCustomScreenType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -121,7 +119,7 @@ public interface CustomScreenType extends BizEntityType<CustomScreen> {
 	 * @return the value of the '<em>Parent Type Id</em>' attribute.
 	 * @see #setParentTypeId(String)
 	 * @see org.abchip.mimo.biz.common.screen.ScreenPackage#getCustomScreenType_ParentTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getParentTypeId();
@@ -135,23 +133,5 @@ public interface CustomScreenType extends BizEntityType<CustomScreen> {
 	 * @generated
 	 */
 	void setParentTypeId(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustomScreenType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<CustomScreenType> childCustomScreenTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustomScreen' route='customScreenTypeId'"
-	 * @generated
-	 */
-	List<CustomScreen> customScreens();
 
 } // CustomScreenType

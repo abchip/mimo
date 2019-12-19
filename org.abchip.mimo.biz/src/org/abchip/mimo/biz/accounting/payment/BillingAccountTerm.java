@@ -8,9 +8,6 @@
 package org.abchip.mimo.biz.accounting.payment;
 
 import java.math.BigDecimal;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.party.agreement.TermType;
@@ -26,7 +23,6 @@ import org.abchip.mimo.biz.party.agreement.TermType;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getBillingAccountTermId <em>Billing Account Term Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getBillingAccountId <em>Billing Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getBillingAccountTermAttrs <em>Billing Account Term Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getTermDays <em>Term Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getTermValue <em>Term Value</em>}</li>
@@ -49,7 +45,7 @@ public interface BillingAccountTerm extends BizEntity {
 	 * @return the value of the '<em>Term Days</em>' attribute.
 	 * @see #setTermDays(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTerm_TermDays()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTermDays();
@@ -143,23 +139,6 @@ public interface BillingAccountTerm extends BizEntity {
 	void setUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Billing Account Term Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.payment.BillingAccountTermAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Billing Account Term Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Billing Account Term Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTerm_BillingAccountTermAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='BillingAccountTermAttr'"
-	 * @generated
-	 */
-	List<BillingAccountTermAttr> getBillingAccountTermAttrs();
-
-	/**
 	 * Returns the value of the '<em><b>Billing Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -197,7 +176,7 @@ public interface BillingAccountTerm extends BizEntity {
 	 * @see #setBillingAccountTermId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTerm_BillingAccountTermId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBillingAccountTermId();

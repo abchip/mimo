@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.order.shoppinglist;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -56,15 +54,6 @@ public interface ShoppingListType extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShoppingList' route='shoppingListTypeId'"
-	 * @generated
-	 */
-	List<ShoppingList> shoppingLists();
-
-	/**
 	 * Returns the value of the '<em><b>Shopping List Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -76,7 +65,7 @@ public interface ShoppingListType extends BizEntity {
 	 * @see #setShoppingListTypeId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListType_ShoppingListTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShoppingListTypeId();

@@ -73,7 +73,7 @@ public interface FinAccountAuth extends BizEntity {
 	 * @return the value of the '<em>Authorization Date</em>' attribute.
 	 * @see #setAuthorizationDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountAuth_AuthorizationDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getAuthorizationDate();
@@ -99,7 +99,7 @@ public interface FinAccountAuth extends BizEntity {
 	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
 	 * @see #setCurrencyUomId(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountAuth_CurrencyUomId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCurrencyUomId();
@@ -126,7 +126,7 @@ public interface FinAccountAuth extends BizEntity {
 	 * @see #setFinAccountAuthId(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountAuth_FinAccountAuthId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFinAccountAuthId();
@@ -152,7 +152,7 @@ public interface FinAccountAuth extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountAuth_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -178,7 +178,7 @@ public interface FinAccountAuth extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountAuth_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

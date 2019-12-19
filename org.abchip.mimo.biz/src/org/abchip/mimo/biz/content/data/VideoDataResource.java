@@ -39,7 +39,7 @@ public interface VideoDataResource extends BizEntity {
 	 * @see #setDataResourceId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getVideoDataResource_DataResourceId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDataResourceId();
@@ -65,7 +65,7 @@ public interface VideoDataResource extends BizEntity {
 	 * @return the value of the '<em>Video Data</em>' attribute.
 	 * @see #setVideoData(byte[])
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getVideoDataResource_VideoData()
-	 * @model annotation="mimo-ent-format type='byte-array'"
+	 * @model
 	 * @generated
 	 */
 	byte[] getVideoData();

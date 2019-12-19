@@ -39,7 +39,7 @@ public interface JavaResource extends BizEntity {
 	 * @see #setResourceName(String)
 	 * @see org.abchip.mimo.biz.entity.EntityPackage#getJavaResource_ResourceName()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getResourceName();
@@ -65,7 +65,7 @@ public interface JavaResource extends BizEntity {
 	 * @return the value of the '<em>Resource Value</em>' attribute.
 	 * @see #setResourceValue(byte[])
 	 * @see org.abchip.mimo.biz.entity.EntityPackage#getJavaResource_ResourceValue()
-	 * @model annotation="mimo-ent-format type='byte-array'"
+	 * @model
 	 * @generated
 	 */
 	byte[] getResourceValue();

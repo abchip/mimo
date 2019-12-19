@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.party.party.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.marketing.segment.SegmentGroupClassification;
 import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
 import org.abchip.mimo.biz.party.party.PartyClassificationType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
@@ -114,30 +111,6 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 	@Override
 	public void setPartyClassificationTypeId(PartyClassificationType newPartyClassificationTypeId) {
 		eSet(PartyPackage.Literals.PARTY_CLASSIFICATION_GROUP__PARTY_CLASSIFICATION_TYPE_ID, newPartyClassificationTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyClassificationGroup> childPartyClassificationGroups() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SegmentGroupClassification> segmentGroupClassifications() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

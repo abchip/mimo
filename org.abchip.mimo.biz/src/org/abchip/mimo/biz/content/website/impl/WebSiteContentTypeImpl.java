@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.content.website.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.content.website.WebSiteContent;
 import org.abchip.mimo.biz.content.website.WebSiteContentType;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
@@ -114,18 +112,6 @@ public class WebSiteContentTypeImpl extends BizEntityTypeImpl<WebSiteContent> im
 	@Override
 	public void setParentTypeId(WebSiteContentType newParentTypeId) {
 		eSet(WebsitePackage.Literals.WEB_SITE_CONTENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WebSiteContentType> childWebSiteContentTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

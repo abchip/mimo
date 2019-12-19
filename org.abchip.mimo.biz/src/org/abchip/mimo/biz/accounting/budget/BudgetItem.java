@@ -72,7 +72,7 @@ public interface BudgetItem extends BizEntityTyped<BudgetItemType> {
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItem_BudgetItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBudgetItemSeqId();
@@ -98,7 +98,7 @@ public interface BudgetItem extends BizEntityTyped<BudgetItemType> {
 	 * @return the value of the '<em>Justification</em>' attribute.
 	 * @see #setJustification(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItem_Justification()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getJustification();
@@ -124,7 +124,7 @@ public interface BudgetItem extends BizEntityTyped<BudgetItemType> {
 	 * @return the value of the '<em>Purpose</em>' attribute.
 	 * @see #setPurpose(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItem_Purpose()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getPurpose();

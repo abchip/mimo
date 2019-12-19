@@ -7,13 +7,10 @@
  */
 package org.abchip.mimo.biz.order.requirement.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.RequirementType;
-import org.abchip.mimo.biz.order.requirement.RequirementTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -28,7 +25,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementTypeImpl#getRequirementTypeAttrs <em>Requirement Type Attrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -136,41 +132,6 @@ public class RequirementTypeImpl extends BizEntityTypeImpl<Requirement> implemen
 	@Override
 	public void setRequirementTypeId(String newRequirementTypeId) {
 		eSet(RequirementPackage.Literals.REQUIREMENT_TYPE__REQUIREMENT_TYPE_ID, newRequirementTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<RequirementTypeAttr> getRequirementTypeAttrs() {
-		return (List<RequirementTypeAttr>)eGet(RequirementPackage.Literals.REQUIREMENT_TYPE__REQUIREMENT_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<RequirementType> childRequirementTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Requirement> requirements() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //RequirementTypeImpl

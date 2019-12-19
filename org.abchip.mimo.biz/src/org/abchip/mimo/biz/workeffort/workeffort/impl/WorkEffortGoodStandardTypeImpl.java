@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandardType;
@@ -114,18 +112,6 @@ public class WorkEffortGoodStandardTypeImpl extends BizEntityTypeImpl<WorkEffort
 	@Override
 	public void setParentTypeId(WorkEffortGoodStandardType newParentTypeId) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT_GOOD_STANDARD_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WorkEffortGoodStandardType> childWorkEffortGoodStandardTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

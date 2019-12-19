@@ -68,7 +68,7 @@ public interface ContentKeyword extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentKeyword_Keyword()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getKeyword();
@@ -94,7 +94,7 @@ public interface ContentKeyword extends BizEntity {
 	 * @return the value of the '<em>Relevancy Weight</em>' attribute.
 	 * @see #setRelevancyWeight(long)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentKeyword_RelevancyWeight()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRelevancyWeight();

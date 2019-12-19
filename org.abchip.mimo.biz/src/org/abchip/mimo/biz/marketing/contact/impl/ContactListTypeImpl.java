@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.marketing.contact.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.marketing.contact.ContactList;
 import org.abchip.mimo.biz.marketing.contact.ContactListType;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -93,18 +90,6 @@ public class ContactListTypeImpl extends BizEntityImpl implements ContactListTyp
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(ContactPackage.Literals.CONTACT_LIST_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ContactList> contactLists() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ContactListTypeImpl

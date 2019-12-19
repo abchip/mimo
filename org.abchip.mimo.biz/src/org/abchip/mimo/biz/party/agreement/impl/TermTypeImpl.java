@@ -7,14 +7,10 @@
  */
 package org.abchip.mimo.biz.party.agreement.impl;
 
-import java.util.List;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceTerm;
-import org.abchip.mimo.biz.accounting.payment.BillingAccountTerm;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementTerm;
 import org.abchip.mimo.biz.party.agreement.TermType;
-import org.abchip.mimo.biz.party.agreement.TermTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +25,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.TermTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.TermTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.TermTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.TermTypeImpl#getTermTypeAttrs <em>Term Type Attrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -137,65 +132,6 @@ public class TermTypeImpl extends BizEntityTypeImpl<AgreementTerm> implements Te
 	@Override
 	public void setTermTypeId(String newTermTypeId) {
 		eSet(AgreementPackage.Literals.TERM_TYPE__TERM_TYPE_ID, newTermTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<TermTypeAttr> getTermTypeAttrs() {
-		return (List<TermTypeAttr>)eGet(AgreementPackage.Literals.TERM_TYPE__TERM_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AgreementTerm> agreementTerms() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<BillingAccountTerm> billingAccountTerms() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TermType> childTermTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InvoiceTerm> invoiceTerms() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //TermTypeImpl

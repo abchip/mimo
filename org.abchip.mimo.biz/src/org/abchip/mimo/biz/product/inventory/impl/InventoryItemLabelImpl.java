@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.product.inventory.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryItemLabel;
-import org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl;
 import org.abchip.mimo.biz.product.inventory.InventoryItemLabelType;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -94,18 +91,6 @@ public class InventoryItemLabelImpl extends BizEntityTypedImpl<InventoryItemLabe
 	@Override
 	public void setInventoryItemLabelTypeId(InventoryItemLabelType newInventoryItemLabelTypeId) {
 		eSet(InventoryPackage.Literals.INVENTORY_ITEM_LABEL__INVENTORY_ITEM_LABEL_TYPE_ID, newInventoryItemLabelTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InventoryItemLabelAppl> inventoryItemLabelAppls() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

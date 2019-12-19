@@ -1251,31 +1251,13 @@ public interface PricePackage extends EPackage {
 	int PRODUCT_PRICE_RULE__IS_SALE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Product Price Actions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE_RULE__PRODUCT_PRICE_ACTIONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Product Price Conds</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE_RULE__PRODUCT_PRICE_CONDS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Rule Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_RULE__RULE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PRODUCT_PRICE_RULE__RULE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1284,7 +1266,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_RULE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PRODUCT_PRICE_RULE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Product Price Rule</em>' class.
@@ -1293,7 +1275,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_RULE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PRODUCT_PRICE_RULE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.price.impl.ProductPriceTypeImpl <em>Product Price Type</em>}' class.
@@ -2521,28 +2503,6 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductPriceRule_ThruDate();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getProductPriceActions <em>Product Price Actions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Product Price Actions</em>'.
-	 * @see org.abchip.mimo.biz.product.price.ProductPriceRule#getProductPriceActions()
-	 * @see #getProductPriceRule()
-	 * @generated
-	 */
-	EReference getProductPriceRule_ProductPriceActions();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getProductPriceConds <em>Product Price Conds</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Product Price Conds</em>'.
-	 * @see org.abchip.mimo.biz.product.price.ProductPriceRule#getProductPriceConds()
-	 * @see #getProductPriceRule()
-	 * @generated
-	 */
-	EReference getProductPriceRule_ProductPriceConds();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.price.ProductPriceType <em>Product Price Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3405,22 +3365,6 @@ public interface PricePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PRODUCT_PRICE_RULE__THRU_DATE = eINSTANCE.getProductPriceRule_ThruDate();
-
-		/**
-		 * The meta object literal for the '<em><b>Product Price Actions</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PRODUCT_PRICE_RULE__PRODUCT_PRICE_ACTIONS = eINSTANCE.getProductPriceRule_ProductPriceActions();
-
-		/**
-		 * The meta object literal for the '<em><b>Product Price Conds</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PRODUCT_PRICE_RULE__PRODUCT_PRICE_CONDS = eINSTANCE.getProductPriceRule_ProductPriceConds();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.price.impl.ProductPriceTypeImpl <em>Product Price Type</em>}' class.

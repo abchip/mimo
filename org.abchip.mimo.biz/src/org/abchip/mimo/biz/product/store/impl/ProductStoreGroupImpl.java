@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.product.store.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.ProductStoreGroupType;
 import org.abchip.mimo.biz.product.store.StorePackage;
@@ -116,18 +113,6 @@ public class ProductStoreGroupImpl extends BizEntityImpl implements ProductStore
 	@Override
 	public void setProductStoreGroupTypeId(ProductStoreGroupType newProductStoreGroupTypeId) {
 		eSet(StorePackage.Literals.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_TYPE_ID, newProductStoreGroupTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductStore> primaryProductStores() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -10,14 +10,8 @@ package org.abchip.mimo.biz.accounting.payment;
 import java.math.BigDecimal;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.order.order.OrderHeader;
-import org.abchip.mimo.biz.order.return_.ReturnHeader;
-import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 
 /**
@@ -159,7 +153,7 @@ public interface BillingAccount extends BizEntity {
 	 * @return the value of the '<em>External Account Id</em>' attribute.
 	 * @see #setExternalAccountId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount_ExternalAccountId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getExternalAccountId();
@@ -185,7 +179,7 @@ public interface BillingAccount extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -211,7 +205,7 @@ public interface BillingAccount extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -227,60 +221,6 @@ public interface BillingAccount extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='BillingAccountTerm' route='billingAccountId'"
-	 * @generated
-	 */
-	List<BillingAccountTerm> billingAccountTerms();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Invoice' route='billingAccountId'"
-	 * @generated
-	 */
-	List<Invoice> invoices();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader' route='billingAccountId'"
-	 * @generated
-	 */
-	List<OrderHeader> orderHeaders();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentApplication' route='billingAccountId'"
-	 * @generated
-	 */
-	List<PaymentApplication> paymentApplications();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='billingAccountId'"
-	 * @generated
-	 */
-	List<ReturnHeader> returnHeaders();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnItemResponse' route='billingAccountId'"
-	 * @generated
-	 */
-	List<ReturnItemResponse> returnItemResponses();
-
-	/**
 	 * Returns the value of the '<em><b>Billing Account Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -292,7 +232,7 @@ public interface BillingAccount extends BizEntity {
 	 * @see #setBillingAccountId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount_BillingAccountId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBillingAccountId();

@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.DebitCreditFlag;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.party.party.Party;
@@ -72,7 +73,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_AcctgTransEntrySeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getAcctgTransEntrySeqId();
@@ -115,6 +116,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 
 	/**
 	 * Returns the value of the '<em><b>Debit Credit Flag</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.abchip.mimo.biz.accounting.DebitCreditFlag}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Debit Credit Flag</em>' attribute isn't clear,
@@ -122,22 +124,24 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Debit Credit Flag</em>' attribute.
-	 * @see #setDebitCreditFlag(char)
+	 * @see org.abchip.mimo.biz.accounting.DebitCreditFlag
+	 * @see #setDebitCreditFlag(DebitCreditFlag)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_DebitCreditFlag()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
-	char getDebitCreditFlag();
+	DebitCreditFlag getDebitCreditFlag();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getDebitCreditFlag <em>Debit Credit Flag</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Debit Credit Flag</em>' attribute.
+	 * @see org.abchip.mimo.biz.accounting.DebitCreditFlag
 	 * @see #getDebitCreditFlag()
 	 * @generated
 	 */
-	void setDebitCreditFlag(char value);
+	void setDebitCreditFlag(DebitCreditFlag value);
 
 	/**
 	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' reference.
@@ -202,7 +206,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Due Date</em>' attribute.
 	 * @see #setDueDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_DueDate()
-	 * @model annotation="mimo-ent-format type='date'"
+	 * @model
 	 * @generated
 	 */
 	Date getDueDate();
@@ -228,7 +232,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Group Id</em>' attribute.
 	 * @see #setGroupId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_GroupId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGroupId();
@@ -254,7 +258,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Is Summary</em>' attribute.
 	 * @see #setIsSummary(boolean)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_IsSummary()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsSummary();
@@ -306,7 +310,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Organization Party Id</em>' attribute.
 	 * @see #setOrganizationPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_OrganizationPartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrganizationPartyId();
@@ -410,7 +414,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_ProductId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductId();
@@ -488,7 +492,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Tax Id</em>' attribute.
 	 * @see #setTaxId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_TaxId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTaxId();
@@ -514,7 +518,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Their Party Id</em>' attribute.
 	 * @see #setTheirPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_TheirPartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTheirPartyId();
@@ -540,7 +544,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Their Product Id</em>' attribute.
 	 * @see #setTheirProductId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_TheirProductId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTheirProductId();
@@ -566,7 +570,7 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Voucher Ref</em>' attribute.
 	 * @see #setVoucherRef(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_VoucherRef()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getVoucherRef();

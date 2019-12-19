@@ -126,7 +126,7 @@ public interface OrderItemPriceInfo extends BizEntity {
 	 * @see #setOrderItemPriceInfoId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemPriceInfo_OrderItemPriceInfoId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemPriceInfoId();
@@ -152,7 +152,7 @@ public interface OrderItemPriceInfo extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemPriceInfo_OrderItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -178,7 +178,7 @@ public interface OrderItemPriceInfo extends BizEntity {
 	 * @return the value of the '<em>Product Price Action Seq Id</em>' attribute.
 	 * @see #setProductPriceActionSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemPriceInfo_ProductPriceActionSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductPriceActionSeqId();
@@ -230,7 +230,7 @@ public interface OrderItemPriceInfo extends BizEntity {
 	 * @return the value of the '<em>Rate Code</em>' attribute.
 	 * @see #setRateCode(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemPriceInfo_RateCode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getRateCode();

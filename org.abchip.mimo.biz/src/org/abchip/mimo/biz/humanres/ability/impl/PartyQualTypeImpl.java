@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.ability.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PartyQual;
 import org.abchip.mimo.biz.humanres.ability.PartyQualType;
@@ -114,18 +112,6 @@ public class PartyQualTypeImpl extends BizEntityTypeImpl<PartyQual> implements P
 	@Override
 	public void setParentTypeId(PartyQualType newParentTypeId) {
 		eSet(AbilityPackage.Literals.PARTY_QUAL_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyQualType> childPartyQualTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

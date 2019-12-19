@@ -47,7 +47,6 @@ public interface ProductStorePromoAppl extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -64,7 +63,6 @@ public interface ProductStorePromoAppl extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Manual Only</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Manual Only</em>' attribute isn't clear,
@@ -74,9 +72,7 @@ public interface ProductStorePromoAppl extends BizEntity {
 	 * @return the value of the '<em>Manual Only</em>' attribute.
 	 * @see #setManualOnly(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl_ManualOnly()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-slot help='If set to Y then the promotion is not automatically evaluated, but only if it\n              is manually added to the cart.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model annotation="mimo-ent-slot help='If set to Y then the promotion is not automatically evaluated, but only if it\n              is manually added to the cart.'"
 	 * @generated
 	 */
 	boolean isManualOnly();
@@ -102,7 +98,7 @@ public interface ProductStorePromoAppl extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -128,7 +124,7 @@ public interface ProductStorePromoAppl extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

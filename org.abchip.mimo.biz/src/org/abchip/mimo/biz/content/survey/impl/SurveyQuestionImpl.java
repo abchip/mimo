@@ -7,13 +7,10 @@
  */
 package org.abchip.mimo.biz.content.survey.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionCategory;
-import org.abchip.mimo.biz.content.survey.SurveyQuestionOption;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -34,7 +31,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getHint <em>Hint</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getQuestion <em>Question</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getSurveyQuestionCategoryId <em>Survey Question Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getSurveyQuestionOptions <em>Survey Question Options</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getSurveyQuestionTypeId <em>Survey Question Type Id</em>}</li>
  * </ul>
  *
@@ -243,17 +239,6 @@ public class SurveyQuestionImpl extends BizEntityImpl implements SurveyQuestion 
 	@Override
 	public void setSurveyQuestionTypeId(SurveyQuestionType newSurveyQuestionTypeId) {
 		eSet(SurveyPackage.Literals.SURVEY_QUESTION__SURVEY_QUESTION_TYPE_ID, newSurveyQuestionTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<SurveyQuestionOption> getSurveyQuestionOptions() {
-		return (List<SurveyQuestionOption>)eGet(SurveyPackage.Literals.SURVEY_QUESTION__SURVEY_QUESTION_OPTIONS, true);
 	}
 
 } //SurveyQuestionImpl

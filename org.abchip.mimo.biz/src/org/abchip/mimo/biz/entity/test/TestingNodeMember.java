@@ -44,7 +44,7 @@ public interface TestingNodeMember extends BizEntity {
 	 * @return the value of the '<em>Extend From Date</em>' attribute.
 	 * @see #setExtendFromDate(Date)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNodeMember_ExtendFromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getExtendFromDate();
@@ -70,7 +70,7 @@ public interface TestingNodeMember extends BizEntity {
 	 * @return the value of the '<em>Extend Thru Date</em>' attribute.
 	 * @see #setExtendThruDate(Date)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNodeMember_ExtendThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getExtendThruDate();
@@ -98,7 +98,6 @@ public interface TestingNodeMember extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNodeMember_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -178,7 +177,7 @@ public interface TestingNodeMember extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNodeMember_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

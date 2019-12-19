@@ -8,13 +8,7 @@
 package org.abchip.mimo.biz.entity.synchronization.impl;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.entity.synchronization.EntitySync;
-import org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory;
-import org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude;
-import org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -28,9 +22,6 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getEntitySyncId <em>Entity Sync Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getEntitySyncHistories <em>Entity Sync Histories</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getEntitySyncIncludeGroups <em>Entity Sync Include Groups</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getEntitySyncIncludes <em>Entity Sync Includes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#isForPullOnly <em>For Pull Only</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#isForPushOnly <em>For Push Only</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncImpl#getKeepRemoveInfoHours <em>Keep Remove Info Hours</em>}</li>
@@ -350,39 +341,6 @@ public class EntitySyncImpl extends BizEntityImpl implements EntitySync {
 	@Override
 	public void setTargetServiceName(String newTargetServiceName) {
 		eSet(SynchronizationPackage.Literals.ENTITY_SYNC__TARGET_SERVICE_NAME, newTargetServiceName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<EntitySyncHistory> getEntitySyncHistories() {
-		return (List<EntitySyncHistory>)eGet(SynchronizationPackage.Literals.ENTITY_SYNC__ENTITY_SYNC_HISTORIES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<EntitySyncInclude> getEntitySyncIncludes() {
-		return (List<EntitySyncInclude>)eGet(SynchronizationPackage.Literals.ENTITY_SYNC__ENTITY_SYNC_INCLUDES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<EntitySyncIncludeGroup> getEntitySyncIncludeGroups() {
-		return (List<EntitySyncIncludeGroup>)eGet(SynchronizationPackage.Literals.ENTITY_SYNC__ENTITY_SYNC_INCLUDE_GROUPS, true);
 	}
 
 } //EntitySyncImpl

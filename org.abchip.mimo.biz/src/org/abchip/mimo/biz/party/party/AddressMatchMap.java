@@ -41,7 +41,7 @@ public interface AddressMatchMap extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAddressMatchMap_MapKey()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getMapKey();
@@ -69,7 +69,7 @@ public interface AddressMatchMap extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAddressMatchMap_MapValue()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getMapValue();
@@ -95,7 +95,7 @@ public interface AddressMatchMap extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getAddressMatchMap_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();

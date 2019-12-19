@@ -52,7 +52,7 @@ public interface ServerHitBin extends BizEntity {
 	 * @see #setServerHitBinId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_ServerHitBinId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getServerHitBinId();
@@ -78,7 +78,7 @@ public interface ServerHitBin extends BizEntity {
 	 * @return the value of the '<em>Bin End Date Time</em>' attribute.
 	 * @see #setBinEndDateTime(Date)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_BinEndDateTime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getBinEndDateTime();
@@ -104,7 +104,7 @@ public interface ServerHitBin extends BizEntity {
 	 * @return the value of the '<em>Bin Start Date Time</em>' attribute.
 	 * @see #setBinStartDateTime(Date)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_BinStartDateTime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getBinStartDateTime();
@@ -130,7 +130,7 @@ public interface ServerHitBin extends BizEntity {
 	 * @return the value of the '<em>Content Id</em>' attribute.
 	 * @see #setContentId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_ContentId()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getContentId();
@@ -208,7 +208,7 @@ public interface ServerHitBin extends BizEntity {
 	 * @return the value of the '<em>Max Time Millis</em>' attribute.
 	 * @see #setMaxTimeMillis(long)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_MaxTimeMillis()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMaxTimeMillis();
@@ -234,7 +234,7 @@ public interface ServerHitBin extends BizEntity {
 	 * @return the value of the '<em>Min Time Millis</em>' attribute.
 	 * @see #setMinTimeMillis(long)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_MinTimeMillis()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMinTimeMillis();
@@ -260,7 +260,7 @@ public interface ServerHitBin extends BizEntity {
 	 * @return the value of the '<em>Number Hits</em>' attribute.
 	 * @see #setNumberHits(long)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_NumberHits()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getNumberHits();
@@ -286,7 +286,7 @@ public interface ServerHitBin extends BizEntity {
 	 * @return the value of the '<em>Server Host Name</em>' attribute.
 	 * @see #setServerHostName(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_ServerHostName()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getServerHostName();
@@ -312,7 +312,7 @@ public interface ServerHitBin extends BizEntity {
 	 * @return the value of the '<em>Server Ip Address</em>' attribute.
 	 * @see #setServerIpAddress(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_ServerIpAddress()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getServerIpAddress();
@@ -338,7 +338,7 @@ public interface ServerHitBin extends BizEntity {
 	 * @return the value of the '<em>Total Time Millis</em>' attribute.
 	 * @see #setTotalTimeMillis(long)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_TotalTimeMillis()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTotalTimeMillis();

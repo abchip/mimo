@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.party.party;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface PartyIdentificationType extends BizEntityType<PartyIdentificati
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIdentificationType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -110,24 +108,6 @@ public interface PartyIdentificationType extends BizEntityType<PartyIdentificati
 	void setParentTypeId(PartyIdentificationType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyIdentificationType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<PartyIdentificationType> childPartyIdentificationTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyIdentification' route='partyIdentificationTypeId'"
-	 * @generated
-	 */
-	List<PartyIdentification> partyIdentifications();
-
-	/**
 	 * Returns the value of the '<em><b>Party Identification Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -139,7 +119,7 @@ public interface PartyIdentificationType extends BizEntityType<PartyIdentificati
 	 * @see #setPartyIdentificationTypeId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIdentificationType_PartyIdentificationTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyIdentificationTypeId();

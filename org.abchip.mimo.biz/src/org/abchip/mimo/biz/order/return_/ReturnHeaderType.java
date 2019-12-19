@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.order.return_;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -83,33 +81,6 @@ public interface ReturnHeaderType extends BizEntity {
 	void setParentTypeId(ReturnHeaderType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnHeaderType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<ReturnHeaderType> childReturnHeaderTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='returnHeaderTypeId'"
-	 * @generated
-	 */
-	List<ReturnHeader> returnHeaders();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnItemTypeMap' route='returnHeaderTypeId'"
-	 * @generated
-	 */
-	List<ReturnItemTypeMap> returnItemTypeMaps();
-
-	/**
 	 * Returns the value of the '<em><b>Return Header Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -121,7 +92,7 @@ public interface ReturnHeaderType extends BizEntity {
 	 * @see #setReturnHeaderTypeId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeaderType_ReturnHeaderTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReturnHeaderTypeId();

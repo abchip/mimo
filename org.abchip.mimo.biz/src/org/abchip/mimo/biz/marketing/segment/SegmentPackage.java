@@ -135,31 +135,13 @@ public interface SegmentPackage extends EPackage {
 	int SEGMENT_GROUP__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Segment Group Classifications</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Segment Group Geos</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEGMENT_GROUP__SEGMENT_GROUP_GEOS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Segment Group Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Group</em>' class.
@@ -168,7 +150,7 @@ public interface SegmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEGMENT_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int SEGMENT_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupClassificationImpl <em>Group Classification</em>}' class.
@@ -527,28 +509,6 @@ public interface SegmentPackage extends EPackage {
 	EReference getSegmentGroup_SegmentGroupTypeId();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupClassifications <em>Segment Group Classifications</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Segment Group Classifications</em>'.
-	 * @see org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupClassifications()
-	 * @see #getSegmentGroup()
-	 * @generated
-	 */
-	EReference getSegmentGroup_SegmentGroupClassifications();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupGeos <em>Segment Group Geos</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Segment Group Geos</em>'.
-	 * @see org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupGeos()
-	 * @see #getSegmentGroup()
-	 * @generated
-	 */
-	EReference getSegmentGroup_SegmentGroupGeos();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroupClassification <em>Group Classification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -750,22 +710,6 @@ public interface SegmentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID = eINSTANCE.getSegmentGroup_SegmentGroupTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Segment Group Classifications</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS = eINSTANCE.getSegmentGroup_SegmentGroupClassifications();
-
-		/**
-		 * The meta object literal for the '<em><b>Segment Group Geos</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SEGMENT_GROUP__SEGMENT_GROUP_GEOS = eINSTANCE.getSegmentGroup_SegmentGroupGeos();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupClassificationImpl <em>Group Classification</em>}' class.

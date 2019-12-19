@@ -99,7 +99,6 @@ public interface CustRequestContent extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestContent_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -125,7 +124,7 @@ public interface CustRequestContent extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestContent_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

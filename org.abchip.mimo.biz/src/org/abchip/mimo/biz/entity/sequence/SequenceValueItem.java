@@ -39,7 +39,7 @@ public interface SequenceValueItem extends BizEntity {
 	 * @return the value of the '<em>Seq Id</em>' attribute.
 	 * @see #setSeqId(long)
 	 * @see org.abchip.mimo.biz.entity.sequence.SequencePackage#getSequenceValueItem_SeqId()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSeqId();
@@ -65,7 +65,7 @@ public interface SequenceValueItem extends BizEntity {
 	 * @return the value of the '<em>Sequence Policy</em>' attribute.
 	 * @see #setSequencePolicy(String)
 	 * @see org.abchip.mimo.biz.entity.sequence.SequencePackage#getSequenceValueItem_SequencePolicy()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getSequencePolicy();
@@ -92,7 +92,7 @@ public interface SequenceValueItem extends BizEntity {
 	 * @see #setSeqName(String)
 	 * @see org.abchip.mimo.biz.entity.sequence.SequencePackage#getSequenceValueItem_SeqName()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getSeqName();

@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.content.website;
 
-import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -67,7 +66,7 @@ public interface WebAnalyticsType extends BizEntityType<WebAnalyticsConfig> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -109,24 +108,6 @@ public interface WebAnalyticsType extends BizEntityType<WebAnalyticsConfig> {
 	void setParentTypeId(WebAnalyticsType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WebAnalyticsType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<WebAnalyticsType> childWebAnalyticsTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WebAnalyticsConfig' route='webAnalyticsTypeId'"
-	 * @generated
-	 */
-	List<WebAnalyticsConfig> webAnalyticsConfigs();
-
-	/**
 	 * Returns the value of the '<em><b>Web Analytics Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -138,7 +119,7 @@ public interface WebAnalyticsType extends BizEntityType<WebAnalyticsConfig> {
 	 * @see #setWebAnalyticsTypeId(String)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsType_WebAnalyticsTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getWebAnalyticsTypeId();

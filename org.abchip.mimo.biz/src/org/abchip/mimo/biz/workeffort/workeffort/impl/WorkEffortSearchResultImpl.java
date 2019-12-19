@@ -8,11 +8,7 @@
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -32,7 +28,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchResultImpl#getSearchDate <em>Search Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchResultImpl#getSecondsTotal <em>Seconds Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchResultImpl#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSearchResultImpl#getWorkEffortSearchConstraints <em>Work Effort Search Constraints</em>}</li>
  * </ul>
  *
  * @generated
@@ -200,17 +195,6 @@ public class WorkEffortSearchResultImpl extends BizEntityImpl implements WorkEff
 	@Override
 	public void setIsAscending(boolean newIsAscending) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_RESULT__IS_ASCENDING, newIsAscending);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<WorkEffortSearchConstraint> getWorkEffortSearchConstraints() {
-		return (List<WorkEffortSearchConstraint>)eGet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_RESULT__WORK_EFFORT_SEARCH_CONSTRAINTS, true);
 	}
 
 } //WorkEffortSearchResultImpl

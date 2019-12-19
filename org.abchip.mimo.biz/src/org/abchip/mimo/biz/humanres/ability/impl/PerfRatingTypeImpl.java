@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.ability.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PerfRatingType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -113,18 +111,6 @@ public class PerfRatingTypeImpl extends BizEntityImpl implements PerfRatingType 
 	@Override
 	public void setParentTypeId(PerfRatingType newParentTypeId) {
 		eSet(AbilityPackage.Literals.PERF_RATING_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PerfRatingType> childPerfRatingTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

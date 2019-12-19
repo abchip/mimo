@@ -8,9 +8,6 @@
 package org.abchip.mimo.biz.workeffort.workeffort;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -29,7 +26,6 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult#getSearchDate <em>Search Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult#getSecondsTotal <em>Seconds Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult#getWorkEffortSearchConstraints <em>Work Effort Search Constraints</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult()
@@ -48,7 +44,7 @@ public interface WorkEffortSearchResult extends BizEntity {
 	 * @return the value of the '<em>Num Results</em>' attribute.
 	 * @see #setNumResults(long)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult_NumResults()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getNumResults();
@@ -74,7 +70,7 @@ public interface WorkEffortSearchResult extends BizEntity {
 	 * @return the value of the '<em>Order By Name</em>' attribute.
 	 * @see #setOrderByName(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult_OrderByName()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getOrderByName();
@@ -100,7 +96,7 @@ public interface WorkEffortSearchResult extends BizEntity {
 	 * @return the value of the '<em>Search Date</em>' attribute.
 	 * @see #setSearchDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult_SearchDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getSearchDate();
@@ -126,7 +122,7 @@ public interface WorkEffortSearchResult extends BizEntity {
 	 * @return the value of the '<em>Seconds Total</em>' attribute.
 	 * @see #setSecondsTotal(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult_SecondsTotal()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getSecondsTotal();
@@ -152,7 +148,7 @@ public interface WorkEffortSearchResult extends BizEntity {
 	 * @return the value of the '<em>Visit Id</em>' attribute.
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult_VisitId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisitId();
@@ -179,7 +175,7 @@ public interface WorkEffortSearchResult extends BizEntity {
 	 * @see #setWorkEffortSearchResultId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult_WorkEffortSearchResultId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getWorkEffortSearchResultId();
@@ -205,7 +201,7 @@ public interface WorkEffortSearchResult extends BizEntity {
 	 * @return the value of the '<em>Is Ascending</em>' attribute.
 	 * @see #setIsAscending(boolean)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult_IsAscending()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsAscending();
@@ -219,22 +215,5 @@ public interface WorkEffortSearchResult extends BizEntity {
 	 * @generated
 	 */
 	void setIsAscending(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Work Effort Search Constraints</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Work Effort Search Constraints</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Search Constraints</em>' reference list.
-	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult_WorkEffortSearchConstraints()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffortSearchConstraint'"
-	 * @generated
-	 */
-	List<WorkEffortSearchConstraint> getWorkEffortSearchConstraints();
 
 } // WorkEffortSearchResult

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssocType;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
@@ -113,18 +111,6 @@ public class InvoiceItemAssocTypeImpl extends BizEntityTypeImpl<InvoiceItemAssoc
 	@Override
 	public void setParentTypeId(InvoiceItemAssocType newParentTypeId) {
 		eSet(InvoicePackage.Literals.INVOICE_ITEM_ASSOC_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InvoiceItemAssocType> childInvoiceItemAssocTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

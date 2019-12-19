@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -83,24 +81,6 @@ public interface WorkEffortPurposeType extends BizEntity {
 	void setParentTypeId(WorkEffortPurposeType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffortPurposeType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<WorkEffortPurposeType> childWorkEffortPurposeTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort' route='workEffortPurposeTypeId'"
-	 * @generated
-	 */
-	List<WorkEffort> workEfforts();
-
-	/**
 	 * Returns the value of the '<em><b>Work Effort Purpose Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -112,7 +92,7 @@ public interface WorkEffortPurposeType extends BizEntity {
 	 * @see #setWorkEffortPurposeTypeId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPurposeType_WorkEffortPurposeTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getWorkEffortPurposeTypeId();

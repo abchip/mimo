@@ -46,7 +46,7 @@ public interface ApplicationSandbox extends BizEntity {
 	 * @see #setApplicationId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getApplicationSandbox_ApplicationId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getApplicationId();
@@ -72,7 +72,7 @@ public interface ApplicationSandbox extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getApplicationSandbox_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -98,7 +98,7 @@ public interface ApplicationSandbox extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getApplicationSandbox_PartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -124,7 +124,7 @@ public interface ApplicationSandbox extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' attribute.
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getApplicationSandbox_RoleTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRoleTypeId();
@@ -176,7 +176,7 @@ public interface ApplicationSandbox extends BizEntity {
 	 * @return the value of the '<em>Work Effort Id</em>' attribute.
 	 * @see #setWorkEffortId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getApplicationSandbox_WorkEffortId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getWorkEffortId();

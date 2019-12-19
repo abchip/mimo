@@ -2112,11 +2112,11 @@ public interface TaxPackage extends EPackage {
 	EAttribute getZipSalesTaxLookup_ComboUseTax();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isCountyDefault <em>County Default</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyDefault <em>County Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>County Default</em>'.
-	 * @see org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isCountyDefault()
+	 * @see org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyDefault()
 	 * @see #getZipSalesTaxLookup()
 	 * @generated
 	 */
@@ -2178,11 +2178,11 @@ public interface TaxPackage extends EPackage {
 	EAttribute getZipSalesTaxLookup_CountyUseTax();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isGeneralDefault <em>General Default</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getGeneralDefault <em>General Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>General Default</em>'.
-	 * @see org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isGeneralDefault()
+	 * @see org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getGeneralDefault()
 	 * @see #getZipSalesTaxLookup()
 	 * @generated
 	 */

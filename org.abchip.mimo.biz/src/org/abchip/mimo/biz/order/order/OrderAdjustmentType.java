@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.order.order;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
-import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +21,6 @@ import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getOrderAdjustmentTypeAttrs <em>Order Adjustment Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -70,7 +66,7 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -97,7 +93,7 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * @see #setOrderAdjustmentTypeId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_OrderAdjustmentTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderAdjustmentTypeId();
@@ -137,49 +133,5 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * @generated
 	 */
 	void setParentTypeId(OrderAdjustmentType value);
-
-	/**
-	 * Returns the value of the '<em><b>Order Adjustment Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Order Adjustment Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Adjustment Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_OrderAdjustmentTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderAdjustmentTypeAttr'"
-	 * @generated
-	 */
-	List<OrderAdjustmentTypeAttr> getOrderAdjustmentTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderAdjustmentType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<OrderAdjustmentType> childOrderAdjustmentTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='orderAdjustmentTypeId'"
-	 * @generated
-	 */
-	List<OrderAdjustment> orderAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='quoteAdjustmentTypeId'"
-	 * @generated
-	 */
-	List<QuoteAdjustment> quoteAdjustments();
 
 } // OrderAdjustmentType

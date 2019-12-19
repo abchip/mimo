@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.party.agreement;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -21,7 +19,6 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemType#getAgreementItemTypeId <em>Agreement Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemType#getAgreementItemTypeAttrs <em>Agreement Item Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -69,7 +66,7 @@ public interface AgreementItemType extends BizEntityType<AgreementItem> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItemType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -111,41 +108,6 @@ public interface AgreementItemType extends BizEntityType<AgreementItem> {
 	void setParentTypeId(AgreementItemType value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Item Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Agreement Item Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Item Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItemType_AgreementItemTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AgreementItemTypeAttr'"
-	 * @generated
-	 */
-	List<AgreementItemTypeAttr> getAgreementItemTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AgreementItem' route='agreementItemTypeId'"
-	 * @generated
-	 */
-	List<AgreementItem> agreementItems();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AgreementItemType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<AgreementItemType> childAgreementItemTypes();
-
-	/**
 	 * Returns the value of the '<em><b>Agreement Item Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -157,7 +119,7 @@ public interface AgreementItemType extends BizEntityType<AgreementItem> {
 	 * @see #setAgreementItemTypeId(String)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItemType_AgreementItemTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getAgreementItemTypeId();

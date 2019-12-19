@@ -94,7 +94,7 @@ public interface QuoteItem extends BizEntity {
 	 * @return the value of the '<em>Config Id</em>' attribute.
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_ConfigId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getConfigId();
@@ -146,7 +146,7 @@ public interface QuoteItem extends BizEntity {
 	 * @return the value of the '<em>Cust Request Item Seq Id</em>' attribute.
 	 * @see #setCustRequestItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_CustRequestItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCustRequestItemSeqId();
@@ -198,7 +198,7 @@ public interface QuoteItem extends BizEntity {
 	 * @return the value of the '<em>Estimated Delivery Date</em>' attribute.
 	 * @see #setEstimatedDeliveryDate(Date)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_EstimatedDeliveryDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getEstimatedDeliveryDate();
@@ -224,7 +224,7 @@ public interface QuoteItem extends BizEntity {
 	 * @return the value of the '<em>Is Promo</em>' attribute.
 	 * @see #setIsPromo(boolean)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_IsPromo()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsPromo();
@@ -250,7 +250,7 @@ public interface QuoteItem extends BizEntity {
 	 * @return the value of the '<em>Lead Time Days</em>' attribute.
 	 * @see #setLeadTimeDays(long)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_LeadTimeDays()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getLeadTimeDays();
@@ -383,7 +383,7 @@ public interface QuoteItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_QuoteItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getQuoteItemSeqId();
@@ -487,7 +487,7 @@ public interface QuoteItem extends BizEntity {
 	 * @return the value of the '<em>Reserv Start</em>' attribute.
 	 * @see #setReservStart(Date)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteItem_ReservStart()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getReservStart();

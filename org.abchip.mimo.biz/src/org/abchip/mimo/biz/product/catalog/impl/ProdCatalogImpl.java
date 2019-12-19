@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.product.catalog.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine;
 import org.abchip.mimo.biz.product.catalog.CatalogPackage;
 import org.abchip.mimo.biz.product.catalog.ProdCatalog;
 import org.eclipse.emf.ecore.EClass;
@@ -219,18 +216,6 @@ public class ProdCatalogImpl extends BizEntityImpl implements ProdCatalog {
 	@Override
 	public void setViewAllowPermReqd(boolean newViewAllowPermReqd) {
 		eSet(CatalogPackage.Literals.PROD_CATALOG__VIEW_ALLOW_PERM_REQD, newViewAllowPermReqd);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CartAbandonedLine> cartAbandonedLines() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

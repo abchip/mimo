@@ -66,7 +66,7 @@ public interface ShippingDocument extends Document {
 	 * @return the value of the '<em>Shipment Id</em>' attribute.
 	 * @see #setShipmentId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShippingDocument_ShipmentId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentId();
@@ -92,7 +92,7 @@ public interface ShippingDocument extends Document {
 	 * @return the value of the '<em>Shipment Item Seq Id</em>' attribute.
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShippingDocument_ShipmentItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();
@@ -118,7 +118,7 @@ public interface ShippingDocument extends Document {
 	 * @return the value of the '<em>Shipment Package Seq Id</em>' attribute.
 	 * @see #setShipmentPackageSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShippingDocument_ShipmentPackageSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentPackageSeqId();

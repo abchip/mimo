@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.content.survey;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -83,24 +81,6 @@ public interface SurveyQuestionCategory extends BizEntity {
 	void setParentCategoryId(SurveyQuestionCategory value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SurveyQuestionCategory' route='parentCategoryId'"
-	 * @generated
-	 */
-	List<SurveyQuestionCategory> childSurveyQuestionCategories();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SurveyQuestion' route='surveyQuestionCategoryId'"
-	 * @generated
-	 */
-	List<SurveyQuestion> surveyQuestions();
-
-	/**
 	 * Returns the value of the '<em><b>Survey Question Category Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -112,7 +92,7 @@ public interface SurveyQuestionCategory extends BizEntity {
 	 * @see #setSurveyQuestionCategoryId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionCategory_SurveyQuestionCategoryId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSurveyQuestionCategoryId();

@@ -8,12 +8,8 @@
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import java.util.Date;
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlJournal;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
-import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
@@ -137,30 +133,6 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 	@Override
 	public void setPostedDate(Date newPostedDate) {
 		eSet(LedgerPackage.Literals.GL_JOURNAL__POSTED_DATE, newPostedDate);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AcctgTrans> acctgTranss() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyAcctgPreference> partyAcctgPreferences() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

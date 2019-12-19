@@ -8,8 +8,6 @@
 package org.abchip.mimo.biz.order.return_;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
@@ -20,7 +18,6 @@ import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.abchip.mimo.biz.shipment.shipment.Shipment;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +30,6 @@ import org.abchip.mimo.biz.shipment.shipment.Shipment;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getBillingAccountId <em>Billing Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCommunicationEventReturns <em>Communication Event Returns</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCreatedBy <em>Created By</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getDestinationFacilityId <em>Destination Facility Id</em>}</li>
@@ -44,7 +40,6 @@ import org.abchip.mimo.biz.shipment.shipment.Shipment;
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnHeaderTypeId <em>Return Header Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnItems <em>Return Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getSupplierRmaId <em>Supplier Rma Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getToPartyId <em>To Party Id</em>}</li>
@@ -170,7 +165,7 @@ public interface ReturnHeader extends BizEntity {
 	 * @return the value of the '<em>Entry Date</em>' attribute.
 	 * @see #setEntryDate(Date)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_EntryDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getEntryDate();
@@ -196,7 +191,7 @@ public interface ReturnHeader extends BizEntity {
 	 * @return the value of the '<em>Needs Inventory Receive</em>' attribute.
 	 * @see #setNeedsInventoryReceive(boolean)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_NeedsInventoryReceive()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isNeedsInventoryReceive();
@@ -353,7 +348,7 @@ public interface ReturnHeader extends BizEntity {
 	 * @see #setReturnId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_ReturnId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReturnId();
@@ -405,7 +400,7 @@ public interface ReturnHeader extends BizEntity {
 	 * @return the value of the '<em>Supplier Rma Id</em>' attribute.
 	 * @see #setSupplierRmaId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_SupplierRmaId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSupplierRmaId();
@@ -445,66 +440,5 @@ public interface ReturnHeader extends BizEntity {
 	 * @generated
 	 */
 	void setToPartyId(Party value);
-
-	/**
-	 * Returns the value of the '<em><b>Communication Event Returns</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.order.return_.CommunicationEventReturn}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Communication Event Returns</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Event Returns</em>' reference list.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_CommunicationEventReturns()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEventReturn'"
-	 * @generated
-	 */
-	List<CommunicationEventReturn> getCommunicationEventReturns();
-
-	/**
-	 * Returns the value of the '<em><b>Return Items</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.order.return_.ReturnItem}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Return Items</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Items</em>' reference list.
-	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_ReturnItems()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnItem'"
-	 * @generated
-	 */
-	List<ReturnItem> getReturnItems();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment' route='primaryReturnId'"
-	 * @generated
-	 */
-	List<Shipment> primaryShipments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='returnId'"
-	 * @generated
-	 */
-	List<ReturnAdjustment> returnAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnStatus' route='returnId'"
-	 * @generated
-	 */
-	List<ReturnStatus> returnStatuss();
 
 } // ReturnHeader

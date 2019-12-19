@@ -8,9 +8,6 @@
 package org.abchip.mimo.biz.party.party;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.status.StatusItem;
 
@@ -28,8 +25,6 @@ import org.abchip.mimo.biz.common.status.StatusItem;
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getLastInviteDate <em>Last Invite Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyInvitationGroupAssocs <em>Party Invitation Group Assocs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyInvitationRoleAssocs <em>Party Invitation Role Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getToName <em>To Name</em>}</li>
  * </ul>
@@ -50,7 +45,7 @@ public interface PartyInvitation extends BizEntity {
 	 * @return the value of the '<em>Email Address</em>' attribute.
 	 * @see #setEmailAddress(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_EmailAddress()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getEmailAddress();
@@ -76,7 +71,7 @@ public interface PartyInvitation extends BizEntity {
 	 * @return the value of the '<em>Last Invite Date</em>' attribute.
 	 * @see #setLastInviteDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_LastInviteDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastInviteDate();
@@ -102,7 +97,7 @@ public interface PartyInvitation extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -170,40 +165,6 @@ public interface PartyInvitation extends BizEntity {
 	void setToName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Invitation Group Assocs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Party Invitation Group Assocs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Invitation Group Assocs</em>' reference list.
-	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationGroupAssocs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyInvitationGroupAssoc'"
-	 * @generated
-	 */
-	List<PartyInvitationGroupAssoc> getPartyInvitationGroupAssocs();
-
-	/**
-	 * Returns the value of the '<em><b>Party Invitation Role Assocs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyInvitationRoleAssoc}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Party Invitation Role Assocs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Invitation Role Assocs</em>' reference list.
-	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationRoleAssocs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyInvitationRoleAssoc'"
-	 * @generated
-	 */
-	List<PartyInvitationRoleAssoc> getPartyInvitationRoleAssocs();
-
-	/**
 	 * Returns the value of the '<em><b>Party Id From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -241,7 +202,7 @@ public interface PartyInvitation extends BizEntity {
 	 * @see #setPartyInvitationId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyInvitationId();

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.portal;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
@@ -28,7 +26,6 @@ import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getOriginalPortalPageId <em>Original Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getOwnerUserLoginId <em>Owner User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getParentPortalPageId <em>Parent Portal Page Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageColumns <em>Portal Page Columns</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageName <em>Portal Page Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getSecurityGroupId <em>Security Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getSequenceNum <em>Sequence Num</em>}</li>
@@ -104,7 +101,7 @@ public interface PortalPage extends BizEntity {
 	 * @see #setOriginalPortalPageId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_OriginalPortalPageId()
 	 * @model annotation="mimo-ent-slot help='The system portal page this page is derived from'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOriginalPortalPageId();
@@ -130,7 +127,7 @@ public interface PortalPage extends BizEntity {
 	 * @return the value of the '<em>Owner User Login Id</em>' attribute.
 	 * @see #setOwnerUserLoginId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_OwnerUserLoginId()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getOwnerUserLoginId();
@@ -208,7 +205,7 @@ public interface PortalPage extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -222,32 +219,6 @@ public interface PortalPage extends BizEntity {
 	 * @generated
 	 */
 	void setSequenceNum(long value);
-
-	/**
-	 * Returns the value of the '<em><b>Portal Page Columns</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.common.portal.PortalPageColumn}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Portal Page Columns</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Portal Page Columns</em>' reference list.
-	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_PortalPageColumns()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PortalPageColumn'"
-	 * @generated
-	 */
-	List<PortalPageColumn> getPortalPageColumns();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PortalPage' route='parentPortalPageId'"
-	 * @generated
-	 */
-	List<PortalPage> childPortalPages();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Portal Page Id</b></em>' reference.
@@ -288,7 +259,7 @@ public interface PortalPage extends BizEntity {
 	 * @see #setPortalPageId(String)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_PortalPageId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPortalPageId();

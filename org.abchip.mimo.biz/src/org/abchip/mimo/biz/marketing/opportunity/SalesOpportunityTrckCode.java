@@ -41,7 +41,7 @@ public interface SalesOpportunityTrckCode extends BizEntity {
 	 * @return the value of the '<em>Received Date</em>' attribute.
 	 * @see #setReceivedDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityTrckCode_ReceivedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getReceivedDate();
@@ -96,7 +96,7 @@ public interface SalesOpportunityTrckCode extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityTrckCode_TrackingCodeId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTrackingCodeId();

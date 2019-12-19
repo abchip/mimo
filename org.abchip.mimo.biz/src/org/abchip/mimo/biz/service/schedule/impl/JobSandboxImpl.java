@@ -8,11 +8,8 @@
 package org.abchip.mimo.biz.service.schedule.impl;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.product.product.ProductGroupOrder;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.service.schedule.JobSandbox;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
@@ -539,18 +536,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	@Override
 	public void setTempExprId(TemporalExpression newTempExprId) {
 		eSet(SchedulePackage.Literals.JOB_SANDBOX__TEMP_EXPR_ID, newTempExprId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductGroupOrder> productGroupOrders() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //JobSandboxImpl

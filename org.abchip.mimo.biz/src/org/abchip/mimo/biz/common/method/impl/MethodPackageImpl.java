@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.common.method.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -274,6 +278,8 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -292,6 +298,8 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -392,6 +400,8 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -401,7 +411,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -460,6 +470,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		// Create package meta-data objects
 		theMethodPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -469,6 +480,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -519,11 +531,12 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -555,6 +568,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		// Initialize created meta-data
 		theMethodPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -564,6 +578,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -614,11 +629,12 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -711,16 +727,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getCustomMethod_FixedAssetDepMethods() {
-		return (EReference)customMethodEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getCustomMethodType() {
 		return customMethodTypeEClass;
 	}
@@ -799,7 +805,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_NAME);
 		createEReference(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID);
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__DESCRIPTION);
-		createEReference(customMethodEClass, CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS);
 
 		customMethodTypeEClass = createEClass(CUSTOM_METHOD_TYPE);
 		createEAttribute(customMethodTypeEClass, CUSTOM_METHOD_TYPE__CUSTOM_METHOD_TYPE_ID);
@@ -833,13 +838,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		FixedassetPackage theFixedassetPackage = (FixedassetPackage)EPackage.Registry.INSTANCE.getEPackage(FixedassetPackage.eNS_URI);
-		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
-		CostPackage theCostPackage = (CostPackage)EPackage.Registry.INSTANCE.getEPackage(CostPackage.eNS_URI);
-		LedgerPackage theLedgerPackage = (LedgerPackage)EPackage.Registry.INSTANCE.getEPackage(LedgerPackage.eNS_URI);
-		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
-		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
-		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -862,23 +860,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		initEReference(getCustomMethod_CustomMethodTypeId(), this.getCustomMethodType(), null, "customMethodTypeId", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustomMethod_CustomMethodTypeId().getEKeys().add(this.getCustomMethodType_CustomMethodTypeId());
 		initEAttribute(getCustomMethod_Description(), ecorePackage.getEString(), "description", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCustomMethod_FixedAssetDepMethods(), theFixedassetPackage.getFixedAssetDepMethod(), null, "fixedAssetDepMethods", null, 0, -1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(customMethodEClass, theContentPackage.getContent(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(customMethodEClass, theCostPackage.getCostComponentCalc(), "costComponentCalcs", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(customMethodEClass, theLedgerPackage.getPartyAcctgPreference(), "invoicePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(customMethodEClass, theLedgerPackage.getPartyAcctgPreference(), "orderPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(customMethodEClass, theStorePackage.getProductStoreShipmentMeth(), "productStoreShipmentMeths", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(customMethodEClass, theLedgerPackage.getPartyAcctgPreference(), "quotePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(customMethodEClass, theUomPackage.getUomConversion(), "uomCustomMethodUomConversions", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(customMethodEClass, theWorkeffortPackage.getWorkEffort(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(customMethodTypeEClass, CustomMethodType.class, "CustomMethodType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomMethodType_CustomMethodTypeId(), ecorePackage.getEString(), "customMethodTypeId", null, 1, 1, CustomMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -887,17 +868,9 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		initEReference(getCustomMethodType_ParentTypeId(), this.getCustomMethodType(), null, "parentTypeId", null, 0, 1, CustomMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustomMethodType_ParentTypeId().getEKeys().add(this.getCustomMethodType_CustomMethodTypeId());
 
-		addEOperation(customMethodTypeEClass, this.getCustomMethodType(), "childCustomMethodTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(customMethodTypeEClass, this.getCustomMethod(), "customMethods", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
 	}
@@ -937,14 +910,12 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		  (getCustomMethod_CustomMethodId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getCustomMethod_CustomMethodName(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
@@ -958,7 +929,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		  (getCustomMethodType_CustomMethodTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -967,175 +937,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getCustomMethodType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-slot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentslotAnnotations() {
-		String source = "mimo-ent-slot";
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getCustomMethod_FixedAssetDepMethods(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (customMethodTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (customMethodTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "Content",
-			   "route", "customMethodId"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "CostComponentCalc",
-			   "route", "costCustomMethodId"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "frame", "PartyAcctgPreference",
-			   "route", "invoiceSeqCustMethId"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "frame", "PartyAcctgPreference",
-			   "route", "orderSeqCustMethId"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "frame", "ProductStoreShipmentMeth",
-			   "route", "shipmentCustomMethodId"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "frame", "PartyAcctgPreference",
-			   "route", "quoteSeqCustMethId"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "frame", "UomConversion",
-			   "route", "customMethodId"
-		   });
-		addAnnotation
-		  (customMethodEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "frame", "WorkEffort",
-			   "route", "estimateCalcMethod"
-		   });
-		addAnnotation
-		  (getCustomMethod_FixedAssetDepMethods(),
-		   source,
-		   new String[] {
-			   "frame", "FixedAssetDepMethod"
-		   });
-		addAnnotation
-		  (customMethodTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "CustomMethodType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (customMethodTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "CustomMethod",
-			   "route", "customMethodTypeId"
 		   });
 	}
 

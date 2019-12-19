@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderContent;
 import org.abchip.mimo.biz.order.order.OrderContentType;
@@ -134,18 +132,6 @@ public class OrderContentTypeImpl extends BizEntityTypeImpl<OrderContent> implem
 	@Override
 	public void setParentTypeId(OrderContentType newParentTypeId) {
 		eSet(OrderPackage.Literals.ORDER_CONTENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderContentType> childOrderContentTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //OrderContentTypeImpl

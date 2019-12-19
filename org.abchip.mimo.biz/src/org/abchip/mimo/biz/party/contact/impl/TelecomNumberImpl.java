@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.party.contact.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.TelecomNumber;
-import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -132,18 +129,6 @@ public class TelecomNumberImpl extends ContactMechImpl implements TelecomNumber 
 	@Override
 	public void setCountryCode(String newCountryCode) {
 		eSet(ContactPackage.Literals.TELECOM_NUMBER__COUNTRY_CODE, newCountryCode);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Shipment> destinationShipments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //TelecomNumberImpl

@@ -8,8 +8,6 @@
 package org.abchip.mimo.biz.content.document;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
 
 /**
@@ -24,7 +22,6 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentId <em>Document Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDateCreated <em>Date Created</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentAttributes <em>Document Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentLocation <em>Document Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentText <em>Document Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentTypeId <em>Document Type Id</em>}</li>
@@ -73,7 +70,7 @@ public interface Document extends BizEntityTyped<DocumentType> {
 	 * @return the value of the '<em>Date Created</em>' attribute.
 	 * @see #setDateCreated(Date)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocument_DateCreated()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDateCreated();
@@ -100,7 +97,7 @@ public interface Document extends BizEntityTyped<DocumentType> {
 	 * @see #setDocumentId(String)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocument_DocumentId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDocumentId();
@@ -126,7 +123,7 @@ public interface Document extends BizEntityTyped<DocumentType> {
 	 * @return the value of the '<em>Document Location</em>' attribute.
 	 * @see #setDocumentLocation(String)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocument_DocumentLocation()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getDocumentLocation();
@@ -152,7 +149,7 @@ public interface Document extends BizEntityTyped<DocumentType> {
 	 * @return the value of the '<em>Document Text</em>' attribute.
 	 * @see #setDocumentText(String)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocument_DocumentText()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getDocumentText();
@@ -204,7 +201,7 @@ public interface Document extends BizEntityTyped<DocumentType> {
 	 * @return the value of the '<em>Image Data</em>' attribute.
 	 * @see #setImageData(Object)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocument_ImageData()
-	 * @model annotation="mimo-ent-format type='object'"
+	 * @model
 	 * @generated
 	 */
 	Object getImageData();
@@ -218,22 +215,5 @@ public interface Document extends BizEntityTyped<DocumentType> {
 	 * @generated
 	 */
 	void setImageData(Object value);
-
-	/**
-	 * Returns the value of the '<em><b>Document Attributes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.content.document.DocumentAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Document Attributes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Document Attributes</em>' reference list.
-	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocument_DocumentAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DocumentAttribute'"
-	 * @generated
-	 */
-	List<DocumentAttribute> getDocumentAttributes();
 
 } // Document

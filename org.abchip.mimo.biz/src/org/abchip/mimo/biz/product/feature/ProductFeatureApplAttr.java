@@ -46,7 +46,7 @@ public interface ProductFeatureApplAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureApplAttr_AttrName()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -72,7 +72,7 @@ public interface ProductFeatureApplAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Value</em>' attribute.
 	 * @see #setAttrValue(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureApplAttr_AttrValue()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAttrValue();
@@ -100,7 +100,6 @@ public interface ProductFeatureApplAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureApplAttr_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();

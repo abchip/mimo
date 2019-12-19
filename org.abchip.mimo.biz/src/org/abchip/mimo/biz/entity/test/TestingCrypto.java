@@ -96,7 +96,7 @@ public interface TestingCrypto extends BizEntity {
 	 * @see #setTestingCryptoId(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingCrypto_TestingCryptoId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTestingCryptoId();
@@ -122,7 +122,7 @@ public interface TestingCrypto extends BizEntity {
 	 * @return the value of the '<em>Testing Crypto Type Id</em>' attribute.
 	 * @see #setTestingCryptoTypeId(String)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingCrypto_TestingCryptoTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTestingCryptoTypeId();

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.party.party.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyContentType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
@@ -91,18 +89,6 @@ public class PartyContentTypeImpl extends BizEntityImpl implements PartyContentT
 	@Override
 	public void setParentTypeId(PartyContentType newParentTypeId) {
 		eSet(PartyPackage.Literals.PARTY_CONTENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyContentType> childPartyContentTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

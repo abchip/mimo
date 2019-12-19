@@ -7,11 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.ledger;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
-import org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap;
-import org.abchip.mimo.biz.product.cost.CostComponentCalc;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +20,6 @@ import org.abchip.mimo.biz.product.cost.CostComponentCalc;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#getGlAccountTypeId <em>Gl Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#getGlAccountTypeDefaults <em>Gl Account Type Defaults</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -71,7 +66,7 @@ public interface GlAccountType extends BizEntityType<GlAccount> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -113,77 +108,6 @@ public interface GlAccountType extends BizEntityType<GlAccount> {
 	void setParentTypeId(GlAccountType value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Type Defaults</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.GlAccountTypeDefault}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Gl Account Type Defaults</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Type Defaults</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountType_GlAccountTypeDefaults()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccountTypeDefault'"
-	 * @generated
-	 */
-	List<GlAccountTypeDefault> getGlAccountTypeDefaults();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='glAccountTypeId'"
-	 * @generated
-	 */
-	List<AcctgTransEntry> acctgTransEntries();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccountType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<GlAccountType> childGlAccountTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CostComponentCalc' route='costGlAccountTypeId'"
-	 * @generated
-	 */
-	List<CostComponentCalc> costCostComponentCalcs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccount' route='glAccountTypeId'"
-	 * @generated
-	 */
-	List<GlAccount> glAccounts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CostComponentCalc' route='offsettingGlAccountTypeId'"
-	 * @generated
-	 */
-	List<CostComponentCalc> offsettingCostComponentCalcs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentGlAccountTypeMap' route='glAccountTypeId'"
-	 * @generated
-	 */
-	List<PaymentGlAccountTypeMap> paymentGlAccountTypeMaps();
-
-	/**
 	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -195,7 +119,7 @@ public interface GlAccountType extends BizEntityType<GlAccount> {
 	 * @see #setGlAccountTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountType_GlAccountTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGlAccountTypeId();

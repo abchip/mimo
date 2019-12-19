@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.status;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface StatusType extends BizEntityType<StatusItem> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -110,24 +108,6 @@ public interface StatusType extends BizEntityType<StatusItem> {
 	void setParentTypeId(StatusType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='StatusType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<StatusType> childStatusTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='StatusItem' route='statusTypeId'"
-	 * @generated
-	 */
-	List<StatusItem> statusItems();
-
-	/**
 	 * Returns the value of the '<em><b>Status Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -139,7 +119,7 @@ public interface StatusType extends BizEntityType<StatusItem> {
 	 * @see #setStatusTypeId(String)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusType_StatusTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getStatusTypeId();

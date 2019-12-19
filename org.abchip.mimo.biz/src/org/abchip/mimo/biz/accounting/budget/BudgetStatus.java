@@ -97,7 +97,7 @@ public interface BudgetStatus extends BizEntity {
 	 * @return the value of the '<em>Status Date</em>' attribute.
 	 * @see #setStatusDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetStatus_StatusDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getStatusDate();

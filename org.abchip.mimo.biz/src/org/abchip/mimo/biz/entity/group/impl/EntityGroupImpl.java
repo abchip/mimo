@@ -7,12 +7,8 @@
  */
 package org.abchip.mimo.biz.entity.group.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.entity.group.EntityGroup;
-import org.abchip.mimo.biz.entity.group.EntityGroupEntry;
 import org.abchip.mimo.biz.entity.group.GroupPackage;
-import org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -25,7 +21,6 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupImpl#getEntityGroupId <em>Entity Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupImpl#getEntityGroupEntries <em>Entity Group Entries</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupImpl#getEntityGroupName <em>Entity Group Name</em>}</li>
  * </ul>
  *
@@ -93,29 +88,6 @@ public class EntityGroupImpl extends BizEntityImpl implements EntityGroup {
 	@Override
 	public void setEntityGroupName(String newEntityGroupName) {
 		eSet(GroupPackage.Literals.ENTITY_GROUP__ENTITY_GROUP_NAME, newEntityGroupName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<EntityGroupEntry> getEntityGroupEntries() {
-		return (List<EntityGroupEntry>)eGet(GroupPackage.Literals.ENTITY_GROUP__ENTITY_GROUP_ENTRIES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<EntitySyncIncludeGroup> entitySyncIncludeGroups() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //EntityGroupImpl

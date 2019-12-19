@@ -7,13 +7,10 @@
  */
 package org.abchip.mimo.biz.product.facility.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.FacilityType;
-import org.abchip.mimo.biz.product.facility.FacilityTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -26,7 +23,6 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityTypeImpl#getFacilityTypeId <em>Facility Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityTypeImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityTypeImpl#getFacilityTypeAttrs <em>Facility Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -116,41 +112,6 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 	@Override
 	public void setParentTypeId(FacilityType newParentTypeId) {
 		eSet(FacilityPackage.Literals.FACILITY_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<FacilityTypeAttr> getFacilityTypeAttrs() {
-		return (List<FacilityTypeAttr>)eGet(FacilityPackage.Literals.FACILITY_TYPE__FACILITY_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<FacilityType> childFacilityTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Facility> facilities() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

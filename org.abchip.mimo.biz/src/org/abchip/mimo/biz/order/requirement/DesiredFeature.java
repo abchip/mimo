@@ -43,7 +43,7 @@ public interface DesiredFeature extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_DesiredFeatureId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDesiredFeatureId();
@@ -60,7 +60,6 @@ public interface DesiredFeature extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Optional Ind</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Optional Ind</em>' attribute isn't clear,
@@ -70,8 +69,7 @@ public interface DesiredFeature extends BizEntity {
 	 * @return the value of the '<em>Optional Ind</em>' attribute.
 	 * @see #setOptionalInd(boolean)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_OptionalInd()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isOptionalInd();

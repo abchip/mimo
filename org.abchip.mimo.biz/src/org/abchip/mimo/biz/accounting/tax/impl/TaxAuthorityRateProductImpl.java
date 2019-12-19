@@ -9,15 +9,10 @@ package org.abchip.mimo.biz.accounting.tax.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateType;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.order.OrderAdjustment;
-import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.eclipse.emf.ecore.EClass;
@@ -352,42 +347,6 @@ public class TaxAuthorityRateProductImpl extends BizEntityImpl implements TaxAut
 	@Override
 	public void setTitleTransferEnumId(String newTitleTransferEnumId) {
 		eSet(TaxPackage.Literals.TAX_AUTHORITY_RATE_PRODUCT__TITLE_TRANSFER_ENUM_ID, newTitleTransferEnumId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InvoiceItem> invoiceItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderAdjustment> orderAdjustments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ReturnAdjustment> returnAdjustments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

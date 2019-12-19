@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.position.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.humanres.position.EmplPosition;
 import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
@@ -134,30 +132,6 @@ public class EmplPositionTypeImpl extends BizEntityTypeImpl<EmplPosition> implem
 	@Override
 	public void setParentTypeId(EmplPositionType newParentTypeId) {
 		eSet(PositionPackage.Literals.EMPL_POSITION_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<EmplPositionType> childEmplPositionTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<EmplPosition> emplPositions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //EmplPositionTypeImpl

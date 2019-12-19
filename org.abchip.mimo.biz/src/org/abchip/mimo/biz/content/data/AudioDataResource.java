@@ -38,7 +38,7 @@ public interface AudioDataResource extends BizEntity {
 	 * @return the value of the '<em>Audio Data</em>' attribute.
 	 * @see #setAudioData(byte[])
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getAudioDataResource_AudioData()
-	 * @model annotation="mimo-ent-format type='byte-array'"
+	 * @model
 	 * @generated
 	 */
 	byte[] getAudioData();
@@ -65,7 +65,7 @@ public interface AudioDataResource extends BizEntity {
 	 * @see #setDataResourceId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getAudioDataResource_DataResourceId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDataResourceId();

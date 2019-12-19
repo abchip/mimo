@@ -10,28 +10,12 @@ package org.abchip.mimo.biz.product.facility;
 import java.math.BigDecimal;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
-import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.order.order.OrderHeader;
-import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
-import org.abchip.mimo.biz.order.requirement.Requirement;
-import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.party.party.Party;
-import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
-import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
-import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.store.ProductStore;
-import org.abchip.mimo.biz.product.supplier.ReorderGuideline;
-import org.abchip.mimo.biz.shipment.picklist.Picklist;
-import org.abchip.mimo.biz.shipment.shipment.Delivery;
-import org.abchip.mimo.biz.shipment.shipment.Shipment;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,8 +33,6 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  *   <li>{@link org.abchip.mimo.biz.product.facility.Facility#getDefaultInventoryItemTypeId <em>Default Inventory Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.Facility#getDefaultWeightUomId <em>Default Weight Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.Facility#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.Facility#getFacilityAttributes <em>Facility Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.Facility#getFacilityLocations <em>Facility Locations</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.Facility#getFacilityName <em>Facility Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.Facility#getFacilitySize <em>Facility Size</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.Facility#getFacilitySizeUomId <em>Facility Size Uom Id</em>}</li>
@@ -80,7 +62,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @return the value of the '<em>Closed Date</em>' attribute.
 	 * @see #setClosedDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_ClosedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getClosedDate();
@@ -107,7 +89,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see #setDefaultDaysToShip(long)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_DefaultDaysToShip()
 	 * @model annotation="mimo-ent-slot help='In the absence of a product specific days to ship in ProductFacility, this will be used'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDefaultDaysToShip();
@@ -342,7 +324,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @return the value of the '<em>Old Square Footage</em>' attribute.
 	 * @see #setOldSquareFootage(long)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_OldSquareFootage()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getOldSquareFootage();
@@ -368,7 +350,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @return the value of the '<em>Opened Date</em>' attribute.
 	 * @see #setOpenedDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_OpenedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getOpenedDate();
@@ -434,229 +416,6 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @generated
 	 */
 	void setProductStoreId(ProductStore value);
-
-	/**
-	 * Returns the value of the '<em><b>Facility Attributes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.facility.FacilityAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Facility Attributes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Attributes</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_FacilityAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FacilityAttribute'"
-	 * @generated
-	 */
-	List<FacilityAttribute> getFacilityAttributes();
-
-	/**
-	 * Returns the value of the '<em><b>Facility Locations</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.facility.FacilityLocation}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Facility Locations</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Locations</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_FacilityLocations()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FacilityLocation'"
-	 * @generated
-	 */
-	List<FacilityLocation> getFacilityLocations();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Facility' route='parentFacilityId'"
-	 * @generated
-	 */
-	List<Facility> childFacilities();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Container' route='facilityId'"
-	 * @generated
-	 */
-	List<Container> containers();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Delivery' route='destFacilityId'"
-	 * @generated
-	 */
-	List<Delivery> destDeliveries();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='destFacilityId'"
-	 * @generated
-	 */
-	List<ShipmentRouteSegment> destShipmentRouteSegments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment' route='destinationFacilityId'"
-	 * @generated
-	 */
-	List<Shipment> destinationShipments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItem' route='facilityId'"
-	 * @generated
-	 */
-	List<InventoryItem> inventoryItems();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='facilityId'"
-	 * @generated
-	 */
-	List<InventoryTransfer> inventoryTransfers();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAsset' route='locatedAtFacilityId'"
-	 * @generated
-	 */
-	List<FixedAsset> locatedAtFixedAssets();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderItemShipGroup' route='facilityId'"
-	 * @generated
-	 */
-	List<OrderItemShipGroup> orderItemShipGroups();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Delivery' route='originFacilityId'"
-	 * @generated
-	 */
-	List<Delivery> originDeliveries();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader' route='originFacilityId'"
-	 * @generated
-	 */
-	List<OrderHeader> originOrderHeaders();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='originFacilityId'"
-	 * @generated
-	 */
-	List<ShipmentRouteSegment> originShipmentRouteSegments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment' route='originFacilityId'"
-	 * @generated
-	 */
-	List<Shipment> originShipments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Picklist' route='facilityId'"
-	 * @generated
-	 */
-	List<Picklist> picklists();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductFacility' route='facilityId'"
-	 * @generated
-	 */
-	List<ProductFacility> productFacilities();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Product' route='facilityId'"
-	 * @generated
-	 */
-	List<Product> products();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReorderGuideline' route='facilityId'"
-	 * @generated
-	 */
-	List<ReorderGuideline> reorderGuidelines();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Requirement' route='facilityId'"
-	 * @generated
-	 */
-	List<Requirement> requirements();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='destinationFacilityId'"
-	 * @generated
-	 */
-	List<ReturnHeader> returnHeaders();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='facilityIdTo'"
-	 * @generated
-	 */
-	List<InventoryTransfer> toInventoryTransfers();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort' route='facilityId'"
-	 * @generated
-	 */
-	List<WorkEffort> workEfforts();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Facility Id</b></em>' reference.
@@ -748,7 +507,7 @@ public interface Facility extends BizEntityTyped<FacilityType> {
 	 * @see #setFacilityId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacility_FacilityId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFacilityId();

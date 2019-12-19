@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.product.catalog;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +71,7 @@ public interface ProdCatalog extends BizEntity {
 	 * @return the value of the '<em>Content Path Prefix</em>' attribute.
 	 * @see #setContentPathPrefix(String)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalog_ContentPathPrefix()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getContentPathPrefix();
@@ -126,7 +123,7 @@ public interface ProdCatalog extends BizEntity {
 	 * @return the value of the '<em>Purchase Allow Perm Reqd</em>' attribute.
 	 * @see #setPurchaseAllowPermReqd(boolean)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalog_PurchaseAllowPermReqd()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isPurchaseAllowPermReqd();
@@ -178,7 +175,7 @@ public interface ProdCatalog extends BizEntity {
 	 * @return the value of the '<em>Template Path Prefix</em>' attribute.
 	 * @see #setTemplatePathPrefix(String)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalog_TemplatePathPrefix()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getTemplatePathPrefix();
@@ -195,6 +192,7 @@ public interface ProdCatalog extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Use Quick Add</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Use Quick Add</em>' attribute isn't clear,
@@ -204,7 +202,7 @@ public interface ProdCatalog extends BizEntity {
 	 * @return the value of the '<em>Use Quick Add</em>' attribute.
 	 * @see #setUseQuickAdd(boolean)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalog_UseQuickAdd()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isUseQuickAdd();
@@ -230,7 +228,7 @@ public interface ProdCatalog extends BizEntity {
 	 * @return the value of the '<em>View Allow Perm Reqd</em>' attribute.
 	 * @see #setViewAllowPermReqd(boolean)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalog_ViewAllowPermReqd()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isViewAllowPermReqd();
@@ -246,15 +244,6 @@ public interface ProdCatalog extends BizEntity {
 	void setViewAllowPermReqd(boolean value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CartAbandonedLine' route='prodCatalogId'"
-	 * @generated
-	 */
-	List<CartAbandonedLine> cartAbandonedLines();
-
-	/**
 	 * Returns the value of the '<em><b>Prod Catalog Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -266,7 +255,7 @@ public interface ProdCatalog extends BizEntity {
 	 * @see #setProdCatalogId(String)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalog_ProdCatalogId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProdCatalogId();

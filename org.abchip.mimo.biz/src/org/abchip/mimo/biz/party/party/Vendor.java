@@ -119,7 +119,7 @@ public interface Vendor extends BizEntity {
 	 * @return the value of the '<em>Manifest Policies</em>' attribute.
 	 * @see #setManifestPolicies(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getVendor_ManifestPolicies()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getManifestPolicies();
@@ -146,7 +146,7 @@ public interface Vendor extends BizEntity {
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getVendor_PartyId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyId();

@@ -65,7 +65,7 @@ public interface FacilityCalendarType extends BizEntity {
 	 * @return the value of the '<em>Parent Type Id</em>' attribute.
 	 * @see #setParentTypeId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendarType_ParentTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getParentTypeId();
@@ -92,7 +92,7 @@ public interface FacilityCalendarType extends BizEntity {
 	 * @see #setFacilityCalendarTypeId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendarType_FacilityCalendarTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFacilityCalendarTypeId();

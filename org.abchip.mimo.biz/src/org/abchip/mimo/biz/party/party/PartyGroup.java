@@ -174,7 +174,7 @@ public interface PartyGroup extends Party {
 	 * @return the value of the '<em>Num Employees</em>' attribute.
 	 * @see #setNumEmployees(long)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGroup_NumEmployees()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getNumEmployees();
@@ -226,7 +226,7 @@ public interface PartyGroup extends Party {
 	 * @return the value of the '<em>Ticker Symbol</em>' attribute.
 	 * @see #setTickerSymbol(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyGroup_TickerSymbol()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getTickerSymbol();

@@ -7,12 +7,8 @@
  */
 package org.abchip.mimo.biz.content.content.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.content.content.ContentPackage;
-import org.abchip.mimo.biz.content.content.ContentPurpose;
 import org.abchip.mimo.biz.content.content.ContentPurposeType;
-import org.abchip.mimo.biz.content.data.DataResourcePurpose;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -93,30 +89,6 @@ public class ContentPurposeTypeImpl extends BizEntityImpl implements ContentPurp
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(ContentPackage.Literals.CONTENT_PURPOSE_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ContentPurpose> contentPurposes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<DataResourcePurpose> dataResourcePurposes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ContentPurposeTypeImpl

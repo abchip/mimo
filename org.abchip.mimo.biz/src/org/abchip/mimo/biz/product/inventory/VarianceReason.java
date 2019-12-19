@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.product.inventory;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +20,6 @@ import org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.VarianceReason#getVarianceReasonId <em>Variance Reason Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.VarianceReason#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.VarianceReason#getVarianceReasonGlAccounts <em>Variance Reason Gl Accounts</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getVarianceReason()
@@ -69,7 +65,7 @@ public interface VarianceReason extends BizEntity {
 	 * @see #setVarianceReasonId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getVarianceReason_VarianceReasonId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVarianceReasonId();
@@ -83,31 +79,5 @@ public interface VarianceReason extends BizEntity {
 	 * @generated
 	 */
 	void setVarianceReasonId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Variance Reason Gl Accounts</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Variance Reason Gl Accounts</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variance Reason Gl Accounts</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getVarianceReason_VarianceReasonGlAccounts()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='VarianceReasonGlAccount'"
-	 * @generated
-	 */
-	List<VarianceReasonGlAccount> getVarianceReasonGlAccounts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemVariance' route='varianceReasonId'"
-	 * @generated
-	 */
-	List<InventoryItemVariance> inventoryItemVariances();
 
 } // VarianceReason

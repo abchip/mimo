@@ -82,7 +82,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @see #setInventoryTransferId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_InventoryTransferId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getInventoryTransferId();
@@ -134,7 +134,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @return the value of the '<em>Location Seq Id</em>' attribute.
 	 * @see #setLocationSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_LocationSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getLocationSeqId();
@@ -160,7 +160,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @return the value of the '<em>Location Seq Id To</em>' attribute.
 	 * @see #setLocationSeqIdTo(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_LocationSeqIdTo()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getLocationSeqIdTo();
@@ -186,7 +186,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @return the value of the '<em>Receive Date</em>' attribute.
 	 * @see #setReceiveDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_ReceiveDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getReceiveDate();
@@ -212,7 +212,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @return the value of the '<em>Send Date</em>' attribute.
 	 * @see #setSendDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_SendDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getSendDate();

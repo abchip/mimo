@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.invoice.InvoiceContent;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceContentType;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
@@ -113,18 +111,6 @@ public class InvoiceContentTypeImpl extends BizEntityTypeImpl<InvoiceContent> im
 	@Override
 	public void setParentTypeId(InvoiceContentType newParentTypeId) {
 		eSet(InvoicePackage.Literals.INVOICE_CONTENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InvoiceContentType> childInvoiceContentTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

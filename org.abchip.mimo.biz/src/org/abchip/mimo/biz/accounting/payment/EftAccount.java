@@ -44,7 +44,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @return the value of the '<em>Account Number</em>' attribute.
 	 * @see #setAccountNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_AccountNumber()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccountNumber();
@@ -70,7 +70,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @return the value of the '<em>Account Type</em>' attribute.
 	 * @see #setAccountType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_AccountType()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getAccountType();
@@ -201,7 +201,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @see #setRoutingNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_RoutingNumber()
 	 * @model annotation="mimo-ent-slot help='See https://en.wikipedia.org/wiki/Bank_code'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getRoutingNumber();
@@ -227,7 +227,7 @@ public interface EftAccount extends PaymentMethod {
 	 * @return the value of the '<em>Years At Bank</em>' attribute.
 	 * @see #setYearsAtBank(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getEftAccount_YearsAtBank()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getYearsAtBank();

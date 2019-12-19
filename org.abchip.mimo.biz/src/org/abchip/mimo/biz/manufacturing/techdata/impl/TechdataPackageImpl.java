@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.manufacturing.techdata.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -289,6 +293,8 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -307,6 +313,8 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -407,6 +415,8 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -416,7 +426,7 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -475,6 +485,7 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		// Create package meta-data objects
 		theTechdataPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -484,6 +495,7 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -534,11 +546,12 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -570,6 +583,7 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		// Initialize created meta-data
 		theTechdataPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -579,6 +593,7 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -629,11 +644,12 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -708,26 +724,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 	@Override
 	public EAttribute getTechDataCalendar_Description() {
 		return (EAttribute)techDataCalendarEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTechDataCalendar_TechDataCalendarExcDaies() {
-		return (EReference)techDataCalendarEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTechDataCalendar_TechDataCalendarExcWeeks() {
-		return (EReference)techDataCalendarEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1043,8 +1039,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		createEAttribute(techDataCalendarEClass, TECH_DATA_CALENDAR__CALENDAR_ID);
 		createEReference(techDataCalendarEClass, TECH_DATA_CALENDAR__CALENDAR_WEEK_ID);
 		createEAttribute(techDataCalendarEClass, TECH_DATA_CALENDAR__DESCRIPTION);
-		createEReference(techDataCalendarEClass, TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_DAIES);
-		createEReference(techDataCalendarEClass, TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_WEEKS);
 
 		techDataCalendarExcDayEClass = createEClass(TECH_DATA_CALENDAR_EXC_DAY);
 		createEReference(techDataCalendarExcDayEClass, TECH_DATA_CALENDAR_EXC_DAY__CALENDAR_ID);
@@ -1103,7 +1097,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		FixedassetPackage theFixedassetPackage = (FixedassetPackage)EPackage.Registry.INSTANCE.getEPackage(FixedassetPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1121,10 +1114,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		initEReference(getTechDataCalendar_CalendarWeekId(), this.getTechDataCalendarWeek(), null, "calendarWeekId", null, 0, 1, TechDataCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTechDataCalendar_CalendarWeekId().getEKeys().add(this.getTechDataCalendarWeek_CalendarWeekId());
 		initEAttribute(getTechDataCalendar_Description(), ecorePackage.getEString(), "description", null, 0, 1, TechDataCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTechDataCalendar_TechDataCalendarExcDaies(), this.getTechDataCalendarExcDay(), null, "techDataCalendarExcDaies", null, 0, -1, TechDataCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTechDataCalendar_TechDataCalendarExcWeeks(), this.getTechDataCalendarExcWeek(), null, "techDataCalendarExcWeeks", null, 0, -1, TechDataCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(techDataCalendarEClass, theFixedassetPackage.getFixedAsset(), "fixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(techDataCalendarExcDayEClass, TechDataCalendarExcDay.class, "TechDataCalendarExcDay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTechDataCalendarExcDay_CalendarId(), this.getTechDataCalendar(), null, "calendarId", null, 1, 1, TechDataCalendarExcDay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1160,19 +1149,13 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		initEAttribute(getTechDataCalendarWeek_WednesdayCapacity(), ecorePackage.getEDouble(), "wednesdayCapacity", null, 0, 1, TechDataCalendarWeek.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTechDataCalendarWeek_WednesdayStartTime(), ecorePackage.getEDate(), "wednesdayStartTime", null, 0, 1, TechDataCalendarWeek.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(techDataCalendarWeekEClass, this.getTechDataCalendarExcWeek(), "techDataCalendarExcWeeks", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(techDataCalendarWeekEClass, this.getTechDataCalendar(), "techDataCalendars", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
 	}
 
 	/**
@@ -1231,7 +1214,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		  (getTechDataCalendar_CalendarId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1240,12 +1222,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getTechDataCalendarExcDay_ExceptionDateStartTime(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getTechDataCalendarExcDay_Description(),
@@ -1271,12 +1247,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 			   "scale", "6"
 		   });
 		addAnnotation
-		  (getTechDataCalendarExcWeek_ExceptionDateStart(),
-		   source,
-		   new String[] {
-			   "type", "date"
-		   });
-		addAnnotation
 		  (getTechDataCalendarExcWeek_Description(),
 		   source,
 		   new String[] {
@@ -1287,7 +1257,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		  (getTechDataCalendarWeek_CalendarWeekId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1296,90 +1265,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_FridayCapacity(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_FridayStartTime(),
-		   source,
-		   new String[] {
-			   "type", "time"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_MondayCapacity(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_MondayStartTime(),
-		   source,
-		   new String[] {
-			   "type", "time"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_SaturdayCapacity(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_SaturdayStartTime(),
-		   source,
-		   new String[] {
-			   "type", "time"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_SundayCapacity(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_SundayStartTime(),
-		   source,
-		   new String[] {
-			   "type", "time"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_ThursdayCapacity(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_ThursdayStartTime(),
-		   source,
-		   new String[] {
-			   "type", "time"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_TuesdayCapacity(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_TuesdayStartTime(),
-		   source,
-		   new String[] {
-			   "type", "time"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_WednesdayCapacity(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getTechDataCalendarWeek_WednesdayStartTime(),
-		   source,
-		   new String[] {
-			   "type", "time"
 		   });
 	}
 
@@ -1391,24 +1276,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (techDataCalendarEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getTechDataCalendar_TechDataCalendarExcDaies(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getTechDataCalendar_TechDataCalendarExcWeeks(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
 		addAnnotation
 		  (getTechDataCalendarExcDay_CalendarId(),
 		   source,
@@ -1432,61 +1299,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (techDataCalendarWeekEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (techDataCalendarWeekEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (techDataCalendarEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "FixedAsset",
-			   "route", "calendarId"
-		   });
-		addAnnotation
-		  (getTechDataCalendar_TechDataCalendarExcDaies(),
-		   source,
-		   new String[] {
-			   "frame", "TechDataCalendarExcDay"
-		   });
-		addAnnotation
-		  (getTechDataCalendar_TechDataCalendarExcWeeks(),
-		   source,
-		   new String[] {
-			   "frame", "TechDataCalendarExcWeek"
-		   });
-		addAnnotation
-		  (techDataCalendarWeekEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "TechDataCalendarExcWeek",
-			   "route", "calendarWeekId"
-		   });
-		addAnnotation
-		  (techDataCalendarWeekEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "TechDataCalendar",
-			   "route", "calendarWeekId"
 		   });
 	}
 

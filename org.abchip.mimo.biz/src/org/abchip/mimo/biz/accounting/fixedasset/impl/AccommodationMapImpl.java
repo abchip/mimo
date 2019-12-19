@@ -7,15 +7,12 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass;
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMapType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -97,18 +94,6 @@ public class AccommodationMapImpl extends BizEntityImpl implements Accommodation
 	@Override
 	public void setNumberOfSpaces(long newNumberOfSpaces) {
 		eSet(FixedassetPackage.Literals.ACCOMMODATION_MAP__NUMBER_OF_SPACES, newNumberOfSpaces);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WorkEffort> workEfforts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

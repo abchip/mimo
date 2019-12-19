@@ -9,48 +9,21 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
-import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
-import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.note.NoteData;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityWorkEffort;
-import org.abchip.mimo.biz.order.order.OrderHeaderWorkEffort;
-import org.abchip.mimo.biz.order.quote.QuoteItem;
-import org.abchip.mimo.biz.order.quote.QuoteWorkEffort;
-import org.abchip.mimo.biz.order.request.CustRequestWorkEffort;
-import org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment;
 import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
-import org.abchip.mimo.biz.order.shoppinglist.ShoppingListWorkEffort;
-import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.facility.Facility;
-import org.abchip.mimo.biz.product.inventory.InventoryItemDetail;
-import org.abchip.mimo.biz.product.product.ProductMaint;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 import org.abchip.mimo.biz.service.schedule.RuntimeData;
 import org.abchip.mimo.biz.service.schedule.TemporalExpression;
-import org.abchip.mimo.biz.shipment.shipment.Shipment;
-import org.abchip.mimo.biz.workeffort.timesheet.TimeEntry;
-import org.abchip.mimo.biz.workeffort.workeffort.CommunicationEventWorkEff;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAttribute;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortDeliverableProd;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryProduced;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortKeyword;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPurposeType;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -70,7 +43,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getActualMilliSeconds <em>Actual Milli Seconds</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getActualSetupMillis <em>Actual Setup Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getActualStartDate <em>Actual Start Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getCommunicationEventWorkEffs <em>Communication Event Work Effs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getCurrentStatusId <em>Current Status Id</em>}</li>
@@ -111,18 +83,9 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getTotalMilliSecondsAllowed <em>Total Milli Seconds Allowed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getTotalMoneyAllowed <em>Total Money Allowed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getUniversalId <em>Universal Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortAttributes <em>Work Effort Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortDeliverableProds <em>Work Effort Deliverable Prods</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortEventReminders <em>Work Effort Event Reminders</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortFixedAssetStds <em>Work Effort Fixed Asset Stds</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortInventoryAssigns <em>Work Effort Inventory Assigns</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortInventoryProduceds <em>Work Effort Inventory Produceds</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortKeywords <em>Work Effort Keywords</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortName <em>Work Effort Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortNotes <em>Work Effort Notes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortParentId <em>Work Effort Parent Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortPurposeTypeId <em>Work Effort Purpose Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortSkillStandards <em>Work Effort Skill Standards</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortTypeId <em>Work Effort Type Id</em>}</li>
  * </ul>
  *
@@ -1171,308 +1134,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	@Override
 	public void setWorkEffortTypeId(WorkEffortType newWorkEffortTypeId) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_TYPE_ID, newWorkEffortTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<CommunicationEventWorkEff> getCommunicationEventWorkEffs() {
-		return (List<CommunicationEventWorkEff>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__COMMUNICATION_EVENT_WORK_EFFS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<WorkEffortAttribute> getWorkEffortAttributes() {
-		return (List<WorkEffortAttribute>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_ATTRIBUTES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<WorkEffortDeliverableProd> getWorkEffortDeliverableProds() {
-		return (List<WorkEffortDeliverableProd>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_DELIVERABLE_PRODS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<WorkEffortEventReminder> getWorkEffortEventReminders() {
-		return (List<WorkEffortEventReminder>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_EVENT_REMINDERS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<WorkEffortFixedAssetStd> getWorkEffortFixedAssetStds() {
-		return (List<WorkEffortFixedAssetStd>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_FIXED_ASSET_STDS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<WorkEffortInventoryAssign> getWorkEffortInventoryAssigns() {
-		return (List<WorkEffortInventoryAssign>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_INVENTORY_ASSIGNS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<WorkEffortInventoryProduced> getWorkEffortInventoryProduceds() {
-		return (List<WorkEffortInventoryProduced>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_INVENTORY_PRODUCEDS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<WorkEffortKeyword> getWorkEffortKeywords() {
-		return (List<WorkEffortKeyword>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_KEYWORDS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<WorkEffortNote> getWorkEffortNotes() {
-		return (List<WorkEffortNote>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_NOTES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<WorkEffortSkillStandard> getWorkEffortSkillStandards() {
-		return (List<WorkEffortSkillStandard>)eGet(WorkeffortPackage.Literals.WORK_EFFORT__WORK_EFFORT_SKILL_STANDARDS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AcctgTrans> acctgTranss() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WorkEffort> childWorkEfforts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CostComponent> costComponents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CustRequestWorkEffort> custRequestWorkEfforts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Shipment> estimatedArrivalShipments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Shipment> estimatedShipShipments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InventoryItemDetail> inventoryItemDetails() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductMaint> maintTemplateProductMaints() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderHeaderWorkEffort> orderHeaderWorkEfforts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<QuoteItem> quoteItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<QuoteWorkEffort> quoteWorkEfforts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SalesOpportunityWorkEffort> salesOpportunityWorkEfforts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<FixedAssetMaint> scheduleFixedAssetMaints() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShoppingListWorkEffort> shoppingListWorkEfforts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TimeEntry> timeEntries() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WorkRequirementFulfillment> workRequirementFulfillments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //WorkEffortImpl

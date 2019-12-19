@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.party.party.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.party.PartyClassification;
-import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
 import org.abchip.mimo.biz.party.party.PartyClassificationType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -114,30 +111,6 @@ public class PartyClassificationTypeImpl extends BizEntityTypeImpl<PartyClassifi
 	@Override
 	public void setParentTypeId(PartyClassificationType newParentTypeId) {
 		eSet(PartyPackage.Literals.PARTY_CLASSIFICATION_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyClassificationType> childPartyClassificationTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyClassificationGroup> partyClassificationGroups() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

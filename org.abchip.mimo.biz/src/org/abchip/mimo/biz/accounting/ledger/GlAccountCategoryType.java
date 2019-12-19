@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.ledger;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -56,15 +54,6 @@ public interface GlAccountCategoryType extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccountCategory' route='glAccountCategoryTypeId'"
-	 * @generated
-	 */
-	List<GlAccountCategory> glAccountCategories();
-
-	/**
 	 * Returns the value of the '<em><b>Gl Account Category Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -76,7 +65,7 @@ public interface GlAccountCategoryType extends BizEntity {
 	 * @see #setGlAccountCategoryTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountCategoryType_GlAccountCategoryTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGlAccountCategoryTypeId();

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.order.requirement;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -24,7 +22,6 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementType#getRequirementTypeAttrs <em>Requirement Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType()
@@ -69,7 +66,7 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -122,7 +119,7 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	 * @see #setRequirementTypeId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType_RequirementTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRequirementTypeId();
@@ -136,40 +133,5 @@ public interface RequirementType extends BizEntityType<Requirement> {
 	 * @generated
 	 */
 	void setRequirementTypeId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Requirement Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.order.requirement.RequirementTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Requirement Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementType_RequirementTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='RequirementTypeAttr'"
-	 * @generated
-	 */
-	List<RequirementTypeAttr> getRequirementTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='RequirementType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<RequirementType> childRequirementTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Requirement' route='requirementTypeId'"
-	 * @generated
-	 */
-	List<Requirement> requirements();
 
 } // RequirementType

@@ -76,7 +76,7 @@ public interface PaymentApplication extends BizEntity {
 	 * @return the value of the '<em>Invoice Item Seq Id</em>' attribute.
 	 * @see #setInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_InvoiceItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -103,7 +103,7 @@ public interface PaymentApplication extends BizEntity {
 	 * @see #setPaymentApplicationId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_PaymentApplicationId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentApplicationId();

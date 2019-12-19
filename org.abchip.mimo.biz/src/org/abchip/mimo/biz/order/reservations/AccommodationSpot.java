@@ -7,12 +7,9 @@
  */
 package org.abchip.mimo.biz.order.reservations;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,7 +70,7 @@ public interface AccommodationSpot extends BizEntity {
 	 * @see #setAccommodationSpotId(String)
 	 * @see org.abchip.mimo.biz.order.reservations.ReservationsPackage#getAccommodationSpot_AccommodationSpotId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getAccommodationSpotId();
@@ -151,7 +148,7 @@ public interface AccommodationSpot extends BizEntity {
 	 * @return the value of the '<em>Number Of Spaces</em>' attribute.
 	 * @see #setNumberOfSpaces(long)
 	 * @see org.abchip.mimo.biz.order.reservations.ReservationsPackage#getAccommodationSpot_NumberOfSpaces()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getNumberOfSpaces();
@@ -165,14 +162,5 @@ public interface AccommodationSpot extends BizEntity {
 	 * @generated
 	 */
 	void setNumberOfSpaces(long value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort' route='accommodationSpotId'"
-	 * @generated
-	 */
-	List<WorkEffort> workEfforts();
 
 } // AccommodationSpot

@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.common.enum_.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -37,6 +40,7 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.enum_.EnumerationType;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -274,6 +278,8 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -292,6 +298,8 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -392,6 +400,8 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -401,7 +411,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -460,6 +470,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		// Create package meta-data objects
 		theEnumPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -469,6 +480,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theGeoPackage.createPackageContents();
@@ -519,11 +531,12 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -555,6 +568,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		// Initialize created meta-data
 		theEnumPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -564,6 +578,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theGeoPackage.initializePackageContents();
@@ -614,11 +629,12 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -721,16 +737,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEnumeration_UserLoginSecurityQuestions() {
-		return (EReference)enumerationEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getEnumerationType() {
 		return enumerationTypeEClass;
 	}
@@ -810,7 +816,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		createEAttribute(enumerationEClass, ENUMERATION__ENUM_CODE);
 		createEReference(enumerationEClass, ENUMERATION__ENUM_TYPE_ID);
 		createEAttribute(enumerationEClass, ENUMERATION__SEQUENCE_ID);
-		createEReference(enumerationEClass, ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS);
 
 		enumerationTypeEClass = createEClass(ENUMERATION_TYPE);
 		createEAttribute(enumerationTypeEClass, ENUMERATION_TYPE__ENUM_TYPE_ID);
@@ -844,29 +849,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
-		FixedassetPackage theFixedassetPackage = (FixedassetPackage)EPackage.Registry.INSTANCE.getEPackage(FixedassetPackage.eNS_URI);
-		LedgerPackage theLedgerPackage = (LedgerPackage)EPackage.Registry.INSTANCE.getEPackage(LedgerPackage.eNS_URI);
-		CommunicationPackage theCommunicationPackage = (CommunicationPackage)EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
-		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
-		EmailPackage theEmailPackage = (EmailPackage)EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
-		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		RecruitmentPackage theRecruitmentPackage = (RecruitmentPackage)EPackage.Registry.INSTANCE.getEPackage(RecruitmentPackage.eNS_URI);
-		GeoPackage theGeoPackage = (GeoPackage)EPackage.Registry.INSTANCE.getEPackage(GeoPackage.eNS_URI);
-		PaymentPackage thePaymentPackage = (PaymentPackage)EPackage.Registry.INSTANCE.getEPackage(PaymentPackage.eNS_URI);
-		PricePackage thePricePackage = (PricePackage)EPackage.Registry.INSTANCE.getEPackage(PricePackage.eNS_URI);
-		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
-		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
-		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
-		FinaccountPackage theFinaccountPackage = (FinaccountPackage)EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
-		InventoryPackage theInventoryPackage = (InventoryPackage)EPackage.Registry.INSTANCE.getEPackage(InventoryPackage.eNS_URI);
-		SchedulePackage theSchedulePackage = (SchedulePackage)EPackage.Registry.INSTANCE.getEPackage(SchedulePackage.eNS_URI);
-		KeywordPackage theKeywordPackage = (KeywordPackage)EPackage.Registry.INSTANCE.getEPackage(KeywordPackage.eNS_URI);
-		FacilityPackage theFacilityPackage = (FacilityPackage)EPackage.Registry.INSTANCE.getEPackage(FacilityPackage.eNS_URI);
-		RequestPackage theRequestPackage = (RequestPackage)EPackage.Registry.INSTANCE.getEPackage(RequestPackage.eNS_URI);
-		QuotePackage theQuotePackage = (QuotePackage)EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
-		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
-		OpportunityPackage theOpportunityPackage = (OpportunityPackage)EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -890,97 +872,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		initEReference(getEnumeration_EnumTypeId(), this.getEnumerationType(), null, "enumTypeId", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEnumeration_EnumTypeId().getEKeys().add(this.getEnumerationType_EnumTypeId());
 		initEAttribute(getEnumeration_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnumeration_UserLoginSecurityQuestions(), theLoginPackage.getUserLoginSecurityQuestion(), null, "userLoginSecurityQuestions", null, 0, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theFixedassetPackage.getFixedAsset(), "classFixedAssets", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theLedgerPackage.getPartyAcctgPreference(), "cogsPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theCommunicationPackage.getCommunicationEvent(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theStorePackage.getProductStore(), "defaultSalesChannelProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theEmailPackage.getEmailTemplateSetting(), "emailTemplateSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, thePartyPackage.getPerson(), "employmentStatusPersons", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theRecruitmentPackage.getJobRequisition(), "examTypeJobRequisitions", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theGeoPackage.getGeoPoint(), "geoPointTypeGeoPoints", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, thePaymentPackage.getGiftCardFulfillment(), "giftCardFulfillments", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, thePricePackage.getProductPriceCond(), "inputParamProductPriceConds", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theLedgerPackage.getPartyAcctgPreference(), "invoiceSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theRecruitmentPackage.getJobInterview(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theRecruitmentPackage.getJobRequisition(), "jobPostingTypeJobRequisitions", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, thePricePackage.getProductPriceCond(), "operatorProductPriceConds", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theOrderPackage.getOrderItemChange(), "orderItemChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theOrderPackage.getOrderNotification(), "orderNotifications", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theLedgerPackage.getPartyAcctgPreference(), "orderSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theContentPackage.getContent(), "privilegeContents", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theProductPackage.getProductGeo(), "productGeos", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theStorePackage.getProductStoreEmailSetting(), "productStoreEmailSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theLedgerPackage.getPartyAcctgPreference(), "quoteSequencePartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theProductPackage.getProduct(), "ratingProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theFinaccountPackage.getFinAccountTrans(), "reasonFinAccountTranss", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theInventoryPackage.getInventoryItemDetail(), "reasonInventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theSchedulePackage.getJobManagerLock(), "reasonJobManagerLocks", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theOrderPackage.getOrderItemChange(), "reasonOrderItemChanges", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theKeywordPackage.getKeywordThesaurus(), "relationshipKeywordThesauruss", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theFinaccountPackage.getFinAccountType(), "replenishFinAccountTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theStorePackage.getProductStoreFinActSetting(), "replenishMethodProductStoreFinActSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theFacilityPackage.getProductFacility(), "requirementMethodProductFacilities", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theStorePackage.getProductStore(), "requirementMethodProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theProductPackage.getProduct(), "requirementMethodProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theStorePackage.getProductStore(), "reserveOrderProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, thePartyPackage.getPerson(), "residenceStatusPersons", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theRequestPackage.getCustRequest(), "salesChannelCustRequests", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theOrderPackage.getOrderHeader(), "salesChannelOrderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theQuotePackage.getQuote(), "salesChannelQuotes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theWorkeffortPackage.getWorkEffort(), "scopeWorkEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, thePaymentPackage.getPaymentGatewayResponse(), "serviceTypePaymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theStorePackage.getProductStore(), "storeCreditAccountProductStores", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theLedgerPackage.getPartyAcctgPreference(), "taxFormPartyAcctgPreferences", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, thePaymentPackage.getPaymentGatewayResponse(), "tranCodePaymentGatewayResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theFacilityPackage.getFacilityLocation(), "typeFacilityLocations", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theOpportunityPackage.getSalesOpportunity(), "typeSalesOpportunities", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationEClass, theProductPackage.getProduct(), "virtualVariantMethodProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(enumerationTypeEClass, EnumerationType.class, "EnumerationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnumerationType_EnumTypeId(), ecorePackage.getEString(), "enumTypeId", null, 1, 1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -989,17 +880,9 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		initEReference(getEnumerationType_ParentTypeId(), this.getEnumerationType(), null, "parentTypeId", null, 0, 1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEnumerationType_ParentTypeId().getEKeys().add(this.getEnumerationType_EnumTypeId());
 
-		addEOperation(enumerationTypeEClass, this.getEnumerationType(), "childEnumerationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(enumerationTypeEClass, this.getEnumeration(), "enumerations", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
 	}
@@ -1040,7 +923,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		  (getEnumeration_EnumId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1054,21 +936,18 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		  (getEnumeration_EnumCode(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
 		  (getEnumeration_SequenceId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getEnumerationType_EnumTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1077,656 +956,6 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getEnumerationType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-slot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentslotAnnotations() {
-		String source = "mimo-ent-slot";
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(8),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(9),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(10),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(11),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(12),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(13),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(14),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(15),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(16),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(17),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(18),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(19),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(20),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(21),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(22),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(23),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(24),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(25),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(26),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(27),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(28),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(29),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(30),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(31),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(32),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(33),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(34),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(35),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(36),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(37),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(38),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(39),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(40),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(41),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(42),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(43),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(44),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getEnumeration_UserLoginSecurityQuestions(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (enumerationTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "FixedAsset",
-			   "route", "classEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "PartyAcctgPreference",
-			   "route", "cogsMethodId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "frame", "CommunicationEvent",
-			   "route", "reasonEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore",
-			   "route", "defaultSalesChannelEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "frame", "EmailTemplateSetting",
-			   "route", "emailType"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "frame", "Person",
-			   "route", "employmentStatusEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "frame", "JobRequisition",
-			   "route", "examTypeEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "frame", "GeoPoint",
-			   "route", "geoPointTypeEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(8),
-		   source,
-		   new String[] {
-			   "frame", "GiftCardFulfillment",
-			   "route", "typeEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(9),
-		   source,
-		   new String[] {
-			   "frame", "ProductPriceCond",
-			   "route", "inputParamEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(10),
-		   source,
-		   new String[] {
-			   "frame", "PartyAcctgPreference",
-			   "route", "oldInvoiceSequenceEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(11),
-		   source,
-		   new String[] {
-			   "frame", "JobInterview",
-			   "route", "gradeSecuredEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(12),
-		   source,
-		   new String[] {
-			   "frame", "JobRequisition",
-			   "route", "jobPostingTypeEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(13),
-		   source,
-		   new String[] {
-			   "frame", "ProductPriceCond",
-			   "route", "operatorEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(14),
-		   source,
-		   new String[] {
-			   "frame", "OrderItemChange",
-			   "route", "changeTypeEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(15),
-		   source,
-		   new String[] {
-			   "frame", "OrderNotification",
-			   "route", "emailType"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(16),
-		   source,
-		   new String[] {
-			   "frame", "PartyAcctgPreference",
-			   "route", "oldOrderSequenceEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(17),
-		   source,
-		   new String[] {
-			   "frame", "Content",
-			   "route", "privilegeEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(18),
-		   source,
-		   new String[] {
-			   "frame", "ProductGeo",
-			   "route", "productGeoEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(19),
-		   source,
-		   new String[] {
-			   "frame", "ProductStoreEmailSetting",
-			   "route", "emailType"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(20),
-		   source,
-		   new String[] {
-			   "frame", "PartyAcctgPreference",
-			   "route", "oldQuoteSequenceEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(21),
-		   source,
-		   new String[] {
-			   "frame", "Product",
-			   "route", "ratingTypeEnum"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(22),
-		   source,
-		   new String[] {
-			   "frame", "FinAccountTrans",
-			   "route", "reasonEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(23),
-		   source,
-		   new String[] {
-			   "frame", "InventoryItemDetail",
-			   "route", "reasonEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(24),
-		   source,
-		   new String[] {
-			   "frame", "JobManagerLock",
-			   "route", "reasonEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(25),
-		   source,
-		   new String[] {
-			   "frame", "OrderItemChange",
-			   "route", "reasonEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(26),
-		   source,
-		   new String[] {
-			   "frame", "KeywordThesaurus",
-			   "route", "relationshipEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(27),
-		   source,
-		   new String[] {
-			   "frame", "FinAccountType",
-			   "route", "replenishEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(28),
-		   source,
-		   new String[] {
-			   "frame", "ProductStoreFinActSetting",
-			   "route", "replenishMethodEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(29),
-		   source,
-		   new String[] {
-			   "frame", "ProductFacility",
-			   "route", "requirementMethodEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(30),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore",
-			   "route", "requirementMethodEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(31),
-		   source,
-		   new String[] {
-			   "frame", "Product",
-			   "route", "requirementMethodEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(32),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore",
-			   "route", "reserveOrderEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(33),
-		   source,
-		   new String[] {
-			   "frame", "Person",
-			   "route", "residenceStatusEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(34),
-		   source,
-		   new String[] {
-			   "frame", "CustRequest",
-			   "route", "salesChannelEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(35),
-		   source,
-		   new String[] {
-			   "frame", "OrderHeader",
-			   "route", "salesChannelEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(36),
-		   source,
-		   new String[] {
-			   "frame", "Quote",
-			   "route", "salesChannelEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(37),
-		   source,
-		   new String[] {
-			   "frame", "WorkEffort",
-			   "route", "scopeEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(38),
-		   source,
-		   new String[] {
-			   "frame", "PaymentGatewayResponse",
-			   "route", "paymentServiceTypeEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(39),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore",
-			   "route", "storeCreditAccountEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(40),
-		   source,
-		   new String[] {
-			   "frame", "PartyAcctgPreference",
-			   "route", "taxFormId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(41),
-		   source,
-		   new String[] {
-			   "frame", "PaymentGatewayResponse",
-			   "route", "transCodeEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(42),
-		   source,
-		   new String[] {
-			   "frame", "FacilityLocation",
-			   "route", "locationTypeEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(43),
-		   source,
-		   new String[] {
-			   "frame", "SalesOpportunity",
-			   "route", "typeEnumId"
-		   });
-		addAnnotation
-		  (enumerationEClass.getEOperations().get(44),
-		   source,
-		   new String[] {
-			   "frame", "Product",
-			   "route", "virtualVariantMethodEnum"
-		   });
-		addAnnotation
-		  (getEnumeration_UserLoginSecurityQuestions(),
-		   source,
-		   new String[] {
-			   "frame", "UserLoginSecurityQuestion"
-		   });
-		addAnnotation
-		  (enumerationTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "EnumerationType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (enumerationTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "Enumeration",
-			   "route", "enumTypeId"
 		   });
 	}
 

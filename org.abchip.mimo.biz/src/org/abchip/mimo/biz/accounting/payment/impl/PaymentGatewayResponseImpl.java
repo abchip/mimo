@@ -9,10 +9,6 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.payment.Payment;
-import org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
@@ -459,30 +455,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	@Override
 	public void setTransactionDate(Date newTransactionDate) {
 		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE, newTransactionDate);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PaymentGatewayRespMsg> paymentGatewayRespMsgs() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Payment> payments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

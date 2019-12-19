@@ -21,7 +21,7 @@ package org.abchip.mimo.biz.party.contact;
  *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getFilePath <em>File Path</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getFtpPassword <em>Ftp Password</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getHostname <em>Hostname</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getPassiveMode <em>Passive Mode</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#isPassiveMode <em>Passive Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getPort <em>Port</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#getUsername <em>Username</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.FtpAddress#isZipFile <em>Zip File</em>}</li>
@@ -34,7 +34,6 @@ package org.abchip.mimo.biz.party.contact;
 public interface FtpAddress extends ContactMech {
 	/**
 	 * Returns the value of the '<em><b>Binary Transfer</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Binary Transfer</em>' attribute isn't clear,
@@ -44,8 +43,7 @@ public interface FtpAddress extends ContactMech {
 	 * @return the value of the '<em>Binary Transfer</em>' attribute.
 	 * @see #setBinaryTransfer(boolean)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress_BinaryTransfer()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isBinaryTransfer();
@@ -71,7 +69,7 @@ public interface FtpAddress extends ContactMech {
 	 * @return the value of the '<em>Default Timeout</em>' attribute.
 	 * @see #setDefaultTimeout(long)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress_DefaultTimeout()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDefaultTimeout();
@@ -97,7 +95,7 @@ public interface FtpAddress extends ContactMech {
 	 * @return the value of the '<em>File Path</em>' attribute.
 	 * @see #setFilePath(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress_FilePath()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getFilePath();
@@ -124,7 +122,7 @@ public interface FtpAddress extends ContactMech {
 	 * @see #setFtpPassword(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress_FtpPassword()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getFtpPassword();
@@ -150,7 +148,7 @@ public interface FtpAddress extends ContactMech {
 	 * @return the value of the '<em>Hostname</em>' attribute.
 	 * @see #setHostname(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress_Hostname()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getHostname();
@@ -174,22 +172,22 @@ public interface FtpAddress extends ContactMech {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Passive Mode</em>' attribute.
-	 * @see #setPassiveMode(char)
+	 * @see #setPassiveMode(boolean)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress_PassiveMode()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
-	char getPassiveMode();
+	boolean isPassiveMode();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.FtpAddress#getPassiveMode <em>Passive Mode</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.FtpAddress#isPassiveMode <em>Passive Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Passive Mode</em>' attribute.
-	 * @see #getPassiveMode()
+	 * @see #isPassiveMode()
 	 * @generated
 	 */
-	void setPassiveMode(char value);
+	void setPassiveMode(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Port</b></em>' attribute.
@@ -202,7 +200,7 @@ public interface FtpAddress extends ContactMech {
 	 * @return the value of the '<em>Port</em>' attribute.
 	 * @see #setPort(long)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress_Port()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPort();
@@ -228,7 +226,7 @@ public interface FtpAddress extends ContactMech {
 	 * @return the value of the '<em>Username</em>' attribute.
 	 * @see #setUsername(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress_Username()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getUsername();
@@ -245,7 +243,6 @@ public interface FtpAddress extends ContactMech {
 
 	/**
 	 * Returns the value of the '<em><b>Zip File</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Zip File</em>' attribute isn't clear,
@@ -255,8 +252,7 @@ public interface FtpAddress extends ContactMech {
 	 * @return the value of the '<em>Zip File</em>' attribute.
 	 * @see #setZipFile(boolean)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getFtpAddress_ZipFile()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isZipFile();

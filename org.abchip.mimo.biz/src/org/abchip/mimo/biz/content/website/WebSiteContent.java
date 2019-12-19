@@ -74,7 +74,6 @@ public interface WebSiteContent extends BizEntityTyped<WebSiteContentType> {
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSiteContent_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -100,7 +99,7 @@ public interface WebSiteContent extends BizEntityTyped<WebSiteContentType> {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSiteContent_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

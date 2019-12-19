@@ -47,7 +47,7 @@ public interface InvoiceRole extends BizEntity {
 	 * @return the value of the '<em>Datetime Performed</em>' attribute.
 	 * @see #setDatetimePerformed(Date)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceRole_DatetimePerformed()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDatetimePerformed();

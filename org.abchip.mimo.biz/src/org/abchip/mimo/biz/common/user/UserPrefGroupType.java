@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.user;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -56,15 +54,6 @@ public interface UserPrefGroupType extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='UserPreference' route='userPrefGroupTypeId'"
-	 * @generated
-	 */
-	List<UserPreference> userPreferences();
-
-	/**
 	 * Returns the value of the '<em><b>User Pref Group Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -76,7 +65,7 @@ public interface UserPrefGroupType extends BizEntity {
 	 * @see #setUserPrefGroupTypeId(String)
 	 * @see org.abchip.mimo.biz.common.user.UserPackage#getUserPrefGroupType_UserPrefGroupTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getUserPrefGroupTypeId();

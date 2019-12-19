@@ -7,14 +7,11 @@
  */
 package org.abchip.mimo.biz.shipment.picklist.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.shipment.picklist.Picklist;
 import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
-import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -157,18 +154,6 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 	@Override
 	public void setPrimaryShipGroupSeqId(String newPrimaryShipGroupSeqId) {
 		eSet(PicklistPackage.Literals.PICKLIST_BIN__PRIMARY_SHIP_GROUP_SEQ_ID, newPrimaryShipGroupSeqId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Shipment> shipments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //PicklistBinImpl

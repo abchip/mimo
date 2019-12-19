@@ -70,7 +70,7 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_AttrName()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -96,7 +96,7 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Value</em>' attribute.
 	 * @see #setAttrValue(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_AttrValue()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAttrValue();
@@ -124,7 +124,7 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_QuoteId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getQuoteId();
@@ -152,7 +152,7 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_QuoteItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getQuoteItemSeqId();
@@ -180,7 +180,7 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_TermTypeId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTermTypeId();

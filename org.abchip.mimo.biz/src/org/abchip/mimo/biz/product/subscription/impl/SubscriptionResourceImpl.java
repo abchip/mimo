@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.product.subscription.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
 import org.abchip.mimo.biz.webapp.website.WebSite;
@@ -138,30 +135,6 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	@Override
 	public void setWebSiteId(WebSite newWebSiteId) {
 		eSet(SubscriptionPackage.Literals.SUBSCRIPTION_RESOURCE__WEB_SITE_ID, newWebSiteId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SubscriptionResource> childSubscriptionResources() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Subscription> subscriptions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

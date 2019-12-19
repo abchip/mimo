@@ -43,7 +43,7 @@ public interface SalesOpportunityCompetitor extends BizEntity {
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityCompetitor_CompetitorPartyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCompetitorPartyId();
@@ -69,7 +69,7 @@ public interface SalesOpportunityCompetitor extends BizEntity {
 	 * @return the value of the '<em>Position Enum Id</em>' attribute.
 	 * @see #setPositionEnumId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityCompetitor_PositionEnumId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPositionEnumId();
@@ -122,7 +122,7 @@ public interface SalesOpportunityCompetitor extends BizEntity {
 	 * @return the value of the '<em>Strengths</em>' attribute.
 	 * @see #setStrengths(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityCompetitor_Strengths()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getStrengths();
@@ -148,7 +148,7 @@ public interface SalesOpportunityCompetitor extends BizEntity {
 	 * @return the value of the '<em>Weaknesses</em>' attribute.
 	 * @see #setWeaknesses(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityCompetitor_Weaknesses()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getWeaknesses();

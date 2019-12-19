@@ -7,14 +7,9 @@
  */
 package org.abchip.mimo.biz.service.schedule.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.service.schedule.JobSandbox;
 import org.abchip.mimo.biz.service.schedule.RuntimeData;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
-import org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -94,42 +89,6 @@ public class RuntimeDataImpl extends BizEntityImpl implements RuntimeData {
 	@Override
 	public void setRuntimeInfo(String newRuntimeInfo) {
 		eSet(SchedulePackage.Literals.RUNTIME_DATA__RUNTIME_INFO, newRuntimeInfo);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ApplicationSandbox> applicationSandboxs() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<JobSandbox> jobSandboxs() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WorkEffort> workEfforts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //RuntimeDataImpl

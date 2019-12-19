@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.product.facility.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.product.facility.FacilityGroup;
 import org.abchip.mimo.biz.product.facility.FacilityGroupType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -72,18 +69,6 @@ public class FacilityGroupTypeImpl extends BizEntityImpl implements FacilityGrou
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(FacilityPackage.Literals.FACILITY_GROUP_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<FacilityGroup> facilityGroups() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

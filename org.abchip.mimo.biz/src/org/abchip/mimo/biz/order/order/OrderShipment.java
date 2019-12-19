@@ -74,7 +74,7 @@ public interface OrderShipment extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderShipment_OrderItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -128,7 +128,7 @@ public interface OrderShipment extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderShipment_ShipGroupSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipGroupSeqId();
@@ -183,7 +183,7 @@ public interface OrderShipment extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderShipment_ShipmentItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();

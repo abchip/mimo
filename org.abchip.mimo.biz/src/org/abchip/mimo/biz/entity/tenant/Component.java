@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.entity.tenant;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -22,7 +20,6 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Component#getComponentName <em>Component Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Component#getRootLocation <em>Root Location</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.Component#getTenantComponents <em>Tenant Components</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getComponent()
@@ -82,22 +79,5 @@ public interface Component extends BizEntity {
 	 * @generated
 	 */
 	void setRootLocation(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Tenant Components</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.entity.tenant.TenantComponent}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tenant Components</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tenant Components</em>' reference list.
-	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getComponent_TenantComponents()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TenantComponent'"
-	 * @generated
-	 */
-	List<TenantComponent> getTenantComponents();
 
 } // Component

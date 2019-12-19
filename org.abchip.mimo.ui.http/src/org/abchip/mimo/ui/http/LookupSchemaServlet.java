@@ -61,8 +61,8 @@ public class LookupSchemaServlet extends BaseServlet {
 			SchemaColumn currentKey = null;
 			for (Slot slot : frame.getSlots()) {
 
-				if (slot.isRoute())
-					continue;
+//				if (slot.isRoute())
+//					continue;
 
 				SchemaColumn column = buildColumn(slot);
 

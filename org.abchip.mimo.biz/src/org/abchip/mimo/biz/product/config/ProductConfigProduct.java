@@ -46,7 +46,7 @@ public interface ProductConfigProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigProduct_ConfigOptionId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getConfigOptionId();
@@ -125,7 +125,7 @@ public interface ProductConfigProduct extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigProduct_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();

@@ -10,15 +10,11 @@ package org.abchip.mimo.biz.accounting.finaccount;
 import java.math.BigDecimal;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
-import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
 import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
-import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.party.party.Party;
 
 /**
@@ -35,7 +31,6 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getEntryDate <em>Entry Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getFinAccountId <em>Fin Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getFinAccountTransAttributes <em>Fin Account Trans Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getFinAccountTransTypeId <em>Fin Account Trans Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getGlReconciliationId <em>Gl Reconciliation Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getOrderId <em>Order Id</em>}</li>
@@ -116,7 +111,7 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @return the value of the '<em>Entry Date</em>' attribute.
 	 * @see #setEntryDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_EntryDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getEntryDate();
@@ -168,7 +163,7 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @return the value of the '<em>Order Id</em>' attribute.
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_OrderId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -195,7 +190,7 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_OrderItemSeqId()
 	 * @model annotation="mimo-ent-slot help='To be used along with orderId to point to an OrderItem that represents the purchase of a product to add money to the account.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -351,7 +346,7 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @return the value of the '<em>Transaction Date</em>' attribute.
 	 * @see #setTransactionDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_TransactionDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getTransactionDate();
@@ -365,41 +360,6 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @generated
 	 */
 	void setTransactionDate(Date value);
-
-	/**
-	 * Returns the value of the '<em><b>Fin Account Trans Attributes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Fin Account Trans Attributes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Trans Attributes</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_FinAccountTransAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccountTransAttribute'"
-	 * @generated
-	 */
-	List<FinAccountTransAttribute> getFinAccountTransAttributes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='finAccountTransId'"
-	 * @generated
-	 */
-	List<AcctgTrans> acctgTranss();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnItemResponse' route='finAccountTransId'"
-	 * @generated
-	 */
-	List<ReturnItemResponse> returnItemResponses();
 
 	/**
 	 * Returns the value of the '<em><b>Fin Account Trans Type Id</b></em>' reference.
@@ -465,7 +425,7 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @see #setFinAccountTransId(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_FinAccountTransId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFinAccountTransId();

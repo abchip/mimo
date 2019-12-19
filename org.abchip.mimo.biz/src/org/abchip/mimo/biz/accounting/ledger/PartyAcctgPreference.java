@@ -8,8 +8,6 @@
 package org.abchip.mimo.biz.accounting.ledger;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
@@ -66,7 +64,7 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @return the value of the '<em>Enable Accounting</em>' attribute.
 	 * @see #setEnableAccounting(boolean)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_EnableAccounting()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isEnableAccounting();
@@ -144,7 +142,7 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @return the value of the '<em>Fiscal Year Start Day</em>' attribute.
 	 * @see #setFiscalYearStartDay(long)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_FiscalYearStartDay()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getFiscalYearStartDay();
@@ -170,7 +168,7 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @return the value of the '<em>Fiscal Year Start Month</em>' attribute.
 	 * @see #setFiscalYearStartMonth(long)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_FiscalYearStartMonth()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getFiscalYearStartMonth();
@@ -196,7 +194,7 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @return the value of the '<em>Invoice Id Prefix</em>' attribute.
 	 * @see #setInvoiceIdPrefix(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_InvoiceIdPrefix()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getInvoiceIdPrefix();
@@ -248,7 +246,7 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @return the value of the '<em>Last Invoice Number</em>' attribute.
 	 * @see #setLastInvoiceNumber(long)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_LastInvoiceNumber()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getLastInvoiceNumber();
@@ -274,7 +272,7 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @return the value of the '<em>Last Invoice Restart Date</em>' attribute.
 	 * @see #setLastInvoiceRestartDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_LastInvoiceRestartDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastInvoiceRestartDate();
@@ -300,7 +298,7 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @return the value of the '<em>Last Order Number</em>' attribute.
 	 * @see #setLastOrderNumber(long)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_LastOrderNumber()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getLastOrderNumber();
@@ -326,7 +324,7 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @return the value of the '<em>Last Quote Number</em>' attribute.
 	 * @see #setLastQuoteNumber(long)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_LastQuoteNumber()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getLastQuoteNumber();
@@ -430,7 +428,7 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @return the value of the '<em>Order Id Prefix</em>' attribute.
 	 * @see #setOrderIdPrefix(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_OrderIdPrefix()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getOrderIdPrefix();
@@ -483,7 +481,7 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_PartyId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -509,7 +507,7 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @return the value of the '<em>Quote Id Prefix</em>' attribute.
 	 * @see #setQuoteIdPrefix(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_QuoteIdPrefix()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getQuoteIdPrefix();
@@ -535,7 +533,7 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @return the value of the '<em>Use Invoice Id For Returns</em>' attribute.
 	 * @see #setUseInvoiceIdForReturns(boolean)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_UseInvoiceIdForReturns()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isUseInvoiceIdForReturns();
@@ -627,15 +625,6 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @generated
 	 */
 	void setTaxFormId(Enumeration value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyPrefDocTypeTpl' route='partyId'"
-	 * @generated
-	 */
-	List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls();
 
 	/**
 	 * Returns the value of the '<em><b>Error Gl Journal Id</b></em>' reference.

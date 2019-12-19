@@ -7,14 +7,9 @@
  */
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr;
-import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -29,7 +24,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeImpl#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeImpl#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeImpl#getInvoiceTypeAttrs <em>Invoice Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -117,65 +111,6 @@ public class InvoiceTypeImpl extends BizEntityTypeImpl<Invoice> implements Invoi
 	@Override
 	public void setParentTypeId(InvoiceType newParentTypeId) {
 		eSet(InvoicePackage.Literals.INVOICE_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<InvoiceTypeAttr> getInvoiceTypeAttrs() {
-		return (List<InvoiceTypeAttr>)eGet(InvoicePackage.Literals.INVOICE_TYPE__INVOICE_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InvoiceType> childInvoiceTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InvoiceItemTypeMap> invoiceItemTypeMaps() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Invoice> invoices() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -136,7 +136,7 @@ public interface FixedAssetMaint extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMaint_MaintHistSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getMaintHistSeqId();
@@ -163,7 +163,7 @@ public interface FixedAssetMaint extends BizEntity {
 	 * @see #setProductMaintSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMaint_ProductMaintSeqId()
 	 * @model annotation="mimo-ent-slot help='Optional, though should be filled in to determine upcoming maintenance for all scheduled maintenance'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductMaintSeqId();

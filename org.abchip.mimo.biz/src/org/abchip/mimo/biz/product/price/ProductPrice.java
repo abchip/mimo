@@ -94,7 +94,7 @@ public interface ProductPrice extends BizEntity {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_CreatedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -176,7 +176,6 @@ public interface ProductPrice extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -228,7 +227,7 @@ public interface ProductPrice extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_LastModifiedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -414,8 +413,8 @@ public interface ProductPrice extends BizEntity {
 	 * @return the value of the '<em>Tax In Price</em>' attribute.
 	 * @see #setTaxInPrice(boolean)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_TaxInPrice()
-	 * @model annotation="mimo-ent-slot help='If Y the price field has tax included for the given taxAuthPartyId/taxAuthGeoId at the taxPercentage.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='If Y the price field has tax included for the given taxAuthPartyId/taxAuthGeoId at the taxPercentage.'"
 	 * @generated
 	 */
 	boolean isTaxInPrice();
@@ -546,7 +545,7 @@ public interface ProductPrice extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPrice_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

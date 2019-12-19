@@ -80,7 +80,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @see #setDetailSubScreen(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_DetailSubScreen()
 	 * @model annotation="mimo-ent-slot help='This is optional. If not specified a default should be used by the category detail template.'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getDetailSubScreen();
@@ -106,7 +106,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Detail Text</em>' attribute.
 	 * @see #setDetailText(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_DetailText()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getDetailText();
@@ -134,7 +134,6 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -212,7 +211,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Link Info</em>' attribute.
 	 * @see #setLinkInfo(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_LinkInfo()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getLinkInfo();
@@ -240,7 +239,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_LinkSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getLinkSeqId();
@@ -293,7 +292,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_SequenceNum()
 	 * @model annotation="mimo-ent-slot help='This field is used to sort the links. The linkSeqId field is not used because it is part of the primary key and cannot be changed.'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -319,7 +318,7 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

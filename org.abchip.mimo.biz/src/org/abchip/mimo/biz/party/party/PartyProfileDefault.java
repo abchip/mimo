@@ -43,7 +43,7 @@ public interface PartyProfileDefault extends BizEntity {
 	 * @return the value of the '<em>Default Bill Addr</em>' attribute.
 	 * @see #setDefaultBillAddr(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyProfileDefault_DefaultBillAddr()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDefaultBillAddr();
@@ -69,7 +69,7 @@ public interface PartyProfileDefault extends BizEntity {
 	 * @return the value of the '<em>Default Pay Meth</em>' attribute.
 	 * @see #setDefaultPayMeth(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyProfileDefault_DefaultPayMeth()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDefaultPayMeth();
@@ -95,7 +95,7 @@ public interface PartyProfileDefault extends BizEntity {
 	 * @return the value of the '<em>Default Ship Addr</em>' attribute.
 	 * @see #setDefaultShipAddr(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyProfileDefault_DefaultShipAddr()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDefaultShipAddr();
@@ -121,7 +121,7 @@ public interface PartyProfileDefault extends BizEntity {
 	 * @return the value of the '<em>Default Ship Meth</em>' attribute.
 	 * @see #setDefaultShipMeth(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyProfileDefault_DefaultShipMeth()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDefaultShipMeth();

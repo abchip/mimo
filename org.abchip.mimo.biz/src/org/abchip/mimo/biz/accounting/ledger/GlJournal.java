@@ -8,8 +8,6 @@
 package org.abchip.mimo.biz.accounting.ledger;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.party.party.Party;
 
@@ -71,7 +69,7 @@ public interface GlJournal extends BizEntity {
 	 * @return the value of the '<em>Is Posted</em>' attribute.
 	 * @see #setIsPosted(boolean)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlJournal_IsPosted()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsPosted();
@@ -123,7 +121,7 @@ public interface GlJournal extends BizEntity {
 	 * @return the value of the '<em>Posted Date</em>' attribute.
 	 * @see #setPostedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlJournal_PostedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getPostedDate();
@@ -139,24 +137,6 @@ public interface GlJournal extends BizEntity {
 	void setPostedDate(Date value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='glJournalId'"
-	 * @generated
-	 */
-	List<AcctgTrans> acctgTranss();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='errorGlJournalId'"
-	 * @generated
-	 */
-	List<PartyAcctgPreference> partyAcctgPreferences();
-
-	/**
 	 * Returns the value of the '<em><b>Gl Journal Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -168,7 +148,7 @@ public interface GlJournal extends BizEntity {
 	 * @see #setGlJournalId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlJournal_GlJournalId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGlJournalId();

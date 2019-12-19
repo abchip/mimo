@@ -10,15 +10,9 @@ package org.abchip.mimo.biz.marketing.campaign;
 import java.math.BigDecimal;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.marketing.contact.ContactList;
-import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
-import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +37,6 @@ import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#isIsActive <em>Is Active</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getMarketingCampaignNotes <em>Marketing Campaign Notes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getNumSent <em>Num Sent</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getParentCampaignId <em>Parent Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getStartDate <em>Start Date</em>}</li>
@@ -145,7 +138,7 @@ public interface MarketingCampaign extends BizEntity {
 	 * @return the value of the '<em>Campaign Summary</em>' attribute.
 	 * @see #setCampaignSummary(String)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_CampaignSummary()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getCampaignSummary();
@@ -171,7 +164,7 @@ public interface MarketingCampaign extends BizEntity {
 	 * @return the value of the '<em>Converted Leads</em>' attribute.
 	 * @see #setConvertedLeads(String)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_ConvertedLeads()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getConvertedLeads();
@@ -197,7 +190,7 @@ public interface MarketingCampaign extends BizEntity {
 	 * @return the value of the '<em>Created By User Login</em>' attribute.
 	 * @see #setCreatedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_CreatedByUserLogin()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCreatedByUserLogin();
@@ -275,7 +268,7 @@ public interface MarketingCampaign extends BizEntity {
 	 * @return the value of the '<em>Expected Response Percent</em>' attribute.
 	 * @see #setExpectedResponsePercent(double)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_ExpectedResponsePercent()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getExpectedResponsePercent();
@@ -327,7 +320,7 @@ public interface MarketingCampaign extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -353,7 +346,7 @@ public interface MarketingCampaign extends BizEntity {
 	 * @return the value of the '<em>Is Active</em>' attribute.
 	 * @see #setIsActive(boolean)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_IsActive()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isIsActive();
@@ -379,7 +372,7 @@ public interface MarketingCampaign extends BizEntity {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_LastModifiedByUserLogin()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -406,7 +399,7 @@ public interface MarketingCampaign extends BizEntity {
 	 * @see #setMarketingCampaignId(String)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_MarketingCampaignId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getMarketingCampaignId();
@@ -432,7 +425,7 @@ public interface MarketingCampaign extends BizEntity {
 	 * @return the value of the '<em>Num Sent</em>' attribute.
 	 * @see #setNumSent(long)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_NumSent()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getNumSent();
@@ -484,7 +477,7 @@ public interface MarketingCampaign extends BizEntity {
 	 * @return the value of the '<em>Start Date</em>' attribute.
 	 * @see #setStartDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_StartDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getStartDate();
@@ -536,7 +529,7 @@ public interface MarketingCampaign extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -550,58 +543,5 @@ public interface MarketingCampaign extends BizEntity {
 	 * @generated
 	 */
 	void setThruDate(Date value);
-
-	/**
-	 * Returns the value of the '<em><b>Marketing Campaign Notes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Marketing Campaign Notes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Marketing Campaign Notes</em>' reference list.
-	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_MarketingCampaignNotes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='MarketingCampaignNote'"
-	 * @generated
-	 */
-	List<MarketingCampaignNote> getMarketingCampaignNotes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='MarketingCampaign' route='parentCampaignId'"
-	 * @generated
-	 */
-	List<MarketingCampaign> childMarketingCampaigns();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContactList' route='marketingCampaignId'"
-	 * @generated
-	 */
-	List<ContactList> contactLists();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SalesOpportunity' route='marketingCampaignId'"
-	 * @generated
-	 */
-	List<SalesOpportunity> salesOpportunities();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TrackingCode' route='marketingCampaignId'"
-	 * @generated
-	 */
-	List<TrackingCode> trackingCodes();
 
 } // MarketingCampaign

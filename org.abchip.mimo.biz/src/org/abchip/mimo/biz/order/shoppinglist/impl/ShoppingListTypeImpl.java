@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.order.shoppinglist.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListType;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -72,18 +69,6 @@ public class ShoppingListTypeImpl extends BizEntityImpl implements ShoppingListT
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(ShoppinglistPackage.Literals.SHOPPING_LIST_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShoppingList> shoppingLists() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

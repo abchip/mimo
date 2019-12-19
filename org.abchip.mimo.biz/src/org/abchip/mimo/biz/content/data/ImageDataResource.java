@@ -39,7 +39,7 @@ public interface ImageDataResource extends BizEntity {
 	 * @see #setDataResourceId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getImageDataResource_DataResourceId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDataResourceId();
@@ -65,7 +65,7 @@ public interface ImageDataResource extends BizEntity {
 	 * @return the value of the '<em>Image Data</em>' attribute.
 	 * @see #setImageData(byte[])
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getImageDataResource_ImageData()
-	 * @model annotation="mimo-ent-format type='byte-array'"
+	 * @model
 	 * @generated
 	 */
 	byte[] getImageData();

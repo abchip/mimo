@@ -162,31 +162,13 @@ public interface InvoicePackage extends EPackage {
 	int INVOICE__DUE_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Invoice Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVOICE__INVOICE_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Invoice Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE__INVOICE_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Invoice Items</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVOICE__INVOICE_ITEMS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int INVOICE__INVOICE_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Invoice Message</b></em>' attribute.
@@ -195,16 +177,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE__INVOICE_MESSAGE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Invoice Notes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVOICE__INVOICE_NOTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int INVOICE__INVOICE_MESSAGE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Invoice Type Id</b></em>' reference.
@@ -213,7 +186,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE__INVOICE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int INVOICE__INVOICE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Paid Date</b></em>' attribute.
@@ -222,7 +195,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE__PAID_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int INVOICE__PAID_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -231,7 +204,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int INVOICE__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Party Id From</b></em>' reference.
@@ -240,7 +213,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int INVOICE__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Recurrence Info Id</b></em>' reference.
@@ -249,7 +222,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE__RECURRENCE_INFO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+	int INVOICE__RECURRENCE_INFO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Reference Number</b></em>' attribute.
@@ -258,7 +231,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE__REFERENCE_NUMBER = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+	int INVOICE__REFERENCE_NUMBER = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Role Type Id</b></em>' reference.
@@ -267,7 +240,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+	int INVOICE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' reference.
@@ -276,7 +249,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
+	int INVOICE__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Invoice</em>' class.
@@ -285,7 +258,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
+	int INVOICE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceAttributeImpl <em>Attribute</em>}' class.
@@ -1332,31 +1305,13 @@ public interface InvoicePackage extends EPackage {
 	int INVOICE_ITEM_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Invoice Item Type Attrs</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Invoice Item Type Gl Accounts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE_ITEM_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 6;
+	int INVOICE_ITEM_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Item Type</em>' class.
@@ -1365,7 +1320,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE_ITEM_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 7;
+	int INVOICE_ITEM_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeAttrImpl <em>Item Type Attr</em>}' class.
@@ -1960,22 +1915,13 @@ public interface InvoicePackage extends EPackage {
 	int INVOICE_TERM__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Invoice Term Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVOICE_TERM__INVOICE_TERM_ATTRIBUTES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Term Days</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE_TERM__TERM_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int INVOICE_TERM__TERM_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Term Type Id</b></em>' reference.
@@ -1984,7 +1930,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE_TERM__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int INVOICE_TERM__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Term Value</b></em>' attribute.
@@ -1993,7 +1939,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE_TERM__TERM_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int INVOICE_TERM__TERM_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Text Value</b></em>' attribute.
@@ -2002,7 +1948,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE_TERM__TEXT_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int INVOICE_TERM__TEXT_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Uom Id</b></em>' attribute.
@@ -2011,7 +1957,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE_TERM__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int INVOICE_TERM__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Term</em>' class.
@@ -2020,7 +1966,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE_TERM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int INVOICE_TERM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermAttributeImpl <em>Term Attribute</em>}' class.
@@ -2196,22 +2142,13 @@ public interface InvoicePackage extends EPackage {
 	int INVOICE_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Invoice Type Attrs</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVOICE_TYPE__INVOICE_TYPE_ATTRS = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+	int INVOICE_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Type</em>' class.
@@ -2220,7 +2157,7 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOICE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
+	int INVOICE_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeAttrImpl <em>Type Attr</em>}' class.
@@ -2490,39 +2427,6 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInvoice_StatusId();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceAttributes <em>Invoice Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Invoice Attributes</em>'.
-	 * @see org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceAttributes()
-	 * @see #getInvoice()
-	 * @generated
-	 */
-	EReference getInvoice_InvoiceAttributes();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceItems <em>Invoice Items</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Invoice Items</em>'.
-	 * @see org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceItems()
-	 * @see #getInvoice()
-	 * @generated
-	 */
-	EReference getInvoice_InvoiceItems();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceNotes <em>Invoice Notes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Invoice Notes</em>'.
-	 * @see org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceNotes()
-	 * @see #getInvoice()
-	 * @generated
-	 */
-	EReference getInvoice_InvoiceNotes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceAttribute <em>Attribute</em>}'.
@@ -3275,28 +3179,6 @@ public interface InvoicePackage extends EPackage {
 	EReference getInvoiceItemType_ParentTypeId();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getInvoiceItemTypeAttrs <em>Invoice Item Type Attrs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Invoice Item Type Attrs</em>'.
-	 * @see org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getInvoiceItemTypeAttrs()
-	 * @see #getInvoiceItemType()
-	 * @generated
-	 */
-	EReference getInvoiceItemType_InvoiceItemTypeAttrs();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getInvoiceItemTypeGlAccounts <em>Invoice Item Type Gl Accounts</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Invoice Item Type Gl Accounts</em>'.
-	 * @see org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getInvoiceItemTypeGlAccounts()
-	 * @see #getInvoiceItemType()
-	 * @generated
-	 */
-	EReference getInvoiceItemType_InvoiceItemTypeGlAccounts();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeAttr <em>Item Type Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3675,17 +3557,6 @@ public interface InvoicePackage extends EPackage {
 	EAttribute getInvoiceTerm_UomId();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getInvoiceTermAttributes <em>Invoice Term Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Invoice Term Attributes</em>'.
-	 * @see org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getInvoiceTermAttributes()
-	 * @see #getInvoiceTerm()
-	 * @generated
-	 */
-	EReference getInvoiceTerm_InvoiceTermAttributes();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTermAttribute <em>Term Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3792,17 +3663,6 @@ public interface InvoicePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInvoiceType_ParentTypeId();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceType#getInvoiceTypeAttrs <em>Invoice Type Attrs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Invoice Type Attrs</em>'.
-	 * @see org.abchip.mimo.biz.accounting.invoice.InvoiceType#getInvoiceTypeAttrs()
-	 * @see #getInvoiceType()
-	 * @generated
-	 */
-	EReference getInvoiceType_InvoiceTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr <em>Type Attr</em>}'.
@@ -4006,30 +3866,6 @@ public interface InvoicePackage extends EPackage {
 		 * @generated
 		 */
 		EReference INVOICE__STATUS_ID = eINSTANCE.getInvoice_StatusId();
-
-		/**
-		 * The meta object literal for the '<em><b>Invoice Attributes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INVOICE__INVOICE_ATTRIBUTES = eINSTANCE.getInvoice_InvoiceAttributes();
-
-		/**
-		 * The meta object literal for the '<em><b>Invoice Items</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INVOICE__INVOICE_ITEMS = eINSTANCE.getInvoice_InvoiceItems();
-
-		/**
-		 * The meta object literal for the '<em><b>Invoice Notes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INVOICE__INVOICE_NOTES = eINSTANCE.getInvoice_InvoiceNotes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceAttributeImpl <em>Attribute</em>}' class.
@@ -4602,22 +4438,6 @@ public interface InvoicePackage extends EPackage {
 		EReference INVOICE_ITEM_TYPE__PARENT_TYPE_ID = eINSTANCE.getInvoiceItemType_ParentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Invoice Item Type Attrs</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS = eINSTANCE.getInvoiceItemType_InvoiceItemTypeAttrs();
-
-		/**
-		 * The meta object literal for the '<em><b>Invoice Item Type Gl Accounts</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS = eINSTANCE.getInvoiceItemType_InvoiceItemTypeGlAccounts();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeAttrImpl <em>Item Type Attr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4912,14 +4732,6 @@ public interface InvoicePackage extends EPackage {
 		EAttribute INVOICE_TERM__UOM_ID = eINSTANCE.getInvoiceTerm_UomId();
 
 		/**
-		 * The meta object literal for the '<em><b>Invoice Term Attributes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INVOICE_TERM__INVOICE_TERM_ATTRIBUTES = eINSTANCE.getInvoiceTerm_InvoiceTermAttributes();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermAttributeImpl <em>Term Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5002,14 +4814,6 @@ public interface InvoicePackage extends EPackage {
 		 * @generated
 		 */
 		EReference INVOICE_TYPE__PARENT_TYPE_ID = eINSTANCE.getInvoiceType_ParentTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Invoice Type Attrs</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INVOICE_TYPE__INVOICE_TYPE_ATTRS = eINSTANCE.getInvoiceType_InvoiceTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeAttrImpl <em>Type Attr</em>}' class.

@@ -8,13 +8,9 @@
 package org.abchip.mimo.biz.humanres.recruitment.impl;
 
 import java.util.Date;
-
-import java.util.List;
-
+import org.abchip.mimo.biz.common.Gender;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.humanres.ability.SkillType;
-import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
-import org.abchip.mimo.biz.humanres.recruitment.JobInterview;
 import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
 import org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -177,8 +173,8 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @generated
 	 */
 	@Override
-	public char getGender() {
-		return (Character)eGet(RecruitmentPackage.Literals.JOB_REQUISITION__GENDER, true);
+	public Gender getGender() {
+		return (Gender)eGet(RecruitmentPackage.Literals.JOB_REQUISITION__GENDER, true);
 	}
 
 	/**
@@ -187,7 +183,7 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @generated
 	 */
 	@Override
-	public void setGender(char newGender) {
+	public void setGender(Gender newGender) {
 		eSet(RecruitmentPackage.Literals.JOB_REQUISITION__GENDER, newGender);
 	}
 
@@ -349,30 +345,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	@Override
 	public void setSkillTypeId(SkillType newSkillTypeId) {
 		eSet(RecruitmentPackage.Literals.JOB_REQUISITION__SKILL_TYPE_ID, newSkillTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<EmploymentApp> employmentApps() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<JobInterview> jobInterviews() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //JobRequisitionImpl

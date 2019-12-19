@@ -40,7 +40,7 @@ public interface TarpittedLoginView extends BizEntity {
 	 * @see #setTarpitReleaseDateTime(long)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getTarpittedLoginView_TarpitReleaseDateTime()
 	 * @model annotation="mimo-ent-slot help='Date/Time at which the login will gain anew access to the view (in milliseconds from midnight, January 1, 1970 UTC , 0 meaning no tarpit to allow the admin to free a view and to keep history'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTarpitReleaseDateTime();
@@ -68,7 +68,7 @@ public interface TarpittedLoginView extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getTarpittedLoginView_UserLoginId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getUserLoginId();
@@ -96,7 +96,7 @@ public interface TarpittedLoginView extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getTarpittedLoginView_ViewNameId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true' help='name of view protected from data theft'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getViewNameId();

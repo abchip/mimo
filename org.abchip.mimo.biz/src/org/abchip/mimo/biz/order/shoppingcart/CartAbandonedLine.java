@@ -58,7 +58,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_CartAbandonedLineSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCartAbandonedLineSeqId();
@@ -84,7 +84,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Config Id</em>' attribute.
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ConfigId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getConfigId();
@@ -292,7 +292,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Reserv Start</em>' attribute.
 	 * @see #setReservStart(Date)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ReservStart()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getReservStart();
@@ -370,7 +370,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Was Reserved</em>' attribute.
 	 * @see #setWasReserved(boolean)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_WasReserved()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isWasReserved();
@@ -398,7 +398,7 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_VisitId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisitId();

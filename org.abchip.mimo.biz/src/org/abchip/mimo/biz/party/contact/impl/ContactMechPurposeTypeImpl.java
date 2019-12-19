@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.party.contact.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
-import org.abchip.mimo.biz.party.contact.ContactMechTypePurpose;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -71,18 +68,6 @@ public class ContactMechPurposeTypeImpl extends BizEntityImpl implements Contact
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(ContactPackage.Literals.CONTACT_MECH_PURPOSE_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ContactMechTypePurpose> contactMechTypePurposes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

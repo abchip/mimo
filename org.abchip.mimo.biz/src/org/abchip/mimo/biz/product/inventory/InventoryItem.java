@@ -10,25 +10,14 @@ package org.abchip.mimo.biz.product.inventory;
 import java.math.BigDecimal;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
-import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
-import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.order.order.OrderItem;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Container;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.product.Product;
-import org.abchip.mimo.biz.product.subscription.Subscription;
-import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
-import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryProduced;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,11 +42,7 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryProduced;
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getExpireDate <em>Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemAttributes <em>Inventory Item Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemDetails <em>Inventory Item Details</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemLabelAppls <em>Inventory Item Label Appls</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemVariances <em>Inventory Item Variances</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLocationSeqId <em>Location Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLotId <em>Lot Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOldAvailableToPromise <em>Old Available To Promise</em>}</li>
@@ -115,7 +100,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Activation Number</em>' attribute.
 	 * @see #setActivationNumber(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_ActivationNumber()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getActivationNumber();
@@ -141,7 +126,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Activation Valid Thru</em>' attribute.
 	 * @see #setActivationValidThru(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_ActivationValidThru()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getActivationValidThru();
@@ -193,7 +178,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Bin Number</em>' attribute.
 	 * @see #setBinNumber(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_BinNumber()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBinNumber();
@@ -272,7 +257,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Datetime Manufactured</em>' attribute.
 	 * @see #setDatetimeManufactured(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_DatetimeManufactured()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDatetimeManufactured();
@@ -298,7 +283,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Datetime Received</em>' attribute.
 	 * @see #setDatetimeReceived(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_DatetimeReceived()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDatetimeReceived();
@@ -324,7 +309,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Expire Date</em>' attribute.
 	 * @see #setExpireDate(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_ExpireDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getExpireDate();
@@ -376,7 +361,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Location Seq Id</em>' attribute.
 	 * @see #setLocationSeqId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_LocationSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getLocationSeqId();
@@ -559,7 +544,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Serial Number</em>' attribute.
 	 * @see #setSerialNumber(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_SerialNumber()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getSerialNumber();
@@ -585,7 +570,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Soft Identifier</em>' attribute.
 	 * @see #setSoftIdentifier(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_SoftIdentifier()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getSoftIdentifier();
@@ -678,164 +663,6 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @generated
 	 */
 	void setUomId(Uom value);
-
-	/**
-	 * Returns the value of the '<em><b>Inventory Item Attributes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Inventory Item Attributes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Attributes</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemAttribute'"
-	 * @generated
-	 */
-	List<InventoryItemAttribute> getInventoryItemAttributes();
-
-	/**
-	 * Returns the value of the '<em><b>Inventory Item Details</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Inventory Item Details</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Details</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemDetails()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemDetail'"
-	 * @generated
-	 */
-	List<InventoryItemDetail> getInventoryItemDetails();
-
-	/**
-	 * Returns the value of the '<em><b>Inventory Item Label Appls</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Inventory Item Label Appls</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Label Appls</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemLabelAppls()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemLabelAppl'"
-	 * @generated
-	 */
-	List<InventoryItemLabelAppl> getInventoryItemLabelAppls();
-
-	/**
-	 * Returns the value of the '<em><b>Inventory Item Variances</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Inventory Item Variances</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Variances</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemVariances()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemVariance'"
-	 * @generated
-	 */
-	List<InventoryItemVariance> getInventoryItemVariances();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='inventoryItemId'"
-	 * @generated
-	 */
-	List<AcctgTransEntry> acctgTransEntries();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='inventoryItemId'"
-	 * @generated
-	 */
-	List<AcctgTrans> acctgTranss();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderItem' route='fromInventoryItemId'"
-	 * @generated
-	 */
-	List<OrderItem> fromOrderItems();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='inventoryItemId'"
-	 * @generated
-	 */
-	List<InventoryTransfer> inventoryTransfers();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='inventoryItemId'"
-	 * @generated
-	 */
-	List<InvoiceItem> invoiceItems();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ItemIssuance' route='inventoryItemId'"
-	 * @generated
-	 */
-	List<ItemIssuance> itemIssuances();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentReceipt' route='inventoryItemId'"
-	 * @generated
-	 */
-	List<ShipmentReceipt> shipmentReceipts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Subscription' route='inventoryItemId'"
-	 * @generated
-	 */
-	List<Subscription> subscriptions();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffortInventoryAssign' route='inventoryItemId'"
-	 * @generated
-	 */
-	List<WorkEffortInventoryAssign> workEffortInventoryAssigns();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffortInventoryProduced' route='inventoryItemId'"
-	 * @generated
-	 */
-	List<WorkEffortInventoryProduced> workEffortInventoryProduceds();
 
 	/**
 	 * Returns the value of the '<em><b>Inventory Item Type Id</b></em>' reference.
@@ -953,7 +780,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @see #setInventoryItemId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getInventoryItemId();

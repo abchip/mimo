@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.method;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface CustomMethodType extends BizEntityType<CustomMethod> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethodType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -110,24 +108,6 @@ public interface CustomMethodType extends BizEntityType<CustomMethod> {
 	void setParentTypeId(CustomMethodType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustomMethodType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<CustomMethodType> childCustomMethodTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustomMethod' route='customMethodTypeId'"
-	 * @generated
-	 */
-	List<CustomMethod> customMethods();
-
-	/**
 	 * Returns the value of the '<em><b>Custom Method Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -139,7 +119,7 @@ public interface CustomMethodType extends BizEntityType<CustomMethod> {
 	 * @see #setCustomMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethodType_CustomMethodTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCustomMethodTypeId();

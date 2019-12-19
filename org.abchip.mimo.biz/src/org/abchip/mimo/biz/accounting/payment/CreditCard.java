@@ -80,7 +80,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Card Type</em>' attribute.
 	 * @see #setCardType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_CardType()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getCardType();
@@ -132,7 +132,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Consecutive Failed Auths</em>' attribute.
 	 * @see #setConsecutiveFailedAuths(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_ConsecutiveFailedAuths()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getConsecutiveFailedAuths();
@@ -158,7 +158,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Consecutive Failed Nsf</em>' attribute.
 	 * @see #setConsecutiveFailedNsf(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_ConsecutiveFailedNsf()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getConsecutiveFailedNsf();
@@ -290,7 +290,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Last Failed Auth Date</em>' attribute.
 	 * @see #setLastFailedAuthDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_LastFailedAuthDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastFailedAuthDate();
@@ -316,7 +316,7 @@ public interface CreditCard extends PaymentMethod {
 	 * @return the value of the '<em>Last Failed Nsf Date</em>' attribute.
 	 * @see #setLastFailedNsfDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_LastFailedNsfDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastFailedNsfDate();

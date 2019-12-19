@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntryType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -113,30 +111,6 @@ public class AcctgTransEntryTypeImpl extends BizEntityTypeImpl<AcctgTransEntry> 
 	@Override
 	public void setParentTypeId(AcctgTransEntryType newParentTypeId) {
 		eSet(LedgerPackage.Literals.ACCTG_TRANS_ENTRY_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AcctgTransEntry> acctgTransEntries() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<AcctgTransEntryType> childAcctgTransEntryTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

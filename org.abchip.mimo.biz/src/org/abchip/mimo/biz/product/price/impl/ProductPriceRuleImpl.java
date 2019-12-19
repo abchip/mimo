@@ -8,14 +8,8 @@
 package org.abchip.mimo.biz.product.price.impl;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.order.order.OrderItemPriceInfo;
 import org.abchip.mimo.biz.product.price.PricePackage;
-import org.abchip.mimo.biz.product.price.ProductPriceAction;
-import org.abchip.mimo.biz.product.price.ProductPriceCond;
 import org.abchip.mimo.biz.product.price.ProductPriceRule;
 import org.eclipse.emf.ecore.EClass;
 
@@ -31,8 +25,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#isIsSale <em>Is Sale</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getProductPriceActions <em>Product Price Actions</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getProductPriceConds <em>Product Price Conds</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getRuleName <em>Rule Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceRuleImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
@@ -162,40 +154,6 @@ public class ProductPriceRuleImpl extends BizEntityImpl implements ProductPriceR
 	@Override
 	public void setThruDate(Date newThruDate) {
 		eSet(PricePackage.Literals.PRODUCT_PRICE_RULE__THRU_DATE, newThruDate);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ProductPriceAction> getProductPriceActions() {
-		return (List<ProductPriceAction>)eGet(PricePackage.Literals.PRODUCT_PRICE_RULE__PRODUCT_PRICE_ACTIONS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<ProductPriceCond> getProductPriceConds() {
-		return (List<ProductPriceCond>)eGet(PricePackage.Literals.PRODUCT_PRICE_RULE__PRODUCT_PRICE_CONDS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderItemPriceInfo> orderItemPriceInfos() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

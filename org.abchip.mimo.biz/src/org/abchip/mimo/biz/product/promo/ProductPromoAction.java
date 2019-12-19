@@ -131,7 +131,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_PartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -157,7 +157,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_ProductId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductId();
@@ -211,7 +211,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_ProductPromoActionSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductPromoActionSeqId();
@@ -239,7 +239,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_ProductPromoRuleId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductPromoRuleId();
@@ -291,7 +291,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @return the value of the '<em>Service Name</em>' attribute.
 	 * @see #setServiceName(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_ServiceName()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getServiceName();
@@ -317,7 +317,7 @@ public interface ProductPromoAction extends BizEntity {
 	 * @return the value of the '<em>Use Cart Quantity</em>' attribute.
 	 * @see #setUseCartQuantity(boolean)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoAction_UseCartQuantity()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isUseCartQuantity();

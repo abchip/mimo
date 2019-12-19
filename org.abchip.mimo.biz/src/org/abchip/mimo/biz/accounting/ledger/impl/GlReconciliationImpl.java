@@ -9,9 +9,6 @@ package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -287,18 +284,6 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	@Override
 	public void setStatusId(StatusItem newStatusId) {
 		eSet(LedgerPackage.Literals.GL_RECONCILIATION__STATUS_ID, newStatusId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<FinAccountTrans> finAccountTranss() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

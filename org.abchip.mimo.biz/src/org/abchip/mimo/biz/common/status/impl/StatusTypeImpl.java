@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.status.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.status.StatusPackage;
 import org.abchip.mimo.biz.common.status.StatusType;
@@ -113,30 +111,6 @@ public class StatusTypeImpl extends BizEntityTypeImpl<StatusItem> implements Sta
 	@Override
 	public void setParentTypeId(StatusType newParentTypeId) {
 		eSet(StatusPackage.Literals.STATUS_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<StatusType> childStatusTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<StatusItem> statusItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

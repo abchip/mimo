@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.product.facility.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityGroup;
 import org.abchip.mimo.biz.product.facility.FacilityGroupType;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
@@ -136,18 +133,6 @@ public class FacilityGroupImpl extends BizEntityImpl implements FacilityGroup {
 	@Override
 	public void setPrimaryParentGroupId(FacilityGroup newPrimaryParentGroupId) {
 		eSet(FacilityPackage.Literals.FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID, newPrimaryParentGroupId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Facility> facilities() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

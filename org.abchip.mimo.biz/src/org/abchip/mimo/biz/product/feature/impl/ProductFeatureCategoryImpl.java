@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.product.feature.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
-import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureCategory;
 import org.eclipse.emf.ecore.EClass;
 
@@ -93,30 +90,6 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 	@Override
 	public void setParentCategoryId(ProductFeatureCategory newParentCategoryId) {
 		eSet(FeaturePackage.Literals.PRODUCT_FEATURE_CATEGORY__PARENT_CATEGORY_ID, newParentCategoryId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductFeatureCategory> childProductFeatureCategories() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductFeature> productFeatures() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

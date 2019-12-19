@@ -94,7 +94,7 @@ public interface TemporalExpressionAssoc extends BizEntity {
 	 * @see #setExprAssocType(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpressionAssoc_ExprAssocType()
 	 * @model annotation="mimo-ent-slot help='Expression association type.\n         When applied to DIFFERENCE expression types, valid values are INCLUDE or EXCLUDE.\n         When applied to SUBSTITUTION expression types, valid values are INCLUDE, EXCLUDE, or SUBSTITUTE.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getExprAssocType();

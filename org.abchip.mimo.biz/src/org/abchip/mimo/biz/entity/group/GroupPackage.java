@@ -117,22 +117,13 @@ public interface GroupPackage extends EPackage {
 	int ENTITY_GROUP__ENTITY_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Entity Group Entries</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_GROUP__ENTITY_GROUP_ENTRIES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Entity Group Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_GROUP__ENTITY_GROUP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int ENTITY_GROUP__ENTITY_GROUP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Entity Group</em>' class.
@@ -141,7 +132,7 @@ public interface GroupPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ENTITY_GROUP_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupEntryImpl <em>Entity Group Entry</em>}' class.
@@ -259,17 +250,6 @@ public interface GroupPackage extends EPackage {
 	EAttribute getEntityGroup_EntityGroupName();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupEntries <em>Entity Group Entries</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Entity Group Entries</em>'.
-	 * @see org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupEntries()
-	 * @see #getEntityGroup()
-	 * @generated
-	 */
-	EReference getEntityGroup_EntityGroupEntries();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.group.EntityGroupEntry <em>Entity Group Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -359,14 +339,6 @@ public interface GroupPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY_GROUP__ENTITY_GROUP_NAME = eINSTANCE.getEntityGroup_EntityGroupName();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity Group Entries</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTITY_GROUP__ENTITY_GROUP_ENTRIES = eINSTANCE.getEntityGroup_EntityGroupEntries();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.group.impl.EntityGroupEntryImpl <em>Entity Group Entry</em>}' class.

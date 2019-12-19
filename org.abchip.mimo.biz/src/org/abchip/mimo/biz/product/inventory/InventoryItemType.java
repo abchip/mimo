@@ -7,11 +7,7 @@
  */
 package org.abchip.mimo.biz.product.inventory;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
-import org.abchip.mimo.biz.product.facility.Facility;
-import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +21,6 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#getInventoryItemTypeAttrs <em>Inventory Item Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -71,7 +66,7 @@ public interface InventoryItemType extends BizEntityType<InventoryItem> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -113,59 +108,6 @@ public interface InventoryItemType extends BizEntityType<InventoryItem> {
 	void setParentTypeId(InventoryItemType value);
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Inventory Item Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemType_InventoryItemTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemTypeAttr'"
-	 * @generated
-	 */
-	List<InventoryItemTypeAttr> getInventoryItemTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<InventoryItemType> childInventoryItemTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Facility' route='defaultInventoryItemTypeId'"
-	 * @generated
-	 */
-	List<Facility> defaultFacilities();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItem' route='inventoryItemTypeId'"
-	 * @generated
-	 */
-	List<InventoryItem> inventoryItems();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Product' route='inventoryItemTypeId'"
-	 * @generated
-	 */
-	List<Product> products();
-
-	/**
 	 * Returns the value of the '<em><b>Inventory Item Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -177,7 +119,7 @@ public interface InventoryItemType extends BizEntityType<InventoryItem> {
 	 * @see #setInventoryItemTypeId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemType_InventoryItemTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getInventoryItemTypeId();

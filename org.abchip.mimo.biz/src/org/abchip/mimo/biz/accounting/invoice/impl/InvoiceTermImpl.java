@@ -8,12 +8,9 @@
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
 import java.math.BigDecimal;
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceTerm;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceTermAttribute;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.TermType;
 import org.eclipse.emf.ecore.EClass;
@@ -30,7 +27,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getInvoiceTermAttributes <em>Invoice Term Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getTermDays <em>Term Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getTermValue <em>Term Value</em>}</li>
@@ -202,17 +198,6 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	@Override
 	public void setUomId(String newUomId) {
 		eSet(InvoicePackage.Literals.INVOICE_TERM__UOM_ID, newUomId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<InvoiceTermAttribute> getInvoiceTermAttributes() {
-		return (List<InvoiceTermAttribute>)eGet(InvoicePackage.Literals.INVOICE_TERM__INVOICE_TERM_ATTRIBUTES, true);
 	}
 
 	/**

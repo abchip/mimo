@@ -7,23 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.ledger;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
-import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
-import org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
-import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeGlAccount;
-import org.abchip.mimo.biz.accounting.payment.Payment;
-import org.abchip.mimo.biz.accounting.payment.PaymentApplication;
-import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
-import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
-import org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount;
-import org.abchip.mimo.biz.order.order.OrderAdjustment;
-import org.abchip.mimo.biz.order.order.OrderItem;
-import org.abchip.mimo.biz.order.quote.QuoteAdjustment;
-import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,8 +24,6 @@ import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getExternalId <em>External Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountClassId <em>Gl Account Class Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountGroupMembers <em>Gl Account Group Members</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountOrganizations <em>Gl Account Organizations</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountTypeId <em>Gl Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId <em>Gl Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlXbrlClassId <em>Gl Xbrl Class Id</em>}</li>
@@ -144,7 +126,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setExternalId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_ExternalId()
 	 * @model annotation="mimo-ent-slot help='id of the account in an external system where the accounts are imported/exported'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getExternalId();
@@ -170,7 +152,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_ProductId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductId();
@@ -184,211 +166,6 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @generated
 	 */
 	void setProductId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Gl Account Group Members</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Gl Account Group Members</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Group Members</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountGroupMembers()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccountGroupMember'"
-	 * @generated
-	 */
-	List<GlAccountGroupMember> getGlAccountGroupMembers();
-
-	/**
-	 * Returns the value of the '<em><b>Gl Account Organizations</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Gl Account Organizations</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Organizations</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountOrganizations()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccountOrganization'"
-	 * @generated
-	 */
-	List<GlAccountOrganization> getGlAccountOrganizations();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='glAccountId'"
-	 * @generated
-	 */
-	List<AcctgTransEntry> acctgTransEntries();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccount' route='parentGlAccountId'"
-	 * @generated
-	 */
-	List<GlAccount> childGlAccounts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceItemType' route='defaultGlAccountId'"
-	 * @generated
-	 */
-	List<InvoiceItemType> defaultInvoiceItemTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentMethodType' route='defaultGlAccountId'"
-	 * @generated
-	 */
-	List<PaymentMethodType> defaultPaymentMethodTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccountTypeGlAccount' route='glAccountId'"
-	 * @generated
-	 */
-	List<FinAccountTypeGlAccount> finAccountTypeGlAccounts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccountTypeDefault' route='glAccountId'"
-	 * @generated
-	 */
-	List<GlAccountTypeDefault> glAccountTypeDefaults();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlReconciliation' route='glAccountId'"
-	 * @generated
-	 */
-	List<GlReconciliation> glReconciliations();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceItemTypeGlAccount' route='glAccountId'"
-	 * @generated
-	 */
-	List<InvoiceItemTypeGlAccount> invoiceItemTypeGlAccounts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='overrideGlAccountId'"
-	 * @generated
-	 */
-	List<InvoiceItem> overrideInvoiceItems();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderAdjustment' route='overrideGlAccountId'"
-	 * @generated
-	 */
-	List<OrderAdjustment> overrideOrderAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderItem' route='overrideGlAccountId'"
-	 * @generated
-	 */
-	List<OrderItem> overrideOrderItems();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='QuoteAdjustment' route='overrideGlAccountId'"
-	 * @generated
-	 */
-	List<QuoteAdjustment> overrideQuoteAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='overrideGlAccountId'"
-	 * @generated
-	 */
-	List<ReturnAdjustment> overrideReturnAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentApplication' route='overrideGlAccountId'"
-	 * @generated
-	 */
-	List<PaymentApplication> paymentApplications();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentMethodTypeGlAccount' route='glAccountId'"
-	 * @generated
-	 */
-	List<PaymentMethodTypeGlAccount> paymentMethodTypeGlAccounts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentMethod' route='glAccountId'"
-	 * @generated
-	 */
-	List<PaymentMethod> paymentMethods();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Payment' route='overrideGlAccountId'"
-	 * @generated
-	 */
-	List<Payment> payments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccount' route='postToGlAccountId'"
-	 * @generated
-	 */
-	List<FinAccount> postToFinAccounts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='VarianceReasonGlAccount' route='glAccountId'"
-	 * @generated
-	 */
-	List<VarianceReasonGlAccount> varianceReasonGlAccounts();
 
 	/**
 	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' reference.
@@ -532,7 +309,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @see #setGlAccountId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGlAccountId();

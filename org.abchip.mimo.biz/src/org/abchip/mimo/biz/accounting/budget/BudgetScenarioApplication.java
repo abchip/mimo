@@ -70,7 +70,7 @@ public interface BudgetScenarioApplication extends BizEntity {
 	 * @return the value of the '<em>Budget Item Seq Id</em>' attribute.
 	 * @see #setBudgetItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenarioApplication_BudgetItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBudgetItemSeqId();
@@ -98,7 +98,7 @@ public interface BudgetScenarioApplication extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenarioApplication_BudgetScenarioApplicId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBudgetScenarioApplicId();

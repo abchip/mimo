@@ -8,9 +8,6 @@
 package org.abchip.mimo.biz.workeffort.timesheet;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.party.party.Party;
@@ -129,7 +126,7 @@ public interface Timesheet extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -207,7 +204,7 @@ public interface Timesheet extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -223,15 +220,6 @@ public interface Timesheet extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TimeEntry' route='timesheetId'"
-	 * @generated
-	 */
-	List<TimeEntry> timeEntries();
-
-	/**
 	 * Returns the value of the '<em><b>Timesheet Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -243,7 +231,7 @@ public interface Timesheet extends BizEntity {
 	 * @see #setTimesheetId(String)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimesheet_TimesheetId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTimesheetId();

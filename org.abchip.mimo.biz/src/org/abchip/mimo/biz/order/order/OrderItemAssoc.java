@@ -102,7 +102,7 @@ public interface OrderItemAssoc extends BizEntityTyped<OrderItemAssocType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssoc_OrderItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -156,7 +156,7 @@ public interface OrderItemAssoc extends BizEntityTyped<OrderItemAssocType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssoc_ShipGroupSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipGroupSeqId();
@@ -211,7 +211,7 @@ public interface OrderItemAssoc extends BizEntityTyped<OrderItemAssocType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssoc_ToOrderItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getToOrderItemSeqId();
@@ -239,7 +239,7 @@ public interface OrderItemAssoc extends BizEntityTyped<OrderItemAssocType> {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemAssoc_ToShipGroupSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getToShipGroupSeqId();

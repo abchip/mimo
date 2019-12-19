@@ -92,7 +92,7 @@ public interface PaymentGatewayConfig extends BizEntityTyped<PaymentGatewayConfi
 	 * @see #setPaymentGatewayConfigId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayConfig_PaymentGatewayConfigId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentGatewayConfigId();

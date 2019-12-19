@@ -69,7 +69,7 @@ public interface WorkEffortInventoryAssign extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortInventoryAssign_Quantity()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getQuantity();

@@ -7,9 +7,6 @@
  */
 package org.abchip.mimo.biz.common.period.impl;
 
-import java.util.List;
-
-import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 import org.abchip.mimo.biz.common.period.PeriodPackage;
 import org.abchip.mimo.biz.common.period.PeriodType;
 import org.abchip.mimo.biz.common.uom.Uom;
@@ -114,18 +111,6 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 	@Override
 	public void setUomId(Uom newUomId) {
 		eSet(PeriodPackage.Literals.PERIOD_TYPE__UOM_ID, newUomId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CustomTimePeriod> customTimePeriods() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

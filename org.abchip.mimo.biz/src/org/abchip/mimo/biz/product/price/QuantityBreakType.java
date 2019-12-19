@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.price;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -56,15 +54,6 @@ public interface QuantityBreakType extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='QuantityBreak' route='quantityBreakTypeId'"
-	 * @generated
-	 */
-	List<QuantityBreak> quantityBreaks();
-
-	/**
 	 * Returns the value of the '<em><b>Quantity Break Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -76,7 +65,7 @@ public interface QuantityBreakType extends BizEntity {
 	 * @see #setQuantityBreakTypeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreakType_QuantityBreakTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getQuantityBreakTypeId();

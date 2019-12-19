@@ -52,7 +52,7 @@ public interface ProductReview extends BizEntity {
 	 * @return the value of the '<em>Posted Date Time</em>' attribute.
 	 * @see #setPostedDateTime(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductReview_PostedDateTime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getPostedDateTime();
@@ -104,7 +104,7 @@ public interface ProductReview extends BizEntity {
 	 * @return the value of the '<em>Product Review</em>' attribute.
 	 * @see #setProductReview(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductReview_ProductReview()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getProductReview();
@@ -131,7 +131,7 @@ public interface ProductReview extends BizEntity {
 	 * @see #setProductReviewId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductReview_ProductReviewId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductReviewId();
@@ -157,7 +157,7 @@ public interface ProductReview extends BizEntity {
 	 * @return the value of the '<em>Posted Anonymous</em>' attribute.
 	 * @see #setPostedAnonymous(boolean)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductReview_PostedAnonymous()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isPostedAnonymous();

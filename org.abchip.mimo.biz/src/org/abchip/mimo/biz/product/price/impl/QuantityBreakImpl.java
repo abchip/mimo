@@ -8,13 +8,10 @@
 package org.abchip.mimo.biz.product.price.impl;
 
 import java.math.BigDecimal;
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.QuantityBreak;
 import org.abchip.mimo.biz.product.price.QuantityBreakType;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -116,42 +113,6 @@ public class QuantityBreakImpl extends BizEntityImpl implements QuantityBreak {
 	@Override
 	public void setThruQuantity(BigDecimal newThruQuantity) {
 		eSet(PricePackage.Literals.QUANTITY_BREAK__THRU_QUANTITY, newThruQuantity);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentCostEstimate> priceShipmentCostEstimates() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentCostEstimate> quantityShipmentCostEstimates() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentCostEstimate> weightShipmentCostEstimates() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

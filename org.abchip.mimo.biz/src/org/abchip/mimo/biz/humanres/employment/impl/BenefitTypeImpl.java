@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.employment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.humanres.employment.BenefitType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.PartyBenefit;
@@ -176,18 +174,6 @@ public class BenefitTypeImpl extends BizEntityTypeImpl<PartyBenefit> implements 
 	@Override
 	public void setParentTypeId(BenefitType newParentTypeId) {
 		eSet(EmploymentPackage.Literals.BENEFIT_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<BenefitType> childBenefitTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //BenefitTypeImpl

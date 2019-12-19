@@ -63,7 +63,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Agreement Id</em>' attribute.
 	 * @see #setAgreementId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_AgreementId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getAgreementId();
@@ -89,7 +89,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Agreement Item Seq Id</em>' attribute.
 	 * @see #setAgreementItemSeqId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_AgreementItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getAgreementItemSeqId();
@@ -117,7 +117,6 @@ public interface SupplierProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_AvailableFromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getAvailableFromDate();
@@ -143,7 +142,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Available Thru Date</em>' attribute.
 	 * @see #setAvailableThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_AvailableThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getAvailableThruDate();
@@ -169,7 +168,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Can Drop Ship</em>' attribute.
 	 * @see #setCanDropShip(boolean)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_CanDropShip()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isCanDropShip();
@@ -433,7 +432,7 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Supplier Product Id</em>' attribute.
 	 * @see #setSupplierProductId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_SupplierProductId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSupplierProductId();

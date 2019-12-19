@@ -48,7 +48,6 @@ public interface PartyNameHistory extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyNameHistory_ChangeDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getChangeDate();

@@ -107,8 +107,8 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 * @generated
 	 */
 	@Override
-	public char getAnyPrefix() {
-		return (Character)eGet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_PREFIX, true);
+	public String getAnyPrefix() {
+		return (String)eGet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_PREFIX, true);
 	}
 
 	/**
@@ -117,7 +117,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 * @generated
 	 */
 	@Override
-	public void setAnyPrefix(char newAnyPrefix) {
+	public void setAnyPrefix(String newAnyPrefix) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_PREFIX, newAnyPrefix);
 	}
 
@@ -127,8 +127,8 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 * @generated
 	 */
 	@Override
-	public char getAnySuffix() {
-		return (Character)eGet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_SUFFIX, true);
+	public String getAnySuffix() {
+		return (String)eGet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_SUFFIX, true);
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class WorkEffortSearchConstraintImpl extends BizEntityImpl implements Wor
 	 * @generated
 	 */
 	@Override
-	public void setAnySuffix(char newAnySuffix) {
+	public void setAnySuffix(String newAnySuffix) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT_SEARCH_CONSTRAINT__ANY_SUFFIX, newAnySuffix);
 	}
 

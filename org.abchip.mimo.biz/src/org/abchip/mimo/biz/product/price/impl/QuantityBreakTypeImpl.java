@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.product.price.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
-import org.abchip.mimo.biz.product.price.QuantityBreak;
 import org.abchip.mimo.biz.product.price.QuantityBreakType;
 import org.eclipse.emf.ecore.EClass;
 
@@ -72,18 +69,6 @@ public class QuantityBreakTypeImpl extends BizEntityImpl implements QuantityBrea
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(PricePackage.Literals.QUANTITY_BREAK_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<QuantityBreak> quantityBreaks() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

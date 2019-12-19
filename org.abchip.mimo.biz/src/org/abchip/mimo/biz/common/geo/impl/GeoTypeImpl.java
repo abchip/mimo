@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.geo.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoType;
@@ -113,30 +111,6 @@ public class GeoTypeImpl extends BizEntityTypeImpl<Geo> implements GeoType {
 	@Override
 	public void setParentTypeId(GeoType newParentTypeId) {
 		eSet(GeoPackage.Literals.GEO_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<GeoType> childGeoTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Geo> geos() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

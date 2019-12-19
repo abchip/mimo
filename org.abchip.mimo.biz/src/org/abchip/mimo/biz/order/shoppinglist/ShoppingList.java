@@ -8,11 +8,8 @@
 package org.abchip.mimo.biz.order.shoppinglist;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
-import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
@@ -46,9 +43,7 @@ import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListItems <em>Shopping List Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListTypeId <em>Shopping List Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListWorkEfforts <em>Shopping List Work Efforts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getVisitorId <em>Visitor Id</em>}</li>
  * </ul>
  *
@@ -68,7 +63,7 @@ public interface ShoppingList extends BizEntity {
 	 * @return the value of the '<em>Carrier Party Id</em>' attribute.
 	 * @see #setCarrierPartyId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_CarrierPartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCarrierPartyId();
@@ -94,7 +89,7 @@ public interface ShoppingList extends BizEntity {
 	 * @return the value of the '<em>Carrier Role Type Id</em>' attribute.
 	 * @see #setCarrierRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_CarrierRoleTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCarrierRoleTypeId();
@@ -146,7 +141,7 @@ public interface ShoppingList extends BizEntity {
 	 * @return the value of the '<em>Currency Uom</em>' attribute.
 	 * @see #setCurrencyUom(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_CurrencyUom()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCurrencyUom();
@@ -198,7 +193,7 @@ public interface ShoppingList extends BizEntity {
 	 * @return the value of the '<em>Is Active</em>' attribute.
 	 * @see #setIsActive(boolean)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_IsActive()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsActive();
@@ -224,7 +219,7 @@ public interface ShoppingList extends BizEntity {
 	 * @return the value of the '<em>Is Public</em>' attribute.
 	 * @see #setIsPublic(boolean)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_IsPublic()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsPublic();
@@ -250,7 +245,7 @@ public interface ShoppingList extends BizEntity {
 	 * @return the value of the '<em>Last Admin Modified</em>' attribute.
 	 * @see #setLastAdminModified(Date)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_LastAdminModified()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastAdminModified();
@@ -276,7 +271,7 @@ public interface ShoppingList extends BizEntity {
 	 * @return the value of the '<em>Last Ordered Date</em>' attribute.
 	 * @see #setLastOrderedDate(Date)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_LastOrderedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastOrderedDate();
@@ -484,7 +479,7 @@ public interface ShoppingList extends BizEntity {
 	 * @return the value of the '<em>Shipment Method Type Id</em>' attribute.
 	 * @see #setShipmentMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShipmentMethodTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentMethodTypeId();
@@ -511,7 +506,7 @@ public interface ShoppingList extends BizEntity {
 	 * @see #setShoppingListId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShoppingListId();
@@ -563,7 +558,7 @@ public interface ShoppingList extends BizEntity {
 	 * @return the value of the '<em>Visitor Id</em>' attribute.
 	 * @see #setVisitorId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_VisitorId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisitorId();
@@ -577,57 +572,5 @@ public interface ShoppingList extends BizEntity {
 	 * @generated
 	 */
 	void setVisitorId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Shopping List Items</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Shopping List Items</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shopping List Items</em>' reference list.
-	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListItems()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShoppingListItem'"
-	 * @generated
-	 */
-	List<ShoppingListItem> getShoppingListItems();
-
-	/**
-	 * Returns the value of the '<em><b>Shopping List Work Efforts</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListWorkEffort}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Shopping List Work Efforts</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shopping List Work Efforts</em>' reference list.
-	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListWorkEfforts()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShoppingListWorkEffort'"
-	 * @generated
-	 */
-	List<ShoppingListWorkEffort> getShoppingListWorkEfforts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader' route='autoOrderShoppingListId'"
-	 * @generated
-	 */
-	List<OrderHeader> autoOrderOrderHeaders();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShoppingList' route='parentShoppingListId'"
-	 * @generated
-	 */
-	List<ShoppingList> childShoppingLists();
 
 } // ShoppingList

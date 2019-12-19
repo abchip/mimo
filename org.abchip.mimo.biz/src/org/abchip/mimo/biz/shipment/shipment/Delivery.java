@@ -10,9 +10,6 @@ package org.abchip.mimo.biz.shipment.shipment;
 import java.math.BigDecimal;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.product.facility.Facility;
@@ -55,7 +52,7 @@ public interface Delivery extends BizEntity {
 	 * @return the value of the '<em>Actual Arrival Date</em>' attribute.
 	 * @see #setActualArrivalDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_ActualArrivalDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getActualArrivalDate();
@@ -81,7 +78,7 @@ public interface Delivery extends BizEntity {
 	 * @return the value of the '<em>Actual Start Date</em>' attribute.
 	 * @see #setActualStartDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_ActualStartDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getActualStartDate();
@@ -108,7 +105,7 @@ public interface Delivery extends BizEntity {
 	 * @see #setDeliveryId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_DeliveryId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDeliveryId();
@@ -186,7 +183,7 @@ public interface Delivery extends BizEntity {
 	 * @return the value of the '<em>Estimated Arrival Date</em>' attribute.
 	 * @see #setEstimatedArrivalDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_EstimatedArrivalDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getEstimatedArrivalDate();
@@ -212,7 +209,7 @@ public interface Delivery extends BizEntity {
 	 * @return the value of the '<em>Estimated Start Date</em>' attribute.
 	 * @see #setEstimatedStartDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_EstimatedStartDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getEstimatedStartDate();
@@ -330,14 +327,5 @@ public interface Delivery extends BizEntity {
 	 * @generated
 	 */
 	void setStartMileage(BigDecimal value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentRouteSegment' route='deliveryId'"
-	 * @generated
-	 */
-	List<ShipmentRouteSegment> shipmentRouteSegments();
 
 } // Delivery

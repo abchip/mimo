@@ -74,7 +74,7 @@ public interface SalaryStep extends BizEntity {
 	 * @return the value of the '<em>Created By User Login</em>' attribute.
 	 * @see #setCreatedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_CreatedByUserLogin()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCreatedByUserLogin();
@@ -100,7 +100,7 @@ public interface SalaryStep extends BizEntity {
 	 * @return the value of the '<em>Date Modified</em>' attribute.
 	 * @see #setDateModified(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_DateModified()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDateModified();
@@ -128,7 +128,6 @@ public interface SalaryStep extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -154,7 +153,7 @@ public interface SalaryStep extends BizEntity {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_LastModifiedByUserLogin()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -209,7 +208,7 @@ public interface SalaryStep extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_SalaryStepSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSalaryStepSeqId();
@@ -235,7 +234,7 @@ public interface SalaryStep extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

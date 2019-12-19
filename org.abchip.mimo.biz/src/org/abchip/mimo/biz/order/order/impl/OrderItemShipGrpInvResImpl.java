@@ -155,8 +155,8 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 * @generated
 	 */
 	@Override
-	public char getPriority() {
-		return (Character)eGet(OrderPackage.Literals.ORDER_ITEM_SHIP_GRP_INV_RES__PRIORITY, true);
+	public String getPriority() {
+		return (String)eGet(OrderPackage.Literals.ORDER_ITEM_SHIP_GRP_INV_RES__PRIORITY, true);
 	}
 
 	/**
@@ -165,7 +165,7 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 * @generated
 	 */
 	@Override
-	public void setPriority(char newPriority) {
+	public void setPriority(String newPriority) {
 		eSet(OrderPackage.Literals.ORDER_ITEM_SHIP_GRP_INV_RES__PRIORITY, newPriority);
 	}
 

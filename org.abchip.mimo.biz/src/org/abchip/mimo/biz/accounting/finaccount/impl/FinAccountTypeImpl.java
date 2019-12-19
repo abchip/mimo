@@ -7,16 +7,11 @@
  */
 package org.abchip.mimo.biz.accounting.finaccount.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
-import org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeAttr;
-import org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
-import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,8 +24,6 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeImpl#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeImpl#getFinAccountTypeAttrs <em>Fin Account Type Attrs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeImpl#getFinAccountTypeGlAccounts <em>Fin Account Type Gl Accounts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeImpl#isIsRefundable <em>Is Refundable</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -141,64 +134,6 @@ public class FinAccountTypeImpl extends BizEntityTypeImpl<FinAccount> implements
 	@Override
 	public void setReplenishEnumId(Enumeration newReplenishEnumId) {
 		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID, newReplenishEnumId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<FinAccountTypeAttr> getFinAccountTypeAttrs() {
-		return (List<FinAccountTypeAttr>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<FinAccountTypeGlAccount> getFinAccountTypeGlAccounts() {
-		return (List<FinAccountTypeGlAccount>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<FinAccountType> childFinAccountTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<FinAccount> finAccounts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductStoreFinActSetting> productStoreFinActSettings() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

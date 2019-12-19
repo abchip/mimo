@@ -65,7 +65,7 @@ public interface WebPreferenceType extends BizEntity {
 	 * @see #setWebPreferenceTypeId(String)
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebPreferenceType_WebPreferenceTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getWebPreferenceTypeId();

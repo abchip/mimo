@@ -7,9 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.tax.impl;
 
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateType;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -71,18 +68,6 @@ public class TaxAuthorityRateTypeImpl extends BizEntityImpl implements TaxAuthor
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(TaxPackage.Literals.TAX_AUTHORITY_RATE_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TaxAuthorityRateProduct> taxAuthorityRateProducts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

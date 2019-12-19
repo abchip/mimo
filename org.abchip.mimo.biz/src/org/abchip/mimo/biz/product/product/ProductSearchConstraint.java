@@ -47,7 +47,7 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Constraint Name</em>' attribute.
 	 * @see #setConstraintName(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_ConstraintName()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getConstraintName();
@@ -75,7 +75,7 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_ConstraintSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getConstraintSeqId();
@@ -99,12 +99,12 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Any Prefix</em>' attribute.
-	 * @see #setAnyPrefix(char)
+	 * @see #setAnyPrefix(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_AnyPrefix()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
-	char getAnyPrefix();
+	String getAnyPrefix();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductSearchConstraint#getAnyPrefix <em>Any Prefix</em>}' attribute.
@@ -114,7 +114,7 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @see #getAnyPrefix()
 	 * @generated
 	 */
-	void setAnyPrefix(char value);
+	void setAnyPrefix(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Any Suffix</b></em>' attribute.
@@ -125,12 +125,12 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Any Suffix</em>' attribute.
-	 * @see #setAnySuffix(char)
+	 * @see #setAnySuffix(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_AnySuffix()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
-	char getAnySuffix();
+	String getAnySuffix();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductSearchConstraint#getAnySuffix <em>Any Suffix</em>}' attribute.
@@ -140,7 +140,7 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @see #getAnySuffix()
 	 * @generated
 	 */
-	void setAnySuffix(char value);
+	void setAnySuffix(String value);
 
 	/**
 	 * Returns the value of the '<em><b>High Value</b></em>' attribute.
@@ -153,7 +153,7 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>High Value</em>' attribute.
 	 * @see #setHighValue(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_HighValue()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getHighValue();
@@ -179,7 +179,7 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Include Sub Categories</em>' attribute.
 	 * @see #setIncludeSubCategories(boolean)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_IncludeSubCategories()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIncludeSubCategories();
@@ -205,7 +205,7 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Info String</em>' attribute.
 	 * @see #setInfoString(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_InfoString()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getInfoString();
@@ -231,7 +231,7 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Is And</em>' attribute.
 	 * @see #setIsAnd(boolean)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_IsAnd()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsAnd();
@@ -257,7 +257,7 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Low Value</em>' attribute.
 	 * @see #setLowValue(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_LowValue()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getLowValue();
@@ -283,7 +283,7 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Remove Stems</em>' attribute.
 	 * @see #setRemoveStems(boolean)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_RemoveStems()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isRemoveStems();

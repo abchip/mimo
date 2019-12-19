@@ -8,8 +8,6 @@
 package org.abchip.mimo.biz.marketing.tracking;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 
@@ -59,7 +57,7 @@ public interface TrackingCode extends BizEntity {
 	 * @return the value of the '<em>Billable Lifetime</em>' attribute.
 	 * @see #setBillableLifetime(long)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_BillableLifetime()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getBillableLifetime();
@@ -111,7 +109,7 @@ public interface TrackingCode extends BizEntity {
 	 * @return the value of the '<em>Created By User Login</em>' attribute.
 	 * @see #setCreatedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_CreatedByUserLogin()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCreatedByUserLogin();
@@ -137,7 +135,7 @@ public interface TrackingCode extends BizEntity {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_CreatedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -189,7 +187,7 @@ public interface TrackingCode extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -215,7 +213,7 @@ public interface TrackingCode extends BizEntity {
 	 * @return the value of the '<em>Group Id</em>' attribute.
 	 * @see #setGroupId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_GroupId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGroupId();
@@ -241,7 +239,7 @@ public interface TrackingCode extends BizEntity {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_LastModifiedByUserLogin()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -267,7 +265,7 @@ public interface TrackingCode extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_LastModifiedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -371,7 +369,7 @@ public interface TrackingCode extends BizEntity {
 	 * @return the value of the '<em>Prod Catalog Id</em>' attribute.
 	 * @see #setProdCatalogId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_ProdCatalogId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProdCatalogId();
@@ -423,7 +421,7 @@ public interface TrackingCode extends BizEntity {
 	 * @return the value of the '<em>Subgroup Id</em>' attribute.
 	 * @see #setSubgroupId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_SubgroupId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSubgroupId();
@@ -449,7 +447,7 @@ public interface TrackingCode extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -475,7 +473,7 @@ public interface TrackingCode extends BizEntity {
 	 * @return the value of the '<em>Trackable Lifetime</em>' attribute.
 	 * @see #setTrackableLifetime(long)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_TrackableLifetime()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTrackableLifetime();
@@ -502,7 +500,7 @@ public interface TrackingCode extends BizEntity {
 	 * @see #setTrackingCodeId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_TrackingCodeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTrackingCodeId();
@@ -542,14 +540,5 @@ public interface TrackingCode extends BizEntity {
 	 * @generated
 	 */
 	void setTrackingCodeTypeId(TrackingCodeType value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TrackingCodeOrder' route='trackingCodeId'"
-	 * @generated
-	 */
-	List<TrackingCodeOrder> trackingCodeOrders();
 
 } // TrackingCode

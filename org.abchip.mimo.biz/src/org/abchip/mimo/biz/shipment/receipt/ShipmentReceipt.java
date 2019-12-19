@@ -10,14 +10,9 @@ package org.abchip.mimo.biz.shipment.receipt;
 import java.math.BigDecimal;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
-import org.abchip.mimo.biz.product.inventory.InventoryItemDetail;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
@@ -65,7 +60,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Datetime Received</em>' attribute.
 	 * @see #setDatetimeReceived(Date)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_DatetimeReceived()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDatetimeReceived();
@@ -169,7 +164,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_OrderItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -274,7 +269,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @see #setReceiptId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ReceiptId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReceiptId();
@@ -352,7 +347,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Return Id</em>' attribute.
 	 * @see #setReturnId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ReturnId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReturnId();
@@ -378,7 +373,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Return Item Seq Id</em>' attribute.
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ReturnItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReturnItemSeqId();
@@ -430,7 +425,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Shipment Item Seq Id</em>' attribute.
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ShipmentItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();
@@ -456,7 +451,7 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @return the value of the '<em>Shipment Package Seq Id</em>' attribute.
 	 * @see #setShipmentPackageSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getShipmentReceipt_ShipmentPackageSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentPackageSeqId();
@@ -470,23 +465,5 @@ public interface ShipmentReceipt extends BizEntity {
 	 * @generated
 	 */
 	void setShipmentPackageSeqId(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='receiptId'"
-	 * @generated
-	 */
-	List<AcctgTrans> acctgTranss();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemDetail' route='receiptId'"
-	 * @generated
-	 */
-	List<InventoryItemDetail> inventoryItemDetails();
 
 } // ShipmentReceipt

@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.accounting.invoice;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
-import org.abchip.mimo.biz.party.agreement.AgreementTerm;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,8 +23,6 @@ import org.abchip.mimo.biz.party.agreement.AgreementTerm;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getDefaultGlAccountId <em>Default Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getInvoiceItemTypeAttrs <em>Invoice Item Type Attrs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getInvoiceItemTypeGlAccounts <em>Invoice Item Type Gl Accounts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -99,7 +94,7 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -141,76 +136,6 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	void setParentTypeId(InvoiceItemType value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Item Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Invoice Item Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Item Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_InvoiceItemTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceItemTypeAttr'"
-	 * @generated
-	 */
-	List<InvoiceItemTypeAttr> getInvoiceItemTypeAttrs();
-
-	/**
-	 * Returns the value of the '<em><b>Invoice Item Type Gl Accounts</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeGlAccount}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Invoice Item Type Gl Accounts</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Item Type Gl Accounts</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_InvoiceItemTypeGlAccounts()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceItemTypeGlAccount'"
-	 * @generated
-	 */
-	List<InvoiceItemTypeGlAccount> getInvoiceItemTypeGlAccounts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AgreementTerm' route='invoiceItemTypeId'"
-	 * @generated
-	 */
-	List<AgreementTerm> agreementTerms();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceItemType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<InvoiceItemType> childInvoiceItemTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceItemTypeMap' route='invoiceItemTypeId'"
-	 * @generated
-	 */
-	List<InvoiceItemTypeMap> invoiceItemTypeMaps();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceItem' route='invoiceItemTypeId'"
-	 * @generated
-	 */
-	List<InvoiceItem> invoiceItems();
-
-	/**
 	 * Returns the value of the '<em><b>Invoice Item Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -222,7 +147,7 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	 * @see #setInvoiceItemTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_InvoiceItemTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getInvoiceItemTypeId();

@@ -7,12 +7,9 @@
  */
 package org.abchip.mimo.biz.party.need.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.need.NeedPackage;
 import org.abchip.mimo.biz.party.need.NeedType;
-import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -71,18 +68,6 @@ public class NeedTypeImpl extends BizEntityImpl implements NeedType {
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(NeedPackage.Literals.NEED_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Subscription> subscriptions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

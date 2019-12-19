@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.payment.Deduction;
 import org.abchip.mimo.biz.accounting.payment.DeductionType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
@@ -113,30 +111,6 @@ public class DeductionTypeImpl extends BizEntityTypeImpl<Deduction> implements D
 	@Override
 	public void setParentTypeId(DeductionType newParentTypeId) {
 		eSet(PaymentPackage.Literals.DEDUCTION_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<DeductionType> childDeductionTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Deduction> deductions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.category;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -24,7 +22,6 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryType#getProductCategoryTypeAttrs <em>Product Category Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryType()
@@ -69,7 +66,7 @@ public interface ProductCategoryType extends BizEntityType<ProductCategory> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -122,7 +119,7 @@ public interface ProductCategoryType extends BizEntityType<ProductCategory> {
 	 * @see #setProductCategoryTypeId(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryType_ProductCategoryTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductCategoryTypeId();
@@ -136,40 +133,5 @@ public interface ProductCategoryType extends BizEntityType<ProductCategory> {
 	 * @generated
 	 */
 	void setProductCategoryTypeId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Product Category Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Product Category Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Category Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryType_ProductCategoryTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategoryTypeAttr'"
-	 * @generated
-	 */
-	List<ProductCategoryTypeAttr> getProductCategoryTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategoryType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<ProductCategoryType> childProductCategoryTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategory' route='productCategoryTypeId'"
-	 * @generated
-	 */
-	List<ProductCategory> productCategories();
 
 } // ProductCategoryType

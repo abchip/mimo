@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.order.requirement.Requirement;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,7 +41,7 @@ public interface Deliverable extends BizEntity {
 	 * @see #setDeliverableId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getDeliverable_DeliverableId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDeliverableId();
@@ -136,23 +133,5 @@ public interface Deliverable extends BizEntity {
 	 * @generated
 	 */
 	void setDescription(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Requirement' route='deliverableId'"
-	 * @generated
-	 */
-	List<Requirement> requirements();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffortDeliverableProd' route='deliverableId'"
-	 * @generated
-	 */
-	List<WorkEffortDeliverableProd> workEffortDeliverableProds();
 
 } // Deliverable

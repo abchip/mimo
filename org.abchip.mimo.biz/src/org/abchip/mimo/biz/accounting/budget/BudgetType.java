@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.budget;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -21,7 +19,6 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetType#getBudgetTypeId <em>Budget Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetType#getBudgetTypeAttrs <em>Budget Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -69,7 +66,7 @@ public interface BudgetType extends BizEntityType<Budget> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -111,41 +108,6 @@ public interface BudgetType extends BizEntityType<Budget> {
 	void setParentTypeId(BudgetType value);
 
 	/**
-	 * Returns the value of the '<em><b>Budget Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Budget Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetType_BudgetTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='BudgetTypeAttr'"
-	 * @generated
-	 */
-	List<BudgetTypeAttr> getBudgetTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Budget' route='budgetTypeId'"
-	 * @generated
-	 */
-	List<Budget> budgets();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='BudgetType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<BudgetType> childBudgetTypes();
-
-	/**
 	 * Returns the value of the '<em><b>Budget Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -157,7 +119,7 @@ public interface BudgetType extends BizEntityType<Budget> {
 	 * @see #setBudgetTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetType_BudgetTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBudgetTypeId();

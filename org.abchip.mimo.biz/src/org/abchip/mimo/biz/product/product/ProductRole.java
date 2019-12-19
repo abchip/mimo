@@ -75,7 +75,6 @@ public interface ProductRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductRole_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -156,7 +155,7 @@ public interface ProductRole extends BizEntity {
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductRole_SequenceNum()
 	 * @model annotation="mimo-ent-slot help='a product may have several parties associated to it with the same role; this field can be used to define the order of parties associated to the product in that role'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -182,7 +181,7 @@ public interface ProductRole extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductRole_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

@@ -44,7 +44,7 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @see #setConfigIactnTypeId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_ConfigIactnTypeId()
 	 * @model annotation="mimo-ent-slot help='INCOMPATIBLE, etc...'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getConfigIactnTypeId();
@@ -72,7 +72,7 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_ConfigOptionId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getConfigOptionId();
@@ -100,7 +100,7 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_ConfigOptionIdTo()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getConfigOptionIdTo();
@@ -154,7 +154,7 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_SequenceNum()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();

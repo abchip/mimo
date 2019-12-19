@@ -47,7 +47,7 @@ public interface WorkEffortReview extends BizEntity {
 	 * @return the value of the '<em>Rating</em>' attribute.
 	 * @see #setRating(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortReview_Rating()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getRating();
@@ -75,7 +75,6 @@ public interface WorkEffortReview extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortReview_ReviewDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getReviewDate();
@@ -101,7 +100,7 @@ public interface WorkEffortReview extends BizEntity {
 	 * @return the value of the '<em>Posted Anonymous</em>' attribute.
 	 * @see #setPostedAnonymous(boolean)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortReview_PostedAnonymous()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isPostedAnonymous();
@@ -127,7 +126,7 @@ public interface WorkEffortReview extends BizEntity {
 	 * @return the value of the '<em>Review Text</em>' attribute.
 	 * @see #setReviewText(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortReview_ReviewText()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getReviewText();

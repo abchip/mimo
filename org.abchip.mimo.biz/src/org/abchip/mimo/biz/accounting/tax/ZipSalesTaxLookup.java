@@ -33,13 +33,13 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCityUseTax <em>City Use Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getComboSalesTax <em>Combo Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getComboUseTax <em>Combo Use Tax</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isCountyDefault <em>County Default</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyDefault <em>County Default</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyFips <em>County Fips</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyLocalSalesTax <em>County Local Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyLocalUseTax <em>County Local Use Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountySalesTax <em>County Sales Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyUseTax <em>County Use Tax</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isGeneralDefault <em>General Default</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getGeneralDefault <em>General Default</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getGeoCode <em>Geo Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isInsideCity <em>Inside City</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getStateSalesTax <em>State Sales Tax</em>}</li>
@@ -64,7 +64,7 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_City()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getCity();
@@ -237,7 +237,6 @@ public interface ZipSalesTaxLookup extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>County Default</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>County Default</em>' attribute isn't clear,
@@ -245,23 +244,22 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>County Default</em>' attribute.
-	 * @see #setCountyDefault(boolean)
+	 * @see #setCountyDefault(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_CountyDefault()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
-	boolean isCountyDefault();
+	String getCountyDefault();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isCountyDefault <em>County Default</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getCountyDefault <em>County Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>County Default</em>' attribute.
-	 * @see #isCountyDefault()
+	 * @see #getCountyDefault()
 	 * @generated
 	 */
-	void setCountyDefault(boolean value);
+	void setCountyDefault(String value);
 
 	/**
 	 * Returns the value of the '<em><b>County</b></em>' attribute.
@@ -276,7 +274,7 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_County()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getCounty();
@@ -302,7 +300,7 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @return the value of the '<em>County Fips</em>' attribute.
 	 * @see #setCountyFips(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_CountyFips()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getCountyFips();
@@ -423,7 +421,6 @@ public interface ZipSalesTaxLookup extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>General Default</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>General Default</em>' attribute isn't clear,
@@ -431,23 +428,22 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>General Default</em>' attribute.
-	 * @see #setGeneralDefault(boolean)
+	 * @see #setGeneralDefault(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_GeneralDefault()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
-	boolean isGeneralDefault();
+	String getGeneralDefault();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#isGeneralDefault <em>General Default</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.ZipSalesTaxLookup#getGeneralDefault <em>General Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>General Default</em>' attribute.
-	 * @see #isGeneralDefault()
+	 * @see #getGeneralDefault()
 	 * @generated
 	 */
-	void setGeneralDefault(boolean value);
+	void setGeneralDefault(String value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
@@ -462,7 +458,6 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -488,7 +483,7 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @return the value of the '<em>Geo Code</em>' attribute.
 	 * @see #setGeoCode(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_GeoCode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getGeoCode();
@@ -505,7 +500,6 @@ public interface ZipSalesTaxLookup extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Inside City</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inside City</em>' attribute isn't clear,
@@ -515,8 +509,7 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @return the value of the '<em>Inside City</em>' attribute.
 	 * @see #setInsideCity(boolean)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_InsideCity()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isInsideCity();
@@ -544,7 +537,7 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_StateCode()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getStateCode();
@@ -624,7 +617,7 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_ZipCode()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getZipCode();

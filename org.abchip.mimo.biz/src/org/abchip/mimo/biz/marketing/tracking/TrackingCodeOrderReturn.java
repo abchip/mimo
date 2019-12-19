@@ -49,7 +49,7 @@ public interface TrackingCodeOrderReturn extends BizEntity {
 	 * @return the value of the '<em>Affiliate Referred Time Stamp</em>' attribute.
 	 * @see #setAffiliateReferredTimeStamp(Date)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrderReturn_AffiliateReferredTimeStamp()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getAffiliateReferredTimeStamp();
@@ -75,7 +75,7 @@ public interface TrackingCodeOrderReturn extends BizEntity {
 	 * @return the value of the '<em>Has Exported</em>' attribute.
 	 * @see #setHasExported(boolean)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrderReturn_HasExported()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasExported();
@@ -101,7 +101,7 @@ public interface TrackingCodeOrderReturn extends BizEntity {
 	 * @return the value of the '<em>Is Billable</em>' attribute.
 	 * @see #setIsBillable(boolean)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrderReturn_IsBillable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsBillable();
@@ -154,7 +154,7 @@ public interface TrackingCodeOrderReturn extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrderReturn_OrderItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -207,7 +207,7 @@ public interface TrackingCodeOrderReturn extends BizEntity {
 	 * @return the value of the '<em>Site Id</em>' attribute.
 	 * @see #setSiteId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrderReturn_SiteId()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getSiteId();

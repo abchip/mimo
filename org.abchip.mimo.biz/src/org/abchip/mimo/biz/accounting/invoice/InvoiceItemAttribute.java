@@ -67,7 +67,7 @@ public interface InvoiceItemAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Value</em>' attribute.
 	 * @see #setAttrValue(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAttribute_AttrValue()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAttrValue();
@@ -95,7 +95,7 @@ public interface InvoiceItemAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAttribute_InvoiceId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getInvoiceId();
@@ -123,7 +123,7 @@ public interface InvoiceItemAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAttribute_InvoiceItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -151,7 +151,7 @@ public interface InvoiceItemAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAttribute_AttrName()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getAttrName();

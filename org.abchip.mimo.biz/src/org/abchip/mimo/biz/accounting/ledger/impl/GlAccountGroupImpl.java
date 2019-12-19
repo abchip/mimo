@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.ledger.GlAccountGroup;
-import org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountGroupType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -93,18 +90,6 @@ public class GlAccountGroupImpl extends BizEntityImpl implements GlAccountGroup 
 	@Override
 	public void setGlAccountGroupTypeId(GlAccountGroupType newGlAccountGroupTypeId) {
 		eSet(LedgerPackage.Literals.GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID, newGlAccountGroupTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<GlAccountGroupMember> glAccountGroupMembers() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

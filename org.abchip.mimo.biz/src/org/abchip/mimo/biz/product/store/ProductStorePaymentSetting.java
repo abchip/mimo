@@ -48,7 +48,7 @@ public interface ProductStorePaymentSetting extends BizEntity {
 	 * @return the value of the '<em>Apply To All Products</em>' attribute.
 	 * @see #setApplyToAllProducts(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting_ApplyToAllProducts()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isApplyToAllProducts();
@@ -153,7 +153,7 @@ public interface ProductStorePaymentSetting extends BizEntity {
 	 * @return the value of the '<em>Payment Properties Path</em>' attribute.
 	 * @see #setPaymentPropertiesPath(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting_PaymentPropertiesPath()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getPaymentPropertiesPath();
@@ -179,7 +179,7 @@ public interface ProductStorePaymentSetting extends BizEntity {
 	 * @return the value of the '<em>Payment Service</em>' attribute.
 	 * @see #setPaymentService(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting_PaymentService()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getPaymentService();

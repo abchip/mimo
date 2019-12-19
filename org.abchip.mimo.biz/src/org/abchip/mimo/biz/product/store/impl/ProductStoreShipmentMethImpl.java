@@ -8,15 +8,12 @@
 package org.abchip.mimo.biz.product.store.impl;
 
 import java.math.BigDecimal;
-import java.util.List;
-
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
 import org.abchip.mimo.biz.product.store.StorePackage;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 import org.eclipse.emf.ecore.EClass;
@@ -644,18 +641,6 @@ public class ProductStoreShipmentMethImpl extends BizEntityImpl implements Produ
 	@Override
 	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
 		eSet(StorePackage.Literals.PRODUCT_STORE_SHIPMENT_METH__SHIPMENT_METHOD_TYPE_ID, newShipmentMethodTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentCostEstimate> shipmentCostEstimates() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ProductStoreShipmentMethImpl

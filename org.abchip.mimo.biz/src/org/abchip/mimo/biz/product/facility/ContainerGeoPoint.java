@@ -45,7 +45,6 @@ public interface ContainerGeoPoint extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainerGeoPoint_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -98,7 +97,7 @@ public interface ContainerGeoPoint extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainerGeoPoint_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

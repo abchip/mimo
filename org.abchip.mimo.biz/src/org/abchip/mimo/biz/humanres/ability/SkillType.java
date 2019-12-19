@@ -7,11 +7,7 @@
  */
 package org.abchip.mimo.biz.humanres.ability;
 
-import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
-import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
-import org.abchip.mimo.biz.order.quote.QuoteItem;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,7 +66,7 @@ public interface SkillType extends BizEntityType<PartySkill> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getSkillType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -112,51 +108,6 @@ public interface SkillType extends BizEntityType<PartySkill> {
 	void setParentTypeId(SkillType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SkillType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<SkillType> childSkillTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='JobRequisition' route='skillTypeId'"
-	 * @generated
-	 */
-	List<JobRequisition> jobRequisitions();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartySkill' route='skillTypeId'"
-	 * @generated
-	 */
-	List<PartySkill> partySkills();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='QuoteItem' route='skillTypeId'"
-	 * @generated
-	 */
-	List<QuoteItem> quoteItems();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffortSkillStandard' route='skillTypeId'"
-	 * @generated
-	 */
-	List<WorkEffortSkillStandard> workEffortSkillStandards();
-
-	/**
 	 * Returns the value of the '<em><b>Skill Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -168,7 +119,7 @@ public interface SkillType extends BizEntityType<PartySkill> {
 	 * @see #setSkillTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getSkillType_SkillTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSkillTypeId();

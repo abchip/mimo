@@ -79,7 +79,6 @@ public interface ProductCategoryContent extends BizEntityTyped<ProductCategoryCo
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -105,7 +104,7 @@ public interface ProductCategoryContent extends BizEntityTyped<ProductCategoryCo
 	 * @return the value of the '<em>Purchase From Date</em>' attribute.
 	 * @see #setPurchaseFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent_PurchaseFromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getPurchaseFromDate();
@@ -131,7 +130,7 @@ public interface ProductCategoryContent extends BizEntityTyped<ProductCategoryCo
 	 * @return the value of the '<em>Purchase Thru Date</em>' attribute.
 	 * @see #setPurchaseThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent_PurchaseThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getPurchaseThruDate();
@@ -157,7 +156,7 @@ public interface ProductCategoryContent extends BizEntityTyped<ProductCategoryCo
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -183,7 +182,7 @@ public interface ProductCategoryContent extends BizEntityTyped<ProductCategoryCo
 	 * @return the value of the '<em>Use Count Limit</em>' attribute.
 	 * @see #setUseCountLimit(long)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent_UseCountLimit()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getUseCountLimit();

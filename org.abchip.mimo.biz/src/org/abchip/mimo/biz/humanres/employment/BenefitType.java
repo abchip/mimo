@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.employment;
 
-import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -70,7 +69,7 @@ public interface BenefitType extends BizEntityType<PartyBenefit> {
 	 * @see #setBenefitTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getBenefitType_BenefitTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBenefitTypeId();
@@ -122,7 +121,7 @@ public interface BenefitType extends BizEntityType<PartyBenefit> {
 	 * @return the value of the '<em>Employer Paid Percentage</em>' attribute.
 	 * @see #setEmployerPaidPercentage(double)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getBenefitType_EmployerPaidPercentage()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getEmployerPaidPercentage();
@@ -148,7 +147,7 @@ public interface BenefitType extends BizEntityType<PartyBenefit> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getBenefitType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -188,14 +187,5 @@ public interface BenefitType extends BizEntityType<PartyBenefit> {
 	 * @generated
 	 */
 	void setParentTypeId(BenefitType value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='BenefitType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<BenefitType> childBenefitTypes();
 
 } // BenefitType

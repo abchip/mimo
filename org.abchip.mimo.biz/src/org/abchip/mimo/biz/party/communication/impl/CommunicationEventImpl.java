@@ -8,27 +8,18 @@
 package org.abchip.mimo.biz.party.communication.impl;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.marketing.contact.ContactList;
-import org.abchip.mimo.biz.order.order.CommunicationEventOrder;
-import org.abchip.mimo.biz.order.request.CustRequestCommEvent;
-import org.abchip.mimo.biz.order.return_.CommunicationEventReturn;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
-import org.abchip.mimo.biz.party.communication.CommunicationEventProduct;
-import org.abchip.mimo.biz.party.communication.CommunicationEventPurpose;
 import org.abchip.mimo.biz.party.communication.CommunicationEventType;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent;
-import org.abchip.mimo.biz.workeffort.workeffort.CommunicationEventWorkEff;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -592,90 +583,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	@Override
 	public void setToString(String newToString) {
 		eSet(CommunicationPackage.Literals.COMMUNICATION_EVENT__TO_STRING, newToString);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CommunicationEventOrder> communicationEventOrders() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CommunicationEventProduct> communicationEventProducts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CommunicationEventPurpose> communicationEventPurposes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CommunicationEventReturn> communicationEventReturns() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CommunicationEventWorkEff> communicationEventWorkEffs() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CustRequestCommEvent> custRequestCommEvents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<SubscriptionCommEvent> subscriptionCommEvents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

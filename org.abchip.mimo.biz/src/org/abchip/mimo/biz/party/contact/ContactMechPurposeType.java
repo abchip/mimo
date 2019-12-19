@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.party.contact;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -56,15 +54,6 @@ public interface ContactMechPurposeType extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMechTypePurpose' route='contactMechPurposeTypeId'"
-	 * @generated
-	 */
-	List<ContactMechTypePurpose> contactMechTypePurposes();
-
-	/**
 	 * Returns the value of the '<em><b>Contact Mech Purpose Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -76,7 +65,7 @@ public interface ContactMechPurposeType extends BizEntity {
 	 * @see #setContactMechPurposeTypeId(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechPurposeType_ContactMechPurposeTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getContactMechPurposeTypeId();

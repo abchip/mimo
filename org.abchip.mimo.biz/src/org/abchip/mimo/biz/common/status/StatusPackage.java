@@ -126,31 +126,13 @@ public interface StatusPackage extends EPackage {
 	int STATUS_ITEM__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Main Status Valid Changes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATUS_ITEM__MAIN_STATUS_VALID_CHANGES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Sequence Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATUS_ITEM__SEQUENCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Shipment Statuss</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATUS_ITEM__SHIPMENT_STATUSS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int STATUS_ITEM__SEQUENCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' attribute.
@@ -159,7 +141,7 @@ public interface StatusPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATUS_ITEM__STATUS_CODE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int STATUS_ITEM__STATUS_CODE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Status Type Id</b></em>' reference.
@@ -168,7 +150,7 @@ public interface StatusPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATUS_ITEM__STATUS_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int STATUS_ITEM__STATUS_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Item</em>' class.
@@ -177,7 +159,7 @@ public interface StatusPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATUS_ITEM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int STATUS_ITEM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.common.status.impl.StatusTypeImpl <em>Type</em>}' class.
@@ -437,28 +419,6 @@ public interface StatusPackage extends EPackage {
 	EReference getStatusItem_StatusTypeId();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.status.StatusItem#getShipmentStatuss <em>Shipment Statuss</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Shipment Statuss</em>'.
-	 * @see org.abchip.mimo.biz.common.status.StatusItem#getShipmentStatuss()
-	 * @see #getStatusItem()
-	 * @generated
-	 */
-	EReference getStatusItem_ShipmentStatuss();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.status.StatusItem#getMainStatusValidChanges <em>Main Status Valid Changes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Main Status Valid Changes</em>'.
-	 * @see org.abchip.mimo.biz.common.status.StatusItem#getMainStatusValidChanges()
-	 * @see #getStatusItem()
-	 * @generated
-	 */
-	EReference getStatusItem_MainStatusValidChanges();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.status.StatusType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -637,22 +597,6 @@ public interface StatusPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATUS_ITEM__STATUS_TYPE_ID = eINSTANCE.getStatusItem_StatusTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Shipment Statuss</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STATUS_ITEM__SHIPMENT_STATUSS = eINSTANCE.getStatusItem_ShipmentStatuss();
-
-		/**
-		 * The meta object literal for the '<em><b>Main Status Valid Changes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STATUS_ITEM__MAIN_STATUS_VALID_CHANGES = eINSTANCE.getStatusItem_MainStatusValidChanges();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.status.impl.StatusTypeImpl <em>Type</em>}' class.

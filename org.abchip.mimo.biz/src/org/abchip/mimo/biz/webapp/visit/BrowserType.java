@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.webapp.visit;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -42,7 +40,7 @@ public interface BrowserType extends BizEntity {
 	 * @see #setBrowserTypeId(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getBrowserType_BrowserTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBrowserTypeId();
@@ -94,7 +92,7 @@ public interface BrowserType extends BizEntity {
 	 * @return the value of the '<em>Browser Version</em>' attribute.
 	 * @see #setBrowserVersion(String)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getBrowserType_BrowserVersion()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getBrowserVersion();
@@ -108,14 +106,5 @@ public interface BrowserType extends BizEntity {
 	 * @generated
 	 */
 	void setBrowserVersion(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='UserAgent' route='browserTypeId'"
-	 * @generated
-	 */
-	List<UserAgent> userAgents();
 
 } // BrowserType

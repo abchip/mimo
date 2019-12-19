@@ -10,13 +10,10 @@ package org.abchip.mimo.biz.order.order;
 import java.math.BigDecimal;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
 import org.abchip.mimo.biz.common.geo.Geo;
-import org.abchip.mimo.biz.order.return_.ReturnAdjustment;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
@@ -46,7 +43,6 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOldAmountPerQuantity <em>Old Amount Per Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOldPercentage <em>Old Percentage</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentAttributes <em>Order Adjustment Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
@@ -162,7 +158,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Corresponding Product Id</em>' attribute.
 	 * @see #setCorrespondingProductId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_CorrespondingProductId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCorrespondingProductId();
@@ -214,7 +210,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_CreatedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -241,7 +237,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setCustomerReferenceId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_CustomerReferenceId()
 	 * @model annotation="mimo-ent-slot help='for tax entries this is partyTaxId'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getCustomerReferenceId();
@@ -320,7 +316,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Include In Shipping</em>' attribute.
 	 * @see #setIncludeInShipping(boolean)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_IncludeInShipping()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIncludeInShipping();
@@ -346,7 +342,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Include In Tax</em>' attribute.
 	 * @see #setIncludeInTax(boolean)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_IncludeInTax()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIncludeInTax();
@@ -372,7 +368,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Is Manual</em>' attribute.
 	 * @see #setIsManual(boolean)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_IsManual()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsManual();
@@ -398,7 +394,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_LastModifiedByUserLogin()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -424,7 +420,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_LastModifiedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -476,7 +472,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Old Percentage</em>' attribute.
 	 * @see #setOldPercentage(double)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OldPercentage()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getOldPercentage();
@@ -503,7 +499,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setOrderAdjustmentId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderAdjustmentId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderAdjustmentId();
@@ -581,7 +577,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -688,7 +684,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Product Feature Id</em>' attribute.
 	 * @see #setProductFeatureId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_ProductFeatureId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductFeatureId();
@@ -714,7 +710,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Product Promo Action Seq Id</em>' attribute.
 	 * @see #setProductPromoActionSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_ProductPromoActionSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductPromoActionSeqId();
@@ -766,7 +762,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Product Promo Rule Id</em>' attribute.
 	 * @see #setProductPromoRuleId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_ProductPromoRuleId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductPromoRuleId();
@@ -845,7 +841,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Ship Group Seq Id</em>' attribute.
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_ShipGroupSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipGroupSeqId();
@@ -898,7 +894,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Source Reference Id</em>' attribute.
 	 * @see #setSourceReferenceId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_SourceReferenceId()
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getSourceReferenceId();
@@ -925,7 +921,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @see #setTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_TaxAuthGeoId()
 	 * @model annotation="mimo-ent-slot help='these taxAuth fields deprecate the primaryGeoId and secondaryGeoId fields and will be used with the newer tax calc stuff'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -951,7 +947,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Tax Auth Party Id</em>' attribute.
 	 * @see #setTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_TaxAuthPartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTaxAuthPartyId();
@@ -991,31 +987,5 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @generated
 	 */
 	void setTaxAuthorityRateSeqId(TaxAuthorityRateProduct value);
-
-	/**
-	 * Returns the value of the '<em><b>Order Adjustment Attributes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Order Adjustment Attributes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Adjustment Attributes</em>' reference list.
-	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderAdjustmentAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderAdjustmentAttribute'"
-	 * @generated
-	 */
-	List<OrderAdjustmentAttribute> getOrderAdjustmentAttributes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='orderAdjustmentId'"
-	 * @generated
-	 */
-	List<ReturnAdjustment> returnAdjustments();
 
 } // OrderAdjustment

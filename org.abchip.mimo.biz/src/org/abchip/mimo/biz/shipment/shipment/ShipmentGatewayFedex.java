@@ -49,7 +49,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setAccessAccountNbr(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_AccessAccountNbr()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='Your Fedex account number'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccessAccountNbr();
@@ -76,7 +76,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setAccessMeterNumber(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_AccessMeterNumber()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='Your Fedex meter number'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccessMeterNumber();
@@ -103,7 +103,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setAccessUserKey(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_AccessUserKey()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='Your Fedex user credential key'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccessUserKey();
@@ -130,7 +130,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setAccessUserPwd(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_AccessUserPwd()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='Your Fedex user credential password'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccessUserPwd();
@@ -157,7 +157,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setConnectSoapUrl(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_ConnectSoapUrl()
 	 * @model annotation="mimo-ent-slot help='Fedex Soap Connection URL'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getConnectSoapUrl();
@@ -184,7 +184,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setConnectTimeout(long)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_ConnectTimeout()
 	 * @model annotation="mimo-ent-slot help='Timeout in seconds'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getConnectTimeout();
@@ -211,7 +211,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setConnectUrl(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_ConnectUrl()
 	 * @model annotation="mimo-ent-slot help='Fedex Connection URL'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getConnectUrl();
@@ -238,7 +238,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setDefaultDropoffType(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_DefaultDropoffType()
 	 * @model annotation="mimo-ent-slot help='Default dropoff type'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getDefaultDropoffType();
@@ -265,7 +265,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setDefaultPackagingType(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_DefaultPackagingType()
 	 * @model annotation="mimo-ent-slot help='Default packaging type'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getDefaultPackagingType();
@@ -292,7 +292,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setLabelImageType(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_LabelImageType()
 	 * @model annotation="mimo-ent-slot help='Label image type'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getLabelImageType();
@@ -319,7 +319,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setRateEstimateTemplate(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_RateEstimateTemplate()
 	 * @model annotation="mimo-ent-slot help='FedEx API Rate Estimate Template'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getRateEstimateTemplate();
@@ -346,7 +346,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setTemplateShipment(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_TemplateShipment()
 	 * @model annotation="mimo-ent-slot help='Shipment Template location'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getTemplateShipment();
@@ -373,7 +373,7 @@ public interface ShipmentGatewayFedex extends ShipmentGatewayConfig {
 	 * @see #setTemplateSubscription(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayFedex_TemplateSubscription()
 	 * @model annotation="mimo-ent-slot help='Subscription Template location'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getTemplateSubscription();

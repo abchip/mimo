@@ -44,7 +44,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @return the value of the '<em>Address Format</em>' attribute.
 	 * @see #setAddressFormat(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_AddressFormat()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAddressFormat();
@@ -70,7 +70,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @return the value of the '<em>Has Postal Code Ext</em>' attribute.
 	 * @see #setHasPostalCodeExt(boolean)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_HasPostalCodeExt()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasPostalCodeExt();
@@ -96,7 +96,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @return the value of the '<em>Postal Code Regex</em>' attribute.
 	 * @see #setPostalCodeRegex(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_PostalCodeRegex()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getPostalCodeRegex();
@@ -122,7 +122,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @return the value of the '<em>Require Postal Code</em>' attribute.
 	 * @see #setRequirePostalCode(boolean)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_RequirePostalCode()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isRequirePostalCode();
@@ -148,7 +148,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @return the value of the '<em>Require Postal Code Ext</em>' attribute.
 	 * @see #setRequirePostalCodeExt(boolean)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_RequirePostalCodeExt()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isRequirePostalCodeExt();
@@ -174,7 +174,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @return the value of the '<em>Require State Province Id</em>' attribute.
 	 * @see #setRequireStateProvinceId(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_RequireStateProvinceId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRequireStateProvinceId();
@@ -227,7 +227,7 @@ public interface CountryAddressFormat extends BizEntity {
 	 * @see #setGeoId(String)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryAddressFormat_GeoId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGeoId();

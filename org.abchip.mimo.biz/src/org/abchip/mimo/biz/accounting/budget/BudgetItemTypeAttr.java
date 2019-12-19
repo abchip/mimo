@@ -67,7 +67,7 @@ public interface BudgetItemTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItemTypeAttr_AttrName()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getAttrName();

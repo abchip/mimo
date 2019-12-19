@@ -71,7 +71,7 @@ public interface ProductOrderItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getProductOrderItem_EngagementItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getEngagementItemSeqId();
@@ -126,7 +126,7 @@ public interface ProductOrderItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getProductOrderItem_OrderItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();

@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
-import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfigType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
@@ -94,18 +91,6 @@ public class ShipmentGatewayConfigImpl extends BizEntityTypedImpl<ShipmentGatewa
 	@Override
 	public void setShipmentGatewayConfTypeId(ShipmentGatewayConfigType newShipmentGatewayConfTypeId) {
 		eSet(Shipment_Package.Literals.SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID, newShipmentGatewayConfTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductStoreShipmentMeth> productStoreShipmentMeths() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

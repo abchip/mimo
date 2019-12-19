@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.webapp.visit.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.abchip.mimo.biz.webapp.visit.Visit;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.abchip.mimo.biz.webapp.visit.Visitor;
 import org.eclipse.emf.ecore.EClass;
@@ -114,18 +111,6 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	@Override
 	public void setUserLoginId(UserLogin newUserLoginId) {
 		eSet(VisitPackage.Literals.VISITOR__USER_LOGIN_ID, newUserLoginId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Visit> visits() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //VisitorImpl

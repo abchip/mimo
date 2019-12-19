@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.employment;
 
-import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -67,7 +66,7 @@ public interface EmplLeaveReasonType extends BizEntity {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeaveReasonType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -94,7 +93,7 @@ public interface EmplLeaveReasonType extends BizEntity {
 	 * @see #setEmplLeaveReasonTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeaveReasonType_EmplLeaveReasonTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getEmplLeaveReasonTypeId();
@@ -134,14 +133,5 @@ public interface EmplLeaveReasonType extends BizEntity {
 	 * @generated
 	 */
 	void setParentTypeId(EmplLeaveReasonType value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='EmplLeaveReasonType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<EmplLeaveReasonType> childEmplLeaveReasonTypes();
 
 } // EmplLeaveReasonType

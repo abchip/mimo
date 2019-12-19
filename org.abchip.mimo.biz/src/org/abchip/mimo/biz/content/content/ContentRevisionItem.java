@@ -44,7 +44,7 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_ContentId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getContentId();
@@ -72,7 +72,7 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_ContentRevisionSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getContentRevisionSeqId();
@@ -100,7 +100,7 @@ public interface ContentRevisionItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevisionItem_ItemContentId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getItemContentId();

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.content.data;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -68,7 +66,7 @@ public interface DataCategory extends BizEntity {
 	 * @see #setDataCategoryId(String)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataCategory_DataCategoryId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDataCategoryId();
@@ -108,23 +106,5 @@ public interface DataCategory extends BizEntity {
 	 * @generated
 	 */
 	void setParentCategoryId(DataCategory value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataCategory' route='parentCategoryId'"
-	 * @generated
-	 */
-	List<DataCategory> childDataCategories();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResource' route='dataCategoryId'"
-	 * @generated
-	 */
-	List<DataResource> dataResources();
 
 } // DataCategory

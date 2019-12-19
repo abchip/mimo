@@ -55,7 +55,6 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @see #setChangeNote(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_ChangeNote()
 	 * @model annotation="mimo-ent-slot help='Used to track a reason for this change'"
-	 *        annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getChangeNote();
@@ -107,7 +106,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_Description()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getDescription();
@@ -159,7 +158,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @return the value of the '<em>Estimated Close Date</em>' attribute.
 	 * @see #setEstimatedCloseDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_EstimatedCloseDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getEstimatedCloseDate();
@@ -237,7 +236,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @return the value of the '<em>Modified Timestamp</em>' attribute.
 	 * @see #setModifiedTimestamp(Date)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_ModifiedTimestamp()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getModifiedTimestamp();
@@ -263,7 +262,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @return the value of the '<em>Next Step</em>' attribute.
 	 * @see #setNextStep(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_NextStep()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getNextStep();
@@ -316,7 +315,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @see #setSalesOpportunityHistoryId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_SalesOpportunityHistoryId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSalesOpportunityHistoryId();

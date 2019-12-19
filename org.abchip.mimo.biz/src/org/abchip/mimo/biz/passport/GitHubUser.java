@@ -43,7 +43,7 @@ public interface GitHubUser extends BizEntity {
 	 * @see #setGitHubUserId(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getGitHubUser_GitHubUserId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getGitHubUserId();
@@ -69,7 +69,7 @@ public interface GitHubUser extends BizEntity {
 	 * @return the value of the '<em>Access Token</em>' attribute.
 	 * @see #setAccessToken(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getGitHubUser_AccessToken()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccessToken();
@@ -95,7 +95,7 @@ public interface GitHubUser extends BizEntity {
 	 * @return the value of the '<em>Env Prefix</em>' attribute.
 	 * @see #setEnvPrefix(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getGitHubUser_EnvPrefix()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getEnvPrefix();
@@ -147,7 +147,7 @@ public interface GitHubUser extends BizEntity {
 	 * @return the value of the '<em>Token Type</em>' attribute.
 	 * @see #setTokenType(String)
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getGitHubUser_TokenType()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getTokenType();

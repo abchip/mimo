@@ -7,9 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
-import java.util.List;
-
-import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlXbrlClass;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -71,18 +68,6 @@ public class GlXbrlClassImpl extends BizEntityImpl implements GlXbrlClass {
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(LedgerPackage.Literals.GL_XBRL_CLASS__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<GlAccount> glAccounts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

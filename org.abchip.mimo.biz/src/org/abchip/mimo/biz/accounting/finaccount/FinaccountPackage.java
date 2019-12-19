@@ -144,22 +144,13 @@ public interface FinaccountPackage extends EPackage {
 	int FIN_ACCOUNT__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Fin Account Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT__FIN_ACCOUNT_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Fin Account Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__FIN_ACCOUNT_CODE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int FIN_ACCOUNT__FIN_ACCOUNT_CODE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Fin Account Name</b></em>' attribute.
@@ -168,7 +159,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__FIN_ACCOUNT_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int FIN_ACCOUNT__FIN_ACCOUNT_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Fin Account Pin</b></em>' attribute.
@@ -177,7 +168,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__FIN_ACCOUNT_PIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int FIN_ACCOUNT__FIN_ACCOUNT_PIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Fin Account Type Id</b></em>' reference.
@@ -186,7 +177,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__FIN_ACCOUNT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int FIN_ACCOUNT__FIN_ACCOUNT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -195,7 +186,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int FIN_ACCOUNT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Is Refundable</b></em>' attribute.
@@ -204,7 +195,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__IS_REFUNDABLE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int FIN_ACCOUNT__IS_REFUNDABLE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Organization Party Id</b></em>' reference.
@@ -213,7 +204,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__ORGANIZATION_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int FIN_ACCOUNT__ORGANIZATION_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Owner Party Id</b></em>' reference.
@@ -222,7 +213,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__OWNER_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int FIN_ACCOUNT__OWNER_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Post To Gl Account Id</b></em>' reference.
@@ -231,7 +222,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__POST_TO_GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int FIN_ACCOUNT__POST_TO_GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Replenish Level</b></em>' attribute.
@@ -240,7 +231,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__REPLENISH_LEVEL = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int FIN_ACCOUNT__REPLENISH_LEVEL = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Replenish Payment Id</b></em>' reference.
@@ -249,7 +240,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__REPLENISH_PAYMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+	int FIN_ACCOUNT__REPLENISH_PAYMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
@@ -258,7 +249,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+	int FIN_ACCOUNT__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -267,7 +258,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+	int FIN_ACCOUNT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of structural features of the '<em>Fin Account</em>' class.
@@ -276,7 +267,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
+	int FIN_ACCOUNT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAttributeImpl <em>Fin Account Attribute</em>}' class.
@@ -779,22 +770,13 @@ public interface FinaccountPackage extends EPackage {
 	int FIN_ACCOUNT_TRANS__FIN_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Fin Account Trans Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Fin Account Trans Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Gl Reconciliation Id</b></em>' reference.
@@ -803,7 +785,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
@@ -812,7 +794,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS__ORDER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int FIN_ACCOUNT_TRANS__ORDER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
@@ -821,7 +803,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int FIN_ACCOUNT_TRANS__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' reference.
@@ -830,7 +812,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int FIN_ACCOUNT_TRANS__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Payment Id</b></em>' reference.
@@ -839,7 +821,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS__PAYMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int FIN_ACCOUNT_TRANS__PAYMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Performed By Party Id</b></em>' reference.
@@ -848,7 +830,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS__PERFORMED_BY_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int FIN_ACCOUNT_TRANS__PERFORMED_BY_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Reason Enum Id</b></em>' reference.
@@ -857,7 +839,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS__REASON_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int FIN_ACCOUNT_TRANS__REASON_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' reference.
@@ -866,7 +848,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int FIN_ACCOUNT_TRANS__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Transaction Date</b></em>' attribute.
@@ -875,7 +857,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS__TRANSACTION_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+	int FIN_ACCOUNT_TRANS__TRANSACTION_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Fin Account Trans</em>' class.
@@ -884,7 +866,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+	int FIN_ACCOUNT_TRANS_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransAttributeImpl <em>Fin Account Trans Attribute</em>}' class.
@@ -1051,22 +1033,13 @@ public interface FinaccountPackage extends EPackage {
 	int FIN_ACCOUNT_TRANS_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Fin Account Trans Type Attrs</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TRANS_TYPE__FIN_ACCOUNT_TRANS_TYPE_ATTRS = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Has Table</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
+	int FIN_ACCOUNT_TRANS_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
@@ -1075,7 +1048,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+	int FIN_ACCOUNT_TRANS_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Fin Account Trans Type</em>' class.
@@ -1084,7 +1057,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TRANS_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
+	int FIN_ACCOUNT_TRANS_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransTypeAttrImpl <em>Fin Account Trans Type Attr</em>}' class.
@@ -1242,31 +1215,13 @@ public interface FinaccountPackage extends EPackage {
 	int FIN_ACCOUNT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Fin Account Type Attrs</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Fin Account Type Gl Accounts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Has Table</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+	int FIN_ACCOUNT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Refundable</b></em>' attribute.
@@ -1275,7 +1230,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TYPE__IS_REFUNDABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
+	int FIN_ACCOUNT_TYPE__IS_REFUNDABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
@@ -1284,7 +1239,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 6;
+	int FIN_ACCOUNT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Replenish Enum Id</b></em>' reference.
@@ -1293,7 +1248,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 7;
+	int FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Fin Account Type</em>' class.
@@ -1302,7 +1257,7 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIN_ACCOUNT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 8;
+	int FIN_ACCOUNT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeAttrImpl <em>Fin Account Type Attr</em>}' class.
@@ -1674,17 +1629,6 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFinAccount_ThruDate();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountAttributes <em>Fin Account Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Fin Account Attributes</em>'.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountAttributes()
-	 * @see #getFinAccount()
-	 * @generated
-	 */
-	EReference getFinAccount_FinAccountAttributes();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute <em>Fin Account Attribute</em>}'.
@@ -2133,17 +2077,6 @@ public interface FinaccountPackage extends EPackage {
 	EAttribute getFinAccountTrans_TransactionDate();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getFinAccountTransAttributes <em>Fin Account Trans Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Fin Account Trans Attributes</em>'.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getFinAccountTransAttributes()
-	 * @see #getFinAccountTrans()
-	 * @generated
-	 */
-	EReference getFinAccountTrans_FinAccountTransAttributes();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute <em>Fin Account Trans Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2250,17 +2183,6 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFinAccountTransType_ParentTypeId();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getFinAccountTransTypeAttrs <em>Fin Account Trans Type Attrs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Fin Account Trans Type Attrs</em>'.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getFinAccountTransTypeAttrs()
-	 * @see #getFinAccountTransType()
-	 * @generated
-	 */
-	EReference getFinAccountTransType_FinAccountTransTypeAttrs();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransTypeAttr <em>Fin Account Trans Type Attr</em>}'.
@@ -2380,28 +2302,6 @@ public interface FinaccountPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFinAccountType_ReplenishEnumId();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getFinAccountTypeAttrs <em>Fin Account Type Attrs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Fin Account Type Attrs</em>'.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getFinAccountTypeAttrs()
-	 * @see #getFinAccountType()
-	 * @generated
-	 */
-	EReference getFinAccountType_FinAccountTypeAttrs();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getFinAccountTypeGlAccounts <em>Fin Account Type Gl Accounts</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Fin Account Type Gl Accounts</em>'.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getFinAccountTypeGlAccounts()
-	 * @see #getFinAccountType()
-	 * @generated
-	 */
-	EReference getFinAccountType_FinAccountTypeGlAccounts();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeAttr <em>Fin Account Type Attr</em>}'.
@@ -2667,14 +2567,6 @@ public interface FinaccountPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIN_ACCOUNT__THRU_DATE = eINSTANCE.getFinAccount_ThruDate();
-
-		/**
-		 * The meta object literal for the '<em><b>Fin Account Attributes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FIN_ACCOUNT__FIN_ACCOUNT_ATTRIBUTES = eINSTANCE.getFinAccount_FinAccountAttributes();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAttributeImpl <em>Fin Account Attribute</em>}' class.
@@ -3015,14 +2907,6 @@ public interface FinaccountPackage extends EPackage {
 		EAttribute FIN_ACCOUNT_TRANS__TRANSACTION_DATE = eINSTANCE.getFinAccountTrans_TransactionDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Fin Account Trans Attributes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_ATTRIBUTES = eINSTANCE.getFinAccountTrans_FinAccountTransAttributes();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransAttributeImpl <em>Fin Account Trans Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3105,14 +2989,6 @@ public interface FinaccountPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FIN_ACCOUNT_TRANS_TYPE__PARENT_TYPE_ID = eINSTANCE.getFinAccountTransType_ParentTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Fin Account Trans Type Attrs</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FIN_ACCOUNT_TRANS_TYPE__FIN_ACCOUNT_TRANS_TYPE_ATTRS = eINSTANCE.getFinAccountTransType_FinAccountTransTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransTypeAttrImpl <em>Fin Account Trans Type Attr</em>}' class.
@@ -3205,22 +3081,6 @@ public interface FinaccountPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FIN_ACCOUNT_TYPE__REPLENISH_ENUM_ID = eINSTANCE.getFinAccountType_ReplenishEnumId();
-
-		/**
-		 * The meta object literal for the '<em><b>Fin Account Type Attrs</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_ATTRS = eINSTANCE.getFinAccountType_FinAccountTypeAttrs();
-
-		/**
-		 * The meta object literal for the '<em><b>Fin Account Type Gl Accounts</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FIN_ACCOUNT_TYPE__FIN_ACCOUNT_TYPE_GL_ACCOUNTS = eINSTANCE.getFinAccountType_FinAccountTypeGlAccounts();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTypeAttrImpl <em>Fin Account Type Attr</em>}' class.

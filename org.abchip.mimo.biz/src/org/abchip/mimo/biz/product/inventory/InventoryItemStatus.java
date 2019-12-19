@@ -74,7 +74,7 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @see #setOwnerPartyId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_OwnerPartyId()
 	 * @model annotation="mimo-ent-slot help='Used to track a changed (new) ownerPartyId as a status changes.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOwnerPartyId();
@@ -101,7 +101,7 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_ProductId()
 	 * @model annotation="mimo-ent-slot help='Used to track a changed (new) productId as a status changes. In other words over time the item may be represented by a different Product (like new versus refurbished).'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductId();
@@ -129,7 +129,6 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_StatusDatetime()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getStatusDatetime();
@@ -155,7 +154,7 @@ public interface InventoryItemStatus extends BizEntity {
 	 * @return the value of the '<em>Status End Datetime</em>' attribute.
 	 * @see #setStatusEndDatetime(Date)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemStatus_StatusEndDatetime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getStatusEndDatetime();

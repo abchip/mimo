@@ -7,12 +7,9 @@
  */
 package org.abchip.mimo.biz.order.requirement.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.WorkReqFulfType;
-import org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -72,18 +69,6 @@ public class WorkReqFulfTypeImpl extends BizEntityImpl implements WorkReqFulfTyp
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(RequirementPackage.Literals.WORK_REQ_FULF_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WorkRequirementFulfillment> workRequirementFulfillments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

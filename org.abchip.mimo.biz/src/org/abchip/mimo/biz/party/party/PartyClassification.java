@@ -44,7 +44,6 @@ public interface PartyClassification extends BizEntityTyped<PartyClassificationT
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassification_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -70,7 +69,7 @@ public interface PartyClassification extends BizEntityTyped<PartyClassificationT
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassification_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

@@ -8,10 +8,7 @@
 package org.abchip.mimo.biz.product.price;
 
 import java.math.BigDecimal;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,7 +68,7 @@ public interface QuantityBreak extends BizEntity {
 	 * @see #setQuantityBreakId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreak_QuantityBreakId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getQuantityBreakId();
@@ -111,33 +108,6 @@ public interface QuantityBreak extends BizEntity {
 	 * @generated
 	 */
 	void setThruQuantity(BigDecimal value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='priceBreakId'"
-	 * @generated
-	 */
-	List<ShipmentCostEstimate> priceShipmentCostEstimates();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='quantityBreakId'"
-	 * @generated
-	 */
-	List<ShipmentCostEstimate> quantityShipmentCostEstimates();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='weightBreakId'"
-	 * @generated
-	 */
-	List<ShipmentCostEstimate> weightShipmentCostEstimates();
 
 	/**
 	 * Returns the value of the '<em><b>Quantity Break Type Id</b></em>' reference.

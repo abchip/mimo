@@ -69,7 +69,7 @@ public interface OrderItemGroupOrder extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemGroupOrder_OrderId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -97,7 +97,7 @@ public interface OrderItemGroupOrder extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemGroupOrder_OrderItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();

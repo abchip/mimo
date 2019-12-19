@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.position;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface EmplPositionType extends BizEntityType<EmplPosition> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -95,7 +93,7 @@ public interface EmplPositionType extends BizEntityType<EmplPosition> {
 	 * @see #setEmplPositionTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionType_EmplPositionTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getEmplPositionTypeId();
@@ -135,23 +133,5 @@ public interface EmplPositionType extends BizEntityType<EmplPosition> {
 	 * @generated
 	 */
 	void setParentTypeId(EmplPositionType value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='EmplPositionType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<EmplPositionType> childEmplPositionTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='EmplPosition' route='emplPositionTypeId'"
-	 * @generated
-	 */
-	List<EmplPosition> emplPositions();
 
 } // EmplPositionType

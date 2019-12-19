@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.shipment.shipment;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface ShipmentGatewayConfigType extends BizEntityType<ShipmentGateway
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayConfigType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -110,24 +108,6 @@ public interface ShipmentGatewayConfigType extends BizEntityType<ShipmentGateway
 	void setParentTypeId(ShipmentGatewayConfigType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentGatewayConfigType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<ShipmentGatewayConfigType> childShipmentGatewayConfigTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentGatewayConfig' route='shipmentGatewayConfTypeId'"
-	 * @generated
-	 */
-	List<ShipmentGatewayConfig> shipmentGatewayConfigs();
-
-	/**
 	 * Returns the value of the '<em><b>Shipment Gateway Conf Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -139,7 +119,7 @@ public interface ShipmentGatewayConfigType extends BizEntityType<ShipmentGateway
 	 * @see #setShipmentGatewayConfTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayConfigType_ShipmentGatewayConfTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentGatewayConfTypeId();

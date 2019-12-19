@@ -25,9 +25,8 @@ import java.util.List;
  *   <li>{@link org.abchip.mimo.entity.Frame#isHasToString <em>Has To String</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getSlots <em>Slots</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.Frame#getSlotsNumber <em>Slots Number</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.Frame#getRoutesNumber <em>Routes Number</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getSuperNames <em>Super Names</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Frame#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getTextFormula <em>Text Formula</em>}</li>
  * </ul>
  *
@@ -159,36 +158,6 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	List<Slot> getSlots();
 
 	/**
-	 * Returns the value of the '<em><b>Slots Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Slots Number</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Slots Number</em>' attribute.
-	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_SlotsNumber()
-	 * @model changeable="false"
-	 * @generated
-	 */
-	int getSlotsNumber();
-
-	/**
-	 * Returns the value of the '<em><b>Routes Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Routes Number</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Routes Number</em>' attribute.
-	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_RoutesNumber()
-	 * @model changeable="false"
-	 * @generated
-	 */
-	int getRoutesNumber();
-
-	/**
 	 * Returns the value of the '<em><b>Super Names</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
@@ -203,6 +172,32 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * @generated
 	 */
 	List<String> getSuperNames();
+
+	/**
+	 * Returns the value of the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Text</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Text</em>' attribute.
+	 * @see #setText(String)
+	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_Text()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getText();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Frame#getText <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Text</em>' attribute.
+	 * @see #getText()
+	 * @generated
+	 */
+	void setText(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Text Formula</b></em>' attribute. <!--

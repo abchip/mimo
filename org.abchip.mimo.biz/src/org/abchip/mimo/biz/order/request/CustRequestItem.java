@@ -59,7 +59,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Config Id</em>' attribute.
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_ConfigId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getConfigId();
@@ -114,7 +114,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_CustRequestItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCustRequestItemSeqId();
@@ -218,7 +218,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see #setPriority(long)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_Priority()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPriority();
@@ -296,7 +296,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Required By Date</em>' attribute.
 	 * @see #setRequiredByDate(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_RequiredByDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getRequiredByDate();
@@ -374,7 +374,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Reserv Start</em>' attribute.
 	 * @see #setReservStart(Date)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_ReservStart()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getReservStart();
@@ -426,7 +426,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -478,7 +478,7 @@ public interface CustRequestItem extends BizEntity {
 	 * @return the value of the '<em>Story</em>' attribute.
 	 * @see #setStory(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItem_Story()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getStory();

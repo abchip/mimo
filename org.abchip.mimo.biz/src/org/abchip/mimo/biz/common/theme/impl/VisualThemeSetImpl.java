@@ -7,13 +7,9 @@
  */
 package org.abchip.mimo.biz.common.theme.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.common.theme.ThemePackage;
-import org.abchip.mimo.biz.common.theme.VisualTheme;
 import org.abchip.mimo.biz.common.theme.VisualThemeSet;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -72,30 +68,6 @@ public class VisualThemeSetImpl extends BizEntityImpl implements VisualThemeSet 
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(ThemePackage.Literals.VISUAL_THEME_SET__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<VisualTheme> visualThemes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WebSite> webSites() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

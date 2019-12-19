@@ -7,12 +7,9 @@
  */
 package org.abchip.mimo.biz.shipment.receipt.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.receipt.ReceiptPackage;
 import org.abchip.mimo.biz.shipment.receipt.RejectionReason;
-import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -72,18 +69,6 @@ public class RejectionReasonImpl extends BizEntityImpl implements RejectionReaso
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(ReceiptPackage.Literals.REJECTION_REASON__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentReceipt> shipmentReceipts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

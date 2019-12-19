@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderItemAssoc;
 import org.abchip.mimo.biz.order.order.OrderItemAssocType;
@@ -134,18 +132,6 @@ public class OrderItemAssocTypeImpl extends BizEntityTypeImpl<OrderItemAssoc> im
 	@Override
 	public void setParentTypeId(OrderItemAssocType newParentTypeId) {
 		eSet(OrderPackage.Literals.ORDER_ITEM_ASSOC_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<OrderItemAssocType> childOrderItemAssocTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //OrderItemAssocTypeImpl

@@ -7,11 +7,7 @@
  */
 package org.abchip.mimo.biz.product.facility;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.product.inventory.InventoryItem;
-import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,33 +108,6 @@ public interface Container extends BizEntity {
 	void setFacilityId(Facility value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItem' route='containerId'"
-	 * @generated
-	 */
-	List<InventoryItem> inventoryItems();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='containerId'"
-	 * @generated
-	 */
-	List<InventoryTransfer> inventoryTransfers();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='containerIdTo'"
-	 * @generated
-	 */
-	List<InventoryTransfer> toInventoryTransfers();
-
-	/**
 	 * Returns the value of the '<em><b>Container Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -150,7 +119,7 @@ public interface Container extends BizEntity {
 	 * @see #setContainerId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainer_ContainerId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getContainerId();

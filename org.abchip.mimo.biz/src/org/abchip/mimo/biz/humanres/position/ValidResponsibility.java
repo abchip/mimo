@@ -99,7 +99,6 @@ public interface ValidResponsibility extends BizEntity {
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getValidResponsibility_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -152,7 +151,7 @@ public interface ValidResponsibility extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getValidResponsibility_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

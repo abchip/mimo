@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.order.order;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface OrderContentType extends BizEntityType<OrderContent> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContentType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -95,7 +93,7 @@ public interface OrderContentType extends BizEntityType<OrderContent> {
 	 * @see #setOrderContentTypeId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderContentType_OrderContentTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderContentTypeId();
@@ -135,14 +133,5 @@ public interface OrderContentType extends BizEntityType<OrderContent> {
 	 * @generated
 	 */
 	void setParentTypeId(OrderContentType value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderContentType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<OrderContentType> childOrderContentTypes();
 
 } // OrderContentType

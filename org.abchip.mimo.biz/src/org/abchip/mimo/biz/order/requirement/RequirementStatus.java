@@ -97,7 +97,7 @@ public interface RequirementStatus extends BizEntity {
 	 * @return the value of the '<em>Status Date</em>' attribute.
 	 * @see #setStatusDate(Date)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementStatus_StatusDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getStatusDate();

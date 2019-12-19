@@ -70,7 +70,7 @@ public interface SupplierProductFeature extends BizEntity {
 	 * @return the value of the '<em>Id Code</em>' attribute.
 	 * @see #setIdCode(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature_IdCode()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getIdCode();

@@ -50,7 +50,6 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -130,7 +129,7 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @return the value of the '<em>Qualification Desc</em>' attribute.
 	 * @see #setQualificationDesc(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_QualificationDesc()
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getQualificationDesc();
@@ -183,7 +182,7 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -210,7 +209,7 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @see #setTitle(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_Title()
 	 * @model annotation="mimo-ent-slot help='Title of degree or job'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getTitle();

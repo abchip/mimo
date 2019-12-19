@@ -67,7 +67,7 @@ public interface BudgetItemAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Value</em>' attribute.
 	 * @see #setAttrValue(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItemAttribute_AttrValue()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAttrValue();
@@ -95,7 +95,7 @@ public interface BudgetItemAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItemAttribute_BudgetId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBudgetId();
@@ -123,7 +123,7 @@ public interface BudgetItemAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItemAttribute_BudgetItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getBudgetItemSeqId();
@@ -151,7 +151,7 @@ public interface BudgetItemAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItemAttribute_AttrName()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getAttrName();

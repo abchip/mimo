@@ -153,22 +153,13 @@ public interface EnumPackage extends EPackage {
 	int ENUMERATION__SEQUENCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>User Login Security Questions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Enumeration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int ENUMERATION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.
@@ -337,17 +328,6 @@ public interface EnumPackage extends EPackage {
 	EAttribute getEnumeration_SequenceId();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.enum_.Enumeration#getUserLoginSecurityQuestions <em>User Login Security Questions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>User Login Security Questions</em>'.
-	 * @see org.abchip.mimo.biz.common.enum_.Enumeration#getUserLoginSecurityQuestions()
-	 * @see #getEnumeration()
-	 * @generated
-	 */
-	EReference getEnumeration_UserLoginSecurityQuestions();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.enum_.EnumerationType <em>Enumeration Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -472,14 +452,6 @@ public interface EnumPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENUMERATION__SEQUENCE_ID = eINSTANCE.getEnumeration_SequenceId();
-
-		/**
-		 * The meta object literal for the '<em><b>User Login Security Questions</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS = eINSTANCE.getEnumeration_UserLoginSecurityQuestions();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.

@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentContactMechType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.ecore.EClass;
@@ -72,18 +69,6 @@ public class ShipmentContactMechTypeImpl extends BizEntityImpl implements Shipme
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(Shipment_Package.Literals.SHIPMENT_CONTACT_MECH_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentContactMech> shipmentContactMechs() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

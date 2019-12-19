@@ -103,7 +103,7 @@ public interface OrderTerm extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_OrderItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -129,7 +129,7 @@ public interface OrderTerm extends BizEntity {
 	 * @return the value of the '<em>Term Days</em>' attribute.
 	 * @see #setTermDays(long)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderTerm_TermDays()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTermDays();

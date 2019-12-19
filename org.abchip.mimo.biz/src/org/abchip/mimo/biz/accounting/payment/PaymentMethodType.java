@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.accounting.payment;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
-import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +22,6 @@ import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#getDefaultGlAccountId <em>Default Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#getPaymentMethodTypeGlAccounts <em>Payment Method Type Gl Accounts</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentMethodType()
@@ -97,7 +93,7 @@ public interface PaymentMethodType extends BizEntity {
 	 * @see #setPaymentMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentMethodType_PaymentMethodTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentMethodTypeId();
@@ -111,58 +107,5 @@ public interface PaymentMethodType extends BizEntity {
 	 * @generated
 	 */
 	void setPaymentMethodTypeId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Payment Method Type Gl Accounts</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Payment Method Type Gl Accounts</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Method Type Gl Accounts</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentMethodType_PaymentMethodTypeGlAccounts()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentMethodTypeGlAccount'"
-	 * @generated
-	 */
-	List<PaymentMethodTypeGlAccount> getPaymentMethodTypeGlAccounts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderPaymentPreference' route='paymentMethodTypeId'"
-	 * @generated
-	 */
-	List<OrderPaymentPreference> orderPaymentPreferences();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentGatewayResponse' route='paymentMethodTypeId'"
-	 * @generated
-	 */
-	List<PaymentGatewayResponse> paymentGatewayResponses();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentMethod' route='paymentMethodTypeId'"
-	 * @generated
-	 */
-	List<PaymentMethod> paymentMethods();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Payment' route='paymentMethodTypeId'"
-	 * @generated
-	 */
-	List<Payment> payments();
 
 } // PaymentMethodType

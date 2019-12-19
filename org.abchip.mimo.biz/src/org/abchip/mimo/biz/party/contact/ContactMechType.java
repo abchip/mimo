@@ -7,12 +7,7 @@
  */
 package org.abchip.mimo.biz.party.contact;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
-import org.abchip.mimo.biz.marketing.contact.ContactList;
-import org.abchip.mimo.biz.party.communication.CommunicationEvent;
-import org.abchip.mimo.biz.party.communication.CommunicationEventType;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +19,6 @@ import org.abchip.mimo.biz.party.communication.CommunicationEventType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypeAttrs <em>Contact Mech Type Attrs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypePurposes <em>Contact Mech Type Purposes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -73,7 +66,7 @@ public interface ContactMechType extends BizEntityType<ContactMech> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -115,94 +108,6 @@ public interface ContactMechType extends BizEntityType<ContactMech> {
 	void setParentTypeId(ContactMechType value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.ContactMechTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Contact Mech Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechType_ContactMechTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMechTypeAttr'"
-	 * @generated
-	 */
-	List<ContactMechTypeAttr> getContactMechTypeAttrs();
-
-	/**
-	 * Returns the value of the '<em><b>Contact Mech Type Purposes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.ContactMechTypePurpose}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Contact Mech Type Purposes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Type Purposes</em>' reference list.
-	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechType_ContactMechTypePurposes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMechTypePurpose'"
-	 * @generated
-	 */
-	List<ContactMechTypePurpose> getContactMechTypePurposes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMechType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<ContactMechType> childContactMechTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='contactMechTypeId'"
-	 * @generated
-	 */
-	List<CommunicationEvent> communicationEvents();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEventType' route='contactMechTypeId'"
-	 * @generated
-	 */
-	List<CommunicationEventType> contacMechTypeCommunicationEventTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContactList' route='contactMechTypeId'"
-	 * @generated
-	 */
-	List<ContactList> contactLists();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMech' route='contactMechTypeId'"
-	 * @generated
-	 */
-	List<ContactMech> contactMechs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ValidContactMechRole' route='contactMechTypeId'"
-	 * @generated
-	 */
-	List<ValidContactMechRole> validContactMechRoles();
-
-	/**
 	 * Returns the value of the '<em><b>Contact Mech Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -214,7 +119,7 @@ public interface ContactMechType extends BizEntityType<ContactMech> {
 	 * @see #setContactMechTypeId(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechType_ContactMechTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getContactMechTypeId();

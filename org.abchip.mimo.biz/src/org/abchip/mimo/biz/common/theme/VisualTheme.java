@@ -92,7 +92,7 @@ public interface VisualTheme extends BizEntity {
 	 * @see #setVisualThemeId(String)
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualTheme_VisualThemeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisualThemeId();

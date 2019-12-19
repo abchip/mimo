@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.employment;
 
-import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -67,7 +66,7 @@ public interface EmploymentAppSourceType extends BizEntityType<EmploymentApp> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentAppSourceType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -94,7 +93,7 @@ public interface EmploymentAppSourceType extends BizEntityType<EmploymentApp> {
 	 * @see #setEmploymentAppSourceTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentAppSourceType_EmploymentAppSourceTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getEmploymentAppSourceTypeId();
@@ -134,23 +133,5 @@ public interface EmploymentAppSourceType extends BizEntityType<EmploymentApp> {
 	 * @generated
 	 */
 	void setParentTypeId(EmploymentAppSourceType value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='EmploymentAppSourceType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<EmploymentAppSourceType> childEmploymentAppSourceTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='EmploymentApp' route='employmentAppSourceTypeId'"
-	 * @generated
-	 */
-	List<EmploymentApp> employmentApps();
 
 } // EmploymentAppSourceType

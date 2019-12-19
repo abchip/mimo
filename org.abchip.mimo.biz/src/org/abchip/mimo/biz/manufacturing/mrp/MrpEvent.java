@@ -50,7 +50,7 @@ public interface MrpEvent extends BizEntity {
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_MrpId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getMrpId();
@@ -105,7 +105,6 @@ public interface MrpEvent extends BizEntity {
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_EventDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getEventDate();
@@ -158,7 +157,7 @@ public interface MrpEvent extends BizEntity {
 	 * @return the value of the '<em>Event Name</em>' attribute.
 	 * @see #setEventName(String)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_EventName()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getEventName();
@@ -184,7 +183,7 @@ public interface MrpEvent extends BizEntity {
 	 * @return the value of the '<em>Is Late</em>' attribute.
 	 * @see #setIsLate(boolean)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_IsLate()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsLate();
@@ -236,7 +235,7 @@ public interface MrpEvent extends BizEntity {
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(double)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_Quantity()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getQuantity();

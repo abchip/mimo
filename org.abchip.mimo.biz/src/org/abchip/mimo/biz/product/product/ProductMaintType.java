@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.product.product;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,33 +81,6 @@ public interface ProductMaintType extends BizEntity {
 	void setParentTypeId(ProductMaintType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductMaintType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<ProductMaintType> childProductMaintTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAssetMaint' route='productMaintTypeId'"
-	 * @generated
-	 */
-	List<FixedAssetMaint> fixedAssetMaints();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductMaint' route='productMaintTypeId'"
-	 * @generated
-	 */
-	List<ProductMaint> productMaints();
-
-	/**
 	 * Returns the value of the '<em><b>Product Maint Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -122,7 +92,7 @@ public interface ProductMaintType extends BizEntity {
 	 * @see #setProductMaintTypeId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaintType_ProductMaintTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductMaintTypeId();

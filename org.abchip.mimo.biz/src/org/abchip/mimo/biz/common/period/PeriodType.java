@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.period;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.uom.Uom;
 
@@ -69,7 +67,7 @@ public interface PeriodType extends BizEntity {
 	 * @return the value of the '<em>Period Length</em>' attribute.
 	 * @see #setPeriodLength(long)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getPeriodType_PeriodLength()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPeriodLength();
@@ -111,15 +109,6 @@ public interface PeriodType extends BizEntity {
 	void setUomId(Uom value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustomTimePeriod' route='periodTypeId'"
-	 * @generated
-	 */
-	List<CustomTimePeriod> customTimePeriods();
-
-	/**
 	 * Returns the value of the '<em><b>Period Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -131,7 +120,7 @@ public interface PeriodType extends BizEntity {
 	 * @see #setPeriodTypeId(String)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getPeriodType_PeriodTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPeriodTypeId();

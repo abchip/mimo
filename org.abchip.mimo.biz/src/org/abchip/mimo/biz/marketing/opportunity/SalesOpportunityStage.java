@@ -8,9 +8,6 @@
 package org.abchip.mimo.biz.marketing.opportunity;
 
 import java.math.BigDecimal;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -97,7 +94,7 @@ public interface SalesOpportunityStage extends BizEntity {
 	 * @see #setOpportunityStageId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityStage_OpportunityStageId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOpportunityStageId();
@@ -123,7 +120,7 @@ public interface SalesOpportunityStage extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityStage_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -137,23 +134,5 @@ public interface SalesOpportunityStage extends BizEntity {
 	 * @generated
 	 */
 	void setSequenceNum(long value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SalesOpportunity' route='opportunityStageId'"
-	 * @generated
-	 */
-	List<SalesOpportunity> salesOpportunities();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SalesOpportunityHistory' route='opportunityStageId'"
-	 * @generated
-	 */
-	List<SalesOpportunityHistory> salesOpportunityHistories();
 
 } // SalesOpportunityStage

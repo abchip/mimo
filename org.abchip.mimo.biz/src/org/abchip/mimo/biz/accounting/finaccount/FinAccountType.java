@@ -7,11 +7,8 @@
  */
 package org.abchip.mimo.biz.accounting.finaccount;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
-import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +21,6 @@ import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getFinAccountTypeAttrs <em>Fin Account Type Attrs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getFinAccountTypeGlAccounts <em>Fin Account Type Gl Accounts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#isIsRefundable <em>Is Refundable</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -74,7 +69,7 @@ public interface FinAccountType extends BizEntityType<FinAccount> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -100,7 +95,7 @@ public interface FinAccountType extends BizEntityType<FinAccount> {
 	 * @return the value of the '<em>Is Refundable</em>' attribute.
 	 * @see #setIsRefundable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_IsRefundable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsRefundable();
@@ -142,67 +137,6 @@ public interface FinAccountType extends BizEntityType<FinAccount> {
 	void setReplenishEnumId(Enumeration value);
 
 	/**
-	 * Returns the value of the '<em><b>Fin Account Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Fin Account Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_FinAccountTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccountTypeAttr'"
-	 * @generated
-	 */
-	List<FinAccountTypeAttr> getFinAccountTypeAttrs();
-
-	/**
-	 * Returns the value of the '<em><b>Fin Account Type Gl Accounts</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Fin Account Type Gl Accounts</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Type Gl Accounts</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_FinAccountTypeGlAccounts()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccountTypeGlAccount'"
-	 * @generated
-	 */
-	List<FinAccountTypeGlAccount> getFinAccountTypeGlAccounts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccountType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<FinAccountType> childFinAccountTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccount' route='finAccountTypeId'"
-	 * @generated
-	 */
-	List<FinAccount> finAccounts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreFinActSetting' route='finAccountTypeId'"
-	 * @generated
-	 */
-	List<ProductStoreFinActSetting> productStoreFinActSettings();
-
-	/**
 	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -240,7 +174,7 @@ public interface FinAccountType extends BizEntityType<FinAccount> {
 	 * @see #setFinAccountTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_FinAccountTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFinAccountTypeId();

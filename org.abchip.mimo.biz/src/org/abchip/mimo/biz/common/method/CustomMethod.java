@@ -7,16 +7,7 @@
  */
 package org.abchip.mimo.biz.common.method;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
-import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod;
-import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
-import org.abchip.mimo.biz.common.uom.UomConversion;
-import org.abchip.mimo.biz.content.content.Content;
-import org.abchip.mimo.biz.product.cost.CostComponentCalc;
-import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +22,6 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodName <em>Custom Method Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodTypeId <em>Custom Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getFixedAssetDepMethods <em>Fixed Asset Dep Methods</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod()
@@ -51,7 +41,7 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	 * @see #setCustomMethodId(String)
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_CustomMethodId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCustomMethodId();
@@ -77,7 +67,7 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	 * @return the value of the '<em>Custom Method Name</em>' attribute.
 	 * @see #setCustomMethodName(String)
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_CustomMethodName()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCustomMethodName();
@@ -117,95 +107,6 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	 * @generated
 	 */
 	void setDescription(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Fixed Asset Dep Methods</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Fixed Asset Dep Methods</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Dep Methods</em>' reference list.
-	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_FixedAssetDepMethods()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAssetDepMethod'"
-	 * @generated
-	 */
-	List<FixedAssetDepMethod> getFixedAssetDepMethods();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Content' route='customMethodId'"
-	 * @generated
-	 */
-	List<Content> contents();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CostComponentCalc' route='costCustomMethodId'"
-	 * @generated
-	 */
-	List<CostComponentCalc> costComponentCalcs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='invoiceSeqCustMethId'"
-	 * @generated
-	 */
-	List<PartyAcctgPreference> invoicePartyAcctgPreferences();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='orderSeqCustMethId'"
-	 * @generated
-	 */
-	List<PartyAcctgPreference> orderPartyAcctgPreferences();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreShipmentMeth' route='shipmentCustomMethodId'"
-	 * @generated
-	 */
-	List<ProductStoreShipmentMeth> productStoreShipmentMeths();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyAcctgPreference' route='quoteSeqCustMethId'"
-	 * @generated
-	 */
-	List<PartyAcctgPreference> quotePartyAcctgPreferences();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='UomConversion' route='customMethodId'"
-	 * @generated
-	 */
-	List<UomConversion> uomCustomMethodUomConversions();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort' route='estimateCalcMethod'"
-	 * @generated
-	 */
-	List<WorkEffort> workEfforts();
 
 	/**
 	 * Returns the value of the '<em><b>Custom Method Type Id</b></em>' reference.

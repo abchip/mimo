@@ -40,7 +40,7 @@ public interface ProductFeatureIactn extends BizEntityTyped<ProductFeatureIactnT
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureIactn_ProductId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductId();

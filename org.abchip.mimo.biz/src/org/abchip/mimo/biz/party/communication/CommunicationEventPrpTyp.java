@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.party.communication;
 
-import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -20,7 +19,6 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#getCommunicationEventPrpTypId <em>Communication Event Prp Typ Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#getCommunicationEventPurposes <em>Communication Event Purposes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -68,7 +66,7 @@ public interface CommunicationEventPrpTyp extends BizEntityType<CommunicationEve
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventPrpTyp_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -110,32 +108,6 @@ public interface CommunicationEventPrpTyp extends BizEntityType<CommunicationEve
 	void setParentTypeId(CommunicationEventPrpTyp value);
 
 	/**
-	 * Returns the value of the '<em><b>Communication Event Purposes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Communication Event Purposes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Event Purposes</em>' reference list.
-	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventPrpTyp_CommunicationEventPurposes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEventPurpose'"
-	 * @generated
-	 */
-	List<CommunicationEventPurpose> getCommunicationEventPurposes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEventPrpTyp' route='parentTypeId'"
-	 * @generated
-	 */
-	List<CommunicationEventPrpTyp> childCommunicationEventPrpTyps();
-
-	/**
 	 * Returns the value of the '<em><b>Communication Event Prp Typ Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -147,7 +119,7 @@ public interface CommunicationEventPrpTyp extends BizEntityType<CommunicationEve
 	 * @see #setCommunicationEventPrpTypId(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventPrpTyp_CommunicationEventPrpTypId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCommunicationEventPrpTypId();

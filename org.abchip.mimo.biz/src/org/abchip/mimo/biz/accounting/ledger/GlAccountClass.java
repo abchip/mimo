@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.ledger;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -69,7 +67,7 @@ public interface GlAccountClass extends BizEntity {
 	 * @return the value of the '<em>Is Asset Class</em>' attribute.
 	 * @see #setIsAssetClass(boolean)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountClass_IsAssetClass()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsAssetClass();
@@ -121,7 +119,7 @@ public interface GlAccountClass extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountClass_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -137,24 +135,6 @@ public interface GlAccountClass extends BizEntity {
 	void setSequenceNum(long value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccountClass' route='parentClassId'"
-	 * @generated
-	 */
-	List<GlAccountClass> childGlAccountClasses();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccount' route='glAccountClassId'"
-	 * @generated
-	 */
-	List<GlAccount> glAccounts();
-
-	/**
 	 * Returns the value of the '<em><b>Gl Account Class Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -166,7 +146,7 @@ public interface GlAccountClass extends BizEntity {
 	 * @see #setGlAccountClassId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountClass_GlAccountClassId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGlAccountClassId();

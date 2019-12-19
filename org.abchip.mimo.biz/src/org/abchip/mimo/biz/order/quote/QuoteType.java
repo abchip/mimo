@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.order.quote;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
-import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +22,6 @@ import org.abchip.mimo.biz.accounting.ledger.PartyPrefDocTypeTpl;
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteType#getQuoteTypeAttrs <em>Quote Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteType()
@@ -70,7 +66,7 @@ public interface QuoteType extends BizEntityType<Quote> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -123,7 +119,7 @@ public interface QuoteType extends BizEntityType<Quote> {
 	 * @see #setQuoteTypeId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteType_QuoteTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getQuoteTypeId();
@@ -137,49 +133,5 @@ public interface QuoteType extends BizEntityType<Quote> {
 	 * @generated
 	 */
 	void setQuoteTypeId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Quote Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Quote Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteType_QuoteTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='QuoteTypeAttr'"
-	 * @generated
-	 */
-	List<QuoteTypeAttr> getQuoteTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='QuoteType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<QuoteType> childQuoteTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyPrefDocTypeTpl' route='quoteTypeId'"
-	 * @generated
-	 */
-	List<PartyPrefDocTypeTpl> partyPrefDocTypeTpls();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Quote' route='quoteTypeId'"
-	 * @generated
-	 */
-	List<Quote> quotes();
 
 } // QuoteType

@@ -137,7 +137,7 @@ public interface WorkEffortPartyAssignment extends BizEntity {
 	 * @return the value of the '<em>Must Rsvp</em>' attribute.
 	 * @see #setMustRsvp(boolean)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_MustRsvp()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isMustRsvp();
@@ -245,7 +245,6 @@ public interface WorkEffortPartyAssignment extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -325,7 +324,7 @@ public interface WorkEffortPartyAssignment extends BizEntity {
 	 * @return the value of the '<em>Status Date Time</em>' attribute.
 	 * @see #setStatusDateTime(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_StatusDateTime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getStatusDateTime();
@@ -378,7 +377,7 @@ public interface WorkEffortPartyAssignment extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortPartyAssignment_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

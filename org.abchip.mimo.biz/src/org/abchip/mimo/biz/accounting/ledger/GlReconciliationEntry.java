@@ -44,7 +44,7 @@ public interface GlReconciliationEntry extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliationEntry_AcctgTransEntrySeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getAcctgTransEntrySeqId();

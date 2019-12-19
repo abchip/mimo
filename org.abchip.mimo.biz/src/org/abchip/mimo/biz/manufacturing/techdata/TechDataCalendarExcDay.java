@@ -74,7 +74,6 @@ public interface TechDataCalendarExcDay extends BizEntity {
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcDay_ExceptionDateStartTime()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getExceptionDateStartTime();

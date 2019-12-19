@@ -8,8 +8,6 @@
 package org.abchip.mimo.biz.product.cost;
 
 import java.math.BigDecimal;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
 import org.abchip.mimo.biz.common.method.CustomMethod;
@@ -207,7 +205,7 @@ public interface CostComponentCalc extends BizEntity {
 	 * @return the value of the '<em>Per Milli Second</em>' attribute.
 	 * @see #setPerMilliSecond(long)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc_PerMilliSecond()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPerMilliSecond();
@@ -249,15 +247,6 @@ public interface CostComponentCalc extends BizEntity {
 	void setVariableCost(BigDecimal value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CostComponent' route='costComponentCalcId'"
-	 * @generated
-	 */
-	List<CostComponent> costComponents();
-
-	/**
 	 * Returns the value of the '<em><b>Cost Component Calc Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -269,7 +258,7 @@ public interface CostComponentCalc extends BizEntity {
 	 * @see #setCostComponentCalcId(String)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentCalc_CostComponentCalcId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCostComponentCalcId();

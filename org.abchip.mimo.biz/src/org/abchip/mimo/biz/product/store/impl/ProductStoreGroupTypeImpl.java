@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.product.store.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.ProductStoreGroupType;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.ecore.EClass;
@@ -72,18 +69,6 @@ public class ProductStoreGroupTypeImpl extends BizEntityImpl implements ProductS
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(StorePackage.Literals.PRODUCT_STORE_GROUP_TYPE__DESCRIPTION, newDescription);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ProductStoreGroup> productStoreGroups() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

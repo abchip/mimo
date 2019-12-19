@@ -8,14 +8,10 @@
 package org.abchip.mimo.biz.workeffort.timesheet.impl;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
-import org.abchip.mimo.biz.workeffort.timesheet.TimeEntry;
 import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
 import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -203,18 +199,6 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	@Override
 	public void setThruDate(Date newThruDate) {
 		eSet(TimesheetPackage.Literals.TIMESHEET__THRU_DATE, newThruDate);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TimeEntry> timeEntries() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.employment.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.humanres.employment.Employment;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.TerminationType;
@@ -114,18 +112,6 @@ public class TerminationTypeImpl extends BizEntityTypeImpl<Employment> implement
 	@Override
 	public void setParentTypeId(TerminationType newParentTypeId) {
 		eSet(EmploymentPackage.Literals.TERMINATION_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TerminationType> childTerminationTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.entity.tenant;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -23,7 +21,6 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantId <em>Tenant Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#isDisabled <em>Disabled</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getInitialPath <em>Initial Path</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantDataSources <em>Tenant Data Sources</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantName <em>Tenant Name</em>}</li>
  * </ul>
  *
@@ -43,7 +40,7 @@ public interface Tenant extends BizEntity {
 	 * @return the value of the '<em>Initial Path</em>' attribute.
 	 * @see #setInitialPath(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_InitialPath()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getInitialPath();
@@ -70,7 +67,7 @@ public interface Tenant extends BizEntity {
 	 * @see #setTenantId(String)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_TenantId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTenantId();
@@ -97,7 +94,6 @@ public interface Tenant extends BizEntity {
 	 * @see #setDisabled(boolean)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_Disabled()
 	 * @model annotation="mimo-ent-slot help='Disabled if \'Y\', defaults to \'N\' (not disabled).'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isDisabled();
@@ -137,40 +133,5 @@ public interface Tenant extends BizEntity {
 	 * @generated
 	 */
 	void setTenantName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Tenant Data Sources</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.entity.tenant.TenantDataSource}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tenant Data Sources</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tenant Data Sources</em>' reference list.
-	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_TenantDataSources()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TenantDataSource'"
-	 * @generated
-	 */
-	List<TenantDataSource> getTenantDataSources();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TenantComponent' route='tenantId'"
-	 * @generated
-	 */
-	List<TenantComponent> tenantComponents();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TenantDomainName' route='tenantId'"
-	 * @generated
-	 */
-	List<TenantDomainName> tenantDomainNames();
 
 } // Tenant

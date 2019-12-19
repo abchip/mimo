@@ -66,7 +66,7 @@ public interface PayGrade extends BizEntity {
 	 * @see #setPayGradeId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayGrade_PayGradeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPayGradeId();

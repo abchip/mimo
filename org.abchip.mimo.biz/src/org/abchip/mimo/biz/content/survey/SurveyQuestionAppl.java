@@ -51,7 +51,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @see #setExternalFieldRef(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_ExternalFieldRef()
 	 * @model annotation="mimo-ent-slot help='External field ID/reference; for AcroForms used to track the field ID'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getExternalFieldRef();
@@ -77,7 +77,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>Required Field</em>' attribute.
 	 * @see #setRequiredField(boolean)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_RequiredField()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isRequiredField();
@@ -105,7 +105,6 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -131,7 +130,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_SequenceNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -185,7 +184,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @see #setSurveyMultiRespColId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_SurveyMultiRespColId()
 	 * @model annotation="mimo-ent-slot help='Used to optionally associate this question to a specific column in the Multi-Response set; with this you can associate a single question to each cell in the question/column grid; this is useful for AcroForm round trips where the target PDF needs a question associated with each cell, or even the same question applied with different externalFieldRef values.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSurveyMultiRespColId();
@@ -211,7 +210,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>Survey Multi Resp Id</em>' attribute.
 	 * @see #setSurveyMultiRespId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_SurveyMultiRespId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSurveyMultiRespId();
@@ -237,7 +236,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>Survey Page Seq Id</em>' attribute.
 	 * @see #setSurveyPageSeqId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_SurveyPageSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSurveyPageSeqId();
@@ -290,7 +289,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -316,7 +315,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @return the value of the '<em>With Survey Option Seq Id</em>' attribute.
 	 * @see #setWithSurveyOptionSeqId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_WithSurveyOptionSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getWithSurveyOptionSeqId();
@@ -343,7 +342,7 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @see #setWithSurveyQuestionId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_WithSurveyQuestionId()
 	 * @model annotation="mimo-ent-slot help='These two with* fields are used to specify that this question should only appear if the with option has been selected for the with question.'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getWithSurveyQuestionId();

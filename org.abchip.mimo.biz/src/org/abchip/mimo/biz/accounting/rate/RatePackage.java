@@ -424,11 +424,11 @@ public interface RatePackage extends EPackage {
 	EAttribute getPartyRate_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.rate.PartyRate#getDefaultRate <em>Default Rate</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.rate.PartyRate#isDefaultRate <em>Default Rate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Default Rate</em>'.
-	 * @see org.abchip.mimo.biz.accounting.rate.PartyRate#getDefaultRate()
+	 * @see org.abchip.mimo.biz.accounting.rate.PartyRate#isDefaultRate()
 	 * @see #getPartyRate()
 	 * @generated
 	 */

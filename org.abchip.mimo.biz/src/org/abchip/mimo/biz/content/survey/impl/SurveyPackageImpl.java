@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.content.survey.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -361,6 +365,8 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -379,6 +385,8 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -479,6 +487,8 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -488,7 +498,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -547,6 +557,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		// Create package meta-data objects
 		theSurveyPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -556,6 +567,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -606,11 +618,12 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -642,6 +655,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		// Initialize created meta-data
 		theSurveyPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -651,6 +665,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -701,11 +716,12 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -849,27 +865,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 	 */
 	@Override
 	public EAttribute getSurvey_SurveyName() {
-		return (EAttribute)surveyEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSurvey_SurveyMultiResps() {
-		return (EReference)surveyEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSurvey_SurveyPages() {
-		return (EReference)surveyEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)surveyEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1149,16 +1145,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 	 */
 	@Override
 	public EReference getSurveyQuestion_SurveyQuestionTypeId() {
-		return (EReference)surveyQuestionEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSurveyQuestion_SurveyQuestionOptions() {
 		return (EReference)surveyQuestionEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1851,9 +1837,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		createEAttribute(surveyEClass, SURVEY__IS_ANONYMOUS);
 		createEAttribute(surveyEClass, SURVEY__RESPONSE_SERVICE);
 		createEAttribute(surveyEClass, SURVEY__SUBMIT_CAPTION);
-		createEReference(surveyEClass, SURVEY__SURVEY_MULTI_RESPS);
 		createEAttribute(surveyEClass, SURVEY__SURVEY_NAME);
-		createEReference(surveyEClass, SURVEY__SURVEY_PAGES);
 
 		surveyApplTypeEClass = createEClass(SURVEY_APPL_TYPE);
 		createEAttribute(surveyApplTypeEClass, SURVEY_APPL_TYPE__SURVEY_APPL_TYPE_ID);
@@ -1886,7 +1870,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		createEAttribute(surveyQuestionEClass, SURVEY_QUESTION__HINT);
 		createEAttribute(surveyQuestionEClass, SURVEY_QUESTION__QUESTION);
 		createEReference(surveyQuestionEClass, SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID);
-		createEReference(surveyQuestionEClass, SURVEY_QUESTION__SURVEY_QUESTION_OPTIONS);
 		createEReference(surveyQuestionEClass, SURVEY_QUESTION__SURVEY_QUESTION_TYPE_ID);
 
 		surveyQuestionApplEClass = createEClass(SURVEY_QUESTION_APPL);
@@ -1987,13 +1970,10 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
-		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
 		GeoPackage theGeoPackage = (GeoPackage)EPackage.Registry.INSTANCE.getEPackage(GeoPackage.eNS_URI);
 		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
-		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		PartyPackage thePartyPackage_1 = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
-		PaymentPackage thePaymentPackage = (PaymentPackage)EPackage.Registry.INSTANCE.getEPackage(PaymentPackage.eNS_URI);
 		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
 
 		// Create type parameters
@@ -2019,30 +1999,18 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		initEClass(surveyEClass, Survey.class, "Survey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSurvey_SurveyId(), ecorePackage.getEString(), "surveyId", null, 1, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSurvey_AcroFormContentId(), ecorePackage.getEString(), "acroFormContentId", null, 0, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSurvey_AllowMultiple(), ecorePackage.getEBoolean(), "allowMultiple", null, 0, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSurvey_AllowUpdate(), ecorePackage.getEBoolean(), "allowUpdate", null, 0, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSurvey_AllowMultiple(), ecorePackage.getEBoolean(), "allowMultiple", null, 1, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSurvey_AllowUpdate(), ecorePackage.getEBoolean(), "allowUpdate", null, 1, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSurvey_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSurvey_Description(), ecorePackage.getEString(), "description", null, 0, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSurvey_IsAnonymous(), ecorePackage.getEBoolean(), "isAnonymous", null, 0, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSurvey_IsAnonymous(), ecorePackage.getEBoolean(), "isAnonymous", null, 1, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSurvey_ResponseService(), ecorePackage.getEString(), "responseService", null, 0, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSurvey_SubmitCaption(), ecorePackage.getEString(), "submitCaption", null, 0, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSurvey_SurveyMultiResps(), this.getSurveyMultiResp(), null, "surveyMultiResps", null, 0, -1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSurvey_SurveyName(), ecorePackage.getEString(), "surveyName", null, 0, 1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSurvey_SurveyPages(), this.getSurveyPage(), null, "surveyPages", null, 0, -1, Survey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(surveyEClass, theDataPackage.getDataResource(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(surveyEClass, theStorePackage.getProductStoreFinActSetting(), "productStoreFinActSettings", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(surveyEClass, theStorePackage.getProductStoreSurveyAppl(), "productStoreSurveyAppls", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(surveyEClass, this.getSurveyResponse(), "surveyResponses", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(surveyApplTypeEClass, SurveyApplType.class, "SurveyApplType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSurveyApplType_SurveyApplTypeId(), ecorePackage.getEString(), "surveyApplTypeId", null, 1, 1, SurveyApplType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSurveyApplType_Description(), ecorePackage.getEString(), "description", null, 0, 1, SurveyApplType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(surveyApplTypeEClass, theStorePackage.getProductStoreSurveyAppl(), "productStoreSurveyAppls", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(surveyMultiRespEClass, SurveyMultiResp.class, "SurveyMultiResp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSurveyMultiResp_SurveyId(), this.getSurvey(), null, "surveyId", null, 1, 1, SurveyMultiResp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2075,7 +2043,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		initEAttribute(getSurveyQuestion_Question(), ecorePackage.getEString(), "question", null, 0, 1, SurveyQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSurveyQuestion_SurveyQuestionCategoryId(), this.getSurveyQuestionCategory(), null, "surveyQuestionCategoryId", null, 0, 1, SurveyQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSurveyQuestion_SurveyQuestionCategoryId().getEKeys().add(this.getSurveyQuestionCategory_SurveyQuestionCategoryId());
-		initEReference(getSurveyQuestion_SurveyQuestionOptions(), this.getSurveyQuestionOption(), null, "surveyQuestionOptions", null, 0, -1, SurveyQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSurveyQuestion_SurveyQuestionTypeId(), this.getSurveyQuestionType(), null, "surveyQuestionTypeId", null, 0, 1, SurveyQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSurveyQuestion_SurveyQuestionTypeId().getEKeys().add(this.getSurveyQuestionType_SurveyQuestionTypeId());
 
@@ -2101,10 +2068,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		initEReference(getSurveyQuestionCategory_ParentCategoryId(), this.getSurveyQuestionCategory(), null, "parentCategoryId", null, 0, 1, SurveyQuestionCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSurveyQuestionCategory_ParentCategoryId().getEKeys().add(this.getSurveyQuestionCategory_SurveyQuestionCategoryId());
 
-		addEOperation(surveyQuestionCategoryEClass, this.getSurveyQuestionCategory(), "childSurveyQuestionCategories", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(surveyQuestionCategoryEClass, this.getSurveyQuestion(), "surveyQuestions", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(surveyQuestionOptionEClass, SurveyQuestionOption.class, "SurveyQuestionOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSurveyQuestionOption_SurveyQuestionId(), this.getSurveyQuestion(), null, "surveyQuestionId", null, 1, 1, SurveyQuestionOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSurveyQuestionOption_SurveyQuestionId().getEKeys().add(this.getSurveyQuestion_SurveyQuestionId());
@@ -2121,8 +2084,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		initEAttribute(getSurveyQuestionType_SurveyQuestionTypeId(), ecorePackage.getEString(), "surveyQuestionTypeId", null, 1, 1, SurveyQuestionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSurveyQuestionType_Description(), ecorePackage.getEString(), "description", null, 0, 1, SurveyQuestionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(surveyQuestionTypeEClass, this.getSurveyQuestion(), "surveyQuestions", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(surveyResponseEClass, SurveyResponse.class, "SurveyResponse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSurveyResponse_SurveyResponseId(), ecorePackage.getEString(), "surveyResponseId", null, 1, 1, SurveyResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSurveyResponse_GeneralFeedback(), ecorePackage.getEString(), "generalFeedback", null, 0, 1, SurveyResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2130,18 +2091,14 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		initEReference(getSurveyResponse_OrderId(), theOrderPackage.getOrderHeader(), null, "orderId", null, 0, 1, SurveyResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSurveyResponse_OrderId().getEKeys().add(theOrderPackage.getOrderHeader_OrderId());
 		initEAttribute(getSurveyResponse_OrderItemSeqId(), ecorePackage.getEString(), "orderItemSeqId", null, 0, 1, SurveyResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSurveyResponse_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, SurveyResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getSurveyResponse_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getSurveyResponse_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 0, 1, SurveyResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSurveyResponse_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEAttribute(getSurveyResponse_ReferenceId(), ecorePackage.getEString(), "referenceId", null, 0, 1, SurveyResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSurveyResponse_ResponseDate(), ecorePackage.getEDate(), "responseDate", null, 0, 1, SurveyResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSurveyResponse_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, SurveyResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSurveyResponse_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEReference(getSurveyResponse_SurveyId(), this.getSurvey(), null, "surveyId", null, 0, 1, SurveyResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getSurveyResponse_SurveyId().getEKeys().add(this.getSurvey_SurveyId());
-
-		addEOperation(surveyResponseEClass, theDataPackage.getDataResource(), "dataResources", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(surveyResponseEClass, thePaymentPackage.getGiftCardFulfillment(), "giftCardFulfillments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(surveyResponseAnswerEClass, SurveyResponseAnswer.class, "SurveyResponseAnswer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSurveyResponseAnswer_SurveyResponseId(), this.getSurveyResponse(), null, "surveyResponseId", null, 1, 1, SurveyResponseAnswer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2177,12 +2134,10 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
-		// mimo-ent-slot
-		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-format
 		createMimoentformatAnnotations();
+		// mimo-ent-slot
+		createMimoentslotAnnotations();
 	}
 
 	/**
@@ -2270,29 +2225,13 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurvey_SurveyId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurvey_AcroFormContentId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurvey_AllowMultiple(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getSurvey_AllowUpdate(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 		addAnnotation
 		  (getSurvey_Comments(),
@@ -2309,24 +2248,15 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getSurvey_IsAnonymous(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getSurvey_ResponseService(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getSurvey_SubmitCaption(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -2340,7 +2270,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyApplType_SurveyApplTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2354,7 +2283,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyMultiResp_SurveyMultiRespId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2368,21 +2296,18 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyMultiRespColumn_SurveyId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyMultiRespColumn_SurveyMultiRespColId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyMultiRespColumn_SurveyMultiRespId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2396,7 +2321,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyMultiRespColumn_SequenceNum(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2404,7 +2328,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyPage_SurveyPageSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2418,7 +2341,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyPage_SequenceNum(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2426,7 +2348,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyQuestion_SurveyQuestionId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2440,53 +2361,24 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyQuestion_EnumTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyQuestion_FormatString(),
 		   source,
 		   new String[] {
-			   "type", "value",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getSurveyQuestion_Hint(),
-		   source,
-		   new String[] {
-			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getSurveyQuestion_Question(),
-		   source,
-		   new String[] {
-			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getSurveyQuestionAppl_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getSurveyQuestionAppl_ExternalFieldRef(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getSurveyQuestionAppl_RequiredField(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 		addAnnotation
 		  (getSurveyQuestionAppl_SequenceNum(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2494,48 +2386,36 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyQuestionAppl_SurveyMultiRespColId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyQuestionAppl_SurveyMultiRespId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyQuestionAppl_SurveyPageSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyQuestionAppl_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getSurveyQuestionAppl_WithSurveyOptionSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyQuestionAppl_WithSurveyQuestionId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyQuestionCategory_SurveyQuestionCategoryId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2549,7 +2429,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyQuestionOption_SurveyOptionSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2564,7 +2443,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyQuestionOption_AmountBaseUomId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2578,7 +2456,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyQuestionOption_Duration(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2586,28 +2463,19 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyQuestionOption_DurationUomId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyQuestionOption_SequenceNum(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getSurveyQuestionOption_WeightFactor(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
 		   });
 		addAnnotation
 		  (getSurveyQuestionType_SurveyQuestionTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2621,46 +2489,24 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyResponse_SurveyResponseId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyResponse_GeneralFeedback(),
-		   source,
-		   new String[] {
-			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getSurveyResponse_LastModifiedDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getSurveyResponse_OrderItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyResponse_ReferenceId(),
 		   source,
 		   new String[] {
-			   "type", "id-vlong",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getSurveyResponse_ResponseDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getSurveyResponseAnswer_SurveyMultiRespColId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2675,21 +2521,7 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyResponseAnswer_AmountBaseUomId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyResponseAnswer_AnsweredDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getSurveyResponseAnswer_BooleanResponse(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 		addAnnotation
 		  (getSurveyResponseAnswer_CurrencyResponse(),
@@ -2703,7 +2535,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyResponseAnswer_Duration(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2711,20 +2542,12 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyResponseAnswer_DurationUomId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyResponseAnswer_FloatResponse(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
 		   });
 		addAnnotation
 		  (getSurveyResponseAnswer_NumericResponse(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2732,7 +2555,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyResponseAnswer_SequenceNum(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -2740,39 +2562,13 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		  (getSurveyResponseAnswer_SurveyMultiRespId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getSurveyResponseAnswer_SurveyOptionSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getSurveyResponseAnswer_TextResponse(),
-		   source,
-		   new String[] {
-			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getSurveyResponseAnswer_WeightFactor(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getSurveyTrigger_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getSurveyTrigger_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 	}
 
@@ -2784,30 +2580,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (surveyEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (surveyEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (surveyEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (surveyEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
 		addAnnotation
 		  (getSurvey_AcroFormContentId(),
 		   source,
@@ -2831,24 +2603,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		   source,
 		   new String[] {
 			   "help", "Allow response to the survey without login?"
-		   });
-		addAnnotation
-		  (getSurvey_SurveyMultiResps(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getSurvey_SurveyPages(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (surveyApplTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
 		   });
 		addAnnotation
 		  (getSurveyMultiResp_SurveyId(),
@@ -2893,12 +2647,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getSurveyQuestion_SurveyQuestionOptions(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getSurveyQuestionAppl_SurveyId(),
 		   source,
 		   new String[] {
@@ -2935,18 +2683,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 			   "help", "These two with* fields are used to specify that this question should only appear if the with option has been selected for the with question."
 		   });
 		addAnnotation
-		  (surveyQuestionCategoryEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (surveyQuestionCategoryEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getSurveyQuestionOption_SurveyQuestionId(),
 		   source,
 		   new String[] {
@@ -2957,24 +2693,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (surveyQuestionTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (surveyResponseEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (surveyResponseEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
 		   });
 		addAnnotation
 		  (getSurveyResponseAnswer_SurveyResponseId(),
@@ -3018,104 +2736,6 @@ public class SurveyPackageImpl extends EPackageImpl implements SurveyPackage {
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (surveyEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "DataResource",
-			   "route", "surveyId"
-		   });
-		addAnnotation
-		  (surveyEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "ProductStoreFinActSetting",
-			   "route", "purchaseSurveyId"
-		   });
-		addAnnotation
-		  (surveyEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "frame", "ProductStoreSurveyAppl",
-			   "route", "surveyId"
-		   });
-		addAnnotation
-		  (surveyEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "frame", "SurveyResponse",
-			   "route", "surveyId"
-		   });
-		addAnnotation
-		  (getSurvey_SurveyMultiResps(),
-		   source,
-		   new String[] {
-			   "frame", "SurveyMultiResp"
-		   });
-		addAnnotation
-		  (getSurvey_SurveyPages(),
-		   source,
-		   new String[] {
-			   "frame", "SurveyPage"
-		   });
-		addAnnotation
-		  (surveyApplTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "ProductStoreSurveyAppl",
-			   "route", "surveyApplTypeId"
-		   });
-		addAnnotation
-		  (getSurveyQuestion_SurveyQuestionOptions(),
-		   source,
-		   new String[] {
-			   "frame", "SurveyQuestionOption"
-		   });
-		addAnnotation
-		  (surveyQuestionCategoryEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "SurveyQuestionCategory",
-			   "route", "parentCategoryId"
-		   });
-		addAnnotation
-		  (surveyQuestionCategoryEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "SurveyQuestion",
-			   "route", "surveyQuestionCategoryId"
-		   });
-		addAnnotation
-		  (surveyQuestionTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "SurveyQuestion",
-			   "route", "surveyQuestionTypeId"
-		   });
-		addAnnotation
-		  (surveyResponseEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "DataResource",
-			   "route", "surveyResponseId"
-		   });
-		addAnnotation
-		  (surveyResponseEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "GiftCardFulfillment",
-			   "route", "surveyResponseId"
 		   });
 	}
 

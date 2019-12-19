@@ -76,7 +76,7 @@ public interface WorkEffortGoodStandard extends BizEntityTyped<WorkEffortGoodSta
 	 * @return the value of the '<em>Estimated Quantity</em>' attribute.
 	 * @see #setEstimatedQuantity(double)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortGoodStandard_EstimatedQuantity()
-	 * @model annotation="mimo-ent-format type='floating-point'"
+	 * @model
 	 * @generated
 	 */
 	double getEstimatedQuantity();
@@ -104,7 +104,6 @@ public interface WorkEffortGoodStandard extends BizEntityTyped<WorkEffortGoodSta
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortGoodStandard_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -183,7 +182,7 @@ public interface WorkEffortGoodStandard extends BizEntityTyped<WorkEffortGoodSta
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortGoodStandard_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

@@ -47,7 +47,6 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -75,7 +74,7 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_Keyword()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getKeyword();
@@ -101,7 +100,7 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @return the value of the '<em>Target</em>' attribute.
 	 * @see #setTarget(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_Target()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getTarget();
@@ -153,7 +152,7 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

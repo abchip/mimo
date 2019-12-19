@@ -8,10 +8,7 @@
 package org.abchip.mimo.biz.service.schedule.impl;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
-import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 import org.abchip.mimo.biz.service.schedule.RecurrenceRule;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
 import org.eclipse.emf.ecore.EClass;
@@ -387,30 +384,6 @@ public class RecurrenceRuleImpl extends BizEntityImpl implements RecurrenceRule 
 	@Override
 	public void setXName(String newXName) {
 		eSet(SchedulePackage.Literals.RECURRENCE_RULE__XNAME, newXName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<RecurrenceInfo> exceptionRecurrenceInfos() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<RecurrenceInfo> recurrenceInfos() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //RecurrenceRuleImpl

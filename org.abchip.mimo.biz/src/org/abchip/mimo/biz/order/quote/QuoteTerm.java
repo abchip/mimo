@@ -100,7 +100,7 @@ public interface QuoteTerm extends BizEntity {
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTerm_QuoteItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getQuoteItemSeqId();
@@ -126,7 +126,7 @@ public interface QuoteTerm extends BizEntity {
 	 * @return the value of the '<em>Term Days</em>' attribute.
 	 * @see #setTermDays(long)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTerm_TermDays()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTermDays();
@@ -179,7 +179,7 @@ public interface QuoteTerm extends BizEntity {
 	 * @return the value of the '<em>Term Value</em>' attribute.
 	 * @see #setTermValue(long)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTerm_TermValue()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTermValue();
@@ -231,7 +231,7 @@ public interface QuoteTerm extends BizEntity {
 	 * @return the value of the '<em>Uom Id</em>' attribute.
 	 * @see #setUomId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTerm_UomId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getUomId();

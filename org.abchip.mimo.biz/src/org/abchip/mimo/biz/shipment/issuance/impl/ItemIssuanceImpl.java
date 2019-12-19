@@ -10,14 +10,9 @@ package org.abchip.mimo.biz.shipment.issuance.impl;
 import java.math.BigDecimal;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
-import org.abchip.mimo.biz.product.inventory.InventoryItemDetail;
-import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.issuance.IssuancePackage;
 import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
@@ -332,30 +327,6 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	@Override
 	public void setShipmentItemSeqId(String newShipmentItemSeqId) {
 		eSet(IssuancePackage.Literals.ITEM_ISSUANCE__SHIPMENT_ITEM_SEQ_ID, newShipmentItemSeqId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InventoryItemDetail> inventoryItemDetails() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<InventoryTransfer> inventoryTransfers() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ItemIssuanceImpl

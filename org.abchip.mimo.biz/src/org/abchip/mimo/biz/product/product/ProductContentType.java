@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.product;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface ProductContentType extends BizEntityType<ProductContent> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContentType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -110,15 +108,6 @@ public interface ProductContentType extends BizEntityType<ProductContent> {
 	void setParentTypeId(ProductContentType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductContentType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<ProductContentType> childProductContentTypes();
-
-	/**
 	 * Returns the value of the '<em><b>Product Content Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -130,7 +119,7 @@ public interface ProductContentType extends BizEntityType<ProductContent> {
 	 * @see #setProductContentTypeId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductContentType_ProductContentTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductContentTypeId();

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.store;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -56,15 +54,6 @@ public interface ProductStoreGroupType extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreGroup' route='productStoreGroupTypeId'"
-	 * @generated
-	 */
-	List<ProductStoreGroup> productStoreGroups();
-
-	/**
 	 * Returns the value of the '<em><b>Product Store Group Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -76,7 +65,7 @@ public interface ProductStoreGroupType extends BizEntity {
 	 * @see #setProductStoreGroupTypeId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupType_ProductStoreGroupTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductStoreGroupTypeId();

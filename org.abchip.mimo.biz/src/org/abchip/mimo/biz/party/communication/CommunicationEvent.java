@@ -8,22 +8,15 @@
 package org.abchip.mimo.biz.party.communication;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.marketing.contact.ContactList;
-import org.abchip.mimo.biz.order.order.CommunicationEventOrder;
-import org.abchip.mimo.biz.order.request.CustRequestCommEvent;
-import org.abchip.mimo.biz.order.return_.CommunicationEventReturn;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
-import org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent;
-import org.abchip.mimo.biz.workeffort.workeffort.CommunicationEventWorkEff;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,7 +72,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>Bcc String</em>' attribute.
 	 * @see #setBccString(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_BccString()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getBccString();
@@ -105,7 +98,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>Cc String</em>' attribute.
 	 * @see #setCcString(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_CcString()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getCcString();
@@ -235,7 +228,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>Content</em>' attribute.
 	 * @see #setContent(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_Content()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getContent();
@@ -287,7 +280,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>Datetime Ended</em>' attribute.
 	 * @see #setDatetimeEnded(Date)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_DatetimeEnded()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDatetimeEnded();
@@ -313,7 +306,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>Datetime Started</em>' attribute.
 	 * @see #setDatetimeStarted(Date)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_DatetimeStarted()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDatetimeStarted();
@@ -339,7 +332,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>Entry Date</em>' attribute.
 	 * @see #setEntryDate(Date)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_EntryDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getEntryDate();
@@ -365,7 +358,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>From String</em>' attribute.
 	 * @see #setFromString(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_FromString()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getFromString();
@@ -391,7 +384,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>Header String</em>' attribute.
 	 * @see #setHeaderString(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_HeaderString()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getHeaderString();
@@ -417,7 +410,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>Message Id</em>' attribute.
 	 * @see #setMessageId(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_MessageId()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getMessageId();
@@ -469,7 +462,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>Orig Comm Event Id</em>' attribute.
 	 * @see #setOrigCommEventId(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_OrigCommEventId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrigCommEventId();
@@ -495,7 +488,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>Parent Comm Event Id</em>' attribute.
 	 * @see #setParentCommEventId(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_ParentCommEventId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getParentCommEventId();
@@ -677,7 +670,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>Subject</em>' attribute.
 	 * @see #setSubject(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_Subject()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getSubject();
@@ -703,7 +696,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @return the value of the '<em>To String</em>' attribute.
 	 * @see #setToString(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_ToString()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getToString();
@@ -717,69 +710,6 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @generated
 	 */
 	void setToString(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEventOrder' route='communicationEventId'"
-	 * @generated
-	 */
-	List<CommunicationEventOrder> communicationEventOrders();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEventProduct' route='communicationEventId'"
-	 * @generated
-	 */
-	List<CommunicationEventProduct> communicationEventProducts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEventPurpose' route='communicationEventId'"
-	 * @generated
-	 */
-	List<CommunicationEventPurpose> communicationEventPurposes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEventReturn' route='communicationEventId'"
-	 * @generated
-	 */
-	List<CommunicationEventReturn> communicationEventReturns();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEventWorkEff' route='communicationEventId'"
-	 * @generated
-	 */
-	List<CommunicationEventWorkEff> communicationEventWorkEffs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustRequestCommEvent' route='communicationEventId'"
-	 * @generated
-	 */
-	List<CustRequestCommEvent> custRequestCommEvents();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SubscriptionCommEvent' route='communicationEventId'"
-	 * @generated
-	 */
-	List<SubscriptionCommEvent> subscriptionCommEvents();
 
 	/**
 	 * Returns the value of the '<em><b>Communication Event Type Id</b></em>' reference.
@@ -819,7 +749,7 @@ public interface CommunicationEvent extends BizEntityTyped<CommunicationEventTyp
 	 * @see #setCommunicationEventId(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEvent_CommunicationEventId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCommunicationEventId();

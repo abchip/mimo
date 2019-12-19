@@ -10,14 +10,9 @@ package org.abchip.mimo.biz.shipment.issuance;
 import java.math.BigDecimal;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
-import org.abchip.mimo.biz.product.inventory.InventoryItemDetail;
-import org.abchip.mimo.biz.product.inventory.InventoryTransfer;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.shipment.Shipment;
 
@@ -87,7 +82,7 @@ public interface ItemIssuance extends BizEntity {
 	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
 	 * @see #setFixedAssetId(String)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuance_FixedAssetId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFixedAssetId();
@@ -165,7 +160,7 @@ public interface ItemIssuance extends BizEntity {
 	 * @return the value of the '<em>Issued Date Time</em>' attribute.
 	 * @see #setIssuedDateTime(Date)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuance_IssuedDateTime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getIssuedDateTime();
@@ -192,7 +187,7 @@ public interface ItemIssuance extends BizEntity {
 	 * @see #setItemIssuanceId(String)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuance_ItemIssuanceId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getItemIssuanceId();
@@ -218,7 +213,7 @@ public interface ItemIssuance extends BizEntity {
 	 * @return the value of the '<em>Maint Hist Seq Id</em>' attribute.
 	 * @see #setMaintHistSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuance_MaintHistSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getMaintHistSeqId();
@@ -270,7 +265,7 @@ public interface ItemIssuance extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuance_OrderItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -322,7 +317,7 @@ public interface ItemIssuance extends BizEntity {
 	 * @return the value of the '<em>Ship Group Seq Id</em>' attribute.
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuance_ShipGroupSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipGroupSeqId();
@@ -374,7 +369,7 @@ public interface ItemIssuance extends BizEntity {
 	 * @return the value of the '<em>Shipment Item Seq Id</em>' attribute.
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuance_ShipmentItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();
@@ -388,23 +383,5 @@ public interface ItemIssuance extends BizEntity {
 	 * @generated
 	 */
 	void setShipmentItemSeqId(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemDetail' route='itemIssuanceId'"
-	 * @generated
-	 */
-	List<InventoryItemDetail> inventoryItemDetails();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryTransfer' route='itemIssuanceId'"
-	 * @generated
-	 */
-	List<InventoryTransfer> inventoryTransfers();
 
 } // ItemIssuance

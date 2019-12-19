@@ -10,14 +10,10 @@ package org.abchip.mimo.biz.accounting.finaccount;
 import java.math.BigDecimal;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
-import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.party.party.Party;
 
 /**
@@ -33,7 +29,6 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getActualBalance <em>Actual Balance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getAvailableBalance <em>Available Balance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountAttributes <em>Fin Account Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountCode <em>Fin Account Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountName <em>Fin Account Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccount#getFinAccountPin <em>Fin Account Pin</em>}</li>
@@ -146,7 +141,7 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setFinAccountCode(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_FinAccountCode()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getFinAccountCode();
@@ -199,7 +194,7 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setFinAccountPin(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_FinAccountPin()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getFinAccountPin();
@@ -226,7 +221,6 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_FromDate()
 	 * @model annotation="mimo-ent-slot help='Describes when account will be valid. If null, valid immediately.'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -243,6 +237,7 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 
 	/**
 	 * Returns the value of the '<em><b>Is Refundable</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Refundable</em>' attribute isn't clear,
@@ -252,7 +247,7 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @return the value of the '<em>Is Refundable</em>' attribute.
 	 * @see #setIsRefundable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_IsRefundable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isIsRefundable();
@@ -410,7 +405,7 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @return the value of the '<em>Status Id</em>' attribute.
 	 * @see #setStatusId(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_StatusId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getStatusId();
@@ -437,7 +432,6 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_ThruDate()
 	 * @model annotation="mimo-ent-slot help='Expiration date of the account. If null, will never expire.'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getThruDate();
@@ -451,68 +445,6 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @generated
 	 */
 	void setThruDate(Date value);
-
-	/**
-	 * Returns the value of the '<em><b>Fin Account Attributes</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.finaccount.FinAccountAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Fin Account Attributes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Attributes</em>' reference list.
-	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_FinAccountAttributes()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccountAttribute'"
-	 * @generated
-	 */
-	List<FinAccountAttribute> getFinAccountAttributes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccountAuth' route='finAccountId'"
-	 * @generated
-	 */
-	List<FinAccountAuth> finAccountAuths();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='finAccountId'"
-	 * @generated
-	 */
-	List<FinAccountTrans> finAccountTranss();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderPaymentPreference' route='finAccountId'"
-	 * @generated
-	 */
-	List<OrderPaymentPreference> orderPaymentPreferences();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentMethod' route='finAccountId'"
-	 * @generated
-	 */
-	List<PaymentMethod> paymentMethods();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnHeader' route='finAccountId'"
-	 * @generated
-	 */
-	List<ReturnHeader> returnHeaders();
 
 	/**
 	 * Returns the value of the '<em><b>Fin Account Type Id</b></em>' reference.
@@ -552,7 +484,7 @@ public interface FinAccount extends BizEntityTyped<FinAccountType> {
 	 * @see #setFinAccountId(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccount_FinAccountId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getFinAccountId();

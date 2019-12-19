@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.employment;
 
-import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -67,7 +66,7 @@ public interface TerminationType extends BizEntityType<Employment> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getTerminationType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -109,15 +108,6 @@ public interface TerminationType extends BizEntityType<Employment> {
 	void setParentTypeId(TerminationType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TerminationType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<TerminationType> childTerminationTypes();
-
-	/**
 	 * Returns the value of the '<em><b>Termination Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -129,7 +119,7 @@ public interface TerminationType extends BizEntityType<Employment> {
 	 * @see #setTerminationTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getTerminationType_TerminationTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTerminationTypeId();

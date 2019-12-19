@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.content.document;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -22,7 +20,6 @@ import org.abchip.mimo.biz.BizEntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentType#getDocumentTypeId <em>Document Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentType#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.document.DocumentType#getDocumentTypeAttrs <em>Document Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -69,7 +66,7 @@ public interface DocumentType extends BizEntityType<Document> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -96,7 +93,7 @@ public interface DocumentType extends BizEntityType<Document> {
 	 * @see #setDocumentTypeId(String)
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentType_DocumentTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDocumentTypeId();
@@ -136,40 +133,5 @@ public interface DocumentType extends BizEntityType<Document> {
 	 * @generated
 	 */
 	void setParentTypeId(DocumentType value);
-
-	/**
-	 * Returns the value of the '<em><b>Document Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.content.document.DocumentTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Document Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Document Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentType_DocumentTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DocumentTypeAttr'"
-	 * @generated
-	 */
-	List<DocumentTypeAttr> getDocumentTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DocumentType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<DocumentType> childDocumentTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Document' route='documentTypeId'"
-	 * @generated
-	 */
-	List<Document> documents();
 
 } // DocumentType

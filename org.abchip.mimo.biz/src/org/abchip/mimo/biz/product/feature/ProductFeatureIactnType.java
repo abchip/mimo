@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.feature;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface ProductFeatureIactnType extends BizEntityType<ProductFeatureIac
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureIactnType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -110,24 +108,6 @@ public interface ProductFeatureIactnType extends BizEntityType<ProductFeatureIac
 	void setParentTypeId(ProductFeatureIactnType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductFeatureIactnType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<ProductFeatureIactnType> childProductFeatureIactnTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductFeatureIactn' route='productFeatureIactnTypeId'"
-	 * @generated
-	 */
-	List<ProductFeatureIactn> productFeatureIactns();
-
-	/**
 	 * Returns the value of the '<em><b>Product Feature Iactn Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -139,7 +119,7 @@ public interface ProductFeatureIactnType extends BizEntityType<ProductFeatureIac
 	 * @see #setProductFeatureIactnTypeId(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureIactnType_ProductFeatureIactnTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductFeatureIactnTypeId();

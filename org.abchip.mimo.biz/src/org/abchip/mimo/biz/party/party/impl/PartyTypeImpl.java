@@ -7,13 +7,10 @@
  */
 package org.abchip.mimo.biz.party.party.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyType;
-import org.abchip.mimo.biz.party.party.PartyTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -28,7 +25,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyTypeImpl#getPartyTypeAttrs <em>Party Type Attrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -135,41 +131,6 @@ public class PartyTypeImpl extends BizEntityTypeImpl<Party> implements PartyType
 	@Override
 	public void setPartyTypeId(String newPartyTypeId) {
 		eSet(PartyPackage.Literals.PARTY_TYPE__PARTY_TYPE_ID, newPartyTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<PartyTypeAttr> getPartyTypeAttrs() {
-		return (List<PartyTypeAttr>)eGet(PartyPackage.Literals.PARTY_TYPE__PARTY_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyType> childPartyTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Party> parties() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //PartyTypeImpl

@@ -66,7 +66,7 @@ public interface ProductCategoryAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Value</em>' attribute.
 	 * @see #setAttrValue(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryAttribute_AttrValue()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAttrValue();
@@ -121,7 +121,7 @@ public interface ProductCategoryAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryAttribute_AttrName()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id-long' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getAttrName();

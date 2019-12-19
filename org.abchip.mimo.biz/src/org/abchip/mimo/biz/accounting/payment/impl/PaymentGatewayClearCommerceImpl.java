@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import org.abchip.mimo.biz.accounting.ProcessMode;
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayClearCommerce;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -145,8 +146,8 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 * @generated
 	 */
 	@Override
-	public char getProcessMode() {
-		return (Character)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_CLEAR_COMMERCE__PROCESS_MODE, true);
+	public ProcessMode getProcessMode() {
+		return (ProcessMode)eGet(PaymentPackage.Literals.PAYMENT_GATEWAY_CLEAR_COMMERCE__PROCESS_MODE, true);
 	}
 
 	/**
@@ -155,7 +156,7 @@ public class PaymentGatewayClearCommerceImpl extends BizEntityImpl implements Pa
 	 * @generated
 	 */
 	@Override
-	public void setProcessMode(char newProcessMode) {
+	public void setProcessMode(ProcessMode newProcessMode) {
 		eSet(PaymentPackage.Literals.PAYMENT_GATEWAY_CLEAR_COMMERCE__PROCESS_MODE, newProcessMode);
 	}
 

@@ -40,7 +40,7 @@ public interface CustRequestItemNote extends BizEntityNote {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItemNote_CustRequestId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCustRequestId();
@@ -68,7 +68,7 @@ public interface CustRequestItemNote extends BizEntityNote {
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItemNote_CustRequestItemSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCustRequestItemSeqId();

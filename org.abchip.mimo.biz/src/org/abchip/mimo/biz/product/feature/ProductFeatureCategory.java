@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.feature;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -83,24 +81,6 @@ public interface ProductFeatureCategory extends BizEntity {
 	void setParentCategoryId(ProductFeatureCategory value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductFeatureCategory' route='parentCategoryId'"
-	 * @generated
-	 */
-	List<ProductFeatureCategory> childProductFeatureCategories();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductFeature' route='productFeatureCategoryId'"
-	 * @generated
-	 */
-	List<ProductFeature> productFeatures();
-
-	/**
 	 * Returns the value of the '<em><b>Product Feature Category Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -112,7 +92,7 @@ public interface ProductFeatureCategory extends BizEntity {
 	 * @see #setProductFeatureCategoryId(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCategory_ProductFeatureCategoryId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductFeatureCategoryId();

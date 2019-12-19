@@ -8,12 +8,7 @@
 package org.abchip.mimo.biz.service.schedule;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.invoice.Invoice;
-import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +45,7 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @see #setRecurrenceInfoId(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_RecurrenceInfoId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRecurrenceInfoId();
@@ -76,7 +71,7 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @return the value of the '<em>Exception Date Times</em>' attribute.
 	 * @see #setExceptionDateTimes(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_ExceptionDateTimes()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getExceptionDateTimes();
@@ -129,7 +124,7 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @see #setRecurrenceCount(long)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_RecurrenceCount()
 	 * @model annotation="mimo-ent-slot help='Not recommended - more than one process could be using this RecurrenceInfo'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRecurrenceCount();
@@ -155,7 +150,7 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @return the value of the '<em>Recurrence Date Times</em>' attribute.
 	 * @see #setRecurrenceDateTimes(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_RecurrenceDateTimes()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getRecurrenceDateTimes();
@@ -207,7 +202,7 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @return the value of the '<em>Start Date Time</em>' attribute.
 	 * @see #setStartDateTime(Date)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_StartDateTime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getStartDateTime();
@@ -221,41 +216,5 @@ public interface RecurrenceInfo extends BizEntity {
 	 * @generated
 	 */
 	void setStartDateTime(Date value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Invoice' route='recurrenceInfoId'"
-	 * @generated
-	 */
-	List<Invoice> invoices();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='JobSandbox' route='recurrenceInfoId'"
-	 * @generated
-	 */
-	List<JobSandbox> jobSandboxs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShoppingList' route='recurrenceInfoId'"
-	 * @generated
-	 */
-	List<ShoppingList> shoppingLists();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort' route='recurrenceInfoId'"
-	 * @generated
-	 */
-	List<WorkEffort> workEfforts();
 
 } // RecurrenceInfo

@@ -10,8 +10,6 @@ package org.abchip.mimo.biz.accounting.payment;
 import java.math.BigDecimal;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.uom.Uom;
@@ -66,7 +64,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Alt Reference</em>' attribute.
 	 * @see #setAltReference(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_AltReference()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getAltReference();
@@ -144,7 +142,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Gateway Avs Result</em>' attribute.
 	 * @see #setGatewayAvsResult(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_GatewayAvsResult()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getGatewayAvsResult();
@@ -170,7 +168,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Gateway Code</em>' attribute.
 	 * @see #setGatewayCode(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_GatewayCode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getGatewayCode();
@@ -196,7 +194,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Gateway Cv Result</em>' attribute.
 	 * @see #setGatewayCvResult(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_GatewayCvResult()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getGatewayCvResult();
@@ -222,7 +220,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Gateway Flag</em>' attribute.
 	 * @see #setGatewayFlag(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_GatewayFlag()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getGatewayFlag();
@@ -248,7 +246,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Gateway Message</em>' attribute.
 	 * @see #setGatewayMessage(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_GatewayMessage()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getGatewayMessage();
@@ -274,7 +272,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Gateway Score Result</em>' attribute.
 	 * @see #setGatewayScoreResult(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_GatewayScoreResult()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getGatewayScoreResult();
@@ -352,7 +350,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Reference Num</em>' attribute.
 	 * @see #setReferenceNum(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_ReferenceNum()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getReferenceNum();
@@ -378,7 +376,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Result Bad Card Number</em>' attribute.
 	 * @see #setResultBadCardNumber(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_ResultBadCardNumber()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isResultBadCardNumber();
@@ -404,7 +402,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Result Bad Expire</em>' attribute.
 	 * @see #setResultBadExpire(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_ResultBadExpire()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isResultBadExpire();
@@ -430,7 +428,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Result Declined</em>' attribute.
 	 * @see #setResultDeclined(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_ResultDeclined()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isResultDeclined();
@@ -456,7 +454,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Result Nsf</em>' attribute.
 	 * @see #setResultNsf(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_ResultNsf()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isResultNsf();
@@ -482,7 +480,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Sub Reference</em>' attribute.
 	 * @see #setSubReference(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_SubReference()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getSubReference();
@@ -534,7 +532,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @return the value of the '<em>Transaction Date</em>' attribute.
 	 * @see #setTransactionDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_TransactionDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getTransactionDate();
@@ -548,24 +546,6 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @generated
 	 */
 	void setTransactionDate(Date value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentGatewayRespMsg' route='paymentGatewayResponseId'"
-	 * @generated
-	 */
-	List<PaymentGatewayRespMsg> paymentGatewayRespMsgs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Payment' route='paymentGatewayResponseId'"
-	 * @generated
-	 */
-	List<Payment> payments();
 
 	/**
 	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' reference.
@@ -631,7 +611,7 @@ public interface PaymentGatewayResponse extends BizEntity {
 	 * @see #setPaymentGatewayResponseId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayResponse_PaymentGatewayResponseId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentGatewayResponseId();

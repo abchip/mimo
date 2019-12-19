@@ -124,7 +124,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Corresponding Product Id</em>' attribute.
 	 * @see #setCorrespondingProductId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_CorrespondingProductId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCorrespondingProductId();
@@ -176,7 +176,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_CreatedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -202,7 +202,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Customer Reference Id</em>' attribute.
 	 * @see #setCustomerReferenceId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_CustomerReferenceId()
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getCustomerReferenceId();
@@ -280,7 +280,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Include In Shipping</em>' attribute.
 	 * @see #setIncludeInShipping(boolean)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_IncludeInShipping()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isIncludeInShipping();
@@ -306,7 +306,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Include In Tax</em>' attribute.
 	 * @see #setIncludeInTax(boolean)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_IncludeInTax()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isIncludeInTax();
@@ -332,7 +332,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_LastModifiedByUserLogin()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -358,7 +358,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_LastModifiedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -436,7 +436,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Product Feature Id</em>' attribute.
 	 * @see #setProductFeatureId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_ProductFeatureId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductFeatureId();
@@ -462,7 +462,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Product Promo Action Seq Id</em>' attribute.
 	 * @see #setProductPromoActionSeqId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_ProductPromoActionSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductPromoActionSeqId();
@@ -514,7 +514,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Product Promo Rule Id</em>' attribute.
 	 * @see #setProductPromoRuleId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_ProductPromoRuleId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductPromoRuleId();
@@ -541,7 +541,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @see #setQuoteAdjustmentId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_QuoteAdjustmentId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getQuoteAdjustmentId();
@@ -619,7 +619,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Quote Item Seq Id</em>' attribute.
 	 * @see #setQuoteItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_QuoteItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getQuoteItemSeqId();
@@ -697,7 +697,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Source Reference Id</em>' attribute.
 	 * @see #setSourceReferenceId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_SourceReferenceId()
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getSourceReferenceId();
@@ -723,7 +723,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Tax Auth Geo Id</em>' attribute.
 	 * @see #setTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_TaxAuthGeoId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -749,7 +749,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Tax Auth Party Id</em>' attribute.
 	 * @see #setTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_TaxAuthPartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getTaxAuthPartyId();

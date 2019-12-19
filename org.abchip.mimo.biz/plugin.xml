@@ -22,6 +22,14 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated biz -->
       <package
+            uri="http://www.abchip.org/mimo/biz/accounting"
+            class="org.abchip.mimo.biz.accounting.AccountingPackage"
+            genModel="model/biz.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated biz -->
+      <package
             uri="http://www.abchip.org/mimo/biz/accounting/budget"
             class="org.abchip.mimo.biz.accounting.budget.BudgetPackage"
             genModel="model/biz.genmodel"/>
@@ -88,6 +96,14 @@
       <package
             uri="http://www.abchip.org/mimo/biz/catalina/session"
             class="org.abchip.mimo.biz.catalina.session.SessionPackage"
+            genModel="model/biz.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated biz -->
+      <package
+            uri="http://www.abchip.org/mimo/biz/common"
+            class="org.abchip.mimo.biz.common.CommonPackage"
             genModel="model/biz.genmodel"/>
    </extension>
 
@@ -432,6 +448,14 @@
       <package
             uri="http://www.abchip.org/mimo/biz/order/shoppinglist"
             class="org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage"
+            genModel="model/biz.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated biz -->
+      <package
+            uri="http://www.abchip.org/mimo/biz/party"
+            class="org.abchip.mimo.biz.party.PartyPackage"
             genModel="model/biz.genmodel"/>
    </extension>
 

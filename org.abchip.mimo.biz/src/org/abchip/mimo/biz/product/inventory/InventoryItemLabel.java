@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.inventory;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
 
 /**
@@ -83,15 +81,6 @@ public interface InventoryItemLabel extends BizEntityTyped<InventoryItemLabelTyp
 	void setInventoryItemLabelTypeId(InventoryItemLabelType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemLabelAppl' route='inventoryItemLabelId'"
-	 * @generated
-	 */
-	List<InventoryItemLabelAppl> inventoryItemLabelAppls();
-
-	/**
 	 * Returns the value of the '<em><b>Inventory Item Label Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -103,7 +92,7 @@ public interface InventoryItemLabel extends BizEntityTyped<InventoryItemLabelTyp
 	 * @see #setInventoryItemLabelId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabel_InventoryItemLabelId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getInventoryItemLabelId();

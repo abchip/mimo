@@ -10,10 +10,7 @@ package org.abchip.mimo.biz.accounting.ledger;
 import java.math.BigDecimal;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.party.party.Party;
 
@@ -57,7 +54,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Created By User Login</em>' attribute.
 	 * @see #setCreatedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_CreatedByUserLogin()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCreatedByUserLogin();
@@ -83,7 +80,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Created Date</em>' attribute.
 	 * @see #setCreatedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_CreatedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getCreatedDate();
@@ -161,7 +158,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
 	 * @see #setLastModifiedByUserLogin(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_LastModifiedByUserLogin()
-	 * @model annotation="mimo-ent-format type='id-vlong' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getLastModifiedByUserLogin();
@@ -187,7 +184,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Last Modified Date</em>' attribute.
 	 * @see #setLastModifiedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_LastModifiedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getLastModifiedDate();
@@ -291,7 +288,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Reconciled Date</em>' attribute.
 	 * @see #setReconciledDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_ReconciledDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getReconciledDate();
@@ -333,15 +330,6 @@ public interface GlReconciliation extends BizEntity {
 	void setStatusId(StatusItem value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccountTrans' route='glReconciliationId'"
-	 * @generated
-	 */
-	List<FinAccountTrans> finAccountTranss();
-
-	/**
 	 * Returns the value of the '<em><b>Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -379,7 +367,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @see #setGlReconciliationId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_GlReconciliationId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGlReconciliationId();

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.order.return_;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustmentType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -110,33 +108,6 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	void setParentTypeId(ReturnAdjustmentType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnAdjustmentType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<ReturnAdjustmentType> childReturnAdjustmentTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnAdjustment' route='returnAdjustmentTypeId'"
-	 * @generated
-	 */
-	List<ReturnAdjustment> returnAdjustments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnItemTypeMap' route='returnItemTypeId'"
-	 * @generated
-	 */
-	List<ReturnItemTypeMap> returnItemTypeMaps();
-
-	/**
 	 * Returns the value of the '<em><b>Return Adjustment Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -148,7 +119,7 @@ public interface ReturnAdjustmentType extends BizEntityType<ReturnAdjustment> {
 	 * @see #setReturnAdjustmentTypeId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnAdjustmentType_ReturnAdjustmentTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReturnAdjustmentTypeId();

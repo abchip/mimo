@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.common.enum_.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.enum_.EnumerationType;
@@ -113,30 +111,6 @@ public class EnumerationTypeImpl extends BizEntityTypeImpl<Enumeration> implemen
 	@Override
 	public void setParentTypeId(EnumerationType newParentTypeId) {
 		eSet(EnumPackage.Literals.ENUMERATION_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<EnumerationType> childEnumerationTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<Enumeration> enumerations() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

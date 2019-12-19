@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.shipment.shipment;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityTyped;
-import org.abchip.mimo.biz.product.store.ProductStoreShipmentMeth;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,15 +81,6 @@ public interface ShipmentGatewayConfig extends BizEntityTyped<ShipmentGatewayCon
 	void setShipmentGatewayConfTypeId(ShipmentGatewayConfigType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreShipmentMeth' route='shipmentGatewayConfigId'"
-	 * @generated
-	 */
-	List<ProductStoreShipmentMeth> productStoreShipmentMeths();
-
-	/**
 	 * Returns the value of the '<em><b>Shipment Gateway Config Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -104,7 +92,7 @@ public interface ShipmentGatewayConfig extends BizEntityTyped<ShipmentGatewayCon
 	 * @see #setShipmentGatewayConfigId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayConfig_ShipmentGatewayConfigId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentGatewayConfigId();

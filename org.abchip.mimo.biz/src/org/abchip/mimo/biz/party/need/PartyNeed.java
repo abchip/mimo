@@ -55,7 +55,7 @@ public interface PartyNeed extends BizEntity {
 	 * @return the value of the '<em>Datetime Recorded</em>' attribute.
 	 * @see #setDatetimeRecorded(Date)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_DatetimeRecorded()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getDatetimeRecorded();
@@ -136,7 +136,7 @@ public interface PartyNeed extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_PartyNeedId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyNeedId();
@@ -267,7 +267,7 @@ public interface PartyNeed extends BizEntity {
 	 * @return the value of the '<em>Visit Id</em>' attribute.
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_VisitId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisitId();

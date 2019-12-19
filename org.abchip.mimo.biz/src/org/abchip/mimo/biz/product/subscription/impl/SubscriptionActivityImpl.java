@@ -8,12 +8,8 @@
 package org.abchip.mimo.biz.product.subscription.impl;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.subscription.SubscriptionActivity;
-import org.abchip.mimo.biz.product.subscription.SubscriptionFulfillmentPiece;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -28,7 +24,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionActivityImpl#getSubscriptionActivityId <em>Subscription Activity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionActivityImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionActivityImpl#getDateSent <em>Date Sent</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionActivityImpl#getSubscriptionFulfillmentPieces <em>Subscription Fulfillment Pieces</em>}</li>
  * </ul>
  *
  * @generated
@@ -116,17 +111,6 @@ public class SubscriptionActivityImpl extends BizEntityImpl implements Subscript
 	@Override
 	public void setSubscriptionActivityId(String newSubscriptionActivityId) {
 		eSet(SubscriptionPackage.Literals.SUBSCRIPTION_ACTIVITY__SUBSCRIPTION_ACTIVITY_ID, newSubscriptionActivityId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<SubscriptionFulfillmentPiece> getSubscriptionFulfillmentPieces() {
-		return (List<SubscriptionFulfillmentPiece>)eGet(SubscriptionPackage.Literals.SUBSCRIPTION_ACTIVITY__SUBSCRIPTION_FULFILLMENT_PIECES, true);
 	}
 
 } //SubscriptionActivityImpl

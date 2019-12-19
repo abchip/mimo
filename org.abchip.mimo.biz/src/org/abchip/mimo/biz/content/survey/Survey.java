@@ -7,12 +7,7 @@
  */
 package org.abchip.mimo.biz.content.survey;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.content.data.DataResource;
-import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
-import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,9 +27,7 @@ import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
  *   <li>{@link org.abchip.mimo.biz.content.survey.Survey#isIsAnonymous <em>Is Anonymous</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.Survey#getResponseService <em>Response Service</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.Survey#getSubmitCaption <em>Submit Caption</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.Survey#getSurveyMultiResps <em>Survey Multi Resps</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.Survey#getSurveyName <em>Survey Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.Survey#getSurveyPages <em>Survey Pages</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey()
@@ -54,7 +47,7 @@ public interface Survey extends BizEntity {
 	 * @see #setAcroFormContentId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_AcroFormContentId()
 	 * @model annotation="mimo-ent-slot help='Points to PDF with AcroForm'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getAcroFormContentId();
@@ -80,8 +73,8 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Allow Multiple</em>' attribute.
 	 * @see #setAllowMultiple(boolean)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_AllowMultiple()
-	 * @model annotation="mimo-ent-slot help='Allow multiple responses to this survey (if Y), or just a single answer (if N)?'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='Allow multiple responses to this survey (if Y), or just a single answer (if N)?'"
 	 * @generated
 	 */
 	boolean isAllowMultiple();
@@ -107,8 +100,8 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Allow Update</em>' attribute.
 	 * @see #setAllowUpdate(boolean)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_AllowUpdate()
-	 * @model annotation="mimo-ent-slot help='Allow change to responses?'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='Allow change to responses?'"
 	 * @generated
 	 */
 	boolean isAllowUpdate();
@@ -186,8 +179,8 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Is Anonymous</em>' attribute.
 	 * @see #setIsAnonymous(boolean)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_IsAnonymous()
-	 * @model annotation="mimo-ent-slot help='Allow response to the survey without login?'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='Allow response to the survey without login?'"
 	 * @generated
 	 */
 	boolean isIsAnonymous();
@@ -213,7 +206,7 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Response Service</em>' attribute.
 	 * @see #setResponseService(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_ResponseService()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getResponseService();
@@ -239,7 +232,7 @@ public interface Survey extends BizEntity {
 	 * @return the value of the '<em>Submit Caption</em>' attribute.
 	 * @see #setSubmitCaption(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SubmitCaption()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getSubmitCaption();
@@ -266,7 +259,7 @@ public interface Survey extends BizEntity {
 	 * @see #setSurveyId(String)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SurveyId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getSurveyId();
@@ -306,75 +299,5 @@ public interface Survey extends BizEntity {
 	 * @generated
 	 */
 	void setSurveyName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Survey Multi Resps</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.content.survey.SurveyMultiResp}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Survey Multi Resps</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Multi Resps</em>' reference list.
-	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SurveyMultiResps()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SurveyMultiResp'"
-	 * @generated
-	 */
-	List<SurveyMultiResp> getSurveyMultiResps();
-
-	/**
-	 * Returns the value of the '<em><b>Survey Pages</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.content.survey.SurveyPage}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Survey Pages</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Pages</em>' reference list.
-	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SurveyPages()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SurveyPage'"
-	 * @generated
-	 */
-	List<SurveyPage> getSurveyPages();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DataResource' route='surveyId'"
-	 * @generated
-	 */
-	List<DataResource> dataResources();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreFinActSetting' route='purchaseSurveyId'"
-	 * @generated
-	 */
-	List<ProductStoreFinActSetting> productStoreFinActSettings();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreSurveyAppl' route='surveyId'"
-	 * @generated
-	 */
-	List<ProductStoreSurveyAppl> productStoreSurveyAppls();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SurveyResponse' route='surveyId'"
-	 * @generated
-	 */
-	List<SurveyResponse> surveyResponses();
 
 } // Survey

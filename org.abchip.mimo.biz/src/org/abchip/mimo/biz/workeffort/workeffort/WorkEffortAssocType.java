@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -24,7 +22,6 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#getWorkEffortAssocTypeAttrs <em>Work Effort Assoc Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocType()
@@ -69,7 +66,7 @@ public interface WorkEffortAssocType extends BizEntityType<WorkEffortAssoc> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -122,7 +119,7 @@ public interface WorkEffortAssocType extends BizEntityType<WorkEffortAssoc> {
 	 * @see #setWorkEffortAssocTypeId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocType_WorkEffortAssocTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getWorkEffortAssocTypeId();
@@ -136,31 +133,5 @@ public interface WorkEffortAssocType extends BizEntityType<WorkEffortAssoc> {
 	 * @generated
 	 */
 	void setWorkEffortAssocTypeId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Work Effort Assoc Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Work Effort Assoc Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Assoc Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocType_WorkEffortAssocTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffortAssocTypeAttr'"
-	 * @generated
-	 */
-	List<WorkEffortAssocTypeAttr> getWorkEffortAssocTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffortAssocType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<WorkEffortAssocType> childWorkEffortAssocTypes();
 
 } // WorkEffortAssocType

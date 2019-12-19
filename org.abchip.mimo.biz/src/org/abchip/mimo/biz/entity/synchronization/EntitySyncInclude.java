@@ -39,7 +39,7 @@ public interface EntitySyncInclude extends BizEntity {
 	 * @return the value of the '<em>Appl Enum Id</em>' attribute.
 	 * @see #setApplEnumId(String)
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncInclude_ApplEnumId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getApplEnumId();
@@ -67,7 +67,7 @@ public interface EntitySyncInclude extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncInclude_EntityOrPackage()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='long-varchar' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getEntityOrPackage();

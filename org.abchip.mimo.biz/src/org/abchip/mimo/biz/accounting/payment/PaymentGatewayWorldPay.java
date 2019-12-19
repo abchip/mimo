@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.accounting.payment;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.AuthMode;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +39,7 @@ import org.abchip.mimo.biz.BizEntity;
 public interface PaymentGatewayWorldPay extends BizEntity {
 	/**
 	 * Returns the value of the '<em><b>Auth Mode</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.abchip.mimo.biz.accounting.AuthMode}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Auth Mode</em>' attribute isn't clear,
@@ -45,27 +47,28 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Auth Mode</em>' attribute.
-	 * @see #setAuthMode(char)
+	 * @see org.abchip.mimo.biz.accounting.AuthMode
+	 * @see #setAuthMode(AuthMode)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_AuthMode()
-	 * @model annotation="mimo-ent-slot help='Authorization Mode (A: Full-Auth / E: Pre-Auth)'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='Authorization Mode (A: Full-Auth / E: Pre-Auth)'"
 	 * @generated
 	 */
-	char getAuthMode();
+	AuthMode getAuthMode();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayWorldPay#getAuthMode <em>Auth Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Auth Mode</em>' attribute.
+	 * @see org.abchip.mimo.biz.accounting.AuthMode
 	 * @see #getAuthMode()
 	 * @generated
 	 */
-	void setAuthMode(char value);
+	void setAuthMode(AuthMode value);
 
 	/**
 	 * Returns the value of the '<em><b>Fix Contact</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fix Contact</em>' attribute isn't clear,
@@ -75,9 +78,8 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @return the value of the '<em>Fix Contact</em>' attribute.
 	 * @see #setFixContact(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_FixContact()
-	 * @model default="true" required="true"
+	 * @model required="true"
 	 *        annotation="mimo-ent-slot help='Will displace contact info on WorldPay in non-editable format'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isFixContact();
@@ -103,8 +105,8 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @return the value of the '<em>Hide Contact</em>' attribute.
 	 * @see #setHideContact(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_HideContact()
-	 * @model annotation="mimo-ent-slot help='Will hide the contact info completely'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='Will hide the contact info completely'"
 	 * @generated
 	 */
 	boolean isHideContact();
@@ -130,8 +132,8 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @return the value of the '<em>Hide Currency</em>' attribute.
 	 * @see #setHideCurrency(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_HideCurrency()
-	 * @model annotation="mimo-ent-slot help='This causes the currency drop down to be no hidden, so fixing the currency that the shopper must value purchase in'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='This causes the currency drop down to be no hidden, so fixing the currency that the shopper must value purchase in'"
 	 * @generated
 	 */
 	boolean isHideCurrency();
@@ -158,7 +160,7 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @see #setInstId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_InstId()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='Worldpay instance Id'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getInstId();
@@ -185,7 +187,7 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @see #setLangId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_LangId()
 	 * @model annotation="mimo-ent-slot help='The shopper\'s language choice, as a 2-character ISO 639 code, with optional regionalisation using 2-character country code separated by hyphen'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getLangId();
@@ -211,8 +213,8 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @return the value of the '<em>No Language Menu</em>' attribute.
 	 * @see #setNoLanguageMenu(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_NoLanguageMenu()
-	 * @model annotation="mimo-ent-slot help='This suppresses the display of the language menu if noLanguageMenu no you have a choice of languages enabled for your value installation'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='This suppresses the display of the language menu if noLanguageMenu no you have a choice of languages enabled for your value installation'"
 	 * @generated
 	 */
 	boolean isNoLanguageMenu();
@@ -239,7 +241,7 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @see #setPaymentGatewayConfigId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_PaymentGatewayConfigId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentGatewayConfigId();
@@ -266,7 +268,7 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @see #setRedirectUrl(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_RedirectUrl()
 	 * @model annotation="mimo-ent-slot help='Redirect URL'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getRedirectUrl();
@@ -293,7 +295,7 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @see #setTestMode(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_TestMode()
 	 * @model annotation="mimo-ent-slot help='Test Mode (100: approve / 101: cancelled / 0: Live Mode (no test)'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getTestMode();
@@ -319,8 +321,8 @@ public interface PaymentGatewayWorldPay extends BizEntity {
 	 * @return the value of the '<em>With Delivery</em>' attribute.
 	 * @see #setWithDelivery(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayWorldPay_WithDelivery()
-	 * @model annotation="mimo-ent-slot help='Displays input fields for delivery address and withDelivery no mandate that they be filled in'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='Displays input fields for delivery address and withDelivery no mandate that they be filled in'"
 	 * @generated
 	 */
 	boolean isWithDelivery();

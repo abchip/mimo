@@ -7,14 +7,11 @@
  */
 package org.abchip.mimo.biz.marketing.contact.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.contact.ContactList;
 import org.abchip.mimo.biz.marketing.contact.ContactListType;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
-import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
@@ -412,18 +409,6 @@ public class ContactListImpl extends BizEntityImpl implements ContactList {
 	@Override
 	public void setVerifyEmailWebSiteId(String newVerifyEmailWebSiteId) {
 		eSet(ContactPackage.Literals.CONTACT_LIST__VERIFY_EMAIL_WEB_SITE_ID, newVerifyEmailWebSiteId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<CommunicationEvent> communicationEvents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ContactListImpl

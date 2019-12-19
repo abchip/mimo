@@ -54,7 +54,7 @@ public interface ReorderGuideline extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getReorderGuideline_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -133,7 +133,7 @@ public interface ReorderGuideline extends BizEntity {
 	 * @see #setReorderGuidelineId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getReorderGuideline_ReorderGuidelineId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getReorderGuidelineId();
@@ -211,7 +211,7 @@ public interface ReorderGuideline extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' attribute.
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getReorderGuideline_RoleTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRoleTypeId();
@@ -237,7 +237,7 @@ public interface ReorderGuideline extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getReorderGuideline_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

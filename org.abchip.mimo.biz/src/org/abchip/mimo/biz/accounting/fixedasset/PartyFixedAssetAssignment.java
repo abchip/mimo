@@ -49,7 +49,7 @@ public interface PartyFixedAssetAssignment extends BizEntity {
 	 * @return the value of the '<em>Allocated Date</em>' attribute.
 	 * @see #setAllocatedDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getPartyFixedAssetAssignment_AllocatedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getAllocatedDate();
@@ -103,7 +103,6 @@ public interface PartyFixedAssetAssignment extends BizEntity {
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getPartyFixedAssetAssignment_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -209,7 +208,7 @@ public interface PartyFixedAssetAssignment extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getPartyFixedAssetAssignment_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

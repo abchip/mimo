@@ -7,29 +7,12 @@
  */
 package org.abchip.mimo.biz.product.store;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
-import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
-import org.abchip.mimo.biz.order.order.OrderHeader;
-import org.abchip.mimo.biz.order.quote.Quote;
-import org.abchip.mimo.biz.order.request.CustRequest;
-import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.party.party.Party;
-import org.abchip.mimo.biz.party.party.PartyProfileDefault;
-import org.abchip.mimo.biz.passport.GitHubUser;
-import org.abchip.mimo.biz.passport.GoogleUser;
-import org.abchip.mimo.biz.passport.LinkedInUser;
-import org.abchip.mimo.biz.passport.OAuth2GitHub;
-import org.abchip.mimo.biz.passport.OAuth2Google;
-import org.abchip.mimo.biz.passport.OAuth2LinkedIn;
 import org.abchip.mimo.biz.product.facility.Facility;
-import org.abchip.mimo.biz.product.product.ProductReview;
-import org.abchip.mimo.biz.webapp.website.WebSite;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,21 +66,16 @@ import org.abchip.mimo.biz.webapp.website.WebSite;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getItemDeclinedStatus <em>Item Declined Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isManagedByLot <em>Managed By Lot</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isManualAuthIsCapture <em>Manual Auth Is Capture</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2GitHubs <em>OAuth2 Git Hubs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2Googles <em>OAuth2 Googles</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2LinkedIns <em>OAuth2 Linked Ins</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOldHeaderLogo <em>Old Header Logo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOldHeaderMiddleBackground <em>Old Header Middle Background</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOldHeaderRightBackground <em>Old Header Right Background</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOldStyleSheet <em>Old Style Sheet</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isOneInventoryFacility <em>One Inventory Facility</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOrderNumberPrefix <em>Order Number Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getPayToPartyId <em>Pay To Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getPrimaryStoreGroupId <em>Primary Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getProductStoreEmailSettings <em>Product Store Email Settings</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getProductStoreFinActSettings <em>Product Store Fin Act Settings</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isProrateShipping <em>Prorate Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isProrateTaxes <em>Prorate Taxes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isReqReturnInventoryReceive <em>Req Return Inventory Receive</em>}</li>
@@ -144,7 +122,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Auth Declined Message</em>' attribute.
 	 * @see #setAuthDeclinedMessage(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AuthDeclinedMessage()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAuthDeclinedMessage();
@@ -170,7 +148,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Auth Error Message</em>' attribute.
 	 * @see #setAuthErrorMessage(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AuthErrorMessage()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAuthErrorMessage();
@@ -196,7 +174,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Auth Fraud Message</em>' attribute.
 	 * @see #setAuthFraudMessage(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AuthFraudMessage()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAuthFraudMessage();
@@ -213,6 +191,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Auto Approve Invoice</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Auto Approve Invoice</em>' attribute isn't clear,
@@ -222,8 +201,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Auto Approve Invoice</em>' attribute.
 	 * @see #setAutoApproveInvoice(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AutoApproveInvoice()
-	 * @model annotation="mimo-ent-slot help='If Y or empty, sales invoices created from orders will be marked ready.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='If Y or empty, sales invoices created from orders will be marked ready.'"
 	 * @generated
 	 */
 	boolean isAutoApproveInvoice();
@@ -240,6 +219,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Auto Approve Order</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Auto Approve Order</em>' attribute isn't clear,
@@ -249,8 +229,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Auto Approve Order</em>' attribute.
 	 * @see #setAutoApproveOrder(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AutoApproveOrder()
-	 * @model annotation="mimo-ent-slot help='If N, orders will not be automatically approved when payment is authorized.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='If N, orders will not be automatically approved when payment is authorized.'"
 	 * @generated
 	 */
 	boolean isAutoApproveOrder();
@@ -276,7 +256,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Auto Approve Reviews</em>' attribute.
 	 * @see #setAutoApproveReviews(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AutoApproveReviews()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isAutoApproveReviews();
@@ -293,6 +273,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Auto Invoice Digital Items</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Auto Invoice Digital Items</em>' attribute isn't clear,
@@ -302,8 +283,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Auto Invoice Digital Items</em>' attribute.
 	 * @see #setAutoInvoiceDigitalItems(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AutoInvoiceDigitalItems()
-	 * @model annotation="mimo-ent-slot help='Default Y. Invoice digital items when order is placed rather than waiting for completing order items (though shipment/fulfillment).'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='Default Y. Invoice digital items when order is placed rather than waiting for completing order items (though shipment/fulfillment).'"
 	 * @generated
 	 */
 	boolean isAutoInvoiceDigitalItems();
@@ -320,6 +301,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Auto Order Cc Try Exp</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Auto Order Cc Try Exp</em>' attribute isn't clear,
@@ -329,8 +311,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Auto Order Cc Try Exp</em>' attribute.
 	 * @see #setAutoOrderCcTryExp(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AutoOrderCcTryExp()
-	 * @model annotation="mimo-ent-slot help='For auto-orders try other Credit Card expiration dates (if date is wrong or general failure where type not known)?'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='For auto-orders try other Credit Card expiration dates (if date is wrong or general failure where type not known)?'"
 	 * @generated
 	 */
 	boolean isAutoOrderCcTryExp();
@@ -357,7 +339,7 @@ public interface ProductStore extends BizEntity {
 	 * @see #setAutoOrderCcTryLaterMax(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AutoOrderCcTryLaterMax()
 	 * @model annotation="mimo-ent-slot help='For auto-orders if Credit Cards fails for NSF try again how many times?'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getAutoOrderCcTryLaterMax();
@@ -374,6 +356,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Auto Order Cc Try Later Nsf</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Auto Order Cc Try Later Nsf</em>' attribute isn't clear,
@@ -383,8 +366,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Auto Order Cc Try Later Nsf</em>' attribute.
 	 * @see #setAutoOrderCcTryLaterNsf(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AutoOrderCcTryLaterNsf()
-	 * @model annotation="mimo-ent-slot help='For auto-orders if Credit Cards fails for NSF (Not Sufficient Funds) try again later?'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='For auto-orders if Credit Cards fails for NSF (Not Sufficient Funds) try again later?'"
 	 * @generated
 	 */
 	boolean isAutoOrderCcTryLaterNsf();
@@ -401,6 +384,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Auto Order Cc Try Other Cards</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Auto Order Cc Try Other Cards</em>' attribute isn't clear,
@@ -410,8 +394,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Auto Order Cc Try Other Cards</em>' attribute.
 	 * @see #setAutoOrderCcTryOtherCards(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AutoOrderCcTryOtherCards()
-	 * @model annotation="mimo-ent-slot help='For auto-orders try other Credit Cards for the customer?'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='For auto-orders try other Credit Cards for the customer?'"
 	 * @generated
 	 */
 	boolean isAutoOrderCcTryOtherCards();
@@ -437,7 +421,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Auto Save Cart</em>' attribute.
 	 * @see #setAutoSaveCart(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AutoSaveCart()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isAutoSaveCart();
@@ -463,8 +447,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Balance Res On Order Creation</em>' attribute.
 	 * @see #setBalanceResOnOrderCreation(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_BalanceResOnOrderCreation()
-	 * @model annotation="mimo-ent-slot help='If set to Y, when a new sales order is created with backordered items, then reservations on the facility/product are reassigned according to the priority given by the shipBeforeDate field.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='If set to Y, when a new sales order is created with backordered items, then reservations on the facility/product are reassigned according to the priority given by the shipBeforeDate field.'"
 	 * @generated
 	 */
 	boolean isBalanceResOnOrderCreation();
@@ -490,7 +474,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Check Gc Balance</em>' attribute.
 	 * @see #setCheckGcBalance(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_CheckGcBalance()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isCheckGcBalance();
@@ -507,6 +491,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Check Inventory</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Check Inventory</em>' attribute isn't clear,
@@ -516,7 +501,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Check Inventory</em>' attribute.
 	 * @see #setCheckInventory(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_CheckInventory()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isCheckInventory();
@@ -568,7 +553,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Days To Cancel Non Pay</em>' attribute.
 	 * @see #setDaysToCancelNonPay(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_DaysToCancelNonPay()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getDaysToCancelNonPay();
@@ -620,7 +605,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Default Locale String</em>' attribute.
 	 * @see #setDefaultLocaleString(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_DefaultLocaleString()
-	 * @model annotation="mimo-ent-format type='very-short' length='10'"
+	 * @model annotation="mimo-ent-format length='10'"
 	 * @generated
 	 */
 	String getDefaultLocaleString();
@@ -646,7 +631,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Default Password</em>' attribute.
 	 * @see #setDefaultPassword(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_DefaultPassword()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getDefaultPassword();
@@ -698,7 +683,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Default Time Zone String</em>' attribute.
 	 * @see #setDefaultTimeZoneString(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_DefaultTimeZoneString()
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getDefaultTimeZoneString();
@@ -724,7 +709,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Dig Prod Upload Category Id</em>' attribute.
 	 * @see #setDigProdUploadCategoryId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_DigProdUploadCategoryId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDigProdUploadCategoryId();
@@ -750,8 +735,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Enable Auto Suggestion List</em>' attribute.
 	 * @see #setEnableAutoSuggestionList(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_EnableAutoSuggestionList()
-	 * @model annotation="mimo-ent-slot help='The auto-suggestion list is a special ShoppingList that the addSuggestionsToShoppingList service will maintain for cross-sells of ordered items.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='The auto-suggestion list is a special ShoppingList that the addSuggestionsToShoppingList service will maintain for cross-sells of ordered items.'"
 	 * @generated
 	 */
 	boolean isEnableAutoSuggestionList();
@@ -777,7 +762,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Enable Dig Prod Upload</em>' attribute.
 	 * @see #setEnableDigProdUpload(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_EnableDigProdUpload()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isEnableDigProdUpload();
@@ -803,7 +788,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Explode Order Items</em>' attribute.
 	 * @see #setExplodeOrderItems(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ExplodeOrderItems()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isExplodeOrderItems();
@@ -820,6 +805,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Is Demo Store</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Demo Store</em>' attribute isn't clear,
@@ -829,7 +815,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Is Demo Store</em>' attribute.
 	 * @see #setIsDemoStore(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_IsDemoStore()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isIsDemoStore();
@@ -855,8 +841,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Is Immediately Fulfilled</em>' attribute.
 	 * @see #setIsImmediatelyFulfilled(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_IsImmediatelyFulfilled()
-	 * @model annotation="mimo-ent-slot help='If immediately fulfilled (for physical stores, etc): don\'t send email notices, don\'t reserve inventory, and IFF inventory info isn\'t found on the server then don\'t issue inventory right away'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='If immediately fulfilled (for physical stores, etc): don\'t send email notices, don\'t reserve inventory, and IFF inventory info isn\'t found on the server then don\'t issue inventory right away'"
 	 * @generated
 	 */
 	boolean isIsImmediatelyFulfilled();
@@ -882,8 +868,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Managed By Lot</em>' attribute.
 	 * @see #setManagedByLot(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ManagedByLot()
-	 * @model annotation="mimo-ent-slot help='If Y, the preparator can choose the InventoryItem by this lotId when he makes the picklist.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='If Y, the preparator can choose the InventoryItem by this lotId when he makes the picklist.'"
 	 * @generated
 	 */
 	boolean isManagedByLot();
@@ -909,7 +895,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Manual Auth Is Capture</em>' attribute.
 	 * @see #setManualAuthIsCapture(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ManualAuthIsCapture()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isManualAuthIsCapture();
@@ -1222,8 +1208,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>One Inventory Facility</em>' attribute.
 	 * @see #setOneInventoryFacility(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OneInventoryFacility()
-	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true"
 	 * @generated
 	 */
 	boolean isOneInventoryFacility();
@@ -1247,23 +1232,22 @@ public interface ProductStore extends BizEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Order Decimal Quantity</em>' attribute.
-	 * @see #setOrderDecimalQuantity(char)
+	 * @see #setOrderDecimalQuantity(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OrderDecimalQuantity()
 	 * @model annotation="mimo-ent-slot help='use to indicate if decimal quantity can be ordered for this producStore. Default value is Y'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
-	char getOrderDecimalQuantity();
+	boolean isOrderDecimalQuantity();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getOrderDecimalQuantity <em>Order Decimal Quantity</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#isOrderDecimalQuantity <em>Order Decimal Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Order Decimal Quantity</em>' attribute.
-	 * @see #getOrderDecimalQuantity()
+	 * @see #isOrderDecimalQuantity()
 	 * @generated
 	 */
-	void setOrderDecimalQuantity(char value);
+	void setOrderDecimalQuantity(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Number Prefix</b></em>' attribute.
@@ -1276,7 +1260,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Order Number Prefix</em>' attribute.
 	 * @see #setOrderNumberPrefix(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OrderNumberPrefix()
-	 * @model annotation="mimo-ent-format type='id-long' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getOrderNumberPrefix();
@@ -1303,7 +1287,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setReqReturnInventoryReceive(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ReqReturnInventoryReceive()
 	 * @model annotation="mimo-ent-slot help='Default N. This is the default value for the ReturnHeader.needsInventoryReceive field. If set to Y return will automatically go to the Received status when Accepted instead of waiting for actual receipt of the return.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isReqReturnInventoryReceive();
@@ -1320,6 +1303,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Req Ship Addr For Dig Items</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Req Ship Addr For Dig Items</em>' attribute isn't clear,
@@ -1329,8 +1313,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Req Ship Addr For Dig Items</em>' attribute.
 	 * @see #setReqShipAddrForDigItems(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ReqShipAddrForDigItems()
-	 * @model annotation="mimo-ent-slot help='Default Y. Require Shipping Address for Digital Items? Note this only has an effect if there are ONLY digital goods in the cart.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='Default Y. Require Shipping Address for Digital Items? Note this only has an effect if there are ONLY digital goods in the cart.'"
 	 * @generated
 	 */
 	boolean isReqShipAddrForDigItems();
@@ -1356,7 +1340,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Require Customer Role</em>' attribute.
 	 * @see #setRequireCustomerRole(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_RequireCustomerRole()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isRequireCustomerRole();
@@ -1382,7 +1366,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Require Inventory</em>' attribute.
 	 * @see #setRequireInventory(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_RequireInventory()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isRequireInventory();
@@ -1399,6 +1383,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Reserve Inventory</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Reserve Inventory</em>' attribute isn't clear,
@@ -1408,7 +1393,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Reserve Inventory</em>' attribute.
 	 * @see #setReserveInventory(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ReserveInventory()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isReserveInventory();
@@ -1425,6 +1410,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Retry Failed Auths</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Retry Failed Auths</em>' attribute isn't clear,
@@ -1434,7 +1420,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Retry Failed Auths</em>' attribute.
 	 * @see #setRetryFailedAuths(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_RetryFailedAuths()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isRetryFailedAuths();
@@ -1460,7 +1446,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Select Payment Type Per Item</em>' attribute.
 	 * @see #setSelectPaymentTypePerItem(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_SelectPaymentTypePerItem()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isSelectPaymentTypePerItem();
@@ -1487,7 +1473,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setSetOwnerUponIssuance(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_SetOwnerUponIssuance()
 	 * @model annotation="mimo-ent-slot help='If Y or empty, set the inventory item owner upon issuance.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isSetOwnerUponIssuance();
@@ -1504,6 +1489,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Ship If Capture Fails</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ship If Capture Fails</em>' attribute isn't clear,
@@ -1513,8 +1499,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Ship If Capture Fails</em>' attribute.
 	 * @see #setShipIfCaptureFails(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ShipIfCaptureFails()
-	 * @model annotation="mimo-ent-slot help='If N, the captureOrderPayments will cause a service error if credit card capture fails.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='If N, the captureOrderPayments will cause a service error if credit card capture fails.'"
 	 * @generated
 	 */
 	boolean isShipIfCaptureFails();
@@ -1531,6 +1517,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Show Checkout Gift Options</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Show Checkout Gift Options</em>' attribute isn't clear,
@@ -1540,7 +1527,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Show Checkout Gift Options</em>' attribute.
 	 * @see #setShowCheckoutGiftOptions(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ShowCheckoutGiftOptions()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isShowCheckoutGiftOptions();
@@ -1566,8 +1553,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Show Out Of Stock Products</em>' attribute.
 	 * @see #setShowOutOfStockProducts(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ShowOutOfStockProducts()
-	 * @model annotation="mimo-ent-slot help='Default Y. If N then out of stock products will not be displayed on site'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='Default Y. If N then out of stock products will not be displayed on site'"
 	 * @generated
 	 */
 	boolean isShowOutOfStockProducts();
@@ -1593,7 +1580,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Show Prices With Vat Tax</em>' attribute.
 	 * @see #setShowPricesWithVatTax(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ShowPricesWithVatTax()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isShowPricesWithVatTax();
@@ -1610,6 +1597,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Show Tax Is Exempt</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Show Tax Is Exempt</em>' attribute isn't clear,
@@ -1619,8 +1607,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Show Tax Is Exempt</em>' attribute.
 	 * @see #setShowTaxIsExempt(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ShowTaxIsExempt()
-	 * @model annotation="mimo-ent-slot help='default Y; if set to N do not show isExempt checkbox for PartyTaxAuthInfo, always force to N'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
+	 *        annotation="mimo-ent-slot help='default Y; if set to N do not show isExempt checkbox for PartyTaxAuthInfo, always force to N'"
 	 * @generated
 	 */
 	boolean isShowTaxIsExempt();
@@ -1646,8 +1634,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Split Pay Pref Per Shp Grp</em>' attribute.
 	 * @see #setSplitPayPrefPerShpGrp(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_SplitPayPrefPerShpGrp()
-	 * @model annotation="mimo-ent-slot help='Default N. If Y then before the order is stored the OrderPaymentPreference record will be split, one for each OrderItemShipGroup.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='Default N. If Y then before the order is stored the OrderPaymentPreference record will be split, one for each OrderItemShipGroup.'"
 	 * @generated
 	 */
 	boolean isSplitPayPrefPerShpGrp();
@@ -1780,7 +1768,7 @@ public interface ProductStore extends BizEntity {
 	 * @see #setStoreCreditValidDays(long)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_StoreCreditValidDays()
 	 * @model annotation="mimo-ent-slot help='How many days that store credit is valid for. Null value implies no expiration.'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getStoreCreditValidDays();
@@ -1884,7 +1872,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Use Primary Email Username</em>' attribute.
 	 * @see #setUsePrimaryEmailUsername(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_UsePrimaryEmailUsername()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isUsePrimaryEmailUsername();
@@ -1910,7 +1898,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Vat Tax Auth Geo Id</em>' attribute.
 	 * @see #setVatTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_VatTaxAuthGeoId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVatTaxAuthGeoId();
@@ -1936,7 +1924,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Vat Tax Auth Party Id</em>' attribute.
 	 * @see #setVatTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_VatTaxAuthPartyId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVatTaxAuthPartyId();
@@ -1962,7 +1950,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>View Cart On Add</em>' attribute.
 	 * @see #setViewCartOnAdd(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ViewCartOnAdd()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isViewCartOnAdd();
@@ -1988,7 +1976,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Visual Theme Id</em>' attribute.
 	 * @see #setVisualThemeId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_VisualThemeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisualThemeId();
@@ -2004,91 +1992,6 @@ public interface ProductStore extends BizEntity {
 	void setVisualThemeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>OAuth2 Git Hubs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.passport.OAuth2GitHub}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>OAuth2 Git Hubs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>OAuth2 Git Hubs</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OAuth2GitHubs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OAuth2GitHub'"
-	 * @generated
-	 */
-	List<OAuth2GitHub> getOAuth2GitHubs();
-
-	/**
-	 * Returns the value of the '<em><b>OAuth2 Googles</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.passport.OAuth2Google}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>OAuth2 Googles</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>OAuth2 Googles</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OAuth2Googles()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OAuth2Google'"
-	 * @generated
-	 */
-	List<OAuth2Google> getOAuth2Googles();
-
-	/**
-	 * Returns the value of the '<em><b>OAuth2 Linked Ins</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.passport.OAuth2LinkedIn}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>OAuth2 Linked Ins</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>OAuth2 Linked Ins</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OAuth2LinkedIns()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OAuth2LinkedIn'"
-	 * @generated
-	 */
-	List<OAuth2LinkedIn> getOAuth2LinkedIns();
-
-	/**
-	 * Returns the value of the '<em><b>Product Store Email Settings</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Product Store Email Settings</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Email Settings</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProductStoreEmailSettings()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreEmailSetting'"
-	 * @generated
-	 */
-	List<ProductStoreEmailSetting> getProductStoreEmailSettings();
-
-	/**
-	 * Returns the value of the '<em><b>Product Store Fin Act Settings</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Product Store Fin Act Settings</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Fin Act Settings</em>' reference list.
-	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProductStoreFinActSettings()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreFinActSetting'"
-	 * @generated
-	 */
-	List<ProductStoreFinActSetting> getProductStoreFinActSettings();
-
-	/**
 	 * Returns the value of the '<em><b>Prorate Shipping</b></em>' attribute.
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
@@ -2101,7 +2004,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setProrateShipping(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProrateShipping()
 	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isProrateShipping();
@@ -2129,7 +2031,6 @@ public interface ProductStore extends BizEntity {
 	 * @see #setProrateTaxes(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProrateTaxes()
 	 * @model default="true" required="true"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isProrateTaxes();
@@ -2143,123 +2044,6 @@ public interface ProductStore extends BizEntity {
 	 * @generated
 	 */
 	void setProrateTaxes(boolean value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustRequest' route='productStoreId'"
-	 * @generated
-	 */
-	List<CustRequest> custRequests();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GitHubUser' route='productStoreId'"
-	 * @generated
-	 */
-	List<GitHubUser> gitHubUsers();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GoogleUser' route='productStoreId'"
-	 * @generated
-	 */
-	List<GoogleUser> googleUsers();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='LinkedInUser' route='productStoreId'"
-	 * @generated
-	 */
-	List<LinkedInUser> linkedInUsers();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader' route='productStoreId'"
-	 * @generated
-	 */
-	List<OrderHeader> orderHeaders();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyProfileDefault' route='productStoreId'"
-	 * @generated
-	 */
-	List<PartyProfileDefault> partyProfileDefaults();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductReview' route='productStoreId'"
-	 * @generated
-	 */
-	List<ProductReview> productReviews();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreSurveyAppl' route='productStoreId'"
-	 * @generated
-	 */
-	List<ProductStoreSurveyAppl> productStoreSurveyAppls();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Quote' route='productStoreId'"
-	 * @generated
-	 */
-	List<Quote> quotes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SegmentGroup' route='productStoreId'"
-	 * @generated
-	 */
-	List<SegmentGroup> segmentGroups();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShoppingList' route='productStoreId'"
-	 * @generated
-	 */
-	List<ShoppingList> shoppingLists();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='TaxAuthorityRateProduct' route='productStoreId'"
-	 * @generated
-	 */
-	List<TaxAuthorityRateProduct> taxAuthorityRateProducts();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WebSite' route='productStoreId'"
-	 * @generated
-	 */
-	List<WebSite> webSites();
 
 	/**
 	 * Returns the value of the '<em><b>Primary Store Group Id</b></em>' reference.
@@ -2301,7 +2085,6 @@ public interface ProductStore extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProdSearchExcludeVariants()
 	 * @model default="true" required="true"
 	 *        annotation="mimo-ent-slot help='default Y; if set to Y an additional constraint will of isVariant!=Y will be added to all product searches for the store'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
 	 * @generated
 	 */
 	boolean isProdSearchExcludeVariants();
@@ -2354,7 +2137,7 @@ public interface ProductStore extends BizEntity {
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProductStoreId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductStoreId();
@@ -2380,8 +2163,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Add To Cart Remove Incompat</em>' attribute.
 	 * @see #setAddToCartRemoveIncompat(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AddToCartRemoveIncompat()
-	 * @model annotation="mimo-ent-slot help='Default N. If Y then on add to cart remove all products in cart with a ProductAssoc record related to or from the product and with the PRODUCT_INCOMPATABLE type.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='Default N. If Y then on add to cart remove all products in cart with a ProductAssoc record related to or from the product and with the PRODUCT_INCOMPATABLE type.'"
 	 * @generated
 	 */
 	boolean isAddToCartRemoveIncompat();
@@ -2407,8 +2190,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Add To Cart Replace Upsell</em>' attribute.
 	 * @see #setAddToCartReplaceUpsell(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AddToCartReplaceUpsell()
-	 * @model annotation="mimo-ent-slot help='Default N. If Y then on add to cart remove all products in cart with a ProductAssoc record related from the product and with the PRODUCT_UPGRADE type.'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='Default N. If Y then on add to cart remove all products in cart with a ProductAssoc record related from the product and with the PRODUCT_UPGRADE type.'"
 	 * @generated
 	 */
 	boolean isAddToCartReplaceUpsell();
@@ -2434,8 +2217,8 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Allow Comment</em>' attribute.
 	 * @see #setAllowComment(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AllowComment()
-	 * @model annotation="mimo-ent-slot help='Allow comments for order line items per store'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='Allow comments for order line items per store'"
 	 * @generated
 	 */
 	boolean isAllowComment();
@@ -2452,6 +2235,7 @@ public interface ProductStore extends BizEntity {
 
 	/**
 	 * Returns the value of the '<em><b>Allow Password</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Allow Password</em>' attribute isn't clear,
@@ -2461,7 +2245,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Allow Password</em>' attribute.
 	 * @see #setAllowPassword(boolean)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_AllowPassword()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isAllowPassword();

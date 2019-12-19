@@ -57,7 +57,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setAccessLicenseNumber(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_AccessLicenseNumber()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='UPS XPCI Access License Number'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccessLicenseNumber();
@@ -84,7 +84,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setAccessPassword(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_AccessPassword()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='UPS XPCI Access Password'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccessPassword();
@@ -111,7 +111,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setAccessUserId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_AccessUserId()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='UPS XPCI Access User ID'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccessUserId();
@@ -138,7 +138,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setBillShipperAccountNumber(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_BillShipperAccountNumber()
 	 * @model annotation="mimo-ent-slot help='UPS Bill Shipper Account Number'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getBillShipperAccountNumber();
@@ -165,7 +165,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setCodAllowCod(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_CodAllowCod()
 	 * @model annotation="mimo-ent-slot help='All shipment package items are from orders which have been fully paid via EXT_COD'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCodAllowCod();
@@ -192,7 +192,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setCodFundsCode(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_CodFundsCode()
 	 * @model annotation="mimo-ent-slot help='The code that indicates the type of funds used for the COD payment'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getCodFundsCode();
@@ -246,7 +246,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setCodSurchargeApplyToPackage(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_CodSurchargeApplyToPackage()
 	 * @model annotation="mimo-ent-slot help='Surcharge amount will be applied to each shipment package'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getCodSurchargeApplyToPackage();
@@ -273,7 +273,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setCodSurchargeCurrencyUomId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_CodSurchargeCurrencyUomId()
 	 * @model annotation="mimo-ent-slot help='Surcharge currency'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getCodSurchargeCurrencyUomId();
@@ -300,7 +300,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setConnectTimeout(long)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_ConnectTimeout()
 	 * @model annotation="mimo-ent-slot help='Timeout in seconds'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getConnectTimeout();
@@ -327,7 +327,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setConnectUrl(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_ConnectUrl()
 	 * @model annotation="mimo-ent-slot help='UPS Connection URL'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getConnectUrl();
@@ -354,7 +354,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setCustomerClassification(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_CustomerClassification()
 	 * @model annotation="mimo-ent-slot help='Customer Classification'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getCustomerClassification();
@@ -381,7 +381,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setDefaultReturnLabelMemo(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_DefaultReturnLabelMemo()
 	 * @model annotation="mimo-ent-slot help='Return label email memo'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getDefaultReturnLabelMemo();
@@ -408,7 +408,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setDefaultReturnLabelSubject(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_DefaultReturnLabelSubject()
 	 * @model annotation="mimo-ent-slot help='Return label subject'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getDefaultReturnLabelSubject();
@@ -489,7 +489,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setSaveCertInfo(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_SaveCertInfo()
 	 * @model annotation="mimo-ent-slot help='Setting to save files needed for UPS certification (true|false)'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getSaveCertInfo();
@@ -516,7 +516,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setSaveCertPath(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_SaveCertPath()
 	 * @model annotation="mimo-ent-slot help='UPS file certificate path'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getSaveCertPath();
@@ -543,7 +543,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setShipperNumber(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_ShipperNumber()
 	 * @model annotation="mimo-ent-slot help='UPS Shipper Number'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getShipperNumber();
@@ -570,7 +570,7 @@ public interface ShipmentGatewayUps extends ShipmentGatewayConfig {
 	 * @see #setShipperPickupType(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayUps_ShipperPickupType()
 	 * @model annotation="mimo-ent-slot help='Shipper Default Pickup Type'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getShipperPickupType();

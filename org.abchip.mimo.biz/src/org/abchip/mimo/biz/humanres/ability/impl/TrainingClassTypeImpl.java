@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.humanres.ability.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PersonTraining;
 import org.abchip.mimo.biz.humanres.ability.TrainingClassType;
@@ -114,18 +112,6 @@ public class TrainingClassTypeImpl extends BizEntityTypeImpl<PersonTraining> imp
 	@Override
 	public void setParentTypeId(TrainingClassType newParentTypeId) {
 		eSet(AbilityPackage.Literals.TRAINING_CLASS_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<TrainingClassType> childTrainingClassTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

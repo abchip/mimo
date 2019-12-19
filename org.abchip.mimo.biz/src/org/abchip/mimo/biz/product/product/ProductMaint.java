@@ -157,7 +157,7 @@ public interface ProductMaint extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_ProductMaintSeqId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProductMaintSeqId();
@@ -184,7 +184,7 @@ public interface ProductMaint extends BizEntity {
 	 * @see #setRepeatCount(long)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_RepeatCount()
 	 * @model annotation="mimo-ent-slot help='If 0 or null means no limit to repeat count; can be used with multiple ProductMaint records for a single ProductMaintType in cases where maintenance intervals are not evenly distributed, or only need to be done once like a break-in period'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getRepeatCount();

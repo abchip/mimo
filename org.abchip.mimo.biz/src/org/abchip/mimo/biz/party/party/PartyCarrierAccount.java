@@ -43,7 +43,7 @@ public interface PartyCarrierAccount extends BizEntity {
 	 * @return the value of the '<em>Account Number</em>' attribute.
 	 * @see #setAccountNumber(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyCarrierAccount_AccountNumber()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getAccountNumber();
@@ -71,7 +71,6 @@ public interface PartyCarrierAccount extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyCarrierAccount_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -97,7 +96,7 @@ public interface PartyCarrierAccount extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyCarrierAccount_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

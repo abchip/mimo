@@ -8,11 +8,8 @@
 package org.abchip.mimo.biz.entity.test.impl;
 
 import java.util.Date;
-import java.util.List;
-
 import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.Testing;
-import org.abchip.mimo.biz.entity.test.TestingItem;
 import org.abchip.mimo.biz.entity.test.TestingType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -29,7 +26,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getTestingDate <em>Testing Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getTestingItems <em>Testing Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getTestingName <em>Testing Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getTestingSize <em>Testing Size</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingImpl#getTestingTypeId <em>Testing Type Id</em>}</li>
@@ -199,17 +195,6 @@ public class TestingImpl extends BizEntityImpl implements Testing {
 	@Override
 	public void setTestingTypeId(TestingType newTestingTypeId) {
 		eSet(TestPackage.Literals.TESTING__TESTING_TYPE_ID, newTestingTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<TestingItem> getTestingItems() {
-		return (List<TestingItem>)eGet(TestPackage.Literals.TESTING__TESTING_ITEMS, true);
 	}
 
 } //TestingImpl

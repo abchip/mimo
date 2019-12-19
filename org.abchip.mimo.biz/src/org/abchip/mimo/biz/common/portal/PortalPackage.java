@@ -162,22 +162,13 @@ public interface PortalPackage extends EPackage {
 	int PORTAL_PAGE__PARENT_PORTAL_PAGE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Portal Page Columns</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORTAL_PAGE__PORTAL_PAGE_COLUMNS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Portal Page Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PAGE__PORTAL_PAGE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PORTAL_PAGE__PORTAL_PAGE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Security Group Id</b></em>' reference.
@@ -186,7 +177,7 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PAGE__SECURITY_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PORTAL_PAGE__SECURITY_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -195,7 +186,7 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PAGE__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PORTAL_PAGE__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Page</em>' class.
@@ -204,7 +195,7 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PAGE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PORTAL_PAGE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.common.portal.impl.PortalPageColumnImpl <em>Page Column</em>}' class.
@@ -489,22 +480,13 @@ public interface PortalPackage extends EPackage {
 	int PORTAL_PORTLET__PORTLET_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Portlet Portlet Categories</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORTAL_PORTLET__PORTLET_PORTLET_CATEGORIES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Screen Location</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PORTLET__SCREEN_LOCATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PORTAL_PORTLET__SCREEN_LOCATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Screen Name</b></em>' attribute.
@@ -513,7 +495,7 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PORTLET__SCREEN_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PORTAL_PORTLET__SCREEN_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Screenshot</b></em>' attribute.
@@ -522,7 +504,7 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PORTLET__SCREENSHOT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PORTAL_PORTLET__SCREENSHOT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Security Main Action</b></em>' attribute.
@@ -531,7 +513,7 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PORTLET__SECURITY_MAIN_ACTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PORTAL_PORTLET__SECURITY_MAIN_ACTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Security Service Name</b></em>' attribute.
@@ -540,7 +522,7 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PORTLET__SECURITY_SERVICE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PORTAL_PORTLET__SECURITY_SERVICE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Portlet</em>' class.
@@ -549,7 +531,7 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORTAL_PORTLET_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PORTAL_PORTLET_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.common.portal.impl.PortletAttributeImpl <em>Portlet Attribute</em>}' class.
@@ -926,17 +908,6 @@ public interface PortalPackage extends EPackage {
 	EAttribute getPortalPage_SequenceNum();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageColumns <em>Portal Page Columns</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Portal Page Columns</em>'.
-	 * @see org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageColumns()
-	 * @see #getPortalPage()
-	 * @generated
-	 */
-	EReference getPortalPage_PortalPageColumns();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.portal.PortalPageColumn <em>Page Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1174,17 +1145,6 @@ public interface PortalPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPortalPortlet_SecurityServiceName();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.portal.PortalPortlet#getPortletPortletCategories <em>Portlet Portlet Categories</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Portlet Portlet Categories</em>'.
-	 * @see org.abchip.mimo.biz.common.portal.PortalPortlet#getPortletPortletCategories()
-	 * @see #getPortalPortlet()
-	 * @generated
-	 */
-	EReference getPortalPortlet_PortletPortletCategories();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.portal.PortletAttribute <em>Portlet Attribute</em>}'.
@@ -1442,14 +1402,6 @@ public interface PortalPackage extends EPackage {
 		EAttribute PORTAL_PAGE__SEQUENCE_NUM = eINSTANCE.getPortalPage_SequenceNum();
 
 		/**
-		 * The meta object literal for the '<em><b>Portal Page Columns</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORTAL_PAGE__PORTAL_PAGE_COLUMNS = eINSTANCE.getPortalPage_PortalPageColumns();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.portal.impl.PortalPageColumnImpl <em>Page Column</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1630,14 +1582,6 @@ public interface PortalPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PORTAL_PORTLET__SECURITY_SERVICE_NAME = eINSTANCE.getPortalPortlet_SecurityServiceName();
-
-		/**
-		 * The meta object literal for the '<em><b>Portlet Portlet Categories</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORTAL_PORTLET__PORTLET_PORTLET_CATEGORIES = eINSTANCE.getPortalPortlet_PortletPortletCategories();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.portal.impl.PortletAttributeImpl <em>Portlet Attribute</em>}' class.

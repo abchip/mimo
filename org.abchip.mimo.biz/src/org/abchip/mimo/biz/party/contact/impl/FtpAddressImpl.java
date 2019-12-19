@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getFilePath <em>File Path</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getFtpPassword <em>Ftp Password</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getHostname <em>Hostname</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getPassiveMode <em>Passive Mode</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#isPassiveMode <em>Passive Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getPort <em>Port</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#getUsername <em>Username</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.FtpAddressImpl#isZipFile <em>Zip File</em>}</li>
@@ -163,8 +163,8 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 * @generated
 	 */
 	@Override
-	public char getPassiveMode() {
-		return (Character)eGet(ContactPackage.Literals.FTP_ADDRESS__PASSIVE_MODE, true);
+	public boolean isPassiveMode() {
+		return (Boolean)eGet(ContactPackage.Literals.FTP_ADDRESS__PASSIVE_MODE, true);
 	}
 
 	/**
@@ -173,7 +173,7 @@ public class FtpAddressImpl extends ContactMechImpl implements FtpAddress {
 	 * @generated
 	 */
 	@Override
-	public void setPassiveMode(char newPassiveMode) {
+	public void setPassiveMode(boolean newPassiveMode) {
 		eSet(ContactPackage.Literals.FTP_ADDRESS__PASSIVE_MODE, newPassiveMode);
 	}
 

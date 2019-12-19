@@ -77,7 +77,7 @@ public interface PartyContactMech extends BizEntity {
 	 * @return the value of the '<em>Extension</em>' attribute.
 	 * @see #setExtension(String)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMech_Extension()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getExtension();
@@ -105,7 +105,6 @@ public interface PartyContactMech extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMech_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -131,7 +130,7 @@ public interface PartyContactMech extends BizEntity {
 	 * @return the value of the '<em>Allow Solicitation</em>' attribute.
 	 * @see #setAllowSolicitation(boolean)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMech_AllowSolicitation()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isAllowSolicitation();
@@ -157,7 +156,7 @@ public interface PartyContactMech extends BizEntity {
 	 * @return the value of the '<em>Months With Contact Mech</em>' attribute.
 	 * @see #setMonthsWithContactMech(long)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMech_MonthsWithContactMech()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getMonthsWithContactMech();
@@ -236,7 +235,7 @@ public interface PartyContactMech extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMech_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -262,7 +261,7 @@ public interface PartyContactMech extends BizEntity {
 	 * @return the value of the '<em>Verified</em>' attribute.
 	 * @see #setVerified(boolean)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMech_Verified()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isVerified();
@@ -288,7 +287,7 @@ public interface PartyContactMech extends BizEntity {
 	 * @return the value of the '<em>Years With Contact Mech</em>' attribute.
 	 * @see #setYearsWithContactMech(long)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMech_YearsWithContactMech()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getYearsWithContactMech();

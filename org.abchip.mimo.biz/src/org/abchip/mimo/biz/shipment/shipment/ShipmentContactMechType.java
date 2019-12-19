@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.shipment.shipment;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -56,15 +54,6 @@ public interface ShipmentContactMechType extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentContactMech' route='shipmentContactMechTypeId'"
-	 * @generated
-	 */
-	List<ShipmentContactMech> shipmentContactMechs();
-
-	/**
 	 * Returns the value of the '<em><b>Shipment Contact Mech Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -76,7 +65,7 @@ public interface ShipmentContactMechType extends BizEntity {
 	 * @see #setShipmentContactMechTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMechType_ShipmentContactMechTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getShipmentContactMechTypeId();

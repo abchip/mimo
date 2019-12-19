@@ -7,12 +7,9 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -28,7 +25,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortTypeImpl#getWorkEffortTypeAttrs <em>Work Effort Type Attrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -136,41 +132,6 @@ public class WorkEffortTypeImpl extends BizEntityTypeImpl<WorkEffort> implements
 	@Override
 	public void setWorkEffortTypeId(String newWorkEffortTypeId) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT_TYPE__WORK_EFFORT_TYPE_ID, newWorkEffortTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<WorkEffortTypeAttr> getWorkEffortTypeAttrs() {
-		return (List<WorkEffortTypeAttr>)eGet(WorkeffortPackage.Literals.WORK_EFFORT_TYPE__WORK_EFFORT_TYPE_ATTRS, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WorkEffortType> childWorkEffortTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<WorkEffort> workEfforts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //WorkEffortTypeImpl

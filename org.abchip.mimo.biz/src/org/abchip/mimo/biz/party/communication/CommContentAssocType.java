@@ -65,7 +65,7 @@ public interface CommContentAssocType extends BizEntity {
 	 * @see #setCommContentAssocTypeId(String)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommContentAssocType_CommContentAssocTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCommContentAssocTypeId();

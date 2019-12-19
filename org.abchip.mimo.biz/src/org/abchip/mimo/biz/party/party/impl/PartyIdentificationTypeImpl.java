@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.party.party.impl;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.party.PartyIdentification;
 import org.abchip.mimo.biz.party.party.PartyIdentificationType;
@@ -113,30 +111,6 @@ public class PartyIdentificationTypeImpl extends BizEntityTypeImpl<PartyIdentifi
 	@Override
 	public void setParentTypeId(PartyIdentificationType newParentTypeId) {
 		eSet(PartyPackage.Literals.PARTY_IDENTIFICATION_TYPE__PARENT_TYPE_ID, newParentTypeId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyIdentificationType> childPartyIdentificationTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<PartyIdentification> partyIdentifications() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

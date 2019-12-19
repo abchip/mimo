@@ -38,7 +38,7 @@ public interface PartyIcsAvsOverride extends BizEntity {
 	 * @return the value of the '<em>Avs Decline String</em>' attribute.
 	 * @see #setAvsDeclineString(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIcsAvsOverride_AvsDeclineString()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAvsDeclineString();
@@ -65,7 +65,7 @@ public interface PartyIcsAvsOverride extends BizEntity {
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIcsAvsOverride_PartyId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyId();

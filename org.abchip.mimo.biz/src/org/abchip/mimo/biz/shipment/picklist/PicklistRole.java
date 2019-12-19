@@ -75,7 +75,6 @@ public interface PicklistRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistRole_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -129,7 +128,7 @@ public interface PicklistRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistRole_PartyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -209,7 +208,7 @@ public interface PicklistRole extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistRole_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

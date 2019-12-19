@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.product.catalog;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -83,15 +81,6 @@ public interface ProdCatalogCategoryType extends BizEntity {
 	void setParentTypeId(ProdCatalogCategoryType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProdCatalogCategoryType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<ProdCatalogCategoryType> childProdCatalogCategoryTypes();
-
-	/**
 	 * Returns the value of the '<em><b>Prod Catalog Category Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -103,7 +92,7 @@ public interface ProdCatalogCategoryType extends BizEntity {
 	 * @see #setProdCatalogCategoryTypeId(String)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategoryType_ProdCatalogCategoryTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getProdCatalogCategoryTypeId();

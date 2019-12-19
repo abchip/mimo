@@ -135,22 +135,13 @@ public interface UomPackage extends EPackage {
 	int UOM__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Main Uom Conversions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UOM__MAIN_UOM_CONVERSIONS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Numeric Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UOM__NUMERIC_CODE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int UOM__NUMERIC_CODE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Uom Type Id</b></em>' reference.
@@ -159,7 +150,7 @@ public interface UomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UOM__UOM_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int UOM__UOM_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Uom</em>' class.
@@ -168,7 +159,7 @@ public interface UomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UOM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int UOM_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.common.uom.impl.UomConversionImpl <em>Conversion</em>}' class.
@@ -655,17 +646,6 @@ public interface UomPackage extends EPackage {
 	EReference getUom_UomTypeId();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.common.uom.Uom#getMainUomConversions <em>Main Uom Conversions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Main Uom Conversions</em>'.
-	 * @see org.abchip.mimo.biz.common.uom.Uom#getMainUomConversions()
-	 * @see #getUom()
-	 * @generated
-	 */
-	EReference getUom_MainUomConversions();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.common.uom.UomConversion <em>Conversion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1007,14 +987,6 @@ public interface UomPackage extends EPackage {
 		 * @generated
 		 */
 		EReference UOM__UOM_TYPE_ID = eINSTANCE.getUom_UomTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Main Uom Conversions</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UOM__MAIN_UOM_CONVERSIONS = eINSTANCE.getUom_MainUomConversions();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.common.uom.impl.UomConversionImpl <em>Conversion</em>}' class.

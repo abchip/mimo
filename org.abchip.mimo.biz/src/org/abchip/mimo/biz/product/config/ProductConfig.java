@@ -49,7 +49,7 @@ public interface ProductConfig extends BizEntity {
 	 * @return the value of the '<em>Config Type Id</em>' attribute.
 	 * @see #setConfigTypeId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfig_ConfigTypeId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getConfigTypeId();
@@ -75,7 +75,7 @@ public interface ProductConfig extends BizEntity {
 	 * @return the value of the '<em>Default Config Option Id</em>' attribute.
 	 * @see #setDefaultConfigOptionId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfig_DefaultConfigOptionId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDefaultConfigOptionId();
@@ -127,7 +127,7 @@ public interface ProductConfig extends BizEntity {
 	 * @return the value of the '<em>Is Mandatory</em>' attribute.
 	 * @see #setIsMandatory(boolean)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfig_IsMandatory()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isIsMandatory();
@@ -155,7 +155,6 @@ public interface ProductConfig extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfig_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -181,7 +180,7 @@ public interface ProductConfig extends BizEntity {
 	 * @return the value of the '<em>Long Description</em>' attribute.
 	 * @see #setLongDescription(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfig_LongDescription()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getLongDescription();
@@ -236,7 +235,7 @@ public interface ProductConfig extends BizEntity {
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfig_SequenceNum()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -262,7 +261,7 @@ public interface ProductConfig extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfig_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

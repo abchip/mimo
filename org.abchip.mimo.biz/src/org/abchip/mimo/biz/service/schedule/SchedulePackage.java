@@ -932,22 +932,13 @@ public interface SchedulePackage extends EPackage {
 	int TEMPORAL_EXPRESSION__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>From Temporal Expression Assocs</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Integer1</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION__INTEGER1 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int TEMPORAL_EXPRESSION__INTEGER1 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Integer2</b></em>' attribute.
@@ -956,7 +947,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION__INTEGER2 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int TEMPORAL_EXPRESSION__INTEGER2 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>String1</b></em>' attribute.
@@ -965,7 +956,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION__STRING1 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int TEMPORAL_EXPRESSION__STRING1 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>String2</b></em>' attribute.
@@ -974,7 +965,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION__STRING2 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int TEMPORAL_EXPRESSION__STRING2 = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Temp Expr Type Id</b></em>' attribute.
@@ -983,7 +974,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION__TEMP_EXPR_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int TEMPORAL_EXPRESSION__TEMP_EXPR_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Temporal Expression</em>' class.
@@ -992,7 +983,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int TEMPORAL_EXPRESSION_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionAssocImpl <em>Temporal Expression Assoc</em>}' class.
@@ -1864,17 +1855,6 @@ public interface SchedulePackage extends EPackage {
 	EAttribute getTemporalExpression_TempExprTypeId();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getFromTemporalExpressionAssocs <em>From Temporal Expression Assocs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>From Temporal Expression Assocs</em>'.
-	 * @see org.abchip.mimo.biz.service.schedule.TemporalExpression#getFromTemporalExpressionAssocs()
-	 * @see #getTemporalExpression()
-	 * @generated
-	 */
-	EReference getTemporalExpression_FromTemporalExpressionAssocs();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc <em>Temporal Expression Assoc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2526,14 +2506,6 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TEMPORAL_EXPRESSION__TEMP_EXPR_TYPE_ID = eINSTANCE.getTemporalExpression_TempExprTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>From Temporal Expression Assocs</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS = eINSTANCE.getTemporalExpression_FromTemporalExpressionAssocs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionAssocImpl <em>Temporal Expression Assoc</em>}' class.

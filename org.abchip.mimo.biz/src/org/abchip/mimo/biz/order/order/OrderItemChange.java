@@ -106,7 +106,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @return the value of the '<em>Change Datetime</em>' attribute.
 	 * @see #setChangeDatetime(Date)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_ChangeDatetime()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getChangeDatetime();
@@ -237,7 +237,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @see #setOrderItemChangeId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_OrderItemChangeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemChangeId();
@@ -263,7 +263,7 @@ public interface OrderItemChange extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemChange_OrderItemSeqId()
-	 * @model annotation="mimo-ent-format type='id' length='20'"
+	 * @model annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();

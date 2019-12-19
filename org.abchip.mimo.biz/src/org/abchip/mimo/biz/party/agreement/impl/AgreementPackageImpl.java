@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.party.agreement.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -35,6 +38,7 @@ import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.impl.EnumPackageImpl;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.impl.GeoPackageImpl;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -442,6 +446,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -460,6 +466,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -562,6 +570,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
 		CommunicationPackageImpl theCommunicationPackage = (CommunicationPackageImpl)(registeredPackage instanceof CommunicationPackageImpl ? registeredPackage : CommunicationPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
@@ -569,7 +579,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -628,6 +638,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		// Create package meta-data objects
 		theAgreementPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -637,6 +648,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -688,10 +700,11 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -723,6 +736,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		// Initialize created meta-data
 		theAgreementPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -732,6 +746,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -783,10 +798,11 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -920,7 +936,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreement_AgreementDate() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)agreementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -930,7 +946,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EReference getAgreement_AgreementTypeId() {
-		return (EReference)agreementEClass.getEStructuralFeatures().get(4);
+		return (EReference)agreementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -940,7 +956,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreement_Description() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)agreementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -950,7 +966,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreement_FromDate() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)agreementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -960,7 +976,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EReference getAgreement_PartyIdFrom() {
-		return (EReference)agreementEClass.getEStructuralFeatures().get(7);
+		return (EReference)agreementEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -970,7 +986,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EReference getAgreement_PartyIdTo() {
-		return (EReference)agreementEClass.getEStructuralFeatures().get(8);
+		return (EReference)agreementEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -980,7 +996,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EReference getAgreement_ProductId() {
-		return (EReference)agreementEClass.getEStructuralFeatures().get(9);
+		return (EReference)agreementEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -990,7 +1006,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EReference getAgreement_RoleTypeIdFrom() {
-		return (EReference)agreementEClass.getEStructuralFeatures().get(10);
+		return (EReference)agreementEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1000,7 +1016,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EReference getAgreement_RoleTypeIdTo() {
-		return (EReference)agreementEClass.getEStructuralFeatures().get(11);
+		return (EReference)agreementEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1010,7 +1026,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreement_TextData() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)agreementEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1020,27 +1036,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreement_ThruDate() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAgreement_AgreementAttributes() {
-		return (EReference)agreementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAgreement_AgreementItems() {
-		return (EReference)agreementEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)agreementEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1550,7 +1546,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementItemType_Description() {
-		return (EAttribute)agreementItemTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)agreementItemTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1560,7 +1556,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementItemType_HasTable() {
-		return (EAttribute)agreementItemTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)agreementItemTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1570,17 +1566,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EReference getAgreementItemType_ParentTypeId() {
-		return (EReference)agreementItemTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAgreementItemType_AgreementItemTypeAttrs() {
-		return (EReference)agreementItemTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference)agreementItemTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1870,7 +1856,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_Description() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1880,7 +1866,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_FromDate() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1890,7 +1876,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EReference getAgreementTerm_InvoiceItemTypeId() {
-		return (EReference)agreementTermEClass.getEStructuralFeatures().get(6);
+		return (EReference)agreementTermEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1900,7 +1886,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_MaxQuantity() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1910,7 +1896,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_MinQuantity() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1920,7 +1906,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_TermDays() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1930,7 +1916,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EReference getAgreementTerm_TermTypeId() {
-		return (EReference)agreementTermEClass.getEStructuralFeatures().get(10);
+		return (EReference)agreementTermEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1940,7 +1926,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_TermValue() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1950,7 +1936,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_TextValue() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1960,17 +1946,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_ThruDate() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAgreementTerm_AgreementTermAttributes() {
-		return (EReference)agreementTermEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -2050,7 +2026,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementType_Description() {
-		return (EAttribute)agreementTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)agreementTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2060,7 +2036,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementType_HasTable() {
-		return (EAttribute)agreementTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)agreementTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2070,17 +2046,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EReference getAgreementType_ParentTypeId() {
-		return (EReference)agreementTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAgreementType_AgreementTypeAttrs() {
-		return (EReference)agreementTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference)agreementTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2219,16 +2185,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getTermType_TermTypeAttrs() {
-		return (EReference)termTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getTermTypeAttr() {
 		return termTypeAttrEClass;
 	}
@@ -2302,9 +2258,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 
 		agreementEClass = createEClass(AGREEMENT);
 		createEAttribute(agreementEClass, AGREEMENT__AGREEMENT_ID);
-		createEReference(agreementEClass, AGREEMENT__AGREEMENT_ATTRIBUTES);
 		createEAttribute(agreementEClass, AGREEMENT__AGREEMENT_DATE);
-		createEReference(agreementEClass, AGREEMENT__AGREEMENT_ITEMS);
 		createEReference(agreementEClass, AGREEMENT__AGREEMENT_TYPE_ID);
 		createEAttribute(agreementEClass, AGREEMENT__DESCRIPTION);
 		createEAttribute(agreementEClass, AGREEMENT__FROM_DATE);
@@ -2374,7 +2328,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 
 		agreementItemTypeEClass = createEClass(AGREEMENT_ITEM_TYPE);
 		createEAttribute(agreementItemTypeEClass, AGREEMENT_ITEM_TYPE__AGREEMENT_ITEM_TYPE_ID);
-		createEReference(agreementItemTypeEClass, AGREEMENT_ITEM_TYPE__AGREEMENT_ITEM_TYPE_ATTRS);
 		createEAttribute(agreementItemTypeEClass, AGREEMENT_ITEM_TYPE__DESCRIPTION);
 		createEAttribute(agreementItemTypeEClass, AGREEMENT_ITEM_TYPE__HAS_TABLE);
 		createEReference(agreementItemTypeEClass, AGREEMENT_ITEM_TYPE__PARENT_TYPE_ID);
@@ -2412,7 +2365,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__AGREEMENT_TERM_ID);
 		createEReference(agreementTermEClass, AGREEMENT_TERM__AGREEMENT_ID);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__AGREEMENT_ITEM_SEQ_ID);
-		createEReference(agreementTermEClass, AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__DESCRIPTION);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__FROM_DATE);
 		createEReference(agreementTermEClass, AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID);
@@ -2432,7 +2384,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 
 		agreementTypeEClass = createEClass(AGREEMENT_TYPE);
 		createEAttribute(agreementTypeEClass, AGREEMENT_TYPE__AGREEMENT_TYPE_ID);
-		createEReference(agreementTypeEClass, AGREEMENT_TYPE__AGREEMENT_TYPE_ATTRS);
 		createEAttribute(agreementTypeEClass, AGREEMENT_TYPE__DESCRIPTION);
 		createEAttribute(agreementTypeEClass, AGREEMENT_TYPE__HAS_TABLE);
 		createEReference(agreementTypeEClass, AGREEMENT_TYPE__PARENT_TYPE_ID);
@@ -2452,7 +2403,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		createEAttribute(termTypeEClass, TERM_TYPE__DESCRIPTION);
 		createEAttribute(termTypeEClass, TERM_TYPE__HAS_TABLE);
 		createEReference(termTypeEClass, TERM_TYPE__PARENT_TYPE_ID);
-		createEReference(termTypeEClass, TERM_TYPE__TERM_TYPE_ATTRS);
 
 		termTypeAttrEClass = createEClass(TERM_TYPE_ATTR);
 		createEReference(termTypeAttrEClass, TERM_TYPE_ATTR__TERM_TYPE_ID);
@@ -2485,16 +2435,14 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		PartyPackage thePartyPackage_1 = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
-		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
 		FacilityPackage theFacilityPackage = (FacilityPackage)EPackage.Registry.INSTANCE.getEPackage(FacilityPackage.eNS_URI);
 		GeoPackage theGeoPackage = (GeoPackage)EPackage.Registry.INSTANCE.getEPackage(GeoPackage.eNS_URI);
 		PromoPackage thePromoPackage = (PromoPackage)EPackage.Registry.INSTANCE.getEPackage(PromoPackage.eNS_URI);
 		InvoicePackage theInvoicePackage = (InvoicePackage)EPackage.Registry.INSTANCE.getEPackage(InvoicePackage.eNS_URI);
 		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
-		PaymentPackage thePaymentPackage = (PaymentPackage)EPackage.Registry.INSTANCE.getEPackage(PaymentPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -2561,31 +2509,23 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 
 		initEClass(agreementEClass, Agreement.class, "Agreement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreement_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgreement_AgreementAttributes(), this.getAgreementAttribute(), null, "agreementAttributes", null, 0, -1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreement_AgreementDate(), ecorePackage.getEDate(), "agreementDate", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgreement_AgreementItems(), this.getAgreementItem(), null, "agreementItems", null, 0, -1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgreement_AgreementTypeId(), this.getAgreementType(), null, "agreementTypeId", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAgreement_AgreementTypeId().getEKeys().add(this.getAgreementType_AgreementTypeId());
 		initEAttribute(getAgreement_Description(), ecorePackage.getEString(), "description", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreement_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgreement_PartyIdFrom(), thePartyPackage.getParty(), null, "partyIdFrom", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getAgreement_PartyIdFrom().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getAgreement_PartyIdTo(), thePartyPackage.getParty(), null, "partyIdTo", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getAgreement_PartyIdTo().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getAgreement_PartyIdFrom(), thePartyPackage_1.getParty(), null, "partyIdFrom", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreement_PartyIdFrom().getEKeys().add(thePartyPackage_1.getParty_PartyId());
+		initEReference(getAgreement_PartyIdTo(), thePartyPackage_1.getParty(), null, "partyIdTo", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreement_PartyIdTo().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEReference(getAgreement_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAgreement_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
-		initEReference(getAgreement_RoleTypeIdFrom(), thePartyPackage.getRoleType(), null, "roleTypeIdFrom", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getAgreement_RoleTypeIdFrom().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
-		initEReference(getAgreement_RoleTypeIdTo(), thePartyPackage.getRoleType(), null, "roleTypeIdTo", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getAgreement_RoleTypeIdTo().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
+		initEReference(getAgreement_RoleTypeIdFrom(), thePartyPackage_1.getRoleType(), null, "roleTypeIdFrom", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreement_RoleTypeIdFrom().getEKeys().add(thePartyPackage_1.getRoleType_RoleTypeId());
+		initEReference(getAgreement_RoleTypeIdTo(), thePartyPackage_1.getRoleType(), null, "roleTypeIdTo", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreement_RoleTypeIdTo().getEKeys().add(thePartyPackage_1.getRoleType_RoleTypeId());
 		initEAttribute(getAgreement_TextData(), ecorePackage.getEString(), "textData", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreement_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(agreementEClass, this.getAddendum(), "addendums", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(agreementEClass, this.getAgreementTerm(), "agreementTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(agreementEClass, theOrderPackage.getOrderItemShipGroup(), "supplierOrderItemShipGroups", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(agreementAttributeEClass, AgreementAttribute.class, "AgreementAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAgreementAttribute_AgreementId(), this.getAgreement(), null, "agreementId", null, 1, 1, AgreementAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2611,8 +2551,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		initEAttribute(getAgreementContentType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, AgreementContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgreementContentType_ParentTypeId(), this.getAgreementContentType(), null, "parentTypeId", null, 0, 1, AgreementContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAgreementContentType_ParentTypeId().getEKeys().add(this.getAgreementContentType_AgreementContentTypeId());
-
-		addEOperation(agreementContentTypeEClass, this.getAgreementContentType(), "childAgreementContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(agreementEmploymentApplEClass, AgreementEmploymentAppl.class, "AgreementEmploymentAppl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementEmploymentAppl_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, AgreementEmploymentAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2658,15 +2596,10 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 
 		initEClass(agreementItemTypeEClass, AgreementItemType.class, "AgreementItemType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementItemType_AgreementItemTypeId(), ecorePackage.getEString(), "agreementItemTypeId", null, 1, 1, AgreementItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgreementItemType_AgreementItemTypeAttrs(), this.getAgreementItemTypeAttr(), null, "agreementItemTypeAttrs", null, 0, -1, AgreementItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementItemType_Description(), ecorePackage.getEString(), "description", null, 0, 1, AgreementItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementItemType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, AgreementItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgreementItemType_ParentTypeId(), this.getAgreementItemType(), null, "parentTypeId", null, 0, 1, AgreementItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAgreementItemType_ParentTypeId().getEKeys().add(this.getAgreementItemType_AgreementItemTypeId());
-
-		addEOperation(agreementItemTypeEClass, this.getAgreementItem(), "agreementItems", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(agreementItemTypeEClass, this.getAgreementItemType(), "childAgreementItemTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(agreementItemTypeAttrEClass, AgreementItemTypeAttr.class, "AgreementItemTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAgreementItemTypeAttr_AgreementItemTypeId(), this.getAgreementItemType(), null, "agreementItemTypeId", null, 1, 1, AgreementItemTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2677,8 +2610,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		initEClass(agreementPartyApplicEClass, AgreementPartyApplic.class, "AgreementPartyApplic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAgreementPartyApplic_AgreementId(), this.getAgreement(), null, "agreementId", null, 1, 1, AgreementPartyApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAgreementPartyApplic_AgreementId().getEKeys().add(this.getAgreement_AgreementId());
-		initEReference(getAgreementPartyApplic_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, AgreementPartyApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getAgreementPartyApplic_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getAgreementPartyApplic_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 1, 1, AgreementPartyApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementPartyApplic_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEAttribute(getAgreementPartyApplic_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 1, 1, AgreementPartyApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agreementProductApplEClass, AgreementProductAppl.class, "AgreementProductAppl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2702,17 +2635,16 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		initEClass(agreementRoleEClass, AgreementRole.class, "AgreementRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAgreementRole_AgreementId(), this.getAgreement(), null, "agreementId", null, 1, 1, AgreementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAgreementRole_AgreementId().getEKeys().add(this.getAgreement_AgreementId());
-		initEReference(getAgreementRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 1, 1, AgreementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getAgreementRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
-		initEReference(getAgreementRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 1, 1, AgreementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getAgreementRole_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
+		initEReference(getAgreementRole_PartyId(), thePartyPackage_1.getParty(), null, "partyId", null, 1, 1, AgreementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementRole_PartyId().getEKeys().add(thePartyPackage_1.getParty_PartyId());
+		initEReference(getAgreementRole_RoleTypeId(), thePartyPackage_1.getRoleType(), null, "roleTypeId", null, 1, 1, AgreementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementRole_RoleTypeId().getEKeys().add(thePartyPackage_1.getRoleType_RoleTypeId());
 
 		initEClass(agreementTermEClass, AgreementTerm.class, "AgreementTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementTerm_AgreementTermId(), ecorePackage.getEString(), "agreementTermId", null, 1, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgreementTerm_AgreementId(), this.getAgreement(), null, "agreementId", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAgreementTerm_AgreementId().getEKeys().add(this.getAgreement_AgreementId());
 		initEAttribute(getAgreementTerm_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgreementTerm_AgreementTermAttributes(), this.getAgreementTermAttribute(), null, "agreementTermAttributes", null, 0, -1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementTerm_Description(), ecorePackage.getEString(), "description", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementTerm_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgreementTerm_InvoiceItemTypeId(), theInvoicePackage.getInvoiceItemType(), null, "invoiceItemTypeId", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2735,15 +2667,10 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 
 		initEClass(agreementTypeEClass, AgreementType.class, "AgreementType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementType_AgreementTypeId(), ecorePackage.getEString(), "agreementTypeId", null, 1, 1, AgreementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgreementType_AgreementTypeAttrs(), this.getAgreementTypeAttr(), null, "agreementTypeAttrs", null, 0, -1, AgreementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementType_Description(), ecorePackage.getEString(), "description", null, 0, 1, AgreementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, AgreementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgreementType_ParentTypeId(), this.getAgreementType(), null, "parentTypeId", null, 0, 1, AgreementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getAgreementType_ParentTypeId().getEKeys().add(this.getAgreementType_AgreementTypeId());
-
-		addEOperation(agreementTypeEClass, this.getAgreement(), "agreements", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(agreementTypeEClass, this.getAgreementType(), "childAgreementTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(agreementTypeAttrEClass, AgreementTypeAttr.class, "AgreementTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAgreementTypeAttr_AgreementTypeId(), this.getAgreementType(), null, "agreementTypeId", null, 1, 1, AgreementTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2764,15 +2691,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		initEAttribute(getTermType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, TermType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTermType_ParentTypeId(), this.getTermType(), null, "parentTypeId", null, 0, 1, TermType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getTermType_ParentTypeId().getEKeys().add(this.getTermType_TermTypeId());
-		initEReference(getTermType_TermTypeAttrs(), this.getTermTypeAttr(), null, "termTypeAttrs", null, 0, -1, TermType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(termTypeEClass, this.getAgreementTerm(), "agreementTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(termTypeEClass, thePaymentPackage.getBillingAccountTerm(), "billingAccountTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(termTypeEClass, this.getTermType(), "childTermTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(termTypeEClass, theInvoicePackage.getInvoiceTerm(), "invoiceTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(termTypeAttrEClass, TermTypeAttr.class, "TermTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTermTypeAttr_TermTypeId(), this.getTermType(), null, "termTypeId", null, 1, 1, TermTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2787,8 +2705,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		createMimoentframeAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 	}
 
 	/**
@@ -2803,47 +2719,25 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		  (getAddendum_AddendumId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getAddendum_AddendumCreationDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getAddendum_AddendumEffectiveDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getAddendum_AddendumText(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getAddendum_AgreementItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreement_AgreementId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreement_AgreementDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getAgreement_Description(),
@@ -2853,28 +2747,9 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getAgreement_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getAgreement_TextData(),
-		   source,
-		   new String[] {
-			   "type", "very-long"
-		   });
-		addAnnotation
-		  (getAgreement_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getAgreementAttribute_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -2888,33 +2763,18 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		  (getAgreementAttribute_AttrValue(),
 		   source,
 		   new String[] {
-			   "type", "value",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getAgreementContent_AgreementItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementContent_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getAgreementContent_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getAgreementContentType_AgreementContentTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -2925,131 +2785,81 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getAgreementContentType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getAgreementEmploymentAppl_AgreementId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementEmploymentAppl_AgreementItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementEmploymentAppl_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getAgreementEmploymentAppl_PartyIdFrom(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementEmploymentAppl_PartyIdTo(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementEmploymentAppl_RoleTypeIdFrom(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementEmploymentAppl_RoleTypeIdTo(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementEmploymentAppl_AgreementDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getAgreementEmploymentAppl_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getAgreementFacilityAppl_AgreementItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementGeographicalApplic_AgreementItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementItem_AgreementItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementItem_AgreementImage(),
-		   source,
-		   new String[] {
-			   "type", "object"
-		   });
-		addAnnotation
-		  (getAgreementItem_AgreementText(),
-		   source,
-		   new String[] {
-			   "type", "very-long"
 		   });
 		addAnnotation
 		  (getAgreementItem_CurrencyUomId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementItemAttribute_AgreementId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementItemAttribute_AgreementItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementItemAttribute_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -3063,14 +2873,12 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		  (getAgreementItemAttribute_AttrValue(),
 		   source,
 		   new String[] {
-			   "type", "value",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getAgreementItemType_AgreementItemTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -3081,17 +2889,9 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getAgreementItemType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getAgreementItemTypeAttr_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -3105,14 +2905,12 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		  (getAgreementPartyApplic_AgreementItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementProductAppl_AgreementItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -3127,41 +2925,25 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		  (getAgreementPromoAppl_AgreementItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
-		   });
-		addAnnotation
-		  (getAgreementPromoAppl_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getAgreementPromoAppl_SequenceNum(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
-		   });
-		addAnnotation
-		  (getAgreementPromoAppl_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
 		   });
 		addAnnotation
 		  (getAgreementTerm_AgreementTermId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getAgreementTerm_AgreementItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -3172,28 +2954,9 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getAgreementTerm_FromDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
-		  (getAgreementTerm_MaxQuantity(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
-		  (getAgreementTerm_MinQuantity(),
-		   source,
-		   new String[] {
-			   "type", "floating-point"
-		   });
-		addAnnotation
 		  (getAgreementTerm_TermDays(),
 		   source,
 		   new String[] {
-			   "type", "numeric",
 			   "precision", "20",
 			   "scale", "0"
 		   });
@@ -3213,16 +2976,9 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getAgreementTerm_ThruDate(),
-		   source,
-		   new String[] {
-			   "type", "date-time"
-		   });
-		addAnnotation
 		  (getAgreementTermAttribute_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -3236,14 +2992,12 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		  (getAgreementTermAttribute_AttrValue(),
 		   source,
 		   new String[] {
-			   "type", "value",
 			   "length", "255"
 		   });
 		addAnnotation
 		  (getAgreementType_AgreementTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -3254,17 +3008,9 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getAgreementType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getAgreementTypeAttr_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -3278,14 +3024,12 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		  (getAgreementWorkEffortApplic_AgreementItemSeqId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getTermType_TermTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -3296,17 +3040,9 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "length", "255"
 		   });
 		addAnnotation
-		  (getTermType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
 		  (getTermTypeAttr_AttrName(),
 		   source,
 		   new String[] {
-			   "type", "id-long",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -3326,36 +3062,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (agreementEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (agreementEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (agreementEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getAgreement_AgreementAttributes(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getAgreement_AgreementItems(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
 		addAnnotation
 		  (getAgreementAttribute_AgreementId(),
 		   source,
@@ -3397,12 +3103,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (agreementContentTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
 		   });
 		addAnnotation
 		  (getAgreementEmploymentAppl_AgreementId(),
@@ -3513,24 +3213,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "key", "true"
 		   });
 		addAnnotation
-		  (agreementItemTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (agreementItemTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getAgreementItemType_AgreementItemTypeAttrs(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getAgreementItemTypeAttr_AgreementItemTypeId(),
 		   source,
 		   new String[] {
@@ -3621,12 +3303,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getAgreementTerm_AgreementTermAttributes(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getAgreementTermAttribute_AgreementTermId(),
 		   source,
 		   new String[] {
@@ -3637,24 +3313,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-		addAnnotation
-		  (agreementTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (agreementTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getAgreementType_AgreementTypeAttrs(),
-		   source,
-		   new String[] {
-			   "derived", "true"
 		   });
 		addAnnotation
 		  (getAgreementTypeAttr_AgreementTypeId(),
@@ -3687,36 +3345,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "key", "true"
 		   });
 		addAnnotation
-		  (termTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (termTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (termTypeEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (termTypeEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getTermType_TermTypeAttrs(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getTermTypeAttr_TermTypeId(),
 		   source,
 		   new String[] {
@@ -3727,136 +3355,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (agreementEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "Addendum",
-			   "route", "agreementId"
-		   });
-		addAnnotation
-		  (agreementEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "AgreementTerm",
-			   "route", "agreementId"
-		   });
-		addAnnotation
-		  (agreementEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "frame", "OrderItemShipGroup",
-			   "route", "supplierAgreementId"
-		   });
-		addAnnotation
-		  (getAgreement_AgreementAttributes(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementAttribute"
-		   });
-		addAnnotation
-		  (getAgreement_AgreementItems(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementItem"
-		   });
-		addAnnotation
-		  (agreementContentTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "AgreementContentType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (agreementItemTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "AgreementItem",
-			   "route", "agreementItemTypeId"
-		   });
-		addAnnotation
-		  (agreementItemTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "AgreementItemType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (getAgreementItemType_AgreementItemTypeAttrs(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementItemTypeAttr"
-		   });
-		addAnnotation
-		  (getAgreementTerm_AgreementTermAttributes(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementTermAttribute"
-		   });
-		addAnnotation
-		  (agreementTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "Agreement",
-			   "route", "agreementTypeId"
-		   });
-		addAnnotation
-		  (agreementTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "AgreementType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (getAgreementType_AgreementTypeAttrs(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementTypeAttr"
-		   });
-		addAnnotation
-		  (termTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "AgreementTerm",
-			   "route", "termTypeId"
-		   });
-		addAnnotation
-		  (termTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "BillingAccountTerm",
-			   "route", "termTypeId"
-		   });
-		addAnnotation
-		  (termTypeEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "frame", "TermType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (termTypeEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "frame", "InvoiceTerm",
-			   "route", "termTypeId"
-		   });
-		addAnnotation
-		  (getTermType_TermTypeAttrs(),
-		   source,
-		   new String[] {
-			   "frame", "TermTypeAttr"
 		   });
 	}
 

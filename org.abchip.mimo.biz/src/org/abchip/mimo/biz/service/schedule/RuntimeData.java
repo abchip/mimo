@@ -7,11 +7,7 @@
  */
 package org.abchip.mimo.biz.service.schedule;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox;
-import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +39,7 @@ public interface RuntimeData extends BizEntity {
 	 * @see #setRuntimeDataId(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRuntimeData_RuntimeDataId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRuntimeDataId();
@@ -69,7 +65,7 @@ public interface RuntimeData extends BizEntity {
 	 * @return the value of the '<em>Runtime Info</em>' attribute.
 	 * @see #setRuntimeInfo(String)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRuntimeData_RuntimeInfo()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getRuntimeInfo();
@@ -83,32 +79,5 @@ public interface RuntimeData extends BizEntity {
 	 * @generated
 	 */
 	void setRuntimeInfo(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ApplicationSandbox' route='runtimeDataId'"
-	 * @generated
-	 */
-	List<ApplicationSandbox> applicationSandboxs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='JobSandbox' route='runtimeDataId'"
-	 * @generated
-	 */
-	List<JobSandbox> jobSandboxs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort' route='runtimeDataId'"
-	 * @generated
-	 */
-	List<WorkEffort> workEfforts();
 
 } // RuntimeData

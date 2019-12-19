@@ -41,7 +41,7 @@ public interface UserLoginSession extends BizEntity {
 	 * @return the value of the '<em>Saved Date</em>' attribute.
 	 * @see #setSavedDate(Date)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSession_SavedDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getSavedDate();
@@ -67,7 +67,7 @@ public interface UserLoginSession extends BizEntity {
 	 * @return the value of the '<em>Session Data</em>' attribute.
 	 * @see #setSessionData(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSession_SessionData()
-	 * @model annotation="mimo-ent-format type='very-long'"
+	 * @model
 	 * @generated
 	 */
 	String getSessionData();
@@ -94,7 +94,7 @@ public interface UserLoginSession extends BizEntity {
 	 * @see #setUserLoginId(String)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSession_UserLoginId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id-vlong' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getUserLoginId();

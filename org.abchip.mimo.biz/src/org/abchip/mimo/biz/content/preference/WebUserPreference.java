@@ -99,7 +99,7 @@ public interface WebUserPreference extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebUserPreference_VisitId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true' help='To be able to keep preferences for a non loggin in user for the current session'"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getVisitId();
@@ -152,7 +152,7 @@ public interface WebUserPreference extends BizEntity {
 	 * @return the value of the '<em>Web Preference Value</em>' attribute.
 	 * @see #setWebPreferenceValue(String)
 	 * @see org.abchip.mimo.biz.content.preference.PreferencePackage#getWebUserPreference_WebPreferenceValue()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getWebPreferenceValue();

@@ -10,14 +10,10 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 import java.math.BigDecimal;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.shipment.shipment.Delivery;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.ecore.EClass;
 
@@ -287,18 +283,6 @@ public class DeliveryImpl extends BizEntityImpl implements Delivery {
 	@Override
 	public void setStartMileage(BigDecimal newStartMileage) {
 		eSet(Shipment_Package.Literals.DELIVERY__START_MILEAGE, newStartMileage);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ShipmentRouteSegment> shipmentRouteSegments() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //DeliveryImpl

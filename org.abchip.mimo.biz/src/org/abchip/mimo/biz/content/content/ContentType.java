@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.content.content;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -21,7 +19,6 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getContentTypeId <em>Content Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getContentTypeAttrs <em>Content Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -44,7 +41,7 @@ public interface ContentType extends BizEntityType<Content> {
 	 * @see #setContentTypeId(String)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentType_ContentTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getContentTypeId();
@@ -96,7 +93,7 @@ public interface ContentType extends BizEntityType<Content> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -136,40 +133,5 @@ public interface ContentType extends BizEntityType<Content> {
 	 * @generated
 	 */
 	void setParentTypeId(ContentType value);
-
-	/**
-	 * Returns the value of the '<em><b>Content Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Content Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentType_ContentTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContentTypeAttr'"
-	 * @generated
-	 */
-	List<ContentTypeAttr> getContentTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContentType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<ContentType> childContentTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Content' route='contentTypeId'"
-	 * @generated
-	 */
-	List<Content> contents();
 
 } // ContentType

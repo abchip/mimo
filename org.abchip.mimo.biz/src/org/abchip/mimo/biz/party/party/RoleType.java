@@ -7,20 +7,7 @@
  */
 package org.abchip.mimo.biz.party.party;
 
-import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
-import org.abchip.mimo.biz.accounting.invoice.Invoice;
-import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
-import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
-import org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization;
-import org.abchip.mimo.biz.accounting.payment.Payment;
-import org.abchip.mimo.biz.content.content.ContentApproval;
-import org.abchip.mimo.biz.party.agreement.Agreement;
-import org.abchip.mimo.biz.party.communication.CommunicationEvent;
-import org.abchip.mimo.biz.party.contact.ValidContactMechRole;
-import org.abchip.mimo.biz.product.subscription.Subscription;
-import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,8 +22,6 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentCostEstimate;
  *   <li>{@link org.abchip.mimo.biz.party.party.RoleType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.RoleType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.RoleType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.RoleType#getRoleTypeAttrs <em>Role Type Attrs</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.RoleType#getValidContactMechRoles <em>Valid Contact Mech Roles</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType()
@@ -81,7 +66,7 @@ public interface RoleType extends BizEntity {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -134,7 +119,7 @@ public interface RoleType extends BizEntity {
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_RoleTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getRoleTypeId();
@@ -148,210 +133,5 @@ public interface RoleType extends BizEntity {
 	 * @generated
 	 */
 	void setRoleTypeId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Role Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.RoleTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Role Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_RoleTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='RoleTypeAttr'"
-	 * @generated
-	 */
-	List<RoleTypeAttr> getRoleTypeAttrs();
-
-	/**
-	 * Returns the value of the '<em><b>Valid Contact Mech Roles</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.ValidContactMechRole}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Valid Contact Mech Roles</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Valid Contact Mech Roles</em>' reference list.
-	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_ValidContactMechRoles()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ValidContactMechRole'"
-	 * @generated
-	 */
-	List<ValidContactMechRole> getValidContactMechRoles();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTransEntry' route='roleTypeId'"
-	 * @generated
-	 */
-	List<AcctgTransEntry> acctgTransEntries();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTrans' route='roleTypeId'"
-	 * @generated
-	 */
-	List<AcctgTrans> acctgTranss();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='RoleType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<RoleType> childRoleTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ContentApproval' route='roleTypeId'"
-	 * @generated
-	 */
-	List<ContentApproval> contentApprovals();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAsset' route='roleTypeId'"
-	 * @generated
-	 */
-	List<FixedAsset> fixedAssets();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Agreement' route='roleTypeIdFrom'"
-	 * @generated
-	 */
-	List<Agreement> fromAgreements();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='roleTypeIdFrom'"
-	 * @generated
-	 */
-	List<CommunicationEvent> fromCommunicationEvents();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccountOrganization' route='roleTypeId'"
-	 * @generated
-	 */
-	List<GlAccountOrganization> glAccountOrganizations();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Invoice' route='roleTypeId'"
-	 * @generated
-	 */
-	List<Invoice> invoices();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Subscription' route='originatedFromRoleTypeId'"
-	 * @generated
-	 */
-	List<Subscription> originatedFromSubscriptions();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyInvitationRoleAssoc' route='roleTypeId'"
-	 * @generated
-	 */
-	List<PartyInvitationRoleAssoc> partyInvitationRoleAssocs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyRole' route='roleTypeId'"
-	 * @generated
-	 */
-	List<PartyRole> partyRoles();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentCostEstimate' route='roleTypeId'"
-	 * @generated
-	 */
-	List<ShipmentCostEstimate> shipmentCostEstimates();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Subscription' route='roleTypeId'"
-	 * @generated
-	 */
-	List<Subscription> subscriptions();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Agreement' route='roleTypeIdTo'"
-	 * @generated
-	 */
-	List<Agreement> toAgreements();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEvent' route='roleTypeIdTo'"
-	 * @generated
-	 */
-	List<CommunicationEvent> toCommunicationEvents();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Payment' route='roleTypeIdTo'"
-	 * @generated
-	 */
-	List<Payment> toPayments();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyRelationshipType' route='roleTypeIdValidFrom'"
-	 * @generated
-	 */
-	List<PartyRelationshipType> validFromPartyRelationshipTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyRelationshipType' route='roleTypeIdValidTo'"
-	 * @generated
-	 */
-	List<PartyRelationshipType> validToPartyRelationshipTypes();
 
 } // RoleType

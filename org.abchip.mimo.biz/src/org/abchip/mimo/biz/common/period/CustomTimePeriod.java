@@ -8,13 +8,7 @@
 package org.abchip.mimo.biz.common.period;
 
 import java.util.Date;
-
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.accounting.budget.Budget;
-import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
-import org.abchip.mimo.biz.marketing.opportunity.SalesForecastHistory;
 import org.abchip.mimo.biz.party.party.Party;
 
 /**
@@ -53,7 +47,7 @@ public interface CustomTimePeriod extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getCustomTimePeriod_FromDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getFromDate();
@@ -79,7 +73,7 @@ public interface CustomTimePeriod extends BizEntity {
 	 * @return the value of the '<em>Is Closed</em>' attribute.
 	 * @see #setIsClosed(boolean)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getCustomTimePeriod_IsClosed()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isIsClosed();
@@ -157,7 +151,7 @@ public interface CustomTimePeriod extends BizEntity {
 	 * @return the value of the '<em>Period Num</em>' attribute.
 	 * @see #setPeriodNum(long)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getCustomTimePeriod_PeriodNum()
-	 * @model annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 * @model annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getPeriodNum();
@@ -183,7 +177,7 @@ public interface CustomTimePeriod extends BizEntity {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getCustomTimePeriod_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();
@@ -197,42 +191,6 @@ public interface CustomTimePeriod extends BizEntity {
 	 * @generated
 	 */
 	void setThruDate(Date value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Budget' route='customTimePeriodId'"
-	 * @generated
-	 */
-	List<Budget> budgets();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='CustomTimePeriod' route='parentPeriodId'"
-	 * @generated
-	 */
-	List<CustomTimePeriod> childCustomTimePeriods();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SalesForecastHistory' route='customTimePeriodId'"
-	 * @generated
-	 */
-	List<SalesForecastHistory> salesForecastHistories();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='SalesForecast' route='customTimePeriodId'"
-	 * @generated
-	 */
-	List<SalesForecast> salesForecasts();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Period Id</b></em>' reference.
@@ -298,7 +256,7 @@ public interface CustomTimePeriod extends BizEntity {
 	 * @see #setCustomTimePeriodId(String)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getCustomTimePeriod_CustomTimePeriodId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCustomTimePeriodId();

@@ -46,7 +46,7 @@ public interface CheckAccount extends BizEntity {
 	 * @return the value of the '<em>Account Number</em>' attribute.
 	 * @see #setAccountNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_AccountNumber()
-	 * @model annotation="mimo-ent-format type='long-varchar' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getAccountNumber();
@@ -72,7 +72,7 @@ public interface CheckAccount extends BizEntity {
 	 * @return the value of the '<em>Account Type</em>' attribute.
 	 * @see #setAccountType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_AccountType()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getAccountType();
@@ -124,7 +124,7 @@ public interface CheckAccount extends BizEntity {
 	 * @return the value of the '<em>Branch Code</em>' attribute.
 	 * @see #setBranchCode(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_BranchCode()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getBranchCode();
@@ -229,7 +229,7 @@ public interface CheckAccount extends BizEntity {
 	 * @see #setPaymentMethodId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_PaymentMethodId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentMethodId();
@@ -256,7 +256,7 @@ public interface CheckAccount extends BizEntity {
 	 * @see #setRoutingNumber(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCheckAccount_RoutingNumber()
 	 * @model annotation="mimo-ent-slot help='See https://en.wikipedia.org/wiki/Bank_code'"
-	 *        annotation="mimo-ent-format type='short-varchar' length='60'"
+	 *        annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getRoutingNumber();

@@ -39,7 +39,6 @@ public interface WorkEffortIcalData extends BizEntity {
 	 * @see #setIcalData(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortIcalData_IcalData()
 	 * @model annotation="mimo-ent-slot help='iCalender Data'"
-	 *        annotation="mimo-ent-format type='very-long'"
 	 * @generated
 	 */
 	String getIcalData();
@@ -66,7 +65,7 @@ public interface WorkEffortIcalData extends BizEntity {
 	 * @see #setWorkEffortId(String)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortIcalData_WorkEffortId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getWorkEffortId();

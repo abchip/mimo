@@ -9,12 +9,14 @@ package org.abchip.mimo.biz.common.geo.impl;
 
 import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.biz.BizPackage;
+import org.abchip.mimo.biz.accounting.AccountingPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.impl.BudgetPackageImpl;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.accounting.finaccount.impl.FinaccountPackageImpl;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.impl.FixedassetPackageImpl;
+import org.abchip.mimo.biz.accounting.impl.AccountingPackageImpl;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.impl.InvoicePackageImpl;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
@@ -27,6 +29,7 @@ import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.accounting.tax.impl.TaxPackageImpl;
 import org.abchip.mimo.biz.catalina.session.SessionPackage;
 import org.abchip.mimo.biz.catalina.session.impl.SessionPackageImpl;
+import org.abchip.mimo.biz.common.CommonPackage;
 import org.abchip.mimo.biz.common.datasource.DatasourcePackage;
 import org.abchip.mimo.biz.common.datasource.impl.DatasourcePackageImpl;
 import org.abchip.mimo.biz.common.email.EmailPackage;
@@ -44,6 +47,7 @@ import org.abchip.mimo.biz.common.geo.GeoFactory;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.common.geo.GeoType;
+import org.abchip.mimo.biz.common.impl.CommonPackageImpl;
 import org.abchip.mimo.biz.common.keyword.KeywordPackage;
 import org.abchip.mimo.biz.common.keyword.impl.KeywordPackageImpl;
 import org.abchip.mimo.biz.common.language.LanguagePackage;
@@ -330,6 +334,8 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		BizPackageImpl theBizPackage = (BizPackageImpl)(registeredPackage instanceof BizPackageImpl ? registeredPackage : BizPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccountingPackage.eNS_URI);
+		AccountingPackageImpl theAccountingPackage = (AccountingPackageImpl)(registeredPackage instanceof AccountingPackageImpl ? registeredPackage : AccountingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BudgetPackage.eNS_URI);
 		BudgetPackageImpl theBudgetPackage = (BudgetPackageImpl)(registeredPackage instanceof BudgetPackageImpl ? registeredPackage : BudgetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FinaccountPackage.eNS_URI);
@@ -348,6 +354,8 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		TaxPackageImpl theTaxPackage = (TaxPackageImpl)(registeredPackage instanceof TaxPackageImpl ? registeredPackage : TaxPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SessionPackage.eNS_URI);
 		SessionPackageImpl theSessionPackage = (SessionPackageImpl)(registeredPackage instanceof SessionPackageImpl ? registeredPackage : SessionPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		DatasourcePackageImpl theDatasourcePackage = (DatasourcePackageImpl)(registeredPackage instanceof DatasourcePackageImpl ? registeredPackage : DatasourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EmailPackage.eNS_URI);
@@ -448,6 +456,8 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.impl.PartyPackageImpl thePartyPackage = (org.abchip.mimo.biz.party.impl.PartyPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.party.impl.PartyPackageImpl ? registeredPackage : org.abchip.mimo.biz.party.PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -457,7 +467,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NeedPackage.eNS_URI);
 		NeedPackageImpl theNeedPackage = (NeedPackageImpl)(registeredPackage instanceof NeedPackageImpl ? registeredPackage : NeedPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-		PartyPackageImpl thePartyPackage = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
+		PartyPackageImpl thePartyPackage_1 = (PartyPackageImpl)(registeredPackage instanceof PartyPackageImpl ? registeredPackage : PartyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PassportPackage.eNS_URI);
 		PassportPackageImpl thePassportPackage = (PassportPackageImpl)(registeredPackage instanceof PassportPackageImpl ? registeredPackage : PassportPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
@@ -516,6 +526,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		// Create package meta-data objects
 		theGeoPackage.createPackageContents();
 		theBizPackage.createPackageContents();
+		theAccountingPackage.createPackageContents();
 		theBudgetPackage.createPackageContents();
 		theFinaccountPackage.createPackageContents();
 		theFixedassetPackage.createPackageContents();
@@ -525,6 +536,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		theRatePackage.createPackageContents();
 		theTaxPackage.createPackageContents();
 		theSessionPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 		theDatasourcePackage.createPackageContents();
 		theEmailPackage.createPackageContents();
 		theEnumPackage.createPackageContents();
@@ -575,11 +587,12 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
+		thePartyPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
-		thePartyPackage.createPackageContents();
+		thePartyPackage_1.createPackageContents();
 		thePassportPackage.createPackageContents();
 		theCatalogPackage.createPackageContents();
 		theCategoryPackage.createPackageContents();
@@ -611,6 +624,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		// Initialize created meta-data
 		theGeoPackage.initializePackageContents();
 		theBizPackage.initializePackageContents();
+		theAccountingPackage.initializePackageContents();
 		theBudgetPackage.initializePackageContents();
 		theFinaccountPackage.initializePackageContents();
 		theFixedassetPackage.initializePackageContents();
@@ -620,6 +634,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		theRatePackage.initializePackageContents();
 		theTaxPackage.initializePackageContents();
 		theSessionPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 		theDatasourcePackage.initializePackageContents();
 		theEmailPackage.initializePackageContents();
 		theEnumPackage.initializePackageContents();
@@ -670,11 +685,12 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
+		thePartyPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
-		thePartyPackage.initializePackageContents();
+		thePartyPackage_1.initializePackageContents();
 		thePassportPackage.initializePackageContents();
 		theCatalogPackage.initializePackageContents();
 		theCategoryPackage.initializePackageContents();
@@ -968,27 +984,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 */
 	@Override
 	public EAttribute getGeo_WellKnownText() {
-		return (EAttribute)geoEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getGeo_MainGeoAssocs() {
-		return (EReference)geoEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getGeo_TaxAuthTaxAuthorities() {
-		return (EReference)geoEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)geoEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1269,8 +1265,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		createEAttribute(geoEClass, GEO__GEO_NAME);
 		createEAttribute(geoEClass, GEO__GEO_SEC_CODE);
 		createEReference(geoEClass, GEO__GEO_TYPE_ID);
-		createEReference(geoEClass, GEO__MAIN_GEO_ASSOCS);
-		createEReference(geoEClass, GEO__TAX_AUTH_TAX_AUTHORITIES);
 		createEAttribute(geoEClass, GEO__WELL_KNOWN_TEXT);
 
 		geoAssocEClass = createEClass(GEO_ASSOC);
@@ -1325,24 +1319,9 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
-		TaxPackage theTaxPackage = (TaxPackage)EPackage.Registry.INSTANCE.getEPackage(TaxPackage.eNS_URI);
-		org.abchip.mimo.biz.party.contact.ContactPackage theContactPackage_1 = (org.abchip.mimo.biz.party.contact.ContactPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.contact.ContactPackage.eNS_URI);
-		CostPackage theCostPackage = (CostPackage)EPackage.Registry.INSTANCE.getEPackage(CostPackage.eNS_URI);
-		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
-		Shipment_Package theShipment_Package = (Shipment_Package)EPackage.Registry.INSTANCE.getEPackage(Shipment_Package.eNS_URI);
-		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
-		PaymentPackage thePaymentPackage = (PaymentPackage)EPackage.Registry.INSTANCE.getEPackage(PaymentPackage.eNS_URI);
-		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
-		QuotePackage theQuotePackage = (QuotePackage)EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
-		ReturnPackage theReturnPackage = (ReturnPackage)EPackage.Registry.INSTANCE.getEPackage(ReturnPackage.eNS_URI);
-		SupplierPackage theSupplierPackage = (SupplierPackage)EPackage.Registry.INSTANCE.getEPackage(SupplierPackage.eNS_URI);
-		SegmentPackage theSegmentPackage = (SegmentPackage)EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SurveyPackage theSurveyPackage = (SurveyPackage)EPackage.Registry.INSTANCE.getEPackage(SurveyPackage.eNS_URI);
-		InvoicePackage theInvoicePackage = (InvoicePackage)EPackage.Registry.INSTANCE.getEPackage(InvoicePackage.eNS_URI);
 		DatasourcePackage theDatasourcePackage = (DatasourcePackage)EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
 		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
 		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
-		FacilityPackage theFacilityPackage = (FacilityPackage)EPackage.Registry.INSTANCE.getEPackage(FacilityPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1397,61 +1376,7 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		initEAttribute(getGeo_GeoSecCode(), ecorePackage.getEString(), "geoSecCode", null, 0, 1, Geo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGeo_GeoTypeId(), this.getGeoType(), null, "geoTypeId", null, 0, 1, Geo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getGeo_GeoTypeId().getEKeys().add(this.getGeoType_GeoTypeId());
-		initEReference(getGeo_MainGeoAssocs(), this.getGeoAssoc(), null, "mainGeoAssocs", null, 0, -1, Geo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGeo_TaxAuthTaxAuthorities(), theTaxPackage.getTaxAuthority(), null, "taxAuthTaxAuthorities", null, 0, -1, Geo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGeo_WellKnownText(), ecorePackage.getEString(), "wellKnownText", null, 0, 1, Geo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(geoEClass, this.getGeoAssoc(), "assocGeoAssocs", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theContactPackage_1.getPostalAddress(), "cityPostalAddresses", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theCostPackage.getCostComponent(), "costComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theContactPackage_1.getPostalAddress(), "countryPostalAddresses", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theContactPackage_1.getPostalAddress(), "countyPostalAddresses", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theStorePackage.getProductStoreShipmentMeth(), "excludeProductStoreShipmentMeths", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theShipment_Package.getShipmentCostEstimate(), "fromShipmentCostEstimates", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theStorePackage.getProductStoreShipmentMeth(), "includeProductStoreShipmentMeths", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theContactPackage_1.getPostalAddress(), "municipalityPostalAddresses", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theProductPackage.getProduct(), "originProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, thePaymentPackage.getPaymentApplication(), "paymentApplications", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theContactPackage_1.getPostalAddressBoundary(), "postalAddressBoundaries", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theContactPackage_1.getPostalAddress(), "postalCodePostalAddresses", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theOrderPackage.getOrderAdjustment(), "primaryOrderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theQuotePackage.getQuoteAdjustment(), "primaryQuoteAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theReturnPackage.getReturnAdjustment(), "primaryReturnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theProductPackage.getProductGeo(), "productGeos", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theSupplierPackage.getReorderGuideline(), "reorderGuidelines", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theOrderPackage.getOrderAdjustment(), "secondaryOrderAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theQuotePackage.getQuoteAdjustment(), "secondaryQuoteAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theReturnPackage.getReturnAdjustment(), "secondaryReturnAdjustments", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theSegmentPackage.getSegmentGroupGeo(), "segmentGroupGeos", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theContactPackage_1.getPostalAddress(), "stateProvincePostalAddresses", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theSurveyPackage.getSurveyQuestion(), "surveyQuestions", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theInvoicePackage.getInvoiceItem(), "taxInvoiceItems", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoEClass, theShipment_Package.getShipmentCostEstimate(), "toShipmentCostEstimates", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(geoAssocEClass, GeoAssoc.class, "GeoAssoc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGeoAssoc_GeoId(), this.getGeo(), null, "geoId", null, 1, 1, GeoAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1464,10 +1389,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		initEClass(geoAssocTypeEClass, GeoAssocType.class, "GeoAssocType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGeoAssocType_GeoAssocTypeId(), ecorePackage.getEString(), "geoAssocTypeId", null, 1, 1, GeoAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGeoAssocType_Description(), ecorePackage.getEString(), "description", null, 0, 1, GeoAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(geoAssocTypeEClass, this.getCountryAddressFormat(), "countryAddressFormats", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoAssocTypeEClass, this.getGeoAssoc(), "geoAssocs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(geoPointEClass, GeoPoint.class, "GeoPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGeoPoint_GeoPointId(), ecorePackage.getEString(), "geoPointId", null, 1, 1, GeoPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1483,22 +1404,12 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		initEAttribute(getGeoPoint_Latitude(), ecorePackage.getEString(), "latitude", null, 1, 1, GeoPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGeoPoint_Longitude(), ecorePackage.getEString(), "longitude", null, 1, 1, GeoPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(geoPointEClass, theFacilityPackage.getFacility(), "facilities", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoPointEClass, theFacilityPackage.getFacilityLocation(), "facilityLocations", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoPointEClass, theContactPackage_1.getPostalAddress(), "postalAddresses", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(geoTypeEClass, GeoType.class, "GeoType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGeoType_GeoTypeId(), ecorePackage.getEString(), "geoTypeId", null, 1, 1, GeoType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGeoType_Description(), ecorePackage.getEString(), "description", null, 0, 1, GeoType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGeoType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, GeoType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGeoType_ParentTypeId(), this.getGeoType(), null, "parentTypeId", null, 0, 1, GeoType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getGeoType_ParentTypeId().getEKeys().add(this.getGeoType_GeoTypeId());
-
-		addEOperation(geoTypeEClass, this.getGeoType(), "childGeoTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(geoTypeEClass, this.getGeo(), "geos", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-frame
@@ -1507,8 +1418,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		createMimoentformatAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 	}
 
 	/**
@@ -1523,49 +1432,24 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		  (getCountryAddressFormat_GeoId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getCountryAddressFormat_AddressFormat(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getCountryAddressFormat_HasPostalCodeExt(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 		addAnnotation
 		  (getCountryAddressFormat_PostalCodeRegex(),
 		   source,
 		   new String[] {
-			   "type", "long-varchar",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getCountryAddressFormat_RequirePostalCode(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
-		   });
-		addAnnotation
-		  (getCountryAddressFormat_RequirePostalCodeExt(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 		addAnnotation
 		  (getCountryAddressFormat_RequireStateProvinceId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1579,14 +1463,12 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		  (getCountryCode_CountryCode(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getCountryCode_CountryAbbr(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -1600,35 +1482,30 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		  (getCountryCode_CountryNumber(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
 		  (getCountryTeleCode_TeleCode(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
 		  (getGeo_GeoId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
 		  (getGeo_Abbreviation(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
 		  (getGeo_GeoCode(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
@@ -1642,20 +1519,12 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		  (getGeo_GeoSecCode(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
-		   });
-		addAnnotation
-		  (getGeo_WellKnownText(),
-		   source,
-		   new String[] {
-			   "type", "very-long"
 		   });
 		addAnnotation
 		  (getGeoAssocType_GeoAssocTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1669,7 +1538,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		  (getGeoPoint_GeoPointId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1698,21 +1566,18 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		  (getGeoPoint_Latitude(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
 		  (getGeoPoint_Longitude(),
 		   source,
 		   new String[] {
-			   "type", "short-varchar",
 			   "length", "60"
 		   });
 		addAnnotation
 		  (getGeoType_GeoTypeId(),
 		   source,
 		   new String[] {
-			   "type", "id",
 			   "length", "20"
 		   });
 		addAnnotation
@@ -1721,13 +1586,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		   new String[] {
 			   "type", "description",
 			   "length", "255"
-		   });
-		addAnnotation
-		  (getGeoType_HasTable(),
-		   source,
-		   new String[] {
-			   "type", "indicator",
-			   "length", "1"
 		   });
 	}
 
@@ -1739,174 +1597,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 	 */
 	protected void createMimoentslotAnnotations() {
 		String source = "mimo-ent-slot";
-		addAnnotation
-		  (geoEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(8),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(9),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(10),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(11),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(12),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(13),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(14),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(15),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(16),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(17),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(18),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(19),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(20),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(21),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(22),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(23),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(24),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(25),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getGeo_MainGeoAssocs(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (getGeo_TaxAuthTaxAuthorities(),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
 		addAnnotation
 		  (getGeoAssoc_GeoId(),
 		   source,
@@ -1922,36 +1612,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 			   "help", "The enclosing geo"
 		   });
 		addAnnotation
-		  (geoAssocTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoAssocTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoPointEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoPointEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoPointEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
 		  (getGeoPoint_ElevationUomId(),
 		   source,
 		   new String[] {
@@ -1962,271 +1622,6 @@ public class GeoPackageImpl extends EPackageImpl implements GeoPackage {
 		   source,
 		   new String[] {
 			   "help", "To enter any related information"
-		   });
-		addAnnotation
-		  (geoTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-		addAnnotation
-		  (geoTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "derived", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (geoEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "GeoAssoc",
-			   "route", "geoIdTo"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "PostalAddress",
-			   "route", "cityGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "frame", "CostComponent",
-			   "route", "geoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(3),
-		   source,
-		   new String[] {
-			   "frame", "PostalAddress",
-			   "route", "countryGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(4),
-		   source,
-		   new String[] {
-			   "frame", "PostalAddress",
-			   "route", "countyGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(5),
-		   source,
-		   new String[] {
-			   "frame", "ProductStoreShipmentMeth",
-			   "route", "excludeGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(6),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentCostEstimate",
-			   "route", "geoIdFrom"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(7),
-		   source,
-		   new String[] {
-			   "frame", "ProductStoreShipmentMeth",
-			   "route", "includeGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(8),
-		   source,
-		   new String[] {
-			   "frame", "PostalAddress",
-			   "route", "municipalityGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(9),
-		   source,
-		   new String[] {
-			   "frame", "Product",
-			   "route", "originGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(10),
-		   source,
-		   new String[] {
-			   "frame", "PaymentApplication",
-			   "route", "taxAuthGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(11),
-		   source,
-		   new String[] {
-			   "frame", "PostalAddressBoundary",
-			   "route", "geoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(12),
-		   source,
-		   new String[] {
-			   "frame", "PostalAddress",
-			   "route", "postalCodeGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(13),
-		   source,
-		   new String[] {
-			   "frame", "OrderAdjustment",
-			   "route", "primaryGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(14),
-		   source,
-		   new String[] {
-			   "frame", "QuoteAdjustment",
-			   "route", "primaryGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(15),
-		   source,
-		   new String[] {
-			   "frame", "ReturnAdjustment",
-			   "route", "primaryGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(16),
-		   source,
-		   new String[] {
-			   "frame", "ProductGeo",
-			   "route", "geoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(17),
-		   source,
-		   new String[] {
-			   "frame", "ReorderGuideline",
-			   "route", "geoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(18),
-		   source,
-		   new String[] {
-			   "frame", "OrderAdjustment",
-			   "route", "secondaryGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(19),
-		   source,
-		   new String[] {
-			   "frame", "QuoteAdjustment",
-			   "route", "secondaryGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(20),
-		   source,
-		   new String[] {
-			   "frame", "ReturnAdjustment",
-			   "route", "secondaryGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(21),
-		   source,
-		   new String[] {
-			   "frame", "SegmentGroupGeo",
-			   "route", "geoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(22),
-		   source,
-		   new String[] {
-			   "frame", "PostalAddress",
-			   "route", "stateProvinceGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(23),
-		   source,
-		   new String[] {
-			   "frame", "SurveyQuestion",
-			   "route", "geoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(24),
-		   source,
-		   new String[] {
-			   "frame", "InvoiceItem",
-			   "route", "taxAuthGeoId"
-		   });
-		addAnnotation
-		  (geoEClass.getEOperations().get(25),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentCostEstimate",
-			   "route", "geoIdTo"
-		   });
-		addAnnotation
-		  (getGeo_MainGeoAssocs(),
-		   source,
-		   new String[] {
-			   "frame", "GeoAssoc"
-		   });
-		addAnnotation
-		  (getGeo_TaxAuthTaxAuthorities(),
-		   source,
-		   new String[] {
-			   "frame", "TaxAuthority"
-		   });
-		addAnnotation
-		  (geoAssocTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "CountryAddressFormat",
-			   "route", "geoAssocTypeId"
-		   });
-		addAnnotation
-		  (geoAssocTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "GeoAssoc",
-			   "route", "geoAssocTypeId"
-		   });
-		addAnnotation
-		  (geoPointEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "Facility",
-			   "route", "geoPointId"
-		   });
-		addAnnotation
-		  (geoPointEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "FacilityLocation",
-			   "route", "geoPointId"
-		   });
-		addAnnotation
-		  (geoPointEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-			   "frame", "PostalAddress",
-			   "route", "geoPointId"
-		   });
-		addAnnotation
-		  (geoTypeEClass.getEOperations().get(0),
-		   source,
-		   new String[] {
-			   "frame", "GeoType",
-			   "route", "parentTypeId"
-		   });
-		addAnnotation
-		  (geoTypeEClass.getEOperations().get(1),
-		   source,
-		   new String[] {
-			   "frame", "Geo",
-			   "route", "geoTypeId"
 		   });
 	}
 

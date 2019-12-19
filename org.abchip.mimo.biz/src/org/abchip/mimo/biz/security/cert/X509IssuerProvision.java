@@ -45,7 +45,7 @@ public interface X509IssuerProvision extends BizEntity {
 	 * @see #setCertProvisionId(String)
 	 * @see org.abchip.mimo.biz.security.cert.CertPackage#getX509IssuerProvision_CertProvisionId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getCertProvisionId();
@@ -71,7 +71,7 @@ public interface X509IssuerProvision extends BizEntity {
 	 * @return the value of the '<em>City Locality</em>' attribute.
 	 * @see #setCityLocality(String)
 	 * @see org.abchip.mimo.biz.security.cert.CertPackage#getX509IssuerProvision_CityLocality()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCityLocality();
@@ -97,7 +97,7 @@ public interface X509IssuerProvision extends BizEntity {
 	 * @return the value of the '<em>Common Name</em>' attribute.
 	 * @see #setCommonName(String)
 	 * @see org.abchip.mimo.biz.security.cert.CertPackage#getX509IssuerProvision_CommonName()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCommonName();
@@ -123,7 +123,7 @@ public interface X509IssuerProvision extends BizEntity {
 	 * @return the value of the '<em>Country</em>' attribute.
 	 * @see #setCountry(String)
 	 * @see org.abchip.mimo.biz.security.cert.CertPackage#getX509IssuerProvision_Country()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getCountry();
@@ -149,7 +149,7 @@ public interface X509IssuerProvision extends BizEntity {
 	 * @return the value of the '<em>Organization Name</em>' attribute.
 	 * @see #setOrganizationName(String)
 	 * @see org.abchip.mimo.biz.security.cert.CertPackage#getX509IssuerProvision_OrganizationName()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getOrganizationName();
@@ -175,7 +175,7 @@ public interface X509IssuerProvision extends BizEntity {
 	 * @return the value of the '<em>Organizational Unit</em>' attribute.
 	 * @see #setOrganizationalUnit(String)
 	 * @see org.abchip.mimo.biz.security.cert.CertPackage#getX509IssuerProvision_OrganizationalUnit()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getOrganizationalUnit();
@@ -201,7 +201,7 @@ public interface X509IssuerProvision extends BizEntity {
 	 * @return the value of the '<em>Serial Number</em>' attribute.
 	 * @see #setSerialNumber(String)
 	 * @see org.abchip.mimo.biz.security.cert.CertPackage#getX509IssuerProvision_SerialNumber()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getSerialNumber();
@@ -227,7 +227,7 @@ public interface X509IssuerProvision extends BizEntity {
 	 * @return the value of the '<em>State Province</em>' attribute.
 	 * @see #setStateProvince(String)
 	 * @see org.abchip.mimo.biz.security.cert.CertPackage#getX509IssuerProvision_StateProvince()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getStateProvince();

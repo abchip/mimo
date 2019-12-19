@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.biz.security.securitygroup;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntity;
-import org.abchip.mimo.biz.common.portal.PortalPage;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +21,6 @@ import org.abchip.mimo.biz.common.portal.PortalPage;
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroup#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroup#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroup#getGroupName <em>Group Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroup#getProtectedViews <em>Protected Views</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup()
@@ -70,7 +66,7 @@ public interface SecurityGroup extends BizEntity {
 	 * @see #setGroupId(String)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup_GroupId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getGroupId();
@@ -96,7 +92,7 @@ public interface SecurityGroup extends BizEntity {
 	 * @return the value of the '<em>Group Name</em>' attribute.
 	 * @see #setGroupName(String)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup_GroupName()
-	 * @model annotation="mimo-ent-format type='value' length='255'"
+	 * @model annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getGroupName();
@@ -110,31 +106,5 @@ public interface SecurityGroup extends BizEntity {
 	 * @generated
 	 */
 	void setGroupName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Protected Views</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.security.securitygroup.ProtectedView}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Protected Views</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Protected Views</em>' reference list.
-	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup_ProtectedViews()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='ProtectedView'"
-	 * @generated
-	 */
-	List<ProtectedView> getProtectedViews();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PortalPage' route='securityGroupId'"
-	 * @generated
-	 */
-	List<PortalPage> portalPages();
 
 } // SecurityGroup

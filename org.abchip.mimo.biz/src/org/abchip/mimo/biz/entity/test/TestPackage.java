@@ -298,22 +298,13 @@ public interface TestPackage extends EPackage {
 	int TESTING__TESTING_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Testing Items</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TESTING__TESTING_ITEMS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Testing Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TESTING__TESTING_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int TESTING__TESTING_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Testing Size</b></em>' attribute.
@@ -322,7 +313,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TESTING__TESTING_SIZE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int TESTING__TESTING_SIZE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Testing Type Id</b></em>' reference.
@@ -331,7 +322,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TESTING__TESTING_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int TESTING__TESTING_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Testing</em>' class.
@@ -340,7 +331,7 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TESTING_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int TESTING_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.entity.test.impl.TestingCryptoImpl <em>Testing Crypto</em>}' class.
@@ -1254,17 +1245,6 @@ public interface TestPackage extends EPackage {
 	EReference getTesting_TestingTypeId();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.entity.test.Testing#getTestingItems <em>Testing Items</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Testing Items</em>'.
-	 * @see org.abchip.mimo.biz.entity.test.Testing#getTestingItems()
-	 * @see #getTesting()
-	 * @generated
-	 */
-	EReference getTesting_TestingItems();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.test.TestingCrypto <em>Testing Crypto</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1837,14 +1817,6 @@ public interface TestPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TESTING__TESTING_TYPE_ID = eINSTANCE.getTesting_TestingTypeId();
-
-		/**
-		 * The meta object literal for the '<em><b>Testing Items</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TESTING__TESTING_ITEMS = eINSTANCE.getTesting_TestingItems();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.test.impl.TestingCryptoImpl <em>Testing Crypto</em>}' class.

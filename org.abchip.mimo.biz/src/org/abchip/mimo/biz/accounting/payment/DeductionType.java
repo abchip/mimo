@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.accounting.payment;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -68,7 +66,7 @@ public interface DeductionType extends BizEntityType<Deduction> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getDeductionType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -110,24 +108,6 @@ public interface DeductionType extends BizEntityType<Deduction> {
 	void setParentTypeId(DeductionType value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='DeductionType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<DeductionType> childDeductionTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Deduction' route='deductionTypeId'"
-	 * @generated
-	 */
-	List<Deduction> deductions();
-
-	/**
 	 * Returns the value of the '<em><b>Deduction Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -139,7 +119,7 @@ public interface DeductionType extends BizEntityType<Deduction> {
 	 * @see #setDeductionTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getDeductionType_DeductionTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getDeductionTypeId();

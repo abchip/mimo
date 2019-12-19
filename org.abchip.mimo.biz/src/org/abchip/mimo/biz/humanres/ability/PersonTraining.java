@@ -50,7 +50,7 @@ public interface PersonTraining extends BizEntityTyped<TrainingClassType> {
 	 * @return the value of the '<em>Approval Status</em>' attribute.
 	 * @see #setApprovalStatus(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_ApprovalStatus()
-	 * @model annotation="mimo-ent-format type='short-varchar' length='60'"
+	 * @model annotation="mimo-ent-format length='60'"
 	 * @generated
 	 */
 	String getApprovalStatus();
@@ -104,7 +104,6 @@ public interface PersonTraining extends BizEntityTyped<TrainingClassType> {
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_FromDate()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-format type='date-time'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -183,7 +182,7 @@ public interface PersonTraining extends BizEntityTyped<TrainingClassType> {
 	 * @return the value of the '<em>Thru Date</em>' attribute.
 	 * @see #setThruDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_ThruDate()
-	 * @model annotation="mimo-ent-format type='date-time'"
+	 * @model
 	 * @generated
 	 */
 	Date getThruDate();

@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.biz.party.party;
 
-import java.util.List;
-
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -24,7 +22,6 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyType#getParentTypeId <em>Parent Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyType#getPartyTypeAttrs <em>Party Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyType()
@@ -69,7 +66,7 @@ public interface PartyType extends BizEntityType<Party> {
 	 * @return the value of the '<em>Has Table</em>' attribute.
 	 * @see #setHasTable(boolean)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyType_HasTable()
-	 * @model annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model
 	 * @generated
 	 */
 	boolean isHasTable();
@@ -122,7 +119,7 @@ public interface PartyType extends BizEntityType<Party> {
 	 * @see #setPartyTypeId(String)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyType_PartyTypeId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPartyTypeId();
@@ -136,40 +133,5 @@ public interface PartyType extends BizEntityType<Party> {
 	 * @generated
 	 */
 	void setPartyTypeId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Party Type Attrs</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyTypeAttr}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Party Type Attrs</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Type Attrs</em>' reference list.
-	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyType_PartyTypeAttrs()
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyTypeAttr'"
-	 * @generated
-	 */
-	List<PartyTypeAttr> getPartyTypeAttrs();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='PartyType' route='parentTypeId'"
-	 * @generated
-	 */
-	List<PartyType> childPartyTypes();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="mimo-ent-slot derived='true'"
-	 *        annotation="mimo-ent-domain frame='Party' route='partyTypeId'"
-	 * @generated
-	 */
-	List<Party> parties();
 
 } // PartyType

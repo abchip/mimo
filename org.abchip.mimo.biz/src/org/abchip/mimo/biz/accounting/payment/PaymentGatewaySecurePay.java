@@ -42,8 +42,8 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	 * @return the value of the '<em>Enable Amount Round</em>' attribute.
 	 * @see #setEnableAmountRound(boolean)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_EnableAmountRound()
-	 * @model annotation="mimo-ent-slot help='Enable rounds the currency amount to .00 (Y / N)'"
-	 *        annotation="mimo-ent-format type='indicator' length='1'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot help='Enable rounds the currency amount to .00 (Y / N)'"
 	 * @generated
 	 */
 	boolean isEnableAmountRound();
@@ -70,7 +70,7 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	 * @see #setMerchantId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_MerchantId()
 	 * @model annotation="mimo-ent-slot help='You merchant ID'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getMerchantId();
@@ -97,7 +97,7 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	 * @see #setPaymentGatewayConfigId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_PaymentGatewayConfigId()
 	 * @model id="true" required="true"
-	 *        annotation="mimo-ent-format type='id' length='20'"
+	 *        annotation="mimo-ent-format length='20'"
 	 * @generated
 	 */
 	String getPaymentGatewayConfigId();
@@ -124,7 +124,7 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	 * @see #setProcessTimeout(long)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_ProcessTimeout()
 	 * @model annotation="mimo-ent-slot help='Process Timeout'"
-	 *        annotation="mimo-ent-format type='numeric' precision='20' scale='0'"
+	 *        annotation="mimo-ent-format precision='20' scale='0'"
 	 * @generated
 	 */
 	long getProcessTimeout();
@@ -151,7 +151,7 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	 * @see #setPwd(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_Pwd()
 	 * @model annotation="mimo-ent-slot encrypt='TRUE' help='SecurePay Password of account information'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getPwd();
@@ -178,7 +178,7 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	 * @see #setServerURL(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_ServerURL()
 	 * @model annotation="mimo-ent-slot help='Server URL of the payment processor'"
-	 *        annotation="mimo-ent-format type='value' length='255'"
+	 *        annotation="mimo-ent-format length='255'"
 	 * @generated
 	 */
 	String getServerURL();
