@@ -10,63 +10,55 @@
       <!-- @generated mimo -->
       <package
             uri="http://www.abchip.org/mimo"
-            class="org.abchip.mimo.MimoPackage"
-            genModel="model/mimo.genmodel"/>
+            class="org.abchip.mimo.MimoPackage"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated mimo -->
       <package
             uri="http://www.abchip.org/mimo/application"
-            class="org.abchip.mimo.application.ApplicationPackage"
-            genModel="model/mimo.genmodel"/>
+            class="org.abchip.mimo.application.ApplicationPackage"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated mimo -->
       <package
             uri="http://www.abchip.org/mimo/context"
-            class="org.abchip.mimo.context.ContextPackage"
-            genModel="model/mimo.genmodel"/>
+            class="org.abchip.mimo.context.ContextPackage"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated mimo -->
       <package
             uri="http://www.abchip.org/mimo/data"
-            class="org.abchip.mimo.data.DataPackage"
-            genModel="model/mimo.genmodel"/>
+            class="org.abchip.mimo.data.DataPackage"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated mimo -->
       <package
             uri="http://www.abchip.org/mimo/entity"
-            class="org.abchip.mimo.entity.EntityPackage"
-            genModel="model/mimo.genmodel"/>
+            class="org.abchip.mimo.entity.EntityPackage"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated mimo -->
       <package
             uri="http://www.abchip.org/mimo/java"
-            class="org.abchip.mimo.java.JavaPackage"
-            genModel="model/mimo.genmodel"/>
+            class="org.abchip.mimo.java.JavaPackage"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated mimo -->
       <package
             uri="http://www.abchip.org/mimo/resource"
-            class="org.abchip.mimo.resource.ResourcePackage"
-            genModel="model/mimo.genmodel"/>
+            class="org.abchip.mimo.resource.ResourcePackage"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated mimo -->
       <package
             uri="http://www.abchip.org/mimo/util"
-            class="org.abchip.mimo.util.UtilPackage"
-            genModel="model/mimo.genmodel"/>
+            class="org.abchip.mimo.util.UtilPackage"/>
    </extension>
 </plugin>

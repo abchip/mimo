@@ -68,6 +68,18 @@ public class EMFSlotAdapter extends SlotImpl {
 			}
 		}
 
+		EAnnotation eAnnotationFormat = element.getEAnnotation(Slot.NS_PREFIX_FORMAT);
+		if (eAnnotationFormat != null) {
+			for (String key : eAnnotationFormat.getDetails().keySet()) {
+				if (key.equals("length"))
+					eSet(EntityPackage.SLOT__LENGTH, Integer.parseInt(eAnnotationFormat.getDetails().get(key)));
+				else if (key.equals("precision"))
+					eSet(EntityPackage.SLOT__PRECISION, Integer.parseInt(eAnnotationFormat.getDetails().get(key)));
+				else if (key.equals("scale"))
+					eSet(EntityPackage.SLOT__SCALE, Integer.parseInt(eAnnotationFormat.getDetails().get(key)));
+			}
+		}
+
 		this.setSlotDomain();
 	}
 

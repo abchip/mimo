@@ -142,8 +142,18 @@ public class LookupFormServlet extends BaseServlet {
 				field.setView("counter");
 			else if (slot.getText().toLowerCase().contains("image"))
 				field.setView("photo");
-			else
+			else {
 				field.setView("text");
+				if(slot.getLength()>0) {
+					field.setLength(slot.getLength());
+				}
+				if(slot.getPrecision()>0) {
+					field.setPrecision(slot.getPrecision());
+				}
+				if(slot.getScale()>0) {
+					field.setScale(slot.getScale());
+				}
+			}
 		}
 
 		return field;

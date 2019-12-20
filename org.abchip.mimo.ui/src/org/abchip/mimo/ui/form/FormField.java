@@ -21,7 +21,10 @@ import org.abchip.mimo.entity.Entity;
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#getLength <em>Length</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#getPrecision <em>Precision</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#getScale <em>Scale</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#isTopSplit <em>Top Split</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}</li>
  * </ul>
@@ -162,6 +165,32 @@ public interface FormField extends Entity {
 	void setLabel(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Length</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Length</em>' attribute.
+	 * @see #setLength(int)
+	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Length()
+	 * @model
+	 * @generated
+	 */
+	int getLength();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getLength <em>Length</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Length</em>' attribute.
+	 * @see #getLength()
+	 * @generated
+	 */
+	void setLength(int value);
+
+	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -186,6 +215,58 @@ public interface FormField extends Entity {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Precision</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Precision</em>' attribute.
+	 * @see #setPrecision(int)
+	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Precision()
+	 * @model
+	 * @generated
+	 */
+	int getPrecision();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getPrecision <em>Precision</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Precision</em>' attribute.
+	 * @see #getPrecision()
+	 * @generated
+	 */
+	void setPrecision(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Scale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Scale</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scale</em>' attribute.
+	 * @see #setScale(int)
+	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Scale()
+	 * @model
+	 * @generated
+	 */
+	int getScale();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getScale <em>Scale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Scale</em>' attribute.
+	 * @see #getScale()
+	 * @generated
+	 */
+	void setScale(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Domain</b></em>' containment reference.

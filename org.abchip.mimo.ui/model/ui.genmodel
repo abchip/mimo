@@ -54,7 +54,10 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/group"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/icon"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/label"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/length"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/precision"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/scale"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/topSplit"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/view"/>
       </genClasses>

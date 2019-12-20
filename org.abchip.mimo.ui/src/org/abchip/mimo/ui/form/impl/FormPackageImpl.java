@@ -202,7 +202,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 	 */
 	@Override
 	public EAttribute getFormField_View() {
-		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -212,7 +212,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 	 */
 	@Override
 	public EAttribute getFormField_TopSplit() {
-		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -241,8 +241,38 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFormField_Name() {
+	public EAttribute getFormField_Length() {
 		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFormField_Name() {
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFormField_Precision() {
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFormField_Scale() {
+		return (EAttribute)formFieldEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -315,7 +345,10 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		createEAttribute(formFieldEClass, FORM_FIELD__GROUP);
 		createEAttribute(formFieldEClass, FORM_FIELD__ICON);
 		createEAttribute(formFieldEClass, FORM_FIELD__LABEL);
+		createEAttribute(formFieldEClass, FORM_FIELD__LENGTH);
 		createEAttribute(formFieldEClass, FORM_FIELD__NAME);
+		createEAttribute(formFieldEClass, FORM_FIELD__PRECISION);
+		createEAttribute(formFieldEClass, FORM_FIELD__SCALE);
 		createEAttribute(formFieldEClass, FORM_FIELD__TOP_SPLIT);
 		createEAttribute(formFieldEClass, FORM_FIELD__VIEW);
 	}
@@ -366,7 +399,10 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		initEAttribute(getFormField_Group(), ecorePackage.getEString(), "group", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_Label(), ecorePackage.getEString(), "label", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormField_Length(), ecorePackage.getEInt(), "length", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_Name(), ecorePackage.getEString(), "name", null, 1, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormField_Precision(), ecorePackage.getEInt(), "precision", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormField_Scale(), ecorePackage.getEInt(), "scale", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_TopSplit(), ecorePackage.getEBoolean(), "topSplit", null, 0, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormField_View(), ecorePackage.getEString(), "view", null, 1, 1, FormField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

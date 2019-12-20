@@ -30,7 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getLength <em>Length</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getPrecision <em>Precision</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getScale <em>Scale</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isTopSplit <em>Top Split</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getView <em>View</em>}</li>
  * </ul>
@@ -154,6 +157,26 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	protected String label = LABEL_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getLength() <em>Length</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLength()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int LENGTH_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getLength() <em>Length</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLength()
+	 * @generated
+	 * @ordered
+	 */
+	protected int length = LENGTH_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,6 +195,46 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPrecision() <em>Precision</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrecision()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PRECISION_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getPrecision() <em>Precision</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrecision()
+	 * @generated
+	 * @ordered
+	 */
+	protected int precision = PRECISION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getScale() <em>Scale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScale()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SCALE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getScale() <em>Scale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScale()
+	 * @generated
+	 * @ordered
+	 */
+	protected int scale = SCALE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isTopSplit() <em>Top Split</em>}' attribute.
@@ -353,6 +416,29 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	 * @generated
 	 */
 	@Override
+	public int getLength() {
+		return length;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLength(int newLength) {
+		int oldLength = length;
+		length = newLength;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__LENGTH, oldLength, length));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -368,6 +454,52 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getPrecision() {
+		return precision;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPrecision(int newPrecision) {
+		int oldPrecision = precision;
+		precision = newPrecision;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__PRECISION, oldPrecision, precision));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getScale() {
+		return scale;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setScale(int newScale) {
+		int oldScale = scale;
+		scale = newScale;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__SCALE, oldScale, scale));
 	}
 
 	/**
@@ -519,8 +651,14 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 				return getIcon();
 			case FormPackage.FORM_FIELD__LABEL:
 				return getLabel();
+			case FormPackage.FORM_FIELD__LENGTH:
+				return getLength();
 			case FormPackage.FORM_FIELD__NAME:
 				return getName();
+			case FormPackage.FORM_FIELD__PRECISION:
+				return getPrecision();
+			case FormPackage.FORM_FIELD__SCALE:
+				return getScale();
 			case FormPackage.FORM_FIELD__TOP_SPLIT:
 				return isTopSplit();
 			case FormPackage.FORM_FIELD__VIEW:
@@ -555,8 +693,17 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__LABEL:
 				setLabel((String)newValue);
 				return;
+			case FormPackage.FORM_FIELD__LENGTH:
+				setLength((Integer)newValue);
+				return;
 			case FormPackage.FORM_FIELD__NAME:
 				setName((String)newValue);
+				return;
+			case FormPackage.FORM_FIELD__PRECISION:
+				setPrecision((Integer)newValue);
+				return;
+			case FormPackage.FORM_FIELD__SCALE:
+				setScale((Integer)newValue);
 				return;
 			case FormPackage.FORM_FIELD__TOP_SPLIT:
 				setTopSplit((Boolean)newValue);
@@ -594,8 +741,17 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__LABEL:
 				setLabel(LABEL_EDEFAULT);
 				return;
+			case FormPackage.FORM_FIELD__LENGTH:
+				setLength(LENGTH_EDEFAULT);
+				return;
 			case FormPackage.FORM_FIELD__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case FormPackage.FORM_FIELD__PRECISION:
+				setPrecision(PRECISION_EDEFAULT);
+				return;
+			case FormPackage.FORM_FIELD__SCALE:
+				setScale(SCALE_EDEFAULT);
 				return;
 			case FormPackage.FORM_FIELD__TOP_SPLIT:
 				setTopSplit(TOP_SPLIT_EDEFAULT);
@@ -627,8 +783,14 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
 			case FormPackage.FORM_FIELD__LABEL:
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
+			case FormPackage.FORM_FIELD__LENGTH:
+				return length != LENGTH_EDEFAULT;
 			case FormPackage.FORM_FIELD__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case FormPackage.FORM_FIELD__PRECISION:
+				return precision != PRECISION_EDEFAULT;
+			case FormPackage.FORM_FIELD__SCALE:
+				return scale != SCALE_EDEFAULT;
 			case FormPackage.FORM_FIELD__TOP_SPLIT:
 				return topSplit != TOP_SPLIT_EDEFAULT;
 			case FormPackage.FORM_FIELD__VIEW:
@@ -657,8 +819,14 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 		result.append(icon);
 		result.append(", label: ");
 		result.append(label);
+		result.append(", length: ");
+		result.append(length);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", precision: ");
+		result.append(precision);
+		result.append(", scale: ");
+		result.append(scale);
 		result.append(", topSplit: ");
 		result.append(topSplit);
 		result.append(", view: ");

@@ -160,13 +160,40 @@ public interface FormPackage extends EPackage {
 	int FORM_FIELD__LABEL = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__LENGTH = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+	int FORM_FIELD__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__PRECISION = EntityPackage.ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Scale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FIELD__SCALE = EntityPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Top Split</b></em>' attribute.
@@ -175,7 +202,7 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__TOP_SPLIT = EntityPackage.ENTITY_FEATURE_COUNT + 7;
+	int FORM_FIELD__TOP_SPLIT = EntityPackage.ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -184,7 +211,7 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 8;
+	int FORM_FIELD__VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Field</em>' class.
@@ -193,7 +220,7 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 9;
+	int FORM_FIELD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 12;
 
 
 	/**
@@ -294,6 +321,17 @@ public interface FormPackage extends EPackage {
 	EAttribute getFormField_Label();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#getLength <em>Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Length</em>'.
+	 * @see org.abchip.mimo.ui.form.FormField#getLength()
+	 * @see #getFormField()
+	 * @generated
+	 */
+	EAttribute getFormField_Length();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,6 +341,28 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFormField_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#getPrecision <em>Precision</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Precision</em>'.
+	 * @see org.abchip.mimo.ui.form.FormField#getPrecision()
+	 * @see #getFormField()
+	 * @generated
+	 */
+	EAttribute getFormField_Precision();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#getScale <em>Scale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Scale</em>'.
+	 * @see org.abchip.mimo.ui.form.FormField#getScale()
+	 * @see #getFormField()
+	 * @generated
+	 */
+	EAttribute getFormField_Scale();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.form.FormField#getDomain <em>Domain</em>}'.
@@ -436,12 +496,36 @@ public interface FormPackage extends EPackage {
 		EAttribute FORM_FIELD__LABEL = eINSTANCE.getFormField_Label();
 
 		/**
+		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORM_FIELD__LENGTH = eINSTANCE.getFormField_Length();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute FORM_FIELD__NAME = eINSTANCE.getFormField_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Precision</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORM_FIELD__PRECISION = eINSTANCE.getFormField_Precision();
+
+		/**
+		 * The meta object literal for the '<em><b>Scale</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORM_FIELD__SCALE = eINSTANCE.getFormField_Scale();
 
 		/**
 		 * The meta object literal for the '<em><b>Domain</b></em>' containment reference feature.

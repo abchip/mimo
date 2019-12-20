@@ -732,7 +732,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSlot_Name() {
+	public EAttribute getSlot_Length() {
 		return (EAttribute)slotEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -742,7 +742,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSlot_Text() {
+	public EAttribute getSlot_Name() {
 		return (EAttribute)slotEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -752,8 +752,38 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSlot_ToString() {
+	public EAttribute getSlot_Precision() {
 		return (EAttribute)slotEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSlot_Scale() {
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSlot_Text() {
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSlot_ToString() {
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -854,7 +884,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEReference(slotEClass, SLOT__DOMAIN);
 		createEAttribute(slotEClass, SLOT__GROUP);
 		createEAttribute(slotEClass, SLOT__KEY);
+		createEAttribute(slotEClass, SLOT__LENGTH);
 		createEAttribute(slotEClass, SLOT__NAME);
+		createEAttribute(slotEClass, SLOT__PRECISION);
+		createEAttribute(slotEClass, SLOT__SCALE);
 		createEAttribute(slotEClass, SLOT__TEXT);
 		createEAttribute(slotEClass, SLOT__TO_STRING);
 
@@ -1080,7 +1113,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEReference(getSlot_Domain(), this.getDomain(), null, "domain", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Group(), ecorePackage.getEString(), "group", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Key(), ecorePackage.getEBoolean(), "key", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSlot_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Name(), ecorePackage.getEString(), "name", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSlot_Precision(), ecorePackage.getEInt(), "precision", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSlot_Scale(), ecorePackage.getEInt(), "scale", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_Text(), ecorePackage.getEString(), "text", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_ToString(), ecorePackage.getEBoolean(), "toString", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

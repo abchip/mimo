@@ -34,7 +34,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isKey <em>Key</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getLength <em>Length</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getPrecision <em>Precision</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getScale <em>Scale</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isToString <em>To String</em>}</li>
  * </ul>
@@ -151,6 +154,24 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	 */
 	protected boolean key = KEY_EDEFAULT;
 	/**
+	 * The default value of the '{@link #getLength() <em>Length</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLength()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int LENGTH_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getLength() <em>Length</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLength()
+	 * @generated
+	 * @ordered
+	 */
+	protected int length = LENGTH_EDEFAULT;
+	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -168,6 +189,42 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getPrecision() <em>Precision</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrecision()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PRECISION_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getPrecision() <em>Precision</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrecision()
+	 * @generated
+	 * @ordered
+	 */
+	protected int precision = PRECISION_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getScale() <em>Scale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScale()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SCALE_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getScale() <em>Scale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScale()
+	 * @generated
+	 * @ordered
+	 */
+	protected int scale = SCALE_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -248,6 +305,52 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getPrecision() {
+		return precision;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPrecision(int newPrecision) {
+		int oldPrecision = precision;
+		precision = newPrecision;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__PRECISION, oldPrecision, precision));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getScale() {
+		return scale;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setScale(int newScale) {
+		int oldScale = scale;
+		scale = newScale;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__SCALE, oldScale, scale));
 	}
 
 	/**
@@ -553,6 +656,29 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	 * @generated
 	 */
 	@Override
+	public int getLength() {
+		return length;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLength(int newLength) {
+		int oldLength = length;
+		length = newLength;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__LENGTH, oldLength, length));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Entity getValue(String nsPrefix) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -659,8 +785,14 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return getGroup();
 			case EntityPackage.SLOT__KEY:
 				return isKey();
+			case EntityPackage.SLOT__LENGTH:
+				return getLength();
 			case EntityPackage.SLOT__NAME:
 				return getName();
+			case EntityPackage.SLOT__PRECISION:
+				return getPrecision();
+			case EntityPackage.SLOT__SCALE:
+				return getScale();
 			case EntityPackage.SLOT__TEXT:
 				return getText();
 			case EntityPackage.SLOT__TO_STRING:
@@ -698,8 +830,17 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 			case EntityPackage.SLOT__KEY:
 				setKey((Boolean)newValue);
 				return;
+			case EntityPackage.SLOT__LENGTH:
+				setLength((Integer)newValue);
+				return;
 			case EntityPackage.SLOT__NAME:
 				setName((String)newValue);
+				return;
+			case EntityPackage.SLOT__PRECISION:
+				setPrecision((Integer)newValue);
+				return;
+			case EntityPackage.SLOT__SCALE:
+				setScale((Integer)newValue);
 				return;
 			case EntityPackage.SLOT__TEXT:
 				setText((String)newValue);
@@ -740,8 +881,17 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 			case EntityPackage.SLOT__KEY:
 				setKey(KEY_EDEFAULT);
 				return;
+			case EntityPackage.SLOT__LENGTH:
+				setLength(LENGTH_EDEFAULT);
+				return;
 			case EntityPackage.SLOT__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case EntityPackage.SLOT__PRECISION:
+				setPrecision(PRECISION_EDEFAULT);
+				return;
+			case EntityPackage.SLOT__SCALE:
+				setScale(SCALE_EDEFAULT);
 				return;
 			case EntityPackage.SLOT__TEXT:
 				setText(TEXT_EDEFAULT);
@@ -775,8 +925,14 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
 			case EntityPackage.SLOT__KEY:
 				return key != KEY_EDEFAULT;
+			case EntityPackage.SLOT__LENGTH:
+				return length != LENGTH_EDEFAULT;
 			case EntityPackage.SLOT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case EntityPackage.SLOT__PRECISION:
+				return precision != PRECISION_EDEFAULT;
+			case EntityPackage.SLOT__SCALE:
+				return scale != SCALE_EDEFAULT;
 			case EntityPackage.SLOT__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case EntityPackage.SLOT__TO_STRING:
@@ -805,8 +961,14 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 		result.append(group);
 		result.append(", key: ");
 		result.append(key);
+		result.append(", length: ");
+		result.append(length);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", precision: ");
+		result.append(precision);
+		result.append(", scale: ");
+		result.append(scale);
 		result.append(", text: ");
 		result.append(text);
 		result.append(", toString: ");

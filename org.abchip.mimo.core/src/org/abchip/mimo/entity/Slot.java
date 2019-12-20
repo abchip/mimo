@@ -16,19 +16,19 @@ package org.abchip.mimo.entity;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.abchip.mimo.entity.Slot#getCardinality
- * <em>Cardinality</em>}</li>
- * <li>{@link org.abchip.mimo.entity.Slot#isContainment
- * <em>Containment</em>}</li>
- * <li>{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default
- * Value</em>}</li>
- * <li>{@link org.abchip.mimo.entity.Slot#isDerived <em>Derived</em>}</li>
- * <li>{@link org.abchip.mimo.entity.Slot#getDomain <em>Domain</em>}</li>
- * <li>{@link org.abchip.mimo.entity.Slot#getGroup <em>Group</em>}</li>
- * <li>{@link org.abchip.mimo.entity.Slot#isKey <em>Key</em>}</li>
- * <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
- * <li>{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}</li>
- * <li>{@link org.abchip.mimo.entity.Slot#isToString <em>To String</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isContainment <em>Containment</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isDerived <em>Derived</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getGroup <em>Group</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isKey <em>Key</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getLength <em>Length</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getPrecision <em>Precision</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getScale <em>Scale</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isToString <em>To String</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.entity.EntityPackage#getSlot()
@@ -59,15 +59,65 @@ public interface Slot extends EntityIdentifiable {
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getName
-	 * <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Name</em>' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Precision</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Precision</em>' attribute.
+	 * @see #setPrecision(int)
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Precision()
+	 * @model
+	 * @generated
+	 */
+	int getPrecision();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getPrecision <em>Precision</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Precision</em>' attribute.
+	 * @see #getPrecision()
+	 * @generated
+	 */
+	void setPrecision(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Scale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Scale</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scale</em>' attribute.
+	 * @see #setScale(int)
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Scale()
+	 * @model
+	 * @generated
+	 */
+	int getScale();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getScale <em>Scale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Scale</em>' attribute.
+	 * @see #getScale()
+	 * @generated
+	 */
+	void setScale(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute. <!--
@@ -87,11 +137,9 @@ public interface Slot extends EntityIdentifiable {
 	String getText();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getText
-	 * <em>Text</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Text</em>' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Text</em>' attribute.
 	 * @see #getText()
 	 * @generated
 	 */
@@ -115,11 +163,9 @@ public interface Slot extends EntityIdentifiable {
 	boolean isToString();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#isToString <em>To
-	 * String</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>To String</em>' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#isToString <em>To String</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>To String</em>' attribute.
 	 * @see #isToString()
 	 * @generated
 	 */
@@ -133,7 +179,6 @@ public interface Slot extends EntityIdentifiable {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Cardinality</em>' containment reference.
 	 * @see #setCardinality(Cardinality)
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Cardinality()
@@ -143,12 +188,10 @@ public interface Slot extends EntityIdentifiable {
 	Cardinality getCardinality();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getCardinality
-	 * <em>Cardinality</em>}' containment reference. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getCardinality <em>Cardinality</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Cardinality</em>' containment reference.
+	 * @param value the new value of the '<em>Cardinality</em>' containment reference.
 	 * @see #getCardinality()
 	 * @generated
 	 */
@@ -230,11 +273,9 @@ public interface Slot extends EntityIdentifiable {
 	boolean isDerived();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#isDerived
-	 * <em>Derived</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Derived</em>' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#isDerived <em>Derived</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Derived</em>' attribute.
 	 * @see #isDerived()
 	 * @generated
 	 */
@@ -258,12 +299,10 @@ public interface Slot extends EntityIdentifiable {
 	Domain getDomain();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getDomain
-	 * <em>Domain</em>}' containment reference. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getDomain <em>Domain</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Domain</em>' containment reference.
+	 * @param value the new value of the '<em>Domain</em>' containment reference.
 	 * @see #getDomain()
 	 * @generated
 	 */
@@ -287,25 +326,23 @@ public interface Slot extends EntityIdentifiable {
 	String getGroup();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getGroup
-	 * <em>Group</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Group</em>' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getGroup <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Group</em>' attribute.
 	 * @see #getGroup()
 	 * @generated
 	 */
 	void setGroup(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Key</b></em>' attribute. <!-- begin-user-doc
+	 * Returns the value of the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc
 	 * -->
 	 * <p>
 	 * If the meaning of the '<em>Key</em>' attribute isn't clear, there really
 	 * should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Key</em>' attribute.
 	 * @see #setKey(boolean)
 	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Key()
@@ -315,19 +352,42 @@ public interface Slot extends EntityIdentifiable {
 	boolean isKey();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#isKey
-	 * <em>Key</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Key</em>' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#isKey <em>Key</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Key</em>' attribute.
 	 * @see #isKey()
 	 * @generated
 	 */
 	void setKey(boolean value);
 
 	/**
+	 * Returns the value of the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Length</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Length</em>' attribute.
+	 * @see #setLength(int)
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Length()
+	 * @model
+	 * @generated
+	 */
+	int getLength();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getLength <em>Length</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Length</em>' attribute.
+	 * @see #getLength()
+	 * @generated
+	 */
+	void setLength(int value);
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @model nsPrefixRequired="true"
 	 * @generated
 	 */
@@ -335,7 +395,6 @@ public interface Slot extends EntityIdentifiable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
@@ -343,7 +402,6 @@ public interface Slot extends EntityIdentifiable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
@@ -351,7 +409,6 @@ public interface Slot extends EntityIdentifiable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
@@ -359,7 +416,6 @@ public interface Slot extends EntityIdentifiable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
@@ -367,7 +423,6 @@ public interface Slot extends EntityIdentifiable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */

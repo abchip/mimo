@@ -614,7 +614,10 @@
         <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//entity/Slot/domain"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/group"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/key"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/length"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/precision"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/scale"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/text"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/toString"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getValue">
