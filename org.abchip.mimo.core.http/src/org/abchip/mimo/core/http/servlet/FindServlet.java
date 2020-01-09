@@ -30,7 +30,7 @@ public class FindServlet extends BaseServlet {
 
 	@Inject
 	private ResourceManager resourceManager;
-	
+
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(context, request, response);
 	}
@@ -55,7 +55,7 @@ public class FindServlet extends BaseServlet {
 		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName, tenant);
 		if (frame == null)
 			return;
-		
+
 		if (keys != null) {
 			StringBuffer sb = new StringBuffer();
 			int i = 0;
@@ -80,7 +80,7 @@ public class FindServlet extends BaseServlet {
 		response.setStatus(HttpServletResponse.SC_FOUND);
 
 		ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame, tenant);
-		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_MIMO_NOTATION);
 		for (E entity : entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy)))
 			entitySerializer.add(entity);
 

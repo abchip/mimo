@@ -45,7 +45,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		this.connector = connector;
 
 		ResourceManager resourceManager = context.get(ResourceManager.class);
-		this.resourceSerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		this.resourceSerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_MIMO_NOTATION);
 
 		this.tenant = tenant;
 	}

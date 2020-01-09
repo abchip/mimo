@@ -1722,6 +1722,7 @@
     <eClassifiers xsi:type="ecore:EEnum" name="SerializationType">
       <eLiterals name="XML_Metadata_Interchange" value="10" literal="XMI"/>
       <eLiterals name="JavaScript_Object_Notation" value="20" literal="JSON"/>
+      <eLiterals name="JavaScript_Mimo_Notation" value="30" literal="MIMO"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="util" nsURI="http://www.abchip.org/mimo/util" nsPrefix="mimo-util">

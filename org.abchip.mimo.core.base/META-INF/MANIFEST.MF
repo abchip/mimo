@@ -13,7 +13,8 @@ Require-Bundle: org.abchip.mimo.core,
  com.fasterxml.jackson.core.jackson-core,
  com.fasterxml.jackson.core.jackson-annotations,
  org.eclipse.osgi
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ lib/json-1.8.jar
 Export-Package: org.abchip.mimo.core.base,
  org.abchip.mimo.core.base.app,
  org.abchip.mimo.core.base.nio,

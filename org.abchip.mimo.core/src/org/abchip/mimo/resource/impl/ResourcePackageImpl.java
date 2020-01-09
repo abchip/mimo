@@ -1413,6 +1413,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.XML_METADATA_INTERCHANGE);
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		addEEnumLiteral(serializationTypeEEnum, SerializationType.JAVA_SCRIPT_MIMO_NOTATION);
 	}
 
 } //ResourcePackageImpl

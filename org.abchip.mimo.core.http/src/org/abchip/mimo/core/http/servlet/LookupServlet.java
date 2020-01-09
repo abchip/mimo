@@ -49,7 +49,7 @@ public class LookupServlet extends BaseServlet {
 		else {
 			response.setStatus(HttpServletResponse.SC_FOUND);
 
-			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_MIMO_NOTATION);
 			entitySerializer.add(entity);
 			entitySerializer.save(response.getOutputStream());
 		}

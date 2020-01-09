@@ -41,7 +41,15 @@ public enum SerializationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	JAVA_SCRIPT_OBJECT_NOTATION(20, "JavaScript_Object_Notation", "JSON");
+	JAVA_SCRIPT_OBJECT_NOTATION(20, "JavaScript_Object_Notation", "JSON"), /**
+	 * The '<em><b>Java Script Mimo Notation</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #JAVA_SCRIPT_MIMO_NOTATION_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	JAVA_SCRIPT_MIMO_NOTATION(30, "JavaScript_Mimo_Notation", "MIMO");
 
 	/**
 	 * The '<em><b>XML Metadata Interchange</b></em>' literal value.
@@ -74,6 +82,21 @@ public enum SerializationType implements Enumerator {
 	public static final int JAVA_SCRIPT_OBJECT_NOTATION_VALUE = 20;
 
 	/**
+	 * The '<em><b>Java Script Mimo Notation</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Java Script Mimo Notation</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #JAVA_SCRIPT_MIMO_NOTATION
+	 * @model name="JavaScript_Mimo_Notation" literal="MIMO"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int JAVA_SCRIPT_MIMO_NOTATION_VALUE = 30;
+
+	/**
 	 * An array of all the '<em><b>Serialization Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +106,7 @@ public enum SerializationType implements Enumerator {
 		new SerializationType[] {
 			XML_METADATA_INTERCHANGE,
 			JAVA_SCRIPT_OBJECT_NOTATION,
+			JAVA_SCRIPT_MIMO_NOTATION,
 		};
 
 	/**
@@ -141,6 +165,7 @@ public enum SerializationType implements Enumerator {
 		switch (value) {
 			case XML_METADATA_INTERCHANGE_VALUE: return XML_METADATA_INTERCHANGE;
 			case JAVA_SCRIPT_OBJECT_NOTATION_VALUE: return JAVA_SCRIPT_OBJECT_NOTATION;
+			case JAVA_SCRIPT_MIMO_NOTATION_VALUE: return JAVA_SCRIPT_MIMO_NOTATION;
 		}
 		return null;
 	}
