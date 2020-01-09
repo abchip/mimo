@@ -7,7 +7,9 @@
  */
 package org.abchip.mimo.biz.common.geo;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.tax.TaxAuthority;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +26,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoName <em>Geo Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoSecCode <em>Geo Sec Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoTypeId <em>Geo Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getMainGeoAssocs <em>Main Geo Assocs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getTaxAuthTaxAuthorities <em>Tax Auth Tax Authorities</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getWellKnownText <em>Well Known Text</em>}</li>
  * </ul>
  *
@@ -187,6 +191,38 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	 * @generated
 	 */
 	void setGeoTypeId(GeoType value);
+
+	/**
+	 * Returns the value of the '<em><b>Main Geo Assocs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.common.geo.GeoAssoc}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main Geo Assocs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Main Geo Assocs</em>' reference list.
+	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_MainGeoAssocs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<GeoAssoc> getMainGeoAssocs();
+
+	/**
+	 * Returns the value of the '<em><b>Tax Auth Tax Authorities</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.tax.TaxAuthority}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tax Auth Tax Authorities</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tax Auth Tax Authorities</em>' reference list.
+	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_TaxAuthTaxAuthorities()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<TaxAuthority> getTaxAuthTaxAuthorities();
 
 	/**
 	 * Returns the value of the '<em><b>Geo Id</b></em>' attribute.

@@ -1592,8 +1592,28 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getProductPriceRule_ProductPriceActions() {
+		return (EReference)productPriceRuleEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getProductPriceRule_ProductPriceConds() {
+		return (EReference)productPriceRuleEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getProductPriceRule_RuleName() {
-		return (EAttribute)productPriceRuleEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)productPriceRuleEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1603,7 +1623,7 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 	 */
 	@Override
 	public EAttribute getProductPriceRule_ThruDate() {
-		return (EAttribute)productPriceRuleEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)productPriceRuleEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1866,6 +1886,8 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 		createEAttribute(productPriceRuleEClass, PRODUCT_PRICE_RULE__DESCRIPTION);
 		createEAttribute(productPriceRuleEClass, PRODUCT_PRICE_RULE__FROM_DATE);
 		createEAttribute(productPriceRuleEClass, PRODUCT_PRICE_RULE__IS_SALE);
+		createEReference(productPriceRuleEClass, PRODUCT_PRICE_RULE__PRODUCT_PRICE_ACTIONS);
+		createEReference(productPriceRuleEClass, PRODUCT_PRICE_RULE__PRODUCT_PRICE_CONDS);
 		createEAttribute(productPriceRuleEClass, PRODUCT_PRICE_RULE__RULE_NAME);
 		createEAttribute(productPriceRuleEClass, PRODUCT_PRICE_RULE__THRU_DATE);
 
@@ -2059,6 +2081,8 @@ public class PricePackageImpl extends EPackageImpl implements PricePackage {
 		initEAttribute(getProductPriceRule_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductPriceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductPriceRule_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, ProductPriceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductPriceRule_IsSale(), ecorePackage.getEBoolean(), "isSale", null, 1, 1, ProductPriceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductPriceRule_ProductPriceActions(), this.getProductPriceAction(), null, "productPriceActions", null, 0, -1, ProductPriceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getProductPriceRule_ProductPriceConds(), this.getProductPriceCond(), null, "productPriceConds", null, 0, -1, ProductPriceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductPriceRule_RuleName(), ecorePackage.getEString(), "ruleName", null, 0, 1, ProductPriceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductPriceRule_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ProductPriceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -715,8 +715,8 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStatusItem_SequenceId() {
-		return (EAttribute)statusItemEClass.getEStructuralFeatures().get(2);
+	public EReference getStatusItem_MainStatusValidChanges() {
+		return (EReference)statusItemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -725,7 +725,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStatusItem_StatusCode() {
+	public EAttribute getStatusItem_SequenceId() {
 		return (EAttribute)statusItemEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -735,8 +735,28 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getStatusItem_StatusTypeId() {
+	public EReference getStatusItem_ShipmentStatuss() {
 		return (EReference)statusItemEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getStatusItem_StatusCode() {
+		return (EAttribute)statusItemEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getStatusItem_StatusTypeId() {
+		return (EReference)statusItemEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -871,7 +891,9 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		statusItemEClass = createEClass(STATUS_ITEM);
 		createEAttribute(statusItemEClass, STATUS_ITEM__STATUS_ID);
 		createEAttribute(statusItemEClass, STATUS_ITEM__DESCRIPTION);
+		createEReference(statusItemEClass, STATUS_ITEM__MAIN_STATUS_VALID_CHANGES);
 		createEAttribute(statusItemEClass, STATUS_ITEM__SEQUENCE_ID);
+		createEReference(statusItemEClass, STATUS_ITEM__SHIPMENT_STATUSS);
 		createEAttribute(statusItemEClass, STATUS_ITEM__STATUS_CODE);
 		createEReference(statusItemEClass, STATUS_ITEM__STATUS_TYPE_ID);
 
@@ -913,6 +935,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		Shipment_Package theShipment_Package = (Shipment_Package)EPackage.Registry.INSTANCE.getEPackage(Shipment_Package.eNS_URI);
 
 		// Create type parameters
 
@@ -933,7 +956,9 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		initEClass(statusItemEClass, StatusItem.class, "StatusItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatusItem_StatusId(), ecorePackage.getEString(), "statusId", null, 1, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_Description(), ecorePackage.getEString(), "description", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStatusItem_MainStatusValidChanges(), this.getStatusValidChange(), null, "mainStatusValidChanges", null, 0, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStatusItem_ShipmentStatuss(), theShipment_Package.getShipmentStatus(), null, "shipmentStatuss", null, 0, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_StatusCode(), ecorePackage.getEString(), "statusCode", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStatusItem_StatusTypeId(), this.getStatusType(), null, "statusTypeId", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getStatusItem_StatusTypeId().getEKeys().add(this.getStatusType_StatusTypeId());

@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.party.party;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.status.StatusItem;
 
@@ -25,6 +26,8 @@ import org.abchip.mimo.biz.common.status.StatusItem;
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getLastInviteDate <em>Last Invite Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyInvitationGroupAssocs <em>Party Invitation Group Assocs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyInvitationRoleAssocs <em>Party Invitation Role Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getToName <em>To Name</em>}</li>
  * </ul>
@@ -189,6 +192,38 @@ public interface PartyInvitation extends BizEntity {
 	 * @generated
 	 */
 	void setPartyIdFrom(Party value);
+
+	/**
+	 * Returns the value of the '<em><b>Party Invitation Group Assocs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Invitation Group Assocs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Invitation Group Assocs</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationGroupAssocs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PartyInvitationGroupAssoc> getPartyInvitationGroupAssocs();
+
+	/**
+	 * Returns the value of the '<em><b>Party Invitation Role Assocs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyInvitationRoleAssoc}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Invitation Role Assocs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Invitation Role Assocs</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyInvitationRoleAssocs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PartyInvitationRoleAssoc> getPartyInvitationRoleAssocs();
 
 	/**
 	 * Returns the value of the '<em><b>Party Invitation Id</b></em>' attribute.

@@ -13,6 +13,7 @@ import java.util.Date;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityFactory;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
@@ -225,7 +226,9 @@ public class EMFSlotAdapter extends SlotImpl {
 			return true;
 		else if (this.getDataClassName().equals(char.class.getCanonicalName()))
 			return true;
-
+		else if(EntityIdentifiable.class.isAssignableFrom(this.getETypedElement().getEType().getInstanceClass()))
+			return true;
+		
 		return false;
 	}
 

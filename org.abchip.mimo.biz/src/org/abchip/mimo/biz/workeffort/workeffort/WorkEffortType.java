@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -22,6 +23,7 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType#getWorkEffortTypeAttrs <em>Work Effort Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortType()
@@ -106,6 +108,22 @@ public interface WorkEffortType extends BizEntityType<WorkEffort> {
 	 * @generated
 	 */
 	void setParentTypeId(WorkEffortType value);
+
+	/**
+	 * Returns the value of the '<em><b>Work Effort Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortType_WorkEffortTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkEffortTypeAttr> getWorkEffortTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Work Effort Type Id</b></em>' attribute.

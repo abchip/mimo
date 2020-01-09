@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.common.portal;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -23,6 +24,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPortlet#getEditFormLocation <em>Edit Form Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPortlet#getEditFormName <em>Edit Form Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPortlet#getPortletName <em>Portlet Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPortlet#getPortletPortletCategories <em>Portlet Portlet Categories</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPortlet#getScreenLocation <em>Screen Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPortlet#getScreenName <em>Screen Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPortlet#getScreenshot <em>Screenshot</em>}</li>
@@ -138,6 +140,22 @@ public interface PortalPortlet extends BizEntity {
 	 * @generated
 	 */
 	void setPortletName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Portlet Portlet Categories</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.common.portal.PortletPortletCategory}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Portlet Portlet Categories</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Portlet Portlet Categories</em>' reference list.
+	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPortlet_PortletPortletCategories()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PortletPortletCategory> getPortletPortletCategories();
 
 	/**
 	 * Returns the value of the '<em><b>Screen Location</b></em>' attribute.

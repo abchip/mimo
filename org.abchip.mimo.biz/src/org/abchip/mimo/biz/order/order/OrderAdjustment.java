@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.order;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
@@ -43,6 +44,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOldAmountPerQuantity <em>Old Amount Per Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOldPercentage <em>Old Percentage</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentAttributes <em>Order Adjustment Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
@@ -486,6 +488,22 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @generated
 	 */
 	void setOldPercentage(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Adjustment Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderAdjustmentAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Adjustment Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Adjustment Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderAdjustmentAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OrderAdjustmentAttribute> getOrderAdjustmentAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Order Adjustment Id</b></em>' attribute.

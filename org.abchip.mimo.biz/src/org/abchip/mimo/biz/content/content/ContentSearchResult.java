@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.content.content;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -20,6 +21,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getContentSearchResultId <em>Content Search Result Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getContentSearchConstraints <em>Content Search Constraints</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#isIsAscending <em>Is Ascending</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getNumResults <em>Num Results</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getOrderByName <em>Order By Name</em>}</li>
@@ -59,6 +61,22 @@ public interface ContentSearchResult extends BizEntity {
 	 * @generated
 	 */
 	void setContentSearchResultId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Content Search Constraints</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentSearchConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Search Constraints</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Search Constraints</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchResult_ContentSearchConstraints()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ContentSearchConstraint> getContentSearchConstraints();
 
 	/**
 	 * Returns the value of the '<em><b>Is Ascending</b></em>' attribute.

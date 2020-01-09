@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.entity.test;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -23,6 +24,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getTestingDate <em>Testing Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getTestingItems <em>Testing Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getTestingName <em>Testing Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getTestingSize <em>Testing Size</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.Testing#getTestingTypeId <em>Testing Type Id</em>}</li>
@@ -110,6 +112,22 @@ public interface Testing extends BizEntity {
 	 * @generated
 	 */
 	void setTestingDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Testing Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.test.TestingItem}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Testing Items</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Testing Items</em>' reference list.
+	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTesting_TestingItems()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<TestingItem> getTestingItems();
 
 	/**
 	 * Returns the value of the '<em><b>Testing Id</b></em>' attribute.

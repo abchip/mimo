@@ -9,17 +9,29 @@ package org.abchip.mimo.biz.order.order.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder;
+import org.abchip.mimo.biz.order.order.CommunicationEventOrder;
+import org.abchip.mimo.biz.order.order.OrderAttribute;
+import org.abchip.mimo.biz.order.order.OrderDeliverySchedule;
 import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.order.order.OrderHeaderNote;
+import org.abchip.mimo.biz.order.order.OrderHeaderWorkEffort;
+import org.abchip.mimo.biz.order.order.OrderItem;
+import org.abchip.mimo.biz.order.order.OrderItemGroup;
+import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.order.order.OrderProductPromoCode;
 import org.abchip.mimo.biz.order.order.OrderStatus;
 import org.abchip.mimo.biz.order.order.OrderType;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.promo.ProductPromoUse;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.webapp.website.WebSite;
@@ -36,6 +48,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getAutoOrderShoppingListId <em>Auto Order Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCommunicationEventOrders <em>Communication Event Orders</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCreatedBy <em>Created By</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCurrencyUom <em>Currency Uom</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getEntryDate <em>Entry Date</em>}</li>
@@ -47,18 +60,28 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isIsRushOrder <em>Is Rush Order</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isIsViewed <em>Is Viewed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isNeedsInventoryIssuance <em>Needs Inventory Issuance</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderAttributes <em>Order Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderDate <em>Order Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderDeliverySchedules <em>Order Delivery Schedules</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderHeaderNotes <em>Order Header Notes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderHeaderWorkEfforts <em>Order Header Work Efforts</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderItemGroups <em>Order Item Groups</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderItemShipGroups <em>Order Item Ship Groups</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderItems <em>Order Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderName <em>Order Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderProductPromoCodes <em>Order Product Promo Codes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderTypeId <em>Order Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOriginFacilityId <em>Origin Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getPickSheetPrintedDate <em>Pick Sheet Printed Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isPriority <em>Priority</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getProductPromoUses <em>Product Promo Uses</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getRemainingSubTotal <em>Remaining Sub Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getSyncStatusId <em>Sync Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTerminalId <em>Terminal Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTrackingCodeOrders <em>Tracking Code Orders</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTransactionId <em>Transaction Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getWebSiteId <em>Web Site Id</em>}</li>
@@ -141,6 +164,17 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public void setBillingAccountId(BillingAccount newBillingAccountId) {
 		eSet(OrderPackage.Literals.ORDER_HEADER__BILLING_ACCOUNT_ID, newBillingAccountId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CommunicationEventOrder> getCommunicationEventOrders() {
+		return (List<CommunicationEventOrder>)eGet(OrderPackage.Literals.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS, true);
 	}
 
 	/**
@@ -344,6 +378,17 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OrderAttribute> getOrderAttributes() {
+		return (List<OrderAttribute>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ATTRIBUTES, true);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -359,6 +404,72 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public void setOrderDate(Date newOrderDate) {
 		eSet(OrderPackage.Literals.ORDER_HEADER__ORDER_DATE, newOrderDate);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OrderDeliverySchedule> getOrderDeliverySchedules() {
+		return (List<OrderDeliverySchedule>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_DELIVERY_SCHEDULES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OrderHeaderNote> getOrderHeaderNotes() {
+		return (List<OrderHeaderNote>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_HEADER_NOTES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OrderHeaderWorkEffort> getOrderHeaderWorkEfforts() {
+		return (List<OrderHeaderWorkEffort>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_HEADER_WORK_EFFORTS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OrderItemGroup> getOrderItemGroups() {
+		return (List<OrderItemGroup>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEM_GROUPS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OrderItemShipGroup> getOrderItemShipGroups() {
+		return (List<OrderItemShipGroup>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEM_SHIP_GROUPS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OrderItem> getOrderItems() {
+		return (List<OrderItem>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_ITEMS, true);
 	}
 
 	/**
@@ -395,6 +506,17 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public void setOrderName(String newOrderName) {
 		eSet(OrderPackage.Literals.ORDER_HEADER__ORDER_NAME, newOrderName);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OrderProductPromoCode> getOrderProductPromoCodes() {
+		return (List<OrderProductPromoCode>)eGet(OrderPackage.Literals.ORDER_HEADER__ORDER_PRODUCT_PROMO_CODES, true);
 	}
 
 	/**
@@ -469,6 +591,17 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public void setPriority(boolean newPriority) {
 		eSet(OrderPackage.Literals.ORDER_HEADER__PRIORITY, newPriority);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductPromoUse> getProductPromoUses() {
+		return (List<ProductPromoUse>)eGet(OrderPackage.Literals.ORDER_HEADER__PRODUCT_PROMO_USES, true);
 	}
 
 	/**
@@ -577,6 +710,17 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	@Override
 	public void setTerminalId(String newTerminalId) {
 		eSet(OrderPackage.Literals.ORDER_HEADER__TERMINAL_ID, newTerminalId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<TrackingCodeOrder> getTrackingCodeOrders() {
+		return (List<TrackingCodeOrder>)eGet(OrderPackage.Literals.ORDER_HEADER__TRACKING_CODE_ORDERS, true);
 	}
 
 	/**

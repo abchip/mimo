@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.order.request;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 import org.abchip.mimo.biz.party.party.Party;
 
@@ -20,6 +21,7 @@ import org.abchip.mimo.biz.party.party.Party;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestType#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestType#getCustRequestTypeAttrs <em>Cust Request Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -57,6 +59,22 @@ public interface CustRequestType extends BizEntityType<CustRequest> {
 	 * @generated
 	 */
 	void setCustRequestTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Cust Request Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cust Request Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cust Request Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestType_CustRequestTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<CustRequestTypeAttr> getCustRequestTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

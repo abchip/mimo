@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.biz.product.config.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProductConfigItem;
+import org.abchip.mimo.biz.product.config.ProductConfigOption;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getConfigItemName <em>Config Item Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getConfigItemProductConfigOptions <em>Config Item Product Config Options</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getConfigItemTypeId <em>Config Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigItemImpl#getImageUrl <em>Image Url</em>}</li>
@@ -73,6 +76,17 @@ public class ProductConfigItemImpl extends BizEntityImpl implements ProductConfi
 	@Override
 	public void setConfigItemName(String newConfigItemName) {
 		eSet(ConfigPackage.Literals.PRODUCT_CONFIG_ITEM__CONFIG_ITEM_NAME, newConfigItemName);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductConfigOption> getConfigItemProductConfigOptions() {
+		return (List<ProductConfigOption>)eGet(ConfigPackage.Literals.PRODUCT_CONFIG_ITEM__CONFIG_ITEM_PRODUCT_CONFIG_OPTIONS, true);
 	}
 
 	/**

@@ -63,7 +63,7 @@ public class LoginServlet extends HttpServlet {
 
 			// anonymous access
 			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-			try (Context context = authenticationManager.login(null, authentication)) {
+			try (Context context = authenticationManager.login(session.getId(), authentication)) {
 
 				String entityName = "OAuth2" + provider;
 

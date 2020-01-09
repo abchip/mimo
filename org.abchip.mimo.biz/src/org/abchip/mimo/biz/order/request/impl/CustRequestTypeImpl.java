@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.biz.order.request.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestType;
+import org.abchip.mimo.biz.order.request.CustRequestTypeAttr;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.ecore.EClass;
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestTypeImpl#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestTypeImpl#getCustRequestTypeAttrs <em>Cust Request Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -74,6 +77,17 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	@Override
 	public void setCustRequestTypeId(String newCustRequestTypeId) {
 		eSet(RequestPackage.Literals.CUST_REQUEST_TYPE__CUST_REQUEST_TYPE_ID, newCustRequestTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CustRequestTypeAttr> getCustRequestTypeAttrs() {
+		return (List<CustRequestTypeAttr>)eGet(RequestPackage.Literals.CUST_REQUEST_TYPE__CUST_REQUEST_TYPE_ATTRS, true);
 	}
 
 	/**

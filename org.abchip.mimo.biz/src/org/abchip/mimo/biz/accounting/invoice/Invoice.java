@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.accounting.invoice;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
 import org.abchip.mimo.biz.common.status.StatusItem;
@@ -32,8 +33,11 @@ import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getDueDate <em>Due Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceAttributes <em>Invoice Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceDate <em>Invoice Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceItems <em>Invoice Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceMessage <em>Invoice Message</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceNotes <em>Invoice Notes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getPaidDate <em>Paid Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getPartyId <em>Party Id</em>}</li>
@@ -180,6 +184,22 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	void setDueDate(Date value);
 
 	/**
+	 * Returns the value of the '<em><b>Invoice Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.invoice.InvoiceAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Invoice Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Invoice Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<InvoiceAttribute> getInvoiceAttributes();
+
+	/**
 	 * Returns the value of the '<em><b>Invoice Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -206,6 +226,22 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	void setInvoiceDate(Date value);
 
 	/**
+	 * Returns the value of the '<em><b>Invoice Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.invoice.InvoiceItem}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Invoice Items</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Invoice Items</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceItems()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<InvoiceItem> getInvoiceItems();
+
+	/**
 	 * Returns the value of the '<em><b>Invoice Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -230,6 +266,22 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	 * @generated
 	 */
 	void setInvoiceMessage(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Invoice Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.invoice.InvoiceNote}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Invoice Notes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Invoice Notes</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceNotes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<InvoiceNote> getInvoiceNotes();
 
 	/**
 	 * Returns the value of the '<em><b>Paid Date</b></em>' attribute.

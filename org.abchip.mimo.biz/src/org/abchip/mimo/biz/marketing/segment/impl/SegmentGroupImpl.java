@@ -7,8 +7,11 @@
  */
 package org.abchip.mimo.biz.marketing.segment.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
+import org.abchip.mimo.biz.marketing.segment.SegmentGroupClassification;
+import org.abchip.mimo.biz.marketing.segment.SegmentGroupGeo;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupType;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
 import org.abchip.mimo.biz.product.store.ProductStore;
@@ -25,6 +28,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getSegmentGroupId <em>Segment Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getSegmentGroupClassifications <em>Segment Group Classifications</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getSegmentGroupGeos <em>Segment Group Geos</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getSegmentGroupTypeId <em>Segment Group Type Id</em>}</li>
  * </ul>
  *
@@ -93,6 +98,28 @@ public class SegmentGroupImpl extends BizEntityImpl implements SegmentGroup {
 	@Override
 	public void setProductStoreId(ProductStore newProductStoreId) {
 		eSet(SegmentPackage.Literals.SEGMENT_GROUP__PRODUCT_STORE_ID, newProductStoreId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<SegmentGroupClassification> getSegmentGroupClassifications() {
+		return (List<SegmentGroupClassification>)eGet(SegmentPackage.Literals.SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<SegmentGroupGeo> getSegmentGroupGeos() {
+		return (List<SegmentGroupGeo>)eGet(SegmentPackage.Literals.SEGMENT_GROUP__SEGMENT_GROUP_GEOS, true);
 	}
 
 	/**

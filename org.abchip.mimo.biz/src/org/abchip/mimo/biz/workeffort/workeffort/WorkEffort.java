@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.workeffort.workeffort;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
@@ -40,6 +41,7 @@ import org.abchip.mimo.biz.service.schedule.TemporalExpression;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getActualMilliSeconds <em>Actual Milli Seconds</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getActualSetupMillis <em>Actual Setup Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getActualStartDate <em>Actual Start Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCommunicationEventWorkEffs <em>Communication Event Work Effs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCurrentStatusId <em>Current Status Id</em>}</li>
@@ -80,9 +82,18 @@ import org.abchip.mimo.biz.service.schedule.TemporalExpression;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getTotalMilliSecondsAllowed <em>Total Milli Seconds Allowed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getTotalMoneyAllowed <em>Total Money Allowed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getUniversalId <em>Universal Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortAttributes <em>Work Effort Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortDeliverableProds <em>Work Effort Deliverable Prods</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortEventReminders <em>Work Effort Event Reminders</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortFixedAssetStds <em>Work Effort Fixed Asset Stds</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortInventoryAssigns <em>Work Effort Inventory Assigns</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortInventoryProduceds <em>Work Effort Inventory Produceds</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortKeywords <em>Work Effort Keywords</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortName <em>Work Effort Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortNotes <em>Work Effort Notes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortParentId <em>Work Effort Parent Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortPurposeTypeId <em>Work Effort Purpose Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortSkillStandards <em>Work Effort Skill Standards</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortTypeId <em>Work Effort Type Id</em>}</li>
  * </ul>
  *
@@ -246,6 +257,22 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @generated
 	 */
 	void setActualStartDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Communication Event Work Effs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.CommunicationEventWorkEff}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Communication Event Work Effs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Communication Event Work Effs</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_CommunicationEventWorkEffs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<CommunicationEventWorkEff> getCommunicationEventWorkEffs();
 
 	/**
 	 * Returns the value of the '<em><b>Created By User Login</b></em>' attribute.
@@ -1294,6 +1321,118 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	void setUniversalId(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Work Effort Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkEffortAttribute> getWorkEffortAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Work Effort Deliverable Prods</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortDeliverableProd}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Deliverable Prods</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Deliverable Prods</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortDeliverableProds()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkEffortDeliverableProd> getWorkEffortDeliverableProds();
+
+	/**
+	 * Returns the value of the '<em><b>Work Effort Event Reminders</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Event Reminders</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Event Reminders</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortEventReminders()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkEffortEventReminder> getWorkEffortEventReminders();
+
+	/**
+	 * Returns the value of the '<em><b>Work Effort Fixed Asset Stds</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Fixed Asset Stds</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Fixed Asset Stds</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortFixedAssetStds()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkEffortFixedAssetStd> getWorkEffortFixedAssetStds();
+
+	/**
+	 * Returns the value of the '<em><b>Work Effort Inventory Assigns</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Inventory Assigns</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Inventory Assigns</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortInventoryAssigns()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkEffortInventoryAssign> getWorkEffortInventoryAssigns();
+
+	/**
+	 * Returns the value of the '<em><b>Work Effort Inventory Produceds</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryProduced}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Inventory Produceds</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Inventory Produceds</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortInventoryProduceds()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkEffortInventoryProduced> getWorkEffortInventoryProduceds();
+
+	/**
+	 * Returns the value of the '<em><b>Work Effort Keywords</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortKeyword}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Keywords</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Keywords</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortKeywords()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkEffortKeyword> getWorkEffortKeywords();
+
+	/**
 	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -1347,6 +1486,22 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	void setWorkEffortName(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Work Effort Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortNote}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Notes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Notes</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortNotes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkEffortNote> getWorkEffortNotes();
+
+	/**
 	 * Returns the value of the '<em><b>Work Effort Parent Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -1398,6 +1553,22 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	 * @generated
 	 */
 	void setWorkEffortPurposeTypeId(WorkEffortPurposeType value);
+
+	/**
+	 * Returns the value of the '<em><b>Work Effort Skill Standards</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Skill Standards</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Skill Standards</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortSkillStandards()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkEffortSkillStandard> getWorkEffortSkillStandards();
 
 	/**
 	 * Returns the value of the '<em><b>Work Effort Type Id</b></em>' reference.

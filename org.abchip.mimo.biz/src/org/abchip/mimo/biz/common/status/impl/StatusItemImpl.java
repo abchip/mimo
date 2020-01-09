@@ -7,10 +7,13 @@
  */
 package org.abchip.mimo.biz.common.status.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.status.StatusPackage;
 import org.abchip.mimo.biz.common.status.StatusType;
+import org.abchip.mimo.biz.common.status.StatusValidChange;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentStatus;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -23,7 +26,9 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getMainStatusValidChanges <em>Main Status Valid Changes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getShipmentStatuss <em>Shipment Statuss</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getStatusCode <em>Status Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusItemImpl#getStatusTypeId <em>Status Type Id</em>}</li>
  * </ul>
@@ -79,6 +84,17 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<StatusValidChange> getMainStatusValidChanges() {
+		return (List<StatusValidChange>)eGet(StatusPackage.Literals.STATUS_ITEM__MAIN_STATUS_VALID_CHANGES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public String getSequenceId() {
 		return (String)eGet(StatusPackage.Literals.STATUS_ITEM__SEQUENCE_ID, true);
@@ -92,6 +108,17 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	@Override
 	public void setSequenceId(String newSequenceId) {
 		eSet(StatusPackage.Literals.STATUS_ITEM__SEQUENCE_ID, newSequenceId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ShipmentStatus> getShipmentStatuss() {
+		return (List<ShipmentStatus>)eGet(StatusPackage.Literals.STATUS_ITEM__SHIPMENT_STATUSS, true);
 	}
 
 	/**

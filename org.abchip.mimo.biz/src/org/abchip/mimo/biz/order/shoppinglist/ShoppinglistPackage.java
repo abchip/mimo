@@ -270,13 +270,31 @@ public interface ShoppinglistPackage extends EPackage {
 	int SHOPPING_LIST__SHIPMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
+	 * The feature id for the '<em><b>Shopping List Items</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHOPPING_LIST__SHOPPING_LIST_ITEMS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+
+	/**
 	 * The feature id for the '<em><b>Shopping List Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__SHOPPING_LIST_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+	int SHOPPING_LIST__SHOPPING_LIST_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>Shopping List Work Efforts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHOPPING_LIST__SHOPPING_LIST_WORK_EFFORTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Visitor Id</b></em>' attribute.
@@ -285,7 +303,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST__VISITOR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+	int SHOPPING_LIST__VISITOR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
 
 	/**
 	 * The number of structural features of the '<em>Shopping List</em>' class.
@@ -294,7 +312,7 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOPPING_LIST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+	int SHOPPING_LIST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.shoppinglist.impl.ShoppingListItemImpl <em>Shopping List Item</em>}' class.
@@ -879,6 +897,17 @@ public interface ShoppinglistPackage extends EPackage {
 	EAttribute getShoppingList_ShipmentMethodTypeId();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListItems <em>Shopping List Items</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Shopping List Items</em>'.
+	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListItems()
+	 * @see #getShoppingList()
+	 * @generated
+	 */
+	EReference getShoppingList_ShoppingListItems();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListTypeId <em>Shopping List Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -888,6 +917,17 @@ public interface ShoppinglistPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getShoppingList_ShoppingListTypeId();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListWorkEfforts <em>Shopping List Work Efforts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Shopping List Work Efforts</em>'.
+	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListWorkEfforts()
+	 * @see #getShoppingList()
+	 * @generated
+	 */
+	EReference getShoppingList_ShoppingListWorkEfforts();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getVisitorId <em>Visitor Id</em>}'.
@@ -1304,12 +1344,28 @@ public interface ShoppinglistPackage extends EPackage {
 		EAttribute SHOPPING_LIST__SHIPMENT_METHOD_TYPE_ID = eINSTANCE.getShoppingList_ShipmentMethodTypeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Shopping List Items</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SHOPPING_LIST__SHOPPING_LIST_ITEMS = eINSTANCE.getShoppingList_ShoppingListItems();
+
+		/**
 		 * The meta object literal for the '<em><b>Shopping List Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference SHOPPING_LIST__SHOPPING_LIST_TYPE_ID = eINSTANCE.getShoppingList_ShoppingListTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Shopping List Work Efforts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SHOPPING_LIST__SHOPPING_LIST_WORK_EFFORTS = eINSTANCE.getShoppingList_ShoppingListWorkEfforts();
 
 		/**
 		 * The meta object literal for the '<em><b>Visitor Id</b></em>' attribute feature.

@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.quote;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
@@ -30,8 +31,13 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getIssueDate <em>Issue Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteAttributes <em>Quote Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteCoefficients <em>Quote Coefficients</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteItems <em>Quote Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteName <em>Quote Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteNotes <em>Quote Notes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteTypeId <em>Quote Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteWorkEfforts <em>Quote Work Efforts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getValidFromDate <em>Valid From Date</em>}</li>
@@ -174,6 +180,54 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	void setProductStoreId(ProductStore value);
 
 	/**
+	 * Returns the value of the '<em><b>Quote Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Quote Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Quote Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<QuoteAttribute> getQuoteAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Quote Coefficients</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteCoefficient}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Quote Coefficients</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Quote Coefficients</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteCoefficients()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<QuoteCoefficient> getQuoteCoefficients();
+
+	/**
+	 * Returns the value of the '<em><b>Quote Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteItem}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Quote Items</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Quote Items</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteItems()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<QuoteItem> getQuoteItems();
+
+	/**
 	 * Returns the value of the '<em><b>Quote Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -227,6 +281,22 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	void setQuoteName(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Quote Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteNote}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Quote Notes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Quote Notes</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteNotes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<QuoteNote> getQuoteNotes();
+
+	/**
 	 * Returns the value of the '<em><b>Quote Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -251,6 +321,22 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @generated
 	 */
 	void setQuoteTypeId(QuoteType value);
+
+	/**
+	 * Returns the value of the '<em><b>Quote Work Efforts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteWorkEffort}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Quote Work Efforts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Quote Work Efforts</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteWorkEfforts()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<QuoteWorkEffort> getQuoteWorkEfforts();
 
 	/**
 	 * Returns the value of the '<em><b>Sales Channel Enum Id</b></em>' reference.

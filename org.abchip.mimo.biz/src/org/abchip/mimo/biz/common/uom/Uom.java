@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.common.uom;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 
 /**
@@ -21,6 +22,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getUomId <em>Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getAbbreviation <em>Abbreviation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getMainUomConversions <em>Main Uom Conversions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getNumericCode <em>Numeric Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.Uom#getUomTypeId <em>Uom Type Id</em>}</li>
  * </ul>
@@ -81,6 +83,22 @@ public interface Uom extends BizEntityTyped<UomType> {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Main Uom Conversions</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.common.uom.UomConversion}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main Uom Conversions</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Main Uom Conversions</em>' reference list.
+	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUom_MainUomConversions()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<UomConversion> getMainUomConversions();
 
 	/**
 	 * Returns the value of the '<em><b>Numeric Code</b></em>' attribute.

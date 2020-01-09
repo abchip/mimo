@@ -8,11 +8,13 @@
 package org.abchip.mimo.biz.content.data;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyResponse;
+import org.abchip.mimo.biz.product.feature.ProductFeatureDataResource;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
@@ -29,7 +31,10 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataCategoryId <em>Data Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceAttributes <em>Data Resource Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceMetaDatas <em>Data Resource Meta Datas</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceName <em>Data Resource Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourcePurposes <em>Data Resource Purposes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataTemplateTypeId <em>Data Template Type Id</em>}</li>
@@ -39,6 +44,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getLocaleString <em>Locale String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getMimeTypeId <em>Mime Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getObjectInfo <em>Object Info</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getProductFeatureDataResources <em>Product Feature Data Resources</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getRelatedDetailId <em>Related Detail Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getSurveyId <em>Survey Id</em>}</li>
@@ -155,6 +161,38 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	void setDataCategoryId(DataCategory value);
 
 	/**
+	 * Returns the value of the '<em><b>Data Resource Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.data.DataResourceAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data Resource Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data Resource Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<DataResourceAttribute> getDataResourceAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Data Resource Meta Datas</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.data.DataResourceMetaData}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data Resource Meta Datas</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data Resource Meta Datas</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceMetaDatas()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<DataResourceMetaData> getDataResourceMetaDatas();
+
+	/**
 	 * Returns the value of the '<em><b>Data Resource Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -206,6 +244,22 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @generated
 	 */
 	void setDataResourceName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Data Resource Purposes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.data.DataResourcePurpose}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data Resource Purposes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data Resource Purposes</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourcePurposes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<DataResourcePurpose> getDataResourcePurposes();
 
 	/**
 	 * Returns the value of the '<em><b>Is Public</b></em>' attribute.
@@ -442,6 +496,22 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @generated
 	 */
 	void setObjectInfo(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Feature Data Resources</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.feature.ProductFeatureDataResource}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Feature Data Resources</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Feature Data Resources</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_ProductFeatureDataResources()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductFeatureDataResource> getProductFeatureDataResources();
 
 	/**
 	 * Returns the value of the '<em><b>Related Detail Id</b></em>' attribute.

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.order.quote;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -22,6 +23,7 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteType#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteType#getQuoteTypeAttrs <em>Quote Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteType()
@@ -106,6 +108,22 @@ public interface QuoteType extends BizEntityType<Quote> {
 	 * @generated
 	 */
 	void setParentTypeId(QuoteType value);
+
+	/**
+	 * Returns the value of the '<em><b>Quote Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.quote.QuoteTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Quote Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Quote Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteType_QuoteTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<QuoteTypeAttr> getQuoteTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Quote Type Id</b></em>' attribute.

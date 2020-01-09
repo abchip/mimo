@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.biz.content.content.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentType;
+import org.abchip.mimo.biz.content.content.ContentTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentTypeImpl#getContentTypeId <em>Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentTypeImpl#getContentTypeAttrs <em>Content Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -72,6 +75,17 @@ public class ContentTypeImpl extends BizEntityTypeImpl<Content> implements Conte
 	@Override
 	public void setContentTypeId(String newContentTypeId) {
 		eSet(ContentPackage.Literals.CONTENT_TYPE__CONTENT_TYPE_ID, newContentTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ContentTypeAttr> getContentTypeAttrs() {
+		return (List<ContentTypeAttr>)eGet(ContentPackage.Literals.CONTENT_TYPE__CONTENT_TYPE_ATTRS, true);
 	}
 
 	/**

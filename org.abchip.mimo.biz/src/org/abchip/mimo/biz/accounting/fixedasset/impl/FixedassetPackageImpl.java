@@ -1079,8 +1079,8 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFixedAsset_FixedAssetName() {
-		return (EAttribute)fixedAssetEClass.getEStructuralFeatures().get(11);
+	public EReference getFixedAsset_FixedAssetAttributes() {
+		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1089,7 +1089,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EReference getFixedAsset_FixedAssetTypeId() {
+	public EReference getFixedAsset_FixedAssetIdents() {
 		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -1099,7 +1099,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EReference getFixedAsset_InstanceOfProductId() {
+	public EReference getFixedAsset_FixedAssetMaints() {
 		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -1109,8 +1109,8 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EReference getFixedAsset_LocatedAtFacilityId() {
-		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(14);
+	public EAttribute getFixedAsset_FixedAssetName() {
+		return (EAttribute)fixedAssetEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -1119,8 +1119,8 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFixedAsset_LocatedAtLocationSeqId() {
-		return (EAttribute)fixedAssetEClass.getEStructuralFeatures().get(15);
+	public EReference getFixedAsset_FixedAssetRegistrations() {
+		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -1129,7 +1129,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EReference getFixedAsset_ParentFixedAssetId() {
+	public EReference getFixedAsset_FixedAssetTypeId() {
 		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -1139,7 +1139,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EReference getFixedAsset_PartyId() {
+	public EReference getFixedAsset_InstanceOfProductId() {
 		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -1149,8 +1149,8 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFixedAsset_ProductionCapacity() {
-		return (EAttribute)fixedAssetEClass.getEStructuralFeatures().get(18);
+	public EReference getFixedAsset_LocatedAtFacilityId() {
+		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -1159,7 +1159,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFixedAsset_PurchaseCost() {
+	public EAttribute getFixedAsset_LocatedAtLocationSeqId() {
 		return (EAttribute)fixedAssetEClass.getEStructuralFeatures().get(19);
 	}
 
@@ -1169,8 +1169,8 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFixedAsset_PurchaseCostUomId() {
-		return (EAttribute)fixedAssetEClass.getEStructuralFeatures().get(20);
+	public EReference getFixedAsset_ParentFixedAssetId() {
+		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -1179,7 +1179,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EReference getFixedAsset_RoleTypeId() {
+	public EReference getFixedAsset_PartyId() {
 		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(21);
 	}
 
@@ -1189,7 +1189,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFixedAsset_SalvageValue() {
+	public EAttribute getFixedAsset_ProductionCapacity() {
 		return (EAttribute)fixedAssetEClass.getEStructuralFeatures().get(22);
 	}
 
@@ -1199,7 +1199,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFixedAsset_SerialNumber() {
+	public EAttribute getFixedAsset_PurchaseCost() {
 		return (EAttribute)fixedAssetEClass.getEStructuralFeatures().get(23);
 	}
 
@@ -1209,8 +1209,48 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
+	public EAttribute getFixedAsset_PurchaseCostUomId() {
+		return (EAttribute)fixedAssetEClass.getEStructuralFeatures().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFixedAsset_RoleTypeId() {
+		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFixedAsset_SalvageValue() {
+		return (EAttribute)fixedAssetEClass.getEStructuralFeatures().get(26);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFixedAsset_SerialNumber() {
+		return (EAttribute)fixedAssetEClass.getEStructuralFeatures().get(27);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getFixedAsset_UomId() {
-		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(24);
+		return (EReference)fixedAssetEClass.getEStructuralFeatures().get(28);
 	}
 
 	/**
@@ -2039,8 +2079,18 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 * @generated
 	 */
 	@Override
+	public EReference getFixedAssetType_FixedAssetTypeAttrs() {
+		return (EReference)fixedAssetTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getFixedAssetType_HasTable() {
-		return (EAttribute)fixedAssetTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)fixedAssetTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2050,7 +2100,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 	 */
 	@Override
 	public EReference getFixedAssetType_ParentTypeId() {
-		return (EReference)fixedAssetTypeEClass.getEStructuralFeatures().get(3);
+		return (EReference)fixedAssetTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2330,7 +2380,11 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		createEAttribute(fixedAssetEClass, FIXED_ASSET__DATE_NEXT_SERVICE);
 		createEAttribute(fixedAssetEClass, FIXED_ASSET__DEPRECIATION);
 		createEAttribute(fixedAssetEClass, FIXED_ASSET__EXPECTED_END_OF_LIFE);
+		createEReference(fixedAssetEClass, FIXED_ASSET__FIXED_ASSET_ATTRIBUTES);
+		createEReference(fixedAssetEClass, FIXED_ASSET__FIXED_ASSET_IDENTS);
+		createEReference(fixedAssetEClass, FIXED_ASSET__FIXED_ASSET_MAINTS);
 		createEAttribute(fixedAssetEClass, FIXED_ASSET__FIXED_ASSET_NAME);
+		createEReference(fixedAssetEClass, FIXED_ASSET__FIXED_ASSET_REGISTRATIONS);
 		createEReference(fixedAssetEClass, FIXED_ASSET__FIXED_ASSET_TYPE_ID);
 		createEReference(fixedAssetEClass, FIXED_ASSET__INSTANCE_OF_PRODUCT_ID);
 		createEReference(fixedAssetEClass, FIXED_ASSET__LOCATED_AT_FACILITY_ID);
@@ -2440,6 +2494,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		fixedAssetTypeEClass = createEClass(FIXED_ASSET_TYPE);
 		createEAttribute(fixedAssetTypeEClass, FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ID);
 		createEAttribute(fixedAssetTypeEClass, FIXED_ASSET_TYPE__DESCRIPTION);
+		createEReference(fixedAssetTypeEClass, FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS);
 		createEAttribute(fixedAssetTypeEClass, FIXED_ASSET_TYPE__HAS_TABLE);
 		createEReference(fixedAssetTypeEClass, FIXED_ASSET_TYPE__PARENT_TYPE_ID);
 
@@ -2582,7 +2637,11 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		initEAttribute(getFixedAsset_DateNextService(), ecorePackage.getEDate(), "dateNextService", null, 0, 1, FixedAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFixedAsset_Depreciation(), ecorePackage.getEBigDecimal(), "depreciation", null, 0, 1, FixedAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFixedAsset_ExpectedEndOfLife(), ecorePackage.getEDate(), "expectedEndOfLife", null, 0, 1, FixedAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFixedAsset_FixedAssetAttributes(), this.getFixedAssetAttribute(), null, "fixedAssetAttributes", null, 0, -1, FixedAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getFixedAsset_FixedAssetIdents(), this.getFixedAssetIdent(), null, "fixedAssetIdents", null, 0, -1, FixedAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getFixedAsset_FixedAssetMaints(), this.getFixedAssetMaint(), null, "fixedAssetMaints", null, 0, -1, FixedAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFixedAsset_FixedAssetName(), ecorePackage.getEString(), "fixedAssetName", null, 0, 1, FixedAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFixedAsset_FixedAssetRegistrations(), this.getFixedAssetRegistration(), null, "fixedAssetRegistrations", null, 0, -1, FixedAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getFixedAsset_FixedAssetTypeId(), this.getFixedAssetType(), null, "fixedAssetTypeId", null, 0, 1, FixedAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFixedAsset_FixedAssetTypeId().getEKeys().add(this.getFixedAssetType_FixedAssetTypeId());
 		initEReference(getFixedAsset_InstanceOfProductId(), theProductPackage.getProduct(), null, "instanceOfProductId", null, 0, 1, FixedAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2726,6 +2785,7 @@ public class FixedassetPackageImpl extends EPackageImpl implements FixedassetPac
 		initEClass(fixedAssetTypeEClass, FixedAssetType.class, "FixedAssetType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFixedAssetType_FixedAssetTypeId(), ecorePackage.getEString(), "fixedAssetTypeId", null, 1, 1, FixedAssetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFixedAssetType_Description(), ecorePackage.getEString(), "description", null, 0, 1, FixedAssetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFixedAssetType_FixedAssetTypeAttrs(), this.getFixedAssetTypeAttr(), null, "fixedAssetTypeAttrs", null, 0, -1, FixedAssetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFixedAssetType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, FixedAssetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFixedAssetType_ParentTypeId(), this.getFixedAssetType(), null, "parentTypeId", null, 0, 1, FixedAssetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFixedAssetType_ParentTypeId().getEKeys().add(this.getFixedAssetType_FixedAssetTypeId());

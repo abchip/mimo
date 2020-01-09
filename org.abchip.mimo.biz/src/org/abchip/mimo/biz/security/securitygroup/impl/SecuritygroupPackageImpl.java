@@ -808,6 +808,16 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 * @generated
 	 */
 	@Override
+	public EReference getSecurityGroup_ProtectedViews() {
+		return (EReference)securityGroupEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSecurityGroupPermission() {
 		return securityGroupPermissionEClass;
 	}
@@ -1012,6 +1022,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__GROUP_ID);
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__DESCRIPTION);
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__GROUP_NAME);
+		createEReference(securityGroupEClass, SECURITY_GROUP__PROTECTED_VIEWS);
 
 		securityGroupPermissionEClass = createEClass(SECURITY_GROUP_PERMISSION);
 		createEReference(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__GROUP_ID);
@@ -1087,6 +1098,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		initEAttribute(getSecurityGroup_GroupId(), ecorePackage.getEString(), "groupId", null, 1, 1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSecurityGroup_Description(), ecorePackage.getEString(), "description", null, 0, 1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSecurityGroup_GroupName(), ecorePackage.getEString(), "groupName", null, 0, 1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSecurityGroup_ProtectedViews(), this.getProtectedView(), null, "protectedViews", null, 0, -1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(securityGroupPermissionEClass, SecurityGroupPermission.class, "SecurityGroupPermission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSecurityGroupPermission_GroupId(), this.getSecurityGroup(), null, "groupId", null, 1, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -8,9 +8,11 @@
 package org.abchip.mimo.biz.service.schedule.impl;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
 import org.abchip.mimo.biz.service.schedule.TemporalExpression;
+import org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getDate1 <em>Date1</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getDate2 <em>Date2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getFromTemporalExpressionAssocs <em>From Temporal Expression Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getInteger1 <em>Integer1</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getInteger2 <em>Integer2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.TemporalExpressionImpl#getString1 <em>String1</em>}</li>
@@ -137,6 +140,17 @@ public class TemporalExpressionImpl extends BizEntityImpl implements TemporalExp
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(SchedulePackage.Literals.TEMPORAL_EXPRESSION__DESCRIPTION, newDescription);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<TemporalExpressionAssoc> getFromTemporalExpressionAssocs() {
+		return (List<TemporalExpressionAssoc>)eGet(SchedulePackage.Literals.TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS, true);
 	}
 
 	/**

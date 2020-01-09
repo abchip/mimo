@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.content.content;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
@@ -31,7 +32,12 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getCharacterSetId <em>Character Set Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getChildBranchCount <em>Child Branch Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getChildLeafCount <em>Child Leaf Count</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentAttributes <em>Content Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentKeywords <em>Content Keywords</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentMetaDatas <em>Content Meta Datas</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentName <em>Content Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentPurposes <em>Content Purposes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentRevisions <em>Content Revisions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getContentTypeId <em>Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.Content#getCreatedDate <em>Created Date</em>}</li>
@@ -136,6 +142,54 @@ public interface Content extends BizEntityTyped<ContentType> {
 	void setChildLeafCount(long value);
 
 	/**
+	 * Returns the value of the '<em><b>Content Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ContentAttribute> getContentAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Content Keywords</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentKeyword}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Keywords</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Keywords</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentKeywords()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ContentKeyword> getContentKeywords();
+
+	/**
+	 * Returns the value of the '<em><b>Content Meta Datas</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentMetaData}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Meta Datas</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Meta Datas</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentMetaDatas()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ContentMetaData> getContentMetaDatas();
+
+	/**
 	 * Returns the value of the '<em><b>Content Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -187,6 +241,38 @@ public interface Content extends BizEntityTyped<ContentType> {
 	 * @generated
 	 */
 	void setContentName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Content Purposes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentPurpose}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Purposes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Purposes</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentPurposes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ContentPurpose> getContentPurposes();
+
+	/**
+	 * Returns the value of the '<em><b>Content Revisions</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentRevision}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Revisions</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Revisions</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContent_ContentRevisions()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ContentRevision> getContentRevisions();
 
 	/**
 	 * Returns the value of the '<em><b>Content Type Id</b></em>' reference.

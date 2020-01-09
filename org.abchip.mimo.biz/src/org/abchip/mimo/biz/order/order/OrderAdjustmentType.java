@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.order.order;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -21,6 +22,7 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#isHasTable <em>Has Table</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getOrderAdjustmentTypeAttrs <em>Order Adjustment Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -80,6 +82,22 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * @generated
 	 */
 	void setHasTable(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Adjustment Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Adjustment Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Adjustment Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_OrderAdjustmentTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OrderAdjustmentTypeAttr> getOrderAdjustmentTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Order Adjustment Type Id</b></em>' attribute.

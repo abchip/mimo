@@ -7,8 +7,10 @@
  */
 package org.abchip.mimo.biz.common.portal.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.common.portal.PortalPackage;
 import org.abchip.mimo.biz.common.portal.PortalPage;
+import org.abchip.mimo.biz.common.portal.PortalPageColumn;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
@@ -28,6 +30,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getOriginalPortalPageId <em>Original Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getOwnerUserLoginId <em>Owner User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getParentPortalPageId <em>Parent Portal Page Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getPortalPageColumns <em>Portal Page Columns</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getPortalPageName <em>Portal Page Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getSecurityGroupId <em>Security Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getSequenceNum <em>Sequence Num</em>}</li>
@@ -217,6 +220,17 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	@Override
 	public void setParentPortalPageId(PortalPage newParentPortalPageId) {
 		eSet(PortalPackage.Literals.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID, newParentPortalPageId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<PortalPageColumn> getPortalPageColumns() {
+		return (List<PortalPageColumn>)eGet(PortalPackage.Literals.PORTAL_PAGE__PORTAL_PAGE_COLUMNS, true);
 	}
 
 	/**

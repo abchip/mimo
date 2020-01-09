@@ -733,8 +733,8 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDocument_DocumentLocation() {
-		return (EAttribute)documentEClass.getEStructuralFeatures().get(3);
+	public EReference getDocument_DocumentAttributes() {
+		return (EReference)documentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -743,7 +743,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDocument_DocumentText() {
+	public EAttribute getDocument_DocumentLocation() {
 		return (EAttribute)documentEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -753,8 +753,18 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDocument_DocumentText() {
+		return (EAttribute)documentEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getDocument_DocumentTypeId() {
-		return (EReference)documentEClass.getEStructuralFeatures().get(5);
+		return (EReference)documentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -764,7 +774,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EAttribute getDocument_ImageData() {
-		return (EAttribute)documentEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)documentEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -853,8 +863,18 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getDocumentType_DocumentTypeAttrs() {
+		return (EReference)documentTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getDocumentType_HasTable() {
-		return (EAttribute)documentTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)documentTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -864,7 +884,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 	 */
 	@Override
 	public EReference getDocumentType_ParentTypeId() {
-		return (EReference)documentTypeEClass.getEStructuralFeatures().get(3);
+		return (EReference)documentTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -940,6 +960,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		createEAttribute(documentEClass, DOCUMENT__DOCUMENT_ID);
 		createEAttribute(documentEClass, DOCUMENT__COMMENTS);
 		createEAttribute(documentEClass, DOCUMENT__DATE_CREATED);
+		createEReference(documentEClass, DOCUMENT__DOCUMENT_ATTRIBUTES);
 		createEAttribute(documentEClass, DOCUMENT__DOCUMENT_LOCATION);
 		createEAttribute(documentEClass, DOCUMENT__DOCUMENT_TEXT);
 		createEReference(documentEClass, DOCUMENT__DOCUMENT_TYPE_ID);
@@ -954,6 +975,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		documentTypeEClass = createEClass(DOCUMENT_TYPE);
 		createEAttribute(documentTypeEClass, DOCUMENT_TYPE__DOCUMENT_TYPE_ID);
 		createEAttribute(documentTypeEClass, DOCUMENT_TYPE__DESCRIPTION);
+		createEReference(documentTypeEClass, DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS);
 		createEAttribute(documentTypeEClass, DOCUMENT_TYPE__HAS_TABLE);
 		createEReference(documentTypeEClass, DOCUMENT_TYPE__PARENT_TYPE_ID);
 
@@ -1010,6 +1032,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		initEAttribute(getDocument_DocumentId(), ecorePackage.getEString(), "documentId", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_DateCreated(), ecorePackage.getEDate(), "dateCreated", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocument_DocumentAttributes(), this.getDocumentAttribute(), null, "documentAttributes", null, 0, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_DocumentLocation(), ecorePackage.getEString(), "documentLocation", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_DocumentText(), ecorePackage.getEString(), "documentText", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocument_DocumentTypeId(), this.getDocumentType(), null, "documentTypeId", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1026,6 +1049,7 @@ public class DocumentPackageImpl extends EPackageImpl implements DocumentPackage
 		initEClass(documentTypeEClass, DocumentType.class, "DocumentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentType_DocumentTypeId(), ecorePackage.getEString(), "documentTypeId", null, 1, 1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentType_Description(), ecorePackage.getEString(), "description", null, 0, 1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentType_DocumentTypeAttrs(), this.getDocumentTypeAttr(), null, "documentTypeAttrs", null, 0, -1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentType_ParentTypeId(), this.getDocumentType(), null, "parentTypeId", null, 0, 1, DocumentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDocumentType_ParentTypeId().getEKeys().add(this.getDocumentType_DocumentTypeId());

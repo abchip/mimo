@@ -9,15 +9,22 @@ package org.abchip.mimo.biz.product.product.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.communication.CommunicationEventProduct;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.facility.ProductFacility;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
 import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.product.product.ProductAttribute;
+import org.abchip.mimo.biz.product.product.ProductGeo;
+import org.abchip.mimo.biz.product.product.ProductMaint;
+import org.abchip.mimo.biz.product.product.ProductMeter;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductType;
 import org.abchip.mimo.biz.security.login.UserLogin;
@@ -39,6 +46,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getBrandName <em>Brand Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#isChargeShipping <em>Charge Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCommunicationEventProducts <em>Communication Event Products</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getConfigId <em>Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getCreatedDate <em>Created Date</em>}</li>
@@ -71,9 +79,14 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getPiecesIncluded <em>Pieces Included</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getPriceDetailText <em>Price Detail Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getPrimaryProductCategoryId <em>Primary Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductAttributes <em>Product Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductDepth <em>Product Depth</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductDiameter <em>Product Diameter</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductFacilities <em>Product Facilities</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductGeos <em>Product Geos</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductHeight <em>Product Height</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductMaints <em>Product Maints</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductMeters <em>Product Meters</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductName <em>Product Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductRating <em>Product Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductImpl#getProductTypeId <em>Product Type Id</em>}</li>
@@ -229,6 +242,17 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	@Override
 	public void setComments(String newComments) {
 		eSet(ProductPackage.Literals.PRODUCT__COMMENTS, newComments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CommunicationEventProduct> getCommunicationEventProducts() {
+		return (List<CommunicationEventProduct>)eGet(ProductPackage.Literals.PRODUCT__COMMUNICATION_EVENT_PRODUCTS, true);
 	}
 
 	/**
@@ -856,6 +880,28 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductFacility> getProductFacilities() {
+		return (List<ProductFacility>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_FACILITIES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductGeo> getProductGeos() {
+		return (List<ProductGeo>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_GEOS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public BigDecimal getProductHeight() {
 		return (BigDecimal)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_HEIGHT, true);
@@ -869,6 +915,28 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	@Override
 	public void setProductHeight(BigDecimal newProductHeight) {
 		eSet(ProductPackage.Literals.PRODUCT__PRODUCT_HEIGHT, newProductHeight);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductMaint> getProductMaints() {
+		return (List<ProductMaint>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_MAINTS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductMeter> getProductMeters() {
+		return (List<ProductMeter>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_METERS, true);
 	}
 
 	/**
@@ -1449,6 +1517,17 @@ public class ProductImpl extends BizEntityTypedImpl<ProductType> implements Prod
 	@Override
 	public void setPrimaryProductCategoryId(ProductCategory newPrimaryProductCategoryId) {
 		eSet(ProductPackage.Literals.PRODUCT__PRIMARY_PRODUCT_CATEGORY_ID, newPrimaryProductCategoryId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductAttribute> getProductAttributes() {
+		return (List<ProductAttribute>)eGet(ProductPackage.Literals.PRODUCT__PRODUCT_ATTRIBUTES, true);
 	}
 
 	/**

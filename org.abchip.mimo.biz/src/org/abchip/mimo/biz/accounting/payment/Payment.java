@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.payment;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
@@ -39,6 +40,7 @@ import org.abchip.mimo.biz.party.party.RoleType;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdFrom <em>Party Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdTo <em>Party Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentAttributes <em>Payment Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
@@ -261,6 +263,22 @@ public interface Payment extends BizEntityTyped<PaymentType> {
 	 * @generated
 	 */
 	void setPartyIdTo(Party value);
+
+	/**
+	 * Returns the value of the '<em><b>Payment Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.payment.PaymentAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Payment Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Payment Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayment_PaymentAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PaymentAttribute> getPaymentAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Payment Preference Id</b></em>' reference.

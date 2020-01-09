@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.biz.content.document.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.content.document.Document;
 import org.abchip.mimo.biz.content.document.DocumentPackage;
 import org.abchip.mimo.biz.content.document.DocumentType;
+import org.abchip.mimo.biz.content.document.DocumentTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentTypeImpl#getDocumentTypeId <em>Document Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentTypeImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentTypeImpl#getDocumentTypeAttrs <em>Document Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -72,6 +75,17 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(DocumentPackage.Literals.DOCUMENT_TYPE__DESCRIPTION, newDescription);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<DocumentTypeAttr> getDocumentTypeAttrs() {
+		return (List<DocumentTypeAttr>)eGet(DocumentPackage.Literals.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS, true);
 	}
 
 	/**

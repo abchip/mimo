@@ -8,10 +8,14 @@
 package org.abchip.mimo.biz.security.login.impl;
 
 import java.util.Date;
+import java.util.List;
+import org.abchip.mimo.biz.common.user.UserPreference;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.LoginPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.security.login.UserLoginHistory;
+import org.abchip.mimo.biz.security.login.UserLoginPasswordHistory;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -38,6 +42,9 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#isRequirePasswordChange <em>Require Password Change</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getSuccessiveFailedLogins <em>Successive Failed Logins</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getUserLdapDn <em>User Ldap Dn</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getUserLoginHistories <em>User Login Histories</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getUserLoginPasswordHistories <em>User Login Password Histories</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getUserPreferences <em>User Preferences</em>}</li>
  * </ul>
  *
  * @generated
@@ -366,6 +373,39 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	@Override
 	public void setUserLdapDn(String newUserLdapDn) {
 		eSet(LoginPackage.Literals.USER_LOGIN__USER_LDAP_DN, newUserLdapDn);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<UserLoginHistory> getUserLoginHistories() {
+		return (List<UserLoginHistory>)eGet(LoginPackage.Literals.USER_LOGIN__USER_LOGIN_HISTORIES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<UserLoginPasswordHistory> getUserLoginPasswordHistories() {
+		return (List<UserLoginPasswordHistory>)eGet(LoginPackage.Literals.USER_LOGIN__USER_LOGIN_PASSWORD_HISTORIES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<UserPreference> getUserPreferences() {
+		return (List<UserPreference>)eGet(LoginPackage.Literals.USER_LOGIN__USER_PREFERENCES, true);
 	}
 
 	/**

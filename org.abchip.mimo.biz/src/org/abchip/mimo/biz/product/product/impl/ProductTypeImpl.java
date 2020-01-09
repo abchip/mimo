@@ -7,10 +7,12 @@
  */
 package org.abchip.mimo.biz.product.product.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductType;
+import org.abchip.mimo.biz.product.product.ProductTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -27,6 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductTypeImpl#isIsDigital <em>Is Digital</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductTypeImpl#isIsPhysical <em>Is Physical</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductTypeImpl#getProductTypeAttrs <em>Product Type Attrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -154,6 +157,17 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	@Override
 	public void setParentTypeId(ProductType newParentTypeId) {
 		eSet(ProductPackage.Literals.PRODUCT_TYPE__PARENT_TYPE_ID, newParentTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductTypeAttr> getProductTypeAttrs() {
+		return (List<ProductTypeAttr>)eGet(ProductPackage.Literals.PRODUCT_TYPE__PRODUCT_TYPE_ATTRS, true);
 	}
 
 	/**

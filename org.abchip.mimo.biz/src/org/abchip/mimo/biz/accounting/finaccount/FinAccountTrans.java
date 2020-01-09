@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.finaccount;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
 import org.abchip.mimo.biz.accounting.payment.Payment;
@@ -31,6 +32,7 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getEntryDate <em>Entry Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getFinAccountId <em>Fin Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getFinAccountTransAttributes <em>Fin Account Trans Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getFinAccountTransTypeId <em>Fin Account Trans Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getGlReconciliationId <em>Gl Reconciliation Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans#getOrderId <em>Order Id</em>}</li>
@@ -412,6 +414,22 @@ public interface FinAccountTrans extends BizEntityTyped<FinAccountTransType> {
 	 * @generated
 	 */
 	void setFinAccountId(FinAccount value);
+
+	/**
+	 * Returns the value of the '<em><b>Fin Account Trans Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fin Account Trans Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fin Account Trans Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTrans_FinAccountTransAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<FinAccountTransAttribute> getFinAccountTransAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Fin Account Trans Id</b></em>' attribute.

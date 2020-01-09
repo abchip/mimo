@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.fixedasset;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.uom.Uom;
@@ -40,7 +41,11 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getDateNextService <em>Date Next Service</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getDepreciation <em>Depreciation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getExpectedEndOfLife <em>Expected End Of Life</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetAttributes <em>Fixed Asset Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetIdents <em>Fixed Asset Idents</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetMaints <em>Fixed Asset Maints</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetName <em>Fixed Asset Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetRegistrations <em>Fixed Asset Registrations</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getInstanceOfProductId <em>Instance Of Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getLocatedAtFacilityId <em>Located At Facility Id</em>}</li>
@@ -322,6 +327,54 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	void setExpectedEndOfLife(Date value);
 
 	/**
+	 * Returns the value of the '<em><b>Fixed Asset Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fixed Asset Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fixed Asset Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<FixedAssetAttribute> getFixedAssetAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Fixed Asset Idents</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fixed Asset Idents</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fixed Asset Idents</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetIdents()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<FixedAssetIdent> getFixedAssetIdents();
+
+	/**
+	 * Returns the value of the '<em><b>Fixed Asset Maints</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fixed Asset Maints</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fixed Asset Maints</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetMaints()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<FixedAssetMaint> getFixedAssetMaints();
+
+	/**
 	 * Returns the value of the '<em><b>Fixed Asset Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -346,6 +399,22 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @generated
 	 */
 	void setFixedAssetName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Fixed Asset Registrations</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fixed Asset Registrations</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fixed Asset Registrations</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetRegistrations()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<FixedAssetRegistration> getFixedAssetRegistrations();
 
 	/**
 	 * Returns the value of the '<em><b>Instance Of Product Id</b></em>' reference.

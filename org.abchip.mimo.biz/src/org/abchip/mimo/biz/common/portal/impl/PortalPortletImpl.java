@@ -7,8 +7,10 @@
  */
 package org.abchip.mimo.biz.common.portal.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.common.portal.PortalPackage;
 import org.abchip.mimo.biz.common.portal.PortalPortlet;
+import org.abchip.mimo.biz.common.portal.PortletPortletCategory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getEditFormLocation <em>Edit Form Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getEditFormName <em>Edit Form Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getPortletName <em>Portlet Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getPortletPortletCategories <em>Portlet Portlet Categories</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getScreenLocation <em>Screen Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getScreenName <em>Screen Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPortletImpl#getScreenshot <em>Screenshot</em>}</li>
@@ -136,6 +139,17 @@ public class PortalPortletImpl extends BizEntityImpl implements PortalPortlet {
 	@Override
 	public void setPortletName(String newPortletName) {
 		eSet(PortalPackage.Literals.PORTAL_PORTLET__PORTLET_NAME, newPortletName);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<PortletPortletCategory> getPortletPortletCategories() {
+		return (List<PortletPortletCategory>)eGet(PortalPackage.Literals.PORTAL_PORTLET__PORTLET_PORTLET_CATEGORIES, true);
 	}
 
 	/**

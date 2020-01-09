@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.biz.product.inventory.impl;
 
+import java.util.List;
+import org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.abchip.mimo.biz.product.inventory.VarianceReason;
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.VarianceReasonImpl#getVarianceReasonId <em>Variance Reason Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.VarianceReasonImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.VarianceReasonImpl#getVarianceReasonGlAccounts <em>Variance Reason Gl Accounts</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,6 +72,17 @@ public class VarianceReasonImpl extends BizEntityImpl implements VarianceReason 
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(InventoryPackage.Literals.VARIANCE_REASON__DESCRIPTION, newDescription);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<VarianceReasonGlAccount> getVarianceReasonGlAccounts() {
+		return (List<VarianceReasonGlAccount>)eGet(InventoryPackage.Literals.VARIANCE_REASON__VARIANCE_REASON_GL_ACCOUNTS, true);
 	}
 
 	/**

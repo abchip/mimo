@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.biz.common.method.impl;
 
+import java.util.List;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.method.CustomMethodType;
 import org.abchip.mimo.biz.common.method.MethodPackage;
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getCustomMethodName <em>Custom Method Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getCustomMethodTypeId <em>Custom Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getFixedAssetDepMethods <em>Fixed Asset Dep Methods</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,6 +114,17 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(MethodPackage.Literals.CUSTOM_METHOD__DESCRIPTION, newDescription);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<FixedAssetDepMethod> getFixedAssetDepMethods() {
+		return (List<FixedAssetDepMethod>)eGet(MethodPackage.Literals.CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS, true);
 	}
 
 	/**

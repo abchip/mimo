@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.inventory;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.common.status.StatusItem;
@@ -42,7 +43,11 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getExpireDate <em>Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemAttributes <em>Inventory Item Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemDetails <em>Inventory Item Details</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemLabelAppls <em>Inventory Item Label Appls</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemVariances <em>Inventory Item Variances</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLocationSeqId <em>Location Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLotId <em>Lot Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOldAvailableToPromise <em>Old Available To Promise</em>}</li>
@@ -349,6 +354,54 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @generated
 	 */
 	void setFixedAssetId(FixedAsset value);
+
+	/**
+	 * Returns the value of the '<em><b>Inventory Item Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Inventory Item Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Inventory Item Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<InventoryItemAttribute> getInventoryItemAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Inventory Item Details</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemDetail}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Inventory Item Details</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Inventory Item Details</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemDetails()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<InventoryItemDetail> getInventoryItemDetails();
+
+	/**
+	 * Returns the value of the '<em><b>Inventory Item Label Appls</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Inventory Item Label Appls</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Inventory Item Label Appls</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemLabelAppls()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<InventoryItemLabelAppl> getInventoryItemLabelAppls();
 
 	/**
 	 * Returns the value of the '<em><b>Location Seq Id</b></em>' attribute.
@@ -689,6 +742,22 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @generated
 	 */
 	void setInventoryItemTypeId(InventoryItemType value);
+
+	/**
+	 * Returns the value of the '<em><b>Inventory Item Variances</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Inventory Item Variances</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Inventory Item Variances</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemVariances()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<InventoryItemVariance> getInventoryItemVariances();
 
 	/**
 	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.

@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.product.feature;
 
 import java.math.BigDecimal;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.uom.Uom;
 
@@ -26,6 +27,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeature#getDefaultSequenceNum <em>Default Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeature#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeature#getIdCode <em>Id Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeature#getMainProductFeatureIactns <em>Main Product Feature Iactns</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeature#getNumberSpecified <em>Number Specified</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeature#getProductFeatureCategoryId <em>Product Feature Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeature#getProductFeatureTypeId <em>Product Feature Type Id</em>}</li>
@@ -166,6 +168,22 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	 * @generated
 	 */
 	void setIdCode(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Main Product Feature Iactns</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.feature.ProductFeatureIactn}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main Product Feature Iactns</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Main Product Feature Iactns</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_MainProductFeatureIactns()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductFeatureIactn> getMainProductFeatureIactns();
 
 	/**
 	 * Returns the value of the '<em><b>Number Specified</b></em>' attribute.

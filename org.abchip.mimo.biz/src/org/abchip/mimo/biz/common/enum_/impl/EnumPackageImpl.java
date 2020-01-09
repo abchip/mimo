@@ -737,6 +737,16 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getEnumeration_UserLoginSecurityQuestions() {
+		return (EReference)enumerationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEnumerationType() {
 		return enumerationTypeEClass;
 	}
@@ -816,6 +826,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		createEAttribute(enumerationEClass, ENUMERATION__ENUM_CODE);
 		createEReference(enumerationEClass, ENUMERATION__ENUM_TYPE_ID);
 		createEAttribute(enumerationEClass, ENUMERATION__SEQUENCE_ID);
+		createEReference(enumerationEClass, ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS);
 
 		enumerationTypeEClass = createEClass(ENUMERATION_TYPE);
 		createEAttribute(enumerationTypeEClass, ENUMERATION_TYPE__ENUM_TYPE_ID);
@@ -849,6 +860,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -872,6 +884,7 @@ public class EnumPackageImpl extends EPackageImpl implements EnumPackage {
 		initEReference(getEnumeration_EnumTypeId(), this.getEnumerationType(), null, "enumTypeId", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getEnumeration_EnumTypeId().getEKeys().add(this.getEnumerationType_EnumTypeId());
 		initEAttribute(getEnumeration_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnumeration_UserLoginSecurityQuestions(), theLoginPackage.getUserLoginSecurityQuestion(), null, "userLoginSecurityQuestions", null, 0, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(enumerationTypeEClass, EnumerationType.class, "EnumerationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnumerationType_EnumTypeId(), ecorePackage.getEString(), "enumTypeId", null, 1, 1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

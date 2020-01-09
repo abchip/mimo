@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.product.product;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -23,6 +24,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#isIsAscending <em>Is Ascending</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getNumResults <em>Num Results</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getOrderByName <em>Order By Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getProductSearchConstraints <em>Product Search Constraints</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getSearchDate <em>Search Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getSecondsTotal <em>Seconds Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductSearchResult#getVisitId <em>Visit Id</em>}</li>
@@ -84,6 +86,22 @@ public interface ProductSearchResult extends BizEntity {
 	 * @generated
 	 */
 	void setOrderByName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Search Constraints</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.ProductSearchConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Search Constraints</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Search Constraints</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchResult_ProductSearchConstraints()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductSearchConstraint> getProductSearchConstraints();
 
 	/**
 	 * Returns the value of the '<em><b>Search Date</b></em>' attribute.

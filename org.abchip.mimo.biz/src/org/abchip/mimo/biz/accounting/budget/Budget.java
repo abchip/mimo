@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.budget;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 
@@ -20,6 +21,10 @@ import org.abchip.mimo.biz.common.period.CustomTimePeriod;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetId <em>Budget Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetAttributes <em>Budget Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetItems <em>Budget Items</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetRevisions <em>Budget Revisions</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetStatuss <em>Budget Statuss</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetTypeId <em>Budget Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
@@ -134,5 +139,69 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * @generated
 	 */
 	void setBudgetId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Budget Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Budget Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Budget Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<BudgetAttribute> getBudgetAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Budget Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetItem}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Budget Items</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Budget Items</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetItems()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<BudgetItem> getBudgetItems();
+
+	/**
+	 * Returns the value of the '<em><b>Budget Revisions</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetRevision}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Budget Revisions</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Budget Revisions</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetRevisions()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<BudgetRevision> getBudgetRevisions();
+
+	/**
+	 * Returns the value of the '<em><b>Budget Statuss</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetStatus}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Budget Statuss</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Budget Statuss</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetStatuss()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<BudgetStatus> getBudgetStatuss();
 
 } // Budget

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.facility;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -20,6 +21,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityType#getFacilityTypeId <em>Facility Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityType#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityType#getFacilityTypeAttrs <em>Facility Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -54,6 +56,22 @@ public interface FacilityType extends BizEntityType<Facility> {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Facility Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.facility.FacilityTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Facility Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Facility Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityType_FacilityTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<FacilityTypeAttr> getFacilityTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Has Table</b></em>' attribute.

@@ -896,8 +896,18 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getWebSite_WebAnalyticsConfigs() {
+		return (EReference)webSiteEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getWebSite_WebappPath() {
-		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -952,6 +962,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(webSiteEClass, WEB_SITE__SITE_NAME);
 		createEAttribute(webSiteEClass, WEB_SITE__STANDARD_CONTENT_PREFIX);
 		createEReference(webSiteEClass, WEB_SITE__VISUAL_THEME_SET_ID);
+		createEReference(webSiteEClass, WEB_SITE__WEB_ANALYTICS_CONFIGS);
 		createEAttribute(webSiteEClass, WEB_SITE__WEBAPP_PATH);
 	}
 
@@ -983,6 +994,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
 		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
 		ThemePackage theThemePackage = (ThemePackage)EPackage.Registry.INSTANCE.getEPackage(ThemePackage.eNS_URI);
+		org.abchip.mimo.biz.content.website.WebsitePackage theWebsitePackage_1 = (org.abchip.mimo.biz.content.website.WebsitePackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.content.website.WebsitePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1020,6 +1032,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebSite_StandardContentPrefix(), ecorePackage.getEString(), "standardContentPrefix", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebSite_VisualThemeSetId(), theThemePackage.getVisualThemeSet(), null, "visualThemeSetId", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWebSite_VisualThemeSetId().getEKeys().add(theThemePackage.getVisualThemeSet_VisualThemeSetId());
+		initEReference(getWebSite_WebAnalyticsConfigs(), theWebsitePackage_1.getWebAnalyticsConfig(), null, "webAnalyticsConfigs", null, 0, -1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSite_WebappPath(), ecorePackage.getEString(), "webappPath", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations

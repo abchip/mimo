@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.entity.group;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -19,6 +20,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupId <em>Entity Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupEntries <em>Entity Group Entries</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.group.EntityGroup#getEntityGroupName <em>Entity Group Name</em>}</li>
  * </ul>
  *
@@ -53,6 +55,22 @@ public interface EntityGroup extends BizEntity {
 	 * @generated
 	 */
 	void setEntityGroupId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Entity Group Entries</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.group.EntityGroupEntry}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Entity Group Entries</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Entity Group Entries</em>' reference list.
+	 * @see org.abchip.mimo.biz.entity.group.GroupPackage#getEntityGroup_EntityGroupEntries()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<EntityGroupEntry> getEntityGroupEntries();
 
 	/**
 	 * Returns the value of the '<em><b>Entity Group Name</b></em>' attribute.

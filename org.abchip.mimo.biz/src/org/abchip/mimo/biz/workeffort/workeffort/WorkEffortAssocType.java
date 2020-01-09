@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -22,6 +23,7 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType#getWorkEffortAssocTypeAttrs <em>Work Effort Assoc Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocType()
@@ -106,6 +108,22 @@ public interface WorkEffortAssocType extends BizEntityType<WorkEffortAssoc> {
 	 * @generated
 	 */
 	void setParentTypeId(WorkEffortAssocType value);
+
+	/**
+	 * Returns the value of the '<em><b>Work Effort Assoc Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Assoc Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Assoc Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocType_WorkEffortAssocTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkEffortAssocTypeAttr> getWorkEffortAssocTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Work Effort Assoc Type Id</b></em>' attribute.

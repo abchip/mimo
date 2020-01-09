@@ -973,8 +973,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResource_DataResourceName() {
-		return (EAttribute)dataResourceEClass.getEStructuralFeatures().get(5);
+	public EReference getDataResource_DataResourceAttributes() {
+		return (EReference)dataResourceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -983,7 +983,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getDataResource_DataResourceTypeId() {
+	public EReference getDataResource_DataResourceMetaDatas() {
 		return (EReference)dataResourceEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -993,8 +993,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getDataResource_DataSourceId() {
-		return (EReference)dataResourceEClass.getEStructuralFeatures().get(7);
+	public EAttribute getDataResource_DataResourceName() {
+		return (EAttribute)dataResourceEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1003,7 +1003,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getDataResource_DataTemplateTypeId() {
+	public EReference getDataResource_DataResourcePurposes() {
 		return (EReference)dataResourceEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1013,8 +1013,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResource_IsPublic() {
-		return (EAttribute)dataResourceEClass.getEStructuralFeatures().get(9);
+	public EReference getDataResource_DataResourceTypeId() {
+		return (EReference)dataResourceEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1023,7 +1023,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getDataResource_LastModifiedByUserLogin() {
+	public EReference getDataResource_DataSourceId() {
 		return (EReference)dataResourceEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -1033,8 +1033,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResource_LastModifiedDate() {
-		return (EAttribute)dataResourceEClass.getEStructuralFeatures().get(11);
+	public EReference getDataResource_DataTemplateTypeId() {
+		return (EReference)dataResourceEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1043,7 +1043,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResource_LocaleString() {
+	public EAttribute getDataResource_IsPublic() {
 		return (EAttribute)dataResourceEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -1053,7 +1053,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getDataResource_MimeTypeId() {
+	public EReference getDataResource_LastModifiedByUserLogin() {
 		return (EReference)dataResourceEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -1063,7 +1063,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResource_ObjectInfo() {
+	public EAttribute getDataResource_LastModifiedDate() {
 		return (EAttribute)dataResourceEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -1073,7 +1073,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResource_RelatedDetailId() {
+	public EAttribute getDataResource_LocaleString() {
 		return (EAttribute)dataResourceEClass.getEStructuralFeatures().get(15);
 	}
 
@@ -1083,7 +1083,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getDataResource_StatusId() {
+	public EReference getDataResource_MimeTypeId() {
 		return (EReference)dataResourceEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -1093,8 +1093,48 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDataResource_ObjectInfo() {
+		return (EAttribute)dataResourceEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDataResource_ProductFeatureDataResources() {
+		return (EReference)dataResourceEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDataResource_RelatedDetailId() {
+		return (EAttribute)dataResourceEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDataResource_StatusId() {
+		return (EReference)dataResourceEClass.getEStructuralFeatures().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getDataResource_SurveyId() {
-		return (EReference)dataResourceEClass.getEStructuralFeatures().get(17);
+		return (EReference)dataResourceEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -1104,7 +1144,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 */
 	@Override
 	public EReference getDataResource_SurveyResponseId() {
-		return (EReference)dataResourceEClass.getEStructuralFeatures().get(18);
+		return (EReference)dataResourceEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -1323,8 +1363,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResourceType_Description() {
-		return (EAttribute)dataResourceTypeEClass.getEStructuralFeatures().get(1);
+	public EReference getDataResourceType_DataResourceTypeAttrs() {
+		return (EReference)dataResourceTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1333,7 +1373,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataResourceType_HasTable() {
+	public EAttribute getDataResourceType_Description() {
 		return (EAttribute)dataResourceTypeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1343,8 +1383,18 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDataResourceType_HasTable() {
+		return (EAttribute)dataResourceTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getDataResourceType_ParentTypeId() {
-		return (EReference)dataResourceTypeEClass.getEStructuralFeatures().get(3);
+		return (EReference)dataResourceTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1705,7 +1755,10 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		createEReference(dataResourceEClass, DATA_RESOURCE__CREATED_BY_USER_LOGIN);
 		createEAttribute(dataResourceEClass, DATA_RESOURCE__CREATED_DATE);
 		createEReference(dataResourceEClass, DATA_RESOURCE__DATA_CATEGORY_ID);
+		createEReference(dataResourceEClass, DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES);
+		createEReference(dataResourceEClass, DATA_RESOURCE__DATA_RESOURCE_META_DATAS);
 		createEAttribute(dataResourceEClass, DATA_RESOURCE__DATA_RESOURCE_NAME);
+		createEReference(dataResourceEClass, DATA_RESOURCE__DATA_RESOURCE_PURPOSES);
 		createEReference(dataResourceEClass, DATA_RESOURCE__DATA_RESOURCE_TYPE_ID);
 		createEReference(dataResourceEClass, DATA_RESOURCE__DATA_SOURCE_ID);
 		createEReference(dataResourceEClass, DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID);
@@ -1715,6 +1768,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		createEAttribute(dataResourceEClass, DATA_RESOURCE__LOCALE_STRING);
 		createEReference(dataResourceEClass, DATA_RESOURCE__MIME_TYPE_ID);
 		createEAttribute(dataResourceEClass, DATA_RESOURCE__OBJECT_INFO);
+		createEReference(dataResourceEClass, DATA_RESOURCE__PRODUCT_FEATURE_DATA_RESOURCES);
 		createEAttribute(dataResourceEClass, DATA_RESOURCE__RELATED_DETAIL_ID);
 		createEReference(dataResourceEClass, DATA_RESOURCE__STATUS_ID);
 		createEReference(dataResourceEClass, DATA_RESOURCE__SURVEY_ID);
@@ -1745,6 +1799,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 
 		dataResourceTypeEClass = createEClass(DATA_RESOURCE_TYPE);
 		createEAttribute(dataResourceTypeEClass, DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ID);
+		createEReference(dataResourceTypeEClass, DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ATTRS);
 		createEAttribute(dataResourceTypeEClass, DATA_RESOURCE_TYPE__DESCRIPTION);
 		createEAttribute(dataResourceTypeEClass, DATA_RESOURCE_TYPE__HAS_TABLE);
 		createEReference(dataResourceTypeEClass, DATA_RESOURCE_TYPE__PARENT_TYPE_ID);
@@ -1818,6 +1873,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 		DatasourcePackage theDatasourcePackage = (DatasourcePackage)EPackage.Registry.INSTANCE.getEPackage(DatasourcePackage.eNS_URI);
+		FeaturePackage theFeaturePackage = (FeaturePackage)EPackage.Registry.INSTANCE.getEPackage(FeaturePackage.eNS_URI);
 		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
 		SurveyPackage theSurveyPackage = (SurveyPackage)EPackage.Registry.INSTANCE.getEPackage(SurveyPackage.eNS_URI);
 		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
@@ -1878,7 +1934,10 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		initEAttribute(getDataResource_CreatedDate(), ecorePackage.getEDate(), "createdDate", null, 0, 1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataResource_DataCategoryId(), this.getDataCategory(), null, "dataCategoryId", null, 0, 1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDataResource_DataCategoryId().getEKeys().add(this.getDataCategory_DataCategoryId());
+		initEReference(getDataResource_DataResourceAttributes(), this.getDataResourceAttribute(), null, "dataResourceAttributes", null, 0, -1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDataResource_DataResourceMetaDatas(), this.getDataResourceMetaData(), null, "dataResourceMetaDatas", null, 0, -1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResource_DataResourceName(), ecorePackage.getEString(), "dataResourceName", null, 0, 1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataResource_DataResourcePurposes(), this.getDataResourcePurpose(), null, "dataResourcePurposes", null, 0, -1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDataResource_DataResourceTypeId(), this.getDataResourceType(), null, "dataResourceTypeId", null, 0, 1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDataResource_DataResourceTypeId().getEKeys().add(this.getDataResourceType_DataResourceTypeId());
 		initEReference(getDataResource_DataSourceId(), theDatasourcePackage.getDataSource(), null, "dataSourceId", null, 0, 1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1893,6 +1952,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		initEReference(getDataResource_MimeTypeId(), this.getMimeType(), null, "mimeTypeId", null, 0, 1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDataResource_MimeTypeId().getEKeys().add(this.getMimeType_MimeTypeId());
 		initEAttribute(getDataResource_ObjectInfo(), ecorePackage.getEString(), "objectInfo", null, 0, 1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataResource_ProductFeatureDataResources(), theFeaturePackage.getProductFeatureDataResource(), null, "productFeatureDataResources", null, 0, -1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResource_RelatedDetailId(), ecorePackage.getEString(), "relatedDetailId", null, 0, 1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataResource_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, DataResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getDataResource_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
@@ -1934,6 +1994,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 
 		initEClass(dataResourceTypeEClass, DataResourceType.class, "DataResourceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataResourceType_DataResourceTypeId(), ecorePackage.getEString(), "dataResourceTypeId", null, 1, 1, DataResourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataResourceType_DataResourceTypeAttrs(), this.getDataResourceTypeAttr(), null, "dataResourceTypeAttrs", null, 0, -1, DataResourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResourceType_Description(), ecorePackage.getEString(), "description", null, 0, 1, DataResourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataResourceType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, DataResourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataResourceType_ParentTypeId(), this.getDataResourceType(), null, "parentTypeId", null, 0, 1, DataResourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

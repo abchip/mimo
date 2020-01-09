@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.biz.product.category.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.abchip.mimo.biz.product.category.ProductCategoryAttribute;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
 import org.eclipse.emf.ecore.EClass;
 
@@ -30,6 +32,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getLinkTwoImageUrl <em>Link Two Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getLongDescription <em>Long Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getPrimaryParentCategoryId <em>Primary Parent Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getProductCategoryAttributes <em>Product Category Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#isShowInSelect <em>Show In Select</em>}</li>
  * </ul>
@@ -259,6 +262,17 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	@Override
 	public void setPrimaryParentCategoryId(ProductCategory newPrimaryParentCategoryId) {
 		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID, newPrimaryParentCategoryId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductCategoryAttribute> getProductCategoryAttributes() {
+		return (List<ProductCategoryAttribute>)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY__PRODUCT_CATEGORY_ATTRIBUTES, true);
 	}
 
 	/**

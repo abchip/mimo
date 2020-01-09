@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.cost;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -19,6 +20,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentType#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentType#getCostComponentTypeAttrs <em>Cost Component Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponentType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -133,5 +135,21 @@ public interface CostComponentType extends BizEntityType<CostComponent> {
 	 * @generated
 	 */
 	void setCostComponentTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Cost Component Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.cost.CostComponentTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cost Component Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cost Component Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentType_CostComponentTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<CostComponentTypeAttr> getCostComponentTypeAttrs();
 
 } // CostComponentType

@@ -8,12 +8,18 @@
 package org.abchip.mimo.biz.content.content.impl;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.content.content.Content;
+import org.abchip.mimo.biz.content.content.ContentAttribute;
+import org.abchip.mimo.biz.content.content.ContentKeyword;
+import org.abchip.mimo.biz.content.content.ContentMetaData;
 import org.abchip.mimo.biz.content.content.ContentPackage;
+import org.abchip.mimo.biz.content.content.ContentPurpose;
+import org.abchip.mimo.biz.content.content.ContentRevision;
 import org.abchip.mimo.biz.content.content.ContentType;
 import org.abchip.mimo.biz.content.data.CharacterSet;
 import org.abchip.mimo.biz.content.data.DataResource;
@@ -34,7 +40,12 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCharacterSetId <em>Character Set Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getChildBranchCount <em>Child Branch Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getChildLeafCount <em>Child Leaf Count</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentAttributes <em>Content Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentKeywords <em>Content Keywords</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentMetaDatas <em>Content Meta Datas</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentName <em>Content Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentPurposes <em>Content Purposes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentRevisions <em>Content Revisions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentTypeId <em>Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCreatedDate <em>Created Date</em>}</li>
@@ -147,6 +158,39 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ContentAttribute> getContentAttributes() {
+		return (List<ContentAttribute>)eGet(ContentPackage.Literals.CONTENT__CONTENT_ATTRIBUTES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ContentKeyword> getContentKeywords() {
+		return (List<ContentKeyword>)eGet(ContentPackage.Literals.CONTENT__CONTENT_KEYWORDS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ContentMetaData> getContentMetaDatas() {
+		return (List<ContentMetaData>)eGet(ContentPackage.Literals.CONTENT__CONTENT_META_DATAS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public String getContentId() {
 		return (String)eGet(ContentPackage.Literals.CONTENT__CONTENT_ID, true);
@@ -180,6 +224,28 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	@Override
 	public void setContentName(String newContentName) {
 		eSet(ContentPackage.Literals.CONTENT__CONTENT_NAME, newContentName);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ContentPurpose> getContentPurposes() {
+		return (List<ContentPurpose>)eGet(ContentPackage.Literals.CONTENT__CONTENT_PURPOSES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ContentRevision> getContentRevisions() {
+		return (List<ContentRevision>)eGet(ContentPackage.Literals.CONTENT__CONTENT_REVISIONS, true);
 	}
 
 	/**

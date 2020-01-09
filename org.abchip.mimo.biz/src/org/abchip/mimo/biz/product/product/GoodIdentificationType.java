@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.product;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -20,6 +21,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentificationType#getGoodIdentificationTypeId <em>Good Identification Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentificationType#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentificationType#getGoodIdentifications <em>Good Identifications</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentificationType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.GoodIdentificationType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -54,6 +56,22 @@ public interface GoodIdentificationType extends BizEntityType<GoodIdentification
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Good Identifications</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.GoodIdentification}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Good Identifications</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Good Identifications</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getGoodIdentificationType_GoodIdentifications()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<GoodIdentification> getGoodIdentifications();
 
 	/**
 	 * Returns the value of the '<em><b>Has Table</b></em>' attribute.

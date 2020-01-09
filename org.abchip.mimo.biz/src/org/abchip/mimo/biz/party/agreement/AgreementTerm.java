@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.agreement;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
 
@@ -25,6 +26,7 @@ import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTerm#getAgreementTermId <em>Agreement Term Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTerm#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTerm#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTerm#getAgreementTermAttributes <em>Agreement Term Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTerm#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTerm#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementTerm#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}</li>
@@ -67,6 +69,22 @@ public interface AgreementTerm extends BizEntityTyped<TermType> {
 	 * @generated
 	 */
 	void setAgreementItemSeqId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Agreement Term Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.AgreementTermAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Agreement Term Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agreement Term Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTerm_AgreementTermAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<AgreementTermAttribute> getAgreementTermAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

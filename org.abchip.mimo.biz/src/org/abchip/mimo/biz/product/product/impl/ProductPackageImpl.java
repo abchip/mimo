@@ -923,8 +923,18 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getGoodIdentificationType_GoodIdentifications() {
+		return (EReference)goodIdentificationTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getGoodIdentificationType_HasTable() {
-		return (EAttribute)goodIdentificationTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)goodIdentificationTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -934,7 +944,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EReference getGoodIdentificationType_ParentTypeId() {
-		return (EReference)goodIdentificationTypeEClass.getEStructuralFeatures().get(3);
+		return (EReference)goodIdentificationTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1023,8 +1033,18 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getProduct_CommunicationEventProducts() {
+		return (EReference)productEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getProduct_ConfigId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1034,7 +1054,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EReference getProduct_CreatedByUserLogin() {
-		return (EReference)productEClass.getEStructuralFeatures().get(8);
+		return (EReference)productEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1044,7 +1064,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_CreatedDate() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1054,16 +1074,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EReference getProduct_DefaultShipmentBoxTypeId() {
-		return (EReference)productEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getProduct_DepthUomId() {
 		return (EReference)productEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -1073,8 +1083,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_Description() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(12);
+	public EReference getProduct_DepthUomId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1083,7 +1093,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_DetailImageUrl() {
+	public EAttribute getProduct_Description() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -1093,7 +1103,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_DetailScreen() {
+	public EAttribute getProduct_DetailImageUrl() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -1103,8 +1113,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getProduct_DiameterUomId() {
-		return (EReference)productEClass.getEStructuralFeatures().get(15);
+	public EAttribute getProduct_DetailScreen() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -1113,7 +1123,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getProduct_FacilityId() {
+	public EReference getProduct_DiameterUomId() {
 		return (EReference)productEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -1123,8 +1133,18 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getProduct_FacilityId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getProduct_FixedAmount() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(17);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -1134,7 +1154,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EReference getProduct_HeightUomId() {
-		return (EReference)productEClass.getEStructuralFeatures().get(18);
+		return (EReference)productEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -1144,16 +1164,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_InShippingBox() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(19);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getProduct_IncludeInPromotions() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(20);
 	}
 
@@ -1163,7 +1173,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_InternalName() {
+	public EAttribute getProduct_IncludeInPromotions() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(21);
 	}
 
@@ -1173,7 +1183,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_IntroductionDate() {
+	public EAttribute getProduct_InternalName() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(22);
 	}
 
@@ -1183,8 +1193,18 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getProduct_IntroductionDate() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getProduct_InventoryItemTypeId() {
-		return (EReference)productEClass.getEStructuralFeatures().get(23);
+		return (EReference)productEClass.getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -1194,16 +1214,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_InventoryMessage() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(24);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getProduct_IsVariant() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(25);
 	}
 
@@ -1213,7 +1223,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_IsVirtual() {
+	public EAttribute getProduct_IsVariant() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(26);
 	}
 
@@ -1223,7 +1233,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_LargeImageUrl() {
+	public EAttribute getProduct_IsVirtual() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(27);
 	}
 
@@ -1233,8 +1243,18 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getProduct_LargeImageUrl() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(28);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getProduct_LastModifiedByUserLogin() {
-		return (EReference)productEClass.getEStructuralFeatures().get(28);
+		return (EReference)productEClass.getEStructuralFeatures().get(29);
 	}
 
 	/**
@@ -1244,16 +1264,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_LastModifiedDate() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(29);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getProduct_LongDescription() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(30);
 	}
 
@@ -1263,7 +1273,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_LotIdFilledIn() {
+	public EAttribute getProduct_LongDescription() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(31);
 	}
 
@@ -1273,7 +1283,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_MediumImageUrl() {
+	public EAttribute getProduct_LotIdFilledIn() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(32);
 	}
 
@@ -1283,7 +1293,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_OrderDecimalQuantity() {
+	public EAttribute getProduct_MediumImageUrl() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(33);
 	}
 
@@ -1293,8 +1303,18 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getProduct_OrderDecimalQuantity() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(34);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getProduct_OriginGeoId() {
-		return (EReference)productEClass.getEStructuralFeatures().get(34);
+		return (EReference)productEClass.getEStructuralFeatures().get(35);
 	}
 
 	/**
@@ -1304,16 +1324,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_OriginalImageUrl() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(35);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getProduct_PiecesIncluded() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(36);
 	}
 
@@ -1323,7 +1333,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_PriceDetailText() {
+	public EAttribute getProduct_PiecesIncluded() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(37);
 	}
 
@@ -1333,8 +1343,28 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getProduct_PriceDetailText() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(38);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getProduct_PrimaryProductCategoryId() {
-		return (EReference)productEClass.getEStructuralFeatures().get(38);
+		return (EReference)productEClass.getEStructuralFeatures().get(39);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getProduct_ProductAttributes() {
+		return (EReference)productEClass.getEStructuralFeatures().get(40);
 	}
 
 	/**
@@ -1344,26 +1374,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ProductDepth() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(39);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getProduct_ProductDiameter() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(40);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getProduct_ProductHeight() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(41);
 	}
 
@@ -1373,7 +1383,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_ProductName() {
+	public EAttribute getProduct_ProductDiameter() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(42);
 	}
 
@@ -1383,8 +1393,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_ProductRating() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(43);
+	public EReference getProduct_ProductFacilities() {
+		return (EReference)productEClass.getEStructuralFeatures().get(43);
 	}
 
 	/**
@@ -1393,7 +1403,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getProduct_ProductTypeId() {
+	public EReference getProduct_ProductGeos() {
 		return (EReference)productEClass.getEStructuralFeatures().get(44);
 	}
 
@@ -1403,7 +1413,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_ProductWeight() {
+	public EAttribute getProduct_ProductHeight() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(45);
 	}
 
@@ -1413,8 +1423,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_ProductWidth() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(46);
+	public EReference getProduct_ProductMaints() {
+		return (EReference)productEClass.getEStructuralFeatures().get(46);
 	}
 
 	/**
@@ -1423,8 +1433,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_QuantityIncluded() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(47);
+	public EReference getProduct_ProductMeters() {
+		return (EReference)productEClass.getEStructuralFeatures().get(47);
 	}
 
 	/**
@@ -1433,8 +1443,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getProduct_QuantityUomId() {
-		return (EReference)productEClass.getEStructuralFeatures().get(48);
+	public EAttribute getProduct_ProductName() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(48);
 	}
 
 	/**
@@ -1443,8 +1453,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getProduct_RatingTypeEnum() {
-		return (EReference)productEClass.getEStructuralFeatures().get(49);
+	public EAttribute getProduct_ProductRating() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(49);
 	}
 
 	/**
@@ -1453,8 +1463,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_ReleaseDate() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(50);
+	public EReference getProduct_ProductTypeId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(50);
 	}
 
 	/**
@@ -1463,7 +1473,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_RequireAmount() {
+	public EAttribute getProduct_ProductWeight() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(51);
 	}
 
@@ -1473,7 +1483,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_RequireInventory() {
+	public EAttribute getProduct_ProductWidth() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(52);
 	}
 
@@ -1483,8 +1493,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getProduct_RequirementMethodEnumId() {
-		return (EReference)productEClass.getEStructuralFeatures().get(53);
+	public EAttribute getProduct_QuantityIncluded() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(53);
 	}
 
 	/**
@@ -1493,8 +1503,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_Reserv2ndPPPerc() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(54);
+	public EReference getProduct_QuantityUomId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(54);
 	}
 
 	/**
@@ -1503,8 +1513,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_ReservMaxPersons() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(55);
+	public EReference getProduct_RatingTypeEnum() {
+		return (EReference)productEClass.getEStructuralFeatures().get(55);
 	}
 
 	/**
@@ -1513,7 +1523,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_ReservNthPPPerc() {
+	public EAttribute getProduct_ReleaseDate() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(56);
 	}
 
@@ -1523,7 +1533,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_Returnable() {
+	public EAttribute getProduct_RequireAmount() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(57);
 	}
 
@@ -1533,7 +1543,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_SalesDiscWhenNotAvail() {
+	public EAttribute getProduct_RequireInventory() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(58);
 	}
 
@@ -1543,8 +1553,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_SalesDiscontinuationDate() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(59);
+	public EReference getProduct_RequirementMethodEnumId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(59);
 	}
 
 	/**
@@ -1553,7 +1563,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_ShippingDepth() {
+	public EAttribute getProduct_Reserv2ndPPPerc() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(60);
 	}
 
@@ -1563,7 +1573,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_ShippingHeight() {
+	public EAttribute getProduct_ReservMaxPersons() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(61);
 	}
 
@@ -1573,7 +1583,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_ShippingWeight() {
+	public EAttribute getProduct_ReservNthPPPerc() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(62);
 	}
 
@@ -1583,7 +1593,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_ShippingWidth() {
+	public EAttribute getProduct_Returnable() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(63);
 	}
 
@@ -1593,7 +1603,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_SmallImageUrl() {
+	public EAttribute getProduct_SalesDiscWhenNotAvail() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(64);
 	}
 
@@ -1603,7 +1613,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_SupportDiscontinuationDate() {
+	public EAttribute getProduct_SalesDiscontinuationDate() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(65);
 	}
 
@@ -1613,7 +1623,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_Taxable() {
+	public EAttribute getProduct_ShippingDepth() {
 		return (EAttribute)productEClass.getEStructuralFeatures().get(66);
 	}
 
@@ -1623,8 +1633,68 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getProduct_ShippingHeight() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(67);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getProduct_ShippingWeight() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(68);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getProduct_ShippingWidth() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(69);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getProduct_SmallImageUrl() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(70);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getProduct_SupportDiscontinuationDate() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(71);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getProduct_Taxable() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(72);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getProduct_VirtualVariantMethodEnum() {
-		return (EReference)productEClass.getEStructuralFeatures().get(67);
+		return (EReference)productEClass.getEStructuralFeatures().get(73);
 	}
 
 	/**
@@ -1634,7 +1704,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EReference getProduct_WeightUomId() {
-		return (EReference)productEClass.getEStructuralFeatures().get(68);
+		return (EReference)productEClass.getEStructuralFeatures().get(74);
 	}
 
 	/**
@@ -1644,7 +1714,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EReference getProduct_WidthUomId() {
-		return (EReference)productEClass.getEStructuralFeatures().get(69);
+		return (EReference)productEClass.getEStructuralFeatures().get(75);
 	}
 
 	/**
@@ -2963,8 +3033,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductSearchResult_SearchDate() {
-		return (EAttribute)productSearchResultEClass.getEStructuralFeatures().get(4);
+	public EReference getProductSearchResult_ProductSearchConstraints() {
+		return (EReference)productSearchResultEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2973,7 +3043,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductSearchResult_SecondsTotal() {
+	public EAttribute getProductSearchResult_SearchDate() {
 		return (EAttribute)productSearchResultEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -2983,8 +3053,18 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductSearchResult_VisitId() {
+	public EAttribute getProductSearchResult_SecondsTotal() {
 		return (EAttribute)productSearchResultEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getProductSearchResult_VisitId() {
+		return (EAttribute)productSearchResultEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3055,6 +3135,16 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	@Override
 	public EReference getProductType_ParentTypeId() {
 		return (EReference)productTypeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getProductType_ProductTypeAttrs() {
+		return (EReference)productTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -3174,6 +3264,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		goodIdentificationTypeEClass = createEClass(GOOD_IDENTIFICATION_TYPE);
 		createEAttribute(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__GOOD_IDENTIFICATION_TYPE_ID);
 		createEAttribute(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__DESCRIPTION);
+		createEReference(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__GOOD_IDENTIFICATIONS);
 		createEAttribute(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__HAS_TABLE);
 		createEReference(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__PARENT_TYPE_ID);
 
@@ -3185,6 +3276,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productEClass, PRODUCT__BRAND_NAME);
 		createEAttribute(productEClass, PRODUCT__CHARGE_SHIPPING);
 		createEAttribute(productEClass, PRODUCT__COMMENTS);
+		createEReference(productEClass, PRODUCT__COMMUNICATION_EVENT_PRODUCTS);
 		createEAttribute(productEClass, PRODUCT__CONFIG_ID);
 		createEReference(productEClass, PRODUCT__CREATED_BY_USER_LOGIN);
 		createEAttribute(productEClass, PRODUCT__CREATED_DATE);
@@ -3217,9 +3309,14 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productEClass, PRODUCT__PIECES_INCLUDED);
 		createEAttribute(productEClass, PRODUCT__PRICE_DETAIL_TEXT);
 		createEReference(productEClass, PRODUCT__PRIMARY_PRODUCT_CATEGORY_ID);
+		createEReference(productEClass, PRODUCT__PRODUCT_ATTRIBUTES);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_DEPTH);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_DIAMETER);
+		createEReference(productEClass, PRODUCT__PRODUCT_FACILITIES);
+		createEReference(productEClass, PRODUCT__PRODUCT_GEOS);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_HEIGHT);
+		createEReference(productEClass, PRODUCT__PRODUCT_MAINTS);
+		createEReference(productEClass, PRODUCT__PRODUCT_METERS);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_NAME);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_RATING);
 		createEReference(productEClass, PRODUCT__PRODUCT_TYPE_ID);
@@ -3397,6 +3494,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productSearchResultEClass, PRODUCT_SEARCH_RESULT__IS_ASCENDING);
 		createEAttribute(productSearchResultEClass, PRODUCT_SEARCH_RESULT__NUM_RESULTS);
 		createEAttribute(productSearchResultEClass, PRODUCT_SEARCH_RESULT__ORDER_BY_NAME);
+		createEReference(productSearchResultEClass, PRODUCT_SEARCH_RESULT__PRODUCT_SEARCH_CONSTRAINTS);
 		createEAttribute(productSearchResultEClass, PRODUCT_SEARCH_RESULT__SEARCH_DATE);
 		createEAttribute(productSearchResultEClass, PRODUCT_SEARCH_RESULT__SECONDS_TOTAL);
 		createEAttribute(productSearchResultEClass, PRODUCT_SEARCH_RESULT__VISIT_ID);
@@ -3408,6 +3506,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productTypeEClass, PRODUCT_TYPE__IS_DIGITAL);
 		createEAttribute(productTypeEClass, PRODUCT_TYPE__IS_PHYSICAL);
 		createEReference(productTypeEClass, PRODUCT_TYPE__PARENT_TYPE_ID);
+		createEReference(productTypeEClass, PRODUCT_TYPE__PRODUCT_TYPE_ATTRS);
 
 		productTypeAttrEClass = createEClass(PRODUCT_TYPE_ATTR);
 		createEReference(productTypeAttrEClass, PRODUCT_TYPE_ATTR__PRODUCT_TYPE_ID);
@@ -3446,6 +3545,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
 		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
+		CommunicationPackage theCommunicationPackage = (CommunicationPackage)EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
 		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 		Shipment_Package theShipment_Package = (Shipment_Package)EPackage.Registry.INSTANCE.getEPackage(Shipment_Package.eNS_URI);
 		FacilityPackage theFacilityPackage = (FacilityPackage)EPackage.Registry.INSTANCE.getEPackage(FacilityPackage.eNS_URI);
@@ -3527,6 +3627,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEClass(goodIdentificationTypeEClass, GoodIdentificationType.class, "GoodIdentificationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGoodIdentificationType_GoodIdentificationTypeId(), ecorePackage.getEString(), "goodIdentificationTypeId", null, 1, 1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGoodIdentificationType_Description(), ecorePackage.getEString(), "description", null, 0, 1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGoodIdentificationType_GoodIdentifications(), this.getGoodIdentification(), null, "goodIdentifications", null, 0, -1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGoodIdentificationType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGoodIdentificationType_ParentTypeId(), this.getGoodIdentificationType(), null, "parentTypeId", null, 0, 1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getGoodIdentificationType_ParentTypeId().getEKeys().add(this.getGoodIdentificationType_GoodIdentificationTypeId());
@@ -3540,6 +3641,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEAttribute(getProduct_BrandName(), ecorePackage.getEString(), "brandName", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ChargeShipping(), ecorePackage.getEBoolean(), "chargeShipping", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProduct_CommunicationEventProducts(), theCommunicationPackage.getCommunicationEventProduct(), null, "communicationEventProducts", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ConfigId(), ecorePackage.getEString(), "configId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProduct_CreatedByUserLogin(), theLoginPackage.getUserLogin(), null, "createdByUserLogin", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProduct_CreatedByUserLogin().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
@@ -3582,9 +3684,14 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEAttribute(getProduct_PriceDetailText(), ecorePackage.getEString(), "priceDetailText", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProduct_PrimaryProductCategoryId(), theCategoryPackage.getProductCategory(), null, "primaryProductCategoryId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProduct_PrimaryProductCategoryId().getEKeys().add(theCategoryPackage.getProductCategory_ProductCategoryId());
+		initEReference(getProduct_ProductAttributes(), this.getProductAttribute(), null, "productAttributes", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductDepth(), ecorePackage.getEBigDecimal(), "productDepth", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductDiameter(), ecorePackage.getEBigDecimal(), "productDiameter", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProduct_ProductFacilities(), theFacilityPackage.getProductFacility(), null, "productFacilities", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getProduct_ProductGeos(), this.getProductGeo(), null, "productGeos", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductHeight(), ecorePackage.getEBigDecimal(), "productHeight", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProduct_ProductMaints(), this.getProductMaint(), null, "productMaints", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getProduct_ProductMeters(), this.getProductMeter(), null, "productMeters", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductName(), ecorePackage.getEString(), "productName", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductRating(), ecorePackage.getEBigDecimal(), "productRating", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProduct_ProductTypeId(), this.getProductType(), null, "productTypeId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3814,6 +3921,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEAttribute(getProductSearchResult_IsAscending(), ecorePackage.getEBoolean(), "isAscending", null, 0, 1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSearchResult_NumResults(), ecorePackage.getELong(), "numResults", null, 0, 1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSearchResult_OrderByName(), ecorePackage.getEString(), "orderByName", null, 0, 1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductSearchResult_ProductSearchConstraints(), this.getProductSearchConstraint(), null, "productSearchConstraints", null, 0, -1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSearchResult_SearchDate(), ecorePackage.getEDate(), "searchDate", null, 0, 1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSearchResult_SecondsTotal(), ecorePackage.getEDouble(), "secondsTotal", null, 0, 1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSearchResult_VisitId(), ecorePackage.getEString(), "visitId", null, 0, 1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3826,6 +3934,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEAttribute(getProductType_IsPhysical(), ecorePackage.getEBoolean(), "isPhysical", null, 0, 1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProductType_ParentTypeId(), this.getProductType(), null, "parentTypeId", null, 0, 1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getProductType_ParentTypeId().getEKeys().add(this.getProductType_ProductTypeId());
+		initEReference(getProductType_ProductTypeAttrs(), this.getProductTypeAttr(), null, "productTypeAttrs", null, 0, -1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(productTypeAttrEClass, ProductTypeAttr.class, "ProductTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProductTypeAttr_ProductTypeId(), this.getProductType(), null, "productTypeId", null, 1, 1, ProductTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

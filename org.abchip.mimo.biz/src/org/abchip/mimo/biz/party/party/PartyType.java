@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.party.party;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -22,6 +23,7 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyType#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyType#getPartyTypeAttrs <em>Party Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyType()
@@ -106,6 +108,22 @@ public interface PartyType extends BizEntityType<Party> {
 	 * @generated
 	 */
 	void setParentTypeId(PartyType value);
+
+	/**
+	 * Returns the value of the '<em><b>Party Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyType_PartyTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PartyTypeAttr> getPartyTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Party Type Id</b></em>' attribute.

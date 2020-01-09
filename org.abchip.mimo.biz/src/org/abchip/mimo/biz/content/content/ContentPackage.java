@@ -144,13 +144,58 @@ public interface ContentPackage extends EPackage {
 	int CONTENT__CHILD_LEAF_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Content Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT__CONTENT_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Content Keywords</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT__CONTENT_KEYWORDS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Content Meta Datas</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT__CONTENT_META_DATAS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+
+	/**
 	 * The feature id for the '<em><b>Content Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__CONTENT_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int CONTENT__CONTENT_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Content Purposes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT__CONTENT_PURPOSES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Content Revisions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT__CONTENT_REVISIONS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Content Type Id</b></em>' reference.
@@ -159,7 +204,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__CONTENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int CONTENT__CONTENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Created By User Login</b></em>' reference.
@@ -168,7 +213,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int CONTENT__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Created Date</b></em>' attribute.
@@ -177,7 +222,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__CREATED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int CONTENT__CREATED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Custom Method Id</b></em>' reference.
@@ -186,7 +231,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__CUSTOM_METHOD_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int CONTENT__CUSTOM_METHOD_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Data Resource Id</b></em>' reference.
@@ -195,7 +240,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int CONTENT__DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Data Source Id</b></em>' reference.
@@ -204,7 +249,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__DATA_SOURCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int CONTENT__DATA_SOURCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Decorator Content Id</b></em>' reference.
@@ -213,7 +258,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__DECORATOR_CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int CONTENT__DECORATOR_CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -222,7 +267,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int CONTENT__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Instance Of Content Id</b></em>' reference.
@@ -231,7 +276,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__INSTANCE_OF_CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int CONTENT__INSTANCE_OF_CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' reference.
@@ -240,7 +285,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int CONTENT__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified Date</b></em>' attribute.
@@ -249,7 +294,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+	int CONTENT__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Locale String</b></em>' attribute.
@@ -258,7 +303,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__LOCALE_STRING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+	int CONTENT__LOCALE_STRING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Mime Type Id</b></em>' reference.
@@ -267,7 +312,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__MIME_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+	int CONTENT__MIME_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Owner Content Id</b></em>' reference.
@@ -276,7 +321,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__OWNER_CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
+	int CONTENT__OWNER_CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Privilege Enum Id</b></em>' reference.
@@ -285,7 +330,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__PRIVILEGE_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
+	int CONTENT__PRIVILEGE_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Service Name</b></em>' attribute.
@@ -294,7 +339,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__SERVICE_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
+	int CONTENT__SERVICE_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' reference.
@@ -303,7 +348,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 21;
+	int CONTENT__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Template Data Resource Id</b></em>' reference.
@@ -312,7 +357,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__TEMPLATE_DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
+	int CONTENT__TEMPLATE_DATA_RESOURCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 27;
 
 	/**
 	 * The number of structural features of the '<em>Content</em>' class.
@@ -321,7 +366,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 23;
+	int CONTENT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 28;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl <em>Approval</em>}' class.
@@ -1888,13 +1933,22 @@ public interface ContentPackage extends EPackage {
 	int CONTENT_SEARCH_RESULT__CONTENT_SEARCH_RESULT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Content Search Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT_SEARCH_RESULT__CONTENT_SEARCH_CONSTRAINTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Is Ascending</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_SEARCH_RESULT__IS_ASCENDING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int CONTENT_SEARCH_RESULT__IS_ASCENDING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Num Results</b></em>' attribute.
@@ -1903,7 +1957,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_SEARCH_RESULT__NUM_RESULTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int CONTENT_SEARCH_RESULT__NUM_RESULTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Order By Name</b></em>' attribute.
@@ -1912,7 +1966,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_SEARCH_RESULT__ORDER_BY_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int CONTENT_SEARCH_RESULT__ORDER_BY_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Search Date</b></em>' attribute.
@@ -1921,7 +1975,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_SEARCH_RESULT__SEARCH_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int CONTENT_SEARCH_RESULT__SEARCH_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Seconds Total</b></em>' attribute.
@@ -1930,7 +1984,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_SEARCH_RESULT__SECONDS_TOTAL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int CONTENT_SEARCH_RESULT__SECONDS_TOTAL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Visit Id</b></em>' attribute.
@@ -1939,7 +1993,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_SEARCH_RESULT__VISIT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int CONTENT_SEARCH_RESULT__VISIT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Search Result</em>' class.
@@ -1948,7 +2002,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_SEARCH_RESULT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int CONTENT_SEARCH_RESULT_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.content.impl.ContentTypeImpl <em>Type</em>}' class.
@@ -2015,13 +2069,22 @@ public interface ContentPackage extends EPackage {
 	int CONTENT_TYPE__CONTENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Content Type Attrs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT_TYPE__CONTENT_TYPE_ATTRS = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+	int CONTENT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Has Table</b></em>' attribute.
@@ -2030,7 +2093,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int CONTENT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
@@ -2039,7 +2102,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
+	int CONTENT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Type</em>' class.
@@ -2048,7 +2111,7 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+	int CONTENT_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.content.content.impl.ContentTypeAttrImpl <em>Type Attr</em>}' class.
@@ -2188,6 +2251,39 @@ public interface ContentPackage extends EPackage {
 	EAttribute getContent_ChildLeafCount();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.content.content.Content#getContentAttributes <em>Content Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Content Attributes</em>'.
+	 * @see org.abchip.mimo.biz.content.content.Content#getContentAttributes()
+	 * @see #getContent()
+	 * @generated
+	 */
+	EReference getContent_ContentAttributes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.content.content.Content#getContentKeywords <em>Content Keywords</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Content Keywords</em>'.
+	 * @see org.abchip.mimo.biz.content.content.Content#getContentKeywords()
+	 * @see #getContent()
+	 * @generated
+	 */
+	EReference getContent_ContentKeywords();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.content.content.Content#getContentMetaDatas <em>Content Meta Datas</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Content Meta Datas</em>'.
+	 * @see org.abchip.mimo.biz.content.content.Content#getContentMetaDatas()
+	 * @see #getContent()
+	 * @generated
+	 */
+	EReference getContent_ContentMetaDatas();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.content.Content#getContentName <em>Content Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2197,6 +2293,28 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContent_ContentName();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.content.content.Content#getContentPurposes <em>Content Purposes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Content Purposes</em>'.
+	 * @see org.abchip.mimo.biz.content.content.Content#getContentPurposes()
+	 * @see #getContent()
+	 * @generated
+	 */
+	EReference getContent_ContentPurposes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.content.content.Content#getContentRevisions <em>Content Revisions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Content Revisions</em>'.
+	 * @see org.abchip.mimo.biz.content.content.Content#getContentRevisions()
+	 * @see #getContent()
+	 * @generated
+	 */
+	EReference getContent_ContentRevisions();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.content.Content#getContentTypeId <em>Content Type Id</em>}'.
@@ -3404,6 +3522,17 @@ public interface ContentPackage extends EPackage {
 	EAttribute getContentSearchResult_ContentSearchResultId();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.content.content.ContentSearchResult#getContentSearchConstraints <em>Content Search Constraints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Content Search Constraints</em>'.
+	 * @see org.abchip.mimo.biz.content.content.ContentSearchResult#getContentSearchConstraints()
+	 * @see #getContentSearchResult()
+	 * @generated
+	 */
+	EReference getContentSearchResult_ContentSearchConstraints();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.content.ContentSearchResult#isIsAscending <em>Is Ascending</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3489,6 +3618,17 @@ public interface ContentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContentType_ContentTypeId();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.content.content.ContentType#getContentTypeAttrs <em>Content Type Attrs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Content Type Attrs</em>'.
+	 * @see org.abchip.mimo.biz.content.content.ContentType#getContentTypeAttrs()
+	 * @see #getContentType()
+	 * @generated
+	 */
+	EReference getContentType_ContentTypeAttrs();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.content.ContentType#getDescription <em>Description</em>}'.
@@ -3631,12 +3771,52 @@ public interface ContentPackage extends EPackage {
 		EAttribute CONTENT__CHILD_LEAF_COUNT = eINSTANCE.getContent_ChildLeafCount();
 
 		/**
+		 * The meta object literal for the '<em><b>Content Attributes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTENT__CONTENT_ATTRIBUTES = eINSTANCE.getContent_ContentAttributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Content Keywords</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTENT__CONTENT_KEYWORDS = eINSTANCE.getContent_ContentKeywords();
+
+		/**
+		 * The meta object literal for the '<em><b>Content Meta Datas</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTENT__CONTENT_META_DATAS = eINSTANCE.getContent_ContentMetaDatas();
+
+		/**
 		 * The meta object literal for the '<em><b>Content Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute CONTENT__CONTENT_NAME = eINSTANCE.getContent_ContentName();
+
+		/**
+		 * The meta object literal for the '<em><b>Content Purposes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTENT__CONTENT_PURPOSES = eINSTANCE.getContent_ContentPurposes();
+
+		/**
+		 * The meta object literal for the '<em><b>Content Revisions</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTENT__CONTENT_REVISIONS = eINSTANCE.getContent_ContentRevisions();
 
 		/**
 		 * The meta object literal for the '<em><b>Content Type Id</b></em>' reference feature.
@@ -4559,6 +4739,14 @@ public interface ContentPackage extends EPackage {
 		EAttribute CONTENT_SEARCH_RESULT__CONTENT_SEARCH_RESULT_ID = eINSTANCE.getContentSearchResult_ContentSearchResultId();
 
 		/**
+		 * The meta object literal for the '<em><b>Content Search Constraints</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTENT_SEARCH_RESULT__CONTENT_SEARCH_CONSTRAINTS = eINSTANCE.getContentSearchResult_ContentSearchConstraints();
+
+		/**
 		 * The meta object literal for the '<em><b>Is Ascending</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4623,6 +4811,14 @@ public interface ContentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTENT_TYPE__CONTENT_TYPE_ID = eINSTANCE.getContentType_ContentTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Content Type Attrs</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTENT_TYPE__CONTENT_TYPE_ATTRS = eINSTANCE.getContentType_ContentTypeAttrs();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.

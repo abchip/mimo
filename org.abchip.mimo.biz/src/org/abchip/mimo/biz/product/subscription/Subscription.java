@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.product.subscription;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.order.order.OrderHeader;
@@ -57,6 +58,8 @@ import org.abchip.mimo.biz.product.product.Product;
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getPurchaseFromDate <em>Purchase From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getPurchaseThruDate <em>Purchase Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionAttributes <em>Subscription Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionCommEvents <em>Subscription Comm Events</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getSubscriptionTypeId <em>Subscription Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.Subscription#getThruDate <em>Thru Date</em>}</li>
@@ -699,6 +702,38 @@ public interface Subscription extends BizEntityTyped<SubscriptionType> {
 	 * @generated
 	 */
 	void setRoleTypeId(RoleType value);
+
+	/**
+	 * Returns the value of the '<em><b>Subscription Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.subscription.SubscriptionAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Subscription Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Subscription Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_SubscriptionAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SubscriptionAttribute> getSubscriptionAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Subscription Comm Events</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Subscription Comm Events</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Subscription Comm Events</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscription_SubscriptionCommEvents()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SubscriptionCommEvent> getSubscriptionCommEvents();
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

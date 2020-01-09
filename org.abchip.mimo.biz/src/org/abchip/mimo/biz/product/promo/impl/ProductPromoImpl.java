@@ -9,9 +9,11 @@ package org.abchip.mimo.biz.product.promo.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
+import org.abchip.mimo.biz.product.promo.ProductPromoRule;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.ecore.EClass;
@@ -31,6 +33,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getOverrideOrgPartyId <em>Override Org Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getProductPromoRules <em>Product Promo Rules</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getPromoName <em>Promo Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getPromoText <em>Promo Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#isRequireCode <em>Require Code</em>}</li>
@@ -186,6 +189,17 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	@Override
 	public void setOverrideOrgPartyId(Party newOverrideOrgPartyId) {
 		eSet(PromoPackage.Literals.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID, newOverrideOrgPartyId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductPromoRule> getProductPromoRules() {
+		return (List<ProductPromoRule>)eGet(PromoPackage.Literals.PRODUCT_PROMO__PRODUCT_PROMO_RULES, true);
 	}
 
 	/**

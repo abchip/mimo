@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.marketing.opportunity;
 
 import java.math.BigDecimal;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 import org.abchip.mimo.biz.common.uom.Uom;
@@ -38,6 +39,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getPercentOfQuotaForecast <em>Percent Of Quota Forecast</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getPipelineAmount <em>Pipeline Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getQuotaAmount <em>Quota Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getSalesForecastDetails <em>Sales Forecast Details</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast()
@@ -408,6 +410,22 @@ public interface SalesForecast extends BizEntity {
 	 * @generated
 	 */
 	void setQuotaAmount(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Sales Forecast Details</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sales Forecast Details</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sales Forecast Details</em>' reference list.
+	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_SalesForecastDetails()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SalesForecastDetail> getSalesForecastDetails();
 
 	/**
 	 * Returns the value of the '<em><b>Sales Forecast Id</b></em>' attribute.

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.content;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -19,6 +20,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getContentTypeId <em>Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getContentTypeAttrs <em>Content Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -55,6 +57,22 @@ public interface ContentType extends BizEntityType<Content> {
 	 * @generated
 	 */
 	void setContentTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Content Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.content.ContentTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentType_ContentTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ContentTypeAttr> getContentTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

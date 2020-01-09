@@ -8,7 +8,11 @@
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceAttribute;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceNote;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
@@ -35,8 +39,11 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getDueDate <em>Due Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceAttributes <em>Invoice Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceDate <em>Invoice Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceItems <em>Invoice Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceMessage <em>Invoice Message</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceNotes <em>Invoice Notes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getPaidDate <em>Paid Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getPartyId <em>Party Id</em>}</li>
@@ -178,6 +185,17 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<InvoiceAttribute> getInvoiceAttributes() {
+		return (List<InvoiceAttribute>)eGet(InvoicePackage.Literals.INVOICE__INVOICE_ATTRIBUTES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Date getInvoiceDate() {
 		return (Date)eGet(InvoicePackage.Literals.INVOICE__INVOICE_DATE, true);
@@ -198,6 +216,17 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<InvoiceItem> getInvoiceItems() {
+		return (List<InvoiceItem>)eGet(InvoicePackage.Literals.INVOICE__INVOICE_ITEMS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public String getInvoiceMessage() {
 		return (String)eGet(InvoicePackage.Literals.INVOICE__INVOICE_MESSAGE, true);
@@ -211,6 +240,17 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	@Override
 	public void setInvoiceMessage(String newInvoiceMessage) {
 		eSet(InvoicePackage.Literals.INVOICE__INVOICE_MESSAGE, newInvoiceMessage);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<InvoiceNote> getInvoiceNotes() {
+		return (List<InvoiceNote>)eGet(InvoicePackage.Literals.INVOICE__INVOICE_NOTES, true);
 	}
 
 	/**

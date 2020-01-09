@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo.core.http;
 
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ProviderConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -17,14 +18,20 @@ public class HttpConnector {
 
 	private ProviderConfig providerConfig;
 	private CloseableHttpClient httpClient;
+	private ContextDescription contextDescription;
 	private final String token;
 
-	protected HttpConnector(ProviderConfig providerConfig, CloseableHttpClient httpClient, String token) {
+	protected HttpConnector(ProviderConfig providerConfig, CloseableHttpClient httpClient, ContextDescription contextDescription) {
 		this.providerConfig = providerConfig;
 		this.httpClient = httpClient;
-		this.token = token;
+		this.contextDescription = contextDescription;
+		this.token = contextDescription.getId();
 	}
 
+	protected ContextDescription getContextDescription() {
+		return this.contextDescription;
+	}
+	
 	protected String getToken() {
 		return token;
 	}

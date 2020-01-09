@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.product.promo;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
@@ -26,6 +27,8 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getLastModifiedDate <em>Last Modified Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoCodeEmails <em>Product Promo Code Emails</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoCodeParties <em>Product Promo Code Parties</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#isRequireEmailOrParty <em>Require Email Or Party</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getThruDate <em>Thru Date</em>}</li>
@@ -168,6 +171,38 @@ public interface ProductPromoCode extends BizEntity {
 	 * @generated
 	 */
 	void setLastModifiedDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Promo Code Emails</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.promo.ProductPromoCodeEmail}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Promo Code Emails</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Promo Code Emails</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_ProductPromoCodeEmails()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductPromoCodeEmail> getProductPromoCodeEmails();
+
+	/**
+	 * Returns the value of the '<em><b>Product Promo Code Parties</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.promo.ProductPromoCodeParty}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Promo Code Parties</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Promo Code Parties</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_ProductPromoCodeParties()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductPromoCodeParty> getProductPromoCodeParties();
 
 	/**
 	 * Returns the value of the '<em><b>Require Email Or Party</b></em>' attribute.

@@ -22,10 +22,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#isAnonymous <em>Anonymous</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getCurrencyUom <em>Currency Uom</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getDataPath <em>Data Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getLocale <em>Locale</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getPicture <em>Picture</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getTenant <em>Tenant</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getTimeZone <em>Time Zone</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getUser <em>User</em>}</li>
  * </ul>
  *
@@ -50,6 +53,24 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 * @ordered
 	 */
 	protected boolean anonymous = ANONYMOUS_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getCurrencyUom() <em>Currency Uom</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUom()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CURRENCY_UOM_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getCurrencyUom() <em>Currency Uom</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUom()
+	 * @generated
+	 * @ordered
+	 */
+	protected String currencyUom = CURRENCY_UOM_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDataPath() <em>Data Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -87,6 +108,24 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 */
 	protected String id = ID_EDEFAULT;
 	/**
+	 * The default value of the '{@link #getLocale() <em>Locale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocale()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LOCALE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getLocale() <em>Locale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocale()
+	 * @generated
+	 * @ordered
+	 */
+	protected String locale = LOCALE_EDEFAULT;
+	/**
 	 * The default value of the '{@link #getPicture() <em>Picture</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,6 +161,24 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 * @ordered
 	 */
 	protected String tenant = TENANT_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getTimeZone() <em>Time Zone</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeZone()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TIME_ZONE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getTimeZone() <em>Time Zone</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeZone()
+	 * @generated
+	 * @ordered
+	 */
+	protected String timeZone = TIME_ZONE_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getUser() <em>User</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -184,6 +241,29 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCurrencyUom() {
+		return currencyUom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCurrencyUom(String newCurrencyUom) {
+		String oldCurrencyUom = currencyUom;
+		currencyUom = newCurrencyUom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__CURRENCY_UOM, oldCurrencyUom, currencyUom));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -231,6 +311,29 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 * @generated
 	 */
 	@Override
+	public String getLocale() {
+		return locale;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLocale(String newLocale) {
+		String oldLocale = locale;
+		locale = newLocale;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__LOCALE, oldLocale, locale));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getPicture() {
 		return picture;
 	}
@@ -267,6 +370,29 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 		tenant = newTenant;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__TENANT, oldTenant, tenant));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getTimeZone() {
+		return timeZone;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTimeZone(String newTimeZone) {
+		String oldTimeZone = timeZone;
+		timeZone = newTimeZone;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__TIME_ZONE, oldTimeZone, timeZone));
 	}
 
 	/**
@@ -313,14 +439,20 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 		switch (featureID) {
 			case ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS:
 				return isAnonymous();
+			case ContextPackage.CONTEXT_DESCRIPTION__CURRENCY_UOM:
+				return getCurrencyUom();
 			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
 				return getDataPath();
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				return getId();
+			case ContextPackage.CONTEXT_DESCRIPTION__LOCALE:
+				return getLocale();
 			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
 				return getPicture();
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				return getTenant();
+			case ContextPackage.CONTEXT_DESCRIPTION__TIME_ZONE:
+				return getTimeZone();
 			case ContextPackage.CONTEXT_DESCRIPTION__USER:
 				return getUser();
 		}
@@ -338,17 +470,26 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 			case ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS:
 				setAnonymous((Boolean)newValue);
 				return;
+			case ContextPackage.CONTEXT_DESCRIPTION__CURRENCY_UOM:
+				setCurrencyUom((String)newValue);
+				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
 				setDataPath((String)newValue);
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				setId((String)newValue);
 				return;
+			case ContextPackage.CONTEXT_DESCRIPTION__LOCALE:
+				setLocale((String)newValue);
+				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
 				setPicture((String)newValue);
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				setTenant((String)newValue);
+				return;
+			case ContextPackage.CONTEXT_DESCRIPTION__TIME_ZONE:
+				setTimeZone((String)newValue);
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__USER:
 				setUser((String)newValue);
@@ -368,17 +509,26 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 			case ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS:
 				setAnonymous(ANONYMOUS_EDEFAULT);
 				return;
+			case ContextPackage.CONTEXT_DESCRIPTION__CURRENCY_UOM:
+				setCurrencyUom(CURRENCY_UOM_EDEFAULT);
+				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
 				setDataPath(DATA_PATH_EDEFAULT);
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case ContextPackage.CONTEXT_DESCRIPTION__LOCALE:
+				setLocale(LOCALE_EDEFAULT);
+				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
 				setPicture(PICTURE_EDEFAULT);
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				setTenant(TENANT_EDEFAULT);
+				return;
+			case ContextPackage.CONTEXT_DESCRIPTION__TIME_ZONE:
+				setTimeZone(TIME_ZONE_EDEFAULT);
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__USER:
 				setUser(USER_EDEFAULT);
@@ -397,14 +547,20 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 		switch (featureID) {
 			case ContextPackage.CONTEXT_DESCRIPTION__ANONYMOUS:
 				return anonymous != ANONYMOUS_EDEFAULT;
+			case ContextPackage.CONTEXT_DESCRIPTION__CURRENCY_UOM:
+				return CURRENCY_UOM_EDEFAULT == null ? currencyUom != null : !CURRENCY_UOM_EDEFAULT.equals(currencyUom);
 			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
 				return DATA_PATH_EDEFAULT == null ? dataPath != null : !DATA_PATH_EDEFAULT.equals(dataPath);
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case ContextPackage.CONTEXT_DESCRIPTION__LOCALE:
+				return LOCALE_EDEFAULT == null ? locale != null : !LOCALE_EDEFAULT.equals(locale);
 			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
 				return PICTURE_EDEFAULT == null ? picture != null : !PICTURE_EDEFAULT.equals(picture);
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
+			case ContextPackage.CONTEXT_DESCRIPTION__TIME_ZONE:
+				return TIME_ZONE_EDEFAULT == null ? timeZone != null : !TIME_ZONE_EDEFAULT.equals(timeZone);
 			case ContextPackage.CONTEXT_DESCRIPTION__USER:
 				return USER_EDEFAULT == null ? user != null : !USER_EDEFAULT.equals(user);
 		}
@@ -423,14 +579,20 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (anonymous: ");
 		result.append(anonymous);
+		result.append(", currencyUom: ");
+		result.append(currencyUom);
 		result.append(", dataPath: ");
 		result.append(dataPath);
 		result.append(", id: ");
 		result.append(id);
+		result.append(", locale: ");
+		result.append(locale);
 		result.append(", picture: ");
 		result.append(picture);
 		result.append(", tenant: ");
 		result.append(tenant);
+		result.append(", timeZone: ");
+		result.append(timeZone);
 		result.append(", user: ");
 		result.append(user);
 		result.append(')');

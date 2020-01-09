@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.shoppinglist;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.party.contact.ContactMech;
@@ -43,7 +44,9 @@ import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListItems <em>Shopping List Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListTypeId <em>Shopping List Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListWorkEfforts <em>Shopping List Work Efforts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getVisitorId <em>Visitor Id</em>}</li>
  * </ul>
  *
@@ -495,6 +498,22 @@ public interface ShoppingList extends BizEntity {
 	void setShipmentMethodTypeId(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Shopping List Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Shopping List Items</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Shopping List Items</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListItems()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ShoppingListItem> getShoppingListItems();
+
+	/**
 	 * Returns the value of the '<em><b>Shopping List Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -546,6 +565,22 @@ public interface ShoppingList extends BizEntity {
 	 * @generated
 	 */
 	void setShoppingListTypeId(ShoppingListType value);
+
+	/**
+	 * Returns the value of the '<em><b>Shopping List Work Efforts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListWorkEffort}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Shopping List Work Efforts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Shopping List Work Efforts</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListWorkEfforts()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ShoppingListWorkEffort> getShoppingListWorkEfforts();
 
 	/**
 	 * Returns the value of the '<em><b>Visitor Id</b></em>' attribute.

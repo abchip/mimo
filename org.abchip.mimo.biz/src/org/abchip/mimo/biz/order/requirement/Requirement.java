@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.requirement;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.common.status.StatusItem;
@@ -40,10 +41,13 @@ import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getReason <em>Reason</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequiredByDate <em>Required By Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementAttributes <em>Requirement Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementStartDate <em>Requirement Start Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementStatuss <em>Requirement Statuss</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementTypeId <em>Requirement Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getUseCase <em>Use Case</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getWorkRequirementFulfillments <em>Work Requirement Fulfillments</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement()
@@ -390,6 +394,22 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	void setRequiredByDate(Date value);
 
 	/**
+	 * Returns the value of the '<em><b>Requirement Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.requirement.RequirementAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Requirement Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requirement Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_RequirementAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<RequirementAttribute> getRequirementAttributes();
+
+	/**
 	 * Returns the value of the '<em><b>Requirement Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -441,6 +461,22 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @generated
 	 */
 	void setRequirementStartDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Requirement Statuss</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.requirement.RequirementStatus}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Requirement Statuss</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requirement Statuss</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_RequirementStatuss()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<RequirementStatus> getRequirementStatuss();
 
 	/**
 	 * Returns the value of the '<em><b>Requirement Type Id</b></em>' reference.
@@ -519,5 +555,21 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @generated
 	 */
 	void setUseCase(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Work Requirement Fulfillments</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Requirement Fulfillments</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Requirement Fulfillments</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_WorkRequirementFulfillments()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkRequirementFulfillment> getWorkRequirementFulfillments();
 
 } // Requirement

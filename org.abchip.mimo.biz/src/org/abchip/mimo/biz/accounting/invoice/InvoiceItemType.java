@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.invoice;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 
@@ -23,6 +24,8 @@ import org.abchip.mimo.biz.accounting.ledger.GlAccount;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getDefaultGlAccountId <em>Default Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#isHasTable <em>Has Table</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getInvoiceItemTypeAttrs <em>Invoice Item Type Attrs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getInvoiceItemTypeGlAccounts <em>Invoice Item Type Gl Accounts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -108,6 +111,38 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	 * @generated
 	 */
 	void setHasTable(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Invoice Item Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Invoice Item Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Invoice Item Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_InvoiceItemTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<InvoiceItemTypeAttr> getInvoiceItemTypeAttrs();
+
+	/**
+	 * Returns the value of the '<em><b>Invoice Item Type Gl Accounts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeGlAccount}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Invoice Item Type Gl Accounts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Invoice Item Type Gl Accounts</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_InvoiceItemTypeGlAccounts()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<InvoiceItemTypeGlAccount> getInvoiceItemTypeGlAccounts();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.

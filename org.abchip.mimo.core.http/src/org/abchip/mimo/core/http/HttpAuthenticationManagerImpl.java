@@ -314,7 +314,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 					String responseString = "";
 					try (CloseableHttpResponse getResponse = client.execute(getMethod)) {
 						responseString = new BasicResponseHandler().handleResponse(getResponse);
-						
+
 						mapper = new ObjectMapper();
 						JsonNode node = mapper.readTree(responseString);
 						JsonNode profilePicture = node.get("profilePicture");
@@ -323,7 +323,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 						JsonNode element = elements.get(0);
 						JsonNode identifiers = element.get("identifiers");
 						picture = identifiers.get(0).get("identifier").asText();
-						if(picture != null)
+						if (picture != null)
 							userInfo.put("picture", picture);
 					}
 				}
@@ -386,10 +386,13 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			return null;
 
 		Context context = contextRoot.createChildContext(contextId);
-		context.set(HttpConnector.class, connector);
-
 		context.getContextDescription().setUser(authentication.getUser());
 		context.getContextDescription().setTenant(authentication.getTenant());
+		context.getContextDescription().setCurrencyUom(connector.getContextDescription().getCurrencyUom());
+		context.getContextDescription().setLocale(connector.getContextDescription().getLocale());
+		context.getContextDescription().setTimeZone(connector.getContextDescription().getTimeZone());
+
+		context.set(HttpConnector.class, connector);
 
 		return context;
 	}
@@ -461,8 +464,9 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 							SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 					contextSerializer.load(session.getContent(), false);
 					ContextDescription contextDescription = contextSerializer.get();
+
 					if (contextDescription != null)
-						connector = new HttpConnector(providerConfig, client, contextDescription.getId());
+						connector = new HttpConnector(providerConfig, client, contextDescription);
 				}
 			}
 

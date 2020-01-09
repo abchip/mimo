@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.party.agreement;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -19,6 +20,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemType#getAgreementItemTypeId <em>Agreement Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemType#getAgreementItemTypeAttrs <em>Agreement Item Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementItemType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -133,5 +135,21 @@ public interface AgreementItemType extends BizEntityType<AgreementItem> {
 	 * @generated
 	 */
 	void setAgreementItemTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Agreement Item Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.AgreementItemTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Agreement Item Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agreement Item Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementItemType_AgreementItemTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<AgreementItemTypeAttr> getAgreementItemTypeAttrs();
 
 } // AgreementItemType

@@ -8,7 +8,9 @@
 package org.abchip.mimo.biz.security.login;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.user.UserPreference;
 import org.abchip.mimo.biz.party.party.Party;
 
 /**
@@ -36,6 +38,9 @@ import org.abchip.mimo.biz.party.party.Party;
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#isRequirePasswordChange <em>Require Password Change</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getSuccessiveFailedLogins <em>Successive Failed Logins</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLdapDn <em>User Ldap Dn</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLoginHistories <em>User Login Histories</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLoginPasswordHistories <em>User Login Password Histories</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getUserPreferences <em>User Preferences</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin()
@@ -434,6 +439,54 @@ public interface UserLogin extends BizEntity {
 	 * @generated
 	 */
 	void setUserLdapDn(String value);
+
+	/**
+	 * Returns the value of the '<em><b>User Login Histories</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.security.login.UserLoginHistory}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>User Login Histories</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>User Login Histories</em>' reference list.
+	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserLoginHistories()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<UserLoginHistory> getUserLoginHistories();
+
+	/**
+	 * Returns the value of the '<em><b>User Login Password Histories</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.security.login.UserLoginPasswordHistory}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>User Login Password Histories</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>User Login Password Histories</em>' reference list.
+	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserLoginPasswordHistories()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<UserLoginPasswordHistory> getUserLoginPasswordHistories();
+
+	/**
+	 * Returns the value of the '<em><b>User Preferences</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.common.user.UserPreference}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>User Preferences</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>User Preferences</em>' reference list.
+	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_UserPreferences()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<UserPreference> getUserPreferences();
 
 	/**
 	 * Returns the value of the '<em><b>User Login Id</b></em>' attribute.

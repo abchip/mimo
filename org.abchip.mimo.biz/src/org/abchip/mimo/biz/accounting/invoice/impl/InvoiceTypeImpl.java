@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -24,6 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeImpl#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeImpl#isHasTable <em>Has Table</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeImpl#getInvoiceTypeAttrs <em>Invoice Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -91,6 +94,17 @@ public class InvoiceTypeImpl extends BizEntityTypeImpl<Invoice> implements Invoi
 	@Override
 	public void setHasTable(boolean newHasTable) {
 		eSet(InvoicePackage.Literals.INVOICE_TYPE__HAS_TABLE, newHasTable);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<InvoiceTypeAttr> getInvoiceTypeAttrs() {
+		return (List<InvoiceTypeAttr>)eGet(InvoicePackage.Literals.INVOICE_TYPE__INVOICE_TYPE_ATTRS, true);
 	}
 
 	/**

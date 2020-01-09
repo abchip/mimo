@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.payment;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 
@@ -22,6 +23,7 @@ import org.abchip.mimo.biz.accounting.ledger.GlAccount;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#getDefaultGlAccountId <em>Default Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#getPaymentMethodTypeGlAccounts <em>Payment Method Type Gl Accounts</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentMethodType()
@@ -54,6 +56,22 @@ public interface PaymentMethodType extends BizEntity {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Payment Method Type Gl Accounts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Payment Method Type Gl Accounts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Payment Method Type Gl Accounts</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentMethodType_PaymentMethodTypeGlAccounts()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PaymentMethodTypeGlAccount> getPaymentMethodTypeGlAccounts();
 
 	/**
 	 * Returns the value of the '<em><b>Default Gl Account Id</b></em>' reference.

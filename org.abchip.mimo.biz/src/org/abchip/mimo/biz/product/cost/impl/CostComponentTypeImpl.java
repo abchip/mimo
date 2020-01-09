@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.biz.product.cost.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.cost.CostComponent;
 import org.abchip.mimo.biz.product.cost.CostComponentType;
+import org.abchip.mimo.biz.product.cost.CostComponentTypeAttr;
 import org.abchip.mimo.biz.product.cost.CostPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentTypeImpl#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentTypeImpl#getCostComponentTypeAttrs <em>Cost Component Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -132,6 +135,17 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	@Override
 	public void setCostComponentTypeId(String newCostComponentTypeId) {
 		eSet(CostPackage.Literals.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ID, newCostComponentTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CostComponentTypeAttr> getCostComponentTypeAttrs() {
+		return (List<CostComponentTypeAttr>)eGet(CostPackage.Literals.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS, true);
 	}
 
 } //CostComponentTypeImpl

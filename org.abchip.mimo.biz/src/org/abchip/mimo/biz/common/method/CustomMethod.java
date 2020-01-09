@@ -7,7 +7,9 @@
  */
 package org.abchip.mimo.biz.common.method;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +24,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodName <em>Custom Method Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodTypeId <em>Custom Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getFixedAssetDepMethods <em>Fixed Asset Dep Methods</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod()
@@ -107,6 +110,22 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Fixed Asset Dep Methods</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fixed Asset Dep Methods</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fixed Asset Dep Methods</em>' reference list.
+	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_FixedAssetDepMethods()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<FixedAssetDepMethod> getFixedAssetDepMethods();
 
 	/**
 	 * Returns the value of the '<em><b>Custom Method Type Id</b></em>' reference.

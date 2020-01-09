@@ -1386,8 +1386,8 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTemporalExpression_Integer1() {
-		return (EAttribute)temporalExpressionEClass.getEStructuralFeatures().get(4);
+	public EReference getTemporalExpression_FromTemporalExpressionAssocs() {
+		return (EReference)temporalExpressionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1396,7 +1396,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTemporalExpression_Integer2() {
+	public EAttribute getTemporalExpression_Integer1() {
 		return (EAttribute)temporalExpressionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1406,7 +1406,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTemporalExpression_String1() {
+	public EAttribute getTemporalExpression_Integer2() {
 		return (EAttribute)temporalExpressionEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1416,7 +1416,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTemporalExpression_String2() {
+	public EAttribute getTemporalExpression_String1() {
 		return (EAttribute)temporalExpressionEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1426,8 +1426,18 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTemporalExpression_TempExprTypeId() {
+	public EAttribute getTemporalExpression_String2() {
 		return (EAttribute)temporalExpressionEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTemporalExpression_TempExprTypeId() {
+		return (EAttribute)temporalExpressionEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1571,6 +1581,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		createEAttribute(temporalExpressionEClass, TEMPORAL_EXPRESSION__DATE1);
 		createEAttribute(temporalExpressionEClass, TEMPORAL_EXPRESSION__DATE2);
 		createEAttribute(temporalExpressionEClass, TEMPORAL_EXPRESSION__DESCRIPTION);
+		createEReference(temporalExpressionEClass, TEMPORAL_EXPRESSION__FROM_TEMPORAL_EXPRESSION_ASSOCS);
 		createEAttribute(temporalExpressionEClass, TEMPORAL_EXPRESSION__INTEGER1);
 		createEAttribute(temporalExpressionEClass, TEMPORAL_EXPRESSION__INTEGER2);
 		createEAttribute(temporalExpressionEClass, TEMPORAL_EXPRESSION__STRING1);
@@ -1707,6 +1718,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		initEAttribute(getTemporalExpression_Date1(), ecorePackage.getEDate(), "date1", null, 0, 1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTemporalExpression_Date2(), ecorePackage.getEDate(), "date2", null, 0, 1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTemporalExpression_Description(), ecorePackage.getEString(), "description", null, 0, 1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTemporalExpression_FromTemporalExpressionAssocs(), this.getTemporalExpressionAssoc(), null, "fromTemporalExpressionAssocs", null, 0, -1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTemporalExpression_Integer1(), ecorePackage.getELong(), "integer1", null, 0, 1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTemporalExpression_Integer2(), ecorePackage.getELong(), "integer2", null, 0, 1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTemporalExpression_String1(), ecorePackage.getEString(), "string1", null, 0, 1, TemporalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

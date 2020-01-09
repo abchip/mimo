@@ -715,13 +715,22 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_HEADER__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Communication Event Returns</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_HEADER__COMMUNICATION_EVENT_RETURNS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Created By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__CREATED_BY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int RETURN_HEADER__CREATED_BY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Currency Uom Id</b></em>' reference.
@@ -730,7 +739,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int RETURN_HEADER__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Destination Facility Id</b></em>' reference.
@@ -739,7 +748,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__DESTINATION_FACILITY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int RETURN_HEADER__DESTINATION_FACILITY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Entry Date</b></em>' attribute.
@@ -748,7 +757,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__ENTRY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int RETURN_HEADER__ENTRY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Fin Account Id</b></em>' reference.
@@ -757,7 +766,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__FIN_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int RETURN_HEADER__FIN_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>From Party Id</b></em>' reference.
@@ -766,7 +775,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__FROM_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int RETURN_HEADER__FROM_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Needs Inventory Receive</b></em>' attribute.
@@ -775,7 +784,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__NEEDS_INVENTORY_RECEIVE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int RETURN_HEADER__NEEDS_INVENTORY_RECEIVE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Origin Contact Mech Id</b></em>' reference.
@@ -784,7 +793,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__ORIGIN_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int RETURN_HEADER__ORIGIN_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Payment Method Id</b></em>' reference.
@@ -793,7 +802,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int RETURN_HEADER__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Return Header Type Id</b></em>' reference.
@@ -802,7 +811,16 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__RETURN_HEADER_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int RETURN_HEADER__RETURN_HEADER_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Return Items</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_HEADER__RETURN_ITEMS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' reference.
@@ -811,7 +829,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int RETURN_HEADER__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Supplier Rma Id</b></em>' attribute.
@@ -820,7 +838,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__SUPPLIER_RMA_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int RETURN_HEADER__SUPPLIER_RMA_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>To Party Id</b></em>' reference.
@@ -829,7 +847,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__TO_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int RETURN_HEADER__TO_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of structural features of the '<em>Header</em>' class.
@@ -838,7 +856,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int RETURN_HEADER_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderTypeImpl <em>Header Type</em>}' class.
@@ -2408,6 +2426,17 @@ public interface ReturnPackage extends EPackage {
 	EReference getReturnHeader_BillingAccountId();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCommunicationEventReturns <em>Communication Event Returns</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Communication Event Returns</em>'.
+	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getCommunicationEventReturns()
+	 * @see #getReturnHeader()
+	 * @generated
+	 */
+	EReference getReturnHeader_CommunicationEventReturns();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCreatedBy <em>Created By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2516,6 +2545,17 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getReturnHeader_ReturnHeaderTypeId();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnItems <em>Return Items</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Return Items</em>'.
+	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnItems()
+	 * @see #getReturnHeader()
+	 * @generated
+	 */
+	EReference getReturnHeader_ReturnItems();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getStatusId <em>Status Id</em>}'.
@@ -3675,6 +3715,14 @@ public interface ReturnPackage extends EPackage {
 		EReference RETURN_HEADER__BILLING_ACCOUNT_ID = eINSTANCE.getReturnHeader_BillingAccountId();
 
 		/**
+		 * The meta object literal for the '<em><b>Communication Event Returns</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RETURN_HEADER__COMMUNICATION_EVENT_RETURNS = eINSTANCE.getReturnHeader_CommunicationEventReturns();
+
+		/**
 		 * The meta object literal for the '<em><b>Created By</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3753,6 +3801,14 @@ public interface ReturnPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RETURN_HEADER__RETURN_HEADER_TYPE_ID = eINSTANCE.getReturnHeader_ReturnHeaderTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Items</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RETURN_HEADER__RETURN_ITEMS = eINSTANCE.getReturnHeader_ReturnItems();
 
 		/**
 		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.

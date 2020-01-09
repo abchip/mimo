@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.security.securitygroup;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -21,6 +22,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroup#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroup#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroup#getGroupName <em>Group Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroup#getProtectedViews <em>Protected Views</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup()
@@ -106,5 +108,21 @@ public interface SecurityGroup extends BizEntity {
 	 * @generated
 	 */
 	void setGroupName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Protected Views</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.security.securitygroup.ProtectedView}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Protected Views</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Protected Views</em>' reference list.
+	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroup_ProtectedViews()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProtectedView> getProtectedViews();
 
 } // SecurityGroup

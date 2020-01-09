@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.finaccount;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 
@@ -21,6 +22,8 @@ import org.abchip.mimo.biz.common.enum_.Enumeration;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getFinAccountTypeAttrs <em>Fin Account Type Attrs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getFinAccountTypeGlAccounts <em>Fin Account Type Gl Accounts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#isIsRefundable <em>Is Refundable</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -57,6 +60,38 @@ public interface FinAccountType extends BizEntityType<FinAccount> {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Fin Account Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fin Account Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fin Account Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_FinAccountTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<FinAccountTypeAttr> getFinAccountTypeAttrs();
+
+	/**
+	 * Returns the value of the '<em><b>Fin Account Type Gl Accounts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTypeGlAccount}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fin Account Type Gl Accounts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fin Account Type Gl Accounts</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_FinAccountTypeGlAccounts()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<FinAccountTypeGlAccount> getFinAccountTypeGlAccounts();
 
 	/**
 	 * Returns the value of the '<em><b>Has Table</b></em>' attribute.

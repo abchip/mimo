@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.service.schedule;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -23,6 +24,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getDate1 <em>Date1</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getDate2 <em>Date2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getFromTemporalExpressionAssocs <em>From Temporal Expression Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getInteger1 <em>Integer1</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getInteger2 <em>Integer2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.TemporalExpression#getString1 <em>String1</em>}</li>
@@ -139,6 +141,22 @@ public interface TemporalExpression extends BizEntity {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>From Temporal Expression Assocs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>From Temporal Expression Assocs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>From Temporal Expression Assocs</em>' reference list.
+	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getTemporalExpression_FromTemporalExpressionAssocs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<TemporalExpressionAssoc> getFromTemporalExpressionAssocs();
 
 	/**
 	 * Returns the value of the '<em><b>Integer1</b></em>' attribute.

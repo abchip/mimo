@@ -1155,8 +1155,8 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCommunicationEventPrpTyp_Description() {
-		return (EAttribute)communicationEventPrpTypEClass.getEStructuralFeatures().get(1);
+	public EReference getCommunicationEventPrpTyp_CommunicationEventPurposes() {
+		return (EReference)communicationEventPrpTypEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1165,7 +1165,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCommunicationEventPrpTyp_HasTable() {
+	public EAttribute getCommunicationEventPrpTyp_Description() {
 		return (EAttribute)communicationEventPrpTypEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1175,8 +1175,18 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 	 * @generated
 	 */
 	@Override
+	public EAttribute getCommunicationEventPrpTyp_HasTable() {
+		return (EAttribute)communicationEventPrpTypEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getCommunicationEventPrpTyp_ParentTypeId() {
-		return (EReference)communicationEventPrpTypEClass.getEStructuralFeatures().get(3);
+		return (EReference)communicationEventPrpTypEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1415,6 +1425,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 
 		communicationEventPrpTypEClass = createEClass(COMMUNICATION_EVENT_PRP_TYP);
 		createEAttribute(communicationEventPrpTypEClass, COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PRP_TYP_ID);
+		createEReference(communicationEventPrpTypEClass, COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES);
 		createEAttribute(communicationEventPrpTypEClass, COMMUNICATION_EVENT_PRP_TYP__DESCRIPTION);
 		createEAttribute(communicationEventPrpTypEClass, COMMUNICATION_EVENT_PRP_TYP__HAS_TABLE);
 		createEReference(communicationEventPrpTypEClass, COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID);
@@ -1564,6 +1575,7 @@ public class CommunicationPackageImpl extends EPackageImpl implements Communicat
 
 		initEClass(communicationEventPrpTypEClass, CommunicationEventPrpTyp.class, "CommunicationEventPrpTyp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCommunicationEventPrpTyp_CommunicationEventPrpTypId(), ecorePackage.getEString(), "communicationEventPrpTypId", null, 1, 1, CommunicationEventPrpTyp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCommunicationEventPrpTyp_CommunicationEventPurposes(), this.getCommunicationEventPurpose(), null, "communicationEventPurposes", null, 0, -1, CommunicationEventPrpTyp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommunicationEventPrpTyp_Description(), ecorePackage.getEString(), "description", null, 0, 1, CommunicationEventPrpTyp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommunicationEventPrpTyp_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, CommunicationEventPrpTyp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationEventPrpTyp_ParentTypeId(), this.getCommunicationEventPrpTyp(), null, "parentTypeId", null, 0, 1, CommunicationEventPrpTyp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -7,8 +7,11 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountClass;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
 import org.abchip.mimo.biz.accounting.ledger.GlResourceType;
 import org.abchip.mimo.biz.accounting.ledger.GlXbrlClass;
@@ -30,6 +33,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getExternalId <em>External Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlAccountClassId <em>Gl Account Class Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlAccountGroupMembers <em>Gl Account Group Members</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlAccountOrganizations <em>Gl Account Organizations</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlAccountTypeId <em>Gl Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlResourceTypeId <em>Gl Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlXbrlClassId <em>Gl Xbrl Class Id</em>}</li>
@@ -201,6 +206,28 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	@Override
 	public void setGlAccountClassId(GlAccountClass newGlAccountClassId) {
 		eSet(LedgerPackage.Literals.GL_ACCOUNT__GL_ACCOUNT_CLASS_ID, newGlAccountClassId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<GlAccountGroupMember> getGlAccountGroupMembers() {
+		return (List<GlAccountGroupMember>)eGet(LedgerPackage.Literals.GL_ACCOUNT__GL_ACCOUNT_GROUP_MEMBERS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<GlAccountOrganization> getGlAccountOrganizations() {
+		return (List<GlAccountOrganization>)eGet(LedgerPackage.Literals.GL_ACCOUNT__GL_ACCOUNT_ORGANIZATIONS, true);
 	}
 
 	/**

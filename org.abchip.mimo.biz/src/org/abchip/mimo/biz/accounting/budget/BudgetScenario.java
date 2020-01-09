@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.budget;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -19,6 +20,7 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenario#getBudgetScenarioId <em>Budget Scenario Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenario#getBudgetScenarioRules <em>Budget Scenario Rules</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetScenario#getDescription <em>Description</em>}</li>
  * </ul>
  *
@@ -79,5 +81,21 @@ public interface BudgetScenario extends BizEntity {
 	 * @generated
 	 */
 	void setBudgetScenarioId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Budget Scenario Rules</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Budget Scenario Rules</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Budget Scenario Rules</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenario_BudgetScenarioRules()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<BudgetScenarioRule> getBudgetScenarioRules();
 
 } // BudgetScenario

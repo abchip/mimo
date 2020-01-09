@@ -7,13 +7,19 @@
  */
 package org.abchip.mimo.biz.product.store.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.passport.OAuth2GitHub;
+import org.abchip.mimo.biz.passport.OAuth2Google;
+import org.abchip.mimo.biz.passport.OAuth2LinkedIn;
 import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.product.store.ProductStoreEmailSetting;
+import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
 import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.ecore.EClass;
@@ -69,6 +75,9 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getItemDeclinedStatus <em>Item Declined Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isManagedByLot <em>Managed By Lot</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isManualAuthIsCapture <em>Manual Auth Is Capture</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOAuth2GitHubs <em>OAuth2 Git Hubs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOAuth2Googles <em>OAuth2 Googles</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOAuth2LinkedIns <em>OAuth2 Linked Ins</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOldHeaderLogo <em>Old Header Logo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOldHeaderMiddleBackground <em>Old Header Middle Background</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getOldHeaderRightBackground <em>Old Header Right Background</em>}</li>
@@ -79,6 +88,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getPayToPartyId <em>Pay To Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getPrimaryStoreGroupId <em>Primary Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProductStoreEmailSettings <em>Product Store Email Settings</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#getProductStoreFinActSettings <em>Product Store Fin Act Settings</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isProrateShipping <em>Prorate Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isProrateTaxes <em>Prorate Taxes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreImpl#isReqReturnInventoryReceive <em>Req Return Inventory Receive</em>}</li>
@@ -734,6 +745,39 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public void setManualAuthIsCapture(boolean newManualAuthIsCapture) {
 		eSet(StorePackage.Literals.PRODUCT_STORE__MANUAL_AUTH_IS_CAPTURE, newManualAuthIsCapture);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OAuth2GitHub> getOAuth2GitHubs() {
+		return (List<OAuth2GitHub>)eGet(StorePackage.Literals.PRODUCT_STORE__OAUTH2_GIT_HUBS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OAuth2Google> getOAuth2Googles() {
+		return (List<OAuth2Google>)eGet(StorePackage.Literals.PRODUCT_STORE__OAUTH2_GOOGLES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OAuth2LinkedIn> getOAuth2LinkedIns() {
+		return (List<OAuth2LinkedIn>)eGet(StorePackage.Literals.PRODUCT_STORE__OAUTH2_LINKED_INS, true);
 	}
 
 	/**
@@ -1634,6 +1678,28 @@ public class ProductStoreImpl extends BizEntityImpl implements ProductStore {
 	@Override
 	public void setProdSearchExcludeVariants(boolean newProdSearchExcludeVariants) {
 		eSet(StorePackage.Literals.PRODUCT_STORE__PROD_SEARCH_EXCLUDE_VARIANTS, newProdSearchExcludeVariants);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductStoreEmailSetting> getProductStoreEmailSettings() {
+		return (List<ProductStoreEmailSetting>)eGet(StorePackage.Literals.PRODUCT_STORE__PRODUCT_STORE_EMAIL_SETTINGS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductStoreFinActSetting> getProductStoreFinActSettings() {
+		return (List<ProductStoreFinActSetting>)eGet(StorePackage.Literals.PRODUCT_STORE__PRODUCT_STORE_FIN_ACT_SETTINGS, true);
 	}
 
 	/**

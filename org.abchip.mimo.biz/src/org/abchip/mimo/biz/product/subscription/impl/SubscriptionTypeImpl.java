@@ -7,10 +7,12 @@
  */
 package org.abchip.mimo.biz.product.subscription.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionType;
+import org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionTypeImpl#getSubscriptionTypeAttrs <em>Subscription Type Attrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -112,6 +115,17 @@ public class SubscriptionTypeImpl extends BizEntityTypeImpl<Subscription> implem
 	@Override
 	public void setParentTypeId(SubscriptionType newParentTypeId) {
 		eSet(SubscriptionPackage.Literals.SUBSCRIPTION_TYPE__PARENT_TYPE_ID, newParentTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<SubscriptionTypeAttr> getSubscriptionTypeAttrs() {
+		return (List<SubscriptionTypeAttr>)eGet(SubscriptionPackage.Literals.SUBSCRIPTION_TYPE__SUBSCRIPTION_TYPE_ATTRS, true);
 	}
 
 	/**

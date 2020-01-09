@@ -7,7 +7,9 @@
  */
 package org.abchip.mimo.biz.product.inventory;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +22,7 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.VarianceReason#getVarianceReasonId <em>Variance Reason Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.VarianceReason#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.VarianceReason#getVarianceReasonGlAccounts <em>Variance Reason Gl Accounts</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getVarianceReason()
@@ -52,6 +55,22 @@ public interface VarianceReason extends BizEntity {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Variance Reason Gl Accounts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Variance Reason Gl Accounts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Variance Reason Gl Accounts</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getVarianceReason_VarianceReasonGlAccounts()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<VarianceReasonGlAccount> getVarianceReasonGlAccounts();
 
 	/**
 	 * Returns the value of the '<em><b>Variance Reason Id</b></em>' attribute.

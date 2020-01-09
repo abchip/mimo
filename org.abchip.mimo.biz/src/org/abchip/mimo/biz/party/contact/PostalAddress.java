@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.party.contact;
 
+import java.util.List;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
 
@@ -31,6 +32,7 @@ import org.abchip.mimo.biz.common.geo.GeoPoint;
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getHouseNumber <em>House Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getHouseNumberExt <em>House Number Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getMunicipalityGeoId <em>Municipality Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalAddressBoundaries <em>Postal Address Boundaries</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCode <em>Postal Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeExt <em>Postal Code Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeGeoId <em>Postal Code Geo Id</em>}</li>
@@ -354,6 +356,22 @@ public interface PostalAddress extends ContactMech {
 	 * @generated
 	 */
 	void setMunicipalityGeoId(Geo value);
+
+	/**
+	 * Returns the value of the '<em><b>Postal Address Boundaries</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.PostalAddressBoundary}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Postal Address Boundaries</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Postal Address Boundaries</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPostalAddress_PostalAddressBoundaries()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PostalAddressBoundary> getPostalAddressBoundaries();
 
 	/**
 	 * Returns the value of the '<em><b>Postal Code</b></em>' attribute.

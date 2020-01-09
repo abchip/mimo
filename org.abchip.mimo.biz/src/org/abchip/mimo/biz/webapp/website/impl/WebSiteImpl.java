@@ -7,7 +7,9 @@
  */
 package org.abchip.mimo.biz.webapp.website.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.common.theme.VisualThemeSet;
+import org.abchip.mimo.biz.content.website.WebAnalyticsConfig;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.webapp.website.WebSite;
@@ -38,6 +40,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getSiteName <em>Site Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getStandardContentPrefix <em>Standard Content Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getVisualThemeSetId <em>Visual Theme Set Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getWebAnalyticsConfigs <em>Web Analytics Configs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getWebappPath <em>Webapp Path</em>}</li>
  * </ul>
  *
@@ -386,6 +389,17 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	@Override
 	public void setVisualThemeSetId(VisualThemeSet newVisualThemeSetId) {
 		eSet(WebsitePackage.Literals.WEB_SITE__VISUAL_THEME_SET_ID, newVisualThemeSetId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<WebAnalyticsConfig> getWebAnalyticsConfigs() {
+		return (List<WebAnalyticsConfig>)eGet(WebsitePackage.Literals.WEB_SITE__WEB_ANALYTICS_CONFIGS, true);
 	}
 
 	/**

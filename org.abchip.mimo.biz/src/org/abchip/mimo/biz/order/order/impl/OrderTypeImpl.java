@@ -7,10 +7,12 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderType;
+import org.abchip.mimo.biz.order.order.OrderTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -24,6 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTypeImpl#getOrderTypeId <em>Order Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTypeImpl#isHasTable <em>Has Table</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTypeImpl#getOrderTypeAttrs <em>Order Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -92,6 +95,17 @@ public class OrderTypeImpl extends BizEntityTypeImpl<OrderHeader> implements Ord
 	@Override
 	public void setHasTable(boolean newHasTable) {
 		eSet(OrderPackage.Literals.ORDER_TYPE__HAS_TABLE, newHasTable);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OrderTypeAttr> getOrderTypeAttrs() {
+		return (List<OrderTypeAttr>)eGet(OrderPackage.Literals.ORDER_TYPE__ORDER_TYPE_ATTRS, true);
 	}
 
 	/**

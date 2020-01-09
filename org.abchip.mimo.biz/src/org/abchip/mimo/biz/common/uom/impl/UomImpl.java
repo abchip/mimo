@@ -7,7 +7,9 @@
  */
 package org.abchip.mimo.biz.common.uom.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.common.uom.UomConversion;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.common.uom.UomType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
@@ -24,6 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getUomId <em>Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getAbbreviation <em>Abbreviation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getMainUomConversions <em>Main Uom Conversions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getNumericCode <em>Numeric Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomImpl#getUomTypeId <em>Uom Type Id</em>}</li>
  * </ul>
@@ -92,6 +95,17 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(UomPackage.Literals.UOM__DESCRIPTION, newDescription);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<UomConversion> getMainUomConversions() {
+		return (List<UomConversion>)eGet(UomPackage.Literals.UOM__MAIN_UOM_CONVERSIONS, true);
 	}
 
 	/**

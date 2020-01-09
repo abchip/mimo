@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.marketing.campaign;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
@@ -37,6 +38,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#isIsActive <em>Is Active</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getMarketingCampaignNotes <em>Marketing Campaign Notes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getNumSent <em>Num Sent</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getParentCampaignId <em>Parent Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getStartDate <em>Start Date</em>}</li>
@@ -386,6 +388,22 @@ public interface MarketingCampaign extends BizEntity {
 	 * @generated
 	 */
 	void setLastModifiedByUserLogin(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Marketing Campaign Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Marketing Campaign Notes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Marketing Campaign Notes</em>' reference list.
+	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_MarketingCampaignNotes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<MarketingCampaignNote> getMarketingCampaignNotes();
 
 	/**
 	 * Returns the value of the '<em><b>Marketing Campaign Id</b></em>' attribute.

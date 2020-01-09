@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.payment;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -22,6 +23,8 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentType#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentType#getPaymentGlAccountTypeMaps <em>Payment Gl Account Type Maps</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentType#getPaymentTypeAttrs <em>Payment Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType()
@@ -106,6 +109,38 @@ public interface PaymentType extends BizEntityType<Payment> {
 	 * @generated
 	 */
 	void setParentTypeId(PaymentType value);
+
+	/**
+	 * Returns the value of the '<em><b>Payment Gl Account Type Maps</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Payment Gl Account Type Maps</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Payment Gl Account Type Maps</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType_PaymentGlAccountTypeMaps()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PaymentGlAccountTypeMap> getPaymentGlAccountTypeMaps();
+
+	/**
+	 * Returns the value of the '<em><b>Payment Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.payment.PaymentTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Payment Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Payment Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentType_PaymentTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PaymentTypeAttr> getPaymentTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Payment Type Id</b></em>' attribute.

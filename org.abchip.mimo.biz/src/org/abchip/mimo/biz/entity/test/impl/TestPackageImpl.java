@@ -910,8 +910,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTesting_TestingName() {
-		return (EAttribute)testingEClass.getEStructuralFeatures().get(4);
+	public EReference getTesting_TestingItems() {
+		return (EReference)testingEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -920,7 +920,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTesting_TestingSize() {
+	public EAttribute getTesting_TestingName() {
 		return (EAttribute)testingEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -930,8 +930,18 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTesting_TestingSize() {
+		return (EAttribute)testingEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getTesting_TestingTypeId() {
-		return (EReference)testingEClass.getEStructuralFeatures().get(6);
+		return (EReference)testingEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1341,6 +1351,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(testingEClass, TESTING__COMMENTS);
 		createEAttribute(testingEClass, TESTING__DESCRIPTION);
 		createEAttribute(testingEClass, TESTING__TESTING_DATE);
+		createEReference(testingEClass, TESTING__TESTING_ITEMS);
 		createEAttribute(testingEClass, TESTING__TESTING_NAME);
 		createEAttribute(testingEClass, TESTING__TESTING_SIZE);
 		createEReference(testingEClass, TESTING__TESTING_TYPE_ID);
@@ -1453,6 +1464,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getTesting_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTesting_Description(), ecorePackage.getEString(), "description", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTesting_TestingDate(), ecorePackage.getEDate(), "testingDate", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTesting_TestingItems(), this.getTestingItem(), null, "testingItems", null, 0, -1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTesting_TestingName(), ecorePackage.getEString(), "testingName", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTesting_TestingSize(), ecorePackage.getELong(), "testingSize", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTesting_TestingTypeId(), this.getTestingType(), null, "testingTypeId", null, 0, 1, Testing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

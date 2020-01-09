@@ -850,8 +850,18 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getMarketingCampaign_MarketingCampaignNotes() {
+		return (EReference)marketingCampaignEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getMarketingCampaign_NumSent() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -861,7 +871,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EReference getMarketingCampaign_ParentCampaignId() {
-		return (EReference)marketingCampaignEClass.getEStructuralFeatures().get(15);
+		return (EReference)marketingCampaignEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -871,7 +881,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaign_StartDate() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -881,7 +891,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EReference getMarketingCampaign_StatusId() {
-		return (EReference)marketingCampaignEClass.getEStructuralFeatures().get(17);
+		return (EReference)marketingCampaignEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -891,7 +901,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaign_ThruDate() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(18);
+		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -1118,6 +1128,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__FROM_DATE);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__IS_ACTIVE);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__LAST_MODIFIED_BY_USER_LOGIN);
+		createEReference(marketingCampaignEClass, MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__NUM_SENT);
 		createEReference(marketingCampaignEClass, MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__START_DATE);
@@ -1206,6 +1217,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		initEAttribute(getMarketingCampaign_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_IsActive(), ecorePackage.getEBoolean(), "isActive", null, 1, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_LastModifiedByUserLogin(), ecorePackage.getEString(), "lastModifiedByUserLogin", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMarketingCampaign_MarketingCampaignNotes(), this.getMarketingCampaignNote(), null, "marketingCampaignNotes", null, 0, -1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_NumSent(), ecorePackage.getELong(), "numSent", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMarketingCampaign_ParentCampaignId(), this.getMarketingCampaign(), null, "parentCampaignId", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getMarketingCampaign_ParentCampaignId().getEKeys().add(this.getMarketingCampaign_MarketingCampaignId());

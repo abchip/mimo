@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.ledger;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -19,6 +20,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#getAcctgTransTypeId <em>Acctg Trans Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#getAcctgTransTypeAttrs <em>Acctg Trans Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -133,5 +135,21 @@ public interface AcctgTransType extends BizEntityType<AcctgTrans> {
 	 * @generated
 	 */
 	void setAcctgTransTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Acctg Trans Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.AcctgTransTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Acctg Trans Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Acctg Trans Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransType_AcctgTransTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<AcctgTransTypeAttr> getAcctgTransTypeAttrs();
 
 } // AcctgTransType

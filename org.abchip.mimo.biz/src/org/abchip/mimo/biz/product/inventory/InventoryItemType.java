@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.inventory;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -21,6 +22,7 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#isHasTable <em>Has Table</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#getInventoryItemTypeAttrs <em>Inventory Item Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -80,6 +82,22 @@ public interface InventoryItemType extends BizEntityType<InventoryItem> {
 	 * @generated
 	 */
 	void setHasTable(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Inventory Item Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Inventory Item Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Inventory Item Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemType_InventoryItemTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<InventoryItemTypeAttr> getInventoryItemTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.finaccount;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -20,6 +21,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getFinAccountTransTypeId <em>Fin Account Trans Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getFinAccountTransTypeAttrs <em>Fin Account Trans Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -54,6 +56,22 @@ public interface FinAccountTransType extends BizEntityType<FinAccountTrans> {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Fin Account Trans Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fin Account Trans Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fin Account Trans Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransType_FinAccountTransTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<FinAccountTransTypeAttr> getFinAccountTransTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Has Table</b></em>' attribute.

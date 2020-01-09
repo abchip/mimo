@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.budget;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -19,6 +20,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetType#getBudgetTypeId <em>Budget Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetType#getBudgetTypeAttrs <em>Budget Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -133,5 +135,21 @@ public interface BudgetType extends BizEntityType<Budget> {
 	 * @generated
 	 */
 	void setBudgetTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Budget Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Budget Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Budget Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetType_BudgetTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<BudgetTypeAttr> getBudgetTypeAttrs();
 
 } // BudgetType

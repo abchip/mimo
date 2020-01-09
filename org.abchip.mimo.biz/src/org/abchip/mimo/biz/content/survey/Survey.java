@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.survey;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -27,7 +28,9 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.content.survey.Survey#isIsAnonymous <em>Is Anonymous</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.Survey#getResponseService <em>Response Service</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.Survey#getSubmitCaption <em>Submit Caption</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.Survey#getSurveyMultiResps <em>Survey Multi Resps</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.Survey#getSurveyName <em>Survey Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.Survey#getSurveyPages <em>Survey Pages</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey()
@@ -248,6 +251,22 @@ public interface Survey extends BizEntity {
 	void setSubmitCaption(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Survey Multi Resps</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.survey.SurveyMultiResp}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Survey Multi Resps</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Survey Multi Resps</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SurveyMultiResps()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SurveyMultiResp> getSurveyMultiResps();
+
+	/**
 	 * Returns the value of the '<em><b>Survey Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -299,5 +318,21 @@ public interface Survey extends BizEntity {
 	 * @generated
 	 */
 	void setSurveyName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Survey Pages</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.survey.SurveyPage}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Survey Pages</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Survey Pages</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurvey_SurveyPages()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SurveyPage> getSurveyPages();
 
 } // Survey

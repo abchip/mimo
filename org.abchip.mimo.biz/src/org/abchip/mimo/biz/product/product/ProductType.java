@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.product;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -24,6 +25,7 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductType#isIsDigital <em>Is Digital</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductType#isIsPhysical <em>Is Physical</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductType#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductType#getProductTypeAttrs <em>Product Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductType()
@@ -160,6 +162,22 @@ public interface ProductType extends BizEntityType<Product> {
 	 * @generated
 	 */
 	void setParentTypeId(ProductType value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.ProductTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductType_ProductTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductTypeAttr> getProductTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Product Type Id</b></em>' attribute.

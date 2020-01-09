@@ -9,11 +9,13 @@ package org.abchip.mimo.biz.marketing.campaign.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.campaign.CampaignPackage;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaignNote;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -38,6 +40,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#isIsActive <em>Is Active</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getMarketingCampaignNotes <em>Marketing Campaign Notes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getNumSent <em>Num Sent</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getParentCampaignId <em>Parent Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getStartDate <em>Start Date</em>}</li>
@@ -331,6 +334,17 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	@Override
 	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
 		eSet(CampaignPackage.Literals.MARKETING_CAMPAIGN__LAST_MODIFIED_BY_USER_LOGIN, newLastModifiedByUserLogin);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<MarketingCampaignNote> getMarketingCampaignNotes() {
+		return (List<MarketingCampaignNote>)eGet(CampaignPackage.Literals.MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES, true);
 	}
 
 	/**

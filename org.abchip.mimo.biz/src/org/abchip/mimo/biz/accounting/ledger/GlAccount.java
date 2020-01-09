@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.ledger;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 
 /**
@@ -24,6 +25,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getExternalId <em>External Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountClassId <em>Gl Account Class Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountGroupMembers <em>Gl Account Group Members</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountOrganizations <em>Gl Account Organizations</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountTypeId <em>Gl Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId <em>Gl Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlXbrlClassId <em>Gl Xbrl Class Id</em>}</li>
@@ -218,6 +221,38 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @generated
 	 */
 	void setGlAccountClassId(GlAccountClass value);
+
+	/**
+	 * Returns the value of the '<em><b>Gl Account Group Members</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroupMember}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Gl Account Group Members</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Gl Account Group Members</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountGroupMembers()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<GlAccountGroupMember> getGlAccountGroupMembers();
+
+	/**
+	 * Returns the value of the '<em><b>Gl Account Organizations</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.GlAccountOrganization}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Gl Account Organizations</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Gl Account Organizations</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountOrganizations()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<GlAccountOrganization> getGlAccountOrganizations();
 
 	/**
 	 * Returns the value of the '<em><b>Gl Resource Type Id</b></em>' reference.

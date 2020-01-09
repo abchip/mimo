@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.content.document;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 
 /**
@@ -22,6 +23,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentId <em>Document Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDateCreated <em>Date Created</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentAttributes <em>Document Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentLocation <em>Document Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentText <em>Document Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.Document#getDocumentTypeId <em>Document Type Id</em>}</li>
@@ -84,6 +86,22 @@ public interface Document extends BizEntityTyped<DocumentType> {
 	 * @generated
 	 */
 	void setDateCreated(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Document Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.document.DocumentAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Document Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Document Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocument_DocumentAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<DocumentAttribute> getDocumentAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Document Id</b></em>' attribute.

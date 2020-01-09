@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.shipment.shipment;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
@@ -59,6 +60,11 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getPrimaryOrderId <em>Primary Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getPrimaryReturnId <em>Primary Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getPrimaryShipGroupSeqId <em>Primary Ship Group Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentAttributes <em>Shipment Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentContactMechs <em>Shipment Contact Mechs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentItems <em>Shipment Items</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentPackages <em>Shipment Packages</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentRouteSegments <em>Shipment Route Segments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getShipmentTypeId <em>Shipment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Shipment#getStatusId <em>Status Id</em>}</li>
  * </ul>
@@ -769,6 +775,86 @@ public interface Shipment extends BizEntityTyped<ShipmentType> {
 	 * @generated
 	 */
 	void setPrimaryShipGroupSeqId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Shipment Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Shipment Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Shipment Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_ShipmentAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ShipmentAttribute> getShipmentAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Shipment Contact Mechs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Shipment Contact Mechs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Shipment Contact Mechs</em>' reference list.
+	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_ShipmentContactMechs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ShipmentContactMech> getShipmentContactMechs();
+
+	/**
+	 * Returns the value of the '<em><b>Shipment Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentItem}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Shipment Items</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Shipment Items</em>' reference list.
+	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_ShipmentItems()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ShipmentItem> getShipmentItems();
+
+	/**
+	 * Returns the value of the '<em><b>Shipment Packages</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Shipment Packages</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Shipment Packages</em>' reference list.
+	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_ShipmentPackages()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ShipmentPackage> getShipmentPackages();
+
+	/**
+	 * Returns the value of the '<em><b>Shipment Route Segments</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Shipment Route Segments</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Shipment Route Segments</em>' reference list.
+	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipment_ShipmentRouteSegments()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ShipmentRouteSegment> getShipmentRouteSegments();
 
 	/**
 	 * Returns the value of the '<em><b>Shipment Id</b></em>' attribute.

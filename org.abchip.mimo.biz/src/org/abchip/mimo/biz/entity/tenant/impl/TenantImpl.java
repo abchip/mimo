@@ -7,7 +7,9 @@
  */
 package org.abchip.mimo.biz.entity.tenant.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.entity.tenant.Tenant;
+import org.abchip.mimo.biz.entity.tenant.TenantDataSource;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl#getTenantId <em>Tenant Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl#isDisabled <em>Disabled</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl#getInitialPath <em>Initial Path</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl#getTenantDataSources <em>Tenant Data Sources</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantImpl#getTenantName <em>Tenant Name</em>}</li>
  * </ul>
  *
@@ -70,6 +73,17 @@ public class TenantImpl extends BizEntityImpl implements Tenant {
 	@Override
 	public void setInitialPath(String newInitialPath) {
 		eSet(TenantPackage.Literals.TENANT__INITIAL_PATH, newInitialPath);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<TenantDataSource> getTenantDataSources() {
+		return (List<TenantDataSource>)eGet(TenantPackage.Literals.TENANT__TENANT_DATA_SOURCES, true);
 	}
 
 	/**

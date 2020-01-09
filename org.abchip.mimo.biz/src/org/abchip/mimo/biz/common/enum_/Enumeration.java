@@ -7,7 +7,9 @@
  */
 package org.abchip.mimo.biz.common.enum_;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +25,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumCode <em>Enum Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumTypeId <em>Enum Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getUserLoginSecurityQuestions <em>User Login Security Questions</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration()
@@ -107,6 +110,22 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	 * @generated
 	 */
 	void setSequenceId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>User Login Security Questions</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>User Login Security Questions</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>User Login Security Questions</em>' reference list.
+	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration_UserLoginSecurityQuestions()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<UserLoginSecurityQuestion> getUserLoginSecurityQuestions();
 
 	/**
 	 * Returns the value of the '<em><b>Enum Type Id</b></em>' reference.

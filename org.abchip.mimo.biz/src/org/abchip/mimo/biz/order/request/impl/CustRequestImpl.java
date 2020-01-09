@@ -8,13 +8,19 @@
 package org.abchip.mimo.biz.order.request.impl;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.order.request.CustRequestAttribute;
 import org.abchip.mimo.biz.order.request.CustRequestCategory;
+import org.abchip.mimo.biz.order.request.CustRequestCommEvent;
+import org.abchip.mimo.biz.order.request.CustRequestItem;
+import org.abchip.mimo.biz.order.request.CustRequestNote;
 import org.abchip.mimo.biz.order.request.CustRequestType;
+import org.abchip.mimo.biz.order.request.CustRequestWorkEffort;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.party.Party;
@@ -34,10 +40,15 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestAttributes <em>Cust Request Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestCategoryId <em>Cust Request Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestCommEvents <em>Cust Request Comm Events</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestDate <em>Cust Request Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestItems <em>Cust Request Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestName <em>Cust Request Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestNotes <em>Cust Request Notes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getCustRequestWorkEfforts <em>Cust Request Work Efforts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getFromPartyId <em>From Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestImpl#getFulfillContactMechId <em>Fulfill Contact Mech Id</em>}</li>
@@ -166,6 +177,17 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CustRequestAttribute> getCustRequestAttributes() {
+		return (List<CustRequestAttribute>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_ATTRIBUTES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public CustRequestCategory getCustRequestCategoryId() {
 		return (CustRequestCategory)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_CATEGORY_ID, true);
@@ -186,6 +208,17 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CustRequestCommEvent> getCustRequestCommEvents() {
+		return (List<CustRequestCommEvent>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_COMM_EVENTS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Date getCustRequestDate() {
 		return (Date)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_DATE, true);
@@ -199,6 +232,17 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	@Override
 	public void setCustRequestDate(Date newCustRequestDate) {
 		eSet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_DATE, newCustRequestDate);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CustRequestItem> getCustRequestItems() {
+		return (List<CustRequestItem>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_ITEMS, true);
 	}
 
 	/**
@@ -246,6 +290,17 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CustRequestNote> getCustRequestNotes() {
+		return (List<CustRequestNote>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_NOTES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public CustRequestType getCustRequestTypeId() {
 		return (CustRequestType)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_TYPE_ID, true);
@@ -259,6 +314,17 @@ public class CustRequestImpl extends BizEntityTypedImpl<CustRequestType> impleme
 	@Override
 	public void setCustRequestTypeId(CustRequestType newCustRequestTypeId) {
 		eSet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_TYPE_ID, newCustRequestTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CustRequestWorkEffort> getCustRequestWorkEfforts() {
+		return (List<CustRequestWorkEffort>)eGet(RequestPackage.Literals.CUST_REQUEST__CUST_REQUEST_WORK_EFFORTS, true);
 	}
 
 	/**

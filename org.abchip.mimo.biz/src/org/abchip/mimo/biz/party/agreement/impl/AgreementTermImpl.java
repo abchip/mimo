@@ -9,11 +9,13 @@ package org.abchip.mimo.biz.party.agreement.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementTerm;
+import org.abchip.mimo.biz.party.agreement.AgreementTermAttribute;
 import org.abchip.mimo.biz.party.agreement.TermType;
 import org.eclipse.emf.ecore.EClass;
 
@@ -28,6 +30,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getAgreementTermId <em>Agreement Term Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getAgreementTermAttributes <em>Agreement Term Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}</li>
@@ -84,6 +87,17 @@ public class AgreementTermImpl extends BizEntityTypedImpl<TermType> implements A
 	@Override
 	public void setAgreementItemSeqId(String newAgreementItemSeqId) {
 		eSet(AgreementPackage.Literals.AGREEMENT_TERM__AGREEMENT_ITEM_SEQ_ID, newAgreementItemSeqId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<AgreementTermAttribute> getAgreementTermAttributes() {
+		return (List<AgreementTermAttribute>)eGet(AgreementPackage.Literals.AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES, true);
 	}
 
 	/**

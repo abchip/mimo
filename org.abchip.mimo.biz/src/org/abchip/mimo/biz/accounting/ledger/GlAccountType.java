@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.ledger;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -20,6 +21,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#getGlAccountTypeId <em>Gl Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#getGlAccountTypeDefaults <em>Gl Account Type Defaults</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -54,6 +56,22 @@ public interface GlAccountType extends BizEntityType<GlAccount> {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Gl Account Type Defaults</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.GlAccountTypeDefault}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Gl Account Type Defaults</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Gl Account Type Defaults</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountType_GlAccountTypeDefaults()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<GlAccountTypeDefault> getGlAccountTypeDefaults();
 
 	/**
 	 * Returns the value of the '<em><b>Has Table</b></em>' attribute.

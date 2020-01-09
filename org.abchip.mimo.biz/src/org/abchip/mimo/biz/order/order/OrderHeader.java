@@ -10,13 +10,16 @@ package org.abchip.mimo.biz.order.order;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.promo.ProductPromoUse;
 import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.webapp.website.WebSite;
@@ -34,6 +37,7 @@ import org.abchip.mimo.biz.webapp.website.WebSite;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getAutoOrderShoppingListId <em>Auto Order Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getBillingAccountId <em>Billing Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getCommunicationEventOrders <em>Communication Event Orders</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getCreatedBy <em>Created By</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getCurrencyUom <em>Currency Uom</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getEntryDate <em>Entry Date</em>}</li>
@@ -45,18 +49,28 @@ import org.abchip.mimo.biz.webapp.website.WebSite;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#isIsRushOrder <em>Is Rush Order</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#isIsViewed <em>Is Viewed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#isNeedsInventoryIssuance <em>Needs Inventory Issuance</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderAttributes <em>Order Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderDate <em>Order Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderDeliverySchedules <em>Order Delivery Schedules</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderHeaderNotes <em>Order Header Notes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderHeaderWorkEfforts <em>Order Header Work Efforts</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderItemGroups <em>Order Item Groups</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderItemShipGroups <em>Order Item Ship Groups</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderItems <em>Order Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderName <em>Order Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderProductPromoCodes <em>Order Product Promo Codes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getOrderTypeId <em>Order Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getOriginFacilityId <em>Origin Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getPickSheetPrintedDate <em>Pick Sheet Printed Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#isPriority <em>Priority</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getProductPromoUses <em>Product Promo Uses</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getRemainingSubTotal <em>Remaining Sub Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getSyncStatusId <em>Sync Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getTerminalId <em>Terminal Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getTrackingCodeOrders <em>Tracking Code Orders</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getTransactionId <em>Transaction Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderHeader#getWebSiteId <em>Web Site Id</em>}</li>
@@ -144,6 +158,22 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @generated
 	 */
 	void setBillingAccountId(BillingAccount value);
+
+	/**
+	 * Returns the value of the '<em><b>Communication Event Orders</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.CommunicationEventOrder}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Communication Event Orders</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Communication Event Orders</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_CommunicationEventOrders()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<CommunicationEventOrder> getCommunicationEventOrders();
 
 	/**
 	 * Returns the value of the '<em><b>Created By</b></em>' reference.
@@ -432,6 +462,22 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	void setNeedsInventoryIssuance(boolean value);
 
 	/**
+	 * Returns the value of the '<em><b>Order Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OrderAttribute> getOrderAttributes();
+
+	/**
 	 * Returns the value of the '<em><b>Order Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -456,6 +502,102 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @generated
 	 */
 	void setOrderDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Delivery Schedules</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderDeliverySchedule}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Delivery Schedules</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Delivery Schedules</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderDeliverySchedules()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OrderDeliverySchedule> getOrderDeliverySchedules();
+
+	/**
+	 * Returns the value of the '<em><b>Order Header Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderHeaderNote}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Header Notes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Header Notes</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderHeaderNotes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OrderHeaderNote> getOrderHeaderNotes();
+
+	/**
+	 * Returns the value of the '<em><b>Order Header Work Efforts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderHeaderWorkEffort}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Header Work Efforts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Header Work Efforts</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderHeaderWorkEfforts()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OrderHeaderWorkEffort> getOrderHeaderWorkEfforts();
+
+	/**
+	 * Returns the value of the '<em><b>Order Item Groups</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderItemGroup}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Item Groups</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Item Groups</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderItemGroups()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OrderItemGroup> getOrderItemGroups();
+
+	/**
+	 * Returns the value of the '<em><b>Order Item Ship Groups</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderItemShipGroup}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Item Ship Groups</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Item Ship Groups</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderItemShipGroups()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OrderItemShipGroup> getOrderItemShipGroups();
+
+	/**
+	 * Returns the value of the '<em><b>Order Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderItem}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Items</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Items</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderItems()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OrderItem> getOrderItems();
 
 	/**
 	 * Returns the value of the '<em><b>Order Id</b></em>' attribute.
@@ -509,6 +651,22 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @generated
 	 */
 	void setOrderName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Product Promo Codes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderProductPromoCode}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Product Promo Codes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Product Promo Codes</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_OrderProductPromoCodes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OrderProductPromoCode> getOrderProductPromoCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Order Type Id</b></em>' reference.
@@ -614,6 +772,22 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @generated
 	 */
 	void setPriority(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Promo Uses</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.promo.ProductPromoUse}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Promo Uses</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Promo Uses</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_ProductPromoUses()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductPromoUse> getProductPromoUses();
 
 	/**
 	 * Returns the value of the '<em><b>Product Store Id</b></em>' reference.
@@ -770,6 +944,22 @@ public interface OrderHeader extends BizEntityTyped<OrderType> {
 	 * @generated
 	 */
 	void setTerminalId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Tracking Code Orders</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tracking Code Orders</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tracking Code Orders</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeader_TrackingCodeOrders()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<TrackingCodeOrder> getTrackingCodeOrders();
 
 	/**
 	 * Returns the value of the '<em><b>Transaction Id</b></em>' attribute.

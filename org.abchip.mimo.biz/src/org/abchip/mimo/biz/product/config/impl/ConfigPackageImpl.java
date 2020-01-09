@@ -1131,8 +1131,8 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductConfigItem_ConfigItemTypeId() {
-		return (EAttribute)productConfigItemEClass.getEStructuralFeatures().get(2);
+	public EReference getProductConfigItem_ConfigItemProductConfigOptions() {
+		return (EReference)productConfigItemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1141,7 +1141,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductConfigItem_Description() {
+	public EAttribute getProductConfigItem_ConfigItemTypeId() {
 		return (EAttribute)productConfigItemEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1151,7 +1151,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductConfigItem_ImageUrl() {
+	public EAttribute getProductConfigItem_Description() {
 		return (EAttribute)productConfigItemEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1161,8 +1161,18 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductConfigItem_LongDescription() {
+	public EAttribute getProductConfigItem_ImageUrl() {
 		return (EAttribute)productConfigItemEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getProductConfigItem_LongDescription() {
+		return (EAttribute)productConfigItemEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1488,6 +1498,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		productConfigItemEClass = createEClass(PRODUCT_CONFIG_ITEM);
 		createEAttribute(productConfigItemEClass, PRODUCT_CONFIG_ITEM__CONFIG_ITEM_ID);
 		createEAttribute(productConfigItemEClass, PRODUCT_CONFIG_ITEM__CONFIG_ITEM_NAME);
+		createEReference(productConfigItemEClass, PRODUCT_CONFIG_ITEM__CONFIG_ITEM_PRODUCT_CONFIG_OPTIONS);
 		createEAttribute(productConfigItemEClass, PRODUCT_CONFIG_ITEM__CONFIG_ITEM_TYPE_ID);
 		createEAttribute(productConfigItemEClass, PRODUCT_CONFIG_ITEM__DESCRIPTION);
 		createEAttribute(productConfigItemEClass, PRODUCT_CONFIG_ITEM__IMAGE_URL);
@@ -1625,6 +1636,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEClass(productConfigItemEClass, ProductConfigItem.class, "ProductConfigItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductConfigItem_ConfigItemId(), ecorePackage.getEString(), "configItemId", null, 1, 1, ProductConfigItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductConfigItem_ConfigItemName(), ecorePackage.getEString(), "configItemName", null, 0, 1, ProductConfigItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductConfigItem_ConfigItemProductConfigOptions(), this.getProductConfigOption(), null, "configItemProductConfigOptions", null, 0, -1, ProductConfigItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductConfigItem_ConfigItemTypeId(), ecorePackage.getEString(), "configItemTypeId", null, 0, 1, ProductConfigItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductConfigItem_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductConfigItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductConfigItem_ImageUrl(), ecorePackage.getEString(), "imageUrl", null, 0, 1, ProductConfigItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

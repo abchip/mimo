@@ -20,10 +20,13 @@ import org.abchip.mimo.entity.Entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#isAnonymous <em>Anonymous</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ContextDescription#getCurrencyUom <em>Currency Uom</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getDataPath <em>Data Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getId <em>Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ContextDescription#getLocale <em>Locale</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getPicture <em>Picture</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getTenant <em>Tenant</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ContextDescription#getTimeZone <em>Time Zone</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getUser <em>User</em>}</li>
  * </ul>
  *
@@ -57,6 +60,32 @@ public interface ContextDescription extends Entity {
 	 * @generated
 	 */
 	void setAnonymous(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Currency Uom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Currency Uom</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Currency Uom</em>' attribute.
+	 * @see #setCurrencyUom(String)
+	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_CurrencyUom()
+	 * @model
+	 * @generated
+	 */
+	String getCurrencyUom();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.context.ContextDescription#getCurrencyUom <em>Currency Uom</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Currency Uom</em>' attribute.
+	 * @see #getCurrencyUom()
+	 * @generated
+	 */
+	void setCurrencyUom(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Data Path</b></em>' attribute.
@@ -111,6 +140,32 @@ public interface ContextDescription extends Entity {
 	void setId(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Locale</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Locale</em>' attribute.
+	 * @see #setLocale(String)
+	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_Locale()
+	 * @model
+	 * @generated
+	 */
+	String getLocale();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.context.ContextDescription#getLocale <em>Locale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Locale</em>' attribute.
+	 * @see #getLocale()
+	 * @generated
+	 */
+	void setLocale(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Picture</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -161,6 +216,32 @@ public interface ContextDescription extends Entity {
 	 * @generated
 	 */
 	void setTenant(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Time Zone</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Time Zone</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Time Zone</em>' attribute.
+	 * @see #setTimeZone(String)
+	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_TimeZone()
+	 * @model
+	 * @generated
+	 */
+	String getTimeZone();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.context.ContextDescription#getTimeZone <em>Time Zone</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Time Zone</em>' attribute.
+	 * @see #getTimeZone()
+	 * @generated
+	 */
+	void setTimeZone(String value);
 
 	/**
 	 * Returns the value of the '<em><b>User</b></em>' attribute.

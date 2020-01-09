@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.party.agreement;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -19,6 +20,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementType#getAgreementTypeId <em>Agreement Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementType#getAgreementTypeAttrs <em>Agreement Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -133,5 +135,21 @@ public interface AgreementType extends BizEntityType<Agreement> {
 	 * @generated
 	 */
 	void setAgreementTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Agreement Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.AgreementTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Agreement Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agreement Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementType_AgreementTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<AgreementTypeAttr> getAgreementTypeAttrs();
 
 } // AgreementType

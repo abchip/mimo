@@ -189,13 +189,22 @@ public interface CategoryPackage extends EPackage {
 	int PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Product Category Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_CATEGORY__PRODUCT_CATEGORY_ATTRIBUTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+
+	/**
 	 * The feature id for the '<em><b>Product Category Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Show In Select</b></em>' attribute.
@@ -204,7 +213,7 @@ public interface CategoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CATEGORY__SHOW_IN_SELECT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int PRODUCT_CATEGORY__SHOW_IN_SELECT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Product Category</em>' class.
@@ -213,7 +222,7 @@ public interface CategoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CATEGORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int PRODUCT_CATEGORY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryAttributeImpl <em>Product Category Attribute</em>}' class.
@@ -1224,13 +1233,22 @@ public interface CategoryPackage extends EPackage {
 	int PRODUCT_CATEGORY_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Product Category Type Attrs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_CATEGORY_TYPE__PRODUCT_CATEGORY_TYPE_ATTRS = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Product Category Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_CATEGORY_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+	int PRODUCT_CATEGORY_TYPE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryTypeAttrImpl <em>Product Category Type Attr</em>}' class.
@@ -1423,6 +1441,17 @@ public interface CategoryPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProductCategory_PrimaryParentCategoryId();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryAttributes <em>Product Category Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Product Category Attributes</em>'.
+	 * @see org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryAttributes()
+	 * @see #getProductCategory()
+	 * @generated
+	 */
+	EReference getProductCategory_ProductCategoryAttributes();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryTypeId <em>Product Category Type Id</em>}'.
@@ -2153,6 +2182,17 @@ public interface CategoryPackage extends EPackage {
 	EReference getProductCategoryType_ParentTypeId();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.category.ProductCategoryType#getProductCategoryTypeAttrs <em>Product Category Type Attrs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Product Category Type Attrs</em>'.
+	 * @see org.abchip.mimo.biz.product.category.ProductCategoryType#getProductCategoryTypeAttrs()
+	 * @see #getProductCategoryType()
+	 * @generated
+	 */
+	EReference getProductCategoryType_ProductCategoryTypeAttrs();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr <em>Product Category Type Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2298,6 +2338,14 @@ public interface CategoryPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID = eINSTANCE.getProductCategory_PrimaryParentCategoryId();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Category Attributes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRODUCT_CATEGORY__PRODUCT_CATEGORY_ATTRIBUTES = eINSTANCE.getProductCategory_ProductCategoryAttributes();
 
 		/**
 		 * The meta object literal for the '<em><b>Product Category Type Id</b></em>' reference feature.
@@ -2852,6 +2900,14 @@ public interface CategoryPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PRODUCT_CATEGORY_TYPE__PARENT_TYPE_ID = eINSTANCE.getProductCategoryType_ParentTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Category Type Attrs</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRODUCT_CATEGORY_TYPE__PRODUCT_CATEGORY_TYPE_ATTRS = eINSTANCE.getProductCategoryType_ProductCategoryTypeAttrs();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryTypeAttrImpl <em>Product Category Type Attr</em>}' class.

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.order.order;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -21,6 +22,7 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getOrderTypeId <em>Order Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#isHasTable <em>Has Table</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getOrderTypeAttrs <em>Order Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -80,6 +82,22 @@ public interface OrderType extends BizEntityType<OrderHeader> {
 	 * @generated
 	 */
 	void setHasTable(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Order Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.order.OrderTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderType_OrderTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OrderTypeAttr> getOrderTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Order Type Id</b></em>' attribute.

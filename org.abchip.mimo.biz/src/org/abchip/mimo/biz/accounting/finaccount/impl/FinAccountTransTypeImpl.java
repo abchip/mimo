@@ -7,8 +7,10 @@
  */
 package org.abchip.mimo.biz.accounting.finaccount.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountTransTypeAttr;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransTypeImpl#getFinAccountTransTypeId <em>Fin Account Trans Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransTypeImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransTypeImpl#getFinAccountTransTypeAttrs <em>Fin Account Trans Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -71,6 +74,17 @@ public class FinAccountTransTypeImpl extends BizEntityTypeImpl<FinAccountTrans> 
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(FinaccountPackage.Literals.FIN_ACCOUNT_TRANS_TYPE__DESCRIPTION, newDescription);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<FinAccountTransTypeAttr> getFinAccountTransTypeAttrs() {
+		return (List<FinAccountTransTypeAttr>)eGet(FinaccountPackage.Literals.FIN_ACCOUNT_TRANS_TYPE__FIN_ACCOUNT_TRANS_TYPE_ATTRS, true);
 	}
 
 	/**

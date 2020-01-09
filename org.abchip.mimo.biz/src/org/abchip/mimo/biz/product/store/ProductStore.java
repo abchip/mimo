@@ -7,11 +7,15 @@
  */
 package org.abchip.mimo.biz.product.store;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.passport.OAuth2GitHub;
+import org.abchip.mimo.biz.passport.OAuth2Google;
+import org.abchip.mimo.biz.passport.OAuth2LinkedIn;
 import org.abchip.mimo.biz.product.facility.Facility;
 
 /**
@@ -66,6 +70,9 @@ import org.abchip.mimo.biz.product.facility.Facility;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getItemDeclinedStatus <em>Item Declined Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isManagedByLot <em>Managed By Lot</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isManualAuthIsCapture <em>Manual Auth Is Capture</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2GitHubs <em>OAuth2 Git Hubs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2Googles <em>OAuth2 Googles</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2LinkedIns <em>OAuth2 Linked Ins</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOldHeaderLogo <em>Old Header Logo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOldHeaderMiddleBackground <em>Old Header Middle Background</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOldHeaderRightBackground <em>Old Header Right Background</em>}</li>
@@ -76,6 +83,8 @@ import org.abchip.mimo.biz.product.facility.Facility;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getPayToPartyId <em>Pay To Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getPrimaryStoreGroupId <em>Primary Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getProductStoreEmailSettings <em>Product Store Email Settings</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getProductStoreFinActSettings <em>Product Store Fin Act Settings</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isProrateShipping <em>Prorate Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isProrateTaxes <em>Prorate Taxes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isReqReturnInventoryReceive <em>Req Return Inventory Receive</em>}</li>
@@ -909,6 +918,54 @@ public interface ProductStore extends BizEntity {
 	 * @generated
 	 */
 	void setManualAuthIsCapture(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>OAuth2 Git Hubs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.passport.OAuth2GitHub}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>OAuth2 Git Hubs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>OAuth2 Git Hubs</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OAuth2GitHubs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OAuth2GitHub> getOAuth2GitHubs();
+
+	/**
+	 * Returns the value of the '<em><b>OAuth2 Googles</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.passport.OAuth2Google}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>OAuth2 Googles</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>OAuth2 Googles</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OAuth2Googles()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OAuth2Google> getOAuth2Googles();
+
+	/**
+	 * Returns the value of the '<em><b>OAuth2 Linked Ins</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.passport.OAuth2LinkedIn}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>OAuth2 Linked Ins</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>OAuth2 Linked Ins</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_OAuth2LinkedIns()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<OAuth2LinkedIn> getOAuth2LinkedIns();
 
 	/**
 	 * Returns the value of the '<em><b>Digital Item Approved Status</b></em>' reference.
@@ -2098,6 +2155,38 @@ public interface ProductStore extends BizEntity {
 	 * @generated
 	 */
 	void setProdSearchExcludeVariants(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Store Email Settings</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Store Email Settings</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Store Email Settings</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProductStoreEmailSettings()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductStoreEmailSetting> getProductStoreEmailSettings();
+
+	/**
+	 * Returns the value of the '<em><b>Product Store Fin Act Settings</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Store Fin Act Settings</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Store Fin Act Settings</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProductStoreFinActSettings()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductStoreFinActSetting> getProductStoreFinActSettings();
 
 	/**
 	 * Returns the value of the '<em><b>Inventory Facility Id</b></em>' reference.

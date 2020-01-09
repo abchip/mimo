@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.accounting.invoice;
 
 import java.math.BigDecimal;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.party.agreement.TermType;
 
@@ -24,6 +25,7 @@ import org.abchip.mimo.biz.party.agreement.TermType;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getInvoiceTermAttributes <em>Invoice Term Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getTermDays <em>Term Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getTermValue <em>Term Value</em>}</li>
@@ -87,6 +89,22 @@ public interface InvoiceTerm extends BizEntity {
 	 * @generated
 	 */
 	void setInvoiceItemSeqId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Invoice Term Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.invoice.InvoiceTermAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Invoice Term Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Invoice Term Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTerm_InvoiceTermAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<InvoiceTermAttribute> getInvoiceTermAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Term Days</b></em>' attribute.

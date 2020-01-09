@@ -696,8 +696,18 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getEntityGroup_EntityGroupEntries() {
+		return (EReference)entityGroupEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getEntityGroup_EntityGroupName() {
-		return (EAttribute)entityGroupEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)entityGroupEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -771,6 +781,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		// Create classes and their features
 		entityGroupEClass = createEClass(ENTITY_GROUP);
 		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_ID);
+		createEReference(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_ENTRIES);
 		createEAttribute(entityGroupEClass, ENTITY_GROUP__ENTITY_GROUP_NAME);
 
 		entityGroupEntryEClass = createEClass(ENTITY_GROUP_ENTRY);
@@ -816,6 +827,7 @@ public class GroupPackageImpl extends EPackageImpl implements GroupPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(entityGroupEClass, EntityGroup.class, "EntityGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityGroup_EntityGroupId(), ecorePackage.getEString(), "entityGroupId", null, 1, 1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityGroup_EntityGroupEntries(), this.getEntityGroupEntry(), null, "entityGroupEntries", null, 0, -1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityGroup_EntityGroupName(), ecorePackage.getEString(), "entityGroupName", null, 0, 1, EntityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityGroupEntryEClass, EntityGroupEntry.class, "EntityGroupEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

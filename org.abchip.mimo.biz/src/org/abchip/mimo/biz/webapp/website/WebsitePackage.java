@@ -343,13 +343,22 @@ public interface WebsitePackage extends EPackage {
 	int WEB_SITE__VISUAL_THEME_SET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
+	 * The feature id for the '<em><b>Web Analytics Configs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE__WEB_ANALYTICS_CONFIGS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+
+	/**
 	 * The feature id for the '<em><b>Webapp Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE__WEBAPP_PATH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int WEB_SITE__WEBAPP_PATH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of structural features of the '<em>Web Site</em>' class.
@@ -358,7 +367,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+	int WEB_SITE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 
 	/**
@@ -602,6 +611,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getWebSite_VisualThemeSetId();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.webapp.website.WebSite#getWebAnalyticsConfigs <em>Web Analytics Configs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Web Analytics Configs</em>'.
+	 * @see org.abchip.mimo.biz.webapp.website.WebSite#getWebAnalyticsConfigs()
+	 * @see #getWebSite()
+	 * @generated
+	 */
+	EReference getWebSite_WebAnalyticsConfigs();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.website.WebSite#getWebappPath <em>Webapp Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -813,6 +833,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference WEB_SITE__VISUAL_THEME_SET_ID = eINSTANCE.getWebSite_VisualThemeSetId();
+
+		/**
+		 * The meta object literal for the '<em><b>Web Analytics Configs</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WEB_SITE__WEB_ANALYTICS_CONFIGS = eINSTANCE.getWebSite_WebAnalyticsConfigs();
 
 		/**
 		 * The meta object literal for the '<em><b>Webapp Path</b></em>' attribute feature.

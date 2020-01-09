@@ -158,17 +158,16 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	}
 
 	@Override
-	public Context createChildContext(String id) {
+	public Context createChildContext(String contextId) {
 
 		ContextDescription childDescription = (ContextDescription) EcoreUtil.copy((EObject) getContextDescription());
-		childDescription.setId(id);
+		childDescription.setId(contextId);
 
 		return createChildContext(childDescription);
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
-	public Context createChildContext(ContextDescription contextDescription) {
+	private Context createChildContext(ContextDescription contextDescription) {
 
 		IEclipseContext eclipseChildContext = getEclipseContext().createChild();
 		initializeContext(eclipseChildContext);

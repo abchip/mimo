@@ -1054,8 +1054,28 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getFacility_FacilityAttributes() {
+		return (EReference)facilityEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFacility_FacilityLocations() {
+		return (EReference)facilityEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getFacility_FacilityName() {
-		return (EAttribute)facilityEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)facilityEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1065,7 +1085,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacility_FacilitySize() {
-		return (EAttribute)facilityEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)facilityEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1075,26 +1095,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EReference getFacility_FacilitySizeUomId() {
-		return (EReference)facilityEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFacility_FacilityTypeId() {
-		return (EReference)facilityEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFacility_GeoPointId() {
 		return (EReference)facilityEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -1104,8 +1104,28 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getFacility_FacilityTypeId() {
+		return (EReference)facilityEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFacility_GeoPointId() {
+		return (EReference)facilityEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getFacility_OldSquareFootage() {
-		return (EAttribute)facilityEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)facilityEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -1115,7 +1135,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EAttribute getFacility_OpenedDate() {
-		return (EAttribute)facilityEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)facilityEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -1125,26 +1145,6 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EReference getFacility_OwnerPartyId() {
-		return (EReference)facilityEClass.getEStructuralFeatures().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFacility_ParentFacilityId() {
-		return (EReference)facilityEClass.getEStructuralFeatures().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFacility_PrimaryFacilityGroupId() {
 		return (EReference)facilityEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -1154,8 +1154,28 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getFacility_ProductStoreId() {
+	public EReference getFacility_ParentFacilityId() {
 		return (EReference)facilityEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFacility_PrimaryFacilityGroupId() {
+		return (EReference)facilityEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFacility_ProductStoreId() {
+		return (EReference)facilityEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -2044,8 +2064,18 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getFacilityType_FacilityTypeAttrs() {
+		return (EReference)facilityTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getFacilityType_HasTable() {
-		return (EAttribute)facilityTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)facilityTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2055,7 +2085,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 	 */
 	@Override
 	public EReference getFacilityType_ParentTypeId() {
-		return (EReference)facilityTypeEClass.getEStructuralFeatures().get(3);
+		return (EReference)facilityTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2291,6 +2321,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		createEReference(facilityEClass, FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID);
 		createEReference(facilityEClass, FACILITY__DEFAULT_WEIGHT_UOM_ID);
 		createEAttribute(facilityEClass, FACILITY__DESCRIPTION);
+		createEReference(facilityEClass, FACILITY__FACILITY_ATTRIBUTES);
+		createEReference(facilityEClass, FACILITY__FACILITY_LOCATIONS);
 		createEAttribute(facilityEClass, FACILITY__FACILITY_NAME);
 		createEAttribute(facilityEClass, FACILITY__FACILITY_SIZE);
 		createEReference(facilityEClass, FACILITY__FACILITY_SIZE_UOM_ID);
@@ -2406,6 +2438,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		facilityTypeEClass = createEClass(FACILITY_TYPE);
 		createEAttribute(facilityTypeEClass, FACILITY_TYPE__FACILITY_TYPE_ID);
 		createEAttribute(facilityTypeEClass, FACILITY_TYPE__DESCRIPTION);
+		createEReference(facilityTypeEClass, FACILITY_TYPE__FACILITY_TYPE_ATTRS);
 		createEAttribute(facilityTypeEClass, FACILITY_TYPE__HAS_TABLE);
 		createEReference(facilityTypeEClass, FACILITY_TYPE__PARENT_TYPE_ID);
 
@@ -2534,6 +2567,8 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		initEReference(getFacility_DefaultWeightUomId(), theUomPackage.getUom(), null, "defaultWeightUomId", null, 0, 1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacility_DefaultWeightUomId().getEKeys().add(theUomPackage.getUom_UomId());
 		initEAttribute(getFacility_Description(), ecorePackage.getEString(), "description", null, 0, 1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacility_FacilityAttributes(), this.getFacilityAttribute(), null, "facilityAttributes", null, 0, -1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getFacility_FacilityLocations(), this.getFacilityLocation(), null, "facilityLocations", null, 0, -1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacility_FacilityName(), ecorePackage.getEString(), "facilityName", null, 0, 1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacility_FacilitySize(), ecorePackage.getEBigDecimal(), "facilitySize", null, 0, 1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFacility_FacilitySizeUomId(), theUomPackage.getUom(), null, "facilitySizeUomId", null, 0, 1, Facility.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2685,6 +2720,7 @@ public class FacilityPackageImpl extends EPackageImpl implements FacilityPackage
 		initEClass(facilityTypeEClass, FacilityType.class, "FacilityType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFacilityType_FacilityTypeId(), ecorePackage.getEString(), "facilityTypeId", null, 1, 1, FacilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityType_Description(), ecorePackage.getEString(), "description", null, 0, 1, FacilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFacilityType_FacilityTypeAttrs(), this.getFacilityTypeAttr(), null, "facilityTypeAttrs", null, 0, -1, FacilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFacilityType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, FacilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFacilityType_ParentTypeId(), this.getFacilityType(), null, "parentTypeId", null, 0, 1, FacilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getFacilityType_ParentTypeId().getEKeys().add(this.getFacilityType_FacilityTypeId());

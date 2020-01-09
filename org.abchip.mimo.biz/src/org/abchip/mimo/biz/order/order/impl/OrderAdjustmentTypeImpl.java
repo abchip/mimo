@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.biz.order.order.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.order.OrderAdjustment;
 import org.abchip.mimo.biz.order.order.OrderAdjustmentType;
+import org.abchip.mimo.biz.order.order.OrderAdjustmentTypeAttr;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -24,6 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentTypeImpl#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentTypeImpl#isHasTable <em>Has Table</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentTypeImpl#getOrderAdjustmentTypeAttrs <em>Order Adjustment Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -92,6 +95,17 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	@Override
 	public void setHasTable(boolean newHasTable) {
 		eSet(OrderPackage.Literals.ORDER_ADJUSTMENT_TYPE__HAS_TABLE, newHasTable);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<OrderAdjustmentTypeAttr> getOrderAdjustmentTypeAttrs() {
+		return (List<OrderAdjustmentTypeAttr>)eGet(OrderPackage.Literals.ORDER_ADJUSTMENT_TYPE__ORDER_ADJUSTMENT_TYPE_ATTRS, true);
 	}
 
 	/**

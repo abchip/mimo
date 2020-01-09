@@ -7,8 +7,10 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransType;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransTypeAttr;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeImpl#getAcctgTransTypeId <em>Acctg Trans Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeImpl#getAcctgTransTypeAttrs <em>Acctg Trans Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -131,6 +134,17 @@ public class AcctgTransTypeImpl extends BizEntityTypeImpl<AcctgTrans> implements
 	@Override
 	public void setAcctgTransTypeId(String newAcctgTransTypeId) {
 		eSet(LedgerPackage.Literals.ACCTG_TRANS_TYPE__ACCTG_TRANS_TYPE_ID, newAcctgTransTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<AcctgTransTypeAttr> getAcctgTransTypeAttrs() {
+		return (List<AcctgTransTypeAttr>)eGet(LedgerPackage.Literals.ACCTG_TRANS_TYPE__ACCTG_TRANS_TYPE_ATTRS, true);
 	}
 
 } //AcctgTransTypeImpl

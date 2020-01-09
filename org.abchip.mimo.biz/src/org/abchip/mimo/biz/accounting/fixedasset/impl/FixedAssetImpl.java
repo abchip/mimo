@@ -9,7 +9,12 @@ package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetAttribute;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
@@ -42,7 +47,11 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getDateNextService <em>Date Next Service</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getDepreciation <em>Depreciation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getExpectedEndOfLife <em>Expected End Of Life</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetAttributes <em>Fixed Asset Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetIdents <em>Fixed Asset Idents</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetMaints <em>Fixed Asset Maints</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetName <em>Fixed Asset Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetRegistrations <em>Fixed Asset Registrations</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getInstanceOfProductId <em>Instance Of Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getLocatedAtFacilityId <em>Located At Facility Id</em>}</li>
@@ -289,6 +298,39 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<FixedAssetAttribute> getFixedAssetAttributes() {
+		return (List<FixedAssetAttribute>)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_ATTRIBUTES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<FixedAssetIdent> getFixedAssetIdents() {
+		return (List<FixedAssetIdent>)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_IDENTS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<FixedAssetMaint> getFixedAssetMaints() {
+		return (List<FixedAssetMaint>)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_MAINTS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public String getFixedAssetName() {
 		return (String)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_NAME, true);
@@ -302,6 +344,17 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	@Override
 	public void setFixedAssetName(String newFixedAssetName) {
 		eSet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_NAME, newFixedAssetName);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<FixedAssetRegistration> getFixedAssetRegistrations() {
+		return (List<FixedAssetRegistration>)eGet(FixedassetPackage.Literals.FIXED_ASSET__FIXED_ASSET_REGISTRATIONS, true);
 	}
 
 	/**

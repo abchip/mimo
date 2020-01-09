@@ -243,13 +243,22 @@ public interface OpportunityPackage extends EPackage {
 	int SALES_FORECAST__QUOTA_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
+	 * The feature id for the '<em><b>Sales Forecast Details</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SALES_FORECAST__SALES_FORECAST_DETAILS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+
+	/**
 	 * The number of structural features of the '<em>Sales Forecast</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SALES_FORECAST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int SALES_FORECAST_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl <em>Sales Forecast Detail</em>}' class.
@@ -732,13 +741,49 @@ public interface OpportunityPackage extends EPackage {
 	int SALES_OPPORTUNITY__OPPORTUNITY_STAGE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
+	 * The feature id for the '<em><b>Sales Opportunity Competitors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SALES_OPPORTUNITY__SALES_OPPORTUNITY_COMPETITORS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Sales Opportunity Quotes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SALES_OPPORTUNITY__SALES_OPPORTUNITY_QUOTES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Sales Opportunity Trck Codes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SALES_OPPORTUNITY__SALES_OPPORTUNITY_TRCK_CODES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Sales Opportunity Work Efforts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SALES_OPPORTUNITY__SALES_OPPORTUNITY_WORK_EFFORTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+
+	/**
 	 * The feature id for the '<em><b>Type Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SALES_OPPORTUNITY__TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int SALES_OPPORTUNITY__TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of structural features of the '<em>Sales Opportunity</em>' class.
@@ -747,7 +792,7 @@ public interface OpportunityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SALES_OPPORTUNITY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int SALES_OPPORTUNITY_FEATURE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityCompetitorImpl <em>Sales Opportunity Competitor</em>}' class.
@@ -1590,6 +1635,17 @@ public interface OpportunityPackage extends EPackage {
 	EAttribute getSalesForecast_QuotaAmount();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getSalesForecastDetails <em>Sales Forecast Details</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sales Forecast Details</em>'.
+	 * @see org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getSalesForecastDetails()
+	 * @see #getSalesForecast()
+	 * @generated
+	 */
+	EReference getSalesForecast_SalesForecastDetails();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail <em>Sales Forecast Detail</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2014,6 +2070,50 @@ public interface OpportunityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSalesOpportunity_OpportunityStageId();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getSalesOpportunityCompetitors <em>Sales Opportunity Competitors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sales Opportunity Competitors</em>'.
+	 * @see org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getSalesOpportunityCompetitors()
+	 * @see #getSalesOpportunity()
+	 * @generated
+	 */
+	EReference getSalesOpportunity_SalesOpportunityCompetitors();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getSalesOpportunityQuotes <em>Sales Opportunity Quotes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sales Opportunity Quotes</em>'.
+	 * @see org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getSalesOpportunityQuotes()
+	 * @see #getSalesOpportunity()
+	 * @generated
+	 */
+	EReference getSalesOpportunity_SalesOpportunityQuotes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getSalesOpportunityTrckCodes <em>Sales Opportunity Trck Codes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sales Opportunity Trck Codes</em>'.
+	 * @see org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getSalesOpportunityTrckCodes()
+	 * @see #getSalesOpportunity()
+	 * @generated
+	 */
+	EReference getSalesOpportunity_SalesOpportunityTrckCodes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getSalesOpportunityWorkEfforts <em>Sales Opportunity Work Efforts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sales Opportunity Work Efforts</em>'.
+	 * @see org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getSalesOpportunityWorkEfforts()
+	 * @see #getSalesOpportunity()
+	 * @generated
+	 */
+	EReference getSalesOpportunity_SalesOpportunityWorkEfforts();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getTypeEnumId <em>Type Enum Id</em>}'.
@@ -2590,6 +2690,14 @@ public interface OpportunityPackage extends EPackage {
 		EAttribute SALES_FORECAST__QUOTA_AMOUNT = eINSTANCE.getSalesForecast_QuotaAmount();
 
 		/**
+		 * The meta object literal for the '<em><b>Sales Forecast Details</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SALES_FORECAST__SALES_FORECAST_DETAILS = eINSTANCE.getSalesForecast_SalesForecastDetails();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl <em>Sales Forecast Detail</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2906,6 +3014,38 @@ public interface OpportunityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SALES_OPPORTUNITY__OPPORTUNITY_STAGE_ID = eINSTANCE.getSalesOpportunity_OpportunityStageId();
+
+		/**
+		 * The meta object literal for the '<em><b>Sales Opportunity Competitors</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SALES_OPPORTUNITY__SALES_OPPORTUNITY_COMPETITORS = eINSTANCE.getSalesOpportunity_SalesOpportunityCompetitors();
+
+		/**
+		 * The meta object literal for the '<em><b>Sales Opportunity Quotes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SALES_OPPORTUNITY__SALES_OPPORTUNITY_QUOTES = eINSTANCE.getSalesOpportunity_SalesOpportunityQuotes();
+
+		/**
+		 * The meta object literal for the '<em><b>Sales Opportunity Trck Codes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SALES_OPPORTUNITY__SALES_OPPORTUNITY_TRCK_CODES = eINSTANCE.getSalesOpportunity_SalesOpportunityTrckCodes();
+
+		/**
+		 * The meta object literal for the '<em><b>Sales Opportunity Work Efforts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SALES_OPPORTUNITY__SALES_OPPORTUNITY_WORK_EFFORTS = eINSTANCE.getSalesOpportunity_SalesOpportunityWorkEfforts();
 
 		/**
 		 * The meta object literal for the '<em><b>Type Enum Id</b></em>' reference feature.

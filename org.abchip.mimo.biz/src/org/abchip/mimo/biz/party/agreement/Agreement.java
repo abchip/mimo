@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.party.agreement;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.RoleType;
@@ -23,7 +24,9 @@ import org.abchip.mimo.biz.product.product.Product;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementId <em>Agreement Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementAttributes <em>Agreement Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementDate <em>Agreement Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementItems <em>Agreement Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementTypeId <em>Agreement Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getFromDate <em>From Date</em>}</li>
@@ -66,6 +69,22 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @generated
 	 */
 	void setAgreementDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Agreement Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.AgreementItem}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Agreement Items</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agreement Items</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementItems()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<AgreementItem> getAgreementItems();
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -353,5 +372,21 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	 * @generated
 	 */
 	void setAgreementId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Agreement Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.AgreementAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Agreement Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agreement Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<AgreementAttribute> getAgreementAttributes();
 
 } // Agreement

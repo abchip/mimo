@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.promo;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.security.login.UserLogin;
@@ -30,6 +31,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getOverrideOrgPartyId <em>Override Org Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getProductPromoRules <em>Product Promo Rules</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getPromoName <em>Promo Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#getPromoText <em>Promo Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromo#isRequireCode <em>Require Code</em>}</li>
@@ -200,6 +202,22 @@ public interface ProductPromo extends BizEntity {
 	 * @generated
 	 */
 	void setOverrideOrgPartyId(Party value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Promo Rules</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.promo.ProductPromoRule}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Promo Rules</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Promo Rules</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromo_ProductPromoRules()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductPromoRule> getProductPromoRules();
 
 	/**
 	 * Returns the value of the '<em><b>Promo Name</b></em>' attribute.

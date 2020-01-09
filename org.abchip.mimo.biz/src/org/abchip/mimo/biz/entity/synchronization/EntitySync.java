@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.entity.synchronization;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -20,6 +21,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncId <em>Entity Sync Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncHistories <em>Entity Sync Histories</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncIncludeGroups <em>Entity Sync Include Groups</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getEntitySyncIncludes <em>Entity Sync Includes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#isForPullOnly <em>For Pull Only</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#isForPushOnly <em>For Push Only</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.synchronization.EntitySync#getKeepRemoveInfoHours <em>Keep Remove Info Hours</em>}</li>
@@ -66,6 +70,54 @@ public interface EntitySync extends BizEntity {
 	 * @generated
 	 */
 	void setEntitySyncId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Entity Sync Histories</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.synchronization.EntitySyncHistory}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Entity Sync Histories</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Entity Sync Histories</em>' reference list.
+	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncHistories()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<EntitySyncHistory> getEntitySyncHistories();
+
+	/**
+	 * Returns the value of the '<em><b>Entity Sync Include Groups</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Entity Sync Include Groups</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Entity Sync Include Groups</em>' reference list.
+	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncIncludeGroups()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<EntitySyncIncludeGroup> getEntitySyncIncludeGroups();
+
+	/**
+	 * Returns the value of the '<em><b>Entity Sync Includes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.synchronization.EntitySyncInclude}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Entity Sync Includes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Entity Sync Includes</em>' reference list.
+	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySync_EntitySyncIncludes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<EntitySyncInclude> getEntitySyncIncludes();
 
 	/**
 	 * Returns the value of the '<em><b>For Pull Only</b></em>' attribute.

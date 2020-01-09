@@ -7,7 +7,9 @@
  */
 package org.abchip.mimo.biz.party.party;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.contact.ValidContactMechRole;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +24,8 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.party.party.RoleType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.RoleType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.RoleType#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.RoleType#getRoleTypeAttrs <em>Role Type Attrs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.RoleType#getValidContactMechRoles <em>Valid Contact Mech Roles</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType()
@@ -106,6 +110,38 @@ public interface RoleType extends BizEntity {
 	 * @generated
 	 */
 	void setParentTypeId(RoleType value);
+
+	/**
+	 * Returns the value of the '<em><b>Role Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.RoleTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Role Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Role Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_RoleTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<RoleTypeAttr> getRoleTypeAttrs();
+
+	/**
+	 * Returns the value of the '<em><b>Valid Contact Mech Roles</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.ValidContactMechRole}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Valid Contact Mech Roles</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Valid Contact Mech Roles</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getRoleType_ValidContactMechRoles()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ValidContactMechRole> getValidContactMechRoles();
 
 	/**
 	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.

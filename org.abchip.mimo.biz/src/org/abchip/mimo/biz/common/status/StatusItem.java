@@ -7,7 +7,9 @@
  */
 package org.abchip.mimo.biz.common.status;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentStatus;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +22,9 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getMainStatusValidChanges <em>Main Status Valid Changes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getShipmentStatuss <em>Shipment Statuss</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getStatusCode <em>Status Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusItem#getStatusTypeId <em>Status Type Id</em>}</li>
  * </ul>
@@ -57,6 +61,22 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	void setDescription(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Main Status Valid Changes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.common.status.StatusValidChange}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main Status Valid Changes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Main Status Valid Changes</em>' reference list.
+	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_MainStatusValidChanges()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<StatusValidChange> getMainStatusValidChanges();
+
+	/**
 	 * Returns the value of the '<em><b>Sequence Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -81,6 +101,22 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	 * @generated
 	 */
 	void setSequenceId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Shipment Statuss</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Shipment Statuss</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Shipment Statuss</em>' reference list.
+	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_ShipmentStatuss()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ShipmentStatus> getShipmentStatuss();
 
 	/**
 	 * Returns the value of the '<em><b>Status Code</b></em>' attribute.

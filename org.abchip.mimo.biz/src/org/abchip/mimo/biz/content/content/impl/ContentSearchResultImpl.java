@@ -8,7 +8,9 @@
 package org.abchip.mimo.biz.content.content.impl;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.content.content.ContentPackage;
+import org.abchip.mimo.biz.content.content.ContentSearchConstraint;
 import org.abchip.mimo.biz.content.content.ContentSearchResult;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchResultImpl#getContentSearchResultId <em>Content Search Result Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchResultImpl#getContentSearchConstraints <em>Content Search Constraints</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchResultImpl#isIsAscending <em>Is Ascending</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchResultImpl#getNumResults <em>Num Results</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentSearchResultImpl#getOrderByName <em>Order By Name</em>}</li>
@@ -75,6 +78,17 @@ public class ContentSearchResultImpl extends BizEntityImpl implements ContentSea
 	@Override
 	public void setContentSearchResultId(String newContentSearchResultId) {
 		eSet(ContentPackage.Literals.CONTENT_SEARCH_RESULT__CONTENT_SEARCH_RESULT_ID, newContentSearchResultId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ContentSearchConstraint> getContentSearchConstraints() {
+		return (List<ContentSearchConstraint>)eGet(ContentPackage.Literals.CONTENT_SEARCH_RESULT__CONTENT_SEARCH_CONSTRAINTS, true);
 	}
 
 	/**

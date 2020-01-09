@@ -7,10 +7,12 @@
  */
 package org.abchip.mimo.biz.party.agreement.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementTerm;
 import org.abchip.mimo.biz.party.agreement.TermType;
+import org.abchip.mimo.biz.party.agreement.TermTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.TermTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.TermTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.TermTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.TermTypeImpl#getTermTypeAttrs <em>Term Type Attrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -112,6 +115,17 @@ public class TermTypeImpl extends BizEntityTypeImpl<AgreementTerm> implements Te
 	@Override
 	public void setParentTypeId(TermType newParentTypeId) {
 		eSet(AgreementPackage.Literals.TERM_TYPE__PARENT_TYPE_ID, newParentTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<TermTypeAttr> getTermTypeAttrs() {
+		return (List<TermTypeAttr>)eGet(AgreementPackage.Literals.TERM_TYPE__TERM_TYPE_ATTRS, true);
 	}
 
 	/**

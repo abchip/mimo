@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.shipment.shipment;
 
 import java.math.BigDecimal;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.uom.Uom;
 
@@ -25,6 +26,7 @@ import org.abchip.mimo.biz.common.uom.Uom;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType#getBoxLength <em>Box Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType#getBoxWeight <em>Box Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType#getBoxWidth <em>Box Width</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType#getCarrierShipmentBoxTypes <em>Carrier Shipment Box Types</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType#getDimensionUomId <em>Dimension Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType#getWeightUomId <em>Weight Uom Id</em>}</li>
@@ -138,6 +140,22 @@ public interface ShipmentBoxType extends BizEntity {
 	 * @generated
 	 */
 	void setBoxWidth(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Carrier Shipment Box Types</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Carrier Shipment Box Types</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Carrier Shipment Box Types</em>' reference list.
+	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentBoxType_CarrierShipmentBoxTypes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<CarrierShipmentBoxType> getCarrierShipmentBoxTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.biz.content.data.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.DataResourceType;
+import org.abchip.mimo.biz.content.data.DataResourceTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl#getDataResourceTypeAttrs <em>Data Resource Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -72,6 +75,17 @@ public class DataResourceTypeImpl extends BizEntityTypeImpl<DataResource> implem
 	@Override
 	public void setDataResourceTypeId(String newDataResourceTypeId) {
 		eSet(DataPackage.Literals.DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ID, newDataResourceTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<DataResourceTypeAttr> getDataResourceTypeAttrs() {
+		return (List<DataResourceTypeAttr>)eGet(DataPackage.Literals.DATA_RESOURCE_TYPE__DATA_RESOURCE_TYPE_ATTRS, true);
 	}
 
 	/**

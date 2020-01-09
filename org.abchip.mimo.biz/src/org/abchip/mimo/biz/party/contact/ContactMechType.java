@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.party.contact;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -19,6 +20,8 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypeAttrs <em>Contact Mech Type Attrs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypePurposes <em>Contact Mech Type Purposes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.ContactMechType#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -133,6 +136,38 @@ public interface ContactMechType extends BizEntityType<ContactMech> {
 	 * @generated
 	 */
 	void setContactMechTypeId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Contact Mech Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.ContactMechTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Contact Mech Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contact Mech Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechType_ContactMechTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ContactMechTypeAttr> getContactMechTypeAttrs();
+
+	/**
+	 * Returns the value of the '<em><b>Contact Mech Type Purposes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.contact.ContactMechTypePurpose}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Contact Mech Type Purposes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contact Mech Type Purposes</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechType_ContactMechTypePurposes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ContactMechTypePurpose> getContactMechTypePurposes();
 
 	boolean isPostalAddress();
 

@@ -7,10 +7,12 @@
  */
 package org.abchip.mimo.biz.common.enum_.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.common.enum_.EnumPackage;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.enum_.EnumerationType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -26,6 +28,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getEnumCode <em>Enum Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getEnumTypeId <em>Enum Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getUserLoginSecurityQuestions <em>User Login Security Questions</em>}</li>
  * </ul>
  *
  * @generated
@@ -112,6 +115,17 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	@Override
 	public void setSequenceId(String newSequenceId) {
 		eSet(EnumPackage.Literals.ENUMERATION__SEQUENCE_ID, newSequenceId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<UserLoginSecurityQuestion> getUserLoginSecurityQuestions() {
+		return (List<UserLoginSecurityQuestion>)eGet(EnumPackage.Literals.ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS, true);
 	}
 
 	/**

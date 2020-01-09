@@ -7,9 +7,12 @@
  */
 package org.abchip.mimo.biz.party.party.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.contact.ValidContactMechRole;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.party.party.RoleTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -24,6 +27,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.RoleTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.RoleTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.RoleTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.RoleTypeImpl#getRoleTypeAttrs <em>Role Type Attrs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.RoleTypeImpl#getValidContactMechRoles <em>Valid Contact Mech Roles</em>}</li>
  * </ul>
  *
  * @generated
@@ -110,6 +115,28 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	@Override
 	public void setParentTypeId(RoleType newParentTypeId) {
 		eSet(PartyPackage.Literals.ROLE_TYPE__PARENT_TYPE_ID, newParentTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<RoleTypeAttr> getRoleTypeAttrs() {
+		return (List<RoleTypeAttr>)eGet(PartyPackage.Literals.ROLE_TYPE__ROLE_TYPE_ATTRS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ValidContactMechRole> getValidContactMechRoles() {
+		return (List<ValidContactMechRole>)eGet(PartyPackage.Literals.ROLE_TYPE__VALID_CONTACT_MECH_ROLES, true);
 	}
 
 	/**

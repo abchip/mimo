@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.request;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.status.StatusItem;
@@ -30,10 +31,15 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getCustRequestAttributes <em>Cust Request Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getCustRequestCategoryId <em>Cust Request Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getCustRequestCommEvents <em>Cust Request Comm Events</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getCustRequestDate <em>Cust Request Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getCustRequestItems <em>Cust Request Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getCustRequestName <em>Cust Request Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getCustRequestNotes <em>Cust Request Notes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getCustRequestWorkEfforts <em>Cust Request Work Efforts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getFromPartyId <em>From Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequest#getFulfillContactMechId <em>Fulfill Contact Mech Id</em>}</li>
@@ -160,6 +166,22 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	void setCurrencyUomId(Uom value);
 
 	/**
+	 * Returns the value of the '<em><b>Cust Request Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cust Request Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cust Request Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<CustRequestAttribute> getCustRequestAttributes();
+
+	/**
 	 * Returns the value of the '<em><b>Cust Request Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -186,6 +208,22 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	void setCustRequestCategoryId(CustRequestCategory value);
 
 	/**
+	 * Returns the value of the '<em><b>Cust Request Comm Events</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestCommEvent}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cust Request Comm Events</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cust Request Comm Events</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestCommEvents()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<CustRequestCommEvent> getCustRequestCommEvents();
+
+	/**
 	 * Returns the value of the '<em><b>Cust Request Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -210,6 +248,22 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @generated
 	 */
 	void setCustRequestDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Cust Request Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestItem}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cust Request Items</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cust Request Items</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestItems()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<CustRequestItem> getCustRequestItems();
 
 	/**
 	 * Returns the value of the '<em><b>Cust Request Id</b></em>' attribute.
@@ -265,6 +319,22 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	void setCustRequestName(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Cust Request Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestNote}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cust Request Notes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cust Request Notes</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestNotes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<CustRequestNote> getCustRequestNotes();
+
+	/**
 	 * Returns the value of the '<em><b>Cust Request Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -289,6 +359,22 @@ public interface CustRequest extends BizEntityTyped<CustRequestType> {
 	 * @generated
 	 */
 	void setCustRequestTypeId(CustRequestType value);
+
+	/**
+	 * Returns the value of the '<em><b>Cust Request Work Efforts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.request.CustRequestWorkEffort}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cust Request Work Efforts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cust Request Work Efforts</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequest_CustRequestWorkEfforts()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<CustRequestWorkEffort> getCustRequestWorkEfforts();
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

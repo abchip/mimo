@@ -8,10 +8,13 @@
 package org.abchip.mimo.biz.party.party;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.humanres.ability.PartySkill;
+import org.abchip.mimo.biz.product.supplier.SupplierProductFeature;
 import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
@@ -32,9 +35,17 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.party.party.Party#isIsUnread <em>Is Unread</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Party#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Party#getLastModifiedDate <em>Last Modified Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Party#getPartyAttributes <em>Party Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Party#getPartyIdentifications <em>Party Identifications</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Party#getPartyNameHistories <em>Party Name Histories</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Party#getPartyNotes <em>Party Notes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Party#getPartyProfileDefaults <em>Party Profile Defaults</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Party#getPartyRoles <em>Party Roles</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Party#getPartySkills <em>Party Skills</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Party#getPartyTypeId <em>Party Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Party#getPreferredCurrencyUomId <em>Preferred Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Party#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Party#getSupplierProductFeatures <em>Supplier Product Features</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty()
@@ -251,6 +262,118 @@ public interface Party extends BizEntityTyped<PartyType> {
 	void setLastModifiedDate(Date value);
 
 	/**
+	 * Returns the value of the '<em><b>Party Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PartyAttribute> getPartyAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Party Identifications</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyIdentification}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Identifications</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Identifications</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyIdentifications()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PartyIdentification> getPartyIdentifications();
+
+	/**
+	 * Returns the value of the '<em><b>Party Name Histories</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyNameHistory}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Name Histories</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Name Histories</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyNameHistories()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PartyNameHistory> getPartyNameHistories();
+
+	/**
+	 * Returns the value of the '<em><b>Party Notes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyNote}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Notes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Notes</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyNotes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PartyNote> getPartyNotes();
+
+	/**
+	 * Returns the value of the '<em><b>Party Profile Defaults</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyProfileDefault}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Profile Defaults</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Profile Defaults</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyProfileDefaults()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PartyProfileDefault> getPartyProfileDefaults();
+
+	/**
+	 * Returns the value of the '<em><b>Party Roles</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.party.PartyRole}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Roles</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Roles</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartyRoles()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PartyRole> getPartyRoles();
+
+	/**
+	 * Returns the value of the '<em><b>Party Skills</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.humanres.ability.PartySkill}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Party Skills</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Party Skills</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_PartySkills()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PartySkill> getPartySkills();
+
+	/**
 	 * Returns the value of the '<em><b>Preferred Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -301,6 +424,22 @@ public interface Party extends BizEntityTyped<PartyType> {
 	 * @generated
 	 */
 	void setStatusId(StatusItem value);
+
+	/**
+	 * Returns the value of the '<em><b>Supplier Product Features</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Supplier Product Features</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Supplier Product Features</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getParty_SupplierProductFeatures()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SupplierProductFeature> getSupplierProductFeatures();
 
 	/**
 	 * Returns the value of the '<em><b>Party Type Id</b></em>' reference.

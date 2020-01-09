@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.marketing.segment;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.product.store.ProductStore;
 
@@ -22,6 +23,8 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupId <em>Segment Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupClassifications <em>Segment Group Classifications</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupGeos <em>Segment Group Geos</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupTypeId <em>Segment Group Type Id</em>}</li>
  * </ul>
  *
@@ -81,6 +84,38 @@ public interface SegmentGroup extends BizEntity {
 	 * @generated
 	 */
 	void setProductStoreId(ProductStore value);
+
+	/**
+	 * Returns the value of the '<em><b>Segment Group Classifications</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.segment.SegmentGroupClassification}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Segment Group Classifications</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Segment Group Classifications</em>' reference list.
+	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupClassifications()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SegmentGroupClassification> getSegmentGroupClassifications();
+
+	/**
+	 * Returns the value of the '<em><b>Segment Group Geos</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.segment.SegmentGroupGeo}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Segment Group Geos</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Segment Group Geos</em>' reference list.
+	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupGeos()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SegmentGroupGeo> getSegmentGroupGeos();
 
 	/**
 	 * Returns the value of the '<em><b>Segment Group Id</b></em>' attribute.

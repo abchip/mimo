@@ -8,8 +8,11 @@
 package org.abchip.mimo.biz.party.agreement.impl;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.agreement.Agreement;
+import org.abchip.mimo.biz.party.agreement.AgreementAttribute;
+import org.abchip.mimo.biz.party.agreement.AgreementItem;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementType;
 import org.abchip.mimo.biz.party.party.Party;
@@ -26,7 +29,9 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementImpl#getAgreementId <em>Agreement Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementImpl#getAgreementAttributes <em>Agreement Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementImpl#getAgreementDate <em>Agreement Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementImpl#getAgreementItems <em>Agreement Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementImpl#getAgreementTypeId <em>Agreement Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementImpl#getFromDate <em>From Date</em>}</li>
@@ -83,6 +88,17 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	@Override
 	public void setAgreementDate(Date newAgreementDate) {
 		eSet(AgreementPackage.Literals.AGREEMENT__AGREEMENT_DATE, newAgreementDate);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<AgreementItem> getAgreementItems() {
+		return (List<AgreementItem>)eGet(AgreementPackage.Literals.AGREEMENT__AGREEMENT_ITEMS, true);
 	}
 
 	/**
@@ -303,6 +319,17 @@ public class AgreementImpl extends BizEntityTypedImpl<AgreementType> implements 
 	@Override
 	public void setAgreementId(String newAgreementId) {
 		eSet(AgreementPackage.Literals.AGREEMENT__AGREEMENT_ID, newAgreementId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<AgreementAttribute> getAgreementAttributes() {
+		return (List<AgreementAttribute>)eGet(AgreementPackage.Literals.AGREEMENT__AGREEMENT_ATTRIBUTES, true);
 	}
 
 } //AgreementImpl

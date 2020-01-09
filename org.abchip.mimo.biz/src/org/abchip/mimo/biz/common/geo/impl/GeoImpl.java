@@ -7,7 +7,10 @@
  */
 package org.abchip.mimo.biz.common.geo.impl;
 
+import java.util.List;
+import org.abchip.mimo.biz.accounting.tax.TaxAuthority;
 import org.abchip.mimo.biz.common.geo.Geo;
+import org.abchip.mimo.biz.common.geo.GeoAssoc;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
@@ -27,6 +30,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getGeoName <em>Geo Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getGeoSecCode <em>Geo Sec Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getGeoTypeId <em>Geo Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getMainGeoAssocs <em>Main Geo Assocs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getTaxAuthTaxAuthorities <em>Tax Auth Tax Authorities</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getWellKnownText <em>Well Known Text</em>}</li>
  * </ul>
  *
@@ -174,6 +179,28 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	@Override
 	public void setGeoTypeId(GeoType newGeoTypeId) {
 		eSet(GeoPackage.Literals.GEO__GEO_TYPE_ID, newGeoTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<GeoAssoc> getMainGeoAssocs() {
+		return (List<GeoAssoc>)eGet(GeoPackage.Literals.GEO__MAIN_GEO_ASSOCS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<TaxAuthority> getTaxAuthTaxAuthorities() {
+		return (List<TaxAuthority>)eGet(GeoPackage.Literals.GEO__TAX_AUTH_TAX_AUTHORITIES, true);
 	}
 
 	/**

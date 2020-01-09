@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.product.subscription.impl;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
@@ -19,6 +20,8 @@ import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.subscription.Subscription;
+import org.abchip.mimo.biz.product.subscription.SubscriptionAttribute;
+import org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
 import org.abchip.mimo.biz.product.subscription.SubscriptionType;
@@ -61,6 +64,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getPurchaseFromDate <em>Purchase From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getPurchaseThruDate <em>Purchase Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getSubscriptionAttributes <em>Subscription Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getSubscriptionCommEvents <em>Subscription Comm Events</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getSubscriptionTypeId <em>Subscription Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getThruDate <em>Thru Date</em>}</li>
@@ -574,6 +579,28 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	@Override
 	public void setRoleTypeId(RoleType newRoleTypeId) {
 		eSet(SubscriptionPackage.Literals.SUBSCRIPTION__ROLE_TYPE_ID, newRoleTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<SubscriptionAttribute> getSubscriptionAttributes() {
+		return (List<SubscriptionAttribute>)eGet(SubscriptionPackage.Literals.SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<SubscriptionCommEvent> getSubscriptionCommEvents() {
+		return (List<SubscriptionCommEvent>)eGet(SubscriptionPackage.Literals.SUBSCRIPTION__SUBSCRIPTION_COMM_EVENTS, true);
 	}
 
 	/**

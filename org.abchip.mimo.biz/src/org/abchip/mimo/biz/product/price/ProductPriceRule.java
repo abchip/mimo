@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.product.price;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -23,6 +24,8 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#isIsSale <em>Is Sale</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getProductPriceActions <em>Product Price Actions</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getProductPriceConds <em>Product Price Conds</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getRuleName <em>Rule Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceRule#getThruDate <em>Thru Date</em>}</li>
  * </ul>
@@ -109,6 +112,38 @@ public interface ProductPriceRule extends BizEntity {
 	 * @generated
 	 */
 	void setIsSale(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Price Actions</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.price.ProductPriceAction}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Price Actions</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Price Actions</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ProductPriceActions()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductPriceAction> getProductPriceActions();
+
+	/**
+	 * Returns the value of the '<em><b>Product Price Conds</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.price.ProductPriceCond}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Price Conds</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Price Conds</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ProductPriceConds()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductPriceCond> getProductPriceConds();
 
 	/**
 	 * Returns the value of the '<em><b>Rule Name</b></em>' attribute.

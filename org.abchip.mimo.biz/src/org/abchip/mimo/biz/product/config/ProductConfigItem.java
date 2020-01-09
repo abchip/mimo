@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.config;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -20,6 +21,7 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getConfigItemName <em>Config Item Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getConfigItemProductConfigOptions <em>Config Item Product Config Options</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getConfigItemTypeId <em>Config Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigItem#getImageUrl <em>Image Url</em>}</li>
@@ -56,6 +58,22 @@ public interface ProductConfigItem extends BizEntity {
 	 * @generated
 	 */
 	void setConfigItemName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Config Item Product Config Options</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.config.ProductConfigOption}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Config Item Product Config Options</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Config Item Product Config Options</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem_ConfigItemProductConfigOptions()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductConfigOption> getConfigItemProductConfigOptions();
 
 	/**
 	 * Returns the value of the '<em><b>Config Item Type Id</b></em>' attribute.

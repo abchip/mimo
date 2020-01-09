@@ -1007,8 +1007,18 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	 * @generated
 	 */
 	@Override
+	public EReference getRequirement_RequirementAttributes() {
+		return (EReference)requirementEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getRequirement_RequirementStartDate() {
-		return (EAttribute)requirementEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)requirementEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -1017,17 +1027,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	 * @generated
 	 */
 	@Override
-	public EReference getRequirement_RequirementTypeId() {
-		return (EReference)requirementEClass.getEStructuralFeatures().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRequirement_StatusId() {
+	public EReference getRequirement_RequirementStatuss() {
 		return (EReference)requirementEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -1037,8 +1037,38 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	 * @generated
 	 */
 	@Override
+	public EReference getRequirement_RequirementTypeId() {
+		return (EReference)requirementEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRequirement_StatusId() {
+		return (EReference)requirementEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getRequirement_UseCase() {
-		return (EAttribute)requirementEClass.getEStructuralFeatures().get(17);
+		return (EAttribute)requirementEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRequirement_WorkRequirementFulfillments() {
+		return (EReference)requirementEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -1347,6 +1377,16 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 	 * @generated
 	 */
 	@Override
+	public EReference getRequirementType_RequirementTypeAttrs() {
+		return (EReference)requirementTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getRequirementTypeAttr() {
 		return requirementTypeAttrEClass;
 	}
@@ -1507,10 +1547,13 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		createEAttribute(requirementEClass, REQUIREMENT__QUANTITY);
 		createEAttribute(requirementEClass, REQUIREMENT__REASON);
 		createEAttribute(requirementEClass, REQUIREMENT__REQUIRED_BY_DATE);
+		createEReference(requirementEClass, REQUIREMENT__REQUIREMENT_ATTRIBUTES);
 		createEAttribute(requirementEClass, REQUIREMENT__REQUIREMENT_START_DATE);
+		createEReference(requirementEClass, REQUIREMENT__REQUIREMENT_STATUSS);
 		createEReference(requirementEClass, REQUIREMENT__REQUIREMENT_TYPE_ID);
 		createEReference(requirementEClass, REQUIREMENT__STATUS_ID);
 		createEAttribute(requirementEClass, REQUIREMENT__USE_CASE);
+		createEReference(requirementEClass, REQUIREMENT__WORK_REQUIREMENT_FULFILLMENTS);
 
 		requirementAttributeEClass = createEClass(REQUIREMENT_ATTRIBUTE);
 		createEReference(requirementAttributeEClass, REQUIREMENT_ATTRIBUTE__REQUIREMENT_ID);
@@ -1547,6 +1590,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		createEAttribute(requirementTypeEClass, REQUIREMENT_TYPE__DESCRIPTION);
 		createEAttribute(requirementTypeEClass, REQUIREMENT_TYPE__HAS_TABLE);
 		createEReference(requirementTypeEClass, REQUIREMENT_TYPE__PARENT_TYPE_ID);
+		createEReference(requirementTypeEClass, REQUIREMENT_TYPE__REQUIREMENT_TYPE_ATTRS);
 
 		requirementTypeAttrEClass = createEClass(REQUIREMENT_TYPE_ATTR);
 		createEReference(requirementTypeAttrEClass, REQUIREMENT_TYPE_ATTR__REQUIREMENT_TYPE_ID);
@@ -1660,12 +1704,15 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		initEAttribute(getRequirement_Quantity(), ecorePackage.getEBigDecimal(), "quantity", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_Reason(), ecorePackage.getEString(), "reason", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_RequiredByDate(), ecorePackage.getEDate(), "requiredByDate", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirement_RequirementAttributes(), this.getRequirementAttribute(), null, "requirementAttributes", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_RequirementStartDate(), ecorePackage.getEDate(), "requirementStartDate", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirement_RequirementStatuss(), this.getRequirementStatus(), null, "requirementStatuss", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRequirement_RequirementTypeId(), this.getRequirementType(), null, "requirementTypeId", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getRequirement_RequirementTypeId().getEKeys().add(this.getRequirementType_RequirementTypeId());
 		initEReference(getRequirement_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getRequirement_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEAttribute(getRequirement_UseCase(), ecorePackage.getEString(), "useCase", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirement_WorkRequirementFulfillments(), this.getWorkRequirementFulfillment(), null, "workRequirementFulfillments", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(requirementAttributeEClass, RequirementAttribute.class, "RequirementAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRequirementAttribute_RequirementId(), this.getRequirement(), null, "requirementId", null, 1, 1, RequirementAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1713,6 +1760,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		initEAttribute(getRequirementType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequirementType_ParentTypeId(), this.getRequirementType(), null, "parentTypeId", null, 0, 1, RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getRequirementType_ParentTypeId().getEKeys().add(this.getRequirementType_RequirementTypeId());
+		initEReference(getRequirementType_RequirementTypeAttrs(), this.getRequirementTypeAttr(), null, "requirementTypeAttrs", null, 0, -1, RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(requirementTypeAttrEClass, RequirementTypeAttr.class, "RequirementTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRequirementTypeAttr_RequirementTypeId(), this.getRequirementType(), null, "requirementTypeId", null, 1, 1, RequirementTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

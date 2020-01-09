@@ -727,6 +727,16 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getCustomMethod_FixedAssetDepMethods() {
+		return (EReference)customMethodEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getCustomMethodType() {
 		return customMethodTypeEClass;
 	}
@@ -805,6 +815,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_NAME);
 		createEReference(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID);
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__DESCRIPTION);
+		createEReference(customMethodEClass, CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS);
 
 		customMethodTypeEClass = createEClass(CUSTOM_METHOD_TYPE);
 		createEAttribute(customMethodTypeEClass, CUSTOM_METHOD_TYPE__CUSTOM_METHOD_TYPE_ID);
@@ -838,6 +849,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		FixedassetPackage theFixedassetPackage = (FixedassetPackage)EPackage.Registry.INSTANCE.getEPackage(FixedassetPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -860,6 +872,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		initEReference(getCustomMethod_CustomMethodTypeId(), this.getCustomMethodType(), null, "customMethodTypeId", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCustomMethod_CustomMethodTypeId().getEKeys().add(this.getCustomMethodType_CustomMethodTypeId());
 		initEAttribute(getCustomMethod_Description(), ecorePackage.getEString(), "description", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomMethod_FixedAssetDepMethods(), theFixedassetPackage.getFixedAssetDepMethod(), null, "fixedAssetDepMethods", null, 0, -1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(customMethodTypeEClass, CustomMethodType.class, "CustomMethodType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomMethodType_CustomMethodTypeId(), ecorePackage.getEString(), "customMethodTypeId", null, 1, 1, CustomMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

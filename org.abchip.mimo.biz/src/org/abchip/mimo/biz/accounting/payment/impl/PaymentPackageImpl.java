@@ -1185,8 +1185,18 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getBillingAccountTerm_BillingAccountTermAttrs() {
+		return (EReference)billingAccountTermEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getBillingAccountTerm_TermDays() {
-		return (EAttribute)billingAccountTermEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)billingAccountTermEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1196,7 +1206,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 */
 	@Override
 	public EReference getBillingAccountTerm_TermTypeId() {
-		return (EReference)billingAccountTermEClass.getEStructuralFeatures().get(3);
+		return (EReference)billingAccountTermEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1206,7 +1216,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 */
 	@Override
 	public EAttribute getBillingAccountTerm_TermValue() {
-		return (EAttribute)billingAccountTermEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)billingAccountTermEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1216,7 +1226,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 */
 	@Override
 	public EReference getBillingAccountTerm_UomId() {
-		return (EReference)billingAccountTermEClass.getEStructuralFeatures().get(5);
+		return (EReference)billingAccountTermEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2185,7 +2195,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPayment_PaymentGatewayResponseId() {
+	public EReference getPayment_PaymentAttributes() {
 		return (EReference)paymentEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -2195,7 +2205,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPayment_PaymentMethodId() {
+	public EReference getPayment_PaymentGatewayResponseId() {
 		return (EReference)paymentEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -2205,7 +2215,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPayment_PaymentMethodTypeId() {
+	public EReference getPayment_PaymentMethodId() {
 		return (EReference)paymentEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -2215,7 +2225,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPayment_PaymentPreferenceId() {
+	public EReference getPayment_PaymentMethodTypeId() {
 		return (EReference)paymentEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -2225,8 +2235,18 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getPayment_PaymentPreferenceId() {
+		return (EReference)paymentEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getPayment_PaymentRefNum() {
-		return (EAttribute)paymentEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)paymentEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -2236,16 +2256,6 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 */
 	@Override
 	public EReference getPayment_PaymentTypeId() {
-		return (EReference)paymentEClass.getEStructuralFeatures().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPayment_RoleTypeIdTo() {
 		return (EReference)paymentEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -2255,8 +2265,18 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPayment_StatusId() {
+	public EReference getPayment_RoleTypeIdTo() {
 		return (EReference)paymentEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPayment_StatusId() {
+		return (EReference)paymentEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -4745,6 +4765,16 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getPaymentMethodType_PaymentMethodTypeGlAccounts() {
+		return (EReference)paymentMethodTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getPaymentMethodTypeGlAccount() {
 		return paymentMethodTypeGlAccountEClass;
 	}
@@ -4827,6 +4857,26 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 	@Override
 	public EReference getPaymentType_ParentTypeId() {
 		return (EReference)paymentTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPaymentType_PaymentGlAccountTypeMaps() {
+		return (EReference)paymentTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPaymentType_PaymentTypeAttrs() {
+		return (EReference)paymentTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -5058,6 +5108,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		billingAccountTermEClass = createEClass(BILLING_ACCOUNT_TERM);
 		createEAttribute(billingAccountTermEClass, BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_TERM_ID);
 		createEReference(billingAccountTermEClass, BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_ID);
+		createEReference(billingAccountTermEClass, BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_TERM_ATTRS);
 		createEAttribute(billingAccountTermEClass, BILLING_ACCOUNT_TERM__TERM_DAYS);
 		createEReference(billingAccountTermEClass, BILLING_ACCOUNT_TERM__TERM_TYPE_ID);
 		createEAttribute(billingAccountTermEClass, BILLING_ACCOUNT_TERM__TERM_VALUE);
@@ -5169,6 +5220,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		createEReference(paymentEClass, PAYMENT__OVERRIDE_GL_ACCOUNT_ID);
 		createEReference(paymentEClass, PAYMENT__PARTY_ID_FROM);
 		createEReference(paymentEClass, PAYMENT__PARTY_ID_TO);
+		createEReference(paymentEClass, PAYMENT__PAYMENT_ATTRIBUTES);
 		createEReference(paymentEClass, PAYMENT__PAYMENT_GATEWAY_RESPONSE_ID);
 		createEReference(paymentEClass, PAYMENT__PAYMENT_METHOD_ID);
 		createEReference(paymentEClass, PAYMENT__PAYMENT_METHOD_TYPE_ID);
@@ -5450,6 +5502,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		createEAttribute(paymentMethodTypeEClass, PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID);
 		createEReference(paymentMethodTypeEClass, PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID);
 		createEAttribute(paymentMethodTypeEClass, PAYMENT_METHOD_TYPE__DESCRIPTION);
+		createEReference(paymentMethodTypeEClass, PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_GL_ACCOUNTS);
 
 		paymentMethodTypeGlAccountEClass = createEClass(PAYMENT_METHOD_TYPE_GL_ACCOUNT);
 		createEReference(paymentMethodTypeGlAccountEClass, PAYMENT_METHOD_TYPE_GL_ACCOUNT__PAYMENT_METHOD_TYPE_ID);
@@ -5461,6 +5514,8 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		createEAttribute(paymentTypeEClass, PAYMENT_TYPE__DESCRIPTION);
 		createEAttribute(paymentTypeEClass, PAYMENT_TYPE__HAS_TABLE);
 		createEReference(paymentTypeEClass, PAYMENT_TYPE__PARENT_TYPE_ID);
+		createEReference(paymentTypeEClass, PAYMENT_TYPE__PAYMENT_GL_ACCOUNT_TYPE_MAPS);
+		createEReference(paymentTypeEClass, PAYMENT_TYPE__PAYMENT_TYPE_ATTRS);
 
 		paymentTypeAttrEClass = createEClass(PAYMENT_TYPE_ATTR);
 		createEReference(paymentTypeAttrEClass, PAYMENT_TYPE_ATTR__PAYMENT_TYPE_ID);
@@ -5630,6 +5685,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEAttribute(getBillingAccountTerm_BillingAccountTermId(), ecorePackage.getEString(), "billingAccountTermId", null, 1, 1, BillingAccountTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBillingAccountTerm_BillingAccountId(), this.getBillingAccount(), null, "billingAccountId", null, 0, 1, BillingAccountTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getBillingAccountTerm_BillingAccountId().getEKeys().add(this.getBillingAccount_BillingAccountId());
+		initEReference(getBillingAccountTerm_BillingAccountTermAttrs(), this.getBillingAccountTermAttr(), null, "billingAccountTermAttrs", null, 0, -1, BillingAccountTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBillingAccountTerm_TermDays(), ecorePackage.getELong(), "termDays", null, 0, 1, BillingAccountTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBillingAccountTerm_TermTypeId(), theAgreementPackage.getTermType(), null, "termTypeId", null, 0, 1, BillingAccountTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getBillingAccountTerm_TermTypeId().getEKeys().add(theAgreementPackage.getTermType_TermTypeId());
@@ -5762,6 +5818,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		getPayment_PartyIdFrom().getEKeys().add(thePartyPackage_1.getParty_PartyId());
 		initEReference(getPayment_PartyIdTo(), thePartyPackage_1.getParty(), null, "partyIdTo", null, 0, 1, Payment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPayment_PartyIdTo().getEKeys().add(thePartyPackage_1.getParty_PartyId());
+		initEReference(getPayment_PaymentAttributes(), this.getPaymentAttribute(), null, "paymentAttributes", null, 0, -1, Payment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getPayment_PaymentGatewayResponseId(), this.getPaymentGatewayResponse(), null, "paymentGatewayResponseId", null, 0, 1, Payment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPayment_PaymentGatewayResponseId().getEKeys().add(this.getPaymentGatewayResponse_PaymentGatewayResponseId());
 		initEReference(getPayment_PaymentMethodId(), this.getPaymentMethod(), null, "paymentMethodId", null, 0, 1, Payment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6084,6 +6141,7 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEReference(getPaymentMethodType_DefaultGlAccountId(), theLedgerPackage.getGlAccount(), null, "defaultGlAccountId", null, 0, 1, PaymentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPaymentMethodType_DefaultGlAccountId().getEKeys().add(theLedgerPackage.getGlAccount_GlAccountId());
 		initEAttribute(getPaymentMethodType_Description(), ecorePackage.getEString(), "description", null, 0, 1, PaymentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPaymentMethodType_PaymentMethodTypeGlAccounts(), this.getPaymentMethodTypeGlAccount(), null, "paymentMethodTypeGlAccounts", null, 0, -1, PaymentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(paymentMethodTypeGlAccountEClass, PaymentMethodTypeGlAccount.class, "PaymentMethodTypeGlAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPaymentMethodTypeGlAccount_PaymentMethodTypeId(), this.getPaymentMethodType(), null, "paymentMethodTypeId", null, 1, 1, PaymentMethodTypeGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6099,6 +6157,8 @@ public class PaymentPackageImpl extends EPackageImpl implements PaymentPackage {
 		initEAttribute(getPaymentType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, PaymentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPaymentType_ParentTypeId(), this.getPaymentType(), null, "parentTypeId", null, 0, 1, PaymentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getPaymentType_ParentTypeId().getEKeys().add(this.getPaymentType_PaymentTypeId());
+		initEReference(getPaymentType_PaymentGlAccountTypeMaps(), this.getPaymentGlAccountTypeMap(), null, "paymentGlAccountTypeMaps", null, 0, -1, PaymentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPaymentType_PaymentTypeAttrs(), this.getPaymentTypeAttr(), null, "paymentTypeAttrs", null, 0, -1, PaymentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(paymentTypeAttrEClass, PaymentTypeAttr.class, "PaymentTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPaymentTypeAttr_PaymentTypeId(), this.getPaymentType(), null, "paymentTypeId", null, 1, 1, PaymentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

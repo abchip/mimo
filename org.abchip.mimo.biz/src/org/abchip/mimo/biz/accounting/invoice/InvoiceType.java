@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.accounting.invoice;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -21,6 +22,7 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceType#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceType#isHasTable <em>Has Table</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceType#getInvoiceTypeAttrs <em>Invoice Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -80,6 +82,22 @@ public interface InvoiceType extends BizEntityType<Invoice> {
 	 * @generated
 	 */
 	void setHasTable(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Invoice Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.invoice.InvoiceTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Invoice Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Invoice Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceType_InvoiceTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<InvoiceTypeAttr> getInvoiceTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.

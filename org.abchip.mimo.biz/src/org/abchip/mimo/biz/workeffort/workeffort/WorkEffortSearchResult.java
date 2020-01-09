@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.workeffort.workeffort;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -26,6 +27,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult#getSearchDate <em>Search Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult#getSecondsTotal <em>Seconds Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchResult#getWorkEffortSearchConstraints <em>Work Effort Search Constraints</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult()
@@ -162,6 +164,22 @@ public interface WorkEffortSearchResult extends BizEntity {
 	 * @generated
 	 */
 	void setVisitId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Work Effort Search Constraints</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSearchConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Effort Search Constraints</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Effort Search Constraints</em>' reference list.
+	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSearchResult_WorkEffortSearchConstraints()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WorkEffortSearchConstraint> getWorkEffortSearchConstraints();
 
 	/**
 	 * Returns the value of the '<em><b>Work Effort Search Result Id</b></em>' attribute.

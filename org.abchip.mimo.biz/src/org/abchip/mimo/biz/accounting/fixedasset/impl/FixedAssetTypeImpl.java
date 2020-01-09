@@ -7,8 +7,10 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeAttr;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeImpl#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeImpl#getFixedAssetTypeAttrs <em>Fixed Asset Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -71,6 +74,17 @@ public class FixedAssetTypeImpl extends BizEntityTypeImpl<FixedAsset> implements
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__DESCRIPTION, newDescription);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<FixedAssetTypeAttr> getFixedAssetTypeAttrs() {
+		return (List<FixedAssetTypeAttr>)eGet(FixedassetPackage.Literals.FIXED_ASSET_TYPE__FIXED_ASSET_TYPE_ATTRS, true);
 	}
 
 	/**

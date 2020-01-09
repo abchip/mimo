@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.document;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -20,6 +21,7 @@ import org.abchip.mimo.biz.BizEntityType;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentType#getDocumentTypeId <em>Document Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentType#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.document.DocumentType#getDocumentTypeAttrs <em>Document Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.DocumentType#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
@@ -54,6 +56,22 @@ public interface DocumentType extends BizEntityType<Document> {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Document Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.document.DocumentTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Document Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Document Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentType_DocumentTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<DocumentTypeAttr> getDocumentTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Has Table</b></em>' attribute.

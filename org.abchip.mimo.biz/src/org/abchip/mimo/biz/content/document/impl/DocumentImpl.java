@@ -8,7 +8,9 @@
 package org.abchip.mimo.biz.content.document.impl;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.content.document.Document;
+import org.abchip.mimo.biz.content.document.DocumentAttribute;
 import org.abchip.mimo.biz.content.document.DocumentPackage;
 import org.abchip.mimo.biz.content.document.DocumentType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentId <em>Document Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDateCreated <em>Date Created</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentAttributes <em>Document Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentLocation <em>Document Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentText <em>Document Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentTypeId <em>Document Type Id</em>}</li>
@@ -96,6 +99,17 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	@Override
 	public void setDateCreated(Date newDateCreated) {
 		eSet(DocumentPackage.Literals.DOCUMENT__DATE_CREATED, newDateCreated);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<DocumentAttribute> getDocumentAttributes() {
+		return (List<DocumentAttribute>)eGet(DocumentPackage.Literals.DOCUMENT__DOCUMENT_ATTRIBUTES, true);
 	}
 
 	/**

@@ -7,9 +7,12 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.accounting.payment.PaymentType;
+import org.abchip.mimo.biz.accounting.payment.PaymentTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -25,6 +28,8 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeImpl#getPaymentGlAccountTypeMaps <em>Payment Gl Account Type Maps</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeImpl#getPaymentTypeAttrs <em>Payment Type Attrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,6 +116,28 @@ public class PaymentTypeImpl extends BizEntityTypeImpl<Payment> implements Payme
 	@Override
 	public void setParentTypeId(PaymentType newParentTypeId) {
 		eSet(PaymentPackage.Literals.PAYMENT_TYPE__PARENT_TYPE_ID, newParentTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<PaymentGlAccountTypeMap> getPaymentGlAccountTypeMaps() {
+		return (List<PaymentGlAccountTypeMap>)eGet(PaymentPackage.Literals.PAYMENT_TYPE__PAYMENT_GL_ACCOUNT_TYPE_MAPS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<PaymentTypeAttr> getPaymentTypeAttrs() {
+		return (List<PaymentTypeAttr>)eGet(PaymentPackage.Literals.PAYMENT_TYPE__PAYMENT_TYPE_ATTRS, true);
 	}
 
 	/**

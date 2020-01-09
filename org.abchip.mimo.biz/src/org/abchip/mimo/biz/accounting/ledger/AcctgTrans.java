@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.accounting.ledger;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
@@ -32,6 +33,8 @@ import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransId <em>Acctg Trans Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransAttributes <em>Acctg Trans Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransEntries <em>Acctg Trans Entries</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getAcctgTransTypeId <em>Acctg Trans Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTrans#getCreatedDate <em>Created Date</em>}</li>
@@ -794,5 +797,37 @@ public interface AcctgTrans extends BizEntityTyped<AcctgTransType> {
 	 * @generated
 	 */
 	void setAcctgTransId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Acctg Trans Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.AcctgTransAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Acctg Trans Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Acctg Trans Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_AcctgTransAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<AcctgTransAttribute> getAcctgTransAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Acctg Trans Entries</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Acctg Trans Entries</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Acctg Trans Entries</em>' reference list.
+	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTrans_AcctgTransEntries()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<AcctgTransEntry> getAcctgTransEntries();
 
 } // AcctgTrans

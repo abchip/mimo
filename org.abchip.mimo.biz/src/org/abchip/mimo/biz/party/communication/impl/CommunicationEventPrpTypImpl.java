@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.party.communication.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp;
 import org.abchip.mimo.biz.party.communication.CommunicationEventPurpose;
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPrpTypImpl#getCommunicationEventPrpTypId <em>Communication Event Prp Typ Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPrpTypImpl#getCommunicationEventPurposes <em>Communication Event Purposes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPrpTypImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPrpTypImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPrpTypImpl#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -131,6 +133,17 @@ public class CommunicationEventPrpTypImpl extends BizEntityTypeImpl<Communicatio
 	@Override
 	public void setCommunicationEventPrpTypId(String newCommunicationEventPrpTypId) {
 		eSet(CommunicationPackage.Literals.COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PRP_TYP_ID, newCommunicationEventPrpTypId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CommunicationEventPurpose> getCommunicationEventPurposes() {
+		return (List<CommunicationEventPurpose>)eGet(CommunicationPackage.Literals.COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES, true);
 	}
 
 } //CommunicationEventPrpTypImpl

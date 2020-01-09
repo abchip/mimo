@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.survey;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.geo.Geo;
 
@@ -27,6 +28,7 @@ import org.abchip.mimo.biz.common.geo.Geo;
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getHint <em>Hint</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getQuestion <em>Question</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getSurveyQuestionCategoryId <em>Survey Question Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getSurveyQuestionOptions <em>Survey Question Options</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestion#getSurveyQuestionTypeId <em>Survey Question Type Id</em>}</li>
  * </ul>
  *
@@ -216,6 +218,22 @@ public interface SurveyQuestion extends BizEntity {
 	 * @generated
 	 */
 	void setSurveyQuestionCategoryId(SurveyQuestionCategory value);
+
+	/**
+	 * Returns the value of the '<em><b>Survey Question Options</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.survey.SurveyQuestionOption}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Survey Question Options</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Survey Question Options</em>' reference list.
+	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestion_SurveyQuestionOptions()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SurveyQuestionOption> getSurveyQuestionOptions();
 
 	/**
 	 * Returns the value of the '<em><b>Survey Question Id</b></em>' attribute.

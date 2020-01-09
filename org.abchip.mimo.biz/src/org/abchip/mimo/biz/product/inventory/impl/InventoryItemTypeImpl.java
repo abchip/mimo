@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.biz.product.inventory.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
+import org.abchip.mimo.biz.product.inventory.InventoryItemTypeAttr;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -24,6 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemTypeImpl#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemTypeImpl#isHasTable <em>Has Table</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemTypeImpl#getInventoryItemTypeAttrs <em>Inventory Item Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  * </ul>
  *
@@ -92,6 +95,17 @@ public class InventoryItemTypeImpl extends BizEntityTypeImpl<InventoryItem> impl
 	@Override
 	public void setHasTable(boolean newHasTable) {
 		eSet(InventoryPackage.Literals.INVENTORY_ITEM_TYPE__HAS_TABLE, newHasTable);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<InventoryItemTypeAttr> getInventoryItemTypeAttrs() {
+		return (List<InventoryItemTypeAttr>)eGet(InventoryPackage.Literals.INVENTORY_ITEM_TYPE__INVENTORY_ITEM_TYPE_ATTRS, true);
 	}
 
 	/**

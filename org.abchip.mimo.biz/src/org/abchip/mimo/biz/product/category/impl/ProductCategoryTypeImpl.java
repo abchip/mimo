@@ -7,10 +7,12 @@
  */
 package org.abchip.mimo.biz.product.category.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryType;
+import org.abchip.mimo.biz.product.category.ProductCategoryTypeAttr;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryTypeImpl#getProductCategoryTypeAttrs <em>Product Category Type Attrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -112,6 +115,17 @@ public class ProductCategoryTypeImpl extends BizEntityTypeImpl<ProductCategory> 
 	@Override
 	public void setParentTypeId(ProductCategoryType newParentTypeId) {
 		eSet(CategoryPackage.Literals.PRODUCT_CATEGORY_TYPE__PARENT_TYPE_ID, newParentTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductCategoryTypeAttr> getProductCategoryTypeAttrs() {
+		return (List<ProductCategoryTypeAttr>)eGet(CategoryPackage.Literals.PRODUCT_CATEGORY_TYPE__PRODUCT_CATEGORY_TYPE_ATTRS, true);
 	}
 
 	/**

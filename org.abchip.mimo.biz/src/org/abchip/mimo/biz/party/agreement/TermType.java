@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.party.agreement;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -22,6 +23,7 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.party.agreement.TermType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.TermType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.TermType#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.TermType#getTermTypeAttrs <em>Term Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermType()
@@ -106,6 +108,22 @@ public interface TermType extends BizEntityType<AgreementTerm> {
 	 * @generated
 	 */
 	void setParentTypeId(TermType value);
+
+	/**
+	 * Returns the value of the '<em><b>Term Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.agreement.TermTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Term Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Term Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermType_TermTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<TermTypeAttr> getTermTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Term Type Id</b></em>' attribute.

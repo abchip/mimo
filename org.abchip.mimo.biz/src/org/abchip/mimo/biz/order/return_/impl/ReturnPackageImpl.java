@@ -1251,7 +1251,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getReturnHeader_CreatedBy() {
+	public EReference getReturnHeader_CommunicationEventReturns() {
 		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1261,7 +1261,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getReturnHeader_CurrencyUomId() {
+	public EReference getReturnHeader_CreatedBy() {
 		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1271,7 +1271,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getReturnHeader_DestinationFacilityId() {
+	public EReference getReturnHeader_CurrencyUomId() {
 		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1281,8 +1281,18 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getReturnHeader_DestinationFacilityId() {
+		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getReturnHeader_EntryDate() {
-		return (EAttribute)returnHeaderEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)returnHeaderEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1292,16 +1302,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 */
 	@Override
 	public EReference getReturnHeader_FinAccountId() {
-		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getReturnHeader_FromPartyId() {
 		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1311,8 +1311,18 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getReturnHeader_FromPartyId() {
+		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getReturnHeader_NeedsInventoryReceive() {
-		return (EAttribute)returnHeaderEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)returnHeaderEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1322,16 +1332,6 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 */
 	@Override
 	public EReference getReturnHeader_OriginContactMechId() {
-		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getReturnHeader_PaymentMethodId() {
 		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -1341,7 +1341,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getReturnHeader_ReturnHeaderTypeId() {
+	public EReference getReturnHeader_PaymentMethodId() {
 		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -1351,7 +1351,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getReturnHeader_StatusId() {
+	public EReference getReturnHeader_ReturnHeaderTypeId() {
 		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -1361,8 +1361,28 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getReturnHeader_ReturnItems() {
+		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getReturnHeader_StatusId() {
+		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getReturnHeader_SupplierRmaId() {
-		return (EAttribute)returnHeaderEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)returnHeaderEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -1372,7 +1392,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 	 */
 	@Override
 	public EReference getReturnHeader_ToPartyId() {
-		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(14);
+		return (EReference)returnHeaderEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -2115,6 +2135,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		returnHeaderEClass = createEClass(RETURN_HEADER);
 		createEAttribute(returnHeaderEClass, RETURN_HEADER__RETURN_ID);
 		createEReference(returnHeaderEClass, RETURN_HEADER__BILLING_ACCOUNT_ID);
+		createEReference(returnHeaderEClass, RETURN_HEADER__COMMUNICATION_EVENT_RETURNS);
 		createEReference(returnHeaderEClass, RETURN_HEADER__CREATED_BY);
 		createEReference(returnHeaderEClass, RETURN_HEADER__CURRENCY_UOM_ID);
 		createEReference(returnHeaderEClass, RETURN_HEADER__DESTINATION_FACILITY_ID);
@@ -2125,6 +2146,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		createEReference(returnHeaderEClass, RETURN_HEADER__ORIGIN_CONTACT_MECH_ID);
 		createEReference(returnHeaderEClass, RETURN_HEADER__PAYMENT_METHOD_ID);
 		createEReference(returnHeaderEClass, RETURN_HEADER__RETURN_HEADER_TYPE_ID);
+		createEReference(returnHeaderEClass, RETURN_HEADER__RETURN_ITEMS);
 		createEReference(returnHeaderEClass, RETURN_HEADER__STATUS_ID);
 		createEAttribute(returnHeaderEClass, RETURN_HEADER__SUPPLIER_RMA_ID);
 		createEReference(returnHeaderEClass, RETURN_HEADER__TO_PARTY_ID);
@@ -2346,6 +2368,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		initEAttribute(getReturnHeader_ReturnId(), ecorePackage.getEString(), "returnId", null, 1, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReturnHeader_BillingAccountId(), thePaymentPackage.getBillingAccount(), null, "billingAccountId", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getReturnHeader_BillingAccountId().getEKeys().add(thePaymentPackage.getBillingAccount_BillingAccountId());
+		initEReference(getReturnHeader_CommunicationEventReturns(), this.getCommunicationEventReturn(), null, "communicationEventReturns", null, 0, -1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getReturnHeader_CreatedBy(), theLoginPackage.getUserLogin(), null, "createdBy", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getReturnHeader_CreatedBy().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 		initEReference(getReturnHeader_CurrencyUomId(), theUomPackage.getUom(), null, "currencyUomId", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2364,6 +2387,7 @@ public class ReturnPackageImpl extends EPackageImpl implements ReturnPackage {
 		getReturnHeader_PaymentMethodId().getEKeys().add(thePaymentPackage.getPaymentMethod_PaymentMethodId());
 		initEReference(getReturnHeader_ReturnHeaderTypeId(), this.getReturnHeaderType(), null, "returnHeaderTypeId", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getReturnHeader_ReturnHeaderTypeId().getEKeys().add(this.getReturnHeaderType_ReturnHeaderTypeId());
+		initEReference(getReturnHeader_ReturnItems(), this.getReturnItem(), null, "returnItems", null, 0, -1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getReturnHeader_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getReturnHeader_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 		initEAttribute(getReturnHeader_SupplierRmaId(), ecorePackage.getEString(), "supplierRmaId", null, 0, 1, ReturnHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.subscription;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityType;
 
 /**
@@ -22,6 +23,7 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionType#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionType#getSubscriptionTypeAttrs <em>Subscription Type Attrs</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionType()
@@ -106,6 +108,22 @@ public interface SubscriptionType extends BizEntityType<Subscription> {
 	 * @generated
 	 */
 	void setParentTypeId(SubscriptionType value);
+
+	/**
+	 * Returns the value of the '<em><b>Subscription Type Attrs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.subscription.SubscriptionTypeAttr}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Subscription Type Attrs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Subscription Type Attrs</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionType_SubscriptionTypeAttrs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SubscriptionTypeAttr> getSubscriptionTypeAttrs();
 
 	/**
 	 * Returns the value of the '<em><b>Subscription Type Id</b></em>' attribute.

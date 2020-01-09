@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.category;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 
 /**
@@ -27,6 +28,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getLinkTwoImageUrl <em>Link Two Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getLongDescription <em>Long Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getPrimaryParentCategoryId <em>Primary Parent Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryAttributes <em>Product Category Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#isShowInSelect <em>Show In Select</em>}</li>
  * </ul>
@@ -295,6 +297,22 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @generated
 	 */
 	void setPrimaryParentCategoryId(ProductCategory value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Category Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.category.ProductCategoryAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Category Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Category Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_ProductCategoryAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductCategoryAttribute> getProductCategoryAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Product Category Id</b></em>' attribute.

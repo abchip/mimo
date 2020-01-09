@@ -8,10 +8,13 @@
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransAttribute;
+import org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry;
 import org.abchip.mimo.biz.accounting.ledger.AcctgTransType;
 import org.abchip.mimo.biz.accounting.ledger.GlFiscalType;
 import org.abchip.mimo.biz.accounting.ledger.GlJournal;
@@ -37,6 +40,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransImpl#getAcctgTransId <em>Acctg Trans Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransImpl#getAcctgTransAttributes <em>Acctg Trans Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransImpl#getAcctgTransEntries <em>Acctg Trans Entries</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransImpl#getAcctgTransTypeId <em>Acctg Trans Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.AcctgTransImpl#getCreatedDate <em>Created Date</em>}</li>
@@ -650,6 +655,28 @@ public class AcctgTransImpl extends BizEntityTypedImpl<AcctgTransType> implement
 	@Override
 	public void setAcctgTransId(String newAcctgTransId) {
 		eSet(LedgerPackage.Literals.ACCTG_TRANS__ACCTG_TRANS_ID, newAcctgTransId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<AcctgTransAttribute> getAcctgTransAttributes() {
+		return (List<AcctgTransAttribute>)eGet(LedgerPackage.Literals.ACCTG_TRANS__ACCTG_TRANS_ATTRIBUTES, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<AcctgTransEntry> getAcctgTransEntries() {
+		return (List<AcctgTransEntry>)eGet(LedgerPackage.Literals.ACCTG_TRANS__ACCTG_TRANS_ENTRIES, true);
 	}
 
 } //AcctgTransImpl

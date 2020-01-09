@@ -10,13 +10,16 @@ package org.abchip.mimo.biz.product.product;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntityTyped;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomType;
+import org.abchip.mimo.biz.party.communication.CommunicationEventProduct;
 import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.facility.ProductFacility;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
@@ -37,6 +40,7 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getBrandName <em>Brand Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isChargeShipping <em>Charge Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCommunicationEventProducts <em>Communication Event Products</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getConfigId <em>Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCreatedDate <em>Created Date</em>}</li>
@@ -69,9 +73,14 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getPiecesIncluded <em>Pieces Included</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getPriceDetailText <em>Price Detail Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getPrimaryProductCategoryId <em>Primary Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductAttributes <em>Product Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductDepth <em>Product Depth</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductDiameter <em>Product Diameter</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductFacilities <em>Product Facilities</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductGeos <em>Product Geos</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductHeight <em>Product Height</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductMaints <em>Product Maints</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductMeters <em>Product Meters</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductName <em>Product Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductRating <em>Product Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductTypeId <em>Product Type Id</em>}</li>
@@ -236,6 +245,22 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @generated
 	 */
 	void setComments(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Communication Event Products</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.party.communication.CommunicationEventProduct}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Communication Event Products</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Communication Event Products</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_CommunicationEventProducts()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<CommunicationEventProduct> getCommunicationEventProducts();
 
 	/**
 	 * Returns the value of the '<em><b>Config Id</b></em>' attribute.
@@ -1047,6 +1072,38 @@ public interface Product extends BizEntityTyped<ProductType> {
 	void setProductDiameter(BigDecimal value);
 
 	/**
+	 * Returns the value of the '<em><b>Product Facilities</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.facility.ProductFacility}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Facilities</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Facilities</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductFacilities()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductFacility> getProductFacilities();
+
+	/**
+	 * Returns the value of the '<em><b>Product Geos</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.ProductGeo}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Geos</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Geos</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductGeos()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductGeo> getProductGeos();
+
+	/**
 	 * Returns the value of the '<em><b>Product Height</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -1071,6 +1128,38 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @generated
 	 */
 	void setProductHeight(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Maints</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.ProductMaint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Maints</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Maints</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductMaints()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductMaint> getProductMaints();
+
+	/**
+	 * Returns the value of the '<em><b>Product Meters</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.ProductMeter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Meters</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Meters</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductMeters()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductMeter> getProductMeters();
 
 	/**
 	 * Returns the value of the '<em><b>Product Name</b></em>' attribute.
@@ -1832,6 +1921,22 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @generated
 	 */
 	void setPrimaryProductCategoryId(ProductCategory value);
+
+	/**
+	 * Returns the value of the '<em><b>Product Attributes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.product.product.ProductAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product Attributes</em>' reference list.
+	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductAttributes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ProductAttribute> getProductAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.

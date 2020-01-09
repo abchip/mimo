@@ -7,8 +7,10 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.ecore.EClass;
@@ -24,6 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodTypeImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodTypeImpl#getDefaultGlAccountId <em>Default Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodTypeImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodTypeImpl#getPaymentMethodTypeGlAccounts <em>Payment Method Type Gl Accounts</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,6 +73,17 @@ public class PaymentMethodTypeImpl extends BizEntityImpl implements PaymentMetho
 	@Override
 	public void setDescription(String newDescription) {
 		eSet(PaymentPackage.Literals.PAYMENT_METHOD_TYPE__DESCRIPTION, newDescription);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<PaymentMethodTypeGlAccount> getPaymentMethodTypeGlAccounts() {
+		return (List<PaymentMethodTypeGlAccount>)eGet(PaymentPackage.Literals.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_GL_ACCOUNTS, true);
 	}
 
 	/**

@@ -162,13 +162,22 @@ public interface FeaturePackage extends EPackage {
 	int PRODUCT_FEATURE__ID_CODE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Main Product Feature Iactns</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+
+	/**
 	 * The feature id for the '<em><b>Number Specified</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE__NUMBER_SPECIFIED = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int PRODUCT_FEATURE__NUMBER_SPECIFIED = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Product Feature Category Id</b></em>' reference.
@@ -177,7 +186,7 @@ public interface FeaturePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE__PRODUCT_FEATURE_CATEGORY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int PRODUCT_FEATURE__PRODUCT_FEATURE_CATEGORY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Product Feature Type Id</b></em>' reference.
@@ -186,7 +195,7 @@ public interface FeaturePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE__PRODUCT_FEATURE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int PRODUCT_FEATURE__PRODUCT_FEATURE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Uom Id</b></em>' reference.
@@ -195,7 +204,7 @@ public interface FeaturePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE__UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int PRODUCT_FEATURE__UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Product Feature</em>' class.
@@ -204,7 +213,7 @@ public interface FeaturePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int PRODUCT_FEATURE_FEATURE_COUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl <em>Product Feature Appl</em>}' class.
@@ -1412,6 +1421,17 @@ public interface FeaturePackage extends EPackage {
 	EAttribute getProductFeature_IdCode();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.biz.product.feature.ProductFeature#getMainProductFeatureIactns <em>Main Product Feature Iactns</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Main Product Feature Iactns</em>'.
+	 * @see org.abchip.mimo.biz.product.feature.ProductFeature#getMainProductFeatureIactns()
+	 * @see #getProductFeature()
+	 * @generated
+	 */
+	EReference getProductFeature_MainProductFeatureIactns();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.feature.ProductFeature#getNumberSpecified <em>Number Specified</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2193,6 +2213,14 @@ public interface FeaturePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PRODUCT_FEATURE__ID_CODE = eINSTANCE.getProductFeature_IdCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Main Product Feature Iactns</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS = eINSTANCE.getProductFeature_MainProductFeatureIactns();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Specified</b></em>' attribute feature.

@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.biz.accounting.budget.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetType;
+import org.abchip.mimo.biz.accounting.budget.BudgetTypeAttr;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.ecore.EClass;
 
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetTypeImpl#getBudgetTypeId <em>Budget Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetTypeImpl#getBudgetTypeAttrs <em>Budget Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
@@ -132,6 +135,17 @@ public class BudgetTypeImpl extends BizEntityTypeImpl<Budget> implements BudgetT
 	@Override
 	public void setBudgetTypeId(String newBudgetTypeId) {
 		eSet(BudgetPackage.Literals.BUDGET_TYPE__BUDGET_TYPE_ID, newBudgetTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<BudgetTypeAttr> getBudgetTypeAttrs() {
+		return (List<BudgetTypeAttr>)eGet(BudgetPackage.Literals.BUDGET_TYPE__BUDGET_TYPE_ATTRS, true);
 	}
 
 } //BudgetTypeImpl

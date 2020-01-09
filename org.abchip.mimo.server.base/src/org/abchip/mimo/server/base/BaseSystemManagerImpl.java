@@ -19,8 +19,6 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextDescription;
-import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
@@ -189,11 +187,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 
 		// system resources
 
-		// job context
-		ContextDescription contextDescription = ContextFactory.eINSTANCE.createContextDescription();
-		contextDescription.setId(job.getJobReference().getJobName());
-
-		Context jobContext = system.getContext().createChildContext(contextDescription);
+		Context jobContext = system.getContext().createChildContext(job.getJobReference().getJobName());
 		// job.setJobID(jobContext.get);
 		job.setContext(jobContext);
 

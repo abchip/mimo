@@ -7,8 +7,10 @@
  */
 package org.abchip.mimo.biz.webapp.website;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.theme.VisualThemeSet;
+import org.abchip.mimo.biz.content.website.WebAnalyticsConfig;
 import org.abchip.mimo.biz.product.store.ProductStore;
 
 /**
@@ -36,6 +38,7 @@ import org.abchip.mimo.biz.product.store.ProductStore;
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getSiteName <em>Site Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getStandardContentPrefix <em>Standard Content Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getVisualThemeSetId <em>Visual Theme Set Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getWebAnalyticsConfigs <em>Web Analytics Configs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.WebSite#getWebappPath <em>Webapp Path</em>}</li>
  * </ul>
  *
@@ -464,6 +467,22 @@ public interface WebSite extends BizEntity {
 	 * @generated
 	 */
 	void setVisualThemeSetId(VisualThemeSet value);
+
+	/**
+	 * Returns the value of the '<em><b>Web Analytics Configs</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Web Analytics Configs</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Web Analytics Configs</em>' reference list.
+	 * @see org.abchip.mimo.biz.webapp.website.WebsitePackage#getWebSite_WebAnalyticsConfigs()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<WebAnalyticsConfig> getWebAnalyticsConfigs();
 
 	/**
 	 * Returns the value of the '<em><b>Webapp Path</b></em>' attribute.

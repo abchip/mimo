@@ -7,9 +7,11 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocTypeAttr;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.ecore.EClass;
 
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocTypeImpl#getWorkEffortAssocTypeAttrs <em>Work Effort Assoc Type Attrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -112,6 +115,17 @@ public class WorkEffortAssocTypeImpl extends BizEntityTypeImpl<WorkEffortAssoc> 
 	@Override
 	public void setParentTypeId(WorkEffortAssocType newParentTypeId) {
 		eSet(WorkeffortPackage.Literals.WORK_EFFORT_ASSOC_TYPE__PARENT_TYPE_ID, newParentTypeId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<WorkEffortAssocTypeAttr> getWorkEffortAssocTypeAttrs() {
+		return (List<WorkEffortAssocTypeAttr>)eGet(WorkeffortPackage.Literals.WORK_EFFORT_ASSOC_TYPE__WORK_EFFORT_ASSOC_TYPE_ATTRS, true);
 	}
 
 	/**

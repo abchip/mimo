@@ -8,8 +8,10 @@
 package org.abchip.mimo.biz.product.product.impl;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.abchip.mimo.biz.product.product.ProductSearchConstraint;
 import org.abchip.mimo.biz.product.product.ProductSearchResult;
 import org.eclipse.emf.ecore.EClass;
 
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#isIsAscending <em>Is Ascending</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getNumResults <em>Num Results</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getOrderByName <em>Order By Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getProductSearchConstraints <em>Product Search Constraints</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getSearchDate <em>Search Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getSecondsTotal <em>Seconds Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductSearchResultImpl#getVisitId <em>Visit Id</em>}</li>
@@ -95,6 +98,17 @@ public class ProductSearchResultImpl extends BizEntityImpl implements ProductSea
 	@Override
 	public void setOrderByName(String newOrderByName) {
 		eSet(ProductPackage.Literals.PRODUCT_SEARCH_RESULT__ORDER_BY_NAME, newOrderByName);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductSearchConstraint> getProductSearchConstraints() {
+		return (List<ProductSearchConstraint>)eGet(ProductPackage.Literals.PRODUCT_SEARCH_RESULT__PRODUCT_SEARCH_CONSTRAINTS, true);
 	}
 
 	/**

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.marketing.opportunity;
 import java.math.BigDecimal;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.uom.Uom;
@@ -38,6 +39,10 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getNextStepDate <em>Next Step Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getOpportunityName <em>Opportunity Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getOpportunityStageId <em>Opportunity Stage Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getSalesOpportunityCompetitors <em>Sales Opportunity Competitors</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getSalesOpportunityQuotes <em>Sales Opportunity Quotes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getSalesOpportunityTrckCodes <em>Sales Opportunity Trck Codes</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getSalesOpportunityWorkEfforts <em>Sales Opportunity Work Efforts</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity#getTypeEnumId <em>Type Enum Id</em>}</li>
  * </ul>
  *
@@ -357,6 +362,70 @@ public interface SalesOpportunity extends BizEntity {
 	 * @generated
 	 */
 	void setOpportunityStageId(SalesOpportunityStage value);
+
+	/**
+	 * Returns the value of the '<em><b>Sales Opportunity Competitors</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityCompetitor}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sales Opportunity Competitors</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sales Opportunity Competitors</em>' reference list.
+	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityCompetitors()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SalesOpportunityCompetitor> getSalesOpportunityCompetitors();
+
+	/**
+	 * Returns the value of the '<em><b>Sales Opportunity Quotes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityQuote}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sales Opportunity Quotes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sales Opportunity Quotes</em>' reference list.
+	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityQuotes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SalesOpportunityQuote> getSalesOpportunityQuotes();
+
+	/**
+	 * Returns the value of the '<em><b>Sales Opportunity Trck Codes</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityTrckCode}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sales Opportunity Trck Codes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sales Opportunity Trck Codes</em>' reference list.
+	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityTrckCodes()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SalesOpportunityTrckCode> getSalesOpportunityTrckCodes();
+
+	/**
+	 * Returns the value of the '<em><b>Sales Opportunity Work Efforts</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityWorkEffort}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sales Opportunity Work Efforts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sales Opportunity Work Efforts</em>' reference list.
+	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunity_SalesOpportunityWorkEfforts()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<SalesOpportunityWorkEffort> getSalesOpportunityWorkEfforts();
 
 	/**
 	 * Returns the value of the '<em><b>Sales Opportunity Id</b></em>' attribute.

@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.return_;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
@@ -30,6 +31,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getBillingAccountId <em>Billing Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCommunicationEventReturns <em>Communication Event Returns</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCreatedBy <em>Created By</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getDestinationFacilityId <em>Destination Facility Id</em>}</li>
@@ -40,6 +42,7 @@ import org.abchip.mimo.biz.security.login.UserLogin;
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnHeaderTypeId <em>Return Header Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnItems <em>Return Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getSupplierRmaId <em>Supplier Rma Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getToPartyId <em>To Party Id</em>}</li>
@@ -75,6 +78,22 @@ public interface ReturnHeader extends BizEntity {
 	 * @generated
 	 */
 	void setBillingAccountId(BillingAccount value);
+
+	/**
+	 * Returns the value of the '<em><b>Communication Event Returns</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.return_.CommunicationEventReturn}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Communication Event Returns</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Communication Event Returns</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_CommunicationEventReturns()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<CommunicationEventReturn> getCommunicationEventReturns();
 
 	/**
 	 * Returns the value of the '<em><b>Created By</b></em>' reference.
@@ -335,6 +354,22 @@ public interface ReturnHeader extends BizEntity {
 	 * @generated
 	 */
 	void setReturnHeaderTypeId(ReturnHeaderType value);
+
+	/**
+	 * Returns the value of the '<em><b>Return Items</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.order.return_.ReturnItem}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Return Items</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Return Items</em>' reference list.
+	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnHeader_ReturnItems()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<ReturnItem> getReturnItems();
 
 	/**
 	 * Returns the value of the '<em><b>Return Id</b></em>' attribute.

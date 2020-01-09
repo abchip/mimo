@@ -8,8 +8,10 @@
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import java.math.BigDecimal;
+import java.util.List;
 import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.shipment.shipment.CarrierShipmentBoxType;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.ecore.EClass;
@@ -27,6 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getBoxLength <em>Box Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getBoxWeight <em>Box Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getBoxWidth <em>Box Width</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getCarrierShipmentBoxTypes <em>Carrier Shipment Box Types</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getDimensionUomId <em>Dimension Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentBoxTypeImpl#getWeightUomId <em>Weight Uom Id</em>}</li>
@@ -137,6 +140,17 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	@Override
 	public void setBoxWidth(BigDecimal newBoxWidth) {
 		eSet(Shipment_Package.Literals.SHIPMENT_BOX_TYPE__BOX_WIDTH, newBoxWidth);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CarrierShipmentBoxType> getCarrierShipmentBoxTypes() {
+		return (List<CarrierShipmentBoxType>)eGet(Shipment_Package.Literals.SHIPMENT_BOX_TYPE__CARRIER_SHIPMENT_BOX_TYPES, true);
 	}
 
 	/**

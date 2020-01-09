@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.shipment.picklist;
 
 import java.util.Date;
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.product.facility.Facility;
@@ -28,6 +29,7 @@ import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getPicklistDate <em>Picklist Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getPicklistStatusHistories <em>Picklist Status Histories</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.Picklist#getStatusId <em>Status Id</em>}</li>
  * </ul>
@@ -166,6 +168,22 @@ public interface Picklist extends BizEntity {
 	 * @generated
 	 */
 	void setPicklistDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Picklist Status Histories</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Picklist Status Histories</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Picklist Status Histories</em>' reference list.
+	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklist_PicklistStatusHistories()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<PicklistStatusHistory> getPicklistStatusHistories();
 
 	/**
 	 * Returns the value of the '<em><b>Picklist Id</b></em>' attribute.

@@ -79,16 +79,15 @@ public class LinkedInResponseServlet extends HttpServlet {
 
 		String accessToken = null;
 		String idToken = null;
-		
+
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-		
+
 		try (Context context = authenticationManager.login(null, authentication)) {
 
 			// dovremmo accedere con ProductStore e data
 			String entityName = "OAuth2LinkedIn";
 			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
 			EntityIdentifiable oauth2LinkedIn = oauth2Reader.first();
-			
 
 			if (oauth2LinkedIn == null) {
 				response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! LinkedIn get OAuth2 configuration error");
@@ -124,7 +123,6 @@ public class LinkedInResponseServlet extends HttpServlet {
 				return;
 			}
 		}
-
 
 		// checkLogin
 		AuthenticationUserToken authenticationUserToken = ContextFactory.eINSTANCE.createAuthenticationUserToken();

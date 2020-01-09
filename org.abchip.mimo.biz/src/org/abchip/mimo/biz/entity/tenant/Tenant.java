@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.entity.tenant;
 
+import java.util.List;
 import org.abchip.mimo.biz.BizEntity;
 
 /**
@@ -21,6 +22,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantId <em>Tenant Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#isDisabled <em>Disabled</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getInitialPath <em>Initial Path</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantDataSources <em>Tenant Data Sources</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.Tenant#getTenantName <em>Tenant Name</em>}</li>
  * </ul>
  *
@@ -54,6 +56,22 @@ public interface Tenant extends BizEntity {
 	 * @generated
 	 */
 	void setInitialPath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Tenant Data Sources</b></em>' reference list.
+	 * The list contents are of type {@link org.abchip.mimo.biz.entity.tenant.TenantDataSource}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tenant Data Sources</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tenant Data Sources</em>' reference list.
+	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenant_TenantDataSources()
+	 * @model derived="true"
+	 * @generated
+	 */
+	List<TenantDataSource> getTenantDataSources();
 
 	/**
 	 * Returns the value of the '<em><b>Tenant Id</b></em>' attribute.
