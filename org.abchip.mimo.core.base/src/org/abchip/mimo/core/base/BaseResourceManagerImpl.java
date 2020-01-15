@@ -56,7 +56,7 @@ public class BaseResourceManagerImpl extends BaseResource implements ResourceMan
 
 	@Override
 	public <E extends Entity> ResourceSerializer<E> createResourceSerializer(Context context, Frame<E> frame, SerializationType serializationType) {
-		return new BaseResourceSerializerImpl<E>(frame, serializationType);
+		return new BaseResourceSerializerImpl<E>(context, frame, serializationType);
 	}
 
 	@Override

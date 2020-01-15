@@ -654,6 +654,12 @@
       <eLiterals name="Struct" value="180" literal="STC"/>
       <eLiterals name="Wrapper" value="190" literal="WRP"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="DataType">
+      <eLiterals name="Adap ter" value="10" literal="STR"/>
+      <eLiterals name="Array" value="20" literal="ARR"/>
+      <eLiterals name="Binary" value="30" literal="BIN"/>
+      <eLiterals name="Buffer" value="40" literal="BUF"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DatetimeDef">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
           eType="#//data/DatetimeType"/>
@@ -794,9 +800,7 @@
         eSuperTypes="#//entity/Entity">
       <eOperations name="getID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="getURI" lowerBound="1" eType="#//java/JavaURI"/>
-      <eOperations name="getState" lowerBound="1" eType="#//entity/EntityState">
-        <eAnnotations source="mimo-ent-slot"/>
-      </eOperations>
+      <eOperations name="getState" lowerBound="1" eType="#//entity/EntityState"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityIterator" abstract="true" interface="true">
       <eTypeParameters name="E">

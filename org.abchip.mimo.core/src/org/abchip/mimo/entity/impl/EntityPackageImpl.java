@@ -1177,11 +1177,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		   new String[] {
 			   "group", "info"
 		   });
-		addAnnotation
-		  (entityIdentifiableEClass.getEOperations().get(2),
-		   source,
-		   new String[] {
-		   });
 	}
 
 } //EntityPackageImpl
