@@ -126,7 +126,6 @@ public interface Job extends EntityIdentifiable, Closeable {
 
 	/**
 	 * Returns the value of the '<em><b>Date Format</b></em>' attribute.
-	 * The default value is <code>"DMY"</code>.
 	 * The literals are from the enumeration {@link org.abchip.mimo.data.DateFormat}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -138,7 +137,7 @@ public interface Job extends EntityIdentifiable, Closeable {
 	 * @see org.abchip.mimo.data.DateFormat
 	 * @see #setDateFormat(DateFormat)
 	 * @see org.abchip.mimo.server.ServerPackage#getJob_DateFormat()
-	 * @model default="DMY"
+	 * @model
 	 * @generated
 	 */
 	DateFormat getDateFormat();

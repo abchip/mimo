@@ -7,51 +7,47 @@
  */
 package org.abchip.mimo.data.impl;
 
-import org.abchip.mimo.data.BinaryDef;
 import org.abchip.mimo.data.DataPackage;
 import org.abchip.mimo.data.DataType;
+import org.abchip.mimo.data.EnumDef;
 import org.eclipse.emf.ecore.EClass;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Binary Def</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Enum
+ * Def</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
-public class BinaryDefImpl extends DataDefImpl<byte[]> implements BinaryDef {
+public class EnumDefImpl<E extends Enum<E>> extends DataDefImpl<Enum<E>> implements EnumDef<E> {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BinaryDefImpl() {
+	protected EnumDefImpl() {
 		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DataPackage.Literals.BINARY_DEF;
+		return DataPackage.Literals.ENUM_DEF;
 	}
 
 	@Override
 	public Class<?> getJavaClass() {
-		return byte[].class;
+		return Enum.class;
 	}
 
 	@Override
 	public DataType getDataType() {
-		return DataType.BINARY;
+		return DataType.ENUM;
 	}
-
-} //BinaryDefImpl
+} // EnumDefImpl

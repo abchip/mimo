@@ -7,22 +7,20 @@
  */
 package org.abchip.mimo.data.impl;
 
-import org.abchip.mimo.data.DataDef;
 import org.abchip.mimo.data.DataPackage;
 import org.abchip.mimo.data.DataType;
-
-import org.abchip.mimo.entity.impl.EntityImpl;
+import org.abchip.mimo.data.ReferenceDef;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Def</b></em>'.
+ * An implementation of the model object '<em><b>Reference Def</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class DataDefImpl<D> extends EntityImpl implements DataDef<D> {
+public class ReferenceDefImpl extends DataDefImpl<Object> implements ReferenceDef {
 	/**
 	 * 
 	 */
@@ -33,7 +31,7 @@ public abstract class DataDefImpl<D> extends EntityImpl implements DataDef<D> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataDefImpl() {
+	protected ReferenceDefImpl() {
 		super();
 	}
 
@@ -44,23 +42,16 @@ public abstract class DataDefImpl<D> extends EntityImpl implements DataDef<D> {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DataPackage.Literals.DATA_DEF;
+		return DataPackage.Literals.REFERENCE_DEF;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
 	@Override
-	public abstract Class<?> getJavaClass();
+	public Class<?> getJavaClass() {
+		return Object.class;
+	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
 	@Override
-	public abstract DataType getDataType();
-
-} //DataDefImpl
+	public DataType getDataType() {
+		return DataType.REFERENCE;
+	}
+} //ReferenceDefImpl

@@ -1393,7 +1393,14 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "update", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(resourceWriterEClass, ecorePackage.getEString(), "nextSequence", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(resourceWriterEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceWriterEClass_E);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceWriterEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "sequence", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceWriterEClass_E);
+		initEOperation(op, g1);
 
 		op = addEOperation(resourceWriterEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceWriterEClass_E);

@@ -118,7 +118,7 @@ public class LookupSchemaServlet extends BaseServlet {
 
 		if (slot.isNumeric())
 			column.setSort("int");
-		else if (slot.isDate())
+		else if (slot.isDateTime())
 			column.setSort("raw");
 		else if (slot.isString())
 			column.setSort("string");

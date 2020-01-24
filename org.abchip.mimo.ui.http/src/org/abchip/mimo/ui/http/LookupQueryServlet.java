@@ -104,7 +104,7 @@ public class LookupQueryServlet extends BaseServlet {
 			field.setType("string");
 		} else if (slot.isNumeric()) {
 			field.setType("number");
-		} else if (slot.isDate()) {
+		} else if (slot.isDateTime()) {
 			field.setType("date");
 		} else {
 			System.out.println("Unexpected condition: 873we65r87ewtr");

@@ -50,7 +50,15 @@ public interface ResourceWriter<E extends EntityIdentifiable> extends ResourceRe
 	 * @model required="true"
 	 * @generated
 	 */
-	String nextSequence();
+	E make();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" sequenceRequired="true"
+	 * @generated
+	 */
+	E make(boolean sequence);
 
 	/**
 	 * <!-- begin-user-doc -->

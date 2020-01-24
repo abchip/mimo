@@ -136,7 +136,7 @@ public class LookupFormServlet extends BaseServlet {
 				field.setView("combo");
 			else if (slot.isBoolean())
 				field.setView("checkbox");
-			else if (slot.isDate())
+			else if (slot.isDateTime())
 				field.setView("datepicker");
 			else if (slot.getText().toLowerCase().contains("level"))
 				field.setView("counter");
@@ -144,7 +144,7 @@ public class LookupFormServlet extends BaseServlet {
 				field.setView("photo");
 			else {
 				field.setView("text");
-				if(slot.getLength()>0) {
+/*				if(slot.getLength()>0) {
 					field.setLength(slot.getLength());
 				}
 				if(slot.getPrecision()>0) {
@@ -152,7 +152,7 @@ public class LookupFormServlet extends BaseServlet {
 				}
 				if(slot.getScale()>0) {
 					field.setScale(slot.getScale());
-				}
+				}*/
 			}
 		}
 

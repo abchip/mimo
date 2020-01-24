@@ -8,9 +8,9 @@
  */
 package org.abchip.mimo.database.db2;
 
-import org.abchip.mimo.data.CharacterDef;
 import org.abchip.mimo.data.DataDef;
-import org.abchip.mimo.data.DecimalDef;
+import org.abchip.mimo.data.NumericDef;
+import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.database.DatabaseManager;
 import org.abchip.mimo.database.base.BaseDefinitionWriterImpl;
 import org.abchip.mimo.database.definition.IndexColumnDef;
@@ -55,39 +55,54 @@ public class DB2DefinitionWriterImpl extends BaseDefinitionWriterImpl {
 				first = false;
 
 			DataDef<?> columnDef = column.getDefinition();
-			switch (columnDef.getDataDefType()) {
-
+			switch (columnDef.getDataType()) {
+			case BINARY:
+				result.append(getNameInSQLFormat(column) + " SMALLINT");
 			case IDENTITY:
 				result.append(getNameInSQLFormat(column) + " INTEGER NOT NULL  GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1)");
 				pkey_name = getNameInSQLFormat(column);
 				break;
-			case CHARACTER:
-				CharacterDef characterDef = (CharacterDef) columnDef;
-				if (characterDef.isVarying())
-					result.append(getNameInSQLFormat(column) + " VARCHAR(" + characterDef.getLength() + ") DEFAULT '' NOT NULL");
-				else if (characterDef.getLength() <= 254)
-					result.append(getNameInSQLFormat(column) + " CHAR(" + characterDef.getLength() + ") DEFAULT '' NOT NULL");
-				else
-					result.append(getNameInSQLFormat(column) + " VARCHAR(" + characterDef.getLength() + ") DEFAULT '' NOT NULL");
+			case NUMERIC:
+				NumericDef numericDef = (NumericDef) columnDef;
+				switch (numericDef.getType()) {
+				case BIG_DECIMAL:
+					if (numericDef.getPrecision() > 31)
+						result.append(getNameInSQLFormat(column) + " DECFLOAT(34) DEFAULT 0 NOT NULL");
+					else if (numericDef.getScale() != 0)
+						result.append(getNameInSQLFormat(column) + " DECIMAL(" + numericDef.getPrecision() + ", " + numericDef.getScale() + ") DEFAULT 0 NOT NULL");
+					else
+						result.append(getNameInSQLFormat(column) + " DECIMAL(" + numericDef.getPrecision() + ", 0) DEFAULT 0 NOT NULL");
+					break;
+				case BYTE:
+				case DOUBLE:
+				case FLOAT:
+				case INTEGER:
+				case LONG:
+				case SHORT:
+					result.append(getNameInSQLFormat(column) + " " + columnDef.getDataType().getName().toUpperCase());
+					break;
+				}
+
 				break;
-			case DECIMAL:
-				DecimalDef decimalDef = (DecimalDef) columnDef;
-				if (decimalDef.getPrecision() > 31)
-					result.append(getNameInSQLFormat(column) + " DECFLOAT(34) DEFAULT 0 NOT NULL");
-				else if (decimalDef.getScale() != 0)
-					result.append(getNameInSQLFormat(column) + " DECIMAL(" + decimalDef.getPrecision() + ", " + decimalDef.getScale() + ") DEFAULT 0 NOT NULL");
+			case STRING:
+				StringDef stringDef = (StringDef) columnDef;
+				if (stringDef.isVarying())
+					result.append(getNameInSQLFormat(column) + " VARCHAR(" + stringDef.getLength() + ") DEFAULT '' NOT NULL");
+				else if (stringDef.getLength() <= 254)
+					result.append(getNameInSQLFormat(column) + " CHAR(" + stringDef.getLength() + ") DEFAULT '' NOT NULL");
 				else
-					result.append(getNameInSQLFormat(column) + " DECIMAL(" + decimalDef.getPrecision() + ", 0) DEFAULT 0 NOT NULL");
+					result.append(getNameInSQLFormat(column) + " VARCHAR(" + stringDef.getLength() + ") DEFAULT '' NOT NULL");
 				break;
-			case DATETIME:
+			case DATE_TIME:
 				result.append(getNameInSQLFormat(column) + " TIMESTAMP NOT NULL");
 				break;
-			case BINARY:
-				result.append(getNameInSQLFormat(column) + " SMALLINT");
+			case BOOLEAN:
+			case ENUM:
+			case REFERENCE:
+				result.append(getNameInSQLFormat(column) + " " + columnDef.getDataType().getName().toUpperCase());
 				break;
-			default:
-				result.append(getNameInSQLFormat(column) + " " + columnDef.getDataDefType().getName().toUpperCase());
 			}
+
 		}
 		if (pkey_name != null)
 			result.append(", PRIMARY KEY (" + pkey_name + ")");

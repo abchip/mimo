@@ -10,6 +10,16 @@ package org.abchip.mimo;
 
 import java.util.Date;
 
+import org.abchip.mimo.data.BooleanDef;
+import org.abchip.mimo.data.DataDef;
+import org.abchip.mimo.data.DataFactory;
+import org.abchip.mimo.data.DatetimeDef;
+import org.abchip.mimo.data.DatetimeType;
+import org.abchip.mimo.data.EnumDef;
+import org.abchip.mimo.data.NumericDef;
+import org.abchip.mimo.data.NumericType;
+import org.abchip.mimo.data.ReferenceDef;
+import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityFactory;
@@ -20,14 +30,11 @@ import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.SlotImpl;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class EMFSlotAdapter extends SlotImpl {
 
@@ -68,45 +75,64 @@ public class EMFSlotAdapter extends SlotImpl {
 					eSet(EntityPackage.SLOT__GROUP, eAnnotation.getDetails().get(key));
 			}
 		}
-
-		EAnnotation eAnnotationFormat = element.getEAnnotation(Slot.NS_PREFIX_FORMAT);
-		if (eAnnotationFormat != null) {
-			for (String key : eAnnotationFormat.getDetails().keySet()) {
-				if (key.equals("length"))
-					eSet(EntityPackage.SLOT__LENGTH, Integer.parseInt(eAnnotationFormat.getDetails().get(key)));
-				else if (key.equals("precision"))
-					eSet(EntityPackage.SLOT__PRECISION, Integer.parseInt(eAnnotationFormat.getDetails().get(key)));
-				else if (key.equals("scale"))
-					eSet(EntityPackage.SLOT__SCALE, Integer.parseInt(eAnnotationFormat.getDetails().get(key)));
-			}
+		if (this.getDataClassName() != null) {
+			setSlotDataDef();
 		}
+
+		/*
+		 * EAnnotation eAnnotationFormat =
+		 * element.getEAnnotation(Slot.NS_PREFIX_FORMAT); if (eAnnotationFormat != null)
+		 * { for (String key : eAnnotationFormat.getDetails().keySet()) { if
+		 * (key.equals("length")) eSet(EntityPackage.SLOT__LENGTH,
+		 * Integer.parseInt(eAnnotationFormat.getDetails().get(key))); else if
+		 * (key.equals("precision")) eSet(EntityPackage.SLOT__PRECISION,
+		 * Integer.parseInt(eAnnotationFormat.getDetails().get(key))); else if
+		 * (key.equals("scale")) eSet(EntityPackage.SLOT__SCALE,
+		 * Integer.parseInt(eAnnotationFormat.getDetails().get(key))); } }
+		 */
 
 		this.setSlotDomain();
 	}
 
-	@Override
-	public Entity getValue(String nsPrefix) {
+	private void setSlotDataDef() {
 
-		EAnnotation eAnnotation = this.element.getEAnnotation(nsPrefix);
+		Class<?> klass = element.getEType().getInstanceClass();
 
-		if (eAnnotation == null)
-			return null;
-
-		EObject eObject = EcoreUtil.create((EClass) eAnnotation.getReferences().get(0));
-
-		for (String key : eAnnotation.getDetails().keySet()) {
-			EStructuralFeature dataDefFeature = eObject.eClass().getEStructuralFeature(key);
-
-			if (dataDefFeature == null)
-				continue;
-
-			if (dataDefFeature.getDefaultValue() instanceof Number)
-				eObject.eSet(dataDefFeature, Integer.parseInt(eAnnotation.getDetails().get(key)));
-			else
-				eObject.eSet(dataDefFeature, eAnnotation.getDetails().get(key));
+		DataDef<?> dataDef = null;
+		if (this.getDataClassName().equals(Boolean.class.getSimpleName().toLowerCase())) {
+			BooleanDef booleanDef = DataFactory.eINSTANCE.createBooleanDef();
+			dataDef = booleanDef;
+		} else if (this.getDataClassName().equals(Date.class.getCanonicalName())) {
+			DatetimeDef datetimeDef = DataFactory.eINSTANCE.createDatetimeDef();
+			datetimeDef.setType(DatetimeType.TIME_STAMP);
+			dataDef = datetimeDef;
+		} else if (element.getEType() instanceof EEnum) {
+			EnumDef<?> enumDef = DataFactory.eINSTANCE.createEnumDef();
+			dataDef = enumDef;
+		} else if (this.getDataClassName().equals(String.class.getCanonicalName()) || this.getDataClassName().equals(char.class.getCanonicalName())
+				|| EntityIdentifiable.class.isAssignableFrom(this.getETypedElement().getEType().getInstanceClass())) {
+			StringDef stringDef = DataFactory.eINSTANCE.createStringDef();
+			dataDef = stringDef;
+		} else if (Entity.class.isAssignableFrom(klass)) {
+			ReferenceDef referenceDef = DataFactory.eINSTANCE.createReferenceDef();
+			dataDef = referenceDef;
+		} else {
+			if (klass.isPrimitive()) {
+				if (klass.getName().equals("long") || klass.getName().equals("integer") || klass.getName().equals("short") || klass.getName().equals("float")
+						|| klass.getName().equals("double")) {
+					NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
+					numericDef.setType(NumericType.getByName(MimoUtils.firstToUpper(klass.getName())));
+					dataDef = numericDef;
+				}
+			} else if (Number.class.isAssignableFrom(klass)) {
+				NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
+				numericDef.setType(NumericType.BIG_DECIMAL);
+			}
 		}
-
-		return (Entity) eObject;
+		if (dataDef != null)
+			this.setDataDef(dataDef);
+		else
+			"".toString();
 	}
 
 	@Override
@@ -162,74 +188,8 @@ public class EMFSlotAdapter extends SlotImpl {
 			domain.setFrame(element.getEType().getName());
 		}
 
-		if (domain != null) 
+		if (domain != null)
 			eSet(EntityPackage.SLOT__DOMAIN, domain);
-	}
-
-	@Override
-	public boolean isBoolean() {
-		if (this.getDataClassName() == null)
-			return false;
-
-		if (this.getDataClassName().equals(Boolean.class.getSimpleName().toLowerCase()))
-			return true;
-
-		return false;
-	}
-
-	@Override
-	public boolean isDate() {
-		if (this.getDataClassName() == null)
-			return false;
-
-		if (this.getDataClassName().equals(Date.class.getCanonicalName()))
-			return true;
-
-		return false;
-	}
-
-	@Override
-	public boolean isEnum() {
-
-		if (this.getDataClassName() == null)
-			return false;
-
-		if (element.getEType() instanceof EEnum)
-			return true;
-
-		return false;
-	}
-
-	@Override
-	public boolean isNumeric() {
-
-		if (this.getDataClassName() == null)
-			return false;
-
-		Class<?> klass = element.getEType().getInstanceClass();
-		if (klass.isPrimitive()) {
-			if (klass.getName().equals("long") || klass.getName().equals("integer") || klass.getName().equals("short") || klass.getName().equals("float") || klass.getName().equals("double"))
-				return true;
-		} else if (Number.class.isAssignableFrom(klass))
-			return true;
-
-		return false;
-	}
-
-	@Override
-	public boolean isString() {
-
-		if (this.getDataClassName() == null)
-			return false;
-
-		if (this.getDataClassName().equals(String.class.getCanonicalName()))
-			return true;
-		else if (this.getDataClassName().equals(char.class.getCanonicalName()))
-			return true;
-		else if(EntityIdentifiable.class.isAssignableFrom(this.getETypedElement().getEType().getInstanceClass()))
-			return true;
-		
-		return false;
 	}
 
 	private String getDataClassName() {

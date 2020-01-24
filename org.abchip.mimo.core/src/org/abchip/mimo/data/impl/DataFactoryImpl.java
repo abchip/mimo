@@ -62,14 +62,14 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case DataPackage.BINARY_DEF: return (EObject)createBinaryDef();
-			case DataPackage.CHARACTER_DEF: return (EObject)createCharacterDef();
-			case DataPackage.DATETIME_DEF: return (EObject)createDatetimeDef();
-			case DataPackage.DECIMAL_DEF: return (EObject)createDecimalDef();
-			case DataPackage.FLOATING_DEF: return (EObject)createFloatingDef();
-			case DataPackage.IDENTITY_DEF: return (EObject)createIdentityDef();
-			case DataPackage.NUMERIC_DEF: return (EObject)createNumericDef();
 			case DataPackage.STRING_DEF: return (EObject)createStringDef();
+			case DataPackage.BOOLEAN_DEF: return (EObject)createBooleanDef();
+			case DataPackage.ENUM_DEF: return (EObject)createEnumDef();
+			case DataPackage.DATETIME_DEF: return (EObject)createDatetimeDef();
+			case DataPackage.NUMERIC_DEF: return (EObject)createNumericDef();
+			case DataPackage.BINARY_DEF: return (EObject)createBinaryDef();
+			case DataPackage.IDENTITY_DEF: return (EObject)createIdentityDef();
+			case DataPackage.REFERENCE_DEF: return (EObject)createReferenceDef();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -83,20 +83,16 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case DataPackage.BINARY_TYPE:
-				return createBinaryTypeFromString(eDataType, initialValue);
-			case DataPackage.DATA_DEF_TYPE:
-				return createDataDefTypeFromString(eDataType, initialValue);
+			case DataPackage.DATA_TYPE:
+				return createDataTypeFromString(eDataType, initialValue);
 			case DataPackage.DATETIME_TYPE:
 				return createDatetimeTypeFromString(eDataType, initialValue);
 			case DataPackage.DATE_FORMAT:
 				return createDateFormatFromString(eDataType, initialValue);
-			case DataPackage.DECIMAL_TYPE:
-				return createDecimalTypeFromString(eDataType, initialValue);
-			case DataPackage.FLOATING_TYPE:
-				return createFloatingTypeFromString(eDataType, initialValue);
 			case DataPackage.TIME_FORMAT:
 				return createTimeFormatFromString(eDataType, initialValue);
+			case DataPackage.NUMERIC_TYPE:
+				return createNumericTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -110,20 +106,16 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case DataPackage.BINARY_TYPE:
-				return convertBinaryTypeToString(eDataType, instanceValue);
-			case DataPackage.DATA_DEF_TYPE:
-				return convertDataDefTypeToString(eDataType, instanceValue);
+			case DataPackage.DATA_TYPE:
+				return convertDataTypeToString(eDataType, instanceValue);
 			case DataPackage.DATETIME_TYPE:
 				return convertDatetimeTypeToString(eDataType, instanceValue);
 			case DataPackage.DATE_FORMAT:
 				return convertDateFormatToString(eDataType, instanceValue);
-			case DataPackage.DECIMAL_TYPE:
-				return convertDecimalTypeToString(eDataType, instanceValue);
-			case DataPackage.FLOATING_TYPE:
-				return convertFloatingTypeToString(eDataType, instanceValue);
 			case DataPackage.TIME_FORMAT:
 				return convertTimeFormatToString(eDataType, instanceValue);
+			case DataPackage.NUMERIC_TYPE:
+				return convertNumericTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -135,9 +127,9 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	 * @generated
 	 */
 	@Override
-	public BinaryDef createBinaryDef() {
-		BinaryDefImpl binaryDef = new BinaryDefImpl();
-		return binaryDef;
+	public StringDef createStringDef() {
+		StringDefImpl stringDef = new StringDefImpl();
+		return stringDef;
 	}
 
 	/**
@@ -146,9 +138,20 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	 * @generated
 	 */
 	@Override
-	public CharacterDef createCharacterDef() {
-		CharacterDefImpl characterDef = new CharacterDefImpl();
-		return characterDef;
+	public BooleanDef createBooleanDef() {
+		BooleanDefImpl booleanDef = new BooleanDefImpl();
+		return booleanDef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public <E extends Enum<E>> EnumDef<E> createEnumDef() {
+		EnumDefImpl<E> enumDef = new EnumDefImpl<E>();
+		return enumDef;
 	}
 
 	/**
@@ -168,9 +171,9 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	 * @generated
 	 */
 	@Override
-	public DecimalDef createDecimalDef() {
-		DecimalDefImpl decimalDef = new DecimalDefImpl();
-		return decimalDef;
+	public NumericDef createNumericDef() {
+		NumericDefImpl numericDef = new NumericDefImpl();
+		return numericDef;
 	}
 
 	/**
@@ -179,9 +182,9 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	 * @generated
 	 */
 	@Override
-	public FloatingDef createFloatingDef() {
-		FloatingDefImpl floatingDef = new FloatingDefImpl();
-		return floatingDef;
+	public BinaryDef createBinaryDef() {
+		BinaryDefImpl binaryDef = new BinaryDefImpl();
+		return binaryDef;
 	}
 
 	/**
@@ -201,9 +204,9 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	 * @generated
 	 */
 	@Override
-	public NumericDef createNumericDef() {
-		NumericDefImpl numericDef = new NumericDefImpl();
-		return numericDef;
+	public ReferenceDef createReferenceDef() {
+		ReferenceDefImpl referenceDef = new ReferenceDefImpl();
+		return referenceDef;
 	}
 
 	/**
@@ -211,19 +214,8 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public StringDef createStringDef() {
-		StringDefImpl stringDef = new StringDefImpl();
-		return stringDef;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BinaryType createBinaryTypeFromString(EDataType eDataType, String initialValue) {
-		BinaryType result = BinaryType.get(initialValue);
+	public DataType createDataTypeFromString(EDataType eDataType, String initialValue) {
+		DataType result = DataType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -233,27 +225,7 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertBinaryTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataDefType createDataDefTypeFromString(EDataType eDataType, String initialValue) {
-		DataDefType result = DataDefType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertDataDefTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertDataTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -302,46 +274,6 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DecimalType createDecimalTypeFromString(EDataType eDataType, String initialValue) {
-		DecimalType result = DecimalType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertDecimalTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FloatingType createFloatingTypeFromString(EDataType eDataType, String initialValue) {
-		FloatingType result = FloatingType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertFloatingTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public TimeFormat createTimeFormatFromString(EDataType eDataType, String initialValue) {
 		TimeFormat result = TimeFormat.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -354,6 +286,26 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	 * @generated
 	 */
 	public String convertTimeFormatToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NumericType createNumericTypeFromString(EDataType eDataType, String initialValue) {
+		NumericType result = NumericType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNumericTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

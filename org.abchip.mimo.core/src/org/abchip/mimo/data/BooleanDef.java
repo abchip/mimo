@@ -10,13 +10,13 @@ package org.abchip.mimo.data;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Identity Def</b></em>'.
+ * A representation of the model object '<em><b>Boolean Def</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.data.DataPackage#getIdentityDef()
- * @model superTypes="org.abchip.mimo.data.DataDef&lt;org.eclipse.emf.ecore.EJavaObject&gt;"
+ * @see org.abchip.mimo.data.DataPackage#getBooleanDef()
+ * @model superTypes="org.abchip.mimo.data.DataDef&lt;org.eclipse.emf.ecore.EBooleanObject&gt;"
  * @generated
  */
-public interface IdentityDef extends DataDef<Object> {
-} // IdentityDef
+public interface BooleanDef extends DataDef<Boolean> {
+} // BooleanDef

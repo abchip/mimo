@@ -564,13 +564,22 @@ public interface EntityPackage extends EPackage {
 	int SLOT__CONTAINMENT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Data Def</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__DATA_DEF = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__DEFAULT_VALUE = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+	int SLOT__DEFAULT_VALUE = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Derived</b></em>' attribute.
@@ -579,7 +588,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__DERIVED = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
+	int SLOT__DERIVED = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -588,7 +597,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__DOMAIN = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
+	int SLOT__DOMAIN = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Group</b></em>' attribute.
@@ -597,7 +606,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__GROUP = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
+	int SLOT__GROUP = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -606,16 +615,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__KEY = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT__LENGTH = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
+	int SLOT__KEY = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -627,31 +627,13 @@ public interface EntityPackage extends EPackage {
 	int SLOT__NAME = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Precision</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT__PRECISION = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Scale</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLOT__SCALE = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
-
-	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__TEXT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
+	int SLOT__TEXT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>To String</b></em>' attribute.
@@ -660,7 +642,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__TO_STRING = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 12;
+	int SLOT__TO_STRING = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Slot</em>' class.
@@ -669,7 +651,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 13;
+	int SLOT_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityState <em>State</em>}' enum.
@@ -1119,6 +1101,17 @@ public interface EntityPackage extends EPackage {
 	EAttribute getSlot_Containment();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.entity.Slot#getDataDef <em>Data Def</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Data Def</em>'.
+	 * @see org.abchip.mimo.entity.Slot#getDataDef()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EReference getSlot_DataDef();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1174,17 +1167,6 @@ public interface EntityPackage extends EPackage {
 	EAttribute getSlot_Key();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getLength <em>Length</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Length</em>'.
-	 * @see org.abchip.mimo.entity.Slot#getLength()
-	 * @see #getSlot()
-	 * @generated
-	 */
-	EAttribute getSlot_Length();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1194,28 +1176,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSlot_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getPrecision <em>Precision</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Precision</em>'.
-	 * @see org.abchip.mimo.entity.Slot#getPrecision()
-	 * @see #getSlot()
-	 * @generated
-	 */
-	EAttribute getSlot_Precision();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getScale <em>Scale</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Scale</em>'.
-	 * @see org.abchip.mimo.entity.Slot#getScale()
-	 * @see #getSlot()
-	 * @generated
-	 */
-	EAttribute getSlot_Scale();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}'.
@@ -1628,6 +1588,14 @@ public interface EntityPackage extends EPackage {
 		EAttribute SLOT__CONTAINMENT = eINSTANCE.getSlot_Containment();
 
 		/**
+		 * The meta object literal for the '<em><b>Data Def</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SLOT__DATA_DEF = eINSTANCE.getSlot_DataDef();
+
+		/**
 		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1668,36 +1636,12 @@ public interface EntityPackage extends EPackage {
 		EAttribute SLOT__KEY = eINSTANCE.getSlot_Key();
 
 		/**
-		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SLOT__LENGTH = eINSTANCE.getSlot_Length();
-
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SLOT__NAME = eINSTANCE.getSlot_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Precision</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SLOT__PRECISION = eINSTANCE.getSlot_Precision();
-
-		/**
-		 * The meta object literal for the '<em><b>Scale</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SLOT__SCALE = eINSTANCE.getSlot_Scale();
 
 		/**
 		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.

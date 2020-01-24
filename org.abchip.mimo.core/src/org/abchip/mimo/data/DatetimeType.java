@@ -1,16 +1,16 @@
 /**
- *  Copyright (c) 2017, 2019 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
+ * Copyright (c) 2017, 2019 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.data;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
@@ -24,6 +24,16 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum DatetimeType implements Enumerator {
 	/**
+	 * The '<em><b>Time Stamp</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #TIME_STAMP_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	TIME_STAMP(10, "TimeStamp", "TMS"),
+
+	/**
 	 * The '<em><b>Date</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31,7 +41,7 @@ public enum DatetimeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DATE(10, "Date", "DATE"),
+	DATE(20, "Date", "DATE"),
 
 	/**
 	 * The '<em><b>Time</b></em>' literal object.
@@ -41,47 +51,17 @@ public enum DatetimeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TIME(20, "Time", "TIME"),
+	TIME(30, "Time", "TIME"),
 
 	/**
-	 * The '<em><b>Time Stamp</b></em>' literal object.
+	 * The '<em><b>Date Time</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TIME_STAMP_VALUE
+	 * @see #DATE_TIME_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TIME_STAMP(30, "TimeStamp", "TMS");
-
-	/**
-	 * The '<em><b>Date</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Date</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #DATE
-	 * @model name="Date" literal="DATE"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int DATE_VALUE = 10;
-
-	/**
-	 * The '<em><b>Time</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Time</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #TIME
-	 * @model name="Time" literal="TIME"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int TIME_VALUE = 20;
+	DATE_TIME(40, "DateTime", "DTM");
 
 	/**
 	 * The '<em><b>Time Stamp</b></em>' literal value.
@@ -96,7 +76,52 @@ public enum DatetimeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TIME_STAMP_VALUE = 30;
+	public static final int TIME_STAMP_VALUE = 10;
+
+	/**
+	 * The '<em><b>Date</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Date</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DATE
+	 * @model name="Date" literal="DATE"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DATE_VALUE = 20;
+
+	/**
+	 * The '<em><b>Time</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Time</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #TIME
+	 * @model name="Time" literal="TIME"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int TIME_VALUE = 30;
+
+	/**
+	 * The '<em><b>Date Time</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Date Time</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DATE_TIME
+	 * @model name="DateTime" literal="DTM"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DATE_TIME_VALUE = 40;
 
 	/**
 	 * An array of all the '<em><b>Datetime Type</b></em>' enumerators.
@@ -106,9 +131,10 @@ public enum DatetimeType implements Enumerator {
 	 */
 	private static final DatetimeType[] VALUES_ARRAY =
 		new DatetimeType[] {
+			TIME_STAMP,
 			DATE,
 			TIME,
-			TIME_STAMP,
+			DATE_TIME,
 		};
 
 	/**
@@ -165,9 +191,10 @@ public enum DatetimeType implements Enumerator {
 	 */
 	public static DatetimeType get(int value) {
 		switch (value) {
+			case TIME_STAMP_VALUE: return TIME_STAMP;
 			case DATE_VALUE: return DATE;
 			case TIME_VALUE: return TIME;
-			case TIME_STAMP_VALUE: return TIME_STAMP;
+			case DATE_TIME_VALUE: return DATE_TIME;
 		}
 		return null;
 	}

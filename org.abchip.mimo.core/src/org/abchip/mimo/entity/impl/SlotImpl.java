@@ -7,9 +7,10 @@
  */
 package org.abchip.mimo.entity.impl;
 
+import org.abchip.mimo.data.DataDef;
+import org.abchip.mimo.data.DataType;
 import org.abchip.mimo.entity.Cardinality;
 import org.abchip.mimo.entity.Domain;
-import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Slot;
 import org.eclipse.emf.common.notify.Notification;
@@ -20,24 +21,21 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Slot</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Slot</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isContainment <em>Containment</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDataDef <em>Data Def</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isDerived <em>Derived</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isKey <em>Key</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getLength <em>Length</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getPrecision <em>Precision</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getScale <em>Scale</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isToString <em>To String</em>}</li>
  * </ul>
@@ -47,8 +45,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCardinality()
 	 * @generated
 	 * @ordered
@@ -56,8 +53,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	protected Cardinality cardinality;
 	/**
 	 * The default value of the '{@link #isContainment() <em>Containment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isContainment()
 	 * @generated
 	 * @ordered
@@ -65,17 +61,23 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	protected static final boolean CONTAINMENT_EDEFAULT = false;
 	/**
 	 * The cached value of the '{@link #isContainment() <em>Containment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isContainment()
 	 * @generated
 	 * @ordered
 	 */
 	protected boolean containment = CONTAINMENT_EDEFAULT;
 	/**
+	 * The cached value of the '{@link #getDataDef() <em>Data Def</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getDataDef()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataDef<?> dataDef;
+	/**
 	 * The default value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDefaultValue()
 	 * @generated
 	 * @ordered
@@ -83,8 +85,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	protected static final String DEFAULT_VALUE_EDEFAULT = null;
 	/**
 	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDefaultValue()
 	 * @generated
 	 * @ordered
@@ -92,8 +93,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	protected String defaultValue = DEFAULT_VALUE_EDEFAULT;
 	/**
 	 * The default value of the '{@link #isDerived() <em>Derived</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isDerived()
 	 * @generated
 	 * @ordered
@@ -101,8 +101,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	protected static final boolean DERIVED_EDEFAULT = false;
 	/**
 	 * The cached value of the '{@link #isDerived() <em>Derived</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isDerived()
 	 * @generated
 	 * @ordered
@@ -110,134 +109,79 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	protected boolean derived = DERIVED_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getDomain() <em>Domain</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDomain()
 	 * @generated
 	 * @ordered
 	 */
 	protected Domain domain;
 	/**
-	 * The default value of the '{@link #getGroup() <em>Group</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getGroup() <em>Group</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getGroup()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String GROUP_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getGroup()
 	 * @generated
 	 * @ordered
 	 */
 	protected String group = GROUP_EDEFAULT;
 	/**
-	 * The default value of the '{@link #isKey() <em>Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #isKey() <em>Key</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isKey()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final boolean KEY_EDEFAULT = false;
 	/**
-	 * The cached value of the '{@link #isKey() <em>Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #isKey() <em>Key</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isKey()
 	 * @generated
 	 * @ordered
 	 */
 	protected boolean key = KEY_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getLength() <em>Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLength()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int LENGTH_EDEFAULT = 0;
-	/**
-	 * The cached value of the '{@link #getLength() <em>Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLength()
-	 * @generated
-	 * @ordered
-	 */
-	protected int length = LENGTH_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPrecision() <em>Precision</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrecision()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int PRECISION_EDEFAULT = 0;
-	/**
-	 * The cached value of the '{@link #getPrecision() <em>Precision</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrecision()
-	 * @generated
-	 * @ordered
-	 */
-	protected int precision = PRECISION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getScale() <em>Scale</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScale()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int SCALE_EDEFAULT = 0;
-	/**
-	 * The cached value of the '{@link #getScale() <em>Scale</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScale()
-	 * @generated
-	 * @ordered
-	 */
-	protected int scale = SCALE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getText() <em>Text</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getText()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String TEXT_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getText()
 	 * @generated
 	 * @ordered
@@ -245,8 +189,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	protected String text = TEXT_EDEFAULT;
 	/**
 	 * The default value of the '{@link #isToString() <em>To String</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isToString()
 	 * @generated
 	 * @ordered
@@ -254,8 +197,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	protected static final boolean TO_STRING_EDEFAULT = false;
 	/**
 	 * The cached value of the '{@link #isToString() <em>To String</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isToString()
 	 * @generated
 	 * @ordered
@@ -265,9 +207,9 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected SlotImpl() {
@@ -275,8 +217,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -285,8 +226,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -295,8 +235,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -308,54 +247,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int getPrecision() {
-		return precision;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setPrecision(int newPrecision) {
-		int oldPrecision = precision;
-		precision = newPrecision;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__PRECISION, oldPrecision, precision));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int getScale() {
-		return scale;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setScale(int newScale) {
-		int oldScale = scale;
-		scale = newScale;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__SCALE, oldScale, scale));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -364,8 +256,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -377,8 +268,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -387,8 +277,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -400,8 +289,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -424,8 +312,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Cardinality basicGetCardinality() {
@@ -433,8 +320,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
@@ -448,8 +334,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -468,8 +353,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -478,8 +362,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -491,8 +374,71 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DataDef<?> getDataDef() {
+		if (dataDef != null && ((EObject)dataDef).eIsProxy()) {
+			InternalEObject oldDataDef = (InternalEObject)dataDef;
+			dataDef = (DataDef<?>)eResolveProxy(oldDataDef);
+			if (dataDef != oldDataDef) {
+				InternalEObject newDataDef = (InternalEObject)dataDef;
+				NotificationChain msgs = oldDataDef.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__DATA_DEF, null, null);
+				if (newDataDef.eInternalContainer() == null) {
+					msgs = newDataDef.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__DATA_DEF, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EntityPackage.SLOT__DATA_DEF, oldDataDef, dataDef));
+			}
+		}
+		return dataDef;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataDef<?> basicGetDataDef() {
+		return dataDef;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDataDef(DataDef<?> newDataDef, NotificationChain msgs) {
+		DataDef<?> oldDataDef = dataDef;
+		dataDef = newDataDef;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__DATA_DEF, oldDataDef, newDataDef);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDataDef(DataDef<?> newDataDef) {
+		if (newDataDef != dataDef) {
+			NotificationChain msgs = null;
+			if (dataDef != null)
+				msgs = ((InternalEObject)dataDef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__DATA_DEF, null, msgs);
+			if (newDataDef != null)
+				msgs = ((InternalEObject)newDataDef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EntityPackage.SLOT__DATA_DEF, null, msgs);
+			msgs = basicSetDataDef(newDataDef, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__DATA_DEF, newDataDef, newDataDef));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -501,8 +447,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -514,8 +459,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -524,8 +468,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -537,8 +480,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -561,8 +503,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Domain basicGetDomain() {
@@ -570,8 +511,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetDomain(Domain newDomain, NotificationChain msgs) {
@@ -585,8 +525,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -605,8 +544,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -615,8 +553,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -628,8 +565,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -638,8 +574,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -651,103 +586,111 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public int getLength() {
-		return length;
+	public final boolean isBinary() {
+		if (getDataDef() == null)
+			return false;
+
+		return getDataDef().getDataType() == DataType.BINARY;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public void setLength(int newLength) {
-		int oldLength = length;
-		length = newLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__LENGTH, oldLength, length));
+	public final boolean isBoolean() {
+		if (getDataDef() == null)
+			return false;
+
+		return getDataDef().getDataType() == DataType.BOOLEAN;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public Entity getValue(String nsPrefix) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public final boolean isDateTime() {
+		if (getDataDef() == null)
+			return false;
+
+		return getDataDef().getDataType() == DataType.DATE_TIME;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public boolean isBoolean() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public final boolean isEnum() {
+		if (getDataDef() == null)
+			return false;
+
+		return getDataDef().getDataType() == DataType.ENUM;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public boolean isDate() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public final boolean isIdentity() {
+		if (getDataDef() == null)
+			return false;
+
+		return getDataDef().getDataType() == DataType.IDENTITY;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public boolean isEnum() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public final boolean isNumeric() {
+		if (getDataDef() == null)
+			return false;
+
+		return getDataDef().getDataType() == DataType.NUMERIC;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public boolean isNumeric() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public final boolean isString() {
+		if (getDataDef() == null)
+			return false;
+
+		return getDataDef().getDataType() == DataType.STRING;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public boolean isString() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public final boolean isReference() {
+		if (getDataDef() == null)
+			return false;
+
+		return getDataDef().getDataType() == DataType.REFERENCE;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -755,6 +698,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 		switch (featureID) {
 			case EntityPackage.SLOT__CARDINALITY:
 				return basicSetCardinality(null, msgs);
+			case EntityPackage.SLOT__DATA_DEF:
+				return basicSetDataDef(null, msgs);
 			case EntityPackage.SLOT__DOMAIN:
 				return basicSetDomain(null, msgs);
 		}
@@ -762,8 +707,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -774,6 +718,9 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return basicGetCardinality();
 			case EntityPackage.SLOT__CONTAINMENT:
 				return isContainment();
+			case EntityPackage.SLOT__DATA_DEF:
+				if (resolve) return getDataDef();
+				return basicGetDataDef();
 			case EntityPackage.SLOT__DEFAULT_VALUE:
 				return getDefaultValue();
 			case EntityPackage.SLOT__DERIVED:
@@ -785,14 +732,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return getGroup();
 			case EntityPackage.SLOT__KEY:
 				return isKey();
-			case EntityPackage.SLOT__LENGTH:
-				return getLength();
 			case EntityPackage.SLOT__NAME:
 				return getName();
-			case EntityPackage.SLOT__PRECISION:
-				return getPrecision();
-			case EntityPackage.SLOT__SCALE:
-				return getScale();
 			case EntityPackage.SLOT__TEXT:
 				return getText();
 			case EntityPackage.SLOT__TO_STRING:
@@ -802,8 +743,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -814,6 +754,9 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return;
 			case EntityPackage.SLOT__CONTAINMENT:
 				setContainment((Boolean)newValue);
+				return;
+			case EntityPackage.SLOT__DATA_DEF:
+				setDataDef((DataDef<?>)newValue);
 				return;
 			case EntityPackage.SLOT__DEFAULT_VALUE:
 				setDefaultValue((String)newValue);
@@ -830,17 +773,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 			case EntityPackage.SLOT__KEY:
 				setKey((Boolean)newValue);
 				return;
-			case EntityPackage.SLOT__LENGTH:
-				setLength((Integer)newValue);
-				return;
 			case EntityPackage.SLOT__NAME:
 				setName((String)newValue);
-				return;
-			case EntityPackage.SLOT__PRECISION:
-				setPrecision((Integer)newValue);
-				return;
-			case EntityPackage.SLOT__SCALE:
-				setScale((Integer)newValue);
 				return;
 			case EntityPackage.SLOT__TEXT:
 				setText((String)newValue);
@@ -853,8 +787,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -865,6 +798,9 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return;
 			case EntityPackage.SLOT__CONTAINMENT:
 				setContainment(CONTAINMENT_EDEFAULT);
+				return;
+			case EntityPackage.SLOT__DATA_DEF:
+				setDataDef((DataDef<?>)null);
 				return;
 			case EntityPackage.SLOT__DEFAULT_VALUE:
 				setDefaultValue(DEFAULT_VALUE_EDEFAULT);
@@ -881,17 +817,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 			case EntityPackage.SLOT__KEY:
 				setKey(KEY_EDEFAULT);
 				return;
-			case EntityPackage.SLOT__LENGTH:
-				setLength(LENGTH_EDEFAULT);
-				return;
 			case EntityPackage.SLOT__NAME:
 				setName(NAME_EDEFAULT);
-				return;
-			case EntityPackage.SLOT__PRECISION:
-				setPrecision(PRECISION_EDEFAULT);
-				return;
-			case EntityPackage.SLOT__SCALE:
-				setScale(SCALE_EDEFAULT);
 				return;
 			case EntityPackage.SLOT__TEXT:
 				setText(TEXT_EDEFAULT);
@@ -904,8 +831,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -915,6 +841,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return cardinality != null;
 			case EntityPackage.SLOT__CONTAINMENT:
 				return containment != CONTAINMENT_EDEFAULT;
+			case EntityPackage.SLOT__DATA_DEF:
+				return dataDef != null;
 			case EntityPackage.SLOT__DEFAULT_VALUE:
 				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
 			case EntityPackage.SLOT__DERIVED:
@@ -925,14 +853,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
 			case EntityPackage.SLOT__KEY:
 				return key != KEY_EDEFAULT;
-			case EntityPackage.SLOT__LENGTH:
-				return length != LENGTH_EDEFAULT;
 			case EntityPackage.SLOT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EntityPackage.SLOT__PRECISION:
-				return precision != PRECISION_EDEFAULT;
-			case EntityPackage.SLOT__SCALE:
-				return scale != SCALE_EDEFAULT;
 			case EntityPackage.SLOT__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case EntityPackage.SLOT__TO_STRING:
@@ -942,8 +864,7 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -961,14 +882,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 		result.append(group);
 		result.append(", key: ");
 		result.append(key);
-		result.append(", length: ");
-		result.append(length);
 		result.append(", name: ");
 		result.append(name);
-		result.append(", precision: ");
-		result.append(precision);
-		result.append(", scale: ");
-		result.append(scale);
 		result.append(", text: ");
 		result.append(text);
 		result.append(", toString: ");
@@ -977,4 +892,4 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 		return result.toString();
 	}
 
-} //SlotImpl
+} // SlotImpl

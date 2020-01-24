@@ -7,16 +7,15 @@
  */
 package org.abchip.mimo.data;
 
-
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Identity Def</b></em>'.
+ * A representation of the model object '<em><b>Enum Def</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.data.DataPackage#getIdentityDef()
- * @model superTypes="org.abchip.mimo.data.DataDef&lt;org.eclipse.emf.ecore.EJavaObject&gt;"
+ * @see org.abchip.mimo.data.DataPackage#getEnumDef()
+ * @model superTypes="org.abchip.mimo.data.DataDef&lt;org.abchip.mimo.java.JavaEnum&gt;" EBounds="org.abchip.mimo.java.JavaEnum"
  * @generated
  */
-public interface IdentityDef extends DataDef<Object> {
-} // IdentityDef
+public interface EnumDef<E extends Enum<E>> extends DataDef<Enum<E>> {
+} // EnumDef

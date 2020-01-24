@@ -13,9 +13,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.abchip.mimo.data.CharacterDef;
 import org.abchip.mimo.data.DataDef;
-import org.abchip.mimo.data.DecimalDef;
+import org.abchip.mimo.data.NumericDef;
+import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.database.definition.DefinitionWriter;
 import org.abchip.mimo.database.definition.IndexColumnDef;
 import org.abchip.mimo.database.definition.IndexDef;
@@ -62,30 +62,49 @@ public abstract class BaseDefinitionWriterImpl extends StatementWriterImpl imple
 				result.append(", ");
 
 			DataDef<?> columnDef = column.getDefinition();
-			switch (columnDef.getDataDefType()) {
+			switch (columnDef.getDataType()) {
 			case IDENTITY:
 				result.append(getNameInSQLFormat(column) + " INT NOT NULL AUTO_INCREMENT");
 				break;
-			case CHARACTER:
-				CharacterDef characterDef = (CharacterDef)columnDef;
-				if(characterDef.isVarying())
-					result.append(getNameInSQLFormat(column) + " VARCHAR(" + characterDef.getLength() + ")");
+			case NUMERIC:
+				NumericDef numericDef = (NumericDef) columnDef;
+				switch (numericDef.getType()) {
+				case BIG_DECIMAL:
+					if (numericDef.getScale() != 0)
+						result.append(getNameInSQLFormat(column) + " DECIMAL(" + numericDef.getPrecision() + ", " + numericDef.getScale() + ")");
+					else
+						result.append(getNameInSQLFormat(column) + " DECIMAL(" + numericDef.getPrecision() + ",  0)");
+					break;
+				case BYTE:
+				case DOUBLE:
+				case FLOAT:
+				case INTEGER:
+				case LONG:
+				case SHORT:
+					result.append(getNameInSQLFormat(column) + " " + columnDef.getDataType().getName().toUpperCase());
+					break;
+				}
+
+				break;
+			case STRING:
+				StringDef stringDef = (StringDef) columnDef;
+				if (stringDef.isVarying())
+					result.append(getNameInSQLFormat(column) + " VARCHAR(" + stringDef.getLength() + ")");
 				// TODO introduce QContext
-				else if(characterDef.getLength() > 8000)
+				else if (stringDef.getLength() > 8000)
 					result.append(getNameInSQLFormat(column) + " BLOB");
 				else
-					result.append(getNameInSQLFormat(column) + " CHAR(" + characterDef.getLength() + ")");
+					result.append(getNameInSQLFormat(column) + " CHAR(" + stringDef.getLength() + ")");
 				break;
-			case DECIMAL:
-				DecimalDef decimalDef = (DecimalDef)columnDef;
-				if (decimalDef.getScale() != 0)
-					result.append(getNameInSQLFormat(column) + " DECIMAL(" + decimalDef.getPrecision() + ", " + decimalDef.getScale() + ")");
-				else
-					result.append(getNameInSQLFormat(column) + " DECIMAL(" + decimalDef.getPrecision() + ",  0)");
-				break;
-			default:
-				result.append(getNameInSQLFormat(column) + " " + columnDef.getDataDefType().getName().toUpperCase());
+			case BINARY:
+			case BOOLEAN:
+			case DATE_TIME:
+			case ENUM:
+			case REFERENCE:
+				result.append(getNameInSQLFormat(column) + " " + columnDef.getDataType().getName().toUpperCase());
+				break;				
 			}
+
 			first = false;
 		}
 
@@ -178,17 +197,17 @@ public abstract class BaseDefinitionWriterImpl extends StatementWriterImpl imple
 	public String countRecords(Table table) {
 		return "SELECT COUNT(*) FROM " + getQualifiedNameInSQLFormat(table);
 	}
-	
+
 	@Override
 	public String selectData(Table table) {
 		return "SELECT * FROM " + getQualifiedNameInSQLFormat(table);
 	}
-	
+
 	@Override
 	public String truncateTable(Table table) {
 		return deleteData(table);
 	}
-	
+
 	@Override
 	@SuppressWarnings("unchecked")
 	public String insertData(Table table, List<String> fieldNames) {
@@ -223,7 +242,7 @@ public abstract class BaseDefinitionWriterImpl extends StatementWriterImpl imple
 		Map<String, Column> columnMap = toMap(columns);
 		for (String name : fieldNames) {
 			Column column = columnMap.get(name);
-			if (column!= null) {
+			if (column != null) {
 				result.add(column);
 			}
 		}

@@ -17,8 +17,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentResource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="QGPL"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateFormat" eType="ecore:EEnum ../../org.abchip.mimo.core/model/mimo.ecore#//data/DateFormat"
-        defaultValueLiteral="DMY"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateFormat" eType="ecore:EEnum ../../org.abchip.mimo.core/model/mimo.ecore#//data/DateFormat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateSeparator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="/"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="destroyDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>

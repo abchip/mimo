@@ -27,22 +27,31 @@ public interface DataFactory extends EFactory {
 	DataFactory eINSTANCE = org.abchip.mimo.data.impl.DataFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Binary Def</em>'.
+	 * Returns a new object of class '<em>String Def</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Binary Def</em>'.
+	 * @return a new object of class '<em>String Def</em>'.
 	 * @generated
 	 */
-	BinaryDef createBinaryDef();
+	StringDef createStringDef();
 
 	/**
-	 * Returns a new object of class '<em>Character Def</em>'.
+	 * Returns a new object of class '<em>Boolean Def</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Character Def</em>'.
+	 * @return a new object of class '<em>Boolean Def</em>'.
 	 * @generated
 	 */
-	CharacterDef createCharacterDef();
+	BooleanDef createBooleanDef();
+
+	/**
+	 * Returns a new object of class '<em>Enum Def</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enum Def</em>'.
+	 * @generated
+	 */
+	<E extends Enum<E>> EnumDef<E> createEnumDef();
 
 	/**
 	 * Returns a new object of class '<em>Datetime Def</em>'.
@@ -54,22 +63,22 @@ public interface DataFactory extends EFactory {
 	DatetimeDef createDatetimeDef();
 
 	/**
-	 * Returns a new object of class '<em>Decimal Def</em>'.
+	 * Returns a new object of class '<em>Numeric Def</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Decimal Def</em>'.
+	 * @return a new object of class '<em>Numeric Def</em>'.
 	 * @generated
 	 */
-	DecimalDef createDecimalDef();
+	NumericDef createNumericDef();
 
 	/**
-	 * Returns a new object of class '<em>Floating Def</em>'.
+	 * Returns a new object of class '<em>Binary Def</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Floating Def</em>'.
+	 * @return a new object of class '<em>Binary Def</em>'.
 	 * @generated
 	 */
-	FloatingDef createFloatingDef();
+	BinaryDef createBinaryDef();
 
 	/**
 	 * Returns a new object of class '<em>Identity Def</em>'.
@@ -81,22 +90,13 @@ public interface DataFactory extends EFactory {
 	IdentityDef createIdentityDef();
 
 	/**
-	 * Returns a new object of class '<em>Numeric Def</em>'.
+	 * Returns a new object of class '<em>Reference Def</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Numeric Def</em>'.
+	 * @return a new object of class '<em>Reference Def</em>'.
 	 * @generated
 	 */
-	NumericDef createNumericDef();
-
-	/**
-	 * Returns a new object of class '<em>String Def</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>String Def</em>'.
-	 * @generated
-	 */
-	StringDef createStringDef();
+	ReferenceDef createReferenceDef();
 
 	/**
 	 * Returns the package supported by this factory.

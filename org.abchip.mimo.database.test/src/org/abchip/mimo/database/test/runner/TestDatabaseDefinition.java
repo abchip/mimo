@@ -15,8 +15,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.data.CharacterDef;
 import org.abchip.mimo.data.DataFactory;
+import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.database.DatabaseManager;
 import org.abchip.mimo.database.connection.Connection;
 import org.abchip.mimo.database.connection.ConnectionManager;
@@ -149,8 +149,9 @@ public class TestDatabaseDefinition {
 
 			for (int i = 1; i <= 3; i++) {
 				TableColumnDef column = DatabaseDefinitionFactory.eINSTANCE.createTableColumnDef();
-				CharacterDef characterDef = DataFactory.eINSTANCE.createCharacterDef();
+				StringDef characterDef = DataFactory.eINSTANCE.createStringDef();
 				characterDef.setLength(10);
+				characterDef.setVarying(false);
 				column.setDefinition(characterDef);
 				column.setName("COL" + i);
 				tableDef.getColumns().add(column);

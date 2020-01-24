@@ -8,9 +8,9 @@
  */
 package org.abchip.mimo.database.jtds;
 
-import org.abchip.mimo.data.CharacterDef;
 import org.abchip.mimo.data.DataDef;
-import org.abchip.mimo.data.DecimalDef;
+import org.abchip.mimo.data.NumericDef;
+import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.database.base.BaseDefinitionWriterImpl;
 import org.abchip.mimo.database.definition.SchemaDef;
 import org.abchip.mimo.database.definition.TableColumnDef;
@@ -27,8 +27,8 @@ public class JTDSDefinitionWriterImpl extends BaseDefinitionWriterImpl {
 	}
 
 	@Override
-	public String createTable(Schema schema, String name,  TableDef table) {
-		
+	public String createTable(Schema schema, String name, TableDef table) {
+
 		StringBuffer result = new StringBuffer("CREATE TABLE ");
 		result.append(getNameInSQLFormat(schema) + "." + getNameInSQLFormat(name) + " (");
 
@@ -41,39 +41,55 @@ public class JTDSDefinitionWriterImpl extends BaseDefinitionWriterImpl {
 			String columnName = getNameInSQLFormat(column);
 
 			DataDef<?> columnDef = column.getDefinition();
-			switch (columnDef.getDataDefType()) {
-
+			switch (columnDef.getDataType()) {
 			case IDENTITY:
 				result.append(columnName + " INT PRIMARY KEY IDENTITY");
 				break;
-			case CHARACTER:
-				CharacterDef characterDef = (CharacterDef)columnDef;
-				if(characterDef.isVarying()) {
-					if (characterDef.getLength() > 8000)
-						result.append(columnName + " TEXT");
+			case NUMERIC:
+				NumericDef numericDef = (NumericDef) columnDef;
+				switch (numericDef.getType()) {
+				case BIG_DECIMAL:
+					if (numericDef.getScale() != 0)
+						result.append(columnName + " DECIMAL(" + numericDef.getPrecision() + ", " + numericDef.getScale() + ")");
 					else
-						result.append(columnName + " VARCHAR(" + characterDef.getLength() + ")");
+						result.append(columnName + " DECIMAL(" + numericDef.getPrecision() + ",  0)");
+					break;
+				case BYTE:
+				case DOUBLE:
+				case FLOAT:
+				case INTEGER:
+				case LONG:
+				case SHORT:
+					result.append(getNameInSQLFormat(column) + " " + columnDef.getDataType().getName().toUpperCase());
+					break;
 				}
-				else
-					result.append(columnName + " CHAR(" + characterDef.getLength() + ")");					
 
 				break;
-			case DECIMAL:
-				DecimalDef decimalDef = (DecimalDef)columnDef;
-				if (decimalDef.getScale() != 0)
-					result.append(columnName + " DECIMAL(" + decimalDef.getPrecision() + ", " + decimalDef.getScale() + ")");
-				else
-					result.append(columnName + " DECIMAL(" + decimalDef.getPrecision() + ",  0)");
+			case STRING:
+				StringDef stringDef = (StringDef) columnDef;
+				if (stringDef.isVarying()) {
+					if (stringDef.getLength() > 8000)
+						result.append(columnName + " TEXT");
+					else
+						result.append(columnName + " VARCHAR(" + stringDef.getLength() + ")");
+				} else
+					result.append(columnName + " CHAR(" + stringDef.getLength() + ")");
 				break;
-			default:
-				result.append(columnName + " " + columnDef.getDataDefType().getName().toUpperCase());
+			case BINARY:
+			case BOOLEAN:
+			case DATE_TIME:
+			case ENUM:
+			case REFERENCE:
+				result.append(getNameInSQLFormat(column) + " " + columnDef.getDataType().getName().toUpperCase());
+				break;
 			}
+
 			first = false;
 		}
 		result.append(")");
 		return result.toString();
 	}
-	
+
 	@Override
 	public String deleteData(Table table) {
 		return "TRUNCATE TABLE " + getQualifiedNameInSQLFormat(table);
@@ -83,7 +99,7 @@ public class JTDSDefinitionWriterImpl extends BaseDefinitionWriterImpl {
 	public String dropSchema(Schema schema, boolean ignoreFailOnNonEmpty) {
 		return dropSchema(schema);
 	}
-	
+
 	@Override
 	public String createLabel(String name, SchemaDef schema) {
 		// TODO Auto-generated method stub
@@ -97,8 +113,7 @@ public class JTDSDefinitionWriterImpl extends BaseDefinitionWriterImpl {
 	}
 
 	@Override
-	public String createLabelForFields(Schema schema, String name,
-			TableDef table) {
+	public String createLabelForFields(Schema schema, String name, TableDef table) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -110,7 +125,7 @@ public class JTDSDefinitionWriterImpl extends BaseDefinitionWriterImpl {
 	}
 
 	@Override
-	public String copyTableData(Table tableFrom, Table tableTo,	boolean isCreateRelativeRecordNumber) {
+	public String copyTableData(Table tableFrom, Table tableTo, boolean isCreateRelativeRecordNumber) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -16,7 +16,6 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.edi.EdiManager;
 import org.abchip.mimo.edi.entity.EdiFrameSetup;
 import org.abchip.mimo.edi.entity.EntityEvent;
-import org.abchip.mimo.edi.message.MessageFactory;
 import org.abchip.mimo.edi.message.MessageSent;
 import org.abchip.mimo.edi.message.MessageStatus;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -52,10 +51,7 @@ public class BaseEdiManagerImpl implements EdiManager {
 				break;
 			}
 
-			MessageSent messageSent = MessageFactory.eINSTANCE.createMessageSent();
-
-			String messageSentId = messageSentWriter.nextSequence();
-			messageSent.setMessageId(messageSentId);
+			MessageSent messageSent = messageSentWriter.make(true);
 
 			messageSent.setMessageType(setup.getMessageType());
 			messageSent.setSender(contextDescription.getUser());

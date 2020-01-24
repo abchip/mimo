@@ -8,6 +8,8 @@
  */
 package org.abchip.mimo.entity;
 
+import org.abchip.mimo.data.DataDef;
+
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Slot</b></em>'. <!-- end-user-doc -->
@@ -18,15 +20,13 @@ package org.abchip.mimo.entity;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.Slot#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isContainment <em>Containment</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#getDataDef <em>Data Def</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isDerived <em>Derived</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isKey <em>Key</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.Slot#getLength <em>Length</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.Slot#getPrecision <em>Precision</em>}</li>
- *   <li>{@link org.abchip.mimo.entity.Slot#getScale <em>Scale</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isToString <em>To String</em>}</li>
  * </ul>
@@ -66,58 +66,6 @@ public interface Slot extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Precision</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Precision</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Precision</em>' attribute.
-	 * @see #setPrecision(int)
-	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Precision()
-	 * @model
-	 * @generated
-	 */
-	int getPrecision();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getPrecision <em>Precision</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Precision</em>' attribute.
-	 * @see #getPrecision()
-	 * @generated
-	 */
-	void setPrecision(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Scale</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Scale</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scale</em>' attribute.
-	 * @see #setScale(int)
-	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Scale()
-	 * @model
-	 * @generated
-	 */
-	int getScale();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getScale <em>Scale</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scale</em>' attribute.
-	 * @see #getScale()
-	 * @generated
-	 */
-	void setScale(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute. <!--
@@ -225,6 +173,32 @@ public interface Slot extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setContainment(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Data Def</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data Def</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data Def</em>' containment reference.
+	 * @see #setDataDef(DataDef)
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_DataDef()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	DataDef<?> getDataDef();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getDataDef <em>Data Def</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Data Def</em>' containment reference.
+	 * @see #getDataDef()
+	 * @generated
+	 */
+	void setDataDef(DataDef<?> value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Value</b></em>' attribute. <!--
@@ -361,37 +335,12 @@ public interface Slot extends EntityIdentifiable {
 	void setKey(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Length</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Length</em>' attribute.
-	 * @see #setLength(int)
-	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Length()
-	 * @model
-	 * @generated
-	 */
-	int getLength();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#getLength <em>Length</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Length</em>' attribute.
-	 * @see #getLength()
+	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	void setLength(int value);
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model nsPrefixRequired="true"
-	 * @generated
-	 */
-	Entity getValue(String nsPrefix);
+	boolean isBinary();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -401,11 +350,12 @@ public interface Slot extends EntityIdentifiable {
 	boolean isBoolean();
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	boolean isDate();
+	boolean isDateTime();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -413,6 +363,14 @@ public interface Slot extends EntityIdentifiable {
 	 * @generated
 	 */
 	boolean isEnum();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	boolean isIdentity();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -427,4 +385,12 @@ public interface Slot extends EntityIdentifiable {
 	 * @generated
 	 */
 	boolean isString();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	boolean isReference();
 } // Slot

@@ -7,51 +7,47 @@
  */
 package org.abchip.mimo.data.impl;
 
-import org.abchip.mimo.data.BinaryDef;
+import org.abchip.mimo.data.BooleanDef;
 import org.abchip.mimo.data.DataPackage;
 import org.abchip.mimo.data.DataType;
 import org.eclipse.emf.ecore.EClass;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Binary Def</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Boolean
+ * Def</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
-public class BinaryDefImpl extends DataDefImpl<byte[]> implements BinaryDef {
+public class BooleanDefImpl extends DataDefImpl<Boolean> implements BooleanDef {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BinaryDefImpl() {
+	protected BooleanDefImpl() {
 		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DataPackage.Literals.BINARY_DEF;
+		return DataPackage.Literals.BOOLEAN_DEF;
 	}
 
 	@Override
 	public Class<?> getJavaClass() {
-		return byte[].class;
+		return Boolean.class;
 	}
 
 	@Override
 	public DataType getDataType() {
-		return DataType.BINARY;
+		return DataType.BOOLEAN;
 	}
-
-} //BinaryDefImpl
+} // BooleanDefImpl

@@ -10,6 +10,7 @@ package org.abchip.mimo.data.impl;
 import java.util.Date;
 
 import org.abchip.mimo.data.DataPackage;
+import org.abchip.mimo.data.DataType;
 import org.abchip.mimo.data.DateFormat;
 import org.abchip.mimo.data.DatetimeDef;
 import org.abchip.mimo.data.DatetimeType;
@@ -50,7 +51,7 @@ public class DatetimeDefImpl extends DataDefImpl<Date> implements DatetimeDef {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final DatetimeType TYPE_EDEFAULT = DatetimeType.DATE;
+	protected static final DatetimeType TYPE_EDEFAULT = DatetimeType.TIME_STAMP;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -288,4 +289,13 @@ public class DatetimeDefImpl extends DataDefImpl<Date> implements DatetimeDef {
 		return result.toString();
 	}
 
+	@Override
+	public Class<?> getJavaClass() {
+		return Date.class;
+	}
+
+	@Override
+	public DataType getDataType() {
+		return DataType.DATE_TIME;
+	}
 } //DatetimeDefImpl
