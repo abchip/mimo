@@ -26,11 +26,11 @@ import org.abchip.mimo.data.DataType;
 import org.abchip.mimo.data.DateFormat;
 import org.abchip.mimo.data.DatetimeDef;
 import org.abchip.mimo.data.DatetimeType;
+import org.abchip.mimo.data.EntityDef;
 import org.abchip.mimo.data.EnumDef;
 import org.abchip.mimo.data.IdentityDef;
 import org.abchip.mimo.data.NumericDef;
 import org.abchip.mimo.data.NumericType;
-import org.abchip.mimo.data.ReferenceDef;
 import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.data.TimeFormat;
 
@@ -130,7 +130,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass referenceDefEClass = null;
+	private EClass entityDefEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -434,8 +434,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getReferenceDef() {
-		return referenceDefEClass;
+	public EClass getEntityDef() {
+		return entityDefEClass;
 	}
 
 	/**
@@ -542,7 +542,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 
 		identityDefEClass = createEClass(IDENTITY_DEF);
 
-		referenceDefEClass = createEClass(REFERENCE_DEF);
+		entityDefEClass = createEClass(ENTITY_DEF);
 
 		// Create enums
 		dataTypeEEnum = createEEnum(DATA_TYPE);
@@ -614,13 +614,13 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		g1.getETypeArguments().add(g2);
 		binaryDefEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getDataDef());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g2 = createEGenericType(ecorePackage.getEIntegerObject());
 		g1.getETypeArguments().add(g2);
 		identityDefEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getDataDef());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g2 = createEGenericType(theEntityPackage.getEntity());
 		g1.getETypeArguments().add(g2);
-		referenceDefEClass.getEGenericSuperTypes().add(g1);
+		entityDefEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(dataDefEClass, DataDef.class, "DataDef", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -656,7 +656,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 
 		initEClass(identityDefEClass, IdentityDef.class, "IdentityDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(referenceDefEClass, ReferenceDef.class, "ReferenceDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(entityDefEClass, EntityDef.class, "EntityDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(dataTypeEEnum, DataType.class, "DataType");
@@ -667,7 +667,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		addEEnumLiteral(dataTypeEEnum, DataType.NUMERIC);
 		addEEnumLiteral(dataTypeEEnum, DataType.BINARY);
 		addEEnumLiteral(dataTypeEEnum, DataType.IDENTITY);
-		addEEnumLiteral(dataTypeEEnum, DataType.REFERENCE);
+		addEEnumLiteral(dataTypeEEnum, DataType.ENTITY);
 
 		initEEnum(datetimeTypeEEnum, DatetimeType.class, "DatetimeType");
 		addEEnumLiteral(datetimeTypeEEnum, DatetimeType.TIME_STAMP);

@@ -64,10 +64,22 @@ public class FindServlet extends BaseServlet {
 					break;
 
 				Slot slot = frame.getSlot(slotKey);
-				if (slot.isString())
+				switch (slot.getDataType()) {
+				case STRING:
+				case DATE_TIME:
+				case ENUM:
 					sb.append(slotKey + " = \"" + keys[i] + "\"");
-				else
+					break;
+				case IDENTITY:
+				case NUMERIC:
+				case BOOLEAN:
 					sb.append(slotKey + " = " + keys[i] + "");
+					break;
+				case BINARY:
+				case ENTITY:
+					break;
+				}
+
 				i++;
 			}
 

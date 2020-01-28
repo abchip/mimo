@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class IdentityDefImpl extends DataDefImpl<Object> implements IdentityDef {
+public class IdentityDefImpl extends DataDefImpl<Integer> implements IdentityDef {
 	/**
 	 * 
 	 */

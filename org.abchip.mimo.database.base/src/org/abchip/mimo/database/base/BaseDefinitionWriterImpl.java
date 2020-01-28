@@ -100,7 +100,7 @@ public abstract class BaseDefinitionWriterImpl extends StatementWriterImpl imple
 			case BOOLEAN:
 			case DATE_TIME:
 			case ENUM:
-			case REFERENCE:
+			case ENTITY:
 				result.append(getNameInSQLFormat(column) + " " + columnDef.getDataType().getName().toUpperCase());
 				break;				
 			}

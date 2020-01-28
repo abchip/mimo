@@ -608,7 +608,7 @@
       <eLiterals name="Numeric" value="50" literal="NMR"/>
       <eLiterals name="Binary" value="60" literal="BIN"/>
       <eLiterals name="Identity" value="70" literal="IDN"/>
-      <eLiterals name="Reference" value="80" literal="RFR"/>
+      <eLiterals name="Entity" value="80" literal="ENT"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DataDef" abstract="true" eSuperTypes="#//entity/Entity">
       <eTypeParameters name="D"/>
@@ -696,9 +696,9 @@
         <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
       </eGenericSuperTypes>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ReferenceDef">
+    <eClassifiers xsi:type="ecore:EClass" name="EntityDef">
       <eGenericSuperTypes eClassifier="#//data/DataDef">
-        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eTypeArguments eClassifier="#//entity/Entity"/>
       </eGenericSuperTypes>
     </eClassifiers>
   </eSubpackages>
@@ -884,14 +884,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="textFormula" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" eSuperTypes="#//entity/EntityIdentifiable">
-      <eOperations name="isBinary" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="isBoolean" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="isDateTime" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="isEnum" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="isIdentity" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="isNumeric" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="isString" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="isReference" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="getDataType" lowerBound="1" eType="#//data/DataType"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" eType="#//entity/Cardinality"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="containment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

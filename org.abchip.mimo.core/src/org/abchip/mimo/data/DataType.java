@@ -94,14 +94,14 @@ public enum DataType implements Enumerator {
 	IDENTITY(70, "Identity", "IDN"),
 
 	/**
-	 * The '<em><b>Reference</b></em>' literal object.
+	 * The '<em><b>Entity</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #REFERENCE_VALUE
+	 * @see #ENTITY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	REFERENCE(80, "Reference", "RFR");
+	ENTITY(80, "Entity", "ENT");
 
 	/**
 	 * The '<em><b>String</b></em>' literal value.
@@ -209,19 +209,19 @@ public enum DataType implements Enumerator {
 	public static final int IDENTITY_VALUE = 70;
 
 	/**
-	 * The '<em><b>Reference</b></em>' literal value.
+	 * The '<em><b>Entity</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Reference</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Entity</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #REFERENCE
-	 * @model name="Reference" literal="RFR"
+	 * @see #ENTITY
+	 * @model name="Entity" literal="ENT"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int REFERENCE_VALUE = 80;
+	public static final int ENTITY_VALUE = 80;
 
 	/**
 	 * An array of all the '<em><b>Type</b></em>' enumerators.
@@ -238,7 +238,7 @@ public enum DataType implements Enumerator {
 			NUMERIC,
 			BINARY,
 			IDENTITY,
-			REFERENCE,
+			ENTITY,
 		};
 
 	/**
@@ -302,7 +302,7 @@ public enum DataType implements Enumerator {
 			case NUMERIC_VALUE: return NUMERIC;
 			case BINARY_VALUE: return BINARY;
 			case IDENTITY_VALUE: return IDENTITY;
-			case REFERENCE_VALUE: return REFERENCE;
+			case ENTITY_VALUE: return ENTITY;
 		}
 		return null;
 	}

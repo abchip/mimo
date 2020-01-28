@@ -1100,21 +1100,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getSlot_Text(), ecorePackage.getEString(), "text", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlot_ToString(), ecorePackage.getEBoolean(), "toString", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isBinary", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isBoolean", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isDateTime", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isEnum", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isIdentity", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isNumeric", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isString", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(slotEClass, ecorePackage.getEBoolean(), "isReference", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(slotEClass, theDataPackage.getDataType(), "getDataType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(entityStateEEnum, EntityState.class, "EntityState");

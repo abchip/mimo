@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.data;
 
+import org.abchip.mimo.entity.Entity;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -14,9 +16,9 @@ package org.abchip.mimo.data;
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.data.DataPackage#getReferenceDef()
- * @model superTypes="org.abchip.mimo.data.DataDef&lt;org.eclipse.emf.ecore.EJavaObject&gt;"
+ * @see org.abchip.mimo.data.DataPackage#getEntityDef()
+ * @model
  * @generated
  */
-public interface ReferenceDef extends DataDef<Object> {
-} // ReferenceDef
+public interface EntityDef extends DataDef<Entity> {
+} // EntityDef

@@ -90,13 +90,13 @@ public interface DataFactory extends EFactory {
 	IdentityDef createIdentityDef();
 
 	/**
-	 * Returns a new object of class '<em>Reference Def</em>'.
+	 * Returns a new object of class '<em>Entity Def</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Reference Def</em>'.
+	 * @return a new object of class '<em>Entity Def</em>'.
 	 * @generated
 	 */
-	ReferenceDef createReferenceDef();
+	EntityDef createEntityDef();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -112,18 +112,26 @@ public class LookupSchemaServlet extends BaseServlet {
 		}
 
 		if (column.getView() == null) {
-			if (slot.isBoolean())
+			
+			switch (slot.getDataType()) {
+			case STRING:
+			case ENTITY:
+			case ENUM:
+				column.setSort("string");
+				break;
+			case BOOLEAN:
 				column.setView("checkbox");
+				break;
+			case BINARY:
+			case DATE_TIME:
+				column.setSort("raw");
+				break;
+			case IDENTITY:
+			case NUMERIC:
+				column.setSort("int");
+				break;
+			}
 		}
-
-		if (slot.isNumeric())
-			column.setSort("int");
-		else if (slot.isDateTime())
-			column.setSort("raw");
-		else if (slot.isString())
-			column.setSort("string");
-		else
-			column.setSort("raw");
 
 		return column;
 	}

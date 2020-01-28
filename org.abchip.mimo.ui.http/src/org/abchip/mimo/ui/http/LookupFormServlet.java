@@ -18,6 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
+import org.abchip.mimo.data.NumericDef;
+import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
@@ -124,35 +126,45 @@ public class LookupFormServlet extends BaseServlet {
 		}
 
 		// view
-		if ((slot.getDomain() != null)) {
-			// if (slot.getDomain().getFrame().equals("BizEntityNoteData"))
-			// field.setView("note");
-		}
-
 		if (field.getView() == null) {
 			if (slot.isContainment())
 				field.setView("form");
-			else if (slot.getDomain() != null)
-				field.setView("combo");
-			else if (slot.isBoolean())
-				field.setView("checkbox");
-			else if (slot.isDateTime())
-				field.setView("datepicker");
 			else if (slot.getText().toLowerCase().contains("level"))
 				field.setView("counter");
 			else if (slot.getText().toLowerCase().contains("image"))
 				field.setView("photo");
-			else {
+		}
+
+		if (field.getView() == null) {
+
+			switch (slot.getDataType()) {
+			case BINARY:
+				break;
+			case BOOLEAN:
+				field.setView("checkbox");
+				break;
+			case DATE_TIME:
+				field.setView("datepicker");
+				break;
+			case ENTITY:
+				field.setView("combo");
+				break;
+			case ENUM:
+				field.setView("combo");
+				break;
+			case IDENTITY:
+				break;
+			case NUMERIC:
 				field.setView("text");
-/*				if(slot.getLength()>0) {
-					field.setLength(slot.getLength());
-				}
-				if(slot.getPrecision()>0) {
-					field.setPrecision(slot.getPrecision());
-				}
-				if(slot.getScale()>0) {
-					field.setScale(slot.getScale());
-				}*/
+				NumericDef numericDef = (NumericDef) slot.getDataDef();
+				field.setPrecision(numericDef.getPrecision());
+				field.setScale(numericDef.getScale());
+				break;
+			case STRING:
+				field.setView("text");
+				StringDef stringDef = (StringDef) slot.getDataDef();
+				field.setLength(stringDef.getLength());
+				break;
 			}
 		}
 

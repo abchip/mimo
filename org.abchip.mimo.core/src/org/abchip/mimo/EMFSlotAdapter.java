@@ -18,7 +18,7 @@ import org.abchip.mimo.data.DatetimeType;
 import org.abchip.mimo.data.EnumDef;
 import org.abchip.mimo.data.NumericDef;
 import org.abchip.mimo.data.NumericType;
-import org.abchip.mimo.data.ReferenceDef;
+import org.abchip.mimo.data.EntityDef;
 import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
@@ -114,8 +114,8 @@ public class EMFSlotAdapter extends SlotImpl {
 			StringDef stringDef = DataFactory.eINSTANCE.createStringDef();
 			dataDef = stringDef;
 		} else if (Entity.class.isAssignableFrom(klass)) {
-			ReferenceDef referenceDef = DataFactory.eINSTANCE.createReferenceDef();
-			dataDef = referenceDef;
+			EntityDef entityDef = DataFactory.eINSTANCE.createEntityDef();
+			dataDef = entityDef;
 		} else {
 			if (klass.isPrimitive()) {
 				if (klass.getName().equals("long") || klass.getName().equals("integer") || klass.getName().equals("short") || klass.getName().equals("float")

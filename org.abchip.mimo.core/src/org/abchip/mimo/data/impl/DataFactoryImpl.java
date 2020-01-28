@@ -69,7 +69,7 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 			case DataPackage.NUMERIC_DEF: return (EObject)createNumericDef();
 			case DataPackage.BINARY_DEF: return (EObject)createBinaryDef();
 			case DataPackage.IDENTITY_DEF: return (EObject)createIdentityDef();
-			case DataPackage.REFERENCE_DEF: return (EObject)createReferenceDef();
+			case DataPackage.ENTITY_DEF: return (EObject)createEntityDef();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -204,9 +204,9 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	 * @generated
 	 */
 	@Override
-	public ReferenceDef createReferenceDef() {
-		ReferenceDefImpl referenceDef = new ReferenceDefImpl();
-		return referenceDef;
+	public EntityDef createEntityDef() {
+		EntityDefImpl entityDef = new EntityDefImpl();
+		return entityDef;
 	}
 
 	/**

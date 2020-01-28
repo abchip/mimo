@@ -425,7 +425,7 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataType/Numeric"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataType/Binary"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataType/Identity"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataType/Reference"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataType/Entity"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//data/DatetimeType">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DatetimeType/TimeStamp"/>
@@ -478,7 +478,7 @@
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//data/BinaryDef"/>
       <genClasses ecoreClass="mimo.ecore#//data/IdentityDef"/>
-      <genClasses ecoreClass="mimo.ecore#//data/ReferenceDef"/>
+      <genClasses ecoreClass="mimo.ecore#//data/EntityDef"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Entity" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" contentTypeIdentifier="" ecorePackage="mimo.ecore#//entity">
@@ -594,14 +594,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/name"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/text"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/toString"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isBinary"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isBoolean"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isDateTime"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isEnum"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isIdentity"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isNumeric"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isString"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/isReference"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getDataType"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Java" disposableProviderFactory="true" adapterFactory="false"

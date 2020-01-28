@@ -296,23 +296,23 @@ public interface DataPackage extends EPackage {
 	int IDENTITY_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.data.impl.ReferenceDefImpl <em>Reference Def</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.data.impl.EntityDefImpl <em>Entity Def</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.data.impl.ReferenceDefImpl
-	 * @see org.abchip.mimo.data.impl.DataPackageImpl#getReferenceDef()
+	 * @see org.abchip.mimo.data.impl.EntityDefImpl
+	 * @see org.abchip.mimo.data.impl.DataPackageImpl#getEntityDef()
 	 * @generated
 	 */
-	int REFERENCE_DEF = 8;
+	int ENTITY_DEF = 8;
 
 	/**
-	 * The number of structural features of the '<em>Reference Def</em>' class.
+	 * The number of structural features of the '<em>Entity Def</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 0;
+	int ENTITY_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.data.DataType <em>Type</em>}' enum.
@@ -545,14 +545,14 @@ public interface DataPackage extends EPackage {
 	EClass getIdentityDef();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.data.ReferenceDef <em>Reference Def</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.data.EntityDef <em>Entity Def</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Reference Def</em>'.
-	 * @see org.abchip.mimo.data.ReferenceDef
+	 * @return the meta object for class '<em>Entity Def</em>'.
+	 * @see org.abchip.mimo.data.EntityDef
 	 * @generated
 	 */
-	EClass getReferenceDef();
+	EClass getEntityDef();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.data.DataType <em>Type</em>}'.
@@ -779,14 +779,14 @@ public interface DataPackage extends EPackage {
 		EClass IDENTITY_DEF = eINSTANCE.getIdentityDef();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.data.impl.ReferenceDefImpl <em>Reference Def</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.data.impl.EntityDefImpl <em>Entity Def</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.data.impl.ReferenceDefImpl
-		 * @see org.abchip.mimo.data.impl.DataPackageImpl#getReferenceDef()
+		 * @see org.abchip.mimo.data.impl.EntityDefImpl
+		 * @see org.abchip.mimo.data.impl.DataPackageImpl#getEntityDef()
 		 * @generated
 		 */
-		EClass REFERENCE_DEF = eINSTANCE.getReferenceDef();
+		EClass ENTITY_DEF = eINSTANCE.getEntityDef();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.data.DataType <em>Type</em>}' enum.

@@ -289,6 +289,19 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public DataType getDataType() {
+		if(getDataDef() == null)
+			return null;
+		
+		return getDataDef().getDataType();
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -585,109 +598,6 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__KEY, oldKey, key));
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final boolean isBinary() {
-		if (getDataDef() == null)
-			return false;
-
-		return getDataDef().getDataType() == DataType.BINARY;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final boolean isBoolean() {
-		if (getDataDef() == null)
-			return false;
-
-		return getDataDef().getDataType() == DataType.BOOLEAN;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final boolean isDateTime() {
-		if (getDataDef() == null)
-			return false;
-
-		return getDataDef().getDataType() == DataType.DATE_TIME;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final boolean isEnum() {
-		if (getDataDef() == null)
-			return false;
-
-		return getDataDef().getDataType() == DataType.ENUM;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final boolean isIdentity() {
-		if (getDataDef() == null)
-			return false;
-
-		return getDataDef().getDataType() == DataType.IDENTITY;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final boolean isNumeric() {
-		if (getDataDef() == null)
-			return false;
-
-		return getDataDef().getDataType() == DataType.NUMERIC;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final boolean isString() {
-		if (getDataDef() == null)
-			return false;
-
-		return getDataDef().getDataType() == DataType.STRING;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final boolean isReference() {
-		if (getDataDef() == null)
-			return false;
-
-		return getDataDef().getDataType() == DataType.REFERENCE;
-	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

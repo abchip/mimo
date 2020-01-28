@@ -97,20 +97,25 @@ public class LookupQueryServlet extends BaseServlet {
 			label.append(c);
 		}
 		field.setValue(Strings.qINSTANCE.firstToUpper(label.toString()));
-
-		if (slot.isString()) {
+		
+		switch (slot.getDataType()) {
+		case BOOLEAN:
+		case STRING:
+		case ENTITY:
+		case ENUM:
 			field.setType("string");
-		} else if (slot.isBoolean()) {
-			field.setType("string");
-		} else if (slot.isNumeric()) {
-			field.setType("number");
-		} else if (slot.isDateTime()) {
+			break;
+		case BINARY:
+			break;
+		case DATE_TIME:
 			field.setType("date");
-		} else {
-			System.out.println("Unexpected condition: 873we65r87ewtr");
-			field.setType("string");
+			break;
+		case IDENTITY:
+		case NUMERIC:
+			field.setType("number");
+			break;
 		}
-
+		
 		return field;
 	}
 }

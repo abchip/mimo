@@ -9,6 +9,7 @@
 package org.abchip.mimo.entity;
 
 import org.abchip.mimo.data.DataDef;
+import org.abchip.mimo.data.DataType;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -118,6 +119,14 @@ public interface Slot extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setToString(boolean value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	DataType getDataType();
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
@@ -333,64 +342,4 @@ public interface Slot extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setKey(boolean value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	boolean isBinary();
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	boolean isBoolean();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	boolean isDateTime();
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	boolean isEnum();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	boolean isIdentity();
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	boolean isNumeric();
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	boolean isString();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	boolean isReference();
 } // Slot

@@ -9,8 +9,9 @@ package org.abchip.mimo.data.impl;
 
 import org.abchip.mimo.data.DataPackage;
 import org.abchip.mimo.data.DataType;
-import org.abchip.mimo.data.ReferenceDef;
+import org.abchip.mimo.data.EntityDef;
 
+import org.abchip.mimo.entity.Entity;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -20,7 +21,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ReferenceDefImpl extends DataDefImpl<Object> implements ReferenceDef {
+public class EntityDefImpl extends DataDefImpl<Entity> implements EntityDef {
 	/**
 	 * 
 	 */
@@ -31,7 +32,7 @@ public class ReferenceDefImpl extends DataDefImpl<Object> implements ReferenceDe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ReferenceDefImpl() {
+	protected EntityDefImpl() {
 		super();
 	}
 
@@ -42,7 +43,7 @@ public class ReferenceDefImpl extends DataDefImpl<Object> implements ReferenceDe
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DataPackage.Literals.REFERENCE_DEF;
+		return DataPackage.Literals.ENTITY_DEF;
 	}
 
 	@Override
@@ -52,6 +53,6 @@ public class ReferenceDefImpl extends DataDefImpl<Object> implements ReferenceDe
 
 	@Override
 	public DataType getDataType() {
-		return DataType.REFERENCE;
+		return DataType.ENTITY;
 	}
-} //ReferenceDefImpl
+} //EntityDefImpl

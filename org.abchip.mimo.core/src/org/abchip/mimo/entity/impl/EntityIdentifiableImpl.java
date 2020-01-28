@@ -41,6 +41,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -49,6 +50,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -85,10 +87,20 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 				String filter = slot.getDomain().getRoute();
 				if (filter == null || filter.trim().isEmpty()) {
 					if (eIDAttribute != null) {
-						if (slot.isString() || slot.getDomain() != null)
+						switch (slot.getDataType()) {
+						case ENUM:
+						case STRING:
+						case DATE_TIME:
+						case ENTITY:
 							filter = eIDAttribute.getName() + " = '" + this.getID() + "'";
-						else
+							break;
+						case BINARY:
+						case BOOLEAN:
+						case IDENTITY:
+						case NUMERIC:
 							filter = eIDAttribute.getName() + " = " + this.getID();
+							break;
+						}
 					} else
 						return super.eGet(featureID, resolve, coreType);
 				}

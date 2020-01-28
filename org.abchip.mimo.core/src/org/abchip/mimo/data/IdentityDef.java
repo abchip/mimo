@@ -15,8 +15,8 @@ package org.abchip.mimo.data;
  *
  *
  * @see org.abchip.mimo.data.DataPackage#getIdentityDef()
- * @model superTypes="org.abchip.mimo.data.DataDef&lt;org.eclipse.emf.ecore.EJavaObject&gt;"
+ * @model superTypes="org.abchip.mimo.data.DataDef&lt;org.eclipse.emf.ecore.EIntegerObject&gt;"
  * @generated
  */
-public interface IdentityDef extends DataDef<Object> {
+public interface IdentityDef extends DataDef<Integer> {
 } // IdentityDef
