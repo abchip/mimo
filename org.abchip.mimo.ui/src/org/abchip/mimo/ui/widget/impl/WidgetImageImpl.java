@@ -1,12 +1,11 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.impl;
+package org.abchip.mimo.ui.widget.impl;
 
-import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.WidgetImage;
-
-import org.abchip.mimo.ui.WidgetType;
+import org.abchip.mimo.ui.widget.WidgetImage;
+import org.abchip.mimo.ui.widget.WidgetPackage;
+import org.abchip.mimo.ui.widget.WidgetType;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -17,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetImageImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImageImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,7 +60,7 @@ public class WidgetImageImpl extends WidgetImpl implements WidgetImage {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.WIDGET_IMAGE;
+		return WidgetPackage.Literals.WIDGET_IMAGE;
 	}
 
 	/**
@@ -82,7 +81,7 @@ public class WidgetImageImpl extends WidgetImpl implements WidgetImage {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.WIDGET_IMAGE__VIEW:
+			case WidgetPackage.WIDGET_IMAGE__VIEW:
 				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -96,7 +95,7 @@ public class WidgetImageImpl extends WidgetImpl implements WidgetImage {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET_IMAGE__VIEW:
+			case WidgetPackage.WIDGET_IMAGE__VIEW:
 				return view != VIEW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

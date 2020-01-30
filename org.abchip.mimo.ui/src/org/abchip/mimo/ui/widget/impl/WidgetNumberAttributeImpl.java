@@ -1,13 +1,11 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.impl;
+package org.abchip.mimo.ui.widget.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
-
-import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.WidgetTextAttribute;
-
+import org.abchip.mimo.ui.widget.WidgetNumberAttribute;
+import org.abchip.mimo.ui.widget.WidgetPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -16,18 +14,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Widget Text Attribute</b></em>'.
+ * An implementation of the model object '<em><b>Widget Number Attribute</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetTextAttributeImpl#getMaxlength <em>Maxlength</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetNumberAttributeImpl#getMaxlength <em>Maxlength</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class WidgetTextAttributeImpl extends EntityImpl implements WidgetTextAttribute {
+public class WidgetNumberAttributeImpl extends EntityImpl implements WidgetNumberAttribute {
 	/**
 	 * 
 	 */
@@ -58,7 +56,7 @@ public class WidgetTextAttributeImpl extends EntityImpl implements WidgetTextAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WidgetTextAttributeImpl() {
+	protected WidgetNumberAttributeImpl() {
 		super();
 	}
 
@@ -69,7 +67,7 @@ public class WidgetTextAttributeImpl extends EntityImpl implements WidgetTextAtt
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.WIDGET_TEXT_ATTRIBUTE;
+		return WidgetPackage.Literals.WIDGET_NUMBER_ATTRIBUTE;
 	}
 
 	/**
@@ -92,7 +90,7 @@ public class WidgetTextAttributeImpl extends EntityImpl implements WidgetTextAtt
 		int oldMaxlength = maxlength;
 		maxlength = newMaxlength;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_TEXT_ATTRIBUTE__MAXLENGTH, oldMaxlength, maxlength));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH, oldMaxlength, maxlength));
 	}
 
 	/**
@@ -103,7 +101,7 @@ public class WidgetTextAttributeImpl extends EntityImpl implements WidgetTextAtt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.WIDGET_TEXT_ATTRIBUTE__MAXLENGTH:
+			case WidgetPackage.WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH:
 				return getMaxlength();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -117,7 +115,7 @@ public class WidgetTextAttributeImpl extends EntityImpl implements WidgetTextAtt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UIPackage.WIDGET_TEXT_ATTRIBUTE__MAXLENGTH:
+			case WidgetPackage.WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH:
 				setMaxlength((Integer)newValue);
 				return;
 		}
@@ -132,7 +130,7 @@ public class WidgetTextAttributeImpl extends EntityImpl implements WidgetTextAtt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET_TEXT_ATTRIBUTE__MAXLENGTH:
+			case WidgetPackage.WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH:
 				setMaxlength(MAXLENGTH_EDEFAULT);
 				return;
 		}
@@ -147,7 +145,7 @@ public class WidgetTextAttributeImpl extends EntityImpl implements WidgetTextAtt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET_TEXT_ATTRIBUTE__MAXLENGTH:
+			case WidgetPackage.WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH:
 				return maxlength != MAXLENGTH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -169,4 +167,4 @@ public class WidgetTextAttributeImpl extends EntityImpl implements WidgetTextAtt
 		return result.toString();
 	}
 
-} //WidgetTextAttributeImpl
+} //WidgetNumberAttributeImpl

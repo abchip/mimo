@@ -1,13 +1,11 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.impl;
+package org.abchip.mimo.ui.widget.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
-
-import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.WidgetPattern;
-
+import org.abchip.mimo.ui.widget.WidgetPackage;
+import org.abchip.mimo.ui.widget.WidgetPattern;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -22,8 +20,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetPatternImpl#getAllow <em>Allow</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetPatternImpl#getMask <em>Mask</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetPatternImpl#getAllow <em>Allow</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetPatternImpl#getMask <em>Mask</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,7 +88,7 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.WIDGET_PATTERN;
+		return WidgetPackage.Literals.WIDGET_PATTERN;
 	}
 
 	/**
@@ -113,7 +111,7 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 		String oldAllow = allow;
 		allow = newAllow;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_PATTERN__ALLOW, oldAllow, allow));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_PATTERN__ALLOW, oldAllow, allow));
 	}
 
 	/**
@@ -136,7 +134,7 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 		String oldMask = mask;
 		mask = newMask;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_PATTERN__MASK, oldMask, mask));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_PATTERN__MASK, oldMask, mask));
 	}
 
 	/**
@@ -147,9 +145,9 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.WIDGET_PATTERN__ALLOW:
+			case WidgetPackage.WIDGET_PATTERN__ALLOW:
 				return getAllow();
-			case UIPackage.WIDGET_PATTERN__MASK:
+			case WidgetPackage.WIDGET_PATTERN__MASK:
 				return getMask();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -163,10 +161,10 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UIPackage.WIDGET_PATTERN__ALLOW:
+			case WidgetPackage.WIDGET_PATTERN__ALLOW:
 				setAllow((String)newValue);
 				return;
-			case UIPackage.WIDGET_PATTERN__MASK:
+			case WidgetPackage.WIDGET_PATTERN__MASK:
 				setMask((String)newValue);
 				return;
 		}
@@ -181,10 +179,10 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET_PATTERN__ALLOW:
+			case WidgetPackage.WIDGET_PATTERN__ALLOW:
 				setAllow(ALLOW_EDEFAULT);
 				return;
-			case UIPackage.WIDGET_PATTERN__MASK:
+			case WidgetPackage.WIDGET_PATTERN__MASK:
 				setMask(MASK_EDEFAULT);
 				return;
 		}
@@ -199,9 +197,9 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET_PATTERN__ALLOW:
+			case WidgetPackage.WIDGET_PATTERN__ALLOW:
 				return ALLOW_EDEFAULT == null ? allow != null : !ALLOW_EDEFAULT.equals(allow);
-			case UIPackage.WIDGET_PATTERN__MASK:
+			case WidgetPackage.WIDGET_PATTERN__MASK:
 				return MASK_EDEFAULT == null ? mask != null : !MASK_EDEFAULT.equals(mask);
 		}
 		return super.eIsSet(featureID);

@@ -5,10 +5,9 @@ package org.abchip.mimo.ui.schema.impl;
 
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.impl.EntityImpl;
-
-import org.abchip.mimo.ui.Widget;
 import org.abchip.mimo.ui.schema.SchemaColumn;
 import org.abchip.mimo.ui.schema.SchemaPackage;
+import org.abchip.mimo.ui.widget.Widget;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;

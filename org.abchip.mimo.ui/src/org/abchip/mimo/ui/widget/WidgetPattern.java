@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui;
+package org.abchip.mimo.ui.widget;
 
 import org.abchip.mimo.entity.Entity;
 
@@ -14,11 +14,11 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.WidgetPattern#getAllow <em>Allow</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.WidgetPattern#getMask <em>Mask</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.WidgetPattern#getAllow <em>Allow</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.WidgetPattern#getMask <em>Mask</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.UIPackage#getWidgetPattern()
+ * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetPattern()
  * @model abstract="true"
  * @generated
  */
@@ -33,14 +33,14 @@ public interface WidgetPattern extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allow</em>' attribute.
 	 * @see #setAllow(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getWidgetPattern_Allow()
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetPattern_Allow()
 	 * @model
 	 * @generated
 	 */
 	String getAllow();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.WidgetPattern#getAllow <em>Allow</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.WidgetPattern#getAllow <em>Allow</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Allow</em>' attribute.
@@ -59,14 +59,14 @@ public interface WidgetPattern extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mask</em>' attribute.
 	 * @see #setMask(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getWidgetPattern_Mask()
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetPattern_Mask()
 	 * @model
 	 * @generated
 	 */
 	String getMask();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.WidgetPattern#getMask <em>Mask</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.WidgetPattern#getMask <em>Mask</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Mask</em>' attribute.

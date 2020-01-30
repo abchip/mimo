@@ -23,6 +23,8 @@ import org.abchip.mimo.ui.schema.SchemaPackage;
 
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
+import org.abchip.mimo.ui.widget.WidgetPackage;
+import org.abchip.mimo.ui.widget.impl.WidgetPackageImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -113,6 +115,8 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		QueryPackageImpl theQueryPackage = (QueryPackageImpl)(registeredPackage instanceof QueryPackageImpl ? registeredPackage : QueryPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
 		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WidgetPackage.eNS_URI);
+		WidgetPackageImpl theWidgetPackage = (WidgetPackageImpl)(registeredPackage instanceof WidgetPackageImpl ? registeredPackage : WidgetPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theSchemaPackage.createPackageContents();
@@ -121,6 +125,7 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		theMenuPackage.createPackageContents();
 		theQueryPackage.createPackageContents();
 		theToolbarPackage.createPackageContents();
+		theWidgetPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theSchemaPackage.initializePackageContents();
@@ -129,6 +134,7 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		theMenuPackage.initializePackageContents();
 		theQueryPackage.initializePackageContents();
 		theToolbarPackage.initializePackageContents();
+		theWidgetPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theSchemaPackage.freeze();
@@ -349,7 +355,7 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		UIPackage theUIPackage = (UIPackage)EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
+		WidgetPackage theWidgetPackage = (WidgetPackage)EPackage.Registry.INSTANCE.getEPackage(WidgetPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -374,7 +380,7 @@ public class SchemaPackageImpl extends EPackageImpl implements SchemaPackage {
 		initEAttribute(getSchemaColumn_Id(), ecorePackage.getEString(), "id", null, 1, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_LeftSplit(), ecorePackage.getEBoolean(), "leftSplit", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchemaColumn_Sort(), ecorePackage.getEString(), "sort", null, 0, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSchemaColumn_Widget(), theUIPackage.getWidget(), null, "widget", null, 1, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchemaColumn_Widget(), theWidgetPackage.getWidget(), null, "widget", null, 1, 1, SchemaColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent

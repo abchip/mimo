@@ -1,28 +1,27 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.impl;
+package org.abchip.mimo.ui.widget.impl;
 
-import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.WidgetCheckBox;
-
-import org.abchip.mimo.ui.WidgetType;
+import org.abchip.mimo.ui.widget.WidgetComboBox;
+import org.abchip.mimo.ui.widget.WidgetPackage;
+import org.abchip.mimo.ui.widget.WidgetType;
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Widget Check Box</b></em>'.
+ * An implementation of the model object '<em><b>Widget Combo Box</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetCheckBoxImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetComboBoxImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class WidgetCheckBoxImpl extends WidgetImpl implements WidgetCheckBox {
+public class WidgetComboBoxImpl extends WidgetImpl implements WidgetComboBox {
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -31,7 +30,8 @@ public class WidgetCheckBoxImpl extends WidgetImpl implements WidgetCheckBox {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final WidgetType VIEW_EDEFAULT = WidgetType.CHECK_BOX;
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.COMBO_BOX;
+
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -41,16 +41,18 @@ public class WidgetCheckBoxImpl extends WidgetImpl implements WidgetCheckBox {
 	 * @ordered
 	 */
 	protected WidgetType view = VIEW_EDEFAULT;
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WidgetCheckBoxImpl() {
+	protected WidgetComboBoxImpl() {
 		super();
 	}
 
@@ -61,7 +63,7 @@ public class WidgetCheckBoxImpl extends WidgetImpl implements WidgetCheckBox {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.WIDGET_CHECK_BOX;
+		return WidgetPackage.Literals.WIDGET_COMBO_BOX;
 	}
 
 	/**
@@ -82,7 +84,7 @@ public class WidgetCheckBoxImpl extends WidgetImpl implements WidgetCheckBox {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.WIDGET_CHECK_BOX__VIEW:
+			case WidgetPackage.WIDGET_COMBO_BOX__VIEW:
 				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -96,7 +98,7 @@ public class WidgetCheckBoxImpl extends WidgetImpl implements WidgetCheckBox {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET_CHECK_BOX__VIEW:
+			case WidgetPackage.WIDGET_COMBO_BOX__VIEW:
 				return view != VIEW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -118,4 +120,4 @@ public class WidgetCheckBoxImpl extends WidgetImpl implements WidgetCheckBox {
 		return result.toString();
 	}
 
-} //WidgetCheckBoxImpl
+} //WidgetComboBoxImpl

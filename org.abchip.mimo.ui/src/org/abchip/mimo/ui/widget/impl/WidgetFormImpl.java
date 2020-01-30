@@ -1,28 +1,27 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.impl;
+package org.abchip.mimo.ui.widget.impl;
 
-import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.WidgetCounter;
-
-import org.abchip.mimo.ui.WidgetType;
+import org.abchip.mimo.ui.widget.WidgetForm;
+import org.abchip.mimo.ui.widget.WidgetPackage;
+import org.abchip.mimo.ui.widget.WidgetType;
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Widget Counter</b></em>'.
+ * An implementation of the model object '<em><b>Widget Form</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetCounterImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetFormImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class WidgetCounterImpl extends WidgetImpl implements WidgetCounter {
+public class WidgetFormImpl extends WidgetImpl implements WidgetForm {
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -31,7 +30,8 @@ public class WidgetCounterImpl extends WidgetImpl implements WidgetCounter {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final WidgetType VIEW_EDEFAULT = WidgetType.COUNTER;
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.FORM;
+
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -41,16 +41,18 @@ public class WidgetCounterImpl extends WidgetImpl implements WidgetCounter {
 	 * @ordered
 	 */
 	protected WidgetType view = VIEW_EDEFAULT;
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WidgetCounterImpl() {
+	protected WidgetFormImpl() {
 		super();
 	}
 
@@ -61,7 +63,7 @@ public class WidgetCounterImpl extends WidgetImpl implements WidgetCounter {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.WIDGET_COUNTER;
+		return WidgetPackage.Literals.WIDGET_FORM;
 	}
 
 	/**
@@ -82,7 +84,7 @@ public class WidgetCounterImpl extends WidgetImpl implements WidgetCounter {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.WIDGET_COUNTER__VIEW:
+			case WidgetPackage.WIDGET_FORM__VIEW:
 				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -96,7 +98,7 @@ public class WidgetCounterImpl extends WidgetImpl implements WidgetCounter {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET_COUNTER__VIEW:
+			case WidgetPackage.WIDGET_FORM__VIEW:
 				return view != VIEW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -118,4 +120,4 @@ public class WidgetCounterImpl extends WidgetImpl implements WidgetCounter {
 		return result.toString();
 	}
 
-} //WidgetCounterImpl
+} //WidgetFormImpl

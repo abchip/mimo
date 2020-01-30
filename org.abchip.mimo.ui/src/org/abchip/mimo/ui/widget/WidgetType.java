@@ -1,12 +1,11 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui;
+package org.abchip.mimo.ui.widget;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
@@ -14,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Widget Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.abchip.mimo.ui.UIPackage#getWidgetType()
+ * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetType()
  * @model
  * @generated
  */
@@ -206,7 +205,7 @@ public enum WidgetType implements Enumerator {
 	public static final int TEXT_VALUE = 0;
 
 	/**
-	 * An array of all the '<em><b>Widget Type</b></em>' enumerators.
+	 * An array of all the '<em><b>Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -224,7 +223,7 @@ public enum WidgetType implements Enumerator {
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Widget Type</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -232,7 +231,7 @@ public enum WidgetType implements Enumerator {
 	public static final List<WidgetType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Widget Type</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
@@ -250,7 +249,7 @@ public enum WidgetType implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Widget Type</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
@@ -268,7 +267,7 @@ public enum WidgetType implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Widget Type</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.

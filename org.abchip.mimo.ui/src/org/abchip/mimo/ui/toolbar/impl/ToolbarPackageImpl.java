@@ -26,6 +26,8 @@ import org.abchip.mimo.ui.toolbar.ToolbarFactory;
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 import org.abchip.mimo.ui.toolbar.ToolbarView;
 
+import org.abchip.mimo.ui.widget.WidgetPackage;
+import org.abchip.mimo.ui.widget.impl.WidgetPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -115,6 +117,8 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		QueryPackageImpl theQueryPackage = (QueryPackageImpl)(registeredPackage instanceof QueryPackageImpl ? registeredPackage : QueryPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
 		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WidgetPackage.eNS_URI);
+		WidgetPackageImpl theWidgetPackage = (WidgetPackageImpl)(registeredPackage instanceof WidgetPackageImpl ? registeredPackage : WidgetPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theToolbarPackage.createPackageContents();
@@ -123,6 +127,7 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		theMenuPackage.createPackageContents();
 		theQueryPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
+		theWidgetPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theToolbarPackage.initializePackageContents();
@@ -131,6 +136,7 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		theMenuPackage.initializePackageContents();
 		theQueryPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
+		theWidgetPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theToolbarPackage.freeze();

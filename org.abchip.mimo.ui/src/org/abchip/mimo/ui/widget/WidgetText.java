@@ -1,8 +1,7 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui;
-
+package org.abchip.mimo.ui.widget;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,12 +12,12 @@ package org.abchip.mimo.ui;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.WidgetText#getView <em>View</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.WidgetText#getPlaceholder <em>Placeholder</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.WidgetText#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.WidgetText#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.WidgetText#getPlaceholder <em>Placeholder</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.WidgetText#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.UIPackage#getWidgetText()
+ * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetText()
  * @model
  * @generated
  */
@@ -27,7 +26,7 @@ public interface WidgetText extends Widget {
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
 	 * The default value is <code>"text"</code>.
-	 * The literals are from the enumeration {@link org.abchip.mimo.ui.WidgetType}.
+	 * The literals are from the enumeration {@link org.abchip.mimo.ui.widget.WidgetType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Widget</em>' attribute isn't clear,
@@ -35,8 +34,8 @@ public interface WidgetText extends Widget {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View</em>' attribute.
-	 * @see org.abchip.mimo.ui.WidgetType
-	 * @see org.abchip.mimo.ui.UIPackage#getWidgetText_View()
+	 * @see org.abchip.mimo.ui.widget.WidgetType
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetText_View()
 	 * @model default="text" required="true" changeable="false"
 	 * @generated
 	 */
@@ -53,14 +52,14 @@ public interface WidgetText extends Widget {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Placeholder</em>' attribute.
 	 * @see #setPlaceholder(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getWidgetText_Placeholder()
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetText_Placeholder()
 	 * @model default="Insert text here"
 	 * @generated
 	 */
 	String getPlaceholder();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.WidgetText#getPlaceholder <em>Placeholder</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.WidgetText#getPlaceholder <em>Placeholder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Placeholder</em>' attribute.
@@ -79,14 +78,14 @@ public interface WidgetText extends Widget {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attributes</em>' containment reference.
 	 * @see #setAttributes(WidgetTextAttribute)
-	 * @see org.abchip.mimo.ui.UIPackage#getWidgetText_Attributes()
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetText_Attributes()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	WidgetTextAttribute getAttributes();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.WidgetText#getAttributes <em>Attributes</em>}' containment reference.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.WidgetText#getAttributes <em>Attributes</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Attributes</em>' containment reference.

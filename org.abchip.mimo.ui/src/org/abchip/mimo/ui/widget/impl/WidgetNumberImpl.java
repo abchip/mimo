@@ -1,36 +1,42 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.impl;
+package org.abchip.mimo.ui.widget.impl;
 
-import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.WidgetText;
-
-import org.abchip.mimo.ui.WidgetTextAttribute;
-import org.abchip.mimo.ui.WidgetType;
+import org.abchip.mimo.ui.widget.WidgetNumber;
+import org.abchip.mimo.ui.widget.WidgetNumberAttribute;
+import org.abchip.mimo.ui.widget.WidgetPackage;
+import org.abchip.mimo.ui.widget.WidgetType;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Widget Text</b></em>'.
+ * An implementation of the model object '<em><b>Widget Number</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetTextImpl#getView <em>View</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetTextImpl#getPlaceholder <em>Placeholder</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetTextImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetNumberImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetNumberImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetNumberImpl#getPlaceholder <em>Placeholder</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class WidgetTextImpl extends WidgetImpl implements WidgetText {
+public class WidgetNumberImpl extends WidgetImpl implements WidgetNumber {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -40,6 +46,7 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	 * @ordered
 	 */
 	protected static final WidgetType VIEW_EDEFAULT = WidgetType.TEXT;
+
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -49,6 +56,17 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	 * @ordered
 	 */
 	protected WidgetType view = VIEW_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttributes()
+	 * @generated
+	 * @ordered
+	 */
+	protected WidgetNumberAttribute attributes;
+
 	/**
 	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -57,7 +75,8 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PLACEHOLDER_EDEFAULT = "Insert text here";
+	protected static final String PLACEHOLDER_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -67,25 +86,13 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	 * @ordered
 	 */
 	protected String placeholder = PLACEHOLDER_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttributes()
-	 * @generated
-	 * @ordered
-	 */
-	protected WidgetTextAttribute attributes;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WidgetTextImpl() {
+	protected WidgetNumberImpl() {
 		super();
 	}
 
@@ -96,7 +103,7 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.WIDGET_TEXT;
+		return WidgetPackage.Literals.WIDGET_NUMBER;
 	}
 
 	/**
@@ -129,7 +136,7 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 		String oldPlaceholder = placeholder;
 		placeholder = newPlaceholder;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_TEXT__PLACEHOLDER, oldPlaceholder, placeholder));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_NUMBER__PLACEHOLDER, oldPlaceholder, placeholder));
 	}
 
 	/**
@@ -138,19 +145,19 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	 * @generated
 	 */
 	@Override
-	public WidgetTextAttribute getAttributes() {
+	public WidgetNumberAttribute getAttributes() {
 		if (attributes != null && ((EObject)attributes).eIsProxy()) {
 			InternalEObject oldAttributes = (InternalEObject)attributes;
-			attributes = (WidgetTextAttribute)eResolveProxy(oldAttributes);
+			attributes = (WidgetNumberAttribute)eResolveProxy(oldAttributes);
 			if (attributes != oldAttributes) {
 				InternalEObject newAttributes = (InternalEObject)attributes;
-				NotificationChain msgs = oldAttributes.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET_TEXT__ATTRIBUTES, null, null);
+				NotificationChain msgs = oldAttributes.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET_NUMBER__ATTRIBUTES, null, null);
 				if (newAttributes.eInternalContainer() == null) {
-					msgs = newAttributes.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET_TEXT__ATTRIBUTES, null, msgs);
+					msgs = newAttributes.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET_NUMBER__ATTRIBUTES, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UIPackage.WIDGET_TEXT__ATTRIBUTES, oldAttributes, attributes));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WidgetPackage.WIDGET_NUMBER__ATTRIBUTES, oldAttributes, attributes));
 			}
 		}
 		return attributes;
@@ -161,7 +168,7 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public WidgetTextAttribute basicGetAttributes() {
+	public WidgetNumberAttribute basicGetAttributes() {
 		return attributes;
 	}
 
@@ -170,11 +177,11 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAttributes(WidgetTextAttribute newAttributes, NotificationChain msgs) {
-		WidgetTextAttribute oldAttributes = attributes;
+	public NotificationChain basicSetAttributes(WidgetNumberAttribute newAttributes, NotificationChain msgs) {
+		WidgetNumberAttribute oldAttributes = attributes;
 		attributes = newAttributes;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_TEXT__ATTRIBUTES, oldAttributes, newAttributes);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_NUMBER__ATTRIBUTES, oldAttributes, newAttributes);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -186,18 +193,18 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	 * @generated
 	 */
 	@Override
-	public void setAttributes(WidgetTextAttribute newAttributes) {
+	public void setAttributes(WidgetNumberAttribute newAttributes) {
 		if (newAttributes != attributes) {
 			NotificationChain msgs = null;
 			if (attributes != null)
-				msgs = ((InternalEObject)attributes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET_TEXT__ATTRIBUTES, null, msgs);
+				msgs = ((InternalEObject)attributes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET_NUMBER__ATTRIBUTES, null, msgs);
 			if (newAttributes != null)
-				msgs = ((InternalEObject)newAttributes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET_TEXT__ATTRIBUTES, null, msgs);
+				msgs = ((InternalEObject)newAttributes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET_NUMBER__ATTRIBUTES, null, msgs);
 			msgs = basicSetAttributes(newAttributes, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_TEXT__ATTRIBUTES, newAttributes, newAttributes));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_NUMBER__ATTRIBUTES, newAttributes, newAttributes));
 	}
 
 	/**
@@ -208,7 +215,7 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case UIPackage.WIDGET_TEXT__ATTRIBUTES:
+			case WidgetPackage.WIDGET_NUMBER__ATTRIBUTES:
 				return basicSetAttributes(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -222,13 +229,13 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.WIDGET_TEXT__VIEW:
+			case WidgetPackage.WIDGET_NUMBER__VIEW:
 				return getView();
-			case UIPackage.WIDGET_TEXT__PLACEHOLDER:
-				return getPlaceholder();
-			case UIPackage.WIDGET_TEXT__ATTRIBUTES:
+			case WidgetPackage.WIDGET_NUMBER__ATTRIBUTES:
 				if (resolve) return getAttributes();
 				return basicGetAttributes();
+			case WidgetPackage.WIDGET_NUMBER__PLACEHOLDER:
+				return getPlaceholder();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -241,11 +248,11 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UIPackage.WIDGET_TEXT__PLACEHOLDER:
-				setPlaceholder((String)newValue);
+			case WidgetPackage.WIDGET_NUMBER__ATTRIBUTES:
+				setAttributes((WidgetNumberAttribute)newValue);
 				return;
-			case UIPackage.WIDGET_TEXT__ATTRIBUTES:
-				setAttributes((WidgetTextAttribute)newValue);
+			case WidgetPackage.WIDGET_NUMBER__PLACEHOLDER:
+				setPlaceholder((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -259,11 +266,11 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET_TEXT__PLACEHOLDER:
-				setPlaceholder(PLACEHOLDER_EDEFAULT);
+			case WidgetPackage.WIDGET_NUMBER__ATTRIBUTES:
+				setAttributes((WidgetNumberAttribute)null);
 				return;
-			case UIPackage.WIDGET_TEXT__ATTRIBUTES:
-				setAttributes((WidgetTextAttribute)null);
+			case WidgetPackage.WIDGET_NUMBER__PLACEHOLDER:
+				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -277,12 +284,12 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET_TEXT__VIEW:
+			case WidgetPackage.WIDGET_NUMBER__VIEW:
 				return view != VIEW_EDEFAULT;
-			case UIPackage.WIDGET_TEXT__PLACEHOLDER:
-				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
-			case UIPackage.WIDGET_TEXT__ATTRIBUTES:
+			case WidgetPackage.WIDGET_NUMBER__ATTRIBUTES:
 				return attributes != null;
+			case WidgetPackage.WIDGET_NUMBER__PLACEHOLDER:
+				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -305,4 +312,4 @@ public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 		return result.toString();
 	}
 
-} //WidgetTextImpl
+} //WidgetNumberImpl

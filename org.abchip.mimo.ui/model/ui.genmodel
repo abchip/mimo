@@ -14,16 +14,6 @@
       <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/Service"/>
       <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/Event"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ui.ecore#//WidgetType">
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//WidgetType/CheckBox"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//WidgetType/ComboBox"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//WidgetType/Counter"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//WidgetType/DatePicker"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//WidgetType/Form"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//WidgetType/Image"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//WidgetType/Note"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//WidgetType/Text"/>
-    </genEnums>
     <genClasses ecoreClass="ui.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/command"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/type"/>
@@ -41,56 +31,6 @@
     </genClasses>
     <genClasses ecoreClass="ui.ecore#//UiUserSetup">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//UiUserSetup/name"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="ui.ecore#//Widget">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Widget/disabled"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//Widget/domain"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Widget/icon"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Widget/label"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Widget/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//Widget/pattern"/>
-      <genOperations ecoreOperation="ui.ecore#//Widget/getView"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="ui.ecore#//WidgetPattern">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetPattern/allow"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetPattern/mask"/>
-    </genClasses>
-    <genClasses ecoreClass="ui.ecore#//WidgetCheckBox">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetCheckBox/view"/>
-    </genClasses>
-    <genClasses ecoreClass="ui.ecore#//WidgetComboBox">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetComboBox/view"/>
-    </genClasses>
-    <genClasses ecoreClass="ui.ecore#//WidgetCounter">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetCounter/view"/>
-    </genClasses>
-    <genClasses ecoreClass="ui.ecore#//WidgetDatePicker">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetDatePicker/view"/>
-    </genClasses>
-    <genClasses ecoreClass="ui.ecore#//WidgetForm">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetForm/view"/>
-    </genClasses>
-    <genClasses ecoreClass="ui.ecore#//WidgetImage">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetImage/view"/>
-    </genClasses>
-    <genClasses ecoreClass="ui.ecore#//WidgetNote">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetNote/view"/>
-    </genClasses>
-    <genClasses ecoreClass="ui.ecore#//WidgetNumber">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetNumber/view"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//WidgetNumber/attributes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetNumber/placeholder"/>
-    </genClasses>
-    <genClasses ecoreClass="ui.ecore#//WidgetNumberAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetNumberAttribute/maxlength"/>
-    </genClasses>
-    <genClasses ecoreClass="ui.ecore#//WidgetText">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetText/view"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetText/placeholder"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//WidgetText/attributes"/>
-    </genClasses>
-    <genClasses ecoreClass="ui.ecore#//WidgetTextAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//WidgetTextAttribute/maxlength"/>
     </genClasses>
     <nestedGenPackages prefix="Form" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="ui.ecore#//form">
@@ -167,6 +107,69 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/icon"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/label"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//toolbar/ToolbarView/view"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Widget" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="ui.ecore#//widget">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="ui.ecore#//widget/WidgetType">
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/CheckBox"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/ComboBox"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Counter"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/DatePicker"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Form"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Image"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Note"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Text"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="ui.ecore#//widget/Widget">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widget/disabled"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//widget/Widget/domain"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widget/icon"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widget/label"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widget/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//widget/Widget/pattern"/>
+        <genOperations ecoreOperation="ui.ecore#//widget/Widget/getView"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="ui.ecore#//widget/WidgetPattern">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetPattern/allow"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetPattern/mask"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetCheckBox">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetCheckBox/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetComboBox">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetComboBox/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetCounter">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetCounter/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetDatePicker">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetDatePicker/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetForm">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetForm/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetImage">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetImage/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetNote">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetNote/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetNumber">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetNumber/view"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//widget/WidgetNumber/attributes"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetNumber/placeholder"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetNumberAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetNumberAttribute/maxlength"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetText">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetText/view"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetText/placeholder"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//widget/WidgetText/attributes"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetTextAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetTextAttribute/maxlength"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

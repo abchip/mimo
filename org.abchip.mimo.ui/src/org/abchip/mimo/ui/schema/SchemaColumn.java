@@ -5,7 +5,7 @@ package org.abchip.mimo.ui.schema;
 
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.ui.Widget;
+import org.abchip.mimo.ui.widget.Widget;
 
 /**
  * <!-- begin-user-doc -->

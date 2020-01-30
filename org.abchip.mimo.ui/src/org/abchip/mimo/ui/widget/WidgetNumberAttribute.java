@@ -1,27 +1,27 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui;
+package org.abchip.mimo.ui.widget;
 
 import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Widget Text Attribute</b></em>'.
+ * A representation of the model object '<em><b>Widget Number Attribute</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.WidgetTextAttribute#getMaxlength <em>Maxlength</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.WidgetNumberAttribute#getMaxlength <em>Maxlength</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.UIPackage#getWidgetTextAttribute()
+ * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetNumberAttribute()
  * @model
  * @generated
  */
-public interface WidgetTextAttribute extends Entity {
+public interface WidgetNumberAttribute extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Maxlength</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -32,14 +32,14 @@ public interface WidgetTextAttribute extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Maxlength</em>' attribute.
 	 * @see #setMaxlength(int)
-	 * @see org.abchip.mimo.ui.UIPackage#getWidgetTextAttribute_Maxlength()
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetNumberAttribute_Maxlength()
 	 * @model
 	 * @generated
 	 */
 	int getMaxlength();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.WidgetTextAttribute#getMaxlength <em>Maxlength</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.WidgetNumberAttribute#getMaxlength <em>Maxlength</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Maxlength</em>' attribute.
@@ -48,4 +48,4 @@ public interface WidgetTextAttribute extends Entity {
 	 */
 	void setMaxlength(int value);
 
-} // WidgetTextAttribute
+} // WidgetNumberAttribute

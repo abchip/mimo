@@ -1,28 +1,27 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.impl;
+package org.abchip.mimo.ui.widget.impl;
 
-import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.WidgetDatePicker;
-
-import org.abchip.mimo.ui.WidgetType;
+import org.abchip.mimo.ui.widget.WidgetCounter;
+import org.abchip.mimo.ui.widget.WidgetPackage;
+import org.abchip.mimo.ui.widget.WidgetType;
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Widget Date Picker</b></em>'.
+ * An implementation of the model object '<em><b>Widget Counter</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetDatePickerImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetCounterImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class WidgetDatePickerImpl extends WidgetImpl implements WidgetDatePicker {
+public class WidgetCounterImpl extends WidgetImpl implements WidgetCounter {
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -31,7 +30,7 @@ public class WidgetDatePickerImpl extends WidgetImpl implements WidgetDatePicker
 	 * @generated
 	 * @ordered
 	 */
-	protected static final WidgetType VIEW_EDEFAULT = WidgetType.DATE_PICKER;
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.COUNTER;
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,7 +49,7 @@ public class WidgetDatePickerImpl extends WidgetImpl implements WidgetDatePicker
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WidgetDatePickerImpl() {
+	protected WidgetCounterImpl() {
 		super();
 	}
 
@@ -61,7 +60,7 @@ public class WidgetDatePickerImpl extends WidgetImpl implements WidgetDatePicker
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.WIDGET_DATE_PICKER;
+		return WidgetPackage.Literals.WIDGET_COUNTER;
 	}
 
 	/**
@@ -82,7 +81,7 @@ public class WidgetDatePickerImpl extends WidgetImpl implements WidgetDatePicker
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.WIDGET_DATE_PICKER__VIEW:
+			case WidgetPackage.WIDGET_COUNTER__VIEW:
 				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -96,7 +95,7 @@ public class WidgetDatePickerImpl extends WidgetImpl implements WidgetDatePicker
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET_DATE_PICKER__VIEW:
+			case WidgetPackage.WIDGET_COUNTER__VIEW:
 				return view != VIEW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -118,4 +117,4 @@ public class WidgetDatePickerImpl extends WidgetImpl implements WidgetDatePicker
 		return result.toString();
 	}
 
-} //WidgetDatePickerImpl
+} //WidgetCounterImpl

@@ -1,30 +1,30 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui;
-
+package org.abchip.mimo.ui.widget;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Widget Combo Box</b></em>'.
+ * A representation of the model object '<em><b>Widget Date Picker</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.WidgetComboBox#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.WidgetDatePicker#getView <em>View</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.UIPackage#getWidgetComboBox()
+ * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetDatePicker()
  * @model
  * @generated
  */
-public interface WidgetComboBox extends Widget {
+public interface WidgetDatePicker extends Widget {
+
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
-	 * The default value is <code>"mm-combo"</code>.
-	 * The literals are from the enumeration {@link org.abchip.mimo.ui.WidgetType}.
+	 * The default value is <code>"datepicker"</code>.
+	 * The literals are from the enumeration {@link org.abchip.mimo.ui.widget.WidgetType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Widget</em>' attribute isn't clear,
@@ -32,11 +32,10 @@ public interface WidgetComboBox extends Widget {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View</em>' attribute.
-	 * @see org.abchip.mimo.ui.WidgetType
-	 * @see org.abchip.mimo.ui.UIPackage#getWidgetComboBox_View()
-	 * @model default="mm-combo" required="true" changeable="false"
+	 * @see org.abchip.mimo.ui.widget.WidgetType
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetDatePicker_View()
+	 * @model default="datepicker" required="true" changeable="false"
 	 * @generated
 	 */
 	WidgetType getView();
-
-} // WidgetComboBox
+} // WidgetDatePicker

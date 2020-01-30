@@ -26,12 +26,12 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
-import org.abchip.mimo.ui.UIFactory;
 import org.abchip.mimo.ui.UiFrameSetup;
-import org.abchip.mimo.ui.Widget;
 import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
 import org.abchip.mimo.ui.schema.SchemaFactory;
+import org.abchip.mimo.ui.widget.Widget;
+import org.abchip.mimo.ui.widget.WidgetFactory;
 import org.abchip.mimo.util.Lists;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -117,37 +117,37 @@ public class LookupSchemaServlet extends BaseServlet {
 		Widget widget = null;
 		switch (slot.getDataType()) {
 		case STRING:
-			widget = UIFactory.eINSTANCE.createWidgetText();
+			widget = WidgetFactory.eINSTANCE.createWidgetText();
 			break;
 		case ENTITY:
 			column.setSort("string");
-			widget = UIFactory.eINSTANCE.createWidgetText();
+			widget = WidgetFactory.eINSTANCE.createWidgetText();
 			break;
 		case ENUM:
 			column.setSort("string");
-			widget = UIFactory.eINSTANCE.createWidgetText();
+			widget = WidgetFactory.eINSTANCE.createWidgetText();
 			break;
 		case BOOLEAN:
-			widget = UIFactory.eINSTANCE.createWidgetCheckBox();
+			widget = WidgetFactory.eINSTANCE.createWidgetCheckBox();
 			break;
 		case BINARY:
 			break;
 		case DATE_TIME:
 			column.setSort("raw");
-			widget = UIFactory.eINSTANCE.createWidgetText();
+			widget = WidgetFactory.eINSTANCE.createWidgetText();
 			break;
 		case IDENTITY:
 			column.setSort("int");
-			widget = UIFactory.eINSTANCE.createWidgetText();
+			widget = WidgetFactory.eINSTANCE.createWidgetText();
 			break;
 		case NUMERIC:
 			column.setSort("int");
-			widget = UIFactory.eINSTANCE.createWidgetText();
+			widget = WidgetFactory.eINSTANCE.createWidgetText();
 			break;
 		}
 
 		column.setWidget(widget);
-		
+
 		return column;
 	}
 

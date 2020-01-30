@@ -28,16 +28,16 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
-import org.abchip.mimo.ui.UIFactory;
 import org.abchip.mimo.ui.UiFrameSetup;
-import org.abchip.mimo.ui.Widget;
-import org.abchip.mimo.ui.WidgetNumber;
-import org.abchip.mimo.ui.WidgetNumberAttribute;
-import org.abchip.mimo.ui.WidgetText;
-import org.abchip.mimo.ui.WidgetTextAttribute;
 import org.abchip.mimo.ui.form.Form;
 import org.abchip.mimo.ui.form.FormFactory;
 import org.abchip.mimo.ui.form.FormField;
+import org.abchip.mimo.ui.widget.Widget;
+import org.abchip.mimo.ui.widget.WidgetFactory;
+import org.abchip.mimo.ui.widget.WidgetNumber;
+import org.abchip.mimo.ui.widget.WidgetNumberAttribute;
+import org.abchip.mimo.ui.widget.WidgetText;
+import org.abchip.mimo.ui.widget.WidgetTextAttribute;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.ecore.EObject;
@@ -121,38 +121,38 @@ public class LookupFormServlet extends BaseServlet {
 		Widget widget = null;
 
 		if (slot.isContainment())
-			widget = UIFactory.eINSTANCE.createWidgetForm();
+			widget = WidgetFactory.eINSTANCE.createWidgetForm();
 		else if (slot.getDomain() != null)
-			widget = UIFactory.eINSTANCE.createWidgetComboBox();
+			widget = WidgetFactory.eINSTANCE.createWidgetComboBox();
 		else if (slot.getText().toLowerCase().contains("level"))
-			widget = UIFactory.eINSTANCE.createWidgetCounter();
+			widget = WidgetFactory.eINSTANCE.createWidgetCounter();
 		else if (slot.getText().toLowerCase().contains("image"))
-			widget = UIFactory.eINSTANCE.createWidgetImage();
+			widget = WidgetFactory.eINSTANCE.createWidgetImage();
 
 		else {
 			switch (slot.getDataType()) {
 			case BINARY:
 				break;
 			case BOOLEAN:
-				widget = UIFactory.eINSTANCE.createWidgetCheckBox();
+				widget = WidgetFactory.eINSTANCE.createWidgetCheckBox();
 				break;
 			case DATE_TIME:
-				widget = UIFactory.eINSTANCE.createWidgetDatePicker();
+				widget = WidgetFactory.eINSTANCE.createWidgetDatePicker();
 				break;
 			case ENTITY:
-				widget = UIFactory.eINSTANCE.createWidgetComboBox();
+				widget = WidgetFactory.eINSTANCE.createWidgetComboBox();
 				break;
 			case ENUM:
-				widget = UIFactory.eINSTANCE.createWidgetComboBox();
+				widget = WidgetFactory.eINSTANCE.createWidgetComboBox();
 				break;
 			case IDENTITY:
 				break;
 			case NUMERIC:
-				widget = UIFactory.eINSTANCE.createWidgetNumber();
+				widget = WidgetFactory.eINSTANCE.createWidgetNumber();
 				NumericDef numericDef = (NumericDef) slot.getDataDef();
 				// numericDef.setPrecision(50);
 				if (numericDef.getPrecision() > 0) {
-					WidgetNumberAttribute attributes = UIFactory.eINSTANCE.createWidgetNumberAttribute();
+					WidgetNumberAttribute attributes = WidgetFactory.eINSTANCE.createWidgetNumberAttribute();
 					attributes.setMaxlength(numericDef.getPrecision());
 					((WidgetNumber) widget).setAttributes(attributes);
 				}
@@ -162,11 +162,11 @@ public class LookupFormServlet extends BaseServlet {
 				widget.setPattern(null);
 				break;
 			case STRING:
-				widget = UIFactory.eINSTANCE.createWidgetText();
+				widget = WidgetFactory.eINSTANCE.createWidgetText();
 				StringDef stringDef = (StringDef) slot.getDataDef();
 				// stringDef.setLength(50);
 				if (stringDef.getLength() > 0) {
-					WidgetTextAttribute attributes = UIFactory.eINSTANCE.createWidgetTextAttribute();
+					WidgetTextAttribute attributes = WidgetFactory.eINSTANCE.createWidgetTextAttribute();
 					attributes.setMaxlength(stringDef.getLength());
 					((WidgetText) widget).setAttributes(attributes);
 				}

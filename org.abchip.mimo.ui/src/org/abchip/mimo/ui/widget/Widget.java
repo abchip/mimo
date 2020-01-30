@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui;
+package org.abchip.mimo.ui.widget;
 
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
@@ -15,15 +15,15 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.Widget#isDisabled <em>Disabled</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.Widget#getDomain <em>Domain</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.Widget#getIcon <em>Icon</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.Widget#getLabel <em>Label</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.Widget#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.Widget#getPattern <em>Pattern</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.Widget#isDisabled <em>Disabled</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.Widget#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.Widget#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.Widget#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.Widget#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.Widget#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.UIPackage#getWidget()
+ * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidget()
  * @model abstract="true"
  * @generated
  */
@@ -38,14 +38,14 @@ public interface Widget extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Disabled</em>' attribute.
 	 * @see #setDisabled(boolean)
-	 * @see org.abchip.mimo.ui.UIPackage#getWidget_Disabled()
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidget_Disabled()
 	 * @model
 	 * @generated
 	 */
 	boolean isDisabled();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.Widget#isDisabled <em>Disabled</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.Widget#isDisabled <em>Disabled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Disabled</em>' attribute.
@@ -64,14 +64,14 @@ public interface Widget extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Domain</em>' containment reference.
 	 * @see #setDomain(Domain)
-	 * @see org.abchip.mimo.ui.UIPackage#getWidget_Domain()
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidget_Domain()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	Domain getDomain();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.Widget#getDomain <em>Domain</em>}' containment reference.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.Widget#getDomain <em>Domain</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Domain</em>' containment reference.
@@ -90,14 +90,14 @@ public interface Widget extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Icon</em>' attribute.
 	 * @see #setIcon(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getWidget_Icon()
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidget_Icon()
 	 * @model
 	 * @generated
 	 */
 	String getIcon();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.Widget#getIcon <em>Icon</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.Widget#getIcon <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Icon</em>' attribute.
@@ -116,14 +116,14 @@ public interface Widget extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getWidget_Label()
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidget_Label()
 	 * @model
 	 * @generated
 	 */
 	String getLabel();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.Widget#getLabel <em>Label</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.Widget#getLabel <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Label</em>' attribute.
@@ -142,14 +142,14 @@ public interface Widget extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getWidget_Name()
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidget_Name()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.Widget#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.Widget#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -168,14 +168,14 @@ public interface Widget extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Pattern</em>' containment reference.
 	 * @see #setPattern(WidgetPattern)
-	 * @see org.abchip.mimo.ui.UIPackage#getWidget_Pattern()
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidget_Pattern()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	WidgetPattern getPattern();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.Widget#getPattern <em>Pattern</em>}' containment reference.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.Widget#getPattern <em>Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Pattern</em>' containment reference.

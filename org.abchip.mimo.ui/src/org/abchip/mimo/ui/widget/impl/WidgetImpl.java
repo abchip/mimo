@@ -1,15 +1,14 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.impl;
+package org.abchip.mimo.ui.widget.impl;
 
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.impl.EntityImpl;
-
-import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.Widget;
-import org.abchip.mimo.ui.WidgetPattern;
-import org.abchip.mimo.ui.WidgetType;
+import org.abchip.mimo.ui.widget.Widget;
+import org.abchip.mimo.ui.widget.WidgetPackage;
+import org.abchip.mimo.ui.widget.WidgetPattern;
+import org.abchip.mimo.ui.widget.WidgetType;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -25,12 +24,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetImpl#isDisabled <em>Disabled</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetImpl#getDomain <em>Domain</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetImpl#getIcon <em>Icon</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetImpl#getPattern <em>Pattern</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImpl#isDisabled <em>Disabled</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImpl#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImpl#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
  * @generated
@@ -157,7 +156,7 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.WIDGET;
+		return WidgetPackage.Literals.WIDGET;
 	}
 
 	/**
@@ -180,7 +179,7 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 		boolean oldDisabled = disabled;
 		disabled = newDisabled;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__DISABLED, oldDisabled, disabled));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__DISABLED, oldDisabled, disabled));
 	}
 
 	/**
@@ -195,13 +194,13 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 			domain = (Domain)eResolveProxy(oldDomain);
 			if (domain != oldDomain) {
 				InternalEObject newDomain = (InternalEObject)domain;
-				NotificationChain msgs = oldDomain.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__DOMAIN, null, null);
+				NotificationChain msgs = oldDomain.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__DOMAIN, null, null);
 				if (newDomain.eInternalContainer() == null) {
-					msgs = newDomain.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__DOMAIN, null, msgs);
+					msgs = newDomain.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__DOMAIN, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UIPackage.WIDGET__DOMAIN, oldDomain, domain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WidgetPackage.WIDGET__DOMAIN, oldDomain, domain));
 			}
 		}
 		return domain;
@@ -225,7 +224,7 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 		Domain oldDomain = domain;
 		domain = newDomain;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__DOMAIN, oldDomain, newDomain);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__DOMAIN, oldDomain, newDomain);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -241,14 +240,14 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 		if (newDomain != domain) {
 			NotificationChain msgs = null;
 			if (domain != null)
-				msgs = ((InternalEObject)domain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__DOMAIN, null, msgs);
+				msgs = ((InternalEObject)domain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__DOMAIN, null, msgs);
 			if (newDomain != null)
-				msgs = ((InternalEObject)newDomain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__DOMAIN, null, msgs);
+				msgs = ((InternalEObject)newDomain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__DOMAIN, null, msgs);
 			msgs = basicSetDomain(newDomain, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__DOMAIN, newDomain, newDomain));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__DOMAIN, newDomain, newDomain));
 	}
 
 	/**
@@ -271,7 +270,7 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 		String oldIcon = icon;
 		icon = newIcon;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__ICON, oldIcon, icon));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__ICON, oldIcon, icon));
 	}
 
 	/**
@@ -294,7 +293,7 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 		String oldLabel = label;
 		label = newLabel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__LABEL, oldLabel, label));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__LABEL, oldLabel, label));
 	}
 
 	/**
@@ -317,7 +316,7 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__NAME, oldName, name));
 	}
 
 	/**
@@ -332,13 +331,13 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 			pattern = (WidgetPattern)eResolveProxy(oldPattern);
 			if (pattern != oldPattern) {
 				InternalEObject newPattern = (InternalEObject)pattern;
-				NotificationChain msgs = oldPattern.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__PATTERN, null, null);
+				NotificationChain msgs = oldPattern.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__PATTERN, null, null);
 				if (newPattern.eInternalContainer() == null) {
-					msgs = newPattern.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__PATTERN, null, msgs);
+					msgs = newPattern.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__PATTERN, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UIPackage.WIDGET__PATTERN, oldPattern, pattern));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WidgetPackage.WIDGET__PATTERN, oldPattern, pattern));
 			}
 		}
 		return pattern;
@@ -362,7 +361,7 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 		WidgetPattern oldPattern = pattern;
 		pattern = newPattern;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__PATTERN, oldPattern, newPattern);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__PATTERN, oldPattern, newPattern);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -378,14 +377,14 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 		if (newPattern != pattern) {
 			NotificationChain msgs = null;
 			if (pattern != null)
-				msgs = ((InternalEObject)pattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__PATTERN, null, msgs);
+				msgs = ((InternalEObject)pattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__PATTERN, null, msgs);
 			if (newPattern != null)
-				msgs = ((InternalEObject)newPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__PATTERN, null, msgs);
+				msgs = ((InternalEObject)newPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__PATTERN, null, msgs);
 			msgs = basicSetPattern(newPattern, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__PATTERN, newPattern, newPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__PATTERN, newPattern, newPattern));
 	}
 
 	/**
@@ -408,9 +407,9 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case UIPackage.WIDGET__DOMAIN:
+			case WidgetPackage.WIDGET__DOMAIN:
 				return basicSetDomain(null, msgs);
-			case UIPackage.WIDGET__PATTERN:
+			case WidgetPackage.WIDGET__PATTERN:
 				return basicSetPattern(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -424,18 +423,18 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.WIDGET__DISABLED:
+			case WidgetPackage.WIDGET__DISABLED:
 				return isDisabled();
-			case UIPackage.WIDGET__DOMAIN:
+			case WidgetPackage.WIDGET__DOMAIN:
 				if (resolve) return getDomain();
 				return basicGetDomain();
-			case UIPackage.WIDGET__ICON:
+			case WidgetPackage.WIDGET__ICON:
 				return getIcon();
-			case UIPackage.WIDGET__LABEL:
+			case WidgetPackage.WIDGET__LABEL:
 				return getLabel();
-			case UIPackage.WIDGET__NAME:
+			case WidgetPackage.WIDGET__NAME:
 				return getName();
-			case UIPackage.WIDGET__PATTERN:
+			case WidgetPackage.WIDGET__PATTERN:
 				if (resolve) return getPattern();
 				return basicGetPattern();
 		}
@@ -450,22 +449,22 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UIPackage.WIDGET__DISABLED:
+			case WidgetPackage.WIDGET__DISABLED:
 				setDisabled((Boolean)newValue);
 				return;
-			case UIPackage.WIDGET__DOMAIN:
+			case WidgetPackage.WIDGET__DOMAIN:
 				setDomain((Domain)newValue);
 				return;
-			case UIPackage.WIDGET__ICON:
+			case WidgetPackage.WIDGET__ICON:
 				setIcon((String)newValue);
 				return;
-			case UIPackage.WIDGET__LABEL:
+			case WidgetPackage.WIDGET__LABEL:
 				setLabel((String)newValue);
 				return;
-			case UIPackage.WIDGET__NAME:
+			case WidgetPackage.WIDGET__NAME:
 				setName((String)newValue);
 				return;
-			case UIPackage.WIDGET__PATTERN:
+			case WidgetPackage.WIDGET__PATTERN:
 				setPattern((WidgetPattern)newValue);
 				return;
 		}
@@ -480,22 +479,22 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET__DISABLED:
+			case WidgetPackage.WIDGET__DISABLED:
 				setDisabled(DISABLED_EDEFAULT);
 				return;
-			case UIPackage.WIDGET__DOMAIN:
+			case WidgetPackage.WIDGET__DOMAIN:
 				setDomain((Domain)null);
 				return;
-			case UIPackage.WIDGET__ICON:
+			case WidgetPackage.WIDGET__ICON:
 				setIcon(ICON_EDEFAULT);
 				return;
-			case UIPackage.WIDGET__LABEL:
+			case WidgetPackage.WIDGET__LABEL:
 				setLabel(LABEL_EDEFAULT);
 				return;
-			case UIPackage.WIDGET__NAME:
+			case WidgetPackage.WIDGET__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case UIPackage.WIDGET__PATTERN:
+			case WidgetPackage.WIDGET__PATTERN:
 				setPattern((WidgetPattern)null);
 				return;
 		}
@@ -510,17 +509,17 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET__DISABLED:
+			case WidgetPackage.WIDGET__DISABLED:
 				return disabled != DISABLED_EDEFAULT;
-			case UIPackage.WIDGET__DOMAIN:
+			case WidgetPackage.WIDGET__DOMAIN:
 				return domain != null;
-			case UIPackage.WIDGET__ICON:
+			case WidgetPackage.WIDGET__ICON:
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
-			case UIPackage.WIDGET__LABEL:
+			case WidgetPackage.WIDGET__LABEL:
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-			case UIPackage.WIDGET__NAME:
+			case WidgetPackage.WIDGET__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case UIPackage.WIDGET__PATTERN:
+			case WidgetPackage.WIDGET__PATTERN:
 				return pattern != null;
 		}
 		return super.eIsSet(featureID);

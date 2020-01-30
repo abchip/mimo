@@ -1,12 +1,11 @@
 /**
  * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.impl;
+package org.abchip.mimo.ui.widget.impl;
 
-import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.WidgetNote;
-import org.abchip.mimo.ui.WidgetType;
-
+import org.abchip.mimo.ui.widget.WidgetNote;
+import org.abchip.mimo.ui.widget.WidgetPackage;
+import org.abchip.mimo.ui.widget.WidgetType;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -17,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.WidgetNoteImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetNoteImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,7 +63,7 @@ public class WidgetNoteImpl extends WidgetImpl implements WidgetNote {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.WIDGET_NOTE;
+		return WidgetPackage.Literals.WIDGET_NOTE;
 	}
 
 	/**
@@ -85,7 +84,7 @@ public class WidgetNoteImpl extends WidgetImpl implements WidgetNote {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.WIDGET_NOTE__VIEW:
+			case WidgetPackage.WIDGET_NOTE__VIEW:
 				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -99,7 +98,7 @@ public class WidgetNoteImpl extends WidgetImpl implements WidgetNote {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.WIDGET_NOTE__VIEW:
+			case WidgetPackage.WIDGET_NOTE__VIEW:
 				return view != VIEW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
