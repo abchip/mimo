@@ -226,14 +226,14 @@ public interface UIPackage extends EPackage {
 	int UI_USER_SETUP_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewImpl <em>View</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetImpl <em>Widget</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getView()
+	 * @see org.abchip.mimo.ui.impl.WidgetImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidget()
 	 * @generated
 	 */
-	int VIEW = 4;
+	int WIDGET = 4;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -242,7 +242,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW__DISABLED = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int WIDGET__DISABLED = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -251,7 +251,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW__DOMAIN = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int WIDGET__DOMAIN = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -260,7 +260,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int WIDGET__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -269,7 +269,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW__LABEL = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int WIDGET__LABEL = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -278,7 +278,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+	int WIDGET__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -287,26 +287,26 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW__PATTERN = EntityPackage.ENTITY_FEATURE_COUNT + 5;
+	int WIDGET__PATTERN = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The number of structural features of the '<em>View</em>' class.
+	 * The number of structural features of the '<em>Widget</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+	int WIDGET_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewPatternImpl <em>View Pattern</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetPatternImpl <em>Widget Pattern</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewPatternImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewPattern()
+	 * @see org.abchip.mimo.ui.impl.WidgetPatternImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetPattern()
 	 * @generated
 	 */
-	int VIEW_PATTERN = 5;
+	int WIDGET_PATTERN = 5;
 
 	/**
 	 * The feature id for the '<em><b>Allow</b></em>' attribute.
@@ -315,7 +315,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_PATTERN__ALLOW = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int WIDGET_PATTERN__ALLOW = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Mask</b></em>' attribute.
@@ -324,108 +324,26 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_PATTERN__MASK = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int WIDGET_PATTERN__MASK = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>View Pattern</em>' class.
+	 * The number of structural features of the '<em>Widget Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_PATTERN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int WIDGET_PATTERN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewCheckBoxImpl <em>View Check Box</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetCheckBoxImpl <em>Widget Check Box</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewCheckBoxImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewCheckBox()
+	 * @see org.abchip.mimo.ui.impl.WidgetCheckBoxImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetCheckBox()
 	 * @generated
 	 */
-	int VIEW_CHECK_BOX = 6;
-
-	/**
-	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_CHECK_BOX__DISABLED = VIEW__DISABLED;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_CHECK_BOX__DOMAIN = VIEW__DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Icon</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_CHECK_BOX__ICON = VIEW__ICON;
-
-	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_CHECK_BOX__LABEL = VIEW__LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_CHECK_BOX__NAME = VIEW__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_CHECK_BOX__PATTERN = VIEW__PATTERN;
-
-	/**
-	 * The feature id for the '<em><b>View</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_CHECK_BOX__VIEW = VIEW_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>View Check Box</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_CHECK_BOX_FEATURE_COUNT = VIEW_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewComboBoxImpl <em>View Combo Box</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewComboBoxImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewComboBox()
-	 * @generated
-	 */
-	int VIEW_COMBO_BOX = 7;
+	int WIDGET_CHECK_BOX = 6;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -434,7 +352,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COMBO_BOX__DISABLED = VIEW__DISABLED;
+	int WIDGET_CHECK_BOX__DISABLED = WIDGET__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -443,7 +361,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COMBO_BOX__DOMAIN = VIEW__DOMAIN;
+	int WIDGET_CHECK_BOX__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -452,7 +370,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COMBO_BOX__ICON = VIEW__ICON;
+	int WIDGET_CHECK_BOX__ICON = WIDGET__ICON;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -461,7 +379,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COMBO_BOX__LABEL = VIEW__LABEL;
+	int WIDGET_CHECK_BOX__LABEL = WIDGET__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -470,7 +388,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COMBO_BOX__NAME = VIEW__NAME;
+	int WIDGET_CHECK_BOX__NAME = WIDGET__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -479,7 +397,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COMBO_BOX__PATTERN = VIEW__PATTERN;
+	int WIDGET_CHECK_BOX__PATTERN = WIDGET__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -488,26 +406,26 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COMBO_BOX__VIEW = VIEW_FEATURE_COUNT + 0;
+	int WIDGET_CHECK_BOX__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>View Combo Box</em>' class.
+	 * The number of structural features of the '<em>Widget Check Box</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COMBO_BOX_FEATURE_COUNT = VIEW_FEATURE_COUNT + 1;
+	int WIDGET_CHECK_BOX_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewCounterImpl <em>View Counter</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetComboBoxImpl <em>Widget Combo Box</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewCounterImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewCounter()
+	 * @see org.abchip.mimo.ui.impl.WidgetComboBoxImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetComboBox()
 	 * @generated
 	 */
-	int VIEW_COUNTER = 8;
+	int WIDGET_COMBO_BOX = 7;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -516,7 +434,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COUNTER__DISABLED = VIEW__DISABLED;
+	int WIDGET_COMBO_BOX__DISABLED = WIDGET__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -525,7 +443,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COUNTER__DOMAIN = VIEW__DOMAIN;
+	int WIDGET_COMBO_BOX__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -534,7 +452,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COUNTER__ICON = VIEW__ICON;
+	int WIDGET_COMBO_BOX__ICON = WIDGET__ICON;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -543,7 +461,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COUNTER__LABEL = VIEW__LABEL;
+	int WIDGET_COMBO_BOX__LABEL = WIDGET__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -552,7 +470,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COUNTER__NAME = VIEW__NAME;
+	int WIDGET_COMBO_BOX__NAME = WIDGET__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -561,7 +479,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COUNTER__PATTERN = VIEW__PATTERN;
+	int WIDGET_COMBO_BOX__PATTERN = WIDGET__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -570,26 +488,26 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COUNTER__VIEW = VIEW_FEATURE_COUNT + 0;
+	int WIDGET_COMBO_BOX__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>View Counter</em>' class.
+	 * The number of structural features of the '<em>Widget Combo Box</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_COUNTER_FEATURE_COUNT = VIEW_FEATURE_COUNT + 1;
+	int WIDGET_COMBO_BOX_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewDatePickerImpl <em>View Date Picker</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetCounterImpl <em>Widget Counter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewDatePickerImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewDatePicker()
+	 * @see org.abchip.mimo.ui.impl.WidgetCounterImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetCounter()
 	 * @generated
 	 */
-	int VIEW_DATE_PICKER = 9;
+	int WIDGET_COUNTER = 8;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -598,7 +516,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_DATE_PICKER__DISABLED = VIEW__DISABLED;
+	int WIDGET_COUNTER__DISABLED = WIDGET__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -607,7 +525,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_DATE_PICKER__DOMAIN = VIEW__DOMAIN;
+	int WIDGET_COUNTER__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -616,7 +534,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_DATE_PICKER__ICON = VIEW__ICON;
+	int WIDGET_COUNTER__ICON = WIDGET__ICON;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -625,7 +543,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_DATE_PICKER__LABEL = VIEW__LABEL;
+	int WIDGET_COUNTER__LABEL = WIDGET__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -634,7 +552,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_DATE_PICKER__NAME = VIEW__NAME;
+	int WIDGET_COUNTER__NAME = WIDGET__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -643,7 +561,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_DATE_PICKER__PATTERN = VIEW__PATTERN;
+	int WIDGET_COUNTER__PATTERN = WIDGET__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -652,26 +570,26 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_DATE_PICKER__VIEW = VIEW_FEATURE_COUNT + 0;
+	int WIDGET_COUNTER__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>View Date Picker</em>' class.
+	 * The number of structural features of the '<em>Widget Counter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_DATE_PICKER_FEATURE_COUNT = VIEW_FEATURE_COUNT + 1;
+	int WIDGET_COUNTER_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewFormImpl <em>View Form</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetDatePickerImpl <em>Widget Date Picker</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewFormImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewForm()
+	 * @see org.abchip.mimo.ui.impl.WidgetDatePickerImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetDatePicker()
 	 * @generated
 	 */
-	int VIEW_FORM = 10;
+	int WIDGET_DATE_PICKER = 9;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -680,7 +598,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FORM__DISABLED = VIEW__DISABLED;
+	int WIDGET_DATE_PICKER__DISABLED = WIDGET__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -689,7 +607,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FORM__DOMAIN = VIEW__DOMAIN;
+	int WIDGET_DATE_PICKER__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -698,7 +616,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FORM__ICON = VIEW__ICON;
+	int WIDGET_DATE_PICKER__ICON = WIDGET__ICON;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -707,7 +625,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FORM__LABEL = VIEW__LABEL;
+	int WIDGET_DATE_PICKER__LABEL = WIDGET__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -716,7 +634,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FORM__NAME = VIEW__NAME;
+	int WIDGET_DATE_PICKER__NAME = WIDGET__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -725,7 +643,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FORM__PATTERN = VIEW__PATTERN;
+	int WIDGET_DATE_PICKER__PATTERN = WIDGET__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -734,26 +652,26 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FORM__VIEW = VIEW_FEATURE_COUNT + 0;
+	int WIDGET_DATE_PICKER__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>View Form</em>' class.
+	 * The number of structural features of the '<em>Widget Date Picker</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FORM_FEATURE_COUNT = VIEW_FEATURE_COUNT + 1;
+	int WIDGET_DATE_PICKER_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewImageImpl <em>View Image</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetFormImpl <em>Widget Form</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewImageImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewImage()
+	 * @see org.abchip.mimo.ui.impl.WidgetFormImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetForm()
 	 * @generated
 	 */
-	int VIEW_IMAGE = 11;
+	int WIDGET_FORM = 10;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -762,7 +680,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_IMAGE__DISABLED = VIEW__DISABLED;
+	int WIDGET_FORM__DISABLED = WIDGET__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -771,7 +689,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_IMAGE__DOMAIN = VIEW__DOMAIN;
+	int WIDGET_FORM__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -780,7 +698,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_IMAGE__ICON = VIEW__ICON;
+	int WIDGET_FORM__ICON = WIDGET__ICON;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -789,7 +707,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_IMAGE__LABEL = VIEW__LABEL;
+	int WIDGET_FORM__LABEL = WIDGET__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -798,7 +716,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_IMAGE__NAME = VIEW__NAME;
+	int WIDGET_FORM__NAME = WIDGET__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -807,7 +725,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_IMAGE__PATTERN = VIEW__PATTERN;
+	int WIDGET_FORM__PATTERN = WIDGET__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -816,26 +734,26 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_IMAGE__VIEW = VIEW_FEATURE_COUNT + 0;
+	int WIDGET_FORM__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>View Image</em>' class.
+	 * The number of structural features of the '<em>Widget Form</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_IMAGE_FEATURE_COUNT = VIEW_FEATURE_COUNT + 1;
+	int WIDGET_FORM_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewNoteImpl <em>View Note</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetImageImpl <em>Widget Image</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewNoteImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewNote()
+	 * @see org.abchip.mimo.ui.impl.WidgetImageImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetImage()
 	 * @generated
 	 */
-	int VIEW_NOTE = 12;
+	int WIDGET_IMAGE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -844,7 +762,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NOTE__DISABLED = VIEW__DISABLED;
+	int WIDGET_IMAGE__DISABLED = WIDGET__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -853,7 +771,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NOTE__DOMAIN = VIEW__DOMAIN;
+	int WIDGET_IMAGE__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -862,7 +780,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NOTE__ICON = VIEW__ICON;
+	int WIDGET_IMAGE__ICON = WIDGET__ICON;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -871,7 +789,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NOTE__LABEL = VIEW__LABEL;
+	int WIDGET_IMAGE__LABEL = WIDGET__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -880,7 +798,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NOTE__NAME = VIEW__NAME;
+	int WIDGET_IMAGE__NAME = WIDGET__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -889,7 +807,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NOTE__PATTERN = VIEW__PATTERN;
+	int WIDGET_IMAGE__PATTERN = WIDGET__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -898,26 +816,26 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NOTE__VIEW = VIEW_FEATURE_COUNT + 0;
+	int WIDGET_IMAGE__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>View Note</em>' class.
+	 * The number of structural features of the '<em>Widget Image</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NOTE_FEATURE_COUNT = VIEW_FEATURE_COUNT + 1;
+	int WIDGET_IMAGE_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewNumberImpl <em>View Number</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetNoteImpl <em>Widget Note</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewNumberImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewNumber()
+	 * @see org.abchip.mimo.ui.impl.WidgetNoteImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetNote()
 	 * @generated
 	 */
-	int VIEW_NUMBER = 13;
+	int WIDGET_NOTE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -926,7 +844,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NUMBER__DISABLED = VIEW__DISABLED;
+	int WIDGET_NOTE__DISABLED = WIDGET__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -935,7 +853,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NUMBER__DOMAIN = VIEW__DOMAIN;
+	int WIDGET_NOTE__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -944,7 +862,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NUMBER__ICON = VIEW__ICON;
+	int WIDGET_NOTE__ICON = WIDGET__ICON;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -953,7 +871,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NUMBER__LABEL = VIEW__LABEL;
+	int WIDGET_NOTE__LABEL = WIDGET__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -962,7 +880,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NUMBER__NAME = VIEW__NAME;
+	int WIDGET_NOTE__NAME = WIDGET__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -971,7 +889,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NUMBER__PATTERN = VIEW__PATTERN;
+	int WIDGET_NOTE__PATTERN = WIDGET__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -980,7 +898,89 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NUMBER__VIEW = VIEW_FEATURE_COUNT + 0;
+	int WIDGET_NOTE__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Widget Note</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_NOTE_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetNumberImpl <em>Widget Number</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.impl.WidgetNumberImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetNumber()
+	 * @generated
+	 */
+	int WIDGET_NUMBER = 13;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_NUMBER__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_NUMBER__DOMAIN = WIDGET__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_NUMBER__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_NUMBER__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_NUMBER__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_NUMBER__PATTERN = WIDGET__PATTERN;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_NUMBER__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference.
@@ -989,7 +989,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NUMBER__ATTRIBUTES = VIEW_FEATURE_COUNT + 1;
+	int WIDGET_NUMBER__ATTRIBUTES = WIDGET_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -998,26 +998,26 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NUMBER__PLACEHOLDER = VIEW_FEATURE_COUNT + 2;
+	int WIDGET_NUMBER__PLACEHOLDER = WIDGET_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>View Number</em>' class.
+	 * The number of structural features of the '<em>Widget Number</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NUMBER_FEATURE_COUNT = VIEW_FEATURE_COUNT + 3;
+	int WIDGET_NUMBER_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewNumberAttributeImpl <em>View Number Attribute</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetNumberAttributeImpl <em>Widget Number Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewNumberAttributeImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewNumberAttribute()
+	 * @see org.abchip.mimo.ui.impl.WidgetNumberAttributeImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetNumberAttribute()
 	 * @generated
 	 */
-	int VIEW_NUMBER_ATTRIBUTE = 14;
+	int WIDGET_NUMBER_ATTRIBUTE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Maxlength</b></em>' attribute.
@@ -1026,26 +1026,26 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NUMBER_ATTRIBUTE__MAXLENGTH = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>View Number Attribute</em>' class.
+	 * The number of structural features of the '<em>Widget Number Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_NUMBER_ATTRIBUTE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int WIDGET_NUMBER_ATTRIBUTE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewTextImpl <em>View Text</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetTextImpl <em>Widget Text</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewTextImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewText()
+	 * @see org.abchip.mimo.ui.impl.WidgetTextImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetText()
 	 * @generated
 	 */
-	int VIEW_TEXT = 15;
+	int WIDGET_TEXT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -1054,7 +1054,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TEXT__DISABLED = VIEW__DISABLED;
+	int WIDGET_TEXT__DISABLED = WIDGET__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -1063,7 +1063,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TEXT__DOMAIN = VIEW__DOMAIN;
+	int WIDGET_TEXT__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -1072,7 +1072,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TEXT__ICON = VIEW__ICON;
+	int WIDGET_TEXT__ICON = WIDGET__ICON;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -1081,7 +1081,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TEXT__LABEL = VIEW__LABEL;
+	int WIDGET_TEXT__LABEL = WIDGET__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1090,7 +1090,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TEXT__NAME = VIEW__NAME;
+	int WIDGET_TEXT__NAME = WIDGET__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -1099,7 +1099,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TEXT__PATTERN = VIEW__PATTERN;
+	int WIDGET_TEXT__PATTERN = WIDGET__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -1108,7 +1108,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TEXT__VIEW = VIEW_FEATURE_COUNT + 0;
+	int WIDGET_TEXT__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -1117,7 +1117,7 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TEXT__PLACEHOLDER = VIEW_FEATURE_COUNT + 1;
+	int WIDGET_TEXT__PLACEHOLDER = WIDGET_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference.
@@ -1126,26 +1126,26 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TEXT__ATTRIBUTES = VIEW_FEATURE_COUNT + 2;
+	int WIDGET_TEXT__ATTRIBUTES = WIDGET_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>View Text</em>' class.
+	 * The number of structural features of the '<em>Widget Text</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TEXT_FEATURE_COUNT = VIEW_FEATURE_COUNT + 3;
+	int WIDGET_TEXT_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.ViewTextAttributeImpl <em>View Text Attribute</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.WidgetTextAttributeImpl <em>Widget Text Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.impl.ViewTextAttributeImpl
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewTextAttribute()
+	 * @see org.abchip.mimo.ui.impl.WidgetTextAttributeImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetTextAttribute()
 	 * @generated
 	 */
-	int VIEW_TEXT_ATTRIBUTE = 16;
+	int WIDGET_TEXT_ATTRIBUTE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Maxlength</b></em>' attribute.
@@ -1154,16 +1154,16 @@ public interface UIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TEXT_ATTRIBUTE__MAXLENGTH = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int WIDGET_TEXT_ATTRIBUTE__MAXLENGTH = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>View Text Attribute</em>' class.
+	 * The number of structural features of the '<em>Widget Text Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TEXT_ATTRIBUTE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int WIDGET_TEXT_ATTRIBUTE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.ActionType <em>Action Type</em>}' enum.
@@ -1177,15 +1177,14 @@ public interface UIPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.ViewType <em>View Type</em>}' enum.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.WidgetType <em>Widget Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.ViewType
-	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewType()
+	 * @see org.abchip.mimo.ui.WidgetType
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetType()
 	 * @generated
 	 */
-	int VIEW_TYPE = 18;
-
+	int WIDGET_TYPE = 18;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.Action <em>Action</em>}'.
@@ -1338,387 +1337,387 @@ public interface UIPackage extends EPackage {
 	EAttribute getUiUserSetup_Name();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.View <em>View</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.Widget <em>Widget</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.View
+	 * @return the meta object for class '<em>Widget</em>'.
+	 * @see org.abchip.mimo.ui.Widget
 	 * @generated
 	 */
-	EClass getView();
+	EClass getWidget();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.View#isDisabled <em>Disabled</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.Widget#isDisabled <em>Disabled</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Disabled</em>'.
-	 * @see org.abchip.mimo.ui.View#isDisabled()
-	 * @see #getView()
+	 * @see org.abchip.mimo.ui.Widget#isDisabled()
+	 * @see #getWidget()
 	 * @generated
 	 */
-	EAttribute getView_Disabled();
+	EAttribute getWidget_Disabled();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.View#getDomain <em>Domain</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.Widget#getDomain <em>Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Domain</em>'.
-	 * @see org.abchip.mimo.ui.View#getDomain()
-	 * @see #getView()
+	 * @see org.abchip.mimo.ui.Widget#getDomain()
+	 * @see #getWidget()
 	 * @generated
 	 */
-	EReference getView_Domain();
+	EReference getWidget_Domain();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.View#getIcon <em>Icon</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.Widget#getIcon <em>Icon</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Icon</em>'.
-	 * @see org.abchip.mimo.ui.View#getIcon()
-	 * @see #getView()
+	 * @see org.abchip.mimo.ui.Widget#getIcon()
+	 * @see #getWidget()
 	 * @generated
 	 */
-	EAttribute getView_Icon();
+	EAttribute getWidget_Icon();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.View#getLabel <em>Label</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.Widget#getLabel <em>Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Label</em>'.
-	 * @see org.abchip.mimo.ui.View#getLabel()
-	 * @see #getView()
+	 * @see org.abchip.mimo.ui.Widget#getLabel()
+	 * @see #getWidget()
 	 * @generated
 	 */
-	EAttribute getView_Label();
+	EAttribute getWidget_Label();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.View#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.Widget#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.abchip.mimo.ui.View#getName()
-	 * @see #getView()
+	 * @see org.abchip.mimo.ui.Widget#getName()
+	 * @see #getWidget()
 	 * @generated
 	 */
-	EAttribute getView_Name();
+	EAttribute getWidget_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.View#getPattern <em>Pattern</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.Widget#getPattern <em>Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Pattern</em>'.
-	 * @see org.abchip.mimo.ui.View#getPattern()
-	 * @see #getView()
+	 * @see org.abchip.mimo.ui.Widget#getPattern()
+	 * @see #getWidget()
 	 * @generated
 	 */
-	EReference getView_Pattern();
+	EReference getWidget_Pattern();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.ViewPattern <em>View Pattern</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.WidgetPattern <em>Widget Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View Pattern</em>'.
-	 * @see org.abchip.mimo.ui.ViewPattern
+	 * @return the meta object for class '<em>Widget Pattern</em>'.
+	 * @see org.abchip.mimo.ui.WidgetPattern
 	 * @generated
 	 */
-	EClass getViewPattern();
+	EClass getWidgetPattern();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewPattern#getAllow <em>Allow</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetPattern#getAllow <em>Allow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Allow</em>'.
-	 * @see org.abchip.mimo.ui.ViewPattern#getAllow()
-	 * @see #getViewPattern()
+	 * @see org.abchip.mimo.ui.WidgetPattern#getAllow()
+	 * @see #getWidgetPattern()
 	 * @generated
 	 */
-	EAttribute getViewPattern_Allow();
+	EAttribute getWidgetPattern_Allow();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewPattern#getMask <em>Mask</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetPattern#getMask <em>Mask</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Mask</em>'.
-	 * @see org.abchip.mimo.ui.ViewPattern#getMask()
-	 * @see #getViewPattern()
+	 * @see org.abchip.mimo.ui.WidgetPattern#getMask()
+	 * @see #getWidgetPattern()
 	 * @generated
 	 */
-	EAttribute getViewPattern_Mask();
+	EAttribute getWidgetPattern_Mask();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.ViewCheckBox <em>View Check Box</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.WidgetCheckBox <em>Widget Check Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View Check Box</em>'.
-	 * @see org.abchip.mimo.ui.ViewCheckBox
+	 * @return the meta object for class '<em>Widget Check Box</em>'.
+	 * @see org.abchip.mimo.ui.WidgetCheckBox
 	 * @generated
 	 */
-	EClass getViewCheckBox();
+	EClass getWidgetCheckBox();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewCheckBox#getView <em>View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.ViewCheckBox#getView()
-	 * @see #getViewCheckBox()
-	 * @generated
-	 */
-	EAttribute getViewCheckBox_View();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.ViewComboBox <em>View Combo Box</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View Combo Box</em>'.
-	 * @see org.abchip.mimo.ui.ViewComboBox
-	 * @generated
-	 */
-	EClass getViewComboBox();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewComboBox#getView <em>View</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetCheckBox#getView <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.ViewComboBox#getView()
-	 * @see #getViewComboBox()
+	 * @see org.abchip.mimo.ui.WidgetCheckBox#getView()
+	 * @see #getWidgetCheckBox()
 	 * @generated
 	 */
-	EAttribute getViewComboBox_View();
+	EAttribute getWidgetCheckBox_View();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.ViewCounter <em>View Counter</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.WidgetComboBox <em>Widget Combo Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View Counter</em>'.
-	 * @see org.abchip.mimo.ui.ViewCounter
+	 * @return the meta object for class '<em>Widget Combo Box</em>'.
+	 * @see org.abchip.mimo.ui.WidgetComboBox
 	 * @generated
 	 */
-	EClass getViewCounter();
+	EClass getWidgetComboBox();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewCounter#getView <em>View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.ViewCounter#getView()
-	 * @see #getViewCounter()
-	 * @generated
-	 */
-	EAttribute getViewCounter_View();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.ViewDatePicker <em>View Date Picker</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View Date Picker</em>'.
-	 * @see org.abchip.mimo.ui.ViewDatePicker
-	 * @generated
-	 */
-	EClass getViewDatePicker();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewDatePicker#getView <em>View</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetComboBox#getView <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.ViewDatePicker#getView()
-	 * @see #getViewDatePicker()
+	 * @see org.abchip.mimo.ui.WidgetComboBox#getView()
+	 * @see #getWidgetComboBox()
 	 * @generated
 	 */
-	EAttribute getViewDatePicker_View();
+	EAttribute getWidgetComboBox_View();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.ViewForm <em>View Form</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.WidgetCounter <em>Widget Counter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View Form</em>'.
-	 * @see org.abchip.mimo.ui.ViewForm
+	 * @return the meta object for class '<em>Widget Counter</em>'.
+	 * @see org.abchip.mimo.ui.WidgetCounter
 	 * @generated
 	 */
-	EClass getViewForm();
+	EClass getWidgetCounter();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewForm#getView <em>View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.ViewForm#getView()
-	 * @see #getViewForm()
-	 * @generated
-	 */
-	EAttribute getViewForm_View();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.ViewImage <em>View Image</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View Image</em>'.
-	 * @see org.abchip.mimo.ui.ViewImage
-	 * @generated
-	 */
-	EClass getViewImage();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewImage#getView <em>View</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetCounter#getView <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.ViewImage#getView()
-	 * @see #getViewImage()
+	 * @see org.abchip.mimo.ui.WidgetCounter#getView()
+	 * @see #getWidgetCounter()
 	 * @generated
 	 */
-	EAttribute getViewImage_View();
+	EAttribute getWidgetCounter_View();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.ViewNote <em>View Note</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.WidgetDatePicker <em>Widget Date Picker</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View Note</em>'.
-	 * @see org.abchip.mimo.ui.ViewNote
+	 * @return the meta object for class '<em>Widget Date Picker</em>'.
+	 * @see org.abchip.mimo.ui.WidgetDatePicker
 	 * @generated
 	 */
-	EClass getViewNote();
+	EClass getWidgetDatePicker();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewNote#getView <em>View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.ViewNote#getView()
-	 * @see #getViewNote()
-	 * @generated
-	 */
-	EAttribute getViewNote_View();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.ViewNumber <em>View Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View Number</em>'.
-	 * @see org.abchip.mimo.ui.ViewNumber
-	 * @generated
-	 */
-	EClass getViewNumber();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewNumber#getView <em>View</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetDatePicker#getView <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.ViewNumber#getView()
-	 * @see #getViewNumber()
+	 * @see org.abchip.mimo.ui.WidgetDatePicker#getView()
+	 * @see #getWidgetDatePicker()
 	 * @generated
 	 */
-	EAttribute getViewNumber_View();
+	EAttribute getWidgetDatePicker_View();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewNumber#getPlaceholder <em>Placeholder</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.WidgetForm <em>Widget Form</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Placeholder</em>'.
-	 * @see org.abchip.mimo.ui.ViewNumber#getPlaceholder()
-	 * @see #getViewNumber()
+	 * @return the meta object for class '<em>Widget Form</em>'.
+	 * @see org.abchip.mimo.ui.WidgetForm
 	 * @generated
 	 */
-	EAttribute getViewNumber_Placeholder();
+	EClass getWidgetForm();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.ViewNumber#getAttributes <em>Attributes</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetForm#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.WidgetForm#getView()
+	 * @see #getWidgetForm()
+	 * @generated
+	 */
+	EAttribute getWidgetForm_View();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.WidgetImage <em>Widget Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Widget Image</em>'.
+	 * @see org.abchip.mimo.ui.WidgetImage
+	 * @generated
+	 */
+	EClass getWidgetImage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetImage#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.WidgetImage#getView()
+	 * @see #getWidgetImage()
+	 * @generated
+	 */
+	EAttribute getWidgetImage_View();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.WidgetNote <em>Widget Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Widget Note</em>'.
+	 * @see org.abchip.mimo.ui.WidgetNote
+	 * @generated
+	 */
+	EClass getWidgetNote();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetNote#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.WidgetNote#getView()
+	 * @see #getWidgetNote()
+	 * @generated
+	 */
+	EAttribute getWidgetNote_View();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.WidgetNumber <em>Widget Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Widget Number</em>'.
+	 * @see org.abchip.mimo.ui.WidgetNumber
+	 * @generated
+	 */
+	EClass getWidgetNumber();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetNumber#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.WidgetNumber#getView()
+	 * @see #getWidgetNumber()
+	 * @generated
+	 */
+	EAttribute getWidgetNumber_View();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.WidgetNumber#getAttributes <em>Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Attributes</em>'.
-	 * @see org.abchip.mimo.ui.ViewNumber#getAttributes()
-	 * @see #getViewNumber()
+	 * @see org.abchip.mimo.ui.WidgetNumber#getAttributes()
+	 * @see #getWidgetNumber()
 	 * @generated
 	 */
-	EReference getViewNumber_Attributes();
+	EReference getWidgetNumber_Attributes();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.ViewNumberAttribute <em>View Number Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View Number Attribute</em>'.
-	 * @see org.abchip.mimo.ui.ViewNumberAttribute
-	 * @generated
-	 */
-	EClass getViewNumberAttribute();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewNumberAttribute#getMaxlength <em>Maxlength</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Maxlength</em>'.
-	 * @see org.abchip.mimo.ui.ViewNumberAttribute#getMaxlength()
-	 * @see #getViewNumberAttribute()
-	 * @generated
-	 */
-	EAttribute getViewNumberAttribute_Maxlength();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.ViewText <em>View Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View Text</em>'.
-	 * @see org.abchip.mimo.ui.ViewText
-	 * @generated
-	 */
-	EClass getViewText();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewText#getView <em>View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.ViewText#getView()
-	 * @see #getViewText()
-	 * @generated
-	 */
-	EAttribute getViewText_View();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewText#getPlaceholder <em>Placeholder</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetNumber#getPlaceholder <em>Placeholder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Placeholder</em>'.
-	 * @see org.abchip.mimo.ui.ViewText#getPlaceholder()
-	 * @see #getViewText()
+	 * @see org.abchip.mimo.ui.WidgetNumber#getPlaceholder()
+	 * @see #getWidgetNumber()
 	 * @generated
 	 */
-	EAttribute getViewText_Placeholder();
+	EAttribute getWidgetNumber_Placeholder();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.ViewText#getAttributes <em>Attributes</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.WidgetNumberAttribute <em>Widget Number Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Attributes</em>'.
-	 * @see org.abchip.mimo.ui.ViewText#getAttributes()
-	 * @see #getViewText()
+	 * @return the meta object for class '<em>Widget Number Attribute</em>'.
+	 * @see org.abchip.mimo.ui.WidgetNumberAttribute
 	 * @generated
 	 */
-	EReference getViewText_Attributes();
+	EClass getWidgetNumberAttribute();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.ViewTextAttribute <em>View Text Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>View Text Attribute</em>'.
-	 * @see org.abchip.mimo.ui.ViewTextAttribute
-	 * @generated
-	 */
-	EClass getViewTextAttribute();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.ViewTextAttribute#getMaxlength <em>Maxlength</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetNumberAttribute#getMaxlength <em>Maxlength</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Maxlength</em>'.
-	 * @see org.abchip.mimo.ui.ViewTextAttribute#getMaxlength()
-	 * @see #getViewTextAttribute()
+	 * @see org.abchip.mimo.ui.WidgetNumberAttribute#getMaxlength()
+	 * @see #getWidgetNumberAttribute()
 	 * @generated
 	 */
-	EAttribute getViewTextAttribute_Maxlength();
+	EAttribute getWidgetNumberAttribute_Maxlength();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.WidgetText <em>Widget Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Widget Text</em>'.
+	 * @see org.abchip.mimo.ui.WidgetText
+	 * @generated
+	 */
+	EClass getWidgetText();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetText#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.WidgetText#getView()
+	 * @see #getWidgetText()
+	 * @generated
+	 */
+	EAttribute getWidgetText_View();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetText#getPlaceholder <em>Placeholder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Placeholder</em>'.
+	 * @see org.abchip.mimo.ui.WidgetText#getPlaceholder()
+	 * @see #getWidgetText()
+	 * @generated
+	 */
+	EAttribute getWidgetText_Placeholder();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.WidgetText#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Attributes</em>'.
+	 * @see org.abchip.mimo.ui.WidgetText#getAttributes()
+	 * @see #getWidgetText()
+	 * @generated
+	 */
+	EReference getWidgetText_Attributes();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.WidgetTextAttribute <em>Widget Text Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Widget Text Attribute</em>'.
+	 * @see org.abchip.mimo.ui.WidgetTextAttribute
+	 * @generated
+	 */
+	EClass getWidgetTextAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.WidgetTextAttribute#getMaxlength <em>Maxlength</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Maxlength</em>'.
+	 * @see org.abchip.mimo.ui.WidgetTextAttribute#getMaxlength()
+	 * @see #getWidgetTextAttribute()
+	 * @generated
+	 */
+	EAttribute getWidgetTextAttribute_Maxlength();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.ui.ActionType <em>Action Type</em>}'.
@@ -1731,14 +1730,14 @@ public interface UIPackage extends EPackage {
 	EEnum getActionType();
 
 	/**
-	 * Returns the meta object for enum '{@link org.abchip.mimo.ui.ViewType <em>View Type</em>}'.
+	 * Returns the meta object for enum '{@link org.abchip.mimo.ui.WidgetType <em>Widget Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>View Type</em>'.
-	 * @see org.abchip.mimo.ui.ViewType
+	 * @return the meta object for enum '<em>Widget Type</em>'.
+	 * @see org.abchip.mimo.ui.WidgetType
 	 * @generated
 	 */
-	EEnum getViewType();
+	EEnum getWidgetType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1883,14 +1882,14 @@ public interface UIPackage extends EPackage {
 		EAttribute UI_USER_SETUP__NAME = eINSTANCE.getUiUserSetup_Name();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewImpl <em>View</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetImpl <em>Widget</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getView()
+		 * @see org.abchip.mimo.ui.impl.WidgetImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidget()
 		 * @generated
 		 */
-		EClass VIEW = eINSTANCE.getView();
+		EClass WIDGET = eINSTANCE.getWidget();
 
 		/**
 		 * The meta object literal for the '<em><b>Disabled</b></em>' attribute feature.
@@ -1898,7 +1897,7 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW__DISABLED = eINSTANCE.getView_Disabled();
+		EAttribute WIDGET__DISABLED = eINSTANCE.getWidget_Disabled();
 
 		/**
 		 * The meta object literal for the '<em><b>Domain</b></em>' containment reference feature.
@@ -1906,7 +1905,7 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VIEW__DOMAIN = eINSTANCE.getView_Domain();
+		EReference WIDGET__DOMAIN = eINSTANCE.getWidget_Domain();
 
 		/**
 		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
@@ -1914,7 +1913,7 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW__ICON = eINSTANCE.getView_Icon();
+		EAttribute WIDGET__ICON = eINSTANCE.getWidget_Icon();
 
 		/**
 		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
@@ -1922,7 +1921,7 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW__LABEL = eINSTANCE.getView_Label();
+		EAttribute WIDGET__LABEL = eINSTANCE.getWidget_Label();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1930,7 +1929,7 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW__NAME = eINSTANCE.getView_Name();
+		EAttribute WIDGET__NAME = eINSTANCE.getWidget_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Pattern</b></em>' containment reference feature.
@@ -1938,17 +1937,17 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VIEW__PATTERN = eINSTANCE.getView_Pattern();
+		EReference WIDGET__PATTERN = eINSTANCE.getWidget_Pattern();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewPatternImpl <em>View Pattern</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetPatternImpl <em>Widget Pattern</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewPatternImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewPattern()
+		 * @see org.abchip.mimo.ui.impl.WidgetPatternImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetPattern()
 		 * @generated
 		 */
-		EClass VIEW_PATTERN = eINSTANCE.getViewPattern();
+		EClass WIDGET_PATTERN = eINSTANCE.getWidgetPattern();
 
 		/**
 		 * The meta object literal for the '<em><b>Allow</b></em>' attribute feature.
@@ -1956,7 +1955,7 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW_PATTERN__ALLOW = eINSTANCE.getViewPattern_Allow();
+		EAttribute WIDGET_PATTERN__ALLOW = eINSTANCE.getWidgetPattern_Allow();
 
 		/**
 		 * The meta object literal for the '<em><b>Mask</b></em>' attribute feature.
@@ -1964,35 +1963,17 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW_PATTERN__MASK = eINSTANCE.getViewPattern_Mask();
+		EAttribute WIDGET_PATTERN__MASK = eINSTANCE.getWidgetPattern_Mask();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewCheckBoxImpl <em>View Check Box</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetCheckBoxImpl <em>Widget Check Box</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewCheckBoxImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewCheckBox()
+		 * @see org.abchip.mimo.ui.impl.WidgetCheckBoxImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetCheckBox()
 		 * @generated
 		 */
-		EClass VIEW_CHECK_BOX = eINSTANCE.getViewCheckBox();
-
-		/**
-		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VIEW_CHECK_BOX__VIEW = eINSTANCE.getViewCheckBox_View();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewComboBoxImpl <em>View Combo Box</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewComboBoxImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewComboBox()
-		 * @generated
-		 */
-		EClass VIEW_COMBO_BOX = eINSTANCE.getViewComboBox();
+		EClass WIDGET_CHECK_BOX = eINSTANCE.getWidgetCheckBox();
 
 		/**
 		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
@@ -2000,35 +1981,17 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW_COMBO_BOX__VIEW = eINSTANCE.getViewComboBox_View();
+		EAttribute WIDGET_CHECK_BOX__VIEW = eINSTANCE.getWidgetCheckBox_View();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewCounterImpl <em>View Counter</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetComboBoxImpl <em>Widget Combo Box</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewCounterImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewCounter()
+		 * @see org.abchip.mimo.ui.impl.WidgetComboBoxImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetComboBox()
 		 * @generated
 		 */
-		EClass VIEW_COUNTER = eINSTANCE.getViewCounter();
-
-		/**
-		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VIEW_COUNTER__VIEW = eINSTANCE.getViewCounter_View();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewDatePickerImpl <em>View Date Picker</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewDatePickerImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewDatePicker()
-		 * @generated
-		 */
-		EClass VIEW_DATE_PICKER = eINSTANCE.getViewDatePicker();
+		EClass WIDGET_COMBO_BOX = eINSTANCE.getWidgetComboBox();
 
 		/**
 		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
@@ -2036,35 +1999,17 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW_DATE_PICKER__VIEW = eINSTANCE.getViewDatePicker_View();
+		EAttribute WIDGET_COMBO_BOX__VIEW = eINSTANCE.getWidgetComboBox_View();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewFormImpl <em>View Form</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetCounterImpl <em>Widget Counter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewFormImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewForm()
+		 * @see org.abchip.mimo.ui.impl.WidgetCounterImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetCounter()
 		 * @generated
 		 */
-		EClass VIEW_FORM = eINSTANCE.getViewForm();
-
-		/**
-		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VIEW_FORM__VIEW = eINSTANCE.getViewForm_View();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewImageImpl <em>View Image</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewImageImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewImage()
-		 * @generated
-		 */
-		EClass VIEW_IMAGE = eINSTANCE.getViewImage();
+		EClass WIDGET_COUNTER = eINSTANCE.getWidgetCounter();
 
 		/**
 		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
@@ -2072,35 +2017,17 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW_IMAGE__VIEW = eINSTANCE.getViewImage_View();
+		EAttribute WIDGET_COUNTER__VIEW = eINSTANCE.getWidgetCounter_View();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewNoteImpl <em>View Note</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetDatePickerImpl <em>Widget Date Picker</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewNoteImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewNote()
+		 * @see org.abchip.mimo.ui.impl.WidgetDatePickerImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetDatePicker()
 		 * @generated
 		 */
-		EClass VIEW_NOTE = eINSTANCE.getViewNote();
-
-		/**
-		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VIEW_NOTE__VIEW = eINSTANCE.getViewNote_View();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewNumberImpl <em>View Number</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewNumberImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewNumber()
-		 * @generated
-		 */
-		EClass VIEW_NUMBER = eINSTANCE.getViewNumber();
+		EClass WIDGET_DATE_PICKER = eINSTANCE.getWidgetDatePicker();
 
 		/**
 		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
@@ -2108,15 +2035,79 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW_NUMBER__VIEW = eINSTANCE.getViewNumber_View();
+		EAttribute WIDGET_DATE_PICKER__VIEW = eINSTANCE.getWidgetDatePicker_View();
 
 		/**
-		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetFormImpl <em>Widget Form</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.impl.WidgetFormImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetForm()
+		 * @generated
+		 */
+		EClass WIDGET_FORM = eINSTANCE.getWidgetForm();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW_NUMBER__PLACEHOLDER = eINSTANCE.getViewNumber_Placeholder();
+		EAttribute WIDGET_FORM__VIEW = eINSTANCE.getWidgetForm_View();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetImageImpl <em>Widget Image</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.impl.WidgetImageImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetImage()
+		 * @generated
+		 */
+		EClass WIDGET_IMAGE = eINSTANCE.getWidgetImage();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_IMAGE__VIEW = eINSTANCE.getWidgetImage_View();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetNoteImpl <em>Widget Note</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.impl.WidgetNoteImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetNote()
+		 * @generated
+		 */
+		EClass WIDGET_NOTE = eINSTANCE.getWidgetNote();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_NOTE__VIEW = eINSTANCE.getWidgetNote_View();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetNumberImpl <em>Widget Number</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.impl.WidgetNumberImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetNumber()
+		 * @generated
+		 */
+		EClass WIDGET_NUMBER = eINSTANCE.getWidgetNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_NUMBER__VIEW = eINSTANCE.getWidgetNumber_View();
 
 		/**
 		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference feature.
@@ -2124,43 +2115,7 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VIEW_NUMBER__ATTRIBUTES = eINSTANCE.getViewNumber_Attributes();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewNumberAttributeImpl <em>View Number Attribute</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewNumberAttributeImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewNumberAttribute()
-		 * @generated
-		 */
-		EClass VIEW_NUMBER_ATTRIBUTE = eINSTANCE.getViewNumberAttribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Maxlength</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VIEW_NUMBER_ATTRIBUTE__MAXLENGTH = eINSTANCE.getViewNumberAttribute_Maxlength();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewTextImpl <em>View Text</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewTextImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewText()
-		 * @generated
-		 */
-		EClass VIEW_TEXT = eINSTANCE.getViewText();
-
-		/**
-		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VIEW_TEXT__VIEW = eINSTANCE.getViewText_View();
+		EReference WIDGET_NUMBER__ATTRIBUTES = eINSTANCE.getWidgetNumber_Attributes();
 
 		/**
 		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
@@ -2168,25 +2123,17 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW_TEXT__PLACEHOLDER = eINSTANCE.getViewText_Placeholder();
+		EAttribute WIDGET_NUMBER__PLACEHOLDER = eINSTANCE.getWidgetNumber_Placeholder();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference feature.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetNumberAttributeImpl <em>Widget Number Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.impl.WidgetNumberAttributeImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetNumberAttribute()
 		 * @generated
 		 */
-		EReference VIEW_TEXT__ATTRIBUTES = eINSTANCE.getViewText_Attributes();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.ViewTextAttributeImpl <em>View Text Attribute</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.impl.ViewTextAttributeImpl
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewTextAttribute()
-		 * @generated
-		 */
-		EClass VIEW_TEXT_ATTRIBUTE = eINSTANCE.getViewTextAttribute();
+		EClass WIDGET_NUMBER_ATTRIBUTE = eINSTANCE.getWidgetNumberAttribute();
 
 		/**
 		 * The meta object literal for the '<em><b>Maxlength</b></em>' attribute feature.
@@ -2194,7 +2141,59 @@ public interface UIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW_TEXT_ATTRIBUTE__MAXLENGTH = eINSTANCE.getViewTextAttribute_Maxlength();
+		EAttribute WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH = eINSTANCE.getWidgetNumberAttribute_Maxlength();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetTextImpl <em>Widget Text</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.impl.WidgetTextImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetText()
+		 * @generated
+		 */
+		EClass WIDGET_TEXT = eINSTANCE.getWidgetText();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_TEXT__VIEW = eINSTANCE.getWidgetText_View();
+
+		/**
+		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_TEXT__PLACEHOLDER = eINSTANCE.getWidgetText_Placeholder();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WIDGET_TEXT__ATTRIBUTES = eINSTANCE.getWidgetText_Attributes();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.WidgetTextAttributeImpl <em>Widget Text Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.impl.WidgetTextAttributeImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetTextAttribute()
+		 * @generated
+		 */
+		EClass WIDGET_TEXT_ATTRIBUTE = eINSTANCE.getWidgetTextAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Maxlength</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_TEXT_ATTRIBUTE__MAXLENGTH = eINSTANCE.getWidgetTextAttribute_Maxlength();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.ActionType <em>Action Type</em>}' enum.
@@ -2207,14 +2206,14 @@ public interface UIPackage extends EPackage {
 		EEnum ACTION_TYPE = eINSTANCE.getActionType();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.ViewType <em>View Type</em>}' enum.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.WidgetType <em>Widget Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.ViewType
-		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getViewType()
+		 * @see org.abchip.mimo.ui.WidgetType
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getWidgetType()
 		 * @generated
 		 */
-		EEnum VIEW_TYPE = eINSTANCE.getViewType();
+		EEnum WIDGET_TYPE = eINSTANCE.getWidgetType();
 
 	}
 

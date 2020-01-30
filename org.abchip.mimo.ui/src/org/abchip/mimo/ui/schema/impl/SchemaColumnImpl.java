@@ -6,7 +6,7 @@ package org.abchip.mimo.ui.schema.impl;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.impl.EntityImpl;
 
-import org.abchip.mimo.ui.View;
+import org.abchip.mimo.ui.Widget;
 import org.abchip.mimo.ui.schema.SchemaColumn;
 import org.abchip.mimo.ui.schema.SchemaPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#isLeftSplit <em>Left Split</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getSort <em>Sort</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.impl.SchemaColumnImpl#getWidget <em>Widget</em>}</li>
  * </ul>
  *
  * @generated
@@ -216,14 +216,14 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	protected String sort = SORT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getView() <em>View</em>}' containment reference.
+	 * The cached value of the '{@link #getWidget() <em>Widget</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getView()
+	 * @see #getWidget()
 	 * @generated
 	 * @ordered
 	 */
-	protected View view;
+	protected Widget widget;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,74 +273,6 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 * @generated
 	 */
 	@Override
-	public View getView() {
-		if (view != null && ((EObject)view).eIsProxy()) {
-			InternalEObject oldView = (InternalEObject)view;
-			view = (View)eResolveProxy(oldView);
-			if (view != oldView) {
-				InternalEObject newView = (InternalEObject)view;
-				NotificationChain msgs = oldView.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__VIEW, null, null);
-				if (newView.eInternalContainer() == null) {
-					msgs = newView.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__VIEW, null, msgs);
-				}
-				if (msgs != null) msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchemaPackage.SCHEMA_COLUMN__VIEW, oldView, view));
-			}
-		}
-		return view;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public View basicGetView() {
-		return view;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetView(View newView, NotificationChain msgs) {
-		View oldView = view;
-		view = newView;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__VIEW, oldView, newView);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setView(View newView) {
-		if (newView != view) {
-			NotificationChain msgs = null;
-			if (view != null)
-				msgs = ((InternalEObject)view).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__VIEW, null, msgs);
-			if (newView != null)
-				msgs = ((InternalEObject)newView).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__VIEW, null, msgs);
-			msgs = basicSetView(newView, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__VIEW, newView, newView));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean isLeftSplit() {
 		return leftSplit;
 	}
@@ -379,6 +311,74 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		sort = newSort;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__SORT, oldSort, sort));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Widget getWidget() {
+		if (widget != null && ((EObject)widget).eIsProxy()) {
+			InternalEObject oldWidget = (InternalEObject)widget;
+			widget = (Widget)eResolveProxy(oldWidget);
+			if (widget != oldWidget) {
+				InternalEObject newWidget = (InternalEObject)widget;
+				NotificationChain msgs = oldWidget.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__WIDGET, null, null);
+				if (newWidget.eInternalContainer() == null) {
+					msgs = newWidget.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__WIDGET, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchemaPackage.SCHEMA_COLUMN__WIDGET, oldWidget, widget));
+			}
+		}
+		return widget;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Widget basicGetWidget() {
+		return widget;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetWidget(Widget newWidget, NotificationChain msgs) {
+		Widget oldWidget = widget;
+		widget = newWidget;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__WIDGET, oldWidget, newWidget);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setWidget(Widget newWidget) {
+		if (newWidget != widget) {
+			NotificationChain msgs = null;
+			if (widget != null)
+				msgs = ((InternalEObject)widget).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__WIDGET, null, msgs);
+			if (newWidget != null)
+				msgs = ((InternalEObject)newWidget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__WIDGET, null, msgs);
+			msgs = basicSetWidget(newWidget, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__WIDGET, newWidget, newWidget));
 	}
 
 	/**
@@ -528,8 +528,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		switch (featureID) {
 			case SchemaPackage.SCHEMA_COLUMN__DOMAIN:
 				return basicSetDomain(null, msgs);
-			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				return basicSetView(null, msgs);
+			case SchemaPackage.SCHEMA_COLUMN__WIDGET:
+				return basicSetWidget(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -607,9 +607,9 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return isLeftSplit();
 			case SchemaPackage.SCHEMA_COLUMN__SORT:
 				return getSort();
-			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				if (resolve) return getView();
-				return basicGetView();
+			case SchemaPackage.SCHEMA_COLUMN__WIDGET:
+				if (resolve) return getWidget();
+				return basicGetWidget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -649,8 +649,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__SORT:
 				setSort((String)newValue);
 				return;
-			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				setView((View)newValue);
+			case SchemaPackage.SCHEMA_COLUMN__WIDGET:
+				setWidget((Widget)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -691,8 +691,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__SORT:
 				setSort(SORT_EDEFAULT);
 				return;
-			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				setView((View)null);
+			case SchemaPackage.SCHEMA_COLUMN__WIDGET:
+				setWidget((Widget)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -724,8 +724,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				return leftSplit != LEFT_SPLIT_EDEFAULT;
 			case SchemaPackage.SCHEMA_COLUMN__SORT:
 				return SORT_EDEFAULT == null ? sort != null : !SORT_EDEFAULT.equals(sort);
-			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				return view != null;
+			case SchemaPackage.SCHEMA_COLUMN__WIDGET:
+				return widget != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -4,25 +4,25 @@
 package org.abchip.mimo.ui.impl;
 
 import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.ViewDatePicker;
+import org.abchip.mimo.ui.WidgetCounter;
 
-import org.abchip.mimo.ui.ViewType;
+import org.abchip.mimo.ui.WidgetType;
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>View Date Picker</b></em>'.
+ * An implementation of the model object '<em><b>Widget Counter</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewDatePickerImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetCounterImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ViewDatePickerImpl extends ViewImpl implements ViewDatePicker {
+public class WidgetCounterImpl extends WidgetImpl implements WidgetCounter {
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class ViewDatePickerImpl extends ViewImpl implements ViewDatePicker {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ViewType VIEW_EDEFAULT = ViewType.DATE_PICKER;
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.COUNTER;
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -40,7 +40,7 @@ public class ViewDatePickerImpl extends ViewImpl implements ViewDatePicker {
 	 * @generated
 	 * @ordered
 	 */
-	protected ViewType view = VIEW_EDEFAULT;
+	protected WidgetType view = VIEW_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -50,7 +50,7 @@ public class ViewDatePickerImpl extends ViewImpl implements ViewDatePicker {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewDatePickerImpl() {
+	protected WidgetCounterImpl() {
 		super();
 	}
 
@@ -61,7 +61,7 @@ public class ViewDatePickerImpl extends ViewImpl implements ViewDatePicker {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.VIEW_DATE_PICKER;
+		return UIPackage.Literals.WIDGET_COUNTER;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class ViewDatePickerImpl extends ViewImpl implements ViewDatePicker {
 	 * @generated
 	 */
 	@Override
-	public ViewType getView() {
+	public WidgetType getView() {
 		return view;
 	}
 
@@ -82,7 +82,7 @@ public class ViewDatePickerImpl extends ViewImpl implements ViewDatePicker {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.VIEW_DATE_PICKER__VIEW:
+			case UIPackage.WIDGET_COUNTER__VIEW:
 				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -96,7 +96,7 @@ public class ViewDatePickerImpl extends ViewImpl implements ViewDatePicker {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_DATE_PICKER__VIEW:
+			case UIPackage.WIDGET_COUNTER__VIEW:
 				return view != VIEW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -118,4 +118,4 @@ public class ViewDatePickerImpl extends ViewImpl implements ViewDatePicker {
 		return result.toString();
 	}
 
-} //ViewDatePickerImpl
+} //WidgetCounterImpl

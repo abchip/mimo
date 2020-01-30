@@ -61,17 +61,17 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 			case UIPackage.ACTION: return (EObject)createAction();
 			case UIPackage.UI_FRAME_SETUP: return (EObject)createUiFrameSetup();
 			case UIPackage.UI_USER_SETUP: return (EObject)createUiUserSetup();
-			case UIPackage.VIEW_CHECK_BOX: return (EObject)createViewCheckBox();
-			case UIPackage.VIEW_COMBO_BOX: return (EObject)createViewComboBox();
-			case UIPackage.VIEW_COUNTER: return (EObject)createViewCounter();
-			case UIPackage.VIEW_DATE_PICKER: return (EObject)createViewDatePicker();
-			case UIPackage.VIEW_FORM: return (EObject)createViewForm();
-			case UIPackage.VIEW_IMAGE: return (EObject)createViewImage();
-			case UIPackage.VIEW_NOTE: return (EObject)createViewNote();
-			case UIPackage.VIEW_NUMBER: return (EObject)createViewNumber();
-			case UIPackage.VIEW_NUMBER_ATTRIBUTE: return (EObject)createViewNumberAttribute();
-			case UIPackage.VIEW_TEXT: return (EObject)createViewText();
-			case UIPackage.VIEW_TEXT_ATTRIBUTE: return (EObject)createViewTextAttribute();
+			case UIPackage.WIDGET_CHECK_BOX: return (EObject)createWidgetCheckBox();
+			case UIPackage.WIDGET_COMBO_BOX: return (EObject)createWidgetComboBox();
+			case UIPackage.WIDGET_COUNTER: return (EObject)createWidgetCounter();
+			case UIPackage.WIDGET_DATE_PICKER: return (EObject)createWidgetDatePicker();
+			case UIPackage.WIDGET_FORM: return (EObject)createWidgetForm();
+			case UIPackage.WIDGET_IMAGE: return (EObject)createWidgetImage();
+			case UIPackage.WIDGET_NOTE: return (EObject)createWidgetNote();
+			case UIPackage.WIDGET_NUMBER: return (EObject)createWidgetNumber();
+			case UIPackage.WIDGET_NUMBER_ATTRIBUTE: return (EObject)createWidgetNumberAttribute();
+			case UIPackage.WIDGET_TEXT: return (EObject)createWidgetText();
+			case UIPackage.WIDGET_TEXT_ATTRIBUTE: return (EObject)createWidgetTextAttribute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -87,8 +87,8 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 		switch (eDataType.getClassifierID()) {
 			case UIPackage.ACTION_TYPE:
 				return createActionTypeFromString(eDataType, initialValue);
-			case UIPackage.VIEW_TYPE:
-				return createViewTypeFromString(eDataType, initialValue);
+			case UIPackage.WIDGET_TYPE:
+				return createWidgetTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -104,8 +104,8 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 		switch (eDataType.getClassifierID()) {
 			case UIPackage.ACTION_TYPE:
 				return convertActionTypeToString(eDataType, instanceValue);
-			case UIPackage.VIEW_TYPE:
-				return convertViewTypeToString(eDataType, instanceValue);
+			case UIPackage.WIDGET_TYPE:
+				return convertWidgetTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -150,9 +150,9 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	@Override
-	public ViewCheckBox createViewCheckBox() {
-		ViewCheckBoxImpl viewCheckBox = new ViewCheckBoxImpl();
-		return viewCheckBox;
+	public WidgetCheckBox createWidgetCheckBox() {
+		WidgetCheckBoxImpl widgetCheckBox = new WidgetCheckBoxImpl();
+		return widgetCheckBox;
 	}
 
 	/**
@@ -161,9 +161,9 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	@Override
-	public ViewComboBox createViewComboBox() {
-		ViewComboBoxImpl viewComboBox = new ViewComboBoxImpl();
-		return viewComboBox;
+	public WidgetComboBox createWidgetComboBox() {
+		WidgetComboBoxImpl widgetComboBox = new WidgetComboBoxImpl();
+		return widgetComboBox;
 	}
 
 	/**
@@ -172,9 +172,9 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	@Override
-	public ViewCounter createViewCounter() {
-		ViewCounterImpl viewCounter = new ViewCounterImpl();
-		return viewCounter;
+	public WidgetCounter createWidgetCounter() {
+		WidgetCounterImpl widgetCounter = new WidgetCounterImpl();
+		return widgetCounter;
 	}
 
 	/**
@@ -183,9 +183,9 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	@Override
-	public ViewDatePicker createViewDatePicker() {
-		ViewDatePickerImpl viewDatePicker = new ViewDatePickerImpl();
-		return viewDatePicker;
+	public WidgetDatePicker createWidgetDatePicker() {
+		WidgetDatePickerImpl widgetDatePicker = new WidgetDatePickerImpl();
+		return widgetDatePicker;
 	}
 
 	/**
@@ -194,9 +194,9 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	@Override
-	public ViewForm createViewForm() {
-		ViewFormImpl viewForm = new ViewFormImpl();
-		return viewForm;
+	public WidgetForm createWidgetForm() {
+		WidgetFormImpl widgetForm = new WidgetFormImpl();
+		return widgetForm;
 	}
 
 	/**
@@ -205,9 +205,9 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	@Override
-	public ViewImage createViewImage() {
-		ViewImageImpl viewImage = new ViewImageImpl();
-		return viewImage;
+	public WidgetImage createWidgetImage() {
+		WidgetImageImpl widgetImage = new WidgetImageImpl();
+		return widgetImage;
 	}
 
 	/**
@@ -216,9 +216,9 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	@Override
-	public ViewNote createViewNote() {
-		ViewNoteImpl viewNote = new ViewNoteImpl();
-		return viewNote;
+	public WidgetNote createWidgetNote() {
+		WidgetNoteImpl widgetNote = new WidgetNoteImpl();
+		return widgetNote;
 	}
 
 	/**
@@ -227,9 +227,9 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	@Override
-	public ViewNumber createViewNumber() {
-		ViewNumberImpl viewNumber = new ViewNumberImpl();
-		return viewNumber;
+	public WidgetNumber createWidgetNumber() {
+		WidgetNumberImpl widgetNumber = new WidgetNumberImpl();
+		return widgetNumber;
 	}
 
 	/**
@@ -238,9 +238,9 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	@Override
-	public ViewNumberAttribute createViewNumberAttribute() {
-		ViewNumberAttributeImpl viewNumberAttribute = new ViewNumberAttributeImpl();
-		return viewNumberAttribute;
+	public WidgetNumberAttribute createWidgetNumberAttribute() {
+		WidgetNumberAttributeImpl widgetNumberAttribute = new WidgetNumberAttributeImpl();
+		return widgetNumberAttribute;
 	}
 
 	/**
@@ -249,9 +249,9 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	@Override
-	public ViewText createViewText() {
-		ViewTextImpl viewText = new ViewTextImpl();
-		return viewText;
+	public WidgetText createWidgetText() {
+		WidgetTextImpl widgetText = new WidgetTextImpl();
+		return widgetText;
 	}
 
 	/**
@@ -260,9 +260,9 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	@Override
-	public ViewTextAttribute createViewTextAttribute() {
-		ViewTextAttributeImpl viewTextAttribute = new ViewTextAttributeImpl();
-		return viewTextAttribute;
+	public WidgetTextAttribute createWidgetTextAttribute() {
+		WidgetTextAttributeImpl widgetTextAttribute = new WidgetTextAttributeImpl();
+		return widgetTextAttribute;
 	}
 
 	/**
@@ -290,8 +290,8 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ViewType createViewTypeFromString(EDataType eDataType, String initialValue) {
-		ViewType result = ViewType.get(initialValue);
+	public WidgetType createWidgetTypeFromString(EDataType eDataType, String initialValue) {
+		WidgetType result = WidgetType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -301,7 +301,7 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertViewTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertWidgetTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -6,7 +6,7 @@ package org.abchip.mimo.ui.impl;
 import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.ViewPattern;
+import org.abchip.mimo.ui.WidgetPattern;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -16,19 +16,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>View Pattern</b></em>'.
+ * An implementation of the model object '<em><b>Widget Pattern</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewPatternImpl#getAllow <em>Allow</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewPatternImpl#getMask <em>Mask</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetPatternImpl#getAllow <em>Allow</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetPatternImpl#getMask <em>Mask</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ViewPatternImpl extends EntityImpl implements ViewPattern {
+public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPattern {
 	/**
 	 * 
 	 */
@@ -79,7 +79,7 @@ public abstract class ViewPatternImpl extends EntityImpl implements ViewPattern 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewPatternImpl() {
+	protected WidgetPatternImpl() {
 		super();
 	}
 
@@ -90,7 +90,7 @@ public abstract class ViewPatternImpl extends EntityImpl implements ViewPattern 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.VIEW_PATTERN;
+		return UIPackage.Literals.WIDGET_PATTERN;
 	}
 
 	/**
@@ -113,7 +113,7 @@ public abstract class ViewPatternImpl extends EntityImpl implements ViewPattern 
 		String oldAllow = allow;
 		allow = newAllow;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW_PATTERN__ALLOW, oldAllow, allow));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_PATTERN__ALLOW, oldAllow, allow));
 	}
 
 	/**
@@ -136,7 +136,7 @@ public abstract class ViewPatternImpl extends EntityImpl implements ViewPattern 
 		String oldMask = mask;
 		mask = newMask;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW_PATTERN__MASK, oldMask, mask));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_PATTERN__MASK, oldMask, mask));
 	}
 
 	/**
@@ -147,9 +147,9 @@ public abstract class ViewPatternImpl extends EntityImpl implements ViewPattern 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.VIEW_PATTERN__ALLOW:
+			case UIPackage.WIDGET_PATTERN__ALLOW:
 				return getAllow();
-			case UIPackage.VIEW_PATTERN__MASK:
+			case UIPackage.WIDGET_PATTERN__MASK:
 				return getMask();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -163,10 +163,10 @@ public abstract class ViewPatternImpl extends EntityImpl implements ViewPattern 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UIPackage.VIEW_PATTERN__ALLOW:
+			case UIPackage.WIDGET_PATTERN__ALLOW:
 				setAllow((String)newValue);
 				return;
-			case UIPackage.VIEW_PATTERN__MASK:
+			case UIPackage.WIDGET_PATTERN__MASK:
 				setMask((String)newValue);
 				return;
 		}
@@ -181,10 +181,10 @@ public abstract class ViewPatternImpl extends EntityImpl implements ViewPattern 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_PATTERN__ALLOW:
+			case UIPackage.WIDGET_PATTERN__ALLOW:
 				setAllow(ALLOW_EDEFAULT);
 				return;
-			case UIPackage.VIEW_PATTERN__MASK:
+			case UIPackage.WIDGET_PATTERN__MASK:
 				setMask(MASK_EDEFAULT);
 				return;
 		}
@@ -199,9 +199,9 @@ public abstract class ViewPatternImpl extends EntityImpl implements ViewPattern 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_PATTERN__ALLOW:
+			case UIPackage.WIDGET_PATTERN__ALLOW:
 				return ALLOW_EDEFAULT == null ? allow != null : !ALLOW_EDEFAULT.equals(allow);
-			case UIPackage.VIEW_PATTERN__MASK:
+			case UIPackage.WIDGET_PATTERN__MASK:
 				return MASK_EDEFAULT == null ? mask != null : !MASK_EDEFAULT.equals(mask);
 		}
 		return super.eIsSet(featureID);
@@ -225,4 +225,4 @@ public abstract class ViewPatternImpl extends EntityImpl implements ViewPattern 
 		return result.toString();
 	}
 
-} //ViewPatternImpl
+} //WidgetPatternImpl

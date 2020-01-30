@@ -28,7 +28,7 @@ import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.ui.UIFactory;
 import org.abchip.mimo.ui.UiFrameSetup;
-import org.abchip.mimo.ui.View;
+import org.abchip.mimo.ui.Widget;
 import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
 import org.abchip.mimo.ui.schema.SchemaFactory;
@@ -114,39 +114,39 @@ public class LookupSchemaServlet extends BaseServlet {
 			column.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
 
 		// view
-		View view = null;
+		Widget widget = null;
 		switch (slot.getDataType()) {
 		case STRING:
-			view = UIFactory.eINSTANCE.createViewText();
+			widget = UIFactory.eINSTANCE.createWidgetText();
 			break;
 		case ENTITY:
 			column.setSort("string");
-			view = UIFactory.eINSTANCE.createViewText();
+			widget = UIFactory.eINSTANCE.createWidgetText();
 			break;
 		case ENUM:
 			column.setSort("string");
-			view = UIFactory.eINSTANCE.createViewText();
+			widget = UIFactory.eINSTANCE.createWidgetText();
 			break;
 		case BOOLEAN:
-			view = UIFactory.eINSTANCE.createViewCheckBox();
+			widget = UIFactory.eINSTANCE.createWidgetCheckBox();
 			break;
 		case BINARY:
 			break;
 		case DATE_TIME:
 			column.setSort("raw");
-			view = UIFactory.eINSTANCE.createViewText();
+			widget = UIFactory.eINSTANCE.createWidgetText();
 			break;
 		case IDENTITY:
 			column.setSort("int");
-			view = UIFactory.eINSTANCE.createViewText();
+			widget = UIFactory.eINSTANCE.createWidgetText();
 			break;
 		case NUMERIC:
 			column.setSort("int");
-			view = UIFactory.eINSTANCE.createViewText();
+			widget = UIFactory.eINSTANCE.createWidgetText();
 			break;
 		}
 
-		column.setView(view);
+		column.setWidget(widget);
 		
 		return column;
 	}

@@ -133,13 +133,13 @@ public interface FormPackage extends EPackage {
 	int FORM_FIELD__KEY = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>View</b></em>' containment reference.
+	 * The feature id for the '<em><b>Widget</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FIELD__VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int FORM_FIELD__WIDGET = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Field</em>' class.
@@ -205,17 +205,6 @@ public interface FormPackage extends EPackage {
 	EAttribute getFormField_ContextMenu();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.form.FormField#getView()
-	 * @see #getFormField()
-	 * @generated
-	 */
-	EReference getFormField_View();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.form.FormField#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,6 +225,17 @@ public interface FormPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFormField_Key();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.form.FormField#getWidget <em>Widget</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Widget</em>'.
+	 * @see org.abchip.mimo.ui.form.FormField#getWidget()
+	 * @see #getFormField()
+	 * @generated
+	 */
+	EReference getFormField_Widget();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -304,14 +304,6 @@ public interface FormPackage extends EPackage {
 		EAttribute FORM_FIELD__CONTEXT_MENU = eINSTANCE.getFormField_ContextMenu();
 
 		/**
-		 * The meta object literal for the '<em><b>View</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FORM_FIELD__VIEW = eINSTANCE.getFormField_View();
-
-		/**
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -326,6 +318,14 @@ public interface FormPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FORM_FIELD__KEY = eINSTANCE.getFormField_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Widget</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FORM_FIELD__WIDGET = eINSTANCE.getFormField_Widget();
 
 	}
 

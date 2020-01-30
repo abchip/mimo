@@ -7,9 +7,9 @@ import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.View;
-import org.abchip.mimo.ui.ViewPattern;
-import org.abchip.mimo.ui.ViewType;
+import org.abchip.mimo.ui.Widget;
+import org.abchip.mimo.ui.WidgetPattern;
+import org.abchip.mimo.ui.WidgetType;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -19,23 +19,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>View</b></em>'.
+ * An implementation of the model object '<em><b>Widget</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewImpl#isDisabled <em>Disabled</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewImpl#getDomain <em>Domain</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewImpl#getIcon <em>Icon</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewImpl#getPattern <em>Pattern</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetImpl#isDisabled <em>Disabled</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetImpl#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetImpl#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ViewImpl extends EntityImpl implements View {
+public abstract class WidgetImpl extends EntityImpl implements Widget {
 	/**
 	 * The default value of the '{@link #isDisabled() <em>Disabled</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -139,14 +139,14 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	 * @generated
 	 * @ordered
 	 */
-	protected ViewPattern pattern;
+	protected WidgetPattern pattern;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewImpl() {
+	protected WidgetImpl() {
 		super();
 	}
 
@@ -157,7 +157,7 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.VIEW;
+		return UIPackage.Literals.WIDGET;
 	}
 
 	/**
@@ -180,7 +180,7 @@ public abstract class ViewImpl extends EntityImpl implements View {
 		boolean oldDisabled = disabled;
 		disabled = newDisabled;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW__DISABLED, oldDisabled, disabled));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__DISABLED, oldDisabled, disabled));
 	}
 
 	/**
@@ -195,13 +195,13 @@ public abstract class ViewImpl extends EntityImpl implements View {
 			domain = (Domain)eResolveProxy(oldDomain);
 			if (domain != oldDomain) {
 				InternalEObject newDomain = (InternalEObject)domain;
-				NotificationChain msgs = oldDomain.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW__DOMAIN, null, null);
+				NotificationChain msgs = oldDomain.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__DOMAIN, null, null);
 				if (newDomain.eInternalContainer() == null) {
-					msgs = newDomain.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW__DOMAIN, null, msgs);
+					msgs = newDomain.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__DOMAIN, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UIPackage.VIEW__DOMAIN, oldDomain, domain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UIPackage.WIDGET__DOMAIN, oldDomain, domain));
 			}
 		}
 		return domain;
@@ -225,7 +225,7 @@ public abstract class ViewImpl extends EntityImpl implements View {
 		Domain oldDomain = domain;
 		domain = newDomain;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UIPackage.VIEW__DOMAIN, oldDomain, newDomain);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__DOMAIN, oldDomain, newDomain);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -241,14 +241,14 @@ public abstract class ViewImpl extends EntityImpl implements View {
 		if (newDomain != domain) {
 			NotificationChain msgs = null;
 			if (domain != null)
-				msgs = ((InternalEObject)domain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW__DOMAIN, null, msgs);
+				msgs = ((InternalEObject)domain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__DOMAIN, null, msgs);
 			if (newDomain != null)
-				msgs = ((InternalEObject)newDomain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW__DOMAIN, null, msgs);
+				msgs = ((InternalEObject)newDomain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__DOMAIN, null, msgs);
 			msgs = basicSetDomain(newDomain, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW__DOMAIN, newDomain, newDomain));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__DOMAIN, newDomain, newDomain));
 	}
 
 	/**
@@ -271,7 +271,7 @@ public abstract class ViewImpl extends EntityImpl implements View {
 		String oldIcon = icon;
 		icon = newIcon;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW__ICON, oldIcon, icon));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__ICON, oldIcon, icon));
 	}
 
 	/**
@@ -294,7 +294,7 @@ public abstract class ViewImpl extends EntityImpl implements View {
 		String oldLabel = label;
 		label = newLabel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW__LABEL, oldLabel, label));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__LABEL, oldLabel, label));
 	}
 
 	/**
@@ -317,7 +317,7 @@ public abstract class ViewImpl extends EntityImpl implements View {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__NAME, oldName, name));
 	}
 
 	/**
@@ -326,19 +326,19 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	 * @generated
 	 */
 	@Override
-	public ViewPattern getPattern() {
+	public WidgetPattern getPattern() {
 		if (pattern != null && ((EObject)pattern).eIsProxy()) {
 			InternalEObject oldPattern = (InternalEObject)pattern;
-			pattern = (ViewPattern)eResolveProxy(oldPattern);
+			pattern = (WidgetPattern)eResolveProxy(oldPattern);
 			if (pattern != oldPattern) {
 				InternalEObject newPattern = (InternalEObject)pattern;
-				NotificationChain msgs = oldPattern.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW__PATTERN, null, null);
+				NotificationChain msgs = oldPattern.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__PATTERN, null, null);
 				if (newPattern.eInternalContainer() == null) {
-					msgs = newPattern.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW__PATTERN, null, msgs);
+					msgs = newPattern.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__PATTERN, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UIPackage.VIEW__PATTERN, oldPattern, pattern));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UIPackage.WIDGET__PATTERN, oldPattern, pattern));
 			}
 		}
 		return pattern;
@@ -349,7 +349,7 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ViewPattern basicGetPattern() {
+	public WidgetPattern basicGetPattern() {
 		return pattern;
 	}
 
@@ -358,11 +358,11 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPattern(ViewPattern newPattern, NotificationChain msgs) {
-		ViewPattern oldPattern = pattern;
+	public NotificationChain basicSetPattern(WidgetPattern newPattern, NotificationChain msgs) {
+		WidgetPattern oldPattern = pattern;
 		pattern = newPattern;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UIPackage.VIEW__PATTERN, oldPattern, newPattern);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__PATTERN, oldPattern, newPattern);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -374,18 +374,18 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	 * @generated
 	 */
 	@Override
-	public void setPattern(ViewPattern newPattern) {
+	public void setPattern(WidgetPattern newPattern) {
 		if (newPattern != pattern) {
 			NotificationChain msgs = null;
 			if (pattern != null)
-				msgs = ((InternalEObject)pattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW__PATTERN, null, msgs);
+				msgs = ((InternalEObject)pattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__PATTERN, null, msgs);
 			if (newPattern != null)
-				msgs = ((InternalEObject)newPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW__PATTERN, null, msgs);
+				msgs = ((InternalEObject)newPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET__PATTERN, null, msgs);
 			msgs = basicSetPattern(newPattern, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW__PATTERN, newPattern, newPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET__PATTERN, newPattern, newPattern));
 	}
 
 	/**
@@ -394,7 +394,7 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	 * @generated
 	 */
 	@Override
-	public ViewType getView() {
+	public WidgetType getView() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -408,9 +408,9 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case UIPackage.VIEW__DOMAIN:
+			case UIPackage.WIDGET__DOMAIN:
 				return basicSetDomain(null, msgs);
-			case UIPackage.VIEW__PATTERN:
+			case UIPackage.WIDGET__PATTERN:
 				return basicSetPattern(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -424,18 +424,18 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.VIEW__DISABLED:
+			case UIPackage.WIDGET__DISABLED:
 				return isDisabled();
-			case UIPackage.VIEW__DOMAIN:
+			case UIPackage.WIDGET__DOMAIN:
 				if (resolve) return getDomain();
 				return basicGetDomain();
-			case UIPackage.VIEW__ICON:
+			case UIPackage.WIDGET__ICON:
 				return getIcon();
-			case UIPackage.VIEW__LABEL:
+			case UIPackage.WIDGET__LABEL:
 				return getLabel();
-			case UIPackage.VIEW__NAME:
+			case UIPackage.WIDGET__NAME:
 				return getName();
-			case UIPackage.VIEW__PATTERN:
+			case UIPackage.WIDGET__PATTERN:
 				if (resolve) return getPattern();
 				return basicGetPattern();
 		}
@@ -450,23 +450,23 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UIPackage.VIEW__DISABLED:
+			case UIPackage.WIDGET__DISABLED:
 				setDisabled((Boolean)newValue);
 				return;
-			case UIPackage.VIEW__DOMAIN:
+			case UIPackage.WIDGET__DOMAIN:
 				setDomain((Domain)newValue);
 				return;
-			case UIPackage.VIEW__ICON:
+			case UIPackage.WIDGET__ICON:
 				setIcon((String)newValue);
 				return;
-			case UIPackage.VIEW__LABEL:
+			case UIPackage.WIDGET__LABEL:
 				setLabel((String)newValue);
 				return;
-			case UIPackage.VIEW__NAME:
+			case UIPackage.WIDGET__NAME:
 				setName((String)newValue);
 				return;
-			case UIPackage.VIEW__PATTERN:
-				setPattern((ViewPattern)newValue);
+			case UIPackage.WIDGET__PATTERN:
+				setPattern((WidgetPattern)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -480,23 +480,23 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW__DISABLED:
+			case UIPackage.WIDGET__DISABLED:
 				setDisabled(DISABLED_EDEFAULT);
 				return;
-			case UIPackage.VIEW__DOMAIN:
+			case UIPackage.WIDGET__DOMAIN:
 				setDomain((Domain)null);
 				return;
-			case UIPackage.VIEW__ICON:
+			case UIPackage.WIDGET__ICON:
 				setIcon(ICON_EDEFAULT);
 				return;
-			case UIPackage.VIEW__LABEL:
+			case UIPackage.WIDGET__LABEL:
 				setLabel(LABEL_EDEFAULT);
 				return;
-			case UIPackage.VIEW__NAME:
+			case UIPackage.WIDGET__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case UIPackage.VIEW__PATTERN:
-				setPattern((ViewPattern)null);
+			case UIPackage.WIDGET__PATTERN:
+				setPattern((WidgetPattern)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -510,17 +510,17 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW__DISABLED:
+			case UIPackage.WIDGET__DISABLED:
 				return disabled != DISABLED_EDEFAULT;
-			case UIPackage.VIEW__DOMAIN:
+			case UIPackage.WIDGET__DOMAIN:
 				return domain != null;
-			case UIPackage.VIEW__ICON:
+			case UIPackage.WIDGET__ICON:
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
-			case UIPackage.VIEW__LABEL:
+			case UIPackage.WIDGET__LABEL:
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-			case UIPackage.VIEW__NAME:
+			case UIPackage.WIDGET__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case UIPackage.VIEW__PATTERN:
+			case UIPackage.WIDGET__PATTERN:
 				return pattern != null;
 		}
 		return super.eIsSet(featureID);
@@ -548,4 +548,4 @@ public abstract class ViewImpl extends EntityImpl implements View {
 		return result.toString();
 	}
 
-} //ViewImpl
+} //WidgetImpl

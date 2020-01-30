@@ -7,21 +7,21 @@ import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>View Number Attribute</b></em>'.
+ * A representation of the model object '<em><b>Widget Number Attribute</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.ViewNumberAttribute#getMaxlength <em>Maxlength</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.WidgetNumberAttribute#getMaxlength <em>Maxlength</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.UIPackage#getViewNumberAttribute()
+ * @see org.abchip.mimo.ui.UIPackage#getWidgetNumberAttribute()
  * @model
  * @generated
  */
-public interface ViewNumberAttribute extends Entity {
+public interface WidgetNumberAttribute extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Maxlength</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -32,14 +32,14 @@ public interface ViewNumberAttribute extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Maxlength</em>' attribute.
 	 * @see #setMaxlength(int)
-	 * @see org.abchip.mimo.ui.UIPackage#getViewNumberAttribute_Maxlength()
+	 * @see org.abchip.mimo.ui.UIPackage#getWidgetNumberAttribute_Maxlength()
 	 * @model
 	 * @generated
 	 */
 	int getMaxlength();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.ViewNumberAttribute#getMaxlength <em>Maxlength</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.WidgetNumberAttribute#getMaxlength <em>Maxlength</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Maxlength</em>' attribute.
@@ -48,4 +48,4 @@ public interface ViewNumberAttribute extends Entity {
 	 */
 	void setMaxlength(int value);
 
-} // ViewNumberAttribute
+} // WidgetNumberAttribute

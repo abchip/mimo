@@ -8,26 +8,26 @@ import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>View</b></em>'.
+ * A representation of the model object '<em><b>Widget</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.View#isDisabled <em>Disabled</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.View#getDomain <em>Domain</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.View#getIcon <em>Icon</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.View#getLabel <em>Label</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.View#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.View#getPattern <em>Pattern</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.Widget#isDisabled <em>Disabled</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.Widget#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.Widget#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.Widget#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.Widget#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.Widget#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.UIPackage#getView()
+ * @see org.abchip.mimo.ui.UIPackage#getWidget()
  * @model abstract="true"
  * @generated
  */
-public interface View extends Entity {
+public interface Widget extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Disabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -38,14 +38,14 @@ public interface View extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Disabled</em>' attribute.
 	 * @see #setDisabled(boolean)
-	 * @see org.abchip.mimo.ui.UIPackage#getView_Disabled()
+	 * @see org.abchip.mimo.ui.UIPackage#getWidget_Disabled()
 	 * @model
 	 * @generated
 	 */
 	boolean isDisabled();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.View#isDisabled <em>Disabled</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.Widget#isDisabled <em>Disabled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Disabled</em>' attribute.
@@ -64,14 +64,14 @@ public interface View extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Domain</em>' containment reference.
 	 * @see #setDomain(Domain)
-	 * @see org.abchip.mimo.ui.UIPackage#getView_Domain()
+	 * @see org.abchip.mimo.ui.UIPackage#getWidget_Domain()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	Domain getDomain();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.View#getDomain <em>Domain</em>}' containment reference.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.Widget#getDomain <em>Domain</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Domain</em>' containment reference.
@@ -90,14 +90,14 @@ public interface View extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Icon</em>' attribute.
 	 * @see #setIcon(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getView_Icon()
+	 * @see org.abchip.mimo.ui.UIPackage#getWidget_Icon()
 	 * @model
 	 * @generated
 	 */
 	String getIcon();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.View#getIcon <em>Icon</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.Widget#getIcon <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Icon</em>' attribute.
@@ -116,14 +116,14 @@ public interface View extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getView_Label()
+	 * @see org.abchip.mimo.ui.UIPackage#getWidget_Label()
 	 * @model
 	 * @generated
 	 */
 	String getLabel();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.View#getLabel <em>Label</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.Widget#getLabel <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Label</em>' attribute.
@@ -142,14 +142,14 @@ public interface View extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getView_Name()
+	 * @see org.abchip.mimo.ui.UIPackage#getWidget_Name()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.View#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.Widget#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -167,22 +167,22 @@ public interface View extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Pattern</em>' containment reference.
-	 * @see #setPattern(ViewPattern)
-	 * @see org.abchip.mimo.ui.UIPackage#getView_Pattern()
+	 * @see #setPattern(WidgetPattern)
+	 * @see org.abchip.mimo.ui.UIPackage#getWidget_Pattern()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	ViewPattern getPattern();
+	WidgetPattern getPattern();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.View#getPattern <em>Pattern</em>}' containment reference.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.Widget#getPattern <em>Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Pattern</em>' containment reference.
 	 * @see #getPattern()
 	 * @generated
 	 */
-	void setPattern(ViewPattern value);
+	void setPattern(WidgetPattern value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,6 +190,6 @@ public interface View extends Entity {
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	ViewType getView();
+	WidgetType getView();
 
-} // View
+} // Widget

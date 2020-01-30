@@ -5,7 +5,7 @@ package org.abchip.mimo.ui.form.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
 
-import org.abchip.mimo.ui.View;
+import org.abchip.mimo.ui.Widget;
 import org.abchip.mimo.ui.form.FormField;
 import org.abchip.mimo.ui.form.FormPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#isKey <em>Key</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.impl.FormFieldImpl#getWidget <em>Widget</em>}</li>
  * </ul>
  *
  * @generated
@@ -99,14 +99,14 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	protected boolean key = KEY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getView() <em>View</em>}' containment reference.
+	 * The cached value of the '{@link #getWidget() <em>Widget</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getView()
+	 * @see #getWidget()
 	 * @generated
 	 * @ordered
 	 */
-	protected View view;
+	protected Widget widget;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,74 +148,6 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 		contextMenu = newContextMenu;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__CONTEXT_MENU, oldContextMenu, contextMenu));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public View getView() {
-		if (view != null && ((EObject)view).eIsProxy()) {
-			InternalEObject oldView = (InternalEObject)view;
-			view = (View)eResolveProxy(oldView);
-			if (view != oldView) {
-				InternalEObject newView = (InternalEObject)view;
-				NotificationChain msgs = oldView.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FormPackage.FORM_FIELD__VIEW, null, null);
-				if (newView.eInternalContainer() == null) {
-					msgs = newView.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FormPackage.FORM_FIELD__VIEW, null, msgs);
-				}
-				if (msgs != null) msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FormPackage.FORM_FIELD__VIEW, oldView, view));
-			}
-		}
-		return view;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public View basicGetView() {
-		return view;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetView(View newView, NotificationChain msgs) {
-		View oldView = view;
-		view = newView;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__VIEW, oldView, newView);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setView(View newView) {
-		if (newView != view) {
-			NotificationChain msgs = null;
-			if (view != null)
-				msgs = ((InternalEObject)view).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FormPackage.FORM_FIELD__VIEW, null, msgs);
-			if (newView != null)
-				msgs = ((InternalEObject)newView).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FormPackage.FORM_FIELD__VIEW, null, msgs);
-			msgs = basicSetView(newView, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__VIEW, newView, newView));
 	}
 
 	/**
@@ -270,10 +202,78 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	 * @generated
 	 */
 	@Override
+	public Widget getWidget() {
+		if (widget != null && ((EObject)widget).eIsProxy()) {
+			InternalEObject oldWidget = (InternalEObject)widget;
+			widget = (Widget)eResolveProxy(oldWidget);
+			if (widget != oldWidget) {
+				InternalEObject newWidget = (InternalEObject)widget;
+				NotificationChain msgs = oldWidget.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FormPackage.FORM_FIELD__WIDGET, null, null);
+				if (newWidget.eInternalContainer() == null) {
+					msgs = newWidget.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FormPackage.FORM_FIELD__WIDGET, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FormPackage.FORM_FIELD__WIDGET, oldWidget, widget));
+			}
+		}
+		return widget;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Widget basicGetWidget() {
+		return widget;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetWidget(Widget newWidget, NotificationChain msgs) {
+		Widget oldWidget = widget;
+		widget = newWidget;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__WIDGET, oldWidget, newWidget);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setWidget(Widget newWidget) {
+		if (newWidget != widget) {
+			NotificationChain msgs = null;
+			if (widget != null)
+				msgs = ((InternalEObject)widget).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FormPackage.FORM_FIELD__WIDGET, null, msgs);
+			if (newWidget != null)
+				msgs = ((InternalEObject)newWidget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FormPackage.FORM_FIELD__WIDGET, null, msgs);
+			msgs = basicSetWidget(newWidget, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FormPackage.FORM_FIELD__WIDGET, newWidget, newWidget));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FormPackage.FORM_FIELD__VIEW:
-				return basicSetView(null, msgs);
+			case FormPackage.FORM_FIELD__WIDGET:
+				return basicSetWidget(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -292,9 +292,9 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 				return getGroup();
 			case FormPackage.FORM_FIELD__KEY:
 				return isKey();
-			case FormPackage.FORM_FIELD__VIEW:
-				if (resolve) return getView();
-				return basicGetView();
+			case FormPackage.FORM_FIELD__WIDGET:
+				if (resolve) return getWidget();
+				return basicGetWidget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -316,8 +316,8 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__KEY:
 				setKey((Boolean)newValue);
 				return;
-			case FormPackage.FORM_FIELD__VIEW:
-				setView((View)newValue);
+			case FormPackage.FORM_FIELD__WIDGET:
+				setWidget((Widget)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -340,8 +340,8 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 			case FormPackage.FORM_FIELD__KEY:
 				setKey(KEY_EDEFAULT);
 				return;
-			case FormPackage.FORM_FIELD__VIEW:
-				setView((View)null);
+			case FormPackage.FORM_FIELD__WIDGET:
+				setWidget((Widget)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -361,8 +361,8 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 				return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
 			case FormPackage.FORM_FIELD__KEY:
 				return key != KEY_EDEFAULT;
-			case FormPackage.FORM_FIELD__VIEW:
-				return view != null;
+			case FormPackage.FORM_FIELD__WIDGET:
+				return widget != null;
 		}
 		return super.eIsSet(featureID);
 	}

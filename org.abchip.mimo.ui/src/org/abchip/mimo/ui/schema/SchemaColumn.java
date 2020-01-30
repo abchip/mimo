@@ -5,7 +5,7 @@ package org.abchip.mimo.ui.schema;
 
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.ui.View;
+import org.abchip.mimo.ui.Widget;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,7 @@ import org.abchip.mimo.ui.View;
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getId <em>Id</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#isLeftSplit <em>Left Split</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getSort <em>Sort</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.schema.SchemaColumn#getWidget <em>Widget</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn()
@@ -58,32 +58,6 @@ public interface SchemaColumn extends Entity {
 	 * @generated
 	 */
 	void setId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>View</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>View</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>View</em>' containment reference.
-	 * @see #setView(View)
-	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_View()
-	 * @model containment="true" resolveProxies="true" required="true"
-	 * @generated
-	 */
-	View getView();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.schema.SchemaColumn#getView <em>View</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>View</em>' containment reference.
-	 * @see #getView()
-	 * @generated
-	 */
-	void setView(View value);
 
 	/**
 	 * Returns the value of the '<em><b>Left Split</b></em>' attribute.
@@ -136,6 +110,32 @@ public interface SchemaColumn extends Entity {
 	 * @generated
 	 */
 	void setSort(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Widget</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Widget</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Widget</em>' containment reference.
+	 * @see #setWidget(Widget)
+	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_Widget()
+	 * @model containment="true" resolveProxies="true" required="true"
+	 * @generated
+	 */
+	Widget getWidget();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.schema.SchemaColumn#getWidget <em>Widget</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Widget</em>' containment reference.
+	 * @see #getWidget()
+	 * @generated
+	 */
+	void setWidget(Widget value);
 
 	/**
 	 * Returns the value of the '<em><b>Domain</b></em>' containment reference.

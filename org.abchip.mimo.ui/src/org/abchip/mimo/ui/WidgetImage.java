@@ -6,37 +6,37 @@ package org.abchip.mimo.ui;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>View Form</b></em>'.
+ * A representation of the model object '<em><b>Widget Photo</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.ViewForm#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.WidgetImage#getView <em>View</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.UIPackage#getViewForm()
+ * @see org.abchip.mimo.ui.UIPackage#getWidgetImage()
  * @model
  * @generated
  */
-public interface ViewForm extends View {
+public interface WidgetImage extends Widget {
+
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
-	 * The default value is <code>"form"</code>.
-	 * The literals are from the enumeration {@link org.abchip.mimo.ui.ViewType}.
+	 * The default value is <code>"mm-image"</code>.
+	 * The literals are from the enumeration {@link org.abchip.mimo.ui.WidgetType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>View</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Widget</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View</em>' attribute.
-	 * @see org.abchip.mimo.ui.ViewType
-	 * @see org.abchip.mimo.ui.UIPackage#getViewForm_View()
-	 * @model default="form" required="true" changeable="false"
+	 * @see org.abchip.mimo.ui.WidgetType
+	 * @see org.abchip.mimo.ui.UIPackage#getWidgetImage_View()
+	 * @model default="mm-image" required="true" changeable="false"
 	 * @generated
 	 */
-	ViewType getView();
-
-} // ViewForm
+	WidgetType getView();
+} // WidgetImage

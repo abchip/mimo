@@ -4,25 +4,25 @@
 package org.abchip.mimo.ui.impl;
 
 import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.ViewForm;
-import org.abchip.mimo.ui.ViewType;
+import org.abchip.mimo.ui.WidgetImage;
 
+import org.abchip.mimo.ui.WidgetType;
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>View Form</b></em>'.
+ * An implementation of the model object '<em><b>Widget Photo</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewFormImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetImageImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ViewFormImpl extends ViewImpl implements ViewForm {
+public class WidgetImageImpl extends WidgetImpl implements WidgetImage {
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -31,8 +31,7 @@ public class ViewFormImpl extends ViewImpl implements ViewForm {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ViewType VIEW_EDEFAULT = ViewType.FORM;
-
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.IMAGE;
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -41,19 +40,17 @@ public class ViewFormImpl extends ViewImpl implements ViewForm {
 	 * @generated
 	 * @ordered
 	 */
-	protected ViewType view = VIEW_EDEFAULT;
-
+	protected WidgetType view = VIEW_EDEFAULT;
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewFormImpl() {
+	protected WidgetImageImpl() {
 		super();
 	}
 
@@ -64,7 +61,7 @@ public class ViewFormImpl extends ViewImpl implements ViewForm {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.VIEW_FORM;
+		return UIPackage.Literals.WIDGET_IMAGE;
 	}
 
 	/**
@@ -73,7 +70,7 @@ public class ViewFormImpl extends ViewImpl implements ViewForm {
 	 * @generated
 	 */
 	@Override
-	public ViewType getView() {
+	public WidgetType getView() {
 		return view;
 	}
 
@@ -85,7 +82,7 @@ public class ViewFormImpl extends ViewImpl implements ViewForm {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.VIEW_FORM__VIEW:
+			case UIPackage.WIDGET_IMAGE__VIEW:
 				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -99,7 +96,7 @@ public class ViewFormImpl extends ViewImpl implements ViewForm {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_FORM__VIEW:
+			case UIPackage.WIDGET_IMAGE__VIEW:
 				return view != VIEW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -121,4 +118,4 @@ public class ViewFormImpl extends ViewImpl implements ViewForm {
 		return result.toString();
 	}
 
-} //ViewFormImpl
+} //WidgetImageImpl

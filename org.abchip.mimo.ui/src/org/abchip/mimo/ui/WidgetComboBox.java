@@ -6,37 +6,37 @@ package org.abchip.mimo.ui;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>View Date Picker</b></em>'.
+ * A representation of the model object '<em><b>Widget Combo Box</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.ViewDatePicker#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.WidgetComboBox#getView <em>View</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.UIPackage#getViewDatePicker()
+ * @see org.abchip.mimo.ui.UIPackage#getWidgetComboBox()
  * @model
  * @generated
  */
-public interface ViewDatePicker extends View {
-
+public interface WidgetComboBox extends Widget {
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
-	 * The default value is <code>"datepicker"</code>.
-	 * The literals are from the enumeration {@link org.abchip.mimo.ui.ViewType}.
+	 * The default value is <code>"mm-combo"</code>.
+	 * The literals are from the enumeration {@link org.abchip.mimo.ui.WidgetType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>View</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Widget</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View</em>' attribute.
-	 * @see org.abchip.mimo.ui.ViewType
-	 * @see org.abchip.mimo.ui.UIPackage#getViewDatePicker_View()
-	 * @model default="datepicker" required="true" changeable="false"
+	 * @see org.abchip.mimo.ui.WidgetType
+	 * @see org.abchip.mimo.ui.UIPackage#getWidgetComboBox_View()
+	 * @model default="mm-combo" required="true" changeable="false"
 	 * @generated
 	 */
-	ViewType getView();
-} // ViewDatePicker
+	WidgetType getView();
+
+} // WidgetComboBox

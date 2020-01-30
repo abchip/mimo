@@ -6,37 +6,37 @@ package org.abchip.mimo.ui;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>View Note</b></em>'.
+ * A representation of the model object '<em><b>Widget Date Picker</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.ViewNote#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.WidgetDatePicker#getView <em>View</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.UIPackage#getViewNote()
+ * @see org.abchip.mimo.ui.UIPackage#getWidgetDatePicker()
  * @model
  * @generated
  */
-public interface ViewNote extends View {
+public interface WidgetDatePicker extends Widget {
+
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
-	 * The default value is <code>"note"</code>.
-	 * The literals are from the enumeration {@link org.abchip.mimo.ui.ViewType}.
+	 * The default value is <code>"datepicker"</code>.
+	 * The literals are from the enumeration {@link org.abchip.mimo.ui.WidgetType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>View</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Widget</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View</em>' attribute.
-	 * @see org.abchip.mimo.ui.ViewType
-	 * @see org.abchip.mimo.ui.UIPackage#getViewNote_View()
-	 * @model default="note" required="true" changeable="false"
+	 * @see org.abchip.mimo.ui.WidgetType
+	 * @see org.abchip.mimo.ui.UIPackage#getWidgetDatePicker_View()
+	 * @model default="datepicker" required="true" changeable="false"
 	 * @generated
 	 */
-	ViewType getView();
-
-} // ViewNote
+	WidgetType getView();
+} // WidgetDatePicker

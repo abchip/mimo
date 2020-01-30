@@ -4,9 +4,9 @@
 package org.abchip.mimo.ui.impl;
 
 import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.ViewNumber;
-import org.abchip.mimo.ui.ViewNumberAttribute;
-import org.abchip.mimo.ui.ViewType;
+import org.abchip.mimo.ui.WidgetNumber;
+import org.abchip.mimo.ui.WidgetNumberAttribute;
+import org.abchip.mimo.ui.WidgetType;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -19,20 +19,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>View Number</b></em>'.
+ * An implementation of the model object '<em><b>Widget Number</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewNumberImpl#getView <em>View</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewNumberImpl#getAttributes <em>Attributes</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewNumberImpl#getPlaceholder <em>Placeholder</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetNumberImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetNumberImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetNumberImpl#getPlaceholder <em>Placeholder</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ViewNumberImpl extends ViewImpl implements ViewNumber {
+public class WidgetNumberImpl extends WidgetImpl implements WidgetNumber {
 	/**
 	 * 
 	 */
@@ -46,7 +46,7 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ViewType VIEW_EDEFAULT = ViewType.TEXT;
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.TEXT;
 
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
@@ -56,7 +56,7 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	 * @generated
 	 * @ordered
 	 */
-	protected ViewType view = VIEW_EDEFAULT;
+	protected WidgetType view = VIEW_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference.
@@ -66,7 +66,7 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	 * @generated
 	 * @ordered
 	 */
-	protected ViewNumberAttribute attributes;
+	protected WidgetNumberAttribute attributes;
 
 	/**
 	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
@@ -93,7 +93,7 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewNumberImpl() {
+	protected WidgetNumberImpl() {
 		super();
 	}
 
@@ -104,7 +104,7 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.VIEW_NUMBER;
+		return UIPackage.Literals.WIDGET_NUMBER;
 	}
 
 	/**
@@ -113,7 +113,7 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	 * @generated
 	 */
 	@Override
-	public ViewType getView() {
+	public WidgetType getView() {
 		return view;
 	}
 
@@ -137,7 +137,7 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 		String oldPlaceholder = placeholder;
 		placeholder = newPlaceholder;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW_NUMBER__PLACEHOLDER, oldPlaceholder, placeholder));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_NUMBER__PLACEHOLDER, oldPlaceholder, placeholder));
 	}
 
 	/**
@@ -146,19 +146,19 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	 * @generated
 	 */
 	@Override
-	public ViewNumberAttribute getAttributes() {
+	public WidgetNumberAttribute getAttributes() {
 		if (attributes != null && ((EObject)attributes).eIsProxy()) {
 			InternalEObject oldAttributes = (InternalEObject)attributes;
-			attributes = (ViewNumberAttribute)eResolveProxy(oldAttributes);
+			attributes = (WidgetNumberAttribute)eResolveProxy(oldAttributes);
 			if (attributes != oldAttributes) {
 				InternalEObject newAttributes = (InternalEObject)attributes;
-				NotificationChain msgs = oldAttributes.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW_NUMBER__ATTRIBUTES, null, null);
+				NotificationChain msgs = oldAttributes.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET_NUMBER__ATTRIBUTES, null, null);
 				if (newAttributes.eInternalContainer() == null) {
-					msgs = newAttributes.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW_NUMBER__ATTRIBUTES, null, msgs);
+					msgs = newAttributes.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET_NUMBER__ATTRIBUTES, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UIPackage.VIEW_NUMBER__ATTRIBUTES, oldAttributes, attributes));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UIPackage.WIDGET_NUMBER__ATTRIBUTES, oldAttributes, attributes));
 			}
 		}
 		return attributes;
@@ -169,7 +169,7 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ViewNumberAttribute basicGetAttributes() {
+	public WidgetNumberAttribute basicGetAttributes() {
 		return attributes;
 	}
 
@@ -178,11 +178,11 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAttributes(ViewNumberAttribute newAttributes, NotificationChain msgs) {
-		ViewNumberAttribute oldAttributes = attributes;
+	public NotificationChain basicSetAttributes(WidgetNumberAttribute newAttributes, NotificationChain msgs) {
+		WidgetNumberAttribute oldAttributes = attributes;
 		attributes = newAttributes;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UIPackage.VIEW_NUMBER__ATTRIBUTES, oldAttributes, newAttributes);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_NUMBER__ATTRIBUTES, oldAttributes, newAttributes);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -194,18 +194,18 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	 * @generated
 	 */
 	@Override
-	public void setAttributes(ViewNumberAttribute newAttributes) {
+	public void setAttributes(WidgetNumberAttribute newAttributes) {
 		if (newAttributes != attributes) {
 			NotificationChain msgs = null;
 			if (attributes != null)
-				msgs = ((InternalEObject)attributes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW_NUMBER__ATTRIBUTES, null, msgs);
+				msgs = ((InternalEObject)attributes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET_NUMBER__ATTRIBUTES, null, msgs);
 			if (newAttributes != null)
-				msgs = ((InternalEObject)newAttributes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW_NUMBER__ATTRIBUTES, null, msgs);
+				msgs = ((InternalEObject)newAttributes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET_NUMBER__ATTRIBUTES, null, msgs);
 			msgs = basicSetAttributes(newAttributes, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW_NUMBER__ATTRIBUTES, newAttributes, newAttributes));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_NUMBER__ATTRIBUTES, newAttributes, newAttributes));
 	}
 
 	/**
@@ -216,7 +216,7 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case UIPackage.VIEW_NUMBER__ATTRIBUTES:
+			case UIPackage.WIDGET_NUMBER__ATTRIBUTES:
 				return basicSetAttributes(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -230,12 +230,12 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.VIEW_NUMBER__VIEW:
+			case UIPackage.WIDGET_NUMBER__VIEW:
 				return getView();
-			case UIPackage.VIEW_NUMBER__ATTRIBUTES:
+			case UIPackage.WIDGET_NUMBER__ATTRIBUTES:
 				if (resolve) return getAttributes();
 				return basicGetAttributes();
-			case UIPackage.VIEW_NUMBER__PLACEHOLDER:
+			case UIPackage.WIDGET_NUMBER__PLACEHOLDER:
 				return getPlaceholder();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -249,10 +249,10 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UIPackage.VIEW_NUMBER__ATTRIBUTES:
-				setAttributes((ViewNumberAttribute)newValue);
+			case UIPackage.WIDGET_NUMBER__ATTRIBUTES:
+				setAttributes((WidgetNumberAttribute)newValue);
 				return;
-			case UIPackage.VIEW_NUMBER__PLACEHOLDER:
+			case UIPackage.WIDGET_NUMBER__PLACEHOLDER:
 				setPlaceholder((String)newValue);
 				return;
 		}
@@ -267,10 +267,10 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_NUMBER__ATTRIBUTES:
-				setAttributes((ViewNumberAttribute)null);
+			case UIPackage.WIDGET_NUMBER__ATTRIBUTES:
+				setAttributes((WidgetNumberAttribute)null);
 				return;
-			case UIPackage.VIEW_NUMBER__PLACEHOLDER:
+			case UIPackage.WIDGET_NUMBER__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
 		}
@@ -285,11 +285,11 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_NUMBER__VIEW:
+			case UIPackage.WIDGET_NUMBER__VIEW:
 				return view != VIEW_EDEFAULT;
-			case UIPackage.VIEW_NUMBER__ATTRIBUTES:
+			case UIPackage.WIDGET_NUMBER__ATTRIBUTES:
 				return attributes != null;
-			case UIPackage.VIEW_NUMBER__PLACEHOLDER:
+			case UIPackage.WIDGET_NUMBER__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 		}
 		return super.eIsSet(featureID);
@@ -313,4 +313,4 @@ public class ViewNumberImpl extends ViewImpl implements ViewNumber {
 		return result.toString();
 	}
 
-} //ViewNumberImpl
+} //WidgetNumberImpl

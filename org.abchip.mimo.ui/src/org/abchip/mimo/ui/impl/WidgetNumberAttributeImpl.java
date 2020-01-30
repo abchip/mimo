@@ -6,7 +6,7 @@ package org.abchip.mimo.ui.impl;
 import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.ViewNumberAttribute;
+import org.abchip.mimo.ui.WidgetNumberAttribute;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -16,18 +16,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>View Number Attribute</b></em>'.
+ * An implementation of the model object '<em><b>Widget Number Attribute</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewNumberAttributeImpl#getMaxlength <em>Maxlength</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetNumberAttributeImpl#getMaxlength <em>Maxlength</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ViewNumberAttributeImpl extends EntityImpl implements ViewNumberAttribute {
+public class WidgetNumberAttributeImpl extends EntityImpl implements WidgetNumberAttribute {
 	/**
 	 * 
 	 */
@@ -58,7 +58,7 @@ public class ViewNumberAttributeImpl extends EntityImpl implements ViewNumberAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewNumberAttributeImpl() {
+	protected WidgetNumberAttributeImpl() {
 		super();
 	}
 
@@ -69,7 +69,7 @@ public class ViewNumberAttributeImpl extends EntityImpl implements ViewNumberAtt
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.VIEW_NUMBER_ATTRIBUTE;
+		return UIPackage.Literals.WIDGET_NUMBER_ATTRIBUTE;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class ViewNumberAttributeImpl extends EntityImpl implements ViewNumberAtt
 		int oldMaxlength = maxlength;
 		maxlength = newMaxlength;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW_NUMBER_ATTRIBUTE__MAXLENGTH, oldMaxlength, maxlength));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH, oldMaxlength, maxlength));
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class ViewNumberAttributeImpl extends EntityImpl implements ViewNumberAtt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.VIEW_NUMBER_ATTRIBUTE__MAXLENGTH:
+			case UIPackage.WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH:
 				return getMaxlength();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -117,7 +117,7 @@ public class ViewNumberAttributeImpl extends EntityImpl implements ViewNumberAtt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UIPackage.VIEW_NUMBER_ATTRIBUTE__MAXLENGTH:
+			case UIPackage.WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH:
 				setMaxlength((Integer)newValue);
 				return;
 		}
@@ -132,7 +132,7 @@ public class ViewNumberAttributeImpl extends EntityImpl implements ViewNumberAtt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_NUMBER_ATTRIBUTE__MAXLENGTH:
+			case UIPackage.WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH:
 				setMaxlength(MAXLENGTH_EDEFAULT);
 				return;
 		}
@@ -147,7 +147,7 @@ public class ViewNumberAttributeImpl extends EntityImpl implements ViewNumberAtt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_NUMBER_ATTRIBUTE__MAXLENGTH:
+			case UIPackage.WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH:
 				return maxlength != MAXLENGTH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -169,4 +169,4 @@ public class ViewNumberAttributeImpl extends EntityImpl implements ViewNumberAtt
 		return result.toString();
 	}
 
-} //ViewNumberAttributeImpl
+} //WidgetNumberAttributeImpl

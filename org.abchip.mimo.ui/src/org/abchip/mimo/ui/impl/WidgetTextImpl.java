@@ -4,10 +4,10 @@
 package org.abchip.mimo.ui.impl;
 
 import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.ViewText;
+import org.abchip.mimo.ui.WidgetText;
 
-import org.abchip.mimo.ui.ViewTextAttribute;
-import org.abchip.mimo.ui.ViewType;
+import org.abchip.mimo.ui.WidgetTextAttribute;
+import org.abchip.mimo.ui.WidgetType;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -17,20 +17,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>View Text</b></em>'.
+ * An implementation of the model object '<em><b>Widget Text</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewTextImpl#getView <em>View</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewTextImpl#getPlaceholder <em>Placeholder</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewTextImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetTextImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetTextImpl#getPlaceholder <em>Placeholder</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetTextImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ViewTextImpl extends ViewImpl implements ViewText {
+public class WidgetTextImpl extends WidgetImpl implements WidgetText {
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -39,7 +39,7 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ViewType VIEW_EDEFAULT = ViewType.TEXT;
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.TEXT;
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -48,7 +48,7 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	 * @generated
 	 * @ordered
 	 */
-	protected ViewType view = VIEW_EDEFAULT;
+	protected WidgetType view = VIEW_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,7 +75,7 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	 * @generated
 	 * @ordered
 	 */
-	protected ViewTextAttribute attributes;
+	protected WidgetTextAttribute attributes;
 	/**
 	 * 
 	 */
@@ -85,7 +85,7 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewTextImpl() {
+	protected WidgetTextImpl() {
 		super();
 	}
 
@@ -96,7 +96,7 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.VIEW_TEXT;
+		return UIPackage.Literals.WIDGET_TEXT;
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	 * @generated
 	 */
 	@Override
-	public ViewType getView() {
+	public WidgetType getView() {
 		return view;
 	}
 
@@ -129,7 +129,7 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 		String oldPlaceholder = placeholder;
 		placeholder = newPlaceholder;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW_TEXT__PLACEHOLDER, oldPlaceholder, placeholder));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_TEXT__PLACEHOLDER, oldPlaceholder, placeholder));
 	}
 
 	/**
@@ -138,19 +138,19 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	 * @generated
 	 */
 	@Override
-	public ViewTextAttribute getAttributes() {
+	public WidgetTextAttribute getAttributes() {
 		if (attributes != null && ((EObject)attributes).eIsProxy()) {
 			InternalEObject oldAttributes = (InternalEObject)attributes;
-			attributes = (ViewTextAttribute)eResolveProxy(oldAttributes);
+			attributes = (WidgetTextAttribute)eResolveProxy(oldAttributes);
 			if (attributes != oldAttributes) {
 				InternalEObject newAttributes = (InternalEObject)attributes;
-				NotificationChain msgs = oldAttributes.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW_TEXT__ATTRIBUTES, null, null);
+				NotificationChain msgs = oldAttributes.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET_TEXT__ATTRIBUTES, null, null);
 				if (newAttributes.eInternalContainer() == null) {
-					msgs = newAttributes.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW_TEXT__ATTRIBUTES, null, msgs);
+					msgs = newAttributes.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET_TEXT__ATTRIBUTES, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UIPackage.VIEW_TEXT__ATTRIBUTES, oldAttributes, attributes));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UIPackage.WIDGET_TEXT__ATTRIBUTES, oldAttributes, attributes));
 			}
 		}
 		return attributes;
@@ -161,7 +161,7 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ViewTextAttribute basicGetAttributes() {
+	public WidgetTextAttribute basicGetAttributes() {
 		return attributes;
 	}
 
@@ -170,11 +170,11 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAttributes(ViewTextAttribute newAttributes, NotificationChain msgs) {
-		ViewTextAttribute oldAttributes = attributes;
+	public NotificationChain basicSetAttributes(WidgetTextAttribute newAttributes, NotificationChain msgs) {
+		WidgetTextAttribute oldAttributes = attributes;
 		attributes = newAttributes;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UIPackage.VIEW_TEXT__ATTRIBUTES, oldAttributes, newAttributes);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_TEXT__ATTRIBUTES, oldAttributes, newAttributes);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -186,18 +186,18 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	 * @generated
 	 */
 	@Override
-	public void setAttributes(ViewTextAttribute newAttributes) {
+	public void setAttributes(WidgetTextAttribute newAttributes) {
 		if (newAttributes != attributes) {
 			NotificationChain msgs = null;
 			if (attributes != null)
-				msgs = ((InternalEObject)attributes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW_TEXT__ATTRIBUTES, null, msgs);
+				msgs = ((InternalEObject)attributes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET_TEXT__ATTRIBUTES, null, msgs);
 			if (newAttributes != null)
-				msgs = ((InternalEObject)newAttributes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.VIEW_TEXT__ATTRIBUTES, null, msgs);
+				msgs = ((InternalEObject)newAttributes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UIPackage.WIDGET_TEXT__ATTRIBUTES, null, msgs);
 			msgs = basicSetAttributes(newAttributes, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW_TEXT__ATTRIBUTES, newAttributes, newAttributes));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_TEXT__ATTRIBUTES, newAttributes, newAttributes));
 	}
 
 	/**
@@ -208,7 +208,7 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case UIPackage.VIEW_TEXT__ATTRIBUTES:
+			case UIPackage.WIDGET_TEXT__ATTRIBUTES:
 				return basicSetAttributes(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -222,11 +222,11 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.VIEW_TEXT__VIEW:
+			case UIPackage.WIDGET_TEXT__VIEW:
 				return getView();
-			case UIPackage.VIEW_TEXT__PLACEHOLDER:
+			case UIPackage.WIDGET_TEXT__PLACEHOLDER:
 				return getPlaceholder();
-			case UIPackage.VIEW_TEXT__ATTRIBUTES:
+			case UIPackage.WIDGET_TEXT__ATTRIBUTES:
 				if (resolve) return getAttributes();
 				return basicGetAttributes();
 		}
@@ -241,11 +241,11 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UIPackage.VIEW_TEXT__PLACEHOLDER:
+			case UIPackage.WIDGET_TEXT__PLACEHOLDER:
 				setPlaceholder((String)newValue);
 				return;
-			case UIPackage.VIEW_TEXT__ATTRIBUTES:
-				setAttributes((ViewTextAttribute)newValue);
+			case UIPackage.WIDGET_TEXT__ATTRIBUTES:
+				setAttributes((WidgetTextAttribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -259,11 +259,11 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_TEXT__PLACEHOLDER:
+			case UIPackage.WIDGET_TEXT__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
-			case UIPackage.VIEW_TEXT__ATTRIBUTES:
-				setAttributes((ViewTextAttribute)null);
+			case UIPackage.WIDGET_TEXT__ATTRIBUTES:
+				setAttributes((WidgetTextAttribute)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -277,11 +277,11 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_TEXT__VIEW:
+			case UIPackage.WIDGET_TEXT__VIEW:
 				return view != VIEW_EDEFAULT;
-			case UIPackage.VIEW_TEXT__PLACEHOLDER:
+			case UIPackage.WIDGET_TEXT__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
-			case UIPackage.VIEW_TEXT__ATTRIBUTES:
+			case UIPackage.WIDGET_TEXT__ATTRIBUTES:
 				return attributes != null;
 		}
 		return super.eIsSet(featureID);
@@ -305,4 +305,4 @@ public class ViewTextImpl extends ViewImpl implements ViewText {
 		return result.toString();
 	}
 
-} //ViewTextImpl
+} //WidgetTextImpl

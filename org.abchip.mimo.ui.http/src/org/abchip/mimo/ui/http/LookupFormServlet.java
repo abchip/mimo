@@ -30,11 +30,11 @@ import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.ui.UIFactory;
 import org.abchip.mimo.ui.UiFrameSetup;
-import org.abchip.mimo.ui.View;
-import org.abchip.mimo.ui.ViewNumber;
-import org.abchip.mimo.ui.ViewNumberAttribute;
-import org.abchip.mimo.ui.ViewText;
-import org.abchip.mimo.ui.ViewTextAttribute;
+import org.abchip.mimo.ui.Widget;
+import org.abchip.mimo.ui.WidgetNumber;
+import org.abchip.mimo.ui.WidgetNumberAttribute;
+import org.abchip.mimo.ui.WidgetText;
+import org.abchip.mimo.ui.WidgetTextAttribute;
 import org.abchip.mimo.ui.form.Form;
 import org.abchip.mimo.ui.form.FormFactory;
 import org.abchip.mimo.ui.form.FormField;
@@ -118,64 +118,64 @@ public class LookupFormServlet extends BaseServlet {
 		field.setKey(slot.isKey());
 
 		// view
-		View view = null;
+		Widget widget = null;
 
 		if (slot.isContainment())
-			view = UIFactory.eINSTANCE.createViewForm();
+			widget = UIFactory.eINSTANCE.createWidgetForm();
 		else if (slot.getDomain() != null)
-			view = UIFactory.eINSTANCE.createViewComboBox();
+			widget = UIFactory.eINSTANCE.createWidgetComboBox();
 		else if (slot.getText().toLowerCase().contains("level"))
-			view = UIFactory.eINSTANCE.createViewCounter();
+			widget = UIFactory.eINSTANCE.createWidgetCounter();
 		else if (slot.getText().toLowerCase().contains("image"))
-			view = UIFactory.eINSTANCE.createViewImage();
+			widget = UIFactory.eINSTANCE.createWidgetImage();
 
 		else {
 			switch (slot.getDataType()) {
 			case BINARY:
 				break;
 			case BOOLEAN:
-				view = UIFactory.eINSTANCE.createViewCheckBox();
+				widget = UIFactory.eINSTANCE.createWidgetCheckBox();
 				break;
 			case DATE_TIME:
-				view = UIFactory.eINSTANCE.createViewDatePicker();
+				widget = UIFactory.eINSTANCE.createWidgetDatePicker();
 				break;
 			case ENTITY:
-				view = UIFactory.eINSTANCE.createViewComboBox();
+				widget = UIFactory.eINSTANCE.createWidgetComboBox();
 				break;
 			case ENUM:
-				view = UIFactory.eINSTANCE.createViewComboBox();
+				widget = UIFactory.eINSTANCE.createWidgetComboBox();
 				break;
 			case IDENTITY:
 				break;
 			case NUMERIC:
-				view = UIFactory.eINSTANCE.createViewNumber();
+				widget = UIFactory.eINSTANCE.createWidgetNumber();
 				NumericDef numericDef = (NumericDef) slot.getDataDef();
 				// numericDef.setPrecision(50);
 				if (numericDef.getPrecision() > 0) {
-					ViewNumberAttribute attributes = UIFactory.eINSTANCE.createViewNumberAttribute();
+					WidgetNumberAttribute attributes = UIFactory.eINSTANCE.createWidgetNumberAttribute();
 					attributes.setMaxlength(numericDef.getPrecision());
-					((ViewNumber) view).setAttributes(attributes);
+					((WidgetNumber) widget).setAttributes(attributes);
 				}
 
 				// field.setPrecision(numericDef.getPrecision());
 				// field.setScale(numericDef.getScale());
-				view.setPattern(null);
+				widget.setPattern(null);
 				break;
 			case STRING:
-				view = UIFactory.eINSTANCE.createViewText();
+				widget = UIFactory.eINSTANCE.createWidgetText();
 				StringDef stringDef = (StringDef) slot.getDataDef();
 				// stringDef.setLength(50);
 				if (stringDef.getLength() > 0) {
-					ViewTextAttribute attributes = UIFactory.eINSTANCE.createViewTextAttribute();
+					WidgetTextAttribute attributes = UIFactory.eINSTANCE.createWidgetTextAttribute();
 					attributes.setMaxlength(stringDef.getLength());
-					((ViewText) view).setAttributes(attributes);
+					((WidgetText) widget).setAttributes(attributes);
 				}
 				break;
 			}
 		}
 
-		view.setName(slot.getName());
-		view.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
+		widget.setName(slot.getName());
+		widget.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
 
 		StringBuffer label = new StringBuffer();
 		for (char c : slot.getName().toCharArray()) {
@@ -183,9 +183,9 @@ public class LookupFormServlet extends BaseServlet {
 				label.append(" ");
 			label.append(c);
 		}
-		view.setLabel(Strings.qINSTANCE.firstToUpper(label.toString()));
+		widget.setLabel(Strings.qINSTANCE.firstToUpper(label.toString()));
 
-		field.setView(view);
+		field.setWidget(widget);
 
 		return field;
 	}
@@ -197,7 +197,7 @@ public class LookupFormServlet extends BaseServlet {
 
 	private void completeFormField(Context context, FormField formField) {
 
-		Domain domain = formField.getView().getDomain();
+		Domain domain = formField.getWidget().getDomain();
 
 		if (domain == null)
 			return;
@@ -216,8 +216,8 @@ public class LookupFormServlet extends BaseServlet {
 			if (frameSetup == null)
 				continue;
 
-			if (formField.getView().getIcon() == null)
-				formField.getView().setIcon(frameSetup.getIcon());
+			if (formField.getWidget().getIcon() == null)
+				formField.getWidget().setIcon(frameSetup.getIcon());
 
 			if (!formField.isContextMenu())
 				formField.setContextMenu(frameSetup.isContextMenu());

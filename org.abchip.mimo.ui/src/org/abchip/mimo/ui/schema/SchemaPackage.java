@@ -187,13 +187,13 @@ public interface SchemaPackage extends EPackage {
 	int SCHEMA_COLUMN__SORT = EntityPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>View</b></em>' containment reference.
+	 * The feature id for the '<em><b>Widget</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEMA_COLUMN__VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 9;
+	int SCHEMA_COLUMN__WIDGET = EntityPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Column</em>' class.
@@ -259,17 +259,6 @@ public interface SchemaPackage extends EPackage {
 	EAttribute getSchemaColumn_Id();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.schema.SchemaColumn#getView <em>View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.schema.SchemaColumn#getView()
-	 * @see #getSchemaColumn()
-	 * @generated
-	 */
-	EReference getSchemaColumn_View();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#isLeftSplit <em>Left Split</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -290,6 +279,17 @@ public interface SchemaPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSchemaColumn_Sort();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.schema.SchemaColumn#getWidget <em>Widget</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Widget</em>'.
+	 * @see org.abchip.mimo.ui.schema.SchemaColumn#getWidget()
+	 * @see #getSchemaColumn()
+	 * @generated
+	 */
+	EReference getSchemaColumn_Widget();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.schema.SchemaColumn#getDomain <em>Domain</em>}'.
@@ -424,14 +424,6 @@ public interface SchemaPackage extends EPackage {
 		EAttribute SCHEMA_COLUMN__ID = eINSTANCE.getSchemaColumn_Id();
 
 		/**
-		 * The meta object literal for the '<em><b>View</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCHEMA_COLUMN__VIEW = eINSTANCE.getSchemaColumn_View();
-
-		/**
 		 * The meta object literal for the '<em><b>Left Split</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -446,6 +438,14 @@ public interface SchemaPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SCHEMA_COLUMN__SORT = eINSTANCE.getSchemaColumn_Sort();
+
+		/**
+		 * The meta object literal for the '<em><b>Widget</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEMA_COLUMN__WIDGET = eINSTANCE.getSchemaColumn_Widget();
 
 		/**
 		 * The meta object literal for the '<em><b>Domain</b></em>' containment reference feature.

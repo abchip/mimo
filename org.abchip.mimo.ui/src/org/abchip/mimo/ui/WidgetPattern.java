@@ -7,22 +7,22 @@ import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>View Pattern</b></em>'.
+ * A representation of the model object '<em><b>Widget Pattern</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.ViewPattern#getAllow <em>Allow</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.ViewPattern#getMask <em>Mask</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.WidgetPattern#getAllow <em>Allow</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.WidgetPattern#getMask <em>Mask</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.UIPackage#getViewPattern()
+ * @see org.abchip.mimo.ui.UIPackage#getWidgetPattern()
  * @model abstract="true"
  * @generated
  */
-public interface ViewPattern extends Entity {
+public interface WidgetPattern extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Allow</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -33,14 +33,14 @@ public interface ViewPattern extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allow</em>' attribute.
 	 * @see #setAllow(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getViewPattern_Allow()
+	 * @see org.abchip.mimo.ui.UIPackage#getWidgetPattern_Allow()
 	 * @model
 	 * @generated
 	 */
 	String getAllow();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.ViewPattern#getAllow <em>Allow</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.WidgetPattern#getAllow <em>Allow</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Allow</em>' attribute.
@@ -59,14 +59,14 @@ public interface ViewPattern extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mask</em>' attribute.
 	 * @see #setMask(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getViewPattern_Mask()
+	 * @see org.abchip.mimo.ui.UIPackage#getWidgetPattern_Mask()
 	 * @model
 	 * @generated
 	 */
 	String getMask();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.ViewPattern#getMask <em>Mask</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.WidgetPattern#getMask <em>Mask</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Mask</em>' attribute.
@@ -75,4 +75,4 @@ public interface ViewPattern extends Entity {
 	 */
 	void setMask(String value);
 
-} // ViewPattern
+} // WidgetPattern

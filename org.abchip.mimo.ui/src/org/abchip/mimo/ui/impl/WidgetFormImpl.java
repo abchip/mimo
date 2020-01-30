@@ -4,25 +4,25 @@
 package org.abchip.mimo.ui.impl;
 
 import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.ViewComboBox;
-import org.abchip.mimo.ui.ViewType;
+import org.abchip.mimo.ui.WidgetForm;
+import org.abchip.mimo.ui.WidgetType;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>View Combo Box</b></em>'.
+ * An implementation of the model object '<em><b>Widget Form</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewComboBoxImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetFormImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ViewComboBoxImpl extends ViewImpl implements ViewComboBox {
+public class WidgetFormImpl extends WidgetImpl implements WidgetForm {
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class ViewComboBoxImpl extends ViewImpl implements ViewComboBox {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ViewType VIEW_EDEFAULT = ViewType.COMBO_BOX;
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.FORM;
 
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
@@ -41,7 +41,7 @@ public class ViewComboBoxImpl extends ViewImpl implements ViewComboBox {
 	 * @generated
 	 * @ordered
 	 */
-	protected ViewType view = VIEW_EDEFAULT;
+	protected WidgetType view = VIEW_EDEFAULT;
 
 	/**
 	 * 
@@ -53,7 +53,7 @@ public class ViewComboBoxImpl extends ViewImpl implements ViewComboBox {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewComboBoxImpl() {
+	protected WidgetFormImpl() {
 		super();
 	}
 
@@ -64,7 +64,7 @@ public class ViewComboBoxImpl extends ViewImpl implements ViewComboBox {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.VIEW_COMBO_BOX;
+		return UIPackage.Literals.WIDGET_FORM;
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class ViewComboBoxImpl extends ViewImpl implements ViewComboBox {
 	 * @generated
 	 */
 	@Override
-	public ViewType getView() {
+	public WidgetType getView() {
 		return view;
 	}
 
@@ -85,7 +85,7 @@ public class ViewComboBoxImpl extends ViewImpl implements ViewComboBox {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.VIEW_COMBO_BOX__VIEW:
+			case UIPackage.WIDGET_FORM__VIEW:
 				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -99,7 +99,7 @@ public class ViewComboBoxImpl extends ViewImpl implements ViewComboBox {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_COMBO_BOX__VIEW:
+			case UIPackage.WIDGET_FORM__VIEW:
 				return view != VIEW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -121,4 +121,4 @@ public class ViewComboBoxImpl extends ViewImpl implements ViewComboBox {
 		return result.toString();
 	}
 
-} //ViewComboBoxImpl
+} //WidgetFormImpl

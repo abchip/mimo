@@ -4,25 +4,25 @@
 package org.abchip.mimo.ui.impl;
 
 import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.ViewCounter;
+import org.abchip.mimo.ui.WidgetCheckBox;
 
-import org.abchip.mimo.ui.ViewType;
+import org.abchip.mimo.ui.WidgetType;
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>View Counter</b></em>'.
+ * An implementation of the model object '<em><b>Widget Check Box</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewCounterImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetCheckBoxImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ViewCounterImpl extends ViewImpl implements ViewCounter {
+public class WidgetCheckBoxImpl extends WidgetImpl implements WidgetCheckBox {
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class ViewCounterImpl extends ViewImpl implements ViewCounter {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ViewType VIEW_EDEFAULT = ViewType.COUNTER;
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.CHECK_BOX;
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -40,7 +40,7 @@ public class ViewCounterImpl extends ViewImpl implements ViewCounter {
 	 * @generated
 	 * @ordered
 	 */
-	protected ViewType view = VIEW_EDEFAULT;
+	protected WidgetType view = VIEW_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -50,7 +50,7 @@ public class ViewCounterImpl extends ViewImpl implements ViewCounter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewCounterImpl() {
+	protected WidgetCheckBoxImpl() {
 		super();
 	}
 
@@ -61,7 +61,7 @@ public class ViewCounterImpl extends ViewImpl implements ViewCounter {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.VIEW_COUNTER;
+		return UIPackage.Literals.WIDGET_CHECK_BOX;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class ViewCounterImpl extends ViewImpl implements ViewCounter {
 	 * @generated
 	 */
 	@Override
-	public ViewType getView() {
+	public WidgetType getView() {
 		return view;
 	}
 
@@ -82,7 +82,7 @@ public class ViewCounterImpl extends ViewImpl implements ViewCounter {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.VIEW_COUNTER__VIEW:
+			case UIPackage.WIDGET_CHECK_BOX__VIEW:
 				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -96,7 +96,7 @@ public class ViewCounterImpl extends ViewImpl implements ViewCounter {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_COUNTER__VIEW:
+			case UIPackage.WIDGET_CHECK_BOX__VIEW:
 				return view != VIEW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -118,4 +118,4 @@ public class ViewCounterImpl extends ViewImpl implements ViewCounter {
 		return result.toString();
 	}
 
-} //ViewCounterImpl
+} //WidgetCheckBoxImpl

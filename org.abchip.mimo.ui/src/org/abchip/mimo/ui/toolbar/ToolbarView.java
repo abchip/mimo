@@ -7,7 +7,7 @@ import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>View</b></em>'.
+ * A representation of the model object '<em><b>Widget</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -107,7 +107,7 @@ public interface ToolbarView extends Entity {
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>View</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Widget</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

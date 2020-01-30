@@ -6,45 +6,43 @@ package org.abchip.mimo.ui;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>View Text</b></em>'.
+ * A representation of the model object '<em><b>Widget Number</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.ViewText#getView <em>View</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.ViewText#getPlaceholder <em>Placeholder</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.ViewText#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.WidgetNumber#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.WidgetNumber#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.WidgetNumber#getPlaceholder <em>Placeholder</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.UIPackage#getViewText()
+ * @see org.abchip.mimo.ui.UIPackage#getWidgetNumber()
  * @model
  * @generated
  */
-public interface ViewText extends View {
-
+public interface WidgetNumber extends Widget {
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
 	 * The default value is <code>"text"</code>.
-	 * The literals are from the enumeration {@link org.abchip.mimo.ui.ViewType}.
+	 * The literals are from the enumeration {@link org.abchip.mimo.ui.WidgetType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>View</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Widget</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View</em>' attribute.
-	 * @see org.abchip.mimo.ui.ViewType
-	 * @see org.abchip.mimo.ui.UIPackage#getViewText_View()
+	 * @see org.abchip.mimo.ui.WidgetType
+	 * @see org.abchip.mimo.ui.UIPackage#getWidgetNumber_View()
 	 * @model default="text" required="true" changeable="false"
 	 * @generated
 	 */
-	ViewType getView();
+	WidgetType getView();
 
 	/**
 	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.
-	 * The default value is <code>"Insert text here"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Placeholder</em>' attribute isn't clear,
@@ -53,14 +51,14 @@ public interface ViewText extends View {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Placeholder</em>' attribute.
 	 * @see #setPlaceholder(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getViewText_Placeholder()
-	 * @model default="Insert text here"
+	 * @see org.abchip.mimo.ui.UIPackage#getWidgetNumber_Placeholder()
+	 * @model
 	 * @generated
 	 */
 	String getPlaceholder();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.ViewText#getPlaceholder <em>Placeholder</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.WidgetNumber#getPlaceholder <em>Placeholder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Placeholder</em>' attribute.
@@ -78,20 +76,21 @@ public interface ViewText extends View {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attributes</em>' containment reference.
-	 * @see #setAttributes(ViewTextAttribute)
-	 * @see org.abchip.mimo.ui.UIPackage#getViewText_Attributes()
+	 * @see #setAttributes(WidgetNumberAttribute)
+	 * @see org.abchip.mimo.ui.UIPackage#getWidgetNumber_Attributes()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	ViewTextAttribute getAttributes();
+	WidgetNumberAttribute getAttributes();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.ViewText#getAttributes <em>Attributes</em>}' containment reference.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.WidgetNumber#getAttributes <em>Attributes</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Attributes</em>' containment reference.
 	 * @see #getAttributes()
 	 * @generated
 	 */
-	void setAttributes(ViewTextAttribute value);
-} // ViewText
+	void setAttributes(WidgetNumberAttribute value);
+
+} // WidgetNumber

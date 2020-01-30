@@ -4,7 +4,7 @@
 package org.abchip.mimo.ui.form;
 
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.ui.View;
+import org.abchip.mimo.ui.Widget;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +18,7 @@ import org.abchip.mimo.ui.View;
  *   <li>{@link org.abchip.mimo.ui.form.FormField#isContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getGroup <em>Group</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#isKey <em>Key</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#getWidget <em>Widget</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.form.FormPackage#getFormField()
@@ -51,32 +51,6 @@ public interface FormField extends Entity {
 	 * @generated
 	 */
 	void setContextMenu(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>View</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>View</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>View</em>' containment reference.
-	 * @see #setView(View)
-	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_View()
-	 * @model containment="true" resolveProxies="true" required="true"
-	 * @generated
-	 */
-	View getView();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>View</em>' containment reference.
-	 * @see #getView()
-	 * @generated
-	 */
-	void setView(View value);
 
 	/**
 	 * Returns the value of the '<em><b>Group</b></em>' attribute.
@@ -129,5 +103,31 @@ public interface FormField extends Entity {
 	 * @generated
 	 */
 	void setKey(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Widget</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Widget</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Widget</em>' containment reference.
+	 * @see #setWidget(Widget)
+	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Widget()
+	 * @model containment="true" resolveProxies="true" required="true"
+	 * @generated
+	 */
+	Widget getWidget();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getWidget <em>Widget</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Widget</em>' containment reference.
+	 * @see #getWidget()
+	 * @generated
+	 */
+	void setWidget(Widget value);
 
 } // FormField

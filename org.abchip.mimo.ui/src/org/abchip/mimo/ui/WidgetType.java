@@ -11,14 +11,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>View Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Widget Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.abchip.mimo.ui.UIPackage#getViewType()
+ * @see org.abchip.mimo.ui.UIPackage#getWidgetType()
  * @model
  * @generated
  */
-public enum ViewType implements Enumerator {
+public enum WidgetType implements Enumerator {
 	/**
 	 * The '<em><b>Check Box</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -206,13 +206,13 @@ public enum ViewType implements Enumerator {
 	public static final int TEXT_VALUE = 0;
 
 	/**
-	 * An array of all the '<em><b>View Type</b></em>' enumerators.
+	 * An array of all the '<em><b>Widget Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ViewType[] VALUES_ARRAY =
-		new ViewType[] {
+	private static final WidgetType[] VALUES_ARRAY =
+		new WidgetType[] {
 			CHECK_BOX,
 			COMBO_BOX,
 			COUNTER,
@@ -224,24 +224,24 @@ public enum ViewType implements Enumerator {
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>View Type</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Widget Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ViewType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<WidgetType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>View Type</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Widget Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static ViewType get(String literal) {
+	public static WidgetType get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			ViewType result = VALUES_ARRAY[i];
+			WidgetType result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -250,16 +250,16 @@ public enum ViewType implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>View Type</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Widget Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static ViewType getByName(String name) {
+	public static WidgetType getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			ViewType result = VALUES_ARRAY[i];
+			WidgetType result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -268,14 +268,14 @@ public enum ViewType implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>View Type</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Widget Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static ViewType get(int value) {
+	public static WidgetType get(int value) {
 		switch (value) {
 			case CHECK_BOX_VALUE: return CHECK_BOX;
 		}
@@ -309,7 +309,7 @@ public enum ViewType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private ViewType(int value, String name, String literal) {
+	private WidgetType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -356,4 +356,4 @@ public enum ViewType implements Enumerator {
 		return literal;
 	}
 	
-} //ViewType
+} //WidgetType

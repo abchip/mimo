@@ -50,103 +50,103 @@ public interface UIFactory extends EFactory {
 	UiUserSetup createUiUserSetup();
 
 	/**
-	 * Returns a new object of class '<em>View Check Box</em>'.
+	 * Returns a new object of class '<em>Widget Check Box</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View Check Box</em>'.
+	 * @return a new object of class '<em>Widget Check Box</em>'.
 	 * @generated
 	 */
-	ViewCheckBox createViewCheckBox();
+	WidgetCheckBox createWidgetCheckBox();
 
 	/**
-	 * Returns a new object of class '<em>View Combo Box</em>'.
+	 * Returns a new object of class '<em>Widget Combo Box</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View Combo Box</em>'.
+	 * @return a new object of class '<em>Widget Combo Box</em>'.
 	 * @generated
 	 */
-	ViewComboBox createViewComboBox();
+	WidgetComboBox createWidgetComboBox();
 
 	/**
-	 * Returns a new object of class '<em>View Counter</em>'.
+	 * Returns a new object of class '<em>Widget Counter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View Counter</em>'.
+	 * @return a new object of class '<em>Widget Counter</em>'.
 	 * @generated
 	 */
-	ViewCounter createViewCounter();
+	WidgetCounter createWidgetCounter();
 
 	/**
-	 * Returns a new object of class '<em>View Date Picker</em>'.
+	 * Returns a new object of class '<em>Widget Date Picker</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View Date Picker</em>'.
+	 * @return a new object of class '<em>Widget Date Picker</em>'.
 	 * @generated
 	 */
-	ViewDatePicker createViewDatePicker();
+	WidgetDatePicker createWidgetDatePicker();
 
 	/**
-	 * Returns a new object of class '<em>View Form</em>'.
+	 * Returns a new object of class '<em>Widget Form</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View Form</em>'.
+	 * @return a new object of class '<em>Widget Form</em>'.
 	 * @generated
 	 */
-	ViewForm createViewForm();
+	WidgetForm createWidgetForm();
 
 	/**
-	 * Returns a new object of class '<em>View Image</em>'.
+	 * Returns a new object of class '<em>Widget Image</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View Image</em>'.
+	 * @return a new object of class '<em>Widget Image</em>'.
 	 * @generated
 	 */
-	ViewImage createViewImage();
+	WidgetImage createWidgetImage();
 
 	/**
-	 * Returns a new object of class '<em>View Note</em>'.
+	 * Returns a new object of class '<em>Widget Note</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View Note</em>'.
+	 * @return a new object of class '<em>Widget Note</em>'.
 	 * @generated
 	 */
-	ViewNote createViewNote();
+	WidgetNote createWidgetNote();
 
 	/**
-	 * Returns a new object of class '<em>View Number</em>'.
+	 * Returns a new object of class '<em>Widget Number</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View Number</em>'.
+	 * @return a new object of class '<em>Widget Number</em>'.
 	 * @generated
 	 */
-	ViewNumber createViewNumber();
+	WidgetNumber createWidgetNumber();
 
 	/**
-	 * Returns a new object of class '<em>View Number Attribute</em>'.
+	 * Returns a new object of class '<em>Widget Number Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View Number Attribute</em>'.
+	 * @return a new object of class '<em>Widget Number Attribute</em>'.
 	 * @generated
 	 */
-	ViewNumberAttribute createViewNumberAttribute();
+	WidgetNumberAttribute createWidgetNumberAttribute();
 
 	/**
-	 * Returns a new object of class '<em>View Text</em>'.
+	 * Returns a new object of class '<em>Widget Text</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View Text</em>'.
+	 * @return a new object of class '<em>Widget Text</em>'.
 	 * @generated
 	 */
-	ViewText createViewText();
+	WidgetText createWidgetText();
 
 	/**
-	 * Returns a new object of class '<em>View Text Attribute</em>'.
+	 * Returns a new object of class '<em>Widget Text Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View Text Attribute</em>'.
+	 * @return a new object of class '<em>Widget Text Attribute</em>'.
 	 * @generated
 	 */
-	ViewTextAttribute createViewTextAttribute();
+	WidgetTextAttribute createWidgetTextAttribute();
 
 	/**
 	 * Returns the package supported by this factory.

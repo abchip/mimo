@@ -4,25 +4,30 @@
 package org.abchip.mimo.ui.impl;
 
 import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.ViewCheckBox;
+import org.abchip.mimo.ui.WidgetNote;
+import org.abchip.mimo.ui.WidgetType;
 
-import org.abchip.mimo.ui.ViewType;
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>View Check Box</b></em>'.
+ * An implementation of the model object '<em><b>Widget Note</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewCheckBoxImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetNoteImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ViewCheckBoxImpl extends ViewImpl implements ViewCheckBox {
+public class WidgetNoteImpl extends WidgetImpl implements WidgetNote {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -31,7 +36,8 @@ public class ViewCheckBoxImpl extends ViewImpl implements ViewCheckBox {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ViewType VIEW_EDEFAULT = ViewType.CHECK_BOX;
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.NOTE;
+
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -40,17 +46,14 @@ public class ViewCheckBoxImpl extends ViewImpl implements ViewCheckBox {
 	 * @generated
 	 * @ordered
 	 */
-	protected ViewType view = VIEW_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	protected WidgetType view = VIEW_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewCheckBoxImpl() {
+	protected WidgetNoteImpl() {
 		super();
 	}
 
@@ -61,7 +64,7 @@ public class ViewCheckBoxImpl extends ViewImpl implements ViewCheckBox {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.VIEW_CHECK_BOX;
+		return UIPackage.Literals.WIDGET_NOTE;
 	}
 
 	/**
@@ -70,7 +73,7 @@ public class ViewCheckBoxImpl extends ViewImpl implements ViewCheckBox {
 	 * @generated
 	 */
 	@Override
-	public ViewType getView() {
+	public WidgetType getView() {
 		return view;
 	}
 
@@ -82,7 +85,7 @@ public class ViewCheckBoxImpl extends ViewImpl implements ViewCheckBox {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.VIEW_CHECK_BOX__VIEW:
+			case UIPackage.WIDGET_NOTE__VIEW:
 				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -96,7 +99,7 @@ public class ViewCheckBoxImpl extends ViewImpl implements ViewCheckBox {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_CHECK_BOX__VIEW:
+			case UIPackage.WIDGET_NOTE__VIEW:
 				return view != VIEW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -118,4 +121,4 @@ public class ViewCheckBoxImpl extends ViewImpl implements ViewCheckBox {
 		return result.toString();
 	}
 
-} //ViewCheckBoxImpl
+} //WidgetNoteImpl

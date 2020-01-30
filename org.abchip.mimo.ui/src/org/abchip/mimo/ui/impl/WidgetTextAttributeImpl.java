@@ -6,7 +6,7 @@ package org.abchip.mimo.ui.impl;
 import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.abchip.mimo.ui.UIPackage;
-import org.abchip.mimo.ui.ViewTextAttribute;
+import org.abchip.mimo.ui.WidgetTextAttribute;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -16,18 +16,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>View Text Attribute</b></em>'.
+ * An implementation of the model object '<em><b>Widget Text Attribute</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.impl.ViewTextAttributeImpl#getMaxlength <em>Maxlength</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.impl.WidgetTextAttributeImpl#getMaxlength <em>Maxlength</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ViewTextAttributeImpl extends EntityImpl implements ViewTextAttribute {
+public class WidgetTextAttributeImpl extends EntityImpl implements WidgetTextAttribute {
 	/**
 	 * 
 	 */
@@ -58,7 +58,7 @@ public class ViewTextAttributeImpl extends EntityImpl implements ViewTextAttribu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewTextAttributeImpl() {
+	protected WidgetTextAttributeImpl() {
 		super();
 	}
 
@@ -69,7 +69,7 @@ public class ViewTextAttributeImpl extends EntityImpl implements ViewTextAttribu
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UIPackage.Literals.VIEW_TEXT_ATTRIBUTE;
+		return UIPackage.Literals.WIDGET_TEXT_ATTRIBUTE;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class ViewTextAttributeImpl extends EntityImpl implements ViewTextAttribu
 		int oldMaxlength = maxlength;
 		maxlength = newMaxlength;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.VIEW_TEXT_ATTRIBUTE__MAXLENGTH, oldMaxlength, maxlength));
+			eNotify(new ENotificationImpl(this, Notification.SET, UIPackage.WIDGET_TEXT_ATTRIBUTE__MAXLENGTH, oldMaxlength, maxlength));
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class ViewTextAttributeImpl extends EntityImpl implements ViewTextAttribu
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UIPackage.VIEW_TEXT_ATTRIBUTE__MAXLENGTH:
+			case UIPackage.WIDGET_TEXT_ATTRIBUTE__MAXLENGTH:
 				return getMaxlength();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -117,7 +117,7 @@ public class ViewTextAttributeImpl extends EntityImpl implements ViewTextAttribu
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UIPackage.VIEW_TEXT_ATTRIBUTE__MAXLENGTH:
+			case UIPackage.WIDGET_TEXT_ATTRIBUTE__MAXLENGTH:
 				setMaxlength((Integer)newValue);
 				return;
 		}
@@ -132,7 +132,7 @@ public class ViewTextAttributeImpl extends EntityImpl implements ViewTextAttribu
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_TEXT_ATTRIBUTE__MAXLENGTH:
+			case UIPackage.WIDGET_TEXT_ATTRIBUTE__MAXLENGTH:
 				setMaxlength(MAXLENGTH_EDEFAULT);
 				return;
 		}
@@ -147,7 +147,7 @@ public class ViewTextAttributeImpl extends EntityImpl implements ViewTextAttribu
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UIPackage.VIEW_TEXT_ATTRIBUTE__MAXLENGTH:
+			case UIPackage.WIDGET_TEXT_ATTRIBUTE__MAXLENGTH:
 				return maxlength != MAXLENGTH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -169,4 +169,4 @@ public class ViewTextAttributeImpl extends EntityImpl implements ViewTextAttribu
 		return result.toString();
 	}
 
-} //ViewTextAttributeImpl
+} //WidgetTextAttributeImpl
