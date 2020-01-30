@@ -102,9 +102,9 @@ public class GitHubResponseServlet extends HttpServlet {
 
 			HttpPost postMethod = null;
 			try (CloseableHttpClient client = HttpClients.custom().build()) {
-				String clientId = oauth2GitHub.isa().getValue(oauth2GitHub, "clientId", false).toString();
-				String returnURI = oauth2GitHub.isa().getValue(oauth2GitHub, "returnUrl", false).toString();
-				String secret = oauth2GitHub.isa().getValue(oauth2GitHub, "clientSecret", false).toString();
+				String clientId = oauth2GitHub.isa().getValue(oauth2GitHub, "clientId", false, false).toString();
+				String returnURI = oauth2GitHub.isa().getValue(oauth2GitHub, "returnUrl", false, false).toString();
+				String secret = oauth2GitHub.isa().getValue(oauth2GitHub, "clientSecret", false, false).toString();
 
 				URI uri = new URIBuilder().setScheme(TokenEndpoint.substring(0, TokenEndpoint.indexOf(":"))).setHost(TokenEndpoint.substring(TokenEndpoint.indexOf(":") + 3))
 						.setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("code", authorizationCode)

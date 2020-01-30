@@ -8,6 +8,8 @@
  */
 package org.abchip.mimo.database.connection;
 
+import org.abchip.mimo.entity.Entity;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Connection Config</b></em>'.
@@ -29,7 +31,7 @@ package org.abchip.mimo.database.connection;
  * @model
  * @generated
  */
-public interface ConnectionConfig {
+public interface ConnectionConfig extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Credentials</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

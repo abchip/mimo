@@ -13,16 +13,18 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.util.HashMap;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Map;
 
+import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.ResourceManager;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
@@ -115,11 +117,20 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 				pw.write(",");
 
 			Entity entity = (Entity) eObject;
-			String object = entity2String(entity, true);
 
-//			System.err.println(object);
+			/*
+			 * if (entity instanceof EntityIdentifiable) { EntityIdentifiable
+			 * entityIdentifiable = (EntityIdentifiable) entity; switch
+			 * (entityIdentifiable.getState()) { case DIRTY: case PROXY: pw.write("\"" +
+			 * Strings.qINSTANCE.escape(entityIdentifiable.getID()) + "\""); first = false;
+			 * continue; case TRANSIENT: case RESOLVED: break; } }
+			 */
 
-			pw.write(object);
+			JSONObject object = entity2JSON(entity);
+
+			// System.err.println(object);
+
+			pw.write(object.toString());
 			first = false;
 		}
 
@@ -129,58 +140,99 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 		pw.flush();
 	}
 
-	private String entity2String(Entity entity, boolean resolve) {
+	private JSONObject entity2JSON(Entity entity) {
 
-		if (entity instanceof EntityIdentifiable && !resolve) {
-			EntityIdentifiable entityIdentifiable = (EntityIdentifiable) entity;
-			switch (entityIdentifiable.getState()) {
-			case DIRTY:
-			case PROXY:
-				return entityIdentifiable.getID();
-			case TRANSIENT:
-			case RESOLVED:
-			}
-		}
+		JSONObject object = new JSONObject();
 
 		Frame<Entity> frame = entity.isa();
 
-		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("isa", frame.getName());
+		object.put("isa", frame.getName());
 
 		for (Slot slot : frame.getSlots()) {
-			Object value = frame.getValue(entity, slot.getName(), false);
+			Object value = frame.getValue(entity, slot.getName(), true, false);
 			if (isEmpty(value))
 				continue;
 
-			params.put(slot.getName(), value2String(slot, value));
+			object.put(slot.getName(), value2Object(slot, value));
 		}
 
-		return new JSONObject(params).toString(1);
+		return object;
 	}
 
-	private String value2String(Slot slot, Object value) {
+	private Object value2Object(Slot slot, Object value) {
 
-		StringBuilder sb = new StringBuilder();
+		Object object = null;
 
 		if (value instanceof List<?>) {
 			List<?> list = (List<?>) value;
-			sb.append("[");
-			boolean first = true;
+
+			JSONArray array = new JSONArray();
 			for (Object element : list) {
-				if (!first)
-					sb.append(", ");
-				sb.append(value2String(slot, element));
-				first = false;
+				array.put(value2Object(slot, element));
 			}
-			sb.append("]");
+
+			object = array;
 		} else if (value instanceof Entity) {
-			Entity valueIdentifiable = (Entity) value;
-			sb.append(entity2String(valueIdentifiable, slot.isContainment()));
+			Entity entity = (Entity) value;
+
+			if (entity instanceof EntityIdentifiable) {
+				EntityIdentifiable entityIdentifiable = (EntityIdentifiable) entity;
+				switch (entityIdentifiable.getState()) {
+				case DIRTY:
+				case PROXY:
+					object = value2Raw(slot, entityIdentifiable.getID());
+					break;
+				case TRANSIENT:
+				case RESOLVED:
+					break;
+				}
+			}
+
+			if (object == null) {
+				if (slot.isContainment()) {
+					object = entity2JSON(entity);
+				} else
+					object = value2Raw(slot, value);
+			}
 		} else {
-			sb.append(value);
+			object = value2Raw(slot, value);
 		}
 
-		return sb.toString();
+		return object;
+	}
+
+	private Object value2Raw(Slot slot, Object value) {
+
+		Object raw = null;
+
+		switch (slot.getDataType()) {
+		case BINARY:
+			raw = value;
+			break;
+		case BOOLEAN:
+			raw = Boolean.parseBoolean(value.toString());
+			break;
+		case DATE_TIME:
+			DateFormat dateFormat = new SimpleDateFormat(MimoConstants.TIMESTAMP_FORMAT);
+			raw = dateFormat.format(value);
+			break;
+		case ENTITY:
+			EntityIdentifiable entityIdentifiable = (EntityIdentifiable) value;
+			raw = entityIdentifiable.getID();
+			break;
+		case ENUM:
+			Enumerator enumerator = (Enumerator) value;
+			raw = enumerator.getLiteral();
+			break;
+		case IDENTITY:
+		case NUMERIC:
+			raw = value;
+		case STRING:
+			raw = value;
+			break;
+		}
+
+		return raw;
 	}
 
 	private boolean isEmpty(Object value) {

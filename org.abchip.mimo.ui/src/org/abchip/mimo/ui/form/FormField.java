@@ -3,8 +3,8 @@
  */
 package org.abchip.mimo.ui.form;
 
-import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.ui.View;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,16 +16,8 @@ import org.abchip.mimo.entity.Entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#isContextMenu <em>Context Menu</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#isDisabled <em>Disabled</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getGroup <em>Group</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#getIcon <em>Icon</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#getLabel <em>Label</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#getLength <em>Length</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#getPrecision <em>Precision</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#getScale <em>Scale</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.form.FormField#isTopSplit <em>Top Split</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.form.FormField#isKey <em>Key</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}</li>
  * </ul>
  *
@@ -61,238 +53,30 @@ public interface FormField extends Entity {
 	void setContextMenu(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>View</b></em>' attribute.
+	 * Returns the value of the '<em><b>View</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>View</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>View</em>' attribute.
-	 * @see #setView(String)
+	 * @return the value of the '<em>View</em>' containment reference.
+	 * @see #setView(View)
 	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_View()
-	 * @model required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
-	String getView();
+	View getView();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getView <em>View</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>View</em>' attribute.
+	 * @param value the new value of the '<em>View</em>' containment reference.
 	 * @see #getView()
 	 * @generated
 	 */
-	void setView(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Top Split</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Top Split</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Top Split</em>' attribute.
-	 * @see #setTopSplit(boolean)
-	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_TopSplit()
-	 * @model
-	 * @generated
-	 */
-	boolean isTopSplit();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#isTopSplit <em>Top Split</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Top Split</em>' attribute.
-	 * @see #isTopSplit()
-	 * @generated
-	 */
-	void setTopSplit(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Disabled</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Disabled</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Disabled</em>' attribute.
-	 * @see #setDisabled(boolean)
-	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Disabled()
-	 * @model
-	 * @generated
-	 */
-	boolean isDisabled();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#isDisabled <em>Disabled</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Disabled</em>' attribute.
-	 * @see #isDisabled()
-	 * @generated
-	 */
-	void setDisabled(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Label</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Label</em>' attribute.
-	 * @see #setLabel(String)
-	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Label()
-	 * @model
-	 * @generated
-	 */
-	String getLabel();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getLabel <em>Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Label</em>' attribute.
-	 * @see #getLabel()
-	 * @generated
-	 */
-	void setLabel(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Length</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Length</em>' attribute.
-	 * @see #setLength(int)
-	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Length()
-	 * @model
-	 * @generated
-	 */
-	int getLength();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getLength <em>Length</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Length</em>' attribute.
-	 * @see #getLength()
-	 * @generated
-	 */
-	void setLength(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Name()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Precision</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Precision</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Precision</em>' attribute.
-	 * @see #setPrecision(int)
-	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Precision()
-	 * @model
-	 * @generated
-	 */
-	int getPrecision();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getPrecision <em>Precision</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Precision</em>' attribute.
-	 * @see #getPrecision()
-	 * @generated
-	 */
-	void setPrecision(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Scale</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Scale</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scale</em>' attribute.
-	 * @see #setScale(int)
-	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Scale()
-	 * @model
-	 * @generated
-	 */
-	int getScale();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getScale <em>Scale</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scale</em>' attribute.
-	 * @see #getScale()
-	 * @generated
-	 */
-	void setScale(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Domain</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Domain</em>' containment reference.
-	 * @see #setDomain(Domain)
-	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Domain()
-	 * @model containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	Domain getDomain();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getDomain <em>Domain</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Domain</em>' containment reference.
-	 * @see #getDomain()
-	 * @generated
-	 */
-	void setDomain(Domain value);
+	void setView(View value);
 
 	/**
 	 * Returns the value of the '<em><b>Group</b></em>' attribute.
@@ -321,29 +105,29 @@ public interface FormField extends Entity {
 	void setGroup(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Icon</b></em>' attribute.
+	 * Returns the value of the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Icon</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Key</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Icon</em>' attribute.
-	 * @see #setIcon(String)
-	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Icon()
+	 * @return the value of the '<em>Key</em>' attribute.
+	 * @see #setKey(boolean)
+	 * @see org.abchip.mimo.ui.form.FormPackage#getFormField_Key()
 	 * @model
 	 * @generated
 	 */
-	String getIcon();
+	boolean isKey();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#getIcon <em>Icon</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.form.FormField#isKey <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Icon</em>' attribute.
-	 * @see #getIcon()
+	 * @param value the new value of the '<em>Key</em>' attribute.
+	 * @see #isKey()
 	 * @generated
 	 */
-	void setIcon(String value);
+	void setKey(boolean value);
 
 } // FormField

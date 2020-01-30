@@ -12,6 +12,7 @@ import java.sql.SQLException;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.database.connection.ConnectionConfig;
+import org.abchip.mimo.entity.Entity;
 import org.eclipse.datatools.modelbase.sql.constraints.Index;
 
 import org.eclipse.datatools.modelbase.sql.schema.Schema;
@@ -40,7 +41,7 @@ import org.eclipse.datatools.modelbase.sql.tables.ViewTable;
  * @model
  * @generated
  */
-public interface CatalogContainer {
+public interface CatalogContainer extends Entity {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

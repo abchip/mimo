@@ -28,6 +28,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class SetConnectionStatementImpl extends DefinitionStatementImpl implements SetConnectionStatement {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The default value of the '{@link #getDatabaseName() <em>Database Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

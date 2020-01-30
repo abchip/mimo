@@ -9,6 +9,7 @@
 package org.abchip.mimo.database.connection;
 
 import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -101,7 +102,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_CONFIG__CREDENTIALS = 0;
+	int CONNECTION_CONFIG__CREDENTIALS = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Vendor</b></em>' attribute.
@@ -110,7 +111,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_CONFIG__VENDOR = 1;
+	int CONNECTION_CONFIG__VENDOR = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -119,7 +120,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_CONFIG__VERSION = 2;
+	int CONNECTION_CONFIG__VERSION = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -128,7 +129,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_CONFIG__URL = 3;
+	int CONNECTION_CONFIG__URL = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Catalog</b></em>' attribute.
@@ -137,7 +138,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_CONFIG__CATALOG = 4;
+	int CONNECTION_CONFIG__CATALOG = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Persistent</b></em>' attribute.
@@ -146,7 +147,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_CONFIG__PERSISTENT = 5;
+	int CONNECTION_CONFIG__PERSISTENT = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Connection Config</em>' class.
@@ -155,7 +156,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_CONFIG_FEATURE_COUNT = 6;
+	int CONNECTION_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.connection.impl.ConnectionCredentialsImpl <em>Connection Credentials</em>}' class.

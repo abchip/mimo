@@ -20,75 +20,190 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ViewType implements Enumerator {
 	/**
-	 * The '<em><b>Table</b></em>' literal object.
+	 * The '<em><b>Check Box</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TABLE_VALUE
+	 * @see #CHECK_BOX_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TABLE(10, "Table", "TBL"), /**
-	 * The '<em><b>Browse</b></em>' literal object.
+	CHECK_BOX(0, "CheckBox", "checkbox"), /**
+	 * The '<em><b>Combo Box</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #BROWSE_VALUE
+	 * @see #COMBO_BOX_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	BROWSE(20, "Browse", "BRW"), /**
-	 * The '<em><b>Dashboard</b></em>' literal object.
+	COMBO_BOX(0, "ComboBox", "mm-combo"), /**
+	 * The '<em><b>Counter</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DASHBOARD_VALUE
+	 * @see #COUNTER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DASHBOARD(30, "Dashboard", "DSH");
+	COUNTER(0, "Counter", "counter"), /**
+	 * The '<em><b>Date Picker</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DATE_PICKER_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DATE_PICKER(0, "DatePicker", "datepicker"), /**
+	 * The '<em><b>Form</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #FORM_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	FORM(0, "Form", "form"), /**
+	 * The '<em><b>Image</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #IMAGE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	IMAGE(0, "Image", "mm-image"), /**
+	 * The '<em><b>Note</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NOTE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NOTE(0, "Note", "note"), /**
+	 * The '<em><b>Text</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #TEXT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	TEXT(0, "Text", "text");
 
 	/**
-	 * The '<em><b>Table</b></em>' literal value.
+	 * The '<em><b>Check Box</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Table</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Check Box</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #TABLE
-	 * @model name="Table" literal="TBL"
+	 * @see #CHECK_BOX
+	 * @model name="CheckBox" literal="checkbox"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TABLE_VALUE = 10;
+	public static final int CHECK_BOX_VALUE = 0;
 
 	/**
-	 * The '<em><b>Browse</b></em>' literal value.
+	 * The '<em><b>Combo Box</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Browse</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Combo Box</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #BROWSE
-	 * @model name="Browse" literal="BRW"
+	 * @see #COMBO_BOX
+	 * @model name="ComboBox" literal="mm-combo"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BROWSE_VALUE = 20;
+	public static final int COMBO_BOX_VALUE = 0;
 
 	/**
-	 * The '<em><b>Dashboard</b></em>' literal value.
+	 * The '<em><b>Counter</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Dashboard</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Counter</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DASHBOARD
-	 * @model name="Dashboard" literal="DSH"
+	 * @see #COUNTER
+	 * @model name="Counter" literal="counter"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DASHBOARD_VALUE = 30;
+	public static final int COUNTER_VALUE = 0;
+
+	/**
+	 * The '<em><b>Date Picker</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Date Picker</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DATE_PICKER
+	 * @model name="DatePicker" literal="datepicker"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DATE_PICKER_VALUE = 0;
+
+	/**
+	 * The '<em><b>Form</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Form</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #FORM
+	 * @model name="Form" literal="form"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int FORM_VALUE = 0;
+
+	/**
+	 * The '<em><b>Image</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Image</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #IMAGE
+	 * @model name="Image" literal="mm-image"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int IMAGE_VALUE = 0;
+
+	/**
+	 * The '<em><b>Note</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Note</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #NOTE
+	 * @model name="Note" literal="note"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NOTE_VALUE = 0;
+
+	/**
+	 * The '<em><b>Text</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Text</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #TEXT
+	 * @model name="Text" literal="text"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int TEXT_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>View Type</b></em>' enumerators.
@@ -98,9 +213,14 @@ public enum ViewType implements Enumerator {
 	 */
 	private static final ViewType[] VALUES_ARRAY =
 		new ViewType[] {
-			TABLE,
-			BROWSE,
-			DASHBOARD,
+			CHECK_BOX,
+			COMBO_BOX,
+			COUNTER,
+			DATE_PICKER,
+			FORM,
+			IMAGE,
+			NOTE,
+			TEXT,
 		};
 
 	/**
@@ -157,9 +277,7 @@ public enum ViewType implements Enumerator {
 	 */
 	public static ViewType get(int value) {
 		switch (value) {
-			case TABLE_VALUE: return TABLE;
-			case BROWSE_VALUE: return BROWSE;
-			case DASHBOARD_VALUE: return DASHBOARD;
+			case CHECK_BOX_VALUE: return CHECK_BOX;
 		}
 		return null;
 	}

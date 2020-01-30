@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="database" nsURI="http://www.abchip.org/mimo/database" nsPrefix="db">
-  <eClassifiers xsi:type="ecore:EClass" name="CatalogContainer">
+  <eClassifiers xsi:type="ecore:EClass" name="CatalogContainer" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
     <eOperations name="createConnection" eExceptions="#//DatabaseException">
       <eGenericType eTypeParameter="#//CatalogContainer/createConnection/C"/>
       <eTypeParameters name="C"/>
@@ -64,7 +64,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="searchStrategy" lowerBound="1"
         eType="#//SearchStrategy" defaultValueLiteral="CUR"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CatalogGenerationStrategy">
+  <eClassifiers xsi:type="ecore:EClass" name="CatalogGenerationStrategy" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="createIndexOnView" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="createRelativeRecordNumber"
@@ -173,7 +173,7 @@
     </eOperations>
     <eOperations name="start"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="QualifiedName">
+  <eClassifiers xsi:type="ecore:EClass" name="QualifiedName" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
     <eOperations name="getFirstQualifier" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eOperations name="getLastQualifier" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiers" lowerBound="1"
@@ -243,7 +243,7 @@
         <eParameters name="sql" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ConnectionConfig">
+    <eClassifiers xsi:type="ecore:EClass" name="ConnectionConfig" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="credentials" lowerBound="1"
           eType="#//connection/ConnectionCredentials" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="vendor" lowerBound="1"
@@ -391,7 +391,8 @@
           upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="query" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DatabaseObjectDef" abstract="true">
+    <eClassifiers xsi:type="ecore:EClass" name="DatabaseObjectDef" abstract="true"
+        eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DefinitionParser" abstract="true"
@@ -421,7 +422,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="errorList" upperBound="-1"
           eType="#//definition/DefinitionParseError"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DefinitionStatement" abstract="true">
+    <eClassifiers xsi:type="ecore:EClass" name="DefinitionStatement" abstract="true"
+        eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
       <eOperations name="getStatementType" lowerBound="1" eType="#//connection/StatementType"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DefinitionWriter" abstract="true"

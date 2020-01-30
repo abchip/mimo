@@ -8,8 +8,10 @@
  */
 package org.abchip.mimo;
 
+import java.net.URI;
 import java.util.Date;
 
+import org.abchip.mimo.data.BinaryDef;
 import org.abchip.mimo.data.BooleanDef;
 import org.abchip.mimo.data.DataDef;
 import org.abchip.mimo.data.DataFactory;
@@ -99,7 +101,11 @@ public class EMFSlotAdapter extends SlotImpl {
 		Class<?> klass = element.getEType().getInstanceClass();
 
 		DataDef<?> dataDef = null;
-		if (this.getDataClassName().equals(Boolean.class.getSimpleName().toLowerCase())) {
+		if (klass == byte[].class || klass == Object.class) { 
+			BinaryDef binaryDef = DataFactory.eINSTANCE.createBinaryDef();
+			dataDef = binaryDef;
+		}
+		else if (this.getDataClassName().equals(Boolean.class.getSimpleName().toLowerCase())) {
 			BooleanDef booleanDef = DataFactory.eINSTANCE.createBooleanDef();
 			dataDef = booleanDef;
 		} else if (this.getDataClassName().equals(Date.class.getCanonicalName())) {
@@ -109,8 +115,10 @@ public class EMFSlotAdapter extends SlotImpl {
 		} else if (element.getEType() instanceof EEnum) {
 			EnumDef<?> enumDef = DataFactory.eINSTANCE.createEnumDef();
 			dataDef = enumDef;
-		} else if (this.getDataClassName().equals(String.class.getCanonicalName()) || this.getDataClassName().equals(char.class.getCanonicalName())
-				|| EntityIdentifiable.class.isAssignableFrom(this.getETypedElement().getEType().getInstanceClass())) {
+		} else if (this.getDataClassName().equals(String.class.getCanonicalName()) || 
+				   this.getDataClassName().equals(char.class.getCanonicalName()) ||
+				   this.getDataClassName().equals(URI.class.getCanonicalName()) ||
+				   EntityIdentifiable.class.isAssignableFrom(this.getETypedElement().getEType().getInstanceClass())) {
 			StringDef stringDef = DataFactory.eINSTANCE.createStringDef();
 			dataDef = stringDef;
 		} else if (Entity.class.isAssignableFrom(klass)) {
@@ -118,7 +126,7 @@ public class EMFSlotAdapter extends SlotImpl {
 			dataDef = entityDef;
 		} else {
 			if (klass.isPrimitive()) {
-				if (klass.getName().equals("long") || klass.getName().equals("integer") || klass.getName().equals("short") || klass.getName().equals("float")
+				if (klass.getName().equals("long") || klass.getName().equals("int") || klass.getName().equals("short") || klass.getName().equals("float")
 						|| klass.getName().equals("double")) {
 					NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
 					numericDef.setType(NumericType.getByName(MimoUtils.firstToUpper(klass.getName())));
@@ -127,6 +135,7 @@ public class EMFSlotAdapter extends SlotImpl {
 			} else if (Number.class.isAssignableFrom(klass)) {
 				NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
 				numericDef.setType(NumericType.BIG_DECIMAL);
+				dataDef = numericDef;
 			}
 		}
 		if (dataDef != null)

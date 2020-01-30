@@ -235,10 +235,10 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" entityRequired="true" slotNameRequired="true" resolveRequired="true"
+	 * @model required="true" entityRequired="true" slotNameRequired="true" defaultRequired="true" resolveRequired="true"
 	 * @generated
 	 */
-	Object getValue(Entity entity, String slotName, boolean resolve);
+	Object getValue(Entity entity, String slotName, boolean default_, boolean resolve);
 
 	/**
 	 * <!-- begin-user-doc -->

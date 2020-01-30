@@ -36,6 +36,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class IndexColumnDefImpl extends DatabaseObjectDefImpl implements IndexColumnDef {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getName()

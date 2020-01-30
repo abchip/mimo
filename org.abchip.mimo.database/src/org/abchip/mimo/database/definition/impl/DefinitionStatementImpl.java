@@ -11,9 +11,8 @@ package org.abchip.mimo.database.definition.impl;
 import org.abchip.mimo.database.connection.StatementType;
 import org.abchip.mimo.database.definition.DatabaseDefinitionPackage;
 import org.abchip.mimo.database.definition.DefinitionStatement;
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class DefinitionStatementImpl extends MinimalEObjectImpl.Container implements DefinitionStatement {
+public abstract class DefinitionStatementImpl extends EntityImpl implements DefinitionStatement {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

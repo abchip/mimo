@@ -39,6 +39,11 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  */
 public class CreateViewStatementImpl extends DefinitionStatementImpl implements CreateViewStatement {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The cached value of the '{@link #getViewName() <em>View Name</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

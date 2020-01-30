@@ -103,9 +103,9 @@ public class GoogleResponseServlet extends HttpServlet {
 
 			HttpPost postMethod = null;
 			try (CloseableHttpClient client = HttpClients.custom().build()) {
-				String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId", false).toString();
-				String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl", false).toString();
-				String secret = oauth2Google.isa().getValue(oauth2Google, "clientSecret", false).toString();
+				String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId", false, false).toString();
+				String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl", false, false).toString();
+				String secret = oauth2Google.isa().getValue(oauth2Google, "clientSecret", false, false).toString();
 
 				URI uri = new URIBuilder().setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("grant_type", "authorization_code")
 						.setParameter("code", authorizationCode).setParameter("redirect_uri", returnURI).build();

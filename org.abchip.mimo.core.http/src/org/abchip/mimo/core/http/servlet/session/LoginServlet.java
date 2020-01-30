@@ -75,7 +75,7 @@ public class LoginServlet extends HttpServlet {
 					return;
 				}
 				String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-						+ oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri", false).toString();
+						+ oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri", false, false).toString();
 
 				location = response.encodeURL(location);
 				// System.err.println(("Login location: " + location));

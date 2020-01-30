@@ -5,6 +5,7 @@ package org.abchip.mimo.ui.schema;
 
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.ui.View;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,30 +60,30 @@ public interface SchemaColumn extends Entity {
 	void setId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>View</b></em>' attribute.
+	 * Returns the value of the '<em><b>View</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>View</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>View</em>' attribute.
-	 * @see #setView(String)
+	 * @return the value of the '<em>View</em>' containment reference.
+	 * @see #setView(View)
 	 * @see org.abchip.mimo.ui.schema.SchemaPackage#getSchemaColumn_View()
-	 * @model required="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
-	String getView();
+	View getView();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.schema.SchemaColumn#getView <em>View</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.schema.SchemaColumn#getView <em>View</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>View</em>' attribute.
+	 * @param value the new value of the '<em>View</em>' containment reference.
 	 * @see #getView()
 	 * @generated
 	 */
-	void setView(String value);
+	void setView(View value);
 
 	/**
 	 * Returns the value of the '<em><b>Left Split</b></em>' attribute.

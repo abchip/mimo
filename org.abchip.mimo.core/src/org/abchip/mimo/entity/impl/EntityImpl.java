@@ -74,7 +74,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 				if (slot.isDerived())
 					continue;
 
-				Object value = isa.getValue(this, slot.getName(), false);
+				Object value = isa.getValue(this, slot.getName(), false, false);
 				if (value == null)
 					continue;
 

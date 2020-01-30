@@ -28,6 +28,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class RollbackStatementImpl extends DefinitionStatementImpl implements RollbackStatement {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The default value of the '{@link #isHold() <em>Hold</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

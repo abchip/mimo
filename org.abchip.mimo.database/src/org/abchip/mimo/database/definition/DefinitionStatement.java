@@ -9,6 +9,7 @@
 package org.abchip.mimo.database.definition;
 
 import org.abchip.mimo.database.connection.StatementType;
+import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ import org.abchip.mimo.database.connection.StatementType;
  * @model abstract="true"
  * @generated
  */
-public interface DefinitionStatement {
+public interface DefinitionStatement extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

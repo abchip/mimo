@@ -535,11 +535,11 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		DatabaseConnectionPackage theDatabaseConnectionPackage = (DatabaseConnectionPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseConnectionPackage.eNS_URI);
 		DatabaseDefinitionPackage theDatabaseDefinitionPackage = (DatabaseDefinitionPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseDefinitionPackage.eNS_URI);
 		DatabaseQueryPackage theDatabaseQueryPackage = (DatabaseQueryPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI);
+		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		SQLConstraintsPackage theSQLConstraintsPackage = (SQLConstraintsPackage)EPackage.Registry.INSTANCE.getEPackage(SQLConstraintsPackage.eNS_URI);
 		SQLTablesPackage theSQLTablesPackage = (SQLTablesPackage)EPackage.Registry.INSTANCE.getEPackage(SQLTablesPackage.eNS_URI);
 		SQLSchemaPackage theSQLSchemaPackage = (SQLSchemaPackage)EPackage.Registry.INSTANCE.getEPackage(SQLSchemaPackage.eNS_URI);
-		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Add subpackages
@@ -552,7 +552,10 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		catalogContainerEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		catalogGenerationStrategyEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		databaseContainerEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		qualifiedNameEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(catalogContainerEClass, CatalogContainer.class, "CatalogContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

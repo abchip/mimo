@@ -36,6 +36,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class DropStatementImpl extends DefinitionStatementImpl implements DropStatement {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The default value of the '{@link #getRange() <em>Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -83,7 +83,7 @@ public interface DatabaseDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEFINITION_STATEMENT_FEATURE_COUNT = 0;
+	int DEFINITION_STATEMENT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.definition.impl.CallStatementImpl <em>Call Statement</em>}' class.
@@ -397,7 +397,7 @@ public interface DatabaseDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATABASE_OBJECT_DEF__LABEL = 0;
+	int DATABASE_OBJECT_DEF__LABEL = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Database Object Def</em>' class.
@@ -406,7 +406,7 @@ public interface DatabaseDefinitionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATABASE_OBJECT_DEF_FEATURE_COUNT = 1;
+	int DATABASE_OBJECT_DEF_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.definition.DefinitionParser <em>Definition Parser</em>}' class.

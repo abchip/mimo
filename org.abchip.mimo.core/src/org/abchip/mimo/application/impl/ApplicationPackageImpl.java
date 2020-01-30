@@ -888,6 +888,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		applicationComponentEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		applicationModuleEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		serviceCommandProviderEClass.getESuperTypes().add(this.getServiceRef());
+		serviceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		serviceHookEClass.getESuperTypes().add(this.getServiceRef());
 		serviceExecutorEClass.getESuperTypes().add(this.getServiceRef());
 		serviceRefEClass.getESuperTypes().add(theEntityPackage.getEntity());

@@ -187,7 +187,7 @@ public interface SchemaPackage extends EPackage {
 	int SCHEMA_COLUMN__SORT = EntityPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * The feature id for the '<em><b>View</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -259,15 +259,15 @@ public interface SchemaPackage extends EPackage {
 	EAttribute getSchemaColumn_Id();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#getView <em>View</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.schema.SchemaColumn#getView <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @return the meta object for the containment reference '<em>View</em>'.
 	 * @see org.abchip.mimo.ui.schema.SchemaColumn#getView()
 	 * @see #getSchemaColumn()
 	 * @generated
 	 */
-	EAttribute getSchemaColumn_View();
+	EReference getSchemaColumn_View();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.schema.SchemaColumn#isLeftSplit <em>Left Split</em>}'.
@@ -424,12 +424,12 @@ public interface SchemaPackage extends EPackage {
 		EAttribute SCHEMA_COLUMN__ID = eINSTANCE.getSchemaColumn_Id();
 
 		/**
-		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>View</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SCHEMA_COLUMN__VIEW = eINSTANCE.getSchemaColumn_View();
+		EReference SCHEMA_COLUMN__VIEW = eINSTANCE.getSchemaColumn_View();
 
 		/**
 		 * The meta object literal for the '<em><b>Left Split</b></em>' attribute feature.

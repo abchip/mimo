@@ -13,11 +13,11 @@ import java.util.List;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ServiceConfig;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -34,7 +34,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ServiceConfigImpl extends MinimalEObjectImpl.Container implements ServiceConfig {
+public class ServiceConfigImpl extends EntityImpl implements ServiceConfig {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

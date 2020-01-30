@@ -15,9 +15,14 @@
       <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ActionType/Event"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="ui.ecore#//ViewType">
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/Table"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/Browse"/>
-      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/Dashboard"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/CheckBox"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/ComboBox"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/Counter"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/DatePicker"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/Form"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/Image"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/Note"/>
+      <genEnumLiterals ecoreEnumLiteral="ui.ecore#//ViewType/Text"/>
     </genEnums>
     <genClasses ecoreClass="ui.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//Action/command"/>
@@ -38,8 +43,54 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//UiUserSetup/name"/>
     </genClasses>
     <genClasses ecoreClass="ui.ecore#//View">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/frame"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/disabled"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//View/domain"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/icon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//View/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//View/pattern"/>
+      <genOperations ecoreOperation="ui.ecore#//View/getView"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ui.ecore#//ViewPattern">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewPattern/allow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewPattern/mask"/>
+    </genClasses>
+    <genClasses ecoreClass="ui.ecore#//ViewCheckBox">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewCheckBox/view"/>
+    </genClasses>
+    <genClasses ecoreClass="ui.ecore#//ViewComboBox">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewComboBox/view"/>
+    </genClasses>
+    <genClasses ecoreClass="ui.ecore#//ViewCounter">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewCounter/view"/>
+    </genClasses>
+    <genClasses ecoreClass="ui.ecore#//ViewDatePicker">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewDatePicker/view"/>
+    </genClasses>
+    <genClasses ecoreClass="ui.ecore#//ViewForm">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewForm/view"/>
+    </genClasses>
+    <genClasses ecoreClass="ui.ecore#//ViewImage">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewImage/view"/>
+    </genClasses>
+    <genClasses ecoreClass="ui.ecore#//ViewNote">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewNote/view"/>
+    </genClasses>
+    <genClasses ecoreClass="ui.ecore#//ViewNumber">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewNumber/view"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//ViewNumber/attributes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewNumber/placeholder"/>
+    </genClasses>
+    <genClasses ecoreClass="ui.ecore#//ViewNumberAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewNumberAttribute/maxlength"/>
+    </genClasses>
+    <genClasses ecoreClass="ui.ecore#//ViewText">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewText/view"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewText/placeholder"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//ViewText/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="ui.ecore#//ViewTextAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//ViewTextAttribute/maxlength"/>
     </genClasses>
     <nestedGenPackages prefix="Form" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="ui.ecore#//form">
@@ -49,17 +100,9 @@
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//form/FormField">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/contextMenu"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/disabled"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//form/FormField/domain"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/group"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/icon"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/label"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/length"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/name"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/precision"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/scale"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/topSplit"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/view"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/key"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference ui.ecore#//form/FormField/view"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Menu" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
@@ -110,7 +153,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/id"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/leftSplit"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/sort"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//schema/SchemaColumn/view"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference ui.ecore#//schema/SchemaColumn/view"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Toolbar" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"

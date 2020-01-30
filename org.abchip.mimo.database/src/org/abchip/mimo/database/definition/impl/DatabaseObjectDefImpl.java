@@ -15,10 +15,10 @@ package org.abchip.mimo.database.definition.impl;
 
 import org.abchip.mimo.database.definition.DatabaseDefinitionPackage;
 import org.abchip.mimo.database.definition.DatabaseObjectDef;
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -32,7 +32,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class DatabaseObjectDefImpl extends MinimalEObjectImpl.Container implements DatabaseObjectDef {
+public abstract class DatabaseObjectDefImpl extends EntityImpl implements DatabaseObjectDef {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->

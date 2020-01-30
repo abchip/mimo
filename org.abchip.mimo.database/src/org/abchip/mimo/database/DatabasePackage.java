@@ -81,7 +81,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER__NAME = 0;
+	int CATALOG_CONTAINER__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -90,7 +90,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER__ACTIVE = 1;
+	int CATALOG_CONTAINER__ACTIVE = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Connection Config</b></em>' containment reference.
@@ -99,7 +99,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER__CONNECTION_CONFIG = 2;
+	int CATALOG_CONTAINER__CONNECTION_CONFIG = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Supports Guest Access</b></em>' attribute.
@@ -108,7 +108,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER__SUPPORTS_GUEST_ACCESS = 3;
+	int CATALOG_CONTAINER__SUPPORTS_GUEST_ACCESS = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Generation Strategy</b></em>' containment reference.
@@ -117,7 +117,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER__GENERATION_STRATEGY = 4;
+	int CATALOG_CONTAINER__GENERATION_STRATEGY = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Search Strategy</b></em>' attribute.
@@ -126,7 +126,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER__SEARCH_STRATEGY = 5;
+	int CATALOG_CONTAINER__SEARCH_STRATEGY = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Catalog Container</em>' class.
@@ -135,7 +135,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_CONTAINER_FEATURE_COUNT = 6;
+	int CATALOG_CONTAINER_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.impl.CatalogGenerationStrategyImpl <em>Catalog Generation Strategy</em>}' class.
@@ -154,7 +154,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_GENERATION_STRATEGY__CREATE_INDEX_ON_VIEW = 0;
+	int CATALOG_GENERATION_STRATEGY__CREATE_INDEX_ON_VIEW = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Create Relative Record Number</b></em>' attribute.
@@ -163,7 +163,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_GENERATION_STRATEGY__CREATE_RELATIVE_RECORD_NUMBER = 1;
+	int CATALOG_GENERATION_STRATEGY__CREATE_RELATIVE_RECORD_NUMBER = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Catalog Generation Strategy</em>' class.
@@ -172,7 +172,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_GENERATION_STRATEGY_FEATURE_COUNT = 2;
+	int CATALOG_GENERATION_STRATEGY_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.impl.CatalogMetaDataImpl <em>Catalog Meta Data</em>}' class.
@@ -284,7 +284,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALIFIED_NAME__QUALIFIERS = 0;
+	int QUALIFIED_NAME__QUALIFIERS = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Qualified Name</em>' class.
@@ -293,7 +293,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALIFIED_NAME_FEATURE_COUNT = 1;
+	int QUALIFIED_NAME_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.TableProvider <em>Table Provider</em>}' class.

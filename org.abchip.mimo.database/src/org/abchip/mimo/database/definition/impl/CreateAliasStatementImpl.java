@@ -33,6 +33,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class CreateAliasStatementImpl extends DefinitionStatementImpl implements CreateAliasStatement {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The cached value of the '{@link #getAliasName() <em>Alias Name</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

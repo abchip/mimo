@@ -61,7 +61,17 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 			case UIPackage.ACTION: return (EObject)createAction();
 			case UIPackage.UI_FRAME_SETUP: return (EObject)createUiFrameSetup();
 			case UIPackage.UI_USER_SETUP: return (EObject)createUiUserSetup();
-			case UIPackage.VIEW: return (EObject)createView();
+			case UIPackage.VIEW_CHECK_BOX: return (EObject)createViewCheckBox();
+			case UIPackage.VIEW_COMBO_BOX: return (EObject)createViewComboBox();
+			case UIPackage.VIEW_COUNTER: return (EObject)createViewCounter();
+			case UIPackage.VIEW_DATE_PICKER: return (EObject)createViewDatePicker();
+			case UIPackage.VIEW_FORM: return (EObject)createViewForm();
+			case UIPackage.VIEW_IMAGE: return (EObject)createViewImage();
+			case UIPackage.VIEW_NOTE: return (EObject)createViewNote();
+			case UIPackage.VIEW_NUMBER: return (EObject)createViewNumber();
+			case UIPackage.VIEW_NUMBER_ATTRIBUTE: return (EObject)createViewNumberAttribute();
+			case UIPackage.VIEW_TEXT: return (EObject)createViewText();
+			case UIPackage.VIEW_TEXT_ATTRIBUTE: return (EObject)createViewTextAttribute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -140,9 +150,119 @@ public class UIFactoryImpl extends EFactoryImpl implements UIFactory {
 	 * @generated
 	 */
 	@Override
-	public View createView() {
-		ViewImpl view = new ViewImpl();
-		return view;
+	public ViewCheckBox createViewCheckBox() {
+		ViewCheckBoxImpl viewCheckBox = new ViewCheckBoxImpl();
+		return viewCheckBox;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ViewComboBox createViewComboBox() {
+		ViewComboBoxImpl viewComboBox = new ViewComboBoxImpl();
+		return viewComboBox;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ViewCounter createViewCounter() {
+		ViewCounterImpl viewCounter = new ViewCounterImpl();
+		return viewCounter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ViewDatePicker createViewDatePicker() {
+		ViewDatePickerImpl viewDatePicker = new ViewDatePickerImpl();
+		return viewDatePicker;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ViewForm createViewForm() {
+		ViewFormImpl viewForm = new ViewFormImpl();
+		return viewForm;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ViewImage createViewImage() {
+		ViewImageImpl viewImage = new ViewImageImpl();
+		return viewImage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ViewNote createViewNote() {
+		ViewNoteImpl viewNote = new ViewNoteImpl();
+		return viewNote;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ViewNumber createViewNumber() {
+		ViewNumberImpl viewNumber = new ViewNumberImpl();
+		return viewNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ViewNumberAttribute createViewNumberAttribute() {
+		ViewNumberAttributeImpl viewNumberAttribute = new ViewNumberAttributeImpl();
+		return viewNumberAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ViewText createViewText() {
+		ViewTextImpl viewText = new ViewTextImpl();
+		return viewText;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ViewTextAttribute createViewTextAttribute() {
+		ViewTextAttributeImpl viewTextAttribute = new ViewTextAttributeImpl();
+		return viewTextAttribute;
 	}
 
 	/**

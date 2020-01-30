@@ -33,6 +33,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ViewDefImpl extends TableDefImpl implements ViewDef {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The default value of the '{@link #getQuerySelect() <em>Query Select</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getQuerySelect()

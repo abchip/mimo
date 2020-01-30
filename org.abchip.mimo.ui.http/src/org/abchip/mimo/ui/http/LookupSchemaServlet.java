@@ -26,7 +26,9 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
+import org.abchip.mimo.ui.UIFactory;
 import org.abchip.mimo.ui.UiFrameSetup;
+import org.abchip.mimo.ui.View;
 import org.abchip.mimo.ui.schema.Schema;
 import org.abchip.mimo.ui.schema.SchemaColumn;
 import org.abchip.mimo.ui.schema.SchemaFactory;
@@ -61,8 +63,8 @@ public class LookupSchemaServlet extends BaseServlet {
 			SchemaColumn currentKey = null;
 			for (Slot slot : frame.getSlots()) {
 
-//				if (slot.isRoute())
-//					continue;
+				// if (slot.isRoute())
+				// continue;
 
 				SchemaColumn column = buildColumn(slot);
 
@@ -101,38 +103,51 @@ public class LookupSchemaServlet extends BaseServlet {
 	}
 
 	private SchemaColumn buildColumn(Slot slot) {
+
 		SchemaColumn column = SchemaFactory.eINSTANCE.createSchemaColumn();
 		column.setId(slot.getName());
 		column.setHeader(slot.getText());
 		column.setAdjust(true);
 		column.setLeftSplit(slot.isKey());
 		column.setGroup(slot.getGroup());
-		if (slot.getDomain() != null) {
+		if (slot.getDomain() != null)
 			column.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
+
+		// view
+		View view = null;
+		switch (slot.getDataType()) {
+		case STRING:
+			view = UIFactory.eINSTANCE.createViewText();
+			break;
+		case ENTITY:
+			column.setSort("string");
+			view = UIFactory.eINSTANCE.createViewText();
+			break;
+		case ENUM:
+			column.setSort("string");
+			view = UIFactory.eINSTANCE.createViewText();
+			break;
+		case BOOLEAN:
+			view = UIFactory.eINSTANCE.createViewCheckBox();
+			break;
+		case BINARY:
+			break;
+		case DATE_TIME:
+			column.setSort("raw");
+			view = UIFactory.eINSTANCE.createViewText();
+			break;
+		case IDENTITY:
+			column.setSort("int");
+			view = UIFactory.eINSTANCE.createViewText();
+			break;
+		case NUMERIC:
+			column.setSort("int");
+			view = UIFactory.eINSTANCE.createViewText();
+			break;
 		}
 
-		if (column.getView() == null) {
-			
-			switch (slot.getDataType()) {
-			case STRING:
-			case ENTITY:
-			case ENUM:
-				column.setSort("string");
-				break;
-			case BOOLEAN:
-				column.setView("checkbox");
-				break;
-			case BINARY:
-			case DATE_TIME:
-				column.setSort("raw");
-				break;
-			case IDENTITY:
-			case NUMERIC:
-				column.setSort("int");
-				break;
-			}
-		}
-
+		column.setView(view);
+		
 		return column;
 	}
 

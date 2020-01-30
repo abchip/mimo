@@ -8,6 +8,8 @@
  */
 package org.abchip.mimo.database.definition;
 
+import org.abchip.mimo.entity.Entity;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Object Def</b></em>'.
@@ -24,7 +26,7 @@ package org.abchip.mimo.database.definition;
  * @model abstract="true"
  * @generated
  */
-public interface DatabaseObjectDef {
+public interface DatabaseObjectDef extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->

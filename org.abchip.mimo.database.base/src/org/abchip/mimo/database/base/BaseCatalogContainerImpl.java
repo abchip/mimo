@@ -38,6 +38,10 @@ import org.eclipse.datatools.modelbase.sql.tables.ViewTable;
 
 public class BaseCatalogContainerImpl extends CatalogContainerImpl {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Context catalogContext;
 	private CatalogMetaData catalogMetaData;
 

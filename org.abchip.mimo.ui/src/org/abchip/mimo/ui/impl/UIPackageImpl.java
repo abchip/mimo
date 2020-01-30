@@ -16,6 +16,18 @@ import org.abchip.mimo.ui.UIPackage;
 import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.UiUserSetup;
 import org.abchip.mimo.ui.View;
+import org.abchip.mimo.ui.ViewCheckBox;
+import org.abchip.mimo.ui.ViewComboBox;
+import org.abchip.mimo.ui.ViewCounter;
+import org.abchip.mimo.ui.ViewDatePicker;
+import org.abchip.mimo.ui.ViewForm;
+import org.abchip.mimo.ui.ViewImage;
+import org.abchip.mimo.ui.ViewNote;
+import org.abchip.mimo.ui.ViewNumber;
+import org.abchip.mimo.ui.ViewNumberAttribute;
+import org.abchip.mimo.ui.ViewPattern;
+import org.abchip.mimo.ui.ViewText;
+import org.abchip.mimo.ui.ViewTextAttribute;
 import org.abchip.mimo.ui.ViewType;
 import org.abchip.mimo.ui.form.FormPackage;
 import org.abchip.mimo.ui.form.impl.FormPackageImpl;
@@ -37,6 +49,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -80,6 +93,90 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	private EClass viewEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewPatternEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewCheckBoxEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewComboBoxEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewCounterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewDatePickerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewFormEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewImageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewNoteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewNumberEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewNumberAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewTextEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewTextAttributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -337,7 +434,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getView_Frame() {
+	public EAttribute getView_Disabled() {
 		return (EAttribute)viewEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -347,8 +444,338 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getView_Type() {
-		return (EAttribute)viewEClass.getEStructuralFeatures().get(1);
+	public EReference getView_Domain() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getView_Icon() {
+		return (EAttribute)viewEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getView_Label() {
+		return (EAttribute)viewEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getView_Name() {
+		return (EAttribute)viewEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getView_Pattern() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getViewPattern() {
+		return viewPatternEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewPattern_Allow() {
+		return (EAttribute)viewPatternEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewPattern_Mask() {
+		return (EAttribute)viewPatternEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getViewCheckBox() {
+		return viewCheckBoxEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewCheckBox_View() {
+		return (EAttribute)viewCheckBoxEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getViewComboBox() {
+		return viewComboBoxEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewComboBox_View() {
+		return (EAttribute)viewComboBoxEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getViewCounter() {
+		return viewCounterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewCounter_View() {
+		return (EAttribute)viewCounterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getViewDatePicker() {
+		return viewDatePickerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewDatePicker_View() {
+		return (EAttribute)viewDatePickerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getViewForm() {
+		return viewFormEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewForm_View() {
+		return (EAttribute)viewFormEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getViewImage() {
+		return viewImageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewImage_View() {
+		return (EAttribute)viewImageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getViewNote() {
+		return viewNoteEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewNote_View() {
+		return (EAttribute)viewNoteEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getViewNumber() {
+		return viewNumberEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewNumber_View() {
+		return (EAttribute)viewNumberEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewNumber_Placeholder() {
+		return (EAttribute)viewNumberEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getViewNumber_Attributes() {
+		return (EReference)viewNumberEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getViewNumberAttribute() {
+		return viewNumberAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewNumberAttribute_Maxlength() {
+		return (EAttribute)viewNumberAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getViewText() {
+		return viewTextEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewText_View() {
+		return (EAttribute)viewTextEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewText_Placeholder() {
+		return (EAttribute)viewTextEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getViewText_Attributes() {
+		return (EReference)viewTextEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getViewTextAttribute() {
+		return viewTextAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getViewTextAttribute_Maxlength() {
+		return (EAttribute)viewTextAttributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -419,8 +846,53 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		createEAttribute(uiUserSetupEClass, UI_USER_SETUP__NAME);
 
 		viewEClass = createEClass(VIEW);
-		createEAttribute(viewEClass, VIEW__FRAME);
-		createEAttribute(viewEClass, VIEW__TYPE);
+		createEAttribute(viewEClass, VIEW__DISABLED);
+		createEReference(viewEClass, VIEW__DOMAIN);
+		createEAttribute(viewEClass, VIEW__ICON);
+		createEAttribute(viewEClass, VIEW__LABEL);
+		createEAttribute(viewEClass, VIEW__NAME);
+		createEReference(viewEClass, VIEW__PATTERN);
+
+		viewPatternEClass = createEClass(VIEW_PATTERN);
+		createEAttribute(viewPatternEClass, VIEW_PATTERN__ALLOW);
+		createEAttribute(viewPatternEClass, VIEW_PATTERN__MASK);
+
+		viewCheckBoxEClass = createEClass(VIEW_CHECK_BOX);
+		createEAttribute(viewCheckBoxEClass, VIEW_CHECK_BOX__VIEW);
+
+		viewComboBoxEClass = createEClass(VIEW_COMBO_BOX);
+		createEAttribute(viewComboBoxEClass, VIEW_COMBO_BOX__VIEW);
+
+		viewCounterEClass = createEClass(VIEW_COUNTER);
+		createEAttribute(viewCounterEClass, VIEW_COUNTER__VIEW);
+
+		viewDatePickerEClass = createEClass(VIEW_DATE_PICKER);
+		createEAttribute(viewDatePickerEClass, VIEW_DATE_PICKER__VIEW);
+
+		viewFormEClass = createEClass(VIEW_FORM);
+		createEAttribute(viewFormEClass, VIEW_FORM__VIEW);
+
+		viewImageEClass = createEClass(VIEW_IMAGE);
+		createEAttribute(viewImageEClass, VIEW_IMAGE__VIEW);
+
+		viewNoteEClass = createEClass(VIEW_NOTE);
+		createEAttribute(viewNoteEClass, VIEW_NOTE__VIEW);
+
+		viewNumberEClass = createEClass(VIEW_NUMBER);
+		createEAttribute(viewNumberEClass, VIEW_NUMBER__VIEW);
+		createEReference(viewNumberEClass, VIEW_NUMBER__ATTRIBUTES);
+		createEAttribute(viewNumberEClass, VIEW_NUMBER__PLACEHOLDER);
+
+		viewNumberAttributeEClass = createEClass(VIEW_NUMBER_ATTRIBUTE);
+		createEAttribute(viewNumberAttributeEClass, VIEW_NUMBER_ATTRIBUTE__MAXLENGTH);
+
+		viewTextEClass = createEClass(VIEW_TEXT);
+		createEAttribute(viewTextEClass, VIEW_TEXT__VIEW);
+		createEAttribute(viewTextEClass, VIEW_TEXT__PLACEHOLDER);
+		createEReference(viewTextEClass, VIEW_TEXT__ATTRIBUTES);
+
+		viewTextAttributeEClass = createEClass(VIEW_TEXT_ATTRIBUTE);
+		createEAttribute(viewTextAttributeEClass, VIEW_TEXT_ATTRIBUTE__MAXLENGTH);
 
 		// Create enums
 		actionTypeEEnum = createEEnum(ACTION_TYPE);
@@ -475,6 +947,18 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		uiFrameSetupEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		uiUserSetupEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		viewEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		viewPatternEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		viewCheckBoxEClass.getESuperTypes().add(this.getView());
+		viewComboBoxEClass.getESuperTypes().add(this.getView());
+		viewCounterEClass.getESuperTypes().add(this.getView());
+		viewDatePickerEClass.getESuperTypes().add(this.getView());
+		viewFormEClass.getESuperTypes().add(this.getView());
+		viewImageEClass.getESuperTypes().add(this.getView());
+		viewNoteEClass.getESuperTypes().add(this.getView());
+		viewNumberEClass.getESuperTypes().add(this.getView());
+		viewNumberAttributeEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		viewTextEClass.getESuperTypes().add(this.getView());
+		viewTextAttributeEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -495,9 +979,56 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		initEClass(uiUserSetupEClass, UiUserSetup.class, "UiUserSetup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUiUserSetup_Name(), ecorePackage.getEString(), "name", null, 1, 1, UiUserSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getView_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getView_Type(), this.getViewType(), "type", null, 1, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(viewEClass, View.class, "View", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getView_Disabled(), ecorePackage.getEBoolean(), "disabled", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_Domain(), theEntityPackage.getDomain(), null, "domain", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getView_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getView_Label(), ecorePackage.getEString(), "label", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getView_Name(), ecorePackage.getEString(), "name", null, 1, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_Pattern(), this.getViewPattern(), null, "pattern", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(viewEClass, this.getViewType(), "getView", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(viewPatternEClass, ViewPattern.class, "ViewPattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewPattern_Allow(), ecorePackage.getEString(), "allow", null, 0, 1, ViewPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewPattern_Mask(), ecorePackage.getEString(), "mask", null, 0, 1, ViewPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewCheckBoxEClass, ViewCheckBox.class, "ViewCheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewCheckBox_View(), this.getViewType(), "view", "checkbox", 1, 1, ViewCheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewComboBoxEClass, ViewComboBox.class, "ViewComboBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewComboBox_View(), this.getViewType(), "view", "mm-combo", 1, 1, ViewComboBox.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewCounterEClass, ViewCounter.class, "ViewCounter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewCounter_View(), this.getViewType(), "view", "counter", 1, 1, ViewCounter.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewDatePickerEClass, ViewDatePicker.class, "ViewDatePicker", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewDatePicker_View(), this.getViewType(), "view", "datepicker", 1, 1, ViewDatePicker.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewFormEClass, ViewForm.class, "ViewForm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewForm_View(), this.getViewType(), "view", "form", 1, 1, ViewForm.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewImageEClass, ViewImage.class, "ViewImage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewImage_View(), this.getViewType(), "view", "mm-image", 1, 1, ViewImage.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewNoteEClass, ViewNote.class, "ViewNote", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewNote_View(), this.getViewType(), "view", "note", 1, 1, ViewNote.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewNumberEClass, ViewNumber.class, "ViewNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewNumber_View(), this.getViewType(), "view", "text", 1, 1, ViewNumber.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getViewNumber_Attributes(), this.getViewNumberAttribute(), null, "attributes", null, 0, 1, ViewNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewNumber_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, ViewNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewNumberAttributeEClass, ViewNumberAttribute.class, "ViewNumberAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewNumberAttribute_Maxlength(), ecorePackage.getEInt(), "maxlength", null, 0, 1, ViewNumberAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewTextEClass, ViewText.class, "ViewText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewText_View(), this.getViewType(), "view", "text", 1, 1, ViewText.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewText_Placeholder(), ecorePackage.getEString(), "placeholder", "Insert text here", 0, 1, ViewText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getViewText_Attributes(), this.getViewTextAttribute(), null, "attributes", null, 0, 1, ViewText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewTextAttributeEClass, ViewTextAttribute.class, "ViewTextAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewTextAttribute_Maxlength(), ecorePackage.getEInt(), "maxlength", null, 0, 1, ViewTextAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(actionTypeEEnum, ActionType.class, "ActionType");
@@ -506,9 +1037,14 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		addEEnumLiteral(actionTypeEEnum, ActionType.EVENT);
 
 		initEEnum(viewTypeEEnum, ViewType.class, "ViewType");
-		addEEnumLiteral(viewTypeEEnum, ViewType.TABLE);
-		addEEnumLiteral(viewTypeEEnum, ViewType.BROWSE);
-		addEEnumLiteral(viewTypeEEnum, ViewType.DASHBOARD);
+		addEEnumLiteral(viewTypeEEnum, ViewType.CHECK_BOX);
+		addEEnumLiteral(viewTypeEEnum, ViewType.COMBO_BOX);
+		addEEnumLiteral(viewTypeEEnum, ViewType.COUNTER);
+		addEEnumLiteral(viewTypeEEnum, ViewType.DATE_PICKER);
+		addEEnumLiteral(viewTypeEEnum, ViewType.FORM);
+		addEEnumLiteral(viewTypeEEnum, ViewType.IMAGE);
+		addEEnumLiteral(viewTypeEEnum, ViewType.NOTE);
+		addEEnumLiteral(viewTypeEEnum, ViewType.TEXT);
 
 		// Create resource
 		createResource(eNS_URI);

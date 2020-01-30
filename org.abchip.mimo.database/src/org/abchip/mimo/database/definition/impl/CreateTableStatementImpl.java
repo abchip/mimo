@@ -40,6 +40,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class CreateTableStatementImpl extends DefinitionStatementImpl implements CreateTableStatement {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The cached value of the '{@link #getTableName() <em>Table Name</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

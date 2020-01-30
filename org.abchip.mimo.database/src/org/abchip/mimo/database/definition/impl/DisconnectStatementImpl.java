@@ -29,6 +29,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class DisconnectStatementImpl extends DefinitionStatementImpl implements DisconnectStatement {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

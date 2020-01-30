@@ -16,13 +16,13 @@ package org.abchip.mimo.database.connection.impl;
 import org.abchip.mimo.database.connection.ConnectionConfig;
 import org.abchip.mimo.database.connection.ConnectionCredentials;
 import org.abchip.mimo.database.connection.DatabaseConnectionPackage;
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -41,7 +41,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class ConnectionConfigImpl extends MinimalEObjectImpl.Container implements ConnectionConfig {
+public class ConnectionConfigImpl extends EntityImpl implements ConnectionConfig {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The cached value of the '{@link #getCredentials() <em>Credentials</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

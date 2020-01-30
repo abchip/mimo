@@ -32,7 +32,7 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 		this.enum_ = true;
 
 		eSet(EntityPackage.FRAME__NAME, this.eEnum.getName());
-		
+
 		this.setFrameText();
 	}
 
@@ -61,7 +61,7 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public Object getValue(Entity entity, String slotName, boolean resolve) {
+	public Object getValue(Entity entity, String slotName, boolean default_, boolean resolve) {
 		throw new UnsupportedOperationException();
 	}
 

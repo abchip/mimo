@@ -3,6 +3,7 @@
  */
 package org.abchip.mimo.ui;
 
+import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 
 /**
@@ -14,68 +15,181 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.View#getFrame <em>Frame</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.View#getType <em>Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.View#isDisabled <em>Disabled</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.View#getDomain <em>Domain</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.View#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.View#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.View#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.View#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.UIPackage#getView()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface View extends Entity {
 	/**
-	 * Returns the value of the '<em><b>Frame</b></em>' attribute.
+	 * Returns the value of the '<em><b>Disabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Frame</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Disabled</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Frame</em>' attribute.
-	 * @see #setFrame(String)
-	 * @see org.abchip.mimo.ui.UIPackage#getView_Frame()
-	 * @model required="true"
+	 * @return the value of the '<em>Disabled</em>' attribute.
+	 * @see #setDisabled(boolean)
+	 * @see org.abchip.mimo.ui.UIPackage#getView_Disabled()
+	 * @model
 	 * @generated
 	 */
-	String getFrame();
+	boolean isDisabled();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.View#getFrame <em>Frame</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.View#isDisabled <em>Disabled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Frame</em>' attribute.
-	 * @see #getFrame()
+	 * @param value the new value of the '<em>Disabled</em>' attribute.
+	 * @see #isDisabled()
 	 * @generated
 	 */
-	void setFrame(String value);
+	void setDisabled(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.abchip.mimo.ui.ViewType}.
+	 * Returns the value of the '<em><b>Domain</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Domain</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see org.abchip.mimo.ui.ViewType
-	 * @see #setType(ViewType)
-	 * @see org.abchip.mimo.ui.UIPackage#getView_Type()
+	 * @return the value of the '<em>Domain</em>' containment reference.
+	 * @see #setDomain(Domain)
+	 * @see org.abchip.mimo.ui.UIPackage#getView_Domain()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	Domain getDomain();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.View#getDomain <em>Domain</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Domain</em>' containment reference.
+	 * @see #getDomain()
+	 * @generated
+	 */
+	void setDomain(Domain value);
+
+	/**
+	 * Returns the value of the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Icon</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Icon</em>' attribute.
+	 * @see #setIcon(String)
+	 * @see org.abchip.mimo.ui.UIPackage#getView_Icon()
+	 * @model
+	 * @generated
+	 */
+	String getIcon();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.View#getIcon <em>Icon</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Icon</em>' attribute.
+	 * @see #getIcon()
+	 * @generated
+	 */
+	void setIcon(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Label</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Label</em>' attribute.
+	 * @see #setLabel(String)
+	 * @see org.abchip.mimo.ui.UIPackage#getView_Label()
+	 * @model
+	 * @generated
+	 */
+	String getLabel();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.View#getLabel <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label</em>' attribute.
+	 * @see #getLabel()
+	 * @generated
+	 */
+	void setLabel(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see org.abchip.mimo.ui.UIPackage#getView_Name()
 	 * @model required="true"
 	 * @generated
 	 */
-	ViewType getType();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.View#getType <em>Type</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.View#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see org.abchip.mimo.ui.ViewType
-	 * @see #getType()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setType(ViewType value);
+	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Pattern</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pattern</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pattern</em>' containment reference.
+	 * @see #setPattern(ViewPattern)
+	 * @see org.abchip.mimo.ui.UIPackage#getView_Pattern()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	ViewPattern getPattern();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.View#getPattern <em>Pattern</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pattern</em>' containment reference.
+	 * @see #getPattern()
+	 * @generated
+	 */
+	void setPattern(ViewPattern value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	ViewType getView();
 
 } // View

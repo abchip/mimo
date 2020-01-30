@@ -34,6 +34,7 @@ import org.abchip.mimo.database.impl.DatabasePackageImpl;
 import org.abchip.mimo.database.query.DatabaseQueryPackage;
 
 import org.abchip.mimo.database.query.impl.DatabaseQueryPackageImpl;
+import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.datatools.modelbase.sql.accesscontrol.SQLAccessControlPackage;
 
@@ -472,6 +473,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		DatabasePackage theDatabasePackage = (DatabasePackage)EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
+		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
@@ -480,6 +482,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 
 		// Add supertypes to classes
 		connectionEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
+		connectionConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		connectionCredentialsEClass.getESuperTypes().add(theContextPackage.getAuthenticationUserPassword());
 		preparedStatementEClass.getESuperTypes().add(this.getStatement());
 		statementEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());

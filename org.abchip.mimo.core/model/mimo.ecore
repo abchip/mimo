@@ -67,7 +67,7 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           changeable="false" defaultValueLiteral="org.eclipse.osgi.framework.console.CommandProvider"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceConfig">
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="entities" lowerBound="1"
           upperBound="-1" eType="#//entity/Entity" containment="true"/>
     </eClassifiers>
@@ -858,6 +858,7 @@
       <eOperations name="getValue" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
         <eParameters name="entity" lowerBound="1" eType="#//entity/Entity"/>
         <eParameters name="slotName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="default" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eParameters name="resolve" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="setValue">

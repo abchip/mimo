@@ -22,6 +22,7 @@ import org.abchip.mimo.database.CatalogMetaData;
 import org.abchip.mimo.database.DatabasePackage;
 import org.abchip.mimo.database.SearchStrategy;
 import org.abchip.mimo.database.connection.ConnectionConfig;
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.datatools.modelbase.sql.constraints.Index;
 import org.eclipse.datatools.modelbase.sql.schema.Schema;
 import org.eclipse.datatools.modelbase.sql.tables.Table;
@@ -32,7 +33,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -51,7 +51,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class CatalogContainerImpl extends MinimalEObjectImpl.Container implements CatalogContainer {
+public class CatalogContainerImpl extends EntityImpl implements CatalogContainer {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

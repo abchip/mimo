@@ -1424,6 +1424,7 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		// Obtain other dependent packages
 		DatabasePackage theDatabasePackage = (DatabasePackage)EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		DatabaseQueryPackage theDatabaseQueryPackage = (DatabaseQueryPackage)EPackage.Registry.INSTANCE.getEPackage(DatabaseQueryPackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
@@ -1432,7 +1433,6 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		SQLSchemaPackage theSQLSchemaPackage = (SQLSchemaPackage)EPackage.Registry.INSTANCE.getEPackage(SQLSchemaPackage.eNS_URI);
 		SQLConstraintsPackage theSQLConstraintsPackage = (SQLConstraintsPackage)EPackage.Registry.INSTANCE.getEPackage(SQLConstraintsPackage.eNS_URI);
 		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
-		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1446,11 +1446,13 @@ public class DatabaseDefinitionPackageImpl extends EPackageImpl implements Datab
 		createIndexStatementEClass.getESuperTypes().add(this.getDefinitionStatement());
 		createTableStatementEClass.getESuperTypes().add(this.getDefinitionStatement());
 		createViewStatementEClass.getESuperTypes().add(this.getDefinitionStatement());
+		databaseObjectDefEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		definitionParserEClass.getESuperTypes().add(theDatabaseQueryPackage.getStatementParser());
 		EGenericType g1 = createEGenericType(theContextPackage.getRegistry());
 		EGenericType g2 = createEGenericType(this.getDefinitionParser());
 		g1.getETypeArguments().add(g2);
 		definitionParserRegistryEClass.getEGenericSuperTypes().add(g1);
+		definitionStatementEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		definitionWriterEClass.getESuperTypes().add(theDatabaseQueryPackage.getStatementWriter());
 		g1 = createEGenericType(theContextPackage.getRegistry());
 		g2 = createEGenericType(this.getDefinitionWriter());

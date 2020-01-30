@@ -15,10 +15,10 @@ package org.abchip.mimo.database.impl;
 
 import org.abchip.mimo.database.CatalogGenerationStrategy;
 import org.abchip.mimo.database.DatabasePackage;
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -33,7 +33,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class CatalogGenerationStrategyImpl extends MinimalEObjectImpl.Container implements CatalogGenerationStrategy {
+public class CatalogGenerationStrategyImpl extends EntityImpl implements CatalogGenerationStrategy {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The default value of the '{@link #isCreateIndexOnView() <em>Create Index On View</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--

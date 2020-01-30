@@ -12,9 +12,9 @@ import java.util.List;
 
 import org.abchip.mimo.database.DatabasePackage;
 import org.abchip.mimo.database.QualifiedName;
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
@@ -29,7 +29,11 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *
  * @generated
  */
-public class QualifiedNameImpl extends MinimalEObjectImpl.Container implements QualifiedName {
+public class QualifiedNameImpl extends EntityImpl implements QualifiedName {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * The cached value of the '{@link #getQualifiers() <em>Qualifiers</em>}' attribute list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

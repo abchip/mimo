@@ -574,6 +574,7 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getValue">
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/entity"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/slotName"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/default"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/resolve"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/setValue">

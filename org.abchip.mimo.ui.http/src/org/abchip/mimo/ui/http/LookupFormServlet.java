@@ -28,7 +28,13 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
+import org.abchip.mimo.ui.UIFactory;
 import org.abchip.mimo.ui.UiFrameSetup;
+import org.abchip.mimo.ui.View;
+import org.abchip.mimo.ui.ViewNumber;
+import org.abchip.mimo.ui.ViewNumberAttribute;
+import org.abchip.mimo.ui.ViewText;
+import org.abchip.mimo.ui.ViewTextAttribute;
 import org.abchip.mimo.ui.form.Form;
 import org.abchip.mimo.ui.form.FormFactory;
 import org.abchip.mimo.ui.form.FormField;
@@ -97,7 +103,7 @@ public class LookupFormServlet extends BaseServlet {
 			}
 		}
 
-		ResourceSerializer<Form> entitySerializer = resourceManager.createResourceSerializer(context, Form.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Form> entitySerializer = resourceManager.createResourceSerializer(context, Form.class, SerializationType.JAVA_SCRIPT_MIMO_NOTATION);
 		if (form != null) {
 			completeForm(context, form);
 			entitySerializer.add(form);
@@ -106,8 +112,70 @@ public class LookupFormServlet extends BaseServlet {
 	}
 
 	private FormField buildFormField(Slot slot) {
+
 		FormField field = FormFactory.eINSTANCE.createFormField();
-		field.setName(slot.getName());
+		field.setGroup(slot.getGroup());
+		field.setKey(slot.isKey());
+
+		// view
+		View view = null;
+
+		if (slot.isContainment())
+			view = UIFactory.eINSTANCE.createViewForm();
+		else if (slot.getDomain() != null)
+			view = UIFactory.eINSTANCE.createViewComboBox();
+		else if (slot.getText().toLowerCase().contains("level"))
+			view = UIFactory.eINSTANCE.createViewCounter();
+		else if (slot.getText().toLowerCase().contains("image"))
+			view = UIFactory.eINSTANCE.createViewImage();
+
+		else {
+			switch (slot.getDataType()) {
+			case BINARY:
+				break;
+			case BOOLEAN:
+				view = UIFactory.eINSTANCE.createViewCheckBox();
+				break;
+			case DATE_TIME:
+				view = UIFactory.eINSTANCE.createViewDatePicker();
+				break;
+			case ENTITY:
+				view = UIFactory.eINSTANCE.createViewComboBox();
+				break;
+			case ENUM:
+				view = UIFactory.eINSTANCE.createViewComboBox();
+				break;
+			case IDENTITY:
+				break;
+			case NUMERIC:
+				view = UIFactory.eINSTANCE.createViewNumber();
+				NumericDef numericDef = (NumericDef) slot.getDataDef();
+				// numericDef.setPrecision(50);
+				if (numericDef.getPrecision() > 0) {
+					ViewNumberAttribute attributes = UIFactory.eINSTANCE.createViewNumberAttribute();
+					attributes.setMaxlength(numericDef.getPrecision());
+					((ViewNumber) view).setAttributes(attributes);
+				}
+
+				// field.setPrecision(numericDef.getPrecision());
+				// field.setScale(numericDef.getScale());
+				view.setPattern(null);
+				break;
+			case STRING:
+				view = UIFactory.eINSTANCE.createViewText();
+				StringDef stringDef = (StringDef) slot.getDataDef();
+				// stringDef.setLength(50);
+				if (stringDef.getLength() > 0) {
+					ViewTextAttribute attributes = UIFactory.eINSTANCE.createViewTextAttribute();
+					attributes.setMaxlength(stringDef.getLength());
+					((ViewText) view).setAttributes(attributes);
+				}
+				break;
+			}
+		}
+
+		view.setName(slot.getName());
+		view.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
 
 		StringBuffer label = new StringBuffer();
 		for (char c : slot.getName().toCharArray()) {
@@ -115,58 +183,9 @@ public class LookupFormServlet extends BaseServlet {
 				label.append(" ");
 			label.append(c);
 		}
-		field.setLabel(Strings.qINSTANCE.firstToUpper(label.toString()));
+		view.setLabel(Strings.qINSTANCE.firstToUpper(label.toString()));
 
-		field.setGroup(slot.getGroup());
-
-		field.setTopSplit(slot.isKey());
-
-		if (slot.getDomain() != null) {
-			field.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
-		}
-
-		// view
-		if (field.getView() == null) {
-			if (slot.isContainment())
-				field.setView("form");
-			else if (slot.getText().toLowerCase().contains("level"))
-				field.setView("counter");
-			else if (slot.getText().toLowerCase().contains("image"))
-				field.setView("photo");
-		}
-
-		if (field.getView() == null) {
-
-			switch (slot.getDataType()) {
-			case BINARY:
-				break;
-			case BOOLEAN:
-				field.setView("checkbox");
-				break;
-			case DATE_TIME:
-				field.setView("datepicker");
-				break;
-			case ENTITY:
-				field.setView("combo");
-				break;
-			case ENUM:
-				field.setView("combo");
-				break;
-			case IDENTITY:
-				break;
-			case NUMERIC:
-				field.setView("text");
-				NumericDef numericDef = (NumericDef) slot.getDataDef();
-				field.setPrecision(numericDef.getPrecision());
-				field.setScale(numericDef.getScale());
-				break;
-			case STRING:
-				field.setView("text");
-				StringDef stringDef = (StringDef) slot.getDataDef();
-				field.setLength(stringDef.getLength());
-				break;
-			}
-		}
+		field.setView(view);
 
 		return field;
 	}
@@ -178,7 +197,7 @@ public class LookupFormServlet extends BaseServlet {
 
 	private void completeFormField(Context context, FormField formField) {
 
-		Domain domain = formField.getDomain();
+		Domain domain = formField.getView().getDomain();
 
 		if (domain == null)
 			return;
@@ -197,8 +216,8 @@ public class LookupFormServlet extends BaseServlet {
 			if (frameSetup == null)
 				continue;
 
-			if (formField.getIcon() == null)
-				formField.setIcon(frameSetup.getIcon());
+			if (formField.getView().getIcon() == null)
+				formField.getView().setIcon(frameSetup.getIcon());
 
 			if (!formField.isContextMenu())
 				formField.setContextMenu(frameSetup.isContextMenu());

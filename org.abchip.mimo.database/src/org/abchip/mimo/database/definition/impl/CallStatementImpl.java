@@ -38,6 +38,11 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  */
 public class CallStatementImpl extends DefinitionStatementImpl implements CallStatement {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The cached value of the '{@link #getProcedureName() <em>Procedure Name</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

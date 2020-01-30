@@ -6,6 +6,7 @@ package org.abchip.mimo.ui.schema.impl;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.impl.EntityImpl;
 
+import org.abchip.mimo.ui.View;
 import org.abchip.mimo.ui.schema.SchemaColumn;
 import org.abchip.mimo.ui.schema.SchemaPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -215,24 +216,14 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	protected String sort = SORT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getView() <em>View</em>}' attribute.
+	 * The cached value of the '{@link #getView() <em>View</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getView()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VIEW_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getView()
-	 * @generated
-	 * @ordered
-	 */
-	protected String view = VIEW_EDEFAULT;
+	protected View view;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -282,7 +273,21 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 * @generated
 	 */
 	@Override
-	public String getView() {
+	public View getView() {
+		if (view != null && ((EObject)view).eIsProxy()) {
+			InternalEObject oldView = (InternalEObject)view;
+			view = (View)eResolveProxy(oldView);
+			if (view != oldView) {
+				InternalEObject newView = (InternalEObject)view;
+				NotificationChain msgs = oldView.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__VIEW, null, null);
+				if (newView.eInternalContainer() == null) {
+					msgs = newView.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__VIEW, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchemaPackage.SCHEMA_COLUMN__VIEW, oldView, view));
+			}
+		}
 		return view;
 	}
 
@@ -291,12 +296,43 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setView(String newView) {
-		String oldView = view;
+	public View basicGetView() {
+		return view;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetView(View newView, NotificationChain msgs) {
+		View oldView = view;
 		view = newView;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__VIEW, oldView, view));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__VIEW, oldView, newView);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setView(View newView) {
+		if (newView != view) {
+			NotificationChain msgs = null;
+			if (view != null)
+				msgs = ((InternalEObject)view).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__VIEW, null, msgs);
+			if (newView != null)
+				msgs = ((InternalEObject)newView).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SchemaPackage.SCHEMA_COLUMN__VIEW, null, msgs);
+			msgs = basicSetView(newView, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchemaPackage.SCHEMA_COLUMN__VIEW, newView, newView));
 	}
 
 	/**
@@ -492,6 +528,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		switch (featureID) {
 			case SchemaPackage.SCHEMA_COLUMN__DOMAIN:
 				return basicSetDomain(null, msgs);
+			case SchemaPackage.SCHEMA_COLUMN__VIEW:
+				return basicSetView(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -570,7 +608,8 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__SORT:
 				return getSort();
 			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				return getView();
+				if (resolve) return getView();
+				return basicGetView();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -611,7 +650,7 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				setSort((String)newValue);
 				return;
 			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				setView((String)newValue);
+				setView((View)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -653,7 +692,7 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 				setSort(SORT_EDEFAULT);
 				return;
 			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				setView(VIEW_EDEFAULT);
+				setView((View)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -686,7 +725,7 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 			case SchemaPackage.SCHEMA_COLUMN__SORT:
 				return SORT_EDEFAULT == null ? sort != null : !SORT_EDEFAULT.equals(sort);
 			case SchemaPackage.SCHEMA_COLUMN__VIEW:
-				return VIEW_EDEFAULT == null ? view != null : !VIEW_EDEFAULT.equals(view);
+				return view != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -717,8 +756,6 @@ public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
 		result.append(leftSplit);
 		result.append(", sort: ");
 		result.append(sort);
-		result.append(", view: ");
-		result.append(view);
 		result.append(')');
 		return result.toString();
 	}

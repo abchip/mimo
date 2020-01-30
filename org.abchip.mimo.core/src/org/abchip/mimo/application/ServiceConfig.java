@@ -28,7 +28,7 @@ import org.abchip.mimo.entity.Entity;
  * @model
  * @generated
  */
-public interface ServiceConfig {
+public interface ServiceConfig extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Entities</b></em>' containment reference list.
 	 * The list contents are of type {@link org.abchip.mimo.entity.Entity}.

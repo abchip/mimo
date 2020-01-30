@@ -163,12 +163,12 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public Object getValue(Entity entity, String slotName, boolean resolve) {
+	public Object getValue(Entity entity, String slotName, boolean default_, boolean resolve) {
 
 		if (entity instanceof EObject)
-			return getValue((EObject) entity, slotName, resolve);
+			return getValue((EObject) entity, slotName, default_, resolve);
 		else
-			return getValue((Object) entity, slotName, resolve);
+			return getValue((Object) entity, slotName, default_, resolve);
 	}
 
 	@Override
@@ -177,20 +177,23 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			setValue((EObject) entity, slot, value);
 	}
 
-	private Object getValue(EObject eObject, String slotName, boolean resolve) {
+	private Object getValue(EObject eObject, String slotName, boolean default_, boolean resolve) {
 		Object value = null;
 
 		EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(slotName);
 		if (eStructuralFeature != null)
 			value = eObject.eGet(eStructuralFeature, resolve);
 		else {
-			value = getValue((Object) eObject, slotName, resolve);
+			value = getValue((Object) eObject, slotName, default_, resolve);
 		}
 
+		if(value == null && default_)
+			value = eStructuralFeature.getDefaultValue();
+		
 		return value;
 	}
 
-	private Object getValue(Object object, String slotName, boolean resolve) {
+	private Object getValue(Object object, String slotName, boolean default_, boolean resolve) {
 		Object value = null;
 
 		try {

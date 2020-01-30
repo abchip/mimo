@@ -9,6 +9,7 @@
 package org.abchip.mimo.database;
 
 import java.util.List;
+import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +27,7 @@ import java.util.List;
  * @model
  * @generated
  */
-public interface QualifiedName {
+public interface QualifiedName extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Qualifiers</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.

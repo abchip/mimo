@@ -8,6 +8,8 @@
  */
 package org.abchip.mimo.database;
 
+import org.abchip.mimo.entity.Entity;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Catalog Generation Strategy</b></em>'.
@@ -25,7 +27,7 @@ package org.abchip.mimo.database;
  * @model
  * @generated
  */
-public interface CatalogGenerationStrategy {
+public interface CatalogGenerationStrategy extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Create Index On View</b></em>' attribute.
 	 * The default value is <code>"false"</code>.

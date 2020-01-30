@@ -50,13 +50,103 @@ public interface UIFactory extends EFactory {
 	UiUserSetup createUiUserSetup();
 
 	/**
-	 * Returns a new object of class '<em>View</em>'.
+	 * Returns a new object of class '<em>View Check Box</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View</em>'.
+	 * @return a new object of class '<em>View Check Box</em>'.
 	 * @generated
 	 */
-	View createView();
+	ViewCheckBox createViewCheckBox();
+
+	/**
+	 * Returns a new object of class '<em>View Combo Box</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View Combo Box</em>'.
+	 * @generated
+	 */
+	ViewComboBox createViewComboBox();
+
+	/**
+	 * Returns a new object of class '<em>View Counter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View Counter</em>'.
+	 * @generated
+	 */
+	ViewCounter createViewCounter();
+
+	/**
+	 * Returns a new object of class '<em>View Date Picker</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View Date Picker</em>'.
+	 * @generated
+	 */
+	ViewDatePicker createViewDatePicker();
+
+	/**
+	 * Returns a new object of class '<em>View Form</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View Form</em>'.
+	 * @generated
+	 */
+	ViewForm createViewForm();
+
+	/**
+	 * Returns a new object of class '<em>View Image</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View Image</em>'.
+	 * @generated
+	 */
+	ViewImage createViewImage();
+
+	/**
+	 * Returns a new object of class '<em>View Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View Note</em>'.
+	 * @generated
+	 */
+	ViewNote createViewNote();
+
+	/**
+	 * Returns a new object of class '<em>View Number</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View Number</em>'.
+	 * @generated
+	 */
+	ViewNumber createViewNumber();
+
+	/**
+	 * Returns a new object of class '<em>View Number Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View Number Attribute</em>'.
+	 * @generated
+	 */
+	ViewNumberAttribute createViewNumberAttribute();
+
+	/**
+	 * Returns a new object of class '<em>View Text</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View Text</em>'.
+	 * @generated
+	 */
+	ViewText createViewText();
+
+	/**
+	 * Returns a new object of class '<em>View Text Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View Text Attribute</em>'.
+	 * @generated
+	 */
+	ViewTextAttribute createViewTextAttribute();
 
 	/**
 	 * Returns the package supported by this factory.
