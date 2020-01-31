@@ -26,7 +26,7 @@ public enum WidgetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CHECK_BOX(0, "CheckBox", "checkbox"), /**
+	CHECK_BOX(0, "CheckBox", "mm-checkbox"), /**
 	 * The '<em><b>Combo Box</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -42,7 +42,7 @@ public enum WidgetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COUNTER(0, "Counter", "counter"), /**
+	COUNTER(0, "Counter", "mm-counter"), /**
 	 * The '<em><b>Date Picker</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -50,7 +50,7 @@ public enum WidgetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DATE_PICKER(0, "DatePicker", "datepicker"), /**
+	DATE_PICKER(0, "DatePicker", "mm-datepicker"), /**
 	 * The '<em><b>Form</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,7 +58,7 @@ public enum WidgetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FORM(0, "Form", "form"), /**
+	FORM(0, "Form", "mm-form"), /**
 	 * The '<em><b>Image</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,15 +74,7 @@ public enum WidgetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NOTE(0, "Note", "note"), /**
-	 * The '<em><b>Text</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #TEXT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	TEXT(0, "Text", "mm-text"), /**
+	NOTE(0, "Note", "mm-note"), /**
 	 * The '<em><b>Number</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -90,7 +82,23 @@ public enum WidgetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NUMBER(0, "Number", "mm-number");
+	NUMBER(0, "Number", "mm-number"), /**
+	 * The '<em><b>Switch</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SWITCH_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SWITCH(0, "Switch", "mm-switch"), /**
+	 * The '<em><b>Text</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #TEXT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	TEXT(0, "Text", "mm-text");
 
 	/**
 	 * The '<em><b>Check Box</b></em>' literal value.
@@ -101,7 +109,7 @@ public enum WidgetType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CHECK_BOX
-	 * @model name="CheckBox" literal="checkbox"
+	 * @model name="CheckBox" literal="mm-checkbox"
 	 * @generated
 	 * @ordered
 	 */
@@ -131,7 +139,7 @@ public enum WidgetType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #COUNTER
-	 * @model name="Counter" literal="counter"
+	 * @model name="Counter" literal="mm-counter"
 	 * @generated
 	 * @ordered
 	 */
@@ -146,7 +154,7 @@ public enum WidgetType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DATE_PICKER
-	 * @model name="DatePicker" literal="datepicker"
+	 * @model name="DatePicker" literal="mm-datepicker"
 	 * @generated
 	 * @ordered
 	 */
@@ -161,7 +169,7 @@ public enum WidgetType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FORM
-	 * @model name="Form" literal="form"
+	 * @model name="Form" literal="mm-form"
 	 * @generated
 	 * @ordered
 	 */
@@ -191,26 +199,11 @@ public enum WidgetType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #NOTE
-	 * @model name="Note" literal="note"
+	 * @model name="Note" literal="mm-note"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int NOTE_VALUE = 0;
-
-	/**
-	 * The '<em><b>Text</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Text</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #TEXT
-	 * @model name="Text" literal="mm-text"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int TEXT_VALUE = 0;
 
 	/**
 	 * The '<em><b>Number</b></em>' literal value.
@@ -228,6 +221,36 @@ public enum WidgetType implements Enumerator {
 	public static final int NUMBER_VALUE = 0;
 
 	/**
+	 * The '<em><b>Switch</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Switch</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #SWITCH
+	 * @model name="Switch" literal="mm-switch"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SWITCH_VALUE = 0;
+
+	/**
+	 * The '<em><b>Text</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Text</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #TEXT
+	 * @model name="Text" literal="mm-text"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int TEXT_VALUE = 0;
+
+	/**
 	 * An array of all the '<em><b>Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -242,8 +265,9 @@ public enum WidgetType implements Enumerator {
 			FORM,
 			IMAGE,
 			NOTE,
-			TEXT,
 			NUMBER,
+			SWITCH,
+			TEXT,
 		};
 
 	/**

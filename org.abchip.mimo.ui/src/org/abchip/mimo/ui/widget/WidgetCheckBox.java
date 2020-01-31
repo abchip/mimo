@@ -23,7 +23,7 @@ public interface WidgetCheckBox extends Widget {
 
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
-	 * The default value is <code>"checkbox"</code>.
+	 * The default value is <code>"mm-checkbox"</code>.
 	 * The literals are from the enumeration {@link org.abchip.mimo.ui.widget.WidgetType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -34,7 +34,7 @@ public interface WidgetCheckBox extends Widget {
 	 * @return the value of the '<em>View</em>' attribute.
 	 * @see org.abchip.mimo.ui.widget.WidgetType
 	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetCheckBox_View()
-	 * @model default="checkbox" required="true" changeable="false"
+	 * @model default="mm-checkbox" required="true" changeable="false"
 	 * @generated
 	 */
 	WidgetType getView();

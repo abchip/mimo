@@ -104,6 +104,15 @@ public interface WidgetFactory extends EFactory {
 	WidgetNumberAttribute createWidgetNumberAttribute();
 
 	/**
+	 * Returns a new object of class '<em>Switch</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Switch</em>'.
+	 * @generated
+	 */
+	WidgetSwitch createWidgetSwitch();
+
+	/**
 	 * Returns a new object of class '<em>Text</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

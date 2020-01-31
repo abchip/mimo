@@ -44,6 +44,7 @@ import org.abchip.mimo.ui.widget.WidgetNumber;
 import org.abchip.mimo.ui.widget.WidgetNumberAttribute;
 import org.abchip.mimo.ui.widget.WidgetPackage;
 import org.abchip.mimo.ui.widget.WidgetPattern;
+import org.abchip.mimo.ui.widget.WidgetSwitch;
 import org.abchip.mimo.ui.widget.WidgetText;
 import org.abchip.mimo.ui.widget.WidgetTextAttribute;
 import org.abchip.mimo.ui.widget.WidgetType;
@@ -139,6 +140,13 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	private EClass widgetNumberAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass widgetSwitchEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -557,6 +565,26 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getWidgetSwitch() {
+		return widgetSwitchEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetSwitch_View() {
+		return (EAttribute)widgetSwitchEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getWidgetText() {
 		return widgetTextEClass;
 	}
@@ -691,6 +719,9 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		widgetNumberAttributeEClass = createEClass(WIDGET_NUMBER_ATTRIBUTE);
 		createEAttribute(widgetNumberAttributeEClass, WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH);
 
+		widgetSwitchEClass = createEClass(WIDGET_SWITCH);
+		createEAttribute(widgetSwitchEClass, WIDGET_SWITCH__VIEW);
+
 		widgetTextEClass = createEClass(WIDGET_TEXT);
 		createEAttribute(widgetTextEClass, WIDGET_TEXT__VIEW);
 		createEAttribute(widgetTextEClass, WIDGET_TEXT__PLACEHOLDER);
@@ -745,6 +776,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		widgetNoteEClass.getESuperTypes().add(this.getWidget());
 		widgetNumberEClass.getESuperTypes().add(this.getWidget());
 		widgetNumberAttributeEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		widgetSwitchEClass.getESuperTypes().add(this.getWidget());
 		widgetTextEClass.getESuperTypes().add(this.getWidget());
 		widgetTextAttributeEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
@@ -764,25 +796,25 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		initEAttribute(getWidgetPattern_Mask(), ecorePackage.getEString(), "mask", null, 0, 1, WidgetPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetCheckBoxEClass, WidgetCheckBox.class, "WidgetCheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWidgetCheckBox_View(), this.getWidgetType(), "view", "checkbox", 1, 1, WidgetCheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidgetCheckBox_View(), this.getWidgetType(), "view", "mm-checkbox", 1, 1, WidgetCheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetComboBoxEClass, WidgetComboBox.class, "WidgetComboBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetComboBox_View(), this.getWidgetType(), "view", "mm-combo", 1, 1, WidgetComboBox.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetCounterEClass, WidgetCounter.class, "WidgetCounter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWidgetCounter_View(), this.getWidgetType(), "view", "counter", 1, 1, WidgetCounter.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidgetCounter_View(), this.getWidgetType(), "view", "mm-counter", 1, 1, WidgetCounter.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetDatePickerEClass, WidgetDatePicker.class, "WidgetDatePicker", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWidgetDatePicker_View(), this.getWidgetType(), "view", "datepicker", 1, 1, WidgetDatePicker.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidgetDatePicker_View(), this.getWidgetType(), "view", "mm-datepicker", 1, 1, WidgetDatePicker.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetFormEClass, WidgetForm.class, "WidgetForm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWidgetForm_View(), this.getWidgetType(), "view", "form", 1, 1, WidgetForm.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidgetForm_View(), this.getWidgetType(), "view", "mm-form", 1, 1, WidgetForm.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetImageEClass, WidgetImage.class, "WidgetImage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetImage_View(), this.getWidgetType(), "view", "mm-image", 1, 1, WidgetImage.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetNoteEClass, WidgetNote.class, "WidgetNote", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWidgetNote_View(), this.getWidgetType(), "view", "note", 1, 1, WidgetNote.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidgetNote_View(), this.getWidgetType(), "view", "mm-note", 1, 1, WidgetNote.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetNumberEClass, WidgetNumber.class, "WidgetNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetNumber_View(), this.getWidgetType(), "view", "mm-number", 1, 1, WidgetNumber.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -791,6 +823,9 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		initEClass(widgetNumberAttributeEClass, WidgetNumberAttribute.class, "WidgetNumberAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetNumberAttribute_Maxlength(), ecorePackage.getEInt(), "maxlength", null, 0, 1, WidgetNumberAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(widgetSwitchEClass, WidgetSwitch.class, "WidgetSwitch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetSwitch_View(), this.getWidgetType(), "view", "mm-switch", 1, 1, WidgetSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetTextEClass, WidgetText.class, "WidgetText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetText_View(), this.getWidgetType(), "view", "mm-text", 1, 1, WidgetText.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -809,8 +844,9 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.FORM);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.IMAGE);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.NOTE);
-		addEEnumLiteral(widgetTypeEEnum, WidgetType.TEXT);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.NUMBER);
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.SWITCH);
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.TEXT);
 	}
 
 } //WidgetPackageImpl

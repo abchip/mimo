@@ -22,7 +22,7 @@ package org.abchip.mimo.ui.widget;
 public interface WidgetNote extends Widget {
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
-	 * The default value is <code>"note"</code>.
+	 * The default value is <code>"mm-note"</code>.
 	 * The literals are from the enumeration {@link org.abchip.mimo.ui.widget.WidgetType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -33,7 +33,7 @@ public interface WidgetNote extends Widget {
 	 * @return the value of the '<em>View</em>' attribute.
 	 * @see org.abchip.mimo.ui.widget.WidgetType
 	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetNote_View()
-	 * @model default="note" required="true" changeable="false"
+	 * @model default="mm-note" required="true" changeable="false"
 	 * @generated
 	 */
 	WidgetType getView();

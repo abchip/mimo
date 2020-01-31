@@ -67,6 +67,7 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 			case WidgetPackage.WIDGET_NOTE: return (EObject)createWidgetNote();
 			case WidgetPackage.WIDGET_NUMBER: return (EObject)createWidgetNumber();
 			case WidgetPackage.WIDGET_NUMBER_ATTRIBUTE: return (EObject)createWidgetNumberAttribute();
+			case WidgetPackage.WIDGET_SWITCH: return (EObject)createWidgetSwitch();
 			case WidgetPackage.WIDGET_TEXT: return (EObject)createWidgetText();
 			case WidgetPackage.WIDGET_TEXT_ATTRIBUTE: return (EObject)createWidgetTextAttribute();
 			default:
@@ -201,6 +202,17 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 	public WidgetNumberAttribute createWidgetNumberAttribute() {
 		WidgetNumberAttributeImpl widgetNumberAttribute = new WidgetNumberAttributeImpl();
 		return widgetNumberAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WidgetSwitch createWidgetSwitch() {
+		WidgetSwitchImpl widgetSwitch = new WidgetSwitchImpl();
+		return widgetSwitch;
 	}
 
 	/**

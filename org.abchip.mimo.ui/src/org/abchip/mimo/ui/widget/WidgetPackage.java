@@ -872,6 +872,88 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_NUMBER_ATTRIBUTE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetSwitchImpl <em>Switch</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetSwitchImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetSwitch()
+	 * @generated
+	 */
+	int WIDGET_SWITCH = 11;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH__DOMAIN = WIDGET__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH__PATTERN = WIDGET__PATTERN;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Switch</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextImpl <em>Text</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -879,7 +961,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetText()
 	 * @generated
 	 */
-	int WIDGET_TEXT = 11;
+	int WIDGET_TEXT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -979,7 +1061,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTextAttribute()
 	 * @generated
 	 */
-	int WIDGET_TEXT_ATTRIBUTE = 12;
+	int WIDGET_TEXT_ATTRIBUTE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Maxlength</b></em>' attribute.
@@ -1007,7 +1089,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetType()
 	 * @generated
 	 */
-	int WIDGET_TYPE = 13;
+	int WIDGET_TYPE = 14;
 
 
 	/**
@@ -1328,6 +1410,27 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWidgetNumberAttribute_Maxlength();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetSwitch <em>Switch</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Switch</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetSwitch
+	 * @generated
+	 */
+	EClass getWidgetSwitch();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetSwitch#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetSwitch#getView()
+	 * @see #getWidgetSwitch()
+	 * @generated
+	 */
+	EAttribute getWidgetSwitch_View();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetText <em>Text</em>}'.
@@ -1686,6 +1789,24 @@ public interface WidgetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH = eINSTANCE.getWidgetNumberAttribute_Maxlength();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetSwitchImpl <em>Switch</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetSwitchImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetSwitch()
+		 * @generated
+		 */
+		EClass WIDGET_SWITCH = eINSTANCE.getWidgetSwitch();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_SWITCH__VIEW = eINSTANCE.getWidgetSwitch_View();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextImpl <em>Text</em>}' class.
