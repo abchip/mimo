@@ -24,54 +24,52 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Gender implements Enumerator {
 	/**
-	 * The '<em><b>M</b></em>' literal object.
+	 * The '<em><b>Common Male</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #M_VALUE
+	 * @see #COMMON_MALE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	M(10, "M", "CommonMale"),
-
-	/**
-	 * The '<em><b>F</b></em>' literal object.
+	COMMON_MALE(0, "CommonMale", "M"), /**
+	 * The '<em><b>Common Female</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #F_VALUE
+	 * @see #COMMON_FEMALE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	F(20, "F", "CommonFemale");
+	COMMON_FEMALE(0, "CommonFemale", "F");
 
 	/**
-	 * The '<em><b>M</b></em>' literal value.
+	 * The '<em><b>Common Male</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>M</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Common Male</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #M
-	 * @model literal="CommonMale"
+	 * @see #COMMON_MALE
+	 * @model name="CommonMale" literal="M"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int M_VALUE = 10;
+	public static final int COMMON_MALE_VALUE = 0;
 
 	/**
-	 * The '<em><b>F</b></em>' literal value.
+	 * The '<em><b>Common Female</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>F</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Common Female</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #F
-	 * @model literal="CommonFemale"
+	 * @see #COMMON_FEMALE
+	 * @model name="CommonFemale" literal="F"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int F_VALUE = 20;
+	public static final int COMMON_FEMALE_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>Gender</b></em>' enumerators.
@@ -81,8 +79,8 @@ public enum Gender implements Enumerator {
 	 */
 	private static final Gender[] VALUES_ARRAY =
 		new Gender[] {
-			M,
-			F,
+			COMMON_MALE,
+			COMMON_FEMALE,
 		};
 
 	/**
@@ -139,8 +137,7 @@ public enum Gender implements Enumerator {
 	 */
 	public static Gender get(int value) {
 		switch (value) {
-			case M_VALUE: return M;
-			case F_VALUE: return F;
+			case COMMON_MALE_VALUE: return COMMON_MALE;
 		}
 		return null;
 	}

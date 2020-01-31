@@ -24,104 +24,98 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ProcessMode implements Enumerator {
 	/**
-	 * The '<em><b>Y</b></em>' literal object.
+	 * The '<em><b>Approve</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #Y_VALUE
+	 * @see #APPROVE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	Y(10, "Y", "Approve"),
-
-	/**
-	 * The '<em><b>N</b></em>' literal object.
+	APPROVE(0, "Approve", "Y"), /**
+	 * The '<em><b>Decline</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #N_VALUE
+	 * @see #DECLINE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	N(20, "N", "Decline"),
-
-	/**
-	 * The '<em><b>R</b></em>' literal object.
+	DECLINE(0, "Decline", "N"), /**
+	 * The '<em><b>Random</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #R_VALUE
+	 * @see #RANDOM_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	R(30, "R", "Random"),
-
-	/**
-	 * The '<em><b>P</b></em>' literal object.
+	RANDOM(0, "Random", "R"), /**
+	 * The '<em><b>Production</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #P_VALUE
+	 * @see #PRODUCTION_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	P(40, "P", "Production");
+	PRODUCTION(0, "Production", "P");
 
 	/**
-	 * The '<em><b>Y</b></em>' literal value.
+	 * The '<em><b>Approve</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Y</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Approve</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #Y
-	 * @model literal="Approve"
+	 * @see #APPROVE
+	 * @model name="Approve" literal="Y"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int Y_VALUE = 10;
+	public static final int APPROVE_VALUE = 0;
 
 	/**
-	 * The '<em><b>N</b></em>' literal value.
+	 * The '<em><b>Decline</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>N</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Decline</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #N
-	 * @model literal="Decline"
+	 * @see #DECLINE
+	 * @model name="Decline" literal="N"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int N_VALUE = 20;
+	public static final int DECLINE_VALUE = 0;
 
 	/**
-	 * The '<em><b>R</b></em>' literal value.
+	 * The '<em><b>Random</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>R</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Random</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #R
-	 * @model literal="Random"
+	 * @see #RANDOM
+	 * @model name="Random" literal="R"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int R_VALUE = 30;
+	public static final int RANDOM_VALUE = 0;
 
 	/**
-	 * The '<em><b>P</b></em>' literal value.
+	 * The '<em><b>Production</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>P</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Production</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #P
-	 * @model literal="Production"
+	 * @see #PRODUCTION
+	 * @model name="Production" literal="P"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int P_VALUE = 40;
+	public static final int PRODUCTION_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>Process Mode</b></em>' enumerators.
@@ -131,10 +125,10 @@ public enum ProcessMode implements Enumerator {
 	 */
 	private static final ProcessMode[] VALUES_ARRAY =
 		new ProcessMode[] {
-			Y,
-			N,
-			R,
-			P,
+			APPROVE,
+			DECLINE,
+			RANDOM,
+			PRODUCTION,
 		};
 
 	/**
@@ -191,10 +185,7 @@ public enum ProcessMode implements Enumerator {
 	 */
 	public static ProcessMode get(int value) {
 		switch (value) {
-			case Y_VALUE: return Y;
-			case N_VALUE: return N;
-			case R_VALUE: return R;
-			case P_VALUE: return P;
+			case APPROVE_VALUE: return APPROVE;
 		}
 		return null;
 	}

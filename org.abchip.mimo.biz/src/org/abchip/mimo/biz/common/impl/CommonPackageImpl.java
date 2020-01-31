@@ -949,8 +949,8 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(genderEEnum, Gender.class, "Gender");
-		addEEnumLiteral(genderEEnum, Gender.M);
-		addEEnumLiteral(genderEEnum, Gender.F);
+		addEEnumLiteral(genderEEnum, Gender.COMMON_MALE);
+		addEEnumLiteral(genderEEnum, Gender.COMMON_FEMALE);
 	}
 
 } //CommonPackageImpl

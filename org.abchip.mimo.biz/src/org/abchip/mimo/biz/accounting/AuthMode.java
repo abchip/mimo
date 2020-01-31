@@ -24,54 +24,52 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum AuthMode implements Enumerator {
 	/**
-	 * The '<em><b>A</b></em>' literal object.
+	 * The '<em><b>Full Authorize</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #A_VALUE
+	 * @see #FULL_AUTHORIZE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	A(10, "A", "Full-authorize"),
-
-	/**
-	 * The '<em><b>E</b></em>' literal object.
+	FULL_AUTHORIZE(0, "FullAuthorize", "A"), /**
+	 * The '<em><b>Pre Auth</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #E_VALUE
+	 * @see #PRE_AUTH_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	E(20, "E", "Pre-Auth");
+	PRE_AUTH(0, "PreAuth", "E");
 
 	/**
-	 * The '<em><b>A</b></em>' literal value.
+	 * The '<em><b>Full Authorize</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>A</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Full Authorize</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #A
-	 * @model literal="Full-authorize"
+	 * @see #FULL_AUTHORIZE
+	 * @model name="FullAuthorize" literal="A"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int A_VALUE = 10;
+	public static final int FULL_AUTHORIZE_VALUE = 0;
 
 	/**
-	 * The '<em><b>E</b></em>' literal value.
+	 * The '<em><b>Pre Auth</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>E</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Pre Auth</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #E
-	 * @model literal="Pre-Auth"
+	 * @see #PRE_AUTH
+	 * @model name="PreAuth" literal="E"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int E_VALUE = 20;
+	public static final int PRE_AUTH_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>Auth Mode</b></em>' enumerators.
@@ -81,8 +79,8 @@ public enum AuthMode implements Enumerator {
 	 */
 	private static final AuthMode[] VALUES_ARRAY =
 		new AuthMode[] {
-			A,
-			E,
+			FULL_AUTHORIZE,
+			PRE_AUTH,
 		};
 
 	/**
@@ -139,8 +137,7 @@ public enum AuthMode implements Enumerator {
 	 */
 	public static AuthMode get(int value) {
 		switch (value) {
-			case A_VALUE: return A;
-			case E_VALUE: return E;
+			case FULL_AUTHORIZE_VALUE: return FULL_AUTHORIZE;
 		}
 		return null;
 	}

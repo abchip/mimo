@@ -24,54 +24,52 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum DebitCreditFlag implements Enumerator {
 	/**
-	 * The '<em><b>C</b></em>' literal object.
+	 * The '<em><b>Credit</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #C_VALUE
+	 * @see #CREDIT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	C(10, "C", "Credit"),
-
-	/**
-	 * The '<em><b>D</b></em>' literal object.
+	CREDIT(0, "Credit", "C"), /**
+	 * The '<em><b>Debit</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #D_VALUE
+	 * @see #DEBIT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	D(20, "D", "Debit");
+	DEBIT(0, "Debit", "D");
 
 	/**
-	 * The '<em><b>C</b></em>' literal value.
+	 * The '<em><b>Credit</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>C</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Credit</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #C
-	 * @model literal="Credit"
+	 * @see #CREDIT
+	 * @model name="Credit" literal="C"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int C_VALUE = 10;
+	public static final int CREDIT_VALUE = 0;
 
 	/**
-	 * The '<em><b>D</b></em>' literal value.
+	 * The '<em><b>Debit</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>D</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Debit</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #D
-	 * @model literal="Debit"
+	 * @see #DEBIT
+	 * @model name="Debit" literal="D"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int D_VALUE = 20;
+	public static final int DEBIT_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>Debit Credit Flag</b></em>' enumerators.
@@ -81,8 +79,8 @@ public enum DebitCreditFlag implements Enumerator {
 	 */
 	private static final DebitCreditFlag[] VALUES_ARRAY =
 		new DebitCreditFlag[] {
-			C,
-			D,
+			CREDIT,
+			DEBIT,
 		};
 
 	/**
@@ -139,8 +137,7 @@ public enum DebitCreditFlag implements Enumerator {
 	 */
 	public static DebitCreditFlag get(int value) {
 		switch (value) {
-			case C_VALUE: return C;
-			case D_VALUE: return D;
+			case CREDIT_VALUE: return CREDIT;
 		}
 		return null;
 	}

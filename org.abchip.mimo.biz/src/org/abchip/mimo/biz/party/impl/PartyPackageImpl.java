@@ -927,11 +927,11 @@ public class PartyPackageImpl extends EPackageImpl implements PartyPackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(maritalStatusEEnum, MaritalStatus.class, "MaritalStatus");
-		addEEnumLiteral(maritalStatusEEnum, MaritalStatus.S);
-		addEEnumLiteral(maritalStatusEEnum, MaritalStatus.M);
-		addEEnumLiteral(maritalStatusEEnum, MaritalStatus.P);
-		addEEnumLiteral(maritalStatusEEnum, MaritalStatus.D);
-		addEEnumLiteral(maritalStatusEEnum, MaritalStatus.W);
+		addEEnumLiteral(maritalStatusEEnum, MaritalStatus.SINGLE);
+		addEEnumLiteral(maritalStatusEEnum, MaritalStatus.MARRIED);
+		addEEnumLiteral(maritalStatusEEnum, MaritalStatus.SEPARATED);
+		addEEnumLiteral(maritalStatusEEnum, MaritalStatus.DIVORCED);
+		addEEnumLiteral(maritalStatusEEnum, MaritalStatus.WIDOWED);
 	}
 
 } //PartyPackageImpl

@@ -17,10 +17,10 @@ import org.abchip.mimo.data.DataDef;
 import org.abchip.mimo.data.DataFactory;
 import org.abchip.mimo.data.DatetimeDef;
 import org.abchip.mimo.data.DatetimeType;
+import org.abchip.mimo.data.EntityDef;
 import org.abchip.mimo.data.EnumDef;
 import org.abchip.mimo.data.NumericDef;
 import org.abchip.mimo.data.NumericType;
-import org.abchip.mimo.data.EntityDef;
 import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
@@ -77,9 +77,8 @@ public class EMFSlotAdapter extends SlotImpl {
 					eSet(EntityPackage.SLOT__GROUP, eAnnotation.getDetails().get(key));
 			}
 		}
-		if (this.getDataClassName() != null) {
-			setSlotDataDef();
-		}
+
+		this.setSlotDataDef();
 
 		/*
 		 * EAnnotation eAnnotationFormat =
@@ -101,43 +100,46 @@ public class EMFSlotAdapter extends SlotImpl {
 		Class<?> klass = element.getEType().getInstanceClass();
 
 		DataDef<?> dataDef = null;
-		if (klass == byte[].class || klass == Object.class) { 
+		if (klass.isPrimitive()) {
+			if (klass.getName().equals("long") || klass.getName().equals("int") || klass.getName().equals("short") || klass.getName().equals("float") || klass.getName().equals("double")) {
+				NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
+				numericDef.setType(NumericType.getByName(MimoUtils.firstToUpper(klass.getName())));
+				dataDef = numericDef;
+			}
+			else if (klass.getName().equals("boolean")) {
+				BooleanDef booleanDef = DataFactory.eINSTANCE.createBooleanDef();
+				dataDef = booleanDef;
+			}
+			else
+				"".toString();
+		} else if (Number.class.isAssignableFrom(klass)) {
+			NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
+			numericDef.setType(NumericType.BIG_DECIMAL);
+			dataDef = numericDef;
+		} else if (klass == byte[].class || klass == Object.class) {
 			BinaryDef binaryDef = DataFactory.eINSTANCE.createBinaryDef();
 			dataDef = binaryDef;
-		}
-		else if (this.getDataClassName().equals(Boolean.class.getSimpleName().toLowerCase())) {
+		} else if (Entity.class.isAssignableFrom(klass)) {
+			EntityDef entityDef = DataFactory.eINSTANCE.createEntityDef();
+			dataDef = entityDef;
+		} else if (Boolean.class.isAssignableFrom(klass)) {
 			BooleanDef booleanDef = DataFactory.eINSTANCE.createBooleanDef();
 			dataDef = booleanDef;
-		} else if (this.getDataClassName().equals(Date.class.getCanonicalName())) {
+		} else if (Date.class.isAssignableFrom(klass)) {
 			DatetimeDef datetimeDef = DataFactory.eINSTANCE.createDatetimeDef();
 			datetimeDef.setType(DatetimeType.TIME_STAMP);
 			dataDef = datetimeDef;
 		} else if (element.getEType() instanceof EEnum) {
 			EnumDef<?> enumDef = DataFactory.eINSTANCE.createEnumDef();
 			dataDef = enumDef;
-		} else if (this.getDataClassName().equals(String.class.getCanonicalName()) || 
-				   this.getDataClassName().equals(char.class.getCanonicalName()) ||
-				   this.getDataClassName().equals(URI.class.getCanonicalName()) ||
-				   EntityIdentifiable.class.isAssignableFrom(this.getETypedElement().getEType().getInstanceClass())) {
+		} else if (this.getDataClassName().equals(String.class.getCanonicalName()) || this.getDataClassName().equals(char.class.getCanonicalName())
+				|| this.getDataClassName().equals(URI.class.getCanonicalName()) || EntityIdentifiable.class.isAssignableFrom(this.getETypedElement().getEType().getInstanceClass())) {
 			StringDef stringDef = DataFactory.eINSTANCE.createStringDef();
 			dataDef = stringDef;
-		} else if (Entity.class.isAssignableFrom(klass)) {
-			EntityDef entityDef = DataFactory.eINSTANCE.createEntityDef();
-			dataDef = entityDef;
 		} else {
-			if (klass.isPrimitive()) {
-				if (klass.getName().equals("long") || klass.getName().equals("int") || klass.getName().equals("short") || klass.getName().equals("float")
-						|| klass.getName().equals("double")) {
-					NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
-					numericDef.setType(NumericType.getByName(MimoUtils.firstToUpper(klass.getName())));
-					dataDef = numericDef;
-				}
-			} else if (Number.class.isAssignableFrom(klass)) {
-				NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
-				numericDef.setType(NumericType.BIG_DECIMAL);
-				dataDef = numericDef;
-			}
+			"".toString();
 		}
+
 		if (dataDef != null)
 			this.setDataDef(dataDef);
 		else

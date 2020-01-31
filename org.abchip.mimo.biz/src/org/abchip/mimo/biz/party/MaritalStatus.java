@@ -24,129 +24,121 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum MaritalStatus implements Enumerator {
 	/**
-	 * The '<em><b>S</b></em>' literal object.
+	 * The '<em><b>Single</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #S_VALUE
+	 * @see #SINGLE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	S(10, "S", "Single"),
-
-	/**
-	 * The '<em><b>M</b></em>' literal object.
+	SINGLE(0, "Single", "S"), /**
+	 * The '<em><b>Married</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #M_VALUE
+	 * @see #MARRIED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	M(20, "M", "Married"),
-
-	/**
-	 * The '<em><b>P</b></em>' literal object.
+	MARRIED(0, "Married", "M"), /**
+	 * The '<em><b>Separated</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #P_VALUE
+	 * @see #SEPARATED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	P(30, "P", "Separated"),
-
-	/**
-	 * The '<em><b>D</b></em>' literal object.
+	SEPARATED(0, "Separated", "P"), /**
+	 * The '<em><b>Divorced</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #D_VALUE
+	 * @see #DIVORCED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	D(40, "D", "Divorced"),
-
-	/**
-	 * The '<em><b>W</b></em>' literal object.
+	DIVORCED(0, "Divorced", "D"), /**
+	 * The '<em><b>Widowed</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #W_VALUE
+	 * @see #WIDOWED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	W(50, "W", "Widowed");
+	WIDOWED(0, "Widowed", "W");
 
 	/**
-	 * The '<em><b>S</b></em>' literal value.
+	 * The '<em><b>Single</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>S</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Single</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #S
-	 * @model literal="Single"
+	 * @see #SINGLE
+	 * @model name="Single" literal="S"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int S_VALUE = 10;
+	public static final int SINGLE_VALUE = 0;
 
 	/**
-	 * The '<em><b>M</b></em>' literal value.
+	 * The '<em><b>Married</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>M</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Married</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #M
-	 * @model literal="Married"
+	 * @see #MARRIED
+	 * @model name="Married" literal="M"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int M_VALUE = 20;
+	public static final int MARRIED_VALUE = 0;
 
 	/**
-	 * The '<em><b>P</b></em>' literal value.
+	 * The '<em><b>Separated</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>P</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Separated</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #P
-	 * @model literal="Separated"
+	 * @see #SEPARATED
+	 * @model name="Separated" literal="P"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int P_VALUE = 30;
+	public static final int SEPARATED_VALUE = 0;
 
 	/**
-	 * The '<em><b>D</b></em>' literal value.
+	 * The '<em><b>Divorced</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>D</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Divorced</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #D
-	 * @model literal="Divorced"
+	 * @see #DIVORCED
+	 * @model name="Divorced" literal="D"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int D_VALUE = 40;
+	public static final int DIVORCED_VALUE = 0;
 
 	/**
-	 * The '<em><b>W</b></em>' literal value.
+	 * The '<em><b>Widowed</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>W</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Widowed</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #W
-	 * @model literal="Widowed"
+	 * @see #WIDOWED
+	 * @model name="Widowed" literal="W"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int W_VALUE = 50;
+	public static final int WIDOWED_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>Marital Status</b></em>' enumerators.
@@ -156,11 +148,11 @@ public enum MaritalStatus implements Enumerator {
 	 */
 	private static final MaritalStatus[] VALUES_ARRAY =
 		new MaritalStatus[] {
-			S,
-			M,
-			P,
-			D,
-			W,
+			SINGLE,
+			MARRIED,
+			SEPARATED,
+			DIVORCED,
+			WIDOWED,
 		};
 
 	/**
@@ -217,11 +209,7 @@ public enum MaritalStatus implements Enumerator {
 	 */
 	public static MaritalStatus get(int value) {
 		switch (value) {
-			case S_VALUE: return S;
-			case M_VALUE: return M;
-			case P_VALUE: return P;
-			case D_VALUE: return D;
-			case W_VALUE: return W;
+			case SINGLE_VALUE: return SINGLE;
 		}
 		return null;
 	}

@@ -971,18 +971,18 @@ public class AccountingPackageImpl extends EPackageImpl implements AccountingPac
 
 		// Initialize enums and add enum literals
 		initEEnum(debitCreditFlagEEnum, DebitCreditFlag.class, "DebitCreditFlag");
-		addEEnumLiteral(debitCreditFlagEEnum, DebitCreditFlag.C);
-		addEEnumLiteral(debitCreditFlagEEnum, DebitCreditFlag.D);
+		addEEnumLiteral(debitCreditFlagEEnum, DebitCreditFlag.CREDIT);
+		addEEnumLiteral(debitCreditFlagEEnum, DebitCreditFlag.DEBIT);
 
 		initEEnum(processModeEEnum, ProcessMode.class, "ProcessMode");
-		addEEnumLiteral(processModeEEnum, ProcessMode.Y);
-		addEEnumLiteral(processModeEEnum, ProcessMode.N);
-		addEEnumLiteral(processModeEEnum, ProcessMode.R);
-		addEEnumLiteral(processModeEEnum, ProcessMode.P);
+		addEEnumLiteral(processModeEEnum, ProcessMode.APPROVE);
+		addEEnumLiteral(processModeEEnum, ProcessMode.DECLINE);
+		addEEnumLiteral(processModeEEnum, ProcessMode.RANDOM);
+		addEEnumLiteral(processModeEEnum, ProcessMode.PRODUCTION);
 
 		initEEnum(authModeEEnum, AuthMode.class, "AuthMode");
-		addEEnumLiteral(authModeEEnum, AuthMode.A);
-		addEEnumLiteral(authModeEEnum, AuthMode.E);
+		addEEnumLiteral(authModeEEnum, AuthMode.FULL_AUTHORIZE);
+		addEEnumLiteral(authModeEEnum, AuthMode.PRE_AUTH);
 	}
 
 } //AccountingPackageImpl

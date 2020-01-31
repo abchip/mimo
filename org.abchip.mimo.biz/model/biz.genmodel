@@ -35,18 +35,18 @@
     <nestedGenPackages prefix="Accounting" basePackage="org.abchip.mimo.biz" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="biz.ecore#//accounting">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="biz.ecore#//accounting/DebitCreditFlag">
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/DebitCreditFlag/C"/>
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/DebitCreditFlag/D"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/DebitCreditFlag/Credit"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/DebitCreditFlag/Debit"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="biz.ecore#//accounting/ProcessMode">
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/ProcessMode/Y"/>
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/ProcessMode/N"/>
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/ProcessMode/R"/>
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/ProcessMode/P"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/ProcessMode/Approve"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/ProcessMode/Decline"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/ProcessMode/Random"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/ProcessMode/Production"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="biz.ecore#//accounting/AuthMode">
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/AuthMode/A"/>
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/AuthMode/E"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/AuthMode/FullAuthorize"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//accounting/AuthMode/PreAuth"/>
       </genEnums>
       <nestedGenPackages prefix="Budget" basePackage="org.abchip.mimo.biz.accounting"
           disposableProviderFactory="true" adapterFactory="false" ecorePackage="biz.ecore#//accounting/budget">
@@ -1528,8 +1528,8 @@
     <nestedGenPackages prefix="Common" basePackage="org.abchip.mimo.biz" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="biz.ecore#//common">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="biz.ecore#//common/Gender">
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//common/Gender/M"/>
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//common/Gender/F"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//common/Gender/CommonMale"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//common/Gender/CommonFemale"/>
       </genEnums>
       <nestedGenPackages prefix="Datasource" basePackage="org.abchip.mimo.biz.common"
           disposableProviderFactory="true" adapterFactory="false" ecorePackage="biz.ecore#//common/datasource">
@@ -4456,11 +4456,11 @@
     <nestedGenPackages prefix="Party" basePackage="org.abchip.mimo.biz" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="biz.ecore#//party">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="biz.ecore#//party/MaritalStatus">
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//party/MaritalStatus/S"/>
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//party/MaritalStatus/M"/>
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//party/MaritalStatus/P"/>
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//party/MaritalStatus/D"/>
-        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//party/MaritalStatus/W"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//party/MaritalStatus/Single"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//party/MaritalStatus/Married"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//party/MaritalStatus/Separated"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//party/MaritalStatus/Divorced"/>
+        <genEnumLiterals ecoreEnumLiteral="biz.ecore#//party/MaritalStatus/Widowed"/>
       </genEnums>
       <nestedGenPackages prefix="Agreement" basePackage="org.abchip.mimo.biz.party"
           disposableProviderFactory="true" adapterFactory="false" ecorePackage="biz.ecore#//party/agreement">
