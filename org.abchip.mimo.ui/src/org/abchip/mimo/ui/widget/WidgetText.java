@@ -25,7 +25,7 @@ public interface WidgetText extends Widget {
 
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
-	 * The default value is <code>"text"</code>.
+	 * The default value is <code>"mm-text"</code>.
 	 * The literals are from the enumeration {@link org.abchip.mimo.ui.widget.WidgetType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -36,7 +36,7 @@ public interface WidgetText extends Widget {
 	 * @return the value of the '<em>View</em>' attribute.
 	 * @see org.abchip.mimo.ui.widget.WidgetType
 	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetText_View()
-	 * @model default="text" required="true" changeable="false"
+	 * @model default="mm-text" required="true" changeable="false"
 	 * @generated
 	 */
 	WidgetType getView();

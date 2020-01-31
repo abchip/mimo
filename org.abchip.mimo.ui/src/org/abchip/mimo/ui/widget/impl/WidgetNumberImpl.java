@@ -45,7 +45,7 @@ public class WidgetNumberImpl extends WidgetImpl implements WidgetNumber {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final WidgetType VIEW_EDEFAULT = WidgetType.TEXT;
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.NUMBER;
 
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.

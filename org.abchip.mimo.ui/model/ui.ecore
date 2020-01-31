@@ -137,7 +137,8 @@
       <eLiterals name="Form" literal="form"/>
       <eLiterals name="Image" literal="mm-image"/>
       <eLiterals name="Note" literal="note"/>
-      <eLiterals name="Text" literal="text"/>
+      <eLiterals name="Text" literal="mm-text"/>
+      <eLiterals name="Number" literal="mm-number"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Widget" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
       <eOperations name="getView" lowerBound="1" eType="#//widget/WidgetType"/>
@@ -185,7 +186,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetNumber" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
-          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="text"/>
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-number"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="#//widget/WidgetNumberAttribute"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholder" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -195,7 +196,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetText" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
-          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="text"/>
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-text"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholder" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="Insert text here"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="#//widget/WidgetTextAttribute"

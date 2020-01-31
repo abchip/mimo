@@ -120,6 +120,7 @@
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Image"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Note"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Text"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Number"/>
       </genEnums>
       <genClasses image="false" ecoreClass="ui.ecore#//widget/Widget">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widget/disabled"/>

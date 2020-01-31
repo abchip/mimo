@@ -24,7 +24,7 @@ package org.abchip.mimo.ui.widget;
 public interface WidgetNumber extends Widget {
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
-	 * The default value is <code>"text"</code>.
+	 * The default value is <code>"mm-number"</code>.
 	 * The literals are from the enumeration {@link org.abchip.mimo.ui.widget.WidgetType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -35,7 +35,7 @@ public interface WidgetNumber extends Widget {
 	 * @return the value of the '<em>View</em>' attribute.
 	 * @see org.abchip.mimo.ui.widget.WidgetType
 	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetNumber_View()
-	 * @model default="text" required="true" changeable="false"
+	 * @model default="mm-number" required="true" changeable="false"
 	 * @generated
 	 */
 	WidgetType getView();

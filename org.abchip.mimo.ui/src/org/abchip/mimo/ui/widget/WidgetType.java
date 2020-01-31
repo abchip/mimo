@@ -82,7 +82,15 @@ public enum WidgetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TEXT(0, "Text", "text");
+	TEXT(0, "Text", "mm-text"), /**
+	 * The '<em><b>Number</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NUMBER_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NUMBER(0, "Number", "mm-number");
 
 	/**
 	 * The '<em><b>Check Box</b></em>' literal value.
@@ -198,11 +206,26 @@ public enum WidgetType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TEXT
-	 * @model name="Text" literal="text"
+	 * @model name="Text" literal="mm-text"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int TEXT_VALUE = 0;
+
+	/**
+	 * The '<em><b>Number</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Number</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #NUMBER
+	 * @model name="Number" literal="mm-number"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NUMBER_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>Type</b></em>' enumerators.
@@ -220,6 +243,7 @@ public enum WidgetType implements Enumerator {
 			IMAGE,
 			NOTE,
 			TEXT,
+			NUMBER,
 		};
 
 	/**
