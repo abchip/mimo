@@ -3,7 +3,7 @@
  */
 package org.abchip.mimo.ui.widget.impl;
 
-import org.abchip.mimo.ui.widget.WidgetNote;
+import org.abchip.mimo.ui.widget.WidgetTextArea;
 import org.abchip.mimo.ui.widget.WidgetPackage;
 import org.abchip.mimo.ui.widget.WidgetType;
 import org.eclipse.emf.ecore.EClass;
@@ -16,12 +16,12 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetNoteImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetTextAreaImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class WidgetNoteImpl extends WidgetImpl implements WidgetNote {
+public class WidgetTextAreaImpl extends WidgetImpl implements WidgetTextArea {
 	/**
 	 * 
 	 */
@@ -35,7 +35,7 @@ public class WidgetNoteImpl extends WidgetImpl implements WidgetNote {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final WidgetType VIEW_EDEFAULT = WidgetType.NOTE;
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.TEXT_AREA;
 
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
@@ -52,7 +52,7 @@ public class WidgetNoteImpl extends WidgetImpl implements WidgetNote {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WidgetNoteImpl() {
+	protected WidgetTextAreaImpl() {
 		super();
 	}
 
@@ -63,7 +63,7 @@ public class WidgetNoteImpl extends WidgetImpl implements WidgetNote {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WidgetPackage.Literals.WIDGET_NOTE;
+		return WidgetPackage.Literals.WIDGET_TEXT_AREA;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class WidgetNoteImpl extends WidgetImpl implements WidgetNote {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WidgetPackage.WIDGET_NOTE__VIEW:
+			case WidgetPackage.WIDGET_TEXT_AREA__VIEW:
 				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -98,7 +98,7 @@ public class WidgetNoteImpl extends WidgetImpl implements WidgetNote {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WidgetPackage.WIDGET_NOTE__VIEW:
+			case WidgetPackage.WIDGET_TEXT_AREA__VIEW:
 				return view != VIEW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -120,4 +120,4 @@ public class WidgetNoteImpl extends WidgetImpl implements WidgetNote {
 		return result.toString();
 	}
 
-} //WidgetNoteImpl
+} //WidgetTextAreaImpl

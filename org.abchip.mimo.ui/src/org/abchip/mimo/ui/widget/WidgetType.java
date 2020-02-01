@@ -67,14 +67,14 @@ public enum WidgetType implements Enumerator {
 	 * @ordered
 	 */
 	IMAGE(0, "Image", "mm-image"), /**
-	 * The '<em><b>Note</b></em>' literal object.
+	 * The '<em><b>Text Area</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #NOTE_VALUE
+	 * @see #TEXT_AREA_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	NOTE(0, "Note", "mm-note"), /**
+	TEXT_AREA(0, "TextArea", "mm-textarea"), /**
 	 * The '<em><b>Number</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -191,19 +191,19 @@ public enum WidgetType implements Enumerator {
 	public static final int IMAGE_VALUE = 0;
 
 	/**
-	 * The '<em><b>Note</b></em>' literal value.
+	 * The '<em><b>Text Area</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Note</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Text Area</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #NOTE
-	 * @model name="Note" literal="mm-note"
+	 * @see #TEXT_AREA
+	 * @model name="TextArea" literal="mm-textarea"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOTE_VALUE = 0;
+	public static final int TEXT_AREA_VALUE = 0;
 
 	/**
 	 * The '<em><b>Number</b></em>' literal value.
@@ -264,7 +264,7 @@ public enum WidgetType implements Enumerator {
 			DATE_PICKER,
 			FORM,
 			IMAGE,
-			NOTE,
+			TEXT_AREA,
 			NUMBER,
 			SWITCH,
 			TEXT,

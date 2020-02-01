@@ -39,7 +39,7 @@ import org.abchip.mimo.ui.widget.WidgetDatePicker;
 import org.abchip.mimo.ui.widget.WidgetFactory;
 import org.abchip.mimo.ui.widget.WidgetForm;
 import org.abchip.mimo.ui.widget.WidgetImage;
-import org.abchip.mimo.ui.widget.WidgetNote;
+import org.abchip.mimo.ui.widget.WidgetTextArea;
 import org.abchip.mimo.ui.widget.WidgetNumber;
 import org.abchip.mimo.ui.widget.WidgetNumberAttribute;
 import org.abchip.mimo.ui.widget.WidgetPackage;
@@ -125,7 +125,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass widgetNoteEClass = null;
+	private EClass widgetTextAreaEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -485,8 +485,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getWidgetNote() {
-		return widgetNoteEClass;
+	public EClass getWidgetTextArea() {
+		return widgetTextAreaEClass;
 	}
 
 	/**
@@ -495,8 +495,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWidgetNote_View() {
-		return (EAttribute)widgetNoteEClass.getEStructuralFeatures().get(0);
+	public EAttribute getWidgetTextArea_View() {
+		return (EAttribute)widgetTextAreaEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -708,8 +708,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		widgetImageEClass = createEClass(WIDGET_IMAGE);
 		createEAttribute(widgetImageEClass, WIDGET_IMAGE__VIEW);
 
-		widgetNoteEClass = createEClass(WIDGET_NOTE);
-		createEAttribute(widgetNoteEClass, WIDGET_NOTE__VIEW);
+		widgetTextAreaEClass = createEClass(WIDGET_TEXT_AREA);
+		createEAttribute(widgetTextAreaEClass, WIDGET_TEXT_AREA__VIEW);
 
 		widgetNumberEClass = createEClass(WIDGET_NUMBER);
 		createEAttribute(widgetNumberEClass, WIDGET_NUMBER__VIEW);
@@ -773,7 +773,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		widgetDatePickerEClass.getESuperTypes().add(this.getWidget());
 		widgetFormEClass.getESuperTypes().add(this.getWidget());
 		widgetImageEClass.getESuperTypes().add(this.getWidget());
-		widgetNoteEClass.getESuperTypes().add(this.getWidget());
+		widgetTextAreaEClass.getESuperTypes().add(this.getWidget());
 		widgetNumberEClass.getESuperTypes().add(this.getWidget());
 		widgetNumberAttributeEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		widgetSwitchEClass.getESuperTypes().add(this.getWidget());
@@ -813,8 +813,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		initEClass(widgetImageEClass, WidgetImage.class, "WidgetImage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetImage_View(), this.getWidgetType(), "view", "mm-image", 1, 1, WidgetImage.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(widgetNoteEClass, WidgetNote.class, "WidgetNote", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWidgetNote_View(), this.getWidgetType(), "view", "mm-note", 1, 1, WidgetNote.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(widgetTextAreaEClass, WidgetTextArea.class, "WidgetTextArea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetTextArea_View(), this.getWidgetType(), "view", "mm-textarea", 1, 1, WidgetTextArea.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetNumberEClass, WidgetNumber.class, "WidgetNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetNumber_View(), this.getWidgetType(), "view", "mm-number", 1, 1, WidgetNumber.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -843,7 +843,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.DATE_PICKER);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.FORM);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.IMAGE);
-		addEEnumLiteral(widgetTypeEEnum, WidgetType.NOTE);
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.TEXT_AREA);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.NUMBER);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.SWITCH);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.TEXT);

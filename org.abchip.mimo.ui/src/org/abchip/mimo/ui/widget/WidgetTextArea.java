@@ -12,17 +12,17 @@ package org.abchip.mimo.ui.widget;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.widget.WidgetNote#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.WidgetTextArea#getView <em>View</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetNote()
+ * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetTextArea()
  * @model
  * @generated
  */
-public interface WidgetNote extends Widget {
+public interface WidgetTextArea extends Widget {
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
-	 * The default value is <code>"mm-note"</code>.
+	 * The default value is <code>"mm-textarea"</code>.
 	 * The literals are from the enumeration {@link org.abchip.mimo.ui.widget.WidgetType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -32,10 +32,10 @@ public interface WidgetNote extends Widget {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View</em>' attribute.
 	 * @see org.abchip.mimo.ui.widget.WidgetType
-	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetNote_View()
-	 * @model default="mm-note" required="true" changeable="false"
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetTextArea_View()
+	 * @model default="mm-textarea" required="true" changeable="false"
 	 * @generated
 	 */
 	WidgetType getView();
 
-} // WidgetNote
+} // WidgetTextArea

@@ -662,14 +662,14 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_IMAGE_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetNoteImpl <em>Note</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextAreaImpl <em>Text Area</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.widget.impl.WidgetNoteImpl
-	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetNote()
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetTextAreaImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTextArea()
 	 * @generated
 	 */
-	int WIDGET_NOTE = 8;
+	int WIDGET_TEXT_AREA = 8;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -678,7 +678,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_NOTE__DISABLED = WIDGET__DISABLED;
+	int WIDGET_TEXT_AREA__DISABLED = WIDGET__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
@@ -687,7 +687,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_NOTE__DOMAIN = WIDGET__DOMAIN;
+	int WIDGET_TEXT_AREA__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -696,7 +696,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_NOTE__ICON = WIDGET__ICON;
+	int WIDGET_TEXT_AREA__ICON = WIDGET__ICON;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -705,7 +705,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_NOTE__LABEL = WIDGET__LABEL;
+	int WIDGET_TEXT_AREA__LABEL = WIDGET__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -714,7 +714,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_NOTE__NAME = WIDGET__NAME;
+	int WIDGET_TEXT_AREA__NAME = WIDGET__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -723,7 +723,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_NOTE__PATTERN = WIDGET__PATTERN;
+	int WIDGET_TEXT_AREA__PATTERN = WIDGET__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -732,16 +732,16 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_NOTE__VIEW = WIDGET_FEATURE_COUNT + 0;
+	int WIDGET_TEXT_AREA__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Note</em>' class.
+	 * The number of structural features of the '<em>Text Area</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_NOTE_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+	int WIDGET_TEXT_AREA_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetNumberImpl <em>Number</em>}' class.
@@ -1327,25 +1327,25 @@ public interface WidgetPackage extends EPackage {
 	EAttribute getWidgetImage_View();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetNote <em>Note</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetTextArea <em>Text Area</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Note</em>'.
-	 * @see org.abchip.mimo.ui.widget.WidgetNote
+	 * @return the meta object for class '<em>Text Area</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetTextArea
 	 * @generated
 	 */
-	EClass getWidgetNote();
+	EClass getWidgetTextArea();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetNote#getView <em>View</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetTextArea#getView <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>View</em>'.
-	 * @see org.abchip.mimo.ui.widget.WidgetNote#getView()
-	 * @see #getWidgetNote()
+	 * @see org.abchip.mimo.ui.widget.WidgetTextArea#getView()
+	 * @see #getWidgetTextArea()
 	 * @generated
 	 */
-	EAttribute getWidgetNote_View();
+	EAttribute getWidgetTextArea_View();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetNumber <em>Number</em>}'.
@@ -1721,14 +1721,14 @@ public interface WidgetPackage extends EPackage {
 		EAttribute WIDGET_IMAGE__VIEW = eINSTANCE.getWidgetImage_View();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetNoteImpl <em>Note</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextAreaImpl <em>Text Area</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.widget.impl.WidgetNoteImpl
-		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetNote()
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetTextAreaImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTextArea()
 		 * @generated
 		 */
-		EClass WIDGET_NOTE = eINSTANCE.getWidgetNote();
+		EClass WIDGET_TEXT_AREA = eINSTANCE.getWidgetTextArea();
 
 		/**
 		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
@@ -1736,7 +1736,7 @@ public interface WidgetPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WIDGET_NOTE__VIEW = eINSTANCE.getWidgetNote_View();
+		EAttribute WIDGET_TEXT_AREA__VIEW = eINSTANCE.getWidgetTextArea_View();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetNumberImpl <em>Number</em>}' class.

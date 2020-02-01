@@ -64,7 +64,7 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 			case WidgetPackage.WIDGET_DATE_PICKER: return (EObject)createWidgetDatePicker();
 			case WidgetPackage.WIDGET_FORM: return (EObject)createWidgetForm();
 			case WidgetPackage.WIDGET_IMAGE: return (EObject)createWidgetImage();
-			case WidgetPackage.WIDGET_NOTE: return (EObject)createWidgetNote();
+			case WidgetPackage.WIDGET_TEXT_AREA: return (EObject)createWidgetTextArea();
 			case WidgetPackage.WIDGET_NUMBER: return (EObject)createWidgetNumber();
 			case WidgetPackage.WIDGET_NUMBER_ATTRIBUTE: return (EObject)createWidgetNumberAttribute();
 			case WidgetPackage.WIDGET_SWITCH: return (EObject)createWidgetSwitch();
@@ -177,9 +177,9 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 	 * @generated
 	 */
 	@Override
-	public WidgetNote createWidgetNote() {
-		WidgetNoteImpl widgetNote = new WidgetNoteImpl();
-		return widgetNote;
+	public WidgetTextArea createWidgetTextArea() {
+		WidgetTextAreaImpl widgetTextArea = new WidgetTextAreaImpl();
+		return widgetTextArea;
 	}
 
 	/**

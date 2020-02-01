@@ -118,7 +118,7 @@
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/DatePicker"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Form"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Image"/>
-        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Note"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/TextArea"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Number"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Switch"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Text"/>
@@ -154,8 +154,8 @@
       <genClasses ecoreClass="ui.ecore#//widget/WidgetImage">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetImage/view"/>
       </genClasses>
-      <genClasses ecoreClass="ui.ecore#//widget/WidgetNote">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetNote/view"/>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetTextArea">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetTextArea/view"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetNumber">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetNumber/view"/>

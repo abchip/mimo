@@ -77,13 +77,13 @@ public interface WidgetFactory extends EFactory {
 	WidgetImage createWidgetImage();
 
 	/**
-	 * Returns a new object of class '<em>Note</em>'.
+	 * Returns a new object of class '<em>Text Area</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Note</em>'.
+	 * @return a new object of class '<em>Text Area</em>'.
 	 * @generated
 	 */
-	WidgetNote createWidgetNote();
+	WidgetTextArea createWidgetTextArea();
 
 	/**
 	 * Returns a new object of class '<em>Number</em>'.
