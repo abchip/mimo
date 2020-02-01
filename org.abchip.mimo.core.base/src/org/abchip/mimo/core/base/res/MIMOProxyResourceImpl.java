@@ -217,8 +217,11 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 			raw = dateFormat.format(value);
 			break;
 		case ENTITY:
-			EntityIdentifiable entityIdentifiable = (EntityIdentifiable) value;
-			raw = entityIdentifiable.getID();
+			if (value instanceof EntityIdentifiable) {
+				EntityIdentifiable entityIdentifiable = (EntityIdentifiable) value;
+				raw = entityIdentifiable.getID();
+			} else
+				raw = value;
 			break;
 		case ENUM:
 			Enumerator enumerator = (Enumerator) value;
