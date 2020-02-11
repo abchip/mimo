@@ -9,6 +9,8 @@ import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.ui.UIPackage;
 
+import org.abchip.mimo.ui.event.EventPackage;
+import org.abchip.mimo.ui.event.impl.EventPackageImpl;
 import org.abchip.mimo.ui.form.FormPackage;
 
 import org.abchip.mimo.ui.form.impl.FormPackageImpl;
@@ -34,17 +36,19 @@ import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
 import org.abchip.mimo.ui.widget.Widget;
 import org.abchip.mimo.ui.widget.WidgetCheckBox;
 import org.abchip.mimo.ui.widget.WidgetComboBox;
+import org.abchip.mimo.ui.widget.WidgetComboBoxEntry;
 import org.abchip.mimo.ui.widget.WidgetLayout;
 import org.abchip.mimo.ui.widget.WidgetCounter;
 import org.abchip.mimo.ui.widget.WidgetDatePicker;
+import org.abchip.mimo.ui.widget.WidgetEntry;
 import org.abchip.mimo.ui.widget.WidgetFactory;
 import org.abchip.mimo.ui.widget.WidgetForm;
+import org.abchip.mimo.ui.widget.WidgetFormEntry;
 import org.abchip.mimo.ui.widget.WidgetImage;
 import org.abchip.mimo.ui.widget.WidgetTextArea;
 import org.abchip.mimo.ui.widget.WidgetNumber;
 import org.abchip.mimo.ui.widget.WidgetNumberAttribute;
 import org.abchip.mimo.ui.widget.WidgetPackage;
-import org.abchip.mimo.ui.widget.WidgetPattern;
 import org.abchip.mimo.ui.widget.WidgetSwitch;
 import org.abchip.mimo.ui.widget.WidgetText;
 import org.abchip.mimo.ui.widget.WidgetTextAttribute;
@@ -78,7 +82,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass widgetPatternEClass = null;
+	private EClass widgetEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,6 +97,13 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	private EClass widgetComboBoxEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass widgetComboBoxEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,6 +132,13 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	private EClass widgetFormEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass widgetFormEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -240,6 +258,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		UIPackageImpl theUIPackage = (UIPackageImpl)(registeredPackage instanceof UIPackageImpl ? registeredPackage : UIPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
 		FormPackageImpl theFormPackage = (FormPackageImpl)(registeredPackage instanceof FormPackageImpl ? registeredPackage : FormPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EventPackage.eNS_URI);
+		EventPackageImpl theEventPackage = (EventPackageImpl)(registeredPackage instanceof EventPackageImpl ? registeredPackage : EventPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
 		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
@@ -253,6 +273,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		theWidgetPackage.createPackageContents();
 		theUIPackage.createPackageContents();
 		theFormPackage.createPackageContents();
+		theEventPackage.createPackageContents();
 		theMenuPackage.createPackageContents();
 		theQueryPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
@@ -262,6 +283,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		theWidgetPackage.initializePackageContents();
 		theUIPackage.initializePackageContents();
 		theFormPackage.initializePackageContents();
+		theEventPackage.initializePackageContents();
 		theMenuPackage.initializePackageContents();
 		theQueryPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
@@ -301,18 +323,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getWidget_Domain() {
-		return (EReference)widgetEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getWidget_Icon() {
-		return (EAttribute)widgetEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)widgetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -322,7 +334,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 */
 	@Override
 	public EAttribute getWidget_Label() {
-		return (EAttribute)widgetEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)widgetEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -332,7 +344,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 */
 	@Override
 	public EAttribute getWidget_Name() {
-		return (EAttribute)widgetEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)widgetEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -341,38 +353,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getWidget_Pattern() {
-		return (EReference)widgetEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getWidgetPattern() {
-		return widgetPatternEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getWidgetPattern_Allow() {
-		return (EAttribute)widgetPatternEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getWidgetPattern_Mask() {
-		return (EAttribute)widgetPatternEClass.getEStructuralFeatures().get(1);
+	public EClass getWidgetEntry() {
+		return widgetEntryEClass;
 	}
 
 	/**
@@ -413,6 +395,46 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	@Override
 	public EAttribute getWidgetComboBox_View() {
 		return (EAttribute)widgetComboBoxEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getWidgetComboBox_Entry() {
+		return (EReference)widgetComboBoxEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getWidgetComboBoxEntry() {
+		return widgetComboBoxEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetComboBoxEntry_Frame() {
+		return (EAttribute)widgetComboBoxEntryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetComboBoxEntry_Name() {
+		return (EAttribute)widgetComboBoxEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -501,6 +523,56 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getWidgetForm_Entry() {
+		return (EReference)widgetFormEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getWidgetFormEntry() {
+		return widgetFormEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetFormEntry_Frame() {
+		return (EAttribute)widgetFormEntryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetFormEntry_Filter() {
+		return (EAttribute)widgetFormEntryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetFormEntry_Selected() {
+		return (EAttribute)widgetFormEntryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getWidgetImage() {
 		return widgetImageEClass;
 	}
@@ -533,6 +605,16 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	@Override
 	public EAttribute getWidgetLayout_View() {
 		return (EAttribute)widgetLayoutEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getWidgetLayout_Events() {
+		return (EReference)widgetLayoutEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -736,21 +818,22 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		// Create classes and their features
 		widgetEClass = createEClass(WIDGET);
 		createEAttribute(widgetEClass, WIDGET__DISABLED);
-		createEReference(widgetEClass, WIDGET__DOMAIN);
 		createEAttribute(widgetEClass, WIDGET__ICON);
 		createEAttribute(widgetEClass, WIDGET__LABEL);
 		createEAttribute(widgetEClass, WIDGET__NAME);
-		createEReference(widgetEClass, WIDGET__PATTERN);
 
-		widgetPatternEClass = createEClass(WIDGET_PATTERN);
-		createEAttribute(widgetPatternEClass, WIDGET_PATTERN__ALLOW);
-		createEAttribute(widgetPatternEClass, WIDGET_PATTERN__MASK);
+		widgetEntryEClass = createEClass(WIDGET_ENTRY);
 
 		widgetCheckBoxEClass = createEClass(WIDGET_CHECK_BOX);
 		createEAttribute(widgetCheckBoxEClass, WIDGET_CHECK_BOX__VIEW);
 
 		widgetComboBoxEClass = createEClass(WIDGET_COMBO_BOX);
 		createEAttribute(widgetComboBoxEClass, WIDGET_COMBO_BOX__VIEW);
+		createEReference(widgetComboBoxEClass, WIDGET_COMBO_BOX__ENTRY);
+
+		widgetComboBoxEntryEClass = createEClass(WIDGET_COMBO_BOX_ENTRY);
+		createEAttribute(widgetComboBoxEntryEClass, WIDGET_COMBO_BOX_ENTRY__FRAME);
+		createEAttribute(widgetComboBoxEntryEClass, WIDGET_COMBO_BOX_ENTRY__NAME);
 
 		widgetCounterEClass = createEClass(WIDGET_COUNTER);
 		createEAttribute(widgetCounterEClass, WIDGET_COUNTER__VIEW);
@@ -763,12 +846,19 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		widgetFormEClass = createEClass(WIDGET_FORM);
 		createEAttribute(widgetFormEClass, WIDGET_FORM__VIEW);
+		createEReference(widgetFormEClass, WIDGET_FORM__ENTRY);
+
+		widgetFormEntryEClass = createEClass(WIDGET_FORM_ENTRY);
+		createEAttribute(widgetFormEntryEClass, WIDGET_FORM_ENTRY__FRAME);
+		createEAttribute(widgetFormEntryEClass, WIDGET_FORM_ENTRY__FILTER);
+		createEAttribute(widgetFormEntryEClass, WIDGET_FORM_ENTRY__SELECTED);
 
 		widgetImageEClass = createEClass(WIDGET_IMAGE);
 		createEAttribute(widgetImageEClass, WIDGET_IMAGE__VIEW);
 
 		widgetLayoutEClass = createEClass(WIDGET_LAYOUT);
 		createEAttribute(widgetLayoutEClass, WIDGET_LAYOUT__VIEW);
+		createEReference(widgetLayoutEClass, WIDGET_LAYOUT__EVENTS);
 
 		widgetTextAreaEClass = createEClass(WIDGET_TEXT_AREA);
 		createEAttribute(widgetTextAreaEClass, WIDGET_TEXT_AREA__VIEW);
@@ -821,6 +911,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EventPackage theEventPackage = (EventPackage)EPackage.Registry.INSTANCE.getEPackage(EventPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -828,13 +919,15 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		// Add supertypes to classes
 		widgetEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		widgetPatternEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		widgetEntryEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		widgetCheckBoxEClass.getESuperTypes().add(this.getWidget());
 		widgetComboBoxEClass.getESuperTypes().add(this.getWidget());
+		widgetComboBoxEntryEClass.getESuperTypes().add(this.getWidgetEntry());
 		widgetCounterEClass.getESuperTypes().add(this.getWidget());
 		widgetdashboardEClass.getESuperTypes().add(this.getWidget());
 		widgetDatePickerEClass.getESuperTypes().add(this.getWidget());
 		widgetFormEClass.getESuperTypes().add(this.getWidget());
+		widgetFormEntryEClass.getESuperTypes().add(this.getWidgetEntry());
 		widgetImageEClass.getESuperTypes().add(this.getWidget());
 		widgetLayoutEClass.getESuperTypes().add(this.getWidget());
 		widgetTextAreaEClass.getESuperTypes().add(this.getWidget());
@@ -847,23 +940,26 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(widgetEClass, Widget.class, "Widget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidget_Disabled(), ecorePackage.getEBoolean(), "disabled", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWidget_Domain(), theEntityPackage.getDomain(), null, "domain", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWidget_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWidget_Label(), ecorePackage.getEString(), "label", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWidget_Name(), ecorePackage.getEString(), "name", null, 1, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWidget_Pattern(), this.getWidgetPattern(), null, "pattern", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(widgetEClass, this.getWidgetEntry(), "getEntry", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(widgetEClass, this.getWidgetType(), "getView", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(widgetPatternEClass, WidgetPattern.class, "WidgetPattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWidgetPattern_Allow(), ecorePackage.getEString(), "allow", null, 0, 1, WidgetPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWidgetPattern_Mask(), ecorePackage.getEString(), "mask", null, 0, 1, WidgetPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(widgetEntryEClass, WidgetEntry.class, "WidgetEntry", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(widgetCheckBoxEClass, WidgetCheckBox.class, "WidgetCheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetCheckBox_View(), this.getWidgetType(), "view", "mm-checkbox", 1, 1, WidgetCheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetComboBoxEClass, WidgetComboBox.class, "WidgetComboBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetComboBox_View(), this.getWidgetType(), "view", "mm-combo", 1, 1, WidgetComboBox.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWidgetComboBox_Entry(), this.getWidgetComboBoxEntry(), null, "entry", null, 0, 1, WidgetComboBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(widgetComboBoxEntryEClass, WidgetComboBoxEntry.class, "WidgetComboBoxEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetComboBoxEntry_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, WidgetComboBoxEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidgetComboBoxEntry_Name(), ecorePackage.getEString(), "name", null, 0, 1, WidgetComboBoxEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetCounterEClass, WidgetCounter.class, "WidgetCounter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetCounter_View(), this.getWidgetType(), "view", "mm-counter", 1, 1, WidgetCounter.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -876,12 +972,19 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		initEClass(widgetFormEClass, WidgetForm.class, "WidgetForm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetForm_View(), this.getWidgetType(), "view", "mm-form", 1, 1, WidgetForm.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWidgetForm_Entry(), this.getWidgetFormEntry(), null, "entry", null, 0, 1, WidgetForm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(widgetFormEntryEClass, WidgetFormEntry.class, "WidgetFormEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetFormEntry_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, WidgetFormEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidgetFormEntry_Filter(), ecorePackage.getEString(), "filter", null, 0, 1, WidgetFormEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidgetFormEntry_Selected(), ecorePackage.getEString(), "selected", null, 0, 1, WidgetFormEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetImageEClass, WidgetImage.class, "WidgetImage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetImage_View(), this.getWidgetType(), "view", "mm-image", 1, 1, WidgetImage.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetLayoutEClass, WidgetLayout.class, "WidgetLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetLayout_View(), this.getWidgetType(), "view", "mm-layout", 1, 1, WidgetLayout.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWidgetLayout_Events(), theEventPackage.getEventEntry(), null, "events", null, 0, -1, WidgetLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetTextAreaEClass, WidgetTextArea.class, "WidgetTextArea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetTextArea_View(), this.getWidgetType(), "view", "mm-textarea", 1, 1, WidgetTextArea.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -15,6 +15,8 @@ import org.abchip.mimo.ui.UIPackage;
 
 import org.abchip.mimo.ui.UiFrameSetup;
 import org.abchip.mimo.ui.UiUserSetup;
+import org.abchip.mimo.ui.event.EventPackage;
+import org.abchip.mimo.ui.event.impl.EventPackageImpl;
 import org.abchip.mimo.ui.form.FormPackage;
 import org.abchip.mimo.ui.form.impl.FormPackageImpl;
 import org.abchip.mimo.ui.menu.MenuPackage;
@@ -133,6 +135,8 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
 		FormPackageImpl theFormPackage = (FormPackageImpl)(registeredPackage instanceof FormPackageImpl ? registeredPackage : FormPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EventPackage.eNS_URI);
+		EventPackageImpl theEventPackage = (EventPackageImpl)(registeredPackage instanceof EventPackageImpl ? registeredPackage : EventPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
 		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
@@ -147,6 +151,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		// Create package meta-data objects
 		theUIPackage.createPackageContents();
 		theFormPackage.createPackageContents();
+		theEventPackage.createPackageContents();
 		theMenuPackage.createPackageContents();
 		theQueryPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
@@ -156,6 +161,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		// Initialize created meta-data
 		theUIPackage.initializePackageContents();
 		theFormPackage.initializePackageContents();
+		theEventPackage.initializePackageContents();
 		theMenuPackage.initializePackageContents();
 		theQueryPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
@@ -396,6 +402,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 
 		// Obtain other dependent packages
 		FormPackage theFormPackage = (FormPackage)EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
+		EventPackage theEventPackage = (EventPackage)EPackage.Registry.INSTANCE.getEPackage(EventPackage.eNS_URI);
 		MenuPackage theMenuPackage = (MenuPackage)EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
 		QueryPackage theQueryPackage = (QueryPackage)EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
 		SchemaPackage theSchemaPackage = (SchemaPackage)EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
@@ -405,6 +412,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 
 		// Add subpackages
 		getESubpackages().add(theFormPackage);
+		getESubpackages().add(theEventPackage);
 		getESubpackages().add(theMenuPackage);
 		getESubpackages().add(theQueryPackage);
 		getESubpackages().add(theSchemaPackage);

@@ -9,6 +9,8 @@ import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.ui.UIPackage;
 
+import org.abchip.mimo.ui.event.EventPackage;
+import org.abchip.mimo.ui.event.impl.EventPackageImpl;
 import org.abchip.mimo.ui.form.Form;
 import org.abchip.mimo.ui.form.FormFactory;
 import org.abchip.mimo.ui.form.FormField;
@@ -114,6 +116,8 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
 		UIPackageImpl theUIPackage = (UIPackageImpl)(registeredPackage instanceof UIPackageImpl ? registeredPackage : UIPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EventPackage.eNS_URI);
+		EventPackageImpl theEventPackage = (EventPackageImpl)(registeredPackage instanceof EventPackageImpl ? registeredPackage : EventPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
 		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
@@ -128,6 +132,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		// Create package meta-data objects
 		theFormPackage.createPackageContents();
 		theUIPackage.createPackageContents();
+		theEventPackage.createPackageContents();
 		theMenuPackage.createPackageContents();
 		theQueryPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
@@ -137,6 +142,7 @@ public class FormPackageImpl extends EPackageImpl implements FormPackage {
 		// Initialize created meta-data
 		theFormPackage.initializePackageContents();
 		theUIPackage.initializePackageContents();
+		theEventPackage.initializePackageContents();
 		theMenuPackage.initializePackageContents();
 		theQueryPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();

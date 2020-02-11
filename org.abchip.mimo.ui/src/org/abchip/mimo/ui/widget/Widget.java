@@ -3,7 +3,6 @@
  */
 package org.abchip.mimo.ui.widget;
 
-import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 
 /**
@@ -16,11 +15,9 @@ import org.abchip.mimo.entity.Entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.widget.Widget#isDisabled <em>Disabled</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.widget.Widget#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.widget.Widget#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.widget.Widget#getLabel <em>Label</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.widget.Widget#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.widget.Widget#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidget()
@@ -53,32 +50,6 @@ public interface Widget extends Entity {
 	 * @generated
 	 */
 	void setDisabled(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Domain</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Domain</em>' containment reference.
-	 * @see #setDomain(Domain)
-	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidget_Domain()
-	 * @model containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	Domain getDomain();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.Widget#getDomain <em>Domain</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Domain</em>' containment reference.
-	 * @see #getDomain()
-	 * @generated
-	 */
-	void setDomain(Domain value);
 
 	/**
 	 * Returns the value of the '<em><b>Icon</b></em>' attribute.
@@ -159,30 +130,12 @@ public interface Widget extends Entity {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Pattern</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pattern</em>' containment reference.
-	 * @see #setPattern(WidgetPattern)
-	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidget_Pattern()
-	 * @model containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	WidgetPattern getPattern();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.Widget#getPattern <em>Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pattern</em>' containment reference.
-	 * @see #getPattern()
+	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	void setPattern(WidgetPattern value);
+	WidgetEntry getEntry();
 
 	/**
 	 * <!-- begin-user-doc -->

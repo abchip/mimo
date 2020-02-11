@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2017, 2020 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.query.impl;
+package org.abchip.mimo.ui.event.impl;
 
 import org.abchip.mimo.MimoPackage;
 
@@ -9,8 +9,10 @@ import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.ui.UIPackage;
 
+import org.abchip.mimo.ui.event.EventEntry;
+import org.abchip.mimo.ui.event.EventFactory;
 import org.abchip.mimo.ui.event.EventPackage;
-import org.abchip.mimo.ui.event.impl.EventPackageImpl;
+
 import org.abchip.mimo.ui.form.FormPackage;
 
 import org.abchip.mimo.ui.form.impl.FormPackageImpl;
@@ -21,10 +23,9 @@ import org.abchip.mimo.ui.menu.MenuPackage;
 
 import org.abchip.mimo.ui.menu.impl.MenuPackageImpl;
 
-import org.abchip.mimo.ui.query.Query;
-import org.abchip.mimo.ui.query.QueryFactory;
-import org.abchip.mimo.ui.query.QueryField;
 import org.abchip.mimo.ui.query.QueryPackage;
+
+import org.abchip.mimo.ui.query.impl.QueryPackageImpl;
 
 import org.abchip.mimo.ui.schema.SchemaPackage;
 
@@ -35,11 +36,11 @@ import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
 
 import org.abchip.mimo.ui.widget.WidgetPackage;
+
 import org.abchip.mimo.ui.widget.impl.WidgetPackageImpl;
-import org.eclipse.emf.ecore.EAttribute;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -49,20 +50,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
+public class EventPackageImpl extends EPackageImpl implements EventPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass queryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass queryFieldEClass = null;
+	private EClass eventEntryEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -75,12 +69,12 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.abchip.mimo.ui.query.QueryPackage#eNS_URI
+	 * @see org.abchip.mimo.ui.event.EventPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private QueryPackageImpl() {
-		super(eNS_URI, QueryFactory.eINSTANCE);
+	private EventPackageImpl() {
+		super(eNS_URI, EventFactory.eINSTANCE);
 	}
 
 	/**
@@ -93,7 +87,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link QueryPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link EventPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,12 +96,12 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static QueryPackage init() {
-		if (isInited) return (QueryPackage)EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
+	public static EventPackage init() {
+		if (isInited) return (EventPackage)EPackage.Registry.INSTANCE.getEPackage(EventPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredQueryPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		QueryPackageImpl theQueryPackage = registeredQueryPackage instanceof QueryPackageImpl ? (QueryPackageImpl)registeredQueryPackage : new QueryPackageImpl();
+		Object registeredEventPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		EventPackageImpl theEventPackage = registeredEventPackage instanceof EventPackageImpl ? (EventPackageImpl)registeredEventPackage : new EventPackageImpl();
 
 		isInited = true;
 
@@ -119,10 +113,10 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 		UIPackageImpl theUIPackage = (UIPackageImpl)(registeredPackage instanceof UIPackageImpl ? registeredPackage : UIPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
 		FormPackageImpl theFormPackage = (FormPackageImpl)(registeredPackage instanceof FormPackageImpl ? registeredPackage : FormPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EventPackage.eNS_URI);
-		EventPackageImpl theEventPackage = (EventPackageImpl)(registeredPackage instanceof EventPackageImpl ? registeredPackage : EventPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
 		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
+		QueryPackageImpl theQueryPackage = (QueryPackageImpl)(registeredPackage instanceof QueryPackageImpl ? registeredPackage : QueryPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
 		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
@@ -131,31 +125,31 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 		WidgetPackageImpl theWidgetPackage = (WidgetPackageImpl)(registeredPackage instanceof WidgetPackageImpl ? registeredPackage : WidgetPackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theQueryPackage.createPackageContents();
+		theEventPackage.createPackageContents();
 		theUIPackage.createPackageContents();
 		theFormPackage.createPackageContents();
-		theEventPackage.createPackageContents();
 		theMenuPackage.createPackageContents();
+		theQueryPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
 		theToolbarPackage.createPackageContents();
 		theWidgetPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theQueryPackage.initializePackageContents();
+		theEventPackage.initializePackageContents();
 		theUIPackage.initializePackageContents();
 		theFormPackage.initializePackageContents();
-		theEventPackage.initializePackageContents();
 		theMenuPackage.initializePackageContents();
+		theQueryPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
 		theToolbarPackage.initializePackageContents();
 		theWidgetPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theQueryPackage.freeze();
+		theEventPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(QueryPackage.eNS_URI, theQueryPackage);
-		return theQueryPackage;
+		EPackage.Registry.INSTANCE.put(EventPackage.eNS_URI, theEventPackage);
+		return theEventPackage;
 	}
 
 	/**
@@ -164,8 +158,8 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getQuery() {
-		return queryEClass;
+	public EClass getEventEntry() {
+		return eventEntryEClass;
 	}
 
 	/**
@@ -174,68 +168,8 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getQuery_Fields() {
-		return (EReference)queryEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getQuery_Name() {
-		return (EAttribute)queryEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getQueryField() {
-		return queryFieldEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getQueryField_Id() {
-		return (EAttribute)queryFieldEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getQueryField_Value() {
-		return (EAttribute)queryFieldEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getQueryField_Type() {
-		return (EAttribute)queryFieldEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public QueryFactory getQueryFactory() {
-		return (QueryFactory)getEFactoryInstance();
+	public EventFactory getEventFactory() {
+		return (EventFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -257,14 +191,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		queryEClass = createEClass(QUERY);
-		createEReference(queryEClass, QUERY__FIELDS);
-		createEAttribute(queryEClass, QUERY__NAME);
-
-		queryFieldEClass = createEClass(QUERY_FIELD);
-		createEAttribute(queryFieldEClass, QUERY_FIELD__ID);
-		createEAttribute(queryFieldEClass, QUERY_FIELD__VALUE);
-		createEAttribute(queryFieldEClass, QUERY_FIELD__TYPE);
+		eventEntryEClass = createEClass(EVENT_ENTRY);
 	}
 
 	/**
@@ -298,18 +225,10 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		queryEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-		queryFieldEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		eventEntryEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQuery_Fields(), this.getQueryField(), null, "fields", null, 0, -1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getQuery_Name(), ecorePackage.getEString(), "name", null, 1, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(queryFieldEClass, QueryField.class, "QueryField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getQueryField_Id(), ecorePackage.getEString(), "id", null, 1, 1, QueryField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getQueryField_Value(), ecorePackage.getEString(), "value", null, 0, 1, QueryField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getQueryField_Type(), ecorePackage.getEString(), "type", null, 1, 1, QueryField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(eventEntryEClass, EventEntry.class, "EventEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
-} //QueryPackageImpl
+} //EventPackageImpl

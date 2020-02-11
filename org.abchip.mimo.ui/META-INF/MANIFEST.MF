@@ -9,8 +9,12 @@ Bundle-Localization: plugin
 Automatic-Module-Name: org.abchip.mimo.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.abchip.mimo.ui,
+ org.abchip.mimo.ui.event,
+ org.abchip.mimo.ui.event.impl,
+ org.abchip.mimo.ui.event.util,
  org.abchip.mimo.ui.form,
  org.abchip.mimo.ui.form.impl,
+ org.abchip.mimo.ui.form.util,
  org.abchip.mimo.ui.impl,
  org.abchip.mimo.ui.menu,
  org.abchip.mimo.ui.menu.impl,

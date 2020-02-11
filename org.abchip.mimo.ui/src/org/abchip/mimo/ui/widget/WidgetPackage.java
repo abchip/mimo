@@ -79,22 +79,13 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET__DISABLED = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET__DOMAIN = EntityPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int WIDGET__ICON = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -103,7 +94,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET__LABEL = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int WIDGET__LABEL = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -112,16 +103,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET__PATTERN = EntityPackage.ENTITY_FEATURE_COUNT + 5;
+	int WIDGET__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Widget</em>' class.
@@ -130,44 +112,26 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+	int WIDGET_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetPatternImpl <em>Pattern</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetEntryImpl <em>Entry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.widget.impl.WidgetPatternImpl
-	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetPattern()
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetEntryImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetEntry()
 	 * @generated
 	 */
-	int WIDGET_PATTERN = 1;
+	int WIDGET_ENTRY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Allow</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_PATTERN__ALLOW = EntityPackage.ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Mask</b></em>' attribute.
+	 * The number of structural features of the '<em>Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_PATTERN__MASK = EntityPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Pattern</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_PATTERN_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int WIDGET_ENTRY_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetCheckBoxImpl <em>Check Box</em>}' class.
@@ -187,15 +151,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_CHECK_BOX__DISABLED = WIDGET__DISABLED;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_CHECK_BOX__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -223,15 +178,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_CHECK_BOX__NAME = WIDGET__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_CHECK_BOX__PATTERN = WIDGET__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -271,15 +217,6 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_COMBO_BOX__DISABLED = WIDGET__DISABLED;
 
 	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_COMBO_BOX__DOMAIN = WIDGET__DOMAIN;
-
-	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -307,15 +244,6 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_COMBO_BOX__NAME = WIDGET__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_COMBO_BOX__PATTERN = WIDGET__PATTERN;
-
-	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -325,13 +253,59 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_COMBO_BOX__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_COMBO_BOX__ENTRY = WIDGET_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Combo Box</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_COMBO_BOX_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+	int WIDGET_COMBO_BOX_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetComboBoxEntryImpl <em>Combo Box Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetComboBoxEntryImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetComboBoxEntry()
+	 * @generated
+	 */
+	int WIDGET_COMBO_BOX_ENTRY = 4;
+
+	/**
+	 * The feature id for the '<em><b>Frame</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_COMBO_BOX_ENTRY__FRAME = WIDGET_ENTRY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_COMBO_BOX_ENTRY__NAME = WIDGET_ENTRY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Combo Box Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_COMBO_BOX_ENTRY_FEATURE_COUNT = WIDGET_ENTRY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetCounterImpl <em>Counter</em>}' class.
@@ -341,7 +315,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetCounter()
 	 * @generated
 	 */
-	int WIDGET_COUNTER = 4;
+	int WIDGET_COUNTER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -351,15 +325,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_COUNTER__DISABLED = WIDGET__DISABLED;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_COUNTER__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -389,15 +354,6 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_COUNTER__NAME = WIDGET__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_COUNTER__PATTERN = WIDGET__PATTERN;
-
-	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -423,7 +379,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetdashboard()
 	 * @generated
 	 */
-	int WIDGETDASHBOARD = 5;
+	int WIDGETDASHBOARD = 6;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -433,15 +389,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGETDASHBOARD__DISABLED = WIDGET__DISABLED;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGETDASHBOARD__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -471,15 +418,6 @@ public interface WidgetPackage extends EPackage {
 	int WIDGETDASHBOARD__NAME = WIDGET__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGETDASHBOARD__PATTERN = WIDGET__PATTERN;
-
-	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -505,7 +443,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetDatePicker()
 	 * @generated
 	 */
-	int WIDGET_DATE_PICKER = 6;
+	int WIDGET_DATE_PICKER = 7;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -515,15 +453,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_DATE_PICKER__DISABLED = WIDGET__DISABLED;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_DATE_PICKER__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -553,15 +482,6 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_DATE_PICKER__NAME = WIDGET__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_DATE_PICKER__PATTERN = WIDGET__PATTERN;
-
-	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -587,7 +507,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetForm()
 	 * @generated
 	 */
-	int WIDGET_FORM = 7;
+	int WIDGET_FORM = 8;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -597,15 +517,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_FORM__DISABLED = WIDGET__DISABLED;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_FORM__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -635,15 +546,6 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_FORM__NAME = WIDGET__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_FORM__PATTERN = WIDGET__PATTERN;
-
-	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -653,13 +555,68 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_FORM__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_FORM__ENTRY = WIDGET_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Form</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_FORM_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+	int WIDGET_FORM_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetFormEntryImpl <em>Form Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetFormEntryImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetFormEntry()
+	 * @generated
+	 */
+	int WIDGET_FORM_ENTRY = 9;
+
+	/**
+	 * The feature id for the '<em><b>Frame</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_FORM_ENTRY__FRAME = WIDGET_ENTRY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Filter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_FORM_ENTRY__FILTER = WIDGET_ENTRY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_FORM_ENTRY__SELECTED = WIDGET_ENTRY_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Form Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_FORM_ENTRY_FEATURE_COUNT = WIDGET_ENTRY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetImageImpl <em>Image</em>}' class.
@@ -669,7 +626,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetImage()
 	 * @generated
 	 */
-	int WIDGET_IMAGE = 8;
+	int WIDGET_IMAGE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -679,15 +636,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_IMAGE__DISABLED = WIDGET__DISABLED;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_IMAGE__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -717,15 +665,6 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_IMAGE__NAME = WIDGET__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_IMAGE__PATTERN = WIDGET__PATTERN;
-
-	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -751,7 +690,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetLayout()
 	 * @generated
 	 */
-	int WIDGET_LAYOUT = 9;
+	int WIDGET_LAYOUT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -761,15 +700,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_LAYOUT__DISABLED = WIDGET__DISABLED;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_LAYOUT__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -799,15 +729,6 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_LAYOUT__NAME = WIDGET__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_LAYOUT__PATTERN = WIDGET__PATTERN;
-
-	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -817,13 +738,22 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_LAYOUT__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Events</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_LAYOUT__EVENTS = WIDGET_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Layout</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_LAYOUT_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+	int WIDGET_LAYOUT_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextAreaImpl <em>Text Area</em>}' class.
@@ -833,7 +763,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTextArea()
 	 * @generated
 	 */
-	int WIDGET_TEXT_AREA = 10;
+	int WIDGET_TEXT_AREA = 12;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -843,15 +773,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_TEXT_AREA__DISABLED = WIDGET__DISABLED;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_TEXT_AREA__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -881,15 +802,6 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_TEXT_AREA__NAME = WIDGET__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_TEXT_AREA__PATTERN = WIDGET__PATTERN;
-
-	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -915,7 +827,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetNumber()
 	 * @generated
 	 */
-	int WIDGET_NUMBER = 11;
+	int WIDGET_NUMBER = 13;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -925,15 +837,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_NUMBER__DISABLED = WIDGET__DISABLED;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_NUMBER__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -961,15 +864,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_NUMBER__NAME = WIDGET__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_NUMBER__PATTERN = WIDGET__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -1015,7 +909,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetNumberAttribute()
 	 * @generated
 	 */
-	int WIDGET_NUMBER_ATTRIBUTE = 12;
+	int WIDGET_NUMBER_ATTRIBUTE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Maxlength</b></em>' attribute.
@@ -1043,7 +937,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetSwitch()
 	 * @generated
 	 */
-	int WIDGET_SWITCH = 13;
+	int WIDGET_SWITCH = 15;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -1053,15 +947,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_SWITCH__DISABLED = WIDGET__DISABLED;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_SWITCH__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -1091,15 +976,6 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_SWITCH__NAME = WIDGET__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_SWITCH__PATTERN = WIDGET__PATTERN;
-
-	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1125,7 +1001,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetText()
 	 * @generated
 	 */
-	int WIDGET_TEXT = 14;
+	int WIDGET_TEXT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -1135,15 +1011,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_TEXT__DISABLED = WIDGET__DISABLED;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_TEXT__DOMAIN = WIDGET__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -1171,15 +1038,6 @@ public interface WidgetPackage extends EPackage {
 	 * @ordered
 	 */
 	int WIDGET_TEXT__NAME = WIDGET__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_TEXT__PATTERN = WIDGET__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -1225,7 +1083,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTextAttribute()
 	 * @generated
 	 */
-	int WIDGET_TEXT_ATTRIBUTE = 15;
+	int WIDGET_TEXT_ATTRIBUTE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Maxlength</b></em>' attribute.
@@ -1253,7 +1111,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetType()
 	 * @generated
 	 */
-	int WIDGET_TYPE = 16;
+	int WIDGET_TYPE = 18;
 
 
 	/**
@@ -1276,17 +1134,6 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWidget_Disabled();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.widget.Widget#getDomain <em>Domain</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Domain</em>'.
-	 * @see org.abchip.mimo.ui.widget.Widget#getDomain()
-	 * @see #getWidget()
-	 * @generated
-	 */
-	EReference getWidget_Domain();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.Widget#getIcon <em>Icon</em>}'.
@@ -1322,47 +1169,14 @@ public interface WidgetPackage extends EPackage {
 	EAttribute getWidget_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.widget.Widget#getPattern <em>Pattern</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetEntry <em>Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Pattern</em>'.
-	 * @see org.abchip.mimo.ui.widget.Widget#getPattern()
-	 * @see #getWidget()
+	 * @return the meta object for class '<em>Entry</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetEntry
 	 * @generated
 	 */
-	EReference getWidget_Pattern();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetPattern <em>Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pattern</em>'.
-	 * @see org.abchip.mimo.ui.widget.WidgetPattern
-	 * @generated
-	 */
-	EClass getWidgetPattern();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetPattern#getAllow <em>Allow</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Allow</em>'.
-	 * @see org.abchip.mimo.ui.widget.WidgetPattern#getAllow()
-	 * @see #getWidgetPattern()
-	 * @generated
-	 */
-	EAttribute getWidgetPattern_Allow();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetPattern#getMask <em>Mask</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mask</em>'.
-	 * @see org.abchip.mimo.ui.widget.WidgetPattern#getMask()
-	 * @see #getWidgetPattern()
-	 * @generated
-	 */
-	EAttribute getWidgetPattern_Mask();
+	EClass getWidgetEntry();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetCheckBox <em>Check Box</em>}'.
@@ -1405,6 +1219,49 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWidgetComboBox_View();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.widget.WidgetComboBox#getEntry <em>Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Entry</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetComboBox#getEntry()
+	 * @see #getWidgetComboBox()
+	 * @generated
+	 */
+	EReference getWidgetComboBox_Entry();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetComboBoxEntry <em>Combo Box Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Combo Box Entry</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetComboBoxEntry
+	 * @generated
+	 */
+	EClass getWidgetComboBoxEntry();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetComboBoxEntry#getFrame <em>Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Frame</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetComboBoxEntry#getFrame()
+	 * @see #getWidgetComboBoxEntry()
+	 * @generated
+	 */
+	EAttribute getWidgetComboBoxEntry_Frame();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetComboBoxEntry#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetComboBoxEntry#getName()
+	 * @see #getWidgetComboBoxEntry()
+	 * @generated
+	 */
+	EAttribute getWidgetComboBoxEntry_Name();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetCounter <em>Counter</em>}'.
@@ -1491,6 +1348,60 @@ public interface WidgetPackage extends EPackage {
 	EAttribute getWidgetForm_View();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.ui.widget.WidgetForm#getEntry <em>Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Entry</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetForm#getEntry()
+	 * @see #getWidgetForm()
+	 * @generated
+	 */
+	EReference getWidgetForm_Entry();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetFormEntry <em>Form Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Form Entry</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetFormEntry
+	 * @generated
+	 */
+	EClass getWidgetFormEntry();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getFrame <em>Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Frame</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetFormEntry#getFrame()
+	 * @see #getWidgetFormEntry()
+	 * @generated
+	 */
+	EAttribute getWidgetFormEntry_Frame();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getFilter <em>Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Filter</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetFormEntry#getFilter()
+	 * @see #getWidgetFormEntry()
+	 * @generated
+	 */
+	EAttribute getWidgetFormEntry_Filter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetFormEntry#getSelected()
+	 * @see #getWidgetFormEntry()
+	 * @generated
+	 */
+	EAttribute getWidgetFormEntry_Selected();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetImage <em>Image</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1531,6 +1442,17 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWidgetLayout_View();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.ui.widget.WidgetLayout#getEvents <em>Events</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Events</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetLayout#getEvents()
+	 * @see #getWidgetLayout()
+	 * @generated
+	 */
+	EReference getWidgetLayout_Events();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetTextArea <em>Text Area</em>}'.
@@ -1753,14 +1675,6 @@ public interface WidgetPackage extends EPackage {
 		EAttribute WIDGET__DISABLED = eINSTANCE.getWidget_Disabled();
 
 		/**
-		 * The meta object literal for the '<em><b>Domain</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference WIDGET__DOMAIN = eINSTANCE.getWidget_Domain();
-
-		/**
 		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1785,38 +1699,14 @@ public interface WidgetPackage extends EPackage {
 		EAttribute WIDGET__NAME = eINSTANCE.getWidget_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Pattern</b></em>' containment reference feature.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetEntryImpl <em>Entry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetEntryImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetEntry()
 		 * @generated
 		 */
-		EReference WIDGET__PATTERN = eINSTANCE.getWidget_Pattern();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetPatternImpl <em>Pattern</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.widget.impl.WidgetPatternImpl
-		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetPattern()
-		 * @generated
-		 */
-		EClass WIDGET_PATTERN = eINSTANCE.getWidgetPattern();
-
-		/**
-		 * The meta object literal for the '<em><b>Allow</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WIDGET_PATTERN__ALLOW = eINSTANCE.getWidgetPattern_Allow();
-
-		/**
-		 * The meta object literal for the '<em><b>Mask</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WIDGET_PATTERN__MASK = eINSTANCE.getWidgetPattern_Mask();
+		EClass WIDGET_ENTRY = eINSTANCE.getWidgetEntry();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetCheckBoxImpl <em>Check Box</em>}' class.
@@ -1853,6 +1743,40 @@ public interface WidgetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WIDGET_COMBO_BOX__VIEW = eINSTANCE.getWidgetComboBox_View();
+
+		/**
+		 * The meta object literal for the '<em><b>Entry</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WIDGET_COMBO_BOX__ENTRY = eINSTANCE.getWidgetComboBox_Entry();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetComboBoxEntryImpl <em>Combo Box Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetComboBoxEntryImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetComboBoxEntry()
+		 * @generated
+		 */
+		EClass WIDGET_COMBO_BOX_ENTRY = eINSTANCE.getWidgetComboBoxEntry();
+
+		/**
+		 * The meta object literal for the '<em><b>Frame</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_COMBO_BOX_ENTRY__FRAME = eINSTANCE.getWidgetComboBoxEntry_Frame();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_COMBO_BOX_ENTRY__NAME = eINSTANCE.getWidgetComboBoxEntry_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetCounterImpl <em>Counter</em>}' class.
@@ -1927,6 +1851,48 @@ public interface WidgetPackage extends EPackage {
 		EAttribute WIDGET_FORM__VIEW = eINSTANCE.getWidgetForm_View();
 
 		/**
+		 * The meta object literal for the '<em><b>Entry</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WIDGET_FORM__ENTRY = eINSTANCE.getWidgetForm_Entry();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetFormEntryImpl <em>Form Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetFormEntryImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetFormEntry()
+		 * @generated
+		 */
+		EClass WIDGET_FORM_ENTRY = eINSTANCE.getWidgetFormEntry();
+
+		/**
+		 * The meta object literal for the '<em><b>Frame</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_FORM_ENTRY__FRAME = eINSTANCE.getWidgetFormEntry_Frame();
+
+		/**
+		 * The meta object literal for the '<em><b>Filter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_FORM_ENTRY__FILTER = eINSTANCE.getWidgetFormEntry_Filter();
+
+		/**
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_FORM_ENTRY__SELECTED = eINSTANCE.getWidgetFormEntry_Selected();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetImageImpl <em>Image</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1961,6 +1927,14 @@ public interface WidgetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WIDGET_LAYOUT__VIEW = eINSTANCE.getWidgetLayout_View();
+
+		/**
+		 * The meta object literal for the '<em><b>Events</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WIDGET_LAYOUT__EVENTS = eINSTANCE.getWidgetLayout_Events();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextAreaImpl <em>Text Area</em>}' class.

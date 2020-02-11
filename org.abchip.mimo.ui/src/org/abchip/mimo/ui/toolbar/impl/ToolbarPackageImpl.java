@@ -8,6 +8,8 @@ import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.ui.UIPackage;
+import org.abchip.mimo.ui.event.EventPackage;
+import org.abchip.mimo.ui.event.impl.EventPackageImpl;
 import org.abchip.mimo.ui.form.FormPackage;
 import org.abchip.mimo.ui.form.impl.FormPackageImpl;
 import org.abchip.mimo.ui.impl.UIPackageImpl;
@@ -111,6 +113,8 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		UIPackageImpl theUIPackage = (UIPackageImpl)(registeredPackage instanceof UIPackageImpl ? registeredPackage : UIPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(FormPackage.eNS_URI);
 		FormPackageImpl theFormPackage = (FormPackageImpl)(registeredPackage instanceof FormPackageImpl ? registeredPackage : FormPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EventPackage.eNS_URI);
+		EventPackageImpl theEventPackage = (EventPackageImpl)(registeredPackage instanceof EventPackageImpl ? registeredPackage : EventPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
 		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
@@ -124,6 +128,7 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		theToolbarPackage.createPackageContents();
 		theUIPackage.createPackageContents();
 		theFormPackage.createPackageContents();
+		theEventPackage.createPackageContents();
 		theMenuPackage.createPackageContents();
 		theQueryPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
@@ -133,6 +138,7 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		theToolbarPackage.initializePackageContents();
 		theUIPackage.initializePackageContents();
 		theFormPackage.initializePackageContents();
+		theEventPackage.initializePackageContents();
 		theMenuPackage.initializePackageContents();
 		theQueryPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();

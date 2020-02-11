@@ -46,6 +46,9 @@
           eType="#//widget/Widget" containment="true"/>
     </eClassifiers>
   </eSubpackages>
+  <eSubpackages name="event" nsURI="http://www.abchip.org/mimo/ui/event" nsPrefix="ui-event">
+    <eClassifiers xsi:type="ecore:EClass" name="EventEntry" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
+  </eSubpackages>
   <eSubpackages name="menu" nsURI="http://www.abchip.org/mimo/ui/menu" nsPrefix="ui-menu">
     <eClassifiers xsi:type="ecore:EClass" name="ContextMenu" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
@@ -144,21 +147,15 @@
       <eLiterals name="TextArea" literal="mm-textarea"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Widget" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
+      <eOperations name="getEntry" lowerBound="1" eType="#//widget/WidgetEntry"/>
       <eOperations name="getView" lowerBound="1" eType="#//widget/WidgetType"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="disabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="domain" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/Domain"
-          containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//widget/WidgetPattern"
-          containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="WidgetPattern" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="allow" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetEntry" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetCheckBox" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-checkbox"/>
@@ -166,6 +163,13 @@
     <eClassifiers xsi:type="ecore:EClass" name="WidgetComboBox" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-combo"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entry" eType="#//widget/WidgetComboBoxEntry"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetComboBoxEntry" eSuperTypes="#//widget/WidgetEntry">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetCounter" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
@@ -182,6 +186,14 @@
     <eClassifiers xsi:type="ecore:EClass" name="WidgetForm" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-form"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entry" eType="#//widget/WidgetFormEntry"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetFormEntry" eSuperTypes="#//widget/WidgetEntry">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetImage" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
@@ -190,6 +202,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="WidgetLayout" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-layout"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+          eType="#//event/EventEntry"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetTextArea" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"

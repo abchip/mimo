@@ -20,7 +20,6 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.data.NumericDef;
 import org.abchip.mimo.data.StringDef;
-import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
@@ -33,6 +32,8 @@ import org.abchip.mimo.ui.form.Form;
 import org.abchip.mimo.ui.form.FormFactory;
 import org.abchip.mimo.ui.form.FormField;
 import org.abchip.mimo.ui.widget.Widget;
+import org.abchip.mimo.ui.widget.WidgetComboBox;
+import org.abchip.mimo.ui.widget.WidgetComboBoxEntry;
 import org.abchip.mimo.ui.widget.WidgetFactory;
 import org.abchip.mimo.ui.widget.WidgetNumber;
 import org.abchip.mimo.ui.widget.WidgetNumberAttribute;
@@ -40,8 +41,6 @@ import org.abchip.mimo.ui.widget.WidgetText;
 import org.abchip.mimo.ui.widget.WidgetTextAttribute;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Strings;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class LookupFormServlet extends BaseServlet {
 
@@ -77,7 +76,7 @@ public class LookupFormServlet extends BaseServlet {
 				if (slot.getGroup() != null && slot.getGroup().equals("info"))
 					continue;
 
-				FormField field = buildFormField(slot);
+				FormField field = buildFormField(context, slot);
 				if (slot.isKey()) {
 
 					if (currentKey == null)
@@ -105,13 +104,12 @@ public class LookupFormServlet extends BaseServlet {
 
 		ResourceSerializer<Form> entitySerializer = resourceManager.createResourceSerializer(context, Form.class, SerializationType.JAVA_SCRIPT_MIMO_NOTATION);
 		if (form != null) {
-			completeForm(context, form);
 			entitySerializer.add(form);
 		}
 		entitySerializer.save(response.getOutputStream());
 	}
 
-	private FormField buildFormField(Slot slot) {
+	private FormField buildFormField(Context context, Slot slot) {
 
 		FormField field = FormFactory.eINSTANCE.createFormField();
 		field.setGroup(slot.getGroup());
@@ -128,7 +126,6 @@ public class LookupFormServlet extends BaseServlet {
 			widget = WidgetFactory.eINSTANCE.createWidgetCounter();
 		else if (slot.getText().toLowerCase().contains("image"))
 			widget = WidgetFactory.eINSTANCE.createWidgetImage();
-
 		else {
 			switch (slot.getDataType()) {
 			case BINARY:
@@ -150,16 +147,11 @@ public class LookupFormServlet extends BaseServlet {
 			case NUMERIC:
 				widget = WidgetFactory.eINSTANCE.createWidgetNumber();
 				NumericDef numericDef = (NumericDef) slot.getDataDef();
-				// numericDef.setPrecision(50);
 				if (numericDef.getPrecision() > 0) {
 					WidgetNumberAttribute attributes = WidgetFactory.eINSTANCE.createWidgetNumberAttribute();
 					attributes.setMaxlength(numericDef.getPrecision());
 					((WidgetNumber) widget).setAttributes(attributes);
 				}
-
-				// field.setPrecision(numericDef.getPrecision());
-				// field.setScale(numericDef.getScale());
-				widget.setPattern(null);
 				break;
 			case STRING:
 				widget = WidgetFactory.eINSTANCE.createWidgetText();
@@ -173,9 +165,9 @@ public class LookupFormServlet extends BaseServlet {
 				break;
 			}
 		}
+		field.setWidget(widget);
 
 		widget.setName(slot.getName());
-		widget.setDomain((Domain) EcoreUtil.copy((EObject) slot.getDomain()));
 
 		StringBuffer label = new StringBuffer();
 		for (char c : slot.getName().toCharArray()) {
@@ -185,31 +177,54 @@ public class LookupFormServlet extends BaseServlet {
 		}
 		widget.setLabel(Strings.qINSTANCE.firstToUpper(label.toString()));
 
-		field.setWidget(widget);
+		switch (widget.getView()) {
+		case CHECK_BOX:
+			break;
+		case COMBO_BOX:
+			if (slot.getDomain() != null) {
+				WidgetComboBox widgetComboBox = (WidgetComboBox) widget;
+				WidgetComboBoxEntry entry = WidgetFactory.eINSTANCE.createWidgetComboBoxEntry();
+				entry.setFrame(slot.getDomain().getFrame());
+				widgetComboBox.setEntry(entry);
+
+				completeFormField(context, field, slot.getDomain().getFrame());
+			}
+			break;
+		case COUNTER:
+			break;
+		case DASHBOARD:
+			break;
+		case DATE_PICKER:
+			break;
+		case FORM:
+			break;
+		case IMAGE:
+			break;
+		case LAYOUT:
+			break;
+		case NUMBER:
+			break;
+		case SWITCH:
+			break;
+		case TEXT:
+			break;
+		case TEXT_AREA:
+			break;
+		}
 
 		return field;
 	}
 
-	private void completeForm(Context context, Form form) {
-		for (FormField formField : form.getFields())
-			completeFormField(context, formField);
-	}
-
-	private void completeFormField(Context context, FormField formField) {
-
-		Domain domain = formField.getWidget().getDomain();
-
-		if (domain == null)
-			return;
+	private void completeFormField(Context context, FormField formField, String frameName) {
 
 		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(context, UiFrameSetup.class);
 
-		Frame<?> frame = resourceManager.getFrame(context, domain.getFrame());
+		Frame<?> frame = resourceManager.getFrame(context, frameName);
 		if (frame == null)
 			return;
 
 		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
-		Lists.qINSTANCE.addFirst(frameNames, domain.getFrame());
+		Lists.qINSTANCE.addFirst(frameNames, frameName);
 
 		for (String domainName : frameNames) {
 			UiFrameSetup frameSetup = frameSetupReader.lookup(domainName);

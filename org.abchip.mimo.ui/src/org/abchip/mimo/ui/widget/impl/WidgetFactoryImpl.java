@@ -60,10 +60,12 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 		switch (eClass.getClassifierID()) {
 			case WidgetPackage.WIDGET_CHECK_BOX: return (EObject)createWidgetCheckBox();
 			case WidgetPackage.WIDGET_COMBO_BOX: return (EObject)createWidgetComboBox();
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY: return (EObject)createWidgetComboBoxEntry();
 			case WidgetPackage.WIDGET_COUNTER: return (EObject)createWidgetCounter();
 			case WidgetPackage.WIDGETDASHBOARD: return (EObject)createWidgetdashboard();
 			case WidgetPackage.WIDGET_DATE_PICKER: return (EObject)createWidgetDatePicker();
 			case WidgetPackage.WIDGET_FORM: return (EObject)createWidgetForm();
+			case WidgetPackage.WIDGET_FORM_ENTRY: return (EObject)createWidgetFormEntry();
 			case WidgetPackage.WIDGET_IMAGE: return (EObject)createWidgetImage();
 			case WidgetPackage.WIDGET_LAYOUT: return (EObject)createWidgetLayout();
 			case WidgetPackage.WIDGET_TEXT_AREA: return (EObject)createWidgetTextArea();
@@ -135,6 +137,17 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 	 * @generated
 	 */
 	@Override
+	public WidgetComboBoxEntry createWidgetComboBoxEntry() {
+		WidgetComboBoxEntryImpl widgetComboBoxEntry = new WidgetComboBoxEntryImpl();
+		return widgetComboBoxEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public WidgetCounter createWidgetCounter() {
 		WidgetCounterImpl widgetCounter = new WidgetCounterImpl();
 		return widgetCounter;
@@ -171,6 +184,17 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 	public WidgetForm createWidgetForm() {
 		WidgetFormImpl widgetForm = new WidgetFormImpl();
 		return widgetForm;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WidgetFormEntry createWidgetFormEntry() {
+		WidgetFormEntryImpl widgetFormEntry = new WidgetFormEntryImpl();
+		return widgetFormEntry;
 	}
 
 	/**

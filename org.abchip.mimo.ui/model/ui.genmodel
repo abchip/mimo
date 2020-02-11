@@ -32,8 +32,7 @@
     <genClasses ecoreClass="ui.ecore#//UiUserSetup">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//UiUserSetup/name"/>
     </genClasses>
-    <nestedGenPackages prefix="Form" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="ui.ecore#//form">
+    <nestedGenPackages prefix="Form" disposableProviderFactory="true" ecorePackage="ui.ecore#//form">
       <genClasses ecoreClass="ui.ecore#//form/Form">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//form/Form/fields"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/Form/name"/>
@@ -44,6 +43,9 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/FormField/key"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//form/FormField/widget"/>
       </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Event" disposableProviderFactory="true" ecorePackage="ui.ecore#//event">
+      <genClasses ecoreClass="ui.ecore#//event/EventEntry"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Menu" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="ui.ecore#//menu">
@@ -127,22 +129,23 @@
       </genEnums>
       <genClasses image="false" ecoreClass="ui.ecore#//widget/Widget">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widget/disabled"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//widget/Widget/domain"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widget/icon"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widget/label"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widget/name"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//widget/Widget/pattern"/>
+        <genOperations ecoreOperation="ui.ecore#//widget/Widget/getEntry"/>
         <genOperations ecoreOperation="ui.ecore#//widget/Widget/getView"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="ui.ecore#//widget/WidgetPattern">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetPattern/allow"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetPattern/mask"/>
-      </genClasses>
+      <genClasses image="false" ecoreClass="ui.ecore#//widget/WidgetEntry"/>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetCheckBox">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetCheckBox/view"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetComboBox">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetComboBox/view"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//widget/WidgetComboBox/entry"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetComboBoxEntry">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetComboBoxEntry/frame"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetComboBoxEntry/name"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetCounter">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetCounter/view"/>
@@ -155,12 +158,20 @@
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetForm">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetForm/view"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//widget/WidgetForm/entry"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetFormEntry">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetFormEntry/frame"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetFormEntry/filter"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetFormEntry/selected"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetImage">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetImage/view"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetLayout">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetLayout/view"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference ui.ecore#//widget/WidgetLayout/events"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetTextArea">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetTextArea/view"/>

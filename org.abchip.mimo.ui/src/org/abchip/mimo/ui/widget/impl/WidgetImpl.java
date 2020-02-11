@@ -3,17 +3,13 @@
  */
 package org.abchip.mimo.ui.widget.impl;
 
-import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.ui.widget.Widget;
+import org.abchip.mimo.ui.widget.WidgetEntry;
 import org.abchip.mimo.ui.widget.WidgetPackage;
-import org.abchip.mimo.ui.widget.WidgetPattern;
 import org.abchip.mimo.ui.widget.WidgetType;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,11 +21,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImpl#isDisabled <em>Disabled</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImpl#getDomain <em>Domain</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetImpl#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,16 +48,6 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 	 * @ordered
 	 */
 	protected boolean disabled = DISABLED_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDomain() <em>Domain</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDomain()
-	 * @generated
-	 * @ordered
-	 */
-	protected Domain domain;
 
 	/**
 	 * 
@@ -131,16 +115,6 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPattern()
-	 * @generated
-	 * @ordered
-	 */
-	protected WidgetPattern pattern;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -180,74 +154,6 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 		disabled = newDisabled;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__DISABLED, oldDisabled, disabled));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Domain getDomain() {
-		if (domain != null && ((EObject)domain).eIsProxy()) {
-			InternalEObject oldDomain = (InternalEObject)domain;
-			domain = (Domain)eResolveProxy(oldDomain);
-			if (domain != oldDomain) {
-				InternalEObject newDomain = (InternalEObject)domain;
-				NotificationChain msgs = oldDomain.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__DOMAIN, null, null);
-				if (newDomain.eInternalContainer() == null) {
-					msgs = newDomain.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__DOMAIN, null, msgs);
-				}
-				if (msgs != null) msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WidgetPackage.WIDGET__DOMAIN, oldDomain, domain));
-			}
-		}
-		return domain;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Domain basicGetDomain() {
-		return domain;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDomain(Domain newDomain, NotificationChain msgs) {
-		Domain oldDomain = domain;
-		domain = newDomain;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__DOMAIN, oldDomain, newDomain);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDomain(Domain newDomain) {
-		if (newDomain != domain) {
-			NotificationChain msgs = null;
-			if (domain != null)
-				msgs = ((InternalEObject)domain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__DOMAIN, null, msgs);
-			if (newDomain != null)
-				msgs = ((InternalEObject)newDomain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__DOMAIN, null, msgs);
-			msgs = basicSetDomain(newDomain, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__DOMAIN, newDomain, newDomain));
 	}
 
 	/**
@@ -322,98 +228,20 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public WidgetPattern getPattern() {
-		if (pattern != null && ((EObject)pattern).eIsProxy()) {
-			InternalEObject oldPattern = (InternalEObject)pattern;
-			pattern = (WidgetPattern)eResolveProxy(oldPattern);
-			if (pattern != oldPattern) {
-				InternalEObject newPattern = (InternalEObject)pattern;
-				NotificationChain msgs = oldPattern.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__PATTERN, null, null);
-				if (newPattern.eInternalContainer() == null) {
-					msgs = newPattern.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__PATTERN, null, msgs);
-				}
-				if (msgs != null) msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WidgetPackage.WIDGET__PATTERN, oldPattern, pattern));
-			}
-		}
-		return pattern;
+	public WidgetEntry getEntry() {
+		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WidgetPattern basicGetPattern() {
-		return pattern;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPattern(WidgetPattern newPattern, NotificationChain msgs) {
-		WidgetPattern oldPattern = pattern;
-		pattern = newPattern;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__PATTERN, oldPattern, newPattern);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public void setPattern(WidgetPattern newPattern) {
-		if (newPattern != pattern) {
-			NotificationChain msgs = null;
-			if (pattern != null)
-				msgs = ((InternalEObject)pattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__PATTERN, null, msgs);
-			if (newPattern != null)
-				msgs = ((InternalEObject)newPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WidgetPackage.WIDGET__PATTERN, null, msgs);
-			msgs = basicSetPattern(newPattern, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET__PATTERN, newPattern, newPattern));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public WidgetType getView() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case WidgetPackage.WIDGET__DOMAIN:
-				return basicSetDomain(null, msgs);
-			case WidgetPackage.WIDGET__PATTERN:
-				return basicSetPattern(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+	public abstract WidgetType getView();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -425,18 +253,12 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 		switch (featureID) {
 			case WidgetPackage.WIDGET__DISABLED:
 				return isDisabled();
-			case WidgetPackage.WIDGET__DOMAIN:
-				if (resolve) return getDomain();
-				return basicGetDomain();
 			case WidgetPackage.WIDGET__ICON:
 				return getIcon();
 			case WidgetPackage.WIDGET__LABEL:
 				return getLabel();
 			case WidgetPackage.WIDGET__NAME:
 				return getName();
-			case WidgetPackage.WIDGET__PATTERN:
-				if (resolve) return getPattern();
-				return basicGetPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -452,9 +274,6 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 			case WidgetPackage.WIDGET__DISABLED:
 				setDisabled((Boolean)newValue);
 				return;
-			case WidgetPackage.WIDGET__DOMAIN:
-				setDomain((Domain)newValue);
-				return;
 			case WidgetPackage.WIDGET__ICON:
 				setIcon((String)newValue);
 				return;
@@ -463,9 +282,6 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 				return;
 			case WidgetPackage.WIDGET__NAME:
 				setName((String)newValue);
-				return;
-			case WidgetPackage.WIDGET__PATTERN:
-				setPattern((WidgetPattern)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -482,9 +298,6 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 			case WidgetPackage.WIDGET__DISABLED:
 				setDisabled(DISABLED_EDEFAULT);
 				return;
-			case WidgetPackage.WIDGET__DOMAIN:
-				setDomain((Domain)null);
-				return;
 			case WidgetPackage.WIDGET__ICON:
 				setIcon(ICON_EDEFAULT);
 				return;
@@ -493,9 +306,6 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 				return;
 			case WidgetPackage.WIDGET__NAME:
 				setName(NAME_EDEFAULT);
-				return;
-			case WidgetPackage.WIDGET__PATTERN:
-				setPattern((WidgetPattern)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -511,16 +321,12 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 		switch (featureID) {
 			case WidgetPackage.WIDGET__DISABLED:
 				return disabled != DISABLED_EDEFAULT;
-			case WidgetPackage.WIDGET__DOMAIN:
-				return domain != null;
 			case WidgetPackage.WIDGET__ICON:
 				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
 			case WidgetPackage.WIDGET__LABEL:
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 			case WidgetPackage.WIDGET__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case WidgetPackage.WIDGET__PATTERN:
-				return pattern != null;
 		}
 		return super.eIsSet(featureID);
 	}

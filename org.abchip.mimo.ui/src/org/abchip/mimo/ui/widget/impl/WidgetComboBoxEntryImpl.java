@@ -3,9 +3,9 @@
  */
 package org.abchip.mimo.ui.widget.impl;
 
-import org.abchip.mimo.entity.impl.EntityImpl;
+import org.abchip.mimo.ui.widget.WidgetComboBoxEntry;
 import org.abchip.mimo.ui.widget.WidgetPackage;
-import org.abchip.mimo.ui.widget.WidgetPattern;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -14,70 +14,70 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Widget Pattern</b></em>'.
+ * An implementation of the model object '<em><b>Combo Box Entry</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetPatternImpl#getAllow <em>Allow</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetPatternImpl#getMask <em>Mask</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetComboBoxEntryImpl#getFrame <em>Frame</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetComboBoxEntryImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPattern {
+public class WidgetComboBoxEntryImpl extends WidgetEntryImpl implements WidgetComboBoxEntry {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getAllow() <em>Allow</em>}' attribute.
+	 * The default value of the '{@link #getFrame() <em>Frame</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAllow()
+	 * @see #getFrame()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ALLOW_EDEFAULT = null;
+	protected static final String FRAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAllow() <em>Allow</em>}' attribute.
+	 * The cached value of the '{@link #getFrame() <em>Frame</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAllow()
+	 * @see #getFrame()
 	 * @generated
 	 * @ordered
 	 */
-	protected String allow = ALLOW_EDEFAULT;
+	protected String frame = FRAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMask() <em>Mask</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMask()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MASK_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getMask() <em>Mask</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMask()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String mask = MASK_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WidgetPatternImpl() {
+	protected WidgetComboBoxEntryImpl() {
 		super();
 	}
 
@@ -88,7 +88,7 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WidgetPackage.Literals.WIDGET_PATTERN;
+		return WidgetPackage.Literals.WIDGET_COMBO_BOX_ENTRY;
 	}
 
 	/**
@@ -97,8 +97,8 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	 * @generated
 	 */
 	@Override
-	public String getAllow() {
-		return allow;
+	public String getFrame() {
+		return frame;
 	}
 
 	/**
@@ -107,11 +107,11 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	 * @generated
 	 */
 	@Override
-	public void setAllow(String newAllow) {
-		String oldAllow = allow;
-		allow = newAllow;
+	public void setFrame(String newFrame) {
+		String oldFrame = frame;
+		frame = newFrame;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_PATTERN__ALLOW, oldAllow, allow));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FRAME, oldFrame, frame));
 	}
 
 	/**
@@ -120,8 +120,8 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	 * @generated
 	 */
 	@Override
-	public String getMask() {
-		return mask;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -130,11 +130,11 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	 * @generated
 	 */
 	@Override
-	public void setMask(String newMask) {
-		String oldMask = mask;
-		mask = newMask;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_PATTERN__MASK, oldMask, mask));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_COMBO_BOX_ENTRY__NAME, oldName, name));
 	}
 
 	/**
@@ -145,10 +145,10 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WidgetPackage.WIDGET_PATTERN__ALLOW:
-				return getAllow();
-			case WidgetPackage.WIDGET_PATTERN__MASK:
-				return getMask();
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FRAME:
+				return getFrame();
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,11 +161,11 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WidgetPackage.WIDGET_PATTERN__ALLOW:
-				setAllow((String)newValue);
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FRAME:
+				setFrame((String)newValue);
 				return;
-			case WidgetPackage.WIDGET_PATTERN__MASK:
-				setMask((String)newValue);
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -179,11 +179,11 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WidgetPackage.WIDGET_PATTERN__ALLOW:
-				setAllow(ALLOW_EDEFAULT);
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FRAME:
+				setFrame(FRAME_EDEFAULT);
 				return;
-			case WidgetPackage.WIDGET_PATTERN__MASK:
-				setMask(MASK_EDEFAULT);
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -197,10 +197,10 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WidgetPackage.WIDGET_PATTERN__ALLOW:
-				return ALLOW_EDEFAULT == null ? allow != null : !ALLOW_EDEFAULT.equals(allow);
-			case WidgetPackage.WIDGET_PATTERN__MASK:
-				return MASK_EDEFAULT == null ? mask != null : !MASK_EDEFAULT.equals(mask);
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FRAME:
+				return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -215,12 +215,12 @@ public abstract class WidgetPatternImpl extends EntityImpl implements WidgetPatt
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (allow: ");
-		result.append(allow);
-		result.append(", mask: ");
-		result.append(mask);
+		result.append(" (frame: ");
+		result.append(frame);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
 
-} //WidgetPatternImpl
+} //WidgetComboBoxEntryImpl

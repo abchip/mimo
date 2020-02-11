@@ -41,6 +41,15 @@ public interface WidgetFactory extends EFactory {
 	WidgetComboBox createWidgetComboBox();
 
 	/**
+	 * Returns a new object of class '<em>Combo Box Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Combo Box Entry</em>'.
+	 * @generated
+	 */
+	WidgetComboBoxEntry createWidgetComboBoxEntry();
+
+	/**
 	 * Returns a new object of class '<em>Counter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,6 +84,15 @@ public interface WidgetFactory extends EFactory {
 	 * @generated
 	 */
 	WidgetForm createWidgetForm();
+
+	/**
+	 * Returns a new object of class '<em>Form Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Form Entry</em>'.
+	 * @generated
+	 */
+	WidgetFormEntry createWidgetFormEntry();
 
 	/**
 	 * Returns a new object of class '<em>Image</em>'.
