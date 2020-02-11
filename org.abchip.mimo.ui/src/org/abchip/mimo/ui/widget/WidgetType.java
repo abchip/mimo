@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
+ * Copyright (c) 2017, 2020 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.ui.widget;
 
@@ -43,6 +43,14 @@ public enum WidgetType implements Enumerator {
 	 * @ordered
 	 */
 	COUNTER(0, "Counter", "mm-counter"), /**
+	 * The '<em><b>Dashboard</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DASHBOARD_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DASHBOARD(0, "Dashboard", "mm-dashboard"), /**
 	 * The '<em><b>Date Picker</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,14 +75,14 @@ public enum WidgetType implements Enumerator {
 	 * @ordered
 	 */
 	IMAGE(0, "Image", "mm-image"), /**
-	 * The '<em><b>Text Area</b></em>' literal object.
+	 * The '<em><b>Layout</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TEXT_AREA_VALUE
+	 * @see #LAYOUT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TEXT_AREA(0, "TextArea", "mm-textarea"), /**
+	LAYOUT(0, "Layout", "mm-layout"), /**
 	 * The '<em><b>Number</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,7 +106,15 @@ public enum WidgetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TEXT(0, "Text", "mm-text");
+	TEXT(0, "Text", "mm-text"), /**
+	 * The '<em><b>Text Area</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #TEXT_AREA_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	TEXT_AREA(0, "TextArea", "mm-textarea");
 
 	/**
 	 * The '<em><b>Check Box</b></em>' literal value.
@@ -146,6 +162,21 @@ public enum WidgetType implements Enumerator {
 	public static final int COUNTER_VALUE = 0;
 
 	/**
+	 * The '<em><b>Dashboard</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Dashboard</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DASHBOARD
+	 * @model name="Dashboard" literal="mm-dashboard"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DASHBOARD_VALUE = 0;
+
+	/**
 	 * The '<em><b>Date Picker</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -191,19 +222,19 @@ public enum WidgetType implements Enumerator {
 	public static final int IMAGE_VALUE = 0;
 
 	/**
-	 * The '<em><b>Text Area</b></em>' literal value.
+	 * The '<em><b>Layout</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Text Area</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Layout</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #TEXT_AREA
-	 * @model name="TextArea" literal="mm-textarea"
+	 * @see #LAYOUT
+	 * @model name="Layout" literal="mm-layout"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TEXT_AREA_VALUE = 0;
+	public static final int LAYOUT_VALUE = 0;
 
 	/**
 	 * The '<em><b>Number</b></em>' literal value.
@@ -251,6 +282,21 @@ public enum WidgetType implements Enumerator {
 	public static final int TEXT_VALUE = 0;
 
 	/**
+	 * The '<em><b>Text Area</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Text Area</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #TEXT_AREA
+	 * @model name="TextArea" literal="mm-textarea"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int TEXT_AREA_VALUE = 0;
+
+	/**
 	 * An array of all the '<em><b>Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -261,13 +307,15 @@ public enum WidgetType implements Enumerator {
 			CHECK_BOX,
 			COMBO_BOX,
 			COUNTER,
+			DASHBOARD,
 			DATE_PICKER,
 			FORM,
 			IMAGE,
-			TEXT_AREA,
+			LAYOUT,
 			NUMBER,
 			SWITCH,
 			TEXT,
+			TEXT_AREA,
 		};
 
 	/**

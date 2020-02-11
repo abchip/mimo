@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
+ * Copyright (c) 2017, 2020 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.ui.widget;
 
@@ -416,6 +416,88 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_COUNTER_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetdashboardImpl <em>Widgetdashboard</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetdashboardImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetdashboard()
+	 * @generated
+	 */
+	int WIDGETDASHBOARD = 5;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGETDASHBOARD__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGETDASHBOARD__DOMAIN = WIDGET__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGETDASHBOARD__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGETDASHBOARD__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGETDASHBOARD__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGETDASHBOARD__PATTERN = WIDGET__PATTERN;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGETDASHBOARD__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Widgetdashboard</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGETDASHBOARD_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetDatePickerImpl <em>Date Picker</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -423,7 +505,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetDatePicker()
 	 * @generated
 	 */
-	int WIDGET_DATE_PICKER = 5;
+	int WIDGET_DATE_PICKER = 6;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -505,7 +587,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetForm()
 	 * @generated
 	 */
-	int WIDGET_FORM = 6;
+	int WIDGET_FORM = 7;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -587,7 +669,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetImage()
 	 * @generated
 	 */
-	int WIDGET_IMAGE = 7;
+	int WIDGET_IMAGE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -662,6 +744,88 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_IMAGE_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetLayoutImpl <em>Layout</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetLayoutImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetLayout()
+	 * @generated
+	 */
+	int WIDGET_LAYOUT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_LAYOUT__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_LAYOUT__DOMAIN = WIDGET__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_LAYOUT__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_LAYOUT__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_LAYOUT__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_LAYOUT__PATTERN = WIDGET__PATTERN;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_LAYOUT__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Layout</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_LAYOUT_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextAreaImpl <em>Text Area</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -669,7 +833,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTextArea()
 	 * @generated
 	 */
-	int WIDGET_TEXT_AREA = 8;
+	int WIDGET_TEXT_AREA = 10;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -751,7 +915,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetNumber()
 	 * @generated
 	 */
-	int WIDGET_NUMBER = 9;
+	int WIDGET_NUMBER = 11;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -851,7 +1015,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetNumberAttribute()
 	 * @generated
 	 */
-	int WIDGET_NUMBER_ATTRIBUTE = 10;
+	int WIDGET_NUMBER_ATTRIBUTE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Maxlength</b></em>' attribute.
@@ -879,7 +1043,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetSwitch()
 	 * @generated
 	 */
-	int WIDGET_SWITCH = 11;
+	int WIDGET_SWITCH = 13;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -961,7 +1125,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetText()
 	 * @generated
 	 */
-	int WIDGET_TEXT = 12;
+	int WIDGET_TEXT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -1061,7 +1225,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTextAttribute()
 	 * @generated
 	 */
-	int WIDGET_TEXT_ATTRIBUTE = 13;
+	int WIDGET_TEXT_ATTRIBUTE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Maxlength</b></em>' attribute.
@@ -1089,7 +1253,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetType()
 	 * @generated
 	 */
-	int WIDGET_TYPE = 14;
+	int WIDGET_TYPE = 16;
 
 
 	/**
@@ -1264,6 +1428,27 @@ public interface WidgetPackage extends EPackage {
 	EAttribute getWidgetCounter_View();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.Widgetdashboard <em>Widgetdashboard</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Widgetdashboard</em>'.
+	 * @see org.abchip.mimo.ui.widget.Widgetdashboard
+	 * @generated
+	 */
+	EClass getWidgetdashboard();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.Widgetdashboard#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.Widgetdashboard#getView()
+	 * @see #getWidgetdashboard()
+	 * @generated
+	 */
+	EAttribute getWidgetdashboard_View();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetDatePicker <em>Date Picker</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1325,6 +1510,27 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWidgetImage_View();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetLayout <em>Layout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Layout</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetLayout
+	 * @generated
+	 */
+	EClass getWidgetLayout();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetLayout#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetLayout#getView()
+	 * @see #getWidgetLayout()
+	 * @generated
+	 */
+	EAttribute getWidgetLayout_View();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetTextArea <em>Text Area</em>}'.
@@ -1667,6 +1873,24 @@ public interface WidgetPackage extends EPackage {
 		EAttribute WIDGET_COUNTER__VIEW = eINSTANCE.getWidgetCounter_View();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetdashboardImpl <em>Widgetdashboard</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetdashboardImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetdashboard()
+		 * @generated
+		 */
+		EClass WIDGETDASHBOARD = eINSTANCE.getWidgetdashboard();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGETDASHBOARD__VIEW = eINSTANCE.getWidgetdashboard_View();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetDatePickerImpl <em>Date Picker</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1719,6 +1943,24 @@ public interface WidgetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WIDGET_IMAGE__VIEW = eINSTANCE.getWidgetImage_View();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetLayoutImpl <em>Layout</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetLayoutImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetLayout()
+		 * @generated
+		 */
+		EClass WIDGET_LAYOUT = eINSTANCE.getWidgetLayout();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_LAYOUT__VIEW = eINSTANCE.getWidgetLayout_View();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextAreaImpl <em>Text Area</em>}' class.

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, 2019 ABChip and others.
+ * Copyright (c) 2017, 2020 ABChip and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ public enum EntityState implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TRANSIENT(10, "Transient", "TRN"),
+	TRANSIENT(0, "Transient", "TRN"),
 
 	/**
 	 * The '<em><b>Proxy</b></em>' literal object.
@@ -41,7 +41,7 @@ public enum EntityState implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PROXY(20, "Proxy", "PRX"),
+	PROXY(0, "Proxy", "PRX"),
 
 	/**
 	 * The '<em><b>Resolved</b></em>' literal object.
@@ -51,7 +51,7 @@ public enum EntityState implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RESOLVED(30, "Resolved", "RSL"),
+	RESOLVED(0, "Resolved", "RSL"),
 
 	/**
 	 * The '<em><b>Dirty</b></em>' literal object.
@@ -61,7 +61,15 @@ public enum EntityState implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DIRTY(40, "Dirty", "DRT");
+	DIRTY(0, "Dirty", "DRT"), /**
+	 * The '<em><b>Chained</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CHAINED_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CHAINED(0, "Chained", "CHN");
 
 	/**
 	 * The '<em><b>Transient</b></em>' literal value.
@@ -76,7 +84,7 @@ public enum EntityState implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TRANSIENT_VALUE = 10;
+	public static final int TRANSIENT_VALUE = 0;
 
 	/**
 	 * The '<em><b>Proxy</b></em>' literal value.
@@ -91,7 +99,7 @@ public enum EntityState implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PROXY_VALUE = 20;
+	public static final int PROXY_VALUE = 0;
 
 	/**
 	 * The '<em><b>Resolved</b></em>' literal value.
@@ -106,7 +114,7 @@ public enum EntityState implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RESOLVED_VALUE = 30;
+	public static final int RESOLVED_VALUE = 0;
 
 	/**
 	 * The '<em><b>Dirty</b></em>' literal value.
@@ -121,7 +129,22 @@ public enum EntityState implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DIRTY_VALUE = 40;
+	public static final int DIRTY_VALUE = 0;
+
+	/**
+	 * The '<em><b>Chained</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Chained</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #CHAINED
+	 * @model name="Chained" literal="CHN"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CHAINED_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>State</b></em>' enumerators.
@@ -135,6 +158,7 @@ public enum EntityState implements Enumerator {
 			PROXY,
 			RESOLVED,
 			DIRTY,
+			CHAINED,
 		};
 
 	/**
@@ -192,9 +216,6 @@ public enum EntityState implements Enumerator {
 	public static EntityState get(int value) {
 		switch (value) {
 			case TRANSIENT_VALUE: return TRANSIENT;
-			case PROXY_VALUE: return PROXY;
-			case RESOLVED_VALUE: return RESOLVED;
-			case DIRTY_VALUE: return DIRTY;
 		}
 		return null;
 	}

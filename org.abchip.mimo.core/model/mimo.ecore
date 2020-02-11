@@ -793,10 +793,11 @@
       <eGenericSuperTypes eClassifier="#//java/JavaCloseable"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="EntityState">
-      <eLiterals name="Transient" value="10" literal="TRN"/>
-      <eLiterals name="Proxy" value="20" literal="PRX"/>
-      <eLiterals name="Resolved" value="30" literal="RSL"/>
-      <eLiterals name="Dirty" value="40" literal="DRT"/>
+      <eLiterals name="Transient" literal="TRN"/>
+      <eLiterals name="Proxy" literal="PRX"/>
+      <eLiterals name="Resolved" literal="RSL"/>
+      <eLiterals name="Dirty" literal="DRT"/>
+      <eLiterals name="Chained" literal="CHN"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityTyped" eSuperTypes="#//entity/EntityIdentifiable">
       <eTypeParameters name="T">

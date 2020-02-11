@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
+ * Copyright (c) 2017, 2020 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.ui.widget.impl;
 
@@ -61,9 +61,11 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 			case WidgetPackage.WIDGET_CHECK_BOX: return (EObject)createWidgetCheckBox();
 			case WidgetPackage.WIDGET_COMBO_BOX: return (EObject)createWidgetComboBox();
 			case WidgetPackage.WIDGET_COUNTER: return (EObject)createWidgetCounter();
+			case WidgetPackage.WIDGETDASHBOARD: return (EObject)createWidgetdashboard();
 			case WidgetPackage.WIDGET_DATE_PICKER: return (EObject)createWidgetDatePicker();
 			case WidgetPackage.WIDGET_FORM: return (EObject)createWidgetForm();
 			case WidgetPackage.WIDGET_IMAGE: return (EObject)createWidgetImage();
+			case WidgetPackage.WIDGET_LAYOUT: return (EObject)createWidgetLayout();
 			case WidgetPackage.WIDGET_TEXT_AREA: return (EObject)createWidgetTextArea();
 			case WidgetPackage.WIDGET_NUMBER: return (EObject)createWidgetNumber();
 			case WidgetPackage.WIDGET_NUMBER_ATTRIBUTE: return (EObject)createWidgetNumberAttribute();
@@ -144,6 +146,17 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 	 * @generated
 	 */
 	@Override
+	public Widgetdashboard createWidgetdashboard() {
+		WidgetdashboardImpl widgetdashboard = new WidgetdashboardImpl();
+		return widgetdashboard;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public WidgetDatePicker createWidgetDatePicker() {
 		WidgetDatePickerImpl widgetDatePicker = new WidgetDatePickerImpl();
 		return widgetDatePicker;
@@ -169,6 +182,17 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 	public WidgetImage createWidgetImage() {
 		WidgetImageImpl widgetImage = new WidgetImageImpl();
 		return widgetImage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WidgetLayout createWidgetLayout() {
+		WidgetLayoutImpl widgetLayout = new WidgetLayoutImpl();
+		return widgetLayout;
 	}
 
 	/**

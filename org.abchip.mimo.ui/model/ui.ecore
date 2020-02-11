@@ -133,9 +133,11 @@
       <eLiterals name="CheckBox" literal="mm-checkbox"/>
       <eLiterals name="ComboBox" literal="mm-combo"/>
       <eLiterals name="Counter" literal="mm-counter"/>
+      <eLiterals name="Dashboard" literal="mm-dashboard"/>
       <eLiterals name="DatePicker" literal="mm-datepicker"/>
       <eLiterals name="Form" literal="mm-form"/>
       <eLiterals name="Image" literal="mm-image"/>
+      <eLiterals name="Layout" literal="mm-layout"/>
       <eLiterals name="Number" literal="mm-number"/>
       <eLiterals name="Switch" literal="mm-switch"/>
       <eLiterals name="Text" literal="mm-text"/>
@@ -169,6 +171,10 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-counter"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Widgetdashboard" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-dashboard"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetDatePicker" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-datepicker"/>
@@ -180,6 +186,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="WidgetImage" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-image"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetLayout" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-layout"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetTextArea" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"

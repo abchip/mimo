@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
+ * Copyright (c) 2017, 2020 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.ui.widget;
 
@@ -50,6 +50,15 @@ public interface WidgetFactory extends EFactory {
 	WidgetCounter createWidgetCounter();
 
 	/**
+	 * Returns a new object of class '<em>Widgetdashboard</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Widgetdashboard</em>'.
+	 * @generated
+	 */
+	Widgetdashboard createWidgetdashboard();
+
+	/**
 	 * Returns a new object of class '<em>Date Picker</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,6 +84,15 @@ public interface WidgetFactory extends EFactory {
 	 * @generated
 	 */
 	WidgetImage createWidgetImage();
+
+	/**
+	 * Returns a new object of class '<em>Layout</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Layout</em>'.
+	 * @generated
+	 */
+	WidgetLayout createWidgetLayout();
 
 	/**
 	 * Returns a new object of class '<em>Text Area</em>'.

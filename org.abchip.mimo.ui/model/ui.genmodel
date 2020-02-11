@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2017, 2019 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2017, 2020 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html"
     modelDirectory="/org.abchip.mimo.ui/src" modelPluginID="org.abchip.mimo.ui" modelName="MIMO UI"
     rootExtendsInterface="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     suppressEMFTypes="true" importerID="org.eclipse.emf.importer.ecore" containmentProxies="true"
@@ -115,13 +115,15 @@
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/CheckBox"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/ComboBox"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Counter"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Dashboard"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/DatePicker"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Form"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Image"/>
-        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/TextArea"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Layout"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Number"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Switch"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Text"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/TextArea"/>
       </genEnums>
       <genClasses image="false" ecoreClass="ui.ecore#//widget/Widget">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widget/disabled"/>
@@ -145,6 +147,9 @@
       <genClasses ecoreClass="ui.ecore#//widget/WidgetCounter">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetCounter/view"/>
       </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/Widgetdashboard">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widgetdashboard/view"/>
+      </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetDatePicker">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetDatePicker/view"/>
       </genClasses>
@@ -153,6 +158,9 @@
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetImage">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetImage/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetLayout">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetLayout/view"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetTextArea">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetTextArea/view"/>

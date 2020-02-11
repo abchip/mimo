@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, 2019 ABChip and others.
+ * Copyright (c) 2017, 2020 ABChip and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -1109,6 +1109,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEEnumLiteral(entityStateEEnum, EntityState.PROXY);
 		addEEnumLiteral(entityStateEEnum, EntityState.RESOLVED);
 		addEEnumLiteral(entityStateEEnum, EntityState.DIRTY);
+		addEEnumLiteral(entityStateEEnum, EntityState.CHAINED);
 
 		// Create annotations
 		// mimo-ent-slot

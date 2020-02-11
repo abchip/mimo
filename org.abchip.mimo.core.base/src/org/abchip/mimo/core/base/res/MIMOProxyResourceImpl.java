@@ -184,6 +184,7 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 					break;
 				case TRANSIENT:
 				case RESOLVED:
+				case CHAINED:
 					break;
 				}
 			}
