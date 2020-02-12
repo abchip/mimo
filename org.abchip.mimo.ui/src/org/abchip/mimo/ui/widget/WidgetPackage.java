@@ -290,13 +290,22 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_COMBO_BOX_ENTRY__FRAME = WIDGET_ENTRY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Filter</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_COMBO_BOX_ENTRY__NAME = WIDGET_ENTRY_FEATURE_COUNT + 1;
+	int WIDGET_COMBO_BOX_ENTRY__FILTER = WIDGET_ENTRY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_COMBO_BOX_ENTRY__SELECTED = WIDGET_ENTRY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Combo Box Entry</em>' class.
@@ -305,7 +314,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_COMBO_BOX_ENTRY_FEATURE_COUNT = WIDGET_ENTRY_FEATURE_COUNT + 2;
+	int WIDGET_COMBO_BOX_ENTRY_FEATURE_COUNT = WIDGET_ENTRY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetCounterImpl <em>Counter</em>}' class.
@@ -592,22 +601,13 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_FORM_ENTRY__FRAME = WIDGET_ENTRY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Filter</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_FORM_ENTRY__FILTER = WIDGET_ENTRY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Selected</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WIDGET_FORM_ENTRY__SELECTED = WIDGET_ENTRY_FEATURE_COUNT + 2;
+	int WIDGET_FORM_ENTRY__NAME = WIDGET_ENTRY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Form Entry</em>' class.
@@ -616,7 +616,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_FORM_ENTRY_FEATURE_COUNT = WIDGET_ENTRY_FEATURE_COUNT + 3;
+	int WIDGET_FORM_ENTRY_FEATURE_COUNT = WIDGET_ENTRY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetImageImpl <em>Image</em>}' class.
@@ -1253,15 +1253,26 @@ public interface WidgetPackage extends EPackage {
 	EAttribute getWidgetComboBoxEntry_Frame();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetComboBoxEntry#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetComboBoxEntry#getFilter <em>Filter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.abchip.mimo.ui.widget.WidgetComboBoxEntry#getName()
+	 * @return the meta object for the attribute '<em>Filter</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetComboBoxEntry#getFilter()
 	 * @see #getWidgetComboBoxEntry()
 	 * @generated
 	 */
-	EAttribute getWidgetComboBoxEntry_Name();
+	EAttribute getWidgetComboBoxEntry_Filter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetComboBoxEntry#getSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetComboBoxEntry#getSelected()
+	 * @see #getWidgetComboBoxEntry()
+	 * @generated
+	 */
+	EAttribute getWidgetComboBoxEntry_Selected();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetCounter <em>Counter</em>}'.
@@ -1380,26 +1391,15 @@ public interface WidgetPackage extends EPackage {
 	EAttribute getWidgetFormEntry_Frame();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getFilter <em>Filter</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Filter</em>'.
-	 * @see org.abchip.mimo.ui.widget.WidgetFormEntry#getFilter()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetFormEntry#getName()
 	 * @see #getWidgetFormEntry()
 	 * @generated
 	 */
-	EAttribute getWidgetFormEntry_Filter();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getSelected <em>Selected</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Selected</em>'.
-	 * @see org.abchip.mimo.ui.widget.WidgetFormEntry#getSelected()
-	 * @see #getWidgetFormEntry()
-	 * @generated
-	 */
-	EAttribute getWidgetFormEntry_Selected();
+	EAttribute getWidgetFormEntry_Name();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetImage <em>Image</em>}'.
@@ -1771,12 +1771,20 @@ public interface WidgetPackage extends EPackage {
 		EAttribute WIDGET_COMBO_BOX_ENTRY__FRAME = eINSTANCE.getWidgetComboBoxEntry_Frame();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Filter</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WIDGET_COMBO_BOX_ENTRY__NAME = eINSTANCE.getWidgetComboBoxEntry_Name();
+		EAttribute WIDGET_COMBO_BOX_ENTRY__FILTER = eINSTANCE.getWidgetComboBoxEntry_Filter();
+
+		/**
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_COMBO_BOX_ENTRY__SELECTED = eINSTANCE.getWidgetComboBoxEntry_Selected();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetCounterImpl <em>Counter</em>}' class.
@@ -1877,20 +1885,12 @@ public interface WidgetPackage extends EPackage {
 		EAttribute WIDGET_FORM_ENTRY__FRAME = eINSTANCE.getWidgetFormEntry_Frame();
 
 		/**
-		 * The meta object literal for the '<em><b>Filter</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WIDGET_FORM_ENTRY__FILTER = eINSTANCE.getWidgetFormEntry_Filter();
-
-		/**
-		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WIDGET_FORM_ENTRY__SELECTED = eINSTANCE.getWidgetFormEntry_Selected();
+		EAttribute WIDGET_FORM_ENTRY__NAME = eINSTANCE.getWidgetFormEntry_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetImageImpl <em>Image</em>}' class.

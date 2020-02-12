@@ -14,8 +14,7 @@ package org.abchip.mimo.ui.widget;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getFrame <em>Frame</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getFilter <em>Filter</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getSelected <em>Selected</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetFormEntry()
@@ -50,55 +49,29 @@ public interface WidgetFormEntry extends WidgetEntry {
 	void setFrame(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Filter</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Filter</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Filter</em>' attribute.
-	 * @see #setFilter(String)
-	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetFormEntry_Filter()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetFormEntry_Name()
 	 * @model
 	 * @generated
 	 */
-	String getFilter();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getFilter <em>Filter</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Filter</em>' attribute.
-	 * @see #getFilter()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setFilter(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Selected</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Selected</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Selected</em>' attribute.
-	 * @see #setSelected(String)
-	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetFormEntry_Selected()
-	 * @model
-	 * @generated
-	 */
-	String getSelected();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.ui.widget.WidgetFormEntry#getSelected <em>Selected</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Selected</em>' attribute.
-	 * @see #getSelected()
-	 * @generated
-	 */
-	void setSelected(String value);
+	void setName(String value);
 
 } // WidgetFormEntry

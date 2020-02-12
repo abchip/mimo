@@ -21,8 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetFormEntryImpl#getFrame <em>Frame</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetFormEntryImpl#getFilter <em>Filter</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetFormEntryImpl#getSelected <em>Selected</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetFormEntryImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,44 +53,24 @@ public class WidgetFormEntryImpl extends WidgetEntryImpl implements WidgetFormEn
 	protected String frame = FRAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFilter() <em>Filter</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFilter()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FILTER_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getFilter() <em>Filter</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFilter()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String filter = FILTER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSelected() <em>Selected</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelected()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SELECTED_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSelected() <em>Selected</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelected()
-	 * @generated
-	 * @ordered
-	 */
-	protected String selected = SELECTED_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,8 +120,8 @@ public class WidgetFormEntryImpl extends WidgetEntryImpl implements WidgetFormEn
 	 * @generated
 	 */
 	@Override
-	public String getFilter() {
-		return filter;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -151,34 +130,11 @@ public class WidgetFormEntryImpl extends WidgetEntryImpl implements WidgetFormEn
 	 * @generated
 	 */
 	@Override
-	public void setFilter(String newFilter) {
-		String oldFilter = filter;
-		filter = newFilter;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_FORM_ENTRY__FILTER, oldFilter, filter));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getSelected() {
-		return selected;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSelected(String newSelected) {
-		String oldSelected = selected;
-		selected = newSelected;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_FORM_ENTRY__SELECTED, oldSelected, selected));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_FORM_ENTRY__NAME, oldName, name));
 	}
 
 	/**
@@ -191,10 +147,8 @@ public class WidgetFormEntryImpl extends WidgetEntryImpl implements WidgetFormEn
 		switch (featureID) {
 			case WidgetPackage.WIDGET_FORM_ENTRY__FRAME:
 				return getFrame();
-			case WidgetPackage.WIDGET_FORM_ENTRY__FILTER:
-				return getFilter();
-			case WidgetPackage.WIDGET_FORM_ENTRY__SELECTED:
-				return getSelected();
+			case WidgetPackage.WIDGET_FORM_ENTRY__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,11 +164,8 @@ public class WidgetFormEntryImpl extends WidgetEntryImpl implements WidgetFormEn
 			case WidgetPackage.WIDGET_FORM_ENTRY__FRAME:
 				setFrame((String)newValue);
 				return;
-			case WidgetPackage.WIDGET_FORM_ENTRY__FILTER:
-				setFilter((String)newValue);
-				return;
-			case WidgetPackage.WIDGET_FORM_ENTRY__SELECTED:
-				setSelected((String)newValue);
+			case WidgetPackage.WIDGET_FORM_ENTRY__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -231,11 +182,8 @@ public class WidgetFormEntryImpl extends WidgetEntryImpl implements WidgetFormEn
 			case WidgetPackage.WIDGET_FORM_ENTRY__FRAME:
 				setFrame(FRAME_EDEFAULT);
 				return;
-			case WidgetPackage.WIDGET_FORM_ENTRY__FILTER:
-				setFilter(FILTER_EDEFAULT);
-				return;
-			case WidgetPackage.WIDGET_FORM_ENTRY__SELECTED:
-				setSelected(SELECTED_EDEFAULT);
+			case WidgetPackage.WIDGET_FORM_ENTRY__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -251,10 +199,8 @@ public class WidgetFormEntryImpl extends WidgetEntryImpl implements WidgetFormEn
 		switch (featureID) {
 			case WidgetPackage.WIDGET_FORM_ENTRY__FRAME:
 				return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
-			case WidgetPackage.WIDGET_FORM_ENTRY__FILTER:
-				return FILTER_EDEFAULT == null ? filter != null : !FILTER_EDEFAULT.equals(filter);
-			case WidgetPackage.WIDGET_FORM_ENTRY__SELECTED:
-				return SELECTED_EDEFAULT == null ? selected != null : !SELECTED_EDEFAULT.equals(selected);
+			case WidgetPackage.WIDGET_FORM_ENTRY__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -271,10 +217,8 @@ public class WidgetFormEntryImpl extends WidgetEntryImpl implements WidgetFormEn
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (frame: ");
 		result.append(frame);
-		result.append(", filter: ");
-		result.append(filter);
-		result.append(", selected: ");
-		result.append(selected);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

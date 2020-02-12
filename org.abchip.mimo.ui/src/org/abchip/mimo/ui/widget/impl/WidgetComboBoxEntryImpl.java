@@ -21,7 +21,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetComboBoxEntryImpl#getFrame <em>Frame</em>}</li>
- *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetComboBoxEntryImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetComboBoxEntryImpl#getFilter <em>Filter</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetComboBoxEntryImpl#getSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,24 +54,44 @@ public class WidgetComboBoxEntryImpl extends WidgetEntryImpl implements WidgetCo
 	protected String frame = FRAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getFilter() <em>Filter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getFilter()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String FILTER_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getFilter() <em>Filter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getFilter()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String filter = FILTER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SELECTED_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected String selected = SELECTED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,8 +141,8 @@ public class WidgetComboBoxEntryImpl extends WidgetEntryImpl implements WidgetCo
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
+	public String getFilter() {
+		return filter;
 	}
 
 	/**
@@ -130,11 +151,34 @@ public class WidgetComboBoxEntryImpl extends WidgetEntryImpl implements WidgetCo
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setFilter(String newFilter) {
+		String oldFilter = filter;
+		filter = newFilter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_COMBO_BOX_ENTRY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FILTER, oldFilter, filter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getSelected() {
+		return selected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSelected(String newSelected) {
+		String oldSelected = selected;
+		selected = newSelected;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WidgetPackage.WIDGET_COMBO_BOX_ENTRY__SELECTED, oldSelected, selected));
 	}
 
 	/**
@@ -147,8 +191,10 @@ public class WidgetComboBoxEntryImpl extends WidgetEntryImpl implements WidgetCo
 		switch (featureID) {
 			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FRAME:
 				return getFrame();
-			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__NAME:
-				return getName();
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FILTER:
+				return getFilter();
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__SELECTED:
+				return getSelected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,8 +210,11 @@ public class WidgetComboBoxEntryImpl extends WidgetEntryImpl implements WidgetCo
 			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FRAME:
 				setFrame((String)newValue);
 				return;
-			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__NAME:
-				setName((String)newValue);
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FILTER:
+				setFilter((String)newValue);
+				return;
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__SELECTED:
+				setSelected((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,8 +231,11 @@ public class WidgetComboBoxEntryImpl extends WidgetEntryImpl implements WidgetCo
 			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FRAME:
 				setFrame(FRAME_EDEFAULT);
 				return;
-			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__NAME:
-				setName(NAME_EDEFAULT);
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FILTER:
+				setFilter(FILTER_EDEFAULT);
+				return;
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__SELECTED:
+				setSelected(SELECTED_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -199,8 +251,10 @@ public class WidgetComboBoxEntryImpl extends WidgetEntryImpl implements WidgetCo
 		switch (featureID) {
 			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FRAME:
 				return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
-			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__FILTER:
+				return FILTER_EDEFAULT == null ? filter != null : !FILTER_EDEFAULT.equals(filter);
+			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY__SELECTED:
+				return SELECTED_EDEFAULT == null ? selected != null : !SELECTED_EDEFAULT.equals(selected);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,8 +271,10 @@ public class WidgetComboBoxEntryImpl extends WidgetEntryImpl implements WidgetCo
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (frame: ");
 		result.append(frame);
-		result.append(", name: ");
-		result.append(name);
+		result.append(", filter: ");
+		result.append(filter);
+		result.append(", selected: ");
+		result.append(selected);
 		result.append(')');
 		return result.toString();
 	}

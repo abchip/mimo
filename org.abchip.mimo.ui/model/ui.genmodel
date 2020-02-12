@@ -145,7 +145,8 @@
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetComboBoxEntry">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetComboBoxEntry/frame"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetComboBoxEntry/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetComboBoxEntry/filter"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetComboBoxEntry/selected"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetCounter">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetCounter/view"/>
@@ -162,8 +163,7 @@
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetFormEntry">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetFormEntry/frame"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetFormEntry/filter"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetFormEntry/selected"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetFormEntry/name"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetImage">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetImage/view"/>

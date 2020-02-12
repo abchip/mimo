@@ -433,8 +433,18 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWidgetComboBoxEntry_Name() {
+	public EAttribute getWidgetComboBoxEntry_Filter() {
 		return (EAttribute)widgetComboBoxEntryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetComboBoxEntry_Selected() {
+		return (EAttribute)widgetComboBoxEntryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -553,18 +563,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWidgetFormEntry_Filter() {
+	public EAttribute getWidgetFormEntry_Name() {
 		return (EAttribute)widgetFormEntryEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getWidgetFormEntry_Selected() {
-		return (EAttribute)widgetFormEntryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -833,7 +833,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		widgetComboBoxEntryEClass = createEClass(WIDGET_COMBO_BOX_ENTRY);
 		createEAttribute(widgetComboBoxEntryEClass, WIDGET_COMBO_BOX_ENTRY__FRAME);
-		createEAttribute(widgetComboBoxEntryEClass, WIDGET_COMBO_BOX_ENTRY__NAME);
+		createEAttribute(widgetComboBoxEntryEClass, WIDGET_COMBO_BOX_ENTRY__FILTER);
+		createEAttribute(widgetComboBoxEntryEClass, WIDGET_COMBO_BOX_ENTRY__SELECTED);
 
 		widgetCounterEClass = createEClass(WIDGET_COUNTER);
 		createEAttribute(widgetCounterEClass, WIDGET_COUNTER__VIEW);
@@ -850,8 +851,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		widgetFormEntryEClass = createEClass(WIDGET_FORM_ENTRY);
 		createEAttribute(widgetFormEntryEClass, WIDGET_FORM_ENTRY__FRAME);
-		createEAttribute(widgetFormEntryEClass, WIDGET_FORM_ENTRY__FILTER);
-		createEAttribute(widgetFormEntryEClass, WIDGET_FORM_ENTRY__SELECTED);
+		createEAttribute(widgetFormEntryEClass, WIDGET_FORM_ENTRY__NAME);
 
 		widgetImageEClass = createEClass(WIDGET_IMAGE);
 		createEAttribute(widgetImageEClass, WIDGET_IMAGE__VIEW);
@@ -959,7 +959,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		initEClass(widgetComboBoxEntryEClass, WidgetComboBoxEntry.class, "WidgetComboBoxEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetComboBoxEntry_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, WidgetComboBoxEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWidgetComboBoxEntry_Name(), ecorePackage.getEString(), "name", null, 0, 1, WidgetComboBoxEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidgetComboBoxEntry_Filter(), ecorePackage.getEString(), "filter", null, 0, 1, WidgetComboBoxEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidgetComboBoxEntry_Selected(), ecorePackage.getEString(), "selected", null, 0, 1, WidgetComboBoxEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetCounterEClass, WidgetCounter.class, "WidgetCounter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetCounter_View(), this.getWidgetType(), "view", "mm-counter", 1, 1, WidgetCounter.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -976,8 +977,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		initEClass(widgetFormEntryEClass, WidgetFormEntry.class, "WidgetFormEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetFormEntry_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, WidgetFormEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWidgetFormEntry_Filter(), ecorePackage.getEString(), "filter", null, 0, 1, WidgetFormEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWidgetFormEntry_Selected(), ecorePackage.getEString(), "selected", null, 0, 1, WidgetFormEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidgetFormEntry_Name(), ecorePackage.getEString(), "name", null, 0, 1, WidgetFormEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetImageEClass, WidgetImage.class, "WidgetImage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetImage_View(), this.getWidgetType(), "view", "mm-image", 1, 1, WidgetImage.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
