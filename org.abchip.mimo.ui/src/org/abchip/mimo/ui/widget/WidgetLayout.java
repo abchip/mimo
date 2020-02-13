@@ -4,7 +4,7 @@
 package org.abchip.mimo.ui.widget;
 
 import java.util.List;
-import org.abchip.mimo.ui.event.EventEntry;
+import org.abchip.mimo.ui.event.Event;
 
 
 /**
@@ -45,7 +45,7 @@ public interface WidgetLayout extends Widget {
 
 	/**
 	 * Returns the value of the '<em><b>Events</b></em>' reference list.
-	 * The list contents are of type {@link org.abchip.mimo.ui.event.EventEntry}.
+	 * The list contents are of type {@link org.abchip.mimo.ui.event.Event}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Events</em>' reference list isn't clear,
@@ -57,6 +57,6 @@ public interface WidgetLayout extends Widget {
 	 * @model
 	 * @generated
 	 */
-	List<EventEntry> getEvents();
+	List<Event> getEvents();
 
 } // WidgetLayout

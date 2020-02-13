@@ -57,7 +57,7 @@ public class EventFactoryImpl extends EFactoryImpl implements EventFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case EventPackage.EVENT_ENTRY: return (EObject)createEventEntry();
+			case EventPackage.EVENT: return (EObject)createEvent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -69,9 +69,9 @@ public class EventFactoryImpl extends EFactoryImpl implements EventFactory {
 	 * @generated
 	 */
 	@Override
-	public EventEntry createEventEntry() {
-		EventEntryImpl eventEntry = new EventEntryImpl();
-		return eventEntry;
+	public Event createEvent() {
+		EventImpl event = new EventImpl();
+		return event;
 	}
 
 	/**

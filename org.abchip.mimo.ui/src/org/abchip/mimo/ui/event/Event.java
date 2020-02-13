@@ -11,9 +11,9 @@ import org.abchip.mimo.entity.Entity;
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.ui.event.EventPackage#getEventEntry()
+ * @see org.abchip.mimo.ui.event.EventPackage#getEvent()
  * @model
  * @generated
  */
-public interface EventEntry extends Entity {
-} // EventEntry
+public interface Event extends Entity {
+} // Event

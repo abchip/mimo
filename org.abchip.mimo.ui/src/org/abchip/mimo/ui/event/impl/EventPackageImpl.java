@@ -9,7 +9,7 @@ import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.ui.UIPackage;
 
-import org.abchip.mimo.ui.event.EventEntry;
+import org.abchip.mimo.ui.event.Event;
 import org.abchip.mimo.ui.event.EventFactory;
 import org.abchip.mimo.ui.event.EventPackage;
 
@@ -56,8 +56,7 @@ public class EventPackageImpl extends EPackageImpl implements EventPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass eventEntryEClass = null;
-
+	private EClass eventEClass = null;
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -158,8 +157,8 @@ public class EventPackageImpl extends EPackageImpl implements EventPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getEventEntry() {
-		return eventEntryEClass;
+	public EClass getEvent() {
+		return eventEClass;
 	}
 
 	/**
@@ -191,7 +190,7 @@ public class EventPackageImpl extends EPackageImpl implements EventPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		eventEntryEClass = createEClass(EVENT_ENTRY);
+		eventEClass = createEClass(EVENT);
 	}
 
 	/**
@@ -225,10 +224,10 @@ public class EventPackageImpl extends EPackageImpl implements EventPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		eventEntryEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		eventEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(eventEntryEClass, EventEntry.class, "EventEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //EventPackageImpl

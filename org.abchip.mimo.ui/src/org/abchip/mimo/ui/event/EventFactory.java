@@ -23,13 +23,13 @@ public interface EventFactory extends EFactory {
 	EventFactory eINSTANCE = org.abchip.mimo.ui.event.impl.EventFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Entry</em>'.
+	 * Returns a new object of class '<em>Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entry</em>'.
+	 * @return a new object of class '<em>Event</em>'.
 	 * @generated
 	 */
-	EventEntry createEventEntry();
+	Event createEvent();
 
 	/**
 	 * Returns the package supported by this factory.

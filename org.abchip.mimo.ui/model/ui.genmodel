@@ -32,7 +32,8 @@
     <genClasses ecoreClass="ui.ecore#//UiUserSetup">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//UiUserSetup/name"/>
     </genClasses>
-    <nestedGenPackages prefix="Form" disposableProviderFactory="true" ecorePackage="ui.ecore#//form">
+    <nestedGenPackages prefix="Form" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="ui.ecore#//form">
       <genClasses ecoreClass="ui.ecore#//form/Form">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//form/Form/fields"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//form/Form/name"/>
@@ -44,8 +45,9 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//form/FormField/widget"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Event" disposableProviderFactory="true" ecorePackage="ui.ecore#//event">
-      <genClasses ecoreClass="ui.ecore#//event/EventEntry"/>
+    <nestedGenPackages prefix="Event" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="ui.ecore#//event">
+      <genClasses ecoreClass="ui.ecore#//event/Event"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Menu" basePackage="org.abchip.mimo.ui" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="ui.ecore#//menu">

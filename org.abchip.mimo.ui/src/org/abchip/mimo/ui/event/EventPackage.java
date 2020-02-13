@@ -57,34 +57,34 @@ public interface EventPackage extends EPackage {
 	EventPackage eINSTANCE = org.abchip.mimo.ui.event.impl.EventPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.event.impl.EventEntryImpl <em>Entry</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.event.impl.EventImpl <em>Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.event.impl.EventEntryImpl
-	 * @see org.abchip.mimo.ui.event.impl.EventPackageImpl#getEventEntry()
+	 * @see org.abchip.mimo.ui.event.impl.EventImpl
+	 * @see org.abchip.mimo.ui.event.impl.EventPackageImpl#getEvent()
 	 * @generated
 	 */
-	int EVENT_ENTRY = 0;
+	int EVENT = 0;
 
 	/**
-	 * The number of structural features of the '<em>Entry</em>' class.
+	 * The number of structural features of the '<em>Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_ENTRY_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int EVENT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.event.EventEntry <em>Entry</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.event.Event <em>Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Entry</em>'.
-	 * @see org.abchip.mimo.ui.event.EventEntry
+	 * @return the meta object for class '<em>Event</em>'.
+	 * @see org.abchip.mimo.ui.event.Event
 	 * @generated
 	 */
-	EClass getEventEntry();
+	EClass getEvent();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -109,14 +109,14 @@ public interface EventPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.event.impl.EventEntryImpl <em>Entry</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.event.impl.EventImpl <em>Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.event.impl.EventEntryImpl
-		 * @see org.abchip.mimo.ui.event.impl.EventPackageImpl#getEventEntry()
+		 * @see org.abchip.mimo.ui.event.impl.EventImpl
+		 * @see org.abchip.mimo.ui.event.impl.EventPackageImpl#getEvent()
 		 * @generated
 		 */
-		EClass EVENT_ENTRY = eINSTANCE.getEventEntry();
+		EClass EVENT = eINSTANCE.getEvent();
 
 	}
 

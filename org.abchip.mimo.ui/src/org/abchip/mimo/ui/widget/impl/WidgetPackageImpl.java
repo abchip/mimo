@@ -984,7 +984,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		initEClass(widgetLayoutEClass, WidgetLayout.class, "WidgetLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetLayout_View(), this.getWidgetType(), "view", "mm-layout", 1, 1, WidgetLayout.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWidgetLayout_Events(), theEventPackage.getEventEntry(), null, "events", null, 0, -1, WidgetLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWidgetLayout_Events(), theEventPackage.getEvent(), null, "events", null, 0, -1, WidgetLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetTextAreaEClass, WidgetTextArea.class, "WidgetTextArea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetTextArea_View(), this.getWidgetType(), "view", "mm-textarea", 1, 1, WidgetTextArea.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

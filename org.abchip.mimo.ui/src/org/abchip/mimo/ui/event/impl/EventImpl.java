@@ -5,7 +5,7 @@ package org.abchip.mimo.ui.event.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
 
-import org.abchip.mimo.ui.event.EventEntry;
+import org.abchip.mimo.ui.event.Event;
 import org.abchip.mimo.ui.event.EventPackage;
 
 import org.eclipse.emf.ecore.EClass;
@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class EventEntryImpl extends EntityImpl implements EventEntry {
+public class EventImpl extends EntityImpl implements Event {
 	/**
 	 * 
 	 */
@@ -28,7 +28,7 @@ public class EventEntryImpl extends EntityImpl implements EventEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EventEntryImpl() {
+	protected EventImpl() {
 		super();
 	}
 
@@ -39,7 +39,7 @@ public class EventEntryImpl extends EntityImpl implements EventEntry {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EventPackage.Literals.EVENT_ENTRY;
+		return EventPackage.Literals.EVENT;
 	}
 
-} //EventEntryImpl
+} //EventImpl

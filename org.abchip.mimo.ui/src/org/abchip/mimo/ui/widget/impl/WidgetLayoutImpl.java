@@ -5,7 +5,7 @@ package org.abchip.mimo.ui.widget.impl;
 
 import java.util.Collection;
 import java.util.List;
-import org.abchip.mimo.ui.event.EventEntry;
+import org.abchip.mimo.ui.event.Event;
 import org.abchip.mimo.ui.widget.WidgetLayout;
 import org.abchip.mimo.ui.widget.WidgetPackage;
 import org.abchip.mimo.ui.widget.WidgetType;
@@ -62,7 +62,7 @@ public class WidgetLayoutImpl extends WidgetImpl implements WidgetLayout {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EventEntry> events;
+	protected EList<Event> events;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,9 +99,9 @@ public class WidgetLayoutImpl extends WidgetImpl implements WidgetLayout {
 	 * @generated
 	 */
 	@Override
-	public List<EventEntry> getEvents() {
+	public List<Event> getEvents() {
 		if (events == null) {
-			events = new EObjectResolvingEList<EventEntry>(EventEntry.class, this, WidgetPackage.WIDGET_LAYOUT__EVENTS);
+			events = new EObjectResolvingEList<Event>(Event.class, this, WidgetPackage.WIDGET_LAYOUT__EVENTS);
 		}
 		return events;
 	}
@@ -133,7 +133,7 @@ public class WidgetLayoutImpl extends WidgetImpl implements WidgetLayout {
 		switch (featureID) {
 			case WidgetPackage.WIDGET_LAYOUT__EVENTS:
 				getEvents().clear();
-				getEvents().addAll((Collection<? extends EventEntry>)newValue);
+				getEvents().addAll((Collection<? extends Event>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
