@@ -33,6 +33,7 @@ import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 
 import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
 
+import org.abchip.mimo.ui.widget.WidgeReview;
 import org.abchip.mimo.ui.widget.Widget;
 import org.abchip.mimo.ui.widget.WidgetCheckBox;
 import org.abchip.mimo.ui.widget.WidgetComboBox;
@@ -181,6 +182,13 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	private EClass widgetSwitchEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass widgeReviewEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -723,6 +731,26 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getWidgeReview() {
+		return widgeReviewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgeReview_View() {
+		return (EAttribute)widgeReviewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getWidgetText() {
 		return widgetTextEClass;
 	}
@@ -874,6 +902,9 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		widgetSwitchEClass = createEClass(WIDGET_SWITCH);
 		createEAttribute(widgetSwitchEClass, WIDGET_SWITCH__VIEW);
 
+		widgeReviewEClass = createEClass(WIDGE_REVIEW);
+		createEAttribute(widgeReviewEClass, WIDGE_REVIEW__VIEW);
+
 		widgetTextEClass = createEClass(WIDGET_TEXT);
 		createEAttribute(widgetTextEClass, WIDGET_TEXT__VIEW);
 		createEAttribute(widgetTextEClass, WIDGET_TEXT__PLACEHOLDER);
@@ -934,6 +965,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		widgetNumberEClass.getESuperTypes().add(this.getWidget());
 		widgetNumberAttributeEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		widgetSwitchEClass.getESuperTypes().add(this.getWidget());
+		widgeReviewEClass.getESuperTypes().add(this.getWidget());
 		widgetTextEClass.getESuperTypes().add(this.getWidget());
 		widgetTextAttributeEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
@@ -1000,6 +1032,9 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		initEClass(widgetSwitchEClass, WidgetSwitch.class, "WidgetSwitch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetSwitch_View(), this.getWidgetType(), "view", "mm-switch", 1, 1, WidgetSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(widgeReviewEClass, WidgeReview.class, "WidgeReview", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgeReview_View(), this.getWidgetType(), "view", "mm-review", 1, 1, WidgeReview.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(widgetTextEClass, WidgetText.class, "WidgetText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetText_View(), this.getWidgetType(), "view", "mm-text", 1, 1, WidgetText.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWidgetText_Placeholder(), ecorePackage.getEString(), "placeholder", "Insert text here", 0, 1, WidgetText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1019,6 +1054,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.IMAGE);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.LAYOUT);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.NUMBER);
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.REVIEW);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.SWITCH);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.TEXT);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.TEXT_AREA);

@@ -91,6 +91,14 @@ public enum WidgetType implements Enumerator {
 	 * @ordered
 	 */
 	NUMBER(0, "Number", "mm-number"), /**
+	 * The '<em><b>Review</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #REVIEW_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	REVIEW(0, "Review", "mm-review"), /**
 	 * The '<em><b>Switch</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -252,6 +260,21 @@ public enum WidgetType implements Enumerator {
 	public static final int NUMBER_VALUE = 0;
 
 	/**
+	 * The '<em><b>Review</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Review</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #REVIEW
+	 * @model name="Review" literal="mm-review"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int REVIEW_VALUE = 0;
+
+	/**
 	 * The '<em><b>Switch</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -313,6 +336,7 @@ public enum WidgetType implements Enumerator {
 			IMAGE,
 			LAYOUT,
 			NUMBER,
+			REVIEW,
 			SWITCH,
 			TEXT,
 			TEXT_AREA,

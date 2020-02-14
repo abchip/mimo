@@ -142,6 +142,7 @@
       <eLiterals name="Image" literal="mm-image"/>
       <eLiterals name="Layout" literal="mm-layout"/>
       <eLiterals name="Number" literal="mm-number"/>
+      <eLiterals name="Review" literal="mm-review"/>
       <eLiterals name="Switch" literal="mm-switch"/>
       <eLiterals name="Text" literal="mm-text"/>
       <eLiterals name="TextArea" literal="mm-textarea"/>
@@ -222,6 +223,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="WidgetSwitch" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-switch"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgeReview" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-review"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetText" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"

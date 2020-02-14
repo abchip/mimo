@@ -149,6 +149,15 @@ public interface WidgetFactory extends EFactory {
 	WidgetSwitch createWidgetSwitch();
 
 	/**
+	 * Returns a new object of class '<em>Widge Review</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Widge Review</em>'.
+	 * @generated
+	 */
+	WidgeReview createWidgeReview();
+
+	/**
 	 * Returns a new object of class '<em>Text</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

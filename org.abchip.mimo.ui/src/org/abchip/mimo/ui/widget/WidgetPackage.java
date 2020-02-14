@@ -994,6 +994,70 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_SWITCH_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgeReviewImpl <em>Widge Review</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgeReviewImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgeReview()
+	 * @generated
+	 */
+	int WIDGE_REVIEW = 16;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGE_REVIEW__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGE_REVIEW__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGE_REVIEW__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGE_REVIEW__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGE_REVIEW__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Widge Review</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGE_REVIEW_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextImpl <em>Text</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1001,7 +1065,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetText()
 	 * @generated
 	 */
-	int WIDGET_TEXT = 16;
+	int WIDGET_TEXT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -1083,7 +1147,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTextAttribute()
 	 * @generated
 	 */
-	int WIDGET_TEXT_ATTRIBUTE = 17;
+	int WIDGET_TEXT_ATTRIBUTE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Maxlength</b></em>' attribute.
@@ -1111,7 +1175,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetType()
 	 * @generated
 	 */
-	int WIDGET_TYPE = 18;
+	int WIDGET_TYPE = 19;
 
 
 	/**
@@ -1559,6 +1623,27 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWidgetSwitch_View();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgeReview <em>Widge Review</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Widge Review</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgeReview
+	 * @generated
+	 */
+	EClass getWidgeReview();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgeReview#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgeReview#getView()
+	 * @see #getWidgeReview()
+	 * @generated
+	 */
+	EAttribute getWidgeReview_View();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetText <em>Text</em>}'.
@@ -2023,6 +2108,24 @@ public interface WidgetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WIDGET_SWITCH__VIEW = eINSTANCE.getWidgetSwitch_View();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgeReviewImpl <em>Widge Review</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgeReviewImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgeReview()
+		 * @generated
+		 */
+		EClass WIDGE_REVIEW = eINSTANCE.getWidgeReview();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGE_REVIEW__VIEW = eINSTANCE.getWidgeReview_View();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextImpl <em>Text</em>}' class.

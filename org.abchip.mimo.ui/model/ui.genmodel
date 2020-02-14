@@ -125,6 +125,7 @@
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Image"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Layout"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Number"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Review"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Switch"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Text"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/TextArea"/>
@@ -188,6 +189,9 @@
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetSwitch">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetSwitch/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgeReview">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgeReview/view"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetText">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetText/view"/>
