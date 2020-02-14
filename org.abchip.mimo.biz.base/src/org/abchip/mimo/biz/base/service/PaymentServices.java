@@ -8,6 +8,19 @@ import org.abchip.mimo.resource.ResourceReader;
 
 public class PaymentServices {
 
+	public static PaymentMethod getPaymentMethodParty(Context context, String partyId, String methodType) {
+		
+		ResourceManager resourceManager = context.get(ResourceManager.class);
+		
+		String filter = "partyId = \"" + partyId + "\"  AND thruDate IS NULL and paymentMethodTypeId = \"" + methodType + "\"" ;
+		String order = "-fromDate";
+		ResourceReader<PaymentMethod> paymentMethodReader = resourceManager.getResourceReader(context, PaymentMethod.class);
+		for (PaymentMethod paymentMethod : paymentMethodReader.find(filter, null, order)) {
+			return paymentMethod;
+		}
+		return null;
+	}
+
 	public static CreditCard getCreditCardParty(Context context, String partyId) {
 		
 		ResourceManager resourceManager = context.get(ResourceManager.class);
