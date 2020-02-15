@@ -59,13 +59,13 @@ public interface WidgetFactory extends EFactory {
 	WidgetCounter createWidgetCounter();
 
 	/**
-	 * Returns a new object of class '<em>Widgetdashboard</em>'.
+	 * Returns a new object of class '<em>Dashboard</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Widgetdashboard</em>'.
+	 * @return a new object of class '<em>Dashboard</em>'.
 	 * @generated
 	 */
-	Widgetdashboard createWidgetdashboard();
+	WidgetDashboard createWidgetDashboard();
 
 	/**
 	 * Returns a new object of class '<em>Date Picker</em>'.
@@ -174,6 +174,15 @@ public interface WidgetFactory extends EFactory {
 	 * @generated
 	 */
 	WidgetTextAttribute createWidgetTextAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Toolbar</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Toolbar</em>'.
+	 * @generated
+	 */
+	WidgetToolbar createWidgetToolbar();
 
 	/**
 	 * Returns the package supported by this factory.

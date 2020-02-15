@@ -122,7 +122,15 @@ public enum WidgetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TEXT_AREA(0, "TextArea", "mm-textarea");
+	TEXT_AREA(0, "TextArea", "mm-textarea"), /**
+	 * The '<em><b>Toolbar</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #TOOLBAR_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	TOOLBAR(0, "Toolbar", "mm-toolbar");
 
 	/**
 	 * The '<em><b>Check Box</b></em>' literal value.
@@ -320,6 +328,21 @@ public enum WidgetType implements Enumerator {
 	public static final int TEXT_AREA_VALUE = 0;
 
 	/**
+	 * The '<em><b>Toolbar</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Toolbar</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #TOOLBAR
+	 * @model name="Toolbar" literal="mm-toolbar"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int TOOLBAR_VALUE = 0;
+
+	/**
 	 * An array of all the '<em><b>Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -340,6 +363,7 @@ public enum WidgetType implements Enumerator {
 			SWITCH,
 			TEXT,
 			TEXT_AREA,
+			TOOLBAR,
 		};
 
 	/**

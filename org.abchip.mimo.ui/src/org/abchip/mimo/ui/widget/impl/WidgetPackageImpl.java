@@ -53,9 +53,10 @@ import org.abchip.mimo.ui.widget.WidgetPackage;
 import org.abchip.mimo.ui.widget.WidgetSwitch;
 import org.abchip.mimo.ui.widget.WidgetText;
 import org.abchip.mimo.ui.widget.WidgetTextAttribute;
+import org.abchip.mimo.ui.widget.WidgetToolbar;
 import org.abchip.mimo.ui.widget.WidgetType;
 
-import org.abchip.mimo.ui.widget.Widgetdashboard;
+import org.abchip.mimo.ui.widget.WidgetDashboard;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -118,7 +119,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass widgetdashboardEClass = null;
+	private EClass widgetDashboardEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,6 +204,13 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	private EClass widgetTextAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass widgetToolbarEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -481,8 +489,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getWidgetdashboard() {
-		return widgetdashboardEClass;
+	public EClass getWidgetDashboard() {
+		return widgetDashboardEClass;
 	}
 
 	/**
@@ -491,8 +499,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWidgetdashboard_View() {
-		return (EAttribute)widgetdashboardEClass.getEStructuralFeatures().get(0);
+	public EAttribute getWidgetDashboard_View() {
+		return (EAttribute)widgetDashboardEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -811,6 +819,26 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getWidgetToolbar() {
+		return widgetToolbarEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetToolbar_View() {
+		return (EAttribute)widgetToolbarEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getWidgetType() {
 		return widgetTypeEEnum;
 	}
@@ -867,8 +895,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		widgetCounterEClass = createEClass(WIDGET_COUNTER);
 		createEAttribute(widgetCounterEClass, WIDGET_COUNTER__VIEW);
 
-		widgetdashboardEClass = createEClass(WIDGETDASHBOARD);
-		createEAttribute(widgetdashboardEClass, WIDGETDASHBOARD__VIEW);
+		widgetDashboardEClass = createEClass(WIDGET_DASHBOARD);
+		createEAttribute(widgetDashboardEClass, WIDGET_DASHBOARD__VIEW);
 
 		widgetDatePickerEClass = createEClass(WIDGET_DATE_PICKER);
 		createEAttribute(widgetDatePickerEClass, WIDGET_DATE_PICKER__VIEW);
@@ -887,9 +915,6 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		widgetLayoutEClass = createEClass(WIDGET_LAYOUT);
 		createEAttribute(widgetLayoutEClass, WIDGET_LAYOUT__VIEW);
 		createEReference(widgetLayoutEClass, WIDGET_LAYOUT__EVENTS);
-
-		widgetTextAreaEClass = createEClass(WIDGET_TEXT_AREA);
-		createEAttribute(widgetTextAreaEClass, WIDGET_TEXT_AREA__VIEW);
 
 		widgetNumberEClass = createEClass(WIDGET_NUMBER);
 		createEAttribute(widgetNumberEClass, WIDGET_NUMBER__VIEW);
@@ -912,6 +937,12 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		widgetTextAttributeEClass = createEClass(WIDGET_TEXT_ATTRIBUTE);
 		createEAttribute(widgetTextAttributeEClass, WIDGET_TEXT_ATTRIBUTE__MAXLENGTH);
+
+		widgetTextAreaEClass = createEClass(WIDGET_TEXT_AREA);
+		createEAttribute(widgetTextAreaEClass, WIDGET_TEXT_AREA__VIEW);
+
+		widgetToolbarEClass = createEClass(WIDGET_TOOLBAR);
+		createEAttribute(widgetToolbarEClass, WIDGET_TOOLBAR__VIEW);
 
 		// Create enums
 		widgetTypeEEnum = createEEnum(WIDGET_TYPE);
@@ -955,19 +986,20 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		widgetComboBoxEClass.getESuperTypes().add(this.getWidget());
 		widgetComboBoxEntryEClass.getESuperTypes().add(this.getWidgetEntry());
 		widgetCounterEClass.getESuperTypes().add(this.getWidget());
-		widgetdashboardEClass.getESuperTypes().add(this.getWidget());
+		widgetDashboardEClass.getESuperTypes().add(this.getWidget());
 		widgetDatePickerEClass.getESuperTypes().add(this.getWidget());
 		widgetFormEClass.getESuperTypes().add(this.getWidget());
 		widgetFormEntryEClass.getESuperTypes().add(this.getWidgetEntry());
 		widgetImageEClass.getESuperTypes().add(this.getWidget());
 		widgetLayoutEClass.getESuperTypes().add(this.getWidget());
-		widgetTextAreaEClass.getESuperTypes().add(this.getWidget());
 		widgetNumberEClass.getESuperTypes().add(this.getWidget());
 		widgetNumberAttributeEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		widgetSwitchEClass.getESuperTypes().add(this.getWidget());
 		widgeReviewEClass.getESuperTypes().add(this.getWidget());
 		widgetTextEClass.getESuperTypes().add(this.getWidget());
 		widgetTextAttributeEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		widgetTextAreaEClass.getESuperTypes().add(this.getWidget());
+		widgetToolbarEClass.getESuperTypes().add(this.getWidget());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(widgetEClass, Widget.class, "Widget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -997,8 +1029,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		initEClass(widgetCounterEClass, WidgetCounter.class, "WidgetCounter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetCounter_View(), this.getWidgetType(), "view", "mm-counter", 1, 1, WidgetCounter.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(widgetdashboardEClass, Widgetdashboard.class, "Widgetdashboard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWidgetdashboard_View(), this.getWidgetType(), "view", "mm-dashboard", 1, 1, Widgetdashboard.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(widgetDashboardEClass, WidgetDashboard.class, "WidgetDashboard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetDashboard_View(), this.getWidgetType(), "view", "mm-dashboard", 1, 1, WidgetDashboard.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetDatePickerEClass, WidgetDatePicker.class, "WidgetDatePicker", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetDatePicker_View(), this.getWidgetType(), "view", "mm-datepicker", 1, 1, WidgetDatePicker.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1017,9 +1049,6 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		initEClass(widgetLayoutEClass, WidgetLayout.class, "WidgetLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetLayout_View(), this.getWidgetType(), "view", "mm-layout", 1, 1, WidgetLayout.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWidgetLayout_Events(), theEventPackage.getEvent(), null, "events", null, 0, -1, WidgetLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(widgetTextAreaEClass, WidgetTextArea.class, "WidgetTextArea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWidgetTextArea_View(), this.getWidgetType(), "view", "mm-textarea", 1, 1, WidgetTextArea.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetNumberEClass, WidgetNumber.class, "WidgetNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetNumber_View(), this.getWidgetType(), "view", "mm-number", 1, 1, WidgetNumber.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1043,6 +1072,12 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		initEClass(widgetTextAttributeEClass, WidgetTextAttribute.class, "WidgetTextAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetTextAttribute_Maxlength(), ecorePackage.getEInt(), "maxlength", null, 0, 1, WidgetTextAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(widgetTextAreaEClass, WidgetTextArea.class, "WidgetTextArea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetTextArea_View(), this.getWidgetType(), "view", "mm-textarea", 1, 1, WidgetTextArea.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(widgetToolbarEClass, WidgetToolbar.class, "WidgetToolbar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetToolbar_View(), this.getWidgetType(), "view", "mm-toolbar", 1, 1, WidgetToolbar.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(widgetTypeEEnum, WidgetType.class, "WidgetType");
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.CHECK_BOX);
@@ -1058,6 +1093,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.SWITCH);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.TEXT);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.TEXT_AREA);
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.TOOLBAR);
 	}
 
 } //WidgetPackageImpl

@@ -62,19 +62,20 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 			case WidgetPackage.WIDGET_COMBO_BOX: return (EObject)createWidgetComboBox();
 			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY: return (EObject)createWidgetComboBoxEntry();
 			case WidgetPackage.WIDGET_COUNTER: return (EObject)createWidgetCounter();
-			case WidgetPackage.WIDGETDASHBOARD: return (EObject)createWidgetdashboard();
+			case WidgetPackage.WIDGET_DASHBOARD: return (EObject)createWidgetDashboard();
 			case WidgetPackage.WIDGET_DATE_PICKER: return (EObject)createWidgetDatePicker();
 			case WidgetPackage.WIDGET_FORM: return (EObject)createWidgetForm();
 			case WidgetPackage.WIDGET_FORM_ENTRY: return (EObject)createWidgetFormEntry();
 			case WidgetPackage.WIDGET_IMAGE: return (EObject)createWidgetImage();
 			case WidgetPackage.WIDGET_LAYOUT: return (EObject)createWidgetLayout();
-			case WidgetPackage.WIDGET_TEXT_AREA: return (EObject)createWidgetTextArea();
 			case WidgetPackage.WIDGET_NUMBER: return (EObject)createWidgetNumber();
 			case WidgetPackage.WIDGET_NUMBER_ATTRIBUTE: return (EObject)createWidgetNumberAttribute();
 			case WidgetPackage.WIDGET_SWITCH: return (EObject)createWidgetSwitch();
 			case WidgetPackage.WIDGE_REVIEW: return (EObject)createWidgeReview();
 			case WidgetPackage.WIDGET_TEXT: return (EObject)createWidgetText();
 			case WidgetPackage.WIDGET_TEXT_ATTRIBUTE: return (EObject)createWidgetTextAttribute();
+			case WidgetPackage.WIDGET_TEXT_AREA: return (EObject)createWidgetTextArea();
+			case WidgetPackage.WIDGET_TOOLBAR: return (EObject)createWidgetToolbar();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -160,9 +161,9 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 	 * @generated
 	 */
 	@Override
-	public Widgetdashboard createWidgetdashboard() {
-		WidgetdashboardImpl widgetdashboard = new WidgetdashboardImpl();
-		return widgetdashboard;
+	public WidgetDashboard createWidgetDashboard() {
+		WidgetDashboardImpl widgetDashboard = new WidgetDashboardImpl();
+		return widgetDashboard;
 	}
 
 	/**
@@ -295,6 +296,17 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 	public WidgetTextAttribute createWidgetTextAttribute() {
 		WidgetTextAttributeImpl widgetTextAttribute = new WidgetTextAttributeImpl();
 		return widgetTextAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WidgetToolbar createWidgetToolbar() {
+		WidgetToolbarImpl widgetToolbar = new WidgetToolbarImpl();
+		return widgetToolbar;
 	}
 
 	/**

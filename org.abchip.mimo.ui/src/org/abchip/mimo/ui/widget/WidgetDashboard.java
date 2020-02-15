@@ -6,21 +6,21 @@ package org.abchip.mimo.ui.widget;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Widgetdashboard</b></em>'.
+ * A representation of the model object '<em><b>WidgetDashboard</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.widget.Widgetdashboard#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.WidgetDashboard#getView <em>View</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetdashboard()
+ * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetDashboard()
  * @model
  * @generated
  */
-public interface Widgetdashboard extends Widget {
+public interface WidgetDashboard extends Widget {
 	/**
 	 * Returns the value of the '<em><b>View</b></em>' attribute.
 	 * The default value is <code>"mm-dashboard"</code>.
@@ -33,10 +33,10 @@ public interface Widgetdashboard extends Widget {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View</em>' attribute.
 	 * @see org.abchip.mimo.ui.widget.WidgetType
-	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetdashboard_View()
+	 * @see org.abchip.mimo.ui.widget.WidgetPackage#getWidgetDashboard_View()
 	 * @model default="mm-dashboard" required="true" changeable="false"
 	 * @generated
 	 */
 	WidgetType getView();
 
-} // Widgetdashboard
+} // WidgetDashboard

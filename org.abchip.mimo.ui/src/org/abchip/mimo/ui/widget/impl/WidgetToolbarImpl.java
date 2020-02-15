@@ -4,25 +4,25 @@
 package org.abchip.mimo.ui.widget.impl;
 
 import org.abchip.mimo.ui.widget.WidgetPackage;
+import org.abchip.mimo.ui.widget.WidgetToolbar;
 import org.abchip.mimo.ui.widget.WidgetType;
-import org.abchip.mimo.ui.widget.Widgetdashboard;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Widgetdashboard</b></em>'.
+ * An implementation of the model object '<em><b>Toolbar</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetdashboardImpl#getView <em>View</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.widget.impl.WidgetToolbarImpl#getView <em>View</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class WidgetdashboardImpl extends WidgetImpl implements Widgetdashboard {
+public class WidgetToolbarImpl extends WidgetImpl implements WidgetToolbar {
 	/**
 	 * 
 	 */
@@ -36,7 +36,7 @@ public class WidgetdashboardImpl extends WidgetImpl implements Widgetdashboard {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final WidgetType VIEW_EDEFAULT = WidgetType.DASHBOARD;
+	protected static final WidgetType VIEW_EDEFAULT = WidgetType.TOOLBAR;
 
 	/**
 	 * The cached value of the '{@link #getView() <em>View</em>}' attribute.
@@ -53,7 +53,7 @@ public class WidgetdashboardImpl extends WidgetImpl implements Widgetdashboard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WidgetdashboardImpl() {
+	protected WidgetToolbarImpl() {
 		super();
 	}
 
@@ -64,7 +64,7 @@ public class WidgetdashboardImpl extends WidgetImpl implements Widgetdashboard {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WidgetPackage.Literals.WIDGETDASHBOARD;
+		return WidgetPackage.Literals.WIDGET_TOOLBAR;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class WidgetdashboardImpl extends WidgetImpl implements Widgetdashboard {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WidgetPackage.WIDGETDASHBOARD__VIEW:
+			case WidgetPackage.WIDGET_TOOLBAR__VIEW:
 				return getView();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -99,7 +99,7 @@ public class WidgetdashboardImpl extends WidgetImpl implements Widgetdashboard {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WidgetPackage.WIDGETDASHBOARD__VIEW:
+			case WidgetPackage.WIDGET_TOOLBAR__VIEW:
 				return view != VIEW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -121,4 +121,4 @@ public class WidgetdashboardImpl extends WidgetImpl implements Widgetdashboard {
 		return result.toString();
 	}
 
-} //WidgetdashboardImpl
+} //WidgetToolbarImpl

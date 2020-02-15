@@ -129,6 +129,7 @@
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Switch"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Text"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/TextArea"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Toolbar"/>
       </genEnums>
       <genClasses image="false" ecoreClass="ui.ecore#//widget/Widget">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widget/disabled"/>
@@ -154,8 +155,8 @@
       <genClasses ecoreClass="ui.ecore#//widget/WidgetCounter">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetCounter/view"/>
       </genClasses>
-      <genClasses ecoreClass="ui.ecore#//widget/Widgetdashboard">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widgetdashboard/view"/>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetDashboard">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetDashboard/view"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetDatePicker">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetDatePicker/view"/>
@@ -175,9 +176,6 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetLayout/view"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference ui.ecore#//widget/WidgetLayout/events"/>
-      </genClasses>
-      <genClasses ecoreClass="ui.ecore#//widget/WidgetTextArea">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetTextArea/view"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetNumber">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetNumber/view"/>
@@ -200,6 +198,12 @@
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetTextAttribute">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetTextAttribute/maxlength"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetTextArea">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetTextArea/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetToolbar">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetToolbar/view"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

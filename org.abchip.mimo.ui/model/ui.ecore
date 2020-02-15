@@ -146,6 +146,7 @@
       <eLiterals name="Switch" literal="mm-switch"/>
       <eLiterals name="Text" literal="mm-text"/>
       <eLiterals name="TextArea" literal="mm-textarea"/>
+      <eLiterals name="Toolbar" literal="mm-toolbar"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Widget" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
       <eOperations name="getEntry" lowerBound="1" eType="#//widget/WidgetEntry"/>
@@ -177,7 +178,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-counter"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Widgetdashboard" eSuperTypes="#//widget/Widget">
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetDashboard" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-dashboard"/>
     </eClassifiers>
@@ -205,10 +206,6 @@
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-layout"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
           eType="#//event/Event"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="WidgetTextArea" eSuperTypes="#//widget/Widget">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
-          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-textarea"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetNumber" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
@@ -238,6 +235,14 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetTextAttribute" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxlength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetTextArea" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-textarea"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetToolbar" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-toolbar"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
