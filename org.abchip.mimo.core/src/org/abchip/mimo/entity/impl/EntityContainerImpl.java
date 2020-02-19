@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class EntityContainerImpl extends EntityImpl implements EntityContainer {
+public class EntityContainerImpl extends EntityIdentifiableImpl implements EntityContainer {
 	/**
 	 * The cached value of the '{@link #getContents() <em>Contents</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

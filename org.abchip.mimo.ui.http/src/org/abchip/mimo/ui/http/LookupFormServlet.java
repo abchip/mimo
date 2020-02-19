@@ -210,6 +210,10 @@ public class LookupFormServlet extends BaseServlet {
 			break;
 		case TEXT_AREA:
 			break;
+		case REVIEW:
+			break;
+		case TOOLBAR:
+			break;
 		}
 
 		return field;

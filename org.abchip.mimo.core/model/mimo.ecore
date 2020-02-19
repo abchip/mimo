@@ -732,7 +732,7 @@
         </eTypeParameters>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EntityContainer" eSuperTypes="#//entity/Entity">
+    <eClassifiers xsi:type="ecore:EClass" name="EntityContainer" eSuperTypes="#//entity/EntityIdentifiable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
           eType="#//entity/EntityIdentifiable" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
