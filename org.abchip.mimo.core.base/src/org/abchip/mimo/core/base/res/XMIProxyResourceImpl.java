@@ -11,10 +11,13 @@ package org.abchip.mimo.core.base.res;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Collections;
+import java.util.HashMap;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
 public class XMIProxyResourceImpl extends XMIResourceImpl implements ReusableResource {
@@ -40,6 +43,9 @@ public class XMIProxyResourceImpl extends XMIResourceImpl implements ReusableRes
 
 	@Override
 	public void save(OutputStream outputStream) throws IOException {
-		super.save(outputStream, Collections.EMPTY_MAP);
+		HashMap<String, Object> options = new HashMap<String, Object>();
+		options.put(XMIResource.OPTION_SCHEMA_LOCATION, true);		
+		options.put(XMIResource.OPTION_ENCODING, StandardCharsets.UTF_8.name());		
+		super.save(outputStream, options);
 	}
 }
