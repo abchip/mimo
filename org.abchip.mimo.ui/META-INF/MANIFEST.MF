@@ -22,6 +22,8 @@ Export-Package: org.abchip.mimo.ui,
  org.abchip.mimo.ui.schema.impl,
  org.abchip.mimo.ui.toolbar,
  org.abchip.mimo.ui.toolbar.impl,
+ org.abchip.mimo.ui.view,
+ org.abchip.mimo.ui.view.impl,
  org.abchip.mimo.ui.widget,
  org.abchip.mimo.ui.widget.impl
 Require-Bundle: org.eclipse.core.runtime,

@@ -33,6 +33,8 @@ import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 
 import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
 
+import org.abchip.mimo.ui.view.ViewPackage;
+import org.abchip.mimo.ui.view.impl.ViewPackageImpl;
 import org.abchip.mimo.ui.widget.WidgeReview;
 import org.abchip.mimo.ui.widget.Widget;
 import org.abchip.mimo.ui.widget.WidgetBrowser;
@@ -348,6 +350,8 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
 		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ViewPackage.eNS_URI);
+		ViewPackageImpl theViewPackage = (ViewPackageImpl)(registeredPackage instanceof ViewPackageImpl ? registeredPackage : ViewPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theWidgetPackage.createPackageContents();
@@ -358,6 +362,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		theQueryPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
 		theToolbarPackage.createPackageContents();
+		theViewPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theWidgetPackage.initializePackageContents();
@@ -368,6 +373,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		theQueryPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
 		theToolbarPackage.initializePackageContents();
+		theViewPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theWidgetPackage.freeze();

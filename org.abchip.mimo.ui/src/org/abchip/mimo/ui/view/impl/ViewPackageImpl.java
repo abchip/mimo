@@ -1,41 +1,58 @@
 /**
  * Copyright (c) 2017, 2020 ABChip and others.\nAll rights reserved. This program and the accompanying materials\nare made available under the terms of the Eclipse Public License v1.0\nwhich accompanies this distribution, and is available at\nhttp://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.ui.menu.impl;
+package org.abchip.mimo.ui.view.impl;
 
 import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.ui.UIPackage;
+
 import org.abchip.mimo.ui.event.EventPackage;
+
 import org.abchip.mimo.ui.event.impl.EventPackageImpl;
+
 import org.abchip.mimo.ui.form.FormPackage;
+
 import org.abchip.mimo.ui.form.impl.FormPackageImpl;
+
 import org.abchip.mimo.ui.impl.UIPackageImpl;
-import org.abchip.mimo.ui.menu.ContextMenu;
-import org.abchip.mimo.ui.menu.Menu;
-import org.abchip.mimo.ui.menu.MenuAction;
-import org.abchip.mimo.ui.menu.MenuFactory;
-import org.abchip.mimo.ui.menu.MenuGroup;
+
 import org.abchip.mimo.ui.menu.MenuPackage;
 
+import org.abchip.mimo.ui.menu.impl.MenuPackageImpl;
+
 import org.abchip.mimo.ui.query.QueryPackage;
+
 import org.abchip.mimo.ui.query.impl.QueryPackageImpl;
+
 import org.abchip.mimo.ui.schema.SchemaPackage;
 
 import org.abchip.mimo.ui.schema.impl.SchemaPackageImpl;
 
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
+
 import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
+
+import org.abchip.mimo.ui.view.View;
+import org.abchip.mimo.ui.view.ViewCard;
+import org.abchip.mimo.ui.view.ViewDashboard;
+import org.abchip.mimo.ui.view.ViewEditor;
+import org.abchip.mimo.ui.view.ViewFactory;
+import org.abchip.mimo.ui.view.ViewFinder;
+import org.abchip.mimo.ui.view.ViewImport;
 import org.abchip.mimo.ui.view.ViewPackage;
-import org.abchip.mimo.ui.view.impl.ViewPackageImpl;
+import org.abchip.mimo.ui.view.ViewType;
+
 import org.abchip.mimo.ui.widget.WidgetPackage;
+
 import org.abchip.mimo.ui.widget.impl.WidgetPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -45,34 +62,55 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
+public class ViewPackageImpl extends EPackageImpl implements ViewPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass contextMenuEClass = null;
+	private EClass viewEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass menuEClass = null;
+	private EClass viewCardEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass menuActionEClass = null;
+	private EClass viewDashboardEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass menuGroupEClass = null;
+	private EClass viewEditorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewFinderEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewImportEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum viewTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -85,12 +123,12 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.abchip.mimo.ui.menu.MenuPackage#eNS_URI
+	 * @see org.abchip.mimo.ui.view.ViewPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private MenuPackageImpl() {
-		super(eNS_URI, MenuFactory.eINSTANCE);
+	private ViewPackageImpl() {
+		super(eNS_URI, ViewFactory.eINSTANCE);
 	}
 
 	/**
@@ -103,7 +141,7 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link MenuPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link ViewPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,12 +150,12 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static MenuPackage init() {
-		if (isInited) return (MenuPackage)EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
+	public static ViewPackage init() {
+		if (isInited) return (ViewPackage)EPackage.Registry.INSTANCE.getEPackage(ViewPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredMenuPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		MenuPackageImpl theMenuPackage = registeredMenuPackage instanceof MenuPackageImpl ? (MenuPackageImpl)registeredMenuPackage : new MenuPackageImpl();
+		Object registeredViewPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ViewPackageImpl theViewPackage = registeredViewPackage instanceof ViewPackageImpl ? (ViewPackageImpl)registeredViewPackage : new ViewPackageImpl();
 
 		isInited = true;
 
@@ -131,45 +169,45 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 		FormPackageImpl theFormPackage = (FormPackageImpl)(registeredPackage instanceof FormPackageImpl ? registeredPackage : FormPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EventPackage.eNS_URI);
 		EventPackageImpl theEventPackage = (EventPackageImpl)(registeredPackage instanceof EventPackageImpl ? registeredPackage : EventPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MenuPackage.eNS_URI);
+		MenuPackageImpl theMenuPackage = (MenuPackageImpl)(registeredPackage instanceof MenuPackageImpl ? registeredPackage : MenuPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
 		QueryPackageImpl theQueryPackage = (QueryPackageImpl)(registeredPackage instanceof QueryPackageImpl ? registeredPackage : QueryPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
 		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
 		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ViewPackage.eNS_URI);
-		ViewPackageImpl theViewPackage = (ViewPackageImpl)(registeredPackage instanceof ViewPackageImpl ? registeredPackage : ViewPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WidgetPackage.eNS_URI);
 		WidgetPackageImpl theWidgetPackage = (WidgetPackageImpl)(registeredPackage instanceof WidgetPackageImpl ? registeredPackage : WidgetPackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theMenuPackage.createPackageContents();
+		theViewPackage.createPackageContents();
 		theUIPackage.createPackageContents();
 		theFormPackage.createPackageContents();
 		theEventPackage.createPackageContents();
+		theMenuPackage.createPackageContents();
 		theQueryPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
 		theToolbarPackage.createPackageContents();
-		theViewPackage.createPackageContents();
 		theWidgetPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theMenuPackage.initializePackageContents();
+		theViewPackage.initializePackageContents();
 		theUIPackage.initializePackageContents();
 		theFormPackage.initializePackageContents();
 		theEventPackage.initializePackageContents();
+		theMenuPackage.initializePackageContents();
 		theQueryPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
 		theToolbarPackage.initializePackageContents();
-		theViewPackage.initializePackageContents();
 		theWidgetPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theMenuPackage.freeze();
+		theViewPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(MenuPackage.eNS_URI, theMenuPackage);
-		return theMenuPackage;
+		EPackage.Registry.INSTANCE.put(ViewPackage.eNS_URI, theViewPackage);
+		return theViewPackage;
 	}
 
 	/**
@@ -178,8 +216,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getContextMenu() {
-		return contextMenuEClass;
+	public EClass getView() {
+		return viewEClass;
 	}
 
 	/**
@@ -188,8 +226,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getContextMenu_Elements() {
-		return (EReference)contextMenuEClass.getEStructuralFeatures().get(0);
+	public EAttribute getView_Name() {
+		return (EAttribute)viewEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -198,8 +236,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextMenu_Icon() {
-		return (EAttribute)contextMenuEClass.getEStructuralFeatures().get(1);
+	public EAttribute getView_Disabled() {
+		return (EAttribute)viewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -208,8 +246,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextMenu_Name() {
-		return (EAttribute)contextMenuEClass.getEStructuralFeatures().get(2);
+	public EClass getViewCard() {
+		return viewCardEClass;
 	}
 
 	/**
@@ -218,8 +256,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMenu() {
-		return menuEClass;
+	public EAttribute getViewCard_Type() {
+		return (EAttribute)viewCardEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -228,8 +266,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMenu_Elements() {
-		return (EReference)menuEClass.getEStructuralFeatures().get(0);
+	public EClass getViewDashboard() {
+		return viewDashboardEClass;
 	}
 
 	/**
@@ -238,8 +276,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMenu_Icon() {
-		return (EAttribute)menuEClass.getEStructuralFeatures().get(1);
+	public EAttribute getViewDashboard_Type() {
+		return (EAttribute)viewDashboardEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -248,8 +286,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMenu_Name() {
-		return (EAttribute)menuEClass.getEStructuralFeatures().get(2);
+	public EClass getViewEditor() {
+		return viewEditorEClass;
 	}
 
 	/**
@@ -258,8 +296,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMenuAction() {
-		return menuActionEClass;
+	public EAttribute getViewEditor_Type() {
+		return (EAttribute)viewEditorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -268,8 +306,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMenuAction_Action() {
-		return (EAttribute)menuActionEClass.getEStructuralFeatures().get(0);
+	public EClass getViewFinder() {
+		return viewFinderEClass;
 	}
 
 	/**
@@ -278,8 +316,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMenuAction_Filter() {
-		return (EAttribute)menuActionEClass.getEStructuralFeatures().get(1);
+	public EAttribute getViewFinder_Type() {
+		return (EAttribute)viewFinderEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -288,8 +326,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMenuGroup() {
-		return menuGroupEClass;
+	public EClass getViewImport() {
+		return viewImportEClass;
 	}
 
 	/**
@@ -298,8 +336,8 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMenuGroup_Data() {
-		return (EReference)menuGroupEClass.getEStructuralFeatures().get(0);
+	public EAttribute getViewImport_Type() {
+		return (EAttribute)viewImportEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -308,8 +346,18 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 	 * @generated
 	 */
 	@Override
-	public MenuFactory getMenuFactory() {
-		return (MenuFactory)getEFactoryInstance();
+	public EEnum getViewType() {
+		return viewTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ViewFactory getViewFactory() {
+		return (ViewFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -331,22 +379,27 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		contextMenuEClass = createEClass(CONTEXT_MENU);
-		createEReference(contextMenuEClass, CONTEXT_MENU__ELEMENTS);
-		createEAttribute(contextMenuEClass, CONTEXT_MENU__ICON);
-		createEAttribute(contextMenuEClass, CONTEXT_MENU__NAME);
+		viewEClass = createEClass(VIEW);
+		createEAttribute(viewEClass, VIEW__NAME);
+		createEAttribute(viewEClass, VIEW__DISABLED);
 
-		menuEClass = createEClass(MENU);
-		createEReference(menuEClass, MENU__ELEMENTS);
-		createEAttribute(menuEClass, MENU__ICON);
-		createEAttribute(menuEClass, MENU__NAME);
+		viewCardEClass = createEClass(VIEW_CARD);
+		createEAttribute(viewCardEClass, VIEW_CARD__TYPE);
 
-		menuActionEClass = createEClass(MENU_ACTION);
-		createEAttribute(menuActionEClass, MENU_ACTION__ACTION);
-		createEAttribute(menuActionEClass, MENU_ACTION__FILTER);
+		viewDashboardEClass = createEClass(VIEW_DASHBOARD);
+		createEAttribute(viewDashboardEClass, VIEW_DASHBOARD__TYPE);
 
-		menuGroupEClass = createEClass(MENU_GROUP);
-		createEReference(menuGroupEClass, MENU_GROUP__DATA);
+		viewEditorEClass = createEClass(VIEW_EDITOR);
+		createEAttribute(viewEditorEClass, VIEW_EDITOR__TYPE);
+
+		viewFinderEClass = createEClass(VIEW_FINDER);
+		createEAttribute(viewFinderEClass, VIEW_FINDER__TYPE);
+
+		viewImportEClass = createEClass(VIEW_IMPORT);
+		createEAttribute(viewImportEClass, VIEW_IMPORT__TYPE);
+
+		// Create enums
+		viewTypeEEnum = createEEnum(VIEW_TYPE);
 	}
 
 	/**
@@ -374,35 +427,48 @@ public class MenuPackageImpl extends EPackageImpl implements MenuPackage {
 
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		UIPackage theUIPackage = (UIPackage)EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		contextMenuEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-		menuEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-		menuActionEClass.getESuperTypes().add(theUIPackage.getDataNode());
-		menuGroupEClass.getESuperTypes().add(theUIPackage.getDataNode());
+		viewEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		viewCardEClass.getESuperTypes().add(this.getView());
+		viewDashboardEClass.getESuperTypes().add(this.getView());
+		viewEditorEClass.getESuperTypes().add(this.getView());
+		viewFinderEClass.getESuperTypes().add(this.getView());
+		viewImportEClass.getESuperTypes().add(this.getView());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(contextMenuEClass, ContextMenu.class, "ContextMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getContextMenu_Elements(), theUIPackage.getDataNode(), null, "elements", null, 0, -1, ContextMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContextMenu_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, ContextMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContextMenu_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContextMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(viewEClass, View.class, "View", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getView_Name(), ecorePackage.getEString(), "name", null, 1, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getView_Disabled(), ecorePackage.getEBoolean(), "disabled", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(menuEClass, Menu.class, "Menu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMenu_Elements(), theUIPackage.getDataNode(), null, "elements", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMenu_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMenu_Name(), ecorePackage.getEString(), "name", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		addEOperation(viewEClass, this.getViewType(), "getType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(menuActionEClass, MenuAction.class, "MenuAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMenuAction_Action(), ecorePackage.getEString(), "action", null, 0, 1, MenuAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMenuAction_Filter(), ecorePackage.getEString(), "filter", null, 0, 1, MenuAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(viewCardEClass, ViewCard.class, "ViewCard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewCard_Type(), this.getViewType(), "type", "mm-card", 1, 1, ViewCard.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(menuGroupEClass, MenuGroup.class, "MenuGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMenuGroup_Data(), theUIPackage.getDataNode(), null, "data", null, 0, -1, MenuGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(viewDashboardEClass, ViewDashboard.class, "ViewDashboard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewDashboard_Type(), this.getViewType(), "type", "mm-dashboard", 1, 1, ViewDashboard.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewEditorEClass, ViewEditor.class, "ViewEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewEditor_Type(), this.getViewType(), "type", "mm-editor", 1, 1, ViewEditor.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewFinderEClass, ViewFinder.class, "ViewFinder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewFinder_Type(), this.getViewType(), "type", "mm-finder", 1, 1, ViewFinder.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewImportEClass, ViewImport.class, "ViewImport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewImport_Type(), this.getViewType(), "type", "mm-import", 1, 1, ViewImport.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(viewTypeEEnum, ViewType.class, "ViewType");
+		addEEnumLiteral(viewTypeEEnum, ViewType.CARD);
+		addEEnumLiteral(viewTypeEEnum, ViewType.DASHBARD);
+		addEEnumLiteral(viewTypeEEnum, ViewType.EDITOR);
+		addEEnumLiteral(viewTypeEEnum, ViewType.FINDER);
+		addEEnumLiteral(viewTypeEEnum, ViewType.IMPORT);
 	}
 
-} //MenuPackageImpl
+} //ViewPackageImpl

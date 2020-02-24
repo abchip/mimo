@@ -28,6 +28,8 @@ import org.abchip.mimo.ui.toolbar.ToolbarFactory;
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 import org.abchip.mimo.ui.toolbar.ToolbarView;
 
+import org.abchip.mimo.ui.view.ViewPackage;
+import org.abchip.mimo.ui.view.impl.ViewPackageImpl;
 import org.abchip.mimo.ui.widget.WidgetPackage;
 import org.abchip.mimo.ui.widget.impl.WidgetPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
@@ -121,6 +123,8 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		QueryPackageImpl theQueryPackage = (QueryPackageImpl)(registeredPackage instanceof QueryPackageImpl ? registeredPackage : QueryPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
 		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ViewPackage.eNS_URI);
+		ViewPackageImpl theViewPackage = (ViewPackageImpl)(registeredPackage instanceof ViewPackageImpl ? registeredPackage : ViewPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WidgetPackage.eNS_URI);
 		WidgetPackageImpl theWidgetPackage = (WidgetPackageImpl)(registeredPackage instanceof WidgetPackageImpl ? registeredPackage : WidgetPackage.eINSTANCE);
 
@@ -132,6 +136,7 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		theMenuPackage.createPackageContents();
 		theQueryPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
+		theViewPackage.createPackageContents();
 		theWidgetPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -142,6 +147,7 @@ public class ToolbarPackageImpl extends EPackageImpl implements ToolbarPackage {
 		theMenuPackage.initializePackageContents();
 		theQueryPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
+		theViewPackage.initializePackageContents();
 		theWidgetPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed

@@ -131,6 +131,41 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
   </eSubpackages>
+  <eSubpackages name="view" nsURI="http://www.abchip.org/mimo/ui/view" nsPrefix="ui-view">
+    <eClassifiers xsi:type="ecore:EEnum" name="ViewType">
+      <eLiterals name="Card" literal="mm-card"/>
+      <eLiterals name="Dashbard" literal="mm-dashboard"/>
+      <eLiterals name="Editor" literal="mm-editor"/>
+      <eLiterals name="Finder" literal="mm-finder"/>
+      <eLiterals name="Import" literal="mm-import"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="View" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
+      <eOperations name="getType" lowerBound="1" eType="#//view/ViewType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="disabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewCard" eSuperTypes="#//view/View">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
+          eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-card"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewDashboard" eSuperTypes="#//view/View">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
+          eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-dashboard"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewEditor" eSuperTypes="#//view/View">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
+          eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-editor"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewFinder" eSuperTypes="#//view/View">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
+          eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-finder"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewImport" eSuperTypes="#//view/View">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
+          eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-import"/>
+    </eClassifiers>
+  </eSubpackages>
   <eSubpackages name="widget" nsURI="http://www.abchip.org/mimo/ui/widget" nsPrefix="ui-widget">
     <eClassifiers xsi:type="ecore:EEnum" name="WidgetType">
       <eLiterals name="Browser" literal="mm-browser"/>

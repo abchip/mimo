@@ -32,6 +32,8 @@ import org.abchip.mimo.ui.schema.impl.SchemaPackageImpl;
 import org.abchip.mimo.ui.toolbar.ToolbarPackage;
 
 import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
+import org.abchip.mimo.ui.view.ViewPackage;
+import org.abchip.mimo.ui.view.impl.ViewPackageImpl;
 import org.abchip.mimo.ui.widget.WidgetPackage;
 import org.abchip.mimo.ui.widget.impl.WidgetPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
@@ -145,6 +147,8 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		SchemaPackageImpl theSchemaPackage = (SchemaPackageImpl)(registeredPackage instanceof SchemaPackageImpl ? registeredPackage : SchemaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
 		ToolbarPackageImpl theToolbarPackage = (ToolbarPackageImpl)(registeredPackage instanceof ToolbarPackageImpl ? registeredPackage : ToolbarPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ViewPackage.eNS_URI);
+		ViewPackageImpl theViewPackage = (ViewPackageImpl)(registeredPackage instanceof ViewPackageImpl ? registeredPackage : ViewPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WidgetPackage.eNS_URI);
 		WidgetPackageImpl theWidgetPackage = (WidgetPackageImpl)(registeredPackage instanceof WidgetPackageImpl ? registeredPackage : WidgetPackage.eINSTANCE);
 
@@ -156,6 +160,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		theQueryPackage.createPackageContents();
 		theSchemaPackage.createPackageContents();
 		theToolbarPackage.createPackageContents();
+		theViewPackage.createPackageContents();
 		theWidgetPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -166,6 +171,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		theQueryPackage.initializePackageContents();
 		theSchemaPackage.initializePackageContents();
 		theToolbarPackage.initializePackageContents();
+		theViewPackage.initializePackageContents();
 		theWidgetPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -407,6 +413,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		QueryPackage theQueryPackage = (QueryPackage)EPackage.Registry.INSTANCE.getEPackage(QueryPackage.eNS_URI);
 		SchemaPackage theSchemaPackage = (SchemaPackage)EPackage.Registry.INSTANCE.getEPackage(SchemaPackage.eNS_URI);
 		ToolbarPackage theToolbarPackage = (ToolbarPackage)EPackage.Registry.INSTANCE.getEPackage(ToolbarPackage.eNS_URI);
+		ViewPackage theViewPackage = (ViewPackage)EPackage.Registry.INSTANCE.getEPackage(ViewPackage.eNS_URI);
 		WidgetPackage theWidgetPackage = (WidgetPackage)EPackage.Registry.INSTANCE.getEPackage(WidgetPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 
@@ -417,6 +424,7 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		getESubpackages().add(theQueryPackage);
 		getESubpackages().add(theSchemaPackage);
 		getESubpackages().add(theToolbarPackage);
+		getESubpackages().add(theViewPackage);
 		getESubpackages().add(theWidgetPackage);
 
 		// Create type parameters
