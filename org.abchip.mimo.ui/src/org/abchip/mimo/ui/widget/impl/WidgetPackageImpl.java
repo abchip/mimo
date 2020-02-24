@@ -35,10 +35,12 @@ import org.abchip.mimo.ui.toolbar.impl.ToolbarPackageImpl;
 
 import org.abchip.mimo.ui.widget.WidgeReview;
 import org.abchip.mimo.ui.widget.Widget;
+import org.abchip.mimo.ui.widget.WidgetBrowser;
 import org.abchip.mimo.ui.widget.WidgetCheckBox;
 import org.abchip.mimo.ui.widget.WidgetComboBox;
 import org.abchip.mimo.ui.widget.WidgetComboBoxEntry;
 import org.abchip.mimo.ui.widget.WidgetLayout;
+import org.abchip.mimo.ui.widget.WidgetMenu;
 import org.abchip.mimo.ui.widget.WidgetCounter;
 import org.abchip.mimo.ui.widget.WidgetDatePicker;
 import org.abchip.mimo.ui.widget.WidgetEntry;
@@ -50,12 +52,18 @@ import org.abchip.mimo.ui.widget.WidgetTextArea;
 import org.abchip.mimo.ui.widget.WidgetNumber;
 import org.abchip.mimo.ui.widget.WidgetNumberAttribute;
 import org.abchip.mimo.ui.widget.WidgetPackage;
+import org.abchip.mimo.ui.widget.WidgetProperty;
+import org.abchip.mimo.ui.widget.WidgetQuery;
 import org.abchip.mimo.ui.widget.WidgetSwitch;
+import org.abchip.mimo.ui.widget.WidgetTab;
+import org.abchip.mimo.ui.widget.WidgetTable;
 import org.abchip.mimo.ui.widget.WidgetText;
 import org.abchip.mimo.ui.widget.WidgetTextAttribute;
 import org.abchip.mimo.ui.widget.WidgetToolbar;
 import org.abchip.mimo.ui.widget.WidgetType;
 
+import org.abchip.mimo.ui.widget.WidgetUploader;
+import org.abchip.mimo.ui.widget.WidgetView;
 import org.abchip.mimo.ui.widget.WidgetDashboard;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -85,6 +93,13 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	private EClass widgetEntryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass widgetBrowserEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,6 +176,13 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass widgetMenuEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass widgetTextAreaEClass = null;
 
 	/**
@@ -182,7 +204,35 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass widgetPropertyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass widgetQueryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass widgetSwitchEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass widgetTabEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass widgetTableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,6 +261,20 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	private EClass widgetToolbarEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass widgetUploaderEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass widgetViewEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -371,6 +435,26 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	@Override
 	public EClass getWidgetEntry() {
 		return widgetEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getWidgetBrowser() {
+		return widgetBrowserEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetBrowser_View() {
+		return (EAttribute)widgetBrowserEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -639,6 +723,26 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getWidgetMenu() {
+		return widgetMenuEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetMenu_View() {
+		return (EAttribute)widgetMenuEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getWidgetTextArea() {
 		return widgetTextAreaEClass;
 	}
@@ -719,6 +823,46 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getWidgetProperty() {
+		return widgetPropertyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetProperty_View() {
+		return (EAttribute)widgetPropertyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getWidgetQuery() {
+		return widgetQueryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetQuery_View() {
+		return (EAttribute)widgetQueryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getWidgetSwitch() {
 		return widgetSwitchEClass;
 	}
@@ -731,6 +875,46 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	@Override
 	public EAttribute getWidgetSwitch_View() {
 		return (EAttribute)widgetSwitchEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getWidgetTab() {
+		return widgetTabEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetTab_View() {
+		return (EAttribute)widgetTabEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getWidgetTable() {
+		return widgetTableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetTable_View() {
+		return (EAttribute)widgetTableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -839,6 +1023,46 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getWidgetUploader() {
+		return widgetUploaderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetUploader_View() {
+		return (EAttribute)widgetUploaderEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getWidgetView() {
+		return widgetViewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getWidgetView_View() {
+		return (EAttribute)widgetViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getWidgetType() {
 		return widgetTypeEEnum;
 	}
@@ -880,6 +1104,9 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		widgetEntryEClass = createEClass(WIDGET_ENTRY);
 
+		widgetBrowserEClass = createEClass(WIDGET_BROWSER);
+		createEAttribute(widgetBrowserEClass, WIDGET_BROWSER__VIEW);
+
 		widgetCheckBoxEClass = createEClass(WIDGET_CHECK_BOX);
 		createEAttribute(widgetCheckBoxEClass, WIDGET_CHECK_BOX__VIEW);
 
@@ -916,6 +1143,9 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		createEAttribute(widgetLayoutEClass, WIDGET_LAYOUT__VIEW);
 		createEReference(widgetLayoutEClass, WIDGET_LAYOUT__EVENTS);
 
+		widgetMenuEClass = createEClass(WIDGET_MENU);
+		createEAttribute(widgetMenuEClass, WIDGET_MENU__VIEW);
+
 		widgetNumberEClass = createEClass(WIDGET_NUMBER);
 		createEAttribute(widgetNumberEClass, WIDGET_NUMBER__VIEW);
 		createEReference(widgetNumberEClass, WIDGET_NUMBER__ATTRIBUTES);
@@ -924,11 +1154,23 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		widgetNumberAttributeEClass = createEClass(WIDGET_NUMBER_ATTRIBUTE);
 		createEAttribute(widgetNumberAttributeEClass, WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH);
 
-		widgetSwitchEClass = createEClass(WIDGET_SWITCH);
-		createEAttribute(widgetSwitchEClass, WIDGET_SWITCH__VIEW);
+		widgetPropertyEClass = createEClass(WIDGET_PROPERTY);
+		createEAttribute(widgetPropertyEClass, WIDGET_PROPERTY__VIEW);
+
+		widgetQueryEClass = createEClass(WIDGET_QUERY);
+		createEAttribute(widgetQueryEClass, WIDGET_QUERY__VIEW);
 
 		widgeReviewEClass = createEClass(WIDGE_REVIEW);
 		createEAttribute(widgeReviewEClass, WIDGE_REVIEW__VIEW);
+
+		widgetSwitchEClass = createEClass(WIDGET_SWITCH);
+		createEAttribute(widgetSwitchEClass, WIDGET_SWITCH__VIEW);
+
+		widgetTabEClass = createEClass(WIDGET_TAB);
+		createEAttribute(widgetTabEClass, WIDGET_TAB__VIEW);
+
+		widgetTableEClass = createEClass(WIDGET_TABLE);
+		createEAttribute(widgetTableEClass, WIDGET_TABLE__VIEW);
 
 		widgetTextEClass = createEClass(WIDGET_TEXT);
 		createEAttribute(widgetTextEClass, WIDGET_TEXT__VIEW);
@@ -943,6 +1185,12 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 
 		widgetToolbarEClass = createEClass(WIDGET_TOOLBAR);
 		createEAttribute(widgetToolbarEClass, WIDGET_TOOLBAR__VIEW);
+
+		widgetUploaderEClass = createEClass(WIDGET_UPLOADER);
+		createEAttribute(widgetUploaderEClass, WIDGET_UPLOADER__VIEW);
+
+		widgetViewEClass = createEClass(WIDGET_VIEW);
+		createEAttribute(widgetViewEClass, WIDGET_VIEW__VIEW);
 
 		// Create enums
 		widgetTypeEEnum = createEEnum(WIDGET_TYPE);
@@ -982,6 +1230,7 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		// Add supertypes to classes
 		widgetEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		widgetEntryEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		widgetBrowserEClass.getESuperTypes().add(this.getWidget());
 		widgetCheckBoxEClass.getESuperTypes().add(this.getWidget());
 		widgetComboBoxEClass.getESuperTypes().add(this.getWidget());
 		widgetComboBoxEntryEClass.getESuperTypes().add(this.getWidgetEntry());
@@ -992,14 +1241,21 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		widgetFormEntryEClass.getESuperTypes().add(this.getWidgetEntry());
 		widgetImageEClass.getESuperTypes().add(this.getWidget());
 		widgetLayoutEClass.getESuperTypes().add(this.getWidget());
+		widgetMenuEClass.getESuperTypes().add(this.getWidget());
 		widgetNumberEClass.getESuperTypes().add(this.getWidget());
 		widgetNumberAttributeEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		widgetSwitchEClass.getESuperTypes().add(this.getWidget());
+		widgetPropertyEClass.getESuperTypes().add(this.getWidget());
+		widgetQueryEClass.getESuperTypes().add(this.getWidget());
 		widgeReviewEClass.getESuperTypes().add(this.getWidget());
+		widgetSwitchEClass.getESuperTypes().add(this.getWidget());
+		widgetTabEClass.getESuperTypes().add(this.getWidget());
+		widgetTableEClass.getESuperTypes().add(this.getWidget());
 		widgetTextEClass.getESuperTypes().add(this.getWidget());
 		widgetTextAttributeEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		widgetTextAreaEClass.getESuperTypes().add(this.getWidget());
 		widgetToolbarEClass.getESuperTypes().add(this.getWidget());
+		widgetUploaderEClass.getESuperTypes().add(this.getWidget());
+		widgetViewEClass.getESuperTypes().add(this.getWidget());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(widgetEClass, Widget.class, "Widget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1013,6 +1269,9 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		addEOperation(widgetEClass, this.getWidgetType(), "getView", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(widgetEntryEClass, WidgetEntry.class, "WidgetEntry", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(widgetBrowserEClass, WidgetBrowser.class, "WidgetBrowser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetBrowser_View(), this.getWidgetType(), "view", "mm-browser", 1, 1, WidgetBrowser.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetCheckBoxEClass, WidgetCheckBox.class, "WidgetCheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetCheckBox_View(), this.getWidgetType(), "view", "mm-checkbox", 1, 1, WidgetCheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1050,6 +1309,9 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		initEAttribute(getWidgetLayout_View(), this.getWidgetType(), "view", "mm-layout", 1, 1, WidgetLayout.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWidgetLayout_Events(), theEventPackage.getEvent(), null, "events", null, 0, -1, WidgetLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(widgetMenuEClass, WidgetMenu.class, "WidgetMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetMenu_View(), this.getWidgetType(), "view", "mm-menu", 1, 1, WidgetMenu.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(widgetNumberEClass, WidgetNumber.class, "WidgetNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetNumber_View(), this.getWidgetType(), "view", "mm-number", 1, 1, WidgetNumber.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWidgetNumber_Attributes(), this.getWidgetNumberAttribute(), null, "attributes", null, 0, 1, WidgetNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1058,11 +1320,23 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		initEClass(widgetNumberAttributeEClass, WidgetNumberAttribute.class, "WidgetNumberAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetNumberAttribute_Maxlength(), ecorePackage.getEInt(), "maxlength", null, 0, 1, WidgetNumberAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(widgetSwitchEClass, WidgetSwitch.class, "WidgetSwitch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWidgetSwitch_View(), this.getWidgetType(), "view", "mm-switch", 1, 1, WidgetSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(widgetPropertyEClass, WidgetProperty.class, "WidgetProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetProperty_View(), this.getWidgetType(), "view", "mm-property", 1, 1, WidgetProperty.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(widgetQueryEClass, WidgetQuery.class, "WidgetQuery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetQuery_View(), this.getWidgetType(), "view", "mm-query", 1, 1, WidgetQuery.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgeReviewEClass, WidgeReview.class, "WidgeReview", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgeReview_View(), this.getWidgetType(), "view", "mm-review", 1, 1, WidgeReview.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(widgetSwitchEClass, WidgetSwitch.class, "WidgetSwitch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetSwitch_View(), this.getWidgetType(), "view", "mm-switch", 1, 1, WidgetSwitch.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(widgetTabEClass, WidgetTab.class, "WidgetTab", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetTab_View(), this.getWidgetType(), "view", "mm-tab", 1, 1, WidgetTab.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(widgetTableEClass, WidgetTable.class, "WidgetTable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetTable_View(), this.getWidgetType(), "view", "mm-table", 1, 1, WidgetTable.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(widgetTextEClass, WidgetText.class, "WidgetText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetText_View(), this.getWidgetType(), "view", "mm-text", 1, 1, WidgetText.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1078,8 +1352,15 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		initEClass(widgetToolbarEClass, WidgetToolbar.class, "WidgetToolbar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidgetToolbar_View(), this.getWidgetType(), "view", "mm-toolbar", 1, 1, WidgetToolbar.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(widgetUploaderEClass, WidgetUploader.class, "WidgetUploader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetUploader_View(), this.getWidgetType(), "view", "mm-uploader", 1, 1, WidgetUploader.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(widgetViewEClass, WidgetView.class, "WidgetView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidgetView_View(), this.getWidgetType(), "view", "mm-view", 1, 1, WidgetView.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(widgetTypeEEnum, WidgetType.class, "WidgetType");
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.BROWSER);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.CHECK_BOX);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.COMBO_BOX);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.COUNTER);
@@ -1088,12 +1369,19 @@ public class WidgetPackageImpl extends EPackageImpl implements WidgetPackage {
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.FORM);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.IMAGE);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.LAYOUT);
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.MENU);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.NUMBER);
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.PROPERTY);
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.QUERY);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.REVIEW);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.SWITCH);
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.TAB);
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.TABLE);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.TEXT);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.TEXT_AREA);
 		addEEnumLiteral(widgetTypeEEnum, WidgetType.TOOLBAR);
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.UPLOADER);
+		addEEnumLiteral(widgetTypeEEnum, WidgetType.VIEW);
 	}
 
 } //WidgetPackageImpl

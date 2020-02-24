@@ -23,6 +23,15 @@ public interface WidgetFactory extends EFactory {
 	WidgetFactory eINSTANCE = org.abchip.mimo.ui.widget.impl.WidgetFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Browser</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Browser</em>'.
+	 * @generated
+	 */
+	WidgetBrowser createWidgetBrowser();
+
+	/**
 	 * Returns a new object of class '<em>Check Box</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,6 +122,15 @@ public interface WidgetFactory extends EFactory {
 	WidgetLayout createWidgetLayout();
 
 	/**
+	 * Returns a new object of class '<em>Menu</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Menu</em>'.
+	 * @generated
+	 */
+	WidgetMenu createWidgetMenu();
+
+	/**
 	 * Returns a new object of class '<em>Text Area</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,6 +158,24 @@ public interface WidgetFactory extends EFactory {
 	WidgetNumberAttribute createWidgetNumberAttribute();
 
 	/**
+	 * Returns a new object of class '<em>Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Property</em>'.
+	 * @generated
+	 */
+	WidgetProperty createWidgetProperty();
+
+	/**
+	 * Returns a new object of class '<em>Query</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Query</em>'.
+	 * @generated
+	 */
+	WidgetQuery createWidgetQuery();
+
+	/**
 	 * Returns a new object of class '<em>Switch</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -147,6 +183,24 @@ public interface WidgetFactory extends EFactory {
 	 * @generated
 	 */
 	WidgetSwitch createWidgetSwitch();
+
+	/**
+	 * Returns a new object of class '<em>Tab</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Tab</em>'.
+	 * @generated
+	 */
+	WidgetTab createWidgetTab();
+
+	/**
+	 * Returns a new object of class '<em>Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Table</em>'.
+	 * @generated
+	 */
+	WidgetTable createWidgetTable();
 
 	/**
 	 * Returns a new object of class '<em>Widge Review</em>'.
@@ -183,6 +237,24 @@ public interface WidgetFactory extends EFactory {
 	 * @generated
 	 */
 	WidgetToolbar createWidgetToolbar();
+
+	/**
+	 * Returns a new object of class '<em>Uploader</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Uploader</em>'.
+	 * @generated
+	 */
+	WidgetUploader createWidgetUploader();
+
+	/**
+	 * Returns a new object of class '<em>View</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View</em>'.
+	 * @generated
+	 */
+	WidgetView createWidgetView();
 
 	/**
 	 * Returns the package supported by this factory.

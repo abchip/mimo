@@ -134,6 +134,70 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_ENTRY_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetBrowserImpl <em>Browser</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetBrowserImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetBrowser()
+	 * @generated
+	 */
+	int WIDGET_BROWSER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_BROWSER__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_BROWSER__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_BROWSER__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_BROWSER__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_BROWSER__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Browser</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_BROWSER_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetCheckBoxImpl <em>Check Box</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,7 +205,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetCheckBox()
 	 * @generated
 	 */
-	int WIDGET_CHECK_BOX = 2;
+	int WIDGET_CHECK_BOX = 3;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -205,7 +269,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetComboBox()
 	 * @generated
 	 */
-	int WIDGET_COMBO_BOX = 3;
+	int WIDGET_COMBO_BOX = 4;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -278,7 +342,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetComboBoxEntry()
 	 * @generated
 	 */
-	int WIDGET_COMBO_BOX_ENTRY = 4;
+	int WIDGET_COMBO_BOX_ENTRY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Frame</b></em>' attribute.
@@ -324,7 +388,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetCounter()
 	 * @generated
 	 */
-	int WIDGET_COUNTER = 5;
+	int WIDGET_COUNTER = 6;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -388,7 +452,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetDashboard()
 	 * @generated
 	 */
-	int WIDGET_DASHBOARD = 6;
+	int WIDGET_DASHBOARD = 7;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -452,7 +516,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetDatePicker()
 	 * @generated
 	 */
-	int WIDGET_DATE_PICKER = 7;
+	int WIDGET_DATE_PICKER = 8;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -516,7 +580,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetForm()
 	 * @generated
 	 */
-	int WIDGET_FORM = 8;
+	int WIDGET_FORM = 9;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -589,7 +653,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetFormEntry()
 	 * @generated
 	 */
-	int WIDGET_FORM_ENTRY = 9;
+	int WIDGET_FORM_ENTRY = 10;
 
 	/**
 	 * The feature id for the '<em><b>Frame</b></em>' attribute.
@@ -626,7 +690,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetImage()
 	 * @generated
 	 */
-	int WIDGET_IMAGE = 10;
+	int WIDGET_IMAGE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -690,7 +754,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetLayout()
 	 * @generated
 	 */
-	int WIDGET_LAYOUT = 11;
+	int WIDGET_LAYOUT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -756,6 +820,70 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_LAYOUT_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetMenuImpl <em>Menu</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetMenuImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetMenu()
+	 * @generated
+	 */
+	int WIDGET_MENU = 13;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_MENU__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_MENU__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_MENU__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_MENU__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_MENU__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Menu</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_MENU_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextAreaImpl <em>Text Area</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -763,7 +891,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTextArea()
 	 * @generated
 	 */
-	int WIDGET_TEXT_AREA = 18;
+	int WIDGET_TEXT_AREA = 24;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetNumberImpl <em>Number</em>}' class.
@@ -773,7 +901,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetNumber()
 	 * @generated
 	 */
-	int WIDGET_NUMBER = 12;
+	int WIDGET_NUMBER = 14;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -855,7 +983,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetNumberAttribute()
 	 * @generated
 	 */
-	int WIDGET_NUMBER_ATTRIBUTE = 13;
+	int WIDGET_NUMBER_ATTRIBUTE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Maxlength</b></em>' attribute.
@@ -876,14 +1004,14 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_NUMBER_ATTRIBUTE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetSwitchImpl <em>Switch</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetPropertyImpl <em>Property</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.widget.impl.WidgetSwitchImpl
-	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetSwitch()
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPropertyImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetProperty()
 	 * @generated
 	 */
-	int WIDGET_SWITCH = 14;
+	int WIDGET_PROPERTY = 16;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -892,7 +1020,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_SWITCH__DISABLED = WIDGET__DISABLED;
+	int WIDGET_PROPERTY__DISABLED = WIDGET__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
@@ -901,7 +1029,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_SWITCH__ICON = WIDGET__ICON;
+	int WIDGET_PROPERTY__ICON = WIDGET__ICON;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -910,7 +1038,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_SWITCH__LABEL = WIDGET__LABEL;
+	int WIDGET_PROPERTY__LABEL = WIDGET__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -919,7 +1047,7 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_SWITCH__NAME = WIDGET__NAME;
+	int WIDGET_PROPERTY__NAME = WIDGET__NAME;
 
 	/**
 	 * The feature id for the '<em><b>View</b></em>' attribute.
@@ -928,16 +1056,110 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_SWITCH__VIEW = WIDGET_FEATURE_COUNT + 0;
+	int WIDGET_PROPERTY__VIEW = WIDGET_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Switch</em>' class.
+	 * The number of structural features of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_SWITCH_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+	int WIDGET_PROPERTY_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetQueryImpl <em>Query</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetQueryImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetQuery()
+	 * @generated
+	 */
+	int WIDGET_QUERY = 17;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_QUERY__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_QUERY__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_QUERY__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_QUERY__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_QUERY__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Query</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_QUERY_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetSwitchImpl <em>Switch</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetSwitchImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetSwitch()
+	 * @generated
+	 */
+	int WIDGET_SWITCH = 19;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTabImpl <em>Tab</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetTabImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTab()
+	 * @generated
+	 */
+	int WIDGET_TAB = 20;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTableImpl <em>Table</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetTableImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTable()
+	 * @generated
+	 */
+	int WIDGET_TABLE = 21;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgeReviewImpl <em>Widge Review</em>}' class.
@@ -947,7 +1169,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgeReview()
 	 * @generated
 	 */
-	int WIDGE_REVIEW = 15;
+	int WIDGE_REVIEW = 18;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -1004,6 +1226,168 @@ public interface WidgetPackage extends EPackage {
 	int WIDGE_REVIEW_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Switch</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_SWITCH_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_TAB__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_TAB__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_TAB__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_TAB__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_TAB__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Tab</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_TAB_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_TABLE__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_TABLE__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_TABLE__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_TABLE__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_TABLE__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Table</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_TABLE_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextImpl <em>Text</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1011,7 +1395,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetText()
 	 * @generated
 	 */
-	int WIDGET_TEXT = 16;
+	int WIDGET_TEXT = 22;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -1093,7 +1477,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTextAttribute()
 	 * @generated
 	 */
-	int WIDGET_TEXT_ATTRIBUTE = 17;
+	int WIDGET_TEXT_ATTRIBUTE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Maxlength</b></em>' attribute.
@@ -1175,7 +1559,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetToolbar()
 	 * @generated
 	 */
-	int WIDGET_TOOLBAR = 19;
+	int WIDGET_TOOLBAR = 25;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -1232,6 +1616,134 @@ public interface WidgetPackage extends EPackage {
 	int WIDGET_TOOLBAR_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetUploaderImpl <em>Uploader</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetUploaderImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetUploader()
+	 * @generated
+	 */
+	int WIDGET_UPLOADER = 26;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_UPLOADER__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_UPLOADER__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_UPLOADER__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_UPLOADER__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_UPLOADER__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Uploader</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_UPLOADER_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.impl.WidgetViewImpl <em>View</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetViewImpl
+	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetView()
+	 * @generated
+	 */
+	int WIDGET_VIEW = 27;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_VIEW__DISABLED = WIDGET__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_VIEW__ICON = WIDGET__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_VIEW__LABEL = WIDGET__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_VIEW__NAME = WIDGET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_VIEW__VIEW = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>View</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET_VIEW_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.widget.WidgetType <em>Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1239,7 +1751,7 @@ public interface WidgetPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetType()
 	 * @generated
 	 */
-	int WIDGET_TYPE = 20;
+	int WIDGET_TYPE = 28;
 
 
 	/**
@@ -1305,6 +1817,27 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getWidgetEntry();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetBrowser <em>Browser</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Browser</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetBrowser
+	 * @generated
+	 */
+	EClass getWidgetBrowser();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetBrowser#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetBrowser#getView()
+	 * @see #getWidgetBrowser()
+	 * @generated
+	 */
+	EAttribute getWidgetBrowser_View();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetCheckBox <em>Check Box</em>}'.
@@ -1583,6 +2116,27 @@ public interface WidgetPackage extends EPackage {
 	EReference getWidgetLayout_Events();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetMenu <em>Menu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Menu</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetMenu
+	 * @generated
+	 */
+	EClass getWidgetMenu();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetMenu#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetMenu#getView()
+	 * @see #getWidgetMenu()
+	 * @generated
+	 */
+	EAttribute getWidgetMenu_View();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetTextArea <em>Text Area</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1668,6 +2222,48 @@ public interface WidgetPackage extends EPackage {
 	EAttribute getWidgetNumberAttribute_Maxlength();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetProperty <em>Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Property</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetProperty
+	 * @generated
+	 */
+	EClass getWidgetProperty();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetProperty#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetProperty#getView()
+	 * @see #getWidgetProperty()
+	 * @generated
+	 */
+	EAttribute getWidgetProperty_View();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetQuery <em>Query</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Query</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetQuery
+	 * @generated
+	 */
+	EClass getWidgetQuery();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetQuery#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetQuery#getView()
+	 * @see #getWidgetQuery()
+	 * @generated
+	 */
+	EAttribute getWidgetQuery_View();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetSwitch <em>Switch</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1687,6 +2283,48 @@ public interface WidgetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWidgetSwitch_View();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetTab <em>Tab</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Tab</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetTab
+	 * @generated
+	 */
+	EClass getWidgetTab();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetTab#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetTab#getView()
+	 * @see #getWidgetTab()
+	 * @generated
+	 */
+	EAttribute getWidgetTab_View();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetTable <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Table</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetTable
+	 * @generated
+	 */
+	EClass getWidgetTable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetTable#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetTable#getView()
+	 * @see #getWidgetTable()
+	 * @generated
+	 */
+	EAttribute getWidgetTable_View();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgeReview <em>Widge Review</em>}'.
@@ -1795,6 +2433,48 @@ public interface WidgetPackage extends EPackage {
 	EAttribute getWidgetToolbar_View();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetUploader <em>Uploader</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Uploader</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetUploader
+	 * @generated
+	 */
+	EClass getWidgetUploader();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetUploader#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetUploader#getView()
+	 * @see #getWidgetUploader()
+	 * @generated
+	 */
+	EAttribute getWidgetUploader_View();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.widget.WidgetView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetView
+	 * @generated
+	 */
+	EClass getWidgetView();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.widget.WidgetView#getView <em>View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View</em>'.
+	 * @see org.abchip.mimo.ui.widget.WidgetView#getView()
+	 * @see #getWidgetView()
+	 * @generated
+	 */
+	EAttribute getWidgetView_View();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.ui.widget.WidgetType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1877,6 +2557,24 @@ public interface WidgetPackage extends EPackage {
 		 * @generated
 		 */
 		EClass WIDGET_ENTRY = eINSTANCE.getWidgetEntry();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetBrowserImpl <em>Browser</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetBrowserImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetBrowser()
+		 * @generated
+		 */
+		EClass WIDGET_BROWSER = eINSTANCE.getWidgetBrowser();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_BROWSER__VIEW = eINSTANCE.getWidgetBrowser_View();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetCheckBoxImpl <em>Check Box</em>}' class.
@@ -2107,6 +2805,24 @@ public interface WidgetPackage extends EPackage {
 		EReference WIDGET_LAYOUT__EVENTS = eINSTANCE.getWidgetLayout_Events();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetMenuImpl <em>Menu</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetMenuImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetMenu()
+		 * @generated
+		 */
+		EClass WIDGET_MENU = eINSTANCE.getWidgetMenu();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_MENU__VIEW = eINSTANCE.getWidgetMenu_View();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTextAreaImpl <em>Text Area</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2177,6 +2893,42 @@ public interface WidgetPackage extends EPackage {
 		EAttribute WIDGET_NUMBER_ATTRIBUTE__MAXLENGTH = eINSTANCE.getWidgetNumberAttribute_Maxlength();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetPropertyImpl <em>Property</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPropertyImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetProperty()
+		 * @generated
+		 */
+		EClass WIDGET_PROPERTY = eINSTANCE.getWidgetProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_PROPERTY__VIEW = eINSTANCE.getWidgetProperty_View();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetQueryImpl <em>Query</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetQueryImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetQuery()
+		 * @generated
+		 */
+		EClass WIDGET_QUERY = eINSTANCE.getWidgetQuery();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_QUERY__VIEW = eINSTANCE.getWidgetQuery_View();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetSwitchImpl <em>Switch</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2193,6 +2945,42 @@ public interface WidgetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WIDGET_SWITCH__VIEW = eINSTANCE.getWidgetSwitch_View();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTabImpl <em>Tab</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetTabImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTab()
+		 * @generated
+		 */
+		EClass WIDGET_TAB = eINSTANCE.getWidgetTab();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_TAB__VIEW = eINSTANCE.getWidgetTab_View();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetTableImpl <em>Table</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetTableImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetTable()
+		 * @generated
+		 */
+		EClass WIDGET_TABLE = eINSTANCE.getWidgetTable();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_TABLE__VIEW = eINSTANCE.getWidgetTable_View();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgeReviewImpl <em>Widge Review</em>}' class.
@@ -2281,6 +3069,42 @@ public interface WidgetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WIDGET_TOOLBAR__VIEW = eINSTANCE.getWidgetToolbar_View();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetUploaderImpl <em>Uploader</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetUploaderImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetUploader()
+		 * @generated
+		 */
+		EClass WIDGET_UPLOADER = eINSTANCE.getWidgetUploader();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_UPLOADER__VIEW = eINSTANCE.getWidgetUploader_View();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.impl.WidgetViewImpl <em>View</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetViewImpl
+		 * @see org.abchip.mimo.ui.widget.impl.WidgetPackageImpl#getWidgetView()
+		 * @generated
+		 */
+		EClass WIDGET_VIEW = eINSTANCE.getWidgetView();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET_VIEW__VIEW = eINSTANCE.getWidgetView_View();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.widget.WidgetType <em>Type</em>}' enum.

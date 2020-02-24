@@ -178,8 +178,6 @@ public class LookupFormServlet extends BaseServlet {
 		widget.setLabel(Strings.qINSTANCE.firstToUpper(label.toString()));
 
 		switch (widget.getView()) {
-		case CHECK_BOX:
-			break;
 		case COMBO_BOX:
 			if (slot.getDomain() != null) {
 				WidgetComboBox widgetComboBox = (WidgetComboBox) widget;
@@ -190,6 +188,8 @@ public class LookupFormServlet extends BaseServlet {
 				completeFormField(context, field, slot.getDomain().getFrame());
 			}
 			break;
+		case CHECK_BOX:
+			break;			
 		case COUNTER:
 			break;
 		case DASHBOARD:
@@ -213,6 +213,22 @@ public class LookupFormServlet extends BaseServlet {
 		case REVIEW:
 			break;
 		case TOOLBAR:
+			break;
+		case BROWSER:
+			break;
+		case MENU:
+			break;
+		case PROPERTY:
+			break;
+		case QUERY:
+			break;
+		case TAB:
+			break;
+		case TABLE:
+			break;
+		case UPLOADER:
+			break;
+		case VIEW:
 			break;
 		}
 

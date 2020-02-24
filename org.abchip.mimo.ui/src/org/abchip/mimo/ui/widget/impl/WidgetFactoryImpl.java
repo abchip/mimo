@@ -58,6 +58,7 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case WidgetPackage.WIDGET_BROWSER: return (EObject)createWidgetBrowser();
 			case WidgetPackage.WIDGET_CHECK_BOX: return (EObject)createWidgetCheckBox();
 			case WidgetPackage.WIDGET_COMBO_BOX: return (EObject)createWidgetComboBox();
 			case WidgetPackage.WIDGET_COMBO_BOX_ENTRY: return (EObject)createWidgetComboBoxEntry();
@@ -68,14 +69,21 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 			case WidgetPackage.WIDGET_FORM_ENTRY: return (EObject)createWidgetFormEntry();
 			case WidgetPackage.WIDGET_IMAGE: return (EObject)createWidgetImage();
 			case WidgetPackage.WIDGET_LAYOUT: return (EObject)createWidgetLayout();
+			case WidgetPackage.WIDGET_MENU: return (EObject)createWidgetMenu();
 			case WidgetPackage.WIDGET_NUMBER: return (EObject)createWidgetNumber();
 			case WidgetPackage.WIDGET_NUMBER_ATTRIBUTE: return (EObject)createWidgetNumberAttribute();
-			case WidgetPackage.WIDGET_SWITCH: return (EObject)createWidgetSwitch();
+			case WidgetPackage.WIDGET_PROPERTY: return (EObject)createWidgetProperty();
+			case WidgetPackage.WIDGET_QUERY: return (EObject)createWidgetQuery();
 			case WidgetPackage.WIDGE_REVIEW: return (EObject)createWidgeReview();
+			case WidgetPackage.WIDGET_SWITCH: return (EObject)createWidgetSwitch();
+			case WidgetPackage.WIDGET_TAB: return (EObject)createWidgetTab();
+			case WidgetPackage.WIDGET_TABLE: return (EObject)createWidgetTable();
 			case WidgetPackage.WIDGET_TEXT: return (EObject)createWidgetText();
 			case WidgetPackage.WIDGET_TEXT_ATTRIBUTE: return (EObject)createWidgetTextAttribute();
 			case WidgetPackage.WIDGET_TEXT_AREA: return (EObject)createWidgetTextArea();
 			case WidgetPackage.WIDGET_TOOLBAR: return (EObject)createWidgetToolbar();
+			case WidgetPackage.WIDGET_UPLOADER: return (EObject)createWidgetUploader();
+			case WidgetPackage.WIDGET_VIEW: return (EObject)createWidgetView();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -109,6 +117,17 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WidgetBrowser createWidgetBrowser() {
+		WidgetBrowserImpl widgetBrowser = new WidgetBrowserImpl();
+		return widgetBrowser;
 	}
 
 	/**
@@ -227,6 +246,17 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 	 * @generated
 	 */
 	@Override
+	public WidgetMenu createWidgetMenu() {
+		WidgetMenuImpl widgetMenu = new WidgetMenuImpl();
+		return widgetMenu;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public WidgetTextArea createWidgetTextArea() {
 		WidgetTextAreaImpl widgetTextArea = new WidgetTextAreaImpl();
 		return widgetTextArea;
@@ -260,9 +290,53 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 	 * @generated
 	 */
 	@Override
+	public WidgetProperty createWidgetProperty() {
+		WidgetPropertyImpl widgetProperty = new WidgetPropertyImpl();
+		return widgetProperty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WidgetQuery createWidgetQuery() {
+		WidgetQueryImpl widgetQuery = new WidgetQueryImpl();
+		return widgetQuery;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public WidgetSwitch createWidgetSwitch() {
 		WidgetSwitchImpl widgetSwitch = new WidgetSwitchImpl();
 		return widgetSwitch;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WidgetTab createWidgetTab() {
+		WidgetTabImpl widgetTab = new WidgetTabImpl();
+		return widgetTab;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WidgetTable createWidgetTable() {
+		WidgetTableImpl widgetTable = new WidgetTableImpl();
+		return widgetTable;
 	}
 
 	/**
@@ -307,6 +381,28 @@ public class WidgetFactoryImpl extends EFactoryImpl implements WidgetFactory {
 	public WidgetToolbar createWidgetToolbar() {
 		WidgetToolbarImpl widgetToolbar = new WidgetToolbarImpl();
 		return widgetToolbar;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WidgetUploader createWidgetUploader() {
+		WidgetUploaderImpl widgetUploader = new WidgetUploaderImpl();
+		return widgetUploader;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WidgetView createWidgetView() {
+		WidgetViewImpl widgetView = new WidgetViewImpl();
+		return widgetView;
 	}
 
 	/**

@@ -133,6 +133,7 @@
   </eSubpackages>
   <eSubpackages name="widget" nsURI="http://www.abchip.org/mimo/ui/widget" nsPrefix="ui-widget">
     <eClassifiers xsi:type="ecore:EEnum" name="WidgetType">
+      <eLiterals name="Browser" literal="mm-browser"/>
       <eLiterals name="CheckBox" literal="mm-checkbox"/>
       <eLiterals name="ComboBox" literal="mm-combo"/>
       <eLiterals name="Counter" literal="mm-counter"/>
@@ -141,12 +142,19 @@
       <eLiterals name="Form" literal="mm-form"/>
       <eLiterals name="Image" literal="mm-image"/>
       <eLiterals name="Layout" literal="mm-layout"/>
+      <eLiterals name="Menu" literal="mm-menu"/>
       <eLiterals name="Number" literal="mm-number"/>
+      <eLiterals name="Property" literal="mm-property"/>
+      <eLiterals name="Query" literal="mm-query"/>
       <eLiterals name="Review" literal="mm-review"/>
       <eLiterals name="Switch" literal="mm-switch"/>
+      <eLiterals name="Tab" literal="mm-tab"/>
+      <eLiterals name="Table" literal="mm-table"/>
       <eLiterals name="Text" literal="mm-text"/>
       <eLiterals name="TextArea" literal="mm-textarea"/>
       <eLiterals name="Toolbar" literal="mm-toolbar"/>
+      <eLiterals name="Uploader" literal="mm-uploader"/>
+      <eLiterals name="View" literal="mm-view"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Widget" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
       <eOperations name="getEntry" lowerBound="1" eType="#//widget/WidgetEntry"/>
@@ -158,6 +166,10 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetEntry" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetBrowser" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-browser"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetCheckBox" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-checkbox"/>
@@ -207,6 +219,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
           eType="#//event/Event"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetMenu" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-menu"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetNumber" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-number"/>
@@ -217,13 +233,29 @@
     <eClassifiers xsi:type="ecore:EClass" name="WidgetNumberAttribute" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxlength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="WidgetSwitch" eSuperTypes="#//widget/Widget">
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetProperty" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
-          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-switch"/>
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-property"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetQuery" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-query"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgeReview" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-review"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetSwitch" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-switch"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetTab" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-tab"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetTable" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-table"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WidgetText" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
@@ -243,6 +275,14 @@
     <eClassifiers xsi:type="ecore:EClass" name="WidgetToolbar" eSuperTypes="#//widget/Widget">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
           eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-toolbar"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetUploader" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-uploader"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WidgetView" eSuperTypes="#//widget/Widget">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" lowerBound="1"
+          eType="#//widget/WidgetType" changeable="false" defaultValueLiteral="mm-view"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

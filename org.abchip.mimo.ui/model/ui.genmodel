@@ -116,6 +116,7 @@
     <nestedGenPackages prefix="Widget" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="ui.ecore#//widget">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="ui.ecore#//widget/WidgetType">
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Browser"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/CheckBox"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/ComboBox"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Counter"/>
@@ -124,12 +125,19 @@
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Form"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Image"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Layout"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Menu"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Number"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Property"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Query"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Review"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Switch"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Tab"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Table"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Text"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/TextArea"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Toolbar"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/Uploader"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//widget/WidgetType/View"/>
       </genEnums>
       <genClasses image="false" ecoreClass="ui.ecore#//widget/Widget">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/Widget/disabled"/>
@@ -140,6 +148,9 @@
         <genOperations ecoreOperation="ui.ecore#//widget/Widget/getView"/>
       </genClasses>
       <genClasses image="false" ecoreClass="ui.ecore#//widget/WidgetEntry"/>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetBrowser">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetBrowser/view"/>
+      </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetCheckBox">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetCheckBox/view"/>
       </genClasses>
@@ -177,6 +188,9 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference ui.ecore#//widget/WidgetLayout/events"/>
       </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetMenu">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetMenu/view"/>
+      </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetNumber">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetNumber/view"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ui.ecore#//widget/WidgetNumber/attributes"/>
@@ -185,11 +199,23 @@
       <genClasses ecoreClass="ui.ecore#//widget/WidgetNumberAttribute">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetNumberAttribute/maxlength"/>
       </genClasses>
-      <genClasses ecoreClass="ui.ecore#//widget/WidgetSwitch">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetSwitch/view"/>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetProperty">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetProperty/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetQuery">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetQuery/view"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgeReview">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgeReview/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetSwitch">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetSwitch/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetTab">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetTab/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetTable">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetTable/view"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetText">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetText/view"/>
@@ -204,6 +230,12 @@
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//widget/WidgetToolbar">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetToolbar/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetUploader">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetUploader/view"/>
+      </genClasses>
+      <genClasses ecoreClass="ui.ecore#//widget/WidgetView">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//widget/WidgetView/view"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

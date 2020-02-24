@@ -19,6 +19,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum WidgetType implements Enumerator {
 	/**
+	 * The '<em><b>Browser</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #BROWSER_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	BROWSER(0, "Browser", "mm-browser"), /**
 	 * The '<em><b>Check Box</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +91,14 @@ public enum WidgetType implements Enumerator {
 	 * @ordered
 	 */
 	LAYOUT(0, "Layout", "mm-layout"), /**
+	 * The '<em><b>Menu</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MENU_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MENU(0, "Menu", "mm-menu"), /**
 	 * The '<em><b>Number</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91,6 +107,22 @@ public enum WidgetType implements Enumerator {
 	 * @ordered
 	 */
 	NUMBER(0, "Number", "mm-number"), /**
+	 * The '<em><b>Property</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PROPERTY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	PROPERTY(0, "Property", "mm-property"), /**
+	 * The '<em><b>Query</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #QUERY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	QUERY(0, "Query", "mm-query"), /**
 	 * The '<em><b>Review</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,6 +139,22 @@ public enum WidgetType implements Enumerator {
 	 * @ordered
 	 */
 	SWITCH(0, "Switch", "mm-switch"), /**
+	 * The '<em><b>Tab</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #TAB_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	TAB(0, "Tab", "mm-tab"), /**
+	 * The '<em><b>Table</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #TABLE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	TABLE(0, "Table", "mm-table"), /**
 	 * The '<em><b>Text</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,7 +178,38 @@ public enum WidgetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TOOLBAR(0, "Toolbar", "mm-toolbar");
+	TOOLBAR(0, "Toolbar", "mm-toolbar"), /**
+	 * The '<em><b>Uploader</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UPLOADER_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UPLOADER(0, "Uploader", "mm-uploader"), /**
+	 * The '<em><b>View</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #VIEW_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	VIEW(0, "View", "mm-view");
+
+	/**
+	 * The '<em><b>Browser</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Browser</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #BROWSER
+	 * @model name="Browser" literal="mm-browser"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int BROWSER_VALUE = 0;
 
 	/**
 	 * The '<em><b>Check Box</b></em>' literal value.
@@ -253,6 +332,21 @@ public enum WidgetType implements Enumerator {
 	public static final int LAYOUT_VALUE = 0;
 
 	/**
+	 * The '<em><b>Menu</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Menu</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #MENU
+	 * @model name="Menu" literal="mm-menu"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MENU_VALUE = 0;
+
+	/**
 	 * The '<em><b>Number</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -266,6 +360,36 @@ public enum WidgetType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int NUMBER_VALUE = 0;
+
+	/**
+	 * The '<em><b>Property</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Property</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #PROPERTY
+	 * @model name="Property" literal="mm-property"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PROPERTY_VALUE = 0;
+
+	/**
+	 * The '<em><b>Query</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Query</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #QUERY
+	 * @model name="Query" literal="mm-query"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int QUERY_VALUE = 0;
 
 	/**
 	 * The '<em><b>Review</b></em>' literal value.
@@ -296,6 +420,36 @@ public enum WidgetType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int SWITCH_VALUE = 0;
+
+	/**
+	 * The '<em><b>Tab</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Tab</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #TAB
+	 * @model name="Tab" literal="mm-tab"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int TAB_VALUE = 0;
+
+	/**
+	 * The '<em><b>Table</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Table</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #TABLE
+	 * @model name="Table" literal="mm-table"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int TABLE_VALUE = 0;
 
 	/**
 	 * The '<em><b>Text</b></em>' literal value.
@@ -343,6 +497,36 @@ public enum WidgetType implements Enumerator {
 	public static final int TOOLBAR_VALUE = 0;
 
 	/**
+	 * The '<em><b>Uploader</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Uploader</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UPLOADER
+	 * @model name="Uploader" literal="mm-uploader"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UPLOADER_VALUE = 0;
+
+	/**
+	 * The '<em><b>View</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>View</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #VIEW
+	 * @model name="View" literal="mm-view"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int VIEW_VALUE = 0;
+
+	/**
 	 * An array of all the '<em><b>Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -350,6 +534,7 @@ public enum WidgetType implements Enumerator {
 	 */
 	private static final WidgetType[] VALUES_ARRAY =
 		new WidgetType[] {
+			BROWSER,
 			CHECK_BOX,
 			COMBO_BOX,
 			COUNTER,
@@ -358,12 +543,19 @@ public enum WidgetType implements Enumerator {
 			FORM,
 			IMAGE,
 			LAYOUT,
+			MENU,
 			NUMBER,
+			PROPERTY,
+			QUERY,
 			REVIEW,
 			SWITCH,
+			TAB,
+			TABLE,
 			TEXT,
 			TEXT_AREA,
 			TOOLBAR,
+			UPLOADER,
+			VIEW,
 		};
 
 	/**
@@ -420,7 +612,7 @@ public enum WidgetType implements Enumerator {
 	 */
 	public static WidgetType get(int value) {
 		switch (value) {
-			case CHECK_BOX_VALUE: return CHECK_BOX;
+			case BROWSER_VALUE: return BROWSER;
 		}
 		return null;
 	}
