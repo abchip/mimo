@@ -233,14 +233,14 @@ public interface ViewPackage extends EPackage {
 	int VIEW_EDITOR_FEATURE_COUNT = VIEW_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.ui.view.impl.ViewFinderImpl <em>Finder</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.ui.view.impl.ViewSearchImpl <em>Search</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.ui.view.impl.ViewFinderImpl
-	 * @see org.abchip.mimo.ui.view.impl.ViewPackageImpl#getViewFinder()
+	 * @see org.abchip.mimo.ui.view.impl.ViewSearchImpl
+	 * @see org.abchip.mimo.ui.view.impl.ViewPackageImpl#getViewSearch()
 	 * @generated
 	 */
-	int VIEW_FINDER = 4;
+	int VIEW_SEARCH = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -249,7 +249,7 @@ public interface ViewPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FINDER__NAME = VIEW__NAME;
+	int VIEW_SEARCH__NAME = VIEW__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -258,7 +258,7 @@ public interface ViewPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FINDER__DISABLED = VIEW__DISABLED;
+	int VIEW_SEARCH__DISABLED = VIEW__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -267,16 +267,16 @@ public interface ViewPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FINDER__TYPE = VIEW_FEATURE_COUNT + 0;
+	int VIEW_SEARCH__TYPE = VIEW_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Finder</em>' class.
+	 * The number of structural features of the '<em>Search</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FINDER_FEATURE_COUNT = VIEW_FEATURE_COUNT + 1;
+	int VIEW_SEARCH_FEATURE_COUNT = VIEW_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.view.impl.ViewImportImpl <em>Import</em>}' class.
@@ -431,25 +431,25 @@ public interface ViewPackage extends EPackage {
 	EAttribute getViewEditor_Type();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.ui.view.ViewFinder <em>Finder</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.view.ViewSearch <em>Search</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Finder</em>'.
-	 * @see org.abchip.mimo.ui.view.ViewFinder
+	 * @return the meta object for class '<em>Search</em>'.
+	 * @see org.abchip.mimo.ui.view.ViewSearch
 	 * @generated
 	 */
-	EClass getViewFinder();
+	EClass getViewSearch();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.view.ViewFinder#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.view.ViewSearch#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see org.abchip.mimo.ui.view.ViewFinder#getType()
-	 * @see #getViewFinder()
+	 * @see org.abchip.mimo.ui.view.ViewSearch#getType()
+	 * @see #getViewSearch()
 	 * @generated
 	 */
-	EAttribute getViewFinder_Type();
+	EAttribute getViewSearch_Type();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.view.ViewImport <em>Import</em>}'.
@@ -585,14 +585,14 @@ public interface ViewPackage extends EPackage {
 		EAttribute VIEW_EDITOR__TYPE = eINSTANCE.getViewEditor_Type();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.ui.view.impl.ViewFinderImpl <em>Finder</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.view.impl.ViewSearchImpl <em>Search</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.ui.view.impl.ViewFinderImpl
-		 * @see org.abchip.mimo.ui.view.impl.ViewPackageImpl#getViewFinder()
+		 * @see org.abchip.mimo.ui.view.impl.ViewSearchImpl
+		 * @see org.abchip.mimo.ui.view.impl.ViewPackageImpl#getViewSearch()
 		 * @generated
 		 */
-		EClass VIEW_FINDER = eINSTANCE.getViewFinder();
+		EClass VIEW_SEARCH = eINSTANCE.getViewSearch();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -600,7 +600,7 @@ public interface ViewPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEW_FINDER__TYPE = eINSTANCE.getViewFinder_Type();
+		EAttribute VIEW_SEARCH__TYPE = eINSTANCE.getViewSearch_Type();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.view.impl.ViewImportImpl <em>Import</em>}' class.

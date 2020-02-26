@@ -119,8 +119,8 @@
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//view/ViewType/Card"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//view/ViewType/Dashbard"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//view/ViewType/Editor"/>
-        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//view/ViewType/Finder"/>
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//view/ViewType/Import"/>
+        <genEnumLiterals ecoreEnumLiteral="ui.ecore#//view/ViewType/Search"/>
       </genEnums>
       <genClasses image="false" ecoreClass="ui.ecore#//view/View">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//view/View/name"/>
@@ -136,8 +136,8 @@
       <genClasses ecoreClass="ui.ecore#//view/ViewEditor">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//view/ViewEditor/type"/>
       </genClasses>
-      <genClasses ecoreClass="ui.ecore#//view/ViewFinder">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//view/ViewFinder/type"/>
+      <genClasses ecoreClass="ui.ecore#//view/ViewSearch">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//view/ViewSearch/type"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//view/ViewImport">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//view/ViewImport/type"/>

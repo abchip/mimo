@@ -50,13 +50,13 @@ public interface ViewFactory extends EFactory {
 	ViewEditor createViewEditor();
 
 	/**
-	 * Returns a new object of class '<em>Finder</em>'.
+	 * Returns a new object of class '<em>Search</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Finder</em>'.
+	 * @return a new object of class '<em>Search</em>'.
 	 * @generated
 	 */
-	ViewFinder createViewFinder();
+	ViewSearch createViewSearch();
 
 	/**
 	 * Returns a new object of class '<em>Import</em>'.

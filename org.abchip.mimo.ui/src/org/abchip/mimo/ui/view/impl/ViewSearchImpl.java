@@ -3,7 +3,7 @@
  */
 package org.abchip.mimo.ui.view.impl;
 
-import org.abchip.mimo.ui.view.ViewFinder;
+import org.abchip.mimo.ui.view.ViewSearch;
 import org.abchip.mimo.ui.view.ViewPackage;
 import org.abchip.mimo.ui.view.ViewType;
 
@@ -11,18 +11,18 @@ import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Finder</b></em>'.
+ * An implementation of the model object '<em><b>Search</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.view.impl.ViewFinderImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.view.impl.ViewSearchImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ViewFinderImpl extends ViewImpl implements ViewFinder {
+public class ViewSearchImpl extends ViewImpl implements ViewSearch {
 	/**
 	 * 
 	 */
@@ -36,7 +36,7 @@ public class ViewFinderImpl extends ViewImpl implements ViewFinder {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ViewType TYPE_EDEFAULT = ViewType.FINDER;
+	protected static final ViewType TYPE_EDEFAULT = ViewType.SEARCH;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -53,7 +53,7 @@ public class ViewFinderImpl extends ViewImpl implements ViewFinder {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewFinderImpl() {
+	protected ViewSearchImpl() {
 		super();
 	}
 
@@ -64,7 +64,7 @@ public class ViewFinderImpl extends ViewImpl implements ViewFinder {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ViewPackage.Literals.VIEW_FINDER;
+		return ViewPackage.Literals.VIEW_SEARCH;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class ViewFinderImpl extends ViewImpl implements ViewFinder {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ViewPackage.VIEW_FINDER__TYPE:
+			case ViewPackage.VIEW_SEARCH__TYPE:
 				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -99,7 +99,7 @@ public class ViewFinderImpl extends ViewImpl implements ViewFinder {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ViewPackage.VIEW_FINDER__TYPE:
+			case ViewPackage.VIEW_SEARCH__TYPE:
 				return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -121,4 +121,4 @@ public class ViewFinderImpl extends ViewImpl implements ViewFinder {
 		return result.toString();
 	}
 
-} //ViewFinderImpl
+} //ViewSearchImpl

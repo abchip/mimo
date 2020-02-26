@@ -61,7 +61,7 @@ public class ViewFactoryImpl extends EFactoryImpl implements ViewFactory {
 			case ViewPackage.VIEW_CARD: return (EObject)createViewCard();
 			case ViewPackage.VIEW_DASHBOARD: return (EObject)createViewDashboard();
 			case ViewPackage.VIEW_EDITOR: return (EObject)createViewEditor();
-			case ViewPackage.VIEW_FINDER: return (EObject)createViewFinder();
+			case ViewPackage.VIEW_SEARCH: return (EObject)createViewSearch();
 			case ViewPackage.VIEW_IMPORT: return (EObject)createViewImport();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -137,9 +137,9 @@ public class ViewFactoryImpl extends EFactoryImpl implements ViewFactory {
 	 * @generated
 	 */
 	@Override
-	public ViewFinder createViewFinder() {
-		ViewFinderImpl viewFinder = new ViewFinderImpl();
-		return viewFinder;
+	public ViewSearch createViewSearch() {
+		ViewSearchImpl viewSearch = new ViewSearchImpl();
+		return viewSearch;
 	}
 
 	/**

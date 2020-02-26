@@ -136,8 +136,8 @@
       <eLiterals name="Card" literal="mm-card"/>
       <eLiterals name="Dashbard" literal="mm-dashboard"/>
       <eLiterals name="Editor" literal="mm-editor"/>
-      <eLiterals name="Finder" literal="mm-finder"/>
       <eLiterals name="Import" literal="mm-import"/>
+      <eLiterals name="Search" literal="mm-search"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="View" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
       <eOperations name="getType" lowerBound="1" eType="#//view/ViewType"/>
@@ -157,9 +157,9 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
           eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-editor"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ViewFinder" eSuperTypes="#//view/View">
+    <eClassifiers xsi:type="ecore:EClass" name="ViewSearch" eSuperTypes="#//view/View">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
-          eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-finder"/>
+          eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-search"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ViewImport" eSuperTypes="#//view/View">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"

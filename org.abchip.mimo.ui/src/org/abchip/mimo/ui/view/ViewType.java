@@ -50,16 +50,6 @@ public enum ViewType implements Enumerator {
 	EDITOR(0, "Editor", "mm-editor"),
 
 	/**
-	 * The '<em><b>Finder</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #FINDER_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	FINDER(0, "Finder", "mm-finder"),
-
-	/**
 	 * The '<em><b>Import</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,7 +57,15 @@ public enum ViewType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	IMPORT(0, "Import", "mm-import");
+	IMPORT(0, "Import", "mm-import"), /**
+	 * The '<em><b>Search</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SEARCH_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SEARCH(0, "Search", "mm-search");
 
 	/**
 	 * The '<em><b>Card</b></em>' literal value.
@@ -115,21 +113,6 @@ public enum ViewType implements Enumerator {
 	public static final int EDITOR_VALUE = 0;
 
 	/**
-	 * The '<em><b>Finder</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Finder</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #FINDER
-	 * @model name="Finder" literal="mm-finder"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int FINDER_VALUE = 0;
-
-	/**
 	 * The '<em><b>Import</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -145,6 +128,21 @@ public enum ViewType implements Enumerator {
 	public static final int IMPORT_VALUE = 0;
 
 	/**
+	 * The '<em><b>Search</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Search</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #SEARCH
+	 * @model name="Search" literal="mm-search"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SEARCH_VALUE = 0;
+
+	/**
 	 * An array of all the '<em><b>Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,8 +153,8 @@ public enum ViewType implements Enumerator {
 			CARD,
 			DASHBARD,
 			EDITOR,
-			FINDER,
 			IMPORT,
+			SEARCH,
 		};
 
 	/**

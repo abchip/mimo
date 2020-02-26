@@ -40,7 +40,7 @@ import org.abchip.mimo.ui.view.ViewCard;
 import org.abchip.mimo.ui.view.ViewDashboard;
 import org.abchip.mimo.ui.view.ViewEditor;
 import org.abchip.mimo.ui.view.ViewFactory;
-import org.abchip.mimo.ui.view.ViewFinder;
+import org.abchip.mimo.ui.view.ViewSearch;
 import org.abchip.mimo.ui.view.ViewImport;
 import org.abchip.mimo.ui.view.ViewPackage;
 import org.abchip.mimo.ui.view.ViewType;
@@ -96,7 +96,7 @@ public class ViewPackageImpl extends EPackageImpl implements ViewPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass viewFinderEClass = null;
+	private EClass viewSearchEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,8 +306,8 @@ public class ViewPackageImpl extends EPackageImpl implements ViewPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getViewFinder() {
-		return viewFinderEClass;
+	public EClass getViewSearch() {
+		return viewSearchEClass;
 	}
 
 	/**
@@ -316,8 +316,8 @@ public class ViewPackageImpl extends EPackageImpl implements ViewPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getViewFinder_Type() {
-		return (EAttribute)viewFinderEClass.getEStructuralFeatures().get(0);
+	public EAttribute getViewSearch_Type() {
+		return (EAttribute)viewSearchEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -392,8 +392,8 @@ public class ViewPackageImpl extends EPackageImpl implements ViewPackage {
 		viewEditorEClass = createEClass(VIEW_EDITOR);
 		createEAttribute(viewEditorEClass, VIEW_EDITOR__TYPE);
 
-		viewFinderEClass = createEClass(VIEW_FINDER);
-		createEAttribute(viewFinderEClass, VIEW_FINDER__TYPE);
+		viewSearchEClass = createEClass(VIEW_SEARCH);
+		createEAttribute(viewSearchEClass, VIEW_SEARCH__TYPE);
 
 		viewImportEClass = createEClass(VIEW_IMPORT);
 		createEAttribute(viewImportEClass, VIEW_IMPORT__TYPE);
@@ -437,7 +437,7 @@ public class ViewPackageImpl extends EPackageImpl implements ViewPackage {
 		viewCardEClass.getESuperTypes().add(this.getView());
 		viewDashboardEClass.getESuperTypes().add(this.getView());
 		viewEditorEClass.getESuperTypes().add(this.getView());
-		viewFinderEClass.getESuperTypes().add(this.getView());
+		viewSearchEClass.getESuperTypes().add(this.getView());
 		viewImportEClass.getESuperTypes().add(this.getView());
 
 		// Initialize classes and features; add operations and parameters
@@ -456,8 +456,8 @@ public class ViewPackageImpl extends EPackageImpl implements ViewPackage {
 		initEClass(viewEditorEClass, ViewEditor.class, "ViewEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getViewEditor_Type(), this.getViewType(), "type", "mm-editor", 1, 1, ViewEditor.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(viewFinderEClass, ViewFinder.class, "ViewFinder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getViewFinder_Type(), this.getViewType(), "type", "mm-finder", 1, 1, ViewFinder.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(viewSearchEClass, ViewSearch.class, "ViewSearch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewSearch_Type(), this.getViewType(), "type", "mm-search", 1, 1, ViewSearch.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewImportEClass, ViewImport.class, "ViewImport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getViewImport_Type(), this.getViewType(), "type", "mm-import", 1, 1, ViewImport.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -467,8 +467,8 @@ public class ViewPackageImpl extends EPackageImpl implements ViewPackage {
 		addEEnumLiteral(viewTypeEEnum, ViewType.CARD);
 		addEEnumLiteral(viewTypeEEnum, ViewType.DASHBARD);
 		addEEnumLiteral(viewTypeEEnum, ViewType.EDITOR);
-		addEEnumLiteral(viewTypeEEnum, ViewType.FINDER);
 		addEEnumLiteral(viewTypeEEnum, ViewType.IMPORT);
+		addEEnumLiteral(viewTypeEEnum, ViewType.SEARCH);
 	}
 
 } //ViewPackageImpl

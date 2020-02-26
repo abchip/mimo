@@ -6,24 +6,24 @@ package org.abchip.mimo.ui.view;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Finder</b></em>'.
+ * A representation of the model object '<em><b>Search</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.ui.view.ViewFinder#getType <em>Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.view.ViewSearch#getType <em>Type</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.ui.view.ViewPackage#getViewFinder()
+ * @see org.abchip.mimo.ui.view.ViewPackage#getViewSearch()
  * @model
  * @generated
  */
-public interface ViewFinder extends View {
+public interface ViewSearch extends View {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The default value is <code>"mm-finder"</code>.
+	 * The default value is <code>"mm-search"</code>.
 	 * The literals are from the enumeration {@link org.abchip.mimo.ui.view.ViewType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -33,10 +33,10 @@ public interface ViewFinder extends View {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see org.abchip.mimo.ui.view.ViewType
-	 * @see org.abchip.mimo.ui.view.ViewPackage#getViewFinder_Type()
-	 * @model default="mm-finder" required="true" changeable="false"
+	 * @see org.abchip.mimo.ui.view.ViewPackage#getViewSearch_Type()
+	 * @model default="mm-search" required="true" changeable="false"
 	 * @generated
 	 */
 	ViewType getType();
 
-} // ViewFinder
+} // ViewSearch
