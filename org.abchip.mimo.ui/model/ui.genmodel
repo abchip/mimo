@@ -32,6 +32,10 @@
     <genClasses ecoreClass="ui.ecore#//UiUserSetup">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//UiUserSetup/name"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="ui.ecore#//Entry"/>
+    <genClasses image="false" ecoreClass="ui.ecore#//EntryFramed">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//EntryFramed/frame"/>
+    </genClasses>
     <nestedGenPackages prefix="Form" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="ui.ecore#//form">
       <genClasses ecoreClass="ui.ecore#//form/Form">
@@ -123,8 +127,11 @@
         <genEnumLiterals ecoreEnumLiteral="ui.ecore#//view/ViewType/Search"/>
       </genEnums>
       <genClasses image="false" ecoreClass="ui.ecore#//view/View">
+        <genTypeParameters ecoreTypeParameter="ui.ecore#//view/View/E"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//view/View/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ui.ecore#//view/View/disabled"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference ui.ecore#//view/View/entry"/>
         <genOperations ecoreOperation="ui.ecore#//view/View/getType"/>
       </genClasses>
       <genClasses ecoreClass="ui.ecore#//view/ViewCard">

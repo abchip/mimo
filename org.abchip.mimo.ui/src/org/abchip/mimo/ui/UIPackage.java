@@ -225,6 +225,53 @@ public interface UIPackage extends EPackage {
 	int UI_USER_SETUP_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.EntryImpl <em>Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.impl.EntryImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getEntry()
+	 * @generated
+	 */
+	int ENTRY = 4;
+
+	/**
+	 * The number of structural features of the '<em>Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.ui.impl.EntryFramedImpl <em>Entry Framed</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.ui.impl.EntryFramedImpl
+	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getEntryFramed()
+	 * @generated
+	 */
+	int ENTRY_FRAMED = 5;
+
+	/**
+	 * The feature id for the '<em><b>Frame</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_FRAMED__FRAME = ENTRY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Entry Framed</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_FRAMED_FEATURE_COUNT = ENTRY_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.ActionType <em>Action Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -232,7 +279,7 @@ public interface UIPackage extends EPackage {
 	 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getActionType()
 	 * @generated
 	 */
-	int ACTION_TYPE = 4;
+	int ACTION_TYPE = 6;
 
 
 	/**
@@ -386,6 +433,37 @@ public interface UIPackage extends EPackage {
 	EAttribute getUiUserSetup_Name();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.Entry <em>Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Entry</em>'.
+	 * @see org.abchip.mimo.ui.Entry
+	 * @generated
+	 */
+	EClass getEntry();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.ui.EntryFramed <em>Entry Framed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Entry Framed</em>'.
+	 * @see org.abchip.mimo.ui.EntryFramed
+	 * @generated
+	 */
+	EClass getEntryFramed();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.ui.EntryFramed#getFrame <em>Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Frame</em>'.
+	 * @see org.abchip.mimo.ui.EntryFramed#getFrame()
+	 * @see #getEntryFramed()
+	 * @generated
+	 */
+	EAttribute getEntryFramed_Frame();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.ui.ActionType <em>Action Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -536,6 +614,34 @@ public interface UIPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UI_USER_SETUP__NAME = eINSTANCE.getUiUserSetup_Name();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.EntryImpl <em>Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.impl.EntryImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getEntry()
+		 * @generated
+		 */
+		EClass ENTRY = eINSTANCE.getEntry();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.ui.impl.EntryFramedImpl <em>Entry Framed</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.ui.impl.EntryFramedImpl
+		 * @see org.abchip.mimo.ui.impl.UIPackageImpl#getEntryFramed()
+		 * @generated
+		 */
+		EClass ENTRY_FRAMED = eINSTANCE.getEntryFramed();
+
+		/**
+		 * The meta object literal for the '<em><b>Frame</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTRY_FRAMED__FRAME = eINSTANCE.getEntryFramed_Frame();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.ActionType <em>Action Type</em>}' enum.

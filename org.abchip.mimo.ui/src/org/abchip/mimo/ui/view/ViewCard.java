@@ -3,6 +3,8 @@
  */
 package org.abchip.mimo.ui.view;
 
+import org.abchip.mimo.ui.EntryFramed;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Card</b></em>'.
@@ -19,7 +21,7 @@ package org.abchip.mimo.ui.view;
  * @model
  * @generated
  */
-public interface ViewCard extends View {
+public interface ViewCard extends View<EntryFramed> {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The default value is <code>"mm-card"</code>.

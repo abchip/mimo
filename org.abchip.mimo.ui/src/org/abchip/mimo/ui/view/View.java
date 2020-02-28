@@ -4,6 +4,7 @@
 package org.abchip.mimo.ui.view;
 
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.ui.Entry;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,13 +17,14 @@ import org.abchip.mimo.entity.Entity;
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.view.View#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.view.View#isDisabled <em>Disabled</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.view.View#getEntry <em>Entry</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.ui.view.ViewPackage#getView()
  * @model abstract="true"
  * @generated
  */
-public interface View extends Entity {
+public interface View<E extends Entry> extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -74,6 +76,32 @@ public interface View extends Entity {
 	 * @generated
 	 */
 	void setDisabled(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Entry</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Entry</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Entry</em>' reference.
+	 * @see #setEntry(Entry)
+	 * @see org.abchip.mimo.ui.view.ViewPackage#getView_Entry()
+	 * @model required="true"
+	 * @generated
+	 */
+	E getEntry();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.ui.view.View#getEntry <em>Entry</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Entry</em>' reference.
+	 * @see #getEntry()
+	 * @generated
+	 */
+	void setEntry(E value);
 
 	/**
 	 * <!-- begin-user-doc -->

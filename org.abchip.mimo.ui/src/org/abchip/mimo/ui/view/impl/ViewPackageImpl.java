@@ -52,8 +52,11 @@ import org.abchip.mimo.ui.widget.impl.WidgetPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -246,6 +249,16 @@ public class ViewPackageImpl extends EPackageImpl implements ViewPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getView_Entry() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getViewCard() {
 		return viewCardEClass;
 	}
@@ -382,6 +395,7 @@ public class ViewPackageImpl extends EPackageImpl implements ViewPackage {
 		viewEClass = createEClass(VIEW);
 		createEAttribute(viewEClass, VIEW__NAME);
 		createEAttribute(viewEClass, VIEW__DISABLED);
+		createEReference(viewEClass, VIEW__ENTRY);
 
 		viewCardEClass = createEClass(VIEW_CARD);
 		createEAttribute(viewCardEClass, VIEW_CARD__TYPE);
@@ -426,24 +440,45 @@ public class ViewPackageImpl extends EPackageImpl implements ViewPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		UIPackage theUIPackage = (UIPackage)EPackage.Registry.INSTANCE.getEPackage(UIPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 
 		// Create type parameters
+		ETypeParameter viewEClass_E = addETypeParameter(viewEClass, "E");
 
 		// Set bounds for type parameters
+		EGenericType g1 = createEGenericType(theUIPackage.getEntry());
+		viewEClass_E.getEBounds().add(g1);
 
 		// Add supertypes to classes
 		viewEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		viewCardEClass.getESuperTypes().add(this.getView());
-		viewDashboardEClass.getESuperTypes().add(this.getView());
-		viewEditorEClass.getESuperTypes().add(this.getView());
-		viewSearchEClass.getESuperTypes().add(this.getView());
-		viewImportEClass.getESuperTypes().add(this.getView());
+		g1 = createEGenericType(this.getView());
+		EGenericType g2 = createEGenericType(theUIPackage.getEntryFramed());
+		g1.getETypeArguments().add(g2);
+		viewCardEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getView());
+		g2 = createEGenericType(theUIPackage.getEntryFramed());
+		g1.getETypeArguments().add(g2);
+		viewDashboardEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getView());
+		g2 = createEGenericType(theUIPackage.getEntryFramed());
+		g1.getETypeArguments().add(g2);
+		viewEditorEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getView());
+		g2 = createEGenericType(theUIPackage.getEntryFramed());
+		g1.getETypeArguments().add(g2);
+		viewSearchEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getView());
+		g2 = createEGenericType(theUIPackage.getEntryFramed());
+		g1.getETypeArguments().add(g2);
+		viewImportEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(viewEClass, View.class, "View", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getView_Name(), ecorePackage.getEString(), "name", null, 1, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getView_Disabled(), ecorePackage.getEBoolean(), "disabled", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		g1 = createEGenericType(viewEClass_E);
+		initEReference(getView_Entry(), g1, null, "entry", null, 1, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(viewEClass, this.getViewType(), "getType", 1, 1, IS_UNIQUE, IS_ORDERED);
 

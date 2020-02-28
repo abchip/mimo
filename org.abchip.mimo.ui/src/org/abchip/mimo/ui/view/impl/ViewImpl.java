@@ -5,6 +5,7 @@ package org.abchip.mimo.ui.view.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
 
+import org.abchip.mimo.ui.Entry;
 import org.abchip.mimo.ui.view.View;
 import org.abchip.mimo.ui.view.ViewPackage;
 import org.abchip.mimo.ui.view.ViewType;
@@ -13,6 +14,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,11 +28,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.ui.view.impl.ViewImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.ui.view.impl.ViewImpl#isDisabled <em>Disabled</em>}</li>
+ *   <li>{@link org.abchip.mimo.ui.view.impl.ViewImpl#getEntry <em>Entry</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ViewImpl extends EntityImpl implements View {
+public abstract class ViewImpl<E extends Entry> extends EntityImpl implements View<E> {
 	/**
 	 * 
 	 */
@@ -74,6 +78,16 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	 * @ordered
 	 */
 	protected boolean disabled = DISABLED_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getEntry() <em>Entry</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntry()
+	 * @generated
+	 * @ordered
+	 */
+	protected E entry;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,6 +159,47 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public E getEntry() {
+		if (entry != null && ((EObject)entry).eIsProxy()) {
+			InternalEObject oldEntry = (InternalEObject)entry;
+			entry = (E)eResolveProxy(oldEntry);
+			if (entry != oldEntry) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ViewPackage.VIEW__ENTRY, oldEntry, entry));
+			}
+		}
+		return entry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public E basicGetEntry() {
+		return entry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEntry(E newEntry) {
+		E oldEntry = entry;
+		entry = newEntry;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ViewPackage.VIEW__ENTRY, oldEntry, entry));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public ViewType getType() {
 		// TODO: implement this method
@@ -164,6 +219,9 @@ public abstract class ViewImpl extends EntityImpl implements View {
 				return getName();
 			case ViewPackage.VIEW__DISABLED:
 				return isDisabled();
+			case ViewPackage.VIEW__ENTRY:
+				if (resolve) return getEntry();
+				return basicGetEntry();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,6 +231,7 @@ public abstract class ViewImpl extends EntityImpl implements View {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -181,6 +240,9 @@ public abstract class ViewImpl extends EntityImpl implements View {
 				return;
 			case ViewPackage.VIEW__DISABLED:
 				setDisabled((Boolean)newValue);
+				return;
+			case ViewPackage.VIEW__ENTRY:
+				setEntry((E)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -200,6 +262,9 @@ public abstract class ViewImpl extends EntityImpl implements View {
 			case ViewPackage.VIEW__DISABLED:
 				setDisabled(DISABLED_EDEFAULT);
 				return;
+			case ViewPackage.VIEW__ENTRY:
+				setEntry((E)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -216,6 +281,8 @@ public abstract class ViewImpl extends EntityImpl implements View {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ViewPackage.VIEW__DISABLED:
 				return disabled != DISABLED_EDEFAULT;
+			case ViewPackage.VIEW__ENTRY:
+				return entry != null;
 		}
 		return super.eIsSet(featureID);
 	}

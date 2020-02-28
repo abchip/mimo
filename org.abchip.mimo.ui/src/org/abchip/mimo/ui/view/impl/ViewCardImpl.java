@@ -3,6 +3,7 @@
  */
 package org.abchip.mimo.ui.view.impl;
 
+import org.abchip.mimo.ui.EntryFramed;
 import org.abchip.mimo.ui.view.ViewCard;
 import org.abchip.mimo.ui.view.ViewPackage;
 import org.abchip.mimo.ui.view.ViewType;
@@ -21,7 +22,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ViewCardImpl extends ViewImpl implements ViewCard {
+public class ViewCardImpl extends ViewImpl<EntryFramed> implements ViewCard {
 	/**
 	 * 
 	 */
@@ -64,6 +65,17 @@ public class ViewCardImpl extends ViewImpl implements ViewCard {
 	@Override
 	protected EClass eStaticClass() {
 		return ViewPackage.Literals.VIEW_CARD;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setEntry(EntryFramed newEntry) {
+		super.setEntry(newEntry);
 	}
 
 	/**

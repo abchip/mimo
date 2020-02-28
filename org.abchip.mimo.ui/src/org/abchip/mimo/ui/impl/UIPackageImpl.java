@@ -10,6 +10,8 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.ui.Action;
 import org.abchip.mimo.ui.ActionType;
 import org.abchip.mimo.ui.DataNode;
+import org.abchip.mimo.ui.Entry;
+import org.abchip.mimo.ui.EntryFramed;
 import org.abchip.mimo.ui.UIFactory;
 import org.abchip.mimo.ui.UIPackage;
 
@@ -76,6 +78,20 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	private EClass uiUserSetupEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entryFramedEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -328,6 +344,36 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEntry() {
+		return entryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEntryFramed() {
+		return entryFramedEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEntryFramed_Frame() {
+		return (EAttribute)entryFramedEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getActionType() {
 		return actionTypeEEnum;
 	}
@@ -378,6 +424,11 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 
 		uiUserSetupEClass = createEClass(UI_USER_SETUP);
 		createEAttribute(uiUserSetupEClass, UI_USER_SETUP__NAME);
+
+		entryEClass = createEClass(ENTRY);
+
+		entryFramedEClass = createEClass(ENTRY_FRAMED);
+		createEAttribute(entryFramedEClass, ENTRY_FRAMED__FRAME);
 
 		// Create enums
 		actionTypeEEnum = createEEnum(ACTION_TYPE);
@@ -436,6 +487,8 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 		dataNodeEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		uiFrameSetupEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		uiUserSetupEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		entryEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		entryFramedEClass.getESuperTypes().add(this.getEntry());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -455,6 +508,11 @@ public class UIPackageImpl extends EPackageImpl implements UIPackage {
 
 		initEClass(uiUserSetupEClass, UiUserSetup.class, "UiUserSetup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUiUserSetup_Name(), ecorePackage.getEString(), "name", null, 1, 1, UiUserSetup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(entryEClass, Entry.class, "Entry", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(entryFramedEClass, EntryFramed.class, "EntryFramed", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEntryFramed_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, EntryFramed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(actionTypeEEnum, ActionType.class, "ActionType");

@@ -26,6 +26,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entry" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EntryFramed" abstract="true" eSuperTypes="#//Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eSubpackages name="form" nsURI="http://www.abchip.org/mimo/ui/form" nsPrefix="ui-form">
     <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
@@ -140,30 +144,51 @@
       <eLiterals name="Search" literal="mm-search"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="View" abstract="true" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/Entity">
+      <eTypeParameters name="E">
+        <eBounds eClassifier="#//Entry"/>
+      </eTypeParameters>
       <eOperations name="getType" lowerBound="1" eType="#//view/ViewType"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="disabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entry" lowerBound="1">
+        <eGenericType eTypeParameter="#//view/View/E"/>
+      </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ViewCard" eSuperTypes="#//view/View">
+    <eClassifiers xsi:type="ecore:EClass" name="ViewCard">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
           eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-card"/>
+      <eGenericSuperTypes eClassifier="#//view/View">
+        <eTypeArguments eClassifier="#//EntryFramed"/>
+      </eGenericSuperTypes>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ViewDashboard" eSuperTypes="#//view/View">
+    <eClassifiers xsi:type="ecore:EClass" name="ViewDashboard">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
           eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-dashboard"/>
+      <eGenericSuperTypes eClassifier="#//view/View">
+        <eTypeArguments eClassifier="#//EntryFramed"/>
+      </eGenericSuperTypes>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ViewEditor" eSuperTypes="#//view/View">
+    <eClassifiers xsi:type="ecore:EClass" name="ViewEditor">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
           eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-editor"/>
+      <eGenericSuperTypes eClassifier="#//view/View">
+        <eTypeArguments eClassifier="#//EntryFramed"/>
+      </eGenericSuperTypes>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ViewSearch" eSuperTypes="#//view/View">
+    <eClassifiers xsi:type="ecore:EClass" name="ViewSearch">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
           eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-search"/>
+      <eGenericSuperTypes eClassifier="#//view/View">
+        <eTypeArguments eClassifier="#//EntryFramed"/>
+      </eGenericSuperTypes>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ViewImport" eSuperTypes="#//view/View">
+    <eClassifiers xsi:type="ecore:EClass" name="ViewImport">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
           eType="#//view/ViewType" changeable="false" defaultValueLiteral="mm-import"/>
+      <eGenericSuperTypes eClassifier="#//view/View">
+        <eTypeArguments eClassifier="#//EntryFramed"/>
+      </eGenericSuperTypes>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="widget" nsURI="http://www.abchip.org/mimo/ui/widget" nsPrefix="ui-widget">

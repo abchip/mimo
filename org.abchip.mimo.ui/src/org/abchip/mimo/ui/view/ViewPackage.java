@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,13 +87,22 @@ public interface ViewPackage extends EPackage {
 	int VIEW__DISABLED = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Entry</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__ENTRY = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int VIEW_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.ui.view.impl.ViewCardImpl <em>Card</em>}' class.
@@ -121,6 +131,15 @@ public interface ViewPackage extends EPackage {
 	 * @ordered
 	 */
 	int VIEW_CARD__DISABLED = VIEW__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_CARD__ENTRY = VIEW__ENTRY;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -169,6 +188,15 @@ public interface ViewPackage extends EPackage {
 	int VIEW_DASHBOARD__DISABLED = VIEW__DISABLED;
 
 	/**
+	 * The feature id for the '<em><b>Entry</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_DASHBOARD__ENTRY = VIEW__ENTRY;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -213,6 +241,15 @@ public interface ViewPackage extends EPackage {
 	 * @ordered
 	 */
 	int VIEW_EDITOR__DISABLED = VIEW__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_EDITOR__ENTRY = VIEW__ENTRY;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -261,6 +298,15 @@ public interface ViewPackage extends EPackage {
 	int VIEW_SEARCH__DISABLED = VIEW__DISABLED;
 
 	/**
+	 * The feature id for the '<em><b>Entry</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_SEARCH__ENTRY = VIEW__ENTRY;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -305,6 +351,15 @@ public interface ViewPackage extends EPackage {
 	 * @ordered
 	 */
 	int VIEW_IMPORT__DISABLED = VIEW__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_IMPORT__ENTRY = VIEW__ENTRY;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -366,6 +421,17 @@ public interface ViewPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getView_Disabled();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.ui.view.View#getEntry <em>Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entry</em>'.
+	 * @see org.abchip.mimo.ui.view.View#getEntry()
+	 * @see #getView()
+	 * @generated
+	 */
+	EReference getView_Entry();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.ui.view.ViewCard <em>Card</em>}'.
@@ -529,6 +595,14 @@ public interface ViewPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VIEW__DISABLED = eINSTANCE.getView_Disabled();
+
+		/**
+		 * The meta object literal for the '<em><b>Entry</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VIEW__ENTRY = eINSTANCE.getView_Entry();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.ui.view.impl.ViewCardImpl <em>Card</em>}' class.

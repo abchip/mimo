@@ -3,6 +3,7 @@
  */
 package org.abchip.mimo.ui.view.impl;
 
+import org.abchip.mimo.ui.EntryFramed;
 import org.abchip.mimo.ui.view.ViewSearch;
 import org.abchip.mimo.ui.view.ViewPackage;
 import org.abchip.mimo.ui.view.ViewType;
@@ -22,7 +23,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ViewSearchImpl extends ViewImpl implements ViewSearch {
+public class ViewSearchImpl extends ViewImpl<EntryFramed> implements ViewSearch {
 	/**
 	 * 
 	 */
@@ -65,6 +66,17 @@ public class ViewSearchImpl extends ViewImpl implements ViewSearch {
 	@Override
 	protected EClass eStaticClass() {
 		return ViewPackage.Literals.VIEW_SEARCH;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setEntry(EntryFramed newEntry) {
+		super.setEntry(newEntry);
 	}
 
 	/**

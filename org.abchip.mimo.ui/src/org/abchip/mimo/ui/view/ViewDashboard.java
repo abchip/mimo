@@ -3,6 +3,8 @@
  */
 package org.abchip.mimo.ui.view;
 
+import org.abchip.mimo.ui.EntryFramed;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +22,7 @@ package org.abchip.mimo.ui.view;
  * @model
  * @generated
  */
-public interface ViewDashboard extends View {
+public interface ViewDashboard extends View<EntryFramed> {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The default value is <code>"mm-dashboard"</code>.
