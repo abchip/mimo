@@ -314,6 +314,7 @@ public class BaseApplicationStarter {
 		Class<?> tempClass = this.application.getContext().loadClass(className);
 		if (tempClass == null) {
 			try {
+				System.err.println("load from base: " + className);
 				tempClass = Class.forName(className);
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
