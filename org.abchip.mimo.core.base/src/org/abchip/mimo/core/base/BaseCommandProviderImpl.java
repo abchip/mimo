@@ -46,7 +46,7 @@ public abstract class BaseCommandProviderImpl implements CommandProvider {
 
 		Context context = threadLocalContext.get();
 		if (context == null)
-			throw new RuntimeException("You need a login, please use command 'login' before execute any command");
+			throw new RuntimeException("You need a login, please use first command 'login'");
 
 		return context;
 	}
