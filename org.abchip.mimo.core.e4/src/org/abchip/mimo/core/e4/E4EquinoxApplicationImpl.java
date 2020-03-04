@@ -33,8 +33,9 @@ public class E4EquinoxApplicationImpl implements IApplication {
 	private Application application = null;
 	private ApplicationManager applicationManager;
 
+	@SuppressWarnings("resource")
 	@Override
-	public Object start(IApplicationContext context) throws Exception {
+	public final Object start(IApplicationContext context) throws Exception {
 
 		String applicationConfig = null;
 		String applicationName = null;
@@ -91,22 +92,15 @@ public class E4EquinoxApplicationImpl implements IApplication {
 			application.setPort(Integer.parseInt(applicationPort));
 		
 		// Start application
-		doStart();
-
-		return waitForStopOrRestart();
-	}
-
-	@SuppressWarnings("resource")
-	protected void doStart() {
-
 		// context
 		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
-
 		BundleContext bundleContext = bundle.getBundleContext();
 		E4ContextRootImpl contextApplication = new E4ContextRootImpl(bundleContext, application.getContextDescription());
 		contextApplication.set(Application.class, application);
 		contextApplication.set(ContextRoot.class, contextApplication);
 		application.setContext(contextApplication);
+
+		doStart(application);
 
 		// application manager
 		ServiceReference<ApplicationManager> applicationManagerReference = bundleContext.getServiceReference(ApplicationManager.class);
@@ -114,6 +108,12 @@ public class E4EquinoxApplicationImpl implements IApplication {
 
 		System.out.println("Starting " + application);
 		applicationManager.start(this.getClass(), application, System.out);		
+
+		return waitForStopOrRestart();
+	}
+
+	protected void doStart(Application application) {
+
 	}
 	
 	private Object waitForStopOrRestart() {
@@ -135,7 +135,7 @@ public class E4EquinoxApplicationImpl implements IApplication {
 	}
 
 	@Override
-	public void stop() {
+	public final void stop() {
 		System.out.println("Stopping " + application.getText());
 		applicationManager.stop(application);
 	}
