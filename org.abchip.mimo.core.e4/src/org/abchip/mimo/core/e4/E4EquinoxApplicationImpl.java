@@ -33,7 +33,6 @@ public class E4EquinoxApplicationImpl implements IApplication {
 	private Application application = null;
 	private ApplicationManager applicationManager;
 
-	@SuppressWarnings("resource")
 	@Override
 	public Object start(IApplicationContext context) throws Exception {
 
@@ -65,8 +64,7 @@ public class E4EquinoxApplicationImpl implements IApplication {
 
 			return waitForStopOrRestart();
 		}
-		// BundleContext bundleContext =
-		// InternalPlatform.getDefault().getBundleContext();
+
 		// Load application
 		ApplicationPackage.eINSTANCE.eClass();
 
@@ -91,6 +89,15 @@ public class E4EquinoxApplicationImpl implements IApplication {
 
 		if (applicationPort != null)
 			application.setPort(Integer.parseInt(applicationPort));
+		
+		// Start application
+		doStart();
+
+		return waitForStopOrRestart();
+	}
+
+	@SuppressWarnings("resource")
+	protected void doStart() {
 
 		// context
 		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
@@ -106,11 +113,9 @@ public class E4EquinoxApplicationImpl implements IApplication {
 		applicationManager = bundleContext.getService(applicationManagerReference);
 
 		System.out.println("Starting " + application);
-		applicationManager.start(this.getClass(), application, System.out);
-
-		return waitForStopOrRestart();
+		applicationManager.start(this.getClass(), application, System.out);		
 	}
-
+	
 	private Object waitForStopOrRestart() {
 		while (true) {
 			try {
