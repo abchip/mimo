@@ -51,7 +51,7 @@ public class BaseTesterCommandProviderImpl extends BaseCommandProviderImpl {
 
 			String componentName = interpreter.nextArgument();
 
-			for (ApplicationComponent component : application.getComponents()) {
+			for (ApplicationComponent component : application.getActiveComponents()) {
 				if (!component.getName().equalsIgnoreCase(componentName))
 					continue;
 

@@ -238,13 +238,22 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION_COMPONENT__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_COMPONENT__STATUS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
+	int APPLICATION_COMPONENT_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ApplicationManager <em>Manager</em>}' class.
@@ -781,6 +790,16 @@ public interface ApplicationPackage extends EPackage {
 	int SERVICE_TESTER_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.application.ComponentStatus <em>Component Status</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.application.ComponentStatus
+	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getComponentStatus()
+	 * @generated
+	 */
+	int COMPONENT_STATUS = 14;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ServiceStatus <em>Service Status</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -788,7 +807,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceStatus()
 	 * @generated
 	 */
-	int SERVICE_STATUS = 14;
+	int SERVICE_STATUS = 15;
 
 
 	/**
@@ -986,6 +1005,17 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getApplicationComponent_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.ApplicationComponent#getStatus <em>Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Status</em>'.
+	 * @see org.abchip.mimo.application.ApplicationComponent#getStatus()
+	 * @see #getApplicationComponent()
+	 * @generated
+	 */
+	EAttribute getApplicationComponent_Status();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.application.ApplicationManager <em>Manager</em>}'.
@@ -1306,6 +1336,16 @@ public interface ApplicationPackage extends EPackage {
 	EAttribute getServiceTester_InterfaceName();
 
 	/**
+	 * Returns the meta object for enum '{@link org.abchip.mimo.application.ComponentStatus <em>Component Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Component Status</em>'.
+	 * @see org.abchip.mimo.application.ComponentStatus
+	 * @generated
+	 */
+	EEnum getComponentStatus();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.application.ServiceStatus <em>Service Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1484,6 +1524,14 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute APPLICATION_COMPONENT__NAME = eINSTANCE.getApplicationComponent_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APPLICATION_COMPONENT__STATUS = eINSTANCE.getApplicationComponent_Status();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.ApplicationManager <em>Manager</em>}' class.
@@ -1748,6 +1796,16 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVICE_TESTER__INTERFACE_NAME = eINSTANCE.getServiceTester_InterfaceName();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.application.ComponentStatus <em>Component Status</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.application.ComponentStatus
+		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getComponentStatus()
+		 * @generated
+		 */
+		EEnum COMPONENT_STATUS = eINSTANCE.getComponentStatus();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.ServiceStatus <em>Service Status</em>}' enum.

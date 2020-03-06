@@ -32,6 +32,7 @@ import org.abchip.mimo.application.ApplicationStarted;
 import org.abchip.mimo.application.ApplicationStarting;
 import org.abchip.mimo.application.ComponentStarted;
 import org.abchip.mimo.application.ComponentStarting;
+import org.abchip.mimo.application.ComponentStatus;
 import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceExecutor;
 import org.abchip.mimo.application.ServiceHook;
@@ -108,12 +109,16 @@ public class BaseApplicationStarter {
 
 	public void activateComponent(ApplicationComponent component) {
 
+		println(">component " + component);
+		if(component.getStatus() != ComponentStatus.ACTIVE) {
+			println("!unactive");
+			return;
+		}
+		
 		@SuppressWarnings("resource")
 		Context componentContext = application.getContext().createChildContext(component.getName());
 		componentContext.set(ApplicationComponent.class, component);
 		component.setContext(componentContext);
-
-		println(">component " + component);
 
 		// configuration
 		if (component.getConfig() != null)

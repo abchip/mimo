@@ -11,6 +11,11 @@
     <genClasses ecoreClass="mimo.ecore#//Mimo"/>
     <nestedGenPackages prefix="Application" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="mimo.ecore#//application">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//application/ComponentStatus">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ComponentStatus/Active"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ComponentStatus/Stopped"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ComponentStatus/Testing"/>
+      </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//application/ServiceStatus">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Active"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Stopped"/>
@@ -27,6 +32,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/port"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/resourceMapping"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/text"/>
+        <genOperations ecoreOperation="mimo.ecore#//application/Application/getActiveComponents"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//application/ApplicationComponent">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ApplicationComponent/config"/>
@@ -35,6 +41,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ApplicationComponent/commands"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ApplicationComponent/modules"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationComponent/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationComponent/status"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//application/ApplicationManager">
         <genOperations ecoreOperation="mimo.ecore#//application/ApplicationManager/start">

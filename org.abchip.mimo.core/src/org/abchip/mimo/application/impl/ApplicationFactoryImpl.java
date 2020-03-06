@@ -87,6 +87,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case ApplicationPackage.COMPONENT_STATUS:
+				return createComponentStatusFromString(eDataType, initialValue);
 			case ApplicationPackage.SERVICE_STATUS:
 				return createServiceStatusFromString(eDataType, initialValue);
 			default:
@@ -102,6 +104,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case ApplicationPackage.COMPONENT_STATUS:
+				return convertComponentStatusToString(eDataType, instanceValue);
 			case ApplicationPackage.SERVICE_STATUS:
 				return convertServiceStatusToString(eDataType, instanceValue);
 			default:
@@ -239,6 +243,26 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public ServiceTester createServiceTester() {
 		ServiceTesterImpl serviceTester = new ServiceTesterImpl();
 		return serviceTester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentStatus createComponentStatusFromString(EDataType eDataType, String initialValue) {
+		ComponentStatus result = ComponentStatus.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertComponentStatusToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

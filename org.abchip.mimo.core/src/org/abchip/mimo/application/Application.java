@@ -270,4 +270,12 @@ public interface Application extends EntityIdentifiable {
 	 */
 	void setText(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	List<ApplicationComponent> getActiveComponents();
+
 } // Application

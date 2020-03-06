@@ -5,6 +5,7 @@
   <eSubpackages name="application" nsURI="http://www.abchip.org/mimo/application"
       nsPrefix="mimo-app">
     <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//entity/EntityIdentifiable">
+      <eOperations name="getActiveComponents" upperBound="-1" eType="#//application/ApplicationComponent"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
           eType="#//application/ServiceCommandProvider" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
@@ -38,6 +39,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
+          eType="#//application/ComponentStatus" defaultValueLiteral="ACT"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ApplicationManager" abstract="true"
         interface="true">
@@ -61,6 +64,11 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
           eType="#//application/ServiceRef" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ComponentStatus">
+      <eLiterals name="Active" literal="ACT"/>
+      <eLiterals name="Stopped" literal="STP"/>
+      <eLiterals name="Testing" literal="TST"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceCommandProvider" eSuperTypes="#//application/ServiceRef">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
@@ -106,8 +114,8 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ServiceStatus">
       <eLiterals name="Active" literal="ACT"/>
-      <eLiterals name="Stopped" value="20" literal="STP"/>
-      <eLiterals name="Testing" value="30" literal="TST"/>
+      <eLiterals name="Stopped" literal="STP"/>
+      <eLiterals name="Testing" literal="TST"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceServlet" eSuperTypes="#//application/ServiceRef">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" lowerBound="1"

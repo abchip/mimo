@@ -14,6 +14,7 @@ import java.util.List;
 import org.abchip.mimo.application.ApplicationComponent;
 import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.application.ComponentStatus;
 import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceConfig;
 import org.abchip.mimo.application.ServiceHook;
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationComponentImpl#getCommands <em>Commands</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationComponentImpl#getModules <em>Modules</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationComponentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ApplicationComponentImpl#getStatus <em>Status</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,6 +113,24 @@ public class ApplicationComponentImpl extends EntityIdentifiableImpl implements 
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ComponentStatus STATUS_EDEFAULT = ComponentStatus.ACTIVE;
+	/**
+	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentStatus status = STATUS_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -271,6 +291,29 @@ public class ApplicationComponentImpl extends EntityIdentifiableImpl implements 
 	 * @generated
 	 */
 	@Override
+	public ComponentStatus getStatus() {
+		return status;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStatus(ComponentStatus newStatus) {
+		ComponentStatus oldStatus = status;
+		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_COMPONENT__STATUS, oldStatus, status));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION_COMPONENT__CONFIG:
@@ -309,6 +352,8 @@ public class ApplicationComponentImpl extends EntityIdentifiableImpl implements 
 				return getModules();
 			case ApplicationPackage.APPLICATION_COMPONENT__NAME:
 				return getName();
+			case ApplicationPackage.APPLICATION_COMPONENT__STATUS:
+				return getStatus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -343,6 +388,9 @@ public class ApplicationComponentImpl extends EntityIdentifiableImpl implements 
 			case ApplicationPackage.APPLICATION_COMPONENT__NAME:
 				setName((String)newValue);
 				return;
+			case ApplicationPackage.APPLICATION_COMPONENT__STATUS:
+				setStatus((ComponentStatus)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -373,6 +421,9 @@ public class ApplicationComponentImpl extends EntityIdentifiableImpl implements 
 			case ApplicationPackage.APPLICATION_COMPONENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case ApplicationPackage.APPLICATION_COMPONENT__STATUS:
+				setStatus(STATUS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -397,6 +448,8 @@ public class ApplicationComponentImpl extends EntityIdentifiableImpl implements 
 				return modules != null && !modules.isEmpty();
 			case ApplicationPackage.APPLICATION_COMPONENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ApplicationPackage.APPLICATION_COMPONENT__STATUS:
+				return status != STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -413,6 +466,8 @@ public class ApplicationComponentImpl extends EntityIdentifiableImpl implements 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", status: ");
+		result.append(status);
 		result.append(')');
 		return result.toString();
 	}

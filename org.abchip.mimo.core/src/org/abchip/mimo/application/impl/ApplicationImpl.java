@@ -8,12 +8,14 @@
  */
 package org.abchip.mimo.application.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationComponent;
 import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.application.ComponentStatus;
 import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceConfig;
 import org.abchip.mimo.application.ServiceHook;
@@ -438,6 +440,22 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__TEXT, oldText, text));
 	}
 
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public List<ApplicationComponent> getActiveComponents() {
+		
+		List<ApplicationComponent> components = new ArrayList<ApplicationComponent>();
+		for(ApplicationComponent component: this.getComponents())
+			if(component.getStatus() == ComponentStatus.ACTIVE)
+				components.add(component);
+		
+		return components;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->

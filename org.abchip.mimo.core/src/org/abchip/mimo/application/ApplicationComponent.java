@@ -28,6 +28,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  *   <li>{@link org.abchip.mimo.application.ApplicationComponent#getCommands <em>Commands</em>}</li>
  *   <li>{@link org.abchip.mimo.application.ApplicationComponent#getModules <em>Modules</em>}</li>
  *   <li>{@link org.abchip.mimo.application.ApplicationComponent#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.ApplicationComponent#getStatus <em>Status</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.application.ApplicationPackage#getApplicationComponent()
@@ -160,5 +161,35 @@ public interface ApplicationComponent extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Status</b></em>' attribute.
+	 * The default value is <code>"ACT"</code>.
+	 * The literals are from the enumeration {@link org.abchip.mimo.application.ComponentStatus}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Status</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Status</em>' attribute.
+	 * @see org.abchip.mimo.application.ComponentStatus
+	 * @see #setStatus(ComponentStatus)
+	 * @see org.abchip.mimo.application.ApplicationPackage#getApplicationComponent_Status()
+	 * @model default="ACT" required="true"
+	 * @generated
+	 */
+	ComponentStatus getStatus();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.application.ApplicationComponent#getStatus <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status</em>' attribute.
+	 * @see org.abchip.mimo.application.ComponentStatus
+	 * @see #getStatus()
+	 * @generated
+	 */
+	void setStatus(ComponentStatus value);
 
 } // ApplicationComponent
