@@ -51,4 +51,12 @@ public interface AuthenticationManager {
 	 */
 	Context login(String contextId, AuthenticationUserToken authentication);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextIdRequired="true" authenticationRequired="true"
+	 * @generated
+	 */
+	Context login(String contextId, AuthenticationAdminKey authentication);
+
 } // AuthenticationManager

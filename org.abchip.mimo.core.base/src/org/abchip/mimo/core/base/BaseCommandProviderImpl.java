@@ -11,8 +11,8 @@ package org.abchip.mimo.core.base;
 import javax.inject.Inject;
 
 import org.abchip.mimo.application.Application;
+import org.abchip.mimo.context.AuthenticationAdminKey;
 import org.abchip.mimo.context.AuthenticationManager;
-import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextFactory;
 import org.eclipse.osgi.framework.console.CommandProvider;
@@ -25,17 +25,16 @@ public abstract class BaseCommandProviderImpl implements CommandProvider {
 	private ThreadLocal<Context> threadLocalContext = new ThreadLocal<Context>();
 
 	@SuppressWarnings("resource")
-	protected void login(String user, String password) {
+	protected void login(String adminKey) {
 
 		AuthenticationManager authenticationManager = application.getContext().get(AuthenticationManager.class);
-		if(authenticationManager == null)
+		if (authenticationManager == null)
 			return;
-			
-		AuthenticationUserPassword userPassword = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
-		userPassword.setUser(user);
-		userPassword.setPassword(password);
 
-		Context context = authenticationManager.login(null, userPassword);
+		AuthenticationAdminKey authAdminKey = ContextFactory.eINSTANCE.createAuthenticationAdminKey();
+		authAdminKey.setAdminKey(adminKey);
+
+		Context context = authenticationManager.login(null, authAdminKey);
 		if (context == null)
 			return;
 

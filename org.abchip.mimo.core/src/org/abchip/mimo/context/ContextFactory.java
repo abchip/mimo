@@ -30,6 +30,15 @@ public interface ContextFactory extends EFactory {
 	ContextFactory eINSTANCE = org.abchip.mimo.context.impl.ContextFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Authentication Admin Key</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Authentication Admin Key</em>'.
+	 * @generated
+	 */
+	AuthenticationAdminKey createAuthenticationAdminKey();
+
+	/**
 	 * Returns a new object of class '<em>Authentication User Password</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -15,6 +15,7 @@ import org.abchip.mimo.application.impl.ApplicationPackageImpl;
 
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Authentication;
+import org.abchip.mimo.context.AuthenticationAdminKey;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserPassword;
@@ -96,6 +97,13 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	private EClass authenticationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass authenticationAdminKeyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -395,6 +403,26 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	@Override
 	public EClass getAuthentication() {
 		return authenticationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAuthenticationAdminKey() {
+		return authenticationAdminKeyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAuthenticationAdminKey_AdminKey() {
+		return (EAttribute)authenticationAdminKeyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1080,6 +1108,9 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		authenticationEClass = createEClass(AUTHENTICATION);
 
+		authenticationAdminKeyEClass = createEClass(AUTHENTICATION_ADMIN_KEY);
+		createEAttribute(authenticationAdminKeyEClass, AUTHENTICATION_ADMIN_KEY__ADMIN_KEY);
+
 		authenticationManagerEClass = createEClass(AUTHENTICATION_MANAGER);
 
 		authenticationUserPasswordEClass = createEClass(AUTHENTICATION_USER_PASSWORD);
@@ -1219,6 +1250,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		// Add supertypes to classes
 		authenticationEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		authenticationAdminKeyEClass.getESuperTypes().add(this.getAuthentication());
 		authenticationUserPasswordEClass.getESuperTypes().add(this.getAuthentication());
 		authenticationUserTokenEClass.getESuperTypes().add(this.getAuthentication());
 		authenticationAnonymousEClass.getESuperTypes().add(this.getAuthentication());
@@ -1252,6 +1284,9 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(authenticationAdminKeyEClass, AuthenticationAdminKey.class, "AuthenticationAdminKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAuthenticationAdminKey_AdminKey(), ecorePackage.getEString(), "adminKey", null, 1, 1, AuthenticationAdminKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(authenticationManagerEClass, AuthenticationManager.class, "AuthenticationManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(authenticationManagerEClass, ecorePackage.getEBoolean(), "checkLogin", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1269,6 +1304,10 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		op = addEOperation(authenticationManagerEClass, this.getContext(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(authenticationManagerEClass, this.getContext(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getAuthenticationAdminKey(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(authenticationUserPasswordEClass, AuthenticationUserPassword.class, "AuthenticationUserPassword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthenticationUserPassword_User(), ecorePackage.getEString(), "user", null, 1, 1, AuthenticationUserPassword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

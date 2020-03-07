@@ -23,7 +23,7 @@ public class BaseEntityCommandProviderImpl extends BaseCommandProviderImpl {
 	private ResourceManager resourceManager;
 
 	public <E extends EntityIdentifiable> void _login(CommandInterpreter interpreter) throws Exception {
-		this.login(interpreter.nextArgument(), interpreter.nextArgument());
+		this.login(interpreter.nextArgument());
 	}
 
 	@SuppressWarnings("resource")

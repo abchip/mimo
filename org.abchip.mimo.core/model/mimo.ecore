@@ -148,6 +148,10 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Authentication" abstract="true" interface="true"
         eSuperTypes="#//entity/Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationAdminKey" eSuperTypes="#//context/Authentication">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="adminKey" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AuthenticationManager" abstract="true"
         interface="true">
       <eOperations name="checkLogin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -165,6 +169,10 @@
       <eOperations name="login" eType="#//context/Context">
         <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="authentication" lowerBound="1" eType="#//context/AuthenticationUserToken"/>
+      </eOperations>
+      <eOperations name="login" eType="#//context/Context">
+        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="authentication" lowerBound="1" eType="#//context/AuthenticationAdminKey"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AuthenticationUserPassword" eSuperTypes="#//context/Authentication">

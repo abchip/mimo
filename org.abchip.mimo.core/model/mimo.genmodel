@@ -122,6 +122,9 @@
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/Authentication"/>
+      <genClasses ecoreClass="mimo.ecore#//context/AuthenticationAdminKey">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationAdminKey/adminKey"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationManager">
         <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/checkLogin">
           <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/checkLogin/authentication"/>
@@ -138,6 +141,10 @@
         <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/login.2">
           <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.2/contextId"/>
           <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.2/authentication"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/login.3">
+          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.3/contextId"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.3/authentication"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationUserPassword">

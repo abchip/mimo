@@ -26,6 +26,7 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.context.AuthenticationAdminKey;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserPassword;
@@ -502,5 +503,11 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		}
 
 		return client;
+	}
+
+	@Override
+	public Context login(String contextId, AuthenticationAdminKey authentication) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

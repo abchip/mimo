@@ -65,6 +65,7 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case ContextPackage.AUTHENTICATION_ADMIN_KEY: return (EObject)createAuthenticationAdminKey();
 			case ContextPackage.AUTHENTICATION_USER_PASSWORD: return (EObject)createAuthenticationUserPassword();
 			case ContextPackage.AUTHENTICATION_USER_TOKEN: return (EObject)createAuthenticationUserToken();
 			case ContextPackage.AUTHENTICATION_ANONYMOUS: return (EObject)createAuthenticationAnonymous();
@@ -125,6 +126,17 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AuthenticationAdminKey createAuthenticationAdminKey() {
+		AuthenticationAdminKeyImpl authenticationAdminKey = new AuthenticationAdminKeyImpl();
+		return authenticationAdminKey;
 	}
 
 	/**
