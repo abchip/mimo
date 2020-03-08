@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#isAnonymous <em>Anonymous</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getCurrencyUom <em>Currency Uom</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getDataPath <em>Data Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getLocale <em>Locale</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getPicture <em>Picture</em>}</li>
@@ -71,24 +70,6 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 * @ordered
 	 */
 	protected String currencyUom = CURRENCY_UOM_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDataPath() <em>Data Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataPath()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_PATH_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDataPath() <em>Data Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataPath()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataPath = DATA_PATH_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -268,27 +249,6 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 * @generated
 	 */
 	@Override
-	public String getDataPath() {
-		return dataPath;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDataPath(String newDataPath) {
-		String oldDataPath = dataPath;
-		dataPath = newDataPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH, oldDataPath, dataPath));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getId() {
 		return id;
 	}
@@ -441,8 +401,6 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 				return isAnonymous();
 			case ContextPackage.CONTEXT_DESCRIPTION__CURRENCY_UOM:
 				return getCurrencyUom();
-			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
-				return getDataPath();
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				return getId();
 			case ContextPackage.CONTEXT_DESCRIPTION__LOCALE:
@@ -472,9 +430,6 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__CURRENCY_UOM:
 				setCurrencyUom((String)newValue);
-				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
-				setDataPath((String)newValue);
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				setId((String)newValue);
@@ -512,9 +467,6 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 			case ContextPackage.CONTEXT_DESCRIPTION__CURRENCY_UOM:
 				setCurrencyUom(CURRENCY_UOM_EDEFAULT);
 				return;
-			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
-				setDataPath(DATA_PATH_EDEFAULT);
-				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				setId(ID_EDEFAULT);
 				return;
@@ -549,8 +501,6 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 				return anonymous != ANONYMOUS_EDEFAULT;
 			case ContextPackage.CONTEXT_DESCRIPTION__CURRENCY_UOM:
 				return CURRENCY_UOM_EDEFAULT == null ? currencyUom != null : !CURRENCY_UOM_EDEFAULT.equals(currencyUom);
-			case ContextPackage.CONTEXT_DESCRIPTION__DATA_PATH:
-				return DATA_PATH_EDEFAULT == null ? dataPath != null : !DATA_PATH_EDEFAULT.equals(dataPath);
 			case ContextPackage.CONTEXT_DESCRIPTION__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ContextPackage.CONTEXT_DESCRIPTION__LOCALE:
@@ -581,8 +531,6 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 		result.append(anonymous);
 		result.append(", currencyUom: ");
 		result.append(currencyUom);
-		result.append(", dataPath: ");
-		result.append(dataPath);
 		result.append(", id: ");
 		result.append(id);
 		result.append(", locale: ");

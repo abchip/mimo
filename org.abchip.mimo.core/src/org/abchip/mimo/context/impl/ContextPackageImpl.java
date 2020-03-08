@@ -621,7 +621,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_DataPath() {
+	public EAttribute getContextDescription_Id() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -631,7 +631,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_Id() {
+	public EAttribute getContextDescription_Locale() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -641,7 +641,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_Locale() {
+	public EAttribute getContextDescription_Picture() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -651,7 +651,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_Picture() {
+	public EAttribute getContextDescription_Tenant() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -661,7 +661,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_Tenant() {
+	public EAttribute getContextDescription_TimeZone() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -671,18 +671,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_TimeZone() {
-		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getContextDescription_User() {
-		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1136,7 +1126,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		contextDescriptionEClass = createEClass(CONTEXT_DESCRIPTION);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__ANONYMOUS);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__CURRENCY_UOM);
-		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__DATA_PATH);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__ID);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__LOCALE);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__PICTURE);
@@ -1422,7 +1411,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEClass(contextDescriptionEClass, ContextDescription.class, "ContextDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextDescription_Anonymous(), ecorePackage.getEBoolean(), "anonymous", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_CurrencyUom(), ecorePackage.getEString(), "currencyUom", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContextDescription_DataPath(), ecorePackage.getEString(), "dataPath", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_Id(), ecorePackage.getEString(), "id", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_Locale(), ecorePackage.getEString(), "locale", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_Picture(), ecorePackage.getEString(), "picture", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

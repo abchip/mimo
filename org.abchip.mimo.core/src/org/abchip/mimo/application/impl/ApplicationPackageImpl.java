@@ -339,8 +339,18 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
+	public EAttribute getApplication_HomeLocation() {
+		return (EAttribute)applicationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getApplication_Hooks() {
-		return (EReference)applicationEClass.getEStructuralFeatures().get(5);
+		return (EReference)applicationEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -350,16 +360,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 */
 	@Override
 	public EAttribute getApplication_Name() {
-		return (EAttribute)applicationEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getApplication_Port() {
 		return (EAttribute)applicationEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -369,8 +369,18 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
+	public EAttribute getApplication_Port() {
+		return (EAttribute)applicationEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getApplication_ResourceMapping() {
-		return (EReference)applicationEClass.getEStructuralFeatures().get(8);
+		return (EReference)applicationEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -380,7 +390,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 */
 	@Override
 	public EAttribute getApplication_Text() {
-		return (EAttribute)applicationEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)applicationEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -818,6 +828,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEReference(applicationEClass, APPLICATION__CONFIG);
 		createEReference(applicationEClass, APPLICATION__CONTEXT);
 		createEReference(applicationEClass, APPLICATION__CONTEXT_DESCRIPTION);
+		createEAttribute(applicationEClass, APPLICATION__HOME_LOCATION);
 		createEReference(applicationEClass, APPLICATION__HOOKS);
 		createEAttribute(applicationEClass, APPLICATION__NAME);
 		createEAttribute(applicationEClass, APPLICATION__PORT);
@@ -935,6 +946,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEReference(getApplication_Config(), this.getServiceConfig(), null, "config", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Context(), theContextPackage.getContextRoot(), null, "context", null, 0, 1, Application.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_ContextDescription(), theContextPackage.getContextDescription(), null, "contextDescription", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApplication_HomeLocation(), ecorePackage.getEString(), "homeLocation", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Hooks(), this.getServiceHook(), null, "hooks", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_Name(), ecorePackage.getEString(), "name", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_Port(), ecorePackage.getEInt(), "port", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

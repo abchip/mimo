@@ -27,6 +27,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/config"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/context"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/contextDescription"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/homeLocation"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/hooks"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/port"/>
@@ -216,7 +217,6 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//context/ContextDescription">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/anonymous"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/currencyUom"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/dataPath"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/id"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/locale"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/picture"/>

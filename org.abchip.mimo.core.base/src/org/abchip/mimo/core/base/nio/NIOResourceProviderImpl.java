@@ -8,9 +8,12 @@
  */
 package org.abchip.mimo.core.base.nio;
 
+import java.nio.file.Paths;
+
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -36,7 +39,8 @@ public class NIOResourceProviderImpl extends ResourceProviderImpl {
 		this.resourceConfig.setLockSupport(true);
 		this.resourceConfig.setOrderSupport(true);
 
-		this.pathManager = new NIOPathManager(contextRoot.getContextDescription().getDataPath());
+		Application application = contextRoot.get(Application.class);
+		this.pathManager = new NIOPathManager(Paths.get(application.getHomeLocation(), "data-nio"));
 	}
 
 	@Override

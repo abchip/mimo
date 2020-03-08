@@ -120,13 +120,22 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION__CONTEXT_DESCRIPTION = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Home Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__HOME_LOCATION = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Hooks</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__HOOKS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
+	int APPLICATION__HOOKS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -135,7 +144,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
+	int APPLICATION__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' attribute.
@@ -144,7 +153,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__PORT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
+	int APPLICATION__PORT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Resource Mapping</b></em>' containment reference.
@@ -153,7 +162,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__RESOURCE_MAPPING = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
+	int APPLICATION__RESOURCE_MAPPING = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -162,7 +171,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
+	int APPLICATION__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Application</em>' class.
@@ -171,7 +180,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
+	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationComponentImpl <em>Component</em>}' class.
@@ -876,6 +885,17 @@ public interface ApplicationPackage extends EPackage {
 	EReference getApplication_ContextDescription();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.Application#getHomeLocation <em>Home Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Home Location</em>'.
+	 * @see org.abchip.mimo.application.Application#getHomeLocation()
+	 * @see #getApplication()
+	 * @generated
+	 */
+	EAttribute getApplication_HomeLocation();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.application.Application#getHooks <em>Hooks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1426,6 +1446,14 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APPLICATION__CONTEXT_DESCRIPTION = eINSTANCE.getApplication_ContextDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Home Location</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APPLICATION__HOME_LOCATION = eINSTANCE.getApplication_HomeLocation();
 
 		/**
 		 * The meta object literal for the '<em><b>Hooks</b></em>' containment reference list feature.

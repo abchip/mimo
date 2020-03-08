@@ -21,7 +21,6 @@ import org.abchip.mimo.entity.Entity;
  * <ul>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#isAnonymous <em>Anonymous</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getCurrencyUom <em>Currency Uom</em>}</li>
- *   <li>{@link org.abchip.mimo.context.ContextDescription#getDataPath <em>Data Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getId <em>Id</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getLocale <em>Locale</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getPicture <em>Picture</em>}</li>
@@ -86,32 +85,6 @@ public interface ContextDescription extends Entity {
 	 * @generated
 	 */
 	void setCurrencyUom(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Data Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Data Path</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Path</em>' attribute.
-	 * @see #setDataPath(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_DataPath()
-	 * @model
-	 * @generated
-	 */
-	String getDataPath();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.ContextDescription#getDataPath <em>Data Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Path</em>' attribute.
-	 * @see #getDataPath()
-	 * @generated
-	 */
-	void setDataPath(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.

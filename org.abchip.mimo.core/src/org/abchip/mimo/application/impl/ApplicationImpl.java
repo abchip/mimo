@@ -45,6 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getConfig <em>Config</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getContext <em>Context</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getContextDescription <em>Context Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getHomeLocation <em>Home Location</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getHooks <em>Hooks</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getPort <em>Port</em>}</li>
@@ -96,6 +97,24 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * @ordered
 	 */
 	protected ContextDescription contextDescription;
+	/**
+	 * The default value of the '{@link #getHomeLocation() <em>Home Location</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHomeLocation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HOME_LOCATION_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getHomeLocation() <em>Home Location</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHomeLocation()
+	 * @generated
+	 * @ordered
+	 */
+	protected String homeLocation = HOME_LOCATION_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getHooks() <em>Hooks</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -477,6 +496,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
 				if (resolve) return getContextDescription();
 				return basicGetContextDescription();
+			case ApplicationPackage.APPLICATION__HOME_LOCATION:
+				return getHomeLocation();
 			case ApplicationPackage.APPLICATION__HOOKS:
 				return getHooks();
 			case ApplicationPackage.APPLICATION__NAME:
@@ -516,6 +537,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return;
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
 				setContextDescription((ContextDescription)newValue);
+				return;
+			case ApplicationPackage.APPLICATION__HOME_LOCATION:
+				setHomeLocation((String)newValue);
 				return;
 			case ApplicationPackage.APPLICATION__HOOKS:
 				getHooks().clear();
@@ -559,6 +583,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
 				setContextDescription((ContextDescription)null);
 				return;
+			case ApplicationPackage.APPLICATION__HOME_LOCATION:
+				setHomeLocation(HOME_LOCATION_EDEFAULT);
+				return;
 			case ApplicationPackage.APPLICATION__HOOKS:
 				getHooks().clear();
 				return;
@@ -595,6 +622,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return context != null;
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
 				return contextDescription != null;
+			case ApplicationPackage.APPLICATION__HOME_LOCATION:
+				return HOME_LOCATION_EDEFAULT == null ? homeLocation != null : !HOME_LOCATION_EDEFAULT.equals(homeLocation);
 			case ApplicationPackage.APPLICATION__HOOKS:
 				return hooks != null && !hooks.isEmpty();
 			case ApplicationPackage.APPLICATION__NAME:
@@ -618,7 +647,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
+		result.append(" (homeLocation: ");
+		result.append(homeLocation);
+		result.append(", name: ");
 		result.append(name);
 		result.append(", port: ");
 		result.append(port);
@@ -754,6 +785,29 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION, newContextDescription, newContextDescription));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getHomeLocation() {
+		return homeLocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setHomeLocation(String newHomeLocation) {
+		String oldHomeLocation = homeLocation;
+		homeLocation = newHomeLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__HOME_LOCATION, oldHomeLocation, homeLocation));
 	}
 
 } // ApplicationImpl
