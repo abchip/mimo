@@ -56,10 +56,26 @@ public interface ContextRoot extends Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	String getInstallArea();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model required="true" nameRequired="true"
 	 * @generated
 	 */
 	Class<?> loadClass(String name);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" nameRequired="true"
+	 * @generated
+	 */
+	String locateBundle(String name);
 
 	/**
 	 * <!-- begin-user-doc -->

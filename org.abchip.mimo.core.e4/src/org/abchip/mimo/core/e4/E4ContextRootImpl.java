@@ -9,6 +9,7 @@
 package org.abchip.mimo.core.e4;
 
 import java.net.URI;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Dictionary;
@@ -58,6 +59,13 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	}
 
 	@Override
+	public String getInstallArea() {
+		String installArea = System.getProperty("osgi.install.area");
+		installArea = installArea.replaceFirst("file:/", "/");
+		return installArea;
+	}
+
+	@Override
 	public Class<?> loadClass(String className) {
 
 		Class<?> klass = null;
@@ -66,7 +74,7 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 			URI uri = URI.create(className);
 			String tokens[] = uri.getPath().split("/");
 			if (tokens[1].equals("bundle")) {
-				for (Bundle bundle : bundleContext.getBundles()) {
+				for (Bundle bundle : getBundleContext().getBundles()) {
 					if (bundle.getSymbolicName().equals(tokens[2])) {
 						try {
 							klass = bundle.loadClass(tokens[3]);
@@ -89,6 +97,26 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		}
 
 		return klass;
+	}
+
+	@Override
+	public String locateBundle(String name) {
+
+		String location = null;
+		for (Bundle bundle : getBundleContext().getBundles()) {
+			if (!bundle.getSymbolicName().equals(name))
+				continue;
+			
+			location = bundle.getLocation();
+			break;
+		}
+		
+		location = location.replaceFirst("reference:file:", "");
+		if(location.startsWith("/"))
+			return location;
+		
+		
+		return Paths.get(this.getInstallArea(), location).toString();
 	}
 
 	@Override
@@ -177,11 +205,11 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 
 		Context contextChild = new E4ContextChildImpl(eclipseChildContext, contextDescription);
 
-		for(Factory<Object> factory: this.getAll(Factory.class)) {
+		for (Factory<Object> factory : this.getAll(Factory.class)) {
 			Object object = factory.create(contextChild);
 			contextChild.set(factory.getInterfaceClass(), object);
 		}
-		
+
 		return contextChild;
 	}
 }

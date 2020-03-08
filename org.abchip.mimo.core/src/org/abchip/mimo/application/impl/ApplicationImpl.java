@@ -34,9 +34,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Application</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Application</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -58,8 +57,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ApplicationImpl extends EntityIdentifiableImpl implements Application {
 	/**
 	 * The cached value of the '{@link #getCommands() <em>Commands</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCommands()
 	 * @generated
 	 * @ordered
@@ -67,8 +65,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	protected EList<ServiceCommandProvider> commands;
 	/**
 	 * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getComponents()
 	 * @generated
 	 * @ordered
@@ -76,8 +73,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	protected EList<ApplicationComponent> components;
 	/**
 	 * The cached value of the '{@link #getConfig() <em>Config</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getConfig()
 	 * @generated
 	 * @ordered
@@ -85,8 +81,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	protected ServiceConfig config;
 	/**
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -94,8 +89,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	protected ContextRoot context;
 	/**
 	 * The cached value of the '{@link #getContextDescription() <em>Context Description</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getContextDescription()
 	 * @generated
 	 * @ordered
@@ -103,44 +98,43 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	protected ContextDescription contextDescription;
 	/**
 	 * The cached value of the '{@link #getHooks() <em>Hooks</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getHooks()
 	 * @generated
 	 * @ordered
 	 */
 	protected EList<ServiceHook> hooks;
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPort() <em>Port</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getPort() <em>Port</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getPort()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final int PORT_EDEFAULT = 0;
 	/**
-	 * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getPort() <em>Port</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getPort()
 	 * @generated
 	 * @ordered
@@ -148,26 +142,26 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	protected int port = PORT_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getResourceMapping() <em>Resource Mapping</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getResourceMapping()
 	 * @generated
 	 * @ordered
 	 */
 	protected ResourceMapping resourceMapping;
 	/**
-	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getText() <em>Text</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getText()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String TEXT_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getText()
 	 * @generated
 	 * @ordered
@@ -177,9 +171,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ApplicationImpl() {
@@ -187,8 +181,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -197,8 +190,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -210,8 +202,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -223,8 +214,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -247,8 +237,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ServiceConfig basicGetConfig() {
@@ -256,8 +245,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetConfig(ServiceConfig newConfig, NotificationChain msgs) {
@@ -271,8 +259,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -291,8 +278,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -304,8 +290,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -314,8 +299,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -327,8 +311,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -337,8 +320,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -350,8 +332,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -374,8 +355,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ResourceMapping basicGetResourceMapping() {
@@ -383,8 +363,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetResourceMapping(ResourceMapping newResourceMapping, NotificationChain msgs) {
@@ -398,8 +377,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -418,8 +396,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -428,8 +405,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -440,26 +416,24 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__TEXT, oldText, text));
 	}
 
-
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public List<ApplicationComponent> getActiveComponents() {
-		
+
 		List<ApplicationComponent> components = new ArrayList<ApplicationComponent>();
-		for(ApplicationComponent component: this.getComponents())
-			if(component.getStatus() == ComponentStatus.ACTIVE)
+		for (ApplicationComponent component : this.getComponents())
+			if (component.getStatus() == ComponentStatus.ACTIVE)
 				components.add(component);
-		
+
 		return components;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -484,8 +458,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -520,8 +493,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -566,8 +538,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -608,8 +579,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -640,8 +610,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -660,8 +629,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -684,8 +652,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ContextRoot basicGetContext() {
@@ -693,8 +660,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetContext(ContextRoot newContext, NotificationChain msgs) {
@@ -708,8 +674,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -728,8 +693,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -752,8 +716,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ContextDescription basicGetContextDescription() {
@@ -761,8 +724,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetContextDescription(ContextDescription newContextDescription, NotificationChain msgs) {
@@ -776,8 +738,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -795,4 +756,4 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION, newContextDescription, newContextDescription));
 	}
 
-} //ApplicationImpl
+} // ApplicationImpl

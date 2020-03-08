@@ -243,8 +243,12 @@
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getAll.1/filter"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/ContextRoot/getAll.1/T"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getInstallArea"/>
         <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/loadClass">
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/loadClass/name"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/locateBundle">
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/locateBundle/name"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/set">
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/set/name"/>
