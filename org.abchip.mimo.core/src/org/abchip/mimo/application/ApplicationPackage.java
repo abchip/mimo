@@ -120,22 +120,13 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION__CONTEXT_DESCRIPTION = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Home Location</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION__HOME_LOCATION = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Hooks</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__HOOKS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
+	int APPLICATION__HOOKS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -144,7 +135,16 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
+	int APPLICATION__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Paths</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__PATHS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' attribute.
@@ -183,6 +183,52 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationPathsImpl <em>Paths</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.application.impl.ApplicationPathsImpl
+	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationPaths()
+	 * @generated
+	 */
+	int APPLICATION_PATHS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_PATHS__DATA = 0;
+
+	/**
+	 * The feature id for the '<em><b>Logs</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_PATHS__LOGS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Work</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_PATHS__WORK = 2;
+
+	/**
+	 * The number of structural features of the '<em>Paths</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_PATHS_FEATURE_COUNT = 3;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationComponentImpl <em>Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -190,7 +236,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationComponent()
 	 * @generated
 	 */
-	int APPLICATION_COMPONENT = 1;
+	int APPLICATION_COMPONENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Config</b></em>' containment reference.
@@ -272,7 +318,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationManager()
 	 * @generated
 	 */
-	int APPLICATION_MANAGER = 2;
+	int APPLICATION_MANAGER = 3;
 
 	/**
 	 * The number of structural features of the '<em>Manager</em>' class.
@@ -291,7 +337,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationModule()
 	 * @generated
 	 */
-	int APPLICATION_MODULE = 3;
+	int APPLICATION_MODULE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -328,7 +374,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceRef()
 	 * @generated
 	 */
-	int SERVICE_REF = 8;
+	int SERVICE_REF = 9;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -365,7 +411,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceCommandProvider()
 	 * @generated
 	 */
-	int SERVICE_COMMAND_PROVIDER = 4;
+	int SERVICE_COMMAND_PROVIDER = 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceConfigImpl <em>Service Config</em>}' class.
@@ -375,7 +421,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceConfig()
 	 * @generated
 	 */
-	int SERVICE_CONFIG = 5;
+	int SERVICE_CONFIG = 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceHookImpl <em>Service Hook</em>}' class.
@@ -385,7 +431,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceHook()
 	 * @generated
 	 */
-	int SERVICE_HOOK = 6;
+	int SERVICE_HOOK = 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceExecutorImpl <em>Service Executor</em>}' class.
@@ -395,7 +441,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceExecutor()
 	 * @generated
 	 */
-	int SERVICE_EXECUTOR = 7;
+	int SERVICE_EXECUTOR = 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceRegistryImpl <em>Service Registry</em>}' class.
@@ -405,7 +451,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceRegistry()
 	 * @generated
 	 */
-	int SERVICE_REGISTRY = 10;
+	int SERVICE_REGISTRY = 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceRegistryEntryImpl <em>Service Registry Entry</em>}' class.
@@ -415,7 +461,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceRegistryEntry()
 	 * @generated
 	 */
-	int SERVICE_REGISTRY_ENTRY = 11;
+	int SERVICE_REGISTRY_ENTRY = 12;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -551,7 +597,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceFactory()
 	 * @generated
 	 */
-	int SERVICE_FACTORY = 9;
+	int SERVICE_FACTORY = 10;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -705,7 +751,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceServlet()
 	 * @generated
 	 */
-	int SERVICE_SERVLET = 12;
+	int SERVICE_SERVLET = 13;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -760,7 +806,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceTester()
 	 * @generated
 	 */
-	int SERVICE_TESTER = 13;
+	int SERVICE_TESTER = 14;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -806,7 +852,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getComponentStatus()
 	 * @generated
 	 */
-	int COMPONENT_STATUS = 14;
+	int COMPONENT_STATUS = 15;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ServiceStatus <em>Service Status</em>}' enum.
@@ -816,7 +862,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceStatus()
 	 * @generated
 	 */
-	int SERVICE_STATUS = 15;
+	int SERVICE_STATUS = 16;
 
 
 	/**
@@ -885,17 +931,6 @@ public interface ApplicationPackage extends EPackage {
 	EReference getApplication_ContextDescription();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.Application#getHomeLocation <em>Home Location</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Home Location</em>'.
-	 * @see org.abchip.mimo.application.Application#getHomeLocation()
-	 * @see #getApplication()
-	 * @generated
-	 */
-	EAttribute getApplication_HomeLocation();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.application.Application#getHooks <em>Hooks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -916,6 +951,17 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getApplication_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.application.Application#getPaths <em>Paths</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Paths</em>'.
+	 * @see org.abchip.mimo.application.Application#getPaths()
+	 * @see #getApplication()
+	 * @generated
+	 */
+	EReference getApplication_Paths();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.Application#getPort <em>Port</em>}'.
@@ -949,6 +995,49 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getApplication_Text();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.application.ApplicationPaths <em>Paths</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Paths</em>'.
+	 * @see org.abchip.mimo.application.ApplicationPaths
+	 * @generated
+	 */
+	EClass getApplicationPaths();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.ApplicationPaths#getData <em>Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Data</em>'.
+	 * @see org.abchip.mimo.application.ApplicationPaths#getData()
+	 * @see #getApplicationPaths()
+	 * @generated
+	 */
+	EAttribute getApplicationPaths_Data();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.ApplicationPaths#getLogs <em>Logs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Logs</em>'.
+	 * @see org.abchip.mimo.application.ApplicationPaths#getLogs()
+	 * @see #getApplicationPaths()
+	 * @generated
+	 */
+	EAttribute getApplicationPaths_Logs();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.ApplicationPaths#getWork <em>Work</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Work</em>'.
+	 * @see org.abchip.mimo.application.ApplicationPaths#getWork()
+	 * @see #getApplicationPaths()
+	 * @generated
+	 */
+	EAttribute getApplicationPaths_Work();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.application.ApplicationComponent <em>Component</em>}'.
@@ -1448,14 +1537,6 @@ public interface ApplicationPackage extends EPackage {
 		EReference APPLICATION__CONTEXT_DESCRIPTION = eINSTANCE.getApplication_ContextDescription();
 
 		/**
-		 * The meta object literal for the '<em><b>Home Location</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute APPLICATION__HOME_LOCATION = eINSTANCE.getApplication_HomeLocation();
-
-		/**
 		 * The meta object literal for the '<em><b>Hooks</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1470,6 +1551,14 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute APPLICATION__NAME = eINSTANCE.getApplication_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Paths</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION__PATHS = eINSTANCE.getApplication_Paths();
 
 		/**
 		 * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
@@ -1494,6 +1583,40 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute APPLICATION__TEXT = eINSTANCE.getApplication_Text();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ApplicationPathsImpl <em>Paths</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.application.impl.ApplicationPathsImpl
+		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationPaths()
+		 * @generated
+		 */
+		EClass APPLICATION_PATHS = eINSTANCE.getApplicationPaths();
+
+		/**
+		 * The meta object literal for the '<em><b>Data</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APPLICATION_PATHS__DATA = eINSTANCE.getApplicationPaths_Data();
+
+		/**
+		 * The meta object literal for the '<em><b>Logs</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APPLICATION_PATHS__LOGS = eINSTANCE.getApplicationPaths_Logs();
+
+		/**
+		 * The meta object literal for the '<em><b>Work</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APPLICATION_PATHS__WORK = eINSTANCE.getApplicationPaths_Work();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ApplicationComponentImpl <em>Component</em>}' class.

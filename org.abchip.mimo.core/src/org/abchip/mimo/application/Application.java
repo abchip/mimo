@@ -28,9 +28,9 @@ import org.abchip.mimo.resource.ResourceMapping;
  *   <li>{@link org.abchip.mimo.application.Application#getConfig <em>Config</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getContext <em>Context</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getContextDescription <em>Context Description</em>}</li>
- *   <li>{@link org.abchip.mimo.application.Application#getHomeLocation <em>Home Location</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getHooks <em>Hooks</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.Application#getPaths <em>Paths</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getPort <em>Port</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getResourceMapping <em>Resource Mapping</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getText <em>Text</em>}</li>
@@ -152,32 +152,6 @@ public interface Application extends EntityIdentifiable {
 	void setContextDescription(ContextDescription value);
 
 	/**
-	 * Returns the value of the '<em><b>Home Location</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Home Location</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Home Location</em>' attribute.
-	 * @see #setHomeLocation(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_HomeLocation()
-	 * @model
-	 * @generated
-	 */
-	String getHomeLocation();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.Application#getHomeLocation <em>Home Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Home Location</em>' attribute.
-	 * @see #getHomeLocation()
-	 * @generated
-	 */
-	void setHomeLocation(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Hooks</b></em>' containment reference list.
 	 * The list contents are of type {@link org.abchip.mimo.application.ServiceHook}.
 	 * <!-- begin-user-doc -->
@@ -218,6 +192,32 @@ public interface Application extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Paths</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Paths</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Paths</em>' containment reference.
+	 * @see #setPaths(ApplicationPaths)
+	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_Paths()
+	 * @model containment="true" resolveProxies="true" required="true"
+	 * @generated
+	 */
+	ApplicationPaths getPaths();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.application.Application#getPaths <em>Paths</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Paths</em>' containment reference.
+	 * @see #getPaths()
+	 * @generated
+	 */
+	void setPaths(ApplicationPaths value);
 
 	/**
 	 * Returns the value of the '<em><b>Port</b></em>' attribute.

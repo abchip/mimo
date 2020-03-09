@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationManager;
 import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.context.ContextRoot;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -90,14 +91,16 @@ public class E4EquinoxApplicationImpl implements IApplication {
 
 		if (applicationPort != null)
 			application.setPort(Integer.parseInt(applicationPort));
-		
+
 		// Start application
 		// context
 		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
 		BundleContext bundleContext = bundle.getBundleContext();
 		E4ContextRootImpl contextApplication = new E4ContextRootImpl(bundleContext, application.getContextDescription());
 		contextApplication.set(Application.class, application);
+		contextApplication.set(ApplicationPaths.class, application.getPaths());
 		contextApplication.set(ContextRoot.class, contextApplication);
+
 		application.setContext(contextApplication);
 
 		doStart(application);
@@ -107,28 +110,28 @@ public class E4EquinoxApplicationImpl implements IApplication {
 		applicationManager = bundleContext.getService(applicationManagerReference);
 
 		System.out.println("Starting " + application);
-		applicationManager.start(this.getClass(), application, System.out);		
+		applicationManager.start(this.getClass(), application, System.out);
 
 		return waitForStopOrRestart();
 	}
 
-	protected void doStart(Application application) {
+	protected void doStart(Application application) throws Exception {
 
 	}
-	
+
 	private Object waitForStopOrRestart() {
 		while (true) {
 			try {
 				TimeUnit.MILLISECONDS.sleep(1000);
 				if (applicationManager == null)
 					continue;
-				
-//				if (applicationManager.restart(application))
-//					return EXIT_RESTART;
-//				if ()
-//					
+
+				// if (applicationManager.restart(application))
+				// return EXIT_RESTART;
+				// if ()
+				//
 			} catch (InterruptedException e) {
-				applicationManager.stop(application);				
+				applicationManager.stop(application);
 				return EXIT_OK;
 			}
 		}

@@ -15,6 +15,7 @@ import org.abchip.mimo.application.ApplicationFactory;
 import org.abchip.mimo.application.ApplicationManager;
 import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.application.ComponentStatus;
 import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceConfig;
@@ -76,6 +77,13 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	private EClass applicationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass applicationPathsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -339,18 +347,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getApplication_HomeLocation() {
-		return (EAttribute)applicationEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getApplication_Hooks() {
-		return (EReference)applicationEClass.getEStructuralFeatures().get(6);
+		return (EReference)applicationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -360,7 +358,17 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 */
 	@Override
 	public EAttribute getApplication_Name() {
-		return (EAttribute)applicationEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)applicationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getApplication_Paths() {
+		return (EReference)applicationEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -391,6 +399,46 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	@Override
 	public EAttribute getApplication_Text() {
 		return (EAttribute)applicationEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getApplicationPaths() {
+		return applicationPathsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getApplicationPaths_Data() {
+		return (EAttribute)applicationPathsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getApplicationPaths_Logs() {
+		return (EAttribute)applicationPathsEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getApplicationPaths_Work() {
+		return (EAttribute)applicationPathsEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -828,12 +876,17 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEReference(applicationEClass, APPLICATION__CONFIG);
 		createEReference(applicationEClass, APPLICATION__CONTEXT);
 		createEReference(applicationEClass, APPLICATION__CONTEXT_DESCRIPTION);
-		createEAttribute(applicationEClass, APPLICATION__HOME_LOCATION);
 		createEReference(applicationEClass, APPLICATION__HOOKS);
 		createEAttribute(applicationEClass, APPLICATION__NAME);
+		createEReference(applicationEClass, APPLICATION__PATHS);
 		createEAttribute(applicationEClass, APPLICATION__PORT);
 		createEReference(applicationEClass, APPLICATION__RESOURCE_MAPPING);
 		createEAttribute(applicationEClass, APPLICATION__TEXT);
+
+		applicationPathsEClass = createEClass(APPLICATION_PATHS);
+		createEAttribute(applicationPathsEClass, APPLICATION_PATHS__DATA);
+		createEAttribute(applicationPathsEClass, APPLICATION_PATHS__LOGS);
+		createEAttribute(applicationPathsEClass, APPLICATION_PATHS__WORK);
 
 		applicationComponentEClass = createEClass(APPLICATION_COMPONENT);
 		createEReference(applicationComponentEClass, APPLICATION_COMPONENT__CONFIG);
@@ -946,14 +999,19 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEReference(getApplication_Config(), this.getServiceConfig(), null, "config", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Context(), theContextPackage.getContextRoot(), null, "context", null, 0, 1, Application.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_ContextDescription(), theContextPackage.getContextDescription(), null, "contextDescription", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getApplication_HomeLocation(), ecorePackage.getEString(), "homeLocation", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Hooks(), this.getServiceHook(), null, "hooks", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_Name(), ecorePackage.getEString(), "name", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplication_Paths(), this.getApplicationPaths(), null, "paths", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_Port(), ecorePackage.getEInt(), "port", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_ResourceMapping(), theResourcePackage.getResourceMapping(), null, "resourceMapping", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_Text(), ecorePackage.getEString(), "text", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(applicationEClass, this.getApplicationComponent(), "getActiveComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(applicationPathsEClass, ApplicationPaths.class, "ApplicationPaths", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getApplicationPaths_Data(), ecorePackage.getEString(), "data", null, 1, 1, ApplicationPaths.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApplicationPaths_Logs(), ecorePackage.getEString(), "logs", null, 1, 1, ApplicationPaths.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApplicationPaths_Work(), ecorePackage.getEString(), "work", null, 1, 1, ApplicationPaths.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(applicationComponentEClass, ApplicationComponent.class, "ApplicationComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getApplicationComponent_Config(), this.getServiceConfig(), null, "config", null, 0, 1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

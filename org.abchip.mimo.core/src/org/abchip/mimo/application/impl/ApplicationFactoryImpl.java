@@ -63,6 +63,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ApplicationPackage.APPLICATION: return (EObject)createApplication();
+			case ApplicationPackage.APPLICATION_PATHS: return (EObject)createApplicationPaths();
 			case ApplicationPackage.APPLICATION_COMPONENT: return (EObject)createApplicationComponent();
 			case ApplicationPackage.APPLICATION_MODULE: return (EObject)createApplicationModule();
 			case ApplicationPackage.SERVICE_COMMAND_PROVIDER: return (EObject)createServiceCommandProvider();
@@ -122,6 +123,17 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public Application createApplication() {
 		ApplicationImpl application = new ApplicationImpl();
 		return application;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ApplicationPaths createApplicationPaths() {
+		ApplicationPathsImpl applicationPaths = new ApplicationPathsImpl();
+		return applicationPaths;
 	}
 
 	/**

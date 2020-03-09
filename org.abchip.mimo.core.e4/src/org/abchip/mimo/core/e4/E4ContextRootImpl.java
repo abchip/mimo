@@ -8,11 +8,15 @@
  */
 package org.abchip.mimo.core.e4;
 
+import java.io.IOException;
 import java.net.URI;
+import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Dictionary;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.UUID;
 
@@ -106,16 +110,15 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		for (Bundle bundle : getBundleContext().getBundles()) {
 			if (!bundle.getSymbolicName().equals(name))
 				continue;
-			
+
 			location = bundle.getLocation();
 			break;
 		}
-		
+
 		location = location.replaceFirst("reference:file:", "");
-		if(location.startsWith("/"))
+		if (location.startsWith("/"))
 			return location;
-		
-		
+
 		return Paths.get(this.getInstallArea(), location).toString();
 	}
 
@@ -211,5 +214,33 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		}
 
 		return contextChild;
+	}
+
+	@Override
+	public URL getResource(String path) {
+
+		URL resource = null;
+
+		for (Bundle bundle : getBundleContext().getBundles()) {
+			resource = bundle.getResource(path);
+			if (resource != null)
+				break;
+		}
+
+		return resource;
+	}
+
+	@Override
+	public List<URL> getResources(String path) throws IOException {
+
+		List<URL> resources = new ArrayList<URL>();
+
+		for (Bundle bundle : getBundleContext().getBundles()) {
+			Enumeration<URL> urls = bundle.getResources(path);
+			if(urls != null)
+				resources.addAll(Collections.list(urls));
+		}
+
+		return resources;
 	}
 }

@@ -16,15 +16,24 @@
           transient="true" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="contextDescription" lowerBound="1"
           eType="#//context/ContextDescription" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="homeLocation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hooks" upperBound="-1"
           eType="#//application/ServiceHook" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="paths" lowerBound="1"
+          eType="#//application/ApplicationPaths" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceMapping" lowerBound="1"
           eType="#//resource/ResourceMapping" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationPaths">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="logs" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="work" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ApplicationComponent" eSuperTypes="#//entity/EntityIdentifiable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="config" eType="#//application/ServiceConfig"
@@ -344,6 +353,12 @@
         <eParameters name="filter" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getInstallArea" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getResource" eType="#//java/JavaURL" eExceptions="#//java/JavaIOException">
+        <eParameters name="path" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="getResources" upperBound="-1" eType="#//java/JavaURL" eExceptions="#//java/JavaIOException">
+        <eParameters name="path" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
       <eOperations name="loadClass" lowerBound="1">
         <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
           <eTypeArguments/>

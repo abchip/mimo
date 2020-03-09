@@ -37,6 +37,15 @@ public interface ApplicationFactory extends EFactory {
 	Application createApplication();
 
 	/**
+	 * Returns a new object of class '<em>Paths</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Paths</em>'.
+	 * @generated
+	 */
+	ApplicationPaths createApplicationPaths();
+
+	/**
 	 * Returns a new object of class '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

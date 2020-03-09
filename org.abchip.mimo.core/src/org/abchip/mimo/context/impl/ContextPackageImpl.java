@@ -1456,6 +1456,14 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		addEOperation(contextRootEClass, ecorePackage.getEString(), "getInstallArea", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(contextRootEClass, theJavaPackage.getJavaURL(), "getResource", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "path", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theJavaPackage.getJavaIOException());
+
+		op = addEOperation(contextRootEClass, theJavaPackage.getJavaURL(), "getResources", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "path", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theJavaPackage.getJavaIOException());
+
 		op = addEOperation(contextRootEClass, null, "loadClass", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());

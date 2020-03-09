@@ -27,13 +27,18 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/config"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/context"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/contextDescription"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/homeLocation"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/hooks"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/paths"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/port"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/resourceMapping"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/text"/>
         <genOperations ecoreOperation="mimo.ecore#//application/Application/getActiveComponents"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//application/ApplicationPaths">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationPaths/data"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationPaths/logs"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationPaths/work"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//application/ApplicationComponent">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ApplicationComponent/config"/>
@@ -244,6 +249,12 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/ContextRoot/getAll.1/T"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getInstallArea"/>
+        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getResource">
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getResource/path"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getResources">
+          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getResources/path"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/loadClass">
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/loadClass/name"/>
         </genOperations>

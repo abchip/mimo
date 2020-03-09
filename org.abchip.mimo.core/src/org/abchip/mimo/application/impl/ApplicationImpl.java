@@ -15,6 +15,7 @@ import java.util.List;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationComponent;
 import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.application.ComponentStatus;
 import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceConfig;
@@ -45,9 +46,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getConfig <em>Config</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getContext <em>Context</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getContextDescription <em>Context Description</em>}</li>
- *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getHomeLocation <em>Home Location</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getHooks <em>Hooks</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getPaths <em>Paths</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getPort <em>Port</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getResourceMapping <em>Resource Mapping</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getText <em>Text</em>}</li>
@@ -98,24 +99,6 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 */
 	protected ContextDescription contextDescription;
 	/**
-	 * The default value of the '{@link #getHomeLocation() <em>Home Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHomeLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HOME_LOCATION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getHomeLocation() <em>Home Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHomeLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected String homeLocation = HOME_LOCATION_EDEFAULT;
-	/**
 	 * The cached value of the '{@link #getHooks() <em>Hooks</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getHooks()
@@ -141,6 +124,15 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaths() <em>Paths</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaths()
+	 * @generated
+	 * @ordered
+	 */
+	protected ApplicationPaths paths;
 	/**
 	 * The default value of the '{@link #getPort() <em>Port</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -330,6 +322,74 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ApplicationPaths getPaths() {
+		if (paths != null && ((EObject)paths).eIsProxy()) {
+			InternalEObject oldPaths = (InternalEObject)paths;
+			paths = (ApplicationPaths)eResolveProxy(oldPaths);
+			if (paths != oldPaths) {
+				InternalEObject newPaths = (InternalEObject)paths;
+				NotificationChain msgs = oldPaths.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__PATHS, null, null);
+				if (newPaths.eInternalContainer() == null) {
+					msgs = newPaths.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__PATHS, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION__PATHS, oldPaths, paths));
+			}
+		}
+		return paths;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ApplicationPaths basicGetPaths() {
+		return paths;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPaths(ApplicationPaths newPaths, NotificationChain msgs) {
+		ApplicationPaths oldPaths = paths;
+		paths = newPaths;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__PATHS, oldPaths, newPaths);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPaths(ApplicationPaths newPaths) {
+		if (newPaths != paths) {
+			NotificationChain msgs = null;
+			if (paths != null)
+				msgs = ((InternalEObject)paths).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__PATHS, null, msgs);
+			if (newPaths != null)
+				msgs = ((InternalEObject)newPaths).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__PATHS, null, msgs);
+			msgs = basicSetPaths(newPaths, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__PATHS, newPaths, newPaths));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -470,6 +530,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return basicSetContextDescription(null, msgs);
 			case ApplicationPackage.APPLICATION__HOOKS:
 				return ((InternalEList<?>)getHooks()).basicRemove(otherEnd, msgs);
+			case ApplicationPackage.APPLICATION__PATHS:
+				return basicSetPaths(null, msgs);
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
 				return basicSetResourceMapping(null, msgs);
 		}
@@ -496,12 +558,13 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
 				if (resolve) return getContextDescription();
 				return basicGetContextDescription();
-			case ApplicationPackage.APPLICATION__HOME_LOCATION:
-				return getHomeLocation();
 			case ApplicationPackage.APPLICATION__HOOKS:
 				return getHooks();
 			case ApplicationPackage.APPLICATION__NAME:
 				return getName();
+			case ApplicationPackage.APPLICATION__PATHS:
+				if (resolve) return getPaths();
+				return basicGetPaths();
 			case ApplicationPackage.APPLICATION__PORT:
 				return getPort();
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
@@ -538,15 +601,15 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
 				setContextDescription((ContextDescription)newValue);
 				return;
-			case ApplicationPackage.APPLICATION__HOME_LOCATION:
-				setHomeLocation((String)newValue);
-				return;
 			case ApplicationPackage.APPLICATION__HOOKS:
 				getHooks().clear();
 				getHooks().addAll((Collection<? extends ServiceHook>)newValue);
 				return;
 			case ApplicationPackage.APPLICATION__NAME:
 				setName((String)newValue);
+				return;
+			case ApplicationPackage.APPLICATION__PATHS:
+				setPaths((ApplicationPaths)newValue);
 				return;
 			case ApplicationPackage.APPLICATION__PORT:
 				setPort((Integer)newValue);
@@ -583,14 +646,14 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
 				setContextDescription((ContextDescription)null);
 				return;
-			case ApplicationPackage.APPLICATION__HOME_LOCATION:
-				setHomeLocation(HOME_LOCATION_EDEFAULT);
-				return;
 			case ApplicationPackage.APPLICATION__HOOKS:
 				getHooks().clear();
 				return;
 			case ApplicationPackage.APPLICATION__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case ApplicationPackage.APPLICATION__PATHS:
+				setPaths((ApplicationPaths)null);
 				return;
 			case ApplicationPackage.APPLICATION__PORT:
 				setPort(PORT_EDEFAULT);
@@ -622,12 +685,12 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return context != null;
 			case ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION:
 				return contextDescription != null;
-			case ApplicationPackage.APPLICATION__HOME_LOCATION:
-				return HOME_LOCATION_EDEFAULT == null ? homeLocation != null : !HOME_LOCATION_EDEFAULT.equals(homeLocation);
 			case ApplicationPackage.APPLICATION__HOOKS:
 				return hooks != null && !hooks.isEmpty();
 			case ApplicationPackage.APPLICATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ApplicationPackage.APPLICATION__PATHS:
+				return paths != null;
 			case ApplicationPackage.APPLICATION__PORT:
 				return port != PORT_EDEFAULT;
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
@@ -647,9 +710,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (homeLocation: ");
-		result.append(homeLocation);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(", port: ");
 		result.append(port);
@@ -785,29 +846,6 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__CONTEXT_DESCRIPTION, newContextDescription, newContextDescription));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getHomeLocation() {
-		return homeLocation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setHomeLocation(String newHomeLocation) {
-		String oldHomeLocation = homeLocation;
-		homeLocation = newHomeLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__HOME_LOCATION, oldHomeLocation, homeLocation));
 	}
 
 } // ApplicationImpl

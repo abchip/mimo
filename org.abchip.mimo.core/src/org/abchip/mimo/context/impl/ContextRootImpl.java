@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.context.impl;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.Dictionary;
 import java.util.List;
 import org.abchip.mimo.context.Context;
@@ -96,6 +98,30 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	 */
 	@Override
 	public String getInstallArea() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public URL getResource(String path) throws IOException {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<URL> getResources(String path) throws IOException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
