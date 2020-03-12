@@ -10,8 +10,7 @@ Require-Bundle: org.abchip.mimo.core,
  org.eclipse.e4.core.di,
  org.eclipse.osgi,
  org.eclipse.equinox.app,
- org.abchip.mimo.core.base,
- javax.annotation
+ org.abchip.mimo.core.base
 Export-Package: org.abchip.mimo.core.e4
 Bundle-ClassPath: .
 Bundle-Activator: org.abchip.mimo.core.e4.E4Activator
