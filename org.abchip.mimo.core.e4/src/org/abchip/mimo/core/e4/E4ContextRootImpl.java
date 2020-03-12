@@ -172,15 +172,15 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		if (resource != null)
 			return resource;
 
-//		System.err.print("resource: " + path);
+		// System.err.print("resource: " + path);
 		for (Bundle bundle : getBundleContext().getBundles()) {
 			resource = bundle.getResource(path);
 			if (resource != null) {
-//				System.err.print(" found on: " + bundle.getSymbolicName());
+				// System.err.print(" found on: " + bundle.getSymbolicName());
 				break;
 			}
 		}
-//		System.err.println();
+		// System.err.println();
 
 		return resource;
 	}
@@ -194,7 +194,7 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		if (urls != null && urls.hasMoreElements())
 			return Collections.list(urls);
 
-//		System.err.print("resources: " + path);
+		// System.err.print("resources: " + path);
 		for (Bundle bundle : getBundleContext().getBundles()) {
 			if (getBundleContext().getBundle().equals(bundle))
 				continue;
@@ -202,10 +202,10 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 			urls = bundle.getResources(path);
 			if (urls != null) {
 				resources.addAll(Collections.list(urls));
-//				System.err.print(" found on: " + bundle.getSymbolicName());
+				// System.err.print(" found on: " + bundle.getSymbolicName());
 			}
 		}
-//		System.err.println();
+		// System.err.println();
 
 		return resources;
 	}
@@ -237,17 +237,17 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 			} catch (ClassNotFoundException e) {
 			}
 
-//			System.err.print("load: " + className);
+			// System.err.print("load: " + className);
 			for (Bundle bundle : getBundleContext().getBundles()) {
 				try {
 					klass = bundle.loadClass(className);
-//					System.err.print(" found on: " + bundle.getSymbolicName());
+					// System.err.print(" found on: " + bundle.getSymbolicName());
 					break;
 				} catch (ClassNotFoundException e) {
 					continue;
 				}
 			}
-//			System.err.println();
+			// System.err.println();
 		}
 
 		return klass;
@@ -266,9 +266,10 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		}
 
 		location = location.replaceFirst("reference:file:", "");
-		if (location.startsWith("/"))
+		if (location.startsWith("plugins/"))
+			return Paths.get(this.getInstallArea(), location).toString();
+		else
 			return location;
 
-		return Paths.get(this.getInstallArea(), location).toString();
 	}
 }
