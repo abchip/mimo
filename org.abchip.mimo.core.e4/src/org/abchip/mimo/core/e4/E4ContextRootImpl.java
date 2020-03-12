@@ -70,59 +70,6 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	}
 
 	@Override
-	public Class<?> loadClass(String className) {
-
-		Class<?> klass = null;
-
-		if (className.startsWith(MimoConstants.SCHEME_NAME + ":")) {
-			URI uri = URI.create(className);
-			String tokens[] = uri.getPath().split("/");
-			if (tokens[1].equals("bundle")) {
-				for (Bundle bundle : getBundleContext().getBundles()) {
-					if (bundle.getSymbolicName().equals(tokens[2])) {
-						try {
-							klass = bundle.loadClass(tokens[3]);
-							break;
-						} catch (ClassNotFoundException e) {
-							e.printStackTrace();
-						}
-					}
-				}
-			}
-		} else {
-			for (Bundle bundle : getBundleContext().getBundles()) {
-				try {
-					klass = bundle.loadClass(className);
-					break;
-				} catch (ClassNotFoundException e) {
-					continue;
-				}
-			}
-		}
-
-		return klass;
-	}
-
-	@Override
-	public String locateBundle(String name) {
-
-		String location = null;
-		for (Bundle bundle : getBundleContext().getBundles()) {
-			if (!bundle.getSymbolicName().equals(name))
-				continue;
-
-			location = bundle.getLocation();
-			break;
-		}
-
-		location = location.replaceFirst("reference:file:", "");
-		if (location.startsWith("/"))
-			return location;
-
-		return Paths.get(this.getInstallArea(), location).toString();
-	}
-
-	@Override
 	public void set(String name, Object object, boolean remoteExport, Dictionary<String, String> dictionary) {
 
 		if (remoteExport) {
@@ -221,11 +168,19 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 
 		URL resource = null;
 
+		resource = getBundleContext().getBundle().getResource(path);
+		if (resource != null)
+			return resource;
+
+//		System.err.print("resource: " + path);
 		for (Bundle bundle : getBundleContext().getBundles()) {
 			resource = bundle.getResource(path);
-			if (resource != null)
+			if (resource != null) {
+//				System.err.print(" found on: " + bundle.getSymbolicName());
 				break;
+			}
 		}
+//		System.err.println();
 
 		return resource;
 	}
@@ -235,12 +190,85 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 
 		List<URL> resources = new ArrayList<URL>();
 
+		Enumeration<URL> urls = getBundleContext().getBundle().getResources(path);
+		if (urls != null && urls.hasMoreElements())
+			return Collections.list(urls);
+
+//		System.err.print("resources: " + path);
 		for (Bundle bundle : getBundleContext().getBundles()) {
-			Enumeration<URL> urls = bundle.getResources(path);
-			if(urls != null)
+			if (getBundleContext().getBundle().equals(bundle))
+				continue;
+
+			urls = bundle.getResources(path);
+			if (urls != null) {
 				resources.addAll(Collections.list(urls));
+//				System.err.print(" found on: " + bundle.getSymbolicName());
+			}
 		}
+//		System.err.println();
 
 		return resources;
+	}
+
+	@Override
+	public Class<?> loadClass(String className) {
+
+		Class<?> klass = null;
+
+		if (className.startsWith(MimoConstants.SCHEME_NAME + ":")) {
+			URI uri = URI.create(className);
+			String tokens[] = uri.getPath().split("/");
+			if (tokens[1].equals("bundle")) {
+				for (Bundle bundle : getBundleContext().getBundles()) {
+					if (bundle.getSymbolicName().equals(tokens[2])) {
+						try {
+							klass = bundle.loadClass(tokens[3]);
+							break;
+						} catch (ClassNotFoundException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			}
+		} else {
+			try {
+				klass = getBundleContext().getBundle().loadClass(className);
+				return klass;
+			} catch (ClassNotFoundException e) {
+			}
+
+//			System.err.print("load: " + className);
+			for (Bundle bundle : getBundleContext().getBundles()) {
+				try {
+					klass = bundle.loadClass(className);
+//					System.err.print(" found on: " + bundle.getSymbolicName());
+					break;
+				} catch (ClassNotFoundException e) {
+					continue;
+				}
+			}
+//			System.err.println();
+		}
+
+		return klass;
+	}
+
+	@Override
+	public String locateBundle(String name) {
+
+		String location = null;
+		for (Bundle bundle : getBundleContext().getBundles()) {
+			if (!bundle.getSymbolicName().equals(name))
+				continue;
+
+			location = bundle.getLocation();
+			break;
+		}
+
+		location = location.replaceFirst("reference:file:", "");
+		if (location.startsWith("/"))
+			return location;
+
+		return Paths.get(this.getInstallArea(), location).toString();
 	}
 }
