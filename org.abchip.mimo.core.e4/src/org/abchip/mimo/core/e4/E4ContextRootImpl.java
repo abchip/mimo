@@ -268,8 +268,14 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		location = location.replaceFirst("reference:file:", "");
 		if (location.startsWith("plugins/"))
 			return Paths.get(this.getInstallArea(), location).toString();
-		else
+		else {
+			String osName = System.getProperty("os.name");
+			String osNameMatch = osName.toLowerCase();
+			if(osNameMatch.contains("windows")) {
+				location = location.replaceFirst("/", "");
+			}
+			 
 			return location;
-
+		}
 	}
 }
