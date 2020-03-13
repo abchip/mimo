@@ -6,11 +6,11 @@ Bundle-Version: 0.2.0.qualifier
 Bundle-Vendor: ABChip
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.abchip.mimo.core,
+ org.abchip.mimo.core.base,
  org.eclipse.e4.core.contexts,
  org.eclipse.e4.core.di,
  org.eclipse.osgi,
- org.eclipse.equinox.app,
- org.abchip.mimo.core.base
+ org.eclipse.equinox.app
 Export-Package: org.abchip.mimo.core.e4
 Bundle-ClassPath: .
 Bundle-Activator: org.abchip.mimo.core.e4.E4Activator

@@ -20,9 +20,10 @@ Require-Bundle: org.abchip.mimo.core,
  com.fasterxml.jackson.core.jackson-core,
  com.fasterxml.jackson.core.jackson-databind,
  org.apache.httpcomponents.httpclient,
- org.apache.httpcomponents.httpcore,
- javax.servlet;bundle-version="3.1.0"
-Import-Package: org.osgi.framework,
+ org.apache.httpcomponents.httpcore
+Import-Package: javax.servlet,
+ javax.servlet.http,
+ org.osgi.framework,
  org.osgi.service.http
 Export-Package: org.abchip.mimo.core.http,
  org.abchip.mimo.core.http.servlet
