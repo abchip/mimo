@@ -60,7 +60,6 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 	@Override
 	public <T> T make(Class<T> clazz) {
-
 		IEclipseContext eclipseContext = getEclipseContext();
 		T object = ContextInjectionFactory.make(clazz, eclipseContext);
 
