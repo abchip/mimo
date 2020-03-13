@@ -245,7 +245,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 		if (bundle == null)
 			return null;
 
-		Enumeration<URL> resources = bundle.getResources(path);
+		Enumeration<URL> resources = bundle.findEntries(path, null, false);
 
 		return Collections.list(resources);
 	}

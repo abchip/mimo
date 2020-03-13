@@ -190,7 +190,7 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 
 		List<URL> resources = new ArrayList<URL>();
 
-		Enumeration<URL> urls = getBundleContext().getBundle().getResources(path);
+		Enumeration<URL> urls = getBundleContext().getBundle().findEntries(path, null, false);
 		if (urls != null && urls.hasMoreElements())
 			return Collections.list(urls);
 
@@ -199,7 +199,7 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 			if (getBundleContext().getBundle().equals(bundle))
 				continue;
 
-			urls = bundle.getResources(path);
+			urls = bundle.findEntries(path, null, false);
 			if (urls != null) {
 				resources.addAll(Collections.list(urls));
 				// System.err.print(" found on: " + bundle.getSymbolicName());
