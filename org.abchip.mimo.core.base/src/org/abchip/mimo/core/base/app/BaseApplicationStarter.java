@@ -77,7 +77,7 @@ public class BaseApplicationStarter {
 		messageLevel++;
 		Dictionary<String, String> properties = new Hashtable<String, String>();
 		properties.put("org.abchip.mimo.application.hook.application", application.getName());
-		applicationHooks = registerHooks(application.getContext(), application.getHooks(), properties);
+		applicationHooks = registerHooks(application.getContext(), application.getContext(), application.getHooks(), properties);
 		for (Object hook : applicationHooks) {
 			println("!application starting " + hook);
 			application.getContext().invoke(hook, ApplicationStarting.class);
@@ -128,7 +128,7 @@ public class BaseApplicationStarter {
 		messageLevel++;
 		Dictionary<String, String> properties = new Hashtable<String, String>();
 		properties.put("org.abchip.mimo.application.hook.component", component.getName());
-		List<Object> componentHooks = registerHooks(application.getContext(), component.getHooks(), properties);
+		List<Object> componentHooks = registerHooks(application.getContext(), componentContext, component.getHooks(), properties);
 		componentMapHooks.put(component.getName(), componentHooks);
 		for (Object hook : componentHooks) {
 			println("!component starting " + hook);
@@ -169,7 +169,7 @@ public class BaseApplicationStarter {
 		messageLevel--;
 	}
 
-	private List<Object> registerHooks(ContextRoot context, List<ServiceHook> hooks, Dictionary<String, String> properties) {
+	private List<Object> registerHooks(ContextRoot contextRoot, Context contextChild, List<ServiceHook> hooks, Dictionary<String, String> properties) {
 
 		List<Object> services = new ArrayList<Object>();
 		for (ServiceHook hook : hooks) {
@@ -180,8 +180,8 @@ public class BaseApplicationStarter {
 			}
 
 			println("+hook " + hook);
-			Object service = loadObject(context, hook.getClassName());
-			context.set(hook.getInterfaceName(), service, false, properties);
+			Object service = loadObject(contextChild, hook.getClassName());
+			contextRoot.set(hook.getInterfaceName(), service, false, properties);
 			services.add(service);
 		}
 
@@ -193,7 +193,7 @@ public class BaseApplicationStarter {
 			context.set(entity.getClass().getInterfaces()[0].getName(), entity);
 	}
 
-	private List<Object> registerCommands(ContextRoot contextRoot, Context context, List<ServiceCommandProvider> commandProviders) {
+	private List<Object> registerCommands(ContextRoot contextRoot, Context contextChild, List<ServiceCommandProvider> commandProviders) {
 
 		List<Object> commands = new ArrayList<Object>();
 		for (ServiceCommandProvider command : commandProviders) {
@@ -203,7 +203,7 @@ public class BaseApplicationStarter {
 			}
 
 			println("+command " + command);
-			Object service = loadObject(context, command.getClassName());
+			Object service = loadObject(contextChild, command.getClassName());
 			contextRoot.set(command.getInterfaceName(), service, false, null);
 			commands.add(service);
 		}
