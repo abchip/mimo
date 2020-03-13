@@ -12,12 +12,12 @@ Require-Bundle: org.abchip.mimo.core,
  com.fasterxml.jackson.core.jackson-databind,
  com.fasterxml.jackson.core.jackson-core,
  com.fasterxml.jackson.core.jackson-annotations,
- org.eclipse.osgi,
- javax.servlet;bundle-version="3.1.0"
+ org.eclipse.osgi
 Bundle-ClassPath: .,
  lib/json-1.8.jar
 Export-Package: org.abchip.mimo.core.base,
  org.abchip.mimo.core.base.app,
  org.abchip.mimo.core.base.nio,
  org.abchip.mimo.core.base.util
-Import-Package: org.osgi.service.http
+Import-Package: javax.servlet,
+ org.osgi.service.http
