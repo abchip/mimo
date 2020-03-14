@@ -6,7 +6,8 @@ Bundle-Version: 0.2.0.qualifier
 Bundle-Vendor: ABChip
 Automatic-Module-Name: org.abchip.mimo.edi.base
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.abchip.mimo.core.base,
+Require-Bundle: org.abchip.mimo.core,
+ org.abchip.mimo.core.base,
  org.abchip.mimo.edi,
  org.eclipse.osgi
 Export-Package: org.abchip.mimo.edi.base
