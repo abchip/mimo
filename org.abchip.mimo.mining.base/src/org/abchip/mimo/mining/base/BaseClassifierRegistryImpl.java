@@ -39,10 +39,4 @@ public class BaseClassifierRegistryImpl implements ClassifierRegistry {
 	public Classifier lookupByVendorVersion(String vendor, String version) {
 		return this.registry.lookupByVendorVersion(vendor, version);
 	}
-
-	@Override
-	public Classifier lookupByPort(int port) {
-		return registry.lookupByPort(port);
-	}
-
 }

@@ -46,9 +46,4 @@ public class BaseDefinitionParserRegistryImpl implements DefinitionParserRegistr
 	public DefinitionParser lookupByVendorVersion(String vendor, String version) {
 		return this.registry.lookupByVendorVersion(vendor, version);
 	}
-
-	@Override
-	public DefinitionParser lookupByPort(int port) {
-		return registry.lookupByPort(port);
-	}
 }

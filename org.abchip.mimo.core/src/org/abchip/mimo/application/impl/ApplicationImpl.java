@@ -41,6 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getAdminKey <em>Admin Key</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getCommands <em>Commands</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getComponents <em>Components</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getConfig <em>Config</em>}</li>
@@ -49,7 +50,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getHooks <em>Hooks</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getPaths <em>Paths</em>}</li>
- *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getPort <em>Port</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getResourceMapping <em>Resource Mapping</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getText <em>Text</em>}</li>
  * </ul>
@@ -57,6 +57,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ApplicationImpl extends EntityIdentifiableImpl implements Application {
+	/**
+	 * The default value of the '{@link #getAdminKey() <em>Admin Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdminKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ADMIN_KEY_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getAdminKey() <em>Admin Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdminKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected String adminKey = ADMIN_KEY_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getCommands() <em>Commands</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -134,24 +152,6 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 */
 	protected ApplicationPaths paths;
 	/**
-	 * The default value of the '{@link #getPort() <em>Port</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getPort()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int PORT_EDEFAULT = 0;
-	/**
-	 * The cached value of the '{@link #getPort() <em>Port</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getPort()
-	 * @generated
-	 * @ordered
-	 */
-	protected int port = PORT_EDEFAULT;
-	/**
 	 * The cached value of the '{@link #getResourceMapping() <em>Resource Mapping</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
@@ -198,6 +198,29 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	@Override
 	protected EClass eStaticClass() {
 		return ApplicationPackage.Literals.APPLICATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getAdminKey() {
+		return adminKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAdminKey(String newAdminKey) {
+		String oldAdminKey = adminKey;
+		adminKey = newAdminKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__ADMIN_KEY, oldAdminKey, adminKey));
 	}
 
 	/**
@@ -394,27 +417,6 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * @generated
 	 */
 	@Override
-	public int getPort() {
-		return port;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setPort(int newPort) {
-		int oldPort = port;
-		port = newPort;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__PORT, oldPort, port));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ResourceMapping getResourceMapping() {
 		if (resourceMapping != null && ((EObject)resourceMapping).eIsProxy()) {
 			InternalEObject oldResourceMapping = (InternalEObject)resourceMapping;
@@ -545,6 +547,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ApplicationPackage.APPLICATION__ADMIN_KEY:
+				return getAdminKey();
 			case ApplicationPackage.APPLICATION__COMMANDS:
 				return getCommands();
 			case ApplicationPackage.APPLICATION__COMPONENTS:
@@ -565,8 +569,6 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__PATHS:
 				if (resolve) return getPaths();
 				return basicGetPaths();
-			case ApplicationPackage.APPLICATION__PORT:
-				return getPort();
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
 				if (resolve) return getResourceMapping();
 				return basicGetResourceMapping();
@@ -584,6 +586,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ApplicationPackage.APPLICATION__ADMIN_KEY:
+				setAdminKey((String)newValue);
+				return;
 			case ApplicationPackage.APPLICATION__COMMANDS:
 				getCommands().clear();
 				getCommands().addAll((Collection<? extends ServiceCommandProvider>)newValue);
@@ -611,9 +616,6 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__PATHS:
 				setPaths((ApplicationPaths)newValue);
 				return;
-			case ApplicationPackage.APPLICATION__PORT:
-				setPort((Integer)newValue);
-				return;
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
 				setResourceMapping((ResourceMapping)newValue);
 				return;
@@ -631,6 +633,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ApplicationPackage.APPLICATION__ADMIN_KEY:
+				setAdminKey(ADMIN_KEY_EDEFAULT);
+				return;
 			case ApplicationPackage.APPLICATION__COMMANDS:
 				getCommands().clear();
 				return;
@@ -655,9 +660,6 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__PATHS:
 				setPaths((ApplicationPaths)null);
 				return;
-			case ApplicationPackage.APPLICATION__PORT:
-				setPort(PORT_EDEFAULT);
-				return;
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
 				setResourceMapping((ResourceMapping)null);
 				return;
@@ -675,6 +677,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ApplicationPackage.APPLICATION__ADMIN_KEY:
+				return ADMIN_KEY_EDEFAULT == null ? adminKey != null : !ADMIN_KEY_EDEFAULT.equals(adminKey);
 			case ApplicationPackage.APPLICATION__COMMANDS:
 				return commands != null && !commands.isEmpty();
 			case ApplicationPackage.APPLICATION__COMPONENTS:
@@ -691,8 +695,6 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ApplicationPackage.APPLICATION__PATHS:
 				return paths != null;
-			case ApplicationPackage.APPLICATION__PORT:
-				return port != PORT_EDEFAULT;
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
 				return resourceMapping != null;
 			case ApplicationPackage.APPLICATION__TEXT:
@@ -710,10 +712,10 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
+		result.append(" (adminKey: ");
+		result.append(adminKey);
+		result.append(", name: ");
 		result.append(name);
-		result.append(", port: ");
-		result.append(port);
 		result.append(", text: ");
 		result.append(text);
 		result.append(')');

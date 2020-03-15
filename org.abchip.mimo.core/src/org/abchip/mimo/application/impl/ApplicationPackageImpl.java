@@ -57,7 +57,6 @@ import org.abchip.mimo.util.impl.UtilPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -297,8 +296,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EReference getApplication_Commands() {
-		return (EReference)applicationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getApplication_AdminKey() {
+		return (EAttribute)applicationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -307,7 +306,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EReference getApplication_Components() {
+	public EReference getApplication_Commands() {
 		return (EReference)applicationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -317,7 +316,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EReference getApplication_Config() {
+	public EReference getApplication_Components() {
 		return (EReference)applicationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -327,7 +326,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EReference getApplication_Context() {
+	public EReference getApplication_Config() {
 		return (EReference)applicationEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -337,7 +336,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EReference getApplication_ContextDescription() {
+	public EReference getApplication_Context() {
 		return (EReference)applicationEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -347,7 +346,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EReference getApplication_Hooks() {
+	public EReference getApplication_ContextDescription() {
 		return (EReference)applicationEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -357,8 +356,18 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
+	public EReference getApplication_Hooks() {
+		return (EReference)applicationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getApplication_Name() {
-		return (EAttribute)applicationEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)applicationEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -368,17 +377,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 */
 	@Override
 	public EReference getApplication_Paths() {
-		return (EReference)applicationEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getApplication_Port() {
-		return (EAttribute)applicationEClass.getEStructuralFeatures().get(8);
+		return (EReference)applicationEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -871,6 +870,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		// Create classes and their features
 		applicationEClass = createEClass(APPLICATION);
+		createEAttribute(applicationEClass, APPLICATION__ADMIN_KEY);
 		createEReference(applicationEClass, APPLICATION__COMMANDS);
 		createEReference(applicationEClass, APPLICATION__COMPONENTS);
 		createEReference(applicationEClass, APPLICATION__CONFIG);
@@ -879,7 +879,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEReference(applicationEClass, APPLICATION__HOOKS);
 		createEAttribute(applicationEClass, APPLICATION__NAME);
 		createEReference(applicationEClass, APPLICATION__PATHS);
-		createEAttribute(applicationEClass, APPLICATION__PORT);
 		createEReference(applicationEClass, APPLICATION__RESOURCE_MAPPING);
 		createEAttribute(applicationEClass, APPLICATION__TEXT);
 
@@ -994,6 +993,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getApplication_AdminKey(), ecorePackage.getEString(), "adminKey", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Commands(), this.getServiceCommandProvider(), null, "commands", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Components(), this.getApplicationComponent(), null, "components", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Config(), this.getServiceConfig(), null, "config", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1002,7 +1002,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEReference(getApplication_Hooks(), this.getServiceHook(), null, "hooks", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_Name(), ecorePackage.getEString(), "name", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Paths(), this.getApplicationPaths(), null, "paths", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getApplication_Port(), ecorePackage.getEInt(), "port", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_ResourceMapping(), theResourcePackage.getResourceMapping(), null, "resourceMapping", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_Text(), ecorePackage.getEString(), "text", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1024,11 +1023,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		initEClass(applicationManagerEClass, ApplicationManager.class, "ApplicationManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(applicationManagerEClass, this.getApplication(), "start", 1, 1, IS_UNIQUE, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEJavaClass());
-		EGenericType g2 = createEGenericType();
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(applicationManagerEClass, null, "start", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getApplication(), "application", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theJavaPackage.getJavaOutputStream(), "output", 0, 1, IS_UNIQUE, IS_ORDERED);
 

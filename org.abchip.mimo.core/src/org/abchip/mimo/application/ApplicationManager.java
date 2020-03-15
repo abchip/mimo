@@ -24,10 +24,10 @@ public interface ApplicationManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextRequired="true" applicationRequired="true" outputDataType="org.abchip.mimo.java.JavaOutputStream"
+	 * @model applicationRequired="true" outputDataType="org.abchip.mimo.java.JavaOutputStream"
 	 * @generated
 	 */
-	Application start(Class<?> context, Application application, OutputStream output);
+	void start(Application application, OutputStream output);
 
 	/**
 	 * <!-- begin-user-doc -->

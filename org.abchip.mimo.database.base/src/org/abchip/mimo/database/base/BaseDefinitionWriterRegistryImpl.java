@@ -47,9 +47,4 @@ public class BaseDefinitionWriterRegistryImpl implements DefinitionWriterRegistr
 	public DefinitionWriter lookupByVendorVersion(String vendor, String version) {
 		return this.registry.lookupByVendorVersion(vendor, version);
 	}
-
-	@Override
-	public DefinitionWriter lookupByPort(int port) {
-		return registry.lookupByPort(port);
-	}
 }

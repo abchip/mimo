@@ -46,9 +46,4 @@ public class BaseNameHelperRegistryImpl implements NameHelperRegistry {
 	public NameHelper lookupByVendorVersion(String vendor, String version) {
 		return this.registry.lookupByVendorVersion(vendor, version);
 	}
-
-	@Override
-	public NameHelper lookupByPort(int port) {
-		return registry.lookupByPort(port);
-	}
 }

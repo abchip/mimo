@@ -23,6 +23,7 @@ import org.abchip.mimo.resource.ResourceMapping;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.application.Application#getAdminKey <em>Admin Key</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getCommands <em>Commands</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getComponents <em>Components</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getConfig <em>Config</em>}</li>
@@ -31,7 +32,6 @@ import org.abchip.mimo.resource.ResourceMapping;
  *   <li>{@link org.abchip.mimo.application.Application#getHooks <em>Hooks</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getPaths <em>Paths</em>}</li>
- *   <li>{@link org.abchip.mimo.application.Application#getPort <em>Port</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getResourceMapping <em>Resource Mapping</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getText <em>Text</em>}</li>
  * </ul>
@@ -41,6 +41,32 @@ import org.abchip.mimo.resource.ResourceMapping;
  * @generated
  */
 public interface Application extends EntityIdentifiable {
+	/**
+	 * Returns the value of the '<em><b>Admin Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Admin Key</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Admin Key</em>' attribute.
+	 * @see #setAdminKey(String)
+	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_AdminKey()
+	 * @model
+	 * @generated
+	 */
+	String getAdminKey();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.application.Application#getAdminKey <em>Admin Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Admin Key</em>' attribute.
+	 * @see #getAdminKey()
+	 * @generated
+	 */
+	void setAdminKey(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Commands</b></em>' containment reference list.
 	 * The list contents are of type {@link org.abchip.mimo.application.ServiceCommandProvider}.
@@ -218,32 +244,6 @@ public interface Application extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setPaths(ApplicationPaths value);
-
-	/**
-	 * Returns the value of the '<em><b>Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Port</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Port</em>' attribute.
-	 * @see #setPort(int)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_Port()
-	 * @model
-	 * @generated
-	 */
-	int getPort();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.Application#getPort <em>Port</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Port</em>' attribute.
-	 * @see #getPort()
-	 * @generated
-	 */
-	void setPort(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Resource Mapping</b></em>' containment reference.

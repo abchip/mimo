@@ -47,10 +47,4 @@ public class BaseQueryWriterRegistryImpl implements QueryWriterRegistry {
 	public QueryWriter lookupByVendorVersion(String vendor, String version) {
 		return this.registry.lookupByVendorVersion(vendor, version);
 	}
-
-	@Override
-	public QueryWriter lookupByPort(int port) {
-		return registry.lookupByPort(port);
-	}
-
 }

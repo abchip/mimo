@@ -33,13 +33,6 @@ public class BaseRegistryImpl<K> implements Registry<K> {
 	}
 
 	@Override
-	public K lookupByPort(int port) {
-
-		String filter = "(" + MimoConstants.APPLICATION_PORT + "=" + port + ")";
-		return contextRoot.get(klass, filter);
-	}
-
-	@Override
 	public List<K> list() {
 
 		List<K> plugins = contextRoot.getAll(klass);

@@ -47,9 +47,4 @@ public class BaseQueryParserRegistryImpl implements QueryParserRegistry {
 	public QueryParser lookupByVendorVersion(String vendor, String version) {
 		return this.registry.lookupByVendorVersion(vendor, version);
 	}
-
-	@Override
-	public QueryParser lookupByPort(int port) {
-		return registry.lookupByPort(port);
-	}
 }

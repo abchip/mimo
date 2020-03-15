@@ -16,15 +16,14 @@ import org.abchip.mimo.application.ApplicationManager;
 public class BaseApplicationManagerImpl implements ApplicationManager {
 
 	@Override
-	public Application start(Class<?> context, Application application, OutputStream output) {
+	public void start(Application application, OutputStream output) {
 
 		try {
 			// Start application
-			return new BaseApplicationStarter(application, output).start();
+			new BaseApplicationStarter(application, output).start();
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			return null;
 		}
 	}
 

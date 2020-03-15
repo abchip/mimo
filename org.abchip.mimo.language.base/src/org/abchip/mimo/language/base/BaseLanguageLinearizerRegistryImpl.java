@@ -40,9 +40,4 @@ public class BaseLanguageLinearizerRegistryImpl implements LanguageLinearizerReg
 	public LanguageLinearizer lookupByVendorVersion(String vendor, String version) {
 		return this.registry.lookupByVendorVersion(vendor, version);
 	}
-
-	@Override
-	public LanguageLinearizer lookupByPort(int port) {
-		return registry.lookupByPort(port);
-	}
 }

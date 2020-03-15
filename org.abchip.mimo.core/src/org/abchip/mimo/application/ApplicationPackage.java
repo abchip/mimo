@@ -75,13 +75,22 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Admin Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__ADMIN_KEY = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Commands</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__COMMANDS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
+	int APPLICATION__COMMANDS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
@@ -90,7 +99,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__COMPONENTS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
+	int APPLICATION__COMPONENTS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Config</b></em>' containment reference.
@@ -99,7 +108,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__CONFIG = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+	int APPLICATION__CONFIG = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -108,7 +117,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__CONTEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
+	int APPLICATION__CONTEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Context Description</b></em>' containment reference.
@@ -117,7 +126,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__CONTEXT_DESCRIPTION = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
+	int APPLICATION__CONTEXT_DESCRIPTION = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Hooks</b></em>' containment reference list.
@@ -126,7 +135,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__HOOKS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
+	int APPLICATION__HOOKS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -135,7 +144,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
+	int APPLICATION__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Paths</b></em>' containment reference.
@@ -144,16 +153,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__PATHS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION__PORT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
+	int APPLICATION__PATHS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Resource Mapping</b></em>' containment reference.
@@ -876,6 +876,17 @@ public interface ApplicationPackage extends EPackage {
 	EClass getApplication();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.Application#getAdminKey <em>Admin Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Admin Key</em>'.
+	 * @see org.abchip.mimo.application.Application#getAdminKey()
+	 * @see #getApplication()
+	 * @generated
+	 */
+	EAttribute getApplication_AdminKey();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.application.Application#getCommands <em>Commands</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -962,17 +973,6 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getApplication_Paths();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.Application#getPort <em>Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Port</em>'.
-	 * @see org.abchip.mimo.application.Application#getPort()
-	 * @see #getApplication()
-	 * @generated
-	 */
-	EAttribute getApplication_Port();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.application.Application#getResourceMapping <em>Resource Mapping</em>}'.
@@ -1497,6 +1497,14 @@ public interface ApplicationPackage extends EPackage {
 		EClass APPLICATION = eINSTANCE.getApplication();
 
 		/**
+		 * The meta object literal for the '<em><b>Admin Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APPLICATION__ADMIN_KEY = eINSTANCE.getApplication_AdminKey();
+
+		/**
 		 * The meta object literal for the '<em><b>Commands</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1559,14 +1567,6 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APPLICATION__PATHS = eINSTANCE.getApplication_Paths();
-
-		/**
-		 * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute APPLICATION__PORT = eINSTANCE.getApplication_Port();
 
 		/**
 		 * The meta object literal for the '<em><b>Resource Mapping</b></em>' containment reference feature.

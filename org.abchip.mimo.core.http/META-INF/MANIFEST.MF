@@ -7,6 +7,7 @@ Bundle-Vendor: ABChip
 Automatic-Module-Name: org.abchip.mimo.core.http
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.abchip.mimo.core,
+ org.abchip.mimo.core.base,
  org.eclipse.jetty.server,
  org.eclipse.jetty.util,
  org.eclipse.jetty.servlet,
@@ -20,10 +21,12 @@ Require-Bundle: org.abchip.mimo.core,
  com.fasterxml.jackson.core.jackson-core,
  com.fasterxml.jackson.core.jackson-databind,
  org.apache.httpcomponents.httpclient,
- org.apache.httpcomponents.httpcore
+ org.apache.httpcomponents.httpcore,
+ org.abchip.mimo.core.e4
 Import-Package: javax.servlet,
  javax.servlet.http,
  org.osgi.framework,
+ org.osgi.framework.launch;version="1.2.0",
  org.osgi.service.http
 Export-Package: org.abchip.mimo.core.http,
  org.abchip.mimo.core.http.servlet

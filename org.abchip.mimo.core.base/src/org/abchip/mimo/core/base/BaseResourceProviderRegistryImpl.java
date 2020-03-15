@@ -55,11 +55,6 @@ public class BaseResourceProviderRegistryImpl extends BaseResource implements Re
 	}
 
 	@Override
-	public ResourceProvider lookupByPort(int port) {
-		return registry.lookupByPort(port);
-	}
-
-	@Override
 	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Class<E> klass) {
 		return getResourceProvider(context, klass.getSimpleName());
 	}
@@ -93,7 +88,6 @@ public class BaseResourceProviderRegistryImpl extends BaseResource implements Re
 	@Override
 	public <E extends EntityIdentifiable> void registerProvider(Context context, String frameName, ResourceProvider provider) {
 		Dictionary<String, String> dictionary = new Hashtable<String, String>();
-		dictionary.put(MimoConstants.DOMAIN_NAME, "mimo");
 		dictionary.put(MimoConstants.PROVIDER_FRAME, frameName);
 
 		this.getContextRoot().set(ResourceProvider.class.getName(), provider, false, dictionary);

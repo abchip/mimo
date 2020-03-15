@@ -33,14 +33,6 @@ public interface Registry<K> {
 	List<K> list();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" portRequired="true"
-	 * @generated
-	 */
-	K lookupByPort(int port);
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model required="true" vendorRequired="true" versionRequired="true"
 	 * @generated

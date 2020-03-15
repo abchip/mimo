@@ -278,7 +278,6 @@ public class BaseApplicationStarter {
 
 		// service properties
 		properties.put(MimoConstants.APPLICATION_NAME, application.getName());
-		properties.put(MimoConstants.APPLICATION_PORT, Integer.toString(application.getPort()));
 		properties.put(MimoConstants.COMPONENT_NAME, component.getName());
 
 		// singleton

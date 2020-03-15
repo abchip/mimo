@@ -24,29 +24,31 @@ public abstract class BaseCommandProviderImpl implements CommandProvider {
 
 	private ThreadLocal<Context> threadLocalContext = new ThreadLocal<Context>();
 
-	@SuppressWarnings("resource")
-	protected void login(String adminKey) {
+	protected Context login(String adminKey) {
 
 		AuthenticationManager authenticationManager = application.getContext().get(AuthenticationManager.class);
 		if (authenticationManager == null)
-			return;
+			return null;
 
 		AuthenticationAdminKey authAdminKey = ContextFactory.eINSTANCE.createAuthenticationAdminKey();
 		authAdminKey.setAdminKey(adminKey);
 
 		Context context = authenticationManager.login(null, authAdminKey);
-		if (context == null)
-			return;
 
 		threadLocalContext.set(context);
+		
+		return context;
 	}
 
 	protected Context getContext() {
 
 		Context context = threadLocalContext.get();
-		if (context == null)
-			throw new RuntimeException("You need a login, please use first command 'login'");
+		if (context != null)
+			return context;
+		
+		if(application.getAdminKey() == null)
+			return login(null);
 
-		return context;
+		throw new RuntimeException("You need a login, please use first command 'login'");
 	}
 }

@@ -1677,11 +1677,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1 = createEGenericType(registryEClass_K);
 		initEOperation(op, g1);
 
-		op = addEOperation(registryEClass, null, "lookupByPort", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "port", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(registryEClass_K);
-		initEOperation(op, g1);
-
 		op = addEOperation(registryEClass, null, "lookupByVendorVersion", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "vendor", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "version", 1, 1, IS_UNIQUE, IS_ORDERED);

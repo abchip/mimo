@@ -22,6 +22,7 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Testing"/>
       </genEnums>
       <genClasses ecoreClass="mimo.ecore#//application/Application">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/adminKey"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/commands"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/components"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/config"/>
@@ -30,7 +31,6 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/hooks"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/name"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/paths"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/port"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/resourceMapping"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/text"/>
         <genOperations ecoreOperation="mimo.ecore#//application/Application/getActiveComponents"/>
@@ -51,7 +51,6 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//application/ApplicationManager">
         <genOperations ecoreOperation="mimo.ecore#//application/ApplicationManager/start">
-          <genParameters ecoreParameter="mimo.ecore#//application/ApplicationManager/start/context"/>
           <genParameters ecoreParameter="mimo.ecore#//application/ApplicationManager/start/application"/>
           <genParameters ecoreParameter="mimo.ecore#//application/ApplicationManager/start/output"/>
         </genOperations>
@@ -423,9 +422,6 @@
           <genParameters ecoreParameter="mimo.ecore#//context/Registry/lookup/name"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Registry/list"/>
-        <genOperations ecoreOperation="mimo.ecore#//context/Registry/lookupByPort">
-          <genParameters ecoreParameter="mimo.ecore#//context/Registry/lookupByPort/port"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Registry/lookupByVendorVersion">
           <genParameters ecoreParameter="mimo.ecore#//context/Registry/lookupByVendorVersion/vendor"/>
           <genParameters ecoreParameter="mimo.ecore#//context/Registry/lookupByVendorVersion/version"/>
