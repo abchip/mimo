@@ -7,6 +7,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//entity/EntityIdentifiable">
       <eOperations name="getActiveComponents" upperBound="-1" eType="#//application/ApplicationComponent"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="adminKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="plugin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
           eType="#//application/ServiceCommandProvider" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
@@ -19,7 +20,8 @@
           eType="#//context/ContextDescription" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hooks" upperBound="-1"
           eType="#//application/ServiceHook" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="paths" lowerBound="1"
           eType="#//application/ApplicationPaths" containment="true"/>

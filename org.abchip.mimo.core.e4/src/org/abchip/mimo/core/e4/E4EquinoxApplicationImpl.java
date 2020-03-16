@@ -15,8 +15,6 @@ import org.abchip.mimo.application.ApplicationManager;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.FrameworkUtil;
 
 public final class E4EquinoxApplicationImpl implements IApplication {
 
@@ -50,9 +48,7 @@ public final class E4EquinoxApplicationImpl implements IApplication {
 
 		application = E4Activator.loadApplication(applicationConfig);
 
-		BundleContext bundleContext = FrameworkUtil.getBundle(this.getClass()).getBundleContext();
-
-		E4Activator.startApplication(bundleContext, application);
+		E4Activator.startApplication(application);
 
 		return waitForStopOrRestart();
 	}

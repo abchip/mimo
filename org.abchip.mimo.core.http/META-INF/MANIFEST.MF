@@ -8,6 +8,7 @@ Automatic-Module-Name: org.abchip.mimo.core.http
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.abchip.mimo.core,
  org.abchip.mimo.core.base,
+ org.abchip.mimo.core.e4,
  org.eclipse.jetty.server,
  org.eclipse.jetty.util,
  org.eclipse.jetty.servlet,
@@ -15,21 +16,25 @@ Require-Bundle: org.abchip.mimo.core,
  org.eclipse.equinox.http.registry,
  org.eclipse.equinox.http.jetty,
  org.eclipse.equinox.http.servlet,
- org.apache.commons.io,
  org.emfjson.jackson,
  com.fasterxml.jackson.core.jackson-annotations,
  com.fasterxml.jackson.core.jackson-core,
- com.fasterxml.jackson.core.jackson-databind,
- org.apache.httpcomponents.httpclient,
- org.apache.httpcomponents.httpcore,
- org.abchip.mimo.core.e4
+ com.fasterxml.jackson.core.jackson-databind
 Import-Package: javax.servlet,
  javax.servlet.http,
  org.osgi.framework,
  org.osgi.framework.launch;version="1.2.0",
  org.osgi.service.http
 Export-Package: org.abchip.mimo.core.http,
- org.abchip.mimo.core.http.servlet
+ org.abchip.mimo.core.http.servlet,
+ org.apache.http,
+ org.apache.http.client.methods,
+ org.apache.http.client.utils,
+ org.apache.http.entity,
+ org.apache.http.impl.client
 Bundle-ActivationPolicy: lazy
-Bundle-ClassPath: lib/commons-fileupload-1.4.jar,
- .
+Bundle-ClassPath: .,
+ lib/commons-fileupload-1.4.jar,
+ lib/httpcore-4.4.10.jar,
+ lib/httpclient-4.5.6.jar,
+ lib/httpclient-cache-4.5.6.jar

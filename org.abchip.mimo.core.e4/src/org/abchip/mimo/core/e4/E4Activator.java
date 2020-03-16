@@ -23,9 +23,12 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceRegistration;
+import org.osgi.framework.wiring.BundleWiring;
 
 public class E4Activator implements BundleActivator {
 
@@ -71,8 +74,21 @@ public class E4Activator implements BundleActivator {
 		return (Application) resource.getContents().get(0);
 	}
 
-	@SuppressWarnings("resource")
-	public static void startApplication(BundleContext bundleContext, Application application) {
+	@SuppressWarnings({ "resource" })
+	public static void startApplication(Application application) {
+
+		// search bundle host
+		BundleContext bundleContext = FrameworkUtil.getBundle(E4Activator.class).getBundleContext();
+		for (Bundle bundle : bundleContext.getBundles()) {
+			if (bundle.getSymbolicName().equals(application.getPlugin())) {
+				bundleContext = bundle.getBundleContext();
+				break;
+			}
+		}
+
+		Bundle bundle = bundleContext.getBundle();
+		ClassLoader bundleLoader = bundle.adapt(BundleWiring.class).getClassLoader();
+		Thread.currentThread().setContextClassLoader(bundleLoader);
 
 		// context
 		ContextRoot contextApplication = new E4ContextRootImpl(bundleContext, application.getContextDescription());

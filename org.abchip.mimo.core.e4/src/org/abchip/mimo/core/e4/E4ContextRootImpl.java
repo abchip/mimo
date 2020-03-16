@@ -237,6 +237,7 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 			} catch (ClassNotFoundException e) {
 			}
 
+			"".toString();
 			// System.err.print("load: " + className);
 			for (Bundle bundle : getBundleContext().getBundles()) {
 				try {

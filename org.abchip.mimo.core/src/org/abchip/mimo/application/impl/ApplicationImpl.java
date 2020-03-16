@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getAdminKey <em>Admin Key</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getPlugin <em>Plugin</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getCommands <em>Commands</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getComponents <em>Components</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getConfig <em>Config</em>}</li>
@@ -75,6 +76,24 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * @ordered
 	 */
 	protected String adminKey = ADMIN_KEY_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getPlugin() <em>Plugin</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlugin()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLUGIN_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getPlugin() <em>Plugin</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlugin()
+	 * @generated
+	 * @ordered
+	 */
+	protected String plugin = PLUGIN_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getCommands() <em>Commands</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -221,6 +240,29 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 		adminKey = newAdminKey;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__ADMIN_KEY, oldAdminKey, adminKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getPlugin() {
+		return plugin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPlugin(String newPlugin) {
+		String oldPlugin = plugin;
+		plugin = newPlugin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__PLUGIN, oldPlugin, plugin));
 	}
 
 	/**
@@ -549,6 +591,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION__ADMIN_KEY:
 				return getAdminKey();
+			case ApplicationPackage.APPLICATION__PLUGIN:
+				return getPlugin();
 			case ApplicationPackage.APPLICATION__COMMANDS:
 				return getCommands();
 			case ApplicationPackage.APPLICATION__COMPONENTS:
@@ -588,6 +632,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION__ADMIN_KEY:
 				setAdminKey((String)newValue);
+				return;
+			case ApplicationPackage.APPLICATION__PLUGIN:
+				setPlugin((String)newValue);
 				return;
 			case ApplicationPackage.APPLICATION__COMMANDS:
 				getCommands().clear();
@@ -636,6 +683,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__ADMIN_KEY:
 				setAdminKey(ADMIN_KEY_EDEFAULT);
 				return;
+			case ApplicationPackage.APPLICATION__PLUGIN:
+				setPlugin(PLUGIN_EDEFAULT);
+				return;
 			case ApplicationPackage.APPLICATION__COMMANDS:
 				getCommands().clear();
 				return;
@@ -679,6 +729,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION__ADMIN_KEY:
 				return ADMIN_KEY_EDEFAULT == null ? adminKey != null : !ADMIN_KEY_EDEFAULT.equals(adminKey);
+			case ApplicationPackage.APPLICATION__PLUGIN:
+				return PLUGIN_EDEFAULT == null ? plugin != null : !PLUGIN_EDEFAULT.equals(plugin);
 			case ApplicationPackage.APPLICATION__COMMANDS:
 				return commands != null && !commands.isEmpty();
 			case ApplicationPackage.APPLICATION__COMPONENTS:
@@ -714,6 +766,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (adminKey: ");
 		result.append(adminKey);
+		result.append(", plugin: ");
+		result.append(plugin);
 		result.append(", name: ");
 		result.append(name);
 		result.append(", text: ");

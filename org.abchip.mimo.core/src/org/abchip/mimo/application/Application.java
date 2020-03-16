@@ -24,6 +24,7 @@ import org.abchip.mimo.resource.ResourceMapping;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.application.Application#getAdminKey <em>Admin Key</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.Application#getPlugin <em>Plugin</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getCommands <em>Commands</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getComponents <em>Components</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getConfig <em>Config</em>}</li>
@@ -66,6 +67,32 @@ public interface Application extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setAdminKey(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Plugin</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Plugin</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Plugin</em>' attribute.
+	 * @see #setPlugin(String)
+	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_Plugin()
+	 * @model
+	 * @generated
+	 */
+	String getPlugin();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.application.Application#getPlugin <em>Plugin</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Plugin</em>' attribute.
+	 * @see #getPlugin()
+	 * @generated
+	 */
+	void setPlugin(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Commands</b></em>' containment reference list.
@@ -204,7 +231,7 @@ public interface Application extends EntityIdentifiable {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_Name()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getName();

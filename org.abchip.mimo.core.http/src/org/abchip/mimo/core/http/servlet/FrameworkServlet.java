@@ -30,7 +30,6 @@ public class FrameworkServlet extends HttpServlet {
 
 	private String mimoOsgiData;
 	private String mimoApplicationConfig;
-	private String mimoApplicationName;
 
 	public FrameworkServlet() {
 		super();
@@ -44,16 +43,15 @@ public class FrameworkServlet extends HttpServlet {
 
 		mimoOsgiData = config.getInitParameter("mimo.osgi.data");
 		mimoApplicationConfig = config.getInitParameter("mimo.application.config");
-		mimoApplicationName = config.getInitParameter("mimo.application.name");
 
 		try {
 			// start framework
-			Application application = new E4FrameworkStarter(mimoOsgiData, mimoApplicationConfig, mimoApplicationName).start();
-			
+			Application application = new E4FrameworkStarter(mimoOsgiData, mimoApplicationConfig).start();
+
 			// register org.osgi.service.httpHttpService
 			if (application.getContext().get(HttpService.class) == null)
 				application.getContext().set(HttpService.class, new HttpServiceImpl(servletContext));
-			
+
 		} catch (BundleException | IOException e) {
 			throw new ServletException(e);
 		}

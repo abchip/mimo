@@ -54,7 +54,7 @@ public class E4FrameworkStarter {
 
 		application = E4Activator.loadApplication(applicationConfig);
 
-		E4Activator.startApplication(bundleContext, application);
+		E4Activator.startApplication(application);
 
 		return application;
 	}
