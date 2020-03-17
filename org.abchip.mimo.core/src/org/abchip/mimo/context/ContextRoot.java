@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.context;
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.Dictionary;
 import java.util.List;
 
@@ -62,22 +60,6 @@ public interface ContextRoot extends Context {
 	 * @generated
 	 */
 	String getInstallArea();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.java.JavaURL" exceptions="org.abchip.mimo.java.JavaIOException" pathRequired="true"
-	 * @generated
-	 */
-	URL getResource(String path) throws IOException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.java.JavaURL" exceptions="org.abchip.mimo.java.JavaIOException" pathRequired="true"
-	 * @generated
-	 */
-	List<URL> getResources(String path) throws IOException;
 
 	/**
 	 * <!-- begin-user-doc -->

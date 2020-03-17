@@ -21,6 +21,7 @@ import org.abchip.mimo.mining.classification.Evaluator;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Files;
+import org.osgi.framework.FrameworkUtil;
 
 import com.aliasi.classify.BaseClassifierEvaluator;
 import com.aliasi.classify.ScoredClassification;
@@ -117,7 +118,7 @@ public class LPClassifierImpl implements Classifier {
 	private void loadModels() {
 		try {
 			String classifierPath = "model/3LangId.LMClassifier";
-			URL url = contextRoot.getResource(this.getClass(), classifierPath);
+			URL url = FrameworkUtil.getBundle(this.getClass()).getResource(classifierPath);
 			File serializedClassifier = files.copyToFile(url.openStream());
 			classifier = (ScoredClassifier<CharSequence>) AbstractExternalizable.readObject(serializedClassifier);
 		} catch (ClassNotFoundException | IOException e) {

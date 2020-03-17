@@ -24,6 +24,7 @@ import org.abchip.mimo.logic.LogicFactory;
 import org.abchip.mimo.logic.Question;
 import org.abchip.mimo.logic.Reasoner;
 import org.abchip.mimo.logic.Theory;
+import org.osgi.framework.FrameworkUtil;
 
 import gnu.prolog.database.PrologTextLoader;
 import gnu.prolog.database.PrologTextLoaderError;
@@ -32,6 +33,7 @@ import gnu.prolog.vm.Environment;
 
 public class GNUReasonerImpl implements Reasoner {
 
+	@SuppressWarnings("unused")
 	private Context context;
 
 	private Environment environment = null;
@@ -68,7 +70,8 @@ public class GNUReasonerImpl implements Reasoner {
 
 		environment = new GNUEnvironment();
 
-		URL resource = context.getResource(this.getClass(), "/theories/asup_base.pl");
+		URL resource = FrameworkUtil.getBundle(this.getClass()).getResource("/theories/asup_base.pl");
+
 		// environment.ensureLoaded(AtomTerm.get(resource.getFile()));
 
 		PrologTextLoaderState ptls = environment.getPrologTextLoaderState();

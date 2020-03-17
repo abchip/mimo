@@ -8,14 +8,10 @@
  */
 package org.abchip.mimo.core.e4;
 
-import java.io.IOException;
-import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Dictionary;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.UUID;
 
@@ -159,53 +155,6 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		}
 
 		return contextChild;
-	}
-
-	@Override
-	public URL getResource(String path) {
-
-		URL resource = null;
-
-		resource = getBundleContext().getBundle().getResource(path);
-		if (resource != null)
-			return resource;
-
-		// System.err.print("resource: " + path);
-		for (Bundle bundle : getBundleContext().getBundles()) {
-			resource = bundle.getResource(path);
-			if (resource != null) {
-				// System.err.print(" found on: " + bundle.getSymbolicName());
-				break;
-			}
-		}
-		// System.err.println();
-
-		return resource;
-	}
-
-	@Override
-	public List<URL> getResources(String path) throws IOException {
-
-		List<URL> resources = new ArrayList<URL>();
-
-		Enumeration<URL> urls = getBundleContext().getBundle().findEntries(path, null, false);
-		if (urls != null && urls.hasMoreElements())
-			return Collections.list(urls);
-
-		// System.err.print("resources: " + path);
-		for (Bundle bundle : getBundleContext().getBundles()) {
-			if (getBundleContext().getBundle().equals(bundle))
-				continue;
-
-			urls = bundle.findEntries(path, null, false);
-			if (urls != null) {
-				resources.addAll(Collections.list(urls));
-				// System.err.print(" found on: " + bundle.getSymbolicName());
-			}
-		}
-		// System.err.println();
-
-		return resources;
 	}
 
 	@Override

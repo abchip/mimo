@@ -11,6 +11,7 @@ package org.abchip.mimo.database.test.runner;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -39,6 +40,8 @@ import org.eclipse.datatools.modelbase.sql.schema.Schema;
 import org.eclipse.datatools.modelbase.sql.tables.Table;
 import org.eclipse.datatools.modelbase.sql.tables.ViewTable;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 
 @Test(entity = "Definition")
 public class TestDatabaseDefinition {
@@ -67,7 +70,9 @@ public class TestDatabaseDefinition {
 			schema = databaseManager.createSchema(connection, schemaName, schemaDef);
 
 			// tables
-			for (URL tableURL : connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/tables")) {
+			Bundle bundle = FrameworkUtil.getBundle(this.getClass());
+			for (Enumeration<URL> elements = bundle.findEntries("/resources/schemas/" + schemaName + "/tables", null, false); elements.hasMoreElements();) {
+				URL tableURL = elements.nextElement();
 				String fileName = files.getBaseName(tableURL.getFile());
 
 				DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(tableURL);
@@ -83,7 +88,8 @@ public class TestDatabaseDefinition {
 			}
 
 			// views
-			for (URL viewURL : connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/views")) {
+			for (Enumeration<URL> elements = bundle.findEntries("/resources/schemas/" + schemaName + "/views", null, false); elements.hasMoreElements();) {
+				URL viewURL = elements.nextElement();
 				String fileName = files.getBaseName(viewURL.getFile());
 
 				DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(viewURL);
@@ -99,7 +105,8 @@ public class TestDatabaseDefinition {
 			}
 
 			// indices
-			for (URL indexURL : connection.getContext().getResources(this.getClass(), "/resources/schemas/" + schemaName + "/indices")) {
+			for (Enumeration<URL> elements = bundle.findEntries("/resources/schemas/" + schemaName + "/indices", null, false); elements.hasMoreElements();) {
+				URL indexURL = elements.nextElement();
 				String fileName = files.getBaseName(indexURL.getFile());
 
 				DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(indexURL);
@@ -126,6 +133,7 @@ public class TestDatabaseDefinition {
 		}
 
 		System.out.println("Creazione schema completata");
+
 	}
 
 	public Object _testDDL(CommandInterpreter interpreter) throws SQLException {

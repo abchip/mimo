@@ -1392,22 +1392,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(contextEClass, theJavaPackage.getJavaURL(), "getResource", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEJavaClass());
-		g2 = createEGenericType();
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "path", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theJavaPackage.getJavaIOException());
-
-		op = addEOperation(contextEClass, theJavaPackage.getJavaURL(), "getResources", 0, -1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEJavaClass());
-		g2 = createEGenericType();
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "path", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theJavaPackage.getJavaIOException());
-
 		initEClass(contextDescriptionEClass, ContextDescription.class, "ContextDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextDescription_Anonymous(), ecorePackage.getEBoolean(), "anonymous", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_CurrencyUom(), ecorePackage.getEString(), "currencyUom", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1455,14 +1439,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEOperation(op, g1);
 
 		addEOperation(contextRootEClass, ecorePackage.getEString(), "getInstallArea", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(contextRootEClass, theJavaPackage.getJavaURL(), "getResource", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "path", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theJavaPackage.getJavaIOException());
-
-		op = addEOperation(contextRootEClass, theJavaPackage.getJavaURL(), "getResources", 0, -1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "path", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theJavaPackage.getJavaIOException());
 
 		op = addEOperation(contextRootEClass, ecorePackage.getEString(), "locateBundle", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);

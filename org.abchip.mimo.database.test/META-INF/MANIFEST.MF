@@ -8,10 +8,10 @@ Bundle-Vendor: ABChip
 Export-Package: org.abchip.mimo.database.test,
   org.abchip.mimo.database.test.runner
 Require-Bundle: org.abchip.mimo.database,
-  org.abchip.mimo.tester,
-  org.abchip.mimo.tester.base,
-  org.eclipse.datatools.modelbase.sql,
-  org.eclipse.datatools.sqltools.parsers.sql.query
+ org.abchip.mimo.tester,
+ org.abchip.mimo.tester.base,
+ org.eclipse.datatools.modelbase.sql,
+ org.eclipse.datatools.sqltools.parsers.sql.query,
+ org.eclipse.osgi
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Import-Package: org.eclipse.emf.ecore.xmi.impl,
- org.eclipse.osgi.framework.console;version="1.1.0";resolution:=optional
+Import-Package: org.osgi.framework

@@ -8,12 +8,8 @@
  */
 package org.abchip.mimo.core.e4;
 
-import java.io.IOException;
 import java.lang.annotation.Annotation;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,8 +21,6 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.impl.ContextImpl;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.osgi.framework.Bundle;
-import org.osgi.framework.FrameworkUtil;
 
 public abstract class E4ContextImpl extends ContextImpl {
 
@@ -223,29 +217,5 @@ public abstract class E4ContextImpl extends ContextImpl {
 	@Override
 	public ContextDescription getContextDescription() {
 		return this.contextDescription;
-	}
-
-	@Override
-	public URL getResource(Class<?> context, String path) {
-
-		Bundle bundle = FrameworkUtil.getBundle(context);
-		if (bundle == null)
-			return null;
-
-		URL resource = bundle.getResource(path);
-
-		return resource;
-	}
-
-	@Override
-	public List<URL> getResources(Class<?> context, String path) throws IOException {
-
-		Bundle bundle = FrameworkUtil.getBundle(context);
-		if (bundle == null)
-			return null;
-
-		Enumeration<URL> resources = bundle.findEntries(path, null, false);
-
-		return Collections.list(resources);
 	}
 }

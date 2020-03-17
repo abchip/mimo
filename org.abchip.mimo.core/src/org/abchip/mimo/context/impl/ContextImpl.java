@@ -7,10 +7,7 @@
  */
 package org.abchip.mimo.context.impl;
 
-import java.io.IOException;
 import java.lang.annotation.Annotation;
-import java.net.URL;
-import java.util.List;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
@@ -156,30 +153,6 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	public void set(String name, Object object) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public URL getResource(Class<?> context, String path) throws IOException {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<URL> getResources(Class<?> context, String path) throws IOException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

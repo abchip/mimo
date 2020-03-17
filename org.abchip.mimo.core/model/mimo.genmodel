@@ -212,14 +212,6 @@
           <genParameters ecoreParameter="mimo.ecore#//context/Context/set.1/name"/>
           <genParameters ecoreParameter="mimo.ecore#//context/Context/set.1/object"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Context/getResource">
-          <genParameters ecoreParameter="mimo.ecore#//context/Context/getResource/context"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/Context/getResource/path"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Context/getResources">
-          <genParameters ecoreParameter="mimo.ecore#//context/Context/getResources/context"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/Context/getResources/path"/>
-        </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/ContextDescription">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/anonymous"/>
@@ -251,12 +243,6 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/ContextRoot/getAll.1/T"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getInstallArea"/>
-        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getResource">
-          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getResource/path"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getResources">
-          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getResources/path"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/locateBundle">
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/locateBundle/name"/>
         </genOperations>

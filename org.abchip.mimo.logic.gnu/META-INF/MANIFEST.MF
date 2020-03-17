@@ -9,3 +9,4 @@ Require-Bundle: org.abchip.mimo.logic
 Export-Package: org.abchip.mimo.logic.gnu
 Bundle-ClassPath: lib/gnuprologjava-0.2.6.jar,
  .
+Import-Package: org.osgi.framework

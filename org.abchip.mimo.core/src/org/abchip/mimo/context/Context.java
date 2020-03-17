@@ -9,10 +9,7 @@
 package org.abchip.mimo.context;
 
 import java.io.Closeable;
-import java.io.IOException;
 import java.lang.annotation.Annotation;
-import java.net.URL;
-import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,21 +109,5 @@ public interface Context extends Closeable {
 	 * @generated
 	 */
 	void set(String name, Object object);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.java.JavaURL" exceptions="org.abchip.mimo.java.JavaIOException" contextRequired="true" pathRequired="true"
-	 * @generated
-	 */
-	URL getResource(Class<?> context, String path) throws IOException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model dataType="org.abchip.mimo.java.JavaURL" exceptions="org.abchip.mimo.java.JavaIOException" contextRequired="true" pathRequired="true"
-	 * @generated
-	 */
-	List<URL> getResources(Class<?> context, String path) throws IOException;
 
 } // Context
