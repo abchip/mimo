@@ -21,7 +21,7 @@ import org.osgi.service.http.NamespaceException;
 
 public class HttpServiceImpl implements HttpService {
 
-	private ServletContext servletContext;
+	protected ServletContext servletContext;
 
 	public HttpServiceImpl(ServletContext servletContext) {
 		this.servletContext = servletContext;
@@ -29,14 +29,11 @@ public class HttpServiceImpl implements HttpService {
 
 	@Override
 	public HttpContext createDefaultHttpContext() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void registerResources(String arg0, String arg1, HttpContext arg2) throws NamespaceException {
-		// TODO Auto-generated method stub
-
 	}
 
 	@SuppressWarnings("rawtypes")

@@ -30,7 +30,6 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
-import org.eclipse.jetty.http.HttpHeader;
 
 public class LoginServlet extends HttpServlet {
 
@@ -80,7 +79,7 @@ public class LoginServlet extends HttpServlet {
 				location = response.encodeURL(location);
 				// System.err.println(("Login location: " + location));
 
-				response.setHeader(HttpHeader.LOCATION.name(), location);
+				response.setHeader("Location", location);
 				response.setStatus(HttpServletResponse.SC_OK);
 
 				ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();

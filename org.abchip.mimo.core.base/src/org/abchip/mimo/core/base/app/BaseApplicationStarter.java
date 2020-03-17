@@ -37,7 +37,6 @@ import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceExecutor;
 import org.abchip.mimo.application.ServiceHook;
 import org.abchip.mimo.application.ServiceRef;
-import org.abchip.mimo.application.ServiceRegistering;
 import org.abchip.mimo.application.ServiceRegistry;
 import org.abchip.mimo.application.ServiceRegistryEntry;
 import org.abchip.mimo.application.ServiceServlet;
@@ -110,11 +109,11 @@ public class BaseApplicationStarter {
 	public void activateComponent(ApplicationComponent component) {
 
 		println(">component " + component);
-		if(component.getStatus() != ComponentStatus.ACTIVE) {
+		if (component.getStatus() != ComponentStatus.ACTIVE) {
 			println("!unactive");
 			return;
 		}
-		
+
 		@SuppressWarnings("resource")
 		Context componentContext = application.getContext().createChildContext(component.getName());
 		componentContext.set(ApplicationComponent.class, component);
@@ -220,13 +219,21 @@ public class BaseApplicationStarter {
 
 		println("+service " + serviceRef);
 
-		// registry entry
+		// service properties
 		Dictionary<String, String> dictionary = new Hashtable<String, String>();
+
+		// registry entry
 		if (serviceRef instanceof ServiceRegistryEntry) {
 			ServiceRegistryEntry serviceRegistry = (ServiceRegistryEntry) serviceRef;
 			dictionary.put(MimoConstants.REGISTRY_NAME, serviceRegistry.getName());
 			dictionary.put(MimoConstants.REGISTRY_VENDOR, serviceRegistry.getVendor());
 			dictionary.put(MimoConstants.REGISTRY_VERSION, serviceRegistry.getVersion());
+		}
+
+		// servlet
+		if (serviceRef instanceof ServiceServlet) {
+			ServiceServlet serviceServlet = (ServiceServlet) serviceRef;
+			dictionary.put(MimoConstants.SERVICE_ALIAS, serviceServlet.getAlias());
 		}
 
 		// service registration
@@ -297,19 +304,6 @@ public class BaseApplicationStarter {
 				throw new RuntimeException(e);
 			}
 		}
-
-		// application hooks
-		for (Object hook : applicationHooks)
-			component.getContext().invoke(hook, ServiceRegistering.class);
-
-		// component hooks
-		List<Object> componentHooks = componentMapHooks.get(component.getName());
-		if (componentHooks != null) {
-			for (Object hook : componentHooks)
-				component.getContext().invoke(hook, ServiceRegistering.class);
-		}
-
-		component.getContext().invoke(service, ServiceRegistering.class);
 
 		application.getContext().set(name, service, remoteExport, properties);
 	}
