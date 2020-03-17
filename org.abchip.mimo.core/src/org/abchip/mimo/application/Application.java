@@ -13,6 +13,7 @@ import org.abchip.mimo.context.ContextRoot;
 
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceMapping;
+import org.osgi.framework.Bundle;
 
 /**
  * <!-- begin-user-doc -->
@@ -331,5 +332,13 @@ public interface Application extends EntityIdentifiable {
 	 * @generated
 	 */
 	List<ApplicationComponent> getActiveComponents();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" dataType="org.abchip.mimo.application.ApplicationBundle" required="true"
+	 * @generated
+	 */
+	Bundle getBundle();
 
 } // Application

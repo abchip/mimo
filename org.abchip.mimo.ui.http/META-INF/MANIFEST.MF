@@ -10,3 +10,4 @@ Require-Bundle: org.abchip.mimo.ui,
  org.abchip.mimo.core.http
 Import-Package: javax.servlet,
  javax.servlet.http
+Export-Package: org.abchip.mimo.ui.http

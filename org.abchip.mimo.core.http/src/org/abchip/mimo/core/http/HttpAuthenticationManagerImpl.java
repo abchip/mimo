@@ -26,6 +26,7 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.AuthenticationAdminKey;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
@@ -63,6 +64,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
+	@Inject
+	private Application application;
 	@Inject
 	private ContextRoot contextRoot;
 	@Inject
@@ -505,9 +508,18 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		return client;
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public Context login(String contextId, AuthenticationAdminKey authentication) {
-		// TODO Auto-generated method stub
-		return null;
+
+		if (application.getAdminKey() != null && !authentication.getAdminKey().equals(application.getAdminKey()))
+			return null;
+
+		ContextRoot contextRoot = application.getContext();
+		if (contextRoot == null)
+			return null;
+
+		Context contextUser = contextRoot.createChildContext(contextId);
+		return contextUser;
 	}
 }

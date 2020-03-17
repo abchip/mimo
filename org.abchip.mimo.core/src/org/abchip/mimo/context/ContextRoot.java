@@ -85,14 +85,6 @@ public interface ContextRoot extends Context {
 	 * @model required="true" nameRequired="true"
 	 * @generated
 	 */
-	Class<?> loadClass(String name);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" nameRequired="true"
-	 * @generated
-	 */
 	String locateBundle(String name);
 
 	/**

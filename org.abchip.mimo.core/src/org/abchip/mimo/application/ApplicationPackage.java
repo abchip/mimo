@@ -12,6 +12,7 @@ import org.abchip.mimo.entity.EntityPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -190,6 +191,16 @@ public interface ApplicationPackage extends EPackage {
 	 * @ordered
 	 */
 	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 12;
+
+	/**
+	 * The meta object id for the '<em>Bundle</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.osgi.framework.Bundle
+	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationBundle()
+	 * @generated
+	 */
+	int APPLICATION_BUNDLE = 17;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationPathsImpl <em>Paths</em>}' class.
@@ -1017,6 +1028,17 @@ public interface ApplicationPackage extends EPackage {
 	EAttribute getApplication_Text();
 
 	/**
+	 * Returns the meta object for data type '{@link org.osgi.framework.Bundle <em>Bundle</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Bundle</em>'.
+	 * @see org.osgi.framework.Bundle
+	 * @model instanceClass="org.osgi.framework.Bundle"
+	 * @generated
+	 */
+	EDataType getApplicationBundle();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.application.ApplicationPaths <em>Paths</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1611,6 +1633,16 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute APPLICATION__TEXT = eINSTANCE.getApplication_Text();
+
+		/**
+		 * The meta object literal for the '<em>Bundle</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.osgi.framework.Bundle
+		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationBundle()
+		 * @generated
+		 */
+		EDataType APPLICATION_BUNDLE = eINSTANCE.getApplicationBundle();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ApplicationPathsImpl <em>Paths</em>}' class.

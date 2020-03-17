@@ -18,7 +18,6 @@ import org.abchip.mimo.tester.TestManager;
 import org.abchip.mimo.tester.TestSuiteLauncher;
 import org.abchip.mimo.tester.TestSuiteRunner;
 import org.abchip.mimo.tester.TestUnitRunner;
-import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.InvalidSyntaxException;
@@ -30,19 +29,8 @@ public class BaseTestManagerImpl implements TestManager {
 	@Override
 	public TestUnitRunner prepareUnitRunner(Context context, Class<?> klass) {
 
-		Bundle bundle = FrameworkUtil.getBundle(klass);
-		String classURI = MimoConstants.SCHEME_NAME + ":/bundle/" + bundle.getSymbolicName() + "/" + klass.getName();
-
-		Class<?> testClass = null;
-		try {
-			testClass = bundle.loadClass(klass.getName());
-		} catch (ClassNotFoundException e) {
-		}
-		if (testClass == null)
-			throw new RuntimeException("Invalid runner: " + classURI);
-
 		Context testContext = new BaseTestContextImpl(context);
-		TestUnitRunner testRunner = new BaseTestUnitRunnerImpl(testContext, testClass);
+		TestUnitRunner testRunner = new BaseTestUnitRunnerImpl(testContext, klass);
 
 		return testRunner;
 	}

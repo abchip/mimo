@@ -56,12 +56,14 @@ import org.abchip.mimo.util.impl.UtilPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.osgi.framework.Bundle;
 
 /**
  * <!-- begin-user-doc -->
@@ -188,6 +190,13 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	private EEnum serviceStatusEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType applicationBundleEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -408,6 +417,16 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	@Override
 	public EAttribute getApplication_Text() {
 		return (EAttribute)applicationEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EDataType getApplicationBundle() {
+		return applicationBundleEDataType;
 	}
 
 	/**
@@ -952,6 +971,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		// Create enums
 		componentStatusEEnum = createEEnum(COMPONENT_STATUS);
 		serviceStatusEEnum = createEEnum(SERVICE_STATUS);
+
+		// Create data types
+		applicationBundleEDataType = createEDataType(APPLICATION_BUNDLE);
 	}
 
 	/**
@@ -1018,6 +1040,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEAttribute(getApplication_Text(), ecorePackage.getEString(), "text", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(applicationEClass, this.getApplicationComponent(), "getActiveComponents", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(applicationEClass, this.getApplicationBundle(), "getBundle", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(applicationPathsEClass, ApplicationPaths.class, "ApplicationPaths", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getApplicationPaths_Data(), ecorePackage.getEString(), "data", null, 1, 1, ApplicationPaths.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1097,6 +1121,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.ACTIVE);
 		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.STOPPED);
 		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.TESTING);
+
+		// Initialize data types
+		initEDataType(applicationBundleEDataType, Bundle.class, "ApplicationBundle", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //ApplicationPackageImpl

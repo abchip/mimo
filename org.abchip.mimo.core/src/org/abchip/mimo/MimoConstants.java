@@ -10,7 +10,6 @@ package org.abchip.mimo;
 
 public class MimoConstants {
 
-	public static final String SCHEME_NAME = "mimo";
 	public static final String APPLICATION_NAME = "org.abchip.mimo.application.name";
 	public static final String COMPONENT_NAME = "org.abchip.mimo.component.name";
 	public static final String PROVIDER_FRAME = "org.abchip.mimo.provider.frame";

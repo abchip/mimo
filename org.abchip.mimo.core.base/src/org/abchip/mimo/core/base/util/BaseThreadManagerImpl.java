@@ -17,10 +17,9 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.util.UtilFactory;
-import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.util.ThreadManager;
 import org.abchip.mimo.util.Threads;
+import org.abchip.mimo.util.UtilFactory;
 
 public class BaseThreadManagerImpl implements ThreadManager {
 
@@ -54,7 +53,7 @@ public class BaseThreadManagerImpl implements ThreadManager {
 	@Override
 	public org.abchip.mimo.util.Thread createThread(String name, Runnable runnable, boolean daemon) {
 
-		BaseThreadImpl thread = new BaseThreadImpl(this, runnable, MimoConstants.SCHEME_NAME + "://thread/" + name, daemon);
+		BaseThreadImpl thread = new BaseThreadImpl(this, runnable, "mimo://thread/" + name, daemon);
 		return thread;
 	}
 

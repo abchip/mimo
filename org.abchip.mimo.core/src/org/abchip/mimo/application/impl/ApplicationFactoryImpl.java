@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.osgi.framework.Bundle;
 
 /**
  * <!-- begin-user-doc -->
@@ -92,6 +93,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 				return createComponentStatusFromString(eDataType, initialValue);
 			case ApplicationPackage.SERVICE_STATUS:
 				return createServiceStatusFromString(eDataType, initialValue);
+			case ApplicationPackage.APPLICATION_BUNDLE:
+				return createApplicationBundleFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -109,6 +112,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 				return convertComponentStatusToString(eDataType, instanceValue);
 			case ApplicationPackage.SERVICE_STATUS:
 				return convertServiceStatusToString(eDataType, instanceValue);
+			case ApplicationPackage.APPLICATION_BUNDLE:
+				return convertApplicationBundleToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -295,6 +300,24 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 */
 	public String convertServiceStatusToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bundle createApplicationBundleFromString(EDataType eDataType, String initialValue) {
+		return (Bundle)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertApplicationBundleToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

@@ -10,3 +10,4 @@ Require-Bundle: org.abchip.mimo.language,
  org.eclipse.osgi,
  org.abchip.mimo.core.base
 Import-Package: javax.inject
+Export-Package: org.abchip.mimo.language.base

@@ -179,9 +179,13 @@ public class BaseApplicationStarter {
 			}
 
 			println("+hook " + hook);
-			Object service = loadObject(contextChild, hook.getClassName());
-			contextRoot.set(hook.getInterfaceName(), service, false, properties);
-			services.add(service);
+			try {
+				Object service = loadObject(contextChild, hook.getClassName());
+				contextRoot.set(hook.getInterfaceName(), service, false, properties);
+				services.add(service);
+			} catch (ClassNotFoundException e) {
+				System.err.println(e.getMessage());
+			}
 		}
 
 		return services;
@@ -202,15 +206,19 @@ public class BaseApplicationStarter {
 			}
 
 			println("+command " + command);
-			Object service = loadObject(contextChild, command.getClassName());
-			contextRoot.set(command.getInterfaceName(), service, false, null);
-			commands.add(service);
+			try {
+				Object service = loadObject(contextChild, command.getClassName());
+				contextRoot.set(command.getInterfaceName(), service, false, null);
+				commands.add(service);
+			} catch (ClassNotFoundException e) {
+				System.err.println(e.getMessage());
+			}
 		}
 
 		return commands;
 	}
 
-	private void registerService(ApplicationComponent component, ServiceRef serviceRef) throws ClassNotFoundException {
+	private void registerService(ApplicationComponent component, ServiceRef serviceRef) {
 		// STOPPED
 		if (serviceRef.getStatus() == ServiceStatus.STOPPED) {
 			println("-service " + serviceRef + " unactive");
@@ -236,23 +244,23 @@ public class BaseApplicationStarter {
 			dictionary.put(MimoConstants.SERVICE_ALIAS, serviceServlet.getAlias());
 		}
 
-		// service registration
-		Object service = loadObject(component.getContext(), serviceRef.getClassName());
-		if (service == null) {
-			System.err.println("Service reference not found: " + serviceRef);
-			println("");
-			return;
-		}
-
 		String interfaceName = serviceRef.getInterfaceName() != null ? serviceRef.getInterfaceName() : serviceRef.getClassName();
-
 		boolean remoteExport = false;
 		if (serviceRef instanceof ServiceExecutor) {
 			ServiceExecutor serviceExecutor = (ServiceExecutor) serviceRef;
 			remoteExport = serviceExecutor.isRemoteExport();
 		}
 
-		registerService(component, interfaceName, service, remoteExport, dictionary);
+		// service registration
+		Object service = null;
+		try {
+			service = loadObject(component.getContext(), serviceRef.getClassName());
+			registerService(component, interfaceName, service, remoteExport, dictionary);
+		} catch (ClassNotFoundException e) {
+			System.err.println(e.getMessage());
+			println("");
+			return;
+		}
 
 		// registry
 		if (serviceRef instanceof ServiceRegistry) {
@@ -308,18 +316,8 @@ public class BaseApplicationStarter {
 		application.getContext().set(name, service, remoteExport, properties);
 	}
 
-	private Object loadObject(Context context, String className) {
-		Class<?> tempClass = this.application.getContext().loadClass(className);
-		if (tempClass == null) {
-			try {
-				System.err.println("load from base: " + className);
-				tempClass = Class.forName(className);
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			}
-			return null;
-		}
-
+	private Object loadObject(Context context, String className) throws ClassNotFoundException {
+		Class<?> tempClass = this.application.getBundle().loadClass(className);
 		return context.make(tempClass);
 	}
 

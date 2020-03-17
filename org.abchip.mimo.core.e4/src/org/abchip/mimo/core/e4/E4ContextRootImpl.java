@@ -9,7 +9,6 @@
 package org.abchip.mimo.core.e4;
 
 import java.io.IOException;
-import java.net.URI;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -20,7 +19,6 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.UUID;
 
-import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
@@ -36,20 +34,20 @@ import org.osgi.framework.ServiceReference;
 
 public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 
-	private BundleContext bundleContext;
+	private Bundle bundle;
 	private IEclipseContext eclipseContext;
 
-	public E4ContextRootImpl(BundleContext bundleContext, ContextDescription contextDescription) {
+	public E4ContextRootImpl(Bundle bundle, ContextDescription contextDescription) {
 		super(contextDescription);
 
-		this.bundleContext = bundleContext;
-		this.eclipseContext = EclipseContextFactory.getServiceContext(bundleContext);
+		this.bundle = bundle;
+		this.eclipseContext = EclipseContextFactory.getServiceContext(bundle.getBundleContext());
 
 		initializeContext(this.eclipseContext);
 	}
 
 	private BundleContext getBundleContext() {
-		return this.bundleContext;
+		return this.bundle.getBundleContext();
 	}
 
 	@Override
@@ -211,50 +209,6 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	}
 
 	@Override
-	public Class<?> loadClass(String className) {
-
-		Class<?> klass = null;
-
-		if (className.startsWith(MimoConstants.SCHEME_NAME + ":")) {
-			URI uri = URI.create(className);
-			String tokens[] = uri.getPath().split("/");
-			if (tokens[1].equals("bundle")) {
-				for (Bundle bundle : getBundleContext().getBundles()) {
-					if (bundle.getSymbolicName().equals(tokens[2])) {
-						try {
-							klass = bundle.loadClass(tokens[3]);
-							break;
-						} catch (ClassNotFoundException e) {
-							e.printStackTrace();
-						}
-					}
-				}
-			}
-		} else {
-			try {
-				klass = getBundleContext().getBundle().loadClass(className);
-				return klass;
-			} catch (ClassNotFoundException e) {
-			}
-
-			"".toString();
-			// System.err.print("load: " + className);
-			for (Bundle bundle : getBundleContext().getBundles()) {
-				try {
-					klass = bundle.loadClass(className);
-					// System.err.print(" found on: " + bundle.getSymbolicName());
-					break;
-				} catch (ClassNotFoundException e) {
-					continue;
-				}
-			}
-			// System.err.println();
-		}
-
-		return klass;
-	}
-
-	@Override
 	public String locateBundle(String name) {
 
 		String location = null;
@@ -272,10 +226,10 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		else {
 			String osName = System.getProperty("os.name");
 			String osNameMatch = osName.toLowerCase();
-			if(osNameMatch.contains("windows")) {
+			if (osNameMatch.contains("windows")) {
 				location = location.replaceFirst("/", "");
 			}
-			 
+
 			return location;
 		}
 	}
