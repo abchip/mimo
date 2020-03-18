@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationManager;
 import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.application.ApplicationPaths;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 
@@ -25,11 +26,16 @@ public final class E4EquinoxApplicationImpl implements IApplication {
 	public final Object start(IApplicationContext context) throws Exception {
 
 		String applicationConfig = null;
+		String applicationHome = null;
 
 		String[] arguments = (String[]) context.getArguments().get(IApplicationContext.APPLICATION_ARGS);
 		for (int i = 0; i < arguments.length; i++) {
 			if (arguments[i].equals("-mimo.config")) {
 				applicationConfig = arguments[i + 1];
+				i++;
+				continue;
+			} else if (arguments[i].equals("-mimo.home")) {
+				applicationHome = arguments[i + 1];
 				i++;
 				continue;
 			}
@@ -47,6 +53,12 @@ public final class E4EquinoxApplicationImpl implements IApplication {
 		ApplicationPackage.eINSTANCE.eClass();
 
 		application = E4Activator.loadApplication(applicationConfig);
+		if (applicationHome != null) {
+			ApplicationPaths applicationPaths = application.getPaths();
+			applicationPaths.setData(applicationPaths.getData().replaceFirst("\\{mimo.home\\}", applicationHome));
+			applicationPaths.setLogs(applicationPaths.getLogs().replaceFirst("\\{mimo.home\\}", applicationHome));
+			applicationPaths.setWork(applicationPaths.getWork().replaceFirst("\\{mimo.home\\}", applicationHome));
+		}
 
 		E4Activator.startApplication(application);
 
