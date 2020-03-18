@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MIMO Core Jetty
+Bundle-SymbolicName: org.abchip.mimo.core.jetty
+Bundle-Version: 0.2.0.qualifier
+Bundle-Vendor: ABChip
+Automatic-Module-Name: org.abchip.mimo.core.jetty
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.abchip.mimo.core.jetty
+Bundle-ClassPath: .
+Require-Bundle: org.eclipse.equinox.http.jetty,
+ org.eclipse.equinox.http.registry,
+ org.eclipse.equinox.http.servlet,
+ org.eclipse.jetty.continuation,
+ org.eclipse.jetty.http,
+ org.eclipse.jetty.io,
+ org.eclipse.jetty.security,
+ org.eclipse.jetty.server,
+ org.eclipse.jetty.servlet,
+ org.eclipse.jetty.util,
+ org.abchip.mimo.core
+Import-Package: javax.servlet,
+ javax.servlet.http,
+ org.osgi.service.http
