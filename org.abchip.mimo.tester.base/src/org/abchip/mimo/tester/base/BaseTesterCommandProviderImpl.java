@@ -42,7 +42,7 @@ public class BaseTesterCommandProviderImpl extends BaseCommandProviderImpl {
 	public void _test(CommandInterpreter interpreter) throws Exception {
 
 		AuthenticationUserPassword authentication = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
-		authentication.setUser("abchip-test");
+		authentication.setUser("test");
 		authentication.setPassword("ofbiz");
 		authentication.setTenant("test");
 
