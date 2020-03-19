@@ -8,7 +8,6 @@
  */
 package org.abchip.mimo.core.e4;
 
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Dictionary;
@@ -54,13 +53,6 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	@Override
 	protected void removeEclipseContext() {
 		this.eclipseContext = null;
-	}
-
-	@Override
-	public String getInstallArea() {
-		String installArea = System.getProperty("osgi.install.area");
-		installArea = installArea.replaceFirst("file:/", "/");
-		return installArea;
 	}
 
 	@Override
@@ -155,31 +147,5 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		}
 
 		return contextChild;
-	}
-
-	@Override
-	public String locateBundle(String name) {
-
-		String location = null;
-		for (Bundle bundle : getBundleContext().getBundles()) {
-			if (!bundle.getSymbolicName().equals(name))
-				continue;
-
-			location = bundle.getLocation();
-			break;
-		}
-
-		location = location.replaceFirst("reference:file:", "");
-		if (location.startsWith("plugins/"))
-			return Paths.get(this.getInstallArea(), location).toString();
-		else {
-			String osName = System.getProperty("os.name");
-			String osNameMatch = osName.toLowerCase();
-			if (osNameMatch.contains("windows")) {
-				location = location.replaceFirst("/", "");
-			}
-
-			return location;
-		}
 	}
 }

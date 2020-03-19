@@ -7,6 +7,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//entity/EntityIdentifiable">
       <eOperations name="getActiveComponents" upperBound="-1" eType="#//application/ApplicationComponent"/>
       <eOperations name="getBundle" lowerBound="1" eType="#//application/ApplicationBundle"/>
+      <eOperations name="getInstallArea" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="locateBundle" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="adminKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="plugin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
@@ -73,8 +77,15 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
           eType="#//application/ServiceRef" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
+          eType="#//application/ModuleStatus" defaultValueLiteral="ACT"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ComponentStatus">
+      <eLiterals name="Active" literal="ACT"/>
+      <eLiterals name="Stopped" literal="STP"/>
+      <eLiterals name="Testing" literal="TST"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ModuleStatus">
       <eLiterals name="Active" literal="ACT"/>
       <eLiterals name="Stopped" literal="STP"/>
       <eLiterals name="Testing" literal="TST"/>
@@ -334,10 +345,6 @@
           </eGenericType>
         </eParameters>
         <eParameters name="filter" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="getInstallArea" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="locateBundle" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="set" lowerBound="1">
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

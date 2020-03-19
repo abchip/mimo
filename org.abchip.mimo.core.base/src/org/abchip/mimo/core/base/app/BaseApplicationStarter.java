@@ -33,6 +33,7 @@ import org.abchip.mimo.application.ApplicationStarting;
 import org.abchip.mimo.application.ComponentStarted;
 import org.abchip.mimo.application.ComponentStarting;
 import org.abchip.mimo.application.ComponentStatus;
+import org.abchip.mimo.application.ModuleStatus;
 import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceExecutor;
 import org.abchip.mimo.application.ServiceHook;
@@ -139,7 +140,10 @@ public class BaseApplicationStarter {
 		for (ApplicationModule module : component.getModules()) {
 			messageLevel++;
 			println(">module " + module);
-
+			if (module.getStatus() != ModuleStatus.ACTIVE) {
+				println("!unactive");
+				continue;
+			}
 			// services
 			messageLevel++;
 			for (ServiceRef serviceRef : module.getServices()) {

@@ -17,6 +17,7 @@ import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.application.ComponentStatus;
+import org.abchip.mimo.application.ModuleStatus;
 import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceConfig;
 import org.abchip.mimo.application.ServiceExecutor;
@@ -183,6 +184,13 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	private EEnum componentStatusEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum moduleStatusEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -595,6 +603,16 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
+	public EAttribute getApplicationModule_Status() {
+		return (EAttribute)applicationModuleEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getServiceCommandProvider() {
 		return serviceCommandProviderEClass;
 	}
@@ -865,6 +883,16 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
+	public EEnum getModuleStatus() {
+		return moduleStatusEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getServiceStatus() {
 		return serviceStatusEEnum;
 	}
@@ -931,6 +959,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		applicationModuleEClass = createEClass(APPLICATION_MODULE);
 		createEAttribute(applicationModuleEClass, APPLICATION_MODULE__NAME);
 		createEReference(applicationModuleEClass, APPLICATION_MODULE__SERVICES);
+		createEAttribute(applicationModuleEClass, APPLICATION_MODULE__STATUS);
 
 		serviceCommandProviderEClass = createEClass(SERVICE_COMMAND_PROVIDER);
 		createEAttribute(serviceCommandProviderEClass, SERVICE_COMMAND_PROVIDER__INTERFACE_NAME);
@@ -970,6 +999,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		// Create enums
 		componentStatusEEnum = createEEnum(COMPONENT_STATUS);
+		moduleStatusEEnum = createEEnum(MODULE_STATUS);
 		serviceStatusEEnum = createEEnum(SERVICE_STATUS);
 
 		// Create data types
@@ -1043,6 +1073,11 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		addEOperation(applicationEClass, this.getApplicationBundle(), "getBundle", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(applicationEClass, ecorePackage.getEString(), "getInstallArea", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		EOperation op = addEOperation(applicationEClass, ecorePackage.getEString(), "locateBundle", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(applicationPathsEClass, ApplicationPaths.class, "ApplicationPaths", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getApplicationPaths_Data(), ecorePackage.getEString(), "data", null, 1, 1, ApplicationPaths.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplicationPaths_Logs(), ecorePackage.getEString(), "logs", null, 1, 1, ApplicationPaths.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1059,7 +1094,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		initEClass(applicationManagerEClass, ApplicationManager.class, "ApplicationManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(applicationManagerEClass, null, "start", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(applicationManagerEClass, null, "start", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getApplication(), "application", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theJavaPackage.getJavaOutputStream(), "output", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1072,6 +1107,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEClass(applicationModuleEClass, ApplicationModule.class, "ApplicationModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getApplicationModule_Name(), ecorePackage.getEString(), "name", null, 0, 1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplicationModule_Services(), this.getServiceRef(), null, "services", null, 0, -1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApplicationModule_Status(), this.getModuleStatus(), "status", "ACT", 1, 1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceCommandProviderEClass, ServiceCommandProvider.class, "ServiceCommandProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceCommandProvider_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.eclipse.osgi.framework.console.CommandProvider", 1, 1, ServiceCommandProvider.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1116,6 +1152,11 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		addEEnumLiteral(componentStatusEEnum, ComponentStatus.ACTIVE);
 		addEEnumLiteral(componentStatusEEnum, ComponentStatus.STOPPED);
 		addEEnumLiteral(componentStatusEEnum, ComponentStatus.TESTING);
+
+		initEEnum(moduleStatusEEnum, ModuleStatus.class, "ModuleStatus");
+		addEEnumLiteral(moduleStatusEEnum, ModuleStatus.ACTIVE);
+		addEEnumLiteral(moduleStatusEEnum, ModuleStatus.STOPPED);
+		addEEnumLiteral(moduleStatusEEnum, ModuleStatus.TESTING);
 
 		initEEnum(serviceStatusEEnum, ServiceStatus.class, "ServiceStatus");
 		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.ACTIVE);

@@ -15,6 +15,7 @@ import javax.inject.Inject;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationComponent;
 import org.abchip.mimo.application.ApplicationModule;
+import org.abchip.mimo.application.ModuleStatus;
 import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.context.AuthenticationManager;
@@ -46,7 +47,7 @@ public class BaseTesterCommandProviderImpl extends BaseCommandProviderImpl {
 		authentication.setTenant("test");
 
 		AuthenticationManager authenticationManager = application.getContext().get(AuthenticationManager.class);
-		
+
 		try (Context context = authenticationManager.login(null, authentication)) {
 
 			String componentName = interpreter.nextArgument();
@@ -56,6 +57,8 @@ public class BaseTesterCommandProviderImpl extends BaseCommandProviderImpl {
 					continue;
 
 				for (ApplicationModule module : component.getModules()) {
+					if (module.getStatus() != ModuleStatus.ACTIVE)
+						continue;
 					for (ServiceRef serviceRef : module.getServices()) {
 						if (!serviceRef.getInterfaceName().equals(TestSuiteLauncher.class.getName()))
 							continue;

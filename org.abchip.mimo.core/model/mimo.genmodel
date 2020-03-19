@@ -16,6 +16,11 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ComponentStatus/Stopped"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ComponentStatus/Testing"/>
       </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//application/ModuleStatus">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ModuleStatus/Active"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ModuleStatus/Stopped"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ModuleStatus/Testing"/>
+      </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//application/ServiceStatus">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Active"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Stopped"/>
@@ -37,6 +42,10 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/text"/>
         <genOperations ecoreOperation="mimo.ecore#//application/Application/getActiveComponents"/>
         <genOperations ecoreOperation="mimo.ecore#//application/Application/getBundle"/>
+        <genOperations ecoreOperation="mimo.ecore#//application/Application/getInstallArea"/>
+        <genOperations ecoreOperation="mimo.ecore#//application/Application/locateBundle">
+          <genParameters ecoreParameter="mimo.ecore#//application/Application/locateBundle/name"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//application/ApplicationPaths">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationPaths/data"/>
@@ -67,6 +76,7 @@
       <genClasses ecoreClass="mimo.ecore#//application/ApplicationModule">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationModule/name"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ApplicationModule/services"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationModule/status"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//application/ServiceCommandProvider">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceCommandProvider/interfaceName"/>
@@ -241,10 +251,6 @@
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getAll.1/klass"/>
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/getAll.1/filter"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/ContextRoot/getAll.1/T"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/getInstallArea"/>
-        <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/locateBundle">
-          <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/locateBundle/name"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/ContextRoot/set">
           <genParameters ecoreParameter="mimo.ecore#//context/ContextRoot/set/name"/>

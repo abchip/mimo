@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.application.ModuleStatus;
 import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationModuleImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationModuleImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ApplicationModuleImpl#getStatus <em>Status</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,24 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	 * @ordered
 	 */
 	protected EList<ServiceRef> services;
+	/**
+	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ModuleStatus STATUS_EDEFAULT = ModuleStatus.ACTIVE;
+	/**
+	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected ModuleStatus status = STATUS_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -132,6 +152,29 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	 * @generated
 	 */
 	@Override
+	public ModuleStatus getStatus() {
+		return status;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStatus(ModuleStatus newStatus) {
+		ModuleStatus oldStatus = status;
+		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION_MODULE__STATUS, oldStatus, status));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ApplicationPackage.APPLICATION_MODULE__SERVICES:
@@ -152,6 +195,8 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 				return getName();
 			case ApplicationPackage.APPLICATION_MODULE__SERVICES:
 				return getServices();
+			case ApplicationPackage.APPLICATION_MODULE__STATUS:
+				return getStatus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,6 +217,9 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 				getServices().clear();
 				getServices().addAll((Collection<? extends ServiceRef>)newValue);
 				return;
+			case ApplicationPackage.APPLICATION_MODULE__STATUS:
+				setStatus((ModuleStatus)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -190,6 +238,9 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 			case ApplicationPackage.APPLICATION_MODULE__SERVICES:
 				getServices().clear();
 				return;
+			case ApplicationPackage.APPLICATION_MODULE__STATUS:
+				setStatus(STATUS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -206,6 +257,8 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ApplicationPackage.APPLICATION_MODULE__SERVICES:
 				return services != null && !services.isEmpty();
+			case ApplicationPackage.APPLICATION_MODULE__STATUS:
+				return status != STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -222,6 +275,8 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", status: ");
+		result.append(status);
 		result.append(')');
 		return result.toString();
 	}

@@ -91,6 +91,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 		switch (eDataType.getClassifierID()) {
 			case ApplicationPackage.COMPONENT_STATUS:
 				return createComponentStatusFromString(eDataType, initialValue);
+			case ApplicationPackage.MODULE_STATUS:
+				return createModuleStatusFromString(eDataType, initialValue);
 			case ApplicationPackage.SERVICE_STATUS:
 				return createServiceStatusFromString(eDataType, initialValue);
 			case ApplicationPackage.APPLICATION_BUNDLE:
@@ -110,6 +112,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 		switch (eDataType.getClassifierID()) {
 			case ApplicationPackage.COMPONENT_STATUS:
 				return convertComponentStatusToString(eDataType, instanceValue);
+			case ApplicationPackage.MODULE_STATUS:
+				return convertModuleStatusToString(eDataType, instanceValue);
 			case ApplicationPackage.SERVICE_STATUS:
 				return convertServiceStatusToString(eDataType, instanceValue);
 			case ApplicationPackage.APPLICATION_BUNDLE:
@@ -279,6 +283,26 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	public String convertComponentStatusToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModuleStatus createModuleStatusFromString(EDataType eDataType, String initialValue) {
+		ModuleStatus result = ModuleStatus.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertModuleStatusToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

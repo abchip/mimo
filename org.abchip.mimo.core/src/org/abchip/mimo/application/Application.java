@@ -341,4 +341,20 @@ public interface Application extends EntityIdentifiable {
 	 */
 	Bundle getBundle();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	String getInstallArea();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" nameRequired="true"
+	 * @generated
+	 */
+	String locateBundle(String name);
+
 } // Application
