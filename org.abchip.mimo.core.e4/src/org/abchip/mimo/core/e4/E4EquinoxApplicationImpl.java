@@ -8,14 +8,17 @@
  */
 package org.abchip.mimo.core.e4;
 
+import java.util.Dictionary;
+import java.util.Hashtable;
 import java.util.concurrent.TimeUnit;
 
+import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationManager;
-import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.ApplicationPaths;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.FrameworkUtil;
 
 public final class E4EquinoxApplicationImpl implements IApplication {
 
@@ -41,6 +44,11 @@ public final class E4EquinoxApplicationImpl implements IApplication {
 			}
 		}
 
+		BundleContext bundleContext = FrameworkUtil.getBundle(this.getClass()).getBundleContext();
+		Dictionary<String, Object> properties = new Hashtable<String, Object>();
+		properties.put(MimoConstants.APPLICATION_CONFIG, true);
+		bundleContext.registerService(String.class, applicationConfig, properties);
+
 		context.applicationRunning();
 
 		if (applicationConfig == null) {
@@ -48,19 +56,6 @@ public final class E4EquinoxApplicationImpl implements IApplication {
 
 			return waitForStopOrRestart();
 		}
-
-		// Load application
-		ApplicationPackage.eINSTANCE.eClass();
-
-		application = E4Activator.loadApplication(applicationConfig);
-		if (applicationHome != null) {
-			ApplicationPaths applicationPaths = application.getPaths();
-			applicationPaths.setData(applicationPaths.getData().replaceFirst("\\{mimo.home\\}", applicationHome));
-			applicationPaths.setLogs(applicationPaths.getLogs().replaceFirst("\\{mimo.home\\}", applicationHome));
-			applicationPaths.setWork(applicationPaths.getWork().replaceFirst("\\{mimo.home\\}", applicationHome));
-		}
-
-		E4Activator.startApplication(application);
 
 		return waitForStopOrRestart();
 	}

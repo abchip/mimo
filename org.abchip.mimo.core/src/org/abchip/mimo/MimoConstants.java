@@ -11,6 +11,8 @@ package org.abchip.mimo;
 public class MimoConstants {
 
 	public static final String APPLICATION_NAME = "org.abchip.mimo.application.name";
+	public static final String APPLICATION_HOME = "org.abchip.mimo.application.home";
+	public static final String APPLICATION_CONFIG = "org.abchip.mimo.application.config";
 	public static final String COMPONENT_NAME = "org.abchip.mimo.component.name";
 	public static final String PROVIDER_FRAME = "org.abchip.mimo.provider.frame";
 	public static final String SERVICE_ALIAS = "org.abchip.mimo.service.alias";
