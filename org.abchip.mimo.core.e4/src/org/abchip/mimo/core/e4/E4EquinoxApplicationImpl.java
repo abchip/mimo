@@ -40,6 +40,10 @@ public final class E4EquinoxApplicationImpl implements IApplication {
 				dictionary.put(MimoConstants.APPLICATION_ACTIVATOR_HOME, arguments[i + 1]);
 				i++;
 				continue;
+			} else if (arguments[i].equals("-mimo.admin.key")) {
+				dictionary.put(MimoConstants.APPLICATION_ACTIVATOR_ADMIN_KEY, arguments[i + 1]);
+				i++;
+				continue;
 			}
 		}
 

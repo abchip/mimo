@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.abchip.mimo.context.AuthenticationAdminKey;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserPassword;
@@ -53,8 +54,9 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		System.out.println(session.getId() + ": " + getServletName() + " " + HttpUtils.getParametersAsString(request));
 
+		String adminKeyParam = request.getParameter("adminKey");
 		String provider = request.getParameter("provider");
-		String userField = request.getParameter("user");
+		String userParam = request.getParameter("user");
 		String password = request.getParameter("password");
 
 		// Third part
@@ -97,31 +99,55 @@ public class LoginServlet extends HttpServlet {
 
 		Context context = ContextUtils.getContext(session.getId());
 
-		// user password login
-		String[] fields = userField.split("/");
-
-		String tenant = null;
-		String user = null;
-
-		if (fields.length > 1) {
-			tenant = fields[0];
-			if (tenant.trim().isEmpty())
-				tenant = null;
-			user = fields[1];
-		} else
-			user = fields[0];
-
 		// close previous
 		if (context != null) {
-			ContextUtils.removeContext(session.getId());
 			context.close();
 			context = null;
+		}		
+		ContextUtils.removeContext(session.getId());
+		
+		// adminKey
+		if (adminKeyParam != null) {
+
+			String[] fields = adminKeyParam.split("/");
+
+			String tenant = null;
+			String adminKey = null;
+
+			if (fields.length > 1) {
+				tenant = fields[0];
+				if (tenant.trim().isEmpty())
+					tenant = null;
+				adminKey = fields[1];
+			} else
+				adminKey = fields[0];
+			
+			// new session with user password
+			AuthenticationAdminKey authentication = ContextFactory.eINSTANCE.createAuthenticationAdminKey();
+			authentication.setAdminKey(adminKey);
+			authentication.setTenant(tenant);
+
+			context = authenticationManager.login(session.getId(), authentication);
+			ContextUtils.addContext(context);
+
 		}
+		// user password login
+		else {
 
-		// new session with user password
-		if (context == null) {
-			ContextUtils.removeContext(session.getId());
+			String[] fields = userParam.split("/");
 
+			String tenant = null;
+			String user = null;
+
+			if (fields.length > 1) {
+				tenant = fields[0];
+				if (tenant.trim().isEmpty())
+					tenant = null;
+				user = fields[1];
+			} else
+				user = fields[0];
+			
+			// new session with user password
 			AuthenticationUserPassword authentication = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
 			authentication.setUser(user);
 			authentication.setPassword(password);

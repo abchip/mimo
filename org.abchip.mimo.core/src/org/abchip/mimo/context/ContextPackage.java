@@ -123,13 +123,22 @@ public interface ContextPackage extends EPackage {
 	int AUTHENTICATION_ADMIN_KEY__ADMIN_KEY = AUTHENTICATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_ADMIN_KEY__TENANT = AUTHENTICATION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Authentication Admin Key</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_ADMIN_KEY_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 1;
+	int AUTHENTICATION_ADMIN_KEY_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.AuthenticationManager <em>Authentication Manager</em>}' class.
@@ -974,6 +983,17 @@ public interface ContextPackage extends EPackage {
 	EAttribute getAuthenticationAdminKey_AdminKey();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.AuthenticationAdminKey#getTenant <em>Tenant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tenant</em>'.
+	 * @see org.abchip.mimo.context.AuthenticationAdminKey#getTenant()
+	 * @see #getAuthenticationAdminKey()
+	 * @generated
+	 */
+	EAttribute getAuthenticationAdminKey_Tenant();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.context.AuthenticationManager <em>Authentication Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1710,6 +1730,14 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute AUTHENTICATION_ADMIN_KEY__ADMIN_KEY = eINSTANCE.getAuthenticationAdminKey_AdminKey();
+
+		/**
+		 * The meta object literal for the '<em><b>Tenant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHENTICATION_ADMIN_KEY__TENANT = eINSTANCE.getAuthenticationAdminKey_Tenant();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.AuthenticationManager <em>Authentication Manager</em>}' class.

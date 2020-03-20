@@ -70,7 +70,6 @@ public class E4Activator implements BundleActivator {
 						if (serviceReference.getProperty(MimoConstants.APPLICATION_ACTIVATOR) == null)
 							return;
 
-						
 						try {
 							Dictionary dictionary = (Dictionary) bundleContext.getService(serviceReference);
 							startApplication(dictionary);
@@ -94,21 +93,22 @@ public class E4Activator implements BundleActivator {
 	@SuppressWarnings({ "resource", "rawtypes" })
 	private void startApplication(Dictionary dictionary) throws Exception {
 
-		if(E4Activator.application != null) {
+		if (E4Activator.application != null) {
 			System.err.println("Application already started " + application);
 			return;
 		}
-		
+
 		Object applicationConfig = dictionary.get(MimoConstants.APPLICATION_ACTIVATOR_CONFIG);
 		Object applicationHome = dictionary.get(MimoConstants.APPLICATION_ACTIVATOR_HOME);
-		
+		Object adminKey = dictionary.get(MimoConstants.APPLICATION_ACTIVATOR_ADMIN_KEY);
+
 		if (applicationConfig == null) {
 			System.err.println("Application config is required");
-			return;			
+			return;
 		}
-		
+
 		Application application = null;
-		
+
 		try {
 			Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 			Map<String, Object> m = reg.getExtensionToFactoryMap();
@@ -125,14 +125,22 @@ public class E4Activator implements BundleActivator {
 			resource.load(Collections.EMPTY_MAP);
 			application = (Application) resource.getContents().get(0);
 
+			// ${mimo.admin.key}
+			if (adminKey == null)
+				adminKey = "";
+			if (application.getAdminKey() != null)
+				application.setAdminKey(application.getAdminKey().replaceFirst("\\$\\{mimo.admin.key\\}", adminKey.toString()));
+			if (application.getAdminKey().isEmpty())
+				application.setAdminKey(null);
+
+			// ${mimo.home}
 			if (applicationHome != null) {
 				ApplicationPaths applicationPaths = application.getPaths();
-				applicationPaths.setData(applicationPaths.getData().replaceFirst("\\{mimo.home\\}", applicationHome.toString()));
-				applicationPaths.setLogs(applicationPaths.getLogs().replaceFirst("\\{mimo.home\\}", applicationHome.toString()));
-				applicationPaths.setWork(applicationPaths.getWork().replaceFirst("\\{mimo.home\\}", applicationHome.toString()));
+				applicationPaths.setData(applicationPaths.getData().replaceFirst("\\$\\{mimo.home\\}", applicationHome.toString()));
+				applicationPaths.setLogs(applicationPaths.getLogs().replaceFirst("\\$\\{mimo.home\\}", applicationHome.toString()));
+				applicationPaths.setWork(applicationPaths.getWork().replaceFirst("\\$\\{mimo.home\\}", applicationHome.toString()));
 			}
 
-			
 			Bundle bundle = application.getBundle();
 			ClassLoader bundleLoader = bundle.adapt(BundleWiring.class).getClassLoader();
 			Thread.currentThread().setContextClassLoader(bundleLoader);

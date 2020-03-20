@@ -18,6 +18,7 @@ package org.abchip.mimo.context;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.context.AuthenticationAdminKey#getAdminKey <em>Admin Key</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.AuthenticationAdminKey#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.context.ContextPackage#getAuthenticationAdminKey()
@@ -50,5 +51,31 @@ public interface AuthenticationAdminKey extends Authentication {
 	 * @generated
 	 */
 	void setAdminKey(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tenant</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tenant</em>' attribute.
+	 * @see #setTenant(String)
+	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationAdminKey_Tenant()
+	 * @model
+	 * @generated
+	 */
+	String getTenant();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationAdminKey#getTenant <em>Tenant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tenant</em>' attribute.
+	 * @see #getTenant()
+	 * @generated
+	 */
+	void setTenant(String value);
 
 } // AuthenticationAdminKey
