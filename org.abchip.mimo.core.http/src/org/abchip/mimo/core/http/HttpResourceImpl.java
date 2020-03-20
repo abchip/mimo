@@ -209,11 +209,15 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			} finally {
 				this.resourceSerializer.clear();
 			}
-
-			String query = "?frame=" + getFrame().getName() + "&replace=" + replace + "&json=" + baos.toString();
+			
+			String query = "?frame=" + getFrame().getName() + "&replace=" + replace;
+			try {
+				query += "&json=" + URLEncoder.encode(baos.toString(), "UTF-8");
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
 			if (tenant != null)
 				query += "&tenant=" + this.tenant;
-
 			try (CloseableHttpResponse response = connector.execute("save", query)) {
 			} catch (Exception e) {
 				logger.error(e);
