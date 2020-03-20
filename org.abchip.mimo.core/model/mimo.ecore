@@ -171,6 +171,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="AuthenticationAdminKey" eSuperTypes="#//context/Authentication">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="adminKey" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AuthenticationManager" abstract="true"
         interface="true">

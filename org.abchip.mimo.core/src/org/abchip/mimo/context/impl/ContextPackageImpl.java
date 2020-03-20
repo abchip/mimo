@@ -431,6 +431,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAuthenticationAdminKey_Tenant() {
+		return (EAttribute)authenticationAdminKeyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAuthenticationManager() {
 		return authenticationManagerEClass;
 	}
@@ -1100,6 +1110,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		authenticationAdminKeyEClass = createEClass(AUTHENTICATION_ADMIN_KEY);
 		createEAttribute(authenticationAdminKeyEClass, AUTHENTICATION_ADMIN_KEY__ADMIN_KEY);
+		createEAttribute(authenticationAdminKeyEClass, AUTHENTICATION_ADMIN_KEY__TENANT);
 
 		authenticationManagerEClass = createEClass(AUTHENTICATION_MANAGER);
 
@@ -1275,6 +1286,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(authenticationAdminKeyEClass, AuthenticationAdminKey.class, "AuthenticationAdminKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthenticationAdminKey_AdminKey(), ecorePackage.getEString(), "adminKey", null, 1, 1, AuthenticationAdminKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAuthenticationAdminKey_Tenant(), ecorePackage.getEString(), "tenant", null, 0, 1, AuthenticationAdminKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationManagerEClass, AuthenticationManager.class, "AuthenticationManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.context.impl.AuthenticationAdminKeyImpl#getAdminKey <em>Admin Key</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.AuthenticationAdminKeyImpl#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,6 +57,26 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 	 * @ordered
 	 */
 	protected String adminKey = ADMIN_KEY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTenant()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TENANT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTenant()
+	 * @generated
+	 * @ordered
+	 */
+	protected String tenant = TENANT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,10 +126,35 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 	 * @generated
 	 */
 	@Override
+	public String getTenant() {
+		return tenant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTenant(String newTenant) {
+		String oldTenant = tenant;
+		tenant = newTenant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_ADMIN_KEY__TENANT, oldTenant, tenant));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ContextPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
 				return getAdminKey();
+			case ContextPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
+				return getTenant();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,6 +169,9 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 		switch (featureID) {
 			case ContextPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
 				setAdminKey((String)newValue);
+				return;
+			case ContextPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
+				setTenant((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,6 +188,9 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 			case ContextPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
 				setAdminKey(ADMIN_KEY_EDEFAULT);
 				return;
+			case ContextPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
+				setTenant(TENANT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -153,6 +205,8 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 		switch (featureID) {
 			case ContextPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
 				return ADMIN_KEY_EDEFAULT == null ? adminKey != null : !ADMIN_KEY_EDEFAULT.equals(adminKey);
+			case ContextPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
+				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -169,6 +223,8 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (adminKey: ");
 		result.append(adminKey);
+		result.append(", tenant: ");
+		result.append(tenant);
 		result.append(')');
 		return result.toString();
 	}

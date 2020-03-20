@@ -142,6 +142,7 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//context/Authentication"/>
       <genClasses ecoreClass="mimo.ecore#//context/AuthenticationAdminKey">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationAdminKey/adminKey"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationAdminKey/tenant"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationManager">
         <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/checkLogin">
