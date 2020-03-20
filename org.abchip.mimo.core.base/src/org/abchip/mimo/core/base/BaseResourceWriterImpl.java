@@ -40,10 +40,10 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 
 		if (sequence) {
 
-			EntityLocker<?> entityLocker = lock(internal.getContext(), this.getFrame());
+			EntityLocker<?> entityLocker = lock(this.getContext(), this.getFrame());
 
 			try {
-				String id = this.internal.getResource().nextSequence();
+				String id = this.getResource().nextSequence();
 				
 				Frame<?> domainFrame = entityIdentifiable.isa();
 				for (String key : domainFrame.getKeys()) {
@@ -62,12 +62,12 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 	@Override
 	public void delete(E entity) {
 
-		EntityLocker<?> entityLocker = lock(internal.getContext(), entity);
+		EntityLocker<?> entityLocker = lock(this.getContext(), entity);
 
 		try {
 			ResourceHelper.firePreDeleteEvent(this, entity);
 
-			this.internal.getResource().delete(entity);
+			this.getResource().delete(entity);
 			this.setInternalResource(entity);
 
 			ResourceHelper.firePostDeleteEvent(this, entity);
@@ -84,12 +84,12 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 	@Override
 	public void create(E entity, boolean update) {
 
-		EntityLocker<?> entityLocker = lock(internal.getContext(), entity);
+		EntityLocker<?> entityLocker = lock(this.getContext(), entity);
 
 		try {
 			ResourceHelper.firePreSaveEvent(this, entity);
 
-			this.internal.getResource().create(entity, update);
+			this.getResource().create(entity, update);
 			this.setInternalResource(entity);
 
 			ResourceHelper.firePostSaveEvent(this, entity);
@@ -101,12 +101,12 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 	@Override
 	public void update(E entity) {
 
-		EntityLocker<?> entityLocker = lock(internal.getContext(), entity);
+		EntityLocker<?> entityLocker = lock(this.getContext(), entity);
 
 		try {
 			ResourceHelper.firePreSaveEvent(this, entity);
 
-			this.internal.getResource().update(entity);
+			this.getResource().update(entity);
 			this.setInternalResource(entity);
 
 			ResourceHelper.firePostSaveEvent(this, entity);

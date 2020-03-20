@@ -26,6 +26,7 @@ import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.util.EntityUtils;
 
 public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
@@ -97,7 +98,24 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 	@Override
 	public String nextSequence() {
-		throw new UnsupportedOperationException();
+
+		String nextSequence = null;
+
+		String query = "?frame=" + getFrame().getName();
+		if (tenant != null)
+			query += "&tenant=" + this.tenant;
+
+		try (CloseableHttpResponse response = this.connector.execute("nextSequence", query)) {
+
+			if (response != null && response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
+				HttpEntity entity = response.getEntity();
+				nextSequence = EntityUtils.toString(entity, "UTF-8");
+			}
+		} catch (Exception e) {
+			logger.error(e);
+		}
+
+		return nextSequence;
 	}
 
 	@Override

@@ -270,5 +270,10 @@ public class ResourceHelper {
 		public String getTenant() {
 			return context.getContextDescription().getTenant();
 		}
+
+		@Override
+		public Resource<E> getResource() {
+			return null;
+		}
 	}
 }

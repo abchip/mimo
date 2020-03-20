@@ -50,7 +50,7 @@ public class HttpServiceServlet extends HttpServlet {
 
 				BundleContext bundleContext = FrameworkUtil.getBundle(Application.class).getBundleContext();
 				for (ServiceReference<Servlet> serviceReference : bundleContext.getServiceReferences(Servlet.class, null)) {
-					Object servletAlias = serviceReference.getProperty(MimoConstants.SERVICE_ALIAS);
+					Object servletAlias = serviceReference.getProperty(MimoConstants.SERVLET_ALIAS);
 					if (servletAlias == null)
 						continue;
 

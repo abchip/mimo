@@ -12,6 +12,7 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceNotifier;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceReader;
@@ -208,6 +209,14 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	 */
 	@Override
 	public abstract Frame<E> getFrame();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public abstract Resource<E> getResource();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

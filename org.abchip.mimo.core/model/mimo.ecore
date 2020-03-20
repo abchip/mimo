@@ -1609,8 +1609,14 @@
         <eGenericType eTypeParameter="#//resource/ResourceReader/E"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
+      <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
       <eOperations name="getFrame" lowerBound="1">
         <eGenericType eClassifier="#//entity/Frame">
+          <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getResource" lowerBound="1">
+        <eGenericType eClassifier="#//resource/Resource">
           <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>
         </eGenericType>
       </eOperations>
@@ -1624,7 +1630,6 @@
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
-      <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="notifier">
         <eGenericType eClassifier="#//resource/ResourceNotifier">
           <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>

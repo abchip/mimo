@@ -245,7 +245,7 @@ public class BaseApplicationStarter {
 		// servlet
 		if (serviceRef instanceof ServiceServlet) {
 			ServiceServlet serviceServlet = (ServiceServlet) serviceRef;
-			dictionary.put(MimoConstants.SERVICE_ALIAS, serviceServlet.getAlias());
+			dictionary.put(MimoConstants.SERVLET_ALIAS, serviceServlet.getAlias());
 		}
 
 		String interfaceName = serviceRef.getInterfaceName() != null ? serviceRef.getInterfaceName() : serviceRef.getClassName();

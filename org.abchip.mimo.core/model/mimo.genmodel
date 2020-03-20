@@ -982,7 +982,9 @@
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/first.1">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/first.1/proxy"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/getContext"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/getFrame"/>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/getResource"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/getTenant"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/lookup">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/lookup/name"/>
@@ -991,7 +993,6 @@
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/lookup.1/name"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/lookup.1/proxy"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/getContext"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceSerializer">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceSerializer/E"/>
