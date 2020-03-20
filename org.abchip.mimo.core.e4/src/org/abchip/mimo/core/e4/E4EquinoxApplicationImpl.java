@@ -28,33 +28,29 @@ public final class E4EquinoxApplicationImpl implements IApplication {
 	@Override
 	public final Object start(IApplicationContext context) throws Exception {
 
-		String applicationConfig = null;
-		String applicationHome = null;
+		Dictionary<String, Object> dictionary = new Hashtable<String, Object>();
 
 		String[] arguments = (String[]) context.getArguments().get(IApplicationContext.APPLICATION_ARGS);
 		for (int i = 0; i < arguments.length; i++) {
 			if (arguments[i].equals("-mimo.config")) {
-				applicationConfig = arguments[i + 1];
+				dictionary.put(MimoConstants.APPLICATION_ACTIVATOR_CONFIG, arguments[i + 1]);
 				i++;
 				continue;
 			} else if (arguments[i].equals("-mimo.home")) {
-				applicationHome = arguments[i + 1];
+				dictionary.put(MimoConstants.APPLICATION_ACTIVATOR_HOME, arguments[i + 1]);
 				i++;
 				continue;
 			}
 		}
 
-		BundleContext bundleContext = FrameworkUtil.getBundle(this.getClass()).getBundleContext();
-		Dictionary<String, Object> properties = new Hashtable<String, Object>();
-		properties.put(MimoConstants.APPLICATION_CONFIG, true);
-		bundleContext.registerService(String.class, applicationConfig, properties);
+		if (!dictionary.isEmpty()) {
+			BundleContext bundleContext = FrameworkUtil.getBundle(this.getClass()).getBundleContext();
+			Dictionary<String, Object> properties = new Hashtable<String, Object>();
+			properties.put(MimoConstants.APPLICATION_ACTIVATOR, true);
 
-		context.applicationRunning();
+			bundleContext.registerService(Dictionary.class, dictionary, properties);
 
-		if (applicationConfig == null) {
-			System.out.println("Configuration required: see -mimo.config parameter");
-
-			return waitForStopOrRestart();
+			context.applicationRunning();
 		}
 
 		return waitForStopOrRestart();

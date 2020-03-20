@@ -10,6 +10,7 @@ package org.abchip.mimo.core.e4;
 
 import java.io.File;
 import java.util.Collections;
+import java.util.Dictionary;
 import java.util.Map;
 
 import org.abchip.mimo.MimoConstants;
@@ -42,32 +43,22 @@ public class E4Activator implements BundleActivator {
 	}
 
 	@Override
+	@SuppressWarnings("rawtypes")
 	public void start(BundleContext bundleContext) throws Exception {
 		this.applicationManagerRegistration = bundleContext.registerService(ApplicationManager.class, new BaseApplicationManagerImpl(), null);
 
-		String applicationConfig = null;
-		for (ServiceReference<String> str : bundleContext.getServiceReferences(String.class, null)) {
-			if (str.getProperty(MimoConstants.APPLICATION_CONFIG) == null)
+		Dictionary dictionary = null;
+		for (ServiceReference<Dictionary> dictionaryReference : bundleContext.getServiceReferences(Dictionary.class, null)) {
+			if (dictionaryReference.getProperty(MimoConstants.APPLICATION_ACTIVATOR) == null)
 				continue;
 
-			applicationConfig = bundleContext.getService(str).toString();
-
-			/*
-			 * if (applicationHome != null) { ApplicationPaths applicationPaths =
-			 * application.getPaths();
-			 * applicationPaths.setData(applicationPaths.getData().replaceFirst(
-			 * "\\{mimo.home\\}", applicationHome));
-			 * applicationPaths.setLogs(applicationPaths.getLogs().replaceFirst(
-			 * "\\{mimo.home\\}", applicationHome));
-			 * applicationPaths.setWork(applicationPaths.getWork().replaceFirst(
-			 * "\\{mimo.home\\}", applicationHome)); }
-			 */
-
+			dictionary = bundleContext.getService(dictionaryReference);
 			break;
 		}
 
-		if (applicationConfig != null) {
-			startApplication(applicationConfig);
+		if (dictionary != null) {
+			startApplication(dictionary);
+
 		} else {
 			bundleContext.addServiceListener(new ServiceListener() {
 
@@ -76,14 +67,14 @@ public class E4Activator implements BundleActivator {
 					switch (event.getType()) {
 					case ServiceEvent.REGISTERED:
 						ServiceReference<?> serviceReference = event.getServiceReference();
-						if (serviceReference.getProperties().get(MimoConstants.APPLICATION_CONFIG) == null)
+						if (serviceReference.getProperty(MimoConstants.APPLICATION_ACTIVATOR) == null)
 							return;
 
-						String applicationConfig = bundleContext.getService(serviceReference).toString();
+						
 						try {
-							startApplication(applicationConfig);
+							Dictionary dictionary = (Dictionary) bundleContext.getService(serviceReference);
+							startApplication(dictionary);
 						} catch (Exception e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 						break;
@@ -100,9 +91,24 @@ public class E4Activator implements BundleActivator {
 			context.ungetService(applicationManagerRegistration.getReference());
 	}
 
-	@SuppressWarnings({ "resource" })
-	private void startApplication(String applicationConfig) throws Exception {
+	@SuppressWarnings({ "resource", "rawtypes" })
+	private void startApplication(Dictionary dictionary) throws Exception {
 
+		if(E4Activator.application != null) {
+			System.err.println("Application already started " + application);
+			return;
+		}
+		
+		Object applicationConfig = dictionary.get(MimoConstants.APPLICATION_ACTIVATOR_CONFIG);
+		Object applicationHome = dictionary.get(MimoConstants.APPLICATION_ACTIVATOR_HOME);
+		
+		if (applicationConfig == null) {
+			System.err.println("Application config is required");
+			return;			
+		}
+		
+		Application application = null;
+		
 		try {
 			Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 			Map<String, Object> m = reg.getExtensionToFactoryMap();
@@ -110,15 +116,23 @@ public class E4Activator implements BundleActivator {
 
 			ResourceSet resourceSet = new ResourceSetImpl();
 			URI uri = null;
-			if (applicationConfig.startsWith("http"))
-				uri = URI.createURI(applicationConfig);
+			if (applicationConfig.toString().startsWith("http"))
+				uri = URI.createURI(applicationConfig.toString());
 			else
-				uri = URI.createFileURI(new File(applicationConfig).getAbsolutePath());
+				uri = URI.createFileURI(new File(applicationConfig.toString()).getAbsolutePath());
 
 			Resource resource = resourceSet.getResource(uri, true);
 			resource.load(Collections.EMPTY_MAP);
-			E4Activator.application = (Application) resource.getContents().get(0);
+			application = (Application) resource.getContents().get(0);
 
+			if (applicationHome != null) {
+				ApplicationPaths applicationPaths = application.getPaths();
+				applicationPaths.setData(applicationPaths.getData().replaceFirst("\\{mimo.home\\}", applicationHome.toString()));
+				applicationPaths.setLogs(applicationPaths.getLogs().replaceFirst("\\{mimo.home\\}", applicationHome.toString()));
+				applicationPaths.setWork(applicationPaths.getWork().replaceFirst("\\{mimo.home\\}", applicationHome.toString()));
+			}
+
+			
 			Bundle bundle = application.getBundle();
 			ClassLoader bundleLoader = bundle.adapt(BundleWiring.class).getClassLoader();
 			Thread.currentThread().setContextClassLoader(bundleLoader);
@@ -129,13 +143,16 @@ public class E4Activator implements BundleActivator {
 			contextApplication.set(ApplicationPaths.class, application.getPaths());
 			contextApplication.set(ContextRoot.class, contextApplication);
 
-			E4Activator.application.setContext(contextApplication);
+			application.setContext(contextApplication);
 
 			ApplicationManager applicationManager = contextApplication.get(ApplicationManager.class);
 
+			E4Activator.application = application;
 			applicationManager.start(application, System.out);
+
 			System.out.println("Started " + application);
 		} catch (Exception e) {
+			E4Activator.application = null;
 			System.err.println("Failed " + application);
 			throw e;
 		}
