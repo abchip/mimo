@@ -263,8 +263,10 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public java.net.URI getURI() {
-		return super.getURI();
-		// return java.net.URI.create(EcoreUtil.getURI(eClass).toString());
+		if(eResource() != null)
+			return super.getURI();
+		else
+			return java.net.URI.create(EcoreUtil.getURI(eClass).toString());
 	}
 
 	@SuppressWarnings("unchecked")
