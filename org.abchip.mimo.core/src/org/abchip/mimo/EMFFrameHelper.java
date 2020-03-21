@@ -17,7 +17,6 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.Resource;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -30,15 +29,12 @@ public class EMFFrameHelper {
 
 	private static Map<String, Frame<?>> publicFrames = null;
 
-	@SuppressWarnings("unchecked")
-	public static Map<String, Frame<?>> getFrames(Resource<Frame<?>> frameReader) {
+	public static Map<String, Frame<?>> getFrames() {
 
 		if (publicFrames == null) {
-			if(frameReader == null)
-				return Collections.EMPTY_MAP;
 			synchronized (EMFFrameHelper.class) {
 				if (publicFrames == null) {
-					loadFrames(frameReader);
+					loadFrames();
 				}
 			}
 		}
@@ -85,7 +81,7 @@ public class EMFFrameHelper {
 		return ePackage;
 	}
 
-	private static synchronized void loadFrames(Resource<Frame<?>> frameResource) {
+	private static synchronized void loadFrames() {
 
 		Map<String, Frame<?>> tempFrames = new HashMap<String, Frame<?>>();
 		if (publicFrames == null)

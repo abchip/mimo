@@ -11,25 +11,17 @@ package org.abchip.mimo;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceFactory;
-import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
 
 public class EMFResourceProviderImpl extends ResourceProviderImpl {
-
-	@Inject
-	private ContextRoot contextRoot;
-	@Inject
-	private ResourceProviderRegistry resourceProviderRegistry;
 
 	private static ResourceConfig EMF_RESOURCE_CONFIG;
 
@@ -39,9 +31,6 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 		EMF_RESOURCE_CONFIG = ResourceFactory.eINSTANCE.createResourceConfig();
 		EMF_RESOURCE_CONFIG.setLockSupport(true);
 		EMF_RESOURCE_CONFIG.setOrderSupport(true);
-
-		resourceProviderRegistry.registerProvider(contextRoot, Frame.class, this);
-		resourceProviderRegistry.registerProvider(contextRoot, EntityEnum.class, this);
 	}
 
 	private static boolean isFrame(Frame<?> frame) {
@@ -52,24 +41,44 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 		return frame instanceof EMFFrameEnumAdapter;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
-		return internalGetResource(context, frame, tenant);
-	}
-
-	@SuppressWarnings("unchecked")
-	public static <E extends EntityIdentifiable> Resource<E> internalGetResource(Context context, Frame<E> frame, String tenant) {
 		EMFResourceImpl<E> resource = null;
 
-		if (frame == null || isFrame(frame)) {
+		if (isFrame(frame)) {
 			resource = new EMFResourceImpl<E>(frame);
-			resource.setEntities((Map<String, E>) EMFFrameHelper.getFrames((Resource<Frame<?>>) resource));
+			resource.setEntities((Map<String, E>) EMFFrameHelper.getFrames());
 		} else if (isEnum(frame)) {
 			resource = new EMFResourceImpl<E>(frame);
 			resource.setEntities((Map<String, E>) EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
 		}
 		if (resource != null)
 			resource.setResourceConfig(EMF_RESOURCE_CONFIG);
+
+		return resource;
+
+	}
+
+	@SuppressWarnings("unchecked")
+	public static <E extends EntityIdentifiable> Resource<E> internalGetFrameResource(Context context, String tenant) {
+
+		Frame<E> frame = (Frame<E>) EMFFrameHelper.getFrames().get(Frame.class.getSimpleName());
+		EMFResourceImpl<E> resource = new EMFResourceImpl<E>(frame);
+		resource.setEntities((Map<String, E>) EMFFrameHelper.getFrames());
+		resource.setResourceConfig(EMF_RESOURCE_CONFIG);
+
+		return resource;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static <E extends EntityIdentifiable> Resource<E> internalGetEnumResource(Context context, String frameName, String tenant) {
+
+		Frame<E> frame = (Frame<E>) EMFFrameHelper.getFrames().get(frameName);
+
+		EMFResourceImpl<E> resource = new EMFResourceImpl<E>(frame);
+		resource.setEntities((Map<String, E>) EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
+		resource.setResourceConfig(EMF_RESOURCE_CONFIG);
 
 		return resource;
 	}

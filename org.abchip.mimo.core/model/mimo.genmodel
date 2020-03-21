@@ -930,24 +930,6 @@
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProviderRegistry/getResourceProvider.2/frame"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceProviderRegistry/getResourceProvider.2/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider/context"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider/klass"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider/provider"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider/E"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider.1">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider.1/context"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider.1/frame"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider.1/provider"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider.1/E"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider.2">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider.2/context"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider.2/frame"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider.2/provider"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceProviderRegistry/registerProvider.2/E"/>
-        </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceReader">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceReader/E"/>

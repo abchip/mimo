@@ -8,19 +8,19 @@
  */
 package org.abchip.mimo.core.base;
 
-import java.util.Dictionary;
-import java.util.Hashtable;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Registry;
 import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.MappingType;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceMapping;
 import org.abchip.mimo.resource.ResourceMappingRule;
 import org.abchip.mimo.resource.ResourceMappingRuleByFrame;
@@ -29,6 +29,9 @@ import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceProviderRegistry;
 
 public class BaseResourceProviderRegistryImpl extends BaseResource implements ResourceProviderRegistry {
+
+	@Inject
+	private ResourceManager resourceManager;
 
 	private Registry<ResourceProvider> registry;
 	private ResourceMapping resourceMapping;
@@ -75,69 +78,70 @@ public class BaseResourceProviderRegistryImpl extends BaseResource implements Re
 		return getProvider(context, frame);
 	}
 
-	@Override
-	public <E extends EntityIdentifiable> void registerProvider(Context context, Class<E> klass, ResourceProvider provider) {
-		registerProvider(context, klass.getSimpleName(), provider);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> void registerProvider(Context context, Frame<E> frame, ResourceProvider provider) {
-		registerProvider(context, frame.getName(), provider);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> void registerProvider(Context context, String frameName, ResourceProvider provider) {
-		Dictionary<String, String> dictionary = new Hashtable<String, String>();
-		dictionary.put(MimoConstants.PROVIDER_FRAME, frameName);
-
-		this.getContextRoot().set(ResourceProvider.class.getName(), provider, false, dictionary);
-	}
-
 	private ResourceProvider getProvider(Context context, Frame<?> frame) {
 
-		ResourceProvider resourceProvider = null;
+		ResourceMappingRuleByFrame ruleByFrame = getRuleByFrame(context, frame);
+		ResourceMappingRuleByPackage ruleByPackage = getRuleByPackage(context, frame);
 
-		for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
-			switch (mappingRule.getMappingType()) {
-			case BY_FRAME:
-				ResourceMappingRuleByFrame ruleByFrame = (ResourceMappingRuleByFrame) mappingRule;
-				if (ruleByFrame.getFrame().equals(frame.getName()))
-					resourceProvider = this.lookup(ruleByFrame.getProvider());
-				else
-					resourceProvider = getProviderByFrame(context, frame);
-				break;
-			case BY_PACKAGE:
-				ResourceMappingRuleByPackage resourceMappingRuleByPackage = (ResourceMappingRuleByPackage) mappingRule;
-				if (frame.getPackageName().startsWith(resourceMappingRuleByPackage.getPackage()))
-					resourceProvider = this.lookup(resourceMappingRuleByPackage.getProvider());
-				break;
-			}
-			if (resourceProvider != null)
-				break;
-		}
+		if (ruleByFrame == null && ruleByPackage == null)
+			return null;
+		if (ruleByPackage == null)
+			return this.lookup(ruleByFrame.getProvider());
+		if (ruleByFrame == null)
+			return this.lookup(ruleByPackage.getProvider());
+		if (ruleByFrame.getFrame().equals(frame.getName()))
+			return this.lookup(ruleByFrame.getProvider());
 
-		return resourceProvider;
+		Frame<?> frameFromRule = resourceManager.getFrame(context, ruleByFrame.getFrame());
+		if (frameFromRule.getPackageName().startsWith(ruleByPackage.getPackage()))
+			return this.lookup(ruleByFrame.getProvider());
+		else
+			return this.lookup(ruleByPackage.getProvider());
 	}
 
-	private ResourceProvider getProviderByFrame(Context context, Frame<?> frame) {
+	private ResourceMappingRuleByFrame getRuleByFrame(Context context, Frame<?> frame) {
 
-		ResourceProvider resourceProvider = null;
+		List<Frame<?>> frames = new LinkedList<Frame<?>>();
+		frames.add(frame);
+		frames.addAll(frame.getSuperFrames());
 
-		String filter = "(" + MimoConstants.PROVIDER_FRAME + "=" + frame.getName() + ")";
+		ResourceMappingRuleByFrame ruleByFrame = null;
+		for (Frame<?> frameItem : frames) {
+			for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
+				if (!mappingRule.getMappingType().equals(MappingType.BY_FRAME))
+					continue;
 
-		for (ResourceProvider rp : this.getContextRoot().getAll(ResourceProvider.class, filter)) {
-			resourceProvider = rp;
-			break;
+				ResourceMappingRuleByFrame mappingRuleByFrame = (ResourceMappingRuleByFrame) mappingRule;
+				if (mappingRuleByFrame.getFrame().equals(frameItem.getName())) {
+					ruleByFrame = mappingRuleByFrame;
+					break;
+				}
+			}
+			if (ruleByFrame != null)
+				break;
 		}
 
-		if (resourceProvider == null) {
-			for (Frame<?> ako : frame.getSuperFrames()) {
-				resourceProvider = getProvider(context, ako);
-				if (resourceProvider != null)
-					break;
+		return ruleByFrame;
+	}
+
+	private ResourceMappingRuleByPackage getRuleByPackage(Context context, Frame<?> frame) {
+
+		ResourceMappingRuleByPackage ruleByPackage = null;
+
+		for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
+			if (!mappingRule.getMappingType().equals(MappingType.BY_PACKAGE))
+				continue;
+
+			ResourceMappingRuleByPackage mappingRuleByPackage = (ResourceMappingRuleByPackage) mappingRule;
+			if (frame.getPackageName().startsWith(mappingRuleByPackage.getPackage())) {
+				// deeper package
+				if (ruleByPackage != null && ruleByPackage.getPackage().length() > mappingRuleByPackage.getPackage().length())
+					continue;
+
+				ruleByPackage = mappingRuleByPackage;
 			}
 		}
 
-		return resourceProvider;
+		return ruleByPackage;
 	}
 }

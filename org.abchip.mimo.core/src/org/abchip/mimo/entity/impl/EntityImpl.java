@@ -118,7 +118,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	@SuppressWarnings({ "unchecked" })
 	@Override
 	public <E extends Entity> Frame<E> isa() {
-		Frame<E> isa = (Frame<E>) EMFFrameHelper.getFrames(null).get(eClass().getName());
+		Frame<E> isa = (Frame<E>) EMFFrameHelper.getFrames().get(eClass().getName());
 		if (isa != null)
 			return isa;
 

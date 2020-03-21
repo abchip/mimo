@@ -50,12 +50,12 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			tenant = URIs.qINSTANCE.parseParameter(getURI().query()).get("tenant");
 
 		if (Frame.class.getSimpleName().equals(frameName)) {
-			this.resource = EMFResourceProviderImpl.internalGetResource(this.getContext(), null, tenant);
+			this.resource = EMFResourceProviderImpl.internalGetFrameResource(this.getContext(), tenant);
 		} else {
 			ResourceManager resourceManager = this.getContext().get(ResourceManager.class);
 			Frame<E> frame = (Frame<E>) resourceManager.getFrame(getContext(), frameName);
 			if (frame.isEnum()) {
-				this.resource = EMFResourceProviderImpl.internalGetResource(this.getContext(), frame, tenant);
+				this.resource = EMFResourceProviderImpl.internalGetEnumResource(this.getContext(), frameName, tenant);
 			} else {
 				ResourceProviderRegistry resourceProviderRegistry = this.getContext().get(ResourceProviderRegistry.class);
 				this.resource = resourceProviderRegistry.getResourceProvider(this.getContext(), frame).getResource(this.getContext(), frame, tenant);

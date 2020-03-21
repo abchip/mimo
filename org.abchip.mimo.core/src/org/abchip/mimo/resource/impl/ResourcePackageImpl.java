@@ -1221,36 +1221,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(resourceProviderRegistryEClass, null, "registerProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
-		t1.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEJavaClass());
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getResourceProvider(), "provider", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(resourceProviderRegistryEClass, null, "registerProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
-		t1.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(theEntityPackage.getFrame());
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getResourceProvider(), "provider", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(resourceProviderRegistryEClass, null, "registerProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
-		t1.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getResourceProvider(), "provider", 1, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(resourceReaderEClass, ResourceReader.class, "ResourceReader", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		g1 = createEGenericType(this.getResourceNotifier());
 		g2 = createEGenericType(resourceReaderEClass_E);
