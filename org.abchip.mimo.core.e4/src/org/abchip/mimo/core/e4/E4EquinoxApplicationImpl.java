@@ -36,7 +36,7 @@ public final class E4EquinoxApplicationImpl implements IApplication {
 				dictionary.put(MimoConstants.APPLICATION_ACTIVATOR_CONFIG, arguments[i + 1]);
 				i++;
 				continue;
-			} else if (arguments[i].equals("-mimo.home")) {
+			} else if (arguments[i].equals("-mimo.home")) 	{
 				dictionary.put(MimoConstants.APPLICATION_ACTIVATOR_HOME, arguments[i + 1]);
 				i++;
 				continue;
