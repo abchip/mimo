@@ -48,8 +48,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		return EntityPackage.Literals.ENTITY;
 	}
 
-	@Override
-	public String toString() {
+	public String toStringxxx() {
 
 		Frame<?> isa = this.isa();
 		StringBuilder result = new StringBuilder(isa.getName());
