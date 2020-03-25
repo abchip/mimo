@@ -10,7 +10,6 @@ Require-Bundle: org.abchip.mimo.core,
  org.abchip.mimo.core.base,
  org.abchip.mimo.core.e4,
  org.apache.commons.logging,
- org.emfjson.jackson,
  com.fasterxml.jackson.core.jackson-annotations,
  com.fasterxml.jackson.core.jackson-core,
  com.fasterxml.jackson.core.jackson-databind
