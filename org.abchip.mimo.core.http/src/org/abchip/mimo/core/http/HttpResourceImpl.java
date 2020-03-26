@@ -63,7 +63,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 	@Override
 	public void create(E entity, boolean update) {
-		doSave(entity, false);
+		doSave(entity, update);
 	}
 
 	@Override
