@@ -572,7 +572,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 */
 	@Override
 	public String getInstallArea() {
-		String installArea = System.getProperty("osgi.install.area");
+		String installArea = this.getBundle().getBundleContext().getProperty("osgi.install.area");
 		installArea = installArea.replaceFirst("file:/", "/");
 		return installArea;
 	}

@@ -15,7 +15,7 @@ package org.abchip.mimo.entity;
  *
  *
  * @see org.abchip.mimo.entity.EntityPackage#getEntityTyped()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface EntityTyped<T extends EntityType<?>> extends EntityIdentifiable {

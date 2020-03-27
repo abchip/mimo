@@ -27,8 +27,6 @@ public class BaseSystemActivator {
 	public void start(ContextRoot contextRoot, org.abchip.mimo.server.System system, ResourceManager resourceManager, JobManager jobManager, org.abchip.mimo.server.SystemManager systemManager,
 			JobLogManager jobLogManager) {
 
-		system.setName(resolveVariables(contextRoot, system.getName()));
-
 		system.setContext(contextRoot);
 
 		@SuppressWarnings("resource")
@@ -39,14 +37,5 @@ public class BaseSystemActivator {
 
 		org.abchip.mimo.util.Thread thread = threadManager.createThread("job-closer", new BaseJobCloser(threadManager, jobManager), true);
 		threadManager.start(thread);
-	}
-
-	public static String resolveVariables(ContextRoot contextRoot, String varString) {
-
-		String resolvedString = varString;
-		if (resolvedString.indexOf("${osgi.instance.area}") >= 0)
-			resolvedString = resolvedString.replace("${osgi.instance.area}", System.getProperty("osgi.instance.area"));
-
-		return resolvedString;
 	}
 }

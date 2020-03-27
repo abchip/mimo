@@ -809,7 +809,7 @@
       <eLiterals name="Dirty" literal="DRT"/>
       <eLiterals name="Chained" literal="CHN"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EntityTyped" eSuperTypes="#//entity/EntityIdentifiable">
+    <eClassifiers xsi:type="ecore:EClass" name="EntityTyped" abstract="true" eSuperTypes="#//entity/EntityIdentifiable">
       <eTypeParameters name="T">
         <eBounds eClassifier="#//entity/EntityType">
           <eTypeArguments/>

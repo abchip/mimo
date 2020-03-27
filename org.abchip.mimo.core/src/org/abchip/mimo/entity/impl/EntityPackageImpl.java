@@ -1009,7 +1009,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		addEOperation(entityIteratorEClass, null, "remove", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(entityTypedEClass, EntityTyped.class, "EntityTyped", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(entityTypedEClass, EntityTyped.class, "EntityTyped", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(entityTypedEClass, null, "getType", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(entityTypedEClass_T);

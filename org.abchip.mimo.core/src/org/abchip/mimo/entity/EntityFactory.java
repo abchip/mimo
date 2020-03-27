@@ -54,15 +54,6 @@ public interface EntityFactory extends EFactory {
 	EntityContainer createEntityContainer();
 
 	/**
-	 * Returns a new object of class '<em>Typed</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Typed</em>'.
-	 * @generated
-	 */
-	<T extends EntityType<?>> EntityTyped<T> createEntityTyped();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -12,6 +12,7 @@ import java.io.File;
 import java.util.Collections;
 import java.util.Dictionary;
 import java.util.Map;
+import java.util.Properties;
 
 import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.application.Application;
@@ -43,17 +44,27 @@ public class E4Activator implements BundleActivator {
 	}
 
 	@Override
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void start(BundleContext bundleContext) throws Exception {
+
 		this.applicationManagerRegistration = bundleContext.registerService(ApplicationManager.class, new BaseApplicationManagerImpl(), null);
 
 		Dictionary dictionary = null;
-		for (ServiceReference<Dictionary> dictionaryReference : bundleContext.getServiceReferences(Dictionary.class, null)) {
-			if (dictionaryReference.getProperty(MimoConstants.APPLICATION_ACTIVATOR) == null)
-				continue;
+		if (Boolean.parseBoolean(bundleContext.getProperty("mimo.activation"))) {
+			dictionary = new Properties();
+			dictionary.put(MimoConstants.APPLICATION_ACTIVATOR_CONFIG, bundleContext.getProperty("mimo.config"));
+			dictionary.put(MimoConstants.APPLICATION_ACTIVATOR_HOME, bundleContext.getProperty("mimo.home"));
+			
+			if(bundleContext.getProperty("mimo.admin.key") != null)
+				dictionary.put(MimoConstants.APPLICATION_ACTIVATOR_ADMIN_KEY, bundleContext.getProperty("mimo.admin.key"));
+		} else {
+			for (ServiceReference<Dictionary> dictionaryReference : bundleContext.getServiceReferences(Dictionary.class, null)) {
+				if (dictionaryReference.getProperty(MimoConstants.APPLICATION_ACTIVATOR) == null)
+					continue;
 
-			dictionary = bundleContext.getService(dictionaryReference);
-			break;
+				dictionary = bundleContext.getService(dictionaryReference);
+				break;
+			}
 		}
 
 		if (dictionary != null) {
