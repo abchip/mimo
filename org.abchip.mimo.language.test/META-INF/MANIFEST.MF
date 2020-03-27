@@ -9,3 +9,4 @@ Require-Bundle: org.abchip.mimo.language,
  org.abchip.mimo.tester.base
 Export-Package: org.abchip.mimo.language.test,
  org.abchip.mimo.language.test.runner
+Import-Package: javax.inject

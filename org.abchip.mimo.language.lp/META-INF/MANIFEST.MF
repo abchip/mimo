@@ -9,4 +9,6 @@ Require-Bundle: org.abchip.mimo.language
 Export-Package: org.abchip.mimo.language.lp
 Bundle-ClassPath: lib/lingpipe-4.1.2.jar,
  .
-Import-Package: org.osgi.framework
+Import-Package: javax.annotation;version="1.2.0",
+ javax.inject,
+ org.osgi.framework

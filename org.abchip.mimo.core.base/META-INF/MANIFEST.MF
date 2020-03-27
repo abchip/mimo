@@ -19,5 +19,7 @@ Export-Package: org.abchip.mimo.core.base,
  org.abchip.mimo.core.base.app,
  org.abchip.mimo.core.base.nio,
  org.abchip.mimo.core.base.util
-Import-Package: javax.servlet,
+Import-Package: javax.annotation;version="1.2.0",
+ javax.inject,
+ javax.servlet,
  org.osgi.service.http

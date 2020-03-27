@@ -15,3 +15,4 @@ Export-Package: org.abchip.mimo.core.e4
 Bundle-ClassPath: .
 Bundle-Activator: org.abchip.mimo.core.e4.E4Activator
 Bundle-ActivationPolicy: lazy
+Import-Package: javax.annotation;version="1.2.0"

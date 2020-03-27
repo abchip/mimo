@@ -46,8 +46,12 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.util.Singleton;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.InvalidSyntaxException;
+import org.osgi.framework.ServiceReference;
 import org.osgi.service.http.HttpService;
 import org.osgi.service.http.NamespaceException;
+import org.osgi.util.tracker.ServiceTracker;
 
 public class BaseApplicationStarter {
 
@@ -60,12 +64,23 @@ public class BaseApplicationStarter {
 	private int messageLevel;
 	private Writer writer = null;
 
+	private ServiceTracker<?, ?> httpServiceTracker;
+	private HttpService httpService = null;
+
 	public BaseApplicationStarter(Application application, OutputStream outputStream) {
 		this.application = application;
 		this.writer = new OutputStreamWriter(outputStream);
+
 	}
 
 	public Application start() throws Exception {
+
+		httpService = application.getContext().get(HttpService.class);
+
+		if (httpService == null) {
+			httpServiceTracker = new HttpServiceTracker(application.getBundle().getBundleContext());
+			httpServiceTracker.open();
+		}
 
 		println(">application " + application);
 
@@ -281,11 +296,11 @@ public class BaseApplicationStarter {
 		if (serviceRef instanceof ServiceServlet) {
 			ServiceServlet serviceServlet = (ServiceServlet) serviceRef;
 
-			HttpService httpService = application.getContext().get(HttpService.class);
 			if (httpService != null) {
 				try {
 					httpService.registerServlet(serviceServlet.getAlias(), (Servlet) service, null, null);
 				} catch (ServletException | NamespaceException e) {
+					e.printStackTrace();
 					System.err.println("Servlet registration failed: " + serviceRef);
 					println("");
 				}
@@ -345,5 +360,43 @@ public class BaseApplicationStarter {
 			sb.append(in);
 		sb.trimToSize();
 		return sb.toString();
+	}
+
+	private class HttpServiceTracker extends ServiceTracker<HttpService, HttpService> {
+
+		public HttpServiceTracker(BundleContext context) {
+			super(context, HttpService.class, null);
+		}
+
+		public HttpService addingService(ServiceReference<HttpService> reference) {
+			httpService = super.addingService(reference);
+
+			BundleContext bundleContext = application.getBundle().getBundleContext();
+			
+			try {
+				for (ServiceReference<Servlet> serviceReference : bundleContext.getServiceReferences(Servlet.class, null)) {
+					Object servletAlias = serviceReference.getProperty(MimoConstants.SERVLET_ALIAS);
+					if (servletAlias == null)
+						continue;
+
+					try {
+						Servlet servlet = bundleContext.getService(serviceReference);
+						httpService.registerServlet(servletAlias.toString(), servlet, serviceReference.getProperties(), null);
+					} catch (ServletException | NamespaceException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			} catch (InvalidSyntaxException e) {
+				e.printStackTrace();
+			}
+
+			return httpService;
+		}
+
+		public void removedService(ServiceReference<HttpService> reference, HttpService service) {
+			httpService = null;
+			super.removedService(reference, service);
+		}
 	}
 }

@@ -11,3 +11,4 @@ Require-Bundle: org.abchip.mimo.core,
  org.abchip.mimo.edi,
  org.eclipse.osgi
 Export-Package: org.abchip.mimo.edi.base
+Import-Package: javax.inject

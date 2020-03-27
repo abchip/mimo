@@ -8,6 +8,7 @@ Automatic-Module-Name: org.abchip.mimo.ui.http
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.abchip.mimo.ui,
  org.abchip.mimo.core.http
-Import-Package: javax.servlet,
+Import-Package: javax.inject,
+ javax.servlet,
  javax.servlet.http
 Export-Package: org.abchip.mimo.ui.http

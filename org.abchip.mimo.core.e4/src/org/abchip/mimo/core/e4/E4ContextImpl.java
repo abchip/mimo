@@ -14,8 +14,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
-
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.impl.ContextImpl;
@@ -25,8 +23,6 @@ import org.eclipse.e4.core.contexts.IEclipseContext;
 public abstract class E4ContextImpl extends ContextImpl {
 
 	private static final String ADAPTER_FACTORIES_NAME = "org.abchip.mimo.context.adapterFactories";
-
-	private static Boolean postConstruct = null;
 
 	private ContextDescription contextDescription;
 
@@ -56,10 +52,6 @@ public abstract class E4ContextImpl extends ContextImpl {
 	public <T> T make(Class<T> clazz) {
 		IEclipseContext eclipseContext = getEclipseContext();
 		T object = ContextInjectionFactory.make(clazz, eclipseContext);
-
-		if (isActivePostConstruct())
-			ContextInjectionFactory.invoke(object, PostConstruct.class, eclipseContext, object);
-
 		return object;
 	}
 
@@ -181,36 +173,6 @@ public abstract class E4ContextImpl extends ContextImpl {
 			}
 
 			factories.add(factory);
-		}
-	}
-
-	private boolean isActivePostConstruct() {
-
-		if (postConstruct == null) {
-
-			IEclipseContext eclipseContext = getEclipseContext();
-			Dummy dummy = ContextInjectionFactory.make(Dummy.class, eclipseContext);
-			postConstruct = !dummy.isLoaded();
-		}
-
-		return postConstruct;
-	}
-
-	public static class Dummy {
-
-		private boolean loaded = false;
-
-		public Dummy() {
-
-		}
-
-		@PostConstruct
-		public void init() {
-			this.loaded = true;
-		}
-
-		public boolean isLoaded() {
-			return loaded;
 		}
 	}
 

@@ -22,3 +22,4 @@ Bundle-ClassPath: .,
  lib/cmutimelex.jar,
  lib/en_us.jar,
  lib/mbrola.jar
+Import-Package: javax.annotation;version="1.2.0"
