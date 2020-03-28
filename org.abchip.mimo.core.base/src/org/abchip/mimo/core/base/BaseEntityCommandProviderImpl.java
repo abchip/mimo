@@ -26,7 +26,6 @@ public class BaseEntityCommandProviderImpl extends BaseCommandProviderImpl {
 		this.login(interpreter.nextArgument());
 	}
 
-	@SuppressWarnings("resource")
 	public <E extends EntityIdentifiable> void _find(CommandInterpreter interpreter) throws Exception {
 
 		Context context = this.getContext();

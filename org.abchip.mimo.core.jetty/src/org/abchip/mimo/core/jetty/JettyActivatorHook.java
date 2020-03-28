@@ -29,7 +29,7 @@ public class JettyActivatorHook {
 		settings.put("http.host", socketConfig.getAddress());
 		settings.put("http.port", socketConfig.getPort());
 		settings.put("https.enabled", Boolean.FALSE);
-		settings.put("context.path", "/");
+		settings.put("context.path", "/mimo");
 		settings.put("context.sessioninactiveinterval", 1800);
 		try {
 			JettyConfigurator.startServer("org.abchip.mimo.core.http", settings);
