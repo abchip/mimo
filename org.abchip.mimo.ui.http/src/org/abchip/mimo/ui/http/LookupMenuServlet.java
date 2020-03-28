@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
@@ -42,22 +43,24 @@ public class LookupMenuServlet extends BaseServlet {
 		String name = request.getParameter("name");
 
 		Menu menu = null;
-		ResourceReader<Menu> menuReader = resourceManager.getResourceReader(context, Menu.class, Resource.TENANT_MASTER);
 
+		ResourceReader<Menu> menuReader = resourceManager.getResourceReader(context, Menu.class, Resource.TENANT_MASTER);
 		if (name == null || name.isEmpty()) {
 			menu = MenuFactory.eINSTANCE.createMenu();
 			menu.setName("List Menu");
 
-			for (Menu elem : menuReader.find()) {
-				// build upper level group from menu
-				MenuGroup group = MenuFactory.eINSTANCE.createMenuGroup();
-				group.setId(UUID.randomUUID().toString());
-				group.setValue(elem.getName());
-				group.setIcon(elem.getIcon());
-				group.getData().addAll(elem.getElements());
+			try (EntityIterator<Menu> menus = menuReader.find()) {
+				for (Menu elem : menus) {
+					// build upper level group from menu
+					MenuGroup group = MenuFactory.eINSTANCE.createMenuGroup();
+					group.setId(UUID.randomUUID().toString());
+					group.setValue(elem.getName());
+					group.setIcon(elem.getIcon());
+					group.getData().addAll(elem.getElements());
 
-				// append to root
-				menu.getElements().add(group);
+					// append to root
+					menu.getElements().add(group);
+				}
 			}
 		} else {
 			menu = menuReader.lookup(name);

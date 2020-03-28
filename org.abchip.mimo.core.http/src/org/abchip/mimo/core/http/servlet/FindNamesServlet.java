@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Strings;
@@ -48,12 +49,14 @@ public class FindNamesServlet extends BaseServlet {
 
 		boolean first = true;
 		response.getWriter().write("[");
-		for (E entity : entityReader.find(filter, null, null, 0, true)) {
-			if (!first)
-				response.getWriter().write(", ");
+		try (EntityIterator<E> entities = entityReader.find(filter, null, null, 0, true)) {
+			for (E entity : entities) {
+				if (!first)
+					response.getWriter().write(", ");
 
-			response.getWriter().write("\"" + Strings.qINSTANCE.escape(entity.getID()) + "\"");
-			first = false;
+				response.getWriter().write("\"" + Strings.qINSTANCE.escape(entity.getID()) + "\"");
+				first = false;
+			}
 		}
 		response.getWriter().write("]");
 	}

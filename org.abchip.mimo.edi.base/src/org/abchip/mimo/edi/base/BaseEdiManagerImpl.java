@@ -19,8 +19,8 @@ import org.abchip.mimo.edi.entity.EntityEvent;
 import org.abchip.mimo.edi.message.MessageSent;
 import org.abchip.mimo.edi.message.MessageStatus;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.SerializationType;
@@ -37,8 +37,8 @@ public class BaseEdiManagerImpl implements EdiManager {
 
 		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, entity.isa(), SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 
-		ResourceReader<EdiFrameSetup> setupReader = resourceManager.getResourceReader(context, EdiFrameSetup.class);
-		for (EdiFrameSetup setup : setupReader.find("frame='" + entity.isa().getName() + "'")) {
+		EntityIterator<EdiFrameSetup> setups = resourceManager.getResourceReader(context, EdiFrameSetup.class).find("frame='" + entity.isa().getName() + "'");		
+		for (EdiFrameSetup setup : setups) {
 
 			switch (setup.getEntityEvent()) {
 			case ALL:

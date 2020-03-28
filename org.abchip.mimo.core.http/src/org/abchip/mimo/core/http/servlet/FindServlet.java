@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.ResourceManager;
@@ -93,9 +94,10 @@ public class FindServlet extends BaseServlet {
 
 		ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame, tenant);
 		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_MIMO_NOTATION);
-		for (E entity : entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy)))
-			entitySerializer.add(entity);
-
+		try (EntityIterator<E> entities = entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy))) {
+			for (E entity : entities)
+				entitySerializer.add(entity);
+		}
 		entitySerializer.save(response.getOutputStream());
 		entitySerializer.clear();
 	}

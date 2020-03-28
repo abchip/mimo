@@ -52,7 +52,6 @@ public class TestTwitter {
 	@Inject
 	private AudioManager audioManager;
 
-	@SuppressWarnings("unused")
 	@TestStarted
 	public void start() throws InterruptedException {
 
@@ -60,23 +59,17 @@ public class TestTwitter {
 
 		testConfusionMatrix();
 
-		if (true)
-			return;
-
 		ResourceReader<Tweet> tweetReader = resourceManager.getResourceReader(testRunner.getContext(), Tweet.class);
 		ResourceReader<Language> languageReader = resourceManager.getResourceReader(testRunner.getContext(), Language.class);
 
-		Tweet t = tweetReader.lookup("939830847619944449");
-
 		for (Frame<?> frame : resourceManager.getResourceReader(testRunner.getContext(), Frame.class).find()) {
 			String text = "The frame " + frame.getName() + " has the following properties:";
-			// audioManager.play(testRunner.getContext(), AudioStyle.A, text, true, true);
+			audioManager.play(testRunner.getContext(), AudioStyle.A, text, true, true);
 			StringBuffer sb = new StringBuffer();
 			for (Slot slot : frame.getSlots()) {
 				sb.append(slot.getName() + ". ");
 			}
-			// audioManager.play(testRunner.getContext(), AudioStyle.B, sb.toString(), true,
-			// true);
+			audioManager.play(testRunner.getContext(), AudioStyle.B, sb.toString(), true, true);
 		}
 
 		Set<String> users = new HashSet<String>();
@@ -91,13 +84,7 @@ public class TestTwitter {
 
 		for (String languageName : languages) {
 			Language language = languageReader.lookup(languageName.toUpperCase());
-			if (language == null)
-				"".toCharArray();
-			// audioManager.play(testRunner.getContext(), AudioStyle.A, "Unknown language: "
-			// +
-			// languageName, true, true);
-			else
-				audioManager.play(testRunner.getContext(), AudioStyle.A, language.getText(), true, true);
+			audioManager.play(testRunner.getContext(), AudioStyle.A, language.getText(), true, true);
 		}
 
 		audioManager.play(testRunner.getContext(), AudioStyle.A, "The following users have written on Twitter", true, true);
@@ -105,7 +92,7 @@ public class TestTwitter {
 		Thread.sleep(1000);
 
 		for (String user : users) {
-			// audioManager.play(testRunner.getContext(), AudioStyle.A, user, true, true);
+			audioManager.play(testRunner.getContext(), AudioStyle.A, user, true, true);
 		}
 
 		audioManager.play(testRunner.getContext(), AudioStyle.A, "I found the following tweets in the system", true, true);

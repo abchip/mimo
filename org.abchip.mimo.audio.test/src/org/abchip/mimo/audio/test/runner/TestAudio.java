@@ -53,6 +53,10 @@ public class TestAudio {
 
 		// recordAudio();
 
+		for (Audio audio : resourceManager.getResourceReader(null, Audio.class).find()) {
+			audio.toString();
+		}
+
 		ResourceReader<Audio> audioReader = resourceManager.getResourceReader(testRunner.getContext(), Audio.class);
 		for (Audio audio : audioReader.find()) {
 
