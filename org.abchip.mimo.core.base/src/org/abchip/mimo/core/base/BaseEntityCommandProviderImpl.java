@@ -12,6 +12,7 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.util.Strings;
@@ -40,8 +41,10 @@ public class BaseEntityCommandProviderImpl extends BaseCommandProviderImpl {
 			return;
 		}
 
-		for (E entity : resourceManager.getResourceReader(context, frame).find(null, null, order)) {
-			System.out.println(entity.getID());
+		try (EntityIterator<E> entities = resourceManager.getResourceReader(context, frame).find(null, null, order)) {
+			for (E entity : entities) {
+				System.out.println(entity.getID());
+			}
 		}
 	}
 

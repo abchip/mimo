@@ -43,8 +43,7 @@ public class SPH4AudioPlayerImpl implements AudioPlayer {
 	public boolean isStopped() {
 		if (audioPlayer != null) {
 			return audioPlayer.getThreadStatus() == ThreadStatus.TERMINATED;
-		}
-		else
+		} else
 			return true;
 	}
 
@@ -53,18 +52,18 @@ public class SPH4AudioPlayerImpl implements AudioPlayer {
 
 		audioPlayer = ThreadManager.qINSTANCE.createThread("mimo-audio", new Runnable() {
 
-			@SuppressWarnings("resource")
 			@Override
 			public void run() {
-				
+
 				InputStream stream = new ByteArrayInputStream(audio.getContent());
-				
+
 				try (AudioInputStream in = AudioSystem.getAudioInputStream(stream)) {
 
 					AudioFormat format = in.getFormat();
 					Info info = new Info(SourceDataLine.class, format);
 
-					try (SourceDataLine line = (SourceDataLine) AudioSystem.getLine(info)) {
+					try (@SuppressWarnings("resource")
+					SourceDataLine line = (SourceDataLine) AudioSystem.getLine(info)) {
 
 						line.open(format);
 						line.start();
@@ -76,9 +75,11 @@ public class SPH4AudioPlayerImpl implements AudioPlayer {
 
 						line.drain();
 						line.stop();
-					} 
+					} catch (LineUnavailableException e) {
+						throw new IllegalStateException(e);
+					}
 
-				} catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
+				} catch (UnsupportedAudioFileException | IOException e) {
 					throw new IllegalStateException(e);
 				}
 			}

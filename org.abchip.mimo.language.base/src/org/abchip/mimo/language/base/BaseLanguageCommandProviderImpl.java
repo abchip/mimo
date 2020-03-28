@@ -12,6 +12,7 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.base.BaseCommandProviderImpl;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
 import org.abchip.mimo.language.LanguagePlanet;
@@ -25,23 +26,24 @@ public class BaseLanguageCommandProviderImpl extends BaseCommandProviderImpl {
 	@Inject
 	private LanguageManager languageManager;
 
-	@SuppressWarnings("resource")
 	public void _lang(CommandInterpreter interpreter) throws Exception {
 
 		Context context = this.getContext();
 
 		System.out.println(languageManager.translate(context, "eng", "man", "ita"));
 
-		for (Language language : resourceManager.getResourceReader(context, Language.class).find()) {
-			System.out.println(language);
+		try (EntityIterator<Language> languages = resourceManager.getResourceReader(context, Language.class).find()) {
+			for (Language language : languages) {
+				System.out.println(language);
 
-			LanguagePlanet mars = resourceManager.getFrame(context, LanguagePlanet.class).createProxy("mars");
-			language.getPlanets().add(mars);
-			language.getPlanets().get(0);
+				LanguagePlanet mars = resourceManager.getFrame(context, LanguagePlanet.class).createProxy("mars");
+				language.getPlanets().add(mars);
+				language.getPlanets().get(0);
 
-			LanguagePlanet moon = resourceManager.getFrame(context, LanguagePlanet.class).createProxy("moon");
-			language.getPlanetsCont().add(moon);
-			language.getPlanetsCont().get(0);
+				LanguagePlanet moon = resourceManager.getFrame(context, LanguagePlanet.class).createProxy("moon");
+				language.getPlanetsCont().add(moon);
+				language.getPlanetsCont().get(0);
+			}
 		}
 	}
 

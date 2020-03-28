@@ -149,7 +149,6 @@ public class BaseJobManagerImpl implements JobManager {
 		return job;
 	}
 
-	@SuppressWarnings("resource")
 	@Override
 	public Job lookup(String contextID, String name, String user, int number) {
 
@@ -159,11 +158,11 @@ public class BaseJobManagerImpl implements JobManager {
 		Job jobTarget = null;
 
 		ResourceReader<Job> jobReader = resourceManager.getResourceReader(jobCaller.getContext(), Job.class);
-		EntityIterator<Job> jobs = jobReader.find(filter);
 
-		// first element
-		if (jobs.hasNext())
-			jobTarget = jobs.next();
+		try (EntityIterator<Job> jobs = jobReader.find(filter)) {
+			if (jobs.hasNext())
+				jobTarget = jobs.next();
+		}
 
 		return jobTarget;
 	}

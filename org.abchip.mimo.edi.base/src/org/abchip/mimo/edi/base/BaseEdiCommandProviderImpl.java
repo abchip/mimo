@@ -25,7 +25,6 @@ public class BaseEdiCommandProviderImpl extends BaseCommandProviderImpl {
 	@Inject
 	private ResourceManager resourceManager;
 
-	@SuppressWarnings("resource")
 	public void _testEdi(CommandInterpreter interpreter) throws Exception {
 
 		Context context = this.getContext();
@@ -47,10 +46,6 @@ public class BaseEdiCommandProviderImpl extends BaseCommandProviderImpl {
 				System.err.println("MessageSent not deleted");
 		} else
 			System.err.println("MessageSent not found");
-
-		for (MessageSent messageSent2 : messageSentWriter.find(null, null, null, 0, true)) {
-			System.out.println(messageSent2);
-		}
 	}
 
 	@Override
