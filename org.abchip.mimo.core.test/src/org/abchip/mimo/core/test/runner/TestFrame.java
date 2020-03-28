@@ -10,6 +10,7 @@ package org.abchip.mimo.core.test.runner;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
@@ -33,11 +34,14 @@ public class TestFrame {
 		testFrame();
 	}
 
+	@SuppressWarnings("rawtypes")
 	private void testFrame() {
 
-		for (Frame<?> frame : resourceManager.getResourceReader(testRunner.getContext(), Frame.class).find()) {
-			if (!frame.isAbstract() && frame.getSuperNames().contains(EntityPackage.eINSTANCE.getEntityIdentifiable().getName()))
-				testAsserter.assertNotNull("Entity creation " + frame.getName(), frame.createEntity());
+		try (EntityIterator<Frame> frames = resourceManager.getResourceReader(testRunner.getContext(), Frame.class).find()) {
+			for (Frame<?> frame : frames) {
+				if (!frame.isAbstract() && frame.getSuperNames().contains(EntityPackage.eINSTANCE.getEntityIdentifiable().getName()))
+					testAsserter.assertNotNull("Entity creation " + frame.getName(), frame.createEntity());
+			}
 		}
 	}
 }

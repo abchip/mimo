@@ -9,6 +9,7 @@
 package org.abchip.mimo.core.http;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.KeyManagementException;
@@ -34,13 +35,13 @@ import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.CookieSpecs;
@@ -230,16 +231,19 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 						.setParameter("accessToken", authentication.getAccessToken()).setParameter("userId", (String) userInfo.get("email"))
 						.setParameter("firstName", (String) userInfo.get("given_name")).setParameter("lastName", (String) userInfo.get("family_name"))
 						.setParameter("email", (String) userInfo.get("email")).build();
+			} catch (URISyntaxException e1) {
+				e1.printStackTrace();
+				return false;
+			}
 
-				try (CloseableHttpResponse response = getHttpsClient().execute(new HttpPost(uri))) {
+			try (CloseableHttpResponse response = getHttpsClient().execute(new HttpPost(uri))) {
 
-					if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
-						return false;
-					}
-					authentication.setUser((String) userInfo.get("email"));
-					authentication.setPicture((String) userInfo.get("picture"));
+				if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
+					return false;
 				}
-			} catch (IOException | URISyntaxException e) {
+				authentication.setUser((String) userInfo.get("email"));
+				authentication.setPicture((String) userInfo.get("picture"));
+			} catch (IOException e) {
 				e.printStackTrace();
 				return false;
 			}
@@ -340,19 +344,22 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 						.setParameter("firstName", (String) userInfo.get("localizedFirstName")).setParameter("lastName", (String) userInfo.get("localizedLastName"))
 						.setParameter("email", (String) userInfo.get("email")).build();
 
-				try (CloseableHttpResponse response = getHttpsClient().execute(new HttpPost(uri))) {
-
-					if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
-						return false;
-					}
-					authentication.setUser((String) userInfo.get("email"));
-					authentication.setPicture((String) userInfo.get("picture"));
-				}
-
-			} catch (IOException | URISyntaxException e) {
+			} catch (URISyntaxException e) {
 				e.printStackTrace();
 				return false;
 			}
+			try (CloseableHttpResponse response = getHttpsClient().execute(new HttpPost(uri))) {
+
+				if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
+					return false;
+				}
+				authentication.setUser((String) userInfo.get("email"));
+				authentication.setPicture((String) userInfo.get("picture"));
+			} catch (IOException e) {
+				e.printStackTrace();
+				return false;
+			}
+
 			break;
 		default:
 			break;
@@ -362,7 +369,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	}
 
 	@Override
-	public Context login(String contextId, AuthenticationAnonymous authentication) {
+	public ContextProvider login(String contextId, AuthenticationAnonymous authentication) {
 
 		ProviderUser user = this.providerConfig.getPublicUser();
 		if (user == null)
@@ -371,22 +378,23 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		AuthenticationUserPassword authenticationUserPassword = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
 		authenticationUserPassword.setUser(user.getUser());
 		authenticationUserPassword.setPassword(user.getPassword());
-		Context context = this.login(contextId, authenticationUserPassword);
+		ContextProvider context = this.login(contextId, authenticationUserPassword);
 
 		if (context != null)
-			context.getContextDescription().setAnonymous(true);
+			context.get().getContextDescription().setAnonymous(true);
 
 		return context;
 	}
 
 	@Override
-	public Context login(String contextId, AuthenticationUserPassword authentication) {
+	public ContextProvider login(String contextId, AuthenticationUserPassword authentication) {
 
 		HttpConnector connector = connect(authentication.getUser(), authentication.getPassword(), authentication.getTenant());
 		if (connector == null)
 			return null;
 
-		Context context = contextRoot.createChildContext(contextId);
+		ContextProvider contextProvider = contextRoot.createChildContext(contextId);
+		Context context = contextProvider.get();
 		context.getContextDescription().setUser(authentication.getUser());
 		context.getContextDescription().setTenant(authentication.getTenant());
 		context.getContextDescription().setCurrencyUom(connector.getContextDescription().getCurrencyUom());
@@ -395,17 +403,18 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		context.set(HttpConnector.class, connector);
 
-		return context;
+		return contextProvider;
 	}
 
 	@Override
-	public Context login(String contextId, AuthenticationAdminKey authentication) {
+	public ContextProvider login(String contextId, AuthenticationAdminKey authentication) {
 
 		HttpConnector connector = connect(authentication.getAdminKey(), authentication.getTenant());
 		if (connector == null)
 			return null;
 
-		Context context = contextRoot.createChildContext(contextId);
+		ContextProvider contextProvider = contextRoot.createChildContext(contextId);
+		Context context = contextProvider.get();
 		context.getContextDescription().setTenant(authentication.getTenant());
 		context.getContextDescription().setCurrencyUom(connector.getContextDescription().getCurrencyUom());
 		context.getContextDescription().setLocale(connector.getContextDescription().getLocale());
@@ -413,11 +422,11 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		context.set(HttpConnector.class, connector);
 
-		return context;
+		return contextProvider;
 	}
 
 	@Override
-	public Context login(String contextId, AuthenticationUserToken authentication) {
+	public ContextProvider login(String contextId, AuthenticationUserToken authentication) {
 
 		// from previous httpClient
 		AuthenticationUserPassword authenticationUserPassword = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
@@ -428,27 +437,32 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			e.printStackTrace();
 			return null;
 		}
+		try (CloseableHttpClient client = getHttpsClient()) {
+			try (CloseableHttpResponse response = client.execute(new HttpPost(uri))) {
 
-		try (CloseableHttpResponse response = getHttpsClient().execute(new HttpPost(uri))) {
+				if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)
+					return null;
 
-			if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)
+				String user = response.getFirstHeader("user").getValue();
+				String password = response.getFirstHeader("password").getValue();
+				// System.out.println("User: " + user + " " + "password: " + password);
+				authenticationUserPassword.setUser(user);
+				authenticationUserPassword.setPassword(password);
+
+			} catch (IOException e) {
+				e.printStackTrace();
 				return null;
-
-			String user = response.getFirstHeader("user").getValue();
-			String password = response.getFirstHeader("password").getValue();
-			// System.out.println("User: " + user + " " + "password: " + password);
-			authenticationUserPassword.setUser(user);
-			authenticationUserPassword.setPassword(password);
-		} catch (IOException e) {
-			e.printStackTrace();
+			}
+		} catch (IOException e1) {
+			e1.printStackTrace();
 			return null;
 		}
 
-		Context context = login(contextId, authenticationUserPassword);
+		ContextProvider context = login(contextId, authenticationUserPassword);
 		if (context == null)
 			return null;
 
-		context.getContextDescription().setPicture(authentication.getPicture());
+		context.get().getContextDescription().setPicture(authentication.getPicture());
 
 		return context;
 	}
@@ -467,21 +481,19 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		String url = providerConfig.getUrl() + "/login";
 
 		HttpConnector connector = null;
-		try {
 
+		try (CloseableHttpClient client = HttpClients.custom().setSSLSocketFactory(this.sslsf).build()) {
 			HttpPost httpPost = new HttpPost(url);
 			httpPost.setEntity(new UrlEncodedFormEntity(postParameters));
 
-			@SuppressWarnings("resource")
-			CloseableHttpClient client = HttpClients.custom().setSSLSocketFactory(this.sslsf).build();
 			try (CloseableHttpResponse response = client.execute(httpPost)) {
 				if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_OK) {
 
-					HttpEntity session = response.getEntity();
-
 					ResourceSerializer<ContextDescription> contextSerializer = resourceManager.createResourceSerializer(contextRoot, ContextDescription.class,
 							SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
-					contextSerializer.load(session.getContent(), false);
+					try (InputStream stream = response.getEntity().getContent()) {
+						contextSerializer.load(stream, false);
+					}
 					ContextDescription contextDescription = contextSerializer.get();
 
 					if (contextDescription != null)
@@ -507,30 +519,31 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		String url = providerConfig.getUrl() + "/login";
 
 		HttpConnector connector = null;
-		try {
 
+		try (CloseableHttpClient client = HttpClients.custom().setSSLSocketFactory(this.sslsf).build()) {
 			HttpPost httpPost = new HttpPost(url);
 			httpPost.setEntity(new UrlEncodedFormEntity(postParameters));
 
-			@SuppressWarnings("resource")
-			CloseableHttpClient client = HttpClients.custom().setSSLSocketFactory(this.sslsf).build();
 			try (CloseableHttpResponse response = client.execute(httpPost)) {
 				if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_OK) {
 
-					HttpEntity session = response.getEntity();
-
 					ResourceSerializer<ContextDescription> contextSerializer = resourceManager.createResourceSerializer(contextRoot, ContextDescription.class,
 							SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
-					contextSerializer.load(session.getContent(), false);
+
+					try (InputStream stream = response.getEntity().getContent()) {
+						contextSerializer.load(stream, false);
+					}
 					ContextDescription contextDescription = contextSerializer.get();
 
 					if (contextDescription != null)
 						connector = new HttpConnector(providerConfig, client, contextDescription);
 				}
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+			return null;
 		}
 
 		return connector;

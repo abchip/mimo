@@ -2,6 +2,7 @@ package org.abchip.mimo.language.lp;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.mining.classification.ClassificationFactory;
@@ -68,8 +70,10 @@ public class LPClassifierImpl implements Classifier {
 
 		List<Language> languages = new ArrayList<Language>();
 		ResourceReader<Language> languageReader = resourceManager.getResourceReader(contextRoot, Language.class);
-		for (Language language : languageReader.find())
-			languages.add(language);
+		try (EntityIterator<Language> languageIterator = languageReader.find()) {
+			for (Language language : languageIterator)
+				languages.add(language);
+		}
 
 		String[] categories = new String[languages.size()];
 		int i = 0;
@@ -92,8 +96,10 @@ public class LPClassifierImpl implements Classifier {
 
 		List<Language> languages = new ArrayList<Language>();
 		ResourceReader<Language> languageReader = resourceManager.getResourceReader(contextRoot, Language.class);
-		for (Language language : languageReader.find())
-			languages.add(language);
+		try (EntityIterator<Language> languageIterator = languageReader.find()) {
+			for (Language language : languageIterator)
+				languages.add(language);
+		}
 
 		for (int i = 0; i < lpClassification.size(); i++) {
 			E languageClassified = null;
@@ -119,8 +125,10 @@ public class LPClassifierImpl implements Classifier {
 		try {
 			String classifierPath = "model/3LangId.LMClassifier";
 			URL url = FrameworkUtil.getBundle(this.getClass()).getResource(classifierPath);
-			File serializedClassifier = files.copyToFile(url.openStream());
-			classifier = (ScoredClassifier<CharSequence>) AbstractExternalizable.readObject(serializedClassifier);
+			try (InputStream stream = url.openStream()) {
+				File serializedClassifier = files.copyToFile(stream);
+				classifier = (ScoredClassifier<CharSequence>) AbstractExternalizable.readObject(serializedClassifier);
+			}
 		} catch (ClassNotFoundException | IOException e) {
 			e.printStackTrace();
 		}

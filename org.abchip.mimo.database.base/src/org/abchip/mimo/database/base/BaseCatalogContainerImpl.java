@@ -247,7 +247,7 @@ public class BaseCatalogContainerImpl extends CatalogContainerImpl {
 		view.setSchema(null);
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "resource" })
 	protected void initialize() throws SQLException {
 
 		this.connectionGraph = null;
@@ -378,6 +378,7 @@ public class BaseCatalogContainerImpl extends CatalogContainerImpl {
 		return iConnectionProfile;
 	}
 
+	@SuppressWarnings("resource")
 	private ConnectionInfo getConnectionWork() throws SQLException {
 		if (this.connectionWork == null)
 			synchronized (this) {

@@ -16,6 +16,7 @@ import java.util.UUID;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.Factory;
 import org.eclipse.e4.core.contexts.EclipseContextFactory;
@@ -122,7 +123,7 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	}
 
 	@Override
-	public Context createChildContext(String contextId) {
+	public ContextProvider createChildContext(String contextId) {
 
 		ContextDescription childDescription = (ContextDescription) EcoreUtil.copy((EObject) getContextDescription());
 		childDescription.setId(contextId);
@@ -131,7 +132,7 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 	}
 
 	@SuppressWarnings("unchecked")
-	private Context createChildContext(ContextDescription contextDescription) {
+	private ContextProvider createChildContext(ContextDescription contextDescription) {
 
 		IEclipseContext eclipseChildContext = getEclipseContext().createChild();
 		initializeContext(eclipseChildContext);
@@ -146,6 +147,17 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 			contextChild.set(factory.getInterfaceClass(), object);
 		}
 
-		return contextChild;
+		return new ContextProvider() {
+			
+			@Override
+			public Context get() {
+				return contextChild;
+			}
+			
+			@Override
+			public void close() {
+				contextChild.dispose();
+			}
+		};
 	}
 }

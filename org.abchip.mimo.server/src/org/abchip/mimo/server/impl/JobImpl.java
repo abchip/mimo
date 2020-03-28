@@ -711,7 +711,6 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	 * 
 	 * @generated NOT
 	 */
-	@SuppressWarnings("resource")
 	public boolean isActive() {
 		Context context = getContext();
 		if (context == null)
@@ -1095,8 +1094,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	}
 
 	@Override
-	public void close() {
+	public void dispose() {
 		if (this.isActive())
-			this.getContext().close();
+			this.getContext().dispose();
 	}
 } // JobImpl

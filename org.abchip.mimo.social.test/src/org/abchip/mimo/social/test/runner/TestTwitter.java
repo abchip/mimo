@@ -15,7 +15,9 @@ import java.util.Set;
 import javax.inject.Inject;
 
 import org.abchip.mimo.audio.AudioManager;
+import org.abchip.mimo.audio.AudioPlayer;
 import org.abchip.mimo.audio.AudioStyle;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.language.Language;
@@ -52,6 +54,7 @@ public class TestTwitter {
 	@Inject
 	private AudioManager audioManager;
 
+	@SuppressWarnings("rawtypes")
 	@TestStarted
 	public void start() throws InterruptedException {
 
@@ -62,58 +65,79 @@ public class TestTwitter {
 		ResourceReader<Tweet> tweetReader = resourceManager.getResourceReader(testRunner.getContext(), Tweet.class);
 		ResourceReader<Language> languageReader = resourceManager.getResourceReader(testRunner.getContext(), Language.class);
 
-		for (Frame<?> frame : resourceManager.getResourceReader(testRunner.getContext(), Frame.class).find()) {
-			String text = "The frame " + frame.getName() + " has the following properties:";
-			audioManager.play(testRunner.getContext(), AudioStyle.A, text, true, true);
-			StringBuffer sb = new StringBuffer();
-			for (Slot slot : frame.getSlots()) {
-				sb.append(slot.getName() + ". ");
+		try (EntityIterator<Frame> frames = resourceManager.getResourceReader(testRunner.getContext(), Frame.class).find()) {
+			for (Frame<?> frame : frames) {
+				String text = "The frame " + frame.getName() + " has the following properties:";
+				try (AudioPlayer audioPlayer = audioManager.play(testRunner.getContext(), AudioStyle.A, text, true, true)) {
+					audioPlayer.start();
+				}
+				StringBuffer sb = new StringBuffer();
+				for (Slot slot : frame.getSlots()) {
+					sb.append(slot.getName() + ". ");
+				}
+				try (AudioPlayer audioPlayer = audioManager.play(testRunner.getContext(), AudioStyle.B, sb.toString(), true, true)) {
+					audioPlayer.start();
+				}
 			}
-			audioManager.play(testRunner.getContext(), AudioStyle.B, sb.toString(), true, true);
 		}
 
 		Set<String> users = new HashSet<String>();
 		Set<String> languages = new HashSet<String>();
-		for (Tweet tweet : tweetReader.find()) {
-			users.add(tweet.getUser());
-			if (tweet.getLanguage() != null)
-				languages.add(tweet.getLanguage());
+		try (EntityIterator<Tweet> tweets = tweetReader.find()) {
+			for (Tweet tweet : tweets) {
+				users.add(tweet.getUser());
+				if (tweet.getLanguage() != null)
+					languages.add(tweet.getLanguage());
+			}
 		}
 
-		audioManager.play(testRunner.getContext(), AudioStyle.A, "The following languages have been spoken on Twitter", true, true);
+		try (AudioPlayer audioPlayer = audioManager.play(testRunner.getContext(), AudioStyle.A, "The following languages have been spoken on Twitter", true, true)) {
+			audioPlayer.start();
+		}
 
 		for (String languageName : languages) {
 			Language language = languageReader.lookup(languageName.toUpperCase());
-			audioManager.play(testRunner.getContext(), AudioStyle.A, language.getText(), true, true);
+			try (AudioPlayer audioPlayer = audioManager.play(testRunner.getContext(), AudioStyle.A, language.getText(), true, true)) {
+				audioPlayer.start();
+			}
 		}
-
-		audioManager.play(testRunner.getContext(), AudioStyle.A, "The following users have written on Twitter", true, true);
+		try (AudioPlayer audioPlayer = audioManager.play(testRunner.getContext(), AudioStyle.A, "The following users have written on Twitter", true, true)) {
+			audioPlayer.start();
+		}
 
 		Thread.sleep(1000);
 
 		for (String user : users) {
-			audioManager.play(testRunner.getContext(), AudioStyle.A, user, true, true);
+			try (AudioPlayer audioPlayer = audioManager.play(testRunner.getContext(), AudioStyle.A, user, true, true)) {
+				audioPlayer.start();
+			}
 		}
 
-		audioManager.play(testRunner.getContext(), AudioStyle.A, "I found the following tweets in the system", true, true);
+		try (AudioPlayer audioPlayer = audioManager.play(testRunner.getContext(), AudioStyle.A, "I found the following tweets in the system", true, true)) {
+			audioPlayer.start();
+		}
 
-		for (Tweet tweet : tweetReader.find()) {
+		try (EntityIterator<Tweet> tweets = tweetReader.find()) {
+			for (Tweet tweet : tweets) {
 
-			if (tweet.getLanguage() == null)
-				continue;
-			String text = tweet.getText();
-			for (String entity : tweet.getEntities()) {
-				text = text.replaceAll(entity, "");
-			}
-			for (String hashtag : tweet.getHashtags()) {
-				text = text.replaceAll("#" + hashtag, "");
-			}
+				if (tweet.getLanguage() == null)
+					continue;
+				String text = tweet.getText();
+				for (String entity : tweet.getEntities()) {
+					text = text.replaceAll(entity, "");
+				}
+				for (String hashtag : tweet.getHashtags()) {
+					text = text.replaceAll("#" + hashtag, "");
+				}
 
-			if (tweet.getLanguage().equalsIgnoreCase("EN")) {
-				audioManager.play(testRunner.getContext(), AudioStyle.A, tweet.getUser() + " wrote:", true, true);
+				if (tweet.getLanguage().equalsIgnoreCase("EN")) {
+					try (AudioPlayer audioPlayer = audioManager.play(testRunner.getContext(), AudioStyle.A, tweet.getUser() + " wrote:", true, true)) {
+						audioPlayer.start();
+					}
+				}
+				Classification<Language> classification = languageManager.classifyLanguage(testRunner.getContext(), text);
+				asserter.assertEquals("Tweet language: " + tweet.getText(), tweet.getLanguage().toUpperCase(), classification.getEntity().getName());
 			}
-			Classification<Language> classification = languageManager.classifyLanguage(testRunner.getContext(), text);
-			asserter.assertEquals("Tweet language: " + tweet.getText(), tweet.getLanguage().toUpperCase(), classification.getEntity().getName());
 		}
 	}
 
@@ -121,18 +145,22 @@ public class TestTwitter {
 
 		List<Language> languages = new ArrayList<Language>();
 		ResourceReader<Language> languageReader = resourceManager.getResourceReader(testRunner.getContext(), Language.class);
-		for (Language language : languageReader.find())
-			languages.add(language);
+		try (EntityIterator<Language> languageIterator = languageReader.find()) {
+			for (Language language : languageIterator)
+				languages.add(language);
+		}
 
 		Classifier classifier = miningManager.lookupClassifier(Language.class, String.class);
 		Evaluator evaluator = classifier.buildEvaluator(Language.class, String.class);
 
 		ResourceReader<Tweet> tweetReader = resourceManager.getResourceReader(testRunner.getContext(), Tweet.class);
-		for (Tweet tweet : tweetReader.find()) {
+		try (EntityIterator<Tweet> tweets = tweetReader.find()) {
+			for (Tweet tweet : tweets) {
 
-			Language language = lookupLanguageByIso(languages, tweet.getLanguage());
-			if (language != null)
-				evaluator.evaluate(tweet.getText(), language.getText().toLowerCase());
+				Language language = lookupLanguageByIso(languages, tweet.getLanguage());
+				if (language != null)
+					evaluator.evaluate(tweet.getText(), language.getText().toLowerCase());
+			}
 		}
 
 		evaluator.printConfusionMatrix();
@@ -149,11 +177,13 @@ public class TestTwitter {
 	private void loadTweets() {
 
 		ResourceWriter<Tweet> tweetWriter = resourceManager.getResourceWriter(testRunner.getContext(), Tweet.class);
-		for (Tweet tweet : twitterManager.search(testRunner.getContext(), null, "#ai", 1000)) {
-			try {
-				tweetWriter.create(tweet, true);
-			} catch (Exception e) {
-				System.err.println(e.getMessage());
+		try (EntityIterator<Tweet> tweets = twitterManager.search(testRunner.getContext(), null, "#ai", 1000)) {
+			for (Tweet tweet : tweets) {
+				try {
+					tweetWriter.create(tweet, true);
+				} catch (Exception e) {
+					System.err.println(e.getMessage());
+				}
 			}
 		}
 	}

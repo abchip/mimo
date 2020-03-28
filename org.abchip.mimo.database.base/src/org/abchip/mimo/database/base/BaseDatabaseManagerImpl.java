@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.database.base;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -334,7 +335,9 @@ public class BaseDatabaseManagerImpl implements DatabaseManager {
 
 		try (Statement statement = connection.createStatementCursorInsensitive(true)) {
 			String command = definitionWriter.hasLogicals(table);
-			return statement.executeQuery(command).next();
+			try (ResultSet resultSet = statement.executeQuery(command)) {
+				return resultSet.next();
+			}
 		}
 	}
 

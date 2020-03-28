@@ -33,7 +33,7 @@ public interface AuthenticationManager {
 	 * @model contextIdRequired="true" authenticationRequired="true"
 	 * @generated
 	 */
-	Context login(String contextId, AuthenticationAnonymous authentication);
+	ContextProvider login(String contextId, AuthenticationAnonymous authentication);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ public interface AuthenticationManager {
 	 * @model contextIdRequired="true" authenticationRequired="true"
 	 * @generated
 	 */
-	Context login(String contextId, AuthenticationUserPassword authentication);
+	ContextProvider login(String contextId, AuthenticationUserPassword authentication);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public interface AuthenticationManager {
 	 * @model contextIdRequired="true" authenticationRequired="true"
 	 * @generated
 	 */
-	Context login(String contextId, AuthenticationUserToken authentication);
+	ContextProvider login(String contextId, AuthenticationUserToken authentication);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -57,6 +57,6 @@ public interface AuthenticationManager {
 	 * @model contextIdRequired="true" authenticationRequired="true"
 	 * @generated
 	 */
-	Context login(String contextId, AuthenticationAdminKey authentication);
+	ContextProvider login(String contextId, AuthenticationAdminKey authentication);
 
 } // AuthenticationManager

@@ -16,6 +16,7 @@ import java.util.Date;
 import org.abchip.mimo.database.connection.Connection;
 import org.abchip.mimo.database.connection.PreparedStatement;
 
+@SuppressWarnings("resource")
 public class BasePreparedStatementImpl extends BaseStatementImpl implements PreparedStatement {
 
 	protected BasePreparedStatementImpl(Connection connection, java.sql.PreparedStatement statement, boolean native_) {

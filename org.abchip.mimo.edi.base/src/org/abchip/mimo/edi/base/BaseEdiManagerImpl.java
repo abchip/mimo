@@ -37,38 +37,39 @@ public class BaseEdiManagerImpl implements EdiManager {
 
 		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, entity.isa(), SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 
-		EntityIterator<EdiFrameSetup> setups = resourceManager.getResourceReader(context, EdiFrameSetup.class).find("frame='" + entity.isa().getName() + "'");		
-		for (EdiFrameSetup setup : setups) {
+		try (EntityIterator<EdiFrameSetup> setups = resourceManager.getResourceReader(context, EdiFrameSetup.class).find("frame='" + entity.isa().getName() + "'")) {
+			for (EdiFrameSetup setup : setups) {
 
-			switch (setup.getEntityEvent()) {
-			case ALL:
-				break;
-			case CREATE:
-			case DELETE:
-			case UPDATE:
-				if (setup.getEntityEvent() != event)
-					continue;
-				break;
+				switch (setup.getEntityEvent()) {
+				case ALL:
+					break;
+				case CREATE:
+				case DELETE:
+				case UPDATE:
+					if (setup.getEntityEvent() != event)
+						continue;
+					break;
+				}
+
+				MessageSent messageSent = messageSentWriter.make(true);
+
+				messageSent.setMessageType(setup.getMessageType());
+				messageSent.setSender(contextDescription.getUser());
+				messageSent.setFrame(entity.isa().getName());
+				messageSent.setEntity(entity.getID());
+				messageSent.setEvent(event);
+				messageSent.setStatus(MessageStatus.READY);
+				entitySerializer.add(entity);
+				ByteArrayOutputStream baos = new ByteArrayOutputStream();
+				try {
+					entitySerializer.save(baos);
+				} catch (IOException e) {
+					messageSent.setStatus(MessageStatus.ERROR);
+				}
+				messageSent.setBody(baos.toString());
+				entitySerializer.clear();
+				messageSentWriter.create(messageSent);
 			}
-
-			MessageSent messageSent = messageSentWriter.make(true);
-
-			messageSent.setMessageType(setup.getMessageType());
-			messageSent.setSender(contextDescription.getUser());
-			messageSent.setFrame(entity.isa().getName());
-			messageSent.setEntity(entity.getID());
-			messageSent.setEvent(event);
-			messageSent.setStatus(MessageStatus.READY);
-			entitySerializer.add(entity);
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			try {
-				entitySerializer.save(baos);
-			} catch (IOException e) {
-				messageSent.setStatus(MessageStatus.ERROR);
-			}
-			messageSent.setBody(baos.toString());
-			entitySerializer.clear();
-			messageSentWriter.create(messageSent);
 		}
 	}
 }

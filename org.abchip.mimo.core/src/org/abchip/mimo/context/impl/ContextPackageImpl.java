@@ -26,6 +26,7 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.ExceptionManager;
@@ -258,6 +259,13 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	private EClass userProfileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass contextProviderEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1031,6 +1039,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getContextProvider() {
+		return contextProviderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getCapabilityRight() {
 		return capabilityRightEEnum;
 	}
@@ -1144,6 +1162,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__TIME_ZONE);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__USER);
 
+		contextProviderEClass = createEClass(CONTEXT_PROVIDER);
+
 		contextRootEClass = createEClass(CONTEXT_ROOT);
 
 		entityLockerEClass = createEClass(ENTITY_LOCKER);
@@ -1255,8 +1275,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		authenticationUserTokenEClass.getESuperTypes().add(this.getAuthentication());
 		authenticationAnonymousEClass.getESuperTypes().add(this.getAuthentication());
 		capabilityEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		contextEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 		contextDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		contextProviderEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 		contextRootEClass.getESuperTypes().add(this.getContext());
 		identityEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		messageDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntity());
@@ -1294,19 +1314,19 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, this.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "create", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(authenticationManagerEClass, this.getContext(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(authenticationManagerEClass, this.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAuthenticationAnonymous(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(authenticationManagerEClass, this.getContext(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(authenticationManagerEClass, this.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAuthenticationUserPassword(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(authenticationManagerEClass, this.getContext(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(authenticationManagerEClass, this.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(authenticationManagerEClass, this.getContext(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(authenticationManagerEClass, this.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAuthenticationAdminKey(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1332,7 +1352,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(contextEClass, Context.class, "Context", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(contextEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contextEClass, null, "dispose", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(contextEClass, null, "get", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");
@@ -1416,9 +1436,15 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		addEOperation(contextDescriptionEClass, ecorePackage.getEBoolean(), "isTenant", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(contextProviderEClass, ContextProvider.class, "ContextProvider", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(contextProviderEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(contextProviderEClass, this.getContext(), "get", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(contextRootEClass, ContextRoot.class, "ContextRoot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(contextRootEClass, this.getContext(), "createChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(contextRootEClass, this.getContextProvider(), "createChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(contextRootEClass, null, "get", 0, 1, IS_UNIQUE, IS_ORDERED);

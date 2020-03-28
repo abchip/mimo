@@ -24,8 +24,8 @@ public class BaseTestContextImpl extends ContextImpl {
 	}
 
 	@Override
-	public void close() {
-		this.delegate.close();
+	public void dispose() {
+		this.delegate.dispose();
 	}
 
 /*	@Override

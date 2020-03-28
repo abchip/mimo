@@ -55,7 +55,7 @@ public class StatusServlet extends HttpServlet {
 		if (context == null) {
 
 			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-			context = authenticationManager.login(session.getId(), authentication);
+			context = authenticationManager.login(session.getId(), authentication).get();
 
 			ContextUtils.addContext(context);
 		}

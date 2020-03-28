@@ -29,7 +29,6 @@ public class BaseSystemActivator {
 
 		system.setContext(contextRoot);
 
-		@SuppressWarnings("resource")
 		Job jobKernel = systemManager.start(system);
 
 		contextRoot.set(org.abchip.mimo.server.System.class, system);

@@ -27,7 +27,6 @@ public class BaseJobCloser implements Runnable {
 		this.jobManager = jobManager;
 	}
 
-	@SuppressWarnings("resource")
 	@Override
 	public void run() {
 

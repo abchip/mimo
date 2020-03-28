@@ -50,9 +50,13 @@ public class BaseTestHelper {
 
 		Bundle bundle = FrameworkUtil.getBundle(context.getClass());
 		URL entry = bundle.getEntry(resource);
-		List<String> sourceSQL = readLinesFromInputStream(entry.openStream());
-
-		return sourceSQL;
+		try (InputStream stream = entry.openStream()) {
+			List<String> sourceSQL = readLinesFromInputStream(stream);
+			return sourceSQL;
+		}
+		catch(IOException e) {
+			throw e;
+		}
 	}
 
 	private static List<String> readLinesFromInputStream(InputStream inputStream) throws IOException {

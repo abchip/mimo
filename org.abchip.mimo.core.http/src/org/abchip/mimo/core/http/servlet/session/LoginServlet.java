@@ -24,6 +24,7 @@ import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -64,11 +65,11 @@ public class LoginServlet extends HttpServlet {
 
 			// anonymous access
 			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-			try (Context context = authenticationManager.login(session.getId(), authentication)) {
+			try (ContextProvider context = authenticationManager.login(session.getId(), authentication)) {
 
 				String entityName = "OAuth2" + provider;
 
-				ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
+				ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context.get(), entityName);
 				EntityIdentifiable oauth2Entity = oauth2Reader.first();
 
 				if (oauth2Entity == null) {
@@ -87,7 +88,7 @@ public class LoginServlet extends HttpServlet {
 				ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
 				tempContextDescription.setId(session.getId());
 				tempContextDescription.setAnonymous(true);
-				ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+				ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context.get(), ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 				serializer.add(tempContextDescription);
 				serializer.save(response.getOutputStream());
 
@@ -101,7 +102,7 @@ public class LoginServlet extends HttpServlet {
 
 		// close previous
 		if (context != null) {
-			context.close();
+			context.dispose();
 			context = null;
 		}		
 		ContextUtils.removeContext(session.getId());
@@ -127,7 +128,7 @@ public class LoginServlet extends HttpServlet {
 			authentication.setAdminKey(adminKey);
 			authentication.setTenant(tenant);
 
-			context = authenticationManager.login(session.getId(), authentication);
+			context = authenticationManager.login(session.getId(), authentication).get();
 			ContextUtils.addContext(context);
 
 		}
@@ -153,7 +154,7 @@ public class LoginServlet extends HttpServlet {
 			authentication.setPassword(password);
 			authentication.setTenant(tenant);
 
-			context = authenticationManager.login(session.getId(), authentication);
+			context = authenticationManager.login(session.getId(), authentication).get();
 			ContextUtils.addContext(context);
 		}
 

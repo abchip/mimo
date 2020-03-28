@@ -66,7 +66,6 @@ public class BaseJobManagerImpl implements JobManager {
 		return create(identity, null);
 	}
 
-	@SuppressWarnings("resource")
 	@Override
 	public JobCapability create(Identity<?> identity, String jobName) {
 
@@ -190,10 +189,9 @@ public class BaseJobManagerImpl implements JobManager {
 	@Override
 	public void close(JobCapability jobCapability) {
 
-		try (Job job = lookup(jobCapability)) {
-			if (job != null)
-				close(job);
-		}
+		Job job = lookup(jobCapability);
+		if (job != null)
+			close(job);
 	}
 
 	@Override

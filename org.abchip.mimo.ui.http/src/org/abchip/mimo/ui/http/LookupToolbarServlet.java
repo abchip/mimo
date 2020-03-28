@@ -30,6 +30,7 @@ public class LookupToolbarServlet extends BaseServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
+	@SuppressWarnings("resource")
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String frameName = request.getParameter("frame");

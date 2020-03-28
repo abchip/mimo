@@ -1,5 +1,6 @@
 package org.abchip.mimo.audio.sph4.demo;
 
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.logging.Logger;
@@ -78,7 +79,9 @@ public class SpeakerIdentificationDemo {
 				long endTime = s.getStartTime() + s.getLength();
 				t = new TimeFrame(startTime, endTime);
 
-				recognizer.startRecognition(url.openStream(), t);
+				try (InputStream stream = url.openStream()) {
+					recognizer.startRecognition(stream, t);
+				}
 				while ((result = recognizer.getResult()) != null) {
 					stats.collect(result);
 				}
@@ -96,7 +99,9 @@ public class SpeakerIdentificationDemo {
 				t = new TimeFrame(startTime, endTime);
 
 				// Decode again with updated SpeakerProfile
-				recognizer.startRecognition(url.openStream(), t);
+				try (InputStream stream = url.openStream()) {
+					recognizer.startRecognition(stream, t);
+				}
 				while ((result = recognizer.getResult()) != null) {
 					System.out.format("Hypothesis: %s\n", result.getHypothesis());
 				}
@@ -112,12 +117,15 @@ public class SpeakerIdentificationDemo {
 		if (conFile == null) {
 			System.setProperty("java.util.logging.config.file", "ignoreAllSphinx4LoggingOutput");
 		}
-		
+
 		SpeakerIdentification sd = new SpeakerIdentification();
 		URL url = SpeakerIdentificationDemo.class.getResource("test.wav");
-		ArrayList<SpeakerCluster> clusters = sd.cluster(url.openStream());
+		try (InputStream stream = url.openStream()) {
+			ArrayList<SpeakerCluster> clusters = sd.cluster(stream);
+			printSpeakerIntervals(clusters, url.getPath());
+			speakerAdaptiveDecoding(clusters, url);
 
-		printSpeakerIntervals(clusters, url.getPath());
-		speakerAdaptiveDecoding(clusters, url);
+		}
+
 	}
 }

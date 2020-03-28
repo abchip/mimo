@@ -77,7 +77,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void close() {
+	public void dispose() {
 
 		Map<Class<?>, List<AdapterFactory>> adapterFactories = (Map<Class<?>, List<AdapterFactory>>) getEclipseContext().get(ADAPTER_FACTORIES_NAME);
 		adapterFactories.clear();

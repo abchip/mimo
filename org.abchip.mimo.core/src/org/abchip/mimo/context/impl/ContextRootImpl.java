@@ -9,8 +9,8 @@ package org.abchip.mimo.context.impl;
 
 import java.util.Dictionary;
 import java.util.List;
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.eclipse.emf.ecore.EClass;
 
@@ -47,7 +47,7 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	 * @generated
 	 */
 	@Override
-	public Context createChildContext(String contextId) {
+	public ContextProvider createChildContext(String contextId) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

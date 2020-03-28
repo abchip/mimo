@@ -10,6 +10,7 @@ package org.abchip.mimo.core.http;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
@@ -133,9 +134,11 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			try (CloseableHttpResponse response = this.connector.execute("lookup", query)) {
 
 				if (response != null && response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
-					HttpEntity jsonEntity = response.getEntity();
-					this.resourceSerializer.load(jsonEntity.getContent(), false);
-					entity = this.resourceSerializer.get();
+					try (InputStream stream = response.getEntity().getContent()) {
+						this.resourceSerializer.load(stream, false);
+						entity = this.resourceSerializer.get();
+					}
+
 				}
 			} catch (Exception e) {
 				logger.error(e);
@@ -176,8 +179,9 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			try (CloseableHttpResponse response = this.connector.execute("find", query)) {
 
 				if (response != null && (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND)) {
-					HttpEntity jsonEntities = response.getEntity();
-					this.resourceSerializer.load(jsonEntities.getContent(), false);
+					try (InputStream stream = response.getEntity().getContent()) {
+						this.resourceSerializer.load(stream, false);
+					}
 				}
 
 				entities = this.resourceSerializer.getAll();
@@ -209,7 +213,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			} finally {
 				this.resourceSerializer.clear();
 			}
-			
+
 			String query = "?frame=" + getFrame().getName() + "&replace=" + replace;
 			try {
 				query += "&json=" + URLEncoder.encode(baos.toString(), "UTF-8");

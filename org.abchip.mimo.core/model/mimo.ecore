@@ -179,19 +179,19 @@
         <eParameters name="authentication" lowerBound="1" eType="#//context/AuthenticationUserToken"/>
         <eParameters name="create" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
-      <eOperations name="login" eType="#//context/Context">
+      <eOperations name="login" eType="#//context/ContextProvider">
         <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="authentication" lowerBound="1" eType="#//context/AuthenticationAnonymous"/>
       </eOperations>
-      <eOperations name="login" eType="#//context/Context">
+      <eOperations name="login" eType="#//context/ContextProvider">
         <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="authentication" lowerBound="1" eType="#//context/AuthenticationUserPassword"/>
       </eOperations>
-      <eOperations name="login" eType="#//context/Context">
+      <eOperations name="login" eType="#//context/ContextProvider">
         <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="authentication" lowerBound="1" eType="#//context/AuthenticationUserToken"/>
       </eOperations>
-      <eOperations name="login" eType="#//context/Context">
+      <eOperations name="login" eType="#//context/ContextProvider">
         <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="authentication" lowerBound="1" eType="#//context/AuthenticationAdminKey"/>
       </eOperations>
@@ -227,8 +227,8 @@
       <eLiterals name="Write" value="20" literal="WRT"/>
       <eLiterals name="Execute" value="30" literal="EXC"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true" eSuperTypes="#//java/JavaCloseable">
-      <eOperations name="close"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true">
+      <eOperations name="dispose"/>
       <eOperations name="get" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/get/T"/>
         <eTypeParameters name="T"/>
@@ -314,8 +314,13 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContextProvider" abstract="true" interface="true"
+        eSuperTypes="#//java/JavaCloseable">
+      <eOperations name="close"/>
+      <eOperations name="get" lowerBound="1" eType="#//context/Context"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContextRoot" abstract="true" eSuperTypes="#//context/Context">
-      <eOperations name="createChildContext" lowerBound="1" eType="#//context/Context">
+      <eOperations name="createChildContext" lowerBound="1" eType="#//context/ContextProvider">
         <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="get">

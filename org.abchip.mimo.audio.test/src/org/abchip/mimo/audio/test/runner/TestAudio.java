@@ -42,6 +42,7 @@ public class TestAudio {
 	@Inject
 	private TestRunner testRunner;
 
+	@SuppressWarnings("resource")
 	@TestStarted
 	public void start() throws InterruptedException {
 
@@ -69,6 +70,7 @@ public class TestAudio {
 		}
 	}
 
+	@SuppressWarnings("resource")
 	private void readFrames() throws InterruptedException {
 
 		audioManager.play(testRunner.getContext(), AudioStyle.A, "I found the following frames in the system", true, true);
@@ -85,7 +87,7 @@ public class TestAudio {
 		}
 	}
 
-	@SuppressWarnings("unused")
+	@SuppressWarnings({ "unused", "resource" })
 	private void recordAudio() throws InterruptedException {
 
 		try (AudioRecorder audioRecorder = audioManager.record(testRunner.getContext())) {

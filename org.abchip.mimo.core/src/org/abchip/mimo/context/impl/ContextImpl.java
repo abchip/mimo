@@ -48,7 +48,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * @generated NOT
 	 */
 	@Override
-	public abstract void close();
+	public abstract void dispose();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,7 +174,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	protected void finalize() throws Throwable {
 		super.finalize();
 		
-		this.close();
+		this.dispose();
 	}
 
 } //ContextImpl

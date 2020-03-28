@@ -27,7 +27,7 @@ public interface ContextRoot extends Context {
 	 * @model required="true" contextIdRequired="true"
 	 * @generated
 	 */
-	Context createChildContext(String contextId);
+	ContextProvider createChildContext(String contextId);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -57,7 +57,7 @@ public class BaseConnectionImpl implements Connection {
 		this.currentCatalogConnection = null;
 		this.virtualCatalog = null;
 
-		this.context.close();
+		this.context.dispose();
 	}
 
 	@Override
@@ -213,9 +213,6 @@ public class BaseConnectionImpl implements Connection {
 
 		virtualCatalog = catalog;
 		currentCatalogConnection = null;
-
-		getRawConnection();
-
 	}
 
 	@Override

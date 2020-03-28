@@ -27,7 +27,7 @@ public class LogoutServlet extends BaseServlet {
 		HttpSession session = request.getSession();
 		
 		ContextUtils.removeContext(session.getId());
-		context.close();
+		context.dispose();
 		
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
 		

@@ -53,6 +53,7 @@ public class SPH4AudioPlayerImpl implements AudioPlayer {
 
 		audioPlayer = ThreadManager.qINSTANCE.createThread("mimo-audio", new Runnable() {
 
+			@SuppressWarnings("resource")
 			@Override
 			public void run() {
 				
@@ -75,7 +76,7 @@ public class SPH4AudioPlayerImpl implements AudioPlayer {
 
 						line.drain();
 						line.stop();
-					}
+					} 
 
 				} catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
 					throw new IllegalStateException(e);

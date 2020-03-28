@@ -8,7 +8,6 @@
  */
 package org.abchip.mimo.context;
 
-import java.io.Closeable;
 import java.lang.annotation.Annotation;
 
 /**
@@ -18,17 +17,17 @@ import java.lang.annotation.Annotation;
  *
  *
  * @see org.abchip.mimo.context.ContextPackage#getContext()
- * @model abstract="true" superTypes="org.abchip.mimo.java.JavaCloseable"
+ * @model abstract="true"
  * @generated
  */
-public interface Context extends Closeable {
+public interface Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
-	void close();
+	void dispose();
 
 	/**
 	 * <!-- begin-user-doc -->

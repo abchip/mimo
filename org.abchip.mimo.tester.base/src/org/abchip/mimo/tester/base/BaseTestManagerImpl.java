@@ -25,7 +25,6 @@ import org.osgi.framework.ServiceReference;
 
 public class BaseTestManagerImpl implements TestManager {
 
-	@SuppressWarnings("resource")
 	@Override
 	public TestUnitRunner prepareUnitRunner(Context context, Class<?> klass) {
 
@@ -35,7 +34,6 @@ public class BaseTestManagerImpl implements TestManager {
 		return testRunner;
 	}
 
-	@SuppressWarnings("resource")
 	@Override
 	public List<TestSuiteRunner> prepareSuiteRunner(Context context, String component) {
 		BundleContext bundleContext = FrameworkUtil.getBundle(Context.class).getBundleContext();

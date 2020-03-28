@@ -20,8 +20,8 @@ import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserPassword;
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.base.BaseCommandProviderImpl;
 import org.abchip.mimo.tester.AssertionFailed;
 import org.abchip.mimo.tester.AssertionResult;
@@ -48,7 +48,7 @@ public class BaseTesterCommandProviderImpl extends BaseCommandProviderImpl {
 
 		AuthenticationManager authenticationManager = application.getContext().get(AuthenticationManager.class);
 
-		try (Context context = authenticationManager.login(null, authentication)) {
+		try (ContextProvider contextProvider = authenticationManager.login(null, authentication)) {
 
 			String componentName = interpreter.nextArgument();
 
@@ -66,7 +66,7 @@ public class BaseTesterCommandProviderImpl extends BaseCommandProviderImpl {
 						if (serviceRef.getStatus() != ServiceStatus.ACTIVE)
 							continue;
 
-						List<TestSuiteRunner> runners = testManager.prepareSuiteRunner(context, component.getName());
+						List<TestSuiteRunner> runners = testManager.prepareSuiteRunner(contextProvider.get(), component.getName());
 						for (TestSuiteRunner runner : runners) {
 							List<TestResult> results = runner.call();
 							for (TestResult result : results) {

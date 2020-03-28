@@ -101,7 +101,7 @@ public class E4Activator implements BundleActivator {
 			context.ungetService(applicationManagerRegistration.getReference());
 	}
 
-	@SuppressWarnings({ "resource", "rawtypes" })
+	@SuppressWarnings({ "rawtypes" })
 	private void startApplication(Dictionary dictionary) throws Exception {
 
 		if (E4Activator.application != null) {

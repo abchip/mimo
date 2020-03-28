@@ -46,7 +46,6 @@ public class BaseEntityCommandProviderImpl extends BaseCommandProviderImpl {
 		}
 	}
 
-	@SuppressWarnings("resource")
 	public <E extends EntityIdentifiable> void _lookup(CommandInterpreter interpreter) throws Exception {
 
 		Context context = this.getContext();

@@ -38,6 +38,7 @@ public class LookupMenuServlet extends BaseServlet {
 	@Inject
 	private ResourceManager resourceManager;
 
+	@SuppressWarnings("resource")
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String name = request.getParameter("name");

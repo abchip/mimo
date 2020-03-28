@@ -22,8 +22,8 @@ import javax.servlet.http.HttpSession;
 import org.abchip.mimo.context.AuthenticationAnonymous;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserToken;
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
@@ -89,11 +89,11 @@ public class GoogleResponseServlet extends HttpServlet {
 
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
 
-		try (Context context = authenticationManager.login(null, authentication)) {
+		try (ContextProvider context = authenticationManager.login(null, authentication)) {
 
 			// dovremmo accedere con ProductStore e data
 			String entityName = "OAuth2Google";
-			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context, entityName);
+			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context.get(), entityName);
 			EntityIdentifiable oauth2Google = oauth2Reader.first();
 
 			if (oauth2Google == null) {
@@ -139,8 +139,8 @@ public class GoogleResponseServlet extends HttpServlet {
 		if (authenticationManager.checkLogin(authenticationUserToken, true)) {
 			ContextUtils.removeContext(state);
 			@SuppressWarnings("resource")
-			Context context = authenticationManager.login(state, authenticationUserToken);
-			ContextUtils.addContext(context);
+			ContextProvider context = authenticationManager.login(state, authenticationUserToken);
+			ContextUtils.addContext(context.get());
 
 			String location = response.encodeURL("http://localhost:8081");
 			// System.err.println(("Response location: " + location));

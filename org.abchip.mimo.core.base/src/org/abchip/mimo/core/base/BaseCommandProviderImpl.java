@@ -33,10 +33,11 @@ public abstract class BaseCommandProviderImpl implements CommandProvider {
 		AuthenticationAdminKey authAdminKey = ContextFactory.eINSTANCE.createAuthenticationAdminKey();
 		authAdminKey.setAdminKey(adminKey);
 
-		Context context = authenticationManager.login(null, authAdminKey);
+		@SuppressWarnings("resource")
+		Context context = authenticationManager.login(null, authAdminKey).get();
 
 		threadLocalContext.set(context);
-		
+
 		return context;
 	}
 
@@ -45,8 +46,8 @@ public abstract class BaseCommandProviderImpl implements CommandProvider {
 		Context context = threadLocalContext.get();
 		if (context != null)
 			return context;
-		
-		if(application.getAdminKey() == null)
+
+		if (application.getAdminKey() == null)
 			return login(null);
 
 		throw new RuntimeException("You need a login, please use first command 'login'");

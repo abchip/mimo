@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.server;
 
-import java.io.Closeable;
 import java.util.Date;
 import java.util.List;
 
@@ -41,10 +40,10 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  * </ul>
  *
  * @see org.abchip.mimo.server.ServerPackage#getJob()
- * @model superTypes="org.abchip.mimo.entity.EntityIdentifiable org.abchip.mimo.java.JavaCloseable"
+ * @model
  * @generated
  */
-public interface Job extends EntityIdentifiable, Closeable {
+public interface Job extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Context</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -414,7 +413,7 @@ public interface Job extends EntityIdentifiable, Closeable {
 	 * @model
 	 * @generated
 	 */
-	void close();
+	void dispose();
 
 	/**
 	 * <!-- begin-user-doc -->
