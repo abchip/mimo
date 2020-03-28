@@ -1720,6 +1720,12 @@
         <eParameters name="stream" lowerBound="1" eType="#//java/JavaInputStream"/>
       </eOperations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HttpServiceConfig" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="socket" lowerBound="1"
+          eType="#//util/SocketConfig" containment="true"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Lists" abstract="true" interface="true">
       <eOperations name="addFirst">
         <eTypeParameters name="E"/>

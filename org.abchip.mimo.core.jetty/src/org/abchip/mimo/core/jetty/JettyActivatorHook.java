@@ -13,6 +13,7 @@ import java.util.Hashtable;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ComponentStarting;
+import org.abchip.mimo.util.HttpServiceConfig;
 import org.abchip.mimo.util.SocketConfig;
 import org.eclipse.equinox.http.jetty.JettyConfigurator;
 import org.eclipse.equinox.http.servlet.ExtendedHttpService;
@@ -20,16 +21,17 @@ import org.osgi.service.http.HttpService;
 
 public class JettyActivatorHook {
 
-	
 	@ComponentStarting
-	public void start(Application application, SocketConfig socketConfig) {
+	public void start(Application application, HttpServiceConfig httpServiceConfig) {
+
+		SocketConfig socketConfig = httpServiceConfig.getSocket();
 
 		Dictionary<String, Object> settings = new Hashtable<String, Object>();
 		settings.put("http.enabled", Boolean.TRUE);
 		settings.put("http.host", socketConfig.getAddress());
 		settings.put("http.port", socketConfig.getPort());
 		settings.put("https.enabled", Boolean.FALSE);
-		settings.put("context.path", "/mimo");
+		settings.put("context.path", httpServiceConfig.getPath());
 		settings.put("context.sessioninactiveinterval", 1800);
 		try {
 			JettyConfigurator.startServer("org.abchip.mimo.core.http", settings);
@@ -40,22 +42,22 @@ public class JettyActivatorHook {
 		try {
 			String filterString = "(http.port=" + socketConfig.getPort() + ")";
 			ExtendedHttpService httpService = (ExtendedHttpService) application.getContext().get(HttpService.class, filterString);
-			
+
 			if (httpService != null) {
 				application.getContext().set(HttpService.class, httpService);
-				
-//				HttpContext httpContext = httpService.createDefaultHttpContext();
+
+				// HttpContext httpContext = httpService.createDefaultHttpContext();
 				httpService.registerFilter("/", new CORSFilter(), null, null);
-//				httpService.registerFilter("/", new MultiPartFilter(), null, httpContext);
-				
+				// httpService.registerFilter("/", new MultiPartFilter(), null, httpContext);
+
 				// FileService
-//				httpService.registerResources("/", "/site/index.html", httpContext);
-//				httpService.registerResources("/*", "/site", httpContext);				
+				// httpService.registerResources("/", "/site/index.html", httpContext);
+				// httpService.registerResources("/*", "/site", httpContext);
 			} else {
 				System.out.println("HttpService not found!");
 				return;
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -36,6 +36,7 @@ import org.abchip.mimo.resource.impl.ResourcePackageImpl;
 
 import org.abchip.mimo.util.Classes;
 import org.abchip.mimo.util.Files;
+import org.abchip.mimo.util.HttpServiceConfig;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Singleton;
 import org.abchip.mimo.util.SocketConfig;
@@ -55,6 +56,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -79,6 +81,13 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * @generated
 	 */
 	private EClass filesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass httpServiceConfigEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -266,6 +275,36 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	@Override
 	public EClass getFiles() {
 		return filesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getHttpServiceConfig() {
+		return httpServiceConfigEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getHttpServiceConfig_Path() {
+		return (EAttribute)httpServiceConfigEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getHttpServiceConfig_Socket() {
+		return (EReference)httpServiceConfigEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -531,6 +570,10 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		filesEClass = createEClass(FILES);
 
+		httpServiceConfigEClass = createEClass(HTTP_SERVICE_CONFIG);
+		createEAttribute(httpServiceConfigEClass, HTTP_SERVICE_CONFIG__PATH);
+		createEReference(httpServiceConfigEClass, HTTP_SERVICE_CONFIG__SOCKET);
+
 		listsEClass = createEClass(LISTS);
 
 		singletonEClass = createEClass(SINGLETON);
@@ -602,6 +645,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		singletonEClass_S.getEBounds().add(g1);
 
 		// Add supertypes to classes
+		httpServiceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		g1 = createEGenericType(this.getSingleton());
 		EGenericType g2 = createEGenericType(this.getLists());
 		g1.getETypeArguments().add(g2);
@@ -657,6 +701,10 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		op = addEOperation(filesEClass, theJavaPackage.getJavaFile(), "copyToFile", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theJavaPackage.getJavaInputStream(), "stream", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, theJavaPackage.getJavaIOException());
+
+		initEClass(httpServiceConfigEClass, HttpServiceConfig.class, "HttpServiceConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getHttpServiceConfig_Path(), ecorePackage.getEString(), "path", null, 1, 1, HttpServiceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHttpServiceConfig_Socket(), this.getSocketConfig(), null, "socket", null, 1, 1, HttpServiceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(listsEClass, Lists.class, "Lists", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

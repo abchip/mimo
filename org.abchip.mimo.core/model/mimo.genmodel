@@ -1058,6 +1058,10 @@
           <genParameters ecoreParameter="mimo.ecore#//util/Files/copyToFile/stream"/>
         </genOperations>
       </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//util/HttpServiceConfig">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//util/HttpServiceConfig/path"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//util/HttpServiceConfig/socket"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//util/Lists">
         <genOperations ecoreOperation="mimo.ecore#//util/Lists/addFirst">
           <genParameters ecoreParameter="mimo.ecore#//util/Lists/addFirst/list"/>

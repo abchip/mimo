@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo.util.impl;
 
+import org.abchip.mimo.util.HttpServiceConfig;
 import org.abchip.mimo.util.SocketConfig;
 import org.abchip.mimo.util.UtilFactory;
 import org.abchip.mimo.util.UtilPackage;
@@ -66,6 +67,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case UtilPackage.HTTP_SERVICE_CONFIG: return (EObject)createHttpServiceConfig();
 			case UtilPackage.SOCKET_CONFIG: return (EObject)createSocketConfig();
 			case UtilPackage.THREAD_INFO: return (EObject)createThreadInfo();
 			default:
@@ -101,6 +103,17 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public HttpServiceConfig createHttpServiceConfig() {
+		HttpServiceConfigImpl httpServiceConfig = new HttpServiceConfigImpl();
+		return httpServiceConfig;
 	}
 
 	/**

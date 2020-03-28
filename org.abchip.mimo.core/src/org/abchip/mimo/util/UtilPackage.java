@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,6 +103,43 @@ public interface UtilPackage extends EPackage {
 	int FILES_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.util.impl.HttpServiceConfigImpl <em>Http Service Config</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.util.impl.HttpServiceConfigImpl
+	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getHttpServiceConfig()
+	 * @generated
+	 */
+	int HTTP_SERVICE_CONFIG = 2;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HTTP_SERVICE_CONFIG__PATH = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Socket</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HTTP_SERVICE_CONFIG__SOCKET = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Http Service Config</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HTTP_SERVICE_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Singleton <em>Singleton</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -109,7 +147,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getSingleton()
 	 * @generated
 	 */
-	int SINGLETON = 3;
+	int SINGLETON = 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Lists <em>Lists</em>}' class.
@@ -119,7 +157,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getLists()
 	 * @generated
 	 */
-	int LISTS = 2;
+	int LISTS = 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Streams <em>Streams</em>}' class.
@@ -129,7 +167,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getStreams()
 	 * @generated
 	 */
-	int STREAMS = 5;
+	int STREAMS = 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Strings <em>Strings</em>}' class.
@@ -139,7 +177,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getStrings()
 	 * @generated
 	 */
-	int STRINGS = 6;
+	int STRINGS = 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Thread <em>Thread</em>}' class.
@@ -149,7 +187,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThread()
 	 * @generated
 	 */
-	int THREAD = 7;
+	int THREAD = 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.Threads <em>Threads</em>}' class.
@@ -159,7 +197,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThreads()
 	 * @generated
 	 */
-	int THREADS = 8;
+	int THREADS = 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.impl.ThreadInfoImpl <em>Thread Info</em>}' class.
@@ -169,7 +207,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThreadInfo()
 	 * @generated
 	 */
-	int THREAD_INFO = 9;
+	int THREAD_INFO = 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.ThreadManager <em>Thread Manager</em>}' class.
@@ -179,7 +217,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThreadManager()
 	 * @generated
 	 */
-	int THREAD_MANAGER = 10;
+	int THREAD_MANAGER = 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.URIs <em>UR Is</em>}' class.
@@ -189,7 +227,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getURIs()
 	 * @generated
 	 */
-	int UR_IS = 11;
+	int UR_IS = 12;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.util.ThreadStatus <em>Thread Status</em>}' enum.
@@ -199,7 +237,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getThreadStatus()
 	 * @generated
 	 */
-	int THREAD_STATUS = 12;
+	int THREAD_STATUS = 13;
 
 	/**
 	 * The number of structural features of the '<em>Singleton</em>' class.
@@ -227,7 +265,7 @@ public interface UtilPackage extends EPackage {
 	 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getSocketConfig()
 	 * @generated
 	 */
-	int SOCKET_CONFIG = 4;
+	int SOCKET_CONFIG = 5;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' attribute.
@@ -429,6 +467,38 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFiles();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.util.HttpServiceConfig <em>Http Service Config</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Http Service Config</em>'.
+	 * @see org.abchip.mimo.util.HttpServiceConfig
+	 * @generated
+	 */
+	EClass getHttpServiceConfig();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.util.HttpServiceConfig#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see org.abchip.mimo.util.HttpServiceConfig#getPath()
+	 * @see #getHttpServiceConfig()
+	 * @generated
+	 */
+	EAttribute getHttpServiceConfig_Path();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.util.HttpServiceConfig#getSocket <em>Socket</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Socket</em>'.
+	 * @see org.abchip.mimo.util.HttpServiceConfig#getSocket()
+	 * @see #getHttpServiceConfig()
+	 * @generated
+	 */
+	EReference getHttpServiceConfig_Socket();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.util.Lists <em>Lists</em>}'.
@@ -713,6 +783,32 @@ public interface UtilPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FILES = eINSTANCE.getFiles();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.util.impl.HttpServiceConfigImpl <em>Http Service Config</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.util.impl.HttpServiceConfigImpl
+		 * @see org.abchip.mimo.util.impl.UtilPackageImpl#getHttpServiceConfig()
+		 * @generated
+		 */
+		EClass HTTP_SERVICE_CONFIG = eINSTANCE.getHttpServiceConfig();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HTTP_SERVICE_CONFIG__PATH = eINSTANCE.getHttpServiceConfig_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>Socket</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HTTP_SERVICE_CONFIG__SOCKET = eINSTANCE.getHttpServiceConfig_Socket();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.util.Lists <em>Lists</em>}' class.
