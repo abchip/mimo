@@ -1,0 +1,25 @@
+{
+	"declaration": true, 
+    "compilerOptions": {
+    	"module": "commonjs",
+        "target": "es6",
+ 		"experimentalDecorators": true,
+	    "emitDecoratorMetadata": true,
+        "lib": ["es2016", "dom"],
+        "baseUrl":".",
+        "paths": {
+			"core/*":["mimo/core/*"],
+			"config/*":["mimo/config/*"],
+            "widgets/*":["mimo/widgets/*"],
+            "services/*":["mimo/services/*"],	
+			"views/*":["mimo/views/*"]
+        },
+        "sourceMap": true
+    },
+    "include":[
+		"mimo/**/*.ts"
+	],
+    "files":[
+        "node_modules/@xbs/webix-pro/types/webix.global.d.ts"
+    ]
+}
