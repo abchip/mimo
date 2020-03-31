@@ -31,7 +31,7 @@ public class BaseEntityCommandProviderImpl extends BaseCommandProviderImpl {
 
 		Context context = this.getContext();
 
-		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
+		String frameName = interpreter.nextArgument();
 		String order = interpreter.nextArgument();
 
 		@SuppressWarnings("unchecked")
@@ -52,7 +52,7 @@ public class BaseEntityCommandProviderImpl extends BaseCommandProviderImpl {
 
 		Context context = this.getContext();
 
-		String frameName = Strings.qINSTANCE.firstToUpper(interpreter.nextArgument());
+		String frameName = Strings.firstToUpper(interpreter.nextArgument());
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName);
 		if (frame == null)

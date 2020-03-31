@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.base.util;
+package org.abchip.mimo.core.base.ctx;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
@@ -17,23 +17,20 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.util.ThreadManager;
+import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.util.Threads;
-import org.abchip.mimo.util.UtilFactory;
 
 public class BaseThreadManagerImpl implements ThreadManager {
 
 	private Map<Long, BaseThreadTime> currentTimes = new HashMap<Long, BaseThreadTime>();
 	private Map<Long, Long> previousCpuTimes = new HashMap<Long, Long>();
 
-	private Threads threads;
 	private long totalCpuTime = 0;
 
 	@Inject
-	public BaseThreadManagerImpl(Threads threads) {
-		this.threads = threads;
-
-		org.abchip.mimo.util.Thread thread = createThread("cpu-monitor", new BaseThreadsMonitor(this), true);
+	public BaseThreadManagerImpl() {
+		org.abchip.mimo.context.Thread thread = createThread("cpu-monitor", new BaseThreadsMonitor(this), true);
 		start(thread);
 	}
 
@@ -46,28 +43,28 @@ public class BaseThreadManagerImpl implements ThreadManager {
 	}
 
 	@Override
-	public org.abchip.mimo.util.Thread createThread(String name, Runnable runnable) {
+	public org.abchip.mimo.context.Thread createThread(String name, Runnable runnable) {
 		return createThread(name, runnable, false);
 	}
 
 	@Override
-	public org.abchip.mimo.util.Thread createThread(String name, Runnable runnable, boolean daemon) {
+	public org.abchip.mimo.context.Thread createThread(String name, Runnable runnable, boolean daemon) {
 
 		BaseThreadImpl thread = new BaseThreadImpl(this, runnable, "mimo://thread/" + name, daemon);
 		return thread;
 	}
 
 	@Override
-	public List<org.abchip.mimo.util.Thread> listThreads() {
+	public List<org.abchip.mimo.context.Thread> listThreads() {
 
-		List<org.abchip.mimo.util.Thread> threads = new ArrayList<org.abchip.mimo.util.Thread>();
+		List<org.abchip.mimo.context.Thread> threads = new ArrayList<org.abchip.mimo.context.Thread>();
 
-		for (Thread thread : Threads.qINSTANCE.listThreads()) {
+		for (Thread thread : Threads.listThreads()) {
 			if (thread == null)
 				continue;
 
-			if (thread instanceof org.abchip.mimo.util.Thread)
-				threads.add((org.abchip.mimo.util.Thread) thread);
+			if (thread instanceof org.abchip.mimo.context.Thread)
+				threads.add((org.abchip.mimo.context.Thread) thread);
 			else
 				threads.add(new BaseThreadAdapter(this, thread));
 		}
@@ -76,28 +73,28 @@ public class BaseThreadManagerImpl implements ThreadManager {
 	}
 
 	@Override
-	public org.abchip.mimo.util.Thread lookupThread(long id) {
+	public org.abchip.mimo.context.Thread lookupThread(long id) {
 
-		Thread thread = threads.lookupThread(id);
-		if (thread instanceof org.abchip.mimo.util.Thread)
-			return (org.abchip.mimo.util.Thread) thread;
+		Thread thread = Threads.lookupThread(id);
+		if (thread instanceof org.abchip.mimo.context.Thread)
+			return (org.abchip.mimo.context.Thread) thread;
 		else
 			return new BaseThreadAdapter(this, thread);
 	}
 
 	@Override
-	public org.abchip.mimo.util.Thread lookupThread(String name) {
+	public org.abchip.mimo.context.Thread lookupThread(String name) {
 
-		Thread thread = threads.lookupThread(name);
-		if (thread instanceof org.abchip.mimo.util.Thread)
-			return (org.abchip.mimo.util.Thread) thread;
+		Thread thread = Threads.lookupThread(name);
+		if (thread instanceof org.abchip.mimo.context.Thread)
+			return (org.abchip.mimo.context.Thread) thread;
 		else
 			return new BaseThreadAdapter(this, thread);
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public void release(org.abchip.mimo.util.Thread thread) {
+	public void release(org.abchip.mimo.context.Thread thread) {
 		if (thread instanceof BaseThreadImpl) {
 			BaseThreadImpl baseThreadImpl = (BaseThreadImpl) thread;
 			baseThreadImpl.unlock();
@@ -106,18 +103,18 @@ public class BaseThreadManagerImpl implements ThreadManager {
 	}
 
 	@Override
-	public void start(org.abchip.mimo.util.Thread thread) {
+	public void start(org.abchip.mimo.context.Thread thread) {
 		thread.getJavaThread().start();
 	}
 
 	@Override
-	public void stop(org.abchip.mimo.util.Thread thread) {
+	public void stop(org.abchip.mimo.context.Thread thread) {
 		thread.getJavaThread().interrupt();
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public void suspend(org.abchip.mimo.util.Thread thread) {
+	public void suspend(org.abchip.mimo.context.Thread thread) {
 
 		if (thread instanceof BaseThreadImpl) {
 			BaseThreadImpl baseThreadImpl = (BaseThreadImpl) thread;
@@ -128,11 +125,11 @@ public class BaseThreadManagerImpl implements ThreadManager {
 	}
 
 	@Override
-	public org.abchip.mimo.util.Thread currentThread() {
+	public org.abchip.mimo.context.Thread currentThread() {
 
 		Thread currentThread = Thread.currentThread();
-		if (currentThread instanceof org.abchip.mimo.util.Thread)
-			return (org.abchip.mimo.util.Thread) currentThread;
+		if (currentThread instanceof org.abchip.mimo.context.Thread)
+			return (org.abchip.mimo.context.Thread) currentThread;
 		else
 			return new BaseThreadAdapter(this, currentThread);
 	}
@@ -142,7 +139,7 @@ public class BaseThreadManagerImpl implements ThreadManager {
 		ThreadMXBean thBean = ManagementFactory.getThreadMXBean();
 		HashMap<Long, BaseThreadTime> newTimes = new HashMap<Long, BaseThreadTime>();
 
-		for (Thread thread : threads.listThreads()) {
+		for (Thread thread : Threads.listThreads()) {
 			// TODO remove me
 			if (thread == null)
 				continue;
@@ -168,9 +165,9 @@ public class BaseThreadManagerImpl implements ThreadManager {
 	}
 
 	@Override
-	public org.abchip.mimo.util.ThreadInfo getThreadInfo(org.abchip.mimo.util.Thread thread) {
+	public org.abchip.mimo.context.ThreadInfo getThreadInfo(org.abchip.mimo.context.Thread thread) {
 
-		org.abchip.mimo.util.ThreadInfo threadInfo = UtilFactory.eINSTANCE.createThreadInfo();
+		org.abchip.mimo.context.ThreadInfo threadInfo = ContextFactory.eINSTANCE.createThreadInfo();
 
 		threadInfo.setThreadName(thread.getThreadName());
 

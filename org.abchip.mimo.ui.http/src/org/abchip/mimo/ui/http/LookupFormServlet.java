@@ -81,23 +81,23 @@ public class LookupFormServlet extends BaseServlet {
 				if (slot.isKey()) {
 
 					if (currentKey == null)
-						Lists.qINSTANCE.addFirst(form.getFields(), field);
+						Lists.addFirst(form.getFields(), field);
 					else
-						Lists.qINSTANCE.addAfter(form.getFields(), currentKey, field);
+						Lists.addAfter(form.getFields(), currentKey, field);
 
 					if (currentField == null || currentField.equals(currentKey))
 						currentField = field;
 
 					currentKey = field;
 				} else if (slot.getName().startsWith("created"))
-					Lists.qINSTANCE.addLast(form.getFields(), field);
+					Lists.addLast(form.getFields(), field);
 				else if (slot.getName().startsWith("lastUpdated"))
-					Lists.qINSTANCE.addLast(form.getFields(), field);
+					Lists.addLast(form.getFields(), field);
 				else {
 					if (currentField == null)
-						Lists.qINSTANCE.addFirst(form.getFields(), field);
+						Lists.addFirst(form.getFields(), field);
 					else
-						Lists.qINSTANCE.addAfter(form.getFields(), currentField, field);
+						Lists.addAfter(form.getFields(), currentField, field);
 					currentField = field;
 				}
 			}
@@ -176,7 +176,7 @@ public class LookupFormServlet extends BaseServlet {
 				label.append(" ");
 			label.append(c);
 		}
-		widget.setLabel(Strings.qINSTANCE.firstToUpper(label.toString()));
+		widget.setLabel(Strings.firstToUpper(label.toString()));
 
 		switch (widget.getView()) {
 		case COMBO_BOX:
@@ -245,7 +245,7 @@ public class LookupFormServlet extends BaseServlet {
 			return;
 
 		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
-		Lists.qINSTANCE.addFirst(frameNames, frameName);
+		Lists.addFirst(frameNames, frameName);
 
 		for (String domainName : frameNames) {
 			UiFrameSetup frameSetup = frameSetupReader.lookup(domainName);

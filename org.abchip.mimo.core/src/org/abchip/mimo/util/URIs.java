@@ -9,33 +9,28 @@
 package org.abchip.mimo.util;
 
 import java.net.URI;
+import java.net.URLDecoder;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * <!-- begin-user-doc --> A representation of the model object '<em><b>UR
- * Is</b></em>'. <!-- end-user-doc -->
- *
- *
- * @see org.abchip.mimo.util.UtilPackage#getURIs()
- * @model interface="true" abstract="true"
- * @generated
- */
-public interface URIs extends Singleton<URIs> {
+public class URIs {
 
-	URIs qINSTANCE = null;
+	public String getBaseName(URI uri) {
+		return org.apache.commons.io.FilenameUtils.getBaseName(uri.getRawPath());
+	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" uriDataType="org.abchip.mimo.java.JavaURI" uriRequired="true"
-	 * @generated
-	 */
-	String getBaseName(URI uri);
+	public static Map<String, String> parseParameter(String query) {
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" queryRequired="true"
-	 * @generated
-	 */
-	Map<String, String> parseParameter(String query);
+		Map<String, String> query_pairs = new LinkedHashMap<String, String>();
+		try {
+			String[] pairs = query.split("&");
+			for (String pair : pairs) {
+				int idx = pair.indexOf("=");
+				query_pairs.put(URLDecoder.decode(pair.substring(0, idx), "UTF-8"), URLDecoder.decode(pair.substring(idx + 1), "UTF-8"));
+			}
+		} catch (Exception e) {
 
-} // URIs
+		}
+		return query_pairs;
+	}
+}

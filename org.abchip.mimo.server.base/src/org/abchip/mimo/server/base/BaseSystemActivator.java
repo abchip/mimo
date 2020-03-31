@@ -12,11 +12,11 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.application.ComponentStarted;
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobLogManager;
 import org.abchip.mimo.server.JobManager;
-import org.abchip.mimo.util.ThreadManager;
 
 public class BaseSystemActivator {
 
@@ -34,7 +34,7 @@ public class BaseSystemActivator {
 		contextRoot.set(org.abchip.mimo.server.System.class, system);
 		contextRoot.set(Job.class, jobKernel);
 
-		org.abchip.mimo.util.Thread thread = threadManager.createThread("job-closer", new BaseJobCloser(threadManager, jobManager), true);
+		org.abchip.mimo.context.Thread thread = threadManager.createThread("job-closer", new BaseJobCloser(threadManager, jobManager), true);
 		threadManager.start(thread);
 	}
 }

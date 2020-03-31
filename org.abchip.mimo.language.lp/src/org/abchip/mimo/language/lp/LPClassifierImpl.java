@@ -35,8 +35,6 @@ public class LPClassifierImpl implements Classifier {
 	@Inject
 	private ContextRoot contextRoot;
 	@Inject
-	private Files files;
-	@Inject
 	private ResourceManager resourceManager;
 
 	private ScoredClassifier<CharSequence> classifier;
@@ -126,7 +124,7 @@ public class LPClassifierImpl implements Classifier {
 			String classifierPath = "model/3LangId.LMClassifier";
 			URL url = FrameworkUtil.getBundle(this.getClass()).getResource(classifierPath);
 			try (InputStream stream = url.openStream()) {
-				File serializedClassifier = files.copyToFile(stream);
+				File serializedClassifier = Files.copyToFile(stream);
 				classifier = (ScoredClassifier<CharSequence>) AbstractExternalizable.readObject(serializedClassifier);
 			}
 		} catch (ClassNotFoundException | IOException e) {

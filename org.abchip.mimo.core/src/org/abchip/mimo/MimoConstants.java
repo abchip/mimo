@@ -10,11 +10,6 @@ package org.abchip.mimo;
 
 public class MimoConstants {
 
-	public static final String  APPLICATION_ACTIVATOR= "org.abchip.mimo.application.activator";
-	public static final String APPLICATION_ACTIVATOR_HOME = "org.abchip.mimo.application.home";
-	public static final String APPLICATION_ACTIVATOR_CONFIG = "org.abchip.mimo.application.config";
-	public static final String APPLICATION_ACTIVATOR_ADMIN_KEY = "org.abchip.mimo.application.admin.key";
-
 	public static final String APPLICATION_NAME = "org.abchip.mimo.application.name";
 	public static final String COMPONENT_NAME = "org.abchip.mimo.component.name";
 	public static final String SERVLET_ALIAS = "org.abchip.mimo.servlet.alias";

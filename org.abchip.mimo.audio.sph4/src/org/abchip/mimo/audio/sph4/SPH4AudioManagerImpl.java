@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.util.Locale;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import javax.sound.sampled.AudioFileFormat;
 import javax.speech.Central;
 import javax.speech.Engine;
@@ -25,6 +26,7 @@ import org.abchip.mimo.audio.AudioPlayer;
 import org.abchip.mimo.audio.AudioRecorder;
 import org.abchip.mimo.audio.AudioStyle;
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ThreadManager;
 
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
@@ -32,6 +34,9 @@ import com.sun.speech.freetts.audio.SingleFileAudioPlayer;
 
 public class SPH4AudioManagerImpl implements AudioManager {
 
+	@Inject
+	private ThreadManager threadManager;
+	
 	@PostConstruct
 	private void init() {
 		String conFile = System.getProperty("java.util.logging.config.file");
@@ -42,13 +47,13 @@ public class SPH4AudioManagerImpl implements AudioManager {
 
 	@Override
 	public AudioRecorder record(Context context) {
-		return new SPH4AudioRecorderImpl();
+		return new SPH4AudioRecorderImpl(threadManager);
 	}
 
 	@Override
 	public AudioPlayer play(Context context, Audio audio, boolean start, boolean waitEnd) {
 
-		AudioPlayer audioPlayer = new SPH4AudioPlayerImpl(audio);
+		AudioPlayer audioPlayer = new SPH4AudioPlayerImpl(threadManager, audio);
 		if (start)
 			audioPlayer.start();
 		if (waitEnd) {
@@ -108,7 +113,7 @@ public class SPH4AudioManagerImpl implements AudioManager {
 			e.toString();
 		}
 
-		AudioPlayer audioPlayer = new SPH4AudioPlayerImpl(audio);
+		AudioPlayer audioPlayer = new SPH4AudioPlayerImpl(threadManager, audio);
 		
 		if (start)
 			audioPlayer.start();

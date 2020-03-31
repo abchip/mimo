@@ -59,23 +59,23 @@ public class LookupQueryServlet extends BaseServlet {
 				if (slot.isKey()) {
 
 					if (currentKey == null)
-						Lists.qINSTANCE.addFirst(query.getFields(), field);
+						Lists.addFirst(query.getFields(), field);
 					else
-						Lists.qINSTANCE.addAfter(query.getFields(), currentKey, field);
+						Lists.addAfter(query.getFields(), currentKey, field);
 
 					if (currentField == null || currentField.equals(currentKey))
 						currentField = field;
 
 					currentKey = field;
 				} else if (slot.getName().startsWith("created"))
-					Lists.qINSTANCE.addLast(query.getFields(), field);
+					Lists.addLast(query.getFields(), field);
 				else if (slot.getName().startsWith("lastUpdated"))
-					Lists.qINSTANCE.addLast(query.getFields(), field);
+					Lists.addLast(query.getFields(), field);
 				else {
 					if (currentField == null)
-						Lists.qINSTANCE.addFirst(query.getFields(), field);
+						Lists.addFirst(query.getFields(), field);
 					else
-						Lists.qINSTANCE.addAfter(query.getFields(), currentField, field);
+						Lists.addAfter(query.getFields(), currentField, field);
 					currentField = field;
 				}
 			}
@@ -97,7 +97,7 @@ public class LookupQueryServlet extends BaseServlet {
 				label.append(" ");
 			label.append(c);
 		}
-		field.setValue(Strings.qINSTANCE.firstToUpper(label.toString()));
+		field.setValue(Strings.firstToUpper(label.toString()));
 		
 		switch (slot.getDataType()) {
 		case BOOLEAN:

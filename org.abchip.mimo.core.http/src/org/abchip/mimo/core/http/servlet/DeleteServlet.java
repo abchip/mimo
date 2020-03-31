@@ -18,7 +18,6 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
-import org.abchip.mimo.util.Strings;
 
 public class DeleteServlet extends BaseServlet {
 
@@ -34,7 +33,7 @@ public class DeleteServlet extends BaseServlet {
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String tenant = request.getParameter("tenant");
-		String frame = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
+		String frame = request.getParameter("frame");
 		String id = request.getParameter("id");
 
 		try {

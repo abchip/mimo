@@ -11,11 +11,11 @@ package org.abchip.mimo.server.base;
 import java.util.Date;
 import java.util.Iterator;
 
+import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobManager;
 import org.abchip.mimo.server.JobStatus;
 import org.abchip.mimo.server.ServerHelper;
-import org.abchip.mimo.util.ThreadManager;
 
 public class BaseJobCloser implements Runnable {
 

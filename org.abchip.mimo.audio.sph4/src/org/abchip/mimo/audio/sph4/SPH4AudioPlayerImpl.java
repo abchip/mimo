@@ -21,16 +21,18 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 import org.abchip.mimo.audio.Audio;
 import org.abchip.mimo.audio.AudioPlayer;
-import org.abchip.mimo.util.Thread;
-import org.abchip.mimo.util.ThreadManager;
-import org.abchip.mimo.util.ThreadStatus;
+import org.abchip.mimo.context.Thread;
+import org.abchip.mimo.context.ThreadManager;
+import org.abchip.mimo.context.ThreadStatus;
 
 public class SPH4AudioPlayerImpl implements AudioPlayer {
 
+	private ThreadManager threadManager;
 	private Thread audioPlayer;
 	private Audio audio;
 
-	public SPH4AudioPlayerImpl(Audio audio) {
+	public SPH4AudioPlayerImpl(ThreadManager threadManager, Audio audio) {
+		this.threadManager = threadManager;
 		this.audio = audio;
 	}
 
@@ -50,7 +52,7 @@ public class SPH4AudioPlayerImpl implements AudioPlayer {
 	@Override
 	public void start() {
 
-		audioPlayer = ThreadManager.qINSTANCE.createThread("mimo-audio", new Runnable() {
+		audioPlayer = threadManager.createThread("mimo-audio", new Runnable() {
 
 			@Override
 			public void run() {
@@ -85,12 +87,12 @@ public class SPH4AudioPlayerImpl implements AudioPlayer {
 			}
 		});
 
-		ThreadManager.qINSTANCE.start(audioPlayer);
+		threadManager.start(audioPlayer);
 	}
 
 	@Override
 	public void stop() {
-		ThreadManager.qINSTANCE.stop(audioPlayer);
+		threadManager.stop(audioPlayer);
 	}
 
 	@Override

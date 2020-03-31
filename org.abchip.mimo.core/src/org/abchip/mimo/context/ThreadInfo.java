@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.util;
+package org.abchip.mimo.context;
 
 import org.abchip.mimo.entity.Entity;
 
@@ -19,19 +19,19 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.util.ThreadInfo#getThreadName <em>Thread Name</em>}</li>
- *   <li>{@link org.abchip.mimo.util.ThreadInfo#getThreadId <em>Thread Id</em>}</li>
- *   <li>{@link org.abchip.mimo.util.ThreadInfo#getThreadPriority <em>Thread Priority</em>}</li>
- *   <li>{@link org.abchip.mimo.util.ThreadInfo#getThreadCPUUsage <em>Thread CPU Usage</em>}</li>
- *   <li>{@link org.abchip.mimo.util.ThreadInfo#getThreadStatus <em>Thread Status</em>}</li>
- *   <li>{@link org.abchip.mimo.util.ThreadInfo#isThreadRunnable <em>Thread Runnable</em>}</li>
- *   <li>{@link org.abchip.mimo.util.ThreadInfo#isThreadInterrupted <em>Thread Interrupted</em>}</li>
- *   <li>{@link org.abchip.mimo.util.ThreadInfo#isThreadNative <em>Thread Native</em>}</li>
- *   <li>{@link org.abchip.mimo.util.ThreadInfo#isThreadSuspended <em>Thread Suspended</em>}</li>
- *   <li>{@link org.abchip.mimo.util.ThreadInfo#isThreadDaemon <em>Thread Daemon</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ThreadInfo#getThreadName <em>Thread Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ThreadInfo#getThreadId <em>Thread Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ThreadInfo#getThreadPriority <em>Thread Priority</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ThreadInfo#getThreadCPUUsage <em>Thread CPU Usage</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ThreadInfo#getThreadStatus <em>Thread Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ThreadInfo#isThreadRunnable <em>Thread Runnable</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ThreadInfo#isThreadInterrupted <em>Thread Interrupted</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ThreadInfo#isThreadNative <em>Thread Native</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ThreadInfo#isThreadSuspended <em>Thread Suspended</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ThreadInfo#isThreadDaemon <em>Thread Daemon</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.util.UtilPackage#getThreadInfo()
+ * @see org.abchip.mimo.context.ContextPackage#getThreadInfo()
  * @model
  * @generated
  */
@@ -46,14 +46,14 @@ public interface ThreadInfo extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Thread Name</em>' attribute.
 	 * @see #setThreadName(String)
-	 * @see org.abchip.mimo.util.UtilPackage#getThreadInfo_ThreadName()
+	 * @see org.abchip.mimo.context.ContextPackage#getThreadInfo_ThreadName()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getThreadName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.ThreadInfo#getThreadName <em>Thread Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ThreadInfo#getThreadName <em>Thread Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Thread Name</em>' attribute.
@@ -72,14 +72,14 @@ public interface ThreadInfo extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Thread Id</em>' attribute.
 	 * @see #setThreadId(long)
-	 * @see org.abchip.mimo.util.UtilPackage#getThreadInfo_ThreadId()
+	 * @see org.abchip.mimo.context.ContextPackage#getThreadInfo_ThreadId()
 	 * @model required="true"
 	 * @generated
 	 */
 	long getThreadId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.ThreadInfo#getThreadId <em>Thread Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ThreadInfo#getThreadId <em>Thread Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Thread Id</em>' attribute.
@@ -98,14 +98,14 @@ public interface ThreadInfo extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Thread Priority</em>' attribute.
 	 * @see #setThreadPriority(int)
-	 * @see org.abchip.mimo.util.UtilPackage#getThreadInfo_ThreadPriority()
+	 * @see org.abchip.mimo.context.ContextPackage#getThreadInfo_ThreadPriority()
 	 * @model required="true"
 	 * @generated
 	 */
 	int getThreadPriority();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.ThreadInfo#getThreadPriority <em>Thread Priority</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ThreadInfo#getThreadPriority <em>Thread Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Thread Priority</em>' attribute.
@@ -124,14 +124,14 @@ public interface ThreadInfo extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Thread CPU Usage</em>' attribute.
 	 * @see #setThreadCPUUsage(double)
-	 * @see org.abchip.mimo.util.UtilPackage#getThreadInfo_ThreadCPUUsage()
+	 * @see org.abchip.mimo.context.ContextPackage#getThreadInfo_ThreadCPUUsage()
 	 * @model required="true"
 	 * @generated
 	 */
 	double getThreadCPUUsage();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.ThreadInfo#getThreadCPUUsage <em>Thread CPU Usage</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ThreadInfo#getThreadCPUUsage <em>Thread CPU Usage</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Thread CPU Usage</em>' attribute.
@@ -142,7 +142,7 @@ public interface ThreadInfo extends Entity {
 
 	/**
 	 * Returns the value of the '<em><b>Thread Status</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.abchip.mimo.util.ThreadStatus}.
+	 * The literals are from the enumeration {@link org.abchip.mimo.context.ThreadStatus}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Thread Status</em>' attribute isn't clear,
@@ -150,20 +150,20 @@ public interface ThreadInfo extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Thread Status</em>' attribute.
-	 * @see org.abchip.mimo.util.ThreadStatus
+	 * @see org.abchip.mimo.context.ThreadStatus
 	 * @see #setThreadStatus(ThreadStatus)
-	 * @see org.abchip.mimo.util.UtilPackage#getThreadInfo_ThreadStatus()
+	 * @see org.abchip.mimo.context.ContextPackage#getThreadInfo_ThreadStatus()
 	 * @model required="true"
 	 * @generated
 	 */
 	ThreadStatus getThreadStatus();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.ThreadInfo#getThreadStatus <em>Thread Status</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ThreadInfo#getThreadStatus <em>Thread Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Thread Status</em>' attribute.
-	 * @see org.abchip.mimo.util.ThreadStatus
+	 * @see org.abchip.mimo.context.ThreadStatus
 	 * @see #getThreadStatus()
 	 * @generated
 	 */
@@ -179,14 +179,14 @@ public interface ThreadInfo extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Thread Runnable</em>' attribute.
 	 * @see #setThreadRunnable(boolean)
-	 * @see org.abchip.mimo.util.UtilPackage#getThreadInfo_ThreadRunnable()
+	 * @see org.abchip.mimo.context.ContextPackage#getThreadInfo_ThreadRunnable()
 	 * @model required="true"
 	 * @generated
 	 */
 	boolean isThreadRunnable();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.ThreadInfo#isThreadRunnable <em>Thread Runnable</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ThreadInfo#isThreadRunnable <em>Thread Runnable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Thread Runnable</em>' attribute.
@@ -205,14 +205,14 @@ public interface ThreadInfo extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Thread Interrupted</em>' attribute.
 	 * @see #setThreadInterrupted(boolean)
-	 * @see org.abchip.mimo.util.UtilPackage#getThreadInfo_ThreadInterrupted()
+	 * @see org.abchip.mimo.context.ContextPackage#getThreadInfo_ThreadInterrupted()
 	 * @model required="true"
 	 * @generated
 	 */
 	boolean isThreadInterrupted();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.ThreadInfo#isThreadInterrupted <em>Thread Interrupted</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ThreadInfo#isThreadInterrupted <em>Thread Interrupted</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Thread Interrupted</em>' attribute.
@@ -231,14 +231,14 @@ public interface ThreadInfo extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Thread Native</em>' attribute.
 	 * @see #setThreadNative(boolean)
-	 * @see org.abchip.mimo.util.UtilPackage#getThreadInfo_ThreadNative()
+	 * @see org.abchip.mimo.context.ContextPackage#getThreadInfo_ThreadNative()
 	 * @model required="true"
 	 * @generated
 	 */
 	boolean isThreadNative();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.ThreadInfo#isThreadNative <em>Thread Native</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ThreadInfo#isThreadNative <em>Thread Native</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Thread Native</em>' attribute.
@@ -257,14 +257,14 @@ public interface ThreadInfo extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Thread Suspended</em>' attribute.
 	 * @see #setThreadSuspended(boolean)
-	 * @see org.abchip.mimo.util.UtilPackage#getThreadInfo_ThreadSuspended()
+	 * @see org.abchip.mimo.context.ContextPackage#getThreadInfo_ThreadSuspended()
 	 * @model required="true"
 	 * @generated
 	 */
 	boolean isThreadSuspended();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.ThreadInfo#isThreadSuspended <em>Thread Suspended</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ThreadInfo#isThreadSuspended <em>Thread Suspended</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Thread Suspended</em>' attribute.
@@ -283,14 +283,14 @@ public interface ThreadInfo extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Thread Daemon</em>' attribute.
 	 * @see #setThreadDaemon(boolean)
-	 * @see org.abchip.mimo.util.UtilPackage#getThreadInfo_ThreadDaemon()
+	 * @see org.abchip.mimo.context.ContextPackage#getThreadInfo_ThreadDaemon()
 	 * @model required="true"
 	 * @generated
 	 */
 	boolean isThreadDaemon();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.ThreadInfo#isThreadDaemon <em>Thread Daemon</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ThreadInfo#isThreadDaemon <em>Thread Daemon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Thread Daemon</em>' attribute.

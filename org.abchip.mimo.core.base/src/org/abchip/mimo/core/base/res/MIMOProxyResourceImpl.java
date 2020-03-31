@@ -122,7 +122,7 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 			 * if (entity instanceof EntityIdentifiable) { EntityIdentifiable
 			 * entityIdentifiable = (EntityIdentifiable) entity; switch
 			 * (entityIdentifiable.getState()) { case DIRTY: case PROXY: pw.write("\"" +
-			 * Strings.qINSTANCE.escape(entityIdentifiable.getID()) + "\""); first = false;
+			 * Strings..escape(entityIdentifiable.getID()) + "\""); first = false;
 			 * continue; case TRANSIENT: case RESOLVED: break; } }
 			 */
 

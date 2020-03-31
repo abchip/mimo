@@ -6,18 +6,18 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.base.util;
+package org.abchip.mimo.core.base.ctx;
 
 import java.lang.Thread.State;
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
 
-import org.abchip.mimo.util.ThreadStatus;
+import org.abchip.mimo.context.ThreadStatus;
 
 
 public class BaseThreadHelper {
 
-	public static org.abchip.mimo.util.ThreadStatus getThreadStatus(State state) {
+	public static org.abchip.mimo.context.ThreadStatus getThreadStatus(State state) {
 
 		switch (state) {
 		case NEW:

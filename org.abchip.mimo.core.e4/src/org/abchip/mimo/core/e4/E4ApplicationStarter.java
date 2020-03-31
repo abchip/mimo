@@ -6,14 +6,12 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.base.app;
+package org.abchip.mimo.core.e4;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.HashMap;
@@ -45,7 +43,6 @@ import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.util.Singleton;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceReference;
@@ -53,9 +50,7 @@ import org.osgi.service.http.HttpService;
 import org.osgi.service.http.NamespaceException;
 import org.osgi.util.tracker.ServiceTracker;
 
-public class BaseApplicationStarter {
-
-	private static final String SINGLETON_INSTANCE = "qINSTANCE";
+public class E4ApplicationStarter {
 
 	private Application application = null;
 	private List<Object> applicationHooks = null;
@@ -67,7 +62,7 @@ public class BaseApplicationStarter {
 	private ServiceTracker<?, ?> httpServiceTracker;
 	private HttpService httpService = null;
 
-	public BaseApplicationStarter(Application application, OutputStream outputStream) {
+	public E4ApplicationStarter(Application application, OutputStream outputStream) {
 		this.application = application;
 		this.writer = new OutputStreamWriter(outputStream);
 
@@ -314,24 +309,6 @@ public class BaseApplicationStarter {
 		properties.put(MimoConstants.APPLICATION_NAME, application.getName());
 		properties.put(MimoConstants.COMPONENT_NAME, component.getName());
 
-		// singleton
-		if (service instanceof Singleton<?>) {
-			Class<?> klass = service.getClass();
-			try {
-				Field field = klass.getField(SINGLETON_INSTANCE);
-				if (field != null) {
-					field.setAccessible(true);
-					Field modifiersField = Field.class.getDeclaredField("modifiers");
-					modifiersField.setAccessible(true);
-					modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
-					field.set(null, service);
-					field.setAccessible(false);
-				}
-			} catch (Exception e) {
-				throw new RuntimeException(e);
-			}
-		}
-
 		application.getContext().set(name, service, remoteExport, properties);
 	}
 
@@ -372,7 +349,7 @@ public class BaseApplicationStarter {
 			httpService = super.addingService(reference);
 
 			BundleContext bundleContext = application.getBundle().getBundleContext();
-			
+
 			try {
 				for (ServiceReference<Servlet> serviceReference : bundleContext.getServiceReferences(Servlet.class, null)) {
 					Object servletAlias = serviceReference.getProperty(MimoConstants.SERVLET_ALIAS);

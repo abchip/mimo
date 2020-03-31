@@ -47,7 +47,7 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		String frameName = getURI().segment(0);
 		String tenant = null;
 		if (getURI().hasQuery())
-			tenant = URIs.qINSTANCE.parseParameter(getURI().query()).get("tenant");
+			tenant = URIs.parseParameter(getURI().query()).get("tenant");
 
 		if (Frame.class.getSimpleName().equals(frameName)) {
 			this.resource = EMFResourceProviderImpl.internalGetFrameResource(this.getContext(), tenant);

@@ -5,30 +5,39 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.util.impl;
+package org.abchip.mimo.application.impl;
+
+import org.abchip.mimo.application.ApplicationPackage;
+import org.abchip.mimo.application.SocketConfig;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.abchip.mimo.util.SocketConfig;
-import org.abchip.mimo.util.UtilPackage;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>SocketConfig</b></em>'.
+ * An implementation of the model object '<em><b>Socket Config</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.util.impl.SocketConfigImpl#getAddress <em>Address</em>}</li>
- *   <li>{@link org.abchip.mimo.util.impl.SocketConfigImpl#getPort <em>Port</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.SocketConfigImpl#getAddress <em>Address</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.SocketConfigImpl#getPort <em>Port</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SocketConfigImpl extends EntityImpl implements SocketConfig {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -38,6 +47,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 * @ordered
 	 */
 	protected static final String ADDRESS_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -47,6 +57,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 * @ordered
 	 */
 	protected String address = ADDRESS_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getPort() <em>Port</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -56,6 +67,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 * @ordered
 	 */
 	protected static final int PORT_EDEFAULT = 0;
+
 	/**
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -65,10 +77,6 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 * @ordered
 	 */
 	protected int port = PORT_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,7 +94,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UtilPackage.Literals.SOCKET_CONFIG;
+		return ApplicationPackage.Literals.SOCKET_CONFIG;
 	}
 
 	/**
@@ -109,7 +117,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 		String oldAddress = address;
 		address = newAddress;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.SOCKET_CONFIG__ADDRESS, oldAddress, address));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SOCKET_CONFIG__ADDRESS, oldAddress, address));
 	}
 
 	/**
@@ -132,7 +140,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 		int oldPort = port;
 		port = newPort;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.SOCKET_CONFIG__PORT, oldPort, port));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SOCKET_CONFIG__PORT, oldPort, port));
 	}
 
 	/**
@@ -143,9 +151,9 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UtilPackage.SOCKET_CONFIG__ADDRESS:
+			case ApplicationPackage.SOCKET_CONFIG__ADDRESS:
 				return getAddress();
-			case UtilPackage.SOCKET_CONFIG__PORT:
+			case ApplicationPackage.SOCKET_CONFIG__PORT:
 				return getPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -159,10 +167,10 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UtilPackage.SOCKET_CONFIG__ADDRESS:
+			case ApplicationPackage.SOCKET_CONFIG__ADDRESS:
 				setAddress((String)newValue);
 				return;
-			case UtilPackage.SOCKET_CONFIG__PORT:
+			case ApplicationPackage.SOCKET_CONFIG__PORT:
 				setPort((Integer)newValue);
 				return;
 		}
@@ -177,10 +185,10 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UtilPackage.SOCKET_CONFIG__ADDRESS:
+			case ApplicationPackage.SOCKET_CONFIG__ADDRESS:
 				setAddress(ADDRESS_EDEFAULT);
 				return;
-			case UtilPackage.SOCKET_CONFIG__PORT:
+			case ApplicationPackage.SOCKET_CONFIG__PORT:
 				setPort(PORT_EDEFAULT);
 				return;
 		}
@@ -195,9 +203,9 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UtilPackage.SOCKET_CONFIG__ADDRESS:
+			case ApplicationPackage.SOCKET_CONFIG__ADDRESS:
 				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
-			case UtilPackage.SOCKET_CONFIG__PORT:
+			case ApplicationPackage.SOCKET_CONFIG__PORT:
 				return port != PORT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

@@ -42,6 +42,9 @@ import org.abchip.mimo.context.MessageFile;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
 import org.abchip.mimo.context.RegistryFactory;
+import org.abchip.mimo.context.ThreadInfo;
+import org.abchip.mimo.context.ThreadManager;
+import org.abchip.mimo.context.ThreadStatus;
 import org.abchip.mimo.context.UserClass;
 import org.abchip.mimo.context.UserProfile;
 
@@ -61,11 +64,6 @@ import org.abchip.mimo.java.impl.JavaPackageImpl;
 import org.abchip.mimo.resource.ResourcePackage;
 
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
-
-import org.abchip.mimo.util.UtilPackage;
-
-import org.abchip.mimo.util.impl.UtilPackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -258,6 +256,27 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass threadEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass threadInfoEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass threadManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass userProfileEClass = null;
 
 	/**
@@ -280,6 +299,13 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	private EEnum lockTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum threadStatusEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -362,8 +388,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(registeredPackage instanceof JavaPackageImpl ? registeredPackage : JavaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
-		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(registeredPackage instanceof UtilPackageImpl ? registeredPackage : UtilPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theContextPackage.createPackageContents();
@@ -373,7 +397,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		theEntityPackage.createPackageContents();
 		theJavaPackage.createPackageContents();
 		theResourcePackage.createPackageContents();
-		theUtilPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theContextPackage.initializePackageContents();
@@ -383,7 +406,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		theEntityPackage.initializePackageContents();
 		theJavaPackage.initializePackageContents();
 		theResourcePackage.initializePackageContents();
-		theUtilPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theContextPackage.freeze();
@@ -989,6 +1011,136 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getThread() {
+		return threadEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getThreadInfo() {
+		return threadInfoEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThreadInfo_ThreadName() {
+		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThreadInfo_ThreadId() {
+		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThreadInfo_ThreadPriority() {
+		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThreadInfo_ThreadCPUUsage() {
+		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThreadInfo_ThreadStatus() {
+		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThreadInfo_ThreadRunnable() {
+		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThreadInfo_ThreadInterrupted() {
+		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThreadInfo_ThreadNative() {
+		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThreadInfo_ThreadSuspended() {
+		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThreadInfo_ThreadDaemon() {
+		return (EAttribute)threadInfoEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getThreadManager() {
+		return threadManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getUserProfile() {
 		return userProfileEClass;
 	}
@@ -1061,6 +1213,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	@Override
 	public EEnum getLockType() {
 		return lockTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getThreadStatus() {
+		return threadStatusEEnum;
 	}
 
 	/**
@@ -1207,6 +1369,22 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		registryFactoryEClass = createEClass(REGISTRY_FACTORY);
 
+		threadEClass = createEClass(THREAD);
+
+		threadInfoEClass = createEClass(THREAD_INFO);
+		createEAttribute(threadInfoEClass, THREAD_INFO__THREAD_NAME);
+		createEAttribute(threadInfoEClass, THREAD_INFO__THREAD_ID);
+		createEAttribute(threadInfoEClass, THREAD_INFO__THREAD_PRIORITY);
+		createEAttribute(threadInfoEClass, THREAD_INFO__THREAD_CPU_USAGE);
+		createEAttribute(threadInfoEClass, THREAD_INFO__THREAD_STATUS);
+		createEAttribute(threadInfoEClass, THREAD_INFO__THREAD_RUNNABLE);
+		createEAttribute(threadInfoEClass, THREAD_INFO__THREAD_INTERRUPTED);
+		createEAttribute(threadInfoEClass, THREAD_INFO__THREAD_NATIVE);
+		createEAttribute(threadInfoEClass, THREAD_INFO__THREAD_SUSPENDED);
+		createEAttribute(threadInfoEClass, THREAD_INFO__THREAD_DAEMON);
+
+		threadManagerEClass = createEClass(THREAD_MANAGER);
+
 		userProfileEClass = createEClass(USER_PROFILE);
 		createEAttribute(userProfileEClass, USER_PROFILE__JOB_DESCRIPTION);
 		createEAttribute(userProfileEClass, USER_PROFILE__NAME);
@@ -1216,6 +1394,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		// Create enums
 		capabilityRightEEnum = createEEnum(CAPABILITY_RIGHT);
 		lockTypeEEnum = createEEnum(LOCK_TYPE);
+		threadStatusEEnum = createEEnum(THREAD_STATUS);
 		userClassEEnum = createEEnum(USER_CLASS);
 
 		// Create data types
@@ -1284,6 +1463,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		messageFileEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		providerConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		providerUserEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		threadEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		threadInfoEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		userProfileEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 
 		// Initialize classes and features; add operations and parameters
@@ -1698,6 +1879,78 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		initEClass(threadEClass, org.abchip.mimo.context.Thread.class, "Thread", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(threadEClass, ecorePackage.getEBoolean(), "checkRunnable", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadEClass, theJavaPackage.getJavaThread(), "getJavaThread", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadEClass, ecorePackage.getELong(), "getThreadID", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadEClass, ecorePackage.getEString(), "getThreadName", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadEClass, ecorePackage.getEInt(), "getThreadPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadEClass, ecorePackage.getEDouble(), "getThreadCPUUsage", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadEClass, this.getThreadStatus(), "getThreadStatus", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadEClass, ecorePackage.getEBoolean(), "isInterrupted", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadEClass, ecorePackage.getEBoolean(), "isNative", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadEClass, ecorePackage.getEBoolean(), "isSuspended", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadEClass, ecorePackage.getEBoolean(), "isThreadDaemon", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(threadInfoEClass, ThreadInfo.class, "ThreadInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getThreadInfo_ThreadName(), ecorePackage.getEString(), "threadName", null, 1, 1, ThreadInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThreadInfo_ThreadId(), ecorePackage.getELong(), "threadId", null, 1, 1, ThreadInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThreadInfo_ThreadPriority(), ecorePackage.getEInt(), "threadPriority", null, 1, 1, ThreadInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThreadInfo_ThreadCPUUsage(), ecorePackage.getEDouble(), "threadCPUUsage", null, 1, 1, ThreadInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThreadInfo_ThreadStatus(), this.getThreadStatus(), "threadStatus", null, 1, 1, ThreadInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThreadInfo_ThreadRunnable(), ecorePackage.getEBoolean(), "threadRunnable", null, 1, 1, ThreadInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThreadInfo_ThreadInterrupted(), ecorePackage.getEBoolean(), "threadInterrupted", null, 1, 1, ThreadInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThreadInfo_ThreadNative(), ecorePackage.getEBoolean(), "threadNative", null, 1, 1, ThreadInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThreadInfo_ThreadSuspended(), ecorePackage.getEBoolean(), "threadSuspended", null, 1, 1, ThreadInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThreadInfo_ThreadDaemon(), ecorePackage.getEBoolean(), "threadDaemon", null, 1, 1, ThreadInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(threadManagerEClass, ThreadManager.class, "ThreadManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(threadManagerEClass, this.getThread(), "createThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaRunnable(), "runnable", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(threadManagerEClass, this.getThread(), "createThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theJavaPackage.getJavaRunnable(), "runnable", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "daemon", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadManagerEClass, this.getThread(), "currentThread", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(threadManagerEClass, this.getThreadInfo(), "getThreadInfo", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(threadManagerEClass, this.getThread(), "listThreads", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(threadManagerEClass, this.getThread(), "lookupThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getELong(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(threadManagerEClass, this.getThread(), "lookupThread", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(threadManagerEClass, null, "release", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(threadManagerEClass, null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(threadManagerEClass, null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(threadManagerEClass, null, "suspend", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(userProfileEClass, UserProfile.class, "UserProfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserProfile_JobDescription(), ecorePackage.getEString(), "jobDescription", null, 0, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserProfile_Name(), ecorePackage.getEString(), "name", null, 1, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1713,6 +1966,14 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEEnum(lockTypeEEnum, LockType.class, "LockType");
 		addEEnumLiteral(lockTypeEEnum, LockType.READ);
 		addEEnumLiteral(lockTypeEEnum, LockType.WRITE);
+
+		initEEnum(threadStatusEEnum, ThreadStatus.class, "ThreadStatus");
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.NEW);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.RUNNABLE);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.BLOCKED);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.WAITING);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.TIMED_WAITING);
+		addEEnumLiteral(threadStatusEEnum, ThreadStatus.TERMINATED);
 
 		initEEnum(userClassEEnum, UserClass.class, "UserClass");
 		addEEnumLiteral(userClassEEnum, UserClass.USER);

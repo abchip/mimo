@@ -5,24 +5,24 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.util;
+package org.abchip.mimo.application;
 
 import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>SocketConfig</b></em>'.
+ * A representation of the model object '<em><b>Socket Config</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.util.SocketConfig#getAddress <em>Address</em>}</li>
- *   <li>{@link org.abchip.mimo.util.SocketConfig#getPort <em>Port</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.SocketConfig#getAddress <em>Address</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.SocketConfig#getPort <em>Port</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.util.UtilPackage#getSocketConfig()
+ * @see org.abchip.mimo.application.ApplicationPackage#getSocketConfig()
  * @model
  * @generated
  */
@@ -30,21 +30,17 @@ public interface SocketConfig extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Address</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Address</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Address</em>' attribute.
 	 * @see #setAddress(String)
-	 * @see org.abchip.mimo.util.UtilPackage#getSocketConfig_Address()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getSocketConfig_Address()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getAddress();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.SocketConfig#getAddress <em>Address</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.application.SocketConfig#getAddress <em>Address</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Address</em>' attribute.
@@ -56,21 +52,17 @@ public interface SocketConfig extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Port</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Port</em>' attribute.
 	 * @see #setPort(int)
-	 * @see org.abchip.mimo.util.UtilPackage#getSocketConfig_Port()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getSocketConfig_Port()
 	 * @model required="true"
 	 * @generated
 	 */
 	int getPort();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.SocketConfig#getPort <em>Port</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.application.SocketConfig#getPort <em>Port</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Port</em>' attribute.

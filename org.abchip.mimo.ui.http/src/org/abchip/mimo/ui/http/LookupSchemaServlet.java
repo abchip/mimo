@@ -73,23 +73,23 @@ public class LookupSchemaServlet extends BaseServlet {
 				if (slot.isKey()) {
 
 					if (currentKey == null)
-						Lists.qINSTANCE.addFirst(schema.getColumns(), column);
+						Lists.addFirst(schema.getColumns(), column);
 					else
-						Lists.qINSTANCE.addAfter(schema.getColumns(), currentKey, column);
+						Lists.addAfter(schema.getColumns(), currentKey, column);
 
 					if (currentColumn == null || currentColumn.equals(currentKey))
 						currentColumn = column;
 
 					currentKey = column;
 				} else if (slot.getName().startsWith("created"))
-					Lists.qINSTANCE.addLast(schema.getColumns(), column);
+					Lists.addLast(schema.getColumns(), column);
 				else if (slot.getName().startsWith("lastUpdated"))
-					Lists.qINSTANCE.addLast(schema.getColumns(), column);
+					Lists.addLast(schema.getColumns(), column);
 				else {
 					if (currentColumn == null)
-						Lists.qINSTANCE.addFirst(schema.getColumns(), column);
+						Lists.addFirst(schema.getColumns(), column);
 					else
-						Lists.qINSTANCE.addAfter(schema.getColumns(), currentColumn, column);
+						Lists.addAfter(schema.getColumns(), currentColumn, column);
 					currentColumn = column;
 				}
 			}
@@ -171,7 +171,7 @@ public class LookupSchemaServlet extends BaseServlet {
 			return;
 
 		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
-		Lists.qINSTANCE.addFirst(frameNames, domain.getFrame());
+		Lists.addFirst(frameNames, domain.getFrame());
 
 		for (String domainName : frameNames) {
 			UiFrameSetup frameSetup = frameSetupReader.lookup(domainName);

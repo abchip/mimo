@@ -9,59 +9,37 @@
 package org.abchip.mimo.util;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.apache.commons.io.IOUtils;
 
-/**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Files</b></em>'.
- * <!-- end-user-doc -->
- *
- *
- * @see org.abchip.mimo.util.UtilPackage#getFiles()
- * @model interface="true" abstract="true"
- * @generated
- */
-public interface Files {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" fileNameRequired="true"
-	 * @generated
-	 */
-	String getBaseName(String fileName);
+public class Files {
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.java.JavaIOException" pathRequired="true"
-	 * @generated
-	 */
-	void cleanDirectory(String path) throws IOException;
+	public String getBaseName(String name) {
+		return org.apache.commons.io.FilenameUtils.getBaseName(name);
+	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.java.JavaIOException" pathRequired="true"
-	 * @generated
-	 */
-	void deleteDirectory(String path) throws IOException;
+	public void cleanDirectory(String path) throws IOException {
+		org.apache.commons.io.FileUtils.cleanDirectory(new File(path));
+	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	String getSeparator();
+	public void deleteDirectory(String path) throws IOException {
+		org.apache.commons.io.FileUtils.forceDelete(new File(path));
+	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaFile" required="true" exceptions="org.abchip.mimo.java.JavaIOException" streamDataType="org.abchip.mimo.java.JavaInputStream" streamRequired="true"
-	 * @generated
-	 */
-	File copyToFile(InputStream stream) throws IOException;
+	@SuppressWarnings("resource")
+	public String getSeparator() {
+		return java.nio.file.FileSystems.getDefault().getSeparator();
+	}
 
-} // Files
+	public static File copyToFile(InputStream stream) throws IOException {
+		File tempFile = File.createTempFile("mimo-file", "tmp");
+		tempFile.deleteOnExit();
+		try (FileOutputStream out = new FileOutputStream(tempFile)) {
+			IOUtils.copy(stream, out);
+		}
+		return tempFile;
+	}
+}

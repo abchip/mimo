@@ -15,6 +15,7 @@ import java.util.concurrent.ThreadFactory;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobLog;
 import org.abchip.mimo.server.JobLogEntry;
@@ -23,7 +24,6 @@ import org.abchip.mimo.server.JobManager;
 import org.abchip.mimo.server.JobReference;
 import org.abchip.mimo.server.ServerFactory;
 import org.abchip.mimo.server.ServerHelper;
-import org.abchip.mimo.util.ThreadManager;
 
 public class BaseJobLogManagerImpl implements JobLogManager {
 
@@ -128,7 +128,7 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 
 		@Override
 		public Thread newThread(Runnable runnable) {
-			org.abchip.mimo.util.Thread thread = threadManager.createThread("job-logger", runnable);
+			org.abchip.mimo.context.Thread thread = threadManager.createThread("job-logger", runnable);
 			return thread.getJavaThread();
 		}
 

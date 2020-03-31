@@ -6,15 +6,15 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.base.util;
+package org.abchip.mimo.core.base.ctx;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import org.abchip.mimo.context.ThreadStatus;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.util.ThreadStatus;
 
-public class BaseThreadImpl extends Thread implements org.abchip.mimo.util.Thread {
+public class BaseThreadImpl extends Thread implements org.abchip.mimo.context.Thread {
 
 	private static final long serialVersionUID = 1L;
 	private final AtomicBoolean locked = new AtomicBoolean();

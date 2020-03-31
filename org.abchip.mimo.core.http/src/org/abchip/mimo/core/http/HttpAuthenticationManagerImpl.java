@@ -308,7 +308,6 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 				if (userInfo != null) {
 					// retrieve picture
-					@SuppressWarnings("unused")
 					String picture = "";
 					getMethod = new HttpGet("https://api.linkedin.com/v2/me?projection=(" + authentication.getIdToken() + ",profilePicture(displayImage~:playableStreams))");
 					getMethod.setHeader("Host", "api.linkedin.com");

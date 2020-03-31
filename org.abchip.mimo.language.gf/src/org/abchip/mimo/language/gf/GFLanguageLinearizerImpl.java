@@ -21,7 +21,7 @@ public class GFLanguageLinearizerImpl implements LanguageLinearizer {
 	@Override
 	public String linearize(Context context, String language, LanguageExpression expression) {
 
-		Concr syntaxBuilder = GFGrammarLoader.get().getConcr("App"+Strings.qINSTANCE.firstToUpper(language));
+		Concr syntaxBuilder = GFGrammarLoader.get().getConcr("App"+Strings.firstToUpper(language));
 		Expr rawExpression = (Expr) expression.getExpressionRow();	
 		String result = syntaxBuilder.linearize(rawExpression);
 		

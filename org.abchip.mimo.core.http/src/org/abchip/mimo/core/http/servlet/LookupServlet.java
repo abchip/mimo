@@ -20,7 +20,6 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
-import org.abchip.mimo.util.Strings;
 
 public class LookupServlet extends BaseServlet {
 
@@ -37,7 +36,7 @@ public class LookupServlet extends BaseServlet {
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String tenant = request.getParameter("tenant");
-		String frame = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
+		String frame = request.getParameter("frame");
 		String id = request.getParameter("id");
 		String proxy = request.getParameter("proxy");
 		if (proxy == null || proxy.trim().isEmpty())

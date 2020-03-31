@@ -27,7 +27,7 @@
         eType="#//JobReference" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="jobRunInfo" lowerBound="1"
         eType="#//JobRunInfo" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="jobThread" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//util/Thread"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jobThread" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Thread"
         transient="true" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="jobType" eType="#//JobType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
