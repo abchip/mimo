@@ -60,19 +60,6 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
           eType="#//application/ComponentStatus" defaultValueLiteral="ACT"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ApplicationManager" abstract="true"
-        interface="true">
-      <eOperations name="start" lowerBound="1">
-        <eParameters name="application" lowerBound="1" eType="#//application/Application"/>
-        <eParameters name="output" eType="#//java/JavaOutputStream"/>
-      </eOperations>
-      <eOperations name="restart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eParameters name="application" lowerBound="1" eType="#//application/Application"/>
-      </eOperations>
-      <eOperations name="stop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eParameters name="application" lowerBound="1" eType="#//application/Application"/>
-      </eOperations>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ApplicationModule" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
@@ -84,6 +71,12 @@
       <eLiterals name="Active" literal="ACT"/>
       <eLiterals name="Stopped" literal="STP"/>
       <eLiterals name="Testing" literal="TST"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HttpServiceConfig" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="socket" lowerBound="1"
+          eType="#//application/SocketConfig" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ModuleStatus">
       <eLiterals name="Active" literal="ACT"/>
@@ -148,6 +141,12 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           changeable="false" defaultValueLiteral="org.abchip.mimo.tester.TestSuiteLauncher"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SocketConfig" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="context" nsURI="http://www.abchip.org/mimo/context" nsPrefix="mimo-ctx">
@@ -599,6 +598,84 @@
           </eGenericType>
         </eParameters>
       </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Thread" abstract="true" interface="true"
+        eSuperTypes="#//entity/Entity">
+      <eOperations name="checkRunnable" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="getJavaThread" lowerBound="1" eType="#//java/JavaThread"/>
+      <eOperations name="getThreadID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      <eOperations name="getThreadName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getThreadPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eOperations name="getThreadCPUUsage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eOperations name="getThreadStatus" eType="#//context/ThreadStatus"/>
+      <eOperations name="isInterrupted" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="isNative" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="isSuspended" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="isThreadDaemon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ThreadInfo" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadName" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadId" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadPriority" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadCPUUsage" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadStatus" lowerBound="1"
+          eType="#//context/ThreadStatus"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadRunnable" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadInterrupted" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadNative" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadSuspended" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadDaemon" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ThreadManager" abstract="true" interface="true">
+      <eOperations name="createThread" eType="#//context/Thread">
+        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="runnable" lowerBound="1" eType="#//java/JavaRunnable"/>
+      </eOperations>
+      <eOperations name="createThread" eType="#//context/Thread">
+        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="runnable" lowerBound="1" eType="#//java/JavaRunnable"/>
+        <eParameters name="daemon" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eOperations>
+      <eOperations name="currentThread" lowerBound="1" eType="#//context/Thread"/>
+      <eOperations name="getThreadInfo" eType="#//context/ThreadInfo">
+        <eParameters name="thread" lowerBound="1" eType="#//context/Thread"/>
+      </eOperations>
+      <eOperations name="listThreads" upperBound="-1" eType="#//context/Thread"/>
+      <eOperations name="lookupThread" eType="#//context/Thread">
+        <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      </eOperations>
+      <eOperations name="lookupThread" eType="#//context/Thread">
+        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="release">
+        <eParameters name="thread" lowerBound="1" eType="#//context/Thread"/>
+      </eOperations>
+      <eOperations name="start">
+        <eParameters name="thread" lowerBound="1" eType="#//context/Thread"/>
+      </eOperations>
+      <eOperations name="stop">
+        <eParameters name="thread" lowerBound="1" eType="#//context/Thread"/>
+      </eOperations>
+      <eOperations name="suspend">
+        <eParameters name="thread" lowerBound="1" eType="#//context/Thread"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ThreadStatus">
+      <eLiterals name="New" value="10" literal="NEW"/>
+      <eLiterals name="Runnable" value="20" literal="RUN"/>
+      <eLiterals name="Blocked" value="30" literal="BLC"/>
+      <eLiterals name="Waiting" value="40" literal="WAIT"/>
+      <eLiterals name="TimedWaiting" value="50" literal="TMW"/>
+      <eLiterals name="Terminated" value="60" literal="END"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="UserClass">
       <eLiterals name="User" value="10" literal="USR"/>
@@ -1690,336 +1767,6 @@
       <eLiterals name="XML_Metadata_Interchange" value="10" literal="XMI"/>
       <eLiterals name="JavaScript_Object_Notation" value="20" literal="JSON"/>
       <eLiterals name="JavaScript_Mimo_Notation" value="30" literal="MIMO"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="util" nsURI="http://www.abchip.org/mimo/util" nsPrefix="mimo-util">
-    <eClassifiers xsi:type="ecore:EClass" name="Classes" abstract="true" interface="true">
-      <eOperations name="getAllInterfaces" upperBound="-1">
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-          <eTypeArguments/>
-        </eGenericType>
-        <eParameters name="input" lowerBound="1">
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments/>
-          </eGenericType>
-        </eParameters>
-      </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Files" abstract="true" interface="true">
-      <eOperations name="getBaseName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="fileName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="cleanDirectory" lowerBound="1" eExceptions="#//java/JavaIOException">
-        <eParameters name="path" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="deleteDirectory" lowerBound="1" eExceptions="#//java/JavaIOException">
-        <eParameters name="path" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="getSeparator" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="copyToFile" lowerBound="1" eType="#//java/JavaFile" eExceptions="#//java/JavaIOException">
-        <eParameters name="stream" lowerBound="1" eType="#//java/JavaInputStream"/>
-      </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HttpServiceConfig" eSuperTypes="#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="socket" lowerBound="1"
-          eType="#//util/SocketConfig" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Lists" abstract="true" interface="true">
-      <eOperations name="addFirst">
-        <eTypeParameters name="E"/>
-        <eParameters name="list" lowerBound="1">
-          <eGenericType eClassifier="#//java/JavaList">
-            <eTypeArguments eTypeParameter="#//util/Lists/addFirst/E"/>
-          </eGenericType>
-        </eParameters>
-        <eParameters name="element" lowerBound="1">
-          <eGenericType eTypeParameter="#//util/Lists/addFirst/E"/>
-        </eParameters>
-      </eOperations>
-      <eOperations name="addLast">
-        <eTypeParameters name="E"/>
-        <eParameters name="list" lowerBound="1">
-          <eGenericType eClassifier="#//java/JavaList">
-            <eTypeArguments eTypeParameter="#//util/Lists/addLast/E"/>
-          </eGenericType>
-        </eParameters>
-        <eParameters name="element" lowerBound="1">
-          <eGenericType eTypeParameter="#//util/Lists/addLast/E"/>
-        </eParameters>
-      </eOperations>
-      <eOperations name="addBefore">
-        <eTypeParameters name="E"/>
-        <eParameters name="list" lowerBound="1">
-          <eGenericType eClassifier="#//java/JavaList">
-            <eTypeArguments eTypeParameter="#//util/Lists/addBefore/E"/>
-          </eGenericType>
-        </eParameters>
-        <eParameters name="oldElement" lowerBound="1">
-          <eGenericType eTypeParameter="#//util/Lists/addBefore/E"/>
-        </eParameters>
-        <eParameters name="newElement" lowerBound="1">
-          <eGenericType eTypeParameter="#//util/Lists/addBefore/E"/>
-        </eParameters>
-      </eOperations>
-      <eOperations name="addAfter">
-        <eTypeParameters name="E"/>
-        <eParameters name="list" lowerBound="1">
-          <eGenericType eClassifier="#//java/JavaList">
-            <eTypeArguments eTypeParameter="#//util/Lists/addAfter/E"/>
-          </eGenericType>
-        </eParameters>
-        <eParameters name="oldElement" lowerBound="1">
-          <eGenericType eTypeParameter="#//util/Lists/addAfter/E"/>
-        </eParameters>
-        <eParameters name="newElement" lowerBound="1">
-          <eGenericType eTypeParameter="#//util/Lists/addAfter/E"/>
-        </eParameters>
-      </eOperations>
-      <eOperations name="slice">
-        <eGenericType eClassifier="#//java/JavaList">
-          <eTypeArguments eTypeParameter="#//util/Lists/slice/E"/>
-        </eGenericType>
-        <eTypeParameters name="E"/>
-        <eParameters name="list" lowerBound="1">
-          <eGenericType eClassifier="#//java/JavaList">
-            <eTypeArguments eTypeParameter="#//util/Lists/slice/E"/>
-          </eGenericType>
-        </eParameters>
-        <eParameters name="index" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="limit" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eOperations>
-      <eGenericSuperTypes eClassifier="#//util/Singleton">
-        <eTypeArguments eClassifier="#//util/Lists"/>
-      </eGenericSuperTypes>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Singleton" abstract="true" interface="true">
-      <eTypeParameters name="S">
-        <eBounds eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-      </eTypeParameters>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SocketConfig" eSuperTypes="#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Streams" abstract="true" interface="true">
-      <eOperations name="copy">
-        <eParameters name="input" lowerBound="1" eType="#//java/JavaInputStream"/>
-        <eParameters name="output" lowerBound="1" eType="#//java/JavaOutputStream"/>
-      </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Strings" abstract="true" interface="true">
-      <eOperations name="appendChars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="chars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="times" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="before" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eOperations>
-      <eOperations name="checkEquals" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject">
-        <eParameters name="string1" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="string2" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="escape" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="firstToUpper" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="firstToLower" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="isEmptyTrim" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="isOneOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="values" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="left" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="nrOfChars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eOperations>
-      <eOperations name="lSet" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="nrOfChars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eOperations>
-      <eOperations name="lSet" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="nrOfChars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="filler" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="removeFirstChar" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="removeLastChar" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="right" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="nrOfChars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eOperations>
-      <eOperations name="rSet" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="nrOfChars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eOperations>
-      <eOperations name="rSet" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="nrOfChars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="filler" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="nrOfChars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="filler" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="trimL" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="trimR" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="string" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eGenericSuperTypes eClassifier="#//util/Singleton">
-        <eTypeArguments eClassifier="#//util/Strings"/>
-      </eGenericSuperTypes>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Thread" abstract="true" interface="true"
-        eSuperTypes="#//entity/Entity">
-      <eOperations name="checkRunnable" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="getJavaThread" lowerBound="1" eType="#//java/JavaThread"/>
-      <eOperations name="getThreadID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-      <eOperations name="getThreadName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="getThreadPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      <eOperations name="getThreadCPUUsage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-      <eOperations name="getThreadStatus" eType="#//util/ThreadStatus"/>
-      <eOperations name="isInterrupted" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="isNative" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="isSuspended" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="isThreadDaemon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Threads" abstract="true" interface="true">
-      <eOperations name="listThreads" upperBound="-1" eType="#//java/JavaThread"/>
-      <eOperations name="listThreads" upperBound="-1" eType="#//java/JavaThread">
-        <eParameters name="threadGroup" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="listThreads" upperBound="-1" eType="#//java/JavaThread">
-        <eParameters name="threadGroup" lowerBound="1" eType="#//java/JavaThreadGroup"/>
-      </eOperations>
-      <eOperations name="listThreadInfos" upperBound="-1" eType="#//java/JavaThreadInfo"/>
-      <eOperations name="listThreadGroups" upperBound="-1" eType="#//java/JavaThreadGroup"/>
-      <eOperations name="lookupBlockingThread" eType="#//java/JavaThread">
-        <eParameters name="thread" lowerBound="1" eType="#//java/JavaThread"/>
-      </eOperations>
-      <eOperations name="lookupLockingThread" eType="#//java/JavaThread">
-        <eParameters name="object" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-      </eOperations>
-      <eOperations name="lookupThread" eType="#//java/JavaThread">
-        <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-      </eOperations>
-      <eOperations name="lookupThread" eType="#//java/JavaThread">
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="lookupThread" eType="#//java/JavaThread">
-        <eParameters name="info" lowerBound="1" eType="#//java/JavaThreadInfo"/>
-      </eOperations>
-      <eOperations name="lookupThreadGroup" eType="#//java/JavaThreadGroup">
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="lookupThreadInfo" eType="#//java/JavaThreadInfo">
-        <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-      </eOperations>
-      <eOperations name="lookupThreadInfo" eType="#//java/JavaThreadInfo">
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="lookupThreadInfo" eType="#//java/JavaThreadInfo">
-        <eParameters name="thread" lowerBound="1" eType="#//java/JavaThread"/>
-      </eOperations>
-      <eGenericSuperTypes eClassifier="#//util/Singleton">
-        <eTypeArguments eClassifier="#//util/Threads"/>
-      </eGenericSuperTypes>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ThreadInfo" eSuperTypes="#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadName" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadId" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadPriority" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadCPUUsage" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadStatus" lowerBound="1"
-          eType="#//util/ThreadStatus"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadRunnable" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadInterrupted" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadNative" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadSuspended" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadDaemon" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ThreadManager" abstract="true" interface="true">
-      <eOperations name="createThread" eType="#//util/Thread">
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="runnable" lowerBound="1" eType="#//java/JavaRunnable"/>
-      </eOperations>
-      <eOperations name="createThread" eType="#//util/Thread">
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="runnable" lowerBound="1" eType="#//java/JavaRunnable"/>
-        <eParameters name="daemon" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eOperations>
-      <eOperations name="currentThread" lowerBound="1" eType="#//util/Thread"/>
-      <eOperations name="getThreadInfo" eType="#//util/ThreadInfo">
-        <eParameters name="thread" lowerBound="1" eType="#//util/Thread"/>
-      </eOperations>
-      <eOperations name="listThreads" upperBound="-1" eType="#//util/Thread"/>
-      <eOperations name="lookupThread" eType="#//util/Thread">
-        <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-      </eOperations>
-      <eOperations name="lookupThread" eType="#//util/Thread">
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="release">
-        <eParameters name="thread" lowerBound="1" eType="#//util/Thread"/>
-      </eOperations>
-      <eOperations name="start">
-        <eParameters name="thread" lowerBound="1" eType="#//util/Thread"/>
-      </eOperations>
-      <eOperations name="stop">
-        <eParameters name="thread" lowerBound="1" eType="#//util/Thread"/>
-      </eOperations>
-      <eOperations name="suspend">
-        <eParameters name="thread" lowerBound="1" eType="#//util/Thread"/>
-      </eOperations>
-      <eGenericSuperTypes eClassifier="#//util/Singleton">
-        <eTypeArguments eClassifier="#//util/ThreadManager"/>
-      </eGenericSuperTypes>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="ThreadStatus">
-      <eLiterals name="New" value="10" literal="NEW"/>
-      <eLiterals name="Runnable" value="20" literal="RUN"/>
-      <eLiterals name="Blocked" value="30" literal="BLC"/>
-      <eLiterals name="Waiting" value="40" literal="WAIT"/>
-      <eLiterals name="TimedWaiting" value="50" literal="TMW"/>
-      <eLiterals name="Terminated" value="60" literal="END"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="URIs" abstract="true" interface="true">
-      <eOperations name="getBaseName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="uri" lowerBound="1" eType="#//java/JavaURI"/>
-      </eOperations>
-      <eOperations name="parseParameter" lowerBound="1">
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        </eGenericType>
-        <eParameters name="query" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eGenericSuperTypes eClassifier="#//util/Singleton">
-        <eTypeArguments eClassifier="#//util/URIs"/>
-      </eGenericSuperTypes>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

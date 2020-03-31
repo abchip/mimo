@@ -23,7 +23,6 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
-import org.abchip.mimo.util.Strings;
 
 public class FindServlet extends BaseServlet {
 
@@ -40,7 +39,7 @@ public class FindServlet extends BaseServlet {
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String tenant = request.getParameter("tenant");
-		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
+		String frameName = request.getParameter("frame");
 		String proxy = request.getParameter("proxy");
 		if (proxy == null || proxy.trim().isEmpty())
 			proxy = "false";

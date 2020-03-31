@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.Thread;
 import org.abchip.mimo.data.DateFormat;
 import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.abchip.mimo.server.Job;
@@ -23,7 +24,6 @@ import org.abchip.mimo.server.JobStatus;
 import org.abchip.mimo.server.JobType;
 import org.abchip.mimo.server.ServerFactory;
 import org.abchip.mimo.server.ServerPackage;
-import org.abchip.mimo.util.Thread;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -209,7 +209,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	 * @generated
 	 * @ordered
 	 */
-	protected org.abchip.mimo.util.Thread jobThread;
+	protected org.abchip.mimo.context.Thread jobThread;
 
 	/**
 	 * The default value of the '{@link #getJobType() <em>Job Type</em>}' attribute.
@@ -473,7 +473,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	 * @generated
 	 */
 	@Override
-	public org.abchip.mimo.util.Thread getJobThread() {
+	public org.abchip.mimo.context.Thread getJobThread() {
 		return jobThread;
 	}
 
@@ -482,8 +482,8 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 	 * @generated
 	 */
 	@Override
-	public void setJobThread(org.abchip.mimo.util.Thread newJobThread) {
-		org.abchip.mimo.util.Thread oldJobThread = jobThread;
+	public void setJobThread(org.abchip.mimo.context.Thread newJobThread) {
+		org.abchip.mimo.context.Thread oldJobThread = jobThread;
 		jobThread = newJobThread;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.JOB__JOB_THREAD, oldJobThread, jobThread));
@@ -953,7 +953,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 				setJobRunInfo((JobRunInfo)newValue);
 				return;
 			case ServerPackage.JOB__JOB_THREAD:
-				setJobThread((org.abchip.mimo.util.Thread)newValue);
+				setJobThread((org.abchip.mimo.context.Thread)newValue);
 				return;
 			case ServerPackage.JOB__JOB_TYPE:
 				setJobType((JobType)newValue);
@@ -1007,7 +1007,7 @@ public class JobImpl extends EntityIdentifiableImpl implements Job {
 				setJobRunInfo((JobRunInfo)null);
 				return;
 			case ServerPackage.JOB__JOB_THREAD:
-				setJobThread((org.abchip.mimo.util.Thread)null);
+				setJobThread((org.abchip.mimo.context.Thread)null);
 				return;
 			case ServerPackage.JOB__JOB_TYPE:
 				setJobType(JOB_TYPE_EDEFAULT);

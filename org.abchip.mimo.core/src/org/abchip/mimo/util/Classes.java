@@ -9,23 +9,12 @@ package org.abchip.mimo.util;
 
 import java.util.List;
 
-/**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Classes</b></em>'.
- * <!-- end-user-doc -->
- *
- *
- * @see org.abchip.mimo.util.UtilPackage#getClasses()
- * @model interface="true" abstract="true"
- * @generated
- */
-public interface Classes {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model inputRequired="true"
-	 * @generated
-	 */
-	List<Class<?>> getAllInterfaces(Class<?> input);
+import org.apache.commons.lang.ClassUtils;
 
-} // Classes
+public class Classes {
+
+	@SuppressWarnings("unchecked")
+	public static List<Class<?>> getAllInterfaces(Class<?> input) {
+		return ClassUtils.getAllInterfaces(input);
+	}
+}

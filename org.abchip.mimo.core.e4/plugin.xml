@@ -6,8 +6,8 @@
 
 <plugin>
    <extension
-         id="mimo-ap"
-         name="Application"
+         id="osgi"
+         name="MIMO OSGI Application"
          point="org.eclipse.core.runtime.applications">
       <application
             cardinality="singleton-global"
@@ -17,17 +17,5 @@
                class="org.abchip.mimo.core.e4.E4EquinoxApplicationImpl">
          </run>
       </application>
-   </extension>
-   <extension
-         id="test"
-         point="org.eclipse.core.runtime.products">
-      <product
-            application="org.abchip.mimo.core.e4.mimo-ap"
-            name="abchip-net">
-         <property
-               name="appName"
-               value="abchip-net">
-         </property>
-      </product>
    </extension>
 </plugin>

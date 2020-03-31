@@ -22,6 +22,7 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
+import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.server.Job;
@@ -34,7 +35,6 @@ import org.abchip.mimo.server.SystemEventType;
 import org.abchip.mimo.server.SystemListener;
 import org.abchip.mimo.server.SystemManager;
 import org.abchip.mimo.server.SystemStatus;
-import org.abchip.mimo.util.ThreadManager;
 
 public class BaseSystemManagerImpl implements SystemManager {
 

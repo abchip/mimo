@@ -129,6 +129,15 @@ public interface ContextFactory extends EFactory {
 	ProviderUser createProviderUser();
 
 	/**
+	 * Returns a new object of class '<em>Thread Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Thread Info</em>'.
+	 * @generated
+	 */
+	ThreadInfo createThreadInfo();
+
+	/**
 	 * Returns a new object of class '<em>User Profile</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

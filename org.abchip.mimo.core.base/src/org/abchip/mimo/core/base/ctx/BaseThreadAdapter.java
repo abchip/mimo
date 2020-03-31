@@ -6,17 +6,17 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.base.util;
+package org.abchip.mimo.core.base.ctx;
 
 import java.lang.management.ThreadInfo;
 
+import org.abchip.mimo.context.ThreadStatus;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.util.ThreadStatus;
 import org.abchip.mimo.util.Threads;
 
 
-public class BaseThreadAdapter implements org.abchip.mimo.util.Thread {
+public class BaseThreadAdapter implements org.abchip.mimo.context.Thread {
 
 	private static final long serialVersionUID = 1L;
 	private Thread thread;
@@ -69,7 +69,7 @@ public class BaseThreadAdapter implements org.abchip.mimo.util.Thread {
 
 	@Override
 	public boolean isSuspended() {
-		ThreadInfo threadInfo = Threads.qINSTANCE.lookupThreadInfo(getJavaThread());
+		ThreadInfo threadInfo = Threads.lookupThreadInfo(getJavaThread());
 		if (threadInfo != null)
 			return threadInfo.isSuspended();
 		else

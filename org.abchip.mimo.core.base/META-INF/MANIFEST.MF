@@ -16,9 +16,9 @@ Bundle-ClassPath: .,
  lib/json-1.8.jar,
  lib/emfjson-jackson-1.3.0.jar
 Export-Package: org.abchip.mimo.core.base,
- org.abchip.mimo.core.base.app,
+ org.abchip.mimo.core.base.ctx,
  org.abchip.mimo.core.base.nio,
- org.abchip.mimo.core.base.util
+ org.abchip.mimo.core.base.res
 Import-Package: javax.annotation;version="1.2.0",
  javax.inject,
  javax.servlet,

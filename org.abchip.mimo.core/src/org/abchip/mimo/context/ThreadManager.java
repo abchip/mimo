@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.util;
+package org.abchip.mimo.context;
 
 import java.util.List;
 
@@ -16,13 +16,11 @@ import java.util.List;
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.util.UtilPackage#getThreadManager()
+ * @see org.abchip.mimo.context.ContextPackage#getThreadManager()
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface ThreadManager extends Singleton<ThreadManager> {
-	
-	ThreadManager qINSTANCE = null;
+public interface ThreadManager {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -30,7 +28,7 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	 * @model nameRequired="true" runnableType="org.abchip.mimo.java.JavaRunnable" runnableRequired="true"
 	 * @generated
 	 */
-	org.abchip.mimo.util.Thread createThread(String name, Runnable runnable);
+	org.abchip.mimo.context.Thread createThread(String name, Runnable runnable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -38,7 +36,7 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	 * @model nameRequired="true" runnableType="org.abchip.mimo.java.JavaRunnable" runnableRequired="true" daemonRequired="true"
 	 * @generated
 	 */
-	org.abchip.mimo.util.Thread createThread(String name, Runnable runnable, boolean daemon);
+	org.abchip.mimo.context.Thread createThread(String name, Runnable runnable, boolean daemon);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,7 +44,7 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	 * @model required="true"
 	 * @generated
 	 */
-	org.abchip.mimo.util.Thread currentThread();
+	org.abchip.mimo.context.Thread currentThread();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -54,7 +52,7 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	 * @model threadRequired="true"
 	 * @generated
 	 */
-	ThreadInfo getThreadInfo(org.abchip.mimo.util.Thread thread);
+	ThreadInfo getThreadInfo(org.abchip.mimo.context.Thread thread);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +60,7 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	 * @model
 	 * @generated
 	 */
-	List<org.abchip.mimo.util.Thread> listThreads();
+	List<org.abchip.mimo.context.Thread> listThreads();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +68,7 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	 * @model idRequired="true"
 	 * @generated
 	 */
-	org.abchip.mimo.util.Thread lookupThread(long id);
+	org.abchip.mimo.context.Thread lookupThread(long id);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,7 +76,7 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	 * @model nameRequired="true"
 	 * @generated
 	 */
-	org.abchip.mimo.util.Thread lookupThread(String name);
+	org.abchip.mimo.context.Thread lookupThread(String name);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,7 +84,7 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	 * @model threadRequired="true"
 	 * @generated
 	 */
-	void release(org.abchip.mimo.util.Thread thread);
+	void release(org.abchip.mimo.context.Thread thread);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,7 +92,7 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	 * @model threadRequired="true"
 	 * @generated
 	 */
-	void start(org.abchip.mimo.util.Thread thread);
+	void start(org.abchip.mimo.context.Thread thread);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,7 +100,7 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	 * @model threadRequired="true"
 	 * @generated
 	 */
-	void stop(org.abchip.mimo.util.Thread thread);
+	void stop(org.abchip.mimo.context.Thread thread);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,6 +108,6 @@ public interface ThreadManager extends Singleton<ThreadManager> {
 	 * @model threadRequired="true"
 	 * @generated
 	 */
-	void suspend(org.abchip.mimo.util.Thread thread);
+	void suspend(org.abchip.mimo.context.Thread thread);
 
 } // ThreadManager

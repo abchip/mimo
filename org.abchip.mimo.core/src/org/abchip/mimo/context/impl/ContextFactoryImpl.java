@@ -8,8 +8,26 @@
  */
 package org.abchip.mimo.context.impl;
 
-import org.abchip.mimo.context.*;
-
+import org.abchip.mimo.context.AuthenticationAdminKey;
+import org.abchip.mimo.context.AuthenticationAnonymous;
+import org.abchip.mimo.context.AuthenticationUserPassword;
+import org.abchip.mimo.context.AuthenticationUserToken;
+import org.abchip.mimo.context.CapabilityRight;
+import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.context.Identity;
+import org.abchip.mimo.context.LockType;
+import org.abchip.mimo.context.MessageDataField;
+import org.abchip.mimo.context.MessageDescription;
+import org.abchip.mimo.context.MessageException;
+import org.abchip.mimo.context.MessageFile;
+import org.abchip.mimo.context.ProviderConfig;
+import org.abchip.mimo.context.ProviderUser;
+import org.abchip.mimo.context.ThreadInfo;
+import org.abchip.mimo.context.ThreadStatus;
+import org.abchip.mimo.context.UserClass;
+import org.abchip.mimo.context.UserProfile;
 import org.abchip.mimo.data.DataDef;
 import org.abchip.mimo.entity.Entity;
 import org.eclipse.emf.ecore.EClass;
@@ -76,6 +94,7 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 			case ContextPackage.MESSAGE_FILE: return (EObject)createMessageFile();
 			case ContextPackage.PROVIDER_CONFIG: return (EObject)createProviderConfig();
 			case ContextPackage.PROVIDER_USER: return (EObject)createProviderUser();
+			case ContextPackage.THREAD_INFO: return (EObject)createThreadInfo();
 			case ContextPackage.USER_PROFILE: return (EObject)createUserProfile();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -94,6 +113,8 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 				return createCapabilityRightFromString(eDataType, initialValue);
 			case ContextPackage.LOCK_TYPE:
 				return createLockTypeFromString(eDataType, initialValue);
+			case ContextPackage.THREAD_STATUS:
+				return createThreadStatusFromString(eDataType, initialValue);
 			case ContextPackage.USER_CLASS:
 				return createUserClassFromString(eDataType, initialValue);
 			case ContextPackage.MESSAGE_VARIABLE_LIST:
@@ -117,6 +138,8 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 				return convertCapabilityRightToString(eDataType, instanceValue);
 			case ContextPackage.LOCK_TYPE:
 				return convertLockTypeToString(eDataType, instanceValue);
+			case ContextPackage.THREAD_STATUS:
+				return convertThreadStatusToString(eDataType, instanceValue);
 			case ContextPackage.USER_CLASS:
 				return convertUserClassToString(eDataType, instanceValue);
 			case ContextPackage.MESSAGE_VARIABLE_LIST:
@@ -255,6 +278,17 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * @generated
 	 */
 	@Override
+	public ThreadInfo createThreadInfo() {
+		ThreadInfoImpl threadInfo = new ThreadInfoImpl();
+		return threadInfo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public UserProfile createUserProfile() {
 		UserProfileImpl userProfile = new UserProfileImpl();
 		return userProfile;
@@ -297,6 +331,26 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * @generated
 	 */
 	public String convertLockTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ThreadStatus createThreadStatusFromString(EDataType eDataType, String initialValue) {
+		ThreadStatus result = ThreadStatus.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertThreadStatusToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -66,11 +66,6 @@ import org.abchip.mimo.java.JavaPackage;
 import org.abchip.mimo.resource.ResourcePackage;
 
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
-
-import org.abchip.mimo.util.UtilPackage;
-
-import org.abchip.mimo.util.impl.UtilPackageImpl;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
@@ -368,8 +363,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
-		UtilPackageImpl theUtilPackage = (UtilPackageImpl)(registeredPackage instanceof UtilPackageImpl ? registeredPackage : UtilPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theJavaPackage.createPackageContents();
@@ -379,7 +372,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 		theDataPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theResourcePackage.createPackageContents();
-		theUtilPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theJavaPackage.initializePackageContents();
@@ -389,7 +381,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 		theDataPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theResourcePackage.initializePackageContents();
-		theUtilPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theJavaPackage.freeze();

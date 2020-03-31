@@ -63,19 +63,6 @@ public class LookupContextMenuServlet extends BaseServlet {
 		if (contextMenu.getIcon() == null)
 			contextMenu.setIcon(getIcon(context, frameName));
 
-		/*
-		 * ContextMenu contextMenuFrame = resourceManager.getEntityReader(contextRoot,
-		 * ContextMenu.class, ResourceScope.CONTEXT).lookup("Frame"); if
-		 * (contextMenuFrame != null) {
-		 * 
-		 * MenuGroup groupFrame = MenuFactory.eINSTANCE.createMenuGroup();
-		 * groupFrame.setValue(frame.getName());
-		 * groupFrame.getData().addAll(contextMenuFrame.getElements());
-		 * groupFrame.setIcon(getIcon("Frame"));
-		 * 
-		 * Lists.qINSTANCE.addFirst(contextMenu.getElements(), groupFrame); }
-		 */
-
 		for (Frame<?> ako : frame.getSuperFrames()) {
 			ContextMenu contextMenuAko = resourceManager.getResourceReader(context, ContextMenu.class, Resource.TENANT_MASTER).lookup(ako.getName());
 			if (contextMenuAko == null)
@@ -139,7 +126,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(context, UiFrameSetup.class, Resource.TENANT_MASTER);
 
 		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
-		Lists.qINSTANCE.addFirst(frameNames, frameName);
+		Lists.addFirst(frameNames, frameName);
 
 		for (String domainName : frameNames) {
 			UiFrameSetup frameSetup = frameSetupReader.lookup(domainName);

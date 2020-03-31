@@ -8,135 +8,185 @@
  */
 package org.abchip.mimo.util;
 
-import java.lang.Thread;
+import java.lang.management.ManagementFactory;
+import java.lang.management.MonitorInfo;
 import java.lang.management.ThreadInfo;
-
+import java.lang.management.ThreadMXBean;
 import java.util.List;
 
-/**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Threads</b></em>'.
- * <!-- end-user-doc -->
- *
- *
- * @see org.abchip.mimo.util.UtilPackage#getThreads()
- * @model interface="true" abstract="true"
- * @generated
- */
-public interface Threads extends Singleton<Threads> {
-	
-	Threads qINSTANCE = null;
+public class Threads {
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThread"
-	 * @generated
-	 */
-	List<Thread> listThreads();
+	private static ThreadGroup rootThreadGroup = null;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThread" threadGroupRequired="true"
-	 * @generated
-	 */
-	List<Thread> listThreads(String threadGroup);
+	public static List<Thread> listThreads() {
+		ThreadGroup rootThreadGroup = getRootThreadGroup();
+		ThreadMXBean thbean = ManagementFactory.getThreadMXBean();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThread" threadGroupType="org.abchip.mimo.java.JavaThreadGroup" threadGroupRequired="true"
-	 * @generated
-	 */
-	List<Thread> listThreads(ThreadGroup threadGroup);
+		int size = thbean.getThreadCount();
+		int n = 0;
+		Thread[] threads = null;
+		do {
+			size *= 2;
+			threads = new Thread[size];
+			n = rootThreadGroup.enumerate(threads, true);
+		} while (n == size);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThreadInfo"
-	 * @generated
-	 */
-	List<ThreadInfo> listThreadInfos();
+		return java.util.Arrays.asList(threads);
+	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThreadGroup"
-	 * @generated
-	 */
-	List<ThreadGroup> listThreadGroups();
+	public List<Thread> listThreads(String threadGroup) {
+		ThreadGroup group = lookupThreadGroup(threadGroup);
+		if (group == null)
+			return null;
+		return listThreads(group);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThread" threadType="org.abchip.mimo.java.JavaThread" threadRequired="true"
-	 * @generated
-	 */
-	Thread lookupBlockingThread(Thread thread);
+	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThread" objectRequired="true"
-	 * @generated
-	 */
-	Thread lookupLockingThread(Object object);
+	public List<Thread> listThreads(ThreadGroup threadGroup) {
+		int size = threadGroup.activeCount();
+		int n = 0;
+		Thread[] threads = null;
+		do {
+			size *= 2;
+			threads = new Thread[size];
+			n = threadGroup.enumerate(threads, false);
+		} while (n == size);
+		return java.util.Arrays.asList(threads);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThread" idRequired="true"
-	 * @generated
-	 */
-	Thread lookupThread(long id);
+	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThread" nameRequired="true"
-	 * @generated
-	 */
-	Thread lookupThread(String name);
+	public List<ThreadGroup> listThreadGroups() {
+		ThreadGroup root = getRootThreadGroup();
+		int size = root.activeGroupCount();
+		int n = 0;
+		ThreadGroup[] groups = null;
+		do {
+			size *= 2;
+			groups = new ThreadGroup[size];
+			n = root.enumerate(groups, true);
+		} while (n == size);
+		ThreadGroup[] allGroups = new ThreadGroup[n + 1];
+		allGroups[0] = root;
+		System.arraycopy(groups, 0, allGroups, 1, n);
+		return java.util.Arrays.asList(allGroups);
+	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThread" infoType="org.abchip.mimo.java.JavaThreadInfo" infoRequired="true"
-	 * @generated
-	 */
-	Thread lookupThread(ThreadInfo info);
+	public List<ThreadInfo> listThreadInfos() {
+		ThreadMXBean thbean = ManagementFactory.getThreadMXBean();
+		long[] threadIds = thbean.getAllThreadIds();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThreadGroup" nameRequired="true"
-	 * @generated
-	 */
-	ThreadGroup lookupThreadGroup(String name);
+		ThreadInfo[] infos;
+		if (!thbean.isObjectMonitorUsageSupported() || !thbean.isSynchronizerUsageSupported())
+			infos = thbean.getThreadInfo(threadIds);
+		else
+			infos = thbean.getThreadInfo(threadIds, true, false);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThreadInfo" idRequired="true"
-	 * @generated
-	 */
-	ThreadInfo lookupThreadInfo(long id);
+		ThreadInfo[] notNulls = new ThreadInfo[infos.length];
+		int nNotNulls = 0;
+		for (ThreadInfo info : infos)
+			if (info != null)
+				notNulls[nNotNulls++] = info;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThreadInfo" nameRequired="true"
-	 * @generated
-	 */
-	ThreadInfo lookupThreadInfo(String name);
+		if (nNotNulls == infos.length)
+			return java.util.Arrays.asList(infos);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaThreadInfo" threadType="org.abchip.mimo.java.JavaThread" threadRequired="true"
-	 * @generated
-	 */
-	ThreadInfo lookupThreadInfo(Thread thread);
+		return java.util.Arrays.asList(notNulls);
+	}
 
-} // Threads
+	public Thread lookupBlockingThread(Thread thread) {
+		ThreadInfo info = lookupThreadInfo(thread);
+		if (info == null)
+			return null;
+		long id = info.getLockOwnerId();
+		if (id == -1)
+			return null;
+		return lookupThread(id);
+	}
+
+	public Thread lookupLockingThread(Object object) {
+
+		long identity = System.identityHashCode(object);
+
+		ThreadInfo info = null;
+		MonitorInfo[] monitors = null;
+		for (Thread thread : listThreads()) {
+			info = lookupThreadInfo(thread.getId());
+			if (info == null)
+				continue;
+			monitors = info.getLockedMonitors();
+			for (MonitorInfo monitor : monitors)
+				if (identity == monitor.getIdentityHashCode())
+					return thread;
+		}
+		return null;
+	}
+
+	public static Thread lookupThread(long id) {
+		for (Thread thread : listThreads())
+			if (thread.getId() == id)
+				return thread;
+		return null;
+	}
+
+	public static Thread lookupThread(String name) {
+		for (Thread thread : listThreads())
+			if (thread.getName().equals(name))
+				return thread;
+		return null;
+	}
+
+	public Thread lookupThread(ThreadInfo info) {
+		return lookupThread(info.getThreadId());
+	}
+
+	public ThreadGroup lookupThreadGroup(String name) {
+		for (ThreadGroup group : listThreadGroups())
+			if (group.getName().equals(name))
+				return group;
+		return null;
+	}
+
+	public static ThreadInfo lookupThreadInfo(long id) {
+		ThreadMXBean thbean = ManagementFactory.getThreadMXBean();
+
+		if (!thbean.isObjectMonitorUsageSupported() || !thbean.isSynchronizerUsageSupported())
+			return thbean.getThreadInfo(id);
+
+		ThreadInfo[] infos = thbean.getThreadInfo(new long[] { id }, true, false);
+		if (infos.length == 0)
+			return null;
+		return infos[0];
+	}
+
+	public static ThreadInfo lookupThreadInfo(Thread thread) {
+		return Threads.lookupThreadInfo(thread.getId());
+	}
+
+	public ThreadInfo lookupThreadInfo(String name) {
+
+		for (Thread thread : listThreads())
+			if (thread.getName().equals(name))
+				return lookupThreadInfo(thread.getId());
+		return null;
+
+	}
+
+	private static ThreadGroup getRootThreadGroup() {
+
+		if (rootThreadGroup != null)
+			return rootThreadGroup;
+
+		synchronized (Threads.class) {
+			if (rootThreadGroup == null) {
+				ThreadGroup threadGroup = Thread.currentThread().getThreadGroup();
+				ThreadGroup parentThreadGroup = null;
+				while ((parentThreadGroup = threadGroup.getParent()) != null)
+					threadGroup = parentThreadGroup;
+
+				rootThreadGroup = threadGroup;
+			}
+		}
+
+		return rootThreadGroup;
+	}
+}

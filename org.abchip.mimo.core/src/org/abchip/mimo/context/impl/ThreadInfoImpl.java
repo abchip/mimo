@@ -6,13 +6,13 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.util.impl;
+package org.abchip.mimo.context.impl;
 
+import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.context.ThreadInfo;
+import org.abchip.mimo.context.ThreadStatus;
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.abchip.mimo.util.UtilPackage;
 import org.eclipse.emf.common.notify.Notification;
-import org.abchip.mimo.util.ThreadInfo;
-import org.abchip.mimo.util.ThreadStatus;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -24,16 +24,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.util.impl.ThreadInfoImpl#getThreadName <em>Thread Name</em>}</li>
- *   <li>{@link org.abchip.mimo.util.impl.ThreadInfoImpl#getThreadId <em>Thread Id</em>}</li>
- *   <li>{@link org.abchip.mimo.util.impl.ThreadInfoImpl#getThreadPriority <em>Thread Priority</em>}</li>
- *   <li>{@link org.abchip.mimo.util.impl.ThreadInfoImpl#getThreadCPUUsage <em>Thread CPU Usage</em>}</li>
- *   <li>{@link org.abchip.mimo.util.impl.ThreadInfoImpl#getThreadStatus <em>Thread Status</em>}</li>
- *   <li>{@link org.abchip.mimo.util.impl.ThreadInfoImpl#isThreadRunnable <em>Thread Runnable</em>}</li>
- *   <li>{@link org.abchip.mimo.util.impl.ThreadInfoImpl#isThreadInterrupted <em>Thread Interrupted</em>}</li>
- *   <li>{@link org.abchip.mimo.util.impl.ThreadInfoImpl#isThreadNative <em>Thread Native</em>}</li>
- *   <li>{@link org.abchip.mimo.util.impl.ThreadInfoImpl#isThreadSuspended <em>Thread Suspended</em>}</li>
- *   <li>{@link org.abchip.mimo.util.impl.ThreadInfoImpl#isThreadDaemon <em>Thread Daemon</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ThreadInfoImpl#getThreadName <em>Thread Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ThreadInfoImpl#getThreadId <em>Thread Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ThreadInfoImpl#getThreadPriority <em>Thread Priority</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ThreadInfoImpl#getThreadCPUUsage <em>Thread CPU Usage</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ThreadInfoImpl#getThreadStatus <em>Thread Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ThreadInfoImpl#isThreadRunnable <em>Thread Runnable</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ThreadInfoImpl#isThreadInterrupted <em>Thread Interrupted</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ThreadInfoImpl#isThreadNative <em>Thread Native</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ThreadInfoImpl#isThreadSuspended <em>Thread Suspended</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ThreadInfoImpl#isThreadDaemon <em>Thread Daemon</em>}</li>
  * </ul>
  *
  * @generated
@@ -238,7 +238,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UtilPackage.Literals.THREAD_INFO;
+		return ContextPackage.Literals.THREAD_INFO;
 	}
 
 	/**
@@ -261,7 +261,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 		String oldThreadName = threadName;
 		threadName = newThreadName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_NAME, oldThreadName, threadName));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.THREAD_INFO__THREAD_NAME, oldThreadName, threadName));
 	}
 
 	/**
@@ -284,7 +284,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 		long oldThreadId = threadId;
 		threadId = newThreadId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_ID, oldThreadId, threadId));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.THREAD_INFO__THREAD_ID, oldThreadId, threadId));
 	}
 
 	/**
@@ -307,7 +307,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 		int oldThreadPriority = threadPriority;
 		threadPriority = newThreadPriority;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_PRIORITY, oldThreadPriority, threadPriority));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.THREAD_INFO__THREAD_PRIORITY, oldThreadPriority, threadPriority));
 	}
 
 	/**
@@ -330,7 +330,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 		double oldThreadCPUUsage = threadCPUUsage;
 		threadCPUUsage = newThreadCPUUsage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_CPU_USAGE, oldThreadCPUUsage, threadCPUUsage));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.THREAD_INFO__THREAD_CPU_USAGE, oldThreadCPUUsage, threadCPUUsage));
 	}
 
 	/**
@@ -353,7 +353,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 		ThreadStatus oldThreadStatus = threadStatus;
 		threadStatus = newThreadStatus == null ? THREAD_STATUS_EDEFAULT : newThreadStatus;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_STATUS, oldThreadStatus, threadStatus));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.THREAD_INFO__THREAD_STATUS, oldThreadStatus, threadStatus));
 	}
 
 	/**
@@ -376,7 +376,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 		boolean oldThreadRunnable = threadRunnable;
 		threadRunnable = newThreadRunnable;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_RUNNABLE, oldThreadRunnable, threadRunnable));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.THREAD_INFO__THREAD_RUNNABLE, oldThreadRunnable, threadRunnable));
 	}
 
 	/**
@@ -399,7 +399,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 		boolean oldThreadInterrupted = threadInterrupted;
 		threadInterrupted = newThreadInterrupted;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_INTERRUPTED, oldThreadInterrupted, threadInterrupted));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.THREAD_INFO__THREAD_INTERRUPTED, oldThreadInterrupted, threadInterrupted));
 	}
 
 	/**
@@ -422,7 +422,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 		boolean oldThreadNative = threadNative;
 		threadNative = newThreadNative;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_NATIVE, oldThreadNative, threadNative));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.THREAD_INFO__THREAD_NATIVE, oldThreadNative, threadNative));
 	}
 
 	/**
@@ -445,7 +445,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 		boolean oldThreadSuspended = threadSuspended;
 		threadSuspended = newThreadSuspended;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_SUSPENDED, oldThreadSuspended, threadSuspended));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.THREAD_INFO__THREAD_SUSPENDED, oldThreadSuspended, threadSuspended));
 	}
 
 	/**
@@ -468,7 +468,7 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 		boolean oldThreadDaemon = threadDaemon;
 		threadDaemon = newThreadDaemon;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.THREAD_INFO__THREAD_DAEMON, oldThreadDaemon, threadDaemon));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.THREAD_INFO__THREAD_DAEMON, oldThreadDaemon, threadDaemon));
 	}
 
 	/**
@@ -479,25 +479,25 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UtilPackage.THREAD_INFO__THREAD_NAME:
+			case ContextPackage.THREAD_INFO__THREAD_NAME:
 				return getThreadName();
-			case UtilPackage.THREAD_INFO__THREAD_ID:
+			case ContextPackage.THREAD_INFO__THREAD_ID:
 				return getThreadId();
-			case UtilPackage.THREAD_INFO__THREAD_PRIORITY:
+			case ContextPackage.THREAD_INFO__THREAD_PRIORITY:
 				return getThreadPriority();
-			case UtilPackage.THREAD_INFO__THREAD_CPU_USAGE:
+			case ContextPackage.THREAD_INFO__THREAD_CPU_USAGE:
 				return getThreadCPUUsage();
-			case UtilPackage.THREAD_INFO__THREAD_STATUS:
+			case ContextPackage.THREAD_INFO__THREAD_STATUS:
 				return getThreadStatus();
-			case UtilPackage.THREAD_INFO__THREAD_RUNNABLE:
+			case ContextPackage.THREAD_INFO__THREAD_RUNNABLE:
 				return isThreadRunnable();
-			case UtilPackage.THREAD_INFO__THREAD_INTERRUPTED:
+			case ContextPackage.THREAD_INFO__THREAD_INTERRUPTED:
 				return isThreadInterrupted();
-			case UtilPackage.THREAD_INFO__THREAD_NATIVE:
+			case ContextPackage.THREAD_INFO__THREAD_NATIVE:
 				return isThreadNative();
-			case UtilPackage.THREAD_INFO__THREAD_SUSPENDED:
+			case ContextPackage.THREAD_INFO__THREAD_SUSPENDED:
 				return isThreadSuspended();
-			case UtilPackage.THREAD_INFO__THREAD_DAEMON:
+			case ContextPackage.THREAD_INFO__THREAD_DAEMON:
 				return isThreadDaemon();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -511,34 +511,34 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UtilPackage.THREAD_INFO__THREAD_NAME:
+			case ContextPackage.THREAD_INFO__THREAD_NAME:
 				setThreadName((String)newValue);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_ID:
+			case ContextPackage.THREAD_INFO__THREAD_ID:
 				setThreadId((Long)newValue);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_PRIORITY:
+			case ContextPackage.THREAD_INFO__THREAD_PRIORITY:
 				setThreadPriority((Integer)newValue);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_CPU_USAGE:
+			case ContextPackage.THREAD_INFO__THREAD_CPU_USAGE:
 				setThreadCPUUsage((Double)newValue);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_STATUS:
+			case ContextPackage.THREAD_INFO__THREAD_STATUS:
 				setThreadStatus((ThreadStatus)newValue);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_RUNNABLE:
+			case ContextPackage.THREAD_INFO__THREAD_RUNNABLE:
 				setThreadRunnable((Boolean)newValue);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_INTERRUPTED:
+			case ContextPackage.THREAD_INFO__THREAD_INTERRUPTED:
 				setThreadInterrupted((Boolean)newValue);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_NATIVE:
+			case ContextPackage.THREAD_INFO__THREAD_NATIVE:
 				setThreadNative((Boolean)newValue);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_SUSPENDED:
+			case ContextPackage.THREAD_INFO__THREAD_SUSPENDED:
 				setThreadSuspended((Boolean)newValue);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_DAEMON:
+			case ContextPackage.THREAD_INFO__THREAD_DAEMON:
 				setThreadDaemon((Boolean)newValue);
 				return;
 		}
@@ -553,34 +553,34 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UtilPackage.THREAD_INFO__THREAD_NAME:
+			case ContextPackage.THREAD_INFO__THREAD_NAME:
 				setThreadName(THREAD_NAME_EDEFAULT);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_ID:
+			case ContextPackage.THREAD_INFO__THREAD_ID:
 				setThreadId(THREAD_ID_EDEFAULT);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_PRIORITY:
+			case ContextPackage.THREAD_INFO__THREAD_PRIORITY:
 				setThreadPriority(THREAD_PRIORITY_EDEFAULT);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_CPU_USAGE:
+			case ContextPackage.THREAD_INFO__THREAD_CPU_USAGE:
 				setThreadCPUUsage(THREAD_CPU_USAGE_EDEFAULT);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_STATUS:
+			case ContextPackage.THREAD_INFO__THREAD_STATUS:
 				setThreadStatus(THREAD_STATUS_EDEFAULT);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_RUNNABLE:
+			case ContextPackage.THREAD_INFO__THREAD_RUNNABLE:
 				setThreadRunnable(THREAD_RUNNABLE_EDEFAULT);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_INTERRUPTED:
+			case ContextPackage.THREAD_INFO__THREAD_INTERRUPTED:
 				setThreadInterrupted(THREAD_INTERRUPTED_EDEFAULT);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_NATIVE:
+			case ContextPackage.THREAD_INFO__THREAD_NATIVE:
 				setThreadNative(THREAD_NATIVE_EDEFAULT);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_SUSPENDED:
+			case ContextPackage.THREAD_INFO__THREAD_SUSPENDED:
 				setThreadSuspended(THREAD_SUSPENDED_EDEFAULT);
 				return;
-			case UtilPackage.THREAD_INFO__THREAD_DAEMON:
+			case ContextPackage.THREAD_INFO__THREAD_DAEMON:
 				setThreadDaemon(THREAD_DAEMON_EDEFAULT);
 				return;
 		}
@@ -595,25 +595,25 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UtilPackage.THREAD_INFO__THREAD_NAME:
+			case ContextPackage.THREAD_INFO__THREAD_NAME:
 				return THREAD_NAME_EDEFAULT == null ? threadName != null : !THREAD_NAME_EDEFAULT.equals(threadName);
-			case UtilPackage.THREAD_INFO__THREAD_ID:
+			case ContextPackage.THREAD_INFO__THREAD_ID:
 				return threadId != THREAD_ID_EDEFAULT;
-			case UtilPackage.THREAD_INFO__THREAD_PRIORITY:
+			case ContextPackage.THREAD_INFO__THREAD_PRIORITY:
 				return threadPriority != THREAD_PRIORITY_EDEFAULT;
-			case UtilPackage.THREAD_INFO__THREAD_CPU_USAGE:
+			case ContextPackage.THREAD_INFO__THREAD_CPU_USAGE:
 				return threadCPUUsage != THREAD_CPU_USAGE_EDEFAULT;
-			case UtilPackage.THREAD_INFO__THREAD_STATUS:
+			case ContextPackage.THREAD_INFO__THREAD_STATUS:
 				return threadStatus != THREAD_STATUS_EDEFAULT;
-			case UtilPackage.THREAD_INFO__THREAD_RUNNABLE:
+			case ContextPackage.THREAD_INFO__THREAD_RUNNABLE:
 				return threadRunnable != THREAD_RUNNABLE_EDEFAULT;
-			case UtilPackage.THREAD_INFO__THREAD_INTERRUPTED:
+			case ContextPackage.THREAD_INFO__THREAD_INTERRUPTED:
 				return threadInterrupted != THREAD_INTERRUPTED_EDEFAULT;
-			case UtilPackage.THREAD_INFO__THREAD_NATIVE:
+			case ContextPackage.THREAD_INFO__THREAD_NATIVE:
 				return threadNative != THREAD_NATIVE_EDEFAULT;
-			case UtilPackage.THREAD_INFO__THREAD_SUSPENDED:
+			case ContextPackage.THREAD_INFO__THREAD_SUSPENDED:
 				return threadSuspended != THREAD_SUSPENDED_EDEFAULT;
-			case UtilPackage.THREAD_INFO__THREAD_DAEMON:
+			case ContextPackage.THREAD_INFO__THREAD_DAEMON:
 				return threadDaemon != THREAD_DAEMON_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

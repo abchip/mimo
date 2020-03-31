@@ -20,11 +20,12 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.TargetDataLine;
 
 import org.abchip.mimo.audio.AudioRecorder;
-import org.abchip.mimo.util.Thread;
-import org.abchip.mimo.util.ThreadManager;
+import org.abchip.mimo.context.Thread;
+import org.abchip.mimo.context.ThreadManager;
 
 public class SPH4AudioRecorderImpl implements AudioRecorder {
 
+	private ThreadManager threadManager;
 	private AudioFormat audioFormat = null;
 	private DataLine.Info audioInfo = null;
 
@@ -33,7 +34,9 @@ public class SPH4AudioRecorderImpl implements AudioRecorder {
 	private TargetDataLine line = null;
 	private ByteArrayOutputStream outputStream = null;
 
-	public SPH4AudioRecorderImpl() {
+	public SPH4AudioRecorderImpl(ThreadManager threadManager) {
+		this.threadManager = threadManager;
+
 		this.audioFormat = buildAudioFormat();
 		this.audioInfo = new DataLine.Info(TargetDataLine.class, audioFormat);
 	}
@@ -46,7 +49,7 @@ public class SPH4AudioRecorderImpl implements AudioRecorder {
 	@Override
 	public void start() {
 
-		audioRecorder = ThreadManager.qINSTANCE.createThread("mimo-audio", new Runnable() {
+		audioRecorder = threadManager.createThread("mimo-audio", new Runnable() {
 
 			@Override
 			public void run() {
@@ -73,13 +76,13 @@ public class SPH4AudioRecorderImpl implements AudioRecorder {
 			}
 		});
 
-		ThreadManager.qINSTANCE.start(audioRecorder);
+		threadManager.start(audioRecorder);
 	}
 
 	@Override
 	public void stop() {
 
-		ThreadManager.qINSTANCE.stop(audioRecorder);
+		threadManager.stop(audioRecorder);
 
 		line.stop();
 		line.close();

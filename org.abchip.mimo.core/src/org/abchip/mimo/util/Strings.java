@@ -8,145 +8,197 @@
  */
 package org.abchip.mimo.util;
 
+import java.text.CharacterIterator;
+import java.text.StringCharacterIterator;
 import java.util.List;
 
-/**
- * <!-- begin-user-doc --> A representation of the model object
- * '<em><b>Strings</b></em>'. <!-- end-user-doc -->
- *
- *
- * @see org.abchip.mimo.util.UtilPackage#getStrings()
- * @model interface="true" abstract="true"
- * @generated
- */
-public interface Strings extends Singleton<Strings> {
+import org.apache.commons.lang.StringEscapeUtils;
 
-	Strings qINSTANCE = null;
+public class Strings {
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true" charsRequired="true" timesRequired="true" beforeRequired="true"
-	 * @generated
-	 */
-	String appendChars(String string, String chars, int times, boolean before);
+	public static String firstToUpper(String string) {
+		StringBuffer s = new StringBuffer(string.length());
+		CharacterIterator it = new StringCharacterIterator(string);
+		for (char ch = it.first(); ch != CharacterIterator.DONE; ch = it.next())
+			if (it.getIndex() == 0)
+				s.append(String.valueOf(ch).toUpperCase());
+			else
+				s.append(ch);
+		return s.toString();
+	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
-	String firstToUpper(String string);
+	public static String firstToLower(String string) {
+		StringBuffer s = new StringBuffer(string.length());
+		CharacterIterator it = new StringCharacterIterator(string);
+		for (char ch = it.first(); ch != CharacterIterator.DONE; ch = it.next())
+			if (it.getIndex() == 0)
+				s.append(String.valueOf(ch).toLowerCase());
+			else
+				s.append(ch);
+		return s.toString();
+	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
-	String firstToLower(String string);
+	public String appendChars(String string, String chars, int times, boolean before) {
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
-	String removeFirstChar(String string);
+		StringBuffer sb = new StringBuffer();
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
-	String removeLastChar(String string);
+		if (!before)
+			sb.append(string);
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
-	String trimL(String string);
+		for (int x = 0; x < times; x++)
+			sb.append(chars);
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
-	String trimR(String string);
+		if (before)
+			sb.append(string);
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
-	Boolean isEmptyTrim(String string);
+		sb.trimToSize();
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true" valuesMany="true"
-	 * @generated
-	 */
-	Boolean isOneOf(String string, List<String> values);
+		return sb.toString();
+	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" string1Required="true" string2Required="true"
-	 * @generated
-	 */
-	Boolean checkEquals(String string1, String string2);
+	public String removeFirstChar(String str) {
+		if (str.length() == 0)
+			return str;
+		if (str.length() == 1)
+			return "";
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true"
-	 * @generated
-	 */
-	String escape(String string);
+		return str.substring(1);
+	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true" nrOfCharsRequired="true"
-	 * @generated
-	 */
-	String left(String string, int nrOfChars);
+	public String removeLastChar(String str) {
+		if (str.length() == 0)
+			return str;
+		if (str.length() == 1)
+			return "";
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true" nrOfCharsRequired="true"
-	 * @generated
-	 */
-	String lSet(String string, int nrOfChars);
+		return str.substring(0, str.length() - 1);
+	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true" nrOfCharsRequired="true" fillerRequired="true"
-	 * @generated
-	 */
-	String lSet(String string, int nrOfChars, String filler);
+	public String trimL(String string) {
+		int i = 0;
+		while (i < string.length() && (Character.isWhitespace(string.charAt(i)) || string.charAt(i) == 0))
+			i++;
+		return string.substring(i);
+	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" nrOfCharsRequired="true" fillerRequired="true"
-	 * @generated
-	 */
-	String string(int nrOfChars, String filler);
+	public String trimR(String string) {
+		int i = string.length() - 1;
+		while (i >= 0 && (Character.isWhitespace(string.charAt(i)) || string.charAt(i) == 0))
+			i--;
+		return string.substring(0, i + 1);
+	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true" nrOfCharsRequired="true"
-	 * @generated
-	 */
-	String rSet(String string, int nrOfChars);
+	public Boolean isEmptyTrim(String string) {
+		return string == null || string.trim().equals("");
+	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true" nrOfCharsRequired="true" fillerRequired="true"
-	 * @generated
-	 */
-	String rSet(String string, int nrOfChars, String filler);
+	public Boolean isOneOf(String string, List<String> values) {
+		if (values == null) {
+			return false;
+		}
+
+		for (String value : values) {
+			if (checkEquals(string, value)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public Boolean checkEquals(String s1, String s2) {
+		if (s1 == null) {
+			return s2 == null;
+		}
+		return s1.equals(s2);
+	}
+
+	public String left(String s, int nrOfChars) {
+		if (s == null)
+			return null;
+
+		if (nrOfChars < 1)
+			return "";
+
+		if (nrOfChars >= s.length())
+			return s;
+
+		return s.substring(0, nrOfChars);
+	}
+
+	public String string(int numeroRipetizioni, String stringa) {
+		if (stringa == null || numeroRipetizioni <= 0) {
+			return "";
+		} else {
+			StringBuffer aus = new StringBuffer(numeroRipetizioni);
+			for (int i = 1; i <= numeroRipetizioni; i++) {
+				aus.append(stringa);
+			}
+			return aus.toString();
+		}
+	}
+
+	public String rSet(String sDaAllineare, int nCaratteri) {
+		return rSet(sDaAllineare, nCaratteri, " ");
+	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" stringRequired="true" nrOfCharsRequired="true"
-	 * @generated
+	 * Allinea a destra una stringa in una di nCaratteri
+	 * 
+	 * @param s
+	 *            la stringa da allineare
+	 * @param nCaratteri
+	 *            lunghezza della stringa di output
+	 * @return una stringa di nCaratteri riempita a sx da spazi (es. "pippo" ->
+	 *         "   pippo")
 	 */
-	String right(String string, int nrOfChars);
+	public String rSet(String sDaAllineare, int nCaratteri, String riempimento) {
+		String filler = string(nCaratteri, riempimento);
+		if (sDaAllineare == null || nCaratteri <= 0) {
+			return filler;
+		} else {
+			return right(filler + sDaAllineare, nCaratteri);
+		}
+	}
 
-} // Strings
+	/**
+	 * Allinea a sinistra una stringa in una di nCaratteri
+	 * 
+	 * @param s
+	 *            la stringa da allineare
+	 * @param nCaratteri
+	 *            lunghezza della stringa di output
+	 * @return una stringa di nCaratteri riempita a dx da spazi (es. "pippo" ->
+	 *         "pippo   ")
+	 */
+	public String lSet(String sDaAllineare, int nCaratteri) {
+		return lSet(sDaAllineare, nCaratteri, " ");
+	}
+
+	public String lSet(String sDaAllineare, int nCaratteri, String riempimento) {
+		String filler = string(nCaratteri, riempimento);
+		if (sDaAllineare == null || nCaratteri <= 0) {
+			return filler;
+		} else {
+			return left(sDaAllineare + filler, nCaratteri);
+		}
+	}
+
+	public String right(String s, int nCaratteri) {
+		if (s == null)
+			return null;
+
+		if (nCaratteri < 1)
+			return "";
+
+		if (nCaratteri >= s.length())
+			return s;
+
+		return s.substring(s.length() - nCaratteri);
+	}
+
+	public static String escapeJava(String string) {
+		return StringEscapeUtils.escapeJava(string);
+	}
+
+}

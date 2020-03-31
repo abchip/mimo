@@ -10,16 +10,11 @@ package org.abchip.mimo.core.e4;
 
 import java.io.File;
 import java.util.Collections;
-import java.util.Dictionary;
 import java.util.Map;
-import java.util.Properties;
 
-import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.application.Application;
-import org.abchip.mimo.application.ApplicationManager;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.core.base.app.BaseApplicationManagerImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -28,15 +23,10 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceEvent;
-import org.osgi.framework.ServiceListener;
-import org.osgi.framework.ServiceReference;
-import org.osgi.framework.ServiceRegistration;
 import org.osgi.framework.wiring.BundleWiring;
 
 public class E4Activator implements BundleActivator {
 
-	private ServiceRegistration<ApplicationManager> applicationManagerRegistration;
 	private static Application application;
 
 	public static Application getApplication() {
@@ -44,77 +34,29 @@ public class E4Activator implements BundleActivator {
 	}
 
 	@Override
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void start(BundleContext bundleContext) throws Exception {
 
-		this.applicationManagerRegistration = bundleContext.registerService(ApplicationManager.class, new BaseApplicationManagerImpl(), null);
+		if (!Boolean.parseBoolean(bundleContext.getProperty("mimo.activation")))
+			return;
 
-		Dictionary dictionary = null;
-		if (Boolean.parseBoolean(bundleContext.getProperty("mimo.activation"))) {
-			dictionary = new Properties();
-			dictionary.put(MimoConstants.APPLICATION_ACTIVATOR_CONFIG, bundleContext.getProperty("mimo.config"));
-			dictionary.put(MimoConstants.APPLICATION_ACTIVATOR_HOME, bundleContext.getProperty("mimo.home"));
-			
-			if(bundleContext.getProperty("mimo.admin.key") != null)
-				dictionary.put(MimoConstants.APPLICATION_ACTIVATOR_ADMIN_KEY, bundleContext.getProperty("mimo.admin.key"));
-		} else {
-			for (ServiceReference<Dictionary> dictionaryReference : bundleContext.getServiceReferences(Dictionary.class, null)) {
-				if (dictionaryReference.getProperty(MimoConstants.APPLICATION_ACTIVATOR) == null)
-					continue;
+		if (bundleContext.getProperty("mimo.config") == null)
+			return;
 
-				dictionary = bundleContext.getService(dictionaryReference);
-				break;
-			}
-		}
+		if (bundleContext.getProperty("mimo.home") == null)
+			return;
 
-		if (dictionary != null) {
-			startApplication(dictionary);
-
-		} else {
-			bundleContext.addServiceListener(new ServiceListener() {
-
-				@Override
-				public void serviceChanged(ServiceEvent event) {
-					switch (event.getType()) {
-					case ServiceEvent.REGISTERED:
-						ServiceReference<?> serviceReference = event.getServiceReference();
-						if (serviceReference.getProperty(MimoConstants.APPLICATION_ACTIVATOR) == null)
-							return;
-
-						try {
-							Dictionary dictionary = (Dictionary) bundleContext.getService(serviceReference);
-							startApplication(dictionary);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-						break;
-					}
-				}
-			});
-		}
+		startApplication(bundleContext.getProperty("mimo.config"), bundleContext.getProperty("mimo.home"), bundleContext.getProperty("mimo.admin.key"));
 	}
 
 	@Override
 	public void stop(BundleContext context) throws Exception {
 
-		if (this.applicationManagerRegistration != null)
-			context.ungetService(applicationManagerRegistration.getReference());
 	}
 
-	@SuppressWarnings({ "rawtypes" })
-	private void startApplication(Dictionary dictionary) throws Exception {
+	private void startApplication(String applicationConfig, String applicationHome, String adminKey) throws Exception {
 
 		if (E4Activator.application != null) {
 			System.err.println("Application already started " + application);
-			return;
-		}
-
-		Object applicationConfig = dictionary.get(MimoConstants.APPLICATION_ACTIVATOR_CONFIG);
-		Object applicationHome = dictionary.get(MimoConstants.APPLICATION_ACTIVATOR_HOME);
-		Object adminKey = dictionary.get(MimoConstants.APPLICATION_ACTIVATOR_ADMIN_KEY);
-
-		if (applicationConfig == null) {
-			System.err.println("Application config is required");
 			return;
 		}
 
@@ -164,10 +106,8 @@ public class E4Activator implements BundleActivator {
 
 			application.setContext(contextApplication);
 
-			ApplicationManager applicationManager = contextApplication.get(ApplicationManager.class);
-
 			E4Activator.application = application;
-			applicationManager.start(application, System.out);
+			new E4ApplicationStarter(application, System.out).start();
 
 			System.out.println("Started " + application);
 		} catch (Exception e) {

@@ -292,12 +292,12 @@ public interface Job extends EntityIdentifiable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Job Thread</em>' reference.
-	 * @see #setJobThread(org.abchip.mimo.util.Thread)
+	 * @see #setJobThread(org.abchip.mimo.context.Thread)
 	 * @see org.abchip.mimo.server.ServerPackage#getJob_JobThread()
 	 * @model resolveProxies="false" transient="true"
 	 * @generated
 	 */
-	org.abchip.mimo.util.Thread getJobThread();
+	org.abchip.mimo.context.Thread getJobThread();
 
 	/**
 	 * Sets the value of the '{@link org.abchip.mimo.server.Job#getJobThread <em>Job Thread</em>}' reference.
@@ -307,7 +307,7 @@ public interface Job extends EntityIdentifiable {
 	 * @see #getJobThread()
 	 * @generated
 	 */
-	void setJobThread(org.abchip.mimo.util.Thread value);
+	void setJobThread(org.abchip.mimo.context.Thread value);
 
 	/**
 	 * Returns the value of the '<em><b>Job Type</b></em>' attribute.

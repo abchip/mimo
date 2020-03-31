@@ -8,26 +8,17 @@
  */
 package org.abchip.mimo.util;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-/**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Streams</b></em>'.
- * <!-- end-user-doc -->
- *
- *
- * @see org.abchip.mimo.util.UtilPackage#getStreams()
- * @model interface="true" abstract="true"
- * @generated
- */
-public interface Streams {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model inputDataType="org.abchip.mimo.java.JavaInputStream" inputRequired="true" outputDataType="org.abchip.mimo.java.JavaOutputStream" outputRequired="true"
-	 * @generated
-	 */
-	void copy(InputStream input, OutputStream output);
+public class Streams {
 
-} // Streams
+	public void copy(InputStream input, OutputStream output) {
+		try {
+			org.apache.commons.io.IOUtils.copy(input, output);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+}

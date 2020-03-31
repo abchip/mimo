@@ -583,7 +583,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getUserProfile()
 	 * @generated
 	 */
-	int USER_PROFILE = 25;
+	int USER_PROFILE = 28;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.ContextProvider <em>Provider</em>}' class.
@@ -866,6 +866,153 @@ public interface ContextPackage extends EPackage {
 	int REGISTRY_FACTORY_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.Thread <em>Thread</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.Thread
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThread()
+	 * @generated
+	 */
+	int THREAD = 25;
+
+	/**
+	 * The number of structural features of the '<em>Thread</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.impl.ThreadInfoImpl <em>Thread Info</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.impl.ThreadInfoImpl
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThreadInfo()
+	 * @generated
+	 */
+	int THREAD_INFO = 26;
+
+	/**
+	 * The feature id for the '<em><b>Thread Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO__THREAD_NAME = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Thread Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO__THREAD_ID = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Thread Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO__THREAD_PRIORITY = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Thread CPU Usage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO__THREAD_CPU_USAGE = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Thread Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO__THREAD_STATUS = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Thread Runnable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO__THREAD_RUNNABLE = EntityPackage.ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Thread Interrupted</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO__THREAD_INTERRUPTED = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Thread Native</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO__THREAD_NATIVE = EntityPackage.ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Thread Suspended</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO__THREAD_SUSPENDED = EntityPackage.ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Thread Daemon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO__THREAD_DAEMON = EntityPackage.ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The number of structural features of the '<em>Thread Info</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_INFO_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 10;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.ThreadManager <em>Thread Manager</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.ThreadManager
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThreadManager()
+	 * @generated
+	 */
+	int THREAD_MANAGER = 27;
+
+	/**
+	 * The number of structural features of the '<em>Thread Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_MANAGER_FEATURE_COUNT = 0;
+
+	/**
 	 * The feature id for the '<em><b>Job Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -918,7 +1065,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getCapabilityRight()
 	 * @generated
 	 */
-	int CAPABILITY_RIGHT = 26;
+	int CAPABILITY_RIGHT = 29;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.LockType <em>Lock Type</em>}' enum.
@@ -928,7 +1075,17 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLockType()
 	 * @generated
 	 */
-	int LOCK_TYPE = 27;
+	int LOCK_TYPE = 30;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.ThreadStatus <em>Thread Status</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.ThreadStatus
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThreadStatus()
+	 * @generated
+	 */
+	int THREAD_STATUS = 31;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.UserClass <em>User Class</em>}' enum.
@@ -938,7 +1095,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getUserClass()
 	 * @generated
 	 */
-	int USER_CLASS = 28;
+	int USER_CLASS = 32;
 
 	/**
 	 * The meta object id for the '<em>Message Variable List</em>' data type.
@@ -947,7 +1104,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageVariableList()
 	 * @generated
 	 */
-	int MESSAGE_VARIABLE_LIST = 29;
+	int MESSAGE_VARIABLE_LIST = 33;
 
 	/**
 	 * The meta object id for the '<em>Message Exception</em>' data type.
@@ -957,7 +1114,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageException()
 	 * @generated
 	 */
-	int MESSAGE_EXCEPTION = 30;
+	int MESSAGE_EXCEPTION = 34;
 
 
 	/**
@@ -1586,6 +1743,146 @@ public interface ContextPackage extends EPackage {
 	EClass getRegistryFactory();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.context.Thread <em>Thread</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Thread</em>'.
+	 * @see org.abchip.mimo.context.Thread
+	 * @generated
+	 */
+	EClass getThread();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.context.ThreadInfo <em>Thread Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Thread Info</em>'.
+	 * @see org.abchip.mimo.context.ThreadInfo
+	 * @generated
+	 */
+	EClass getThreadInfo();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ThreadInfo#getThreadName <em>Thread Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thread Name</em>'.
+	 * @see org.abchip.mimo.context.ThreadInfo#getThreadName()
+	 * @see #getThreadInfo()
+	 * @generated
+	 */
+	EAttribute getThreadInfo_ThreadName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ThreadInfo#getThreadId <em>Thread Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thread Id</em>'.
+	 * @see org.abchip.mimo.context.ThreadInfo#getThreadId()
+	 * @see #getThreadInfo()
+	 * @generated
+	 */
+	EAttribute getThreadInfo_ThreadId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ThreadInfo#getThreadPriority <em>Thread Priority</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thread Priority</em>'.
+	 * @see org.abchip.mimo.context.ThreadInfo#getThreadPriority()
+	 * @see #getThreadInfo()
+	 * @generated
+	 */
+	EAttribute getThreadInfo_ThreadPriority();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ThreadInfo#getThreadCPUUsage <em>Thread CPU Usage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thread CPU Usage</em>'.
+	 * @see org.abchip.mimo.context.ThreadInfo#getThreadCPUUsage()
+	 * @see #getThreadInfo()
+	 * @generated
+	 */
+	EAttribute getThreadInfo_ThreadCPUUsage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ThreadInfo#getThreadStatus <em>Thread Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thread Status</em>'.
+	 * @see org.abchip.mimo.context.ThreadInfo#getThreadStatus()
+	 * @see #getThreadInfo()
+	 * @generated
+	 */
+	EAttribute getThreadInfo_ThreadStatus();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ThreadInfo#isThreadRunnable <em>Thread Runnable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thread Runnable</em>'.
+	 * @see org.abchip.mimo.context.ThreadInfo#isThreadRunnable()
+	 * @see #getThreadInfo()
+	 * @generated
+	 */
+	EAttribute getThreadInfo_ThreadRunnable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ThreadInfo#isThreadInterrupted <em>Thread Interrupted</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thread Interrupted</em>'.
+	 * @see org.abchip.mimo.context.ThreadInfo#isThreadInterrupted()
+	 * @see #getThreadInfo()
+	 * @generated
+	 */
+	EAttribute getThreadInfo_ThreadInterrupted();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ThreadInfo#isThreadNative <em>Thread Native</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thread Native</em>'.
+	 * @see org.abchip.mimo.context.ThreadInfo#isThreadNative()
+	 * @see #getThreadInfo()
+	 * @generated
+	 */
+	EAttribute getThreadInfo_ThreadNative();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ThreadInfo#isThreadSuspended <em>Thread Suspended</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thread Suspended</em>'.
+	 * @see org.abchip.mimo.context.ThreadInfo#isThreadSuspended()
+	 * @see #getThreadInfo()
+	 * @generated
+	 */
+	EAttribute getThreadInfo_ThreadSuspended();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ThreadInfo#isThreadDaemon <em>Thread Daemon</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thread Daemon</em>'.
+	 * @see org.abchip.mimo.context.ThreadInfo#isThreadDaemon()
+	 * @see #getThreadInfo()
+	 * @generated
+	 */
+	EAttribute getThreadInfo_ThreadDaemon();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.context.ThreadManager <em>Thread Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Thread Manager</em>'.
+	 * @see org.abchip.mimo.context.ThreadManager
+	 * @generated
+	 */
+	EClass getThreadManager();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.context.UserProfile <em>User Profile</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1668,6 +1965,16 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getLockType();
+
+	/**
+	 * Returns the meta object for enum '{@link org.abchip.mimo.context.ThreadStatus <em>Thread Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Thread Status</em>'.
+	 * @see org.abchip.mimo.context.ThreadStatus
+	 * @generated
+	 */
+	EEnum getThreadStatus();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.context.UserClass <em>User Class</em>}'.
@@ -2243,6 +2550,116 @@ public interface ContextPackage extends EPackage {
 		EClass REGISTRY_FACTORY = eINSTANCE.getRegistryFactory();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.context.Thread <em>Thread</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.context.Thread
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThread()
+		 * @generated
+		 */
+		EClass THREAD = eINSTANCE.getThread();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.ThreadInfoImpl <em>Thread Info</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.context.impl.ThreadInfoImpl
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThreadInfo()
+		 * @generated
+		 */
+		EClass THREAD_INFO = eINSTANCE.getThreadInfo();
+
+		/**
+		 * The meta object literal for the '<em><b>Thread Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAD_INFO__THREAD_NAME = eINSTANCE.getThreadInfo_ThreadName();
+
+		/**
+		 * The meta object literal for the '<em><b>Thread Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAD_INFO__THREAD_ID = eINSTANCE.getThreadInfo_ThreadId();
+
+		/**
+		 * The meta object literal for the '<em><b>Thread Priority</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAD_INFO__THREAD_PRIORITY = eINSTANCE.getThreadInfo_ThreadPriority();
+
+		/**
+		 * The meta object literal for the '<em><b>Thread CPU Usage</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAD_INFO__THREAD_CPU_USAGE = eINSTANCE.getThreadInfo_ThreadCPUUsage();
+
+		/**
+		 * The meta object literal for the '<em><b>Thread Status</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAD_INFO__THREAD_STATUS = eINSTANCE.getThreadInfo_ThreadStatus();
+
+		/**
+		 * The meta object literal for the '<em><b>Thread Runnable</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAD_INFO__THREAD_RUNNABLE = eINSTANCE.getThreadInfo_ThreadRunnable();
+
+		/**
+		 * The meta object literal for the '<em><b>Thread Interrupted</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAD_INFO__THREAD_INTERRUPTED = eINSTANCE.getThreadInfo_ThreadInterrupted();
+
+		/**
+		 * The meta object literal for the '<em><b>Thread Native</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAD_INFO__THREAD_NATIVE = eINSTANCE.getThreadInfo_ThreadNative();
+
+		/**
+		 * The meta object literal for the '<em><b>Thread Suspended</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAD_INFO__THREAD_SUSPENDED = eINSTANCE.getThreadInfo_ThreadSuspended();
+
+		/**
+		 * The meta object literal for the '<em><b>Thread Daemon</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAD_INFO__THREAD_DAEMON = eINSTANCE.getThreadInfo_ThreadDaemon();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.context.ThreadManager <em>Thread Manager</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.context.ThreadManager
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThreadManager()
+		 * @generated
+		 */
+		EClass THREAD_MANAGER = eINSTANCE.getThreadManager();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.UserProfileImpl <em>User Profile</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2313,6 +2730,16 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum LOCK_TYPE = eINSTANCE.getLockType();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.context.ThreadStatus <em>Thread Status</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.context.ThreadStatus
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThreadStatus()
+		 * @generated
+		 */
+		EEnum THREAD_STATUS = eINSTANCE.getThreadStatus();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.UserClass <em>User Class</em>}' enum.

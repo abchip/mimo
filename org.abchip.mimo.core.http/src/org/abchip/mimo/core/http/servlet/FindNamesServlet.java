@@ -35,7 +35,7 @@ public class FindNamesServlet extends BaseServlet {
 	@SuppressWarnings("resource")
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		String frameName = Strings.qINSTANCE.firstToUpper(request.getParameter("frame"));
+		String frameName = Strings.firstToUpper(request.getParameter("frame"));
 		String filter = request.getParameter("filter");
 
 		ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frameName);
@@ -55,7 +55,7 @@ public class FindNamesServlet extends BaseServlet {
 				if (!first)
 					response.getWriter().write(", ");
 
-				response.getWriter().write("\"" + Strings.qINSTANCE.escape(entity.getID()) + "\"");
+				response.getWriter().write("\"" + Strings.escapeJava(entity.getID()) + "\"");
 				first = false;
 			}
 		}

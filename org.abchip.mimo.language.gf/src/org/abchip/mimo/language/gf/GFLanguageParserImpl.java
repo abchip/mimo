@@ -23,7 +23,7 @@ public class GFLanguageParserImpl implements LanguageParser {
 	@Override
 	public LanguageExpression parse(Context context, String language, String text) {
 		
-		Concr syntaxBuilder = GFGrammarLoader.get().getConcr("App" + Strings.qINSTANCE.firstToUpper(language));
+		Concr syntaxBuilder = GFGrammarLoader.get().getConcr("App" + Strings.firstToUpper(language));
 		Expr rowExpression = null;
 		try {
 			Iterator<ExprProb> iter = syntaxBuilder.parse("Chunk", text).iterator();

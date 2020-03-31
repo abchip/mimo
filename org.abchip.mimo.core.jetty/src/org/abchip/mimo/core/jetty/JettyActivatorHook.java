@@ -13,8 +13,8 @@ import java.util.Hashtable;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ComponentStarting;
-import org.abchip.mimo.util.HttpServiceConfig;
-import org.abchip.mimo.util.SocketConfig;
+import org.abchip.mimo.application.HttpServiceConfig;
+import org.abchip.mimo.application.SocketConfig;
 import org.eclipse.equinox.http.jetty.JettyConfigurator;
 import org.eclipse.equinox.http.servlet.ExtendedHttpService;
 import org.osgi.service.http.HttpService;

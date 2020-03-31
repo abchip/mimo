@@ -19,6 +19,7 @@ import java.util.Map;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.Identity;
+import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.context.UserProfile;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.resource.ResourceManager;
@@ -35,7 +36,6 @@ import org.abchip.mimo.server.JobStatus;
 import org.abchip.mimo.server.JobType;
 import org.abchip.mimo.server.ServerFactory;
 import org.abchip.mimo.server.SystemManager;
-import org.abchip.mimo.util.ThreadManager;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 

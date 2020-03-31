@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.util;
+package org.abchip.mimo.application;
 
 import org.abchip.mimo.entity.Entity;
 
@@ -18,11 +18,11 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.util.HttpServiceConfig#getPath <em>Path</em>}</li>
- *   <li>{@link org.abchip.mimo.util.HttpServiceConfig#getSocket <em>Socket</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.HttpServiceConfig#getPath <em>Path</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.HttpServiceConfig#getSocket <em>Socket</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.util.UtilPackage#getHttpServiceConfig()
+ * @see org.abchip.mimo.application.ApplicationPackage#getHttpServiceConfig()
  * @model
  * @generated
  */
@@ -33,14 +33,14 @@ public interface HttpServiceConfig extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Path</em>' attribute.
 	 * @see #setPath(String)
-	 * @see org.abchip.mimo.util.UtilPackage#getHttpServiceConfig_Path()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getHttpServiceConfig_Path()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getPath();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.HttpServiceConfig#getPath <em>Path</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.application.HttpServiceConfig#getPath <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Path</em>' attribute.
@@ -55,14 +55,14 @@ public interface HttpServiceConfig extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Socket</em>' containment reference.
 	 * @see #setSocket(SocketConfig)
-	 * @see org.abchip.mimo.util.UtilPackage#getHttpServiceConfig_Socket()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getHttpServiceConfig_Socket()
 	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	SocketConfig getSocket();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.util.HttpServiceConfig#getSocket <em>Socket</em>}' containment reference.
+	 * Sets the value of the '{@link org.abchip.mimo.application.HttpServiceConfig#getSocket <em>Socket</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Socket</em>' containment reference.

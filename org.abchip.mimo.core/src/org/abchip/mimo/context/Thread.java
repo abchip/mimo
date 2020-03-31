@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.util;
+package org.abchip.mimo.context;
 
 import org.abchip.mimo.entity.Entity;
 
@@ -16,7 +16,7 @@ import org.abchip.mimo.entity.Entity;
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.util.UtilPackage#getThread()
+ * @see org.abchip.mimo.context.ContextPackage#getThread()
  * @model interface="true" abstract="true"
  * @generated
  */
