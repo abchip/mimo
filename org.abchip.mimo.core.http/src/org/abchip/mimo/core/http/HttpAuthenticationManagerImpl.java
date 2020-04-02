@@ -482,7 +482,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		HttpConnector connector = null;
 
-		try (CloseableHttpClient client = HttpClients.custom().setSSLSocketFactory(this.sslsf).build()) {
+		try (CloseableHttpClient client = HttpClients.custom().setSSLSocketFactory(this.sslsf).setConnectionManagerShared(true).build()) {
 			HttpPost httpPost = new HttpPost(url);
 			httpPost.setEntity(new UrlEncodedFormEntity(postParameters));
 
