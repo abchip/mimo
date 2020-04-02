@@ -89,6 +89,10 @@ public class E4Activator implements BundleActivator {
 			// ${mimo.home}
 			if (applicationHome != null) {
 				ApplicationPaths applicationPaths = application.getPaths();
+
+				// win path
+				applicationHome = applicationHome.toString().replace("\\","\\\\");
+				
 				applicationPaths.setData(applicationPaths.getData().replaceFirst("\\$\\{mimo.home\\}", applicationHome.toString()));
 				applicationPaths.setLogs(applicationPaths.getLogs().replaceFirst("\\$\\{mimo.home\\}", applicationHome.toString()));
 				applicationPaths.setWork(applicationPaths.getWork().replaceFirst("\\$\\{mimo.home\\}", applicationHome.toString()));
