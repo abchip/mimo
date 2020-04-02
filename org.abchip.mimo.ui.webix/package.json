@@ -39,7 +39,7 @@
   "dependencies": {
     "@types/node": "^11.15.5",
     "@xbs/webix-pro": "^7.1.4",
-    "acorn": "^6.4.0",
+    "acorn": "^6.4.1",
     "fs": "0.0.1-security",
     "webix-jet": "^2.1.2"
   }
