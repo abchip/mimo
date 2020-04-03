@@ -467,6 +467,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		return context;
 	}
 
+	@SuppressWarnings("resource")
 	private HttpConnector connect(String user, String password, String tenant) {
 
 		List<NameValuePair> postParameters = new ArrayList<>();
@@ -482,25 +483,33 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		HttpConnector connector = null;
 
-		try (CloseableHttpClient client = HttpClients.custom().setSSLSocketFactory(this.sslsf).setConnectionManagerShared(true).build()) {
-			HttpPost httpPost = new HttpPost(url);
+		CloseableHttpClient client = HttpClients.custom().setSSLSocketFactory(this.sslsf).build();
+		HttpPost httpPost = new HttpPost(url);
+		try {
 			httpPost.setEntity(new UrlEncodedFormEntity(postParameters));
-
-			try (CloseableHttpResponse response = client.execute(httpPost)) {
-				if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_OK) {
-
-					ResourceSerializer<ContextDescription> contextSerializer = resourceManager.createResourceSerializer(contextRoot, ContextDescription.class,
-							SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
-					try (InputStream stream = response.getEntity().getContent()) {
-						contextSerializer.load(stream, false);
-					}
-					ContextDescription contextDescription = contextSerializer.get();
-
-					if (contextDescription != null)
-						connector = new HttpConnector(providerConfig, client, contextDescription);
-				}
+		} catch (UnsupportedEncodingException e1) {
+			e1.printStackTrace();
+			try {
+				client.close();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
+			return null;
+		}
 
+		try (CloseableHttpResponse response = client.execute(httpPost)) {
+			if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_OK) {
+
+				ResourceSerializer<ContextDescription> contextSerializer = resourceManager.createResourceSerializer(contextRoot, ContextDescription.class,
+						SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+				try (InputStream stream = response.getEntity().getContent()) {
+					contextSerializer.load(stream, false);
+				}
+				ContextDescription contextDescription = contextSerializer.get();
+
+				if (contextDescription != null)
+					connector = new HttpConnector(providerConfig, client, contextDescription);
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
