@@ -24,24 +24,25 @@ public class BaseEntityCommandProviderImpl extends BaseCommandProviderImpl {
 	private ResourceManager resourceManager;
 
 	public <E extends EntityIdentifiable> void _login(CommandInterpreter interpreter) throws Exception {
-		this.login(interpreter.nextArgument());
+		this.login(nextArgument(interpreter));
 	}
 
 	public <E extends EntityIdentifiable> void _find(CommandInterpreter interpreter) throws Exception {
 
 		Context context = this.getContext();
 
-		String frameName = interpreter.nextArgument();
-		String order = interpreter.nextArgument();
+		String frameName = nextArgument(interpreter);
+		String order = nextArgument(interpreter);
+		String tenant = nextArgument(interpreter);
 
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName);
+		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName, tenant);
 		if (frame == null) {
-			interpreter.print("Frame not found: " + frameName);
+			interpreter.print("Frame not found: " + frameName + " on tenant " + tenant);
 			return;
 		}
 
-		try (EntityIterator<E> entities = resourceManager.getResourceReader(context, frame).find(null, null, order)) {
+		try (EntityIterator<E> entities = resourceManager.getResourceReader(context, frame, tenant).find(null, null, order)) {
 			for (E entity : entities) {
 				System.out.println(entity.getID());
 			}
@@ -52,15 +53,17 @@ public class BaseEntityCommandProviderImpl extends BaseCommandProviderImpl {
 
 		Context context = this.getContext();
 
-		String frameName = Strings.firstToUpper(interpreter.nextArgument());
+		String frameName = Strings.firstToUpper(nextArgument(interpreter));
+		String tenant = nextArgument(interpreter);
+
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName);
+		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName, tenant);
 		if (frame == null)
-			interpreter.print("Frame not found: " + frameName);
+			interpreter.print("Frame not found: " + frameName + " on tenant " + tenant);
 
-		String entityName = interpreter.nextArgument();
+		String entityName = nextArgument(interpreter);
 
-		E entity = resourceManager.getResourceReader(context, frame).lookup(entityName);
+		E entity = resourceManager.getResourceReader(context, frame, tenant).lookup(entityName);
 		System.out.println(entity);
 	}
 
