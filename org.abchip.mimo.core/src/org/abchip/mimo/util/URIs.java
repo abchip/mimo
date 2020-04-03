@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class URIs {
 
-	public String getBaseName(URI uri) {
+	public static String getBaseName(URI uri) {
 		return org.apache.commons.io.FilenameUtils.getBaseName(uri.getRawPath());
 	}
 

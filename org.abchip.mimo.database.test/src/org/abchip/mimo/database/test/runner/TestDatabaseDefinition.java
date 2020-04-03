@@ -50,8 +50,6 @@ public class TestDatabaseDefinition {
 	private ConnectionManager connectionManager;
 	@Inject
 	private DatabaseManager databaseManager;
-	@Inject
-	private Files files;
 
 	@TestStarted
 	public void main() throws SQLException, IOException {
@@ -73,7 +71,7 @@ public class TestDatabaseDefinition {
 			Bundle bundle = FrameworkUtil.getBundle(this.getClass());
 			for (Enumeration<URL> elements = bundle.findEntries("/resources/schemas/" + schemaName + "/tables", null, false); elements.hasMoreElements();) {
 				URL tableURL = elements.nextElement();
-				String fileName = files.getBaseName(tableURL.getFile());
+				String fileName = Files.getBaseName(tableURL.getFile());
 
 				DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(tableURL);
 
@@ -90,7 +88,7 @@ public class TestDatabaseDefinition {
 			// views
 			for (Enumeration<URL> elements = bundle.findEntries("/resources/schemas/" + schemaName + "/views", null, false); elements.hasMoreElements();) {
 				URL viewURL = elements.nextElement();
-				String fileName = files.getBaseName(viewURL.getFile());
+				String fileName = Files.getBaseName(viewURL.getFile());
 
 				DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(viewURL);
 
@@ -107,7 +105,7 @@ public class TestDatabaseDefinition {
 			// indices
 			for (Enumeration<URL> elements = bundle.findEntries("/resources/schemas/" + schemaName + "/indices", null, false); elements.hasMoreElements();) {
 				URL indexURL = elements.nextElement();
-				String fileName = files.getBaseName(indexURL.getFile());
+				String fileName = Files.getBaseName(indexURL.getFile());
 
 				DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(indexURL);
 

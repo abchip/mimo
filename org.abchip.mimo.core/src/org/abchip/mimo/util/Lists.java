@@ -31,7 +31,7 @@ public class Lists {
 		list.add(oldElementPosition + 1, newElement);
 	}
 
-	public <E> List<E> slice(List<E> list, int index, int limit) {
+	public static <E> List<E> slice(List<E> list, int index, int limit) {
 		List<E> result = new ArrayList<E>();
 		if (index >= 0 && index < list.size()) {
 			int end = index + limit < list.size() ? index + limit : list.size();

@@ -34,7 +34,7 @@ public class Threads {
 		return java.util.Arrays.asList(threads);
 	}
 
-	public List<Thread> listThreads(String threadGroup) {
+	public static List<Thread> listThreads(String threadGroup) {
 		ThreadGroup group = lookupThreadGroup(threadGroup);
 		if (group == null)
 			return null;
@@ -42,7 +42,7 @@ public class Threads {
 
 	}
 
-	public List<Thread> listThreads(ThreadGroup threadGroup) {
+	public static List<Thread> listThreads(ThreadGroup threadGroup) {
 		int size = threadGroup.activeCount();
 		int n = 0;
 		Thread[] threads = null;
@@ -55,7 +55,7 @@ public class Threads {
 
 	}
 
-	public List<ThreadGroup> listThreadGroups() {
+	public static List<ThreadGroup> listThreadGroups() {
 		ThreadGroup root = getRootThreadGroup();
 		int size = root.activeGroupCount();
 		int n = 0;
@@ -71,7 +71,7 @@ public class Threads {
 		return java.util.Arrays.asList(allGroups);
 	}
 
-	public List<ThreadInfo> listThreadInfos() {
+	public static List<ThreadInfo> listThreadInfos() {
 		ThreadMXBean thbean = ManagementFactory.getThreadMXBean();
 		long[] threadIds = thbean.getAllThreadIds();
 
@@ -93,7 +93,7 @@ public class Threads {
 		return java.util.Arrays.asList(notNulls);
 	}
 
-	public Thread lookupBlockingThread(Thread thread) {
+	public static Thread lookupBlockingThread(Thread thread) {
 		ThreadInfo info = lookupThreadInfo(thread);
 		if (info == null)
 			return null;
@@ -103,7 +103,7 @@ public class Threads {
 		return lookupThread(id);
 	}
 
-	public Thread lookupLockingThread(Object object) {
+	public static Thread lookupLockingThread(Object object) {
 
 		long identity = System.identityHashCode(object);
 
@@ -135,11 +135,11 @@ public class Threads {
 		return null;
 	}
 
-	public Thread lookupThread(ThreadInfo info) {
+	public static Thread lookupThread(ThreadInfo info) {
 		return lookupThread(info.getThreadId());
 	}
 
-	public ThreadGroup lookupThreadGroup(String name) {
+	public static ThreadGroup lookupThreadGroup(String name) {
 		for (ThreadGroup group : listThreadGroups())
 			if (group.getName().equals(name))
 				return group;
@@ -162,7 +162,7 @@ public class Threads {
 		return Threads.lookupThreadInfo(thread.getId());
 	}
 
-	public ThreadInfo lookupThreadInfo(String name) {
+	public static ThreadInfo lookupThreadInfo(String name) {
 
 		for (Thread thread : listThreads())
 			if (thread.getName().equals(name))

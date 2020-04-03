@@ -17,20 +17,20 @@ import org.apache.commons.io.IOUtils;
 
 public class Files {
 
-	public String getBaseName(String name) {
+	public static String getBaseName(String name) {
 		return org.apache.commons.io.FilenameUtils.getBaseName(name);
 	}
 
-	public void cleanDirectory(String path) throws IOException {
+	public static void cleanDirectory(String path) throws IOException {
 		org.apache.commons.io.FileUtils.cleanDirectory(new File(path));
 	}
 
-	public void deleteDirectory(String path) throws IOException {
+	public static void deleteDirectory(String path) throws IOException {
 		org.apache.commons.io.FileUtils.forceDelete(new File(path));
 	}
 
 	@SuppressWarnings("resource")
-	public String getSeparator() {
+	public static String getSeparator() {
 		return java.nio.file.FileSystems.getDefault().getSeparator();
 	}
 

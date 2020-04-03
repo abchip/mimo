@@ -14,7 +14,7 @@ import java.io.OutputStream;
 
 public class Streams {
 
-	public void copy(InputStream input, OutputStream output) {
+	public static void copy(InputStream input, OutputStream output) {
 		try {
 			org.apache.commons.io.IOUtils.copy(input, output);
 		} catch (IOException e) {
