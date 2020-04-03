@@ -15,14 +15,38 @@ import org.abchip.mimo.context.AuthenticationAdminKey;
 import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextFactory;
+import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.eclipse.osgi.framework.console.CommandProvider;
 
 public abstract class BaseCommandProviderImpl implements CommandProvider {
+
+	protected static final String NULL = "@NULL";
 
 	@Inject
 	private Application application;
 
 	private ThreadLocal<Context> threadLocalContext = new ThreadLocal<Context>();
+
+	protected String nextArgument(CommandInterpreter interpreter) {
+
+		String argument = interpreter.nextArgument();
+		if (argument != null && argument.equals(NULL))
+			argument = null;
+
+		return argument;
+	}
+
+	protected Context getContext() {
+
+		Context context = threadLocalContext.get();
+		if (context != null)
+			return context;
+
+		if (application.getAdminKey() == null)
+			return login(null);
+
+		throw new RuntimeException("You need a login, please use first command 'login'");
+	}
 
 	protected Context login(String adminKey) {
 
@@ -39,17 +63,5 @@ public abstract class BaseCommandProviderImpl implements CommandProvider {
 		threadLocalContext.set(context);
 
 		return context;
-	}
-
-	protected Context getContext() {
-
-		Context context = threadLocalContext.get();
-		if (context != null)
-			return context;
-
-		if (application.getAdminKey() == null)
-			return login(null);
-
-		throw new RuntimeException("You need a login, please use first command 'login'");
 	}
 }

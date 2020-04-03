@@ -50,7 +50,7 @@ public class BaseTesterCommandProviderImpl extends BaseCommandProviderImpl {
 
 		try (ContextProvider contextProvider = authenticationManager.login(null, authentication)) {
 
-			String componentName = interpreter.nextArgument();
+			String componentName = nextArgument(interpreter);
 
 			for (ApplicationComponent component : application.getActiveComponents()) {
 				if (!component.getName().equalsIgnoreCase(componentName))
