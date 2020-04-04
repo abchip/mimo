@@ -15,6 +15,7 @@ import java.util.Map;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.util.Systems;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -91,8 +92,9 @@ public class E4Activator implements BundleActivator {
 				ApplicationPaths applicationPaths = application.getPaths();
 
 				// win path
-				applicationHome = applicationHome.toString().replace("\\","\\\\");
-				
+				if (Systems.isWindows())
+					applicationHome = applicationHome.toString().replace("\\", "\\\\");
+
 				applicationPaths.setData(applicationPaths.getData().replaceFirst("\\$\\{mimo.home\\}", applicationHome.toString()));
 				applicationPaths.setLogs(applicationPaths.getLogs().replaceFirst("\\$\\{mimo.home\\}", applicationHome.toString()));
 				applicationPaths.setWork(applicationPaths.getWork().replaceFirst("\\$\\{mimo.home\\}", applicationHome.toString()));
