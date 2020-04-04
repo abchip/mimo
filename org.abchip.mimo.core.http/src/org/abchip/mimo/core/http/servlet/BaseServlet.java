@@ -24,7 +24,6 @@ import javax.servlet.http.Part;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.ContextUtils;
-import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.core.http.MultipartSupportPart;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItem;
@@ -44,7 +43,7 @@ public abstract class BaseServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		System.out.println(session.getId() + ": " + getServletName() + " " + HttpUtils.getParametersAsString(request));
+		// HttpUtils.getParametersAsString(request));
 
 		Context context = ContextUtils.getContext(session.getId());
 

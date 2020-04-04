@@ -100,6 +100,9 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	@Override
 	public String nextSequence() {
 
+		if(getFrame().getKeys().size() > 1)
+			return null;
+
 		String nextSequence = null;
 
 		String query = "?frame=" + getFrame().getName();
