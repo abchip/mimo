@@ -11,6 +11,13 @@
     <genClasses ecoreClass="mimo.ecore#//Mimo"/>
     <nestedGenPackages prefix="Application" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="mimo.ecore#//application">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//application/ApplicationLogLevel">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ApplicationLogLevel/Error"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ApplicationLogLevel/Warning"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ApplicationLogLevel/Info"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ApplicationLogLevel/Debug"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ApplicationLogLevel/Trace"/>
+      </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//application/ComponentStatus">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ComponentStatus/Active"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ComponentStatus/Stopped"/>
@@ -36,6 +43,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/context"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/contextDescription"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/hooks"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/logs"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/name"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/paths"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/resourceMapping"/>
@@ -60,6 +68,14 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ApplicationComponent/modules"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationComponent/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationComponent/status"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//application/ApplicationLogs">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ApplicationLogs/entries"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationLogs/level"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//application/ApplicationLogEntry">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationLogEntry/package"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationLogEntry/level"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//application/ApplicationModule">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationModule/name"/>

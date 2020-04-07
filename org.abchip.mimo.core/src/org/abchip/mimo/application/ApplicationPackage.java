@@ -148,13 +148,22 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION__HOOKS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Logs</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__LOGS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
+	int APPLICATION__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Paths</b></em>' containment reference.
@@ -163,7 +172,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__PATHS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
+	int APPLICATION__PATHS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Resource Mapping</b></em>' containment reference.
@@ -172,7 +181,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__RESOURCE_MAPPING = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
+	int APPLICATION__RESOURCE_MAPPING = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -181,7 +190,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
+	int APPLICATION__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Application</em>' class.
@@ -190,7 +199,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 12;
+	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 13;
 
 	/**
 	 * The meta object id for the '<em>Bundle</em>' data type.
@@ -200,7 +209,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationBundle()
 	 * @generated
 	 */
-	int APPLICATION_BUNDLE = 19;
+	int APPLICATION_BUNDLE = 22;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationPathsImpl <em>Paths</em>}' class.
@@ -331,6 +340,80 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION_COMPONENT_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationLogsImpl <em>Logs</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.application.impl.ApplicationLogsImpl
+	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationLogs()
+	 * @generated
+	 */
+	int APPLICATION_LOGS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_LOGS__ENTRIES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_LOGS__LEVEL = 1;
+
+	/**
+	 * The number of structural features of the '<em>Logs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_LOGS_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationLogEntryImpl <em>Log Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.application.impl.ApplicationLogEntryImpl
+	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationLogEntry()
+	 * @generated
+	 */
+	int APPLICATION_LOG_ENTRY = 4;
+
+	/**
+	 * The feature id for the '<em><b>Package</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_LOG_ENTRY__PACKAGE = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_LOG_ENTRY__LEVEL = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Log Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_LOG_ENTRY_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationModuleImpl <em>Module</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -338,7 +421,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationModule()
 	 * @generated
 	 */
-	int APPLICATION_MODULE = 3;
+	int APPLICATION_MODULE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -384,7 +467,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getHttpServiceConfig()
 	 * @generated
 	 */
-	int HTTP_SERVICE_CONFIG = 4;
+	int HTTP_SERVICE_CONFIG = 6;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
@@ -421,7 +504,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceRef()
 	 * @generated
 	 */
-	int SERVICE_REF = 9;
+	int SERVICE_REF = 11;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -458,7 +541,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceCommandProvider()
 	 * @generated
 	 */
-	int SERVICE_COMMAND_PROVIDER = 5;
+	int SERVICE_COMMAND_PROVIDER = 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceConfigImpl <em>Service Config</em>}' class.
@@ -468,7 +551,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceConfig()
 	 * @generated
 	 */
-	int SERVICE_CONFIG = 6;
+	int SERVICE_CONFIG = 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceHookImpl <em>Service Hook</em>}' class.
@@ -478,7 +561,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceHook()
 	 * @generated
 	 */
-	int SERVICE_HOOK = 7;
+	int SERVICE_HOOK = 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceExecutorImpl <em>Service Executor</em>}' class.
@@ -488,7 +571,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceExecutor()
 	 * @generated
 	 */
-	int SERVICE_EXECUTOR = 8;
+	int SERVICE_EXECUTOR = 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceRegistryImpl <em>Service Registry</em>}' class.
@@ -498,7 +581,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceRegistry()
 	 * @generated
 	 */
-	int SERVICE_REGISTRY = 11;
+	int SERVICE_REGISTRY = 13;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceRegistryEntryImpl <em>Service Registry Entry</em>}' class.
@@ -508,7 +591,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceRegistryEntry()
 	 * @generated
 	 */
-	int SERVICE_REGISTRY_ENTRY = 12;
+	int SERVICE_REGISTRY_ENTRY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -644,7 +727,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceFactory()
 	 * @generated
 	 */
-	int SERVICE_FACTORY = 10;
+	int SERVICE_FACTORY = 12;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -798,7 +881,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceServlet()
 	 * @generated
 	 */
-	int SERVICE_SERVLET = 13;
+	int SERVICE_SERVLET = 15;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -853,7 +936,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceTester()
 	 * @generated
 	 */
-	int SERVICE_TESTER = 14;
+	int SERVICE_TESTER = 16;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -899,7 +982,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getSocketConfig()
 	 * @generated
 	 */
-	int SOCKET_CONFIG = 15;
+	int SOCKET_CONFIG = 17;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' attribute.
@@ -929,6 +1012,16 @@ public interface ApplicationPackage extends EPackage {
 	int SOCKET_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.application.ApplicationLogLevel <em>Log Level</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.application.ApplicationLogLevel
+	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationLogLevel()
+	 * @generated
+	 */
+	int APPLICATION_LOG_LEVEL = 18;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ComponentStatus <em>Component Status</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -936,7 +1029,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getComponentStatus()
 	 * @generated
 	 */
-	int COMPONENT_STATUS = 16;
+	int COMPONENT_STATUS = 19;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ModuleStatus <em>Module Status</em>}' enum.
@@ -946,7 +1039,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getModuleStatus()
 	 * @generated
 	 */
-	int MODULE_STATUS = 17;
+	int MODULE_STATUS = 20;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ServiceStatus <em>Service Status</em>}' enum.
@@ -956,7 +1049,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceStatus()
 	 * @generated
 	 */
-	int SERVICE_STATUS = 18;
+	int SERVICE_STATUS = 21;
 
 
 	/**
@@ -1056,6 +1149,17 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getApplication_Hooks();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.application.Application#getLogs <em>Logs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Logs</em>'.
+	 * @see org.abchip.mimo.application.Application#getLogs()
+	 * @see #getApplication()
+	 * @generated
+	 */
+	EReference getApplication_Logs();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.Application#getName <em>Name</em>}'.
@@ -1241,6 +1345,70 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getApplicationComponent_Status();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.application.ApplicationLogs <em>Logs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Logs</em>'.
+	 * @see org.abchip.mimo.application.ApplicationLogs
+	 * @generated
+	 */
+	EClass getApplicationLogs();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.application.ApplicationLogs#getEntries <em>Entries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Entries</em>'.
+	 * @see org.abchip.mimo.application.ApplicationLogs#getEntries()
+	 * @see #getApplicationLogs()
+	 * @generated
+	 */
+	EReference getApplicationLogs_Entries();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.ApplicationLogs#getLevel <em>Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Level</em>'.
+	 * @see org.abchip.mimo.application.ApplicationLogs#getLevel()
+	 * @see #getApplicationLogs()
+	 * @generated
+	 */
+	EAttribute getApplicationLogs_Level();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.application.ApplicationLogEntry <em>Log Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Log Entry</em>'.
+	 * @see org.abchip.mimo.application.ApplicationLogEntry
+	 * @generated
+	 */
+	EClass getApplicationLogEntry();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.ApplicationLogEntry#getPackage <em>Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Package</em>'.
+	 * @see org.abchip.mimo.application.ApplicationLogEntry#getPackage()
+	 * @see #getApplicationLogEntry()
+	 * @generated
+	 */
+	EAttribute getApplicationLogEntry_Package();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.ApplicationLogEntry#getLevel <em>Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Level</em>'.
+	 * @see org.abchip.mimo.application.ApplicationLogEntry#getLevel()
+	 * @see #getApplicationLogEntry()
+	 * @generated
+	 */
+	EAttribute getApplicationLogEntry_Level();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.application.ApplicationModule <em>Module</em>}'.
@@ -1626,6 +1794,16 @@ public interface ApplicationPackage extends EPackage {
 	EAttribute getSocketConfig_Port();
 
 	/**
+	 * Returns the meta object for enum '{@link org.abchip.mimo.application.ApplicationLogLevel <em>Log Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Log Level</em>'.
+	 * @see org.abchip.mimo.application.ApplicationLogLevel
+	 * @generated
+	 */
+	EEnum getApplicationLogLevel();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.application.ComponentStatus <em>Component Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1750,6 +1928,14 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APPLICATION__HOOKS = eINSTANCE.getApplication_Hooks();
+
+		/**
+		 * The meta object literal for the '<em><b>Logs</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION__LOGS = eINSTANCE.getApplication_Logs();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1892,6 +2078,58 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute APPLICATION_COMPONENT__STATUS = eINSTANCE.getApplicationComponent_Status();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ApplicationLogsImpl <em>Logs</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.application.impl.ApplicationLogsImpl
+		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationLogs()
+		 * @generated
+		 */
+		EClass APPLICATION_LOGS = eINSTANCE.getApplicationLogs();
+
+		/**
+		 * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION_LOGS__ENTRIES = eINSTANCE.getApplicationLogs_Entries();
+
+		/**
+		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APPLICATION_LOGS__LEVEL = eINSTANCE.getApplicationLogs_Level();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ApplicationLogEntryImpl <em>Log Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.application.impl.ApplicationLogEntryImpl
+		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationLogEntry()
+		 * @generated
+		 */
+		EClass APPLICATION_LOG_ENTRY = eINSTANCE.getApplicationLogEntry();
+
+		/**
+		 * The meta object literal for the '<em><b>Package</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APPLICATION_LOG_ENTRY__PACKAGE = eINSTANCE.getApplicationLogEntry_Package();
+
+		/**
+		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APPLICATION_LOG_ENTRY__LEVEL = eINSTANCE.getApplicationLogEntry_Level();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ApplicationModuleImpl <em>Module</em>}' class.
@@ -2206,6 +2444,16 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SOCKET_CONFIG__PORT = eINSTANCE.getSocketConfig_Port();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.application.ApplicationLogLevel <em>Log Level</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.application.ApplicationLogLevel
+		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationLogLevel()
+		 * @generated
+		 */
+		EEnum APPLICATION_LOG_LEVEL = eINSTANCE.getApplicationLogLevel();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.ComponentStatus <em>Component Status</em>}' enum.

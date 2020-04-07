@@ -25,6 +25,8 @@
           eType="#//context/ContextDescription" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hooks" upperBound="-1"
           eType="#//application/ServiceHook" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logs" lowerBound="1"
+          eType="#//application/ApplicationLogs" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true"/>
@@ -59,6 +61,25 @@
           iD="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
           eType="#//application/ComponentStatus" defaultValueLiteral="ACT"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationLogs">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
+          eType="#//application/ApplicationLogEntry" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" lowerBound="1"
+          eType="#//application/ApplicationLogLevel" defaultValueLiteral="WARN"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationLogEntry" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" lowerBound="1"
+          eType="#//application/ApplicationLogLevel" defaultValueLiteral="WARN"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ApplicationLogLevel">
+      <eLiterals name="Error" literal="ERROR"/>
+      <eLiterals name="Warning" literal="WARN"/>
+      <eLiterals name="Info" literal="INFO"/>
+      <eLiterals name="Debug" literal="DEBUG"/>
+      <eLiterals name="Trace" literal="TRACE"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ApplicationModule" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

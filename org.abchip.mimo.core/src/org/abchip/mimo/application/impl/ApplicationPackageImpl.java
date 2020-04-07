@@ -12,6 +12,9 @@ import org.abchip.mimo.MimoPackage;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationComponent;
 import org.abchip.mimo.application.ApplicationFactory;
+import org.abchip.mimo.application.ApplicationLogEntry;
+import org.abchip.mimo.application.ApplicationLogLevel;
+import org.abchip.mimo.application.ApplicationLogs;
 import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ApplicationPaths;
@@ -89,6 +92,20 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	private EClass applicationComponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass applicationLogsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass applicationLogEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,6 +197,13 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	private EClass socketConfigEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum applicationLogLevelEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -392,8 +416,18 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
+	public EReference getApplication_Logs() {
+		return (EReference)applicationEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getApplication_Name() {
-		return (EAttribute)applicationEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)applicationEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -403,16 +437,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 */
 	@Override
 	public EReference getApplication_Paths() {
-		return (EReference)applicationEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getApplication_ResourceMapping() {
 		return (EReference)applicationEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -422,8 +446,18 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
+	public EReference getApplication_ResourceMapping() {
+		return (EReference)applicationEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getApplication_Text() {
-		return (EAttribute)applicationEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)applicationEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -554,6 +588,66 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	@Override
 	public EAttribute getApplicationComponent_Status() {
 		return (EAttribute)applicationComponentEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getApplicationLogs() {
+		return applicationLogsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getApplicationLogs_Entries() {
+		return (EReference)applicationLogsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getApplicationLogs_Level() {
+		return (EAttribute)applicationLogsEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getApplicationLogEntry() {
+		return applicationLogEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getApplicationLogEntry_Package() {
+		return (EAttribute)applicationLogEntryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getApplicationLogEntry_Level() {
+		return (EAttribute)applicationLogEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -922,6 +1016,16 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
+	public EEnum getApplicationLogLevel() {
+		return applicationLogLevelEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getComponentStatus() {
 		return componentStatusEEnum;
 	}
@@ -984,6 +1088,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEReference(applicationEClass, APPLICATION__CONTEXT);
 		createEReference(applicationEClass, APPLICATION__CONTEXT_DESCRIPTION);
 		createEReference(applicationEClass, APPLICATION__HOOKS);
+		createEReference(applicationEClass, APPLICATION__LOGS);
 		createEAttribute(applicationEClass, APPLICATION__NAME);
 		createEReference(applicationEClass, APPLICATION__PATHS);
 		createEReference(applicationEClass, APPLICATION__RESOURCE_MAPPING);
@@ -1002,6 +1107,14 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEReference(applicationComponentEClass, APPLICATION_COMPONENT__MODULES);
 		createEAttribute(applicationComponentEClass, APPLICATION_COMPONENT__NAME);
 		createEAttribute(applicationComponentEClass, APPLICATION_COMPONENT__STATUS);
+
+		applicationLogsEClass = createEClass(APPLICATION_LOGS);
+		createEReference(applicationLogsEClass, APPLICATION_LOGS__ENTRIES);
+		createEAttribute(applicationLogsEClass, APPLICATION_LOGS__LEVEL);
+
+		applicationLogEntryEClass = createEClass(APPLICATION_LOG_ENTRY);
+		createEAttribute(applicationLogEntryEClass, APPLICATION_LOG_ENTRY__PACKAGE);
+		createEAttribute(applicationLogEntryEClass, APPLICATION_LOG_ENTRY__LEVEL);
 
 		applicationModuleEClass = createEClass(APPLICATION_MODULE);
 		createEAttribute(applicationModuleEClass, APPLICATION_MODULE__NAME);
@@ -1053,6 +1166,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEAttribute(socketConfigEClass, SOCKET_CONFIG__PORT);
 
 		// Create enums
+		applicationLogLevelEEnum = createEEnum(APPLICATION_LOG_LEVEL);
 		componentStatusEEnum = createEEnum(COMPONENT_STATUS);
 		moduleStatusEEnum = createEEnum(MODULE_STATUS);
 		serviceStatusEEnum = createEEnum(SERVICE_STATUS);
@@ -1096,6 +1210,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		// Add supertypes to classes
 		applicationEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		applicationComponentEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		applicationLogEntryEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		applicationModuleEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		httpServiceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		serviceCommandProviderEClass.getESuperTypes().add(this.getServiceRef());
@@ -1120,6 +1235,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEReference(getApplication_Context(), theContextPackage.getContextRoot(), null, "context", null, 0, 1, Application.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_ContextDescription(), theContextPackage.getContextDescription(), null, "contextDescription", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Hooks(), this.getServiceHook(), null, "hooks", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplication_Logs(), this.getApplicationLogs(), null, "logs", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_Name(), ecorePackage.getEString(), "name", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Paths(), this.getApplicationPaths(), null, "paths", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_ResourceMapping(), theResourcePackage.getResourceMapping(), null, "resourceMapping", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1147,6 +1263,14 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEReference(getApplicationComponent_Modules(), this.getApplicationModule(), null, "modules", null, 0, -1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplicationComponent_Name(), ecorePackage.getEString(), "name", null, 1, 1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplicationComponent_Status(), this.getComponentStatus(), "status", "ACT", 1, 1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(applicationLogsEClass, ApplicationLogs.class, "ApplicationLogs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getApplicationLogs_Entries(), this.getApplicationLogEntry(), null, "entries", null, 0, -1, ApplicationLogs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApplicationLogs_Level(), this.getApplicationLogLevel(), "level", "WARN", 1, 1, ApplicationLogs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(applicationLogEntryEClass, ApplicationLogEntry.class, "ApplicationLogEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getApplicationLogEntry_Package(), ecorePackage.getEString(), "package", null, 1, 1, ApplicationLogEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApplicationLogEntry_Level(), this.getApplicationLogLevel(), "level", "WARN", 1, 1, ApplicationLogEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(applicationModuleEClass, ApplicationModule.class, "ApplicationModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getApplicationModule_Name(), ecorePackage.getEString(), "name", null, 0, 1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1200,6 +1324,13 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEAttribute(getSocketConfig_Port(), ecorePackage.getEInt(), "port", null, 1, 1, SocketConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
+		initEEnum(applicationLogLevelEEnum, ApplicationLogLevel.class, "ApplicationLogLevel");
+		addEEnumLiteral(applicationLogLevelEEnum, ApplicationLogLevel.ERROR);
+		addEEnumLiteral(applicationLogLevelEEnum, ApplicationLogLevel.WARNING);
+		addEEnumLiteral(applicationLogLevelEEnum, ApplicationLogLevel.INFO);
+		addEEnumLiteral(applicationLogLevelEEnum, ApplicationLogLevel.DEBUG);
+		addEEnumLiteral(applicationLogLevelEEnum, ApplicationLogLevel.TRACE);
+
 		initEEnum(componentStatusEEnum, ComponentStatus.class, "ComponentStatus");
 		addEEnumLiteral(componentStatusEEnum, ComponentStatus.ACTIVE);
 		addEEnumLiteral(componentStatusEEnum, ComponentStatus.STOPPED);

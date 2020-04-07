@@ -32,6 +32,7 @@ import org.osgi.framework.Bundle;
  *   <li>{@link org.abchip.mimo.application.Application#getContext <em>Context</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getContextDescription <em>Context Description</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getHooks <em>Hooks</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.Application#getLogs <em>Logs</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getPaths <em>Paths</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getResourceMapping <em>Resource Mapping</em>}</li>
@@ -220,6 +221,28 @@ public interface Application extends EntityIdentifiable {
 	 * @generated
 	 */
 	List<ServiceHook> getHooks();
+
+	/**
+	 * Returns the value of the '<em><b>Logs</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Logs</em>' containment reference.
+	 * @see #setLogs(ApplicationLogs)
+	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_Logs()
+	 * @model containment="true" resolveProxies="true" required="true"
+	 * @generated
+	 */
+	ApplicationLogs getLogs();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.application.Application#getLogs <em>Logs</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Logs</em>' containment reference.
+	 * @see #getLogs()
+	 * @generated
+	 */
+	void setLogs(ApplicationLogs value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

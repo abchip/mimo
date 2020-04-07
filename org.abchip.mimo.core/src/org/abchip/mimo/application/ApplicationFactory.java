@@ -55,6 +55,24 @@ public interface ApplicationFactory extends EFactory {
 	ApplicationComponent createApplicationComponent();
 
 	/**
+	 * Returns a new object of class '<em>Logs</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logs</em>'.
+	 * @generated
+	 */
+	ApplicationLogs createApplicationLogs();
+
+	/**
+	 * Returns a new object of class '<em>Log Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Log Entry</em>'.
+	 * @generated
+	 */
+	ApplicationLogEntry createApplicationLogEntry();
+
+	/**
 	 * Returns a new object of class '<em>Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -15,6 +15,7 @@ import java.util.List;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationComponent;
+import org.abchip.mimo.application.ApplicationLogs;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.application.ComponentStatus;
@@ -53,6 +54,7 @@ import org.osgi.framework.FrameworkUtil;
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getContext <em>Context</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getContextDescription <em>Context Description</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getHooks <em>Hooks</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getLogs <em>Logs</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getPaths <em>Paths</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getResourceMapping <em>Resource Mapping</em>}</li>
@@ -143,6 +145,15 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * @ordered
 	 */
 	protected EList<ServiceHook> hooks;
+	/**
+	 * The cached value of the '{@link #getLogs() <em>Logs</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogs()
+	 * @generated
+	 * @ordered
+	 */
+	protected ApplicationLogs logs;
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -358,6 +369,74 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			hooks = new EObjectContainmentEList.Resolving<ServiceHook>(ServiceHook.class, this, ApplicationPackage.APPLICATION__HOOKS);
 		}
 		return hooks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ApplicationLogs getLogs() {
+		if (logs != null && ((EObject)logs).eIsProxy()) {
+			InternalEObject oldLogs = (InternalEObject)logs;
+			logs = (ApplicationLogs)eResolveProxy(oldLogs);
+			if (logs != oldLogs) {
+				InternalEObject newLogs = (InternalEObject)logs;
+				NotificationChain msgs = oldLogs.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__LOGS, null, null);
+				if (newLogs.eInternalContainer() == null) {
+					msgs = newLogs.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__LOGS, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION__LOGS, oldLogs, logs));
+			}
+		}
+		return logs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ApplicationLogs basicGetLogs() {
+		return logs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLogs(ApplicationLogs newLogs, NotificationChain msgs) {
+		ApplicationLogs oldLogs = logs;
+		logs = newLogs;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__LOGS, oldLogs, newLogs);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLogs(ApplicationLogs newLogs) {
+		if (newLogs != logs) {
+			NotificationChain msgs = null;
+			if (logs != null)
+				msgs = ((InternalEObject)logs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__LOGS, null, msgs);
+			if (newLogs != null)
+				msgs = ((InternalEObject)newLogs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__LOGS, null, msgs);
+			msgs = basicSetLogs(newLogs, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__LOGS, newLogs, newLogs));
 	}
 
 	/**
@@ -627,6 +706,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return basicSetContextDescription(null, msgs);
 			case ApplicationPackage.APPLICATION__HOOKS:
 				return ((InternalEList<?>)getHooks()).basicRemove(otherEnd, msgs);
+			case ApplicationPackage.APPLICATION__LOGS:
+				return basicSetLogs(null, msgs);
 			case ApplicationPackage.APPLICATION__PATHS:
 				return basicSetPaths(null, msgs);
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
@@ -661,6 +742,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return basicGetContextDescription();
 			case ApplicationPackage.APPLICATION__HOOKS:
 				return getHooks();
+			case ApplicationPackage.APPLICATION__LOGS:
+				if (resolve) return getLogs();
+				return basicGetLogs();
 			case ApplicationPackage.APPLICATION__NAME:
 				return getName();
 			case ApplicationPackage.APPLICATION__PATHS:
@@ -710,6 +794,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				getHooks().clear();
 				getHooks().addAll((Collection<? extends ServiceHook>)newValue);
 				return;
+			case ApplicationPackage.APPLICATION__LOGS:
+				setLogs((ApplicationLogs)newValue);
+				return;
 			case ApplicationPackage.APPLICATION__NAME:
 				setName((String)newValue);
 				return;
@@ -757,6 +844,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__HOOKS:
 				getHooks().clear();
 				return;
+			case ApplicationPackage.APPLICATION__LOGS:
+				setLogs((ApplicationLogs)null);
+				return;
 			case ApplicationPackage.APPLICATION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -796,6 +886,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return contextDescription != null;
 			case ApplicationPackage.APPLICATION__HOOKS:
 				return hooks != null && !hooks.isEmpty();
+			case ApplicationPackage.APPLICATION__LOGS:
+				return logs != null;
 			case ApplicationPackage.APPLICATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ApplicationPackage.APPLICATION__PATHS:

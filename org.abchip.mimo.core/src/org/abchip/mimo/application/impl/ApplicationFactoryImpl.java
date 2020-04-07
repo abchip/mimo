@@ -66,6 +66,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 			case ApplicationPackage.APPLICATION: return (EObject)createApplication();
 			case ApplicationPackage.APPLICATION_PATHS: return (EObject)createApplicationPaths();
 			case ApplicationPackage.APPLICATION_COMPONENT: return (EObject)createApplicationComponent();
+			case ApplicationPackage.APPLICATION_LOGS: return (EObject)createApplicationLogs();
+			case ApplicationPackage.APPLICATION_LOG_ENTRY: return (EObject)createApplicationLogEntry();
 			case ApplicationPackage.APPLICATION_MODULE: return (EObject)createApplicationModule();
 			case ApplicationPackage.HTTP_SERVICE_CONFIG: return (EObject)createHttpServiceConfig();
 			case ApplicationPackage.SERVICE_COMMAND_PROVIDER: return (EObject)createServiceCommandProvider();
@@ -91,6 +93,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case ApplicationPackage.APPLICATION_LOG_LEVEL:
+				return createApplicationLogLevelFromString(eDataType, initialValue);
 			case ApplicationPackage.COMPONENT_STATUS:
 				return createComponentStatusFromString(eDataType, initialValue);
 			case ApplicationPackage.MODULE_STATUS:
@@ -112,6 +116,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case ApplicationPackage.APPLICATION_LOG_LEVEL:
+				return convertApplicationLogLevelToString(eDataType, instanceValue);
 			case ApplicationPackage.COMPONENT_STATUS:
 				return convertComponentStatusToString(eDataType, instanceValue);
 			case ApplicationPackage.MODULE_STATUS:
@@ -156,6 +162,28 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public ApplicationComponent createApplicationComponent() {
 		ApplicationComponentImpl applicationComponent = new ApplicationComponentImpl();
 		return applicationComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ApplicationLogs createApplicationLogs() {
+		ApplicationLogsImpl applicationLogs = new ApplicationLogsImpl();
+		return applicationLogs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ApplicationLogEntry createApplicationLogEntry() {
+		ApplicationLogEntryImpl applicationLogEntry = new ApplicationLogEntryImpl();
+		return applicationLogEntry;
 	}
 
 	/**
@@ -288,6 +316,26 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public SocketConfig createSocketConfig() {
 		SocketConfigImpl socketConfig = new SocketConfigImpl();
 		return socketConfig;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ApplicationLogLevel createApplicationLogLevelFromString(EDataType eDataType, String initialValue) {
+		ApplicationLogLevel result = ApplicationLogLevel.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertApplicationLogLevelToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
