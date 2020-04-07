@@ -23,7 +23,6 @@ import java.util.Comparator;
 import java.util.List;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
@@ -31,6 +30,8 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
+import org.abchip.mimo.util.Logs;
+import org.osgi.service.log.Logger;
 
 public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
@@ -39,7 +40,8 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Logger logger;
+	private final static Logger LOGGER = Logs.getLogger(NIOResourcempl.class);
+
 	private NIOPathManager pathManager = null;
 	private ResourceSerializer<E> resourceSerializer = null;
 
@@ -47,7 +49,6 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 
 	public NIOResourcempl(Context context, Frame<E> frame, String tenant, NIOPathManager pathManager) {
 
-		this.logger = context.get(Logger.class);
 		this.pathManager = pathManager;
 
 		ResourceManager resourceManager = context.get(ResourceManager.class);
@@ -131,7 +132,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 				this.resourceSerializer.load(inputStream, false);
 				entity = this.resourceSerializer.get();
 			} catch (IOException e) {
-				logger.error(e);
+				LOGGER.error(e.getMessage());
 			} finally {
 				this.resourceSerializer.clear();
 			}
@@ -188,17 +189,16 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 					}
 
 					try (InputStream inputStream = Files.newInputStream(path)) {
-
 						this.resourceSerializer.load(inputStream, true);
 					} catch (Exception e) {
+						LOGGER.error(e.getMessage());
 						this.resourceSerializer.add(getFrame().createProxy(name));
-						logger.error(e);
 					}
 				}
 
 				entries.addAll(this.resourceSerializer.getAll());
 			} catch (Exception e) {
-				logger.error(e);
+				LOGGER.error(e.getMessage());
 			} finally {
 				this.resourceSerializer.clear();
 			}
@@ -257,7 +257,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 		} catch (FileAlreadyExistsException e) {
 			return folder;
 		} catch (IOException e) {
-			logger.error(e);
+			LOGGER.error(e.getMessage());
 			return null;
 		}
 

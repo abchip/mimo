@@ -472,48 +472,6 @@
       <eLiterals name="Read" value="10" literal="READ"/>
       <eLiterals name="Write" value="20" literal="WRT"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Logger" abstract="true" interface="true">
-      <eOperations name="debug">
-        <eParameters name="message" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="debug">
-        <eParameters name="throwable" lowerBound="1" eType="#//java/JavaThrowable"/>
-      </eOperations>
-      <eOperations name="debug">
-        <eParameters name="message" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="throwable" lowerBound="1" eType="#//java/JavaThrowable"/>
-      </eOperations>
-      <eOperations name="error">
-        <eParameters name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="error">
-        <eParameters name="throwable" lowerBound="1" eType="#//java/JavaThrowable"/>
-      </eOperations>
-      <eOperations name="error">
-        <eParameters name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="throwable" lowerBound="1" eType="#//java/JavaThrowable"/>
-      </eOperations>
-      <eOperations name="info">
-        <eParameters name="message" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="info">
-        <eParameters name="throwable" lowerBound="1" eType="#//java/JavaThrowable"/>
-      </eOperations>
-      <eOperations name="info">
-        <eParameters name="message" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="throwable" lowerBound="1" eType="#//java/JavaThrowable"/>
-      </eOperations>
-      <eOperations name="warning">
-        <eParameters name="message" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="warning">
-        <eParameters name="throwable" lowerBound="1" eType="#//java/JavaThrowable"/>
-      </eOperations>
-      <eOperations name="warning">
-        <eParameters name="message" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="throwable" lowerBound="1" eType="#//java/JavaThrowable"/>
-      </eOperations>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="MessageVariableList" instanceClassName="java.lang.Object[]"/>
     <eClassifiers xsi:type="ecore:EClass" name="MessageDescription" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"

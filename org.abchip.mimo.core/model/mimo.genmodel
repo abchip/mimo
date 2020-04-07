@@ -345,48 +345,6 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/LockManager/getQueue/E"/>
         </genOperations>
       </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//context/Logger">
-        <genOperations ecoreOperation="mimo.ecore#//context/Logger/debug">
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/debug/message"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Logger/debug.1">
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/debug.1/throwable"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Logger/debug.2">
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/debug.2/message"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/debug.2/throwable"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Logger/error">
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/error/message"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Logger/error.1">
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/error.1/throwable"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Logger/error.2">
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/error.2/message"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/error.2/throwable"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Logger/info">
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/info/message"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Logger/info.1">
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/info.1/throwable"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Logger/info.2">
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/info.2/message"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/info.2/throwable"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Logger/warning">
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/warning/message"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Logger/warning.1">
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/warning.1/throwable"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Logger/warning.2">
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/warning.2/message"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/Logger/warning.2/throwable"/>
-        </genOperations>
-      </genClasses>
       <genClasses ecoreClass="mimo.ecore#//context/MessageDescription">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/MessageDescription/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/MessageDescription/severity"/>

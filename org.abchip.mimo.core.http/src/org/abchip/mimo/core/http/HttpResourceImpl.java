@@ -18,16 +18,17 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.Logger;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
+import org.abchip.mimo.util.Logs;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.util.EntityUtils;
+import org.osgi.service.log.Logger;
 
 public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
@@ -36,14 +37,14 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	 */
 	private static final long serialVersionUID = 1L;
 
+	private final static Logger LOGGER = Logs.getLogger(HttpResourceImpl.class);
+
 	private HttpConnector connector;
-	private Logger logger;
 	private ResourceSerializer<E> resourceSerializer = null;
 
 	private String tenant = null;
 
 	public HttpResourceImpl(Context context, Frame<E> frame, String tenant, HttpConnector connector) {
-		this.logger = context.get(Logger.class);
 		this.connector = connector;
 
 		ResourceManager resourceManager = context.get(ResourceManager.class);
@@ -77,7 +78,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			try {
 				this.resourceSerializer.save(baos);
 			} catch (Exception e) {
-				logger.error(e);
+				LOGGER.error(e.getMessage());
 				throw new RuntimeException(e);
 			} finally {
 				this.resourceSerializer.clear();
@@ -89,7 +90,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 			try (CloseableHttpResponse response = this.connector.execute("delete", query)) {
 			} catch (Exception e) {
-				logger.error(e);
+				LOGGER.error(e.getMessage());
 				throw new RuntimeException(e);
 			} finally {
 				this.resourceSerializer.clear();
@@ -100,7 +101,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	@Override
 	public String nextSequence() {
 
-		if(getFrame().getKeys().size() > 1)
+		if (getFrame().getKeys().size() > 1)
 			return null;
 
 		String nextSequence = null;
@@ -116,7 +117,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 				nextSequence = EntityUtils.toString(entity, "UTF-8");
 			}
 		} catch (Exception e) {
-			logger.error(e);
+			LOGGER.error(e.getMessage());
 		}
 
 		return nextSequence;
@@ -144,7 +145,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 				}
 			} catch (Exception e) {
-				logger.error(e);
+				LOGGER.error(e.getMessage());
 			} finally {
 				this.resourceSerializer.clear();
 			}
@@ -211,7 +212,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			try {
 				this.resourceSerializer.save(baos);
 			} catch (IOException e) {
-				logger.error(e);
+				LOGGER.error(e.getMessage());
 				throw new RuntimeException(e);
 			} finally {
 				this.resourceSerializer.clear();
@@ -227,7 +228,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 				query += "&tenant=" + this.tenant;
 			try (CloseableHttpResponse response = connector.execute("save", query)) {
 			} catch (Exception e) {
-				logger.error(e);
+				LOGGER.error(e.getMessage());
 				throw new RuntimeException(e);
 			} finally {
 				this.resourceSerializer.clear();

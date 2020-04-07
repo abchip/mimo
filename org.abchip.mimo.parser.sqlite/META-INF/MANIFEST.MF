@@ -6,8 +6,8 @@ Bundle-Version: 0.2.0.qualifier
 Bundle-Vendor: ABChip
 Automatic-Module-Name: org.abchip.mimo.parser.sqlite
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-ClassPath: lib/antlr-runtime-4.4.jar,
- .
+Bundle-ClassPath: .,
+ lib/antlr-runtime-4.4.jar
 Export-Package: org.abchip.mimo.parser.sqlite,
  org.antlr.v4.runtime,
  org.antlr.v4.runtime.tree
