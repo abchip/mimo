@@ -26,8 +26,11 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EPackage.Descriptor;
+import org.osgi.service.log.Logger;
 
 public class Frames {
+
+	private static final Logger LOGGER = Logs.getLogger(Frames.class);
 
 	private static Map<String, Frame<?>> publicFrames = null;
 
@@ -88,7 +91,7 @@ public class Frames {
 				} else if (eClassifier instanceof EDataType) {
 					// TODO
 				} else {
-					System.out.println(eClassifier.getName());
+					LOGGER.warn("Unknown classifier {}", eClassifier.getName());
 				}
 			}
 		}

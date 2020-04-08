@@ -34,6 +34,7 @@ import org.abchip.mimo.database.definition.ViewDef;
 import org.abchip.mimo.database.query.QueryParser;
 import org.abchip.mimo.database.query.QueryParserRegistry;
 import org.abchip.mimo.database.query.QueryWriter;
+import org.abchip.mimo.util.Logs;
 import org.eclipse.datatools.modelbase.sql.constraints.Index;
 import org.eclipse.datatools.modelbase.sql.query.QuerySelect;
 import org.eclipse.datatools.modelbase.sql.query.QuerySelectStatement;
@@ -50,8 +51,11 @@ import org.eclipse.datatools.modelbase.sql.tables.ViewTable;
 import org.eclipse.datatools.sqltools.parsers.sql.query.SQLQueryParseResult;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.osgi.service.log.Logger;
 
 public class BaseDatabaseManagerImpl implements DatabaseManager {
+
+	private static final Logger LOGGER = Logs.getLogger(BaseDatabaseManagerImpl.class);
 
 	@Inject
 	private ContextRoot contextRoot;
@@ -115,7 +119,7 @@ public class BaseDatabaseManagerImpl implements DatabaseManager {
 			if (sql != null)
 				statement.execute(sql);
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			LOGGER.error(e.getMessage());
 		}
 	}
 

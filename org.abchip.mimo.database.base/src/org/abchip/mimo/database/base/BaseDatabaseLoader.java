@@ -22,10 +22,12 @@ import org.abchip.mimo.database.definition.DefinitionWriter;
 import org.abchip.mimo.database.definition.DefinitionWriterRegistry;
 import org.abchip.mimo.database.query.QueryWriter;
 import org.abchip.mimo.database.query.QueryWriterRegistry;
-import org.eclipse.datatools.modelbase.sql.schema.Schema;
-import org.eclipse.datatools.modelbase.sql.tables.Table;
+import org.abchip.mimo.util.Logs;
+import org.osgi.service.log.Logger;
 
 public class BaseDatabaseLoader {
+
+	private static final Logger LOGGER = Logs.getLogger(BaseDatabaseLoader.class);
 
 	@Inject
 	private ContextRoot contextRoot;
@@ -73,26 +75,12 @@ public class BaseDatabaseLoader {
 					databaseContainer.setDefaultCatalogContainer(newCatalogContainer);
 
 			} catch (Exception e) {
-				e.printStackTrace();
-				System.err.println(e.getMessage());
+				LOGGER.error(e.getMessage());
 				continue;
 			}
 
 		}
 
 		// printDatabase(databaseContainer);
-	}
-
-	@SuppressWarnings("unchecked")
-	protected void printDatabase(DatabaseContainer databaseContainer) {
-
-		for (CatalogContainer catalogContainer : databaseContainer.getCatalogContainers()) {
-			System.out.println(catalogContainer);
-			for (Schema schema : catalogContainer.getMetaData().getAllSchemas()) {
-				System.out.println("\t" + schema);
-				for (Table table : (List<Table>) schema.getTables())
-					System.out.println("\t\t" + table);
-			}
-		}
 	}
 }

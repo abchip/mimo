@@ -44,7 +44,7 @@ public class EntityCommands extends BaseCommands {
 
 		try (EntityIterator<E> entities = resourceManager.getResourceReader(context, frame, tenant).find(null, null, order)) {
 			for (E entity : entities) {
-				System.out.println(entity.getID());
+				interpreter.println(entity.getID());
 			}
 		}
 	}
@@ -64,7 +64,7 @@ public class EntityCommands extends BaseCommands {
 		String entityName = nextArgument(interpreter);
 
 		E entity = resourceManager.getResourceReader(context, frame, tenant).lookup(entityName);
-		System.out.println(entity);
+		interpreter.println(entity);
 	}
 
 	@Override

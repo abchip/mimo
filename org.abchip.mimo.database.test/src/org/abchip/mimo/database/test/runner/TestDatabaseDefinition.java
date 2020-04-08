@@ -34,17 +34,20 @@ import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestStarted;
 import org.abchip.mimo.tester.base.BaseTestHelper;
 import org.abchip.mimo.util.Files;
+import org.abchip.mimo.util.Logs;
 import org.eclipse.datatools.modelbase.sql.constraints.Index;
-import org.eclipse.datatools.modelbase.sql.schema.SQLObject;
 import org.eclipse.datatools.modelbase.sql.schema.Schema;
 import org.eclipse.datatools.modelbase.sql.tables.Table;
 import org.eclipse.datatools.modelbase.sql.tables.ViewTable;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
+import org.osgi.service.log.Logger;
 
 @Test(entity = "Definition")
 public class TestDatabaseDefinition {
+
+	private static final Logger LOGGER = Logs.getLogger(TestDatabaseDefinition.class);
 
 	@Inject
 	private ConnectionManager connectionManager;
@@ -75,13 +78,11 @@ public class TestDatabaseDefinition {
 
 				DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(tableURL);
 
-				SQLObject sqlObject = null;
 				try {
 					TableDef tableDef = (TableDef) file;
-					sqlObject = databaseManager.createTable(connection, schema, fileName, tableDef);
-					System.out.println(sqlObject);
+					databaseManager.createTable(connection, schema, fileName, tableDef);
 				} catch (Exception e) {
-					System.err.println(e.toString());
+					LOGGER.error(e.getMessage());
 				}
 			}
 
@@ -92,13 +93,11 @@ public class TestDatabaseDefinition {
 
 				DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(viewURL);
 
-				SQLObject sqlObject = null;
 				try {
 					ViewDef viewDef = (ViewDef) file;
-					sqlObject = databaseManager.createView(connection, schema, fileName, viewDef);
-					System.out.println(sqlObject);
+					databaseManager.createView(connection, schema, fileName, viewDef);
 				} catch (Exception e) {
-					System.err.println(e.toString());
+					LOGGER.error(e.getMessage());
 				}
 			}
 
@@ -109,7 +108,6 @@ public class TestDatabaseDefinition {
 
 				DatabaseObjectDef file = (DatabaseObjectDef) BaseTestHelper.load(indexURL);
 
-				SQLObject sqlObject = null;
 				try {
 					IndexDef indexDef = (IndexDef) file;
 
@@ -118,20 +116,16 @@ public class TestDatabaseDefinition {
 						table = connection.getCatalogMetaData().getView(schemaName, fileName);
 
 						if (table != null) {
-							sqlObject = databaseManager.createIndex(connection, table, fileName, indexDef);
-							System.out.println(sqlObject);
+							databaseManager.createIndex(connection, table, fileName, indexDef);
 						}
 					} else {
 						// TODO
 					}
 				} catch (Exception e) {
-					System.err.println(e.toString());
+					LOGGER.error(e.getMessage());
 				}
 			}
 		}
-
-		System.out.println("Creazione schema completata");
-
 	}
 
 	public Object _testDDL(CommandInterpreter interpreter) throws SQLException {

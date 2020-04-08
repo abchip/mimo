@@ -66,7 +66,6 @@ public class GoogleResponseServlet extends HttpServlet {
 		String state = request.getParameter("state");
 
 		HttpSession session = request.getSession();
-		System.out.println(state + ": " + getServletName());
 
 		if (state != session.getId())
 			session.invalidate();
@@ -143,7 +142,6 @@ public class GoogleResponseServlet extends HttpServlet {
 			ContextUtils.addContext(context.get());
 
 			String location = response.encodeURL("http://localhost:8081");
-			// System.err.println(("Response location: " + location));
 
 			response.sendRedirect(location);
 		} else {

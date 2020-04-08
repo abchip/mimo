@@ -245,7 +245,6 @@ public class BaseJobManagerImpl implements JobManager {
 			throw new RuntimeException("You must specify millis");
 
 		try {
-			System.out.println("Job delay " + millis);
 			Thread.sleep(millis);
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);

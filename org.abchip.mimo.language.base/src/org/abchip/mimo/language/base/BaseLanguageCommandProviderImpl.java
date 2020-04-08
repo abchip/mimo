@@ -30,11 +30,11 @@ public class BaseLanguageCommandProviderImpl extends BaseCommands {
 
 		Context context = this.getContext();
 
-		System.out.println(languageManager.translate(context, "eng", "man", "ita"));
+		interpreter.println(languageManager.translate(context, "eng", "man", "ita"));
 
 		try (EntityIterator<Language> languages = resourceManager.getResourceReader(context, Language.class).find()) {
 			for (Language language : languages) {
-				System.out.println(language);
+				interpreter.println(language);
 
 				LanguagePlanet mars = resourceManager.getFrame(context, LanguagePlanet.class).createProxy("mars");
 				language.getPlanets().add(mars);

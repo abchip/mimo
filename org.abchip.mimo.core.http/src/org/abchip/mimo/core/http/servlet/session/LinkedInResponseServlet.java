@@ -65,7 +65,6 @@ public class LinkedInResponseServlet extends HttpServlet {
 		String state = request.getParameter("state");
 
 		HttpSession session = request.getSession();
-		System.out.println(state + ": " + getServletName());
 
 		if (state != session.getId())
 			session.invalidate();

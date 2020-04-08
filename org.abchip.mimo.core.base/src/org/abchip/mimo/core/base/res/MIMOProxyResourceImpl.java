@@ -128,8 +128,6 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 
 			JSONObject object = entity2JSON(entity);
 
-			// System.err.println(object);
-
 			pw.write(object.toString());
 			first = false;
 		}

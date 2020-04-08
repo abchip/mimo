@@ -118,7 +118,6 @@ public class GNUQuestionResolver {
 		Term mindTerm = LogicFactory.eINSTANCE.createTerm();
 		if (term instanceof CompoundTerm) {
 			CompoundTerm ct = (CompoundTerm) term;
-			System.out.println(ct.tag.functor.value);
 			mindTerm.setName(ct.args[0].toString());
 		} else if (term instanceof JavaObjectTerm) {
 			JavaObjectTerm jo = (JavaObjectTerm) term;

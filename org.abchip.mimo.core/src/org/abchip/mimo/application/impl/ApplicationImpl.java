@@ -26,6 +26,7 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.abchip.mimo.resource.ResourceMapping;
+import org.abchip.mimo.util.Systems;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -677,9 +678,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 		if (location.startsWith("plugins/"))
 			return Paths.get(this.getInstallArea(), location).toString();
 		else {
-			String osName = System.getProperty("os.name");
-			String osNameMatch = osName.toLowerCase();
-			if (osNameMatch.contains("windows")) {
+			if (Systems.isWindows()) {
 				location = location.replaceFirst("/", "");
 			}
 

@@ -15,8 +15,12 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockType;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.util.Logs;
+import org.osgi.service.log.Logger;
 
 public class BaseLockerImpl<N extends EntityIdentifiable> implements EntityLocker<N> {
+
+	private static final Logger LOGGER = Logs.getLogger(BaseLockerImpl.class);
 
 	private ReentrantReadWriteLock lock;
 
@@ -57,7 +61,7 @@ public class BaseLockerImpl<N extends EntityIdentifiable> implements EntityLocke
 				return lock.writeLock().tryLock(time, TimeUnit.MILLISECONDS);
 			}
 		} catch (InterruptedException e) {
-			System.err.println(e);
+			LOGGER.warn(e.getMessage());
 		}
 
 		return false;

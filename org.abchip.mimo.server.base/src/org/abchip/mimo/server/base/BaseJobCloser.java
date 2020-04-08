@@ -16,12 +16,16 @@ import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobManager;
 import org.abchip.mimo.server.JobStatus;
 import org.abchip.mimo.server.ServerHelper;
+import org.abchip.mimo.util.Logs;
+import org.osgi.service.log.Logger;
 
 public class BaseJobCloser implements Runnable {
 
+	private static final Logger LOGGER = Logs.getLogger(BaseJobCloser.class);
+
 	private JobManager jobManager;
 	private ThreadManager threadManager;
-	
+
 	public BaseJobCloser(ThreadManager threadManager, JobManager jobManager) {
 		this.threadManager = threadManager;
 		this.jobManager = jobManager;
@@ -57,7 +61,7 @@ public class BaseJobCloser implements Runnable {
 							jobManager.updateStatus(tmpJob, JobStatus.END);
 							jobManager.close(tmpJob);
 						} catch (Exception e) {
-							System.err.println(e.getMessage());
+							LOGGER.error(e.getMessage());
 						}
 
 					break;
@@ -72,7 +76,7 @@ public class BaseJobCloser implements Runnable {
 				case MESSAGE_WAITING:
 					break;
 				case HOLD:
-					break;					
+					break;
 				case RUN:
 					break;
 				case TIME_WAITING:

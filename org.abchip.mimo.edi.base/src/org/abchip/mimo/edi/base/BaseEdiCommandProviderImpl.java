@@ -43,9 +43,9 @@ public class BaseEdiCommandProviderImpl extends BaseCommands {
 			System.out.println(messageSent);
 			messageSentWriter.delete(messageSent);
 			if (messageSentWriter.lookup(messageSent.getMessageId(), true) != null)
-				System.err.println("MessageSent not deleted");
+				interpreter.println("MessageSent not deleted");
 		} else
-			System.err.println("MessageSent not found");
+			interpreter.println("MessageSent not found");
 	}
 
 	@Override

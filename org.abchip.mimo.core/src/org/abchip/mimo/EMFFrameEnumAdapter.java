@@ -84,7 +84,6 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public String getPackageName() {
-		System.out.println(eEnum);
 		return null;
 	}
 

@@ -35,7 +35,7 @@ public class Logs {
 
 		LoggerFactory loggerFactory = getLoggerFactory();
 		if (loggerFactory == null)
-			System.err.println("Unexpected condition: b96v46rebt0are66t0b465");
+			throw new RuntimeException("Unexpected condition: b96v46rebt0are66t0b465");
 
 		Logger logger = loggerFactory.getLogger(context.getName());
 		return logger;

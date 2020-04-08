@@ -35,10 +35,14 @@ import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;
 import org.abchip.mimo.tester.TestStarted;
+import org.abchip.mimo.util.Logs;
+import org.osgi.service.log.Logger;
 
 @Test(entity = "Twitter")
 public class TestTwitter {
 
+	private static final Logger LOGGER = Logs.getLogger(TestTwitter.class);
+	
 	@Inject
 	private TwitterManager twitterManager;
 	@Inject
@@ -182,7 +186,7 @@ public class TestTwitter {
 				try {
 					tweetWriter.create(tweet, true);
 				} catch (Exception e) {
-					System.err.println(e.getMessage());
+					LOGGER.error(e.getMessage());
 				}
 			}
 		}

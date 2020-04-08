@@ -15,11 +15,15 @@ import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ComponentStarting;
 import org.abchip.mimo.application.HttpServiceConfig;
 import org.abchip.mimo.application.SocketConfig;
+import org.abchip.mimo.util.Logs;
 import org.eclipse.equinox.http.jetty.JettyConfigurator;
 import org.eclipse.equinox.http.servlet.ExtendedHttpService;
 import org.osgi.service.http.HttpService;
+import org.osgi.service.log.Logger;
 
 public class JettyActivatorHook {
+
+	private static final Logger LOGGER = Logs.getLogger(JettyActivatorHook.class);
 
 	@ComponentStarting
 	public void start(Application application, HttpServiceConfig httpServiceConfig) {
@@ -54,12 +58,12 @@ public class JettyActivatorHook {
 				// httpService.registerResources("/", "/site/index.html", httpContext);
 				// httpService.registerResources("/*", "/site", httpContext);
 			} else {
-				System.out.println("HttpService not found!");
+				LOGGER.warn("HttpService not found!");
 				return;
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.error(e.getMessage());
 		}
 	}
 }

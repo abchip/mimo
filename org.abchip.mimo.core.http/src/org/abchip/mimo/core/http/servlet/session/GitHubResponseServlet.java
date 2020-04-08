@@ -66,7 +66,6 @@ public class GitHubResponseServlet extends HttpServlet {
 		String state = request.getParameter("state");
 
 		HttpSession session = request.getSession();
-		System.out.println(state + ": " + getServletName());
 
 		if (state != session.getId())
 			session.invalidate();
@@ -146,7 +145,6 @@ public class GitHubResponseServlet extends HttpServlet {
 			ContextUtils.addContext(context);
 
 			String location = response.encodeURL("http://localhost:8081");
-			// System.err.println(("Response location: " + location));
 
 			response.sendRedirect(location);
 		} else {

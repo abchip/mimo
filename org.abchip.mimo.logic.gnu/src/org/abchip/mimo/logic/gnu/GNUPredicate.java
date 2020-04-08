@@ -1,5 +1,8 @@
 package org.abchip.mimo.logic.gnu;
 
+import org.abchip.mimo.util.Logs;
+import org.osgi.service.log.Logger;
+
 import gnu.prolog.database.Predicate;
 import gnu.prolog.term.JavaObjectTerm;
 import gnu.prolog.term.Term;
@@ -10,6 +13,8 @@ import gnu.prolog.vm.PrologCode;
 import gnu.prolog.vm.PrologException;
 
 public abstract class GNUPredicate implements PrologCode {
+
+	private static final Logger LOGGER = Logs.getLogger(GNUPredicate.class);
 
 	private Environment environment = null;
 	private Predicate predicate = null;
@@ -45,7 +50,7 @@ public abstract class GNUPredicate implements PrologCode {
 				if (!prepare(vars))
 					return PrologCode.FAIL;
 			} catch (Exception e) {
-				System.out.println("ERR->" + e.getMessage());
+				LOGGER.error(e.getMessage());
 				return PrologCode.FAIL;
 			}
 

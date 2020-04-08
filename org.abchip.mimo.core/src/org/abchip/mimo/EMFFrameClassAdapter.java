@@ -21,6 +21,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
 import org.abchip.mimo.util.Lists;
+import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -33,12 +34,12 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.osgi.service.log.Logger;
 
 public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
-	/**
-	 * 
-	 */
+	private static final Logger LOGGER = Logs.getLogger(EMFFrameClassAdapter.class);
+	
 	private static final long serialVersionUID = 1L;
 	private EClass eClass;
 	private Map<String, Slot> slots = null;
@@ -242,7 +243,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 					if (entity != null)
 						eObject.eSet(eFeature, entity);
 				} else
-					System.err.println("Unexpected condition: bvtw4a87ny4r9tycsa9et6");
+					LOGGER.warn("Unexpected condition {}", "bvtw4a87ny4r9tycsa9et6");
 			}
 
 		} else {
@@ -255,7 +256,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 						eObject.eSet(eFeature, value);
 					}
 				} catch (Exception e1) {
-					System.err.println("Invalid slot value: " + eObject.eClass().getName() + "." + slot + " = " + value);
+					LOGGER.error(e.getMessage());
 				}
 			} catch (Exception e) {
 				e.toString();

@@ -23,8 +23,12 @@ import org.abchip.mimo.tester.TestStopped;
 import org.abchip.mimo.tester.TestSuiteRunner;
 import org.abchip.mimo.tester.TestUnitRunner;
 import org.abchip.mimo.tester.TesterFactory;
+import org.abchip.mimo.util.Logs;
+import org.osgi.service.log.Logger;
 
 public abstract class BaseTestSuiteRunnerImpl extends BaseTestRunnerImpl implements TestSuiteRunner {
+
+	private static final Logger LOGGER = Logs.getLogger(BaseTestSuiteRunnerImpl.class);
 
 	private TestManager testManager;
 	private String category;
@@ -53,7 +57,7 @@ public abstract class BaseTestSuiteRunnerImpl extends BaseTestRunnerImpl impleme
 		// suite starting
 		event.setType(TestRunnerEventType.SUITE_STARTING);
 		fireEvent(event);
-		
+
 		getContext().invoke(this, TestStarted.class);
 
 		// runners
@@ -63,7 +67,7 @@ public abstract class BaseTestSuiteRunnerImpl extends BaseTestRunnerImpl impleme
 				TestUnitRunner testRunner = testManager.prepareUnitRunner(getContext(), testClass);
 				testRunners.add(testRunner);
 			} catch (Exception e) {
-				System.err.println(e.getMessage());
+				LOGGER.error(e.getMessage());
 			}
 		}
 
@@ -79,7 +83,7 @@ public abstract class BaseTestSuiteRunnerImpl extends BaseTestRunnerImpl impleme
 				}
 				testResults.add(testResult);
 			} catch (Exception e) {
-				System.err.println(e.getMessage());
+				LOGGER.error(e.getMessage());
 			}
 		}
 
@@ -89,11 +93,11 @@ public abstract class BaseTestSuiteRunnerImpl extends BaseTestRunnerImpl impleme
 
 		try {
 			// invoke
-			getContext().invoke(this, TestStopped.class);		
+			getContext().invoke(this, TestStopped.class);
 		} catch (Exception e) {
-			System.err.println(e.getMessage());			
+			LOGGER.error(e.getMessage());
 		}
-		
+
 		// suite stopped
 		event.setType(TestRunnerEventType.SUITE_STOPPED);
 		fireEvent(event);

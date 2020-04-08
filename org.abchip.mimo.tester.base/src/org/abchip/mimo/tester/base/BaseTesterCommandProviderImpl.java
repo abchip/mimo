@@ -74,12 +74,11 @@ public class BaseTesterCommandProviderImpl extends BaseCommands {
 									switch (assertionResult.getAssertionState()) {
 									case FAILED:
 										AssertionFailed assertionFailed = (AssertionFailed) assertionResult;
-										System.err.println(assertionFailed);
+										interpreter.println(assertionFailed);
 										break;
 									case SUCCESS:
 										AssertionSuccess assertionSuccess = (AssertionSuccess) assertionResult;
-										System.out.println(assertionSuccess);
-
+										interpreter.println(assertionSuccess);
 										break;
 									}
 								}

@@ -50,7 +50,6 @@ public class GoogleRedirectServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		System.out.println(session.getId() + ": " + getServletName());
 
 		// anonymous access
 		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();

@@ -53,7 +53,6 @@ public class LoginServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		System.out.println(session.getId() + ": " + getServletName() + " " + HttpUtils.getParametersAsString(request));
 
 		String adminKeyParam = request.getParameter("adminKey");
 		String provider = request.getParameter("provider");
