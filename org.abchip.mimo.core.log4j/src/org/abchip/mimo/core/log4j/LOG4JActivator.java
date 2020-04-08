@@ -19,9 +19,9 @@ public class LOG4JActivator implements BundleActivator {
 
 	@Override
 	public void start(final BundleContext context) throws Exception {
-		
+
 		this.logger = new LOG4JLogListener();
-		
+
 		LogReaderService reader = Logs.getLogReaderService();
 		if (reader == null)
 			return;
@@ -36,7 +36,7 @@ public class LOG4JActivator implements BundleActivator {
 			return;
 
 		reader.removeLogListener(logger);
-		
+
 		this.logger = null;
 	}
 }

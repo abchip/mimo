@@ -15,8 +15,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.inject.Inject;
-
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.util.Threads;
@@ -28,7 +26,6 @@ public class BaseThreadManagerImpl implements ThreadManager {
 
 	private long totalCpuTime = 0;
 
-	@Inject
 	public BaseThreadManagerImpl() {
 		org.abchip.mimo.context.Thread thread = createThread("cpu-monitor", new BaseThreadsMonitor(this), true);
 		start(thread);

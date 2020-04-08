@@ -38,7 +38,7 @@ public class EntityCommands extends BaseCommands {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName, tenant);
 		if (frame == null) {
-			interpreter.print("Frame not found: " + frameName + " on tenant " + tenant);
+			interpreter.println("Frame not found: " + frameName + " on tenant " + tenant);
 			return;
 		}
 

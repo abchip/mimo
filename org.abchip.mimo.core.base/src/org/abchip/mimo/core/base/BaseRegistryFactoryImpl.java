@@ -8,16 +8,17 @@
  */
 package org.abchip.mimo.core.base;
 
-import javax.inject.Inject;
-
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.Registry;
 import org.abchip.mimo.context.RegistryFactory;
 
 public class BaseRegistryFactoryImpl implements RegistryFactory {
 
-	@Inject
 	private ContextRoot contextRoot;
+
+	public BaseRegistryFactoryImpl(ContextRoot contextRoot) {
+		this.contextRoot = contextRoot;
+	}
 
 	@Override
 	public <K> Registry<K> createRegistry(Class<K> klass) {

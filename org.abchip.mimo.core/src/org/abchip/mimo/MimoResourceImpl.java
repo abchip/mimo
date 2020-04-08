@@ -21,6 +21,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.URIs;
@@ -58,7 +59,8 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 				this.resource = EMFResourceProviderImpl.internalGetEnumResource(this.getContext(), frameName, tenant);
 			} else {
 				ResourceProviderRegistry resourceProviderRegistry = this.getContext().get(ResourceProviderRegistry.class);
-				this.resource = resourceProviderRegistry.getResourceProvider(this.getContext(), frame).getResource(this.getContext(), frame, tenant);
+				ResourceProvider resourceProvider = resourceProviderRegistry.getResourceProvider(this.getContext(), frame);
+				this.resource = resourceProvider.getResource(this.getContext(), frame, tenant);
 			}
 		}
 	}

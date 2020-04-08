@@ -65,8 +65,9 @@ public class E4ApplicationStarter implements Runnable {
 
 	@Override
 	public void run() {
+
 		LOGGER = Logs.getLogger(E4ApplicationStarter.class);
-		
+
 		try {
 			this.start();
 		} catch (Exception e) {

@@ -38,9 +38,6 @@ public class E4Activator implements BundleActivator {
 	@Override
 	public void start(BundleContext bundleContext) throws Exception {
 
-		// touch LOG4J
-		LOG4JActivator.class.toString();
-
 		if (!Boolean.parseBoolean(bundleContext.getProperty("mimo.activation")))
 			return;
 
@@ -74,6 +71,9 @@ public class E4Activator implements BundleActivator {
 
 		E4Activator.application = Applications.load(applicationConfig);
 
+		// touch LOG4J to force activation
+		LOG4JActivator.class.toString();
+
 		// bundle
 		Bundle bundle = E4Activator.application.getBundle();
 
@@ -95,19 +95,19 @@ public class E4Activator implements BundleActivator {
 		E4Activator.application.setContext(contextApplication);
 
 		// registry
-		RegistryFactory registryFactory = new BaseRegistryFactoryImpl();
+		RegistryFactory registryFactory = new BaseRegistryFactoryImpl(contextApplication);
 		application.getContext().set(RegistryFactory.class, registryFactory);
-		
+
 		// thread
 		ThreadManager threadManager = new BaseThreadManagerImpl();
 		application.getContext().set(ThreadManager.class, threadManager);
-		
+
 		Runnable applicationManager = new E4ApplicationStarter(E4Activator.application);
-		thread = threadManager.createThread(application.getName(), applicationManager, true);
-		
-		ClassLoader bundleLoader = bundle.adapt(BundleWiring.class).getClassLoader();		
+		thread = threadManager.createThread(application.getName(), applicationManager, false);
+
+		ClassLoader bundleLoader = bundle.adapt(BundleWiring.class).getClassLoader();
 		thread.getJavaThread().setContextClassLoader(bundleLoader);
-		
+
 		threadManager.start(thread);
 	}
 
