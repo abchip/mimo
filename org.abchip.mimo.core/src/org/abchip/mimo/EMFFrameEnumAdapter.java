@@ -15,6 +15,7 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
+import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.ecore.EEnum;
 
 public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
@@ -41,7 +42,7 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 		return null;
 	}
 
-	protected EEnum getEEnum() {
+	public EEnum getEEnum() {
 		return this.eEnum;
 	}
 
@@ -89,7 +90,7 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 
 	private void setFrameText() {
 
-		String text = MimoUtils.firstToUpper(this.getName());
+		String text = Strings.firstToUpper(this.getName());
 
 		if (text != null)
 			eSet(EntityPackage.FRAME__TEXT, text);

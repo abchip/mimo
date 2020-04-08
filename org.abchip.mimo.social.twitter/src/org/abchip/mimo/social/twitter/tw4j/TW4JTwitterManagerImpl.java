@@ -7,9 +7,9 @@ import javax.annotation.PostConstruct;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.resource.ResourceHelper;
 import org.abchip.mimo.social.twitter.Tweet;
 import org.abchip.mimo.social.twitter.TwitterManager;
+import org.abchip.mimo.util.Resources;
 
 import twitter4j.HashtagEntity;
 import twitter4j.MediaEntity;
@@ -87,6 +87,6 @@ public class TW4JTwitterManagerImpl implements TwitterManager {
             System.out.println("Failed to search tweets: " + te.getMessage());
         }
 		
-		return ResourceHelper.wrapIterator(tweets);
+		return Resources.wrapIterator(tweets);
 	}
 }

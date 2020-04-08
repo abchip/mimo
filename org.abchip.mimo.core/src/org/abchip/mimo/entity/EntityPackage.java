@@ -408,25 +408,6 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_TYPE_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FacetImpl <em>Facet</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.impl.FacetImpl
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFacet()
-	 * @generated
-	 */
-	int FACET = 11;
-
-	/**
-	 * The number of structural features of the '<em>Facet</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FACET_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FrameImpl <em>Frame</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -434,7 +415,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrame()
 	 * @generated
 	 */
-	int FRAME = 12;
+	int FRAME = 11;
 
 	/**
 	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
@@ -543,7 +524,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSlot()
 	 * @generated
 	 */
-	int SLOT = 13;
+	int SLOT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -661,7 +642,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityState()
 	 * @generated
 	 */
-	int ENTITY_STATE = 14;
+	int ENTITY_STATE = 13;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Cardinality <em>Cardinality</em>}'.
@@ -937,16 +918,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEntityType_Slots();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Facet <em>Facet</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Facet</em>'.
-	 * @see org.abchip.mimo.entity.Facet
-	 * @generated
-	 */
-	EClass getFacet();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Frame <em>Frame</em>}'.
@@ -1460,16 +1431,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY_TYPE__SLOTS = eINSTANCE.getEntityType_Slots();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.FacetImpl <em>Facet</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.entity.impl.FacetImpl
-		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFacet()
-		 * @generated
-		 */
-		EClass FACET = eINSTANCE.getFacet();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.FrameImpl <em>Frame</em>}' class.

@@ -35,7 +35,6 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.EntityState;
 import org.abchip.mimo.entity.EntityType;
 import org.abchip.mimo.entity.EntityTyped;
-import org.abchip.mimo.entity.Facet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 
@@ -141,13 +140,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EClass entityTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass facetEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -523,16 +515,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getFacet() {
-		return facetEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getFrame() {
 		return frameEClass;
 	}
@@ -833,8 +815,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		entityTypeEClass = createEClass(ENTITY_TYPE);
 		createEReference(entityTypeEClass, ENTITY_TYPE__SLOTS);
 
-		facetEClass = createEClass(FACET);
-
 		frameEClass = createEClass(FRAME);
 		createEAttribute(frameEClass, FRAME__ABSTRACT);
 		createEAttribute(frameEClass, FRAME__AUTO_INCREMENT);
@@ -930,7 +910,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		entityIteratorEClass.getEGenericSuperTypes().add(g1);
 		entityTypedEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		entityTypeEClass.getESuperTypes().add(this.getEntityIdentifiable());
-		facetEClass.getESuperTypes().add(this.getEntity());
 		frameEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		slotEClass.getESuperTypes().add(this.getEntityIdentifiable());
 
@@ -1020,8 +999,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEOperation(entityTypeEClass, ecorePackage.getEBoolean(), "hasTable", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(entityTypeEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(facetEClass, Facet.class, "Facet", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(frameEClass, Frame.class, "Frame", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFrame_Abstract(), ecorePackage.getEBoolean(), "abstract", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

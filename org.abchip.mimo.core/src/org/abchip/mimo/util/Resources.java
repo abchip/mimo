@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.resource;
+package org.abchip.mimo.util;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,17 +16,22 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.abchip.mimo.MimoUtils;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceEvent;
+import org.abchip.mimo.resource.ResourceEventType;
+import org.abchip.mimo.resource.ResourceNotifier;
+import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 
-public class ResourceHelper {
+public class Resources {
 
 	public static <E extends EntityIdentifiable> EntityIterator<E> wrapIterator(Collection<E> collection) {
-		return ResourceHelper.wrapIterator(collection.iterator());
+		return Resources.wrapIterator(collection.iterator());
 	}
 
 	public static <E extends EntityIdentifiable> EntityIterator<E> wrapIterator(Iterator<E> iterator) {
@@ -228,7 +233,7 @@ public class ResourceHelper {
 
 			List<E> values = new ArrayList<E>(entities.values());
 			if (limit > 0)
-				values = MimoUtils.slice(new ArrayList<E>(values), 0, limit);
+				values = Lists.slice(new ArrayList<E>(values), 0, limit);
 
 			Collections.sort(values, new Comparator<E>() {
 
@@ -245,7 +250,7 @@ public class ResourceHelper {
 				}
 			});
 
-			return ResourceHelper.wrapIterator(values);
+			return Resources.wrapIterator(values);
 		}
 
 		@Override

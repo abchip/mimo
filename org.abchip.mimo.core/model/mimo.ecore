@@ -897,7 +897,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="slots" upperBound="-1"
           eType="#//entity/Slot" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Facet" abstract="true" eSuperTypes="#//entity/Entity"/>
     <eClassifiers xsi:type="ecore:EClass" name="Frame" abstract="true" eSuperTypes="#//entity/EntityIdentifiable">
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/Entity"/>

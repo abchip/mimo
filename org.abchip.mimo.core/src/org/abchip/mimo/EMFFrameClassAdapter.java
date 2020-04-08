@@ -20,6 +20,8 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
+import org.abchip.mimo.util.Lists;
+import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
@@ -86,11 +88,11 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 				}
 
 				if (relativeKey == null) {
-					MimoUtils.addFirst(keys, slot.getName());
-					MimoUtils.addFirst(this.getSlots(), slot);
+					Lists.addFirst(keys, slot.getName());
+					Lists.addFirst(this.getSlots(), slot);
 				} else {
-					MimoUtils.addAfter(keys, relativeKey.getName(), slot.getName());
-					MimoUtils.addAfter(this.getSlots(), relativeKey, slot);
+					Lists.addAfter(keys, relativeKey.getName(), slot.getName());
+					Lists.addAfter(this.getSlots(), relativeKey, slot);
 				}
 			} else
 				this.getSlots().add(slot);
@@ -203,7 +205,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			else if (slotName.startsWith("get"))
 				methodName = slotName;
 			else
-				methodName = "get" + MimoUtils.firstToUpper(slotName);
+				methodName = "get" + Strings.firstToUpper(slotName);
 			Method method = object.getClass().getMethod(methodName, new Class[] {});
 			if (method != null)
 				value = method.invoke(object, new Object[] {});
@@ -294,7 +296,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	private void setFrameText() {
 
-		String text = MimoUtils.firstToUpper(this.getName());
+		String text = Strings.firstToUpper(this.getName());
 
 		if (text != null)
 			eSet(EntityPackage.FRAME__TEXT, text);

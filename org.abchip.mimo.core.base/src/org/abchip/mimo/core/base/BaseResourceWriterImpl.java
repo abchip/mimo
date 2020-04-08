@@ -15,8 +15,8 @@ import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.ResourceHelper;
 import org.abchip.mimo.resource.ResourceWriter;
+import org.abchip.mimo.util.Resources;
 
 public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseResourceReaderImpl<E> implements ResourceWriter<E> {
 
@@ -65,12 +65,12 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 		EntityLocker<?> entityLocker = lock(this.getContext(), entity);
 
 		try {
-			ResourceHelper.firePreDeleteEvent(this, entity);
+			Resources.firePreDeleteEvent(this, entity);
 
 			this.getResource().delete(entity);
 			this.setInternalResource(entity);
 
-			ResourceHelper.firePostDeleteEvent(this, entity);
+			Resources.firePostDeleteEvent(this, entity);
 		} finally {
 			unlock(entityLocker);
 		}
@@ -87,12 +87,12 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 		EntityLocker<?> entityLocker = lock(this.getContext(), entity);
 
 		try {
-			ResourceHelper.firePreSaveEvent(this, entity);
+			Resources.firePreSaveEvent(this, entity);
 
 			this.getResource().create(entity, update);
 			this.setInternalResource(entity);
 
-			ResourceHelper.firePostSaveEvent(this, entity);
+			Resources.firePostSaveEvent(this, entity);
 		} finally {
 			unlock(entityLocker);
 		}
@@ -104,12 +104,12 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 		EntityLocker<?> entityLocker = lock(this.getContext(), entity);
 
 		try {
-			ResourceHelper.firePreSaveEvent(this, entity);
+			Resources.firePreSaveEvent(this, entity);
 
 			this.getResource().update(entity);
 			this.setInternalResource(entity);
 
-			ResourceHelper.firePostSaveEvent(this, entity);
+			Resources.firePostSaveEvent(this, entity);
 		} finally {
 			unlock(entityLocker);
 		}

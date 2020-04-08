@@ -607,7 +607,6 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityType/hasTable"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityType/getText"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//entity/Facet"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Frame">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/Frame/E"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/abstract"/>

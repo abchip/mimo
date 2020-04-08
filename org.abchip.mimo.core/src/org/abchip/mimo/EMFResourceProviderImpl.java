@@ -20,6 +20,7 @@ import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
+import org.abchip.mimo.util.Frames;
 
 public class EMFResourceProviderImpl extends ResourceProviderImpl {
 
@@ -48,10 +49,10 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 
 		if (isFrame(frame)) {
 			resource = new EMFResourceImpl<E>(frame);
-			resource.setEntities((Map<String, E>) EMFFrameHelper.getFrames());
+			resource.setEntities((Map<String, E>) Frames.getFrames());
 		} else if (isEnum(frame)) {
 			resource = new EMFResourceImpl<E>(frame);
-			resource.setEntities((Map<String, E>) EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
+			resource.setEntities((Map<String, E>) Frames.getEnumerators((Frame<EntityEnum>) frame));
 		}
 		if (resource != null)
 			resource.setResourceConfig(EMF_RESOURCE_CONFIG);
@@ -63,9 +64,9 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 	@SuppressWarnings("unchecked")
 	public static <E extends EntityIdentifiable> Resource<E> internalGetFrameResource(Context context, String tenant) {
 
-		Frame<E> frame = (Frame<E>) EMFFrameHelper.getFrames().get(Frame.class.getSimpleName());
+		Frame<E> frame = (Frame<E>) Frames.getFrames().get(Frame.class.getSimpleName());
 		EMFResourceImpl<E> resource = new EMFResourceImpl<E>(frame);
-		resource.setEntities((Map<String, E>) EMFFrameHelper.getFrames());
+		resource.setEntities((Map<String, E>) Frames.getFrames());
 		resource.setResourceConfig(EMF_RESOURCE_CONFIG);
 
 		return resource;
@@ -74,10 +75,10 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 	@SuppressWarnings("unchecked")
 	public static <E extends EntityIdentifiable> Resource<E> internalGetEnumResource(Context context, String frameName, String tenant) {
 
-		Frame<E> frame = (Frame<E>) EMFFrameHelper.getFrames().get(frameName);
+		Frame<E> frame = (Frame<E>) Frames.getFrames().get(frameName);
 
 		EMFResourceImpl<E> resource = new EMFResourceImpl<E>(frame);
-		resource.setEntities((Map<String, E>) EMFFrameHelper.getEnumerators((Frame<EntityEnum>) frame));
+		resource.setEntities((Map<String, E>) Frames.getEnumerators((Frame<EntityEnum>) frame));
 		resource.setResourceConfig(EMF_RESOURCE_CONFIG);
 
 		return resource;

@@ -6,14 +6,16 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo;
+package org.abchip.mimo.util;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.EMFEntityEnumAdapter;
+import org.abchip.mimo.EMFFrameClassAdapter;
+import org.abchip.mimo.EMFFrameEnumAdapter;
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
@@ -25,14 +27,14 @@ import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EPackage.Descriptor;
 
-public class EMFFrameHelper {
+public class Frames {
 
 	private static Map<String, Frame<?>> publicFrames = null;
 
 	public static Map<String, Frame<?>> getFrames() {
 
 		if (publicFrames == null) {
-			synchronized (EMFFrameHelper.class) {
+			synchronized (Frames.class) {
 				if (publicFrames == null) {
 					loadFrames();
 				}
@@ -53,32 +55,6 @@ public class EMFFrameHelper {
 			enums.put(eEnumLiteral.getName(), entity);
 		}
 		return enums;
-	}
-
-	public static String getPackageURI(Class<? extends Entity> klass) {
-
-		Package _package = null;
-		for (Class<?> _interface : klass.getInterfaces()) {
-			if (Entity.class.isAssignableFrom(_interface)) {
-				_package = _interface.getPackage();
-				break;
-			}
-		}
-
-		if (_package == null)
-			_package = klass.getPackage();
-
-		if (_package.getName().startsWith("org.abchip.mimo")) {
-			String packgeName = "http://www.abchip.org/mimo" + _package.getName().substring(14).replaceAll("\\.", "/");
-			return packgeName.toLowerCase();
-		} else
-			return _package.getName();
-	}
-
-	public static EPackage getEPackage(Class<? extends Entity> klass) {
-
-		EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(getPackageURI(klass));
-		return ePackage;
 	}
 
 	private static synchronized void loadFrames() {

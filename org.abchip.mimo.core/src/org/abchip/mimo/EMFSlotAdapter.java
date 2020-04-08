@@ -30,6 +30,7 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.SlotImpl;
+import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EEnum;
@@ -103,14 +104,12 @@ public class EMFSlotAdapter extends SlotImpl {
 		if (klass.isPrimitive()) {
 			if (klass.getName().equals("long") || klass.getName().equals("int") || klass.getName().equals("short") || klass.getName().equals("float") || klass.getName().equals("double")) {
 				NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
-				numericDef.setType(NumericType.getByName(MimoUtils.firstToUpper(klass.getName())));
+				numericDef.setType(NumericType.getByName(Strings.firstToUpper(klass.getName())));
 				dataDef = numericDef;
-			}
-			else if (klass.getName().equals("boolean")) {
+			} else if (klass.getName().equals("boolean")) {
 				BooleanDef booleanDef = DataFactory.eINSTANCE.createBooleanDef();
 				dataDef = booleanDef;
-			}
-			else
+			} else
 				"".toString();
 		} else if (Number.class.isAssignableFrom(klass)) {
 			NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
@@ -175,7 +174,7 @@ public class EMFSlotAdapter extends SlotImpl {
 		}
 
 		if (text == null)
-			text = MimoUtils.firstToUpper(this.getName());
+			text = Strings.firstToUpper(this.getName());
 
 		if (text != null)
 			eSet(EntityPackage.SLOT__TEXT, text);
