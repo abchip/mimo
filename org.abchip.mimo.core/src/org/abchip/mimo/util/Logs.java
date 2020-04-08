@@ -8,17 +8,26 @@
  */
 package org.abchip.mimo.util;
 
-import org.abchip.mimo.application.Application;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.abchip.mimo.Mimo;
+import org.abchip.mimo.application.ApplicationLogEntry;
+import org.abchip.mimo.application.ApplicationLogs;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
+import org.osgi.service.log.LogLevel;
 import org.osgi.service.log.Logger;
 import org.osgi.service.log.LoggerFactory;
+import org.osgi.service.log.admin.LoggerAdmin;
+import org.osgi.service.log.admin.LoggerContext;
 
 public class Logs {
 
 	private static LoggerFactory loggerFactory = null;
+	private static LoggerAdmin loggerAdmin = null;
 
 	public static org.osgi.service.log.Logger getLogger(Class<?> context) {
 
@@ -30,10 +39,10 @@ public class Logs {
 		return logger;
 	}
 
-	private static LoggerFactory getLoggerFactory() {
+	public static LoggerFactory getLoggerFactory() {
 
 		if (loggerFactory == null) {
-			Bundle bundle = FrameworkUtil.getBundle(Application.class);
+			Bundle bundle = FrameworkUtil.getBundle(Mimo.class);
 			BundleContext bundleContext = bundle.getBundleContext();
 
 			ServiceReference<LoggerFactory> loggerFactory = bundleContext.getServiceReference(LoggerFactory.class);
@@ -43,4 +52,45 @@ public class Logs {
 		return loggerFactory;
 	}
 
+	public static LoggerAdmin getLoggerAdmin() {
+
+		if (loggerAdmin == null) {
+			Bundle bundle = FrameworkUtil.getBundle(Logs.class);
+			BundleContext bundleContext = bundle.getBundleContext();
+
+			ServiceReference<LoggerAdmin> loggerAdmin = bundleContext.getServiceReference(LoggerAdmin.class);
+			Logs.loggerAdmin = bundleContext.getService(loggerAdmin);
+		}
+
+		return loggerAdmin;
+	}
+	
+	public static LoggerContext getLoggerContext() {
+		
+		LoggerAdmin loggerAdmin = Logs.getLoggerAdmin();
+		if (loggerAdmin == null)
+			return null;
+
+		Bundle bundle = FrameworkUtil.getBundle(Mimo.class);
+		LoggerContext loggerContext = loggerAdmin.getLoggerContext(bundle.getSymbolicName());
+
+		return loggerContext;
+	}
+
+	public static void reset(ApplicationLogs applicationLogs) {
+
+		LoggerContext loggerContext = Logs.getLoggerContext();
+		if(loggerContext == null)
+			return;
+
+		// root
+		Map<String, LogLevel> logLevels = new HashMap<>();
+		logLevels.put(Logger.ROOT_LOGGER_NAME, LogLevel.valueOf(applicationLogs.getLevel().getLiteral()));
+
+		// packages
+		for (ApplicationLogEntry applicationLogEntry : applicationLogs.getEntries())
+			logLevels.put(applicationLogEntry.getPackage(), LogLevel.valueOf(applicationLogEntry.getLevel().getLiteral()));
+
+		loggerContext.setLogLevels(logLevels);		
+	}
 }

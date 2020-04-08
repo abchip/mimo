@@ -11,7 +11,7 @@ package org.abchip.mimo.edi.base;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.core.base.BaseCommandProviderImpl;
+import org.abchip.mimo.core.base.cmd.BaseCommands;
 import org.abchip.mimo.edi.entity.EntityEvent;
 import org.abchip.mimo.edi.message.MessageFactory;
 import org.abchip.mimo.edi.message.MessageSent;
@@ -20,7 +20,7 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
-public class BaseEdiCommandProviderImpl extends BaseCommandProviderImpl {
+public class BaseEdiCommandProviderImpl extends BaseCommands {
 
 	@Inject
 	private ResourceManager resourceManager;

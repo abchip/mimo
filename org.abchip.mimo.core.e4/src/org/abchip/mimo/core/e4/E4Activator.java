@@ -11,12 +11,9 @@ package org.abchip.mimo.core.e4;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.abchip.mimo.application.Application;
-import org.abchip.mimo.application.ApplicationLogEntry;
-import org.abchip.mimo.application.ApplicationLogs;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.util.Logs;
@@ -29,13 +26,8 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.FrameworkUtil;
-import org.osgi.framework.ServiceReference;
 import org.osgi.framework.wiring.BundleWiring;
-import org.osgi.service.log.LogLevel;
 import org.osgi.service.log.Logger;
-import org.osgi.service.log.admin.LoggerAdmin;
-import org.osgi.service.log.admin.LoggerContext;
 
 public class E4Activator implements BundleActivator {
 
@@ -68,22 +60,21 @@ public class E4Activator implements BundleActivator {
 	private void startApplication(String applicationConfig, String applicationHome, String adminKey) throws Exception {
 
 		if (E4Activator.application != null) {
-			System.err.println("Application already started " + E4Activator.application);
+			Logger logger = Logs.getLogger(E4Activator.class);
+			logger.warn("Application {} alreay started", E4Activator.application.getName());
 			return;
 		}
 
-		try {
-			E4Activator.application = loadApplication(applicationConfig);
-		} catch (Exception e) {
-			System.err.println("Failed " + E4Activator.application);
-			throw e;
-		}
+		E4Activator.application = loadApplication(applicationConfig);
 
+		// logs
+		Logs.reset(E4Activator.application.getLogs());
+
+		// keys
 		setApplicationKeys(E4Activator.application, adminKey);
 
+		// path
 		setApplicationPaths(E4Activator.application.getPaths(), applicationHome);
-
-		setApplicationLogs(E4Activator.application.getLogs());
 
 		Bundle bundle = E4Activator.application.getBundle();
 		ClassLoader bundleLoader = bundle.adapt(BundleWiring.class).getClassLoader();
@@ -98,9 +89,6 @@ public class E4Activator implements BundleActivator {
 		E4Activator.application.setContext(contextApplication);
 
 		new E4ApplicationStarter(E4Activator.application, System.out).start();
-
-		System.out.println("Started " + E4Activator.application);
-
 	}
 
 	private Application loadApplication(String applicationConfig) throws IOException {
@@ -145,32 +133,5 @@ public class E4Activator implements BundleActivator {
 			applicationPaths.setLogs(applicationPaths.getLogs().replaceFirst("\\$\\{mimo.home\\}", applicationHome));
 			applicationPaths.setWork(applicationPaths.getWork().replaceFirst("\\$\\{mimo.home\\}", applicationHome));
 		}
-	}
-
-	private void setApplicationLogs(ApplicationLogs applicationLogs) {
-
-		LoggerAdmin loggerAdmin = getLoggerAdmin();
-		if (loggerAdmin == null) {
-			System.err.println("Unexpected condition: cn785y0q947b4e57806430756043");
-			return;
-		}
-
-		Bundle bundle = FrameworkUtil.getBundle(Application.class);
-		LoggerContext loggerContext = loggerAdmin.getLoggerContext(bundle.getSymbolicName());
-
-		Map<String, LogLevel> logLevels = new HashMap<>(loggerContext.getLogLevels());
-		logLevels.put(Logger.ROOT_LOGGER_NAME, LogLevel.valueOf(applicationLogs.getLevel().getLiteral()));
-		for (ApplicationLogEntry applicationLogEntry : applicationLogs.getEntries()) 
-			logLevels.put(applicationLogEntry.getPackage(), LogLevel.valueOf(applicationLogEntry.getLevel().getLiteral()));
-		loggerContext.setLogLevels(logLevels);
-	}
-
-	private LoggerAdmin getLoggerAdmin() {
-
-		Bundle bundle = FrameworkUtil.getBundle(Logs.class);
-		BundleContext bundleContext = bundle.getBundleContext();
-
-		ServiceReference<LoggerAdmin> loggerAdmin = bundleContext.getServiceReference(LoggerAdmin.class);
-		return bundleContext.getService(loggerAdmin);
 	}
 }

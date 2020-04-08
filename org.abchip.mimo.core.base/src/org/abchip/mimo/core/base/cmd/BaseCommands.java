@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.base;
+package org.abchip.mimo.core.base.cmd;
 
 import javax.inject.Inject;
 
@@ -18,7 +18,7 @@ import org.abchip.mimo.context.ContextFactory;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.eclipse.osgi.framework.console.CommandProvider;
 
-public abstract class BaseCommandProviderImpl implements CommandProvider {
+public abstract class BaseCommands implements CommandProvider {
 
 	protected static final String NULL = "@NULL";
 

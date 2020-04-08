@@ -22,7 +22,7 @@ import org.abchip.mimo.context.AuthenticationManager;
 import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.core.base.BaseCommandProviderImpl;
+import org.abchip.mimo.core.base.cmd.BaseCommands;
 import org.abchip.mimo.tester.AssertionFailed;
 import org.abchip.mimo.tester.AssertionResult;
 import org.abchip.mimo.tester.AssertionSuccess;
@@ -32,7 +32,7 @@ import org.abchip.mimo.tester.TestSuiteLauncher;
 import org.abchip.mimo.tester.TestSuiteRunner;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
-public class BaseTesterCommandProviderImpl extends BaseCommandProviderImpl {
+public class BaseTesterCommandProviderImpl extends BaseCommands {
 
 	@Inject
 	private Application application;

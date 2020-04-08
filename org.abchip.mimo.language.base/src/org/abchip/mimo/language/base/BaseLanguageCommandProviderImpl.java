@@ -11,7 +11,7 @@ package org.abchip.mimo.language.base;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.core.base.BaseCommandProviderImpl;
+import org.abchip.mimo.core.base.cmd.BaseCommands;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
@@ -19,7 +19,7 @@ import org.abchip.mimo.language.LanguagePlanet;
 import org.abchip.mimo.resource.ResourceManager;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
-public class BaseLanguageCommandProviderImpl extends BaseCommandProviderImpl {
+public class BaseLanguageCommandProviderImpl extends BaseCommands {
 
 	@Inject
 	private ResourceManager resourceManager;

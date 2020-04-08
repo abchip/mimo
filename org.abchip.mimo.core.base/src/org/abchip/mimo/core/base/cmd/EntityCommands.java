@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.base;
+package org.abchip.mimo.core.base.cmd;
 
 import javax.inject.Inject;
 
@@ -18,7 +18,7 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
-public class BaseEntityCommandProviderImpl extends BaseCommandProviderImpl {
+public class EntityCommands extends BaseCommands {
 
 	@Inject
 	private ResourceManager resourceManager;
