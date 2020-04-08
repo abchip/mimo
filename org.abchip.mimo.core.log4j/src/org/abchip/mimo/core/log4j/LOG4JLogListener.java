@@ -27,7 +27,6 @@ public final class LOG4JLogListener implements LogListener {
 		Logger logger = getLogger(logEntry);
 
 		String message = logEntry.getMessage();
-
 		LogLevel level = logEntry.getLogLevel();
 		switch (level) {
 		case AUDIT:

@@ -50,7 +50,7 @@ public class BaseThreadManagerImpl implements ThreadManager {
 	@Override
 	public org.abchip.mimo.context.Thread createThread(String name, Runnable runnable, boolean daemon) {
 
-		BaseThreadImpl thread = new BaseThreadImpl(this, runnable, "mimo://thread/" + name, daemon);
+		BaseThreadImpl thread = new BaseThreadImpl(this, runnable, name, daemon);
 		return thread;
 	}
 

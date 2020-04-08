@@ -40,7 +40,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private final static Logger LOGGER = Logs.getLogger(NIOResourcempl.class);
+	private final Logger LOGGER = Logs.getLogger(NIOResourcempl.class);
 
 	private NIOPathManager pathManager = null;
 	private ResourceSerializer<E> resourceSerializer = null;

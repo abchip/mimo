@@ -8,10 +8,6 @@
  */
 package org.abchip.mimo.core.e4;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.HashMap;
@@ -43,32 +39,42 @@ import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.util.Logs;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceReference;
 import org.osgi.service.http.HttpService;
 import org.osgi.service.http.NamespaceException;
+import org.osgi.service.log.Logger;
 import org.osgi.util.tracker.ServiceTracker;
 
-public class E4ApplicationStarter {
+public class E4ApplicationStarter implements Runnable {
 
 	private Application application = null;
 	private List<Object> applicationHooks = null;
 	private Map<String, List<Object>> componentMapHooks = new HashMap<String, List<Object>>();
 
-	private int messageLevel;
-	private Writer writer = null;
+	private Logger LOGGER = null;
 
 	private ServiceTracker<?, ?> httpServiceTracker;
 	private HttpService httpService = null;
 
-	public E4ApplicationStarter(Application application, OutputStream outputStream) {
+	public E4ApplicationStarter(Application application) {
 		this.application = application;
-		this.writer = new OutputStreamWriter(outputStream);
-
 	}
 
-	public Application start() throws Exception {
+	@Override
+	public void run() {
+		LOGGER = Logs.getLogger(E4ApplicationStarter.class);
+		
+		try {
+			this.start();
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+		}
+	}
+
+	private Application start() throws Exception {
 
 		httpService = application.getContext().get(HttpService.class);
 
@@ -77,53 +83,45 @@ public class E4ApplicationStarter {
 			httpServiceTracker.open();
 		}
 
-		println(">application " + application);
+		LOGGER.info("Starting application {} {}", application.getName(), application.getText());
 
 		// configuration
 		if (application.getConfig() != null)
 			registerConfig(application.getContext(), application.getConfig().getEntities());
 
 		// hooks starting
-		messageLevel++;
 		Dictionary<String, String> properties = new Hashtable<String, String>();
 		properties.put("org.abchip.mimo.application.hook.application", application.getName());
 		applicationHooks = registerHooks(application.getContext(), application.getContext(), application.getHooks(), properties);
 		for (Object hook : applicationHooks) {
-			println("!application starting " + hook);
+			LOGGER.info("Notify application {} starting to hook {}", application.getName(), hook.getClass().getName());
 			application.getContext().invoke(hook, ApplicationStarting.class);
 		}
-		messageLevel--;
 
 		// components
-		for (ApplicationComponent component : application.getComponents()) {
-			messageLevel++;
+		for (ApplicationComponent component : application.getComponents())
 			activateComponent(component);
-			messageLevel--;
-		}
 
 		// hooks started
-		messageLevel++;
 		for (Object hook : applicationHooks) {
-			println("!application started " + hook);
+			LOGGER.info("Notify application {} started to hook {}", application.getName(), hook.getClass().getName());
 			application.getContext().invoke(hook, ApplicationStarted.class);
 		}
-		messageLevel--;
 
 		// commands provider
-		messageLevel++;
 		registerCommands(application.getContext(), application.getContext(), application.getCommands());
-		messageLevel--;
 
 		return application;
 	}
 
 	public void activateComponent(ApplicationComponent component) {
 
-		println(">component " + component);
 		if (component.getStatus() != ComponentStatus.ACTIVE) {
-			println("!unactive");
+			LOGGER.info("Disabled component {}", component.getName());
 			return;
 		}
+
+		LOGGER.info("Starting component {}", component.getName());
 
 		@SuppressWarnings("resource")
 		Context componentContext = application.getContext().createChildContext(component.getName()).get();
@@ -135,27 +133,24 @@ public class E4ApplicationStarter {
 			registerConfig(componentContext, component.getConfig().getEntities());
 
 		// hooks starting
-		messageLevel++;
 		Dictionary<String, String> properties = new Hashtable<String, String>();
 		properties.put("org.abchip.mimo.application.hook.component", component.getName());
 		List<Object> componentHooks = registerHooks(application.getContext(), componentContext, component.getHooks(), properties);
 		componentMapHooks.put(component.getName(), componentHooks);
 		for (Object hook : componentHooks) {
-			println("!component starting " + hook);
+			LOGGER.info("Notify component {} starting to hook {}", component.getName(), hook.getClass().getName());
 			component.getContext().invoke(hook, ComponentStarting.class);
 		}
-		messageLevel--;
 
 		// modules
 		for (ApplicationModule module : component.getModules()) {
-			messageLevel++;
-			println(">module " + module);
 			if (module.getStatus() != ModuleStatus.ACTIVE) {
-				println("!unactive");
+				LOGGER.info("Disabled module {}", module.getName());
 				continue;
 			}
+
+			LOGGER.info("Load module {}", module.getName());
 			// services
-			messageLevel++;
 			for (ServiceRef serviceRef : module.getServices()) {
 				try {
 					registerService(component, serviceRef);
@@ -163,23 +158,16 @@ public class E4ApplicationStarter {
 					e.printStackTrace();
 				}
 			}
-			messageLevel--;
-
-			messageLevel--;
 		}
 
 		// hooks
-		messageLevel++;
 		for (Object hook : componentHooks) {
-			println("!component started " + hook);
+			LOGGER.info("Notify component {} started to hook {}", component.getName(), hook.getClass().getName());
 			component.getContext().invoke(hook, ComponentStarted.class);
 		}
-		messageLevel--;
 
 		// commands provider
-		messageLevel++;
 		registerCommands(application.getContext(), componentContext, component.getCommands());
-		messageLevel--;
 	}
 
 	private List<Object> registerHooks(ContextRoot contextRoot, Context contextChild, List<ServiceHook> hooks, Dictionary<String, String> properties) {
@@ -188,17 +176,17 @@ public class E4ApplicationStarter {
 		for (ServiceHook hook : hooks) {
 			// STOPPED
 			if (hook.getStatus() == ServiceStatus.STOPPED) {
-				println("-hook " + hook + " unactive");
+				LOGGER.info("Disabled hook {}", hook.getClassName());
 				continue;
 			}
 
-			println("+hook " + hook);
+			LOGGER.info("Register hook {}", hook.getClassName());
 			try {
 				Object service = loadObject(contextChild, hook.getClassName());
 				contextRoot.set(hook.getInterfaceName(), service, false, properties);
 				services.add(service);
 			} catch (ClassNotFoundException e) {
-				System.err.println(e.getMessage());
+				LOGGER.error(e.getMessage());
 			}
 		}
 
@@ -215,17 +203,17 @@ public class E4ApplicationStarter {
 		List<Object> commands = new ArrayList<Object>();
 		for (ServiceCommandProvider command : commandProviders) {
 			if (command.getStatus() == ServiceStatus.STOPPED) {
-				println("-command " + command + " unactive");
+				LOGGER.info("Disabled command {}", command.getClassName());
 				continue;
 			}
 
-			println("+command " + command);
+			LOGGER.info("Register command {}", command.getClassName());
 			try {
 				Object service = loadObject(contextChild, command.getClassName());
 				contextRoot.set(command.getInterfaceName(), service, false, null);
 				commands.add(service);
 			} catch (ClassNotFoundException e) {
-				System.err.println(e.getMessage());
+				LOGGER.error(e.getMessage());
 			}
 		}
 
@@ -235,11 +223,11 @@ public class E4ApplicationStarter {
 	private void registerService(ApplicationComponent component, ServiceRef serviceRef) {
 		// STOPPED
 		if (serviceRef.getStatus() == ServiceStatus.STOPPED) {
-			println("-service " + serviceRef + " unactive");
+			LOGGER.info("Disabled service {}", serviceRef.getClassName());
 			return;
 		}
 
-		println("+service " + serviceRef);
+		LOGGER.info("Register service {}", serviceRef.getClassName());
 
 		// service properties
 		Dictionary<String, String> dictionary = new Hashtable<String, String>();
@@ -271,8 +259,7 @@ public class E4ApplicationStarter {
 			service = loadObject(component.getContext(), serviceRef.getClassName());
 			registerService(component, interfaceName, service, remoteExport, dictionary);
 		} catch (ClassNotFoundException e) {
-			System.err.println(e.getMessage());
-			println("");
+			LOGGER.error(e.getMessage());
 			return;
 		}
 
@@ -281,9 +268,7 @@ public class E4ApplicationStarter {
 			ServiceRegistry serviceRegistry = (ServiceRegistry) serviceRef;
 			// service entries
 			for (ServiceRegistryEntry serviceChildRef : serviceRegistry.getEntries()) {
-				messageLevel++;
 				registerService(component, serviceChildRef);
-				messageLevel--;
 			}
 		}
 
@@ -295,9 +280,7 @@ public class E4ApplicationStarter {
 				try {
 					httpService.registerServlet(serviceServlet.getAlias(), (Servlet) service, null, null);
 				} catch (ServletException | NamespaceException e) {
-					e.printStackTrace();
-					System.err.println("Servlet registration failed: " + serviceRef);
-					println("");
+					LOGGER.error(e.getMessage());
 				}
 			}
 		}
@@ -315,28 +298,6 @@ public class E4ApplicationStarter {
 	private Object loadObject(Context context, String className) throws ClassNotFoundException {
 		Class<?> tempClass = this.application.getBundle().loadClass(className);
 		return context.make(tempClass);
-	}
-
-	private void println(String message) {
-
-		try {
-			writer.write(appendChars(message + "\n", "\t", messageLevel, true));
-			writer.flush();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	private String appendChars(String in, String chars, int times, boolean before) {
-		StringBuffer sb = new StringBuffer();
-		if (!before)
-			sb.append(in);
-		for (int x = 0; x < times; x++)
-			sb.append(chars);
-		if (before)
-			sb.append(in);
-		sb.trimToSize();
-		return sb.toString();
 	}
 
 	private class HttpServiceTracker extends ServiceTracker<HttpService, HttpService> {
