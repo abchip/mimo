@@ -84,6 +84,8 @@ public class E4ApplicationStarter implements Runnable {
 			httpServiceTracker.open();
 		}
 
+		System.setProperty("mimo.logs", application.getPaths().getLogs());
+
 		LOGGER.info("Starting application {} {}", application.getName(), application.getText());
 
 		// configuration

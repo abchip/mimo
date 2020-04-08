@@ -20,6 +20,7 @@ import org.abchip.mimo.core.log4j.LOG4JActivator;
 import org.abchip.mimo.util.Applications;
 import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.Systems;
+import org.apache.logging.log4j.ThreadContext;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -86,6 +87,8 @@ public class E4Activator implements BundleActivator {
 		// path
 		setApplicationPaths(E4Activator.application.getPaths(), applicationHome);
 
+		ThreadContext.put("mimo.logs", application.getPaths().getLogs());
+		
 		// context
 		ContextRoot contextApplication = new E4ContextRootImpl(bundle, E4Activator.application.getContextDescription());
 		contextApplication.set(Application.class, E4Activator.application);
