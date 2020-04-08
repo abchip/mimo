@@ -8,21 +8,13 @@
  */
 package org.abchip.mimo.core.e4;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.Map;
-
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.core.log4j.LOG4JActivator;
+import org.abchip.mimo.util.Applications;
 import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.Systems;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -40,6 +32,9 @@ public class E4Activator implements BundleActivator {
 	@Override
 	public void start(BundleContext bundleContext) throws Exception {
 
+		// touch LOG4J 
+		LOG4JActivator.class.toString();
+		
 		if (!Boolean.parseBoolean(bundleContext.getProperty("mimo.activation")))
 			return;
 
@@ -65,7 +60,7 @@ public class E4Activator implements BundleActivator {
 			return;
 		}
 
-		E4Activator.application = loadApplication(applicationConfig);
+		E4Activator.application = Applications.load(applicationConfig);
 
 		// logs
 		Logs.reset(E4Activator.application.getLogs());
@@ -89,24 +84,6 @@ public class E4Activator implements BundleActivator {
 		E4Activator.application.setContext(contextApplication);
 
 		new E4ApplicationStarter(E4Activator.application, System.out).start();
-	}
-
-	private Application loadApplication(String applicationConfig) throws IOException {
-
-		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> m = reg.getExtensionToFactoryMap();
-		m.put("xmi", new XMIResourceFactoryImpl());
-
-		ResourceSet resourceSet = new ResourceSetImpl();
-		URI uri = null;
-		if (applicationConfig.toString().startsWith("http"))
-			uri = URI.createURI(applicationConfig.toString());
-		else
-			uri = URI.createFileURI(new File(applicationConfig.toString()).getAbsolutePath());
-
-		Resource resource = resourceSet.getResource(uri, true);
-		resource.load(Collections.EMPTY_MAP);
-		return (Application) resource.getContents().get(0);
 	}
 
 	private void setApplicationKeys(Application application, String adminKey) {

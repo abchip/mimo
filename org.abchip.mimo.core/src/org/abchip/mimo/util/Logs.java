@@ -19,6 +19,7 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
 import org.osgi.service.log.LogLevel;
+import org.osgi.service.log.LogReaderService;
 import org.osgi.service.log.Logger;
 import org.osgi.service.log.LoggerFactory;
 import org.osgi.service.log.admin.LoggerAdmin;
@@ -28,8 +29,9 @@ public class Logs {
 
 	private static LoggerFactory loggerFactory = null;
 	private static LoggerAdmin loggerAdmin = null;
+	private static LogReaderService logReaderService = null;
 
-	public static org.osgi.service.log.Logger getLogger(Class<?> context) {
+	public static Logger getLogger(Class<?> context) {
 
 		LoggerFactory loggerFactory = getLoggerFactory();
 		if (loggerFactory == null)
@@ -55,7 +57,7 @@ public class Logs {
 	public static LoggerAdmin getLoggerAdmin() {
 
 		if (loggerAdmin == null) {
-			Bundle bundle = FrameworkUtil.getBundle(Logs.class);
+			Bundle bundle = FrameworkUtil.getBundle(Mimo.class);
 			BundleContext bundleContext = bundle.getBundleContext();
 
 			ServiceReference<LoggerAdmin> loggerAdmin = bundleContext.getServiceReference(LoggerAdmin.class);
@@ -64,9 +66,9 @@ public class Logs {
 
 		return loggerAdmin;
 	}
-	
+
 	public static LoggerContext getLoggerContext() {
-		
+
 		LoggerAdmin loggerAdmin = Logs.getLoggerAdmin();
 		if (loggerAdmin == null)
 			return null;
@@ -77,10 +79,26 @@ public class Logs {
 		return loggerContext;
 	}
 
+	public static LogReaderService getLogReaderService() {
+
+		if (logReaderService == null) {
+			Bundle bundle = FrameworkUtil.getBundle(Mimo.class);
+			BundleContext bundleContext = bundle.getBundleContext();
+
+			ServiceReference<LogReaderService> logReaderService = bundleContext.getServiceReference(LogReaderService.class);
+			Logs.logReaderService = bundleContext.getService(logReaderService);
+		}
+
+		return logReaderService;
+	}
+
 	public static void reset(ApplicationLogs applicationLogs) {
 
+		if (applicationLogs == null)
+			return;
+
 		LoggerContext loggerContext = Logs.getLoggerContext();
-		if(loggerContext == null)
+		if (loggerContext == null)
 			return;
 
 		// root
@@ -91,6 +109,6 @@ public class Logs {
 		for (ApplicationLogEntry applicationLogEntry : applicationLogs.getEntries())
 			logLevels.put(applicationLogEntry.getPackage(), LogLevel.valueOf(applicationLogEntry.getLevel().getLiteral()));
 
-		loggerContext.setLogLevels(logLevels);		
+		loggerContext.setLogLevels(logLevels);
 	}
 }

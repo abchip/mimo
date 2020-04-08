@@ -9,7 +9,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.abchip.mimo.core.jetty
 Bundle-ClassPath: .
-Require-Bundle: org.eclipse.equinox.http.jetty,
+Require-Bundle: org.abchip.mimo.core,
+ org.eclipse.equinox.http.jetty,
  org.eclipse.equinox.http.registry,
  org.eclipse.equinox.http.servlet,
  org.eclipse.jetty.continuation,
@@ -18,8 +19,7 @@ Require-Bundle: org.eclipse.equinox.http.jetty,
  org.eclipse.jetty.security,
  org.eclipse.jetty.server,
  org.eclipse.jetty.servlet,
- org.eclipse.jetty.util,
- org.abchip.mimo.core
+ org.eclipse.jetty.util
 Import-Package: javax.servlet,
  javax.servlet.http,
  org.osgi.service.http
