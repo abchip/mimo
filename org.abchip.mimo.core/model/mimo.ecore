@@ -1747,4 +1747,7 @@
       <eLiterals name="JavaScript_Mimo_Notation" value="30" literal="MIMO"/>
     </eClassifiers>
   </eSubpackages>
+  <eSubpackages name="service" nsURI="http://www.abchip.org/mimo/service" nsPrefix="mimo-service">
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceManager" abstract="true" interface="true"/>
+  </eSubpackages>
 </ecore:EPackage>

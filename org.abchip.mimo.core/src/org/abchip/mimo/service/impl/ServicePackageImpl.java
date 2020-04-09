@@ -5,10 +5,8 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.impl;
+package org.abchip.mimo.service.impl;
 
-import org.abchip.mimo.Mimo;
-import org.abchip.mimo.MimoFactory;
 import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.application.ApplicationPackage;
@@ -27,14 +25,20 @@ import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.entity.impl.EntityPackageImpl;
 
+import org.abchip.mimo.impl.MimoPackageImpl;
+
 import org.abchip.mimo.java.JavaPackage;
 
 import org.abchip.mimo.java.impl.JavaPackageImpl;
+
 import org.abchip.mimo.resource.ResourcePackage;
 
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
+
+import org.abchip.mimo.service.ServiceFactory;
+import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServicePackage;
-import org.abchip.mimo.service.impl.ServicePackageImpl;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -46,13 +50,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
+public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass mimoEClass = null;
+	private EClass serviceManagerEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -65,12 +69,12 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.abchip.mimo.MimoPackage#eNS_URI
+	 * @see org.abchip.mimo.service.ServicePackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private MimoPackageImpl() {
-		super(eNS_URI, MimoFactory.eINSTANCE);
+	private ServicePackageImpl() {
+		super(eNS_URI, ServiceFactory.eINSTANCE);
 	}
 
 	/**
@@ -83,7 +87,7 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link MimoPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link ServicePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,17 +96,19 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static MimoPackage init() {
-		if (isInited) return (MimoPackage)EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
+	public static ServicePackage init() {
+		if (isInited) return (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredMimoPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		MimoPackageImpl theMimoPackage = registeredMimoPackage instanceof MimoPackageImpl ? (MimoPackageImpl)registeredMimoPackage : new MimoPackageImpl();
+		Object registeredServicePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ServicePackageImpl theServicePackage = registeredServicePackage instanceof ServicePackageImpl ? (ServicePackageImpl)registeredServicePackage : new ServicePackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
+		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
@@ -114,10 +120,9 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(registeredPackage instanceof JavaPackageImpl ? registeredPackage : JavaPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
-		ServicePackageImpl theServicePackage = (ServicePackageImpl)(registeredPackage instanceof ServicePackageImpl ? registeredPackage : ServicePackage.eINSTANCE);
 
 		// Create package meta-data objects
+		theServicePackage.createPackageContents();
 		theMimoPackage.createPackageContents();
 		theApplicationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
@@ -125,9 +130,9 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		theEntityPackage.createPackageContents();
 		theJavaPackage.createPackageContents();
 		theResourcePackage.createPackageContents();
-		theServicePackage.createPackageContents();
 
 		// Initialize created meta-data
+		theServicePackage.initializePackageContents();
 		theMimoPackage.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
@@ -135,14 +140,13 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		theEntityPackage.initializePackageContents();
 		theJavaPackage.initializePackageContents();
 		theResourcePackage.initializePackageContents();
-		theServicePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theMimoPackage.freeze();
+		theServicePackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(MimoPackage.eNS_URI, theMimoPackage);
-		return theMimoPackage;
+		EPackage.Registry.INSTANCE.put(ServicePackage.eNS_URI, theServicePackage);
+		return theServicePackage;
 	}
 
 	/**
@@ -151,8 +155,8 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getMimo() {
-		return mimoEClass;
+	public EClass getServiceManager() {
+		return serviceManagerEClass;
 	}
 
 	/**
@@ -161,8 +165,8 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 	 * @generated
 	 */
 	@Override
-	public MimoFactory getMimoFactory() {
-		return (MimoFactory)getEFactoryInstance();
+	public ServiceFactory getServiceFactory() {
+		return (ServiceFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -184,7 +188,7 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		mimoEClass = createEClass(MIMO);
+		serviceManagerEClass = createEClass(SERVICE_MANAGER);
 	}
 
 	/**
@@ -210,24 +214,6 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Obtain other dependent packages
-		ApplicationPackage theApplicationPackage = (ApplicationPackage)EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
-		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
-		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
-		ResourcePackage theResourcePackage = (ResourcePackage)EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
-		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theApplicationPackage);
-		getESubpackages().add(theContextPackage);
-		getESubpackages().add(theDataPackage);
-		getESubpackages().add(theEntityPackage);
-		getESubpackages().add(theJavaPackage);
-		getESubpackages().add(theResourcePackage);
-		getESubpackages().add(theServicePackage);
-
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -235,10 +221,7 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		// Add supertypes to classes
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(mimoEClass, Mimo.class, "Mimo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		// Create resource
-		createResource(eNS_URI);
+		initEClass(serviceManagerEClass, ServiceManager.class, "ServiceManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
-} //MimoPackageImpl
+} //ServicePackageImpl

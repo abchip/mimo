@@ -1064,5 +1064,9 @@
         </genOperations>
       </genClasses>
     </nestedGenPackages>
+    <nestedGenPackages prefix="Service" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="mimo.ecore#//service">
+      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceManager"/>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

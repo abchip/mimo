@@ -22,6 +22,8 @@ Export-Package: org.abchip.mimo,
  org.abchip.mimo.java.impl,
  org.abchip.mimo.resource,
  org.abchip.mimo.resource.impl,
+ org.abchip.mimo.service,
+ org.abchip.mimo.service.impl,
  org.abchip.mimo.util
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.17.100";visibility:=reexport,
  org.eclipse.emf.ecore;bundle-version="2.21.0";visibility:=reexport,
