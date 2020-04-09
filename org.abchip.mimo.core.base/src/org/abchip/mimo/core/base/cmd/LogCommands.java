@@ -48,7 +48,6 @@ public class LogCommands extends BaseCommands {
 		logLevels.put(bundle, LogLevel.valueOf(bundleLevel));
 
 		loggerContext.setLogLevels(logLevels);
-
 	}
 
 	public void _logReset(CommandInterpreter interpreter) throws Exception {
