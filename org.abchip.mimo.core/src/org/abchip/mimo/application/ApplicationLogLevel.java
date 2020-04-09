@@ -31,7 +31,7 @@ public enum ApplicationLogLevel implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ERROR(0, "Error", "ERROR"),
+	ERROR(10, "Error", "ERROR"),
 
 	/**
 	 * The '<em><b>Warning</b></em>' literal object.
@@ -41,7 +41,7 @@ public enum ApplicationLogLevel implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	WARNING(0, "Warning", "WARN"),
+	WARNING(20, "Warning", "WARN"),
 
 	/**
 	 * The '<em><b>Info</b></em>' literal object.
@@ -51,7 +51,7 @@ public enum ApplicationLogLevel implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INFO(0, "Info", "INFO"),
+	INFO(30, "Info", "INFO"),
 
 	/**
 	 * The '<em><b>Debug</b></em>' literal object.
@@ -61,7 +61,7 @@ public enum ApplicationLogLevel implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DEBUG(0, "Debug", "DEBUG"),
+	DEBUG(40, "Debug", "DEBUG"),
 
 	/**
 	 * The '<em><b>Trace</b></em>' literal object.
@@ -71,7 +71,7 @@ public enum ApplicationLogLevel implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TRACE(0, "Trace", "TRACE");
+	TRACE(50, "Trace", "TRACE");
 
 	/**
 	 * The '<em><b>Error</b></em>' literal value.
@@ -82,7 +82,7 @@ public enum ApplicationLogLevel implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ERROR_VALUE = 0;
+	public static final int ERROR_VALUE = 10;
 
 	/**
 	 * The '<em><b>Warning</b></em>' literal value.
@@ -93,7 +93,7 @@ public enum ApplicationLogLevel implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WARNING_VALUE = 0;
+	public static final int WARNING_VALUE = 20;
 
 	/**
 	 * The '<em><b>Info</b></em>' literal value.
@@ -104,7 +104,7 @@ public enum ApplicationLogLevel implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INFO_VALUE = 0;
+	public static final int INFO_VALUE = 30;
 
 	/**
 	 * The '<em><b>Debug</b></em>' literal value.
@@ -115,7 +115,7 @@ public enum ApplicationLogLevel implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DEBUG_VALUE = 0;
+	public static final int DEBUG_VALUE = 40;
 
 	/**
 	 * The '<em><b>Trace</b></em>' literal value.
@@ -126,7 +126,7 @@ public enum ApplicationLogLevel implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TRACE_VALUE = 0;
+	public static final int TRACE_VALUE = 50;
 
 	/**
 	 * An array of all the '<em><b>Log Level</b></em>' enumerators.
@@ -198,6 +198,10 @@ public enum ApplicationLogLevel implements Enumerator {
 	public static ApplicationLogLevel get(int value) {
 		switch (value) {
 			case ERROR_VALUE: return ERROR;
+			case WARNING_VALUE: return WARNING;
+			case INFO_VALUE: return INFO;
+			case DEBUG_VALUE: return DEBUG;
+			case TRACE_VALUE: return TRACE;
 		}
 		return null;
 	}

@@ -32,12 +32,16 @@ public class Logs {
 	private static LogReaderService logReaderService = null;
 
 	public static Logger getLogger(Class<?> context) {
+		return getLogger(context.getName());
+	}
+
+	public static Logger getLogger(String name) {
 
 		LoggerFactory loggerFactory = getLoggerFactory();
 		if (loggerFactory == null)
 			throw new RuntimeException("Unexpected condition: b96v46rebt0are66t0b465");
 
-		Logger logger = loggerFactory.getLogger(context.getName());
+		Logger logger = loggerFactory.getLogger(name);
 		return logger;
 	}
 

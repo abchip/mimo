@@ -75,11 +75,11 @@
           eType="#//application/ApplicationLogLevel" defaultValueLiteral="WARN"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ApplicationLogLevel">
-      <eLiterals name="Error" literal="ERROR"/>
-      <eLiterals name="Warning" literal="WARN"/>
-      <eLiterals name="Info" literal="INFO"/>
-      <eLiterals name="Debug" literal="DEBUG"/>
-      <eLiterals name="Trace" literal="TRACE"/>
+      <eLiterals name="Error" value="10" literal="ERROR"/>
+      <eLiterals name="Warning" value="20" literal="WARN"/>
+      <eLiterals name="Info" value="30" literal="INFO"/>
+      <eLiterals name="Debug" value="40" literal="DEBUG"/>
+      <eLiterals name="Trace" value="50" literal="TRACE"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ApplicationModule" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -87,12 +87,15 @@ public class Strings {
 		return string.substring(0, i + 1);
 	}
 
-	public static Boolean isEmptyTrim(String string) {
+	public static Boolean isEmpty(String string) {
 		return string == null || string.trim().equals("");
+	}
+
+	public static boolean isNotEmpty(String string) {
+		return !isEmpty(string);
 	}
 
 	public static String escapeJava(String string) {
 		return StringEscapeUtils.escapeJava(string);
 	}
-
 }
