@@ -35,7 +35,9 @@ import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextEvent;
 import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.ProviderConfig;
@@ -43,6 +45,7 @@ import org.abchip.mimo.context.ProviderUser;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
+import org.abchip.mimo.util.Logs;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.CookieSpecs;
@@ -59,11 +62,14 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.ssl.TrustStrategy;
+import org.osgi.service.log.Logger;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class HttpAuthenticationManagerImpl implements AuthenticationManager {
+
+	private static final Logger LOGGER = Logs.getLogger(HttpAuthenticationManagerImpl.class);
 
 	@Inject
 	private ContextRoot contextRoot;
@@ -386,6 +392,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		return context;
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public ContextProvider login(String contextId, AuthenticationUserPassword authentication) {
 
@@ -401,11 +408,27 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		context.getContextDescription().setLocale(connector.getContextDescription().getLocale());
 		context.getContextDescription().setTimeZone(connector.getContextDescription().getTimeZone());
 
+		// http connector
 		context.set(HttpConnector.class, connector);
-		
+		context.registerListener(new ContextListener() {
+			@Override
+			public void handleEvent(ContextEvent event) {
+				switch (event.getEventType()) {
+				case CLOSE:
+					try {
+						connector.close();
+					} catch (IOException e) {
+						LOGGER.warn(e.getMessage());
+					}
+					break;
+				}
+			}
+		});
+
 		return contextProvider;
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public ContextProvider login(String contextId, AuthenticationAdminKey authentication) {
 
@@ -420,7 +443,22 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		context.getContextDescription().setLocale(connector.getContextDescription().getLocale());
 		context.getContextDescription().setTimeZone(connector.getContextDescription().getTimeZone());
 
+		// http connector
 		context.set(HttpConnector.class, connector);
+		context.registerListener(new ContextListener() {
+			@Override
+			public void handleEvent(ContextEvent event) {
+				switch (event.getEventType()) {
+				case CLOSE:
+					try {
+						connector.close();
+					} catch (IOException e) {
+						LOGGER.warn(e.getMessage());
+					}
+					break;
+				}
+			}
+		});
 
 		return contextProvider;
 	}

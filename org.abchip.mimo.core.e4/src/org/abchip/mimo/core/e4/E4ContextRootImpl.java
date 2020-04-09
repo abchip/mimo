@@ -148,12 +148,12 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		}
 
 		return new ContextProvider() {
-			
+
 			@Override
 			public Context get() {
 				return contextChild;
 			}
-			
+
 			@Override
 			public void close() {
 				contextChild.dispose();

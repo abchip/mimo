@@ -13,6 +13,7 @@ import java.lang.annotation.Annotation;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.impl.ContextImpl;
 
 public class BaseTestContextImpl extends ContextImpl {
@@ -85,5 +86,10 @@ public class BaseTestContextImpl extends ContextImpl {
 
 	public <T> void registerAdapterFactory(AdapterFactory factory, Class<T> adapterType) {
 		delegate.registerAdapterFactory(factory, adapterType);
+	}
+
+	@Override
+	public void registerListener(ContextListener listener) {
+		throw new UnsupportedOperationException();
 	}
 }

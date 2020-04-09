@@ -44,14 +44,18 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public ContextProvider createChildContext(String contextId) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract ContextProvider createChildContext(String contextId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public abstract <T> T get(Class<T> klass, String filter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -59,46 +63,22 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	 * @generated
 	 */
 	@Override
-	public <T> T get(Class<T> klass, String filter) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract <T> List<T> getAll(Class<T> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public <T> List<T> getAll(Class<T> klass) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract <T> List<T> getAll(Class<T> klass, String filter);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public <T> List<T> getAll(Class<T> klass, String filter) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void set(String name, Object object, boolean remoteExport, Dictionary<String, String> dictionary) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract void set(String name, Object object, boolean remoteExport, Dictionary<String, String> dictionary);
 
 } //ContextRootImpl

@@ -8,8 +8,6 @@
  */
 package org.abchip.mimo.core.e4;
 
-import java.io.Closeable;
-import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +15,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.abchip.mimo.context.AdapterFactory;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextEvent;
+import org.abchip.mimo.context.ContextEventType;
+import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.impl.ContextImpl;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
@@ -30,11 +32,11 @@ public abstract class E4ContextImpl extends ContextImpl {
 	private static final Logger LOGGER = Logs.getLogger(E4ContextImpl.class);
 
 	private ContextDescription contextDescription;
-	private List<Closeable> closeables;
+	private List<ContextListener> listeners;
 
 	public E4ContextImpl(ContextDescription contextDescription) {
 		this.contextDescription = contextDescription;
-		this.closeables = new ArrayList<Closeable>();
+		this.listeners = new ArrayList<ContextListener>();
 	}
 
 	protected abstract IEclipseContext getEclipseContext();
@@ -46,19 +48,18 @@ public abstract class E4ContextImpl extends ContextImpl {
 	}
 
 	@Override
+	public void registerListener(ContextListener listener) {
+		this.listeners.add(listener);
+	}
+
+	@Override
 	public <T> void set(Class<T> clazz, T object) {
 		getEclipseContext().set(clazz, object);
-		
-		if(object instanceof Closeable)
-			this.closeables.add((Closeable)object);
 	}
 
 	@Override
 	public void set(String name, Object object) {
 		getEclipseContext().set(name, object);
-		
-		if(object instanceof Closeable)
-			this.closeables.add((Closeable)object);
 	}
 
 	@Override
@@ -95,16 +96,27 @@ public abstract class E4ContextImpl extends ContextImpl {
 		Map<Class<?>, List<AdapterFactory>> adapterFactories = (Map<Class<?>, List<AdapterFactory>>) getEclipseContext().get(ADAPTER_FACTORIES_NAME);
 		adapterFactories.clear();
 
-		for (Closeable closeable : this.closeables) {
+		for (ContextListener listener : this.listeners) {
 			try {
-				closeable.close();
-			} catch (IOException e) {
+				listener.handleEvent(new ContextEvent() {
+
+					@Override
+					public ContextEventType getEventType() {
+						return ContextEventType.CLOSE;
+					}
+
+					@Override
+					public Context getContext() {
+						return E4ContextImpl.this;
+					}
+				});
+			} catch (Exception e) {
 				LOGGER.warn(e.getMessage());
 			}
 		}
 
-		this.closeables = null;
-		
+		this.listeners = null;
+
 		getEclipseContext().dispose();
 
 		removeEclipseContext();
