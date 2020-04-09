@@ -11,6 +11,7 @@ import java.lang.annotation.Annotation;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextPackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -129,6 +130,18 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	public <T extends Object> void registerAdapterFactory(AdapterFactory factory, Class<T> adapterType) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void registerListener(ContextListener listener) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -306,6 +306,9 @@
           </eGenericType>
         </eParameters>
       </eOperations>
+      <eOperations name="registerListener">
+        <eParameters name="listener" lowerBound="1" eType="#//context/ContextListener"/>
+      </eOperations>
       <eOperations name="set" lowerBound="1">
         <eTypeParameters name="T"/>
         <eParameters name="klass" lowerBound="1">
@@ -333,6 +336,18 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeZone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContextEvent" abstract="true" interface="true">
+      <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
+      <eOperations name="getEventType" lowerBound="1" eType="#//context/ContextEventType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ContextEventType">
+      <eLiterals name="Close" literal="CLOSE"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContextListener" abstract="true" interface="true">
+      <eOperations name="handleEvent">
+        <eParameters name="event" lowerBound="1" eType="#//context/ContextEvent"/>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContextProvider" abstract="true" interface="true"
         eSuperTypes="#//java/JavaCloseable">

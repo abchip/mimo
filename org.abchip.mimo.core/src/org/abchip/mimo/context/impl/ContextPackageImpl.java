@@ -24,7 +24,10 @@ import org.abchip.mimo.context.Capability;
 import org.abchip.mimo.context.CapabilityRight;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextEvent;
+import org.abchip.mimo.context.ContextEventType;
 import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
@@ -159,6 +162,20 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass contextEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass contextListenerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass contextRootEClass = null;
 
 	/**
@@ -286,6 +303,13 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	private EEnum capabilityRightEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum contextEventTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -711,6 +735,26 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	@Override
 	public EAttribute getContextDescription_User() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getContextEvent() {
+		return contextEventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getContextListener() {
+		return contextListenerEClass;
 	}
 
 	/**
@@ -1199,6 +1243,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getContextEventType() {
+		return contextEventTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getLockType() {
 		return lockTypeEEnum;
 	}
@@ -1312,6 +1366,10 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__TIME_ZONE);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__USER);
 
+		contextEventEClass = createEClass(CONTEXT_EVENT);
+
+		contextListenerEClass = createEClass(CONTEXT_LISTENER);
+
 		contextProviderEClass = createEClass(CONTEXT_PROVIDER);
 
 		contextRootEClass = createEClass(CONTEXT_ROOT);
@@ -1379,6 +1437,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		// Create enums
 		capabilityRightEEnum = createEEnum(CAPABILITY_RIGHT);
+		contextEventTypeEEnum = createEEnum(CONTEXT_EVENT_TYPE);
 		lockTypeEEnum = createEEnum(LOCK_TYPE);
 		threadStatusEEnum = createEEnum(THREAD_STATUS);
 		userClassEEnum = createEEnum(USER_CLASS);
@@ -1578,6 +1637,9 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "adapterType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(contextEClass, null, "registerListener", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getContextListener(), "listener", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(contextEClass, null, "set", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
@@ -1602,6 +1664,17 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEAttribute(getContextDescription_User(), ecorePackage.getEString(), "user", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(contextDescriptionEClass, ecorePackage.getEBoolean(), "isTenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(contextEventEClass, ContextEvent.class, "ContextEvent", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(contextEventEClass, this.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(contextEventEClass, this.getContextEventType(), "getEventType", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(contextListenerEClass, ContextListener.class, "ContextListener", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(contextListenerEClass, null, "handleEvent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getContextEvent(), "event", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contextProviderEClass, ContextProvider.class, "ContextProvider", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1906,6 +1979,9 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEEnumLiteral(capabilityRightEEnum, CapabilityRight.READ);
 		addEEnumLiteral(capabilityRightEEnum, CapabilityRight.WRITE);
 		addEEnumLiteral(capabilityRightEEnum, CapabilityRight.EXECUTE);
+
+		initEEnum(contextEventTypeEEnum, ContextEventType.class, "ContextEventType");
+		addEEnumLiteral(contextEventTypeEEnum, ContextEventType.CLOSE);
 
 		initEEnum(lockTypeEEnum, LockType.class, "LockType");
 		addEEnumLiteral(lockTypeEEnum, LockType.READ);

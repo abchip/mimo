@@ -14,6 +14,7 @@ import org.abchip.mimo.context.AuthenticationUserPassword;
 import org.abchip.mimo.context.AuthenticationUserToken;
 import org.abchip.mimo.context.CapabilityRight;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextEventType;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.Identity;
@@ -111,6 +112,8 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 		switch (eDataType.getClassifierID()) {
 			case ContextPackage.CAPABILITY_RIGHT:
 				return createCapabilityRightFromString(eDataType, initialValue);
+			case ContextPackage.CONTEXT_EVENT_TYPE:
+				return createContextEventTypeFromString(eDataType, initialValue);
 			case ContextPackage.LOCK_TYPE:
 				return createLockTypeFromString(eDataType, initialValue);
 			case ContextPackage.THREAD_STATUS:
@@ -136,6 +139,8 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 		switch (eDataType.getClassifierID()) {
 			case ContextPackage.CAPABILITY_RIGHT:
 				return convertCapabilityRightToString(eDataType, instanceValue);
+			case ContextPackage.CONTEXT_EVENT_TYPE:
+				return convertContextEventTypeToString(eDataType, instanceValue);
 			case ContextPackage.LOCK_TYPE:
 				return convertLockTypeToString(eDataType, instanceValue);
 			case ContextPackage.THREAD_STATUS:
@@ -311,6 +316,26 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 * @generated
 	 */
 	public String convertCapabilityRightToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContextEventType createContextEventTypeFromString(EDataType eDataType, String initialValue) {
+		ContextEventType result = ContextEventType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertContextEventTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

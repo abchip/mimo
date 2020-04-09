@@ -96,6 +96,14 @@ public interface Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model listenerRequired="true"
+	 * @generated
+	 */
+	void registerListener(ContextListener listener);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model klassRequired="true" objectRequired="true"
 	 * @generated
 	 */
