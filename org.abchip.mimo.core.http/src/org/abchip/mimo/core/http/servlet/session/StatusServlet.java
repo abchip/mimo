@@ -23,7 +23,6 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.core.http.ContextUtils;
-import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;

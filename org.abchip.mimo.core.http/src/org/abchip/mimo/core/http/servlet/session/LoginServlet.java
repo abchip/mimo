@@ -26,7 +26,6 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
-import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
@@ -87,7 +86,8 @@ public class LoginServlet extends HttpServlet {
 				ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
 				tempContextDescription.setId(session.getId());
 				tempContextDescription.setAnonymous(true);
-				ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context.get(), ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+				ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context.get(), ContextDescription.class,
+						SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
 				serializer.add(tempContextDescription);
 				serializer.save(response.getOutputStream());
 
@@ -103,9 +103,9 @@ public class LoginServlet extends HttpServlet {
 		if (context != null) {
 			context.dispose();
 			context = null;
-		}		
+		}
 		ContextUtils.removeContext(session.getId());
-		
+
 		// adminKey
 		if (adminKeyParam != null) {
 
@@ -121,7 +121,7 @@ public class LoginServlet extends HttpServlet {
 				adminKey = fields[1];
 			} else
 				adminKey = fields[0];
-			
+
 			// new session with user password
 			AuthenticationAdminKey authentication = ContextFactory.eINSTANCE.createAuthenticationAdminKey();
 			authentication.setAdminKey(adminKey);
@@ -146,7 +146,7 @@ public class LoginServlet extends HttpServlet {
 				user = fields[1];
 			} else
 				user = fields[0];
-			
+
 			// new session with user password
 			AuthenticationUserPassword authentication = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
 			authentication.setUser(user);

@@ -66,7 +66,7 @@ public class E4Activator implements BundleActivator {
 
 		if (E4Activator.application != null) {
 			Logger logger = Logs.getLogger(E4Activator.class);
-			logger.warn("Application {} alreay started", E4Activator.application.getName());
+			logger.warn("Application {} already started", E4Activator.application.getName());
 			return;
 		}
 
