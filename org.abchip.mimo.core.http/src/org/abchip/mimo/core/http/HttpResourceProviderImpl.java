@@ -30,6 +30,7 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 		this.resourceConfig.setOrderSupport(false);
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
 

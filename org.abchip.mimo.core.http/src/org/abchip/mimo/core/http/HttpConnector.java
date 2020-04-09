@@ -8,13 +8,20 @@
  */
 package org.abchip.mimo.core.http;
 
+import java.io.Closeable;
+import java.io.IOException;
+
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ProviderConfig;
+import org.abchip.mimo.util.Logs;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.osgi.service.log.Logger;
 
-public class HttpConnector {
+public class HttpConnector implements Closeable {
+
+	private static final Logger LOGGER = Logs.getLogger(HttpConnector.class);
 
 	private ProviderConfig providerConfig;
 	private CloseableHttpClient httpClient;
@@ -31,7 +38,7 @@ public class HttpConnector {
 	protected ContextDescription getContextDescription() {
 		return this.contextDescription;
 	}
-	
+
 	protected String getToken() {
 		return token;
 	}
@@ -46,7 +53,14 @@ public class HttpConnector {
 			CloseableHttpResponse response = httpClient.execute(httpPost);
 			return response;
 		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
 			return null;
 		}
+	}
+
+	@Override
+	public void close() throws IOException {
+		this.httpClient.close();
+		this.httpClient = null;
 	}
 }

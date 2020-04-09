@@ -402,7 +402,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		context.getContextDescription().setTimeZone(connector.getContextDescription().getTimeZone());
 
 		context.set(HttpConnector.class, connector);
-
+		
 		return contextProvider;
 	}
 

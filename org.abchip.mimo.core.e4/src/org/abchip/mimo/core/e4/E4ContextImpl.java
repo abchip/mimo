@@ -8,6 +8,8 @@
  */
 package org.abchip.mimo.core.e4;
 
+import java.io.Closeable;
+import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,17 +19,22 @@ import java.util.Map;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.impl.ContextImpl;
+import org.abchip.mimo.util.Logs;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.osgi.service.log.Logger;
 
 public abstract class E4ContextImpl extends ContextImpl {
 
 	private static final String ADAPTER_FACTORIES_NAME = "org.abchip.mimo.context.adapterFactories";
+	private static final Logger LOGGER = Logs.getLogger(E4ContextImpl.class);
 
 	private ContextDescription contextDescription;
+	private List<Closeable> closeables;
 
 	public E4ContextImpl(ContextDescription contextDescription) {
 		this.contextDescription = contextDescription;
+		this.closeables = new ArrayList<Closeable>();
 	}
 
 	protected abstract IEclipseContext getEclipseContext();
@@ -41,11 +48,17 @@ public abstract class E4ContextImpl extends ContextImpl {
 	@Override
 	public <T> void set(Class<T> clazz, T object) {
 		getEclipseContext().set(clazz, object);
+		
+		if(object instanceof Closeable)
+			this.closeables.add((Closeable)object);
 	}
 
 	@Override
 	public void set(String name, Object object) {
 		getEclipseContext().set(name, object);
+		
+		if(object instanceof Closeable)
+			this.closeables.add((Closeable)object);
 	}
 
 	@Override
@@ -82,6 +95,16 @@ public abstract class E4ContextImpl extends ContextImpl {
 		Map<Class<?>, List<AdapterFactory>> adapterFactories = (Map<Class<?>, List<AdapterFactory>>) getEclipseContext().get(ADAPTER_FACTORIES_NAME);
 		adapterFactories.clear();
 
+		for (Closeable closeable : this.closeables) {
+			try {
+				closeable.close();
+			} catch (IOException e) {
+				LOGGER.warn(e.getMessage());
+			}
+		}
+
+		this.closeables = null;
+		
 		getEclipseContext().dispose();
 
 		removeEclipseContext();
