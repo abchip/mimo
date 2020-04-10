@@ -112,7 +112,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 		try (CloseableHttpResponse response = this.connector.execute("nextSequence", query)) {
 
-			if (response != null && response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
+			if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
 				HttpEntity entity = response.getEntity();
 				nextSequence = EntityUtils.toString(entity, "UTF-8");
 			}
@@ -142,7 +142,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 						this.resourceSerializer.load(stream, false);
 						entity = this.resourceSerializer.get();
 					}
-
 				}
 			} catch (Exception e) {
 				LOGGER.error(e.getMessage());
@@ -182,7 +181,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 			try (CloseableHttpResponse response = this.connector.execute("find", query)) {
 
-				if (response != null && (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND)) {
+				if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
 					try (InputStream stream = response.getEntity().getContent()) {
 						this.resourceSerializer.load(stream, false);
 					}
@@ -190,7 +189,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 				entities = this.resourceSerializer.getAll();
 			} catch (Exception e) {
-				e.printStackTrace();
+				LOGGER.error(e.getMessage());
 			} finally {
 				this.resourceSerializer.clear();
 			}

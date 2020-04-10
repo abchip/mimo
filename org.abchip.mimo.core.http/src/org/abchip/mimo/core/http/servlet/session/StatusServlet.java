@@ -57,7 +57,7 @@ public class StatusServlet extends HttpServlet {
 
 			ContextUtils.addContext(context);
 		}
-
+		
 		if (context == null) {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return;

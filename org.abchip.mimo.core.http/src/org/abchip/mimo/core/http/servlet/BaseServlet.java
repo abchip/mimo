@@ -42,9 +42,7 @@ public abstract class BaseServlet extends HttpServlet {
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		HttpSession session = request.getSession();
-		// HttpUtils.getParametersAsString(request));
-
+		HttpSession session = request.getSession();		
 		Context context = ContextUtils.getContext(session.getId());
 
 		// invalid access

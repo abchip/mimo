@@ -64,4 +64,8 @@ public abstract class BaseCommands implements CommandProvider {
 
 		return context;
 	}
+
+	protected void logout() {
+		this.getContext().dispose();
+	}
 }

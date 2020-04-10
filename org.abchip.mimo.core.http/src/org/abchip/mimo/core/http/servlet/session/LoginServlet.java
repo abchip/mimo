@@ -53,108 +53,34 @@ public class LoginServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		String adminKeyParam = request.getParameter("adminKey");
-		String provider = request.getParameter("provider");
-		String userParam = request.getParameter("user");
-		String password = request.getParameter("password");
-
-		// Third part
-		if (provider != null) {
-
-			// anonymous access
-			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-			try (ContextProvider context = authenticationManager.login(session.getId(), authentication)) {
-
-				String entityName = "OAuth2" + provider;
-
-				ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context.get(), entityName);
-				EntityIdentifiable oauth2Entity = oauth2Reader.first();
-
-				if (oauth2Entity == null) {
-					response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-					return;
-				}
-				String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-						+ oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri", false, false).toString();
-
-				location = response.encodeURL(location);
-				// System.err.println(("Login location: " + location));
-
-				response.setHeader("Location", location);
-				response.setStatus(HttpServletResponse.SC_OK);
-
-				ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
-				tempContextDescription.setId(session.getId());
-				tempContextDescription.setAnonymous(true);
-				ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context.get(), ContextDescription.class,
-						SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
-				serializer.add(tempContextDescription);
-				serializer.save(response.getOutputStream());
-
-				response.flushBuffer();
-			}
-
-			return;
-		}
-
 		Context context = ContextUtils.getContext(session.getId());
 
 		// close previous
 		if (context != null) {
+			ContextUtils.removeContext(context.getContextDescription().getId());
+
 			context.dispose();
 			context = null;
 		}
-		ContextUtils.removeContext(session.getId());
+
+		// third part -> redirect
+		String provider = request.getParameter("provider");		
+		if (provider != null) {
+			loginRedirect(request, response, provider);
+			return;
+		}
 
 		// adminKey
-		if (adminKeyParam != null) {
-
-			String[] fields = adminKeyParam.split("/");
-
-			String tenant = null;
-			String adminKey = null;
-
-			if (fields.length > 1) {
-				tenant = fields[0];
-				if (tenant.trim().isEmpty())
-					tenant = null;
-				adminKey = fields[1];
-			} else
-				adminKey = fields[0];
-
-			// new session with user password
-			AuthenticationAdminKey authentication = ContextFactory.eINSTANCE.createAuthenticationAdminKey();
-			authentication.setAdminKey(adminKey);
-			authentication.setTenant(tenant);
-
-			context = authenticationManager.login(session.getId(), authentication).get();
-			ContextUtils.addContext(context);
-
+		String adminKey = request.getParameter("adminKey");		
+		if (adminKey != null) {
+			context = loginAdminKey(session, adminKey);
 		}
+
 		// user password login
-		else {
-
-			String[] fields = userParam.split("/");
-
-			String tenant = null;
-			String user = null;
-
-			if (fields.length > 1) {
-				tenant = fields[0];
-				if (tenant.trim().isEmpty())
-					tenant = null;
-				user = fields[1];
-			} else
-				user = fields[0];
-
-			// new session with user password
-			AuthenticationUserPassword authentication = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
-			authentication.setUser(user);
-			authentication.setPassword(password);
-			authentication.setTenant(tenant);
-
-			context = authenticationManager.login(session.getId(), authentication).get();
-			ContextUtils.addContext(context);
+		String user = request.getParameter("user");
+		if(user != null ) {
+			String password = request.getParameter("password");
+			context = loginUserPassword(session, user, password);
 		}
 
 		if (context == null) {
@@ -162,6 +88,9 @@ public class LoginServlet extends HttpServlet {
 			return;
 		}
 
+		// register context
+		ContextUtils.addContext(context);
+		
 		response.setStatus(HttpServletResponse.SC_OK);
 
 		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
@@ -169,5 +98,97 @@ public class LoginServlet extends HttpServlet {
 		serializer.save(response.getOutputStream());
 
 		response.flushBuffer();
+	}
+
+	private Context loginUserPassword(HttpSession session, String userParam, String password) {
+
+		String[] fields = userParam.split("/");
+
+		String tenant = null;
+		String user = null;
+
+		if (fields.length > 1) {
+			tenant = fields[0];
+			if (tenant.trim().isEmpty())
+				tenant = null;
+			user = fields[1];
+		} else
+			user = fields[0];
+
+		// new session with user password
+		AuthenticationUserPassword authentication = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
+		authentication.setUser(user);
+		authentication.setPassword(password);
+		authentication.setTenant(tenant);
+
+		@SuppressWarnings("resource")
+		Context context = authenticationManager.login(session.getId(), authentication).get();
+
+		return context;
+	}
+
+	private Context loginAdminKey(HttpSession session, String adminKeyParam) {
+
+		String[] fields = adminKeyParam.split("/");
+
+		String tenant = null;
+		String adminKey = null;
+
+		if (fields.length > 1) {
+			tenant = fields[0];
+			if (tenant.trim().isEmpty())
+				tenant = null;
+			adminKey = fields[1];
+		} else
+			adminKey = fields[0];
+
+		// new session with user password
+		AuthenticationAdminKey authentication = ContextFactory.eINSTANCE.createAuthenticationAdminKey();
+		authentication.setAdminKey(adminKey);
+		authentication.setTenant(tenant);
+
+		@SuppressWarnings("resource")
+		Context context = authenticationManager.login(session.getId(), authentication).get();
+
+		return context;
+	}
+
+	@SuppressWarnings("resource")
+	private void loginRedirect(HttpServletRequest request, HttpServletResponse response, String provider) throws IOException {
+
+		HttpSession session = request.getSession();
+
+		// TODO remove anonymous access
+		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
+		try (ContextProvider context = authenticationManager.login(session.getId(), authentication)) {
+
+			String entityName = "OAuth2" + provider;
+
+			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context.get(), entityName);
+			EntityIdentifiable oauth2Entity = oauth2Reader.first();
+
+			if (oauth2Entity == null) {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				return;
+			}
+			String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+					+ oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri", false, false).toString();
+
+			location = response.encodeURL(location);
+			// System.err.println(("Login location: " + location));
+
+			response.setHeader("Location", location);
+			response.setStatus(HttpServletResponse.SC_OK);
+
+			ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
+			tempContextDescription.setId(session.getId());
+			tempContextDescription.setAnonymous(true);
+			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context.get(), ContextDescription.class,
+					SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+			serializer.add(tempContextDescription);
+			serializer.save(response.getOutputStream());
+
+			response.flushBuffer();
+		}
 	}
 }

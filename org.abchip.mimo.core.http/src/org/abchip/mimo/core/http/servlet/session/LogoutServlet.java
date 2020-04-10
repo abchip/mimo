@@ -21,16 +21,15 @@ import org.abchip.mimo.core.http.servlet.BaseServlet;
 public class LogoutServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		HttpSession session = request.getSession();
-		
-		ContextUtils.removeContext(session.getId());
+		ContextUtils.removeContext(context.getContextDescription().getId());
 		context.dispose();
-		
+
 		response.setStatus(HttpServletResponse.SC_ACCEPTED);
-		
+
+		HttpSession session = request.getSession();
 		session.invalidate();
 	}
 }

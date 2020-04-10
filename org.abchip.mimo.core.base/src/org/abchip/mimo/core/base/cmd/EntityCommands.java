@@ -23,8 +23,14 @@ public class EntityCommands extends BaseCommands {
 	@Inject
 	private ResourceManager resourceManager;
 
-	public <E extends EntityIdentifiable> void _login(CommandInterpreter interpreter) throws Exception {
+	public void _login(CommandInterpreter interpreter) throws Exception {
 		this.login(nextArgument(interpreter));
+	}
+
+	public void _logout(CommandInterpreter interpreter) throws Exception {
+		this.logout();
+		
+		interpreter.execute("disconnect");
 	}
 
 	public <E extends EntityIdentifiable> void _find(CommandInterpreter interpreter) throws Exception {

@@ -392,77 +392,6 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		return context;
 	}
 
-	@SuppressWarnings("resource")
-	@Override
-	public ContextProvider login(String contextId, AuthenticationUserPassword authentication) {
-
-		HttpConnector connector = connect(authentication.getUser(), authentication.getPassword(), authentication.getTenant());
-		if (connector == null)
-			return null;
-
-		ContextProvider contextProvider = contextRoot.createChildContext(contextId);
-		Context context = contextProvider.get();
-		context.getContextDescription().setUser(authentication.getUser());
-		context.getContextDescription().setTenant(authentication.getTenant());
-		context.getContextDescription().setCurrencyUom(connector.getContextDescription().getCurrencyUom());
-		context.getContextDescription().setLocale(connector.getContextDescription().getLocale());
-		context.getContextDescription().setTimeZone(connector.getContextDescription().getTimeZone());
-
-		// http connector
-		context.set(HttpConnector.class, connector);
-		context.registerListener(new ContextListener() {
-			@Override
-			public void handleEvent(ContextEvent event) {
-				switch (event.getEventType()) {
-				case CLOSE:
-					try {
-						connector.close();
-					} catch (IOException e) {
-						LOGGER.warn(e.getMessage());
-					}
-					break;
-				}
-			}
-		});
-
-		return contextProvider;
-	}
-
-	@SuppressWarnings("resource")
-	@Override
-	public ContextProvider login(String contextId, AuthenticationAdminKey authentication) {
-
-		HttpConnector connector = connect(authentication.getAdminKey(), authentication.getTenant());
-		if (connector == null)
-			return null;
-
-		ContextProvider contextProvider = contextRoot.createChildContext(contextId);
-		Context context = contextProvider.get();
-		context.getContextDescription().setTenant(authentication.getTenant());
-		context.getContextDescription().setCurrencyUom(connector.getContextDescription().getCurrencyUom());
-		context.getContextDescription().setLocale(connector.getContextDescription().getLocale());
-		context.getContextDescription().setTimeZone(connector.getContextDescription().getTimeZone());
-
-		// http connector
-		context.set(HttpConnector.class, connector);
-		context.registerListener(new ContextListener() {
-			@Override
-			public void handleEvent(ContextEvent event) {
-				switch (event.getEventType()) {
-				case CLOSE:
-					try {
-						connector.close();
-					} catch (IOException e) {
-						LOGGER.warn(e.getMessage());
-					}
-					break;
-				}
-			}
-		});
-
-		return contextProvider;
-	}
-
 	@Override
 	public ContextProvider login(String contextId, AuthenticationUserToken authentication) {
 
@@ -496,7 +425,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			return null;
 		}
 
-		ContextProvider context = login(contextId, authenticationUserPassword);
+		ContextProvider context = this.login(contextId, authenticationUserPassword);
 		if (context == null)
 			return null;
 
@@ -506,7 +435,92 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	}
 
 	@SuppressWarnings("resource")
+	@Override
+	public ContextProvider login(String contextId, AuthenticationUserPassword authentication) {
+
+		HttpConnector connector = connect(authentication.getUser(), authentication.getPassword(), authentication.getTenant());
+		if (connector == null)
+			return null;
+
+		ContextProvider contextProvider = contextRoot.createChildContext(contextId);
+		Context context = contextProvider.get();
+		context.getContextDescription().setUser(authentication.getUser());
+		context.getContextDescription().setTenant(authentication.getTenant());
+		context.getContextDescription().setCurrencyUom(connector.getContextDescription().getCurrencyUom());
+		context.getContextDescription().setLocale(connector.getContextDescription().getLocale());
+		context.getContextDescription().setTimeZone(connector.getContextDescription().getTimeZone());
+
+		// http connector
+		context.set(HttpConnector.class, connector);
+		context.registerListener(new ContextListener() {
+			@Override
+			public void handleEvent(ContextEvent event) {
+				switch (event.getEventType()) {
+				case CLOSE:
+					disconnect(connector);
+					break;
+				}
+			}
+		});
+
+		return contextProvider;
+	}
+
+	@SuppressWarnings("resource")
+	@Override
+	public ContextProvider login(String contextId, AuthenticationAdminKey authentication) {
+
+		HttpConnector connector = connect(authentication.getAdminKey(), authentication.getTenant());
+		if (connector == null)
+			return null;
+
+		ContextProvider contextProvider = contextRoot.createChildContext(contextId);
+		Context context = contextProvider.get();
+		context.getContextDescription().setTenant(authentication.getTenant());
+		context.getContextDescription().setCurrencyUom(connector.getContextDescription().getCurrencyUom());
+		context.getContextDescription().setLocale(connector.getContextDescription().getLocale());
+		context.getContextDescription().setTimeZone(connector.getContextDescription().getTimeZone());
+
+		// http connector
+		context.set(HttpConnector.class, connector);
+		context.registerListener(new ContextListener() {
+			@Override
+			public void handleEvent(ContextEvent event) {
+				switch (event.getEventType()) {
+				case CLOSE:
+					disconnect(connector);
+					break;
+				}
+			}
+		});
+
+		return contextProvider;
+	}
+
+	private void disconnect(HttpConnector connector) {
+
+		try (CloseableHttpResponse response = connector.execute("logout", null)) {
+
+			if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_ACCEPTED)
+				LOGGER.audit("Disconnection success {}", response.getStatusLine().getReasonPhrase());
+			else
+				LOGGER.audit("Disconnection failed {}", response.getStatusLine().getReasonPhrase());
+
+		} catch (Exception e) {
+			LOGGER.audit("Disconnection failed {}", e.getMessage());
+		} finally {
+			try {
+				connector.close();
+			} catch (IOException e) {
+				LOGGER.audit(e.getMessage());
+			}
+		}
+	}
+
+	@SuppressWarnings("resource")
 	private HttpConnector connect(String user, String password, String tenant) {
+
+		LOGGER.audit("Connection from user {} for tenant {}", user, tenant);
 
 		List<NameValuePair> postParameters = new ArrayList<>();
 
@@ -526,11 +540,11 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		try {
 			httpPost.setEntity(new UrlEncodedFormEntity(postParameters));
 		} catch (UnsupportedEncodingException e1) {
-			e1.printStackTrace();
+			LOGGER.audit("Connection failed {}", e1.getMessage());
 			try {
 				client.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				LOGGER.audit("Connection failed {}", e.getMessage());
 			}
 			return null;
 		}
@@ -543,13 +557,15 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 				try (InputStream stream = response.getEntity().getContent()) {
 					contextSerializer.load(stream, false);
 				}
-				ContextDescription contextDescription = contextSerializer.get();
 
-				if (contextDescription != null)
-					connector = new HttpConnector(providerConfig, client, contextDescription);
-			}
+				ContextDescription contextDescription = contextSerializer.get();
+				connector = new HttpConnector(providerConfig, client, contextDescription);
+
+				LOGGER.audit("Connection success for user {} tenant", user, tenant);
+			} else
+				LOGGER.audit("Connection failed {}", response.getStatusLine().getReasonPhrase());
 		} catch (IOException e) {
-			e.printStackTrace();
+			LOGGER.audit("Connection failed {}", e.getMessage());
 		}
 
 		return connector;
@@ -557,6 +573,8 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 	@SuppressWarnings("resource")
 	private HttpConnector connect(String adminKey, String tenant) {
+
+		LOGGER.audit("Connection from adminKey {} for tenant {}", adminKey, tenant);
 
 		List<NameValuePair> postParameters = new ArrayList<>();
 		if (tenant != null)
@@ -573,11 +591,11 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		try {
 			httpPost.setEntity(new UrlEncodedFormEntity(postParameters));
 		} catch (UnsupportedEncodingException e1) {
-			e1.printStackTrace();
+			LOGGER.audit("Connection failed {}", e1.getMessage());
 			try {
 				client.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				LOGGER.audit("Connection failed {}", e.getMessage());
 			}
 			return null;
 		}
@@ -592,12 +610,13 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 					contextSerializer.load(stream, false);
 				}
 				ContextDescription contextDescription = contextSerializer.get();
+				connector = new HttpConnector(providerConfig, client, contextDescription);
 
-				if (contextDescription != null)
-					connector = new HttpConnector(providerConfig, client, contextDescription);
-			}
+				LOGGER.audit("Connection success for adminKey {} tenant", adminKey, tenant);
+			} else
+				LOGGER.audit("Connection failed {}", response.getStatusLine().getReasonPhrase());
 		} catch (IOException e) {
-			e.printStackTrace();
+			LOGGER.audit("Connection failed {}", e.getMessage());
 		}
 
 		return connector;
