@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.http;
+package org.abchip.mimo.core.http.servlet;
 
 import java.io.File;
 import java.io.IOException;

@@ -27,6 +27,7 @@ import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.abchip.mimo.util.Logs;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.util.EntityUtils;
 import org.osgi.service.log.Logger;
 
@@ -88,11 +89,14 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			if (tenant != null)
 				query += "&tenant=" + this.tenant;
 
-			try (CloseableHttpResponse response = this.connector.execute("delete", query)) {
+			HttpPost httpPost = this.connector.prepare("delete", query);
+			try (CloseableHttpResponse response = this.connector.execute(httpPost)) {
+				EntityUtils.consume(response.getEntity());
 			} catch (Exception e) {
 				LOGGER.error(e.getMessage());
 				throw new RuntimeException(e);
 			} finally {
+				httpPost.reset();
 				this.resourceSerializer.clear();
 			}
 		}
@@ -110,14 +114,18 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 
-		try (CloseableHttpResponse response = this.connector.execute("nextSequence", query)) {
+		HttpPost httpPost = connector.prepare("nextSequence", query);
+		try (CloseableHttpResponse response = this.connector.execute(httpPost)) {
 
 			if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
 				HttpEntity entity = response.getEntity();
 				nextSequence = EntityUtils.toString(entity, "UTF-8");
+				EntityUtils.consume(entity);
 			}
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage());
+		} finally {
+			httpPost.reset();
 		}
 
 		return nextSequence;
@@ -135,17 +143,23 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			if (proxy)
 				query += "&proxy=" + proxy;
 
-			try (CloseableHttpResponse response = this.connector.execute("lookup", query)) {
+			HttpPost httpPost = connector.prepare("lookup", query);
+			try (CloseableHttpResponse response = this.connector.execute(httpPost)) {
 
-				if (response != null && response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
-					try (InputStream stream = response.getEntity().getContent()) {
+				if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
+					
+					HttpEntity httpEntity = response.getEntity();
+					
+					try (InputStream stream = httpEntity.getContent()) {
 						this.resourceSerializer.load(stream, false);
 						entity = this.resourceSerializer.get();
 					}
+					 EntityUtils.consume(httpEntity);
 				}
 			} catch (Exception e) {
 				LOGGER.error(e.getMessage());
 			} finally {
+				httpPost.reset();
 				this.resourceSerializer.clear();
 			}
 
@@ -179,18 +193,24 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			if (order != null)
 				query += "&order=" + order;
 
-			try (CloseableHttpResponse response = this.connector.execute("find", query)) {
+			HttpPost httpPost = connector.prepare("find", query);
+			try (CloseableHttpResponse response = this.connector.execute(httpPost)) {
 
 				if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
-					try (InputStream stream = response.getEntity().getContent()) {
+					
+					HttpEntity httpEntity = response.getEntity();
+					
+					try (InputStream stream = httpEntity.getContent()) {
 						this.resourceSerializer.load(stream, false);
 					}
+					EntityUtils.consume(httpEntity);
 				}
-
 				entities = this.resourceSerializer.getAll();
+				 
 			} catch (Exception e) {
 				LOGGER.error(e.getMessage());
 			} finally {
+				httpPost.reset();
 				this.resourceSerializer.clear();
 			}
 
@@ -225,11 +245,15 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			}
 			if (tenant != null)
 				query += "&tenant=" + this.tenant;
-			try (CloseableHttpResponse response = connector.execute("save", query)) {
+
+			HttpPost httpPost = connector.prepare("save", query);
+			try (CloseableHttpResponse response = connector.execute(httpPost)) {
+				EntityUtils.consume(response.getEntity());
 			} catch (Exception e) {
 				LOGGER.error(e.getMessage());
 				throw new RuntimeException(e);
 			} finally {
+				httpPost.reset();
 				this.resourceSerializer.clear();
 			}
 		}

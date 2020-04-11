@@ -29,7 +29,7 @@ public class EntityCommands extends BaseCommands {
 
 	public void _logout(CommandInterpreter interpreter) throws Exception {
 		this.logout();
-		
+
 		interpreter.execute("disconnect");
 	}
 
@@ -48,9 +48,11 @@ public class EntityCommands extends BaseCommands {
 			return;
 		}
 
-		try (EntityIterator<E> entities = resourceManager.getResourceReader(context, frame, tenant).find(null, null, order)) {
-			for (E entity : entities) {
-				interpreter.println(entity.getID());
+		while (true) {
+			try (EntityIterator<E> entities = resourceManager.getResourceReader(context, frame, tenant).find(null, null, order)) {
+				for (E entity : entities) {
+					interpreter.println(entity.getID());
+				}
 			}
 		}
 	}
