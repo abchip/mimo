@@ -30,7 +30,9 @@ public class Applications {
 
 		ResourceSet resourceSet = new ResourceSetImpl();
 		URI uri = null;
-		if (configURI.toString().startsWith("http"))
+		if (configURI.toString().startsWith("http://"))
+			uri = URI.createURI(configURI.toString());
+		else if (configURI.toString().startsWith("bundleentry://"))
 			uri = URI.createURI(configURI.toString());
 		else
 			uri = URI.createFileURI(new File(configURI.toString()).getAbsolutePath());

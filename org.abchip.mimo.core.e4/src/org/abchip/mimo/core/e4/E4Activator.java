@@ -8,6 +8,9 @@
  */
 package org.abchip.mimo.core.e4;
 
+import java.io.IOException;
+import java.net.URL;
+
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.context.ContextRoot;
@@ -20,7 +23,6 @@ import org.abchip.mimo.core.log4j.LOG4JActivator;
 import org.abchip.mimo.util.Applications;
 import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.Systems;
-import org.apache.logging.log4j.ThreadContext;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -28,6 +30,8 @@ import org.osgi.framework.wiring.BundleWiring;
 import org.osgi.service.log.Logger;
 
 public class E4Activator implements BundleActivator {
+
+	public static final String APPLICATION_XMI = "/application/application.xmi";
 
 	private static Application application;
 	private Thread thread = null;
@@ -39,18 +43,51 @@ public class E4Activator implements BundleActivator {
 	@Override
 	public void start(BundleContext bundleContext) throws Exception {
 
+		// touch LOG4J to force activation
+		LOG4JActivator.class.toString();
+
+		Logger logger = Logs.getLogger(E4Activator.class);
+
+		if (E4Activator.application != null) {
+			logger.warn("Application {} already started", E4Activator.application.getName());
+			return;
+		}
+
 		if (!Boolean.parseBoolean(bundleContext.getProperty("mimo.activation")))
 			return;
 
-		if (bundleContext.getProperty("mimo.config") == null)
-			return;
+		// get application.xmi
+		if (bundleContext.getProperty("mimo.config") != null) {
+			E4Activator.application = Applications.load(bundleContext.getProperty("mimo.config"));
+		} else {
+			E4Activator.application = searchApplication(bundleContext);
+		}
 
-		if (bundleContext.getProperty("mimo.home") == null)
+		if (E4Activator.application == null) {
+			logger.warn("Application.xmi not found");
 			return;
+		}
 
-		startApplication(bundleContext.getProperty("mimo.config"), bundleContext.getProperty("mimo.home"), bundleContext.getProperty("mimo.admin.key"));
+		if (bundleContext.getProperty("mimo.home") == null) {
+			logger.warn("Property mimo.home not found");
+			return;
+		}
+
+		startApplication(bundleContext.getProperty("mimo.home"), bundleContext.getProperty("mimo.admin.key"));
 	}
 
+	private Application searchApplication(BundleContext bundleContext) throws IOException {
+		for (Bundle bundle : bundleContext.getBundles()) {
+			URL entry = bundle.getEntry(APPLICATION_XMI);
+			if (entry == null)
+				continue;
+
+			return Applications.load(entry.toString());
+		}
+		
+		return null;
+	}
+	
 	@Override
 	public void stop(BundleContext context) throws Exception {
 
@@ -62,18 +99,7 @@ public class E4Activator implements BundleActivator {
 		E4Activator.application = null;
 	}
 
-	private void startApplication(String applicationConfig, String applicationHome, String adminKey) throws Exception {
-
-		if (E4Activator.application != null) {
-			Logger logger = Logs.getLogger(E4Activator.class);
-			logger.warn("Application {} already started", E4Activator.application.getName());
-			return;
-		}
-
-		E4Activator.application = Applications.load(applicationConfig);
-
-		// touch LOG4J to force activation
-		LOG4JActivator.class.toString();
+	private void startApplication(String applicationHome, String adminKey) throws Exception {
 
 		// bundle
 		Bundle bundle = E4Activator.application.getBundle();
@@ -87,8 +113,6 @@ public class E4Activator implements BundleActivator {
 		// path
 		setApplicationPaths(E4Activator.application.getPaths(), applicationHome);
 
-		ThreadContext.put("mimo.logs", application.getPaths().getLogs());
-		
 		// context
 		ContextRoot contextApplication = new E4ContextRootImpl(bundle, E4Activator.application.getContextDescription());
 		contextApplication.set(Application.class, E4Activator.application);
