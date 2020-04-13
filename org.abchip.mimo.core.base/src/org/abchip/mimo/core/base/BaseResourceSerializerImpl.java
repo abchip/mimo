@@ -43,7 +43,7 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 		this.setFrame(frame);
 
 		switch (serializationType) {
-		case JAVA_SCRIPT_OBJECT_NOTATION:
+		case JSON:
 			final ObjectMapper mapper = new ObjectMapper(null);
 			// same as emf
 			final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.ENGLISH);
@@ -59,10 +59,10 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 			// mapper.
 			this.resource = new JSONProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"), mapper);
 			break;
-		case XML_METADATA_INTERCHANGE:
+		case XMI:
 			this.resource = new XMIProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"));
 			break;
-		case JAVA_SCRIPT_MIMO_NOTATION:
+		case MIMO:
 			this.resource = new MIMOProxyResourceImpl(context, URI.createURI("mimo:/" + getFrame().getName() + "s"));
 			break;
 		}

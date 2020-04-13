@@ -91,12 +91,12 @@ public class LoginServlet extends HttpServlet {
 		// register context
 		ContextUtils.addContext(context);
 		
-		response.setStatus(HttpServletResponse.SC_OK);
-
-		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.MIMO);
 		serializer.add(context.getContextDescription());
 		serializer.save(response.getOutputStream());
+		serializer.clear();
 
+		response.setStatus(HttpServletResponse.SC_OK);
 		response.flushBuffer();
 	}
 
@@ -184,7 +184,7 @@ public class LoginServlet extends HttpServlet {
 			tempContextDescription.setId(session.getId());
 			tempContextDescription.setAnonymous(true);
 			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context.get(), ContextDescription.class,
-					SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+					SerializationType.MIMO);
 			serializer.add(tempContextDescription);
 			serializer.save(response.getOutputStream());
 

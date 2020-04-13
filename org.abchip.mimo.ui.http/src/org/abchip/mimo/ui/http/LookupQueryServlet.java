@@ -81,7 +81,7 @@ public class LookupQueryServlet extends BaseServlet {
 			}
 		}
 
-		ResourceSerializer<Query> entitySerializer = resourceManager.createResourceSerializer(context, Query.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Query> entitySerializer = resourceManager.createResourceSerializer(context, Query.class, SerializationType.JSON);
 		if (query != null)
 			entitySerializer.add(query);
 		entitySerializer.save(response.getOutputStream());

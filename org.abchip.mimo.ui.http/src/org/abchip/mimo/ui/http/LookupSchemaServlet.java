@@ -95,7 +95,7 @@ public class LookupSchemaServlet extends BaseServlet {
 			}
 		}
 
-		ResourceSerializer<Schema> entitySerializer = resourceManager.createResourceSerializer(context, Schema.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Schema> entitySerializer = resourceManager.createResourceSerializer(context, Schema.class, SerializationType.JSON);
 		if (schema != null) {
 			completeSchema(context, schema);
 			entitySerializer.add(schema);

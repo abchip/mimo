@@ -91,7 +91,7 @@ public class LookupMenuServlet extends BaseServlet {
 			});
 		}
 
-		ResourceSerializer<Menu> entitySerializer = resourceManager.createResourceSerializer(context, Menu.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<Menu> entitySerializer = resourceManager.createResourceSerializer(context, Menu.class, SerializationType.JSON);
 		if (menu != null)
 			entitySerializer.add(menu);
 		entitySerializer.save(response.getOutputStream());

@@ -38,7 +38,7 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 		if (connector == null)
 			return null;
 
-		Resource<E> resource = new HttpResourceImpl<E>(context, frame, tenant, connector);
+		Resource<E> resource = new HttpResourceImpl<E>(context, connector, frame, tenant);
 		resource.setResourceConfig(this.resourceConfig);
 
 		return resource;

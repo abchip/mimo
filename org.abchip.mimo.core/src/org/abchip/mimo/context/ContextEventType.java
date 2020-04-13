@@ -24,25 +24,25 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ContextEventType implements Enumerator {
 	/**
-	 * The '<em><b>Close</b></em>' literal object.
+	 * The '<em><b>Closing</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CLOSE_VALUE
+	 * @see #CLOSING_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CLOSE(0, "Close", "CLOSE");
+	CLOSING(10, "Closing", "CLS");
 
 	/**
-	 * The '<em><b>Close</b></em>' literal value.
+	 * The '<em><b>Closing</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CLOSE
-	 * @model name="Close" literal="CLOSE"
+	 * @see #CLOSING
+	 * @model name="Closing" literal="CLS"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CLOSE_VALUE = 0;
+	public static final int CLOSING_VALUE = 10;
 
 	/**
 	 * An array of all the '<em><b>Event Type</b></em>' enumerators.
@@ -52,7 +52,7 @@ public enum ContextEventType implements Enumerator {
 	 */
 	private static final ContextEventType[] VALUES_ARRAY =
 		new ContextEventType[] {
-			CLOSE,
+			CLOSING,
 		};
 
 	/**
@@ -109,7 +109,7 @@ public enum ContextEventType implements Enumerator {
 	 */
 	public static ContextEventType get(int value) {
 		switch (value) {
-			case CLOSE_VALUE: return CLOSE;
+			case CLOSING_VALUE: return CLOSING;
 		}
 		return null;
 	}

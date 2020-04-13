@@ -271,6 +271,7 @@
         </eParameters>
       </eOperations>
       <eOperations name="getContextDescription" lowerBound="1" eType="#//context/ContextDescription"/>
+      <eOperations name="getResourceManager" lowerBound="1" eType="#//resource/ResourceManager"/>
       <eOperations name="inject">
         <eParameters name="object" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       </eOperations>
@@ -332,6 +333,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="locale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="picture" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
+          eType="#//context/ContextStatus"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeZone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
@@ -342,7 +345,7 @@
       <eOperations name="getEventType" lowerBound="1" eType="#//context/ContextEventType"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ContextEventType">
-      <eLiterals name="Close" literal="CLOSE"/>
+      <eLiterals name="Closing" value="10" literal="CLS"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContextListener" abstract="true" interface="true">
       <eOperations name="handleEvent">
@@ -398,6 +401,10 @@
           </eGenericType>
         </eParameters>
       </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ContextStatus">
+      <eLiterals name="Active" value="10" literal="ACT"/>
+      <eLiterals name="Closed" value="20" literal="CLS"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityLocker" abstract="true" interface="true">
       <eTypeParameters name="N">
@@ -1757,9 +1764,9 @@
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="SerializationType">
-      <eLiterals name="XML_Metadata_Interchange" value="10" literal="XMI"/>
-      <eLiterals name="JavaScript_Object_Notation" value="20" literal="JSON"/>
-      <eLiterals name="JavaScript_Mimo_Notation" value="30" literal="MIMO"/>
+      <eLiterals name="XMI" value="10" literal="XMI"/>
+      <eLiterals name="JSON" value="20" literal="JSON"/>
+      <eLiterals name="MIMO" value="30" literal="MIMO"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="service" nsURI="http://www.abchip.org/mimo/service" nsPrefix="mimo-service">

@@ -135,7 +135,11 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/CapabilityRight/Execute"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/ContextEventType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/ContextEventType/Close"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/ContextEventType/Closing"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/ContextStatus">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/ContextStatus/Active"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/ContextStatus/Closed"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/LockType">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//context/LockType/Read"/>
@@ -219,6 +223,7 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/getAdapter/T"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/getContextDescription"/>
+        <genOperations ecoreOperation="mimo.ecore#//context/Context/getResourceManager"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/inject">
           <genParameters ecoreParameter="mimo.ecore#//context/Context/inject/object"/>
         </genOperations>
@@ -256,6 +261,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/id"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/locale"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/picture"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/status"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/tenant"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/timeZone"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ContextDescription/user"/>
@@ -734,9 +740,9 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceEventType/After_Delete"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/SerializationType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/XML_Metadata_Interchange"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/JavaScript_Object_Notation"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/JavaScript_Mimo_Notation"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/XMI"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/JSON"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/MIMO"/>
       </genEnums>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/Resource">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/Resource/E"/>

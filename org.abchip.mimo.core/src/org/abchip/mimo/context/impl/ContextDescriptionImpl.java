@@ -9,6 +9,7 @@ package org.abchip.mimo.context.impl;
 
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.context.ContextStatus;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -26,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getLocale <em>Locale</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getPicture <em>Picture</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getTenant <em>Tenant</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getTimeZone <em>Time Zone</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ContextDescriptionImpl#getUser <em>User</em>}</li>
@@ -124,6 +126,24 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 * @ordered
 	 */
 	protected String picture = PICTURE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ContextStatus STATUS_EDEFAULT = ContextStatus.ACTIVE;
+	/**
+	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContextStatus status = STATUS_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -312,6 +332,29 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ContextStatus getStatus() {
+		return status;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStatus(ContextStatus newStatus) {
+		ContextStatus oldStatus = status;
+		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.CONTEXT_DESCRIPTION__STATUS, oldStatus, status));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -407,6 +450,8 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 				return getLocale();
 			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
 				return getPicture();
+			case ContextPackage.CONTEXT_DESCRIPTION__STATUS:
+				return getStatus();
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				return getTenant();
 			case ContextPackage.CONTEXT_DESCRIPTION__TIME_ZONE:
@@ -439,6 +484,9 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
 				setPicture((String)newValue);
+				return;
+			case ContextPackage.CONTEXT_DESCRIPTION__STATUS:
+				setStatus((ContextStatus)newValue);
 				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				setTenant((String)newValue);
@@ -476,6 +524,9 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
 				setPicture(PICTURE_EDEFAULT);
 				return;
+			case ContextPackage.CONTEXT_DESCRIPTION__STATUS:
+				setStatus(STATUS_EDEFAULT);
+				return;
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				setTenant(TENANT_EDEFAULT);
 				return;
@@ -507,6 +558,8 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 				return LOCALE_EDEFAULT == null ? locale != null : !LOCALE_EDEFAULT.equals(locale);
 			case ContextPackage.CONTEXT_DESCRIPTION__PICTURE:
 				return PICTURE_EDEFAULT == null ? picture != null : !PICTURE_EDEFAULT.equals(picture);
+			case ContextPackage.CONTEXT_DESCRIPTION__STATUS:
+				return status != STATUS_EDEFAULT;
 			case ContextPackage.CONTEXT_DESCRIPTION__TENANT:
 				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 			case ContextPackage.CONTEXT_DESCRIPTION__TIME_ZONE:
@@ -537,6 +590,8 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 		result.append(locale);
 		result.append(", picture: ");
 		result.append(picture);
+		result.append(", status: ");
+		result.append(status);
 		result.append(", tenant: ");
 		result.append(tenant);
 		result.append(", timeZone: ");

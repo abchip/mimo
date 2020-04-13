@@ -10,25 +10,23 @@ package org.abchip.mimo.core.http;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.core.http.handler.HttpDeleteHandler;
+import org.abchip.mimo.core.http.handler.HttpFindHandler;
+import org.abchip.mimo.core.http.handler.HttpLookupHandler;
+import org.abchip.mimo.core.http.handler.HttpNextSequenceHandler;
+import org.abchip.mimo.core.http.handler.HttpSaveHandler;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.abchip.mimo.util.Logs;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.util.EntityUtils;
+import org.apache.http.client.ResponseHandler;
 import org.osgi.service.log.Logger;
 
 public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
@@ -45,11 +43,9 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 	private String tenant = null;
 
-	public HttpResourceImpl(Context context, Frame<E> frame, String tenant, HttpConnector connector) {
+	public HttpResourceImpl(Context context, HttpConnector connector, Frame<E> frame, String tenant) {
 		this.connector = connector;
-
-		ResourceManager resourceManager = context.get(ResourceManager.class);
-		this.resourceSerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.JAVA_SCRIPT_MIMO_NOTATION);
+		this.resourceSerializer = context.getResourceManager().createResourceSerializer(context, frame, SerializationType.MIMO);
 
 		this.tenant = tenant;
 	}
@@ -65,44 +61,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	}
 
 	@Override
-	public void create(E entity, boolean update) {
-		doSave(entity, update);
-	}
-
-	@Override
-	public void delete(E entity) {
-
-		synchronized (this.resourceSerializer) {
-			this.resourceSerializer.add(entity);
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-			try {
-				this.resourceSerializer.save(baos);
-			} catch (Exception e) {
-				LOGGER.error(e.getMessage());
-				throw new RuntimeException(e);
-			} finally {
-				this.resourceSerializer.clear();
-			}
-
-			String query = "?frame=" + getFrame().getName() + "&id=" + entity.getID();
-			if (tenant != null)
-				query += "&tenant=" + this.tenant;
-
-			HttpPost httpPost = this.connector.prepare("delete", query);
-			try (CloseableHttpResponse response = this.connector.execute(httpPost)) {
-				EntityUtils.consume(response.getEntity());
-			} catch (Exception e) {
-				LOGGER.error(e.getMessage());
-				throw new RuntimeException(e);
-			} finally {
-				httpPost.reset();
-				this.resourceSerializer.clear();
-			}
-		}
-	}
-
-	@Override
 	public String nextSequence() {
 
 		if (getFrame().getKeys().size() > 1)
@@ -114,108 +72,18 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 
-		HttpPost httpPost = connector.prepare("nextSequence", query);
-		try (CloseableHttpResponse response = this.connector.execute(httpPost)) {
-
-			if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
-				HttpEntity entity = response.getEntity();
-				nextSequence = EntityUtils.toString(entity, "UTF-8");
-				EntityUtils.consume(entity);
-			}
+		try {
+			nextSequence = connector.execute("nextSequence", query, new HttpNextSequenceHandler());
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage());
-		} finally {
-			httpPost.reset();
 		}
 
 		return nextSequence;
 	}
 
 	@Override
-	public E read(String id, String fields, boolean proxy) {
-
-		synchronized (this.resourceSerializer) {
-			E entity = null;
-
-			String query = "?frame=" + getFrame().getName() + "&id=" + id.trim();
-			if (tenant != null)
-				query += "&tenant=" + this.tenant;
-			if (proxy)
-				query += "&proxy=" + proxy;
-
-			HttpPost httpPost = connector.prepare("lookup", query);
-			try (CloseableHttpResponse response = this.connector.execute(httpPost)) {
-
-				if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
-					
-					HttpEntity httpEntity = response.getEntity();
-					
-					try (InputStream stream = httpEntity.getContent()) {
-						this.resourceSerializer.load(stream, false);
-						entity = this.resourceSerializer.get();
-					}
-					 EntityUtils.consume(httpEntity);
-				}
-			} catch (Exception e) {
-				LOGGER.error(e.getMessage());
-			} finally {
-				httpPost.reset();
-				this.resourceSerializer.clear();
-			}
-
-			return entity;
-		}
-	}
-
-	@Override
-	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) {
-
-		synchronized (this.resourceSerializer) {
-			List<E> entities = null;
-
-			String query = "?frame=" + getFrame().getName();
-			if (tenant != null)
-				query += "&tenant=" + this.tenant;
-			if (proxy)
-				query += "&proxy=" + proxy;
-			if (limit != 0)
-				query += "&limit=" + limit;
-			if (filter != null) {
-				try {
-					query += "&filter=" + URLEncoder.encode(filter, "UTF-8");
-				} catch (UnsupportedEncodingException e1) {
-					e1.printStackTrace();
-					return null;
-				}
-			}
-			if (fields != null)
-				query += "&fields=" + fields;
-			if (order != null)
-				query += "&order=" + order;
-
-			HttpPost httpPost = connector.prepare("find", query);
-			try (CloseableHttpResponse response = this.connector.execute(httpPost)) {
-
-				if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_FOUND) {
-					
-					HttpEntity httpEntity = response.getEntity();
-					
-					try (InputStream stream = httpEntity.getContent()) {
-						this.resourceSerializer.load(stream, false);
-					}
-					EntityUtils.consume(httpEntity);
-				}
-				entities = this.resourceSerializer.getAll();
-				 
-			} catch (Exception e) {
-				LOGGER.error(e.getMessage());
-			} finally {
-				httpPost.reset();
-				this.resourceSerializer.clear();
-			}
-
-			return entities;
-		}
+	public void create(E entity, boolean update) {
+		doSave(entity, update);
 	}
 
 	@Override
@@ -223,11 +91,103 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		doSave(entity, true);
 	}
 
-	private void doSave(E entity, boolean replace) {
+	@Override
+	public E read(String id, String fields, boolean proxy) {
 
+		E entity = null;
+
+		String query = "?frame=" + getFrame().getName() + "&id=" + id.trim();
+		if (tenant != null)
+			query += "&tenant=" + this.tenant;
+		if (proxy)
+			query += "&proxy=" + proxy;
+
+		try {
+			@SuppressWarnings({ "unchecked", "rawtypes" })
+			ResponseHandler<E> handler = new HttpLookupHandler(this.resourceSerializer);
+			synchronized (this.resourceSerializer) {
+				entity = this.connector.execute("lookup", query, handler);
+			}
+
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+		}
+
+		return entity;
+	}
+
+	@Override
+	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) {
+
+		List<E> entities = null;
+
+		String query = "?frame=" + getFrame().getName();
+		if (tenant != null)
+			query += "&tenant=" + this.tenant;
+		if (proxy)
+			query += "&proxy=" + proxy;
+		if (limit != 0)
+			query += "&limit=" + limit;
+		if (filter != null) {
+			try {
+				query += "&filter=" + URLEncoder.encode(filter, "UTF-8");
+			} catch (UnsupportedEncodingException e1) {
+				e1.printStackTrace();
+				return null;
+			}
+		}
+		if (fields != null)
+			query += "&fields=" + fields;
+		if (order != null)
+			query += "&order=" + order;
+
+		try {
+			@SuppressWarnings({ "rawtypes", "unchecked" })
+			HttpFindHandler<E> handler = new HttpFindHandler(this.resourceSerializer);
+			synchronized (this.resourceSerializer) {
+				entities = this.connector.execute("find", query, handler);
+			}
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+		}
+
+		return entities;
+	}
+
+	@Override
+	public void delete(E entity) {
+
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		synchronized (this.resourceSerializer) {
 			this.resourceSerializer.add(entity);
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+			try {
+				this.resourceSerializer.save(baos);
+			} catch (Exception e) {
+				LOGGER.error(e.getMessage());
+				throw new RuntimeException(e);
+			} finally {
+				this.resourceSerializer.clear();
+			}
+		}
+
+		String query = "?frame=" + getFrame().getName() + "&id=" + entity.getID();
+		if (tenant != null)
+			query += "&tenant=" + this.tenant;
+
+		try {
+			connector.execute("delete", query, new HttpDeleteHandler());
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+			throw new RuntimeException(e);
+		}
+	}
+
+	private void doSave(E entity, boolean replace) {
+
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		synchronized (this.resourceSerializer) {
+			this.resourceSerializer.add(entity);
 			try {
 				this.resourceSerializer.save(baos);
 			} catch (IOException e) {
@@ -236,26 +196,23 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			} finally {
 				this.resourceSerializer.clear();
 			}
-
-			String query = "?frame=" + getFrame().getName() + "&replace=" + replace;
-			try {
-				query += "&json=" + URLEncoder.encode(baos.toString(), "UTF-8");
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-			if (tenant != null)
-				query += "&tenant=" + this.tenant;
-
-			HttpPost httpPost = connector.prepare("save", query);
-			try (CloseableHttpResponse response = connector.execute(httpPost)) {
-				EntityUtils.consume(response.getEntity());
-			} catch (Exception e) {
-				LOGGER.error(e.getMessage());
-				throw new RuntimeException(e);
-			} finally {
-				httpPost.reset();
-				this.resourceSerializer.clear();
-			}
 		}
+
+		String query = "?frame=" + getFrame().getName() + "&replace=" + replace;
+		try {
+			query += "&json=" + URLEncoder.encode(baos.toString(), "UTF-8");
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		if (tenant != null)
+			query += "&tenant=" + this.tenant;
+
+		try {
+			connector.execute("save", query, new HttpSaveHandler());
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+			throw new RuntimeException(e);
+		}
+
 	}
 }

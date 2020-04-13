@@ -9,6 +9,7 @@
 package org.abchip.mimo.context;
 
 import java.lang.annotation.Annotation;
+import org.abchip.mimo.resource.ResourceManager;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,6 +53,14 @@ public interface Context {
 	 * @generated
 	 */
 	ContextDescription getContextDescription();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	ResourceManager getResourceManager();
 
 	/**
 	 * <!-- begin-user-doc -->

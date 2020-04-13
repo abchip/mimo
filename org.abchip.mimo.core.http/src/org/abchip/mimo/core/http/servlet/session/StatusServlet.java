@@ -63,9 +63,9 @@ public class StatusServlet extends HttpServlet {
 			return;
 		}
 
-		response.setStatus(HttpServletResponse.SC_ACCEPTED);
+		response.setStatus(HttpServletResponse.SC_OK);
 
-		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.MIMO);
 		serializer.add(context.getContextDescription());
 		serializer.save(response.getOutputStream());
 

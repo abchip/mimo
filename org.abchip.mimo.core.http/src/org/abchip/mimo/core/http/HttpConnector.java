@@ -14,7 +14,7 @@ import java.io.IOException;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.util.Logs;
-import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.osgi.service.log.Logger;
@@ -26,7 +26,8 @@ public class HttpConnector implements Closeable {
 	private ProviderConfig providerConfig;
 	private CloseableHttpClient httpClient;
 	private ContextDescription contextDescription;
-	private final String token;
+
+	private String token;
 
 	protected HttpConnector(ProviderConfig providerConfig, CloseableHttpClient httpClient, ContextDescription contextDescription) {
 		this.providerConfig = providerConfig;
@@ -43,27 +44,29 @@ public class HttpConnector implements Closeable {
 		return token;
 	}
 
-	public HttpPost prepare(String path, String query) {
-		HttpPost httpPost = null;
-		path = providerConfig.getUrl() + "/" + path + ";jsessionid=" + token;
+	public <E> E execute(String path, String query, ResponseHandler<E> handler) throws Exception {
+
+		String uri = providerConfig.getUrl() + "/" + path + ";jsessionid=" + token;
 		if (query != null)
-			path = path + query;
+			uri += query;
 
-		httpPost = new HttpPost(path);
-
-		return httpPost;
-	}
-
-	public CloseableHttpResponse execute(HttpPost httpPost) throws Exception {
+		HttpPost httpPost = new HttpPost(uri);
+		// httpPost.setHeader("Connection", "Keep-Alive");
+		// httpPost.setHeader("Connection", "Close");
 
 		LOGGER.trace("Execute http request {}", httpPost.getURI());
 
-		CloseableHttpResponse response = httpClient.execute(httpPost);
-		return response;
+		try {
+			E response = httpClient.execute(httpPost, handler);
+			return response;
+		} finally {
+			httpPost.reset();
+		}
 	}
 
 	@Override
 	public void close() throws IOException {
+		// this.httpClient.close();
 		this.httpClient = null;
 	}
 }

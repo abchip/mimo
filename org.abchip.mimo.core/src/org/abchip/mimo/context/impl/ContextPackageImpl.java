@@ -31,6 +31,7 @@ import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.ContextStatus;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.ExceptionManager;
 import org.abchip.mimo.context.Factory;
@@ -310,6 +311,13 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	private EEnum contextEventTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum contextStatusEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -713,7 +721,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_Tenant() {
+	public EAttribute getContextDescription_Status() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -723,7 +731,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_TimeZone() {
+	public EAttribute getContextDescription_Tenant() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -733,8 +741,18 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContextDescription_User() {
+	public EAttribute getContextDescription_TimeZone() {
 		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContextDescription_User() {
+		return (EAttribute)contextDescriptionEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1253,6 +1271,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getContextStatus() {
+		return contextStatusEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getLockType() {
 		return lockTypeEEnum;
 	}
@@ -1362,6 +1390,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__ID);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__LOCALE);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__PICTURE);
+		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__STATUS);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__TENANT);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__TIME_ZONE);
 		createEAttribute(contextDescriptionEClass, CONTEXT_DESCRIPTION__USER);
@@ -1438,6 +1467,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		// Create enums
 		capabilityRightEEnum = createEEnum(CAPABILITY_RIGHT);
 		contextEventTypeEEnum = createEEnum(CONTEXT_EVENT_TYPE);
+		contextStatusEEnum = createEEnum(CONTEXT_STATUS);
 		lockTypeEEnum = createEEnum(LOCK_TYPE);
 		threadStatusEEnum = createEEnum(THREAD_STATUS);
 		userClassEEnum = createEEnum(USER_CLASS);
@@ -1473,6 +1503,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		ResourcePackage theResourcePackage = (ResourcePackage)EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
 
 		// Create type parameters
@@ -1603,6 +1634,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		addEOperation(contextEClass, this.getContextDescription(), "getContextDescription", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(contextEClass, theResourcePackage.getResourceManager(), "getResourceManager", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(contextEClass, null, "inject", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1659,6 +1692,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEAttribute(getContextDescription_Id(), ecorePackage.getEString(), "id", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_Locale(), ecorePackage.getEString(), "locale", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_Picture(), ecorePackage.getEString(), "picture", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextDescription_Status(), this.getContextStatus(), "status", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_Tenant(), ecorePackage.getEString(), "tenant", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_TimeZone(), ecorePackage.getEString(), "timeZone", null, 0, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextDescription_User(), ecorePackage.getEString(), "user", null, 1, 1, ContextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1981,7 +2015,11 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEEnumLiteral(capabilityRightEEnum, CapabilityRight.EXECUTE);
 
 		initEEnum(contextEventTypeEEnum, ContextEventType.class, "ContextEventType");
-		addEEnumLiteral(contextEventTypeEEnum, ContextEventType.CLOSE);
+		addEEnumLiteral(contextEventTypeEEnum, ContextEventType.CLOSING);
+
+		initEEnum(contextStatusEEnum, ContextStatus.class, "ContextStatus");
+		addEEnumLiteral(contextStatusEEnum, ContextStatus.ACTIVE);
+		addEEnumLiteral(contextStatusEEnum, ContextStatus.CLOSED);
 
 		initEEnum(lockTypeEEnum, LockType.class, "LockType");
 		addEEnumLiteral(lockTypeEEnum, LockType.READ);

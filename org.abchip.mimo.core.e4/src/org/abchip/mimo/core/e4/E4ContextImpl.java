@@ -20,7 +20,9 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextEvent;
 import org.abchip.mimo.context.ContextEventType;
 import org.abchip.mimo.context.ContextListener;
+import org.abchip.mimo.context.ContextStatus;
 import org.abchip.mimo.context.impl.ContextImpl;
+import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
@@ -31,12 +33,14 @@ public abstract class E4ContextImpl extends ContextImpl {
 	private static final String ADAPTER_FACTORIES_NAME = "org.abchip.mimo.context.adapterFactories";
 	private static final Logger LOGGER = Logs.getLogger(E4ContextImpl.class);
 
+	private ResourceManager resourceManager;
 	private ContextDescription contextDescription;
 	private List<ContextListener> listeners;
 
 	public E4ContextImpl(ContextDescription contextDescription) {
 		this.contextDescription = contextDescription;
 		this.listeners = new ArrayList<ContextListener>();
+		this.contextDescription.setStatus(ContextStatus.ACTIVE);
 	}
 
 	protected abstract IEclipseContext getEclipseContext();
@@ -102,7 +106,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 					@Override
 					public ContextEventType getEventType() {
-						return ContextEventType.CLOSE;
+						return ContextEventType.CLOSING;
 					}
 
 					@Override
@@ -116,6 +120,8 @@ public abstract class E4ContextImpl extends ContextImpl {
 		}
 
 		this.listeners = null;
+
+		this.contextDescription.setStatus(ContextStatus.CLOSED);
 
 		getEclipseContext().dispose();
 
@@ -214,5 +220,18 @@ public abstract class E4ContextImpl extends ContextImpl {
 	@Override
 	public ContextDescription getContextDescription() {
 		return this.contextDescription;
+	}
+
+	@Override
+	public ResourceManager getResourceManager() {
+
+		if (this.resourceManager == null) {
+			synchronized (this) {
+				if (this.resourceManager == null) {
+					this.resourceManager = this.get(ResourceManager.class);
+				}
+			}
+		}
+		return this.resourceManager;
 	}
 }

@@ -24,6 +24,7 @@ import org.abchip.mimo.entity.Entity;
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getId <em>Id</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getLocale <em>Locale</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getPicture <em>Picture</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ContextDescription#getStatus <em>Status</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getTenant <em>Tenant</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getTimeZone <em>Time Zone</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ContextDescription#getUser <em>User</em>}</li>
@@ -163,6 +164,31 @@ public interface ContextDescription extends Entity {
 	 * @generated
 	 */
 	void setPicture(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Status</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.abchip.mimo.context.ContextStatus}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Status</em>' attribute.
+	 * @see org.abchip.mimo.context.ContextStatus
+	 * @see #setStatus(ContextStatus)
+	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_Status()
+	 * @model required="true"
+	 * @generated
+	 */
+	ContextStatus getStatus();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.context.ContextDescription#getStatus <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status</em>' attribute.
+	 * @see org.abchip.mimo.context.ContextStatus
+	 * @see #getStatus()
+	 * @generated
+	 */
+	void setStatus(ContextStatus value);
 
 	/**
 	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.

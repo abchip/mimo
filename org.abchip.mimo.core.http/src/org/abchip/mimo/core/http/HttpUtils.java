@@ -16,9 +16,9 @@ import java.util.Map;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.AuthenticationUserToken;
-import org.apache.http.HttpStatus;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -79,7 +79,7 @@ public class HttpUtils {
 
 		try (CloseableHttpClient client = buildHttpsClient()) {
 			try (CloseableHttpResponse response = client.execute(method)) {
-				if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)
+				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
 					throw new Exception(response.getStatusLine().getReasonPhrase());
 
 				String responseString = new BasicResponseHandler().handleResponse(response);
@@ -96,7 +96,7 @@ public class HttpUtils {
 			method.setHeader("Accept", "application/json");
 
 			try (CloseableHttpResponse response = client.execute(method)) {
-				if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)
+				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
 					throw new Exception(response.getStatusLine().getReasonPhrase());
 
 				String responseString = new BasicResponseHandler().handleResponse(response);
@@ -141,7 +141,7 @@ public class HttpUtils {
 
 		try (CloseableHttpClient client = HttpUtils.buildHttpsClient()) {
 			try (CloseableHttpResponse response = client.execute(method)) {
-				if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)
+				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
 					throw new Exception(response.getStatusLine().getReasonPhrase());
 
 				String responseString = new BasicResponseHandler().handleResponse(response);
@@ -159,7 +159,7 @@ public class HttpUtils {
 			method.setConfig(StandardRequestConfig);
 			method.setHeader("Accept", "application/json");
 			try (CloseableHttpResponse response = client.execute(method)) {
-				if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)
+				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
 					throw new Exception(response.getStatusLine().getReasonPhrase());
 
 				String responseString = new BasicResponseHandler().handleResponse(response);
@@ -192,7 +192,7 @@ public class HttpUtils {
 			method.setHeader("Accept", "application/json");
 
 			try (CloseableHttpResponse response = client.execute(method)) {
-				if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)
+				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
 					throw new Exception(response.getStatusLine().getReasonPhrase());
 
 				String responseString = new BasicResponseHandler().handleResponse(response);
@@ -224,7 +224,7 @@ public class HttpUtils {
 
 		try (CloseableHttpClient client = HttpUtils.buildHttpsClient()) {
 			try (CloseableHttpResponse response = client.execute(method)) {
-				if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)
+				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
 					throw new Exception(response.getStatusLine().getReasonPhrase());
 
 				String responseString = new BasicResponseHandler().handleResponse(response);
@@ -235,7 +235,7 @@ public class HttpUtils {
 		return userInfo;
 	}
 
-	protected static CloseableHttpClient buildHttpsClient() throws Exception {
+	private static CloseableHttpClient buildHttpsClient() throws Exception {
 
 		CloseableHttpClient httpClient = null;
 		SSLContextBuilder builder = new SSLContextBuilder();

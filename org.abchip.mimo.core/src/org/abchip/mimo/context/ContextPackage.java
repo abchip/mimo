@@ -410,13 +410,22 @@ public interface ContextPackage extends EPackage {
 	int CONTEXT_DESCRIPTION__PICTURE = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_DESCRIPTION__STATUS = EntityPackage.ENTITY_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DESCRIPTION__TENANT = EntityPackage.ENTITY_FEATURE_COUNT + 5;
+	int CONTEXT_DESCRIPTION__TENANT = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Time Zone</b></em>' attribute.
@@ -425,7 +434,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DESCRIPTION__TIME_ZONE = EntityPackage.ENTITY_FEATURE_COUNT + 6;
+	int CONTEXT_DESCRIPTION__TIME_ZONE = EntityPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>User</b></em>' attribute.
@@ -434,7 +443,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DESCRIPTION__USER = EntityPackage.ENTITY_FEATURE_COUNT + 7;
+	int CONTEXT_DESCRIPTION__USER = EntityPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Description</em>' class.
@@ -443,7 +452,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DESCRIPTION_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 8;
+	int CONTEXT_DESCRIPTION_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.ContextEvent <em>Event</em>}' class.
@@ -1097,6 +1106,16 @@ public interface ContextPackage extends EPackage {
 	int CONTEXT_EVENT_TYPE = 31;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.ContextStatus <em>Status</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.ContextStatus
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextStatus()
+	 * @generated
+	 */
+	int CONTEXT_STATUS = 32;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.LockType <em>Lock Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1104,7 +1123,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLockType()
 	 * @generated
 	 */
-	int LOCK_TYPE = 32;
+	int LOCK_TYPE = 33;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.ThreadStatus <em>Thread Status</em>}' enum.
@@ -1114,7 +1133,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThreadStatus()
 	 * @generated
 	 */
-	int THREAD_STATUS = 33;
+	int THREAD_STATUS = 34;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.UserClass <em>User Class</em>}' enum.
@@ -1124,7 +1143,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getUserClass()
 	 * @generated
 	 */
-	int USER_CLASS = 34;
+	int USER_CLASS = 35;
 
 	/**
 	 * The meta object id for the '<em>Message Variable List</em>' data type.
@@ -1133,7 +1152,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageVariableList()
 	 * @generated
 	 */
-	int MESSAGE_VARIABLE_LIST = 35;
+	int MESSAGE_VARIABLE_LIST = 36;
 
 	/**
 	 * The meta object id for the '<em>Message Exception</em>' data type.
@@ -1143,7 +1162,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageException()
 	 * @generated
 	 */
-	int MESSAGE_EXCEPTION = 36;
+	int MESSAGE_EXCEPTION = 37;
 
 
 	/**
@@ -1442,6 +1461,17 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContextDescription_Picture();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ContextDescription#getStatus <em>Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Status</em>'.
+	 * @see org.abchip.mimo.context.ContextDescription#getStatus()
+	 * @see #getContextDescription()
+	 * @generated
+	 */
+	EAttribute getContextDescription_Status();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ContextDescription#getTenant <em>Tenant</em>}'.
@@ -2006,6 +2036,16 @@ public interface ContextPackage extends EPackage {
 	EEnum getContextEventType();
 
 	/**
+	 * Returns the meta object for enum '{@link org.abchip.mimo.context.ContextStatus <em>Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Status</em>'.
+	 * @see org.abchip.mimo.context.ContextStatus
+	 * @generated
+	 */
+	EEnum getContextStatus();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.context.LockType <em>Lock Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2323,6 +2363,14 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTEXT_DESCRIPTION__PICTURE = eINSTANCE.getContextDescription_Picture();
+
+		/**
+		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_DESCRIPTION__STATUS = eINSTANCE.getContextDescription_Status();
 
 		/**
 		 * The meta object literal for the '<em><b>Tenant</b></em>' attribute feature.
@@ -2789,6 +2837,16 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum CONTEXT_EVENT_TYPE = eINSTANCE.getContextEventType();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.context.ContextStatus <em>Status</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.context.ContextStatus
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextStatus()
+		 * @generated
+		 */
+		EEnum CONTEXT_STATUS = eINSTANCE.getContextStatus();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.LockType <em>Lock Type</em>}' enum.

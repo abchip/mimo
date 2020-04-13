@@ -35,7 +35,7 @@ public class BaseEdiManagerImpl implements EdiManager {
 
 		ResourceWriter<MessageSent> messageSentWriter = resourceManager.getResourceWriter(context, MessageSent.class);
 
-		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, entity.isa(), SerializationType.JAVA_SCRIPT_OBJECT_NOTATION);
+		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, entity.isa(), SerializationType.MIMO);
 
 		try (EntityIterator<EdiFrameSetup> setups = resourceManager.getResourceReader(context, EdiFrameSetup.class).find("frame='" + entity.isa().getName() + "'")) {
 			for (EdiFrameSetup setup : setups) {

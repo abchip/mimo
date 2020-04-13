@@ -15,6 +15,7 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.impl.ContextImpl;
+import org.abchip.mimo.resource.ResourceManager;
 
 public class BaseTestContextImpl extends ContextImpl {
 
@@ -91,5 +92,10 @@ public class BaseTestContextImpl extends ContextImpl {
 	@Override
 	public void registerListener(ContextListener listener) {
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public ResourceManager getResourceManager() {
+		return delegate.getResourceManager();
 	}
 }

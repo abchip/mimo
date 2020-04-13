@@ -103,7 +103,7 @@ public class LookupFormServlet extends BaseServlet {
 			}
 		}
 
-		ResourceSerializer<Form> entitySerializer = resourceManager.createResourceSerializer(context, Form.class, SerializationType.JAVA_SCRIPT_MIMO_NOTATION);
+		ResourceSerializer<Form> entitySerializer = resourceManager.createResourceSerializer(context, Form.class, SerializationType.JSON);
 		if (form != null) {
 			entitySerializer.add(form);
 		}
