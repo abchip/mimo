@@ -53,8 +53,11 @@ public class E4Activator implements BundleActivator {
 			return;
 		}
 
-		if (!Boolean.parseBoolean(bundleContext.getProperty("mimo.activation")))
+		// mimo.home
+		if (bundleContext.getProperty("mimo.home") == null) {
+			logger.warn("Property mimo.home not found");
 			return;
+		}
 
 		// get application.xmi
 		if (bundleContext.getProperty("mimo.config") != null) {
@@ -65,11 +68,6 @@ public class E4Activator implements BundleActivator {
 
 		if (E4Activator.application == null) {
 			logger.warn("Application.xmi not found");
-			return;
-		}
-
-		if (bundleContext.getProperty("mimo.home") == null) {
-			logger.warn("Property mimo.home not found");
 			return;
 		}
 
