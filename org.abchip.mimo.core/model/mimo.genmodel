@@ -119,6 +119,50 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceTester/interfaceName"/>
       </genClasses>
     </nestedGenPackages>
+    <nestedGenPackages prefix="Authentication" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="mimo.ecore#//authentication">
+      <genDataTypes ecoreDataType="mimo.ecore#//authentication/AuthenticationException"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//authentication/Authentication"/>
+      <genClasses ecoreClass="mimo.ecore#//authentication/AuthenticationAdminKey">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationAdminKey/adminKey"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationAdminKey/tenant"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//authentication/AuthenticationAnonymous"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//authentication/AuthenticationManager">
+        <genOperations ecoreOperation="mimo.ecore#//authentication/AuthenticationManager/checkLogin">
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationManager/checkLogin/authentication"/>
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationManager/checkLogin/create"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//authentication/AuthenticationManager/login">
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationManager/login/contextId"/>
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationManager/login/authentication"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//authentication/AuthenticationManager/login.1">
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationManager/login.1/contextId"/>
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationManager/login.1/authentication"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//authentication/AuthenticationManager/login.2">
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationManager/login.2/contextId"/>
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationManager/login.2/authentication"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//authentication/AuthenticationManager/login.3">
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationManager/login.3/contextId"/>
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationManager/login.3/authentication"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//authentication/AuthenticationUserPassword">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationUserPassword/user"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationUserPassword/password"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationUserPassword/tenant"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//authentication/AuthenticationUserToken">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationUserToken/provider"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationUserToken/accessToken"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationUserToken/idToken"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationUserToken/picture"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationUserToken/user"/>
+      </genClasses>
+    </nestedGenPackages>
     <nestedGenPackages prefix="Context" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="mimo.ecore#//context">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//context/CapabilityRight">
@@ -158,46 +202,6 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/AdapterFactory/getAdapter/T"/>
         </genOperations>
       </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//context/Authentication"/>
-      <genClasses ecoreClass="mimo.ecore#//context/AuthenticationAdminKey">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationAdminKey/adminKey"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationAdminKey/tenant"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationManager">
-        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/checkLogin">
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/checkLogin/authentication"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/checkLogin/create"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/login">
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login/contextId"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login/authentication"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/login.1">
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.1/contextId"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.1/authentication"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/login.2">
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.2/contextId"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.2/authentication"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/AuthenticationManager/login.3">
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.3/contextId"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/AuthenticationManager/login.3/authentication"/>
-        </genOperations>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationUserPassword">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserPassword/user"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserPassword/password"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserPassword/tenant"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationUserToken">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/provider"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/accessToken"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/idToken"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/picture"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/AuthenticationUserToken/user"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//context/AuthenticationAnonymous"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/Capability">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/Capability/rights"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/Capability/entityURI"/>
@@ -720,30 +724,30 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaThreadGroup"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaThreadInfo"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Net" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="mimo.ecore#//net">
-      <genDataTypes ecoreDataType="mimo.ecore#//net/HttpPost"/>
-      <genDataTypes ecoreDataType="mimo.ecore#//net/HttpResponseHandler">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//net/HttpResponseHandler/T"/>
+    <nestedGenPackages prefix="Networking" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="mimo.ecore#//networking">
+      <genDataTypes ecoreDataType="mimo.ecore#//networking/HttpPost"/>
+      <genDataTypes ecoreDataType="mimo.ecore#//networking/HttpResponseHandler">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//networking/HttpResponseHandler/T"/>
       </genDataTypes>
-      <genClasses ecoreClass="mimo.ecore#//net/ConnectionPoolingConfig">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/ConnectionPoolingConfig/maxTotal"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/ConnectionPoolingConfig/maxPerRoute"/>
+      <genClasses ecoreClass="mimo.ecore#//networking/ConnectionPoolingConfig">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/ConnectionPoolingConfig/maxTotal"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/ConnectionPoolingConfig/maxPerRoute"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//net/HttpClient">
-        <genOperations ecoreOperation="mimo.ecore#//net/HttpClient/execute">
-          <genParameters ecoreParameter="mimo.ecore#//net/HttpClient/execute/method"/>
-          <genParameters ecoreParameter="mimo.ecore#//net/HttpClient/execute/handler"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//net/HttpClient/execute/T"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//networking/HttpClient">
+        <genOperations ecoreOperation="mimo.ecore#//networking/HttpClient/execute">
+          <genParameters ecoreParameter="mimo.ecore#//networking/HttpClient/execute/method"/>
+          <genParameters ecoreParameter="mimo.ecore#//networking/HttpClient/execute/handler"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//networking/HttpClient/execute/T"/>
         </genOperations>
       </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//net/HostConfig">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/HostConfig/address"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/HostConfig/port"/>
+      <genClasses ecoreClass="mimo.ecore#//networking/HostConfig">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/HostConfig/address"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/HostConfig/port"/>
       </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//net/HttpServiceConfig">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//net/HttpServiceConfig/host"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/HttpServiceConfig/path"/>
+      <genClasses ecoreClass="mimo.ecore#//networking/HttpServiceConfig">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//networking/HttpServiceConfig/host"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/HttpServiceConfig/path"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Resource" disposableProviderFactory="true" adapterFactory="false"

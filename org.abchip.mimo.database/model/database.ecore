@@ -254,7 +254,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="catalog" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="persistent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ConnectionCredentials" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//context/AuthenticationUserPassword"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ConnectionCredentials" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//authentication/AuthenticationUserPassword"/>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectionManager" abstract="true"
         interface="true">
       <eOperations name="createConnection" eType="#//connection/Connection" eExceptions="#//DatabaseException">

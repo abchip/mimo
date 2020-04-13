@@ -8,7 +8,7 @@
 package org.abchip.mimo.context;
 
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.net.HostConfig;
+import org.abchip.mimo.networking.HostConfig;
 
 /**
  * <!-- begin-user-doc -->

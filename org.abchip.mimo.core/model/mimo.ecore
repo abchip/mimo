@@ -158,6 +158,59 @@
           changeable="false" defaultValueLiteral="org.abchip.mimo.tester.TestSuiteLauncher"/>
     </eClassifiers>
   </eSubpackages>
+  <eSubpackages name="authentication" nsURI="http://www.abchip.org/mimo/authentication"
+      nsPrefix="mimo-auth">
+    <eClassifiers xsi:type="ecore:EClass" name="Authentication" abstract="true" interface="true"
+        eSuperTypes="#//entity/Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationAdminKey" eSuperTypes="#//authentication/Authentication">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="adminKey" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationAnonymous" eSuperTypes="#//authentication/Authentication"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="AuthenticationException" instanceClassName="org.abchip.mimo.authentication.AuthenticationException"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationManager" abstract="true"
+        interface="true">
+      <eOperations name="checkLogin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="authentication" lowerBound="1" eType="#//authentication/AuthenticationUserToken"/>
+        <eParameters name="create" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eOperations>
+      <eOperations name="login" eType="#//context/ContextProvider" eExceptions="#//authentication/AuthenticationException">
+        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="authentication" lowerBound="1" eType="#//authentication/AuthenticationAnonymous"/>
+      </eOperations>
+      <eOperations name="login" eType="#//context/ContextProvider" eExceptions="#//authentication/AuthenticationException">
+        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="authentication" lowerBound="1" eType="#//authentication/AuthenticationUserPassword"/>
+      </eOperations>
+      <eOperations name="login" eType="#//context/ContextProvider" eExceptions="#//authentication/AuthenticationException">
+        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="authentication" lowerBound="1" eType="#//authentication/AuthenticationUserToken"/>
+      </eOperations>
+      <eOperations name="login" eType="#//context/ContextProvider" eExceptions="#//authentication/AuthenticationException">
+        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="authentication" lowerBound="1" eType="#//authentication/AuthenticationAdminKey"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationUserPassword" eSuperTypes="#//authentication/Authentication">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationUserToken" eSuperTypes="#//authentication/Authentication">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="provider" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessToken" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="idToken" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="picture" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </eSubpackages>
   <eSubpackages name="context" nsURI="http://www.abchip.org/mimo/context" nsPrefix="mimo-ctx">
     <eClassifiers xsi:type="ecore:EClass" name="AdapterFactory" abstract="true" interface="true">
       <eOperations name="getAdapter">
@@ -174,55 +227,6 @@
         </eParameters>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Authentication" abstract="true" interface="true"
-        eSuperTypes="#//entity/Entity"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationAdminKey" eSuperTypes="#//context/Authentication">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="adminKey" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationManager" abstract="true"
-        interface="true">
-      <eOperations name="checkLogin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eParameters name="authentication" lowerBound="1" eType="#//context/AuthenticationUserToken"/>
-        <eParameters name="create" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eOperations>
-      <eOperations name="login" eType="#//context/ContextProvider">
-        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="authentication" lowerBound="1" eType="#//context/AuthenticationAnonymous"/>
-      </eOperations>
-      <eOperations name="login" eType="#//context/ContextProvider">
-        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="authentication" lowerBound="1" eType="#//context/AuthenticationUserPassword"/>
-      </eOperations>
-      <eOperations name="login" eType="#//context/ContextProvider">
-        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="authentication" lowerBound="1" eType="#//context/AuthenticationUserToken"/>
-      </eOperations>
-      <eOperations name="login" eType="#//context/ContextProvider">
-        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="authentication" lowerBound="1" eType="#//context/AuthenticationAdminKey"/>
-      </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationUserPassword" eSuperTypes="#//context/Authentication">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationUserToken" eSuperTypes="#//context/Authentication">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="provider" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessToken" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="idToken" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="picture" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationAnonymous" eSuperTypes="#//context/Authentication"/>
     <eClassifiers xsi:type="ecore:EClass" name="Capability" abstract="true" eSuperTypes="#//entity/Entity">
       <eOperations name="getEntityName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="rights" upperBound="-1"
@@ -550,7 +554,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="schema" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="host" lowerBound="1"
-          eType="#//net/HostConfig" containment="true"/>
+          eType="#//networking/HostConfig" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="publicUser" eType="#//context/ProviderUser"
@@ -1058,7 +1062,7 @@
     <eClassifiers xsi:type="ecore:EDataType" name="JavaURL" instanceClassName="java.net.URL"/>
     <eClassifiers xsi:type="ecore:EDataType" name="JavaWriter" instanceClassName="java.io.Writer"/>
   </eSubpackages>
-  <eSubpackages name="net" nsURI="http://www.abchip.org/mimo/net" nsPrefix="mimo-net">
+  <eSubpackages name="networking" nsURI="http://www.abchip.org/mimo/networking" nsPrefix="mimo-net">
     <eClassifiers xsi:type="ecore:EClass" name="ConnectionPoolingConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxTotal" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -1067,12 +1071,12 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HttpClient" abstract="true" interface="true">
       <eOperations name="execute" lowerBound="1" eExceptions="#//java/JavaException">
-        <eGenericType eTypeParameter="#//net/HttpClient/execute/T"/>
+        <eGenericType eTypeParameter="#//networking/HttpClient/execute/T"/>
         <eTypeParameters name="T"/>
-        <eParameters name="method" lowerBound="1" eType="#//net/HttpPost"/>
+        <eParameters name="method" lowerBound="1" eType="#//networking/HttpPost"/>
         <eParameters name="handler" lowerBound="1">
-          <eGenericType eClassifier="#//net/HttpResponseHandler">
-            <eTypeArguments eTypeParameter="#//net/HttpClient/execute/T"/>
+          <eGenericType eClassifier="#//networking/HttpResponseHandler">
+            <eTypeArguments eTypeParameter="#//networking/HttpClient/execute/T"/>
           </eGenericType>
         </eParameters>
       </eOperations>
@@ -1089,7 +1093,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HttpServiceConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="host" lowerBound="1"
-          eType="#//net/HostConfig" containment="true"/>
+          eType="#//networking/HostConfig" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>

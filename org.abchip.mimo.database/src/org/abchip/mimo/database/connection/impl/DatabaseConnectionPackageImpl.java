@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 
 import org.abchip.mimo.MimoPackage;
+import org.abchip.mimo.authentication.AuthenticationPackage;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.database.DatabasePackage;
 
@@ -474,6 +475,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		DatabasePackage theDatabasePackage = (DatabasePackage)EPackage.Registry.INSTANCE.getEPackage(DatabasePackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		AuthenticationPackage theAuthenticationPackage = (AuthenticationPackage)EPackage.Registry.INSTANCE.getEPackage(AuthenticationPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
@@ -483,7 +485,7 @@ public class DatabaseConnectionPackageImpl extends EPackageImpl implements Datab
 		// Add supertypes to classes
 		connectionEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 		connectionConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		connectionCredentialsEClass.getESuperTypes().add(theContextPackage.getAuthenticationUserPassword());
+		connectionCredentialsEClass.getESuperTypes().add(theAuthenticationPackage.getAuthenticationUserPassword());
 		preparedStatementEClass.getESuperTypes().add(this.getStatement());
 		statementEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 

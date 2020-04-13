@@ -5,12 +5,12 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.net.impl;
+package org.abchip.mimo.networking.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.abchip.mimo.net.HttpServiceConfig;
-import org.abchip.mimo.net.NetPackage;
-import org.abchip.mimo.net.HostConfig;
+import org.abchip.mimo.networking.HostConfig;
+import org.abchip.mimo.networking.HttpServiceConfig;
+import org.abchip.mimo.networking.NetworkingPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -28,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.net.impl.HttpServiceConfigImpl#getHost <em>Host</em>}</li>
- *   <li>{@link org.abchip.mimo.net.impl.HttpServiceConfigImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link org.abchip.mimo.networking.impl.HttpServiceConfigImpl#getHost <em>Host</em>}</li>
+ *   <li>{@link org.abchip.mimo.networking.impl.HttpServiceConfigImpl#getPath <em>Path</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,7 +86,7 @@ public class HttpServiceConfigImpl extends EntityImpl implements HttpServiceConf
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return NetPackage.Literals.HTTP_SERVICE_CONFIG;
+		return NetworkingPackage.Literals.HTTP_SERVICE_CONFIG;
 	}
 
 	/**
@@ -101,13 +101,13 @@ public class HttpServiceConfigImpl extends EntityImpl implements HttpServiceConf
 			host = (HostConfig)eResolveProxy(oldHost);
 			if (host != oldHost) {
 				InternalEObject newHost = (InternalEObject)host;
-				NotificationChain msgs = oldHost.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NetPackage.HTTP_SERVICE_CONFIG__HOST, null, null);
+				NotificationChain msgs = oldHost.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NetworkingPackage.HTTP_SERVICE_CONFIG__HOST, null, null);
 				if (newHost.eInternalContainer() == null) {
-					msgs = newHost.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NetPackage.HTTP_SERVICE_CONFIG__HOST, null, msgs);
+					msgs = newHost.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NetworkingPackage.HTTP_SERVICE_CONFIG__HOST, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NetPackage.HTTP_SERVICE_CONFIG__HOST, oldHost, host));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NetworkingPackage.HTTP_SERVICE_CONFIG__HOST, oldHost, host));
 			}
 		}
 		return host;
@@ -131,7 +131,7 @@ public class HttpServiceConfigImpl extends EntityImpl implements HttpServiceConf
 		HostConfig oldHost = host;
 		host = newHost;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NetPackage.HTTP_SERVICE_CONFIG__HOST, oldHost, newHost);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NetworkingPackage.HTTP_SERVICE_CONFIG__HOST, oldHost, newHost);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -147,14 +147,14 @@ public class HttpServiceConfigImpl extends EntityImpl implements HttpServiceConf
 		if (newHost != host) {
 			NotificationChain msgs = null;
 			if (host != null)
-				msgs = ((InternalEObject)host).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NetPackage.HTTP_SERVICE_CONFIG__HOST, null, msgs);
+				msgs = ((InternalEObject)host).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NetworkingPackage.HTTP_SERVICE_CONFIG__HOST, null, msgs);
 			if (newHost != null)
-				msgs = ((InternalEObject)newHost).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NetPackage.HTTP_SERVICE_CONFIG__HOST, null, msgs);
+				msgs = ((InternalEObject)newHost).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NetworkingPackage.HTTP_SERVICE_CONFIG__HOST, null, msgs);
 			msgs = basicSetHost(newHost, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NetPackage.HTTP_SERVICE_CONFIG__HOST, newHost, newHost));
+			eNotify(new ENotificationImpl(this, Notification.SET, NetworkingPackage.HTTP_SERVICE_CONFIG__HOST, newHost, newHost));
 	}
 
 	/**
@@ -177,7 +177,7 @@ public class HttpServiceConfigImpl extends EntityImpl implements HttpServiceConf
 		String oldPath = path;
 		path = newPath;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NetPackage.HTTP_SERVICE_CONFIG__PATH, oldPath, path));
+			eNotify(new ENotificationImpl(this, Notification.SET, NetworkingPackage.HTTP_SERVICE_CONFIG__PATH, oldPath, path));
 	}
 
 	/**
@@ -188,7 +188,7 @@ public class HttpServiceConfigImpl extends EntityImpl implements HttpServiceConf
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case NetPackage.HTTP_SERVICE_CONFIG__HOST:
+			case NetworkingPackage.HTTP_SERVICE_CONFIG__HOST:
 				return basicSetHost(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -202,10 +202,10 @@ public class HttpServiceConfigImpl extends EntityImpl implements HttpServiceConf
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NetPackage.HTTP_SERVICE_CONFIG__HOST:
+			case NetworkingPackage.HTTP_SERVICE_CONFIG__HOST:
 				if (resolve) return getHost();
 				return basicGetHost();
-			case NetPackage.HTTP_SERVICE_CONFIG__PATH:
+			case NetworkingPackage.HTTP_SERVICE_CONFIG__PATH:
 				return getPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -219,10 +219,10 @@ public class HttpServiceConfigImpl extends EntityImpl implements HttpServiceConf
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NetPackage.HTTP_SERVICE_CONFIG__HOST:
+			case NetworkingPackage.HTTP_SERVICE_CONFIG__HOST:
 				setHost((HostConfig)newValue);
 				return;
-			case NetPackage.HTTP_SERVICE_CONFIG__PATH:
+			case NetworkingPackage.HTTP_SERVICE_CONFIG__PATH:
 				setPath((String)newValue);
 				return;
 		}
@@ -237,10 +237,10 @@ public class HttpServiceConfigImpl extends EntityImpl implements HttpServiceConf
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NetPackage.HTTP_SERVICE_CONFIG__HOST:
+			case NetworkingPackage.HTTP_SERVICE_CONFIG__HOST:
 				setHost((HostConfig)null);
 				return;
-			case NetPackage.HTTP_SERVICE_CONFIG__PATH:
+			case NetworkingPackage.HTTP_SERVICE_CONFIG__PATH:
 				setPath(PATH_EDEFAULT);
 				return;
 		}
@@ -255,9 +255,9 @@ public class HttpServiceConfigImpl extends EntityImpl implements HttpServiceConf
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NetPackage.HTTP_SERVICE_CONFIG__HOST:
+			case NetworkingPackage.HTTP_SERVICE_CONFIG__HOST:
 				return host != null;
-			case NetPackage.HTTP_SERVICE_CONFIG__PATH:
+			case NetworkingPackage.HTTP_SERVICE_CONFIG__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 		}
 		return super.eIsSet(featureID);

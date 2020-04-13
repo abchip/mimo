@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.net;
+package org.abchip.mimo.networking;
 
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
@@ -17,7 +17,7 @@ import org.apache.http.client.methods.HttpPost;
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.net.NetPackage#getHttpClient()
+ * @see org.abchip.mimo.networking.NetworkingPackage#getHttpClient()
  * @model interface="true" abstract="true"
  * @generated
  */
@@ -26,7 +26,7 @@ public interface HttpClient {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.java.JavaException" methodDataType="org.abchip.mimo.net.HttpPost" methodRequired="true" handlerDataType="org.abchip.mimo.net.HttpResponseHandler&lt;T&gt;" handlerRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.java.JavaException" methodDataType="org.abchip.mimo.networking.HttpPost" methodRequired="true" handlerDataType="org.abchip.mimo.networking.HttpResponseHandler&lt;T&gt;" handlerRequired="true"
 	 * @generated
 	 */
 	<T> T execute(HttpPost method, ResponseHandler<T> handler) throws Exception;

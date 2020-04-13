@@ -17,11 +17,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.abchip.mimo.context.AuthenticationAnonymous;
-import org.abchip.mimo.context.AuthenticationManager;
+import org.abchip.mimo.authentication.AuthenticationAnonymous;
+import org.abchip.mimo.authentication.AuthenticationException;
+import org.abchip.mimo.authentication.AuthenticationFactory;
+import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
-import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -52,12 +53,17 @@ public class StatusServlet extends HttpServlet {
 		// new session with anonymous user
 		if (context == null) {
 
-			AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
-			context = authenticationManager.login(session.getId(), authentication).get();
+			AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
+			try {
+				context = authenticationManager.login(session.getId(), authentication).get();
+			} catch (AuthenticationException e) {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				throw new ServletException(e);
+			}
 
 			ContextUtils.addContext(context);
 		}
-		
+
 		if (context == null) {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return;

@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.database.connection;
 
-import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.authentication.AuthenticationPackage;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.emf.ecore.EAttribute;
@@ -175,7 +175,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_CREDENTIALS__USER = ContextPackage.AUTHENTICATION_USER_PASSWORD__USER;
+	int CONNECTION_CREDENTIALS__USER = AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__USER;
 
 	/**
 	 * The feature id for the '<em><b>Password</b></em>' attribute.
@@ -184,7 +184,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_CREDENTIALS__PASSWORD = ContextPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD;
+	int CONNECTION_CREDENTIALS__PASSWORD = AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD;
 
 	/**
 	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
@@ -193,7 +193,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_CREDENTIALS__TENANT = ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT;
+	int CONNECTION_CREDENTIALS__TENANT = AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__TENANT;
 
 	/**
 	 * The number of structural features of the '<em>Connection Credentials</em>' class.
@@ -202,7 +202,7 @@ public interface DatabaseConnectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_CREDENTIALS_FEATURE_COUNT = ContextPackage.AUTHENTICATION_USER_PASSWORD_FEATURE_COUNT + 0;
+	int CONNECTION_CREDENTIALS_FEATURE_COUNT = AuthenticationPackage.AUTHENTICATION_USER_PASSWORD_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.database.connection.ConnectionManager <em>Connection Manager</em>}' class.

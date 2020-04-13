@@ -6,8 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.context;
-
+package org.abchip.mimo.authentication;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,12 +17,12 @@ package org.abchip.mimo.context;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.AuthenticationUserPassword#getUser <em>User</em>}</li>
- *   <li>{@link org.abchip.mimo.context.AuthenticationUserPassword#getPassword <em>Password</em>}</li>
- *   <li>{@link org.abchip.mimo.context.AuthenticationUserPassword#getTenant <em>Tenant</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.AuthenticationUserPassword#getUser <em>User</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.AuthenticationUserPassword#getPassword <em>Password</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.AuthenticationUserPassword#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserPassword()
+ * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationUserPassword()
  * @model
  * @generated
  */
@@ -38,14 +37,14 @@ public interface AuthenticationUserPassword extends Authentication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User</em>' attribute.
 	 * @see #setUser(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserPassword_User()
+	 * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationUserPassword_User()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getUser();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationUserPassword#getUser <em>User</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.authentication.AuthenticationUserPassword#getUser <em>User</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>User</em>' attribute.
@@ -64,14 +63,14 @@ public interface AuthenticationUserPassword extends Authentication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Password</em>' attribute.
 	 * @see #setPassword(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserPassword_Password()
+	 * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationUserPassword_Password()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getPassword();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationUserPassword#getPassword <em>Password</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.authentication.AuthenticationUserPassword#getPassword <em>Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Password</em>' attribute.
@@ -90,14 +89,14 @@ public interface AuthenticationUserPassword extends Authentication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tenant</em>' attribute.
 	 * @see #setTenant(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserPassword_Tenant()
+	 * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationUserPassword_Tenant()
 	 * @model
 	 * @generated
 	 */
 	String getTenant();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationUserPassword#getTenant <em>Tenant</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.authentication.AuthenticationUserPassword#getTenant <em>Tenant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Tenant</em>' attribute.

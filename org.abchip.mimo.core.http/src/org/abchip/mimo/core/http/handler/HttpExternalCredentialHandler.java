@@ -12,8 +12,8 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.AuthenticationUserPassword;
-import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.authentication.AuthenticationFactory;
+import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.core.http.HttpUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -27,7 +27,7 @@ public class HttpExternalCredentialHandler implements ResponseHandler<Authentica
 		if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
 			throw HttpUtils.buildException(response);
 
-		AuthenticationUserPassword authenticationUserPassword = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
+		AuthenticationUserPassword authenticationUserPassword = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
 
 		return authenticationUserPassword;
 	}

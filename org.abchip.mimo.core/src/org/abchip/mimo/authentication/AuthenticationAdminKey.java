@@ -5,8 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.context;
-
+package org.abchip.mimo.authentication;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,11 +16,11 @@ package org.abchip.mimo.context;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.AuthenticationAdminKey#getAdminKey <em>Admin Key</em>}</li>
- *   <li>{@link org.abchip.mimo.context.AuthenticationAdminKey#getTenant <em>Tenant</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.AuthenticationAdminKey#getAdminKey <em>Admin Key</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.AuthenticationAdminKey#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.context.ContextPackage#getAuthenticationAdminKey()
+ * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationAdminKey()
  * @model
  * @generated
  */
@@ -36,14 +35,14 @@ public interface AuthenticationAdminKey extends Authentication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Admin Key</em>' attribute.
 	 * @see #setAdminKey(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationAdminKey_AdminKey()
+	 * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationAdminKey_AdminKey()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getAdminKey();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationAdminKey#getAdminKey <em>Admin Key</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.authentication.AuthenticationAdminKey#getAdminKey <em>Admin Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Admin Key</em>' attribute.
@@ -62,14 +61,14 @@ public interface AuthenticationAdminKey extends Authentication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tenant</em>' attribute.
 	 * @see #setTenant(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationAdminKey_Tenant()
+	 * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationAdminKey_Tenant()
 	 * @model
 	 * @generated
 	 */
 	String getTenant();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationAdminKey#getTenant <em>Tenant</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.authentication.AuthenticationAdminKey#getTenant <em>Tenant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Tenant</em>' attribute.

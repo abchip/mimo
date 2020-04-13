@@ -14,15 +14,16 @@ import java.util.Map;
 import javax.inject.Inject;
 
 import org.abchip.mimo.application.Application;
-import org.abchip.mimo.context.AuthenticationAdminKey;
-import org.abchip.mimo.context.AuthenticationAnonymous;
-import org.abchip.mimo.context.AuthenticationManager;
-import org.abchip.mimo.context.AuthenticationUserPassword;
-import org.abchip.mimo.context.AuthenticationUserToken;
+import org.abchip.mimo.authentication.AuthenticationAdminKey;
+import org.abchip.mimo.authentication.AuthenticationAnonymous;
+import org.abchip.mimo.authentication.AuthenticationException;
+import org.abchip.mimo.authentication.AuthenticationFactory;
+import org.abchip.mimo.authentication.AuthenticationManager;
+import org.abchip.mimo.authentication.AuthenticationUserPassword;
+import org.abchip.mimo.authentication.AuthenticationUserToken;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextEvent;
-import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ProviderConfig;
@@ -31,7 +32,7 @@ import org.abchip.mimo.core.http.handler.HttpCheckLoginHandler;
 import org.abchip.mimo.core.http.handler.HttpExternalCredentialHandler;
 import org.abchip.mimo.core.http.handler.HttpLoginHandler;
 import org.abchip.mimo.core.http.handler.HttpLogoutHandler;
-import org.abchip.mimo.net.HttpClient;
+import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -54,13 +55,13 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	private HttpClient httpClient;
 
 	@Override
-	public ContextProvider login(String contextId, AuthenticationAnonymous authentication) {
+	public ContextProvider login(String contextId, AuthenticationAnonymous authentication) throws AuthenticationException {
 
 		ProviderUser user = this.providerConfig.getPublicUser();
 		if (user == null)
 			return null;
 
-		AuthenticationUserPassword authenticationUserPassword = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
+		AuthenticationUserPassword authenticationUserPassword = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
 		authenticationUserPassword.setUser(user.getUser());
 		authenticationUserPassword.setPassword(user.getPassword());
 
@@ -72,13 +73,11 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	}
 
 	@Override
-	public ContextProvider login(String contextId, AuthenticationUserToken authentication) {
+	public ContextProvider login(String contextId, AuthenticationUserToken authentication) throws AuthenticationException {
 
 		AuthenticationUserPassword authenticationUserPassword = getExternalCredentials(authentication.getUser());
 
 		ContextProvider context = this.login(contextId, authenticationUserPassword);
-		if (context == null)
-			return null;
 
 		context.get().getContextDescription().setPicture(authentication.getPicture());
 
@@ -87,11 +86,9 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 	@SuppressWarnings("resource")
 	@Override
-	public ContextProvider login(String contextId, AuthenticationUserPassword authentication) {
+	public ContextProvider login(String contextId, AuthenticationUserPassword authentication) throws AuthenticationException {
 
 		HttpConnector connector = connect(authentication.getUser(), authentication.getPassword(), authentication.getTenant());
-		if (connector == null)
-			return null;
 
 		ContextProvider contextProvider = application.getContext().createChildContext(contextId);
 		Context context = contextProvider.get();
@@ -119,11 +116,9 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 	@SuppressWarnings("resource")
 	@Override
-	public ContextProvider login(String contextId, AuthenticationAdminKey authentication) {
+	public ContextProvider login(String contextId, AuthenticationAdminKey authentication) throws AuthenticationException {
 
 		HttpConnector connector = connect(authentication.getAdminKey(), authentication.getTenant());
-		if (connector == null)
-			return null;
 
 		ContextProvider contextProvider = application.getContext().createChildContext(contextId);
 		Context context = contextProvider.get();
@@ -217,7 +212,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		return true;
 	}
 
-	private HttpConnector connect(String user, String password, String tenant) {
+	private HttpConnector connect(String user, String password, String tenant) throws AuthenticationException {
 
 		LOGGER.audit("Connection from user {} tenant {}", user, tenant);
 
@@ -242,12 +237,13 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			LOGGER.audit("Connection success id {} user {} tenant {}", contextDescription.getId(), contextDescription.getUser(), contextDescription.getTenant());
 		} catch (Exception e) {
 			LOGGER.audit("Connection failed {}", e.getMessage());
+			throw new AuthenticationException(e);
 		}
 
 		return connector;
 	}
 
-	private HttpConnector connect(String adminKey, String tenant) {
+	private HttpConnector connect(String adminKey, String tenant) throws AuthenticationException {
 
 		LOGGER.audit("Connection from adminKey {} tenant {}", adminKey, tenant);
 
@@ -271,6 +267,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			LOGGER.audit("Connection success adminKey {} tenant {}", adminKey, tenant);
 		} catch (Exception e) {
 			LOGGER.audit("{}", e.getMessage());
+			throw new AuthenticationException(e);
 		}
 
 		return connector;
@@ -293,7 +290,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		}
 	}
 
-	private AuthenticationUserPassword getExternalCredentials(String user) {
+	private AuthenticationUserPassword getExternalCredentials(String user) throws AuthenticationException {
 
 		LOGGER.warn("Unsecure access to external credential for user {}", user);
 
@@ -309,7 +306,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			LOGGER.audit("External credential success user {}", user);
 		} catch (Exception e) {
 			LOGGER.audit(e.getMessage());
-			return null;
+			throw new AuthenticationException(e);
 		}
 
 		return authentication;

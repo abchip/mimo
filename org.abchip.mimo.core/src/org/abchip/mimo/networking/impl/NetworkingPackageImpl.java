@@ -5,14 +5,15 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.net.impl;
+package org.abchip.mimo.networking.impl;
 
 import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.application.ApplicationPackage;
 
 import org.abchip.mimo.application.impl.ApplicationPackageImpl;
-
+import org.abchip.mimo.authentication.AuthenticationPackage;
+import org.abchip.mimo.authentication.impl.AuthenticationPackageImpl;
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.context.impl.ContextPackageImpl;
@@ -30,13 +31,12 @@ import org.abchip.mimo.impl.MimoPackageImpl;
 import org.abchip.mimo.java.JavaPackage;
 
 import org.abchip.mimo.java.impl.JavaPackageImpl;
-
-import org.abchip.mimo.net.ConnectionPoolingConfig;
-import org.abchip.mimo.net.HttpClient;
-import org.abchip.mimo.net.HttpServiceConfig;
-import org.abchip.mimo.net.NetFactory;
-import org.abchip.mimo.net.NetPackage;
-import org.abchip.mimo.net.HostConfig;
+import org.abchip.mimo.networking.ConnectionPoolingConfig;
+import org.abchip.mimo.networking.HostConfig;
+import org.abchip.mimo.networking.HttpClient;
+import org.abchip.mimo.networking.HttpServiceConfig;
+import org.abchip.mimo.networking.NetworkingFactory;
+import org.abchip.mimo.networking.NetworkingPackage;
 import org.abchip.mimo.resource.ResourcePackage;
 
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
@@ -64,7 +64,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class NetPackageImpl extends EPackageImpl implements NetPackage {
+public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,12 +112,12 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.abchip.mimo.net.NetPackage#eNS_URI
+	 * @see org.abchip.mimo.networking.NetworkingPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private NetPackageImpl() {
-		super(eNS_URI, NetFactory.eINSTANCE);
+	private NetworkingPackageImpl() {
+		super(eNS_URI, NetworkingFactory.eINSTANCE);
 	}
 
 	/**
@@ -130,7 +130,7 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link NetPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link NetworkingPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,12 +139,12 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static NetPackage init() {
-		if (isInited) return (NetPackage)EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
+	public static NetworkingPackage init() {
+		if (isInited) return (NetworkingPackage)EPackage.Registry.INSTANCE.getEPackage(NetworkingPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredNetPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		NetPackageImpl theNetPackage = registeredNetPackage instanceof NetPackageImpl ? (NetPackageImpl)registeredNetPackage : new NetPackageImpl();
+		Object registeredNetworkingPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		NetworkingPackageImpl theNetworkingPackage = registeredNetworkingPackage instanceof NetworkingPackageImpl ? (NetworkingPackageImpl)registeredNetworkingPackage : new NetworkingPackageImpl();
 
 		isInited = true;
 
@@ -153,6 +153,8 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(registeredPackage instanceof ApplicationPackageImpl ? registeredPackage : ApplicationPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuthenticationPackage.eNS_URI);
+		AuthenticationPackageImpl theAuthenticationPackage = (AuthenticationPackageImpl)(registeredPackage instanceof AuthenticationPackageImpl ? registeredPackage : AuthenticationPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
@@ -167,9 +169,10 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		ServicePackageImpl theServicePackage = (ServicePackageImpl)(registeredPackage instanceof ServicePackageImpl ? registeredPackage : ServicePackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theNetPackage.createPackageContents();
+		theNetworkingPackage.createPackageContents();
 		theMimoPackage.createPackageContents();
 		theApplicationPackage.createPackageContents();
+		theAuthenticationPackage.createPackageContents();
 		theContextPackage.createPackageContents();
 		theDataPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
@@ -178,9 +181,10 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		theServicePackage.createPackageContents();
 
 		// Initialize created meta-data
-		theNetPackage.initializePackageContents();
+		theNetworkingPackage.initializePackageContents();
 		theMimoPackage.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
+		theAuthenticationPackage.initializePackageContents();
 		theContextPackage.initializePackageContents();
 		theDataPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
@@ -189,11 +193,11 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		theServicePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theNetPackage.freeze();
+		theNetworkingPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(NetPackage.eNS_URI, theNetPackage);
-		return theNetPackage;
+		EPackage.Registry.INSTANCE.put(NetworkingPackage.eNS_URI, theNetworkingPackage);
+		return theNetworkingPackage;
 	}
 
 	/**
@@ -312,8 +316,8 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getHttpClient() {
-		return httpClientEClass;
+	public NetworkingFactory getNetworkingFactory() {
+		return (NetworkingFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -322,8 +326,8 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 	 * @generated
 	 */
 	@Override
-	public NetFactory getNetFactory() {
-		return (NetFactory)getEFactoryInstance();
+	public EClass getHttpClient() {
+		return httpClientEClass;
 	}
 
 	/**
@@ -432,4 +436,4 @@ public class NetPackageImpl extends EPackageImpl implements NetPackage {
 		initEDataType(httpResponseHandlerEDataType, ResponseHandler.class, "HttpResponseHandler", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 	}
 
-} //NetPackageImpl
+} //NetworkingPackageImpl

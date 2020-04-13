@@ -13,7 +13,7 @@
  */
 package org.abchip.mimo.database.connection.impl;
 
-import org.abchip.mimo.context.impl.AuthenticationUserPasswordImpl;
+import org.abchip.mimo.authentication.impl.AuthenticationUserPasswordImpl;
 import org.abchip.mimo.database.connection.ConnectionCredentials;
 import org.abchip.mimo.database.connection.DatabaseConnectionPackage;
 import org.eclipse.emf.ecore.EClass;

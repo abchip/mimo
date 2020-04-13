@@ -5,11 +5,10 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.context.impl;
+package org.abchip.mimo.authentication.impl;
 
-import org.abchip.mimo.context.AuthenticationUserToken;
-import org.abchip.mimo.context.ContextPackage;
-
+import org.abchip.mimo.authentication.AuthenticationPackage;
+import org.abchip.mimo.authentication.AuthenticationUserToken;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -23,11 +22,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getProvider <em>Provider</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getAccessToken <em>Access Token</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getIdToken <em>Id Token</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getPicture <em>Picture</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserTokenImpl#getUser <em>User</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationUserTokenImpl#getProvider <em>Provider</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationUserTokenImpl#getAccessToken <em>Access Token</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationUserTokenImpl#getIdToken <em>Id Token</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationUserTokenImpl#getPicture <em>Picture</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationUserTokenImpl#getUser <em>User</em>}</li>
  * </ul>
  *
  * @generated
@@ -144,7 +143,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ContextPackage.Literals.AUTHENTICATION_USER_TOKEN;
+		return AuthenticationPackage.Literals.AUTHENTICATION_USER_TOKEN;
 	}
 
 	/**
@@ -167,7 +166,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 		String oldProvider = provider;
 		provider = newProvider;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER, oldProvider, provider));
+			eNotify(new ENotificationImpl(this, Notification.SET, AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PROVIDER, oldProvider, provider));
 	}
 
 	/**
@@ -190,7 +189,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 		String oldAccessToken = accessToken;
 		accessToken = newAccessToken;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN, oldAccessToken, accessToken));
+			eNotify(new ENotificationImpl(this, Notification.SET, AuthenticationPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN, oldAccessToken, accessToken));
 	}
 
 	/**
@@ -213,7 +212,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 		String oldIdToken = idToken;
 		idToken = newIdToken;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN, oldIdToken, idToken));
+			eNotify(new ENotificationImpl(this, Notification.SET, AuthenticationPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN, oldIdToken, idToken));
 	}
 
 	/**
@@ -236,7 +235,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 		String oldPicture = picture;
 		picture = newPicture;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE, oldPicture, picture));
+			eNotify(new ENotificationImpl(this, Notification.SET, AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PICTURE, oldPicture, picture));
 	}
 
 	/**
@@ -259,7 +258,7 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 		String oldUser = user;
 		user = newUser;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_TOKEN__USER, oldUser, user));
+			eNotify(new ENotificationImpl(this, Notification.SET, AuthenticationPackage.AUTHENTICATION_USER_TOKEN__USER, oldUser, user));
 	}
 
 	/**
@@ -270,15 +269,15 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
 				return getProvider();
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
 				return getAccessToken();
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
 				return getIdToken();
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
 				return getPicture();
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__USER:
 				return getUser();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -292,19 +291,19 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
 				setProvider((String)newValue);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
 				setAccessToken((String)newValue);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
 				setIdToken((String)newValue);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
 				setPicture((String)newValue);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__USER:
 				setUser((String)newValue);
 				return;
 		}
@@ -319,19 +318,19 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
 				setProvider(PROVIDER_EDEFAULT);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
 				setAccessToken(ACCESS_TOKEN_EDEFAULT);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
 				setIdToken(ID_TOKEN_EDEFAULT);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
 				setPicture(PICTURE_EDEFAULT);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__USER:
 				setUser(USER_EDEFAULT);
 				return;
 		}
@@ -346,15 +345,15 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PROVIDER:
 				return PROVIDER_EDEFAULT == null ? provider != null : !PROVIDER_EDEFAULT.equals(provider);
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__ACCESS_TOKEN:
 				return ACCESS_TOKEN_EDEFAULT == null ? accessToken != null : !ACCESS_TOKEN_EDEFAULT.equals(accessToken);
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__ID_TOKEN:
 				return ID_TOKEN_EDEFAULT == null ? idToken != null : !ID_TOKEN_EDEFAULT.equals(idToken);
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__PICTURE:
 				return PICTURE_EDEFAULT == null ? picture != null : !PICTURE_EDEFAULT.equals(picture);
-			case ContextPackage.AUTHENTICATION_USER_TOKEN__USER:
+			case AuthenticationPackage.AUTHENTICATION_USER_TOKEN__USER:
 				return USER_EDEFAULT == null ? user != null : !USER_EDEFAULT.equals(user);
 		}
 		return super.eIsSet(featureID);

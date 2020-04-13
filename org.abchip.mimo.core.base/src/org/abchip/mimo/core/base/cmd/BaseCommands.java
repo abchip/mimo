@@ -11,10 +11,11 @@ package org.abchip.mimo.core.base.cmd;
 import javax.inject.Inject;
 
 import org.abchip.mimo.application.Application;
-import org.abchip.mimo.context.AuthenticationAdminKey;
-import org.abchip.mimo.context.AuthenticationManager;
+import org.abchip.mimo.authentication.AuthenticationAdminKey;
+import org.abchip.mimo.authentication.AuthenticationException;
+import org.abchip.mimo.authentication.AuthenticationFactory;
+import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextFactory;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.eclipse.osgi.framework.console.CommandProvider;
 
@@ -43,18 +44,22 @@ public abstract class BaseCommands implements CommandProvider {
 			return context;
 
 		if (application.getAdminKey() == null)
-			return login(null);
+			try {
+				return login(null);
+			} catch (AuthenticationException e) {
+				throw new RuntimeException(e);
+			}
 
 		throw new RuntimeException("You need a login, please use first command 'login'");
 	}
 
-	protected Context login(String adminKey) {
+	protected Context login(String adminKey) throws AuthenticationException {
 
 		AuthenticationManager authenticationManager = application.getContext().get(AuthenticationManager.class);
 		if (authenticationManager == null)
 			return null;
 
-		AuthenticationAdminKey authAdminKey = ContextFactory.eINSTANCE.createAuthenticationAdminKey();
+		AuthenticationAdminKey authAdminKey = AuthenticationFactory.eINSTANCE.createAuthenticationAdminKey();
 		authAdminKey.setAdminKey(adminKey);
 
 		@SuppressWarnings("resource")

@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.context;
+package org.abchip.mimo.authentication;
 
 import org.abchip.mimo.entity.Entity;
 
@@ -16,7 +16,7 @@ import org.abchip.mimo.entity.Entity;
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.context.ContextPackage#getAuthentication()
+ * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthentication()
  * @model interface="true" abstract="true"
  * @generated
  */

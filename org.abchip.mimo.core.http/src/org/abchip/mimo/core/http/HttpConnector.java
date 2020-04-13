@@ -13,7 +13,7 @@ import java.io.IOException;
 
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ProviderConfig;
-import org.abchip.mimo.net.HttpClient;
+import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.util.Logs;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;

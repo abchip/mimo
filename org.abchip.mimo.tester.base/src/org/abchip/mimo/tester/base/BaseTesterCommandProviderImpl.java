@@ -18,9 +18,9 @@ import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ModuleStatus;
 import org.abchip.mimo.application.ServiceRef;
 import org.abchip.mimo.application.ServiceStatus;
-import org.abchip.mimo.context.AuthenticationManager;
-import org.abchip.mimo.context.AuthenticationUserPassword;
-import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.authentication.AuthenticationFactory;
+import org.abchip.mimo.authentication.AuthenticationManager;
+import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.base.cmd.BaseCommands;
 import org.abchip.mimo.tester.AssertionFailed;
@@ -41,7 +41,7 @@ public class BaseTesterCommandProviderImpl extends BaseCommands {
 
 	public void _test(CommandInterpreter interpreter) throws Exception {
 
-		AuthenticationUserPassword authentication = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
+		AuthenticationUserPassword authentication = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
 		authentication.setUser("test");
 		authentication.setPassword("ofbiz");
 		authentication.setTenant("test");

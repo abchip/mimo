@@ -5,10 +5,9 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.net.impl;
+package org.abchip.mimo.networking.impl;
 
-import org.abchip.mimo.net.*;
-
+import org.abchip.mimo.networking.*;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
 import org.eclipse.emf.ecore.EClass;
@@ -26,24 +25,24 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class NetFactoryImpl extends EFactoryImpl implements NetFactory {
+public class NetworkingFactoryImpl extends EFactoryImpl implements NetworkingFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static NetFactory init() {
+	public static NetworkingFactory init() {
 		try {
-			NetFactory theNetFactory = (NetFactory)EPackage.Registry.INSTANCE.getEFactory(NetPackage.eNS_URI);
-			if (theNetFactory != null) {
-				return theNetFactory;
+			NetworkingFactory theNetworkingFactory = (NetworkingFactory)EPackage.Registry.INSTANCE.getEFactory(NetworkingPackage.eNS_URI);
+			if (theNetworkingFactory != null) {
+				return theNetworkingFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new NetFactoryImpl();
+		return new NetworkingFactoryImpl();
 	}
 
 	/**
@@ -52,7 +51,7 @@ public class NetFactoryImpl extends EFactoryImpl implements NetFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NetFactoryImpl() {
+	public NetworkingFactoryImpl() {
 		super();
 	}
 
@@ -64,9 +63,9 @@ public class NetFactoryImpl extends EFactoryImpl implements NetFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case NetPackage.CONNECTION_POOLING_CONFIG: return (EObject)createConnectionPoolingConfig();
-			case NetPackage.HOST_CONFIG: return (EObject)createHostConfig();
-			case NetPackage.HTTP_SERVICE_CONFIG: return (EObject)createHttpServiceConfig();
+			case NetworkingPackage.CONNECTION_POOLING_CONFIG: return (EObject)createConnectionPoolingConfig();
+			case NetworkingPackage.HOST_CONFIG: return (EObject)createHostConfig();
+			case NetworkingPackage.HTTP_SERVICE_CONFIG: return (EObject)createHttpServiceConfig();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -80,9 +79,9 @@ public class NetFactoryImpl extends EFactoryImpl implements NetFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case NetPackage.HTTP_POST:
+			case NetworkingPackage.HTTP_POST:
 				return createHttpPostFromString(eDataType, initialValue);
-			case NetPackage.HTTP_RESPONSE_HANDLER:
+			case NetworkingPackage.HTTP_RESPONSE_HANDLER:
 				return createHttpResponseHandlerFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
@@ -97,9 +96,9 @@ public class NetFactoryImpl extends EFactoryImpl implements NetFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case NetPackage.HTTP_POST:
+			case NetworkingPackage.HTTP_POST:
 				return convertHttpPostToString(eDataType, instanceValue);
-			case NetPackage.HTTP_RESPONSE_HANDLER:
+			case NetworkingPackage.HTTP_RESPONSE_HANDLER:
 				return convertHttpResponseHandlerToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
@@ -181,8 +180,8 @@ public class NetFactoryImpl extends EFactoryImpl implements NetFactory {
 	 * @generated
 	 */
 	@Override
-	public NetPackage getNetPackage() {
-		return (NetPackage)getEPackage();
+	public NetworkingPackage getNetworkingPackage() {
+		return (NetworkingPackage)getEPackage();
 	}
 
 	/**
@@ -192,8 +191,8 @@ public class NetFactoryImpl extends EFactoryImpl implements NetFactory {
 	 * @generated
 	 */
 	@Deprecated
-	public static NetPackage getPackage() {
-		return NetPackage.eINSTANCE;
+	public static NetworkingPackage getPackage() {
+		return NetworkingPackage.eINSTANCE;
 	}
 
-} //NetFactoryImpl
+} //NetworkingFactoryImpl

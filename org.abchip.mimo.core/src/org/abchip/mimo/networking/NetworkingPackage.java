@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.net;
+package org.abchip.mimo.networking;
 
 import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.ecore.EAttribute;
@@ -25,18 +25,18 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see org.abchip.mimo.net.NetFactory
+ * @see org.abchip.mimo.networking.NetworkingFactory
  * @model kind="package"
  * @generated
  */
-public interface NetPackage extends EPackage {
+public interface NetworkingPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "net";
+	String eNAME = "networking";
 
 	/**
 	 * The package namespace URI.
@@ -44,7 +44,7 @@ public interface NetPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.abchip.org/mimo/net";
+	String eNS_URI = "http://www.abchip.org/mimo/networking";
 
 	/**
 	 * The package namespace name.
@@ -60,14 +60,14 @@ public interface NetPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	NetPackage eINSTANCE = org.abchip.mimo.net.impl.NetPackageImpl.init();
+	NetworkingPackage eINSTANCE = org.abchip.mimo.networking.impl.NetworkingPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.net.impl.ConnectionPoolingConfigImpl <em>Connection Pooling Config</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.networking.impl.ConnectionPoolingConfigImpl <em>Connection Pooling Config</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.net.impl.ConnectionPoolingConfigImpl
-	 * @see org.abchip.mimo.net.impl.NetPackageImpl#getConnectionPoolingConfig()
+	 * @see org.abchip.mimo.networking.impl.ConnectionPoolingConfigImpl
+	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getConnectionPoolingConfig()
 	 * @generated
 	 */
 	int CONNECTION_POOLING_CONFIG = 0;
@@ -100,95 +100,95 @@ public interface NetPackage extends EPackage {
 	int CONNECTION_POOLING_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.net.impl.HostConfigImpl <em>Host Config</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.networking.impl.HostConfigImpl <em>Host Config</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.net.impl.HostConfigImpl
-	 * @see org.abchip.mimo.net.impl.NetPackageImpl#getHostConfig()
+	 * @see org.abchip.mimo.networking.impl.HostConfigImpl
+	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHostConfig()
 	 * @generated
 	 */
 	int HOST_CONFIG = 2;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.net.impl.HttpServiceConfigImpl <em>Http Service Config</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.networking.impl.HttpServiceConfigImpl <em>Http Service Config</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.net.impl.HttpServiceConfigImpl
-	 * @see org.abchip.mimo.net.impl.NetPackageImpl#getHttpServiceConfig()
+	 * @see org.abchip.mimo.networking.impl.HttpServiceConfigImpl
+	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpServiceConfig()
 	 * @generated
 	 */
 	int HTTP_SERVICE_CONFIG = 3;
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.net.ConnectionPoolingConfig <em>Connection Pooling Config</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.networking.ConnectionPoolingConfig <em>Connection Pooling Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Connection Pooling Config</em>'.
-	 * @see org.abchip.mimo.net.ConnectionPoolingConfig
+	 * @see org.abchip.mimo.networking.ConnectionPoolingConfig
 	 * @generated
 	 */
 	EClass getConnectionPoolingConfig();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.net.ConnectionPoolingConfig#getMaxTotal <em>Max Total</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.networking.ConnectionPoolingConfig#getMaxTotal <em>Max Total</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Max Total</em>'.
-	 * @see org.abchip.mimo.net.ConnectionPoolingConfig#getMaxTotal()
+	 * @see org.abchip.mimo.networking.ConnectionPoolingConfig#getMaxTotal()
 	 * @see #getConnectionPoolingConfig()
 	 * @generated
 	 */
 	EAttribute getConnectionPoolingConfig_MaxTotal();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.net.ConnectionPoolingConfig#getMaxPerRoute <em>Max Per Route</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.networking.ConnectionPoolingConfig#getMaxPerRoute <em>Max Per Route</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Max Per Route</em>'.
-	 * @see org.abchip.mimo.net.ConnectionPoolingConfig#getMaxPerRoute()
+	 * @see org.abchip.mimo.networking.ConnectionPoolingConfig#getMaxPerRoute()
 	 * @see #getConnectionPoolingConfig()
 	 * @generated
 	 */
 	EAttribute getConnectionPoolingConfig_MaxPerRoute();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.net.HostConfig <em>Host Config</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.networking.HostConfig <em>Host Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Host Config</em>'.
-	 * @see org.abchip.mimo.net.HostConfig
+	 * @see org.abchip.mimo.networking.HostConfig
 	 * @generated
 	 */
 	EClass getHostConfig();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.net.HostConfig#getAddress <em>Address</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.networking.HostConfig#getAddress <em>Address</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Address</em>'.
-	 * @see org.abchip.mimo.net.HostConfig#getAddress()
+	 * @see org.abchip.mimo.networking.HostConfig#getAddress()
 	 * @see #getHostConfig()
 	 * @generated
 	 */
 	EAttribute getHostConfig_Address();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.net.HostConfig#getPort <em>Port</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.networking.HostConfig#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Port</em>'.
-	 * @see org.abchip.mimo.net.HostConfig#getPort()
+	 * @see org.abchip.mimo.networking.HostConfig#getPort()
 	 * @see #getHostConfig()
 	 * @generated
 	 */
 	EAttribute getHostConfig_Port();
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.net.HttpClient <em>Http Client</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.networking.HttpClient <em>Http Client</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.net.HttpClient
-	 * @see org.abchip.mimo.net.impl.NetPackageImpl#getHttpClient()
+	 * @see org.abchip.mimo.networking.HttpClient
+	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpClient()
 	 * @generated
 	 */
 	int HTTP_CLIENT = 1;
@@ -262,7 +262,7 @@ public interface NetPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.apache.http.client.methods.HttpPost
-	 * @see org.abchip.mimo.net.impl.NetPackageImpl#getHttpPost()
+	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpPost()
 	 * @generated
 	 */
 	int HTTP_POST = 4;
@@ -272,38 +272,38 @@ public interface NetPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.apache.http.client.ResponseHandler
-	 * @see org.abchip.mimo.net.impl.NetPackageImpl#getHttpResponseHandler()
+	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpResponseHandler()
 	 * @generated
 	 */
 	int HTTP_RESPONSE_HANDLER = 5;
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.net.HttpServiceConfig <em>Http Service Config</em>}'.
+	 * Returns the meta object for class '{@link org.abchip.mimo.networking.HttpServiceConfig <em>Http Service Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Http Service Config</em>'.
-	 * @see org.abchip.mimo.net.HttpServiceConfig
+	 * @see org.abchip.mimo.networking.HttpServiceConfig
 	 * @generated
 	 */
 	EClass getHttpServiceConfig();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.net.HttpServiceConfig#getHost <em>Host</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.networking.HttpServiceConfig#getHost <em>Host</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Host</em>'.
-	 * @see org.abchip.mimo.net.HttpServiceConfig#getHost()
+	 * @see org.abchip.mimo.networking.HttpServiceConfig#getHost()
 	 * @see #getHttpServiceConfig()
 	 * @generated
 	 */
 	EReference getHttpServiceConfig_Host();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.net.HttpServiceConfig#getPath <em>Path</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.networking.HttpServiceConfig#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Path</em>'.
-	 * @see org.abchip.mimo.net.HttpServiceConfig#getPath()
+	 * @see org.abchip.mimo.networking.HttpServiceConfig#getPath()
 	 * @see #getHttpServiceConfig()
 	 * @generated
 	 */
@@ -332,23 +332,23 @@ public interface NetPackage extends EPackage {
 	EDataType getHttpResponseHandler();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.net.HttpClient <em>Http Client</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Http Client</em>'.
-	 * @see org.abchip.mimo.net.HttpClient
-	 * @generated
-	 */
-	EClass getHttpClient();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	NetFactory getNetFactory();
+	NetworkingFactory getNetworkingFactory();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.networking.HttpClient <em>Http Client</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Http Client</em>'.
+	 * @see org.abchip.mimo.networking.HttpClient
+	 * @generated
+	 */
+	EClass getHttpClient();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -364,11 +364,11 @@ public interface NetPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.net.impl.ConnectionPoolingConfigImpl <em>Connection Pooling Config</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.networking.impl.ConnectionPoolingConfigImpl <em>Connection Pooling Config</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.net.impl.ConnectionPoolingConfigImpl
-		 * @see org.abchip.mimo.net.impl.NetPackageImpl#getConnectionPoolingConfig()
+		 * @see org.abchip.mimo.networking.impl.ConnectionPoolingConfigImpl
+		 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getConnectionPoolingConfig()
 		 * @generated
 		 */
 		EClass CONNECTION_POOLING_CONFIG = eINSTANCE.getConnectionPoolingConfig();
@@ -387,11 +387,11 @@ public interface NetPackage extends EPackage {
 		 */
 		EAttribute CONNECTION_POOLING_CONFIG__MAX_PER_ROUTE = eINSTANCE.getConnectionPoolingConfig_MaxPerRoute();
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.net.impl.HostConfigImpl <em>Host Config</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.networking.impl.HostConfigImpl <em>Host Config</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.net.impl.HostConfigImpl
-		 * @see org.abchip.mimo.net.impl.NetPackageImpl#getHostConfig()
+		 * @see org.abchip.mimo.networking.impl.HostConfigImpl
+		 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHostConfig()
 		 * @generated
 		 */
 		EClass HOST_CONFIG = eINSTANCE.getHostConfig();
@@ -410,11 +410,11 @@ public interface NetPackage extends EPackage {
 		 */
 		EAttribute HOST_CONFIG__PORT = eINSTANCE.getHostConfig_Port();
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.net.impl.HttpServiceConfigImpl <em>Http Service Config</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.networking.impl.HttpServiceConfigImpl <em>Http Service Config</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.net.impl.HttpServiceConfigImpl
-		 * @see org.abchip.mimo.net.impl.NetPackageImpl#getHttpServiceConfig()
+		 * @see org.abchip.mimo.networking.impl.HttpServiceConfigImpl
+		 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpServiceConfig()
 		 * @generated
 		 */
 		EClass HTTP_SERVICE_CONFIG = eINSTANCE.getHttpServiceConfig();
@@ -437,7 +437,7 @@ public interface NetPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.apache.http.client.methods.HttpPost
-		 * @see org.abchip.mimo.net.impl.NetPackageImpl#getHttpPost()
+		 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpPost()
 		 * @generated
 		 */
 		EDataType HTTP_POST = eINSTANCE.getHttpPost();
@@ -446,20 +446,20 @@ public interface NetPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.apache.http.client.ResponseHandler
-		 * @see org.abchip.mimo.net.impl.NetPackageImpl#getHttpResponseHandler()
+		 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpResponseHandler()
 		 * @generated
 		 */
 		EDataType HTTP_RESPONSE_HANDLER = eINSTANCE.getHttpResponseHandler();
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.net.HttpClient <em>Http Client</em>}' class.
+		 * The meta object literal for the '{@link org.abchip.mimo.networking.HttpClient <em>Http Client</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.net.HttpClient
-		 * @see org.abchip.mimo.net.impl.NetPackageImpl#getHttpClient()
+		 * @see org.abchip.mimo.networking.HttpClient
+		 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpClient()
 		 * @generated
 		 */
 		EClass HTTP_CLIENT = eINSTANCE.getHttpClient();
 
 	}
 
-} //NetPackage
+} //NetworkingPackage

@@ -5,11 +5,10 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.context.impl;
+package org.abchip.mimo.authentication.impl;
 
-import org.abchip.mimo.context.AuthenticationAnonymous;
-import org.abchip.mimo.context.ContextPackage;
-
+import org.abchip.mimo.authentication.AuthenticationPackage;
+import org.abchip.mimo.authentication.AuthenticationAnonymous;
 import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -43,7 +42,7 @@ public class AuthenticationAnonymousImpl extends EntityImpl implements Authentic
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ContextPackage.Literals.AUTHENTICATION_ANONYMOUS;
+		return AuthenticationPackage.Literals.AUTHENTICATION_ANONYMOUS;
 	}
 
 } //AuthenticationAnonymousImpl

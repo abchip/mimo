@@ -6,10 +6,10 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.context.impl;
+package org.abchip.mimo.authentication.impl;
 
-import org.abchip.mimo.context.AuthenticationUserPassword;
-import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.authentication.AuthenticationPackage;
+import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -23,9 +23,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserPasswordImpl#getUser <em>User</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserPasswordImpl#getPassword <em>Password</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.AuthenticationUserPasswordImpl#getTenant <em>Tenant</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationUserPasswordImpl#getUser <em>User</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationUserPasswordImpl#getPassword <em>Password</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationUserPasswordImpl#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @generated
@@ -106,7 +106,7 @@ public class AuthenticationUserPasswordImpl extends EntityImpl implements Authen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ContextPackage.Literals.AUTHENTICATION_USER_PASSWORD;
+		return AuthenticationPackage.Literals.AUTHENTICATION_USER_PASSWORD;
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class AuthenticationUserPasswordImpl extends EntityImpl implements Authen
 		String oldUser = user;
 		user = newUser;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_PASSWORD__USER, oldUser, user));
+			eNotify(new ENotificationImpl(this, Notification.SET, AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__USER, oldUser, user));
 	}
 
 	/**
@@ -152,7 +152,7 @@ public class AuthenticationUserPasswordImpl extends EntityImpl implements Authen
 		String oldPassword = password;
 		password = newPassword;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD, oldPassword, password));
+			eNotify(new ENotificationImpl(this, Notification.SET, AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD, oldPassword, password));
 	}
 
 	/**
@@ -175,7 +175,7 @@ public class AuthenticationUserPasswordImpl extends EntityImpl implements Authen
 		String oldTenant = tenant;
 		tenant = newTenant;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT, oldTenant, tenant));
+			eNotify(new ENotificationImpl(this, Notification.SET, AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__TENANT, oldTenant, tenant));
 	}
 
 	/**
@@ -186,11 +186,11 @@ public class AuthenticationUserPasswordImpl extends EntityImpl implements Authen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_USER_PASSWORD__USER:
+			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__USER:
 				return getUser();
-			case ContextPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD:
+			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD:
 				return getPassword();
-			case ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT:
+			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__TENANT:
 				return getTenant();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -204,13 +204,13 @@ public class AuthenticationUserPasswordImpl extends EntityImpl implements Authen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_USER_PASSWORD__USER:
+			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__USER:
 				setUser((String)newValue);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD:
+			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD:
 				setPassword((String)newValue);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT:
+			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__TENANT:
 				setTenant((String)newValue);
 				return;
 		}
@@ -225,13 +225,13 @@ public class AuthenticationUserPasswordImpl extends EntityImpl implements Authen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_USER_PASSWORD__USER:
+			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__USER:
 				setUser(USER_EDEFAULT);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD:
+			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD:
 				setPassword(PASSWORD_EDEFAULT);
 				return;
-			case ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT:
+			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__TENANT:
 				setTenant(TENANT_EDEFAULT);
 				return;
 		}
@@ -246,11 +246,11 @@ public class AuthenticationUserPasswordImpl extends EntityImpl implements Authen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_USER_PASSWORD__USER:
+			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__USER:
 				return USER_EDEFAULT == null ? user != null : !USER_EDEFAULT.equals(user);
-			case ContextPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD:
+			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__PASSWORD:
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
-			case ContextPackage.AUTHENTICATION_USER_PASSWORD__TENANT:
+			case AuthenticationPackage.AUTHENTICATION_USER_PASSWORD__TENANT:
 				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 		}
 		return super.eIsSet(featureID);

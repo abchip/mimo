@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.net;
+package org.abchip.mimo.networking;
 
 import org.abchip.mimo.entity.Entity;
 
@@ -18,11 +18,11 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.net.HostConfig#getAddress <em>Address</em>}</li>
- *   <li>{@link org.abchip.mimo.net.HostConfig#getPort <em>Port</em>}</li>
+ *   <li>{@link org.abchip.mimo.networking.HostConfig#getAddress <em>Address</em>}</li>
+ *   <li>{@link org.abchip.mimo.networking.HostConfig#getPort <em>Port</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.net.NetPackage#getHostConfig()
+ * @see org.abchip.mimo.networking.NetworkingPackage#getHostConfig()
  * @model
  * @generated
  */
@@ -33,14 +33,14 @@ public interface HostConfig extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Address</em>' attribute.
 	 * @see #setAddress(String)
-	 * @see org.abchip.mimo.net.NetPackage#getHostConfig_Address()
+	 * @see org.abchip.mimo.networking.NetworkingPackage#getHostConfig_Address()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getAddress();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.net.HostConfig#getAddress <em>Address</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.networking.HostConfig#getAddress <em>Address</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Address</em>' attribute.
@@ -55,14 +55,14 @@ public interface HostConfig extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Port</em>' attribute.
 	 * @see #setPort(int)
-	 * @see org.abchip.mimo.net.NetPackage#getHostConfig_Port()
+	 * @see org.abchip.mimo.networking.NetworkingPackage#getHostConfig_Port()
 	 * @model required="true"
 	 * @generated
 	 */
 	int getPort();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.net.HostConfig#getPort <em>Port</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.networking.HostConfig#getPort <em>Port</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Port</em>' attribute.

@@ -19,9 +19,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.abchip.mimo.context.AuthenticationAnonymous;
-import org.abchip.mimo.context.AuthenticationManager;
-import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.authentication.AuthenticationAnonymous;
+import org.abchip.mimo.authentication.AuthenticationException;
+import org.abchip.mimo.authentication.AuthenticationFactory;
+import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceManager;
@@ -52,7 +53,7 @@ public class LinkedInRedirectServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		// anonymous access
-		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
+		AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
 		try (ContextProvider context = authenticationManager.login(null, authentication)) {
 
 			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context.get(), "OAuth2LinkedIn");
@@ -78,6 +79,9 @@ public class LinkedInRedirectServlet extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} catch (AuthenticationException e) {
+			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			throw new ServletException(e);
 		}
 	}
 }

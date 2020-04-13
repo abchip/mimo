@@ -5,11 +5,10 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.context.impl;
+package org.abchip.mimo.authentication.impl;
 
-import org.abchip.mimo.context.AuthenticationAdminKey;
-import org.abchip.mimo.context.ContextPackage;
-
+import org.abchip.mimo.authentication.AuthenticationPackage;
+import org.abchip.mimo.authentication.AuthenticationAdminKey;
 import org.abchip.mimo.entity.impl.EntityImpl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -26,8 +25,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.impl.AuthenticationAdminKeyImpl#getAdminKey <em>Admin Key</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.AuthenticationAdminKeyImpl#getTenant <em>Tenant</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationAdminKeyImpl#getAdminKey <em>Admin Key</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.impl.AuthenticationAdminKeyImpl#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,7 +93,7 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ContextPackage.Literals.AUTHENTICATION_ADMIN_KEY;
+		return AuthenticationPackage.Literals.AUTHENTICATION_ADMIN_KEY;
 	}
 
 	/**
@@ -117,7 +116,7 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 		String oldAdminKey = adminKey;
 		adminKey = newAdminKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY, oldAdminKey, adminKey));
+			eNotify(new ENotificationImpl(this, Notification.SET, AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY, oldAdminKey, adminKey));
 	}
 
 	/**
@@ -140,7 +139,7 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 		String oldTenant = tenant;
 		tenant = newTenant;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.AUTHENTICATION_ADMIN_KEY__TENANT, oldTenant, tenant));
+			eNotify(new ENotificationImpl(this, Notification.SET, AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__TENANT, oldTenant, tenant));
 	}
 
 	/**
@@ -151,9 +150,9 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
+			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
 				return getAdminKey();
-			case ContextPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
+			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
 				return getTenant();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -167,10 +166,10 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
+			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
 				setAdminKey((String)newValue);
 				return;
-			case ContextPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
+			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
 				setTenant((String)newValue);
 				return;
 		}
@@ -185,10 +184,10 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
+			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
 				setAdminKey(ADMIN_KEY_EDEFAULT);
 				return;
-			case ContextPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
+			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
 				setTenant(TENANT_EDEFAULT);
 				return;
 		}
@@ -203,9 +202,9 @@ public class AuthenticationAdminKeyImpl extends EntityImpl implements Authentica
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContextPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
+			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__ADMIN_KEY:
 				return ADMIN_KEY_EDEFAULT == null ? adminKey != null : !ADMIN_KEY_EDEFAULT.equals(adminKey);
-			case ContextPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
+			case AuthenticationPackage.AUTHENTICATION_ADMIN_KEY__TENANT:
 				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 		}
 		return super.eIsSet(featureID);

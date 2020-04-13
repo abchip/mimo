@@ -5,8 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.context;
-
+package org.abchip.mimo.authentication;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +13,7 @@ package org.abchip.mimo.context;
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.context.ContextPackage#getAuthenticationAnonymous()
+ * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationAnonymous()
  * @model
  * @generated
  */

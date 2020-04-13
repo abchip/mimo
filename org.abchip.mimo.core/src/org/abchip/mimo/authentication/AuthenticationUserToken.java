@@ -5,8 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.context;
-
+package org.abchip.mimo.authentication;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,14 +16,14 @@ package org.abchip.mimo.context;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getProvider <em>Provider</em>}</li>
- *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getAccessToken <em>Access Token</em>}</li>
- *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getIdToken <em>Id Token</em>}</li>
- *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getPicture <em>Picture</em>}</li>
- *   <li>{@link org.abchip.mimo.context.AuthenticationUserToken#getUser <em>User</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.AuthenticationUserToken#getProvider <em>Provider</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.AuthenticationUserToken#getAccessToken <em>Access Token</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.AuthenticationUserToken#getIdToken <em>Id Token</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.AuthenticationUserToken#getPicture <em>Picture</em>}</li>
+ *   <li>{@link org.abchip.mimo.authentication.AuthenticationUserToken#getUser <em>User</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserToken()
+ * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationUserToken()
  * @model
  * @generated
  */
@@ -39,14 +38,14 @@ public interface AuthenticationUserToken extends Authentication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Provider</em>' attribute.
 	 * @see #setProvider(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserToken_Provider()
+	 * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationUserToken_Provider()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getProvider();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationUserToken#getProvider <em>Provider</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.authentication.AuthenticationUserToken#getProvider <em>Provider</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Provider</em>' attribute.
@@ -65,14 +64,14 @@ public interface AuthenticationUserToken extends Authentication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Access Token</em>' attribute.
 	 * @see #setAccessToken(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserToken_AccessToken()
+	 * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationUserToken_AccessToken()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getAccessToken();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationUserToken#getAccessToken <em>Access Token</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.authentication.AuthenticationUserToken#getAccessToken <em>Access Token</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Access Token</em>' attribute.
@@ -91,14 +90,14 @@ public interface AuthenticationUserToken extends Authentication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id Token</em>' attribute.
 	 * @see #setIdToken(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserToken_IdToken()
+	 * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationUserToken_IdToken()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getIdToken();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationUserToken#getIdToken <em>Id Token</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.authentication.AuthenticationUserToken#getIdToken <em>Id Token</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Id Token</em>' attribute.
@@ -117,14 +116,14 @@ public interface AuthenticationUserToken extends Authentication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Picture</em>' attribute.
 	 * @see #setPicture(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserToken_Picture()
+	 * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationUserToken_Picture()
 	 * @model
 	 * @generated
 	 */
 	String getPicture();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationUserToken#getPicture <em>Picture</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.authentication.AuthenticationUserToken#getPicture <em>Picture</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Picture</em>' attribute.
@@ -143,14 +142,14 @@ public interface AuthenticationUserToken extends Authentication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User</em>' attribute.
 	 * @see #setUser(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getAuthenticationUserToken_User()
+	 * @see org.abchip.mimo.authentication.AuthenticationPackage#getAuthenticationUserToken_User()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getUser();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.AuthenticationUserToken#getUser <em>User</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.authentication.AuthenticationUserToken#getUser <em>User</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>User</em>' attribute.

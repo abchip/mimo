@@ -222,15 +222,6 @@ public interface JavaPackage extends EPackage {
 	int JAVA_FILE = 8;
 
 	/**
-	 * The number of structural features of the '<em>File</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_FILE_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link java.lang.Iterable <em>Iterable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -239,15 +230,6 @@ public interface JavaPackage extends EPackage {
 	 * @generated
 	 */
 	int JAVA_ITERABLE = 9;
-
-	/**
-	 * The number of structural features of the '<em>Iterable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_ITERABLE_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.util.Iterator <em>Iterator</em>}' class.
@@ -260,15 +242,6 @@ public interface JavaPackage extends EPackage {
 	int JAVA_ITERATOR = 10;
 
 	/**
-	 * The number of structural features of the '<em>Iterator</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_ITERATOR_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link java.util.List <em>List</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -277,15 +250,6 @@ public interface JavaPackage extends EPackage {
 	 * @generated
 	 */
 	int JAVA_LIST = 11;
-
-	/**
-	 * The number of structural features of the '<em>List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_LIST_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.lang.Number <em>Number</em>}' class.
@@ -298,15 +262,6 @@ public interface JavaPackage extends EPackage {
 	int JAVA_NUMBER = 12;
 
 	/**
-	 * The number of structural features of the '<em>Number</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_NUMBER_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link java.security.Principal <em>Principal</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -315,15 +270,6 @@ public interface JavaPackage extends EPackage {
 	 * @generated
 	 */
 	int JAVA_PRINCIPAL = 13;
-
-	/**
-	 * The number of structural features of the '<em>Principal</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_PRINCIPAL_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.lang.Runnable <em>Runnable</em>}' class.
@@ -336,15 +282,6 @@ public interface JavaPackage extends EPackage {
 	int JAVA_RUNNABLE = 14;
 
 	/**
-	 * The number of structural features of the '<em>Runnable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_RUNNABLE_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link java.io.Serializable <em>Serializable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,15 +290,6 @@ public interface JavaPackage extends EPackage {
 	 * @generated
 	 */
 	int JAVA_SERIALIZABLE = 15;
-
-	/**
-	 * The number of structural features of the '<em>Serializable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_SERIALIZABLE_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link java.lang.Thread <em>Thread</em>}' class.
@@ -374,15 +302,6 @@ public interface JavaPackage extends EPackage {
 	int JAVA_THREAD = 16;
 
 	/**
-	 * The number of structural features of the '<em>Thread</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_THREAD_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link java.lang.ThreadGroup <em>Thread Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -393,15 +312,6 @@ public interface JavaPackage extends EPackage {
 	int JAVA_THREAD_GROUP = 17;
 
 	/**
-	 * The number of structural features of the '<em>Thread Group</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_THREAD_GROUP_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link java.lang.management.ThreadInfo <em>Thread Info</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -410,15 +320,6 @@ public interface JavaPackage extends EPackage {
 	 * @generated
 	 */
 	int JAVA_THREAD_INFO = 18;
-
-	/**
-	 * The number of structural features of the '<em>Thread Info</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JAVA_THREAD_INFO_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '<em>Annotation</em>' data type.
@@ -449,6 +350,105 @@ public interface JavaPackage extends EPackage {
 	 * @generated
 	 */
 	int JAVA_EXCEPTION = 21;
+
+	/**
+	 * The number of structural features of the '<em>File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_FILE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Iterable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_ITERABLE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Iterator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_ITERATOR_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_LIST_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Number</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_NUMBER_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Principal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_PRINCIPAL_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Runnable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_RUNNABLE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Serializable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_SERIALIZABLE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Thread</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_THREAD_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Thread Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_THREAD_GROUP_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Thread Info</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_THREAD_INFO_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '<em>Input Stream</em>' data type.

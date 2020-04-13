@@ -21,11 +21,10 @@ import javax.net.ssl.SSLSession;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Thread;
 import org.abchip.mimo.context.ThreadManager;
-import org.abchip.mimo.net.ConnectionPoolingConfig;
-import org.abchip.mimo.net.HttpClient;
+import org.abchip.mimo.networking.ConnectionPoolingConfig;
+import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.util.Logs;
 import org.apache.http.HttpHost;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.routing.HttpRoute;
@@ -98,16 +97,13 @@ public class HttpClientImpl implements HttpClient {
 		try {
 			return HTTP.execute(method, handler);
 		} catch (Exception e) {
-			String message = e.getMessage();
-			while (message == null) {
-				if (e.getCause() == null)
-					break;
-				message = e.getCause().getMessage();
-			}
-			if (message == null)
-				throw e;
-			else
-				throw new ClientProtocolException(message);
+			throw e;
+			/*
+			 * String message = e.getMessage(); while (message == null) { if (e.getCause()
+			 * == null) break; message = e.getCause().getMessage(); } if (message == null)
+			 * 
+			 * else throw new ClientProtocolException(message);
+			 */
 		}
 	}
 }

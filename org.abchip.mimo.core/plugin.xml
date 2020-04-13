@@ -25,6 +25,14 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated mimo -->
       <package
+            uri="http://www.abchip.org/mimo/authentication"
+            class="org.abchip.mimo.authentication.AuthenticationPackage"
+            genModel="model/mimo.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mimo -->
+      <package
             uri="http://www.abchip.org/mimo/context"
             class="org.abchip.mimo.context.ContextPackage"
             genModel="model/mimo.genmodel"/>
@@ -57,8 +65,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated mimo -->
       <package
-            uri="http://www.abchip.org/mimo/net"
-            class="org.abchip.mimo.net.NetPackage"
+            uri="http://www.abchip.org/mimo/networking"
+            class="org.abchip.mimo.networking.NetworkingPackage"
             genModel="model/mimo.genmodel"/>
    </extension>
 

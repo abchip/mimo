@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.database.connection;
 
-import org.abchip.mimo.context.AuthenticationUserPassword;
+import org.abchip.mimo.authentication.AuthenticationUserPassword;
 
 /**
  * <!-- begin-user-doc -->

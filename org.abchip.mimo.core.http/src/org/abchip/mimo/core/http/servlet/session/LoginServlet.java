@@ -17,10 +17,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.abchip.mimo.context.AuthenticationAdminKey;
-import org.abchip.mimo.context.AuthenticationAnonymous;
-import org.abchip.mimo.context.AuthenticationManager;
-import org.abchip.mimo.context.AuthenticationUserPassword;
+import org.abchip.mimo.authentication.AuthenticationAdminKey;
+import org.abchip.mimo.authentication.AuthenticationAnonymous;
+import org.abchip.mimo.authentication.AuthenticationException;
+import org.abchip.mimo.authentication.AuthenticationFactory;
+import org.abchip.mimo.authentication.AuthenticationManager;
+import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
@@ -64,23 +66,38 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		// third part -> redirect
-		String provider = request.getParameter("provider");		
+		String provider = request.getParameter("provider");
 		if (provider != null) {
-			loginRedirect(request, response, provider);
+			try {
+				loginRedirect(request, response, provider);
+			} catch (AuthenticationException e) {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				throw new ServletException(e);
+			}
 			return;
 		}
 
 		// adminKey
-		String adminKey = request.getParameter("adminKey");		
+		String adminKey = request.getParameter("adminKey");
 		if (adminKey != null) {
-			context = loginAdminKey(session, adminKey);
+			try {
+				context = loginAdminKey(session, adminKey);
+			} catch (AuthenticationException e) {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				throw new ServletException(e);
+			}
 		}
 
 		// user password login
 		String user = request.getParameter("user");
-		if(user != null ) {
+		if (user != null) {
 			String password = request.getParameter("password");
-			context = loginUserPassword(session, user, password);
+			try {
+				context = loginUserPassword(session, user, password);
+			} catch (AuthenticationException e) {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				throw new ServletException(e);
+			}
 		}
 
 		if (context == null) {
@@ -90,7 +107,7 @@ public class LoginServlet extends HttpServlet {
 
 		// register context
 		ContextUtils.addContext(context);
-		
+
 		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.MIMO);
 		serializer.add(context.getContextDescription());
 		serializer.save(response.getOutputStream());
@@ -100,7 +117,7 @@ public class LoginServlet extends HttpServlet {
 		response.flushBuffer();
 	}
 
-	private Context loginUserPassword(HttpSession session, String userParam, String password) {
+	private Context loginUserPassword(HttpSession session, String userParam, String password) throws AuthenticationException {
 
 		String[] fields = userParam.split("/");
 
@@ -116,7 +133,7 @@ public class LoginServlet extends HttpServlet {
 			user = fields[0];
 
 		// new session with user password
-		AuthenticationUserPassword authentication = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
+		AuthenticationUserPassword authentication = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
 		authentication.setUser(user);
 		authentication.setPassword(password);
 		authentication.setTenant(tenant);
@@ -127,7 +144,7 @@ public class LoginServlet extends HttpServlet {
 		return context;
 	}
 
-	private Context loginAdminKey(HttpSession session, String adminKeyParam) {
+	private Context loginAdminKey(HttpSession session, String adminKeyParam) throws AuthenticationException {
 
 		String[] fields = adminKeyParam.split("/");
 
@@ -143,7 +160,7 @@ public class LoginServlet extends HttpServlet {
 			adminKey = fields[0];
 
 		// new session with user password
-		AuthenticationAdminKey authentication = ContextFactory.eINSTANCE.createAuthenticationAdminKey();
+		AuthenticationAdminKey authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAdminKey();
 		authentication.setAdminKey(adminKey);
 		authentication.setTenant(tenant);
 
@@ -154,12 +171,12 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	@SuppressWarnings("resource")
-	private void loginRedirect(HttpServletRequest request, HttpServletResponse response, String provider) throws IOException {
+	private void loginRedirect(HttpServletRequest request, HttpServletResponse response, String provider) throws IOException, AuthenticationException {
 
 		HttpSession session = request.getSession();
 
 		// TODO remove anonymous access
-		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
+		AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
 		try (ContextProvider context = authenticationManager.login(session.getId(), authentication)) {
 
 			String entityName = "OAuth2" + provider;
@@ -183,8 +200,7 @@ public class LoginServlet extends HttpServlet {
 			ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
 			tempContextDescription.setId(session.getId());
 			tempContextDescription.setAnonymous(true);
-			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context.get(), ContextDescription.class,
-					SerializationType.MIMO);
+			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context.get(), ContextDescription.class, SerializationType.MIMO);
 			serializer.add(tempContextDescription);
 			serializer.save(response.getOutputStream());
 

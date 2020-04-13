@@ -19,11 +19,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.abchip.mimo.context.AuthenticationAnonymous;
-import org.abchip.mimo.context.AuthenticationManager;
-import org.abchip.mimo.context.AuthenticationUserToken;
+import org.abchip.mimo.authentication.AuthenticationAnonymous;
+import org.abchip.mimo.authentication.AuthenticationException;
+import org.abchip.mimo.authentication.AuthenticationFactory;
+import org.abchip.mimo.authentication.AuthenticationManager;
+import org.abchip.mimo.authentication.AuthenticationUserToken;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -86,7 +87,7 @@ public class GitHubResponseServlet extends HttpServlet {
 		String accessToken = null;
 		String idToken = null;
 
-		AuthenticationAnonymous authentication = ContextFactory.eINSTANCE.createAuthenticationAnonymous();
+		AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
 
 		try (ContextProvider context = authenticationManager.login(null, authentication)) {
 
@@ -130,19 +131,29 @@ public class GitHubResponseServlet extends HttpServlet {
 				response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 				return;
 			}
+		} catch (AuthenticationException e) {
+			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			throw new ServletException(e);
 		}
 
 		// checkLogin
-		AuthenticationUserToken authenticationUserToken = ContextFactory.eINSTANCE.createAuthenticationUserToken();
+		AuthenticationUserToken authenticationUserToken = AuthenticationFactory.eINSTANCE.createAuthenticationUserToken();
 		authenticationUserToken.setIdToken(idToken);
 		authenticationUserToken.setAccessToken(accessToken);
 		authenticationUserToken.setProvider("GitHub");
 
 		if (authenticationManager.checkLogin(authenticationUserToken, true)) {
 			ContextUtils.removeContext(state);
-			@SuppressWarnings("resource")
-			Context context = authenticationManager.login(state, authenticationUserToken).get();
-			ContextUtils.addContext(context);
+
+			try {
+				@SuppressWarnings("resource")
+				Context context = authenticationManager.login(state, authenticationUserToken).get();
+				ContextUtils.addContext(context);
+			} catch (AuthenticationException e) {
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				throw new ServletException(e);
+
+			}
 
 			String location = response.encodeURL("http://localhost:8081");
 
