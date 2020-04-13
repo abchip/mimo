@@ -10,7 +10,9 @@ Require-Bundle: org.abchip.mimo.core,
  com.fasterxml.jackson.core.jackson-annotations,
  com.fasterxml.jackson.core.jackson-core,
  com.fasterxml.jackson.core.jackson-databind,
- org.apache.commons.logging;bundle-version="1.2.0"
+ org.apache.commons.logging;bundle-version="1.2.0",
+ org.apache.httpcomponents.httpclient;bundle-version="4.5.10";visibility:=reexport,
+ org.apache.httpcomponents.httpcore;bundle-version="4.4.12";visibility:=reexport
 Import-Package: javax.annotation;version="1.2.0",
  javax.inject,
  javax.servlet,
@@ -21,15 +23,7 @@ Import-Package: javax.annotation;version="1.2.0",
 Export-Package: org.abchip.mimo.core.http,
  org.abchip.mimo.core.http.handler,
  org.abchip.mimo.core.http.servlet,
- org.abchip.mimo.core.http.servlet.session,
- org.apache.http,
- org.apache.http.client.methods,
- org.apache.http.client.utils,
- org.apache.http.entity,
- org.apache.http.impl.client
+ org.abchip.mimo.core.http.servlet.session
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
- lib/commons-fileupload-1.4.jar,
- lib/httpcore-4.4.10.jar,
- lib/httpclient-4.5.6.jar,
- lib/httpclient-cache-4.5.6.jar
+ lib/commons-fileupload-1.4.jar

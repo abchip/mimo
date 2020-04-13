@@ -93,12 +93,6 @@
       <eLiterals name="Stopped" literal="STP"/>
       <eLiterals name="Testing" literal="TST"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HttpServiceConfig" eSuperTypes="#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="socket" lowerBound="1"
-          eType="#//application/SocketConfig" containment="true"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ModuleStatus">
       <eLiterals name="Active" literal="ACT"/>
       <eLiterals name="Stopped" literal="STP"/>
@@ -162,12 +156,6 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           changeable="false" defaultValueLiteral="org.abchip.mimo.tester.TestSuiteLauncher"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SocketConfig" eSuperTypes="#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="context" nsURI="http://www.abchip.org/mimo/context" nsPrefix="mimo-ctx">
@@ -559,10 +547,13 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ProviderConfig" eSuperTypes="#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="schema" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="host" lowerBound="1"
+          eType="#//net/HostConfig" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="publicUser" eType="#//context/ProviderUser"
-          containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="systemUser" eType="#//context/ProviderUser"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ProviderUser" eSuperTypes="#//entity/Entity">
@@ -1066,6 +1057,42 @@
     <eClassifiers xsi:type="ecore:EDataType" name="JavaURI" instanceClassName="java.net.URI"/>
     <eClassifiers xsi:type="ecore:EDataType" name="JavaURL" instanceClassName="java.net.URL"/>
     <eClassifiers xsi:type="ecore:EDataType" name="JavaWriter" instanceClassName="java.io.Writer"/>
+  </eSubpackages>
+  <eSubpackages name="net" nsURI="http://www.abchip.org/mimo/net" nsPrefix="mimo-net">
+    <eClassifiers xsi:type="ecore:EClass" name="ConnectionPoolingConfig" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxTotal" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxPerRoute" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HttpClient" abstract="true" interface="true">
+      <eOperations name="execute" lowerBound="1" eExceptions="#//java/JavaException">
+        <eGenericType eTypeParameter="#//net/HttpClient/execute/T"/>
+        <eTypeParameters name="T"/>
+        <eParameters name="method" lowerBound="1" eType="#//net/HttpPost"/>
+        <eParameters name="handler" lowerBound="1">
+          <eGenericType eClassifier="#//net/HttpResponseHandler">
+            <eTypeArguments eTypeParameter="#//net/HttpClient/execute/T"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HostConfig" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="HttpPost" instanceClassName="org.apache.http.client.methods.HttpPost"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="HttpResponseHandler" instanceClassName="org.apache.http.client.ResponseHandler">
+      <eTypeParameters name="T"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HttpServiceConfig" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="host" lowerBound="1"
+          eType="#//net/HostConfig" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="resource" nsURI="http://www.abchip.org/mimo/resource" nsPrefix="mimo-resource">
     <eClassifiers xsi:type="ecore:EEnum" name="MappingType">

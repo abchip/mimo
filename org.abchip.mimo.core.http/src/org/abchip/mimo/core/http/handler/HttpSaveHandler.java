@@ -12,6 +12,7 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.core.http.HttpUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
@@ -22,7 +23,7 @@ public class HttpSaveHandler implements ResponseHandler<Boolean> {
 	public Boolean handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
 		if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
-			throw new ClientProtocolException(response.getStatusLine().getReasonPhrase());
+			throw HttpUtils.buildException(response);
 
 		return true;
 	}

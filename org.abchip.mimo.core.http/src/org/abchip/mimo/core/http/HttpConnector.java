@@ -13,10 +13,11 @@ import java.io.IOException;
 
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ProviderConfig;
+import org.abchip.mimo.net.HttpClient;
 import org.abchip.mimo.util.Logs;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.client.utils.URIBuilder;
 import org.osgi.service.log.Logger;
 
 public class HttpConnector implements Closeable {
@@ -24,12 +25,12 @@ public class HttpConnector implements Closeable {
 	private static final Logger LOGGER = Logs.getLogger(HttpConnector.class);
 
 	private ProviderConfig providerConfig;
-	private CloseableHttpClient httpClient;
+	private HttpClient httpClient;
 	private ContextDescription contextDescription;
 
 	private String token;
 
-	protected HttpConnector(ProviderConfig providerConfig, CloseableHttpClient httpClient, ContextDescription contextDescription) {
+	protected HttpConnector(ProviderConfig providerConfig, HttpClient httpClient, ContextDescription contextDescription) {
 		this.providerConfig = providerConfig;
 		this.httpClient = httpClient;
 		this.contextDescription = contextDescription;
@@ -40,17 +41,19 @@ public class HttpConnector implements Closeable {
 		return this.contextDescription;
 	}
 
-	protected String getToken() {
-		return token;
-	}
-
+	@SuppressWarnings("deprecation")
 	public <E> E execute(String path, String query, ResponseHandler<E> handler) throws Exception {
 
-		String uri = providerConfig.getUrl() + "/" + path + ";jsessionid=" + token;
-		if (query != null)
-			uri += query;
+		URIBuilder uri = new URIBuilder();
+		uri.setScheme(providerConfig.getSchema());
+		uri.setHost(providerConfig.getHost().getAddress());
+		uri.setPort(providerConfig.getHost().getPort());
+		uri.setPath(providerConfig.getPath() + "/" + path + ";jsessionid=" + token);
 
-		HttpPost httpPost = new HttpPost(uri);
+		if (query != null)
+			uri.setQuery(query);
+
+		HttpPost httpPost = new HttpPost(uri.build());
 		// httpPost.setHeader("Connection", "Keep-Alive");
 		// httpPost.setHeader("Connection", "Close");
 

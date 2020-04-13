@@ -82,15 +82,6 @@ public interface ApplicationFactory extends EFactory {
 	ApplicationModule createApplicationModule();
 
 	/**
-	 * Returns a new object of class '<em>Http Service Config</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Http Service Config</em>'.
-	 * @generated
-	 */
-	HttpServiceConfig createHttpServiceConfig();
-
-	/**
 	 * Returns a new object of class '<em>Service Command Provider</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -170,15 +161,6 @@ public interface ApplicationFactory extends EFactory {
 	 * @generated
 	 */
 	ServiceTester createServiceTester();
-
-	/**
-	 * Returns a new object of class '<em>Socket Config</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Socket Config</em>'.
-	 * @generated
-	 */
-	SocketConfig createSocketConfig();
 
 	/**
 	 * Returns the package supported by this factory.

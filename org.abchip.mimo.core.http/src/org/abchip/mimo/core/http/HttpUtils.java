@@ -19,6 +19,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.AuthenticationUserToken;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -80,7 +82,7 @@ public class HttpUtils {
 		try (CloseableHttpClient client = buildHttpsClient()) {
 			try (CloseableHttpResponse response = client.execute(method)) {
 				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
-					throw new Exception(response.getStatusLine().getReasonPhrase());
+					throw HttpUtils.buildException(response);
 
 				String responseString = new BasicResponseHandler().handleResponse(response);
 				userInfo = new ObjectMapper().readValue(responseString, HashMap.class);
@@ -97,7 +99,7 @@ public class HttpUtils {
 
 			try (CloseableHttpResponse response = client.execute(method)) {
 				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
-					throw new Exception(response.getStatusLine().getReasonPhrase());
+					throw HttpUtils.buildException(response);
 
 				String responseString = new BasicResponseHandler().handleResponse(response);
 				JsonNode node = new ObjectMapper().readTree(responseString);
@@ -142,7 +144,7 @@ public class HttpUtils {
 		try (CloseableHttpClient client = HttpUtils.buildHttpsClient()) {
 			try (CloseableHttpResponse response = client.execute(method)) {
 				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
-					throw new Exception(response.getStatusLine().getReasonPhrase());
+					throw HttpUtils.buildException(response);
 
 				String responseString = new BasicResponseHandler().handleResponse(response);
 				userInfo = new ObjectMapper().readValue(responseString, HashMap.class);
@@ -160,7 +162,7 @@ public class HttpUtils {
 			method.setHeader("Accept", "application/json");
 			try (CloseableHttpResponse response = client.execute(method)) {
 				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
-					throw new Exception(response.getStatusLine().getReasonPhrase());
+					throw HttpUtils.buildException(response);
 
 				String responseString = new BasicResponseHandler().handleResponse(response);
 				JsonNode node = new ObjectMapper().readTree(responseString);
@@ -193,7 +195,7 @@ public class HttpUtils {
 
 			try (CloseableHttpResponse response = client.execute(method)) {
 				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
-					throw new Exception(response.getStatusLine().getReasonPhrase());
+					throw HttpUtils.buildException(response);
 
 				String responseString = new BasicResponseHandler().handleResponse(response);
 				JsonNode node = new ObjectMapper().readTree(responseString);
@@ -225,7 +227,7 @@ public class HttpUtils {
 		try (CloseableHttpClient client = HttpUtils.buildHttpsClient()) {
 			try (CloseableHttpResponse response = client.execute(method)) {
 				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
-					throw new Exception(response.getStatusLine().getReasonPhrase());
+					throw HttpUtils.buildException(response);
 
 				String responseString = new BasicResponseHandler().handleResponse(response);
 				userInfo = new ObjectMapper().readValue(responseString, HashMap.class);
@@ -233,6 +235,12 @@ public class HttpUtils {
 		}
 
 		return userInfo;
+	}
+
+	public static ClientProtocolException buildException(HttpResponse response) {
+		StringBuilder sb = new StringBuilder();
+		sb.append(response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+		return new ClientProtocolException(sb.toString());
 	}
 
 	private static CloseableHttpClient buildHttpsClient() throws Exception {

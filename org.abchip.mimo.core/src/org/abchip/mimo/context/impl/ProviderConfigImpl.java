@@ -11,6 +11,7 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
 import org.abchip.mimo.entity.impl.EntityImpl;
+import org.abchip.mimo.net.HostConfig;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -26,32 +27,60 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getUrl <em>Url</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getSchema <em>Schema</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getHost <em>Host</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getPath <em>Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getPublicUser <em>Public User</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getSystemUser <em>System User</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	/**
-	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
+	 * The default value of the '{@link #getSchema() <em>Schema</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUrl()
+	 * @see #getSchema()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String URL_EDEFAULT = null;
+	protected static final String SCHEMA_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
+	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUrl()
+	 * @see #getSchema()
 	 * @generated
 	 * @ordered
 	 */
-	protected String url = URL_EDEFAULT;
+	protected String schema = SCHEMA_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getHost() <em>Host</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHost()
+	 * @generated
+	 * @ordered
+	 */
+	protected HostConfig host;
+	/**
+	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PATH_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String path = PATH_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getPublicUser() <em>Public User</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -61,15 +90,6 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	 * @ordered
 	 */
 	protected ProviderUser publicUser;
-	/**
-	 * The cached value of the '{@link #getSystemUser() <em>System User</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSystemUser()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProviderUser systemUser;
 	/**
 	 * 
 	 */
@@ -100,8 +120,8 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	 * @generated
 	 */
 	@Override
-	public String getUrl() {
-		return url;
+	public String getSchema() {
+		return schema;
 	}
 
 	/**
@@ -110,11 +130,102 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	 * @generated
 	 */
 	@Override
-	public void setUrl(String newUrl) {
-		String oldUrl = url;
-		url = newUrl;
+	public void setSchema(String newSchema) {
+		String oldSchema = schema;
+		schema = newSchema;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.PROVIDER_CONFIG__URL, oldUrl, url));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.PROVIDER_CONFIG__SCHEMA, oldSchema, schema));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public HostConfig getHost() {
+		if (host != null && ((EObject)host).eIsProxy()) {
+			InternalEObject oldHost = (InternalEObject)host;
+			host = (HostConfig)eResolveProxy(oldHost);
+			if (host != oldHost) {
+				InternalEObject newHost = (InternalEObject)host;
+				NotificationChain msgs = oldHost.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ContextPackage.PROVIDER_CONFIG__HOST, null, null);
+				if (newHost.eInternalContainer() == null) {
+					msgs = newHost.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ContextPackage.PROVIDER_CONFIG__HOST, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContextPackage.PROVIDER_CONFIG__HOST, oldHost, host));
+			}
+		}
+		return host;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HostConfig basicGetHost() {
+		return host;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHost(HostConfig newHost, NotificationChain msgs) {
+		HostConfig oldHost = host;
+		host = newHost;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ContextPackage.PROVIDER_CONFIG__HOST, oldHost, newHost);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setHost(HostConfig newHost) {
+		if (newHost != host) {
+			NotificationChain msgs = null;
+			if (host != null)
+				msgs = ((InternalEObject)host).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ContextPackage.PROVIDER_CONFIG__HOST, null, msgs);
+			if (newHost != null)
+				msgs = ((InternalEObject)newHost).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ContextPackage.PROVIDER_CONFIG__HOST, null, msgs);
+			msgs = basicSetHost(newHost, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.PROVIDER_CONFIG__HOST, newHost, newHost));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.PROVIDER_CONFIG__PATH, oldPath, path));
 	}
 
 	/**
@@ -191,80 +302,12 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	 * @generated
 	 */
 	@Override
-	public ProviderUser getSystemUser() {
-		if (systemUser != null && ((EObject)systemUser).eIsProxy()) {
-			InternalEObject oldSystemUser = (InternalEObject)systemUser;
-			systemUser = (ProviderUser)eResolveProxy(oldSystemUser);
-			if (systemUser != oldSystemUser) {
-				InternalEObject newSystemUser = (InternalEObject)systemUser;
-				NotificationChain msgs = oldSystemUser.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ContextPackage.PROVIDER_CONFIG__SYSTEM_USER, null, null);
-				if (newSystemUser.eInternalContainer() == null) {
-					msgs = newSystemUser.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ContextPackage.PROVIDER_CONFIG__SYSTEM_USER, null, msgs);
-				}
-				if (msgs != null) msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContextPackage.PROVIDER_CONFIG__SYSTEM_USER, oldSystemUser, systemUser));
-			}
-		}
-		return systemUser;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProviderUser basicGetSystemUser() {
-		return systemUser;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSystemUser(ProviderUser newSystemUser, NotificationChain msgs) {
-		ProviderUser oldSystemUser = systemUser;
-		systemUser = newSystemUser;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ContextPackage.PROVIDER_CONFIG__SYSTEM_USER, oldSystemUser, newSystemUser);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSystemUser(ProviderUser newSystemUser) {
-		if (newSystemUser != systemUser) {
-			NotificationChain msgs = null;
-			if (systemUser != null)
-				msgs = ((InternalEObject)systemUser).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ContextPackage.PROVIDER_CONFIG__SYSTEM_USER, null, msgs);
-			if (newSystemUser != null)
-				msgs = ((InternalEObject)newSystemUser).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ContextPackage.PROVIDER_CONFIG__SYSTEM_USER, null, msgs);
-			msgs = basicSetSystemUser(newSystemUser, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.PROVIDER_CONFIG__SYSTEM_USER, newSystemUser, newSystemUser));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ContextPackage.PROVIDER_CONFIG__HOST:
+				return basicSetHost(null, msgs);
 			case ContextPackage.PROVIDER_CONFIG__PUBLIC_USER:
 				return basicSetPublicUser(null, msgs);
-			case ContextPackage.PROVIDER_CONFIG__SYSTEM_USER:
-				return basicSetSystemUser(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -277,14 +320,16 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContextPackage.PROVIDER_CONFIG__URL:
-				return getUrl();
+			case ContextPackage.PROVIDER_CONFIG__SCHEMA:
+				return getSchema();
+			case ContextPackage.PROVIDER_CONFIG__HOST:
+				if (resolve) return getHost();
+				return basicGetHost();
+			case ContextPackage.PROVIDER_CONFIG__PATH:
+				return getPath();
 			case ContextPackage.PROVIDER_CONFIG__PUBLIC_USER:
 				if (resolve) return getPublicUser();
 				return basicGetPublicUser();
-			case ContextPackage.PROVIDER_CONFIG__SYSTEM_USER:
-				if (resolve) return getSystemUser();
-				return basicGetSystemUser();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,14 +342,17 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContextPackage.PROVIDER_CONFIG__URL:
-				setUrl((String)newValue);
+			case ContextPackage.PROVIDER_CONFIG__SCHEMA:
+				setSchema((String)newValue);
+				return;
+			case ContextPackage.PROVIDER_CONFIG__HOST:
+				setHost((HostConfig)newValue);
+				return;
+			case ContextPackage.PROVIDER_CONFIG__PATH:
+				setPath((String)newValue);
 				return;
 			case ContextPackage.PROVIDER_CONFIG__PUBLIC_USER:
 				setPublicUser((ProviderUser)newValue);
-				return;
-			case ContextPackage.PROVIDER_CONFIG__SYSTEM_USER:
-				setSystemUser((ProviderUser)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -318,14 +366,17 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContextPackage.PROVIDER_CONFIG__URL:
-				setUrl(URL_EDEFAULT);
+			case ContextPackage.PROVIDER_CONFIG__SCHEMA:
+				setSchema(SCHEMA_EDEFAULT);
+				return;
+			case ContextPackage.PROVIDER_CONFIG__HOST:
+				setHost((HostConfig)null);
+				return;
+			case ContextPackage.PROVIDER_CONFIG__PATH:
+				setPath(PATH_EDEFAULT);
 				return;
 			case ContextPackage.PROVIDER_CONFIG__PUBLIC_USER:
 				setPublicUser((ProviderUser)null);
-				return;
-			case ContextPackage.PROVIDER_CONFIG__SYSTEM_USER:
-				setSystemUser((ProviderUser)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -339,12 +390,14 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContextPackage.PROVIDER_CONFIG__URL:
-				return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+			case ContextPackage.PROVIDER_CONFIG__SCHEMA:
+				return SCHEMA_EDEFAULT == null ? schema != null : !SCHEMA_EDEFAULT.equals(schema);
+			case ContextPackage.PROVIDER_CONFIG__HOST:
+				return host != null;
+			case ContextPackage.PROVIDER_CONFIG__PATH:
+				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case ContextPackage.PROVIDER_CONFIG__PUBLIC_USER:
 				return publicUser != null;
-			case ContextPackage.PROVIDER_CONFIG__SYSTEM_USER:
-				return systemUser != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -359,8 +412,10 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (url: ");
-		result.append(url);
+		result.append(" (schema: ");
+		result.append(schema);
+		result.append(", path: ");
+		result.append(path);
 		result.append(')');
 		return result.toString();
 	}

@@ -8,7 +8,6 @@
 package org.abchip.mimo.application.impl;
 
 import org.abchip.mimo.application.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -69,7 +68,6 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 			case ApplicationPackage.APPLICATION_LOGS: return (EObject)createApplicationLogs();
 			case ApplicationPackage.APPLICATION_LOG_ENTRY: return (EObject)createApplicationLogEntry();
 			case ApplicationPackage.APPLICATION_MODULE: return (EObject)createApplicationModule();
-			case ApplicationPackage.HTTP_SERVICE_CONFIG: return (EObject)createHttpServiceConfig();
 			case ApplicationPackage.SERVICE_COMMAND_PROVIDER: return (EObject)createServiceCommandProvider();
 			case ApplicationPackage.SERVICE_CONFIG: return (EObject)createServiceConfig();
 			case ApplicationPackage.SERVICE_HOOK: return (EObject)createServiceHook();
@@ -79,7 +77,6 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 			case ApplicationPackage.SERVICE_REGISTRY_ENTRY: return (EObject)createServiceRegistryEntry();
 			case ApplicationPackage.SERVICE_SERVLET: return (EObject)createServiceServlet();
 			case ApplicationPackage.SERVICE_TESTER: return (EObject)createServiceTester();
-			case ApplicationPackage.SOCKET_CONFIG: return (EObject)createSocketConfig();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -203,17 +200,6 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Override
-	public HttpServiceConfig createHttpServiceConfig() {
-		HttpServiceConfigImpl httpServiceConfig = new HttpServiceConfigImpl();
-		return httpServiceConfig;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ServiceCommandProvider createServiceCommandProvider() {
 		ServiceCommandProviderImpl serviceCommandProvider = new ServiceCommandProviderImpl();
 		return serviceCommandProvider;
@@ -305,17 +291,6 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public ServiceTester createServiceTester() {
 		ServiceTesterImpl serviceTester = new ServiceTesterImpl();
 		return serviceTester;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public SocketConfig createSocketConfig() {
-		SocketConfigImpl socketConfig = new SocketConfigImpl();
-		return socketConfig;
 	}
 
 	/**

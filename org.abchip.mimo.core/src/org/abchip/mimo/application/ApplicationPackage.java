@@ -209,7 +209,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationBundle()
 	 * @generated
 	 */
-	int APPLICATION_BUNDLE = 22;
+	int APPLICATION_BUNDLE = 20;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationPathsImpl <em>Paths</em>}' class.
@@ -460,43 +460,6 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION_MODULE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.application.impl.HttpServiceConfigImpl <em>Http Service Config</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.application.impl.HttpServiceConfigImpl
-	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getHttpServiceConfig()
-	 * @generated
-	 */
-	int HTTP_SERVICE_CONFIG = 6;
-
-	/**
-	 * The feature id for the '<em><b>Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HTTP_SERVICE_CONFIG__PATH = EntityPackage.ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Socket</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HTTP_SERVICE_CONFIG__SOCKET = EntityPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Http Service Config</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HTTP_SERVICE_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceRefImpl <em>Service Ref</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -504,7 +467,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceRef()
 	 * @generated
 	 */
-	int SERVICE_REF = 11;
+	int SERVICE_REF = 10;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -541,7 +504,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceCommandProvider()
 	 * @generated
 	 */
-	int SERVICE_COMMAND_PROVIDER = 7;
+	int SERVICE_COMMAND_PROVIDER = 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceConfigImpl <em>Service Config</em>}' class.
@@ -551,7 +514,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceConfig()
 	 * @generated
 	 */
-	int SERVICE_CONFIG = 8;
+	int SERVICE_CONFIG = 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceHookImpl <em>Service Hook</em>}' class.
@@ -561,7 +524,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceHook()
 	 * @generated
 	 */
-	int SERVICE_HOOK = 9;
+	int SERVICE_HOOK = 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceExecutorImpl <em>Service Executor</em>}' class.
@@ -571,7 +534,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceExecutor()
 	 * @generated
 	 */
-	int SERVICE_EXECUTOR = 10;
+	int SERVICE_EXECUTOR = 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceRegistryImpl <em>Service Registry</em>}' class.
@@ -581,7 +544,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceRegistry()
 	 * @generated
 	 */
-	int SERVICE_REGISTRY = 13;
+	int SERVICE_REGISTRY = 12;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ServiceRegistryEntryImpl <em>Service Registry Entry</em>}' class.
@@ -591,7 +554,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceRegistryEntry()
 	 * @generated
 	 */
-	int SERVICE_REGISTRY_ENTRY = 14;
+	int SERVICE_REGISTRY_ENTRY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -727,7 +690,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceFactory()
 	 * @generated
 	 */
-	int SERVICE_FACTORY = 12;
+	int SERVICE_FACTORY = 11;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -881,7 +844,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceServlet()
 	 * @generated
 	 */
-	int SERVICE_SERVLET = 15;
+	int SERVICE_SERVLET = 14;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -936,7 +899,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceTester()
 	 * @generated
 	 */
-	int SERVICE_TESTER = 16;
+	int SERVICE_TESTER = 15;
 
 	/**
 	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -975,43 +938,6 @@ public interface ApplicationPackage extends EPackage {
 	int SERVICE_TESTER_FEATURE_COUNT = SERVICE_REF_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.application.impl.SocketConfigImpl <em>Socket Config</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.application.impl.SocketConfigImpl
-	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getSocketConfig()
-	 * @generated
-	 */
-	int SOCKET_CONFIG = 17;
-
-	/**
-	 * The feature id for the '<em><b>Address</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOCKET_CONFIG__ADDRESS = EntityPackage.ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOCKET_CONFIG__PORT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Socket Config</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOCKET_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ApplicationLogLevel <em>Log Level</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1019,7 +945,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationLogLevel()
 	 * @generated
 	 */
-	int APPLICATION_LOG_LEVEL = 18;
+	int APPLICATION_LOG_LEVEL = 16;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ComponentStatus <em>Component Status</em>}' enum.
@@ -1029,7 +955,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getComponentStatus()
 	 * @generated
 	 */
-	int COMPONENT_STATUS = 19;
+	int COMPONENT_STATUS = 17;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ModuleStatus <em>Module Status</em>}' enum.
@@ -1039,7 +965,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getModuleStatus()
 	 * @generated
 	 */
-	int MODULE_STATUS = 20;
+	int MODULE_STATUS = 18;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ServiceStatus <em>Service Status</em>}' enum.
@@ -1049,7 +975,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getServiceStatus()
 	 * @generated
 	 */
-	int SERVICE_STATUS = 21;
+	int SERVICE_STATUS = 19;
 
 
 	/**
@@ -1454,38 +1380,6 @@ public interface ApplicationPackage extends EPackage {
 	EAttribute getApplicationModule_Status();
 
 	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.application.HttpServiceConfig <em>Http Service Config</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Http Service Config</em>'.
-	 * @see org.abchip.mimo.application.HttpServiceConfig
-	 * @generated
-	 */
-	EClass getHttpServiceConfig();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.HttpServiceConfig#getPath <em>Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Path</em>'.
-	 * @see org.abchip.mimo.application.HttpServiceConfig#getPath()
-	 * @see #getHttpServiceConfig()
-	 * @generated
-	 */
-	EAttribute getHttpServiceConfig_Path();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.application.HttpServiceConfig#getSocket <em>Socket</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Socket</em>'.
-	 * @see org.abchip.mimo.application.HttpServiceConfig#getSocket()
-	 * @see #getHttpServiceConfig()
-	 * @generated
-	 */
-	EReference getHttpServiceConfig_Socket();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.application.ServiceCommandProvider <em>Service Command Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1760,38 +1654,6 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getServiceTester_InterfaceName();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.application.SocketConfig <em>Socket Config</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Socket Config</em>'.
-	 * @see org.abchip.mimo.application.SocketConfig
-	 * @generated
-	 */
-	EClass getSocketConfig();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.SocketConfig#getAddress <em>Address</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Address</em>'.
-	 * @see org.abchip.mimo.application.SocketConfig#getAddress()
-	 * @see #getSocketConfig()
-	 * @generated
-	 */
-	EAttribute getSocketConfig_Address();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.SocketConfig#getPort <em>Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Port</em>'.
-	 * @see org.abchip.mimo.application.SocketConfig#getPort()
-	 * @see #getSocketConfig()
-	 * @generated
-	 */
-	EAttribute getSocketConfig_Port();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.application.ApplicationLogLevel <em>Log Level</em>}'.
@@ -2166,32 +2028,6 @@ public interface ApplicationPackage extends EPackage {
 		EAttribute APPLICATION_MODULE__STATUS = eINSTANCE.getApplicationModule_Status();
 
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.HttpServiceConfigImpl <em>Http Service Config</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.application.impl.HttpServiceConfigImpl
-		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getHttpServiceConfig()
-		 * @generated
-		 */
-		EClass HTTP_SERVICE_CONFIG = eINSTANCE.getHttpServiceConfig();
-
-		/**
-		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute HTTP_SERVICE_CONFIG__PATH = eINSTANCE.getHttpServiceConfig_Path();
-
-		/**
-		 * The meta object literal for the '<em><b>Socket</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HTTP_SERVICE_CONFIG__SOCKET = eINSTANCE.getHttpServiceConfig_Socket();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.ServiceCommandProviderImpl <em>Service Command Provider</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2418,32 +2254,6 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVICE_TESTER__INTERFACE_NAME = eINSTANCE.getServiceTester_InterfaceName();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.SocketConfigImpl <em>Socket Config</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.application.impl.SocketConfigImpl
-		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getSocketConfig()
-		 * @generated
-		 */
-		EClass SOCKET_CONFIG = eINSTANCE.getSocketConfig();
-
-		/**
-		 * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SOCKET_CONFIG__ADDRESS = eINSTANCE.getSocketConfig_Address();
-
-		/**
-		 * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SOCKET_CONFIG__PORT = eINSTANCE.getSocketConfig_Port();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.ApplicationLogLevel <em>Log Level</em>}' enum.

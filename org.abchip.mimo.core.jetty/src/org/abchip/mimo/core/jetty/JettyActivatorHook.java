@@ -13,8 +13,8 @@ import java.util.Hashtable;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ComponentStarting;
-import org.abchip.mimo.application.HttpServiceConfig;
-import org.abchip.mimo.application.SocketConfig;
+import org.abchip.mimo.net.HttpServiceConfig;
+import org.abchip.mimo.net.HostConfig;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.equinox.http.jetty.JettyConfigurator;
 import org.eclipse.equinox.http.servlet.ExtendedHttpService;
@@ -28,12 +28,12 @@ public class JettyActivatorHook {
 	@ComponentStarting
 	public void start(Application application, HttpServiceConfig httpServiceConfig) {
 
-		SocketConfig socketConfig = httpServiceConfig.getSocket();
+		HostConfig hostConfig = httpServiceConfig.getHost();
 
 		Dictionary<String, Object> settings = new Hashtable<String, Object>();
 		settings.put("http.enabled", Boolean.TRUE);
-		settings.put("http.host", socketConfig.getAddress());
-		settings.put("http.port", socketConfig.getPort());
+		settings.put("http.host", hostConfig.getAddress());
+		settings.put("http.port", hostConfig.getPort());
 		settings.put("https.enabled", Boolean.FALSE);
 		settings.put("context.path", httpServiceConfig.getPath());
 		settings.put("context.sessioninactiveinterval", 1800);
@@ -44,7 +44,7 @@ public class JettyActivatorHook {
 		}
 
 		try {
-			String filterString = "(http.port=" + socketConfig.getPort() + ")";
+			String filterString = "(http.port=" + hostConfig.getPort() + ")";
 			ExtendedHttpService httpService = (ExtendedHttpService) application.getContext().get(HttpService.class, filterString);
 
 			if (httpService != null) {

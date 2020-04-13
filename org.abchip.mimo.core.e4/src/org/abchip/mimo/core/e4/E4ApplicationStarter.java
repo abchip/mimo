@@ -71,6 +71,7 @@ public class E4ApplicationStarter implements Runnable {
 		try {
 			this.start();
 		} catch (Exception e) {
+			e.printStackTrace();
 			LOGGER.error(e.getMessage());
 		}
 	}

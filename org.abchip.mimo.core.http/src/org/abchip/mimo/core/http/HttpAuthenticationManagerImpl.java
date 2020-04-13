@@ -9,19 +9,9 @@
 package org.abchip.mimo.core.http;
 
 import java.io.IOException;
-import java.net.URI;
-import java.security.KeyManagementException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.X509Certificate;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSession;
-import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.AuthenticationAdminKey;
@@ -37,25 +27,17 @@ import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
-import org.abchip.mimo.context.Thread;
-import org.abchip.mimo.context.ThreadManager;
+import org.abchip.mimo.core.http.handler.HttpCheckLoginHandler;
+import org.abchip.mimo.core.http.handler.HttpExternalCredentialHandler;
 import org.abchip.mimo.core.http.handler.HttpLoginHandler;
 import org.abchip.mimo.core.http.handler.HttpLogoutHandler;
+import org.abchip.mimo.net.HttpClient;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.util.Logs;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.conn.HttpClientConnectionManager;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.DefaultClientConnectionReuseStrategy;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
-import org.apache.http.ssl.SSLContextBuilder;
-import org.apache.http.ssl.TrustStrategy;
 import org.osgi.service.log.Logger;
 
 public class HttpAuthenticationManagerImpl implements AuthenticationManager {
@@ -69,53 +51,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	@Inject
 	private ProviderConfig providerConfig;
 	@Inject
-	private ThreadManager threadManager;
-
-	private PoolingHttpClientConnectionManager connectionManager = null;
-
-	private CloseableHttpClient HTTP = null;
-
-	@PostConstruct
-	private void init() {
-
-		connectionManager = new PoolingHttpClientConnectionManager();
-
-		connectionManager.setMaxTotal(100);
-		connectionManager.setDefaultMaxPerRoute(80);
-
-		// RequestConfig result =
-		// RequestConfig.custom().setConnectionRequestTimeout(100).setConnectTimeout(300).setSocketTimeout(1500).build();
-
-		// connectionManager.setMaxPerRoute(new HttpRoute(new HttpHost("localhost",
-		// 8080)), 200);
-		// connectionManager.setMaxPerRoute(new HttpRoute(new HttpHost("localhost",
-		// 8443)), 200);
-
-		try {
-			SSLContextBuilder builder = new SSLContextBuilder();
-			builder.loadTrustMaterial(null, new TrustStrategy() {
-				@Override
-				public boolean isTrusted(X509Certificate[] chain, String authType) {
-					return true;
-				}
-			});
-			SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(builder.build(), new HostnameVerifier() {
-
-				@Override
-				public boolean verify(String hostname, SSLSession session) {
-					return true;
-				}
-
-			});
-
-			HTTP = HttpClients.custom().setConnectionManager(connectionManager).setSSLSocketFactory(sslsf).setConnectionReuseStrategy(DefaultClientConnectionReuseStrategy.INSTANCE).build();
-		} catch (KeyManagementException | NoSuchAlgorithmException | KeyStoreException e) {
-			LOGGER.error(e.getMessage());
-		}
-
-		Thread thread = threadManager.createThread(application.getName() + "-http-monitor", new IdleConnectionMonitorThread(connectionManager));
-		threadManager.start(thread);
-	}
+	private HttpClient httpClient;
 
 	@Override
 	public ContextProvider login(String contextId, AuthenticationAnonymous authentication) {
@@ -216,10 +152,13 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	public boolean checkLogin(AuthenticationUserToken authentication, boolean create) {
 
 		// checkLogin
-		URIBuilder checkLogin = new URIBuilder();
-		checkLogin.setPath(providerConfig.getUrl() + "/entityCheckLogin");
-		checkLogin.setParameter("provider", authentication.getProvider());
-		checkLogin.setParameter("accessToken", authentication.getAccessToken());
+		URIBuilder uri = new URIBuilder();
+		uri.setScheme(providerConfig.getSchema());
+		uri.setHost(providerConfig.getHost().getAddress());
+		uri.setPort(providerConfig.getHost().getPort());
+		uri.setPath(providerConfig.getPath() + "/checkLogin");
+		uri.setParameter("provider", authentication.getProvider());
+		uri.setParameter("accessToken", authentication.getAccessToken());
 
 		Map<String, Object> userInfo = null;
 		try {
@@ -229,10 +168,10 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 				authentication.setPicture((String) userInfo.get("avatar_url"));
 
 				// build checkLogin
-				checkLogin.setParameter("userId", (String) userInfo.get("email"));
-				checkLogin.setParameter("email", (String) userInfo.get("email"));
-				checkLogin.setParameter("firstName", (String) userInfo.get("name"));
-				checkLogin.setParameter("lastName", (String) userInfo.get("lastName"));
+				uri.setParameter("userId", (String) userInfo.get("email"));
+				uri.setParameter("email", (String) userInfo.get("email"));
+				uri.setParameter("firstName", (String) userInfo.get("name"));
+				uri.setParameter("lastName", (String) userInfo.get("lastName"));
 				break;
 			}
 			case "Google": {
@@ -240,10 +179,10 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 				authentication.setPicture((String) userInfo.get("picture"));
 
 				// build checkLogin
-				checkLogin.setParameter("userId", (String) userInfo.get("email"));
-				checkLogin.setParameter("email", (String) userInfo.get("email"));
-				checkLogin.setParameter("firstName", (String) userInfo.get("given_name"));
-				checkLogin.setParameter("lastName", (String) userInfo.get("family_name"));
+				uri.setParameter("userId", (String) userInfo.get("email"));
+				uri.setParameter("email", (String) userInfo.get("email"));
+				uri.setParameter("firstName", (String) userInfo.get("given_name"));
+				uri.setParameter("lastName", (String) userInfo.get("family_name"));
 				break;
 			}
 			case "LinkedIn": {
@@ -251,10 +190,10 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 				authentication.setPicture((String) userInfo.get("picture"));
 
 				// build checkLogin
-				checkLogin.setParameter("userId", (String) userInfo.get("email"));
-				checkLogin.setParameter("email", (String) userInfo.get("email"));
-				checkLogin.setParameter("firstName", (String) userInfo.get("localizedFirstName"));
-				checkLogin.setParameter("lastName", (String) userInfo.get("localizedLastName"));
+				uri.setParameter("userId", (String) userInfo.get("email"));
+				uri.setParameter("email", (String) userInfo.get("email"));
+				uri.setParameter("firstName", (String) userInfo.get("localizedFirstName"));
+				uri.setParameter("lastName", (String) userInfo.get("localizedLastName"));
 				break;
 			}
 			default:
@@ -268,10 +207,8 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		// check login
 		try {
-			try (CloseableHttpResponse response = HTTP.execute(new HttpPost(checkLogin.build()))) {
-				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
-					throw new Exception(response.getStatusLine().getReasonPhrase());
-			}
+			this.httpClient.execute(new HttpPost(uri.build()), new HttpCheckLoginHandler());
+			LOGGER.audit("CheckLogin success id {} user {} provider {}", authentication.getIdToken(), authentication.getUser(), authentication.getProvider());
 		} catch (Exception e) {
 			LOGGER.audit(e.getMessage());
 			return false;
@@ -284,7 +221,12 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		LOGGER.audit("Connection from user {} tenant {}", user, tenant);
 
-		URIBuilder uri = new URIBuilder().setPath(providerConfig.getUrl() + "/login");
+		URIBuilder uri = new URIBuilder();
+		uri.setScheme(providerConfig.getSchema());
+		uri.setHost(providerConfig.getHost().getAddress());
+		uri.setPort(providerConfig.getHost().getPort());
+		uri.setPath(providerConfig.getPath() + "/login");
+
 		if (tenant != null)
 			uri.setParameter("user", tenant + "/" + user);
 		else
@@ -295,8 +237,8 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		try {
 			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(application.getContext(), ContextDescription.class, SerializationType.MIMO);
-			ContextDescription contextDescription = HTTP.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
-			connector = new HttpConnector(providerConfig, HTTP, contextDescription);
+			ContextDescription contextDescription = this.httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
+			connector = new HttpConnector(providerConfig, this.httpClient, contextDescription);
 			LOGGER.audit("Connection success id {} user {} tenant {}", contextDescription.getId(), contextDescription.getUser(), contextDescription.getTenant());
 		} catch (Exception e) {
 			LOGGER.audit("Connection failed {}", e.getMessage());
@@ -309,7 +251,12 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		LOGGER.audit("Connection from adminKey {} tenant {}", adminKey, tenant);
 
-		URIBuilder uri = new URIBuilder().setPath(providerConfig.getUrl() + "/login");
+		URIBuilder uri = new URIBuilder();
+		uri.setScheme(providerConfig.getSchema());
+		uri.setHost(providerConfig.getHost().getAddress());
+		uri.setPort(providerConfig.getHost().getPort());
+		uri.setPath(providerConfig.getPath() + "/login");
+
 		if (tenant != null)
 			uri.setParameter("adminKey", tenant + "/" + adminKey);
 		else
@@ -319,11 +266,11 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		try {
 			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(application.getContext(), ContextDescription.class, SerializationType.MIMO);
-			ContextDescription contextDescription = HTTP.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
-			connector = new HttpConnector(providerConfig, HTTP, contextDescription);
+			ContextDescription contextDescription = this.httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
+			connector = new HttpConnector(providerConfig, this.httpClient, contextDescription);
 			LOGGER.audit("Connection success adminKey {} tenant {}", adminKey, tenant);
 		} catch (Exception e) {
-			LOGGER.audit("Connection failed {}", e.getMessage());
+			LOGGER.audit("{}", e.getMessage());
 		}
 
 		return connector;
@@ -348,57 +295,23 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 	private AuthenticationUserPassword getExternalCredentials(String user) {
 
-		AuthenticationUserPassword authenticationUserPassword = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
+		LOGGER.warn("Unsecure access to external credential for user {}", user);
 
-		try  {
-			URI uri = new URIBuilder().setPath(providerConfig.getUrl() + "/entityExternalCredential").setParameter("userId", user).build();
-
-			try (CloseableHttpResponse response = HTTP.execute(new HttpPost(uri))) {
-				if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
-					throw new Exception(response.getStatusLine().getReasonPhrase());
-
-				authenticationUserPassword.setUser(response.getFirstHeader("user").getValue());
-				authenticationUserPassword.setPassword(response.getFirstHeader("password").getValue());
-			}
+		AuthenticationUserPassword authentication = null;
+		try {
+			URIBuilder uri = new URIBuilder();
+			uri.setScheme(providerConfig.getSchema());
+			uri.setHost(providerConfig.getHost().getAddress());
+			uri.setPort(providerConfig.getHost().getPort());
+			uri.setPath(providerConfig.getPath() + "/externalCredential");
+			uri.setParameter("userId", user);
+			authentication = this.httpClient.execute(new HttpPost(uri.build()), new HttpExternalCredentialHandler());
+			LOGGER.audit("External credential success user {}", user);
 		} catch (Exception e) {
 			LOGGER.audit(e.getMessage());
 			return null;
 		}
 
-		return authenticationUserPassword;
-	}
-
-	private class IdleConnectionMonitorThread extends java.lang.Thread {
-
-		private final HttpClientConnectionManager connMgr;
-		private volatile boolean shutdown;
-
-		public IdleConnectionMonitorThread(HttpClientConnectionManager connMgr) {
-			super();
-			this.connMgr = connMgr;
-		}
-
-		@Override
-		public void run() {
-			try {
-				while (!shutdown) {
-					synchronized (this) {
-						wait(3000);
-						connMgr.closeExpiredConnections();
-						connMgr.closeIdleConnections(10, TimeUnit.SECONDS);
-					}
-				}
-			} catch (InterruptedException ex) {
-				// terminate
-			}
-		}
-
-		@SuppressWarnings("unused")
-		public void shutdown() {
-			shutdown = true;
-			synchronized (this) {
-				notifyAll();
-			}
-		}
+		return authentication;
 	}
 }

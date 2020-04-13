@@ -813,13 +813,31 @@ public interface ContextPackage extends EPackage {
 	int MESSAGE_FILE_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * The feature id for the '<em><b>Schema</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER_CONFIG__URL = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int PROVIDER_CONFIG__SCHEMA = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Host</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER_CONFIG__HOST = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER_CONFIG__PATH = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Public User</b></em>' containment reference.
@@ -828,16 +846,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER_CONFIG__PUBLIC_USER = EntityPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>System User</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROVIDER_CONFIG__SYSTEM_USER = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int PROVIDER_CONFIG__PUBLIC_USER = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Provider Config</em>' class.
@@ -846,7 +855,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int PROVIDER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>User</b></em>' attribute.
@@ -1727,15 +1736,37 @@ public interface ContextPackage extends EPackage {
 	EClass getProviderConfig();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ProviderConfig#getUrl <em>Url</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ProviderConfig#getSchema <em>Schema</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Url</em>'.
-	 * @see org.abchip.mimo.context.ProviderConfig#getUrl()
+	 * @return the meta object for the attribute '<em>Schema</em>'.
+	 * @see org.abchip.mimo.context.ProviderConfig#getSchema()
 	 * @see #getProviderConfig()
 	 * @generated
 	 */
-	EAttribute getProviderConfig_Url();
+	EAttribute getProviderConfig_Schema();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.context.ProviderConfig#getHost <em>Host</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Host</em>'.
+	 * @see org.abchip.mimo.context.ProviderConfig#getHost()
+	 * @see #getProviderConfig()
+	 * @generated
+	 */
+	EReference getProviderConfig_Host();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ProviderConfig#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see org.abchip.mimo.context.ProviderConfig#getPath()
+	 * @see #getProviderConfig()
+	 * @generated
+	 */
+	EAttribute getProviderConfig_Path();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.context.ProviderConfig#getPublicUser <em>Public User</em>}'.
@@ -1747,17 +1778,6 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProviderConfig_PublicUser();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.context.ProviderConfig#getSystemUser <em>System User</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>System User</em>'.
-	 * @see org.abchip.mimo.context.ProviderConfig#getSystemUser()
-	 * @see #getProviderConfig()
-	 * @generated
-	 */
-	EReference getProviderConfig_SystemUser();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.context.ProviderUser <em>Provider User</em>}'.
@@ -2587,12 +2607,28 @@ public interface ContextPackage extends EPackage {
 		EClass PROVIDER_CONFIG = eINSTANCE.getProviderConfig();
 
 		/**
-		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Schema</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROVIDER_CONFIG__URL = eINSTANCE.getProviderConfig_Url();
+		EAttribute PROVIDER_CONFIG__SCHEMA = eINSTANCE.getProviderConfig_Schema();
+
+		/**
+		 * The meta object literal for the '<em><b>Host</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROVIDER_CONFIG__HOST = eINSTANCE.getProviderConfig_Host();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROVIDER_CONFIG__PATH = eINSTANCE.getProviderConfig_Path();
 
 		/**
 		 * The meta object literal for the '<em><b>Public User</b></em>' containment reference feature.
@@ -2601,14 +2637,6 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROVIDER_CONFIG__PUBLIC_USER = eINSTANCE.getProviderConfig_PublicUser();
-
-		/**
-		 * The meta object literal for the '<em><b>System User</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROVIDER_CONFIG__SYSTEM_USER = eINSTANCE.getProviderConfig_SystemUser();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.ProviderUserImpl <em>Provider User</em>}' class.

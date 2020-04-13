@@ -12,6 +12,7 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.core.http.HttpUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -24,7 +25,7 @@ public class HttpNextSequenceHandler implements ResponseHandler<String> {
 	public String handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
 		if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_FOUND)
-			throw new ClientProtocolException(response.getStatusLine().getReasonPhrase());
+			throw HttpUtils.buildException(response);
 
 		HttpEntity httpEntity = response.getEntity();
 		return EntityUtils.toString(httpEntity, "UTF-8");

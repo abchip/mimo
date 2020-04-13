@@ -19,7 +19,6 @@ import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.application.ComponentStatus;
-import org.abchip.mimo.application.HttpServiceConfig;
 import org.abchip.mimo.application.ModuleStatus;
 import org.abchip.mimo.application.ServiceCommandProvider;
 import org.abchip.mimo.application.ServiceConfig;
@@ -32,8 +31,6 @@ import org.abchip.mimo.application.ServiceRegistryEntry;
 import org.abchip.mimo.application.ServiceServlet;
 import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.application.ServiceTester;
-
-import org.abchip.mimo.application.SocketConfig;
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.context.impl.ContextPackageImpl;
@@ -51,6 +48,8 @@ import org.abchip.mimo.impl.MimoPackageImpl;
 import org.abchip.mimo.java.JavaPackage;
 
 import org.abchip.mimo.java.impl.JavaPackageImpl;
+import org.abchip.mimo.net.NetPackage;
+import org.abchip.mimo.net.impl.NetPackageImpl;
 import org.abchip.mimo.resource.ResourcePackage;
 
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
@@ -121,13 +120,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass httpServiceConfigEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass serviceCommandProviderEClass = null;
 
 	/**
@@ -192,13 +184,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	private EClass serviceTesterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass socketConfigEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,6 +278,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(registeredPackage instanceof JavaPackageImpl ? registeredPackage : JavaPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
+		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
@@ -305,6 +292,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		theDataPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theJavaPackage.createPackageContents();
+		theNetPackage.createPackageContents();
 		theResourcePackage.createPackageContents();
 		theServicePackage.createPackageContents();
 
@@ -315,6 +303,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		theDataPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theJavaPackage.initializePackageContents();
+		theNetPackage.initializePackageContents();
 		theResourcePackage.initializePackageContents();
 		theServicePackage.initializePackageContents();
 
@@ -702,36 +691,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getHttpServiceConfig() {
-		return httpServiceConfigEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getHttpServiceConfig_Path() {
-		return (EAttribute)httpServiceConfigEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getHttpServiceConfig_Socket() {
-		return (EReference)httpServiceConfigEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getServiceCommandProvider() {
 		return serviceCommandProviderEClass;
 	}
@@ -992,36 +951,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getSocketConfig() {
-		return socketConfigEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSocketConfig_Address() {
-		return (EAttribute)socketConfigEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSocketConfig_Port() {
-		return (EAttribute)socketConfigEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getApplicationLogLevel() {
 		return applicationLogLevelEEnum;
 	}
@@ -1127,10 +1056,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEReference(applicationModuleEClass, APPLICATION_MODULE__SERVICES);
 		createEAttribute(applicationModuleEClass, APPLICATION_MODULE__STATUS);
 
-		httpServiceConfigEClass = createEClass(HTTP_SERVICE_CONFIG);
-		createEAttribute(httpServiceConfigEClass, HTTP_SERVICE_CONFIG__PATH);
-		createEReference(httpServiceConfigEClass, HTTP_SERVICE_CONFIG__SOCKET);
-
 		serviceCommandProviderEClass = createEClass(SERVICE_COMMAND_PROVIDER);
 		createEAttribute(serviceCommandProviderEClass, SERVICE_COMMAND_PROVIDER__INTERFACE_NAME);
 
@@ -1166,10 +1091,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		serviceTesterEClass = createEClass(SERVICE_TESTER);
 		createEAttribute(serviceTesterEClass, SERVICE_TESTER__INTERFACE_NAME);
-
-		socketConfigEClass = createEClass(SOCKET_CONFIG);
-		createEAttribute(socketConfigEClass, SOCKET_CONFIG__ADDRESS);
-		createEAttribute(socketConfigEClass, SOCKET_CONFIG__PORT);
 
 		// Create enums
 		applicationLogLevelEEnum = createEEnum(APPLICATION_LOG_LEVEL);
@@ -1218,7 +1139,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		applicationComponentEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		applicationLogEntryEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		applicationModuleEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		httpServiceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		serviceCommandProviderEClass.getESuperTypes().add(this.getServiceRef());
 		serviceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		serviceHookEClass.getESuperTypes().add(this.getServiceRef());
@@ -1229,7 +1149,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		serviceRegistryEntryEClass.getESuperTypes().add(this.getServiceRef());
 		serviceServletEClass.getESuperTypes().add(this.getServiceRef());
 		serviceTesterEClass.getESuperTypes().add(this.getServiceRef());
-		socketConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1283,10 +1202,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEReference(getApplicationModule_Services(), this.getServiceRef(), null, "services", null, 0, -1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplicationModule_Status(), this.getModuleStatus(), "status", "ACT", 1, 1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(httpServiceConfigEClass, HttpServiceConfig.class, "HttpServiceConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getHttpServiceConfig_Path(), ecorePackage.getEString(), "path", null, 1, 1, HttpServiceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHttpServiceConfig_Socket(), this.getSocketConfig(), null, "socket", null, 1, 1, HttpServiceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(serviceCommandProviderEClass, ServiceCommandProvider.class, "ServiceCommandProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceCommandProvider_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.eclipse.osgi.framework.console.CommandProvider", 1, 1, ServiceCommandProvider.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1324,10 +1239,6 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		initEClass(serviceTesterEClass, ServiceTester.class, "ServiceTester", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceTester_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.abchip.mimo.tester.TestSuiteLauncher", 1, 1, ServiceTester.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(socketConfigEClass, SocketConfig.class, "SocketConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSocketConfig_Address(), ecorePackage.getEString(), "address", null, 1, 1, SocketConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSocketConfig_Port(), ecorePackage.getEInt(), "port", null, 1, 1, SocketConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(applicationLogLevelEEnum, ApplicationLogLevel.class, "ApplicationLogLevel");

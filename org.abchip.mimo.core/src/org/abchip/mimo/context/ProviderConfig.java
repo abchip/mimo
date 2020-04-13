@@ -8,6 +8,7 @@
 package org.abchip.mimo.context;
 
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.net.HostConfig;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,9 +19,10 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.ProviderConfig#getUrl <em>Url</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ProviderConfig#getSchema <em>Schema</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ProviderConfig#getHost <em>Host</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ProviderConfig#getPath <em>Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ProviderConfig#getPublicUser <em>Public User</em>}</li>
- *   <li>{@link org.abchip.mimo.context.ProviderConfig#getSystemUser <em>System User</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.context.ContextPackage#getProviderConfig()
@@ -29,30 +31,70 @@ import org.abchip.mimo.entity.Entity;
  */
 public interface ProviderConfig extends Entity {
 	/**
-	 * Returns the value of the '<em><b>Url</b></em>' attribute.
+	 * Returns the value of the '<em><b>Schema</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Url</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Url</em>' attribute.
-	 * @see #setUrl(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getProviderConfig_Url()
+	 * @return the value of the '<em>Schema</em>' attribute.
+	 * @see #setSchema(String)
+	 * @see org.abchip.mimo.context.ContextPackage#getProviderConfig_Schema()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getUrl();
+	String getSchema();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.ProviderConfig#getUrl <em>Url</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.ProviderConfig#getSchema <em>Schema</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Url</em>' attribute.
-	 * @see #getUrl()
+	 * @param value the new value of the '<em>Schema</em>' attribute.
+	 * @see #getSchema()
 	 * @generated
 	 */
-	void setUrl(String value);
+	void setSchema(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Host</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Host</em>' containment reference.
+	 * @see #setHost(HostConfig)
+	 * @see org.abchip.mimo.context.ContextPackage#getProviderConfig_Host()
+	 * @model containment="true" resolveProxies="true" required="true"
+	 * @generated
+	 */
+	HostConfig getHost();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.context.ProviderConfig#getHost <em>Host</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Host</em>' containment reference.
+	 * @see #getHost()
+	 * @generated
+	 */
+	void setHost(HostConfig value);
+
+	/**
+	 * Returns the value of the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Path</em>' attribute.
+	 * @see #setPath(String)
+	 * @see org.abchip.mimo.context.ContextPackage#getProviderConfig_Path()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getPath();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.context.ProviderConfig#getPath <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Path</em>' attribute.
+	 * @see #getPath()
+	 * @generated
+	 */
+	void setPath(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Public User</b></em>' containment reference.
@@ -79,31 +121,5 @@ public interface ProviderConfig extends Entity {
 	 * @generated
 	 */
 	void setPublicUser(ProviderUser value);
-
-	/**
-	 * Returns the value of the '<em><b>System User</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>System User</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>System User</em>' containment reference.
-	 * @see #setSystemUser(ProviderUser)
-	 * @see org.abchip.mimo.context.ContextPackage#getProviderConfig_SystemUser()
-	 * @model containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	ProviderUser getSystemUser();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.ProviderConfig#getSystemUser <em>System User</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>System User</em>' containment reference.
-	 * @see #getSystemUser()
-	 * @generated
-	 */
-	void setSystemUser(ProviderUser value);
 
 } // ProviderConfig

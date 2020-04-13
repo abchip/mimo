@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.application;
+package org.abchip.mimo.net;
 
 import org.abchip.mimo.entity.Entity;
 
@@ -18,29 +18,29 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.SocketConfig#getAddress <em>Address</em>}</li>
- *   <li>{@link org.abchip.mimo.application.SocketConfig#getPort <em>Port</em>}</li>
+ *   <li>{@link org.abchip.mimo.net.HostConfig#getAddress <em>Address</em>}</li>
+ *   <li>{@link org.abchip.mimo.net.HostConfig#getPort <em>Port</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getSocketConfig()
+ * @see org.abchip.mimo.net.NetPackage#getHostConfig()
  * @model
  * @generated
  */
-public interface SocketConfig extends Entity {
+public interface HostConfig extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Address</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Address</em>' attribute.
 	 * @see #setAddress(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getSocketConfig_Address()
+	 * @see org.abchip.mimo.net.NetPackage#getHostConfig_Address()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getAddress();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.SocketConfig#getAddress <em>Address</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.net.HostConfig#getAddress <em>Address</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Address</em>' attribute.
@@ -55,14 +55,14 @@ public interface SocketConfig extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Port</em>' attribute.
 	 * @see #setPort(int)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getSocketConfig_Port()
+	 * @see org.abchip.mimo.net.NetPackage#getHostConfig_Port()
 	 * @model required="true"
 	 * @generated
 	 */
 	int getPort();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.SocketConfig#getPort <em>Port</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.net.HostConfig#getPort <em>Port</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Port</em>' attribute.
@@ -71,4 +71,4 @@ public interface SocketConfig extends Entity {
 	 */
 	void setPort(int value);
 
-} // SocketConfig
+} // HostConfig

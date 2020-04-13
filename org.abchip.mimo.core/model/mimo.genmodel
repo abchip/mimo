@@ -82,10 +82,6 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ApplicationModule/services"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationModule/status"/>
       </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//application/HttpServiceConfig">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/HttpServiceConfig/path"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/HttpServiceConfig/socket"/>
-      </genClasses>
       <genClasses ecoreClass="mimo.ecore#//application/ServiceCommandProvider">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceCommandProvider/interfaceName"/>
       </genClasses>
@@ -121,10 +117,6 @@
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//application/ServiceTester">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceTester/interfaceName"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//application/SocketConfig">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/SocketConfig/address"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/SocketConfig/port"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Context" basePackage="org.abchip.mimo" disposableProviderFactory="true"
@@ -404,9 +396,10 @@
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//context/ProviderConfig">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderConfig/url"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderConfig/schema"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//context/ProviderConfig/host"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderConfig/path"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//context/ProviderConfig/publicUser"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//context/ProviderConfig/systemUser"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//context/ProviderUser">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderUser/user"/>
@@ -726,6 +719,32 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaThread"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaThreadGroup"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaThreadInfo"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Net" disposableProviderFactory="true" adapterFactory="false"
+        ecorePackage="mimo.ecore#//net">
+      <genDataTypes ecoreDataType="mimo.ecore#//net/HttpPost"/>
+      <genDataTypes ecoreDataType="mimo.ecore#//net/HttpResponseHandler">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//net/HttpResponseHandler/T"/>
+      </genDataTypes>
+      <genClasses ecoreClass="mimo.ecore#//net/ConnectionPoolingConfig">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/ConnectionPoolingConfig/maxTotal"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/ConnectionPoolingConfig/maxPerRoute"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//net/HttpClient">
+        <genOperations ecoreOperation="mimo.ecore#//net/HttpClient/execute">
+          <genParameters ecoreParameter="mimo.ecore#//net/HttpClient/execute/method"/>
+          <genParameters ecoreParameter="mimo.ecore#//net/HttpClient/execute/handler"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//net/HttpClient/execute/T"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//net/HostConfig">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/HostConfig/address"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/HostConfig/port"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//net/HttpServiceConfig">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//net/HttpServiceConfig/host"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//net/HttpServiceConfig/path"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Resource" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="mimo.ecore#//resource">

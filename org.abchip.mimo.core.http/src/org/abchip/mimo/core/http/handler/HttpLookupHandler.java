@@ -13,6 +13,7 @@ import java.io.InputStream;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.apache.http.HttpEntity;
@@ -32,7 +33,7 @@ public class HttpLookupHandler<E extends EntityIdentifiable> implements Response
 	public E handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
 		if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_FOUND)
-			throw new ClientProtocolException(response.getStatusLine().getReasonPhrase());
+			throw HttpUtils.buildException(response);
 
 		HttpEntity httpEntity = response.getEntity();
 		try (InputStream stream = httpEntity.getContent()) {

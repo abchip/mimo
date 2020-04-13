@@ -14,6 +14,7 @@ import java.io.InputStream;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.core.http.HttpUtils;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -32,7 +33,7 @@ public class HttpLoginHandler implements ResponseHandler<ContextDescription> {
 	public ContextDescription handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
 		if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
-			throw new ClientProtocolException(response.getStatusLine().getReasonPhrase());
+			throw HttpUtils.buildException(response);
 
 		HttpEntity httpEntity = response.getEntity();
 		try (InputStream stream = httpEntity.getContent()) {

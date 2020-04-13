@@ -64,6 +64,8 @@ import org.abchip.mimo.impl.MimoPackageImpl;
 import org.abchip.mimo.java.JavaPackage;
 
 import org.abchip.mimo.java.impl.JavaPackageImpl;
+import org.abchip.mimo.net.NetPackage;
+import org.abchip.mimo.net.impl.NetPackageImpl;
 import org.abchip.mimo.resource.ResourcePackage;
 
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
@@ -412,6 +414,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		JavaPackageImpl theJavaPackage = (JavaPackageImpl)(registeredPackage instanceof JavaPackageImpl ? registeredPackage : JavaPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
+		NetPackageImpl theNetPackage = (NetPackageImpl)(registeredPackage instanceof NetPackageImpl ? registeredPackage : NetPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
@@ -424,6 +428,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		theDataPackage.createPackageContents();
 		theEntityPackage.createPackageContents();
 		theJavaPackage.createPackageContents();
+		theNetPackage.createPackageContents();
 		theResourcePackage.createPackageContents();
 		theServicePackage.createPackageContents();
 
@@ -434,6 +439,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		theDataPackage.initializePackageContents();
 		theEntityPackage.initializePackageContents();
 		theJavaPackage.initializePackageContents();
+		theNetPackage.initializePackageContents();
 		theResourcePackage.initializePackageContents();
 		theServicePackage.initializePackageContents();
 
@@ -981,7 +987,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProviderConfig_Url() {
+	public EAttribute getProviderConfig_Schema() {
 		return (EAttribute)providerConfigEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -991,7 +997,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getProviderConfig_PublicUser() {
+	public EReference getProviderConfig_Host() {
 		return (EReference)providerConfigEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1001,8 +1007,18 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getProviderConfig_SystemUser() {
-		return (EReference)providerConfigEClass.getEStructuralFeatures().get(2);
+	public EAttribute getProviderConfig_Path() {
+		return (EAttribute)providerConfigEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getProviderConfig_PublicUser() {
+		return (EReference)providerConfigEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1430,9 +1446,10 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEAttribute(messageFileEClass, MESSAGE_FILE__TEXT);
 
 		providerConfigEClass = createEClass(PROVIDER_CONFIG);
-		createEAttribute(providerConfigEClass, PROVIDER_CONFIG__URL);
+		createEAttribute(providerConfigEClass, PROVIDER_CONFIG__SCHEMA);
+		createEReference(providerConfigEClass, PROVIDER_CONFIG__HOST);
+		createEAttribute(providerConfigEClass, PROVIDER_CONFIG__PATH);
 		createEReference(providerConfigEClass, PROVIDER_CONFIG__PUBLIC_USER);
-		createEReference(providerConfigEClass, PROVIDER_CONFIG__SYSTEM_USER);
 
 		providerUserEClass = createEClass(PROVIDER_USER);
 		createEAttribute(providerUserEClass, PROVIDER_USER__USER);
@@ -1505,6 +1522,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		ResourcePackage theResourcePackage = (ResourcePackage)EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
+		NetPackage theNetPackage = (NetPackage)EPackage.Registry.INSTANCE.getEPackage(NetPackage.eNS_URI);
 
 		// Create type parameters
 		ETypeParameter entityLockerEClass_N = addETypeParameter(entityLockerEClass, "N");
@@ -1892,9 +1910,10 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(providerConfigEClass, ProviderConfig.class, "ProviderConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProviderConfig_Url(), ecorePackage.getEString(), "url", null, 1, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProviderConfig_Schema(), ecorePackage.getEString(), "schema", null, 1, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProviderConfig_Host(), theNetPackage.getHostConfig(), null, "host", null, 1, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProviderConfig_Path(), ecorePackage.getEString(), "path", null, 1, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProviderConfig_PublicUser(), this.getProviderUser(), null, "publicUser", null, 0, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProviderConfig_SystemUser(), this.getProviderUser(), null, "systemUser", null, 0, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(providerUserEClass, ProviderUser.class, "ProviderUser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProviderUser_User(), ecorePackage.getEString(), "user", null, 1, 1, ProviderUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

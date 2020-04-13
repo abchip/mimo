@@ -5,13 +5,11 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.application.impl;
-
-import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.SocketConfig;
+package org.abchip.mimo.net.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
-
+import org.abchip.mimo.net.NetPackage;
+import org.abchip.mimo.net.HostConfig;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -26,13 +24,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.impl.SocketConfigImpl#getAddress <em>Address</em>}</li>
- *   <li>{@link org.abchip.mimo.application.impl.SocketConfigImpl#getPort <em>Port</em>}</li>
+ *   <li>{@link org.abchip.mimo.net.impl.HostConfigImpl#getAddress <em>Address</em>}</li>
+ *   <li>{@link org.abchip.mimo.net.impl.HostConfigImpl#getPort <em>Port</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SocketConfigImpl extends EntityImpl implements SocketConfig {
+public class HostConfigImpl extends EntityImpl implements HostConfig {
 	/**
 	 * 
 	 */
@@ -83,7 +81,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SocketConfigImpl() {
+	protected HostConfigImpl() {
 		super();
 	}
 
@@ -94,7 +92,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.SOCKET_CONFIG;
+		return NetPackage.Literals.HOST_CONFIG;
 	}
 
 	/**
@@ -117,7 +115,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 		String oldAddress = address;
 		address = newAddress;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SOCKET_CONFIG__ADDRESS, oldAddress, address));
+			eNotify(new ENotificationImpl(this, Notification.SET, NetPackage.HOST_CONFIG__ADDRESS, oldAddress, address));
 	}
 
 	/**
@@ -140,7 +138,7 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 		int oldPort = port;
 		port = newPort;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SOCKET_CONFIG__PORT, oldPort, port));
+			eNotify(new ENotificationImpl(this, Notification.SET, NetPackage.HOST_CONFIG__PORT, oldPort, port));
 	}
 
 	/**
@@ -151,9 +149,9 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.SOCKET_CONFIG__ADDRESS:
+			case NetPackage.HOST_CONFIG__ADDRESS:
 				return getAddress();
-			case ApplicationPackage.SOCKET_CONFIG__PORT:
+			case NetPackage.HOST_CONFIG__PORT:
 				return getPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -167,10 +165,10 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.SOCKET_CONFIG__ADDRESS:
+			case NetPackage.HOST_CONFIG__ADDRESS:
 				setAddress((String)newValue);
 				return;
-			case ApplicationPackage.SOCKET_CONFIG__PORT:
+			case NetPackage.HOST_CONFIG__PORT:
 				setPort((Integer)newValue);
 				return;
 		}
@@ -185,10 +183,10 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SOCKET_CONFIG__ADDRESS:
+			case NetPackage.HOST_CONFIG__ADDRESS:
 				setAddress(ADDRESS_EDEFAULT);
 				return;
-			case ApplicationPackage.SOCKET_CONFIG__PORT:
+			case NetPackage.HOST_CONFIG__PORT:
 				setPort(PORT_EDEFAULT);
 				return;
 		}
@@ -203,9 +201,9 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SOCKET_CONFIG__ADDRESS:
+			case NetPackage.HOST_CONFIG__ADDRESS:
 				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
-			case ApplicationPackage.SOCKET_CONFIG__PORT:
+			case NetPackage.HOST_CONFIG__PORT:
 				return port != PORT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -229,4 +227,4 @@ public class SocketConfigImpl extends EntityImpl implements SocketConfig {
 		return result.toString();
 	}
 
-} //SocketConfigImpl
+} //HostConfigImpl

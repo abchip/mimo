@@ -9,38 +9,26 @@
 package org.abchip.mimo.core.http.handler;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.AuthenticationUserPassword;
+import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.core.http.HttpUtils;
-import org.abchip.mimo.resource.ResourceSerializer;
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 
-public class HttpLogoutHandler implements ResponseHandler<ContextDescription> {
-
-	protected ResourceSerializer<ContextDescription> serializer;
-
-	public HttpLogoutHandler(ResourceSerializer<ContextDescription> serializer) {
-		this.serializer = serializer;
-	}
+public class HttpExternalCredentialHandler implements ResponseHandler<AuthenticationUserPassword> {
 
 	@Override
-	public ContextDescription handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
+	public AuthenticationUserPassword handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
 		if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
 			throw HttpUtils.buildException(response);
 
-		HttpEntity httpEntity = response.getEntity();
-		try (InputStream stream = httpEntity.getContent()) {
-			serializer.load(stream, false);
-			return serializer.get();
-		} finally {
-			serializer.clear();
-		}
+		AuthenticationUserPassword authenticationUserPassword = ContextFactory.eINSTANCE.createAuthenticationUserPassword();
+
+		return authenticationUserPassword;
 	}
 }
