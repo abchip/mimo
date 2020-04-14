@@ -48,11 +48,9 @@ public class EntityCommands extends BaseCommands {
 			return;
 		}
 
-		while (true) {
-			try (EntityIterator<E> entities = resourceManager.getResourceReader(context, frame, tenant).find(null, null, order)) {
-				for (E entity : entities) {
-					interpreter.println(entity.getID());
-				}
+		try (EntityIterator<E> entities = resourceManager.getResourceReader(context, frame, tenant).find(null, null, order)) {
+			for (E entity : entities) {
+				interpreter.println(entity.getID());
 			}
 		}
 	}

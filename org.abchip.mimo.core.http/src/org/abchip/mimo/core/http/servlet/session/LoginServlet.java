@@ -86,20 +86,20 @@ public class LoginServlet extends HttpServlet {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 				throw new ServletException(e);
 			}
-		}
-
-		// user password login
-		String user = request.getParameter("user");
-		if (user != null) {
-			String password = request.getParameter("password");
-			try {
-				context = loginUserPassword(session, user, password);
-			} catch (AuthenticationException e) {
-				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-				throw new ServletException(e);
+		} else {
+			// user password login
+			String user = request.getParameter("user");
+			if (user != null) {
+				String password = request.getParameter("password");
+				try {
+					context = loginUserPassword(session, user, password);
+				} catch (AuthenticationException e) {
+					response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+					throw new ServletException(e);
+				}
 			}
 		}
-
+		
 		if (context == null) {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return;

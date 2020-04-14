@@ -54,8 +54,10 @@ public class FindServlet extends BaseServlet {
 
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName, tenant);
-		if (frame == null)
+		if (frame == null) {
+			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 			return;
+		}
 
 		if (keys != null) {
 			StringBuffer sb = new StringBuffer();

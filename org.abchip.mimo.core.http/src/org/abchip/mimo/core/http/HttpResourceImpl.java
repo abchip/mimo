@@ -68,7 +68,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 		String nextSequence = null;
 
-		String query = "?frame=" + getFrame().getName();
+		String query = "frame=" + getFrame().getName();
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 
@@ -96,7 +96,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 		E entity = null;
 
-		String query = "?frame=" + getFrame().getName() + "&id=" + id.trim();
+		String query = "frame=" + getFrame().getName() + "&id=" + id.trim();
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 		if (proxy)
@@ -121,7 +121,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 		List<E> entities = null;
 
-		String query = "?frame=" + getFrame().getName();
+		String query = "frame=" + getFrame().getName();
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 		if (proxy)
@@ -171,7 +171,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			}
 		}
 
-		String query = "?frame=" + getFrame().getName() + "&id=" + entity.getID();
+		String query = "frame=" + getFrame().getName() + "&id=" + entity.getID();
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 
@@ -198,7 +198,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			}
 		}
 
-		String query = "?frame=" + getFrame().getName() + "&replace=" + replace;
+		String query = "frame=" + getFrame().getName() + "&replace=" + replace;
 		try {
 			query += "&json=" + URLEncoder.encode(baos.toString(), "UTF-8");
 		} catch (Exception e1) {

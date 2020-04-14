@@ -29,23 +29,24 @@ public class LogoutServlet extends BaseServlet {
 
 	@Inject
 	private ResourceManager resourceManager;
-	
+
 	@SuppressWarnings("resource")
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.MIMO);
-		serializer.add(context.getContextDescription());
-		serializer.save(response.getOutputStream());
-		serializer.clear();
-
+		
 		// remove context
 		ContextUtils.removeContext(context.getContextDescription().getId());
 		context.dispose();
 
-		// ivalidate session
+		serializer.add(context.getContextDescription());
+		serializer.save(response.getOutputStream());
+		serializer.clear();
+
+		// invalidate session
 		HttpSession session = request.getSession();
 		session.invalidate();
-		
+
 		response.setStatus(HttpServletResponse.SC_OK);
 		response.flushBuffer();
 	}
