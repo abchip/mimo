@@ -88,7 +88,7 @@ public class Strings {
 	}
 
 	public static Boolean isEmpty(String string) {
-		return string == null || string.trim().equals("");
+		return string == null || string.trim().isEmpty();
 	}
 
 	public static boolean isNotEmpty(String string) {

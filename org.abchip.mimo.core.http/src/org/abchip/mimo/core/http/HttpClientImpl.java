@@ -24,7 +24,9 @@ import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.networking.ConnectionPoolingConfig;
 import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.util.Logs;
+import org.abchip.mimo.util.Strings;
 import org.apache.http.HttpHost;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.routing.HttpRoute;
@@ -97,13 +99,17 @@ public class HttpClientImpl implements HttpClient {
 		try {
 			return HTTP.execute(method, handler);
 		} catch (Exception e) {
-			throw e;
-			/*
-			 * String message = e.getMessage(); while (message == null) { if (e.getCause()
-			 * == null) break; message = e.getCause().getMessage(); } if (message == null)
-			 * 
-			 * else throw new ClientProtocolException(message);
-			 */
+
+			String message = e.getMessage();
+			while (Strings.isEmpty(message)) {
+				if (e.getCause() == null)
+					break;
+				message = e.getCause().getMessage();
+			}
+			if (message == null)
+				throw new ClientProtocolException(message);
+			else
+				throw e;
 		}
 	}
 }

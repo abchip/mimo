@@ -11,6 +11,7 @@ package org.abchip.mimo.core.log4j;
 import java.util.Map;
 import java.util.WeakHashMap;
 
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.osgi.service.log.LogEntry;
@@ -19,6 +20,7 @@ import org.osgi.service.log.LogListener;
 
 public final class LOG4JLogListener implements LogListener {
 
+	private static final Level AUDIT = Level.forName("AUDIT", 50);
 	private Map<String, Logger> loggers = new WeakHashMap<String, Logger>();
 
 	@Override
@@ -30,7 +32,7 @@ public final class LOG4JLogListener implements LogListener {
 		LogLevel level = logEntry.getLogLevel();
 		switch (level) {
 		case AUDIT:
-			logger.warn(message);
+			logger.log(AUDIT, message);
 			break;
 		case DEBUG:
 			logger.debug(message);
