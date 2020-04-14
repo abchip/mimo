@@ -89,6 +89,13 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass javaAutoCloseableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass javaByteBufferEClass = null;
 
 	/**
@@ -405,6 +412,16 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(JavaPackage.eNS_URI, theJavaPackage);
 		return theJavaPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getJavaAutoCloseable() {
+		return javaAutoCloseableEClass;
 	}
 
 	/**
@@ -756,6 +773,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 		isCreated = true;
 
 		// Create classes and their features
+		javaAutoCloseableEClass = createEClass(JAVA_AUTO_CLOSEABLE);
+
 		javaByteBufferEClass = createEClass(JAVA_BYTE_BUFFER);
 
 		javaBlockingQueueEClass = createEClass(JAVA_BLOCKING_QUEUE);
@@ -848,6 +867,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 		// Add supertypes to classes
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(javaAutoCloseableEClass, AutoCloseable.class, "JavaAutoCloseable", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(javaByteBufferEClass, ByteBuffer.class, "JavaByteBuffer", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(javaBlockingQueueEClass, BlockingQueue.class, "JavaBlockingQueue", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS, "java.util.concurrent.BlockingQueue<E>");

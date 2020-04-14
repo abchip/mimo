@@ -609,22 +609,13 @@ public interface ContextPackage extends EPackage {
 	int MESSAGE_FILE_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Schema</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROVIDER_CONFIG__SCHEMA = EntityPackage.ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Host</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER_CONFIG__HOST = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int PROVIDER_CONFIG__HOST = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
@@ -633,7 +624,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER_CONFIG__PATH = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int PROVIDER_CONFIG__PATH = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Public User</b></em>' containment reference.
@@ -642,7 +633,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER_CONFIG__PUBLIC_USER = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int PROVIDER_CONFIG__PUBLIC_USER = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Provider Config</em>' class.
@@ -651,7 +642,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+	int PROVIDER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>User</b></em>' attribute.
@@ -1360,17 +1351,6 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getProviderConfig();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ProviderConfig#getSchema <em>Schema</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Schema</em>'.
-	 * @see org.abchip.mimo.context.ProviderConfig#getSchema()
-	 * @see #getProviderConfig()
-	 * @generated
-	 */
-	EAttribute getProviderConfig_Schema();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.context.ProviderConfig#getHost <em>Host</em>}'.
@@ -2091,14 +2071,6 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PROVIDER_CONFIG = eINSTANCE.getProviderConfig();
-
-		/**
-		 * The meta object literal for the '<em><b>Schema</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROVIDER_CONFIG__SCHEMA = eINSTANCE.getProviderConfig_Schema();
 
 		/**
 		 * The meta object literal for the '<em><b>Host</b></em>' containment reference feature.

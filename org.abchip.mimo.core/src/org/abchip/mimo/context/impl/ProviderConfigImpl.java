@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getSchema <em>Schema</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getHost <em>Host</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getPath <em>Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getPublicUser <em>Public User</em>}</li>
@@ -36,24 +35,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
-	/**
-	 * The default value of the '{@link #getSchema() <em>Schema</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSchema()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SCHEMA_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSchema()
-	 * @generated
-	 * @ordered
-	 */
-	protected String schema = SCHEMA_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getHost() <em>Host</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -112,29 +93,6 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	protected EClass eStaticClass() {
 		return ContextPackage.Literals.PROVIDER_CONFIG;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getSchema() {
-		return schema;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSchema(String newSchema) {
-		String oldSchema = schema;
-		schema = newSchema;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.PROVIDER_CONFIG__SCHEMA, oldSchema, schema));
 	}
 
 	/**
@@ -320,8 +278,6 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContextPackage.PROVIDER_CONFIG__SCHEMA:
-				return getSchema();
 			case ContextPackage.PROVIDER_CONFIG__HOST:
 				if (resolve) return getHost();
 				return basicGetHost();
@@ -342,9 +298,6 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContextPackage.PROVIDER_CONFIG__SCHEMA:
-				setSchema((String)newValue);
-				return;
 			case ContextPackage.PROVIDER_CONFIG__HOST:
 				setHost((HostConfig)newValue);
 				return;
@@ -366,9 +319,6 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContextPackage.PROVIDER_CONFIG__SCHEMA:
-				setSchema(SCHEMA_EDEFAULT);
-				return;
 			case ContextPackage.PROVIDER_CONFIG__HOST:
 				setHost((HostConfig)null);
 				return;
@@ -390,8 +340,6 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContextPackage.PROVIDER_CONFIG__SCHEMA:
-				return SCHEMA_EDEFAULT == null ? schema != null : !SCHEMA_EDEFAULT.equals(schema);
 			case ContextPackage.PROVIDER_CONFIG__HOST:
 				return host != null;
 			case ContextPackage.PROVIDER_CONFIG__PATH:
@@ -412,9 +360,7 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (schema: ");
-		result.append(schema);
-		result.append(", path: ");
+		result.append(" (path: ");
 		result.append(path);
 		result.append(')');
 		return result.toString();

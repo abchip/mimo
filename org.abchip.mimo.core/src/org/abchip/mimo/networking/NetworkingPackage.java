@@ -8,6 +8,7 @@
 package org.abchip.mimo.networking;
 
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -153,7 +154,7 @@ public interface NetworkingPackage extends EPackage {
 	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHostConfig()
 	 * @generated
 	 */
-	int HOST_CONFIG = 3;
+	int HOST_CONFIG = 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.networking.impl.HttpServiceConfigImpl <em>Http Service Config</em>}' class.
@@ -163,7 +164,7 @@ public interface NetworkingPackage extends EPackage {
 	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpServiceConfig()
 	 * @generated
 	 */
-	int HTTP_SERVICE_CONFIG = 4;
+	int HTTP_SERVICE_CONFIG = 5;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.networking.ConnectionPoolingConfig <em>Connection Pooling Config</em>}'.
@@ -273,6 +274,17 @@ public interface NetworkingPackage extends EPackage {
 	EAttribute getHostConfig_Port();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.networking.HostConfig#getSchema <em>Schema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Schema</em>'.
+	 * @see org.abchip.mimo.networking.HostConfig#getSchema()
+	 * @see #getHostConfig()
+	 * @generated
+	 */
+	EAttribute getHostConfig_Schema();
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.networking.HttpClient <em>Http Client</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -289,7 +301,26 @@ public interface NetworkingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HTTP_CLIENT_FEATURE_COUNT = 0;
+	int HTTP_CLIENT_FEATURE_COUNT = JavaPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.networking.HttpClientFactory <em>Http Client Factory</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.networking.HttpClientFactory
+	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpClientFactory()
+	 * @generated
+	 */
+	int HTTP_CLIENT_FACTORY = 3;
+
+	/**
+	 * The number of structural features of the '<em>Http Client Factory</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HTTP_CLIENT_FACTORY_FEATURE_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' attribute.
@@ -310,13 +341,22 @@ public interface NetworkingPackage extends EPackage {
 	int HOST_CONFIG__PORT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Schema</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOST_CONFIG__SCHEMA = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Host Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOST_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int HOST_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Host</b></em>' containment reference.
@@ -354,7 +394,7 @@ public interface NetworkingPackage extends EPackage {
 	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpPost()
 	 * @generated
 	 */
-	int HTTP_POST = 5;
+	int HTTP_POST = 6;
 
 	/**
 	 * The meta object id for the '<em>Http Response Handler</em>' data type.
@@ -364,7 +404,7 @@ public interface NetworkingPackage extends EPackage {
 	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpResponseHandler()
 	 * @generated
 	 */
-	int HTTP_RESPONSE_HANDLER = 6;
+	int HTTP_RESPONSE_HANDLER = 7;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.networking.HttpServiceConfig <em>Http Service Config</em>}'.
@@ -438,6 +478,16 @@ public interface NetworkingPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getHttpClient();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.networking.HttpClientFactory <em>Http Client Factory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Http Client Factory</em>'.
+	 * @see org.abchip.mimo.networking.HttpClientFactory
+	 * @generated
+	 */
+	EClass getHttpClientFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -529,6 +579,13 @@ public interface NetworkingPackage extends EPackage {
 		 */
 		EAttribute HOST_CONFIG__PORT = eINSTANCE.getHostConfig_Port();
 		/**
+		 * The meta object literal for the '<em><b>Schema</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HOST_CONFIG__SCHEMA = eINSTANCE.getHostConfig_Schema();
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.networking.impl.HttpServiceConfigImpl <em>Http Service Config</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -578,6 +635,15 @@ public interface NetworkingPackage extends EPackage {
 		 * @generated
 		 */
 		EClass HTTP_CLIENT = eINSTANCE.getHttpClient();
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.networking.HttpClientFactory <em>Http Client Factory</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.networking.HttpClientFactory
+		 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpClientFactory()
+		 * @generated
+		 */
+		EClass HTTP_CLIENT_FACTORY = eINSTANCE.getHttpClientFactory();
 
 	}
 

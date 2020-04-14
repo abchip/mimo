@@ -27,9 +27,9 @@ public class HttpClientMonitor extends Thread {
 		try {
 			while (!shutdown) {
 				synchronized (this) {
-					wait(3000);
+					wait(10000);
 					connMgr.closeExpiredConnections();
-					connMgr.closeIdleConnections(10, TimeUnit.SECONDS);
+					connMgr.closeIdleConnections(30, TimeUnit.SECONDS);
 				}
 			}
 		} catch (InterruptedException ex) {

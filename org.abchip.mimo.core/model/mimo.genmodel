@@ -400,7 +400,6 @@
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//context/ProviderConfig">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderConfig/schema"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//context/ProviderConfig/host"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderConfig/path"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//context/ProviderConfig/publicUser"/>
@@ -696,6 +695,7 @@
       <genDataTypes ecoreDataType="mimo.ecore#//java/JavaURI"/>
       <genDataTypes ecoreDataType="mimo.ecore#//java/JavaURL"/>
       <genDataTypes ecoreDataType="mimo.ecore#//java/JavaWriter"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaAutoCloseable"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaByteBuffer"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaBlockingQueue"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaCallable">
@@ -746,9 +746,13 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//networking/HttpClient/execute/T"/>
         </genOperations>
       </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//networking/HttpClientFactory">
+        <genOperations ecoreOperation="mimo.ecore#//networking/HttpClientFactory/create"/>
+      </genClasses>
       <genClasses ecoreClass="mimo.ecore#//networking/HostConfig">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/HostConfig/address"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/HostConfig/port"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/HostConfig/schema"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//networking/HttpServiceConfig">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//networking/HttpServiceConfig/host"/>

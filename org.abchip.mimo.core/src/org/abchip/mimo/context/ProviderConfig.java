@@ -19,7 +19,6 @@ import org.abchip.mimo.networking.HostConfig;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.ProviderConfig#getSchema <em>Schema</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ProviderConfig#getHost <em>Host</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ProviderConfig#getPath <em>Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ProviderConfig#getPublicUser <em>Public User</em>}</li>
@@ -30,28 +29,6 @@ import org.abchip.mimo.networking.HostConfig;
  * @generated
  */
 public interface ProviderConfig extends Entity {
-	/**
-	 * Returns the value of the '<em><b>Schema</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Schema</em>' attribute.
-	 * @see #setSchema(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getProviderConfig_Schema()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getSchema();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.ProviderConfig#getSchema <em>Schema</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Schema</em>' attribute.
-	 * @see #getSchema()
-	 * @generated
-	 */
-	void setSchema(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Host</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

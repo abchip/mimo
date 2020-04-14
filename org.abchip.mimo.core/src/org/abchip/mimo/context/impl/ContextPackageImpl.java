@@ -784,18 +784,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProviderConfig_Schema() {
-		return (EAttribute)providerConfigEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getProviderConfig_Host() {
-		return (EReference)providerConfigEClass.getEStructuralFeatures().get(1);
+		return (EReference)providerConfigEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -805,7 +795,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 */
 	@Override
 	public EAttribute getProviderConfig_Path() {
-		return (EAttribute)providerConfigEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)providerConfigEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -815,7 +805,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 */
 	@Override
 	public EReference getProviderConfig_PublicUser() {
-		return (EReference)providerConfigEClass.getEStructuralFeatures().get(3);
+		return (EReference)providerConfigEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1221,7 +1211,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEAttribute(messageFileEClass, MESSAGE_FILE__TEXT);
 
 		providerConfigEClass = createEClass(PROVIDER_CONFIG);
-		createEAttribute(providerConfigEClass, PROVIDER_CONFIG__SCHEMA);
 		createEReference(providerConfigEClass, PROVIDER_CONFIG__HOST);
 		createEAttribute(providerConfigEClass, PROVIDER_CONFIG__PATH);
 		createEReference(providerConfigEClass, PROVIDER_CONFIG__PUBLIC_USER);
@@ -1638,7 +1627,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(providerConfigEClass, ProviderConfig.class, "ProviderConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProviderConfig_Schema(), ecorePackage.getEString(), "schema", null, 1, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProviderConfig_Host(), theNetworkingPackage.getHostConfig(), null, "host", null, 1, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProviderConfig_Path(), ecorePackage.getEString(), "path", null, 1, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProviderConfig_PublicUser(), this.getProviderUser(), null, "publicUser", null, 0, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -60,6 +60,25 @@ public interface JavaPackage extends EPackage {
 	JavaPackage eINSTANCE = org.abchip.mimo.java.impl.JavaPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link java.lang.AutoCloseable <em>Auto Closeable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.AutoCloseable
+	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaAutoCloseable()
+	 * @generated
+	 */
+	int JAVA_AUTO_CLOSEABLE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Auto Closeable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_AUTO_CLOSEABLE_FEATURE_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link java.nio.ByteBuffer <em>Byte Buffer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,7 +86,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaByteBuffer()
 	 * @generated
 	 */
-	int JAVA_BYTE_BUFFER = 0;
+	int JAVA_BYTE_BUFFER = 1;
 
 	/**
 	 * The number of structural features of the '<em>Byte Buffer</em>' class.
@@ -86,7 +105,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaBlockingQueue()
 	 * @generated
 	 */
-	int JAVA_BLOCKING_QUEUE = 1;
+	int JAVA_BLOCKING_QUEUE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Blocking Queue</em>' class.
@@ -105,7 +124,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaCallable()
 	 * @generated
 	 */
-	int JAVA_CALLABLE = 2;
+	int JAVA_CALLABLE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Callable</em>' class.
@@ -124,7 +143,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaCharset()
 	 * @generated
 	 */
-	int JAVA_CHARSET = 3;
+	int JAVA_CHARSET = 4;
 
 	/**
 	 * The number of structural features of the '<em>Charset</em>' class.
@@ -143,7 +162,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaCloseable()
 	 * @generated
 	 */
-	int JAVA_CLOSEABLE = 4;
+	int JAVA_CLOSEABLE = 5;
 
 	/**
 	 * The number of structural features of the '<em>Closeable</em>' class.
@@ -162,7 +181,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaConcurrentMap()
 	 * @generated
 	 */
-	int JAVA_CONCURRENT_MAP = 5;
+	int JAVA_CONCURRENT_MAP = 6;
 
 	/**
 	 * The number of structural features of the '<em>Concurrent Map</em>' class.
@@ -181,7 +200,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaEnum()
 	 * @generated
 	 */
-	int JAVA_ENUM = 6;
+	int JAVA_ENUM = 7;
 
 	/**
 	 * The number of structural features of the '<em>Enum</em>' class.
@@ -200,7 +219,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaExecutorService()
 	 * @generated
 	 */
-	int JAVA_EXECUTOR_SERVICE = 7;
+	int JAVA_EXECUTOR_SERVICE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Executor Service</em>' class.
@@ -219,7 +238,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaFile()
 	 * @generated
 	 */
-	int JAVA_FILE = 8;
+	int JAVA_FILE = 9;
 
 	/**
 	 * The meta object id for the '{@link java.lang.Iterable <em>Iterable</em>}' class.
@@ -229,7 +248,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaIterable()
 	 * @generated
 	 */
-	int JAVA_ITERABLE = 9;
+	int JAVA_ITERABLE = 10;
 
 	/**
 	 * The meta object id for the '{@link java.util.Iterator <em>Iterator</em>}' class.
@@ -239,7 +258,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaIterator()
 	 * @generated
 	 */
-	int JAVA_ITERATOR = 10;
+	int JAVA_ITERATOR = 11;
 
 	/**
 	 * The meta object id for the '{@link java.util.List <em>List</em>}' class.
@@ -249,7 +268,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaList()
 	 * @generated
 	 */
-	int JAVA_LIST = 11;
+	int JAVA_LIST = 12;
 
 	/**
 	 * The meta object id for the '{@link java.lang.Number <em>Number</em>}' class.
@@ -259,7 +278,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaNumber()
 	 * @generated
 	 */
-	int JAVA_NUMBER = 12;
+	int JAVA_NUMBER = 13;
 
 	/**
 	 * The meta object id for the '{@link java.security.Principal <em>Principal</em>}' class.
@@ -269,7 +288,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaPrincipal()
 	 * @generated
 	 */
-	int JAVA_PRINCIPAL = 13;
+	int JAVA_PRINCIPAL = 14;
 
 	/**
 	 * The meta object id for the '{@link java.lang.Runnable <em>Runnable</em>}' class.
@@ -279,7 +298,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaRunnable()
 	 * @generated
 	 */
-	int JAVA_RUNNABLE = 14;
+	int JAVA_RUNNABLE = 15;
 
 	/**
 	 * The meta object id for the '{@link java.io.Serializable <em>Serializable</em>}' class.
@@ -289,7 +308,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaSerializable()
 	 * @generated
 	 */
-	int JAVA_SERIALIZABLE = 15;
+	int JAVA_SERIALIZABLE = 16;
 
 	/**
 	 * The meta object id for the '{@link java.lang.Thread <em>Thread</em>}' class.
@@ -299,7 +318,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaThread()
 	 * @generated
 	 */
-	int JAVA_THREAD = 16;
+	int JAVA_THREAD = 17;
 
 	/**
 	 * The meta object id for the '{@link java.lang.ThreadGroup <em>Thread Group</em>}' class.
@@ -309,7 +328,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaThreadGroup()
 	 * @generated
 	 */
-	int JAVA_THREAD_GROUP = 17;
+	int JAVA_THREAD_GROUP = 18;
 
 	/**
 	 * The meta object id for the '{@link java.lang.management.ThreadInfo <em>Thread Info</em>}' class.
@@ -319,7 +338,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaThreadInfo()
 	 * @generated
 	 */
-	int JAVA_THREAD_INFO = 18;
+	int JAVA_THREAD_INFO = 19;
 
 	/**
 	 * The meta object id for the '<em>Annotation</em>' data type.
@@ -329,7 +348,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaAnnotation()
 	 * @generated
 	 */
-	int JAVA_ANNOTATION = 19;
+	int JAVA_ANNOTATION = 20;
 
 	/**
 	 * The meta object id for the '<em>Dictionary</em>' data type.
@@ -339,7 +358,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaDictionary()
 	 * @generated
 	 */
-	int JAVA_DICTIONARY = 20;
+	int JAVA_DICTIONARY = 21;
 
 	/**
 	 * The meta object id for the '<em>Exception</em>' data type.
@@ -349,7 +368,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaException()
 	 * @generated
 	 */
-	int JAVA_EXCEPTION = 21;
+	int JAVA_EXCEPTION = 22;
 
 	/**
 	 * The number of structural features of the '<em>File</em>' class.
@@ -458,7 +477,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaInputStream()
 	 * @generated
 	 */
-	int JAVA_INPUT_STREAM = 22;
+	int JAVA_INPUT_STREAM = 23;
 
 	/**
 	 * The meta object id for the '<em>IO Exception</em>' data type.
@@ -468,7 +487,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaIOException()
 	 * @generated
 	 */
-	int JAVA_IO_EXCEPTION = 23;
+	int JAVA_IO_EXCEPTION = 24;
 
 	/**
 	 * The meta object id for the '<em>Map</em>' data type.
@@ -478,7 +497,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaMap()
 	 * @generated
 	 */
-	int JAVA_MAP = 24;
+	int JAVA_MAP = 25;
 
 	/**
 	 * The meta object id for the '<em>Output Stream</em>' data type.
@@ -488,7 +507,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaOutputStream()
 	 * @generated
 	 */
-	int JAVA_OUTPUT_STREAM = 25;
+	int JAVA_OUTPUT_STREAM = 26;
 
 	/**
 	 * The meta object id for the '<em>Properties</em>' data type.
@@ -498,7 +517,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaProperties()
 	 * @generated
 	 */
-	int JAVA_PROPERTIES = 26;
+	int JAVA_PROPERTIES = 27;
 
 	/**
 	 * The meta object id for the '<em>Throwable</em>' data type.
@@ -508,7 +527,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaThrowable()
 	 * @generated
 	 */
-	int JAVA_THROWABLE = 27;
+	int JAVA_THROWABLE = 28;
 
 	/**
 	 * The meta object id for the '<em>Type</em>' data type.
@@ -518,7 +537,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaType()
 	 * @generated
 	 */
-	int JAVA_TYPE = 28;
+	int JAVA_TYPE = 29;
 
 	/**
 	 * The meta object id for the '<em>URI</em>' data type.
@@ -528,7 +547,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaURI()
 	 * @generated
 	 */
-	int JAVA_URI = 29;
+	int JAVA_URI = 30;
 
 	/**
 	 * The meta object id for the '<em>URL</em>' data type.
@@ -538,7 +557,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaURL()
 	 * @generated
 	 */
-	int JAVA_URL = 30;
+	int JAVA_URL = 31;
 
 	/**
 	 * The meta object id for the '<em>Writer</em>' data type.
@@ -548,8 +567,19 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaWriter()
 	 * @generated
 	 */
-	int JAVA_WRITER = 31;
+	int JAVA_WRITER = 32;
 
+
+	/**
+	 * Returns the meta object for class '{@link java.lang.AutoCloseable <em>Auto Closeable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Auto Closeable</em>'.
+	 * @see java.lang.AutoCloseable
+	 * @model instanceClass="java.lang.AutoCloseable"
+	 * @generated
+	 */
+	EClass getJavaAutoCloseable();
 
 	/**
 	 * Returns the meta object for class '{@link java.nio.ByteBuffer <em>Byte Buffer</em>}'.
@@ -925,6 +955,16 @@ public interface JavaPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link java.lang.AutoCloseable <em>Auto Closeable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.AutoCloseable
+		 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaAutoCloseable()
+		 * @generated
+		 */
+		EClass JAVA_AUTO_CLOSEABLE = eINSTANCE.getJavaAutoCloseable();
+
 		/**
 		 * The meta object literal for the '{@link java.nio.ByteBuffer <em>Byte Buffer</em>}' class.
 		 * <!-- begin-user-doc -->

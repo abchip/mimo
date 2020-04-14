@@ -8,13 +8,10 @@
  */
 package org.abchip.mimo.core.http;
 
-import java.security.cert.X509Certificate;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSession;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -25,12 +22,9 @@ import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.ssl.SSLContextBuilder;
-import org.apache.http.ssl.TrustStrategy;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -246,24 +240,8 @@ public class HttpUtils {
 	private static CloseableHttpClient buildHttpsClient() throws Exception {
 
 		CloseableHttpClient httpClient = null;
-		SSLContextBuilder builder = new SSLContextBuilder();
-		builder.loadTrustMaterial(null, new TrustStrategy() {
-			@Override
-			public boolean isTrusted(X509Certificate[] chain, String authType) {
-				return true;
-			}
-		});
 
-		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(builder.build(), new HostnameVerifier() {
-
-			@Override
-			public boolean verify(String hostname, SSLSession session) {
-				return true;
-			}
-
-		});
-
-		httpClient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
+		httpClient = HttpClients.custom().build();
 
 		return httpClient;
 	}

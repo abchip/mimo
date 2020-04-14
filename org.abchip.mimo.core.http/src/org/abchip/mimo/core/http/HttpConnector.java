@@ -45,7 +45,7 @@ public class HttpConnector implements Closeable {
 	public <E> E execute(String path, String query, ResponseHandler<E> handler) throws Exception {
 
 		URIBuilder uri = new URIBuilder();
-		uri.setScheme(providerConfig.getSchema());
+		uri.setScheme(providerConfig.getHost().getSchema());
 		uri.setHost(providerConfig.getHost().getAddress());
 		uri.setPort(providerConfig.getHost().getPort());
 		uri.setPath(providerConfig.getPath() + "/" + path + ";jsessionid=" + token);
@@ -59,17 +59,12 @@ public class HttpConnector implements Closeable {
 
 		LOGGER.trace("Execute http request {}", httpPost.getURI());
 
-		try {
-			E response = httpClient.execute(httpPost, handler);
-			return response;
-		} finally {
-			httpPost.reset();
-		}
+		E response = httpClient.execute(httpPost, handler);
+		return response;
 	}
 
 	@Override
 	public void close() throws IOException {
-		// this.httpClient.close();
-		this.httpClient = null;
+		this.httpClient.close();
 	}
 }

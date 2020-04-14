@@ -35,6 +35,7 @@ import org.abchip.mimo.networking.ConnectionPoolingConfig;
 import org.abchip.mimo.networking.ConnectionPoolingRouteConfig;
 import org.abchip.mimo.networking.HostConfig;
 import org.abchip.mimo.networking.HttpClient;
+import org.abchip.mimo.networking.HttpClientFactory;
 import org.abchip.mimo.networking.HttpServiceConfig;
 import org.abchip.mimo.networking.NetworkingFactory;
 import org.abchip.mimo.networking.NetworkingPackage;
@@ -108,6 +109,12 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 	 * @generated
 	 */
 	private EClass httpClientEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass httpClientFactoryEClass = null;
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -313,6 +320,16 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 	 * @generated
 	 */
 	@Override
+	public EAttribute getHostConfig_Schema() {
+		return (EAttribute)hostConfigEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getHttpServiceConfig() {
 		return httpServiceConfigEClass;
 	}
@@ -382,6 +399,16 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EClass getHttpClientFactory() {
+		return httpClientFactoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private boolean isCreated = false;
 
 	/**
@@ -407,9 +434,12 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 
 		httpClientEClass = createEClass(HTTP_CLIENT);
 
+		httpClientFactoryEClass = createEClass(HTTP_CLIENT_FACTORY);
+
 		hostConfigEClass = createEClass(HOST_CONFIG);
 		createEAttribute(hostConfigEClass, HOST_CONFIG__ADDRESS);
 		createEAttribute(hostConfigEClass, HOST_CONFIG__PORT);
+		createEAttribute(hostConfigEClass, HOST_CONFIG__SCHEMA);
 
 		httpServiceConfigEClass = createEClass(HTTP_SERVICE_CONFIG);
 		createEReference(httpServiceConfigEClass, HTTP_SERVICE_CONFIG__HOST);
@@ -455,6 +485,7 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		// Add supertypes to classes
 		connectionPoolingConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		connectionPoolingRouteConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		httpClientEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 		hostConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		httpServiceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
@@ -481,9 +512,14 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
+		initEClass(httpClientFactoryEClass, HttpClientFactory.class, "HttpClientFactory", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(httpClientFactoryEClass, this.getHttpClient(), "create", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(hostConfigEClass, HostConfig.class, "HostConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHostConfig_Address(), ecorePackage.getEString(), "address", null, 1, 1, HostConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHostConfig_Port(), ecorePackage.getEInt(), "port", null, 1, 1, HostConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHostConfig_Schema(), ecorePackage.getEString(), "schema", null, 1, 1, HostConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(httpServiceConfigEClass, HttpServiceConfig.class, "HttpServiceConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHttpServiceConfig_Host(), this.getHostConfig(), null, "host", null, 1, 1, HttpServiceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

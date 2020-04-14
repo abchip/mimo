@@ -33,6 +33,7 @@ import org.abchip.mimo.core.http.handler.HttpExternalCredentialHandler;
 import org.abchip.mimo.core.http.handler.HttpLoginHandler;
 import org.abchip.mimo.core.http.handler.HttpLogoutHandler;
 import org.abchip.mimo.networking.HttpClient;
+import org.abchip.mimo.networking.HttpClientFactory;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -52,7 +53,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	@Inject
 	private ProviderConfig providerConfig;
 	@Inject
-	private HttpClient httpClient;
+	private HttpClientFactory httpClientFactory;
 
 	@Override
 	public ContextProvider login(String contextId, AuthenticationAnonymous authentication) throws AuthenticationException {
@@ -148,7 +149,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		// checkLogin
 		URIBuilder uri = new URIBuilder();
-		uri.setScheme(providerConfig.getSchema());
+		uri.setScheme(providerConfig.getHost().getSchema());
 		uri.setHost(providerConfig.getHost().getAddress());
 		uri.setPort(providerConfig.getHost().getPort());
 		uri.setPath(providerConfig.getPath() + "/checkLogin");
@@ -201,8 +202,8 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		}
 
 		// check login
-		try {
-			this.httpClient.execute(new HttpPost(uri.build()), new HttpCheckLoginHandler());
+		try (HttpClient httpClient = this.httpClientFactory.create()) {
+			httpClient.execute(new HttpPost(uri.build()), new HttpCheckLoginHandler());
 			LOGGER.audit("CheckLogin success id {} user {} provider {}", authentication.getIdToken(), authentication.getUser(), authentication.getProvider());
 		} catch (Exception e) {
 			LOGGER.audit(e.getMessage());
@@ -212,12 +213,13 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		return true;
 	}
 
+	@SuppressWarnings("resource")
 	private HttpConnector connect(String user, String password, String tenant) throws AuthenticationException {
 
 		LOGGER.audit("Connection from user {} tenant {}", user, tenant);
 
 		URIBuilder uri = new URIBuilder();
-		uri.setScheme(providerConfig.getSchema());
+		uri.setScheme(providerConfig.getHost().getSchema());
 		uri.setHost(providerConfig.getHost().getAddress());
 		uri.setPort(providerConfig.getHost().getPort());
 		uri.setPath(providerConfig.getPath() + "/login");
@@ -229,13 +231,19 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		uri.setParameter("password", password);
 
 		HttpConnector connector = null;
+		HttpClient httpClient = this.httpClientFactory.create();
 
 		try {
 			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(application.getContext(), ContextDescription.class, SerializationType.MIMO);
-			ContextDescription contextDescription = this.httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
-			connector = new HttpConnector(providerConfig, this.httpClient, contextDescription);
+			ContextDescription contextDescription = httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
+			connector = new HttpConnector(providerConfig, httpClient, contextDescription);
 			LOGGER.audit("Connection success id {} user {} tenant {}", contextDescription.getId(), contextDescription.getUser(), contextDescription.getTenant());
 		} catch (Exception e) {
+			try {
+				httpClient.close();
+			} catch (Exception e1) {
+				LOGGER.warn(e1.getMessage());
+			}
 			LOGGER.audit("Connection failed {}", e.getMessage());
 			throw new AuthenticationException(e);
 		}
@@ -243,12 +251,13 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		return connector;
 	}
 
+	@SuppressWarnings("resource")
 	private HttpConnector connect(String adminKey, String tenant) throws AuthenticationException {
 
 		LOGGER.audit("Connection from adminKey {} tenant {}", adminKey, tenant);
 
 		URIBuilder uri = new URIBuilder();
-		uri.setScheme(providerConfig.getSchema());
+		uri.setScheme(providerConfig.getHost().getSchema());
 		uri.setHost(providerConfig.getHost().getAddress());
 		uri.setPort(providerConfig.getHost().getPort());
 		uri.setPath(providerConfig.getPath() + "/login");
@@ -259,13 +268,19 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			uri.setParameter("adminKey", adminKey);
 
 		HttpConnector connector = null;
+		HttpClient httpClient = this.httpClientFactory.create();
 
 		try {
 			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(application.getContext(), ContextDescription.class, SerializationType.MIMO);
-			ContextDescription contextDescription = this.httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
-			connector = new HttpConnector(providerConfig, this.httpClient, contextDescription);
-			LOGGER.audit("Connection success adminKey {} tenant {}", adminKey, tenant);
+			ContextDescription contextDescription = httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
+			connector = new HttpConnector(providerConfig, httpClient, contextDescription);
+			LOGGER.audit("Connection success id {} adminKey {} tenant {}", contextDescription.getId(), adminKey, tenant);
 		} catch (Exception e) {
+			try {
+				httpClient.close();
+			} catch (Exception e1) {
+				LOGGER.warn(e1.getMessage());
+			}
 			LOGGER.audit("{}", e.getMessage());
 			throw new AuthenticationException(e);
 		}
@@ -295,14 +310,14 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		LOGGER.warn("Unsecure access to external credential for user {}", user);
 
 		AuthenticationUserPassword authentication = null;
-		try {
+		try (HttpClient httpClient = this.httpClientFactory.create()) {
 			URIBuilder uri = new URIBuilder();
-			uri.setScheme(providerConfig.getSchema());
+			uri.setScheme(providerConfig.getHost().getSchema());
 			uri.setHost(providerConfig.getHost().getAddress());
 			uri.setPort(providerConfig.getHost().getPort());
 			uri.setPath(providerConfig.getPath() + "/externalCredential");
 			uri.setParameter("userId", user);
-			authentication = this.httpClient.execute(new HttpPost(uri.build()), new HttpExternalCredentialHandler());
+			authentication = httpClient.execute(new HttpPost(uri.build()), new HttpExternalCredentialHandler());
 			LOGGER.audit("External credential success user {}", user);
 		} catch (Exception e) {
 			LOGGER.audit(e.getMessage());

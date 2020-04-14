@@ -551,8 +551,6 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ProviderConfig" eSuperTypes="#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="schema" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="host" lowerBound="1"
           eType="#//networking/HostConfig" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1"
@@ -997,6 +995,8 @@
   </eSubpackages>
   <eSubpackages name="java" nsURI="http://www.abchip.org/mimo/java" nsPrefix="mimo-java">
     <eClassifiers xsi:type="ecore:EDataType" name="JavaAnnotation" instanceClassName="java.lang.annotation.Annotation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="JavaAutoCloseable" instanceClassName="java.lang.AutoCloseable"
+        abstract="true" interface="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="JavaByteBuffer" instanceClassName="java.nio.ByteBuffer"
         abstract="true" interface="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="JavaBlockingQueue" instanceTypeName="java.util.concurrent.BlockingQueue&lt;E>"
@@ -1076,7 +1076,8 @@
           eType="#//networking/HostConfig" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HttpClient" abstract="true" interface="true">
+    <eClassifiers xsi:type="ecore:EClass" name="HttpClient" abstract="true" interface="true"
+        eSuperTypes="#//java/JavaCloseable">
       <eOperations name="execute" lowerBound="1" eExceptions="#//java/JavaException">
         <eGenericType eTypeParameter="#//networking/HttpClient/execute/T"/>
         <eTypeParameters name="T"/>
@@ -1088,11 +1089,17 @@
         </eParameters>
       </eOperations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HttpClientFactory" abstract="true"
+        interface="true">
+      <eOperations name="create" lowerBound="1" eType="#//networking/HttpClient"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HostConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="schema" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="HttpPost" instanceClassName="org.apache.http.client.methods.HttpPost"/>
     <eClassifiers xsi:type="ecore:EDataType" name="HttpResponseHandler" instanceClassName="org.apache.http.client.ResponseHandler">

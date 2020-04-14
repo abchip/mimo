@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.networking.impl.HostConfigImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link org.abchip.mimo.networking.impl.HostConfigImpl#getPort <em>Port</em>}</li>
+ *   <li>{@link org.abchip.mimo.networking.impl.HostConfigImpl#getSchema <em>Schema</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,6 +76,26 @@ public class HostConfigImpl extends EntityImpl implements HostConfig {
 	 * @ordered
 	 */
 	protected int port = PORT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSchema() <em>Schema</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSchema()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SCHEMA_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSchema()
+	 * @generated
+	 * @ordered
+	 */
+	protected String schema = SCHEMA_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,12 +168,37 @@ public class HostConfigImpl extends EntityImpl implements HostConfig {
 	 * @generated
 	 */
 	@Override
+	public String getSchema() {
+		return schema;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSchema(String newSchema) {
+		String oldSchema = schema;
+		schema = newSchema;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NetworkingPackage.HOST_CONFIG__SCHEMA, oldSchema, schema));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case NetworkingPackage.HOST_CONFIG__ADDRESS:
 				return getAddress();
 			case NetworkingPackage.HOST_CONFIG__PORT:
 				return getPort();
+			case NetworkingPackage.HOST_CONFIG__SCHEMA:
+				return getSchema();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -170,6 +216,9 @@ public class HostConfigImpl extends EntityImpl implements HostConfig {
 				return;
 			case NetworkingPackage.HOST_CONFIG__PORT:
 				setPort((Integer)newValue);
+				return;
+			case NetworkingPackage.HOST_CONFIG__SCHEMA:
+				setSchema((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,6 +238,9 @@ public class HostConfigImpl extends EntityImpl implements HostConfig {
 			case NetworkingPackage.HOST_CONFIG__PORT:
 				setPort(PORT_EDEFAULT);
 				return;
+			case NetworkingPackage.HOST_CONFIG__SCHEMA:
+				setSchema(SCHEMA_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -205,6 +257,8 @@ public class HostConfigImpl extends EntityImpl implements HostConfig {
 				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
 			case NetworkingPackage.HOST_CONFIG__PORT:
 				return port != PORT_EDEFAULT;
+			case NetworkingPackage.HOST_CONFIG__SCHEMA:
+				return SCHEMA_EDEFAULT == null ? schema != null : !SCHEMA_EDEFAULT.equals(schema);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -223,6 +277,8 @@ public class HostConfigImpl extends EntityImpl implements HostConfig {
 		result.append(address);
 		result.append(", port: ");
 		result.append(port);
+		result.append(", schema: ");
+		result.append(schema);
 		result.append(')');
 		return result.toString();
 	}

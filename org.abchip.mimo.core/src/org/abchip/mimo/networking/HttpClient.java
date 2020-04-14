@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.networking;
 
+import java.io.Closeable;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
 
@@ -18,10 +19,10 @@ import org.apache.http.client.methods.HttpPost;
  *
  *
  * @see org.abchip.mimo.networking.NetworkingPackage#getHttpClient()
- * @model interface="true" abstract="true"
+ * @model interface="true" abstract="true" superTypes="org.abchip.mimo.java.JavaCloseable"
  * @generated
  */
-public interface HttpClient {
+public interface HttpClient extends Closeable {
 
 	/**
 	 * <!-- begin-user-doc -->

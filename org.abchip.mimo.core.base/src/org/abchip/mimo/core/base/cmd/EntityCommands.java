@@ -48,6 +48,7 @@ public class EntityCommands extends BaseCommands {
 			return;
 		}
 
+		while(true)
 		try (EntityIterator<E> entities = resourceManager.getResourceReader(context, frame, tenant).find(null, null, order)) {
 			for (E entity : entities) {
 				interpreter.println(entity.getID());
@@ -60,14 +61,15 @@ public class EntityCommands extends BaseCommands {
 		Context context = this.getContext();
 
 		String frameName = Strings.firstToUpper(nextArgument(interpreter));
+
+		String entityName = nextArgument(interpreter);
+		
 		String tenant = nextArgument(interpreter);
 
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName, tenant);
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName + " on tenant " + tenant);
-
-		String entityName = nextArgument(interpreter);
 
 		E entity = resourceManager.getResourceReader(context, frame, tenant).lookup(entityName);
 		interpreter.println(entity);

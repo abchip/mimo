@@ -8,102 +8,39 @@
  */
 package org.abchip.mimo.core.http;
 
-import java.security.KeyManagementException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.X509Certificate;
+import java.io.IOException;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSession;
-
-import org.abchip.mimo.application.Application;
-import org.abchip.mimo.context.Thread;
-import org.abchip.mimo.context.ThreadManager;
-import org.abchip.mimo.networking.ConnectionPoolingConfig;
-import org.abchip.mimo.networking.ConnectionPoolingRouteConfig;
 import org.abchip.mimo.networking.HttpClient;
-import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.Strings;
-import org.apache.http.HttpHost;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.CookieStore;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.conn.routing.HttpRoute;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.DefaultClientConnectionReuseStrategy;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
-import org.apache.http.ssl.SSLContextBuilder;
-import org.apache.http.ssl.TrustStrategy;
-import org.osgi.service.log.Logger;
+import org.apache.http.protocol.HttpContext;
 
 public class HttpClientImpl implements HttpClient {
 
-	private static final Logger LOGGER = Logs.getLogger(HttpClientImpl.class);
+	private HttpContext context;
+	private CloseableHttpClient client = null;
 
-	@Inject
-	private Application application;
-	@Inject
-	private ConnectionPoolingConfig poolingConfig;
-	@Inject
-	private ThreadManager threadManager;
+	public HttpClientImpl(CloseableHttpClient client) {
+		this.client = client;
 
-	private PoolingHttpClientConnectionManager connectionManager = null;
-	private CloseableHttpClient HTTP = null;
-
-	@PostConstruct
-	private void init() {
-
-		connectionManager = new PoolingHttpClientConnectionManager();
-
-		// default
-		connectionManager.setMaxTotal(poolingConfig.getMaxTotal());
-		connectionManager.setDefaultMaxPerRoute(poolingConfig.getMaxPerRoute());
-
-		// routes
-		for(ConnectionPoolingRouteConfig route: poolingConfig.getRoutes()) {
-			HttpHost host = new HttpHost(route.getHost().getAddress(), route.getHost().getPort());
-			connectionManager.setMaxPerRoute(new HttpRoute(host), route.getMax());	
-		}
-		
-		
-		// RequestConfig result =
-		// RequestConfig.custom().setConnectionRequestTimeout(100).setConnectTimeout(300).setSocketTimeout(1500).build();
-
-		
-		try {
-			SSLContextBuilder builder = new SSLContextBuilder();
-			builder.loadTrustMaterial(null, new TrustStrategy() {
-				@Override
-				public boolean isTrusted(X509Certificate[] chain, String authType) {
-					return true;
-				}
-			});
-			SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(builder.build(), new HostnameVerifier() {
-
-				@Override
-				public boolean verify(String hostname, SSLSession session) {
-					return true;
-				}
-
-			});
-
-			HTTP = HttpClients.custom().setConnectionManager(connectionManager).setSSLSocketFactory(sslsf).setConnectionReuseStrategy(DefaultClientConnectionReuseStrategy.INSTANCE).build();
-		} catch (KeyManagementException | NoSuchAlgorithmException | KeyStoreException e) {
-			LOGGER.error(e.getMessage());
-		}
-
-		Thread thread = threadManager.createThread(application.getName() + "-http-monitor", new HttpClientMonitor(connectionManager));
-		threadManager.start(thread);
+		this.context = HttpClientContext.create();
+		CookieStore cookieStore = new BasicCookieStore();
+		this.context.setAttribute(HttpClientContext.COOKIE_STORE, cookieStore);
 	}
 
 	@Override
 	public <T> T execute(HttpPost method, ResponseHandler<T> handler) throws Exception {
+		if (client == null)
+			throw new ClientProtocolException("Client closed");
+
 		try {
-			return HTTP.execute(method, handler);
+			return client.execute(method, handler, context);
 		} catch (Exception e) {
 
 			String message = e.getMessage();
@@ -116,6 +53,17 @@ public class HttpClientImpl implements HttpClient {
 				throw new ClientProtocolException(message);
 			else
 				throw e;
+		} finally {
+			method.reset();
 		}
+	}
+
+	@Override
+	public void close() throws IOException {
+		if (this.client == null)
+			return;
+
+		// this.client.close();
+		this.client = null;
 	}
 }

@@ -33,6 +33,8 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
+import org.abchip.mimo.util.Logs;
+import org.osgi.service.log.Logger;
 
 public class LoginServlet extends HttpServlet {
 
@@ -44,6 +46,8 @@ public class LoginServlet extends HttpServlet {
 	@Inject
 	private AuthenticationManager authenticationManager;
 
+	private static final Logger LOGGER = Logs.getLogger(LoginServlet.class);
+
 	@Override
 	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
@@ -54,6 +58,8 @@ public class LoginServlet extends HttpServlet {
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
+
+		LOGGER.trace("Login from session {}", session.getId());
 
 		Context context = ContextUtils.getContext(session.getId());
 
@@ -99,7 +105,7 @@ public class LoginServlet extends HttpServlet {
 				}
 			}
 		}
-		
+
 		if (context == null) {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return;

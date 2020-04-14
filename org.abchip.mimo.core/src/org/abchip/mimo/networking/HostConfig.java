@@ -20,6 +20,7 @@ import org.abchip.mimo.entity.Entity;
  * <ul>
  *   <li>{@link org.abchip.mimo.networking.HostConfig#getAddress <em>Address</em>}</li>
  *   <li>{@link org.abchip.mimo.networking.HostConfig#getPort <em>Port</em>}</li>
+ *   <li>{@link org.abchip.mimo.networking.HostConfig#getSchema <em>Schema</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.networking.NetworkingPackage#getHostConfig()
@@ -70,5 +71,27 @@ public interface HostConfig extends Entity {
 	 * @generated
 	 */
 	void setPort(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Schema</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Schema</em>' attribute.
+	 * @see #setSchema(String)
+	 * @see org.abchip.mimo.networking.NetworkingPackage#getHostConfig_Schema()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getSchema();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.networking.HostConfig#getSchema <em>Schema</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Schema</em>' attribute.
+	 * @see #getSchema()
+	 * @generated
+	 */
+	void setSchema(String value);
 
 } // HostConfig
