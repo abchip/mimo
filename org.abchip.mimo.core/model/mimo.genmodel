@@ -733,6 +733,11 @@
       <genClasses ecoreClass="mimo.ecore#//networking/ConnectionPoolingConfig">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/ConnectionPoolingConfig/maxTotal"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/ConnectionPoolingConfig/maxPerRoute"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//networking/ConnectionPoolingConfig/routes"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//networking/ConnectionPoolingRouteConfig">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//networking/ConnectionPoolingRouteConfig/host"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/ConnectionPoolingRouteConfig/max"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//networking/HttpClient">
         <genOperations ecoreOperation="mimo.ecore#//networking/HttpClient/execute">

@@ -64,6 +64,7 @@ public class NetworkingFactoryImpl extends EFactoryImpl implements NetworkingFac
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case NetworkingPackage.CONNECTION_POOLING_CONFIG: return (EObject)createConnectionPoolingConfig();
+			case NetworkingPackage.CONNECTION_POOLING_ROUTE_CONFIG: return (EObject)createConnectionPoolingRouteConfig();
 			case NetworkingPackage.HOST_CONFIG: return (EObject)createHostConfig();
 			case NetworkingPackage.HTTP_SERVICE_CONFIG: return (EObject)createHttpServiceConfig();
 			default:
@@ -114,6 +115,17 @@ public class NetworkingFactoryImpl extends EFactoryImpl implements NetworkingFac
 	public ConnectionPoolingConfig createConnectionPoolingConfig() {
 		ConnectionPoolingConfigImpl connectionPoolingConfig = new ConnectionPoolingConfigImpl();
 		return connectionPoolingConfig;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ConnectionPoolingRouteConfig createConnectionPoolingRouteConfig() {
+		ConnectionPoolingRouteConfigImpl connectionPoolingRouteConfig = new ConnectionPoolingRouteConfigImpl();
+		return connectionPoolingRouteConfig;
 	}
 
 	/**

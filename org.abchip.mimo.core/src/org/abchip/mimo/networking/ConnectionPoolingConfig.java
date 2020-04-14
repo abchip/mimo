@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.networking;
 
+import java.util.List;
 import org.abchip.mimo.entity.Entity;
 
 /**
@@ -20,6 +21,7 @@ import org.abchip.mimo.entity.Entity;
  * <ul>
  *   <li>{@link org.abchip.mimo.networking.ConnectionPoolingConfig#getMaxTotal <em>Max Total</em>}</li>
  *   <li>{@link org.abchip.mimo.networking.ConnectionPoolingConfig#getMaxPerRoute <em>Max Per Route</em>}</li>
+ *   <li>{@link org.abchip.mimo.networking.ConnectionPoolingConfig#getRoutes <em>Routes</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.networking.NetworkingPackage#getConnectionPoolingConfig()
@@ -70,5 +72,17 @@ public interface ConnectionPoolingConfig extends Entity {
 	 * @generated
 	 */
 	void setMaxPerRoute(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Routes</b></em>' containment reference list.
+	 * The list contents are of type {@link org.abchip.mimo.networking.ConnectionPoolingRouteConfig}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Routes</em>' containment reference list.
+	 * @see org.abchip.mimo.networking.NetworkingPackage#getConnectionPoolingConfig_Routes()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	List<ConnectionPoolingRouteConfig> getRoutes();
 
 } // ConnectionPoolingConfig

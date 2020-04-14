@@ -91,13 +91,59 @@ public interface NetworkingPackage extends EPackage {
 	int CONNECTION_POOLING_CONFIG__MAX_PER_ROUTE = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Routes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION_POOLING_CONFIG__ROUTES = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Connection Pooling Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_POOLING_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int CONNECTION_POOLING_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.networking.impl.ConnectionPoolingRouteConfigImpl <em>Connection Pooling Route Config</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.networking.impl.ConnectionPoolingRouteConfigImpl
+	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getConnectionPoolingRouteConfig()
+	 * @generated
+	 */
+	int CONNECTION_POOLING_ROUTE_CONFIG = 1;
+
+	/**
+	 * The feature id for the '<em><b>Host</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION_POOLING_ROUTE_CONFIG__HOST = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Max</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION_POOLING_ROUTE_CONFIG__MAX = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Connection Pooling Route Config</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION_POOLING_ROUTE_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.networking.impl.HostConfigImpl <em>Host Config</em>}' class.
@@ -107,7 +153,7 @@ public interface NetworkingPackage extends EPackage {
 	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHostConfig()
 	 * @generated
 	 */
-	int HOST_CONFIG = 2;
+	int HOST_CONFIG = 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.networking.impl.HttpServiceConfigImpl <em>Http Service Config</em>}' class.
@@ -117,7 +163,7 @@ public interface NetworkingPackage extends EPackage {
 	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpServiceConfig()
 	 * @generated
 	 */
-	int HTTP_SERVICE_CONFIG = 3;
+	int HTTP_SERVICE_CONFIG = 4;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.networking.ConnectionPoolingConfig <em>Connection Pooling Config</em>}'.
@@ -150,6 +196,49 @@ public interface NetworkingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getConnectionPoolingConfig_MaxPerRoute();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.networking.ConnectionPoolingConfig#getRoutes <em>Routes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Routes</em>'.
+	 * @see org.abchip.mimo.networking.ConnectionPoolingConfig#getRoutes()
+	 * @see #getConnectionPoolingConfig()
+	 * @generated
+	 */
+	EReference getConnectionPoolingConfig_Routes();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.networking.ConnectionPoolingRouteConfig <em>Connection Pooling Route Config</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Connection Pooling Route Config</em>'.
+	 * @see org.abchip.mimo.networking.ConnectionPoolingRouteConfig
+	 * @generated
+	 */
+	EClass getConnectionPoolingRouteConfig();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.networking.ConnectionPoolingRouteConfig#getHost <em>Host</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Host</em>'.
+	 * @see org.abchip.mimo.networking.ConnectionPoolingRouteConfig#getHost()
+	 * @see #getConnectionPoolingRouteConfig()
+	 * @generated
+	 */
+	EReference getConnectionPoolingRouteConfig_Host();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.networking.ConnectionPoolingRouteConfig#getMax <em>Max</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max</em>'.
+	 * @see org.abchip.mimo.networking.ConnectionPoolingRouteConfig#getMax()
+	 * @see #getConnectionPoolingRouteConfig()
+	 * @generated
+	 */
+	EAttribute getConnectionPoolingRouteConfig_Max();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.networking.HostConfig <em>Host Config</em>}'.
@@ -191,7 +280,7 @@ public interface NetworkingPackage extends EPackage {
 	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpClient()
 	 * @generated
 	 */
-	int HTTP_CLIENT = 1;
+	int HTTP_CLIENT = 2;
 
 	/**
 	 * The number of structural features of the '<em>Http Client</em>' class.
@@ -265,7 +354,7 @@ public interface NetworkingPackage extends EPackage {
 	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpPost()
 	 * @generated
 	 */
-	int HTTP_POST = 4;
+	int HTTP_POST = 5;
 
 	/**
 	 * The meta object id for the '<em>Http Response Handler</em>' data type.
@@ -275,7 +364,7 @@ public interface NetworkingPackage extends EPackage {
 	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getHttpResponseHandler()
 	 * @generated
 	 */
-	int HTTP_RESPONSE_HANDLER = 5;
+	int HTTP_RESPONSE_HANDLER = 6;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.networking.HttpServiceConfig <em>Http Service Config</em>}'.
@@ -386,6 +475,36 @@ public interface NetworkingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONNECTION_POOLING_CONFIG__MAX_PER_ROUTE = eINSTANCE.getConnectionPoolingConfig_MaxPerRoute();
+		/**
+		 * The meta object literal for the '<em><b>Routes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONNECTION_POOLING_CONFIG__ROUTES = eINSTANCE.getConnectionPoolingConfig_Routes();
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.networking.impl.ConnectionPoolingRouteConfigImpl <em>Connection Pooling Route Config</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.networking.impl.ConnectionPoolingRouteConfigImpl
+		 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getConnectionPoolingRouteConfig()
+		 * @generated
+		 */
+		EClass CONNECTION_POOLING_ROUTE_CONFIG = eINSTANCE.getConnectionPoolingRouteConfig();
+		/**
+		 * The meta object literal for the '<em><b>Host</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONNECTION_POOLING_ROUTE_CONFIG__HOST = eINSTANCE.getConnectionPoolingRouteConfig_Host();
+		/**
+		 * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONNECTION_POOLING_ROUTE_CONFIG__MAX = eINSTANCE.getConnectionPoolingRouteConfig_Max();
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.networking.impl.HostConfigImpl <em>Host Config</em>}' class.
 		 * <!-- begin-user-doc -->

@@ -36,6 +36,15 @@ public interface NetworkingFactory extends EFactory {
 	ConnectionPoolingConfig createConnectionPoolingConfig();
 
 	/**
+	 * Returns a new object of class '<em>Connection Pooling Route Config</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Connection Pooling Route Config</em>'.
+	 * @generated
+	 */
+	ConnectionPoolingRouteConfig createConnectionPoolingRouteConfig();
+
+	/**
 	 * Returns a new object of class '<em>Host Config</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -32,6 +32,7 @@ import org.abchip.mimo.java.JavaPackage;
 
 import org.abchip.mimo.java.impl.JavaPackageImpl;
 import org.abchip.mimo.networking.ConnectionPoolingConfig;
+import org.abchip.mimo.networking.ConnectionPoolingRouteConfig;
 import org.abchip.mimo.networking.HostConfig;
 import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.networking.HttpServiceConfig;
@@ -71,6 +72,12 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 	 * @generated
 	 */
 	private EClass connectionPoolingConfigEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass connectionPoolingRouteConfigEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,6 +243,46 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 	 * @generated
 	 */
 	@Override
+	public EReference getConnectionPoolingConfig_Routes() {
+		return (EReference)connectionPoolingConfigEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getConnectionPoolingRouteConfig() {
+		return connectionPoolingRouteConfigEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getConnectionPoolingRouteConfig_Host() {
+		return (EReference)connectionPoolingRouteConfigEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getConnectionPoolingRouteConfig_Max() {
+		return (EAttribute)connectionPoolingRouteConfigEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getHostConfig() {
 		return hostConfigEClass;
 	}
@@ -352,6 +399,11 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		connectionPoolingConfigEClass = createEClass(CONNECTION_POOLING_CONFIG);
 		createEAttribute(connectionPoolingConfigEClass, CONNECTION_POOLING_CONFIG__MAX_TOTAL);
 		createEAttribute(connectionPoolingConfigEClass, CONNECTION_POOLING_CONFIG__MAX_PER_ROUTE);
+		createEReference(connectionPoolingConfigEClass, CONNECTION_POOLING_CONFIG__ROUTES);
+
+		connectionPoolingRouteConfigEClass = createEClass(CONNECTION_POOLING_ROUTE_CONFIG);
+		createEReference(connectionPoolingRouteConfigEClass, CONNECTION_POOLING_ROUTE_CONFIG__HOST);
+		createEAttribute(connectionPoolingRouteConfigEClass, CONNECTION_POOLING_ROUTE_CONFIG__MAX);
 
 		httpClientEClass = createEClass(HTTP_CLIENT);
 
@@ -402,6 +454,7 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 
 		// Add supertypes to classes
 		connectionPoolingConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		connectionPoolingRouteConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		hostConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		httpServiceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
@@ -409,6 +462,11 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		initEClass(connectionPoolingConfigEClass, ConnectionPoolingConfig.class, "ConnectionPoolingConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConnectionPoolingConfig_MaxTotal(), ecorePackage.getEInt(), "maxTotal", null, 1, 1, ConnectionPoolingConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnectionPoolingConfig_MaxPerRoute(), ecorePackage.getEInt(), "maxPerRoute", null, 1, 1, ConnectionPoolingConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectionPoolingConfig_Routes(), this.getConnectionPoolingRouteConfig(), null, "routes", null, 0, -1, ConnectionPoolingConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(connectionPoolingRouteConfigEClass, ConnectionPoolingRouteConfig.class, "ConnectionPoolingRouteConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConnectionPoolingRouteConfig_Host(), this.getHostConfig(), null, "host", null, 1, 1, ConnectionPoolingRouteConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConnectionPoolingRouteConfig_Max(), ecorePackage.getEInt(), "max", null, 1, 1, ConnectionPoolingRouteConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(httpClientEClass, HttpClient.class, "HttpClient", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

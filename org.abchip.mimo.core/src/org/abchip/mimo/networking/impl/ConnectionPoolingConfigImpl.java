@@ -7,14 +7,22 @@
  */
 package org.abchip.mimo.networking.impl;
 
+import java.util.Collection;
+import java.util.List;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.networking.ConnectionPoolingConfig;
+import org.abchip.mimo.networking.ConnectionPoolingRouteConfig;
 import org.abchip.mimo.networking.NetworkingPackage;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.networking.impl.ConnectionPoolingConfigImpl#getMaxTotal <em>Max Total</em>}</li>
  *   <li>{@link org.abchip.mimo.networking.impl.ConnectionPoolingConfigImpl#getMaxPerRoute <em>Max Per Route</em>}</li>
+ *   <li>{@link org.abchip.mimo.networking.impl.ConnectionPoolingConfigImpl#getRoutes <em>Routes</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,6 +84,16 @@ public class ConnectionPoolingConfigImpl extends EntityImpl implements Connectio
 	 * @ordered
 	 */
 	protected int maxPerRoute = MAX_PER_ROUTE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRoutes() <em>Routes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoutes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ConnectionPoolingRouteConfig> routes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,12 +166,41 @@ public class ConnectionPoolingConfigImpl extends EntityImpl implements Connectio
 	 * @generated
 	 */
 	@Override
+	public List<ConnectionPoolingRouteConfig> getRoutes() {
+		if (routes == null) {
+			routes = new EObjectContainmentEList.Resolving<ConnectionPoolingRouteConfig>(ConnectionPoolingRouteConfig.class, this, NetworkingPackage.CONNECTION_POOLING_CONFIG__ROUTES);
+		}
+		return routes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case NetworkingPackage.CONNECTION_POOLING_CONFIG__ROUTES:
+				return ((InternalEList<?>)getRoutes()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case NetworkingPackage.CONNECTION_POOLING_CONFIG__MAX_TOTAL:
 				return getMaxTotal();
 			case NetworkingPackage.CONNECTION_POOLING_CONFIG__MAX_PER_ROUTE:
 				return getMaxPerRoute();
+			case NetworkingPackage.CONNECTION_POOLING_CONFIG__ROUTES:
+				return getRoutes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,6 +210,7 @@ public class ConnectionPoolingConfigImpl extends EntityImpl implements Connectio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -170,6 +219,10 @@ public class ConnectionPoolingConfigImpl extends EntityImpl implements Connectio
 				return;
 			case NetworkingPackage.CONNECTION_POOLING_CONFIG__MAX_PER_ROUTE:
 				setMaxPerRoute((Integer)newValue);
+				return;
+			case NetworkingPackage.CONNECTION_POOLING_CONFIG__ROUTES:
+				getRoutes().clear();
+				getRoutes().addAll((Collection<? extends ConnectionPoolingRouteConfig>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,6 +242,9 @@ public class ConnectionPoolingConfigImpl extends EntityImpl implements Connectio
 			case NetworkingPackage.CONNECTION_POOLING_CONFIG__MAX_PER_ROUTE:
 				setMaxPerRoute(MAX_PER_ROUTE_EDEFAULT);
 				return;
+			case NetworkingPackage.CONNECTION_POOLING_CONFIG__ROUTES:
+				getRoutes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -205,6 +261,8 @@ public class ConnectionPoolingConfigImpl extends EntityImpl implements Connectio
 				return maxTotal != MAX_TOTAL_EDEFAULT;
 			case NetworkingPackage.CONNECTION_POOLING_CONFIG__MAX_PER_ROUTE:
 				return maxPerRoute != MAX_PER_ROUTE_EDEFAULT;
+			case NetworkingPackage.CONNECTION_POOLING_CONFIG__ROUTES:
+				return routes != null && !routes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

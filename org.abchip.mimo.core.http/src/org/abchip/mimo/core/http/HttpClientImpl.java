@@ -22,6 +22,7 @@ import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Thread;
 import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.networking.ConnectionPoolingConfig;
+import org.abchip.mimo.networking.ConnectionPoolingRouteConfig;
 import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.Strings;
@@ -58,16 +59,21 @@ public class HttpClientImpl implements HttpClient {
 
 		connectionManager = new PoolingHttpClientConnectionManager();
 
+		// default
 		connectionManager.setMaxTotal(poolingConfig.getMaxTotal());
 		connectionManager.setDefaultMaxPerRoute(poolingConfig.getMaxPerRoute());
 
+		// routes
+		for(ConnectionPoolingRouteConfig route: poolingConfig.getRoutes()) {
+			HttpHost host = new HttpHost(route.getHost().getAddress(), route.getHost().getPort());
+			connectionManager.setMaxPerRoute(new HttpRoute(host), route.getMax());	
+		}
+		
+		
 		// RequestConfig result =
 		// RequestConfig.custom().setConnectionRequestTimeout(100).setConnectTimeout(300).setSocketTimeout(1500).build();
 
-		connectionManager.setMaxPerRoute(new HttpRoute(new HttpHost("localhost", 8080)), 200);
-		// connectionManager.setMaxPerRoute(new HttpRoute(new HttpHost("localhost",
-		// 8443)), 200);
-
+		
 		try {
 			SSLContextBuilder builder = new SSLContextBuilder();
 			builder.loadTrustMaterial(null, new TrustStrategy() {
