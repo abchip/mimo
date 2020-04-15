@@ -27,15 +27,6 @@ public interface ServiceFactory extends EFactory {
 	ServiceFactory eINSTANCE = org.abchip.mimo.service.impl.ServiceFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Command Provider Reg</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Command Provider Reg</em>'.
-	 * @generated
-	 */
-	ServiceCommandProviderReg createServiceCommandProviderReg();
-
-	/**
 	 * Returns a new object of class '<em>Config</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -43,69 +34,6 @@ public interface ServiceFactory extends EFactory {
 	 * @generated
 	 */
 	ServiceConfig createServiceConfig();
-
-	/**
-	 * Returns a new object of class '<em>Hook Reg</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hook Reg</em>'.
-	 * @generated
-	 */
-	ServiceHookReg createServiceHookReg();
-
-	/**
-	 * Returns a new object of class '<em>Executor Reg</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Executor Reg</em>'.
-	 * @generated
-	 */
-	ServiceExecutorReg createServiceExecutorReg();
-
-	/**
-	 * Returns a new object of class '<em>Factory Reg</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Factory Reg</em>'.
-	 * @generated
-	 */
-	ServiceFactoryReg createServiceFactoryReg();
-
-	/**
-	 * Returns a new object of class '<em>Registry Reg</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Registry Reg</em>'.
-	 * @generated
-	 */
-	ServiceRegistryReg createServiceRegistryReg();
-
-	/**
-	 * Returns a new object of class '<em>Registry Entry Reg</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Registry Entry Reg</em>'.
-	 * @generated
-	 */
-	ServiceRegistryEntryReg createServiceRegistryEntryReg();
-
-	/**
-	 * Returns a new object of class '<em>Servlet Reg</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Servlet Reg</em>'.
-	 * @generated
-	 */
-	ServiceServletReg createServiceServletReg();
-
-	/**
-	 * Returns a new object of class '<em>Tester Reg</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Tester Reg</em>'.
-	 * @generated
-	 */
-	ServiceTesterReg createServiceTesterReg();
 
 	/**
 	 * Returns the package supported by this factory.

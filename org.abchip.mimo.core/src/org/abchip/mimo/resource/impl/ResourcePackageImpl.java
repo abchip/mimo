@@ -57,6 +57,8 @@ import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.service.impl.ServicePackageImpl;
+import org.abchip.mimo.service.reg.RegPackage;
+import org.abchip.mimo.service.reg.impl.RegPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -275,6 +277,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		NetworkingPackageImpl theNetworkingPackage = (NetworkingPackageImpl)(registeredPackage instanceof NetworkingPackageImpl ? registeredPackage : NetworkingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
 		ServicePackageImpl theServicePackage = (ServicePackageImpl)(registeredPackage instanceof ServicePackageImpl ? registeredPackage : ServicePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RegPackage.eNS_URI);
+		RegPackageImpl theRegPackage = (RegPackageImpl)(registeredPackage instanceof RegPackageImpl ? registeredPackage : RegPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theResourcePackage.createPackageContents();
@@ -287,6 +291,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		theJavaPackage.createPackageContents();
 		theNetworkingPackage.createPackageContents();
 		theServicePackage.createPackageContents();
+		theRegPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theResourcePackage.initializePackageContents();
@@ -299,6 +304,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		theJavaPackage.initializePackageContents();
 		theNetworkingPackage.initializePackageContents();
 		theServicePackage.initializePackageContents();
+		theRegPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theResourcePackage.freeze();

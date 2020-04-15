@@ -86,4 +86,12 @@
             genModel="model/mimo.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mimo -->
+      <package
+            uri="http://www.abchip.org/mimo/service/reg"
+            class="org.abchip.mimo.service.reg.RegPackage"
+            genModel="model/mimo.genmodel"/>
+   </extension>
+
 </plugin>

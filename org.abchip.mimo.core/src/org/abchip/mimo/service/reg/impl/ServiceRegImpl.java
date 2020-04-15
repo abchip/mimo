@@ -6,12 +6,12 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.service.impl;
+package org.abchip.mimo.service.reg.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.abchip.mimo.service.ServicePackage;
-import org.abchip.mimo.service.ServiceReg;
 import org.abchip.mimo.service.ServiceStatus;
+import org.abchip.mimo.service.reg.RegPackage;
+import org.abchip.mimo.service.reg.ServiceReg;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceRegImpl#getClassName <em>Class Name</em>}</li>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceRegImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.reg.impl.ServiceRegImpl#getClassName <em>Class Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.reg.impl.ServiceRegImpl#getStatus <em>Status</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,7 +88,7 @@ public abstract class ServiceRegImpl extends EntityImpl implements ServiceReg {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ServicePackage.Literals.SERVICE_REG;
+		return RegPackage.Literals.SERVICE_REG;
 	}
 
 	/**
@@ -111,7 +111,7 @@ public abstract class ServiceRegImpl extends EntityImpl implements ServiceReg {
 		String oldClassName = className;
 		className = newClassName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REG__CLASS_NAME, oldClassName, className));
+			eNotify(new ENotificationImpl(this, Notification.SET, RegPackage.SERVICE_REG__CLASS_NAME, oldClassName, className));
 	}
 
 	/**
@@ -134,9 +134,9 @@ public abstract class ServiceRegImpl extends EntityImpl implements ServiceReg {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_REG__CLASS_NAME:
+			case RegPackage.SERVICE_REG__CLASS_NAME:
 				return getClassName();
-			case ServicePackage.SERVICE_REG__STATUS:
+			case RegPackage.SERVICE_REG__STATUS:
 				return getStatus();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -150,10 +150,10 @@ public abstract class ServiceRegImpl extends EntityImpl implements ServiceReg {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_REG__CLASS_NAME:
+			case RegPackage.SERVICE_REG__CLASS_NAME:
 				setClassName((String)newValue);
 				return;
-			case ServicePackage.SERVICE_REG__STATUS:
+			case RegPackage.SERVICE_REG__STATUS:
 				setStatus((ServiceStatus)newValue);
 				return;
 		}
@@ -168,10 +168,10 @@ public abstract class ServiceRegImpl extends EntityImpl implements ServiceReg {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_REG__CLASS_NAME:
+			case RegPackage.SERVICE_REG__CLASS_NAME:
 				setClassName(CLASS_NAME_EDEFAULT);
 				return;
-			case ServicePackage.SERVICE_REG__STATUS:
+			case RegPackage.SERVICE_REG__STATUS:
 				setStatus(STATUS_EDEFAULT);
 				return;
 		}
@@ -186,9 +186,9 @@ public abstract class ServiceRegImpl extends EntityImpl implements ServiceReg {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_REG__CLASS_NAME:
+			case RegPackage.SERVICE_REG__CLASS_NAME:
 				return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
-			case ServicePackage.SERVICE_REG__STATUS:
+			case RegPackage.SERVICE_REG__STATUS:
 				return status != STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -232,7 +232,7 @@ public abstract class ServiceRegImpl extends EntityImpl implements ServiceReg {
 		ServiceStatus oldStatus = status;
 		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REG__STATUS, oldStatus, status));
+			eNotify(new ENotificationImpl(this, Notification.SET, RegPackage.SERVICE_REG__STATUS, oldStatus, status));
 	}
 
 } //ServiceRegImpl

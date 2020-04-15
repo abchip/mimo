@@ -1,31 +1,35 @@
 /**
- *  Copyright (c) 2017, 2020 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
+ * Copyright (c) 2017, 2020 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.service.impl;
+package org.abchip.mimo.service.reg.impl;
 
-import org.abchip.mimo.service.ServicePackage;
-import org.abchip.mimo.service.ServiceTesterReg;
+import org.abchip.mimo.service.reg.RegPackage;
+import org.abchip.mimo.service.reg.ServiceFactoryReg;
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Service Tester</b></em>'.
+ * An implementation of the model object '<em><b>Service Factory</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceTesterRegImpl#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.reg.impl.ServiceFactoryRegImpl#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ServiceTesterRegImpl extends ServiceRegImpl implements ServiceTesterReg {
+public class ServiceFactoryRegImpl extends ServiceRegImpl implements ServiceFactoryReg {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The default value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,7 +38,8 @@ public class ServiceTesterRegImpl extends ServiceRegImpl implements ServiceTeste
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INTERFACE_NAME_EDEFAULT = "org.abchip.mimo.tester.TestSuiteLauncher";
+	protected static final String INTERFACE_NAME_EDEFAULT = "org.abchip.mimo.context.Factory";
+
 	/**
 	 * The cached value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -44,16 +49,13 @@ public class ServiceTesterRegImpl extends ServiceRegImpl implements ServiceTeste
 	 * @ordered
 	 */
 	protected String interfaceName = INTERFACE_NAME_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceTesterRegImpl() {
+	protected ServiceFactoryRegImpl() {
 		super();
 	}
 
@@ -64,7 +66,7 @@ public class ServiceTesterRegImpl extends ServiceRegImpl implements ServiceTeste
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ServicePackage.Literals.SERVICE_TESTER_REG;
+		return RegPackage.Literals.SERVICE_FACTORY_REG;
 	}
 
 	/**
@@ -85,7 +87,7 @@ public class ServiceTesterRegImpl extends ServiceRegImpl implements ServiceTeste
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_TESTER_REG__INTERFACE_NAME:
+			case RegPackage.SERVICE_FACTORY_REG__INTERFACE_NAME:
 				return getInterfaceName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -99,7 +101,7 @@ public class ServiceTesterRegImpl extends ServiceRegImpl implements ServiceTeste
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_TESTER_REG__INTERFACE_NAME:
+			case RegPackage.SERVICE_FACTORY_REG__INTERFACE_NAME:
 				return INTERFACE_NAME_EDEFAULT == null ? interfaceName != null : !INTERFACE_NAME_EDEFAULT.equals(interfaceName);
 		}
 		return super.eIsSet(featureID);
@@ -121,4 +123,4 @@ public class ServiceTesterRegImpl extends ServiceRegImpl implements ServiceTeste
 		return result.toString();
 	}
 
-} //ServiceTesterRegImpl
+} //ServiceFactoryRegImpl

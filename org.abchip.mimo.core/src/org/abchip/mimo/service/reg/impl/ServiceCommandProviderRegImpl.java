@@ -6,10 +6,10 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.service.impl;
+package org.abchip.mimo.service.reg.impl;
 
-import org.abchip.mimo.service.ServiceCommandProviderReg;
-import org.abchip.mimo.service.ServicePackage;
+import org.abchip.mimo.service.reg.RegPackage;
+import org.abchip.mimo.service.reg.ServiceCommandProviderReg;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceCommandProviderRegImpl#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.reg.impl.ServiceCommandProviderRegImpl#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,7 +65,7 @@ public class ServiceCommandProviderRegImpl extends ServiceRegImpl implements Ser
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ServicePackage.Literals.SERVICE_COMMAND_PROVIDER_REG;
+		return RegPackage.Literals.SERVICE_COMMAND_PROVIDER_REG;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class ServiceCommandProviderRegImpl extends ServiceRegImpl implements Ser
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_COMMAND_PROVIDER_REG__INTERFACE_NAME:
+			case RegPackage.SERVICE_COMMAND_PROVIDER_REG__INTERFACE_NAME:
 				return getInterfaceName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -100,7 +100,7 @@ public class ServiceCommandProviderRegImpl extends ServiceRegImpl implements Ser
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_COMMAND_PROVIDER_REG__INTERFACE_NAME:
+			case RegPackage.SERVICE_COMMAND_PROVIDER_REG__INTERFACE_NAME:
 				return INTERFACE_NAME_EDEFAULT == null ? interfaceName != null : !INTERFACE_NAME_EDEFAULT.equals(interfaceName);
 		}
 		return super.eIsSet(featureID);

@@ -13,9 +13,9 @@ import org.abchip.mimo.context.ContextRoot;
 
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceMapping;
-import org.abchip.mimo.service.ServiceCommandProviderReg;
 import org.abchip.mimo.service.ServiceConfig;
-import org.abchip.mimo.service.ServiceHookReg;
+import org.abchip.mimo.service.reg.ServiceCommandProviderReg;
+import org.abchip.mimo.service.reg.ServiceHookReg;
 import org.osgi.framework.Bundle;
 
 /**
@@ -101,7 +101,7 @@ public interface Application extends EntityIdentifiable {
 
 	/**
 	 * Returns the value of the '<em><b>Commands</b></em>' containment reference list.
-	 * The list contents are of type {@link org.abchip.mimo.service.ServiceCommandProviderReg}.
+	 * The list contents are of type {@link org.abchip.mimo.service.reg.ServiceCommandProviderReg}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Commands</em>' containment reference list isn't clear,
@@ -211,7 +211,7 @@ public interface Application extends EntityIdentifiable {
 
 	/**
 	 * Returns the value of the '<em><b>Hooks</b></em>' containment reference list.
-	 * The list contents are of type {@link org.abchip.mimo.service.ServiceHookReg}.
+	 * The list contents are of type {@link org.abchip.mimo.service.reg.ServiceHookReg}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Hooks</em>' containment reference list isn't clear,

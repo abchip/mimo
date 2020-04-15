@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.service;
+package org.abchip.mimo.service.reg;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +14,7 @@ package org.abchip.mimo.service;
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.service.ServicePackage#getServiceHookReg()
+ * @see org.abchip.mimo.service.reg.RegPackage#getServiceHookReg()
  * @model
  * @generated
  */

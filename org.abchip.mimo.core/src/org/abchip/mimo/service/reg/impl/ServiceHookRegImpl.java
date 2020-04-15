@@ -6,10 +6,10 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.service.impl;
+package org.abchip.mimo.service.reg.impl;
 
-import org.abchip.mimo.service.ServiceHookReg;
-import org.abchip.mimo.service.ServicePackage;
+import org.abchip.mimo.service.reg.RegPackage;
+import org.abchip.mimo.service.reg.ServiceHookReg;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -41,7 +41,7 @@ public class ServiceHookRegImpl extends ServiceRegImpl implements ServiceHookReg
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ServicePackage.Literals.SERVICE_HOOK_REG;
+		return RegPackage.Literals.SERVICE_HOOK_REG;
 	}
 	
 	/**

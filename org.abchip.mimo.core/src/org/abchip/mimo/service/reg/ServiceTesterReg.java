@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.service;
+package org.abchip.mimo.service.reg;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,10 +17,10 @@ package org.abchip.mimo.service;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.ServiceTesterReg#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.reg.ServiceTesterReg#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.service.ServicePackage#getServiceTesterReg()
+ * @see org.abchip.mimo.service.reg.RegPackage#getServiceTesterReg()
  * @model
  * @generated
  */
@@ -36,7 +36,7 @@ public interface ServiceTesterReg extends ServiceReg {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
-	 * @see org.abchip.mimo.service.ServicePackage#getServiceTesterReg_InterfaceName()
+	 * @see org.abchip.mimo.service.reg.RegPackage#getServiceTesterReg_InterfaceName()
 	 * @model default="org.abchip.mimo.tester.TestSuiteLauncher" required="true" changeable="false"
 	 * @generated
 	 */

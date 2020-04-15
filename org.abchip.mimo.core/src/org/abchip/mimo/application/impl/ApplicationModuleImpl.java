@@ -15,7 +15,7 @@ import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ModuleStatus;
 import org.abchip.mimo.entity.impl.EntityImpl;
-import org.abchip.mimo.service.ServiceReg;
+import org.abchip.mimo.service.reg.ServiceReg;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;

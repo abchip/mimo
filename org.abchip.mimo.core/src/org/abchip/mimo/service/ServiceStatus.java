@@ -1,21 +1,21 @@
 /**
- *  Copyright (c) 2017, 2020 ABChip and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *
+ * Copyright (c) 2017, 2020 ABChip and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
 package org.abchip.mimo.service;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Service Status</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Status</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.abchip.mimo.service.ServicePackage#getServiceStatus()
@@ -31,7 +31,9 @@ public enum ServiceStatus implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ACTIVE(0, "Active", "ACT"), /**
+	ACTIVE(0, "Active", "ACT"),
+
+	/**
 	 * The '<em><b>Stopped</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -39,7 +41,9 @@ public enum ServiceStatus implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STOPPED(0, "Stopped", "STP"), /**
+	STOPPED(0, "Stopped", "STP"),
+
+	/**
 	 * The '<em><b>Testing</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -52,10 +56,6 @@ public enum ServiceStatus implements Enumerator {
 	/**
 	 * The '<em><b>Active</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Active</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ACTIVE
 	 * @model name="Active" literal="ACT"
@@ -67,10 +67,6 @@ public enum ServiceStatus implements Enumerator {
 	/**
 	 * The '<em><b>Stopped</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Stopped</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #STOPPED
 	 * @model name="Stopped" literal="STP"
@@ -82,10 +78,6 @@ public enum ServiceStatus implements Enumerator {
 	/**
 	 * The '<em><b>Testing</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Testing</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TESTING
 	 * @model name="Testing" literal="TST"

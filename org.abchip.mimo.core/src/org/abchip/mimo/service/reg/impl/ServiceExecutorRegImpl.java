@@ -6,10 +6,10 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.service.impl;
+package org.abchip.mimo.service.reg.impl;
 
-import org.abchip.mimo.service.ServiceExecutorReg;
-import org.abchip.mimo.service.ServicePackage;
+import org.abchip.mimo.service.reg.RegPackage;
+import org.abchip.mimo.service.reg.ServiceExecutorReg;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceExecutorRegImpl#getInterfaceName <em>Interface Name</em>}</li>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceExecutorRegImpl#isRemoteExport <em>Remote Export</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.reg.impl.ServiceExecutorRegImpl#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.reg.impl.ServiceExecutorRegImpl#isRemoteExport <em>Remote Export</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,7 +86,7 @@ public class ServiceExecutorRegImpl extends ServiceRegImpl implements ServiceExe
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ServicePackage.Literals.SERVICE_EXECUTOR_REG;
+		return RegPackage.Literals.SERVICE_EXECUTOR_REG;
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class ServiceExecutorRegImpl extends ServiceRegImpl implements ServiceExe
 		String oldInterfaceName = interfaceName;
 		interfaceName = newInterfaceName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME, oldInterfaceName, interfaceName));
+			eNotify(new ENotificationImpl(this, Notification.SET, RegPackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME, oldInterfaceName, interfaceName));
 	}
 
 	/**
@@ -132,7 +132,7 @@ public class ServiceExecutorRegImpl extends ServiceRegImpl implements ServiceExe
 		boolean oldRemoteExport = remoteExport;
 		remoteExport = newRemoteExport;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT, oldRemoteExport, remoteExport));
+			eNotify(new ENotificationImpl(this, Notification.SET, RegPackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT, oldRemoteExport, remoteExport));
 	}
 
 	/**
@@ -143,9 +143,9 @@ public class ServiceExecutorRegImpl extends ServiceRegImpl implements ServiceExe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME:
+			case RegPackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME:
 				return getInterfaceName();
-			case ServicePackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT:
+			case RegPackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT:
 				return isRemoteExport();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -159,10 +159,10 @@ public class ServiceExecutorRegImpl extends ServiceRegImpl implements ServiceExe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME:
+			case RegPackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME:
 				setInterfaceName((String)newValue);
 				return;
-			case ServicePackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT:
+			case RegPackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT:
 				setRemoteExport((Boolean)newValue);
 				return;
 		}
@@ -177,10 +177,10 @@ public class ServiceExecutorRegImpl extends ServiceRegImpl implements ServiceExe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME:
+			case RegPackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME:
 				setInterfaceName(INTERFACE_NAME_EDEFAULT);
 				return;
-			case ServicePackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT:
+			case RegPackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT:
 				setRemoteExport(REMOTE_EXPORT_EDEFAULT);
 				return;
 		}
@@ -195,9 +195,9 @@ public class ServiceExecutorRegImpl extends ServiceRegImpl implements ServiceExe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME:
+			case RegPackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME:
 				return INTERFACE_NAME_EDEFAULT == null ? interfaceName != null : !INTERFACE_NAME_EDEFAULT.equals(interfaceName);
-			case ServicePackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT:
+			case RegPackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT:
 				return remoteExport != REMOTE_EXPORT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

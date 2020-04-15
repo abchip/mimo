@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.service;
+package org.abchip.mimo.service.reg;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,10 +17,10 @@ package org.abchip.mimo.service;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.ServiceCommandProviderReg#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.reg.ServiceCommandProviderReg#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.service.ServicePackage#getServiceCommandProviderReg()
+ * @see org.abchip.mimo.service.reg.RegPackage#getServiceCommandProviderReg()
  * @model
  * @generated
  */
@@ -35,7 +35,7 @@ public interface ServiceCommandProviderReg extends ServiceReg {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
-	 * @see org.abchip.mimo.service.ServicePackage#getServiceCommandProviderReg_InterfaceName()
+	 * @see org.abchip.mimo.service.reg.RegPackage#getServiceCommandProviderReg_InterfaceName()
 	 * @model default="org.eclipse.osgi.framework.console.CommandProvider" required="true" changeable="false"
 	 * @generated
 	 */

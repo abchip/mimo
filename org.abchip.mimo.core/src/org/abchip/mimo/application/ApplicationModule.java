@@ -11,7 +11,7 @@ package org.abchip.mimo.application;
 import java.util.List;
 
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.service.ServiceReg;
+import org.abchip.mimo.service.reg.ServiceReg;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +60,7 @@ public interface ApplicationModule extends Entity {
 
 	/**
 	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.
-	 * The list contents are of type {@link org.abchip.mimo.service.ServiceReg}.
+	 * The list contents are of type {@link org.abchip.mimo.service.reg.ServiceReg}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Services</em>' containment reference list isn't clear,

@@ -66,6 +66,8 @@ import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
 import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.service.impl.ServicePackageImpl;
+import org.abchip.mimo.service.reg.RegPackage;
+import org.abchip.mimo.service.reg.impl.RegPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -375,6 +377,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		ResourcePackageImpl theResourcePackage = (ResourcePackageImpl)(registeredPackage instanceof ResourcePackageImpl ? registeredPackage : ResourcePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
 		ServicePackageImpl theServicePackage = (ServicePackageImpl)(registeredPackage instanceof ServicePackageImpl ? registeredPackage : ServicePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RegPackage.eNS_URI);
+		RegPackageImpl theRegPackage = (RegPackageImpl)(registeredPackage instanceof RegPackageImpl ? registeredPackage : RegPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theContextPackage.createPackageContents();
@@ -387,6 +391,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		theNetworkingPackage.createPackageContents();
 		theResourcePackage.createPackageContents();
 		theServicePackage.createPackageContents();
+		theRegPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theContextPackage.initializePackageContents();
@@ -399,6 +404,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		theNetworkingPackage.initializePackageContents();
 		theResourcePackage.initializePackageContents();
 		theServicePackage.initializePackageContents();
+		theRegPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theContextPackage.freeze();
