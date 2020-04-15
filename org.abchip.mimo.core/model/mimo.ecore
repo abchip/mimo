@@ -1765,7 +1765,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="entities" lowerBound="1"
           upperBound="-1" eType="#//entity/Entity" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceExecutor" abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="ServiceException" instanceClassName="org.abchip.mimo.service.ServiceException"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceExecutor" abstract="true" interface="true">
+      <eOperations name="getServiceName" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceManager" abstract="true" interface="true">
       <eOperations name="getServiceExecutor" eType="#//service/ServiceExecutor">
         <eTypeParameters name="E">
@@ -1775,6 +1778,9 @@
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceMessage" abstract="true" eSuperTypes="#//entity/Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceRequest" eSuperTypes="#//service/ServiceMessage"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceResponse" eSuperTypes="#//service/ServiceMessage"/>
     <eClassifiers xsi:type="ecore:EEnum" name="ServiceStatus">
       <eLiterals name="Active" literal="ACT"/>
       <eLiterals name="Stopped" literal="STP"/>

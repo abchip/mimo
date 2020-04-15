@@ -10,21 +10,13 @@ package org.abchip.mimo.service;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Executor</b></em>'.
+ * A representation of the model object '<em><b>Response</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.service.ServicePackage#getServiceExecutor()
- * @model interface="true" abstract="true"
+ * @see org.abchip.mimo.service.ServicePackage#getServiceResponse()
+ * @model
  * @generated
  */
-public interface ServiceExecutor {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	String getServiceName();
-} // ServiceExecutor
+public interface ServiceResponse extends ServiceMessage {
+} // ServiceResponse

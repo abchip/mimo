@@ -215,6 +215,9 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		org.eclipse.emf.ecore.EcorePackage.eINSTANCE.eClass();
+
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
 		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);

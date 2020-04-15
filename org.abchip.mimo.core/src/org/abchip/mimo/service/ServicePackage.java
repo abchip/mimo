@@ -9,6 +9,7 @@ package org.abchip.mimo.service;
 
 import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -129,6 +130,63 @@ public interface ServicePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceMessageImpl <em>Message</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.service.impl.ServiceMessageImpl
+	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMessage()
+	 * @generated
+	 */
+	int SERVICE_MESSAGE = 3;
+
+	/**
+	 * The number of structural features of the '<em>Message</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceRequestImpl <em>Request</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.service.impl.ServiceRequestImpl
+	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceRequest()
+	 * @generated
+	 */
+	int SERVICE_REQUEST = 4;
+
+	/**
+	 * The number of structural features of the '<em>Request</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REQUEST_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceResponseImpl <em>Response</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.service.impl.ServiceResponseImpl
+	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceResponse()
+	 * @generated
+	 */
+	int SERVICE_RESPONSE = 5;
+
+	/**
+	 * The number of structural features of the '<em>Response</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESPONSE_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.ServiceStatus <em>Status</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -136,7 +194,18 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceStatus()
 	 * @generated
 	 */
-	int SERVICE_STATUS = 3;
+	int SERVICE_STATUS = 6;
+
+
+	/**
+	 * The meta object id for the '<em>Exception</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.service.ServiceException
+	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceException()
+	 * @generated
+	 */
+	int SERVICE_EXCEPTION = 7;
 
 
 	/**
@@ -181,6 +250,36 @@ public interface ServicePackage extends EPackage {
 	EClass getServiceManager();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceMessage <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Message</em>'.
+	 * @see org.abchip.mimo.service.ServiceMessage
+	 * @generated
+	 */
+	EClass getServiceMessage();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceRequest <em>Request</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Request</em>'.
+	 * @see org.abchip.mimo.service.ServiceRequest
+	 * @generated
+	 */
+	EClass getServiceRequest();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceResponse <em>Response</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Response</em>'.
+	 * @see org.abchip.mimo.service.ServiceResponse
+	 * @generated
+	 */
+	EClass getServiceResponse();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.service.ServiceStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -189,6 +288,17 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getServiceStatus();
+
+	/**
+	 * Returns the meta object for data type '{@link org.abchip.mimo.service.ServiceException <em>Exception</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Exception</em>'.
+	 * @see org.abchip.mimo.service.ServiceException
+	 * @model instanceClass="org.abchip.mimo.service.ServiceException"
+	 * @generated
+	 */
+	EDataType getServiceException();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -247,6 +357,33 @@ public interface ServicePackage extends EPackage {
 		 */
 		EClass SERVICE_MANAGER = eINSTANCE.getServiceManager();
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceMessageImpl <em>Message</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.service.impl.ServiceMessageImpl
+		 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMessage()
+		 * @generated
+		 */
+		EClass SERVICE_MESSAGE = eINSTANCE.getServiceMessage();
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceRequestImpl <em>Request</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.service.impl.ServiceRequestImpl
+		 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceRequest()
+		 * @generated
+		 */
+		EClass SERVICE_REQUEST = eINSTANCE.getServiceRequest();
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceResponseImpl <em>Response</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.service.impl.ServiceResponseImpl
+		 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceResponse()
+		 * @generated
+		 */
+		EClass SERVICE_RESPONSE = eINSTANCE.getServiceResponse();
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.service.ServiceStatus <em>Status</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -255,6 +392,15 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum SERVICE_STATUS = eINSTANCE.getServiceStatus();
+		/**
+		 * The meta object literal for the '<em>Exception</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.service.ServiceException
+		 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceException()
+		 * @generated
+		 */
+		EDataType SERVICE_EXCEPTION = eINSTANCE.getServiceException();
 
 	}
 

@@ -62,6 +62,8 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ServicePackage.SERVICE_CONFIG: return (EObject)createServiceConfig();
+			case ServicePackage.SERVICE_REQUEST: return (EObject)createServiceRequest();
+			case ServicePackage.SERVICE_RESPONSE: return (EObject)createServiceResponse();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -77,6 +79,8 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 		switch (eDataType.getClassifierID()) {
 			case ServicePackage.SERVICE_STATUS:
 				return createServiceStatusFromString(eDataType, initialValue);
+			case ServicePackage.SERVICE_EXCEPTION:
+				return createServiceExceptionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -92,6 +96,8 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 		switch (eDataType.getClassifierID()) {
 			case ServicePackage.SERVICE_STATUS:
 				return convertServiceStatusToString(eDataType, instanceValue);
+			case ServicePackage.SERVICE_EXCEPTION:
+				return convertServiceExceptionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -113,6 +119,28 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public ServiceRequest createServiceRequest() {
+		ServiceRequestImpl serviceRequest = new ServiceRequestImpl();
+		return serviceRequest;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ServiceResponse createServiceResponse() {
+		ServiceResponseImpl serviceResponse = new ServiceResponseImpl();
+		return serviceResponse;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ServiceStatus createServiceStatusFromString(EDataType eDataType, String initialValue) {
 		ServiceStatus result = ServiceStatus.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -126,6 +154,24 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	 */
 	public String convertServiceStatusToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceException createServiceExceptionFromString(EDataType eDataType, String initialValue) {
+		return (ServiceException)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertServiceExceptionToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

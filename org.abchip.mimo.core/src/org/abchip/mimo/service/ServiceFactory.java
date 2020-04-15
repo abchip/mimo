@@ -36,6 +36,24 @@ public interface ServiceFactory extends EFactory {
 	ServiceConfig createServiceConfig();
 
 	/**
+	 * Returns a new object of class '<em>Request</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Request</em>'.
+	 * @generated
+	 */
+	ServiceRequest createServiceRequest();
+
+	/**
+	 * Returns a new object of class '<em>Response</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Response</em>'.
+	 * @generated
+	 */
+	ServiceResponse createServiceResponse();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

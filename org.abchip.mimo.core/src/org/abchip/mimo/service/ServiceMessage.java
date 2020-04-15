@@ -7,24 +7,17 @@
  */
 package org.abchip.mimo.service;
 
+import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Executor</b></em>'.
+ * A representation of the model object '<em><b>Message</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.service.ServicePackage#getServiceExecutor()
- * @model interface="true" abstract="true"
+ * @see org.abchip.mimo.service.ServicePackage#getServiceMessage()
+ * @model abstract="true"
  * @generated
  */
-public interface ServiceExecutor {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	String getServiceName();
-} // ServiceExecutor
+public interface ServiceMessage extends Entity {
+} // ServiceMessage

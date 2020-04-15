@@ -37,14 +37,19 @@ import org.abchip.mimo.resource.ResourcePackage;
 
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
 import org.abchip.mimo.service.ServiceConfig;
+import org.abchip.mimo.service.ServiceException;
 import org.abchip.mimo.service.ServiceExecutor;
 import org.abchip.mimo.service.ServiceFactory;
 import org.abchip.mimo.service.ServiceManager;
+import org.abchip.mimo.service.ServiceMessage;
 import org.abchip.mimo.service.ServicePackage;
+import org.abchip.mimo.service.ServiceRequest;
+import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.service.ServiceStatus;
 import org.abchip.mimo.service.reg.RegPackage;
 import org.abchip.mimo.service.reg.impl.RegPackageImpl;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
@@ -85,7 +90,32 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass serviceMessageEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceRequestEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceResponseEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum serviceStatusEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType serviceExceptionEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -133,6 +163,9 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		ServicePackageImpl theServicePackage = registeredServicePackage instanceof ServicePackageImpl ? (ServicePackageImpl)registeredServicePackage : new ServicePackageImpl();
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		org.eclipse.emf.ecore.EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
@@ -236,8 +269,48 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getServiceMessage() {
+		return serviceMessageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getServiceRequest() {
+		return serviceRequestEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getServiceResponse() {
+		return serviceResponseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getServiceStatus() {
 		return serviceStatusEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EDataType getServiceException() {
+		return serviceExceptionEDataType;
 	}
 
 	/**
@@ -276,8 +349,17 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		serviceManagerEClass = createEClass(SERVICE_MANAGER);
 
+		serviceMessageEClass = createEClass(SERVICE_MESSAGE);
+
+		serviceRequestEClass = createEClass(SERVICE_REQUEST);
+
+		serviceResponseEClass = createEClass(SERVICE_RESPONSE);
+
 		// Create enums
 		serviceStatusEEnum = createEEnum(SERVICE_STATUS);
+
+		// Create data types
+		serviceExceptionEDataType = createEDataType(SERVICE_EXCEPTION);
 	}
 
 	/**
@@ -306,6 +388,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		// Obtain other dependent packages
 		RegPackage theRegPackage = (RegPackage)EPackage.Registry.INSTANCE.getEPackage(RegPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		org.eclipse.emf.ecore.EcorePackage theEcorePackage = (org.eclipse.emf.ecore.EcorePackage)EPackage.Registry.INSTANCE.getEPackage(org.eclipse.emf.ecore.EcorePackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 
 		// Add subpackages
@@ -317,12 +400,17 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		// Add supertypes to classes
 		serviceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		serviceMessageEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		serviceRequestEClass.getESuperTypes().add(this.getServiceMessage());
+		serviceResponseEClass.getESuperTypes().add(this.getServiceMessage());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(serviceConfigEClass, ServiceConfig.class, "ServiceConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServiceConfig_Entities(), theEntityPackage.getEntity(), null, "entities", null, 1, -1, ServiceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceExecutorEClass, ServiceExecutor.class, "ServiceExecutor", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(serviceExecutorEClass, theEcorePackage.getEString(), "getServiceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(serviceManagerEClass, ServiceManager.class, "ServiceManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -333,11 +421,20 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(serviceMessageEClass, ServiceMessage.class, "ServiceMessage", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(serviceRequestEClass, ServiceRequest.class, "ServiceRequest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(serviceResponseEClass, ServiceResponse.class, "ServiceResponse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		// Initialize enums and add enum literals
 		initEEnum(serviceStatusEEnum, ServiceStatus.class, "ServiceStatus");
 		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.ACTIVE);
 		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.STOPPED);
 		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.TESTING);
+
+		// Initialize data types
+		initEDataType(serviceExceptionEDataType, ServiceException.class, "ServiceException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //ServicePackageImpl

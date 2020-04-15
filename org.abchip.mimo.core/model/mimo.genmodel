@@ -4,7 +4,8 @@
     modelDirectory="/org.abchip.mimo.core/src" modelPluginID="org.abchip.mimo.core"
     modelName="MIMO Core" rootExtendsInterface="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     suppressEMFTypes="true" importerID="org.eclipse.emf.importer.ecore" containmentProxies="true"
-    complianceLevel="8.0" copyrightFields="false" language="EN" importOrganizing="true">
+    complianceLevel="8.0" copyrightFields="false" language="EN" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    importOrganizing="true">
   <foreignModel>mimo.ecore</foreignModel>
   <genPackages prefix="Mimo" basePackage="org.abchip" disposableProviderFactory="true"
       adapterFactory="false" contentTypeIdentifier="" ecorePackage="mimo.ecore#/">
@@ -78,8 +79,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationModule/status"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Authentication" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="mimo.ecore#//authentication">
+    <nestedGenPackages prefix="Authentication" basePackage="org.abchip.mimo" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="mimo.ecore#//authentication">
       <genDataTypes ecoreDataType="mimo.ecore#//authentication/AuthenticationException"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//authentication/Authentication"/>
       <genClasses ecoreClass="mimo.ecore#//authentication/AuthenticationAdminKey">
@@ -450,8 +451,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/UserProfile/userClass"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Data" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="mimo.ecore#//data">
+    <nestedGenPackages prefix="Data" basePackage="org.abchip.mimo" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="mimo.ecore#//data">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//data/DataType">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataType/String"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataType/Boolean"/>
@@ -633,8 +634,8 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getDataType"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Java" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="mimo.ecore#//java">
+    <nestedGenPackages prefix="Java" basePackage="org.abchip.mimo" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="mimo.ecore#//java">
       <genDataTypes ecoreDataType="mimo.ecore#//java/JavaAnnotation"/>
       <genDataTypes ecoreDataType="mimo.ecore#//java/JavaDictionary">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//java/JavaDictionary/K"/>
@@ -683,8 +684,8 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaThreadGroup"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//java/JavaThreadInfo"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Networking" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="mimo.ecore#//networking">
+    <nestedGenPackages prefix="Networking" basePackage="org.abchip.mimo" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="mimo.ecore#//networking">
       <genDataTypes ecoreDataType="mimo.ecore#//networking/HttpPost"/>
       <genDataTypes ecoreDataType="mimo.ecore#//networking/HttpResponseHandler">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//networking/HttpResponseHandler/T"/>
@@ -717,8 +718,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/HttpServiceConfig/path"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Resource" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="mimo.ecore#//resource">
+    <nestedGenPackages prefix="Resource" basePackage="org.abchip.mimo" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="mimo.ecore#//resource">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/MappingType">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/MappingType/ByFrame"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/MappingType/ByPackage"/>
@@ -1076,17 +1077,20 @@
         </genOperations>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Service" disposableProviderFactory="true" adapterFactory="false"
-        ecorePackage="mimo.ecore#//service">
+    <nestedGenPackages prefix="Service" basePackage="org.abchip.mimo" disposableProviderFactory="true"
+        adapterFactory="false" ecorePackage="mimo.ecore#//service">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//service/ServiceStatus">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//service/ServiceStatus/Active"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//service/ServiceStatus/Stopped"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//service/ServiceStatus/Testing"/>
       </genEnums>
+      <genDataTypes ecoreDataType="mimo.ecore#//service/ServiceException"/>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceConfig">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceConfig/entities"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceExecutor"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceExecutor">
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceExecutor/getServiceName"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceManager">
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/getServiceExecutor">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getServiceExecutor/context"/>
@@ -1094,8 +1098,11 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getServiceExecutor/E"/>
         </genOperations>
       </genClasses>
-      <nestedGenPackages prefix="Reg" disposableProviderFactory="true" adapterFactory="false"
-          ecorePackage="mimo.ecore#//service/reg">
+      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMessage"/>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceRequest"/>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceResponse"/>
+      <nestedGenPackages prefix="Reg" basePackage="org.abchip.mimo.service" disposableProviderFactory="true"
+          adapterFactory="false" ecorePackage="mimo.ecore#//service/reg">
         <genClasses ecoreClass="mimo.ecore#//service/reg/ServiceCommandProviderReg">
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/reg/ServiceCommandProviderReg/interfaceName"/>
         </genClasses>
