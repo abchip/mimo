@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.networking;
 
+import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.emf.ecore.EAttribute;
@@ -320,7 +321,7 @@ public interface NetworkingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HTTP_CLIENT_FACTORY_FEATURE_COUNT = 0;
+	int HTTP_CLIENT_FACTORY_FEATURE_COUNT = ContextPackage.FACTORY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' attribute.

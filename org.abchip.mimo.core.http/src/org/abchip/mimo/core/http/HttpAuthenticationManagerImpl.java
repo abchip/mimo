@@ -202,7 +202,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		}
 
 		// check login
-		try (HttpClient httpClient = this.httpClientFactory.create()) {
+		try (HttpClient httpClient = this.httpClientFactory.create(application.getContext())) {
 			httpClient.execute(new HttpPost(uri.build()), new HttpCheckLoginHandler());
 			LOGGER.audit("CheckLogin success id {} user {} provider {}", authentication.getIdToken(), authentication.getUser(), authentication.getProvider());
 		} catch (Exception e) {
@@ -231,7 +231,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		uri.setParameter("password", password);
 
 		HttpConnector connector = null;
-		HttpClient httpClient = this.httpClientFactory.create();
+		HttpClient httpClient = this.httpClientFactory.create(application.getContext());
 
 		try {
 			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(application.getContext(), ContextDescription.class, SerializationType.MIMO);
@@ -268,7 +268,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			uri.setParameter("adminKey", adminKey);
 
 		HttpConnector connector = null;
-		HttpClient httpClient = this.httpClientFactory.create();
+		HttpClient httpClient = this.httpClientFactory.create(application.getContext());
 
 		try {
 			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(application.getContext(), ContextDescription.class, SerializationType.MIMO);
@@ -310,7 +310,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		LOGGER.warn("Unsecure access to external credential for user {}", user);
 
 		AuthenticationUserPassword authentication = null;
-		try (HttpClient httpClient = this.httpClientFactory.create()) {
+		try (HttpClient httpClient = this.httpClientFactory.create(application.getContext())) {
 			URIBuilder uri = new URIBuilder();
 			uri.setScheme(providerConfig.getHost().getSchema());
 			uri.setHost(providerConfig.getHost().getAddress());

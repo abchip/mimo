@@ -494,6 +494,7 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 
 		// Create type parameters
 		addETypeParameter(httpResponseHandlerEDataType, "T");
@@ -504,6 +505,10 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		connectionPoolingConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		connectionPoolingRouteConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		httpClientEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
+		EGenericType g1 = createEGenericType(theContextPackage.getFactory());
+		EGenericType g2 = createEGenericType(this.getHttpClient());
+		g1.getETypeArguments().add(g2);
+		httpClientFactoryEClass.getEGenericSuperTypes().add(g1);
 		hostConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		httpServiceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
@@ -522,8 +527,8 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		EOperation op = addEOperation(httpClientEClass, null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "T");
 		addEParameter(op, this.getHttpPost(), "method", 1, 1, IS_UNIQUE, IS_ORDERED);
-		EGenericType g1 = createEGenericType(this.getHttpResponseHandler());
-		EGenericType g2 = createEGenericType(t1);
+		g1 = createEGenericType(this.getHttpResponseHandler());
+		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "handler", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getNetworkingException());
@@ -531,8 +536,6 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		initEOperation(op, g1);
 
 		initEClass(httpClientFactoryEClass, HttpClientFactory.class, "HttpClientFactory", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		addEOperation(httpClientFactoryEClass, this.getHttpClient(), "create", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(hostConfigEClass, HostConfig.class, "HostConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHostConfig_Address(), ecorePackage.getEString(), "address", null, 1, 1, HostConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -747,9 +747,7 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//networking/HttpClient/execute/T"/>
         </genOperations>
       </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//networking/HttpClientFactory">
-        <genOperations ecoreOperation="mimo.ecore#//networking/HttpClientFactory/create"/>
-      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//networking/HttpClientFactory"/>
       <genClasses ecoreClass="mimo.ecore#//networking/HostConfig">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/HostConfig/address"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/HostConfig/port"/>

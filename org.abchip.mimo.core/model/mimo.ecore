@@ -1091,7 +1091,9 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HttpClientFactory" abstract="true"
         interface="true">
-      <eOperations name="create" lowerBound="1" eType="#//networking/HttpClient"/>
+      <eGenericSuperTypes eClassifier="#//context/Factory">
+        <eTypeArguments eClassifier="#//networking/HttpClient"/>
+      </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HostConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"

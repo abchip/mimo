@@ -17,6 +17,7 @@ import javax.inject.Inject;
 import javax.net.ssl.SSLContext;
 
 import org.abchip.mimo.application.Application;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Thread;
 import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.networking.ConnectionPoolingConfig;
@@ -94,8 +95,14 @@ public class HttpClientFactoryImpl implements HttpClientFactory {
 		threadManager.start(thread);
 	}
 
+
 	@Override
-	public HttpClient create() {
+	public HttpClient create(Context context) {
 		return new HttpClientImpl(HTTP);
+	}
+
+	@Override
+	public Class<HttpClient> getInterfaceClass() {
+		return HttpClient.class;
 	}
 }

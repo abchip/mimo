@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.networking;
 
+import org.abchip.mimo.context.Factory;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -18,13 +20,6 @@ package org.abchip.mimo.networking;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface HttpClientFactory {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 * @generated
-	 */
-	HttpClient create();
+public interface HttpClientFactory extends Factory<HttpClient> {
 
 } // HttpClientFactory
