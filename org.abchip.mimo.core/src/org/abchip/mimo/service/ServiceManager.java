@@ -8,7 +8,6 @@
 package org.abchip.mimo.service;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityIdentifiable;
 
 
 /**
@@ -29,5 +28,5 @@ public interface ServiceManager {
 	 * @model contextRequired="true" nameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> ServiceExecutor getServiceExecutor(Context context, String name);
+	ServiceExecutor getServiceExecutor(Context context, String name);
 } // ServiceManager

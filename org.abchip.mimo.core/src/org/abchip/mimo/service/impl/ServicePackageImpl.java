@@ -51,12 +51,10 @@ import org.abchip.mimo.service.reg.impl.RegPackageImpl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -420,9 +418,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		initEClass(serviceManagerEClass, ServiceManager.class, "ServiceManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(serviceManagerEClass, this.getServiceExecutor(), "getServiceExecutor", 0, 1, IS_UNIQUE, IS_ORDERED);
-		ETypeParameter t1 = addETypeParameter(op, "E");
-		EGenericType g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
-		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 

@@ -1098,7 +1098,6 @@
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/getServiceExecutor">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getServiceExecutor/context"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getServiceExecutor/name"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getServiceExecutor/E"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMessage"/>

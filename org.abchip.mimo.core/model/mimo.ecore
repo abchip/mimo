@@ -1775,9 +1775,6 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceManager" abstract="true" interface="true">
       <eOperations name="getServiceExecutor" eType="#//service/ServiceExecutor">
-        <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
-        </eTypeParameters>
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
