@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.net.URLEncoder;
 
 import javax.inject.Inject;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,6 +23,7 @@ import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 
@@ -42,12 +42,12 @@ public class GitHubRedirectServlet extends HttpServlet {
 	private AuthenticationManager authenticationManager;
 
 	@Override
-	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		doPost(request, response);
 	}
 
 	@Override
-	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		HttpSession session = request.getSession();
 
@@ -65,18 +65,18 @@ public class GitHubRedirectServlet extends HttpServlet {
 
 			String clientId = oauth2GitHub.isa().getValue(oauth2GitHub, "clientId", false, false).toString();
 			String returnURI = oauth2GitHub.isa().getValue(oauth2GitHub, "returnUrl", false, false).toString();
-			// Get user authorization code
-			try {
-				String location = TokenEndpoint + AuthorizeUri + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&redirect_uri="
-						+ URLEncoder.encode(returnURI, "UTF8") + "&state=" + session.getId();
 
-				response.sendRedirect(location);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			// Get user authorization code
+			String location = TokenEndpoint + AuthorizeUri + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&redirect_uri="
+					+ URLEncoder.encode(returnURI, "UTF8") + "&state=" + session.getId();
+
+			response.sendRedirect(location);
 		} catch (AuthenticationException e) {
-			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-			throw new ServletException(e);
+			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+			return;
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
 		}
 	}
 }

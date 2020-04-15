@@ -11,8 +11,7 @@ package org.abchip.mimo.core.http;
 import java.io.IOException;
 
 import org.abchip.mimo.networking.HttpClient;
-import org.abchip.mimo.util.Strings;
-import org.apache.http.client.ClientProtocolException;
+import org.abchip.mimo.networking.NetworkingException;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
@@ -35,24 +34,20 @@ public class HttpClientImpl implements HttpClient {
 	}
 
 	@Override
-	public <T> T execute(HttpPost method, ResponseHandler<T> handler) throws Exception {
+	public <T> T execute(HttpPost method, ResponseHandler<T> handler) throws NetworkingException {
 		if (client == null)
-			throw new ClientProtocolException("Client closed");
+			throw new NetworkingException("Client closed");
 
 		try {
 			return client.execute(method, handler, context);
 		} catch (Exception e) {
 
-			String message = e.getMessage();
-			while (Strings.isEmpty(message)) {
-				if (e.getCause() == null)
-					break;
-				message = e.getCause().getMessage();
-			}
-			if (message == null)
-				throw new ClientProtocolException(message);
-			else
-				throw e;
+			/*
+			 * String message = e.getMessage(); while (Strings.isEmpty(message)) { if
+			 * (e.getCause() == null) break; message = e.getCause().getMessage(); } if
+			 * (message == null) throw new ResourceException(message); else
+			 */
+			throw new NetworkingException(e);
 		} finally {
 			method.reset();
 		}

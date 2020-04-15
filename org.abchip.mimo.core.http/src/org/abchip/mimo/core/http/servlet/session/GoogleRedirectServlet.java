@@ -13,7 +13,6 @@ import java.net.URLEncoder;
 import java.util.UUID;
 
 import javax.inject.Inject;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,6 +24,7 @@ import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 
@@ -43,12 +43,12 @@ public class GoogleRedirectServlet extends HttpServlet {
 	private AuthenticationManager authenticationManager;
 
 	@Override
-	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		doPost(request, response);
 	}
 
 	@Override
-	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		HttpSession session = request.getSession();
 
@@ -67,17 +67,16 @@ public class GoogleRedirectServlet extends HttpServlet {
 			String clientId = oauth2Google.isa().getValue(oauth2Google, "clientId", false, false).toString();
 			String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl", false, false).toString();
 			// Get user authorization code
-			try {
-				String location = AUTHORIZE_URI + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&nonce=" + UUID.randomUUID() + "&redirect_uri="
-						+ URLEncoder.encode(returnURI, "UTF8") + "&state=" + session.getId();
+			String location = AUTHORIZE_URI + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&nonce=" + UUID.randomUUID() + "&redirect_uri="
+					+ URLEncoder.encode(returnURI, "UTF8") + "&state=" + session.getId();
 
-				response.sendRedirect(location);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			response.sendRedirect(location);
 		} catch (AuthenticationException e) {
-			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-			throw new ServletException(e);
+			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+			return;
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
 		}
 	}
 }

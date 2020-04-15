@@ -730,6 +730,7 @@
       <genDataTypes ecoreDataType="mimo.ecore#//networking/HttpResponseHandler">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//networking/HttpResponseHandler/T"/>
       </genDataTypes>
+      <genDataTypes ecoreDataType="mimo.ecore#//networking/NetworkingException"/>
       <genClasses ecoreClass="mimo.ecore#//networking/ConnectionPoolingConfig">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/ConnectionPoolingConfig/maxTotal"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//networking/ConnectionPoolingConfig/maxPerRoute"/>
@@ -776,6 +777,7 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/JSON"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/MIMO"/>
       </genEnums>
+      <genDataTypes ecoreDataType="mimo.ecore#//resource/ResourceException"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/Resource">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/Resource/E"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

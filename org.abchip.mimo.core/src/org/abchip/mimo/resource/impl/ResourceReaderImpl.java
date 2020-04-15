@@ -13,6 +13,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceNotifier;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceReader;
@@ -106,7 +107,7 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	 * @generated NOT
 	 */
 	@Override
-	public EntityIterator<E> find() {
+	public EntityIterator<E> find() throws ResourceException {
 		return find(null);
 	}
 
@@ -116,7 +117,7 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	 * @generated NOT
 	 */
 	@Override
-	public EntityIterator<E> find(String filter) {
+	public EntityIterator<E> find(String filter) throws ResourceException {
 		return find(filter, null);
 	}
 
@@ -126,7 +127,7 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	 * @generated NOT
 	 */
 	@Override
-	public EntityIterator<E> find(String filter, String fields) {
+	public EntityIterator<E> find(String filter, String fields) throws ResourceException {
 		return find(filter, fields, null);
 	}
 
@@ -136,7 +137,7 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	 * @generated NOT
 	 */
 	@Override
-	public EntityIterator<E> find(String filter, String fields, String order) {
+	public EntityIterator<E> find(String filter, String fields, String order) throws ResourceException {
 		return find(filter, fields, order, 0);
 	}
 
@@ -146,7 +147,7 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	 * @generated NOT
 	 */
 	@Override
-	public EntityIterator<E> find(String filter, String fields, String order, int limit) {
+	public EntityIterator<E> find(String filter, String fields, String order, int limit) throws ResourceException {
 		return find(filter, fields, order, limit, false);
 	}
 
@@ -156,7 +157,7 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	 * @generated NOT
 	 */
 	@Override
-	public abstract EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy);
+	public abstract EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -164,7 +165,7 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	 * @generated NOT
 	 */
 	@Override
-	public E first() {
+	public E first() throws ResourceException {
 		return first(false);
 	}
 
@@ -174,7 +175,7 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	 * @generated NOT
 	 */
 	@Override
-	public E first(boolean proxy) {
+	public E first(boolean proxy) throws ResourceException {
 
 		try (EntityIterator<E> entityIterator = find(null, null, null, 1, proxy)) {
 			if (entityIterator.hasNext())
@@ -190,7 +191,7 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	 * @generated NOT
 	 */
 	@Override
-	public E lookup(String name) {
+	public E lookup(String name) throws ResourceException {
 		return lookup(name, false);
 	}
 
@@ -200,7 +201,7 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	 * @generated NOT
 	 */
 	@Override
-	public abstract E lookup(String name, boolean proxy);
+	public abstract E lookup(String name, boolean proxy) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -211,8 +212,8 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	public abstract Frame<E> getFrame();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override

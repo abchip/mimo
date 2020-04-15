@@ -5,20 +5,20 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.authentication;
+package org.abchip.mimo.server;
 
-public class AuthenticationException extends Exception {
+public class ServerException extends Exception {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public AuthenticationException(String message) {
+	public ServerException(String message) {
 		super(message);
 	}
 
-	public AuthenticationException(Exception exception) {
+	public ServerException(Exception exception) {
 		super(exception);
 	}
 }

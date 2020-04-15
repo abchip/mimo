@@ -58,82 +58,82 @@ public interface ResourceReader<E extends EntityIdentifiable> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException"
 	 * @generated
 	 */
-	EntityIterator<E> find();
+	EntityIterator<E> find() throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException"
 	 * @generated
 	 */
-	EntityIterator<E> find(String filter);
+	EntityIterator<E> find(String filter) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException"
 	 * @generated
 	 */
-	EntityIterator<E> find(String filter, String fields);
+	EntityIterator<E> find(String filter, String fields) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException"
 	 * @generated
 	 */
-	EntityIterator<E> find(String filter, String fields, String order);
+	EntityIterator<E> find(String filter, String fields, String order) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException"
 	 * @generated
 	 */
-	EntityIterator<E> find(String filter, String fields, String order, int limit);
+	EntityIterator<E> find(String filter, String fields, String order, int limit) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException"
 	 * @generated
 	 */
-	EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy);
+	EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException"
 	 * @generated
 	 */
-	E first();
+	E first() throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException"
 	 * @generated
 	 */
-	E first(boolean proxy);
+	E first(boolean proxy) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true"
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" nameRequired="true"
 	 * @generated
 	 */
-	E lookup(String name);
+	E lookup(String name) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true"
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" nameRequired="true"
 	 * @generated
 	 */
-	E lookup(String name, boolean proxy);
+	E lookup(String name, boolean proxy) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->

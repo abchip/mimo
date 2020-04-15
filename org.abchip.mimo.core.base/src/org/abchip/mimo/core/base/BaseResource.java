@@ -20,6 +20,7 @@ import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.ResourceException;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
@@ -74,8 +75,12 @@ public class BaseResource {
 	}
 
 	protected Frame<?> getFrame(Context context, String frame, String tenant) {
-		MimoResourceImpl<Frame<?>> internal = getInternalResource(context, Frame.class.getSimpleName(), tenant);
-		return internal.getResource().read(frame, null, false);
+		try {
+			MimoResourceImpl<Frame<?>> internal = getInternalResource(context, Frame.class.getSimpleName(), tenant);
+			return internal.getResource().read(frame, null, false);
+		} catch (ResourceException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	protected <E extends EntityIdentifiable> MimoResourceImpl<E> getInternalResource(Context context, String frame, String tenant) {

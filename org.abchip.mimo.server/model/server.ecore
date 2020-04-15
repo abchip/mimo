@@ -115,21 +115,21 @@
     <eOperations name="checkCapability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="capability" lowerBound="1" eType="#//JobCapability"/>
     </eOperations>
-    <eOperations name="close">
+    <eOperations name="close" eExceptions="#//ServerException">
       <eParameters name="capability" lowerBound="1" eType="#//JobCapability"/>
     </eOperations>
-    <eOperations name="close">
+    <eOperations name="close" eExceptions="#//ServerException">
       <eParameters name="job" lowerBound="1" eType="#//Job"/>
     </eOperations>
     <eOperations name="countActiveJobs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eOperations name="create" lowerBound="1" eType="#//JobCapability">
+    <eOperations name="create" lowerBound="1" eType="#//JobCapability" eExceptions="#//ServerException">
       <eParameters name="identity" lowerBound="1">
         <eGenericType eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Identity">
           <eTypeArguments/>
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="create" lowerBound="1" eType="#//JobCapability">
+    <eOperations name="create" lowerBound="1" eType="#//JobCapability" eExceptions="#//ServerException">
       <eParameters name="identity" lowerBound="1">
         <eGenericType eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Identity">
           <eTypeArguments/>
@@ -185,7 +185,7 @@
     <eOperations name="registerListener">
       <eParameters name="listener" lowerBound="1" eType="#//JobListener"/>
     </eOperations>
-    <eOperations name="spawn" lowerBound="1" eType="#//JobCapability">
+    <eOperations name="spawn" lowerBound="1" eType="#//JobCapability" eExceptions="#//ServerException">
       <eParameters name="parent" lowerBound="1" eType="#//Job"/>
       <eParameters name="jobName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="copyEnvironmentVariables" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -258,10 +258,10 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SystemManager" abstract="true" interface="true">
-    <eOperations name="start" lowerBound="1" eType="#//Job">
+    <eOperations name="start" lowerBound="1" eType="#//Job" eExceptions="#//ServerException">
       <eParameters name="system" lowerBound="1" eType="#//System"/>
     </eOperations>
-    <eOperations name="stop"/>
+    <eOperations name="stop" eExceptions="#//ServerException"/>
     <eOperations name="registerListener">
       <eParameters name="listener" lowerBound="1" eType="#//SystemListener"/>
     </eOperations>
@@ -275,4 +275,5 @@
     <eLiterals name="Ending" value="70" literal="END"/>
     <eLiterals name="Stopped" value="80" literal="STP"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ServerException" instanceClassName="org.abchip.mimo.server.ServerException"/>
 </ecore:EPackage>

@@ -25,6 +25,7 @@
       <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Historical"/>
       <genEnumLiterals ecoreEnumLiteral="language.ecore#//LanguageType/Constructed"/>
     </genEnums>
+    <genDataTypes ecoreDataType="language.ecore#//LanguageException"/>
     <genClasses ecoreClass="language.ecore#//Language">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/iso_639_1"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//Language/name"/>
@@ -37,6 +38,14 @@
     <genClasses ecoreClass="language.ecore#//LanguageExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//LanguageExpression/expressionRow"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="language.ecore#//LanguageLinearizer">
+      <genOperations ecoreOperation="language.ecore#//LanguageLinearizer/linearize">
+        <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/context"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/language"/>
+        <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/expression"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="language.ecore#//LanguageLinearizerRegistry"/>
     <genClasses image="false" ecoreClass="language.ecore#//LanguageManager">
       <genOperations ecoreOperation="language.ecore#//LanguageManager/classifyLanguage">
         <genParameters ecoreParameter="language.ecore#//LanguageManager/classifyLanguage/context"/>
@@ -57,14 +66,6 @@
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="language.ecore#//LanguageParserRegistry"/>
-    <genClasses image="false" ecoreClass="language.ecore#//LanguageLinearizer">
-      <genOperations ecoreOperation="language.ecore#//LanguageLinearizer/linearize">
-        <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/context"/>
-        <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/language"/>
-        <genParameters ecoreParameter="language.ecore#//LanguageLinearizer/linearize/expression"/>
-      </genOperations>
-    </genClasses>
-    <genClasses image="false" ecoreClass="language.ecore#//LanguageLinearizerRegistry"/>
     <genClasses ecoreClass="language.ecore#//LanguagePlanet">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//LanguagePlanet/name"/>
     </genClasses>

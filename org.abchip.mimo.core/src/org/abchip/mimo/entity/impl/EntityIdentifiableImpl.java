@@ -19,6 +19,7 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.EntityState;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.eclipse.emf.ecore.EAttribute;
@@ -104,10 +105,14 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 				}
 
 				List<EntityIdentifiable> values = new EDataTypeUniqueEList<EntityIdentifiable>(EntityIdentifiable.class, this, featureID);
-				for (EntityIdentifiable entityIdentifiable : resourceReader.find(filter)) {
-					String domainKey = entityIdentifiable.isa().getKeys().get(0);
-					entityIdentifiable.isa().setValue(entityIdentifiable, domainKey, this);
-					values.add(entityIdentifiable);
+				try {
+					for (EntityIdentifiable entityIdentifiable : resourceReader.find(filter)) {
+						String domainKey = entityIdentifiable.isa().getKeys().get(0);
+						entityIdentifiable.isa().setValue(entityIdentifiable, domainKey, this);
+						values.add(entityIdentifiable);
+					}
+				} catch (ResourceException e) {
+					throw new RuntimeException(e);
 				}
 				super.eSet(eFeature, values);
 

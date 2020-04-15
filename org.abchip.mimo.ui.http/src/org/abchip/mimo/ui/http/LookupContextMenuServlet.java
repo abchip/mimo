@@ -23,6 +23,7 @@ import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -51,35 +52,46 @@ public class LookupContextMenuServlet extends BaseServlet {
 			return;
 
 		Frame<?> frame = resourceManager.getFrame(context, frameName);
-		if (frame == null)
+		if (frame == null) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
 			return;
-
-		ContextMenu contextMenu = resourceManager.getResourceReader(context, ContextMenu.class, Resource.TENANT_MASTER).lookup(frameName);
-		if (contextMenu == null) {
-			contextMenu = MenuFactory.eINSTANCE.createContextMenu();
-			contextMenu.setName(frameName);
 		}
 
-		if (contextMenu.getIcon() == null)
-			contextMenu.setIcon(getIcon(context, frameName));
+		ResourceReader<ContextMenu> contextMenuReader = resourceManager.getResourceReader(context, ContextMenu.class, Resource.TENANT_MASTER);
 
-		for (Frame<?> ako : frame.getSuperFrames()) {
-			ContextMenu contextMenuAko = resourceManager.getResourceReader(context, ContextMenu.class, Resource.TENANT_MASTER).lookup(ako.getName());
-			if (contextMenuAko == null)
-				continue;
+		ContextMenu contextMenu = null;
 
-			if (contextMenu == null)
-				contextMenu = contextMenuAko;
-			else
-				contextMenu.getElements().addAll(contextMenuAko.getElements());
+		try {
+			contextMenu = contextMenuReader.lookup(frameName);
+			if (contextMenu == null) {
+				contextMenu = MenuFactory.eINSTANCE.createContextMenu();
+				contextMenu.setName(frameName);
+			}
+
+			if (contextMenu.getIcon() == null)
+				contextMenu.setIcon(getIcon(context, frameName));
+
+			for (Frame<?> ako : frame.getSuperFrames()) {
+				ContextMenu contextMenuAko = contextMenuReader.lookup(ako.getName());
+				if (contextMenuAko == null)
+					continue;
+
+				if (contextMenu == null)
+					contextMenu = contextMenuAko;
+				else
+					contextMenu.getElements().addAll(contextMenuAko.getElements());
+			}
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
 		}
 
 		// routes
 		MenuGroup groupRoutes = MenuFactory.eINSTANCE.createMenuGroup();
 		groupRoutes.setValue("Routes");
 		for (Slot slot : frame.getSlots()) {
-//			if (!slot.isRoute())
-//				continue;
+			// if (!slot.isRoute())
+			// continue;
 
 			MenuAction routeAction = MenuFactory.eINSTANCE.createMenuAction();
 			routeAction.setValue(slot.getText());
@@ -116,7 +128,7 @@ public class LookupContextMenuServlet extends BaseServlet {
 		entitySerializer.save(response.getOutputStream());
 	}
 
-	private String getIcon(Context context, String frameName) {
+	private String getIcon(Context context, String frameName) throws ResourceException {
 
 		Frame<?> frame = resourceManager.getFrame(context, frameName);
 		if (frame == null)

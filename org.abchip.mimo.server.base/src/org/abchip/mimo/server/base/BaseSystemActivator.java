@@ -17,6 +17,7 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobLogManager;
 import org.abchip.mimo.server.JobManager;
+import org.abchip.mimo.server.ServerException;
 
 public class BaseSystemActivator {
 
@@ -25,7 +26,7 @@ public class BaseSystemActivator {
 
 	@ComponentStarted
 	public void start(ContextRoot contextRoot, org.abchip.mimo.server.System system, ResourceManager resourceManager, JobManager jobManager, org.abchip.mimo.server.SystemManager systemManager,
-			JobLogManager jobLogManager) {
+			JobLogManager jobLogManager) throws ServerException {
 
 		system.setContext(contextRoot);
 

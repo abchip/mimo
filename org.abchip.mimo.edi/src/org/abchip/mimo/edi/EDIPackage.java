@@ -8,6 +8,7 @@
 package org.abchip.mimo.edi;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -79,6 +80,17 @@ public interface EDIPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>Data Interchange Exception</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.edi.DataInterchangeException
+	 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getDataInterchangeException()
+	 * @generated
+	 */
+	int DATA_INTERCHANGE_EXCEPTION = 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.edi.EdiManager <em>Edi Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,6 +99,17 @@ public interface EDIPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEdiManager();
+
+	/**
+	 * Returns the meta object for data type '{@link org.abchip.mimo.edi.DataInterchangeException <em>Data Interchange Exception</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Data Interchange Exception</em>'.
+	 * @see org.abchip.mimo.edi.DataInterchangeException
+	 * @model instanceClass="org.abchip.mimo.edi.DataInterchangeException"
+	 * @generated
+	 */
+	EDataType getDataInterchangeException();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -119,6 +142,15 @@ public interface EDIPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EDI_MANAGER = eINSTANCE.getEdiManager();
+		/**
+		 * The meta object literal for the '<em>Data Interchange Exception</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.edi.DataInterchangeException
+		 * @see org.abchip.mimo.edi.impl.EDIPackageImpl#getDataInterchangeException()
+		 * @generated
+		 */
+		EDataType DATA_INTERCHANGE_EXCEPTION = eINSTANCE.getDataInterchangeException();
 
 	}
 

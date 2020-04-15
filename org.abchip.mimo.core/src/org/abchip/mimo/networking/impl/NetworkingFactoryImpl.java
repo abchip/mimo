@@ -84,6 +84,8 @@ public class NetworkingFactoryImpl extends EFactoryImpl implements NetworkingFac
 				return createHttpPostFromString(eDataType, initialValue);
 			case NetworkingPackage.HTTP_RESPONSE_HANDLER:
 				return createHttpResponseHandlerFromString(eDataType, initialValue);
+			case NetworkingPackage.NETWORKING_EXCEPTION:
+				return createNetworkingExceptionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -101,6 +103,8 @@ public class NetworkingFactoryImpl extends EFactoryImpl implements NetworkingFac
 				return convertHttpPostToString(eDataType, instanceValue);
 			case NetworkingPackage.HTTP_RESPONSE_HANDLER:
 				return convertHttpResponseHandlerToString(eDataType, instanceValue);
+			case NetworkingPackage.NETWORKING_EXCEPTION:
+				return convertNetworkingExceptionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -184,6 +188,24 @@ public class NetworkingFactoryImpl extends EFactoryImpl implements NetworkingFac
 	 */
 	public String convertHttpResponseHandlerToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NetworkingException createNetworkingExceptionFromString(EDataType eDataType, String initialValue) {
+		return (NetworkingException)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNetworkingExceptionToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

@@ -407,6 +407,16 @@ public interface NetworkingPackage extends EPackage {
 	int HTTP_RESPONSE_HANDLER = 7;
 
 	/**
+	 * The meta object id for the '<em>Exception</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.networking.NetworkingException
+	 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getNetworkingException()
+	 * @generated
+	 */
+	int NETWORKING_EXCEPTION = 8;
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.networking.HttpServiceConfig <em>Http Service Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -459,6 +469,17 @@ public interface NetworkingPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getHttpResponseHandler();
+
+	/**
+	 * Returns the meta object for data type '{@link org.abchip.mimo.networking.NetworkingException <em>Exception</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Exception</em>'.
+	 * @see org.abchip.mimo.networking.NetworkingException
+	 * @model instanceClass="org.abchip.mimo.networking.NetworkingException"
+	 * @generated
+	 */
+	EDataType getNetworkingException();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -626,6 +647,15 @@ public interface NetworkingPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType HTTP_RESPONSE_HANDLER = eINSTANCE.getHttpResponseHandler();
+		/**
+		 * The meta object literal for the '<em>Exception</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.networking.NetworkingException
+		 * @see org.abchip.mimo.networking.impl.NetworkingPackageImpl#getNetworkingException()
+		 * @generated
+		 */
+		EDataType NETWORKING_EXCEPTION = eINSTANCE.getNetworkingException();
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.networking.HttpClient <em>Http Client</em>}' class.
 		 * <!-- begin-user-doc -->

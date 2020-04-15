@@ -27,8 +27,8 @@ public interface HttpClient extends Closeable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.java.JavaException" methodDataType="org.abchip.mimo.networking.HttpPost" methodRequired="true" handlerDataType="org.abchip.mimo.networking.HttpResponseHandler&lt;T&gt;" handlerRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.networking.NetworkingException" methodDataType="org.abchip.mimo.networking.HttpPost" methodRequired="true" handlerDataType="org.abchip.mimo.networking.HttpResponseHandler&lt;T&gt;" handlerRequired="true"
 	 * @generated
 	 */
-	<T> T execute(HttpPost method, ResponseHandler<T> handler) throws Exception;
+	<T> T execute(HttpPost method, ResponseHandler<T> handler) throws NetworkingException;
 } // HttpClient

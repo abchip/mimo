@@ -82,6 +82,8 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
 				return createLanguageScopeFromString(eDataType, initialValue);
 			case LanguagePackage.LANGUAGE_TYPE:
 				return createLanguageTypeFromString(eDataType, initialValue);
+			case LanguagePackage.LANGUAGE_EXCEPTION:
+				return createLanguageExceptionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -99,6 +101,8 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
 				return convertLanguageScopeToString(eDataType, instanceValue);
 			case LanguagePackage.LANGUAGE_TYPE:
 				return convertLanguageTypeToString(eDataType, instanceValue);
+			case LanguagePackage.LANGUAGE_EXCEPTION:
+				return convertLanguageExceptionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -175,6 +179,24 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
 	 */
 	public String convertLanguageTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LanguageException createLanguageExceptionFromString(EDataType eDataType, String initialValue) {
+		return (LanguageException)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLanguageExceptionToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

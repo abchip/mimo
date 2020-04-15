@@ -88,6 +88,8 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 				return createResourceEventTypeFromString(eDataType, initialValue);
 			case ResourcePackage.SERIALIZATION_TYPE:
 				return createSerializationTypeFromString(eDataType, initialValue);
+			case ResourcePackage.RESOURCE_EXCEPTION:
+				return createResourceExceptionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -107,6 +109,8 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 				return convertResourceEventTypeToString(eDataType, instanceValue);
 			case ResourcePackage.SERIALIZATION_TYPE:
 				return convertSerializationTypeToString(eDataType, instanceValue);
+			case ResourcePackage.RESOURCE_EXCEPTION:
+				return convertResourceExceptionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -205,6 +209,24 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 	 */
 	public String convertSerializationTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResourceException createResourceExceptionFromString(EDataType eDataType, String initialValue) {
+		return (ResourceException)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertResourceExceptionToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

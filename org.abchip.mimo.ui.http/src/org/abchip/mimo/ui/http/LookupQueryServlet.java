@@ -19,6 +19,7 @@ import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -43,48 +44,55 @@ public class LookupQueryServlet extends BaseServlet {
 		String prototype = request.getParameter("prototype");
 
 		Frame<?> frame = resourceManager.getFrame(context, frameName);
-		if (frame == null)
+		if (frame == null) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
 			return;
-
-		Query query = resourceManager.getResourceReader(context, Query.class, Resource.TENANT_MASTER).lookup(name);
-
-		if (query == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
-			query = QueryFactory.eINSTANCE.createQuery();
-			query.setName("prototype");
-
-			QueryField currentField = null;
-			QueryField currentKey = null;
-			for (Slot slot : frame.getSlots()) {
-				QueryField field = buildField(slot);
-				if (slot.isKey()) {
-
-					if (currentKey == null)
-						Lists.addFirst(query.getFields(), field);
-					else
-						Lists.addAfter(query.getFields(), currentKey, field);
-
-					if (currentField == null || currentField.equals(currentKey))
-						currentField = field;
-
-					currentKey = field;
-				} else if (slot.getName().startsWith("created"))
-					Lists.addLast(query.getFields(), field);
-				else if (slot.getName().startsWith("lastUpdated"))
-					Lists.addLast(query.getFields(), field);
-				else {
-					if (currentField == null)
-						Lists.addFirst(query.getFields(), field);
-					else
-						Lists.addAfter(query.getFields(), currentField, field);
-					currentField = field;
-				}
-			}
 		}
 
-		ResourceSerializer<Query> entitySerializer = resourceManager.createResourceSerializer(context, Query.class, SerializationType.JSON);
-		if (query != null)
-			entitySerializer.add(query);
-		entitySerializer.save(response.getOutputStream());
+		try {
+			Query query = resourceManager.getResourceReader(context, Query.class, Resource.TENANT_MASTER).lookup(name);
+
+			if (query == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
+				query = QueryFactory.eINSTANCE.createQuery();
+				query.setName("prototype");
+
+				QueryField currentField = null;
+				QueryField currentKey = null;
+				for (Slot slot : frame.getSlots()) {
+					QueryField field = buildField(slot);
+					if (slot.isKey()) {
+
+						if (currentKey == null)
+							Lists.addFirst(query.getFields(), field);
+						else
+							Lists.addAfter(query.getFields(), currentKey, field);
+
+						if (currentField == null || currentField.equals(currentKey))
+							currentField = field;
+
+						currentKey = field;
+					} else if (slot.getName().startsWith("created"))
+						Lists.addLast(query.getFields(), field);
+					else if (slot.getName().startsWith("lastUpdated"))
+						Lists.addLast(query.getFields(), field);
+					else {
+						if (currentField == null)
+							Lists.addFirst(query.getFields(), field);
+						else
+							Lists.addAfter(query.getFields(), currentField, field);
+						currentField = field;
+					}
+				}
+			}
+
+			ResourceSerializer<Query> entitySerializer = resourceManager.createResourceSerializer(context, Query.class, SerializationType.JSON);
+			if (query != null)
+				entitySerializer.add(query);
+			entitySerializer.save(response.getOutputStream());
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
+		}
 	}
 
 	private QueryField buildField(Slot slot) {
@@ -98,7 +106,7 @@ public class LookupQueryServlet extends BaseServlet {
 			label.append(c);
 		}
 		field.setValue(Strings.firstToUpper(label.toString()));
-		
+
 		switch (slot.getDataType()) {
 		case BOOLEAN:
 		case STRING:
@@ -116,7 +124,7 @@ public class LookupQueryServlet extends BaseServlet {
 			field.setType("number");
 			break;
 		}
-		
+
 		return field;
 	}
 }

@@ -16,6 +16,7 @@ import java.util.Map;
 
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 
 public class EMFResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
@@ -75,13 +76,13 @@ public class EMFResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<
 	}
 
 	@Override
-	public void update(E entity) {
-		throw new UnsupportedOperationException();
+	public void update(E entity) throws ResourceException {
+		throw new ResourceException(new UnsupportedOperationException());
 	}
 
 	@Override
-	public String nextSequence() {
-		throw new UnsupportedOperationException();
+	public String nextSequence() throws ResourceException {
+		throw new ResourceException(new UnsupportedOperationException());
 	}
 
 	@Override

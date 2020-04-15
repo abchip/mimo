@@ -1078,7 +1078,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HttpClient" abstract="true" interface="true"
         eSuperTypes="#//java/JavaCloseable">
-      <eOperations name="execute" lowerBound="1" eExceptions="#//java/JavaException">
+      <eOperations name="execute" lowerBound="1" eExceptions="#//networking/NetworkingException">
         <eGenericType eTypeParameter="#//networking/HttpClient/execute/T"/>
         <eTypeParameters name="T"/>
         <eParameters name="method" lowerBound="1" eType="#//networking/HttpPost"/>
@@ -1111,6 +1111,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="NetworkingException" instanceClassName="org.abchip.mimo.networking.NetworkingException"/>
   </eSubpackages>
   <eSubpackages name="resource" nsURI="http://www.abchip.org/mimo/resource" nsPrefix="mimo-resource">
     <eClassifiers xsi:type="ecore:EEnum" name="MappingType">
@@ -1121,13 +1122,13 @@
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/EntityIdentifiable"/>
       </eTypeParameters>
-      <eOperations name="create">
+      <eOperations name="create" eExceptions="#//resource/ResourceException">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//resource/Resource/E"/>
         </eParameters>
         <eParameters name="update" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
-      <eOperations name="delete">
+      <eOperations name="delete" eExceptions="#//resource/ResourceException">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//resource/Resource/E"/>
         </eParameters>
@@ -1138,14 +1139,15 @@
         </eGenericType>
       </eOperations>
       <eOperations name="getTenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="nextSequence" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="read" lowerBound="1">
+      <eOperations name="nextSequence" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          eExceptions="#//resource/ResourceException"/>
+      <eOperations name="read" lowerBound="1" eExceptions="#//resource/ResourceException">
         <eGenericType eTypeParameter="#//resource/Resource/E"/>
         <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
-      <eOperations name="read" lowerBound="1" upperBound="-1">
+      <eOperations name="read" lowerBound="1" upperBound="-1" eExceptions="#//resource/ResourceException">
         <eGenericType eTypeParameter="#//resource/Resource/E"/>
         <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1153,7 +1155,7 @@
         <eParameters name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
-      <eOperations name="update">
+      <eOperations name="update" eExceptions="#//resource/ResourceException">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//resource/Resource/E"/>
         </eParameters>
@@ -1187,6 +1189,7 @@
       <eLiterals name="Before_Delete" value="60" literal="PREDLT"/>
       <eLiterals name="After_Delete" value="70" literal="POSTDLT"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="ResourceException" instanceClassName="org.abchip.mimo.resource.ResourceException"/>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceListener" abstract="true"
         interface="true">
       <eTypeParameters name="E">
@@ -1653,25 +1656,25 @@
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/EntityIdentifiable"/>
       </eTypeParameters>
-      <eOperations name="find">
+      <eOperations name="find" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//entity/EntityIterator">
           <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>
         </eGenericType>
       </eOperations>
-      <eOperations name="find">
+      <eOperations name="find" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//entity/EntityIterator">
           <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>
         </eGenericType>
         <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="find">
+      <eOperations name="find" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//entity/EntityIterator">
           <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>
         </eGenericType>
         <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="find">
+      <eOperations name="find" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//entity/EntityIterator">
           <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>
         </eGenericType>
@@ -1679,7 +1682,7 @@
         <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="find">
+      <eOperations name="find" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//entity/EntityIterator">
           <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>
         </eGenericType>
@@ -1688,7 +1691,7 @@
         <eParameters name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
-      <eOperations name="find">
+      <eOperations name="find" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//entity/EntityIterator">
           <eTypeArguments eTypeParameter="#//resource/ResourceReader/E"/>
         </eGenericType>
@@ -1698,10 +1701,10 @@
         <eParameters name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
-      <eOperations name="first">
+      <eOperations name="first" eExceptions="#//resource/ResourceException">
         <eGenericType eTypeParameter="#//resource/ResourceReader/E"/>
       </eOperations>
-      <eOperations name="first">
+      <eOperations name="first" eExceptions="#//resource/ResourceException">
         <eGenericType eTypeParameter="#//resource/ResourceReader/E"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
@@ -1717,11 +1720,11 @@
         </eGenericType>
       </eOperations>
       <eOperations name="getTenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="lookup">
+      <eOperations name="lookup" eExceptions="#//resource/ResourceException">
         <eGenericType eTypeParameter="#//resource/ResourceReader/E"/>
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="lookup">
+      <eOperations name="lookup" eExceptions="#//resource/ResourceException">
         <eGenericType eTypeParameter="#//resource/ResourceReader/E"/>
         <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -1776,17 +1779,17 @@
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/EntityIdentifiable"/>
       </eTypeParameters>
-      <eOperations name="delete">
+      <eOperations name="delete" eExceptions="#//resource/ResourceException">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//resource/ResourceWriter/E"/>
         </eParameters>
       </eOperations>
-      <eOperations name="create">
+      <eOperations name="create" eExceptions="#//resource/ResourceException">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//resource/ResourceWriter/E"/>
         </eParameters>
       </eOperations>
-      <eOperations name="create">
+      <eOperations name="create" eExceptions="#//resource/ResourceException">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//resource/ResourceWriter/E"/>
         </eParameters>
@@ -1795,11 +1798,11 @@
       <eOperations name="make" lowerBound="1">
         <eGenericType eTypeParameter="#//resource/ResourceWriter/E"/>
       </eOperations>
-      <eOperations name="make" lowerBound="1">
+      <eOperations name="make" lowerBound="1" eExceptions="#//resource/ResourceException">
         <eGenericType eTypeParameter="#//resource/ResourceWriter/E"/>
         <eParameters name="sequence" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
-      <eOperations name="update">
+      <eOperations name="update" eExceptions="#//resource/ResourceException">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//resource/ResourceWriter/E"/>
         </eParameters>

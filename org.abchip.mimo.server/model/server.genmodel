@@ -45,6 +45,7 @@
       <genEnumLiterals ecoreEnumLiteral="server.ecore#//SystemStatus/Ending"/>
       <genEnumLiterals ecoreEnumLiteral="server.ecore#//SystemStatus/Stopped"/>
     </genEnums>
+    <genDataTypes ecoreDataType="server.ecore#//ServerException"/>
     <genClasses ecoreClass="server.ecore#//Job">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference server.ecore#//Job/context"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute server.ecore#//Job/creationDate"/>

@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 
@@ -36,14 +37,19 @@ public class NextSequenceServlet extends BaseServlet {
 		String tenant = request.getParameter("tenant");
 		String frame = request.getParameter("frame");
 
-		ResourceWriter<E> resourceWriter = resourceManager.getResourceWriter(context, frame, tenant);
-		String nextSequence = resourceWriter.getResource().nextSequence();
-		if (nextSequence == null)
-			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-		else {
-			response.setStatus(HttpServletResponse.SC_FOUND);
+		try {
+			ResourceWriter<E> resourceWriter = resourceManager.getResourceWriter(context, frame, tenant);
+			String nextSequence = resourceWriter.getResource().nextSequence();
+			if (nextSequence == null)
+				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+			else {
+				response.setStatus(HttpServletResponse.SC_FOUND);
 
-			response.getWriter().write(nextSequence);
+				response.getWriter().write(nextSequence);
+			}
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
 		}
 	}
 }

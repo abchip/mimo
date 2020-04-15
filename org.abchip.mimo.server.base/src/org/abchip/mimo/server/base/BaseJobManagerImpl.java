@@ -22,6 +22,7 @@ import org.abchip.mimo.context.Identity;
 import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.context.UserProfile;
 import org.abchip.mimo.entity.EntityIterator;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
@@ -34,13 +35,17 @@ import org.abchip.mimo.server.JobManager;
 import org.abchip.mimo.server.JobReference;
 import org.abchip.mimo.server.JobStatus;
 import org.abchip.mimo.server.JobType;
+import org.abchip.mimo.server.ServerException;
 import org.abchip.mimo.server.ServerFactory;
 import org.abchip.mimo.server.SystemManager;
+import org.abchip.mimo.util.Logs;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.osgi.service.log.Logger;
 
 public class BaseJobManagerImpl implements JobManager {
 
+	private static final Logger LOGGER = Logs.getLogger(BaseJobLogManagerImpl.class);
 	private static final int MILLIS_IN_ONE_DAY = 1000 * 60 * 60 * 24;
 
 	@Inject
@@ -62,53 +67,57 @@ public class BaseJobManagerImpl implements JobManager {
 	}
 
 	@Override
-	public JobCapability create(Identity<?> identity) {
+	public JobCapability create(Identity<?> identity) throws ServerException {
 		return create(identity, null);
 	}
 
 	@Override
-	public JobCapability create(Identity<?> identity, String jobName) {
+	public JobCapability create(Identity<?> identity, String jobName) throws ServerException {
 
 		Job startupJob = systemManager.getJobKernel();
 		ResourceReader<UserProfile> userResource = resourceManager.getResourceReader(startupJob.getContext(), UserProfile.class);
 
-		// check credential
-		UserProfile userProfile = userResource.lookup(identity.getJavaPrincipal().getName());
+		try {
+			// check credential
+			UserProfile userProfile = userResource.lookup(identity.getJavaPrincipal().getName());
 
-		if (userProfile == null)
-			throw new RuntimeException("User " + identity.getJavaPrincipal().getName() + " not found");
+			if (userProfile == null)
+				throw new RuntimeException("User " + identity.getJavaPrincipal().getName() + " not found");
 
-		Job job = systemManager.createJob(JobType.BATCH, identity.getJavaPrincipal(), jobName);
+			Job job = systemManager.createJob(JobType.BATCH, identity.getJavaPrincipal(), jobName);
 
-		JobEvent jobEvent = ServerFactory.eINSTANCE.createJobEvent();
-		jobEvent.setSource(job);
-		jobEvent.setType(JobEventType.STARTING);
-		fireEvent(jobEvent);
+			JobEvent jobEvent = ServerFactory.eINSTANCE.createJobEvent();
+			jobEvent.setSource(job);
+			jobEvent.setType(JobEventType.STARTING);
+			fireEvent(jobEvent);
 
-		// save
-		ResourceWriter<Job> jobWriter = resourceManager.getResourceWriter(job.getContext(), Job.class);
-		jobWriter.create(job);
+			// save
+			ResourceWriter<Job> jobWriter = resourceManager.getResourceWriter(job.getContext(), Job.class);
+			jobWriter.create(job);
 
-		jobEvent.setType(JobEventType.STARTED);
-		fireEvent(jobEvent);
+			jobEvent.setType(JobEventType.STARTED);
+			fireEvent(jobEvent);
 
-		activeJobs.put(job.getJobID(), job);
+			activeJobs.put(job.getJobID(), job);
 
-		// capability
-		JobCapability jobCapability = ServerFactory.eINSTANCE.createJobCapability();
-		jobCapability.setJobReference((JobReference) EcoreUtil.copy((EObject) job.getJobReference()));
-		jobCapability.setEntityURI(job.getURI());
-		jobCapability.setPort(job.getSystem().getPort());
+			// capability
+			JobCapability jobCapability = ServerFactory.eINSTANCE.createJobCapability();
+			jobCapability.setJobReference((JobReference) EcoreUtil.copy((EObject) job.getJobReference()));
+			jobCapability.setEntityURI(job.getURI());
+			jobCapability.setPort(job.getSystem().getPort());
 
-		job.getContext().set(JobCapability.class, jobCapability);
+			job.getContext().set(JobCapability.class, jobCapability);
 
-		job.getContext().set(Identity.class, identity);
+			job.getContext().set(Identity.class, identity);
 
-		return jobCapability;
+			return jobCapability;
+		} catch (ResourceException e) {
+			throw new ServerException(e);
+		}
 	}
 
 	@Override
-	public JobCapability spawn(final Job parent, String jobName, boolean copyEnvironmentVariables) {
+	public JobCapability spawn(final Job parent, String jobName, boolean copyEnvironmentVariables) throws ServerException {
 
 		Identity<?> identity = parent.getContext().get(Identity.class);
 		JobCapability jobCapability = create(identity, jobName);
@@ -154,14 +163,15 @@ public class BaseJobManagerImpl implements JobManager {
 
 		Job jobCaller = lookup(contextID);
 
-		String filter = "jobReference.jobName = \"" + name + "\" AND jobReference.jobNumber = " + number + " AND jobReference.jobUser = \"" + user + "'";
 		Job jobTarget = null;
 
 		ResourceReader<Job> jobReader = resourceManager.getResourceReader(jobCaller.getContext(), Job.class);
-
+		String filter = "jobReference.jobName = \"" + name + "\" AND jobReference.jobNumber = " + number + " AND jobReference.jobUser = \"" + user + "'";
 		try (EntityIterator<Job> jobs = jobReader.find(filter)) {
 			if (jobs.hasNext())
 				jobTarget = jobs.next();
+		} catch (ResourceException e) {
+			LOGGER.error(e.getMessage());
 		}
 
 		return jobTarget;
@@ -186,7 +196,7 @@ public class BaseJobManagerImpl implements JobManager {
 	}
 
 	@Override
-	public void close(JobCapability jobCapability) {
+	public void close(JobCapability jobCapability) throws ServerException {
 
 		Job job = lookup(jobCapability);
 		if (job != null)
@@ -194,7 +204,7 @@ public class BaseJobManagerImpl implements JobManager {
 	}
 
 	@Override
-	public void close(Job job) {
+	public void close(Job job) throws ServerException {
 
 		JobEvent jobEvent = ServerFactory.eINSTANCE.createJobEvent();
 		jobEvent.setSource(job);
@@ -204,9 +214,13 @@ public class BaseJobManagerImpl implements JobManager {
 			jobListener.handleEvent(jobEvent);
 
 		// save destroy date job
-		ResourceWriter<Job> jobWriter = resourceManager.getResourceWriter(job.getContext(), Job.class);
-		job.setDestroyDate(new Date());
-		jobWriter.update(job);
+		try {
+			ResourceWriter<Job> jobWriter = resourceManager.getResourceWriter(job.getContext(), Job.class);
+			job.setDestroyDate(new Date());
+			jobWriter.update(job);
+		} catch (ResourceException e) {
+			throw new ServerException(e);
+		}
 
 		jobEvent.setType(JobEventType.STOPPED);
 

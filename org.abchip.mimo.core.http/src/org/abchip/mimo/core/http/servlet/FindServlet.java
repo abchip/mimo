@@ -19,6 +19,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -55,7 +56,7 @@ public class FindServlet extends BaseServlet {
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName, tenant);
 		if (frame == null) {
-			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			return;
 		}
 
@@ -92,15 +93,20 @@ public class FindServlet extends BaseServlet {
 				filter = sb.toString();
 		}
 
-		response.setStatus(HttpServletResponse.SC_FOUND);
-
-		ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame, tenant);
-		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.MIMO);
-		try (EntityIterator<E> entities = entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy))) {
-			for (E entity : entities)
-				entitySerializer.add(entity);
+		try {
+			ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame, tenant);
+			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.MIMO);
+			try (EntityIterator<E> entities = entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy))) {
+				for (E entity : entities)
+					entitySerializer.add(entity);
+			}
+			entitySerializer.save(response.getOutputStream());
+			entitySerializer.clear();
+			
+			response.setStatus(HttpServletResponse.SC_FOUND);
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
 		}
-		entitySerializer.save(response.getOutputStream());
-		entitySerializer.clear();
 	}
 }

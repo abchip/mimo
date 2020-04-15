@@ -20,6 +20,7 @@ import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.mining.classification.ClassificationFactory;
 import org.abchip.mimo.mining.classification.Classifier;
 import org.abchip.mimo.mining.classification.Evaluator;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Files;
@@ -71,6 +72,8 @@ public class LPClassifierImpl implements Classifier {
 		try (EntityIterator<Language> languageIterator = languageReader.find()) {
 			for (Language language : languageIterator)
 				languages.add(language);
+		} catch (ResourceException e) {
+			new RuntimeException(e);
 		}
 
 		String[] categories = new String[languages.size()];
@@ -97,6 +100,8 @@ public class LPClassifierImpl implements Classifier {
 		try (EntityIterator<Language> languageIterator = languageReader.find()) {
 			for (Language language : languageIterator)
 				languages.add(language);
+		} catch (ResourceException e) {
+			new RuntimeException(e);
 		}
 
 		for (int i = 0; i < lpClassification.size(); i++) {

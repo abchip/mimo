@@ -23,6 +23,7 @@ import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -57,60 +58,67 @@ public class LookupFormServlet extends BaseServlet {
 		String prototype = request.getParameter("prototype");
 
 		Frame<?> frame = resourceManager.getFrame(context, frameName);
-		if (frame == null)
+		if (frame == null) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
 			return;
+		}
 
-		Form form = resourceManager.getResourceReader(context, Form.class, Resource.TENANT_MASTER).lookup(name);
+		try {
+			Form form = resourceManager.getResourceReader(context, Form.class, Resource.TENANT_MASTER).lookup(name);
 
-		if (form == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
-			form = FormFactory.eINSTANCE.createForm();
-			form.setName("prototype");
+			if (form == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
+				form = FormFactory.eINSTANCE.createForm();
+				form.setName("prototype");
 
-			FormField currentField = null;
-			FormField currentKey = null;
-			for (Slot slot : frame.getSlots()) {
+				FormField currentField = null;
+				FormField currentKey = null;
+				for (Slot slot : frame.getSlots()) {
 
-				// derived exclusion
-				if (slot.isDerived())
-					continue;
+					// derived exclusion
+					if (slot.isDerived())
+						continue;
 
-				if (slot.getGroup() != null && slot.getGroup().equals("info"))
-					continue;
+					if (slot.getGroup() != null && slot.getGroup().equals("info"))
+						continue;
 
-				FormField field = buildFormField(context, slot);
-				if (slot.isKey()) {
+					FormField field = buildFormField(context, slot);
+					if (slot.isKey()) {
 
-					if (currentKey == null)
-						Lists.addFirst(form.getFields(), field);
-					else
-						Lists.addAfter(form.getFields(), currentKey, field);
+						if (currentKey == null)
+							Lists.addFirst(form.getFields(), field);
+						else
+							Lists.addAfter(form.getFields(), currentKey, field);
 
-					if (currentField == null || currentField.equals(currentKey))
+						if (currentField == null || currentField.equals(currentKey))
+							currentField = field;
+
+						currentKey = field;
+					} else if (slot.getName().startsWith("created"))
+						Lists.addLast(form.getFields(), field);
+					else if (slot.getName().startsWith("lastUpdated"))
+						Lists.addLast(form.getFields(), field);
+					else {
+						if (currentField == null)
+							Lists.addFirst(form.getFields(), field);
+						else
+							Lists.addAfter(form.getFields(), currentField, field);
 						currentField = field;
-
-					currentKey = field;
-				} else if (slot.getName().startsWith("created"))
-					Lists.addLast(form.getFields(), field);
-				else if (slot.getName().startsWith("lastUpdated"))
-					Lists.addLast(form.getFields(), field);
-				else {
-					if (currentField == null)
-						Lists.addFirst(form.getFields(), field);
-					else
-						Lists.addAfter(form.getFields(), currentField, field);
-					currentField = field;
+					}
 				}
 			}
-		}
 
-		ResourceSerializer<Form> entitySerializer = resourceManager.createResourceSerializer(context, Form.class, SerializationType.JSON);
-		if (form != null) {
-			entitySerializer.add(form);
+			ResourceSerializer<Form> entitySerializer = resourceManager.createResourceSerializer(context, Form.class, SerializationType.JSON);
+			if (form != null) {
+				entitySerializer.add(form);
+			}
+			entitySerializer.save(response.getOutputStream());
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
 		}
-		entitySerializer.save(response.getOutputStream());
 	}
 
-	private FormField buildFormField(Context context, Slot slot) {
+	private FormField buildFormField(Context context, Slot slot) throws ResourceException {
 
 		FormField field = FormFactory.eINSTANCE.createFormField();
 		field.setGroup(slot.getGroup());
@@ -190,7 +198,7 @@ public class LookupFormServlet extends BaseServlet {
 			}
 			break;
 		case CHECK_BOX:
-			break;			
+			break;
 		case COUNTER:
 			break;
 		case DASHBOARD:
@@ -236,7 +244,7 @@ public class LookupFormServlet extends BaseServlet {
 		return field;
 	}
 
-	private void completeFormField(Context context, FormField formField, String frameName) {
+	private void completeFormField(Context context, FormField formField, String frameName) throws ResourceException {
 
 		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(context, UiFrameSetup.class);
 

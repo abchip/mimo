@@ -14,9 +14,24 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="planetsCont" upperBound="-1"
         eType="#//LanguagePlanet" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="LanguageException" instanceClassName="org.abchip.mimo.language.LanguageException"/>
   <eClassifiers xsi:type="ecore:EClass" name="LanguageExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expressionRow" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LanguageLinearizer" abstract="true"
+      interface="true">
+    <eOperations name="linearize" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
+      <eParameters name="language" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="expression" lowerBound="1" eType="#//LanguageExpression"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LanguageLinearizerRegistry" abstract="true"
+      interface="true">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Registry">
+      <eTypeArguments eClassifier="#//LanguageLinearizer"/>
+    </eGenericSuperTypes>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LanguageManager" abstract="true" interface="true">
     <eOperations name="classifyLanguage" lowerBound="1">
@@ -46,6 +61,10 @@
       <eTypeArguments eClassifier="#//LanguageParser"/>
     </eGenericSuperTypes>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LanguagePlanet" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="LanguageScope">
     <eLiterals name="Individual" value="10" literal="I"/>
     <eLiterals name="Macrolanguage" value="20" literal="M"/>
@@ -60,24 +79,6 @@
     <eLiterals name="Ancient" value="30" literal="A"/>
     <eLiterals name="Historical" value="40" literal="H"/>
     <eLiterals name="Constructed" value="50" literal="C"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LanguageLinearizer" abstract="true"
-      interface="true">
-    <eOperations name="linearize" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
-      <eParameters name="language" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="expression" lowerBound="1" eType="#//LanguageExpression"/>
-    </eOperations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LanguageLinearizerRegistry" abstract="true"
-      interface="true">
-    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Registry">
-      <eTypeArguments eClassifier="#//LanguageLinearizer"/>
-    </eGenericSuperTypes>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LanguagePlanet" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
   </eClassifiers>
   <eSubpackages name="grammar" nsURI="http://www.abchip.org/mimo/language/grammar"
       nsPrefix="mimo-gram">

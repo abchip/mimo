@@ -18,6 +18,7 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -38,25 +39,31 @@ public class LookupToolbarServlet extends BaseServlet {
 			return;
 
 		Frame<?> frame = resourceManager.getFrame(context, frameName);
-		if (frame == null)
+		if (frame == null) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
 			return;
-
-		Toolbar toolbar = resourceManager.getResourceReader(context, Toolbar.class, Resource.TENANT_MASTER).lookup(frameName);
-
-		for (Frame<?> ako : frame.getSuperFrames()) {
-			Toolbar toolbarAko = resourceManager.getResourceReader(context, Toolbar.class, Resource.TENANT_MASTER).lookup(ako.getName());
-			if (toolbarAko == null)
-				continue;
-
-			if (toolbar == null)
-				toolbar = toolbarAko;
-			else
-				toolbar.getElements().addAll(toolbarAko.getElements());
 		}
 
-		ResourceSerializer<Toolbar> entitySerializer = resourceManager.createResourceSerializer(context, Toolbar.class, SerializationType.JSON);
-		if (toolbar != null)
-			entitySerializer.add(toolbar);
-		entitySerializer.save(response.getOutputStream());
+		try {
+			Toolbar toolbar = resourceManager.getResourceReader(context, Toolbar.class, Resource.TENANT_MASTER).lookup(frameName);
+			for (Frame<?> ako : frame.getSuperFrames()) {
+				Toolbar toolbarAko = resourceManager.getResourceReader(context, Toolbar.class, Resource.TENANT_MASTER).lookup(ako.getName());
+				if (toolbarAko == null)
+					continue;
+
+				if (toolbar == null)
+					toolbar = toolbarAko;
+				else
+					toolbar.getElements().addAll(toolbarAko.getElements());
+			}
+
+			ResourceSerializer<Toolbar> entitySerializer = resourceManager.createResourceSerializer(context, Toolbar.class, SerializationType.JSON);
+			if (toolbar != null)
+				entitySerializer.add(toolbar);
+			entitySerializer.save(response.getOutputStream());
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
+		}
 	}
 }

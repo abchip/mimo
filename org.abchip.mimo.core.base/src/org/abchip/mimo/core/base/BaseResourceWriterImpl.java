@@ -15,6 +15,7 @@ import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.util.Resources;
 
@@ -30,11 +31,15 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 
 	@Override
 	public E make() {
-		return make(false);
+		try {
+			return make(false);
+		} catch (ResourceException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	@Override
-	public E make(boolean sequence) {
+	public E make(boolean sequence) throws ResourceException {
 
 		E entityIdentifiable = this.getFrame().createEntity();
 
@@ -44,7 +49,7 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 
 			try {
 				String id = this.getResource().nextSequence();
-				
+
 				Frame<?> domainFrame = entityIdentifiable.isa();
 				for (String key : domainFrame.getKeys()) {
 					domainFrame.setValue(entityIdentifiable, key, id);
@@ -60,7 +65,7 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 	}
 
 	@Override
-	public void delete(E entity) {
+	public void delete(E entity) throws ResourceException {
 
 		EntityLocker<?> entityLocker = lock(this.getContext(), entity);
 
@@ -77,12 +82,12 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 	}
 
 	@Override
-	public void create(E entity) {
+	public void create(E entity) throws ResourceException {
 		this.create(entity, false);
 	}
 
 	@Override
-	public void create(E entity, boolean update) {
+	public void create(E entity, boolean update) throws ResourceException {
 
 		EntityLocker<?> entityLocker = lock(this.getContext(), entity);
 
@@ -99,7 +104,7 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 	}
 
 	@Override
-	public void update(E entity) {
+	public void update(E entity) throws ResourceException {
 
 		EntityLocker<?> entityLocker = lock(this.getContext(), entity);
 

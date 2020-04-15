@@ -19,6 +19,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -56,7 +57,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 	}
 
 	@Override
-	public EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy) {
+	public EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException {
 
 		List<E> entities = this.internal.getResource().read(filter, fields, order, limit, proxy);
 
@@ -135,7 +136,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 	}
 
 	@Override
-	public E lookup(String name, boolean proxy) {
+	public E lookup(String name, boolean proxy) throws ResourceException {
 
 		E entity = this.internal.getResource().read(name, null, proxy);
 

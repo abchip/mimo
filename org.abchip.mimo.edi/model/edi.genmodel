@@ -11,6 +11,7 @@
   <foreignModel>edi.ecore</foreignModel>
   <genPackages prefix="EDI" basePackage="org.abchip.mimo" disposableProviderFactory="true"
       adapterFactory="false" ecorePackage="edi.ecore#/">
+    <genDataTypes ecoreDataType="edi.ecore#//DataInterchangeException"/>
     <genClasses image="false" ecoreClass="edi.ecore#//EdiManager">
       <genOperations ecoreOperation="edi.ecore#//EdiManager/writeMessage">
         <genParameters ecoreParameter="edi.ecore#//EdiManager/writeMessage/context"/>

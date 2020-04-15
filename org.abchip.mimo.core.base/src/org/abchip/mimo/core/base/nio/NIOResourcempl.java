@@ -26,6 +26,7 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -68,7 +69,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	}
 
 	@Override
-	public void create(E entity, boolean update) {
+	public void create(E entity, boolean update) throws ResourceException {
 
 		synchronized (this.resourceSerializer) {
 			Path file = getClassFolder(getFrame(), true).resolve(entity.getID());
@@ -90,7 +91,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 				}
 
 			} catch (IOException e) {
-				throw new RuntimeException(e);
+				throw new ResourceException(e);
 			} finally {
 				this.resourceSerializer.clear();
 			}
@@ -98,7 +99,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	}
 
 	@Override
-	public void delete(E entity) {
+	public void delete(E entity) throws ResourceException {
 
 		synchronized (this.resourceSerializer) {
 			Path file = getClassFolder(getFrame(), false).resolve(entity.getID());
@@ -108,13 +109,13 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 			try {
 				this.pathManager.deletePath(file);
 			} catch (IOException e) {
-				throw new RuntimeException(e);
+				throw new ResourceException(e);
 			}
 		}
 	}
 
 	@Override
-	public E read(String name, String fields, boolean proxy) {
+	public E read(String name, String fields, boolean proxy) throws ResourceException {
 
 		synchronized (this.resourceSerializer) {
 			Path folder = getClassFolder(this.getFrame(), false);
@@ -132,7 +133,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 				this.resourceSerializer.load(inputStream, false);
 				entity = this.resourceSerializer.get();
 			} catch (IOException e) {
-				LOGGER.error(e.getMessage());
+				throw new ResourceException(e);
 			} finally {
 				this.resourceSerializer.clear();
 			}
@@ -142,7 +143,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	}
 
 	@Override
-	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) {
+	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException {
 
 		synchronized (this.resourceSerializer) {
 			List<E> entries = new ArrayList<E>();
@@ -198,7 +199,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 
 				entries.addAll(this.resourceSerializer.getAll());
 			} catch (Exception e) {
-				LOGGER.error(e.getMessage());
+				throw new ResourceException(e);
 			} finally {
 				this.resourceSerializer.clear();
 			}
@@ -216,7 +217,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	}
 
 	@Override
-	public void update(E entity) {
+	public void update(E entity) throws ResourceException {
 
 		synchronized (this.resourceSerializer) {
 			try {
@@ -232,7 +233,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 				Files.copy(input, file, StandardCopyOption.REPLACE_EXISTING);
 
 			} catch (IOException e) {
-				throw new RuntimeException(e);
+				throw new ResourceException(e);
 			} finally {
 				this.resourceSerializer.clear();
 			}
@@ -265,7 +266,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	}
 
 	@Override
-	public String nextSequence() {
-		throw new UnsupportedOperationException();
+	public String nextSequence() throws ResourceException {
+		throw new ResourceException(new UnsupportedOperationException());
 	}
 }

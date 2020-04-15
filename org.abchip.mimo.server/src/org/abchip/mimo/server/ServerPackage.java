@@ -13,6 +13,7 @@ import org.abchip.mimo.entity.EntityPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -817,6 +818,17 @@ public interface ServerPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>Exception</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.server.ServerException
+	 * @see org.abchip.mimo.server.impl.ServerPackageImpl#getServerException()
+	 * @generated
+	 */
+	int SERVER_EXCEPTION = 21;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.server.Job <em>Job</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1489,6 +1501,17 @@ public interface ServerPackage extends EPackage {
 	EEnum getSystemStatus();
 
 	/**
+	 * Returns the meta object for data type '{@link org.abchip.mimo.server.ServerException <em>Exception</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Exception</em>'.
+	 * @see org.abchip.mimo.server.ServerException
+	 * @model instanceClass="org.abchip.mimo.server.ServerException"
+	 * @generated
+	 */
+	EDataType getServerException();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2055,6 +2078,16 @@ public interface ServerPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum SYSTEM_STATUS = eINSTANCE.getSystemStatus();
+
+		/**
+		 * The meta object literal for the '<em>Exception</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.server.ServerException
+		 * @see org.abchip.mimo.server.impl.ServerPackageImpl#getServerException()
+		 * @generated
+		 */
+		EDataType SERVER_EXCEPTION = eINSTANCE.getServerException();
 
 	}
 

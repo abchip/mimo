@@ -38,6 +38,7 @@ import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceEvent;
 import org.abchip.mimo.resource.ResourceEventType;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceListener;
 import org.abchip.mimo.resource.ResourceManager;
@@ -58,6 +59,7 @@ import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.service.impl.ServicePackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
@@ -192,6 +194,13 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	private EEnum serializationTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType resourceExceptionEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -575,6 +584,16 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
+	public EDataType getResourceException() {
+		return resourceExceptionEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getMappingType() {
 		return mappingTypeEEnum;
 	}
@@ -652,6 +671,9 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		mappingTypeEEnum = createEEnum(MAPPING_TYPE);
 		resourceEventTypeEEnum = createEEnum(RESOURCE_EVENT_TYPE);
 		serializationTypeEEnum = createEEnum(SERIALIZATION_TYPE);
+
+		// Create data types
+		resourceExceptionEDataType = createEDataType(RESOURCE_EXCEPTION);
 	}
 
 	/**
@@ -731,10 +753,12 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1 = createEGenericType(resourceEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "update", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 
 		op = addEOperation(resourceEClass, null, "delete", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 
 		op = addEOperation(resourceEClass, null, "getFrame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
@@ -744,12 +768,14 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		addEOperation(resourceEClass, ecorePackage.getEString(), "getTenant", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(resourceEClass, ecorePackage.getEString(), "nextSequence", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(resourceEClass, ecorePackage.getEString(), "nextSequence", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 
 		op = addEOperation(resourceEClass, null, "read", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(resourceEClass_E);
 		initEOperation(op, g1);
 
@@ -759,12 +785,14 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, ecorePackage.getEString(), "order", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "limit", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(resourceEClass_E);
 		initEOperation(op, g1);
 
 		op = addEOperation(resourceEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 
 		initEClass(resourceConfigEClass, ResourceConfig.class, "ResourceConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getResourceConfig_LockSupport(), ecorePackage.getEBoolean(), "lockSupport", null, 1, 1, ResourceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1237,6 +1265,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		initEReference(getResourceReader_Notifier(), g1, null, "notifier", null, 0, 1, ResourceReader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(resourceReaderEClass, null, "find", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(theEntityPackage.getEntityIterator());
 		g2 = createEGenericType(resourceReaderEClass_E);
 		g1.getETypeArguments().add(g2);
@@ -1244,6 +1273,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		op = addEOperation(resourceReaderEClass, null, "find", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(theEntityPackage.getEntityIterator());
 		g2 = createEGenericType(resourceReaderEClass_E);
 		g1.getETypeArguments().add(g2);
@@ -1252,6 +1282,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		op = addEOperation(resourceReaderEClass, null, "find", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(theEntityPackage.getEntityIterator());
 		g2 = createEGenericType(resourceReaderEClass_E);
 		g1.getETypeArguments().add(g2);
@@ -1261,6 +1292,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "order", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(theEntityPackage.getEntityIterator());
 		g2 = createEGenericType(resourceReaderEClass_E);
 		g1.getETypeArguments().add(g2);
@@ -1271,6 +1303,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "order", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "limit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(theEntityPackage.getEntityIterator());
 		g2 = createEGenericType(resourceReaderEClass_E);
 		g1.getETypeArguments().add(g2);
@@ -1282,17 +1315,20 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, ecorePackage.getEString(), "order", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "limit", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(theEntityPackage.getEntityIterator());
 		g2 = createEGenericType(resourceReaderEClass_E);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
 		op = addEOperation(resourceReaderEClass, null, "first", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(resourceReaderEClass_E);
 		initEOperation(op, g1);
 
 		op = addEOperation(resourceReaderEClass, null, "first", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(resourceReaderEClass_E);
 		initEOperation(op, g1);
 
@@ -1314,12 +1350,14 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		op = addEOperation(resourceReaderEClass, null, "lookup", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(resourceReaderEClass_E);
 		initEOperation(op, g1);
 
 		op = addEOperation(resourceReaderEClass, null, "lookup", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(resourceReaderEClass_E);
 		initEOperation(op, g1);
 
@@ -1368,15 +1406,18 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		op = addEOperation(resourceWriterEClass, null, "delete", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 
 		op = addEOperation(resourceWriterEClass, null, "create", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 
 		op = addEOperation(resourceWriterEClass, null, "create", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "update", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 
 		op = addEOperation(resourceWriterEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceWriterEClass_E);
@@ -1384,12 +1425,14 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		op = addEOperation(resourceWriterEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "sequence", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(resourceWriterEClass_E);
 		initEOperation(op, g1);
 
 		op = addEOperation(resourceWriterEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 
 		// Initialize enums and add enum literals
 		initEEnum(mappingTypeEEnum, MappingType.class, "MappingType");
@@ -1406,6 +1449,9 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.XMI);
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.JSON);
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.MIMO);
+
+		// Initialize data types
+		initEDataType(resourceExceptionEDataType, ResourceException.class, "ResourceException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //ResourcePackageImpl

@@ -23,11 +23,13 @@ import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
 import org.abchip.mimo.context.ThreadManager;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobReference;
 import org.abchip.mimo.server.JobType;
+import org.abchip.mimo.server.ServerException;
 import org.abchip.mimo.server.ServerFactory;
 import org.abchip.mimo.server.ServerHelper;
 import org.abchip.mimo.server.SystemEvent;
@@ -68,7 +70,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 		return this.jobKernel;
 	}
 
-	protected synchronized int nextJobID(JobType jobType, org.abchip.mimo.server.System system, Job job) {
+	protected synchronized int nextJobID(JobType jobType, org.abchip.mimo.server.System system, Job job) throws ResourceException {
 
 		int lastNumber = 0;
 
@@ -89,7 +91,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 	}
 
 	@Override
-	public Job start(org.abchip.mimo.server.System system) {
+	public Job start(org.abchip.mimo.server.System system) throws ServerException {
 
 		// create job kernel
 		Principal principal = new Principal() {
@@ -101,8 +103,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 
 		// acquire system lock
 		EntityLocker<org.abchip.mimo.server.System> locker = lockManager.getLocker(system.getContext(), system);
-		while (!locker.tryLock(org.abchip.mimo.server.System.LOCK_TIMEOUT, LockType.WRITE))
-			;
+		while (!locker.tryLock(org.abchip.mimo.server.System.LOCK_TIMEOUT, LockType.WRITE));
 
 		try {
 			SystemEvent systemEvent = ServerFactory.eINSTANCE.createSystemEvent();
@@ -125,6 +126,8 @@ public class BaseSystemManagerImpl implements SystemManager {
 			systemEvent.setType(SystemEventType.STARTED);
 
 			fireEvent(systemEvent);
+		} catch (ResourceException e) {
+			throw new ServerException(e);
 		} finally {
 			locker.unlock(LockType.WRITE);
 		}
@@ -133,7 +136,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 	}
 
 	@Override
-	public void stop() {
+	public void stop() throws ServerException {
 
 		org.abchip.mimo.server.System system = jobKernel.getSystem();
 
@@ -161,12 +164,12 @@ public class BaseSystemManagerImpl implements SystemManager {
 		}
 	}
 
-	protected Job createJob(JobType jobType, Principal principal, String jobName) {
+	protected Job createJob(JobType jobType, Principal principal, String jobName) throws ResourceException {
 		return createJob(jobKernel.getSystem(), jobType, principal, jobName);
 	}
 
 	@SuppressWarnings("resource")
-	protected Job createJob(org.abchip.mimo.server.System system, JobType jobType, Principal principal, String jobName) {
+	protected Job createJob(org.abchip.mimo.server.System system, JobType jobType, Principal principal, String jobName) throws ResourceException {
 
 		// job
 		final Job job = ServerFactory.eINSTANCE.createJob();

@@ -37,6 +37,7 @@ import org.abchip.mimo.networking.HostConfig;
 import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.networking.HttpClientFactory;
 import org.abchip.mimo.networking.HttpServiceConfig;
+import org.abchip.mimo.networking.NetworkingException;
 import org.abchip.mimo.networking.NetworkingFactory;
 import org.abchip.mimo.networking.NetworkingPackage;
 import org.abchip.mimo.resource.ResourcePackage;
@@ -103,6 +104,12 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 	 * @generated
 	 */
 	private EDataType httpResponseHandlerEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType networkingExceptionEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -380,6 +387,16 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 	 * @generated
 	 */
 	@Override
+	public EDataType getNetworkingException() {
+		return networkingExceptionEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NetworkingFactory getNetworkingFactory() {
 		return (NetworkingFactory)getEFactoryInstance();
 	}
@@ -448,6 +465,7 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		// Create data types
 		httpPostEDataType = createEDataType(HTTP_POST);
 		httpResponseHandlerEDataType = createEDataType(HTTP_RESPONSE_HANDLER);
+		networkingExceptionEDataType = createEDataType(NETWORKING_EXCEPTION);
 	}
 
 	/**
@@ -508,7 +526,7 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		EGenericType g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "handler", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theJavaPackage.getJavaException());
+		addEException(op, this.getNetworkingException());
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
@@ -528,6 +546,7 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		// Initialize data types
 		initEDataType(httpPostEDataType, HttpPost.class, "HttpPost", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(httpResponseHandlerEDataType, ResponseHandler.class, "HttpResponseHandler", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(networkingExceptionEDataType, NetworkingException.class, "NetworkingException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //NetworkingPackageImpl

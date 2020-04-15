@@ -22,18 +22,18 @@ public interface SystemManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" systemRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.server.ServerException" systemRequired="true"
 	 * @generated
 	 */
-	Job start(org.abchip.mimo.server.System system);
+	Job start(org.abchip.mimo.server.System system) throws ServerException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model exceptions="org.abchip.mimo.server.ServerException"
 	 * @generated
 	 */
-	void stop();
+	void stop() throws ServerException;
 
 	/**
 	 * <!-- begin-user-doc -->

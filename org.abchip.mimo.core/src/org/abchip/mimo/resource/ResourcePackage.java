@@ -12,6 +12,7 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -489,6 +490,16 @@ public interface ResourcePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>Exception</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.resource.ResourceException
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceException()
+	 * @generated
+	 */
+	int RESOURCE_EXCEPTION = 18;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.MappingType <em>Mapping Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -780,6 +791,17 @@ public interface ResourcePackage extends EPackage {
 	EEnum getSerializationType();
 
 	/**
+	 * Returns the meta object for data type '{@link org.abchip.mimo.resource.ResourceException <em>Exception</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Exception</em>'.
+	 * @see org.abchip.mimo.resource.ResourceException
+	 * @model instanceClass="org.abchip.mimo.resource.ResourceException"
+	 * @generated
+	 */
+	EDataType getResourceException();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.resource.MappingType <em>Mapping Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1060,6 +1082,16 @@ public interface ResourcePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum SERIALIZATION_TYPE = eINSTANCE.getSerializationType();
+
+		/**
+		 * The meta object literal for the '<em>Exception</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.resource.ResourceException
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceException()
+		 * @generated
+		 */
+		EDataType RESOURCE_EXCEPTION = eINSTANCE.getResourceException();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.resource.MappingType <em>Mapping Type</em>}' enum.

@@ -10,10 +10,10 @@ package org.abchip.mimo.core.http.servlet.session;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 
 import javax.inject.Inject;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +27,7 @@ import org.abchip.mimo.authentication.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.apache.http.HttpStatus;
@@ -57,12 +58,12 @@ public class GoogleResponseServlet extends HttpServlet {
 	private AuthenticationManager authenticationManager;
 
 	@Override
-	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		doPost(request, response);
 	}
 
 	@Override
-	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String state = request.getParameter("state");
 
@@ -124,13 +125,16 @@ public class GoogleResponseServlet extends HttpServlet {
 						return;
 					}
 				}
-			} catch (Exception e) {
+			} catch (URISyntaxException e) {
 				response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 				return;
 			}
 		} catch (AuthenticationException e) {
-			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-			throw new ServletException(e);
+			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+			return;
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
 		}
 		// checkLogin
 		AuthenticationUserToken authenticationUserToken = AuthenticationFactory.eINSTANCE.createAuthenticationUserToken();
@@ -145,10 +149,10 @@ public class GoogleResponseServlet extends HttpServlet {
 				ContextProvider context = authenticationManager.login(state, authenticationUserToken);
 				ContextUtils.addContext(context.get());
 			} catch (AuthenticationException e) {
-				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-				throw new ServletException(e);
+				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+				return;
 			}
-			
+
 			String location = response.encodeURL("http://localhost:8081");
 
 			response.sendRedirect(location);

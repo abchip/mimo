@@ -27,8 +27,8 @@ public interface EdiManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" entityRequired="true" eventRequired="true"
+	 * @model exceptions="org.abchip.mimo.edi.DataInterchangeException" contextRequired="true" entityRequired="true" eventRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> void writeMessage(Context context, E entity, EntityEvent event);
+	<E extends EntityIdentifiable> void writeMessage(Context context, E entity, EntityEvent event) throws DataInterchangeException;
 } // EdiManager

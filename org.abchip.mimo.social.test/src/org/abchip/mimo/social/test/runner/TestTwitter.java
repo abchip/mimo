@@ -26,6 +26,7 @@ import org.abchip.mimo.mining.MiningManager;
 import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.mining.classification.Classifier;
 import org.abchip.mimo.mining.classification.Evaluator;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
@@ -60,7 +61,7 @@ public class TestTwitter {
 
 	@SuppressWarnings("rawtypes")
 	@TestStarted
-	public void start() throws InterruptedException {
+	public void start() throws InterruptedException, ResourceException {
 
 		loadTweets();
 
@@ -145,7 +146,7 @@ public class TestTwitter {
 		}
 	}
 
-	private void testConfusionMatrix() {
+	private void testConfusionMatrix() throws ResourceException {
 
 		List<Language> languages = new ArrayList<Language>();
 		ResourceReader<Language> languageReader = resourceManager.getResourceReader(testRunner.getContext(), Language.class);

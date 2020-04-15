@@ -14,6 +14,7 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.EntityPackage;
 
 import org.abchip.mimo.language.Language;
+import org.abchip.mimo.language.LanguageException;
 import org.abchip.mimo.language.LanguageExpression;
 import org.abchip.mimo.language.LanguageFactory;
 import org.abchip.mimo.language.LanguageLinearizer;
@@ -36,6 +37,7 @@ import org.abchip.mimo.mining.classification.ClassificationPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
@@ -120,6 +122,13 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * @generated
 	 */
 	private EEnum languageTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType languageExceptionEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -388,6 +397,16 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * @generated
 	 */
 	@Override
+	public EDataType getLanguageException() {
+		return languageExceptionEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public LanguageFactory getLanguageFactory() {
 		return (LanguageFactory)getEFactoryInstance();
 	}
@@ -423,15 +442,15 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		languageExpressionEClass = createEClass(LANGUAGE_EXPRESSION);
 		createEAttribute(languageExpressionEClass, LANGUAGE_EXPRESSION__EXPRESSION_ROW);
 
+		languageLinearizerEClass = createEClass(LANGUAGE_LINEARIZER);
+
+		languageLinearizerRegistryEClass = createEClass(LANGUAGE_LINEARIZER_REGISTRY);
+
 		languageManagerEClass = createEClass(LANGUAGE_MANAGER);
 
 		languageParserEClass = createEClass(LANGUAGE_PARSER);
 
 		languageParserRegistryEClass = createEClass(LANGUAGE_PARSER_REGISTRY);
-
-		languageLinearizerEClass = createEClass(LANGUAGE_LINEARIZER);
-
-		languageLinearizerRegistryEClass = createEClass(LANGUAGE_LINEARIZER_REGISTRY);
 
 		languagePlanetEClass = createEClass(LANGUAGE_PLANET);
 		createEAttribute(languagePlanetEClass, LANGUAGE_PLANET__NAME);
@@ -439,6 +458,9 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		// Create enums
 		languageScopeEEnum = createEEnum(LANGUAGE_SCOPE);
 		languageTypeEEnum = createEEnum(LANGUAGE_TYPE);
+
+		// Create data types
+		languageExceptionEDataType = createEDataType(LANGUAGE_EXCEPTION);
 	}
 
 	/**
@@ -467,8 +489,8 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		// Obtain other dependent packages
 		GrammarPackage theGrammarPackage = (GrammarPackage)EPackage.Registry.INSTANCE.getEPackage(GrammarPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		ClassificationPackage theClassificationPackage = (ClassificationPackage)EPackage.Registry.INSTANCE.getEPackage(ClassificationPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
+		ClassificationPackage theClassificationPackage = (ClassificationPackage)EPackage.Registry.INSTANCE.getEPackage(ClassificationPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theGrammarPackage);
@@ -480,13 +502,13 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		// Add supertypes to classes
 		languageEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		EGenericType g1 = createEGenericType(theContextPackage.getRegistry());
-		EGenericType g2 = createEGenericType(this.getLanguageParser());
-		g1.getETypeArguments().add(g2);
-		languageParserRegistryEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theContextPackage.getRegistry());
-		g2 = createEGenericType(this.getLanguageLinearizer());
+		EGenericType g2 = createEGenericType(this.getLanguageLinearizer());
 		g1.getETypeArguments().add(g2);
 		languageLinearizerRegistryEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theContextPackage.getRegistry());
+		g2 = createEGenericType(this.getLanguageParser());
+		g1.getETypeArguments().add(g2);
+		languageParserRegistryEClass.getEGenericSuperTypes().add(g1);
 		languagePlanetEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 
 		// Initialize classes and features; add operations and parameters
@@ -502,9 +524,18 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		initEClass(languageExpressionEClass, LanguageExpression.class, "LanguageExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLanguageExpression_ExpressionRow(), ecorePackage.getEJavaObject(), "expressionRow", null, 1, 1, LanguageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(languageLinearizerEClass, LanguageLinearizer.class, "LanguageLinearizer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = addEOperation(languageLinearizerEClass, ecorePackage.getEString(), "linearize", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "language", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getLanguageExpression(), "expression", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(languageLinearizerRegistryEClass, LanguageLinearizerRegistry.class, "LanguageLinearizerRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(languageManagerEClass, LanguageManager.class, "LanguageManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(languageManagerEClass, null, "classifyLanguage", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(languageManagerEClass, null, "classifyLanguage", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "text", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theClassificationPackage.getClassification());
@@ -527,15 +558,6 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 
 		initEClass(languageParserRegistryEClass, LanguageParserRegistry.class, "LanguageParserRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(languageLinearizerEClass, LanguageLinearizer.class, "LanguageLinearizer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(languageLinearizerEClass, ecorePackage.getEString(), "linearize", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "language", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getLanguageExpression(), "expression", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(languageLinearizerRegistryEClass, LanguageLinearizerRegistry.class, "LanguageLinearizerRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(languagePlanetEClass, LanguagePlanet.class, "LanguagePlanet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLanguagePlanet_Name(), ecorePackage.getEString(), "name", null, 1, 1, LanguagePlanet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -554,6 +576,9 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		addEEnumLiteral(languageTypeEEnum, LanguageType.ANCIENT);
 		addEEnumLiteral(languageTypeEEnum, LanguageType.HISTORICAL);
 		addEEnumLiteral(languageTypeEEnum, LanguageType.CONSTRUCTED);
+
+		// Initialize data types
+		initEDataType(languageExceptionEDataType, LanguageException.class, "LanguageException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

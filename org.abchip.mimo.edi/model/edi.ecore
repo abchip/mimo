@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="edi" nsURI="http://www.abchip.org/mimo/edi" nsPrefix="mimo-edi">
   <eClassifiers xsi:type="ecore:EClass" name="EdiManager" abstract="true" interface="true">
-    <eOperations name="writeMessage">
+    <eOperations name="writeMessage" eExceptions="#//DataInterchangeException">
       <eTypeParameters name="E">
         <eBounds eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable"/>
       </eTypeParameters>
@@ -13,6 +13,7 @@
       <eParameters name="event" lowerBound="1" eType="#//entity/EntityEvent"/>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="DataInterchangeException" instanceClassName="org.abchip.mimo.edi.DataInterchangeException"/>
   <eSubpackages name="entity" nsURI="http://www.abchip.org/mimo/edi/entity" nsPrefix="mimo-edi-ent">
     <eClassifiers xsi:type="ecore:EClass" name="EdiFrameSetup" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageType" lowerBound="1"

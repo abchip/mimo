@@ -19,6 +19,7 @@ import org.abchip.mimo.server.JobReference;
 import org.abchip.mimo.server.JobRunInfo;
 import org.abchip.mimo.server.JobStatus;
 import org.abchip.mimo.server.JobType;
+import org.abchip.mimo.server.ServerException;
 import org.abchip.mimo.server.ServerFactory;
 import org.abchip.mimo.server.ServerPackage;
 import org.abchip.mimo.server.SystemEvent;
@@ -112,6 +113,8 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 				return createSystemEventTypeFromString(eDataType, initialValue);
 			case ServerPackage.SYSTEM_STATUS:
 				return createSystemStatusFromString(eDataType, initialValue);
+			case ServerPackage.SERVER_EXCEPTION:
+				return createServerExceptionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -135,6 +138,8 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 				return convertSystemEventTypeToString(eDataType, instanceValue);
 			case ServerPackage.SYSTEM_STATUS:
 				return convertSystemStatusToString(eDataType, instanceValue);
+			case ServerPackage.SERVER_EXCEPTION:
+				return convertServerExceptionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -359,6 +364,24 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory {
 	 */
 	public String convertSystemStatusToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServerException createServerExceptionFromString(EDataType eDataType, String initialValue) {
+		return (ServerException)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertServerExceptionToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

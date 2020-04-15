@@ -11,6 +11,7 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -181,16 +182,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageManager()
 	 * @generated
 	 */
-	int LANGUAGE_MANAGER = 2;
-
-	/**
-	 * The number of structural features of the '<em>Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LANGUAGE_MANAGER_FEATURE_COUNT = 0;
+	int LANGUAGE_MANAGER = 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageParser <em>Parser</em>}' class.
@@ -200,16 +192,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageParser()
 	 * @generated
 	 */
-	int LANGUAGE_PARSER = 3;
-
-	/**
-	 * The number of structural features of the '<em>Parser</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LANGUAGE_PARSER_FEATURE_COUNT = 0;
+	int LANGUAGE_PARSER = 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageParserRegistry <em>Parser Registry</em>}' class.
@@ -219,16 +202,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageParserRegistry()
 	 * @generated
 	 */
-	int LANGUAGE_PARSER_REGISTRY = 4;
-
-	/**
-	 * The number of structural features of the '<em>Parser Registry</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LANGUAGE_PARSER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
+	int LANGUAGE_PARSER_REGISTRY = 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageLinearizer <em>Linearizer</em>}' class.
@@ -238,7 +212,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageLinearizer()
 	 * @generated
 	 */
-	int LANGUAGE_LINEARIZER = 5;
+	int LANGUAGE_LINEARIZER = 2;
 
 	/**
 	 * The number of structural features of the '<em>Linearizer</em>' class.
@@ -257,7 +231,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageLinearizerRegistry()
 	 * @generated
 	 */
-	int LANGUAGE_LINEARIZER_REGISTRY = 6;
+	int LANGUAGE_LINEARIZER_REGISTRY = 3;
 
 	/**
 	 * The number of structural features of the '<em>Linearizer Registry</em>' class.
@@ -267,6 +241,33 @@ public interface LanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int LANGUAGE_LINEARIZER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_MANAGER_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Parser</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PARSER_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Parser Registry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PARSER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.impl.LanguagePlanetImpl <em>Planet</em>}' class.
@@ -315,6 +316,16 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 */
 	int LANGUAGE_TYPE = 9;
+
+	/**
+	 * The meta object id for the '<em>Exception</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.language.LanguageException
+	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageException()
+	 * @generated
+	 */
+	int LANGUAGE_EXCEPTION = 10;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.language.Language <em>Language</em>}'.
@@ -516,6 +527,17 @@ public interface LanguagePackage extends EPackage {
 	EEnum getLanguageType();
 
 	/**
+	 * Returns the meta object for data type '{@link org.abchip.mimo.language.LanguageException <em>Exception</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Exception</em>'.
+	 * @see org.abchip.mimo.language.LanguageException
+	 * @model instanceClass="org.abchip.mimo.language.LanguageException"
+	 * @generated
+	 */
+	EDataType getLanguageException();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -690,6 +712,15 @@ public interface LanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum LANGUAGE_TYPE = eINSTANCE.getLanguageType();
+		/**
+		 * The meta object literal for the '<em>Exception</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.language.LanguageException
+		 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageException()
+		 * @generated
+		 */
+		EDataType LANGUAGE_EXCEPTION = eINSTANCE.getLanguageException();
 
 	}
 

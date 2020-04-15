@@ -10,6 +10,7 @@ package org.abchip.mimo.edi.impl;
 import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.edi.DataInterchangeException;
 import org.abchip.mimo.edi.EDIFactory;
 import org.abchip.mimo.edi.EDIPackage;
 import org.abchip.mimo.edi.EdiManager;
@@ -25,6 +26,7 @@ import org.abchip.mimo.edi.message.impl.MessagePackageImpl;
 import org.abchip.mimo.edi.transmission.TransmissionPackage;
 import org.abchip.mimo.edi.transmission.impl.TransmissionPackageImpl;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -44,6 +46,13 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 * @generated
 	 */
 	private EClass ediManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType dataInterchangeExceptionEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -139,6 +148,16 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 	 * @generated
 	 */
 	@Override
+	public EDataType getDataInterchangeException() {
+		return dataInterchangeExceptionEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDIFactory getEDIFactory() {
 		return (EDIFactory)getEFactoryInstance();
 	}
@@ -163,6 +182,9 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 
 		// Create classes and their features
 		ediManagerEClass = createEClass(EDI_MANAGER);
+
+		// Create data types
+		dataInterchangeExceptionEDataType = createEDataType(DATA_INTERCHANGE_EXCEPTION);
 	}
 
 	/**
@@ -217,6 +239,10 @@ public class EDIPackageImpl extends EPackageImpl implements EDIPackage {
 		g1 = createEGenericType(t1);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEntityPackage.getEntityEvent(), "event", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getDataInterchangeException());
+
+		// Initialize data types
+		initEDataType(dataInterchangeExceptionEDataType, DataInterchangeException.class, "DataInterchangeException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

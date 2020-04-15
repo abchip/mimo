@@ -11,7 +11,6 @@ package org.abchip.mimo.core.http.servlet.session;
 import java.io.IOException;
 
 import javax.inject.Inject;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,6 +28,7 @@ import org.abchip.mimo.context.ContextFactory;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -49,13 +49,13 @@ public class LoginServlet extends HttpServlet {
 	private static final Logger LOGGER = Logs.getLogger(LoginServlet.class);
 
 	@Override
-	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		doPost(request, response);
 	}
 
 	@SuppressWarnings("resource")
 	@Override
-	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		HttpSession session = request.getSession();
 
@@ -77,8 +77,9 @@ public class LoginServlet extends HttpServlet {
 			try {
 				loginRedirect(request, response, provider);
 			} catch (AuthenticationException e) {
-				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-				throw new ServletException(e);
+				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+			} catch (ResourceException e) {
+				response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 			}
 			return;
 		}
@@ -89,8 +90,8 @@ public class LoginServlet extends HttpServlet {
 			try {
 				context = loginAdminKey(session, adminKey);
 			} catch (AuthenticationException e) {
-				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-				throw new ServletException(e);
+				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+				return;
 			}
 		} else {
 			// user password login
@@ -100,15 +101,10 @@ public class LoginServlet extends HttpServlet {
 				try {
 					context = loginUserPassword(session, user, password);
 				} catch (AuthenticationException e) {
-					response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-					throw new ServletException(e);
+					response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+					return;
 				}
 			}
-		}
-
-		if (context == null) {
-			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-			return;
 		}
 
 		// register context
@@ -177,7 +173,7 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	@SuppressWarnings("resource")
-	private void loginRedirect(HttpServletRequest request, HttpServletResponse response, String provider) throws IOException, AuthenticationException {
+	private void loginRedirect(HttpServletRequest request, HttpServletResponse response, String provider) throws IOException, AuthenticationException, ResourceException {
 
 		HttpSession session = request.getSession();
 

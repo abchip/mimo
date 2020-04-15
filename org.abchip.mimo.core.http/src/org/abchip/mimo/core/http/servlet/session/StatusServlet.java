@@ -11,7 +11,6 @@ package org.abchip.mimo.core.http.servlet.session;
 import java.io.IOException;
 
 import javax.inject.Inject;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,13 +37,13 @@ public class StatusServlet extends HttpServlet {
 	private AuthenticationManager authenticationManager;
 
 	@Override
-	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		doPost(request, response);
 	}
 
 	@SuppressWarnings("resource")
 	@Override
-	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		HttpSession session = request.getSession();
 
@@ -57,16 +56,11 @@ public class StatusServlet extends HttpServlet {
 			try {
 				context = authenticationManager.login(session.getId(), authentication).get();
 			} catch (AuthenticationException e) {
-				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-				throw new ServletException(e);
+				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+				return;
 			}
 
 			ContextUtils.addContext(context);
-		}
-
-		if (context == null) {
-			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-			return;
 		}
 
 		response.setStatus(HttpServletResponse.SC_OK);

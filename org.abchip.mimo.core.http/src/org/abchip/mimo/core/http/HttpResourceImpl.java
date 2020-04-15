@@ -22,12 +22,11 @@ import org.abchip.mimo.core.http.handler.HttpNextSequenceHandler;
 import org.abchip.mimo.core.http.handler.HttpSaveHandler;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
-import org.abchip.mimo.util.Logs;
 import org.apache.http.client.ResponseHandler;
-import org.osgi.service.log.Logger;
 
 public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
@@ -35,8 +34,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	private final static Logger LOGGER = Logs.getLogger(HttpResourceImpl.class);
 
 	private HttpConnector connector;
 	private ResourceSerializer<E> resourceSerializer = null;
@@ -61,7 +58,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	}
 
 	@Override
-	public String nextSequence() {
+	public String nextSequence() throws ResourceException {
 
 		if (getFrame().getKeys().size() > 1)
 			return null;
@@ -75,24 +72,24 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		try {
 			nextSequence = connector.execute("nextSequence", query, new HttpNextSequenceHandler());
 		} catch (Exception e) {
-			LOGGER.error(e.getMessage());
+			throw new ResourceException(e);
 		}
 
 		return nextSequence;
 	}
 
 	@Override
-	public void create(E entity, boolean update) {
+	public void create(E entity, boolean update) throws ResourceException {
 		doSave(entity, update);
 	}
 
 	@Override
-	public void update(E entity) {
+	public void update(E entity) throws ResourceException {
 		doSave(entity, true);
 	}
 
 	@Override
-	public E read(String id, String fields, boolean proxy) {
+	public E read(String id, String fields, boolean proxy) throws ResourceException {
 
 		E entity = null;
 
@@ -110,14 +107,14 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			}
 
 		} catch (Exception e) {
-			LOGGER.error(e.getMessage());
+			throw new ResourceException(e);
 		}
 
 		return entity;
 	}
 
 	@Override
-	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) {
+	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException {
 
 		List<E> entities = null;
 
@@ -148,14 +145,14 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 				entities = this.connector.execute("find", query, handler);
 			}
 		} catch (Exception e) {
-			LOGGER.error(e.getMessage());
+			throw new ResourceException(e);
 		}
 
 		return entities;
 	}
 
 	@Override
-	public void delete(E entity) {
+	public void delete(E entity) throws ResourceException {
 
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		synchronized (this.resourceSerializer) {
@@ -164,8 +161,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			try {
 				this.resourceSerializer.save(baos);
 			} catch (Exception e) {
-				LOGGER.error(e.getMessage());
-				throw new RuntimeException(e);
+				throw new ResourceException(e);
 			} finally {
 				this.resourceSerializer.clear();
 			}
@@ -178,12 +174,11 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		try {
 			connector.execute("delete", query, new HttpDeleteHandler());
 		} catch (Exception e) {
-			LOGGER.error(e.getMessage());
-			throw new RuntimeException(e);
+			throw new ResourceException(e);
 		}
 	}
 
-	private void doSave(E entity, boolean replace) {
+	private void doSave(E entity, boolean replace) throws ResourceException {
 
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		synchronized (this.resourceSerializer) {
@@ -191,8 +186,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			try {
 				this.resourceSerializer.save(baos);
 			} catch (IOException e) {
-				LOGGER.error(e.getMessage());
-				throw new RuntimeException(e);
+				throw new ResourceException(e);
 			} finally {
 				this.resourceSerializer.clear();
 			}
@@ -210,9 +204,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		try {
 			connector.execute("save", query, new HttpSaveHandler());
 		} catch (Exception e) {
-			LOGGER.error(e.getMessage());
-			throw new RuntimeException(e);
+			throw new ResourceException(e);
 		}
-
 	}
 }

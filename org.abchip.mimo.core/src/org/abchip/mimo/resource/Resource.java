@@ -35,18 +35,18 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model entityRequired="true" updateRequired="true"
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true" updateRequired="true"
 	 * @generated
 	 */
-	void create(E entity, boolean update);
+	void create(E entity, boolean update) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model entityRequired="true"
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true"
 	 * @generated
 	 */
-	void delete(E entity);
+	void delete(E entity) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,33 +89,33 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException"
 	 * @generated
 	 */
-	String nextSequence();
+	String nextSequence() throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException"
 	 * @generated
 	 */
-	E read(String name, String fields, boolean proxy);
+	E read(String name, String fields, boolean proxy) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException"
 	 * @generated
 	 */
-	List<E> read(String filter, String fields, String order, int limit, boolean proxy);
+	List<E> read(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model entityRequired="true"
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true"
 	 * @generated
 	 */
-	void update(E entity);
+	void update(E entity) throws ResourceException;
 
 } // Resource

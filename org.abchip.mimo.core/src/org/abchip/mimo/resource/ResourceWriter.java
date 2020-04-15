@@ -23,26 +23,26 @@ public interface ResourceWriter<E extends EntityIdentifiable> extends ResourceRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model entityRequired="true"
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true"
 	 * @generated
 	 */
-	void delete(E entity);
+	void delete(E entity) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model entityRequired="true"
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true"
 	 * @generated
 	 */
-	void create(E entity);
+	void create(E entity) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model entityRequired="true" updateRequired="true"
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true" updateRequired="true"
 	 * @generated
 	 */
-	void create(E entity, boolean update);
+	void create(E entity, boolean update) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -55,17 +55,17 @@ public interface ResourceWriter<E extends EntityIdentifiable> extends ResourceRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" sequenceRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" sequenceRequired="true"
 	 * @generated
 	 */
-	E make(boolean sequence);
+	E make(boolean sequence) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model entityRequired="true"
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true"
 	 * @generated
 	 */
-	void update(E entity);
+	void update(E entity) throws ResourceException;
 
 } // ResourceWriter

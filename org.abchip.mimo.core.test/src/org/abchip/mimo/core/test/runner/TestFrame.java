@@ -13,6 +13,7 @@ import javax.inject.Inject;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
@@ -30,12 +31,12 @@ public class TestFrame {
 	public ResourceManager resourceManager;
 
 	@TestStarted
-	public void main() {
+	public void main() throws ResourceException {
 		testFrame();
 	}
 
 	@SuppressWarnings("rawtypes")
-	private void testFrame() {
+	private void testFrame() throws ResourceException {
 
 		try (EntityIterator<Frame> frames = resourceManager.getResourceReader(testRunner.getContext(), Frame.class).find()) {
 			for (Frame<?> frame : frames) {

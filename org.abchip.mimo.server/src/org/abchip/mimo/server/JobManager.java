@@ -33,18 +33,18 @@ public interface JobManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model capabilityRequired="true"
+	 * @model exceptions="org.abchip.mimo.server.ServerException" capabilityRequired="true"
 	 * @generated
 	 */
-	void close(JobCapability capability);
+	void close(JobCapability capability) throws ServerException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model jobRequired="true"
+	 * @model exceptions="org.abchip.mimo.server.ServerException" jobRequired="true"
 	 * @generated
 	 */
-	void close(Job job);
+	void close(Job job) throws ServerException;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -57,18 +57,18 @@ public interface JobManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" identityRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.server.ServerException" identityRequired="true"
 	 * @generated
 	 */
-	JobCapability create(Identity<?> identity);
+	JobCapability create(Identity<?> identity) throws ServerException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" identityRequired="true" jobNameRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.server.ServerException" identityRequired="true" jobNameRequired="true"
 	 * @generated
 	 */
-	JobCapability create(Identity<?> identity, String jobName);
+	JobCapability create(Identity<?> identity, String jobName) throws ServerException;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -183,9 +183,9 @@ public interface JobManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" parentRequired="true" jobNameRequired="true" copyEnvironmentVariablesRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.server.ServerException" parentRequired="true" jobNameRequired="true" copyEnvironmentVariablesRequired="true"
 	 * @generated
 	 */
-	JobCapability spawn(Job parent, String jobName, boolean copyEnvironmentVariables);
+	JobCapability spawn(Job parent, String jobName, boolean copyEnvironmentVariables) throws ServerException;
 
 } // JobManager

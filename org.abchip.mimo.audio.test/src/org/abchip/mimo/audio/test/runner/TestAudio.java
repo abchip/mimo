@@ -20,6 +20,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
 import org.abchip.mimo.mining.classification.Classification;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
@@ -44,7 +45,7 @@ public class TestAudio {
 
 	@SuppressWarnings("resource")
 	@TestStarted
-	public void start() throws InterruptedException {
+	public void start() throws InterruptedException, ResourceException {
 
 		audioManager.play(testRunner.getContext(), AudioStyle.A, "Hi Diana, there is a kitchen to clean!!", true, true);
 
@@ -71,7 +72,7 @@ public class TestAudio {
 	}
 
 	@SuppressWarnings("resource")
-	private void readFrames() throws InterruptedException {
+	private void readFrames() throws InterruptedException, ResourceException {
 
 		audioManager.play(testRunner.getContext(), AudioStyle.A, "I found the following frames in the system", true, true);
 
@@ -88,7 +89,7 @@ public class TestAudio {
 	}
 
 	@SuppressWarnings({ "unused", "resource" })
-	private void recordAudio() throws InterruptedException {
+	private void recordAudio() throws InterruptedException, ResourceException {
 
 		try (AudioRecorder audioRecorder = audioManager.record(testRunner.getContext())) {
 			audioRecorder.start();

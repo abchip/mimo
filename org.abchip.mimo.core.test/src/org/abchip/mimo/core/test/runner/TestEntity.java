@@ -7,6 +7,7 @@ import org.abchip.mimo.core.test.ObjectA;
 import org.abchip.mimo.core.test.ObjectB;
 import org.abchip.mimo.core.test.TestFactory;
 import org.abchip.mimo.entity.EntityIterator;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
@@ -25,7 +26,7 @@ public class TestEntity {
 	public transient TestAsserter asserter;
 
 	@TestStarted
-	public void start() {
+	public void start() throws ResourceException {
 
 		testWrite();
 
@@ -34,7 +35,7 @@ public class TestEntity {
 		testDelete();
 	}
 
-	private void testRead() {
+	private void testRead() throws ResourceException {
 
 		ResourceReader<ObjectA> entityReader = resourceManager.getResourceReader(testRunner.getContext(), ObjectA.class);
 
@@ -76,7 +77,7 @@ public class TestEntity {
 		}
 	}
 
-	private void testDelete() {
+	private void testDelete() throws ResourceException {
 
 		ResourceWriter<ObjectA> entityWriter = resourceManager.getResourceWriter(testRunner.getContext(), ObjectA.class);
 

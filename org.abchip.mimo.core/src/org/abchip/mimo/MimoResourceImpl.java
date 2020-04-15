@@ -20,10 +20,12 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.resource.ResourceReader;
+import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.URIs;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -33,8 +35,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.osgi.service.log.Logger;
 
 public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl {
+
+	private static final Logger LOGGER = Logs.getLogger(MimoResourceImpl.class);
 
 	private Resource<E> resource = null;
 	private ResourceReader<E> resourceReader = null;
@@ -158,7 +163,12 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 	@Override
 	public EObject getEObject(String uriFragment) {
-		return (EObject) this.getResourceReader().lookup(uriFragment);
+		try {
+			return (EObject) this.getResourceReader().lookup(uriFragment);
+		} catch (ResourceException e) {
+			LOGGER.error(e.getMessage());
+			throw new RuntimeException("Unexpected condition bsda8f7tsd8rf7ewr4b86ds");
+		}
 	}
 
 	@Override

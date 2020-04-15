@@ -22,6 +22,7 @@ import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -51,56 +52,63 @@ public class LookupSchemaServlet extends BaseServlet {
 		String prototype = request.getParameter("prototype");
 
 		Frame<?> frame = resourceManager.getFrame(context, frameName);
-		if (frame == null)
+		if (frame == null) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
 			return;
+		}
 
-		Schema schema = resourceManager.getResourceReader(context, Schema.class, Resource.TENANT_MASTER).lookup(name);
+		try {
+			Schema schema = resourceManager.getResourceReader(context, Schema.class, Resource.TENANT_MASTER).lookup(name);
 
-		if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
-			schema = SchemaFactory.eINSTANCE.createSchema();
-			schema.setName("prototype");
+			if (schema == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
+				schema = SchemaFactory.eINSTANCE.createSchema();
+				schema.setName("prototype");
 
-			SchemaColumn currentColumn = null;
-			SchemaColumn currentKey = null;
-			for (Slot slot : frame.getSlots()) {
+				SchemaColumn currentColumn = null;
+				SchemaColumn currentKey = null;
+				for (Slot slot : frame.getSlots()) {
 
-				// if (slot.isRoute())
-				// continue;
+					// if (slot.isRoute())
+					// continue;
 
-				SchemaColumn column = buildColumn(slot);
+					SchemaColumn column = buildColumn(slot);
 
-				// field id
-				if (slot.isKey()) {
+					// field id
+					if (slot.isKey()) {
 
-					if (currentKey == null)
-						Lists.addFirst(schema.getColumns(), column);
-					else
-						Lists.addAfter(schema.getColumns(), currentKey, column);
+						if (currentKey == null)
+							Lists.addFirst(schema.getColumns(), column);
+						else
+							Lists.addAfter(schema.getColumns(), currentKey, column);
 
-					if (currentColumn == null || currentColumn.equals(currentKey))
+						if (currentColumn == null || currentColumn.equals(currentKey))
+							currentColumn = column;
+
+						currentKey = column;
+					} else if (slot.getName().startsWith("created"))
+						Lists.addLast(schema.getColumns(), column);
+					else if (slot.getName().startsWith("lastUpdated"))
+						Lists.addLast(schema.getColumns(), column);
+					else {
+						if (currentColumn == null)
+							Lists.addFirst(schema.getColumns(), column);
+						else
+							Lists.addAfter(schema.getColumns(), currentColumn, column);
 						currentColumn = column;
-
-					currentKey = column;
-				} else if (slot.getName().startsWith("created"))
-					Lists.addLast(schema.getColumns(), column);
-				else if (slot.getName().startsWith("lastUpdated"))
-					Lists.addLast(schema.getColumns(), column);
-				else {
-					if (currentColumn == null)
-						Lists.addFirst(schema.getColumns(), column);
-					else
-						Lists.addAfter(schema.getColumns(), currentColumn, column);
-					currentColumn = column;
+					}
 				}
 			}
-		}
 
-		ResourceSerializer<Schema> entitySerializer = resourceManager.createResourceSerializer(context, Schema.class, SerializationType.JSON);
-		if (schema != null) {
-			completeSchema(context, schema);
-			entitySerializer.add(schema);
+			ResourceSerializer<Schema> entitySerializer = resourceManager.createResourceSerializer(context, Schema.class, SerializationType.JSON);
+			if (schema != null) {
+				completeSchema(context, schema);
+				entitySerializer.add(schema);
+			}
+			entitySerializer.save(response.getOutputStream());
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
 		}
-		entitySerializer.save(response.getOutputStream());
 	}
 
 	private SchemaColumn buildColumn(Slot slot) {
@@ -152,12 +160,12 @@ public class LookupSchemaServlet extends BaseServlet {
 		return column;
 	}
 
-	private void completeSchema(Context context, Schema schema) {
+	private void completeSchema(Context context, Schema schema) throws ResourceException {
 		for (SchemaColumn column : schema.getColumns())
 			completeSchemaColumn(context, column);
 	}
 
-	private void completeSchemaColumn(Context context, SchemaColumn column) {
+	private void completeSchemaColumn(Context context, SchemaColumn column) throws ResourceException {
 
 		Domain domain = column.getDomain();
 

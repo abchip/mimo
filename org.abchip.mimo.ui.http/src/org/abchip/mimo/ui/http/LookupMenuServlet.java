@@ -20,6 +20,7 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -45,50 +46,55 @@ public class LookupMenuServlet extends BaseServlet {
 
 		Menu menu = null;
 
-		ResourceReader<Menu> menuReader = resourceManager.getResourceReader(context, Menu.class, Resource.TENANT_MASTER);
-		if (name == null || name.isEmpty()) {
-			menu = MenuFactory.eINSTANCE.createMenu();
-			menu.setName("List Menu");
+		try {
+			ResourceReader<Menu> menuReader = resourceManager.getResourceReader(context, Menu.class, Resource.TENANT_MASTER);
+			if (name == null || name.isEmpty()) {
+				menu = MenuFactory.eINSTANCE.createMenu();
+				menu.setName("List Menu");
 
-			try (EntityIterator<Menu> menus = menuReader.find()) {
-				for (Menu elem : menus) {
-					// build upper level group from menu
-					MenuGroup group = MenuFactory.eINSTANCE.createMenuGroup();
-					group.setId(UUID.randomUUID().toString());
-					group.setValue(elem.getName());
-					group.setIcon(elem.getIcon());
-					group.getData().addAll(elem.getElements());
+				try (EntityIterator<Menu> menus = menuReader.find()) {
+					for (Menu elem : menus) {
+						// build upper level group from menu
+						MenuGroup group = MenuFactory.eINSTANCE.createMenuGroup();
+						group.setId(UUID.randomUUID().toString());
+						group.setValue(elem.getName());
+						group.setIcon(elem.getIcon());
+						group.getData().addAll(elem.getElements());
 
-					// append to root
-					menu.getElements().add(group);
-				}
-			}
-		} else {
-			menu = menuReader.lookup(name);
-		}
-
-		if (menu != null) {
-			TreeIterator<EObject> features = ((EObject) menu).eAllContents();
-
-			features.forEachRemaining(new Consumer<EObject>() {
-
-				@Override
-				public void accept(EObject element) {
-					if (element instanceof MenuGroup) {
-						MenuGroup menuGroup = (MenuGroup) element;
-						if (menuGroup.getId() == null || menuGroup.getId().trim().isEmpty()) {
-							menuGroup.setId(UUID.randomUUID().toString());
-						}
-					} else if (element instanceof MenuAction) {
-						MenuAction menuAction = (MenuAction) element;
-						if (menuAction.getFilter() != null)
-							menuAction.setFilter(menuAction.getFilter().replaceAll("=", "%3D"));
-						if (menuAction.getId() == null || menuAction.getId().trim().isEmpty()) {
-							menuAction.setId(menuAction.getAction() + "&r=" + UUID.randomUUID().toString());
-						}
+						// append to root
+						menu.getElements().add(group);
 					}
 				}
-			});
+			} else {
+				menu = menuReader.lookup(name);
+			}
+
+			if (menu != null) {
+				TreeIterator<EObject> features = ((EObject) menu).eAllContents();
+
+				features.forEachRemaining(new Consumer<EObject>() {
+
+					@Override
+					public void accept(EObject element) {
+						if (element instanceof MenuGroup) {
+							MenuGroup menuGroup = (MenuGroup) element;
+							if (menuGroup.getId() == null || menuGroup.getId().trim().isEmpty()) {
+								menuGroup.setId(UUID.randomUUID().toString());
+							}
+						} else if (element instanceof MenuAction) {
+							MenuAction menuAction = (MenuAction) element;
+							if (menuAction.getFilter() != null)
+								menuAction.setFilter(menuAction.getFilter().replaceAll("=", "%3D"));
+							if (menuAction.getId() == null || menuAction.getId().trim().isEmpty()) {
+								menuAction.setId(menuAction.getAction() + "&r=" + UUID.randomUUID().toString());
+							}
+						}
+					}
+				});
+			}
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
 		}
 
 		ResourceSerializer<Menu> entitySerializer = resourceManager.createResourceSerializer(context, Menu.class, SerializationType.JSON);

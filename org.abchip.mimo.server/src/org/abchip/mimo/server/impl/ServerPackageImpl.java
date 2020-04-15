@@ -29,6 +29,7 @@ import org.abchip.mimo.server.JobReference;
 import org.abchip.mimo.server.JobRunInfo;
 import org.abchip.mimo.server.JobStatus;
 import org.abchip.mimo.server.JobType;
+import org.abchip.mimo.server.ServerException;
 import org.abchip.mimo.server.ServerFactory;
 import org.abchip.mimo.server.ServerPackage;
 import org.abchip.mimo.server.SystemEvent;
@@ -38,6 +39,7 @@ import org.abchip.mimo.server.SystemManager;
 import org.abchip.mimo.server.SystemStatus;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
@@ -199,6 +201,13 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * @generated
 	 */
 	private EEnum systemStatusEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType serverExceptionEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -900,6 +909,16 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 	 * @generated
 	 */
 	@Override
+	public EDataType getServerException() {
+		return serverExceptionEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ServerFactory getServerFactory() {
 		return (ServerFactory)getEFactoryInstance();
 	}
@@ -1003,6 +1022,9 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		jobTypeEEnum = createEEnum(JOB_TYPE);
 		systemEventTypeEEnum = createEEnum(SYSTEM_EVENT_TYPE);
 		systemStatusEEnum = createEEnum(SYSTEM_STATUS);
+
+		// Create data types
+		serverExceptionEDataType = createEDataType(SERVER_EXCEPTION);
 	}
 
 	/**
@@ -1151,9 +1173,11 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 
 		op = addEOperation(jobManagerEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJobCapability(), "capability", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getServerException());
 
 		op = addEOperation(jobManagerEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJob(), "job", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getServerException());
 
 		addEOperation(jobManagerEClass, ecorePackage.getEInt(), "countActiveJobs", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1162,6 +1186,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		EGenericType g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "identity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getServerException());
 
 		op = addEOperation(jobManagerEClass, this.getJobCapability(), "create", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theContextPackage.getIdentity());
@@ -1169,6 +1194,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "identity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "jobName", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getServerException());
 
 		op = addEOperation(jobManagerEClass, null, "delay", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getELong(), "millis", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1223,6 +1249,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		addEParameter(op, this.getJob(), "parent", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "jobName", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "copyEnvironmentVariables", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getServerException());
 
 		op = addEOperation(jobManagerEClass, null, "updateStatus", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJob(), "job", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1265,8 +1292,10 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 
 		op = addEOperation(systemManagerEClass, this.getJob(), "start", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSystem(), "system", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getServerException());
 
-		addEOperation(systemManagerEClass, null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(systemManagerEClass, null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getServerException());
 
 		op = addEOperation(systemManagerEClass, null, "registerListener", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSystemListener(), "listener", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1310,6 +1339,9 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage {
 		addEEnumLiteral(systemStatusEEnum, SystemStatus.STARTED);
 		addEEnumLiteral(systemStatusEEnum, SystemStatus.ENDING);
 		addEEnumLiteral(systemStatusEEnum, SystemStatus.STOPPED);
+
+		// Initialize data types
+		initEDataType(serverExceptionEDataType, ServerException.class, "ServerException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

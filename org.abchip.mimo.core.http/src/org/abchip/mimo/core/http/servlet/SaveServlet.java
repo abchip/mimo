@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.ResourceWriter;
@@ -37,23 +38,27 @@ public class SaveServlet extends BaseServlet {
 		String tenant = request.getParameter("tenant");
 		String frame = request.getParameter("frame");
 
-		E entity = null;
-		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.MIMO);
+		try {
+			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.MIMO);
 
-		String json = request.getParameter("json");
-		if (!json.contains("\"eClass\""))
-			json = json.replaceFirst("\\{", "{\"eClass\":\"" + entitySerializer.getFrame().getURI() + "\",");
+			String json = request.getParameter("json");
+			if (!json.contains("\"eClass\""))
+				json = json.replaceFirst("\\{", "{\"eClass\":\"" + entitySerializer.getFrame().getURI() + "\",");
 
-		entitySerializer.load(json, false);
-		entity = entitySerializer.get();
+			entitySerializer.load(json, false);
+			E entity = entitySerializer.get();
 
-		String replace = request.getParameter("replace");
-		if (replace == null || replace.trim().isEmpty())
-			replace = "false";
+			String replace = request.getParameter("replace");
+			if (replace == null || replace.trim().isEmpty())
+				replace = "false";
 
-		ResourceWriter<E> entityWriter = resourceManager.getResourceWriter(context, frame, tenant);
-		entityWriter.create(entity, Boolean.parseBoolean(replace));
+			ResourceWriter<E> entityWriter = resourceManager.getResourceWriter(context, frame, tenant);
+			entityWriter.create(entity, Boolean.parseBoolean(replace));
 
-		response.setStatus(HttpServletResponse.SC_OK);
+			response.setStatus(HttpServletResponse.SC_OK);
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
+		}
 	}
 }

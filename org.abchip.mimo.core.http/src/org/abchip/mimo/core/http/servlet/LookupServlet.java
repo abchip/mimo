@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -42,16 +43,21 @@ public class LookupServlet extends BaseServlet {
 		if (proxy == null || proxy.trim().isEmpty())
 			proxy = "false";
 
-		ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame, tenant);
-		E entity = entityReader.lookup(id, Boolean.parseBoolean(proxy));
-		if (entity == null)
-			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-		else {
-			response.setStatus(HttpServletResponse.SC_FOUND);
+		try {
+			ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame, tenant);
+			E entity = entityReader.lookup(id, Boolean.parseBoolean(proxy));
+			if (entity == null)
+				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+			else {
+				response.setStatus(HttpServletResponse.SC_FOUND);
 
-			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.MIMO);
-			entitySerializer.add(entity);
-			entitySerializer.save(response.getOutputStream());
+				ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.MIMO);
+				entitySerializer.add(entity);
+				entitySerializer.save(response.getOutputStream());
+			}
+		} catch (ResourceException e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+			return;
 		}
 	}
 }
