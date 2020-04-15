@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.application;
+package org.abchip.mimo.service;
 
 import org.abchip.mimo.entity.Entity;
 
@@ -19,11 +19,11 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceReg#getClassName <em>Class Name</em>}</li>
- *   <li>{@link org.abchip.mimo.application.ServiceReg#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceReg#getClassName <em>Class Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceReg#getStatus <em>Status</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceReg()
+ * @see org.abchip.mimo.service.ServicePackage#getServiceReg()
  * @model abstract="true"
  * @generated
  */
@@ -38,14 +38,14 @@ public interface ServiceReg extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Class Name</em>' attribute.
 	 * @see #setClassName(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceReg_ClassName()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceReg_ClassName()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getClassName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceReg#getClassName <em>Class Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceReg#getClassName <em>Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Class Name</em>' attribute.
@@ -68,7 +68,7 @@ public interface ServiceReg extends Entity {
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.abchip.mimo.application.ServiceStatus}.
+	 * The literals are from the enumeration {@link org.abchip.mimo.service.ServiceStatus}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status</em>' attribute isn't clear,
@@ -76,20 +76,20 @@ public interface ServiceReg extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Status</em>' attribute.
-	 * @see org.abchip.mimo.application.ServiceStatus
+	 * @see org.abchip.mimo.service.ServiceStatus
 	 * @see #setStatus(ServiceStatus)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceReg_Status()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceReg_Status()
 	 * @model required="true"
 	 * @generated
 	 */
 	ServiceStatus getStatus();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceReg#getStatus <em>Status</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceReg#getStatus <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Status</em>' attribute.
-	 * @see org.abchip.mimo.application.ServiceStatus
+	 * @see org.abchip.mimo.service.ServiceStatus
 	 * @see #getStatus()
 	 * @generated
 	 */

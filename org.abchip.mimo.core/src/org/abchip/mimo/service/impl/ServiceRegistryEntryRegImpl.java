@@ -6,10 +6,10 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.application.impl;
+package org.abchip.mimo.service.impl;
 
-import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.ServiceRegistryEntryReg;
+import org.abchip.mimo.service.ServicePackage;
+import org.abchip.mimo.service.ServiceRegistryEntryReg;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -22,10 +22,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceRegistryEntryRegImpl#getInterfaceName <em>Interface Name</em>}</li>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceRegistryEntryRegImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceRegistryEntryRegImpl#getVendor <em>Vendor</em>}</li>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceRegistryEntryRegImpl#getVersion <em>Version</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceRegistryEntryRegImpl#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceRegistryEntryRegImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceRegistryEntryRegImpl#getVendor <em>Vendor</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceRegistryEntryRegImpl#getVersion <em>Version</em>}</li>
  * </ul>
  *
  * @generated
@@ -123,7 +123,7 @@ public class ServiceRegistryEntryRegImpl extends ServiceRegImpl implements Servi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.SERVICE_REGISTRY_ENTRY_REG;
+		return ServicePackage.Literals.SERVICE_REGISTRY_ENTRY_REG;
 	}
 
 	/**
@@ -146,7 +146,7 @@ public class ServiceRegistryEntryRegImpl extends ServiceRegImpl implements Servi
 		String oldInterfaceName = interfaceName;
 		interfaceName = newInterfaceName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__INTERFACE_NAME, oldInterfaceName, interfaceName));
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REGISTRY_ENTRY_REG__INTERFACE_NAME, oldInterfaceName, interfaceName));
 	}
 
 	/**
@@ -169,7 +169,7 @@ public class ServiceRegistryEntryRegImpl extends ServiceRegImpl implements Servi
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REGISTRY_ENTRY_REG__NAME, oldName, name));
 	}
 
 	/**
@@ -192,7 +192,7 @@ public class ServiceRegistryEntryRegImpl extends ServiceRegImpl implements Servi
 		String oldVendor = vendor;
 		vendor = newVendor;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__VENDOR, oldVendor, vendor));
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REGISTRY_ENTRY_REG__VENDOR, oldVendor, vendor));
 	}
 
 	/**
@@ -215,7 +215,7 @@ public class ServiceRegistryEntryRegImpl extends ServiceRegImpl implements Servi
 		String oldVersion = version;
 		version = newVersion;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__VERSION, oldVersion, version));
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REGISTRY_ENTRY_REG__VERSION, oldVersion, version));
 	}
 
 	/**
@@ -226,13 +226,13 @@ public class ServiceRegistryEntryRegImpl extends ServiceRegImpl implements Servi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__INTERFACE_NAME:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__INTERFACE_NAME:
 				return getInterfaceName();
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__NAME:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__NAME:
 				return getName();
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__VENDOR:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__VENDOR:
 				return getVendor();
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__VERSION:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__VERSION:
 				return getVersion();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -246,16 +246,16 @@ public class ServiceRegistryEntryRegImpl extends ServiceRegImpl implements Servi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__INTERFACE_NAME:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__INTERFACE_NAME:
 				setInterfaceName((String)newValue);
 				return;
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__NAME:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__NAME:
 				setName((String)newValue);
 				return;
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__VENDOR:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__VENDOR:
 				setVendor((String)newValue);
 				return;
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__VERSION:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__VERSION:
 				setVersion((String)newValue);
 				return;
 		}
@@ -270,16 +270,16 @@ public class ServiceRegistryEntryRegImpl extends ServiceRegImpl implements Servi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__INTERFACE_NAME:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__INTERFACE_NAME:
 				setInterfaceName(INTERFACE_NAME_EDEFAULT);
 				return;
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__NAME:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__VENDOR:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__VENDOR:
 				setVendor(VENDOR_EDEFAULT);
 				return;
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__VERSION:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__VERSION:
 				setVersion(VERSION_EDEFAULT);
 				return;
 		}
@@ -294,13 +294,13 @@ public class ServiceRegistryEntryRegImpl extends ServiceRegImpl implements Servi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__INTERFACE_NAME:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__INTERFACE_NAME:
 				return INTERFACE_NAME_EDEFAULT == null ? interfaceName != null : !INTERFACE_NAME_EDEFAULT.equals(interfaceName);
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__NAME:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__VENDOR:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__VENDOR:
 				return VENDOR_EDEFAULT == null ? vendor != null : !VENDOR_EDEFAULT.equals(vendor);
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG__VERSION:
+			case ServicePackage.SERVICE_REGISTRY_ENTRY_REG__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 		}
 		return super.eIsSet(featureID);

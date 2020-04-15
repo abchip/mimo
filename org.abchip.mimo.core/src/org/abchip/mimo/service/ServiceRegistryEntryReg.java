@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.application;
+package org.abchip.mimo.service;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,13 +17,13 @@ package org.abchip.mimo.application;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceRegistryEntryReg#getInterfaceName <em>Interface Name</em>}</li>
- *   <li>{@link org.abchip.mimo.application.ServiceRegistryEntryReg#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.application.ServiceRegistryEntryReg#getVendor <em>Vendor</em>}</li>
- *   <li>{@link org.abchip.mimo.application.ServiceRegistryEntryReg#getVersion <em>Version</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceRegistryEntryReg#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceRegistryEntryReg#getName <em>Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceRegistryEntryReg#getVendor <em>Vendor</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceRegistryEntryReg#getVersion <em>Version</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceRegistryEntryReg()
+ * @see org.abchip.mimo.service.ServicePackage#getServiceRegistryEntryReg()
  * @model
  * @generated
  */
@@ -38,7 +38,7 @@ public interface ServiceRegistryEntryReg extends ServiceReg {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
 	 * @see #setInterfaceName(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceRegistryEntryReg_InterfaceName()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceRegistryEntryReg_InterfaceName()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -46,7 +46,7 @@ public interface ServiceRegistryEntryReg extends ServiceReg {
 	String getInterfaceName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceRegistryEntryReg#getInterfaceName <em>Interface Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRegistryEntryReg#getInterfaceName <em>Interface Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Interface Name</em>' attribute.
@@ -65,14 +65,14 @@ public interface ServiceRegistryEntryReg extends ServiceReg {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceRegistryEntryReg_Name()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceRegistryEntryReg_Name()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceRegistryEntryReg#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRegistryEntryReg#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -91,14 +91,14 @@ public interface ServiceRegistryEntryReg extends ServiceReg {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Vendor</em>' attribute.
 	 * @see #setVendor(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceRegistryEntryReg_Vendor()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceRegistryEntryReg_Vendor()
 	 * @model
 	 * @generated
 	 */
 	String getVendor();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceRegistryEntryReg#getVendor <em>Vendor</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRegistryEntryReg#getVendor <em>Vendor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Vendor</em>' attribute.
@@ -117,14 +117,14 @@ public interface ServiceRegistryEntryReg extends ServiceReg {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceRegistryEntryReg_Version()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceRegistryEntryReg_Version()
 	 * @model
 	 * @generated
 	 */
 	String getVersion();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceRegistryEntryReg#getVersion <em>Version</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRegistryEntryReg#getVersion <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Version</em>' attribute.

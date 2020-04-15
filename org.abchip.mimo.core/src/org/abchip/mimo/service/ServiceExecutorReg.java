@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.application;
+package org.abchip.mimo.service;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,11 +17,11 @@ package org.abchip.mimo.application;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceExecutorReg#getInterfaceName <em>Interface Name</em>}</li>
- *   <li>{@link org.abchip.mimo.application.ServiceExecutorReg#isRemoteExport <em>Remote Export</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceExecutorReg#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceExecutorReg#isRemoteExport <em>Remote Export</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceExecutorReg()
+ * @see org.abchip.mimo.service.ServicePackage#getServiceExecutorReg()
  * @model
  * @generated
  */
@@ -36,7 +36,7 @@ public interface ServiceExecutorReg extends ServiceReg {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
 	 * @see #setInterfaceName(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceExecutorReg_InterfaceName()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceExecutorReg_InterfaceName()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -44,7 +44,7 @@ public interface ServiceExecutorReg extends ServiceReg {
 	String getInterfaceName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceExecutorReg#getInterfaceName <em>Interface Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceExecutorReg#getInterfaceName <em>Interface Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Interface Name</em>' attribute.
@@ -63,14 +63,14 @@ public interface ServiceExecutorReg extends ServiceReg {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Remote Export</em>' attribute.
 	 * @see #setRemoteExport(boolean)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceExecutorReg_RemoteExport()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceExecutorReg_RemoteExport()
 	 * @model required="true"
 	 * @generated
 	 */
 	boolean isRemoteExport();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceExecutorReg#isRemoteExport <em>Remote Export</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceExecutorReg#isRemoteExport <em>Remote Export</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Remote Export</em>' attribute.

@@ -6,14 +6,14 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.application.impl;
+package org.abchip.mimo.service.impl;
 
 import java.util.Collection;
 import java.util.List;
-import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.ServiceConfig;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.impl.EntityImpl;
+import org.abchip.mimo.service.ServiceConfig;
+import org.abchip.mimo.service.ServicePackage;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceConfigImpl#getEntities <em>Entities</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceConfigImpl#getEntities <em>Entities</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,7 +65,7 @@ public class ServiceConfigImpl extends EntityImpl implements ServiceConfig {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.SERVICE_CONFIG;
+		return ServicePackage.Literals.SERVICE_CONFIG;
 	}
 
 	/**
@@ -76,7 +76,7 @@ public class ServiceConfigImpl extends EntityImpl implements ServiceConfig {
 	@Override
 	public List<Entity> getEntities() {
 		if (entities == null) {
-			entities = new EObjectContainmentEList.Resolving<Entity>(Entity.class, this, ApplicationPackage.SERVICE_CONFIG__ENTITIES);
+			entities = new EObjectContainmentEList.Resolving<Entity>(Entity.class, this, ServicePackage.SERVICE_CONFIG__ENTITIES);
 		}
 		return entities;
 	}
@@ -89,7 +89,7 @@ public class ServiceConfigImpl extends EntityImpl implements ServiceConfig {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_CONFIG__ENTITIES:
+			case ServicePackage.SERVICE_CONFIG__ENTITIES:
 				return ((InternalEList<?>)getEntities()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -103,7 +103,7 @@ public class ServiceConfigImpl extends EntityImpl implements ServiceConfig {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_CONFIG__ENTITIES:
+			case ServicePackage.SERVICE_CONFIG__ENTITIES:
 				return getEntities();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -118,7 +118,7 @@ public class ServiceConfigImpl extends EntityImpl implements ServiceConfig {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_CONFIG__ENTITIES:
+			case ServicePackage.SERVICE_CONFIG__ENTITIES:
 				getEntities().clear();
 				getEntities().addAll((Collection<? extends Entity>)newValue);
 				return;
@@ -134,7 +134,7 @@ public class ServiceConfigImpl extends EntityImpl implements ServiceConfig {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_CONFIG__ENTITIES:
+			case ServicePackage.SERVICE_CONFIG__ENTITIES:
 				getEntities().clear();
 				return;
 		}
@@ -149,7 +149,7 @@ public class ServiceConfigImpl extends EntityImpl implements ServiceConfig {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_CONFIG__ENTITIES:
+			case ServicePackage.SERVICE_CONFIG__ENTITIES:
 				return entities != null && !entities.isEmpty();
 		}
 		return super.eIsSet(featureID);

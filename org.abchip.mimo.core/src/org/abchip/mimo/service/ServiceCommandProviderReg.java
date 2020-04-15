@@ -6,30 +6,28 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.application;
-
+package org.abchip.mimo.service;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Service Tester</b></em>'.
+ * A representation of the model object '<em><b>Service Command Provider</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceTesterReg#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceCommandProviderReg#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceTesterReg()
+ * @see org.abchip.mimo.service.ServicePackage#getServiceCommandProviderReg()
  * @model
  * @generated
  */
-public interface ServiceTesterReg extends ServiceReg {
-
+public interface ServiceCommandProviderReg extends ServiceReg {
 	/**
 	 * Returns the value of the '<em><b>Interface Name</b></em>' attribute.
-	 * The default value is <code>"org.abchip.mimo.tester.TestSuiteLauncher"</code>.
+	 * The default value is <code>"org.eclipse.osgi.framework.console.CommandProvider"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Interface Name</em>' attribute isn't clear,
@@ -37,10 +35,11 @@ public interface ServiceTesterReg extends ServiceReg {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceTesterReg_InterfaceName()
-	 * @model default="org.abchip.mimo.tester.TestSuiteLauncher" required="true" changeable="false"
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceCommandProviderReg_InterfaceName()
+	 * @model default="org.eclipse.osgi.framework.console.CommandProvider" required="true" changeable="false"
 	 * @generated
 	 */
 	@Override
 	String getInterfaceName();
-} // ServiceTesterReg
+
+} // ServiceCommandProviderReg

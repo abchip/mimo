@@ -6,14 +6,13 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.application.impl;
+package org.abchip.mimo.service.impl;
 
 import java.util.Collection;
 import java.util.List;
-
-import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.ServiceRegistryReg;
-import org.abchip.mimo.application.ServiceRegistryEntryReg;
+import org.abchip.mimo.service.ServicePackage;
+import org.abchip.mimo.service.ServiceRegistryEntryReg;
+import org.abchip.mimo.service.ServiceRegistryReg;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -31,8 +30,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceRegistryRegImpl#getEntries <em>Entries</em>}</li>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceRegistryRegImpl#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceRegistryRegImpl#getEntries <em>Entries</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceRegistryRegImpl#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -85,7 +84,7 @@ public class ServiceRegistryRegImpl extends ServiceRegImpl implements ServiceReg
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.SERVICE_REGISTRY_REG;
+		return ServicePackage.Literals.SERVICE_REGISTRY_REG;
 	}
 
 	/**
@@ -96,7 +95,7 @@ public class ServiceRegistryRegImpl extends ServiceRegImpl implements ServiceReg
 	@Override
 	public List<ServiceRegistryEntryReg> getEntries() {
 		if (entries == null) {
-			entries = new EObjectContainmentEList.Resolving<ServiceRegistryEntryReg>(ServiceRegistryEntryReg.class, this, ApplicationPackage.SERVICE_REGISTRY_REG__ENTRIES);
+			entries = new EObjectContainmentEList.Resolving<ServiceRegistryEntryReg>(ServiceRegistryEntryReg.class, this, ServicePackage.SERVICE_REGISTRY_REG__ENTRIES);
 		}
 		return entries;
 	}
@@ -121,7 +120,7 @@ public class ServiceRegistryRegImpl extends ServiceRegImpl implements ServiceReg
 		String oldInterfaceName = interfaceName;
 		interfaceName = newInterfaceName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY_REG__INTERFACE_NAME, oldInterfaceName, interfaceName));
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REGISTRY_REG__INTERFACE_NAME, oldInterfaceName, interfaceName));
 	}
 
 	/**
@@ -132,7 +131,7 @@ public class ServiceRegistryRegImpl extends ServiceRegImpl implements ServiceReg
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY_REG__ENTRIES:
+			case ServicePackage.SERVICE_REGISTRY_REG__ENTRIES:
 				return ((InternalEList<?>)getEntries()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -146,9 +145,9 @@ public class ServiceRegistryRegImpl extends ServiceRegImpl implements ServiceReg
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY_REG__ENTRIES:
+			case ServicePackage.SERVICE_REGISTRY_REG__ENTRIES:
 				return getEntries();
-			case ApplicationPackage.SERVICE_REGISTRY_REG__INTERFACE_NAME:
+			case ServicePackage.SERVICE_REGISTRY_REG__INTERFACE_NAME:
 				return getInterfaceName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -163,11 +162,11 @@ public class ServiceRegistryRegImpl extends ServiceRegImpl implements ServiceReg
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY_REG__ENTRIES:
+			case ServicePackage.SERVICE_REGISTRY_REG__ENTRIES:
 				getEntries().clear();
 				getEntries().addAll((Collection<? extends ServiceRegistryEntryReg>)newValue);
 				return;
-			case ApplicationPackage.SERVICE_REGISTRY_REG__INTERFACE_NAME:
+			case ServicePackage.SERVICE_REGISTRY_REG__INTERFACE_NAME:
 				setInterfaceName((String)newValue);
 				return;
 		}
@@ -182,10 +181,10 @@ public class ServiceRegistryRegImpl extends ServiceRegImpl implements ServiceReg
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY_REG__ENTRIES:
+			case ServicePackage.SERVICE_REGISTRY_REG__ENTRIES:
 				getEntries().clear();
 				return;
-			case ApplicationPackage.SERVICE_REGISTRY_REG__INTERFACE_NAME:
+			case ServicePackage.SERVICE_REGISTRY_REG__INTERFACE_NAME:
 				setInterfaceName(INTERFACE_NAME_EDEFAULT);
 				return;
 		}
@@ -200,9 +199,9 @@ public class ServiceRegistryRegImpl extends ServiceRegImpl implements ServiceReg
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY_REG__ENTRIES:
+			case ServicePackage.SERVICE_REGISTRY_REG__ENTRIES:
 				return entries != null && !entries.isEmpty();
-			case ApplicationPackage.SERVICE_REGISTRY_REG__INTERFACE_NAME:
+			case ServicePackage.SERVICE_REGISTRY_REG__INTERFACE_NAME:
 				return INTERFACE_NAME_EDEFAULT == null ? interfaceName != null : !INTERFACE_NAME_EDEFAULT.equals(interfaceName);
 		}
 		return super.eIsSet(featureID);

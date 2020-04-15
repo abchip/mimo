@@ -5,8 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.application;
-
+package org.abchip.mimo.service;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,10 +16,10 @@ package org.abchip.mimo.application;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceFactoryReg#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceFactoryReg#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceFactoryReg()
+ * @see org.abchip.mimo.service.ServicePackage#getServiceFactoryReg()
  * @model
  * @generated
  */
@@ -35,7 +34,7 @@ public interface ServiceFactoryReg extends ServiceReg {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceFactoryReg_InterfaceName()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceFactoryReg_InterfaceName()
 	 * @model default="org.abchip.mimo.context.Factory" required="true" changeable="false"
 	 * @generated
 	 */

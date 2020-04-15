@@ -5,8 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.application;
-
+package org.abchip.mimo.service;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,11 +16,11 @@ package org.abchip.mimo.application;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceServletReg#getAlias <em>Alias</em>}</li>
- *   <li>{@link org.abchip.mimo.application.ServiceServletReg#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceServletReg#getAlias <em>Alias</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceServletReg#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceServletReg()
+ * @see org.abchip.mimo.service.ServicePackage#getServiceServletReg()
  * @model
  * @generated
  */
@@ -36,14 +35,14 @@ public interface ServiceServletReg extends ServiceReg {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Alias</em>' attribute.
 	 * @see #setAlias(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceServletReg_Alias()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceServletReg_Alias()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getAlias();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceServletReg#getAlias <em>Alias</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceServletReg#getAlias <em>Alias</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Alias</em>' attribute.
@@ -62,7 +61,7 @@ public interface ServiceServletReg extends ServiceReg {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceServletReg_InterfaceName()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceServletReg_InterfaceName()
 	 * @model default="javax.servlet.Servlet" required="true" changeable="false"
 	 * @generated
 	 */

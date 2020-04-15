@@ -28,11 +28,6 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ModuleStatus/Stopped"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ModuleStatus/Testing"/>
       </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//application/ServiceStatus">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Active"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Stopped"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//application/ServiceStatus/Testing"/>
-      </genEnums>
       <genDataTypes ecoreDataType="mimo.ecore#//application/ApplicationBundle"/>
       <genClasses ecoreClass="mimo.ecore#//application/Application">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/adminKey"/>
@@ -81,42 +76,6 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationModule/name"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ApplicationModule/services"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationModule/status"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//application/ServiceCommandProviderReg">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceCommandProviderReg/interfaceName"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//application/ServiceConfig">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ServiceConfig/entities"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//application/ServiceHookReg"/>
-      <genClasses ecoreClass="mimo.ecore#//application/ServiceExecutorReg">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceExecutorReg/interfaceName"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceExecutorReg/remoteExport"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//application/ServiceReg">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceReg/className"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceReg/status"/>
-        <genOperations ecoreOperation="mimo.ecore#//application/ServiceReg/getInterfaceName"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//application/ServiceFactoryReg">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceFactoryReg/interfaceName"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//application/ServiceRegistryReg">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ServiceRegistryReg/entries"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceRegistryReg/interfaceName"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//application/ServiceRegistryEntryReg">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceRegistryEntryReg/interfaceName"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceRegistryEntryReg/name"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceRegistryEntryReg/vendor"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceRegistryEntryReg/version"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//application/ServiceServletReg">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceServletReg/alias"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceServletReg/interfaceName"/>
-      </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//application/ServiceTesterReg">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ServiceTesterReg/interfaceName"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Authentication" disposableProviderFactory="true" adapterFactory="false"
@@ -1119,7 +1078,48 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Service" disposableProviderFactory="true" adapterFactory="false"
         ecorePackage="mimo.ecore#//service">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//service/ServiceStatus">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//service/ServiceStatus/Active"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//service/ServiceStatus/Stopped"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//service/ServiceStatus/Testing"/>
+      </genEnums>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceCommandProviderReg">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceCommandProviderReg/interfaceName"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceConfig">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceConfig/entities"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceHookReg"/>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceExecutorReg">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceExecutorReg/interfaceName"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceExecutorReg/remoteExport"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceReg">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceReg/className"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceReg/status"/>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceReg/getInterfaceName"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceFactoryReg">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceFactoryReg/interfaceName"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceManager"/>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceRegistryReg">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceRegistryReg/entries"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRegistryReg/interfaceName"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceRegistryEntryReg">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRegistryEntryReg/interfaceName"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRegistryEntryReg/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRegistryEntryReg/vendor"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRegistryEntryReg/version"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceServletReg">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceServletReg/alias"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceServletReg/interfaceName"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceTesterReg">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceTesterReg/interfaceName"/>
+      </genClasses>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

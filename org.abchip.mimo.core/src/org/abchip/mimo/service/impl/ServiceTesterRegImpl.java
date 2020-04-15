@@ -6,26 +6,26 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.application.impl;
+package org.abchip.mimo.service.impl;
 
-import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.ServiceCommandProviderReg;
+import org.abchip.mimo.service.ServicePackage;
+import org.abchip.mimo.service.ServiceTesterReg;
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Service Command Provider</b></em>'.
+ * An implementation of the model object '<em><b>Service Tester</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceCommandProviderRegImpl#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceTesterRegImpl#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ServiceCommandProviderRegImpl extends ServiceRegImpl implements ServiceCommandProviderReg {
+public class ServiceTesterRegImpl extends ServiceRegImpl implements ServiceTesterReg {
 	/**
 	 * The default value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ public class ServiceCommandProviderRegImpl extends ServiceRegImpl implements Ser
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INTERFACE_NAME_EDEFAULT = "org.eclipse.osgi.framework.console.CommandProvider";
+	protected static final String INTERFACE_NAME_EDEFAULT = "org.abchip.mimo.tester.TestSuiteLauncher";
 	/**
 	 * The cached value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -48,13 +48,12 @@ public class ServiceCommandProviderRegImpl extends ServiceRegImpl implements Ser
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceCommandProviderRegImpl() {
+	protected ServiceTesterRegImpl() {
 		super();
 	}
 
@@ -65,7 +64,7 @@ public class ServiceCommandProviderRegImpl extends ServiceRegImpl implements Ser
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.SERVICE_COMMAND_PROVIDER_REG;
+		return ServicePackage.Literals.SERVICE_TESTER_REG;
 	}
 
 	/**
@@ -86,7 +85,7 @@ public class ServiceCommandProviderRegImpl extends ServiceRegImpl implements Ser
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_COMMAND_PROVIDER_REG__INTERFACE_NAME:
+			case ServicePackage.SERVICE_TESTER_REG__INTERFACE_NAME:
 				return getInterfaceName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -100,7 +99,7 @@ public class ServiceCommandProviderRegImpl extends ServiceRegImpl implements Ser
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_COMMAND_PROVIDER_REG__INTERFACE_NAME:
+			case ServicePackage.SERVICE_TESTER_REG__INTERFACE_NAME:
 				return INTERFACE_NAME_EDEFAULT == null ? interfaceName != null : !INTERFACE_NAME_EDEFAULT.equals(interfaceName);
 		}
 		return super.eIsSet(featureID);
@@ -122,4 +121,4 @@ public class ServiceCommandProviderRegImpl extends ServiceRegImpl implements Ser
 		return result.toString();
 	}
 
-} //ServiceCommandProviderRegImpl
+} //ServiceTesterRegImpl

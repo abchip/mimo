@@ -6,10 +6,9 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.application;
+package org.abchip.mimo.service;
 
 import java.util.List;
-
 import org.abchip.mimo.entity.Entity;
 
 /**
@@ -21,10 +20,10 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceConfig#getEntities <em>Entities</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceConfig#getEntities <em>Entities</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceConfig()
+ * @see org.abchip.mimo.service.ServicePackage#getServiceConfig()
  * @model
  * @generated
  */
@@ -39,7 +38,7 @@ public interface ServiceConfig extends Entity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entities</em>' containment reference list.
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceConfig_Entities()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceConfig_Entities()
 	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */

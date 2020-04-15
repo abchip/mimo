@@ -14,17 +14,17 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="adminKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="plugin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
-          eType="#//application/ServiceCommandProviderReg" containment="true"/>
+          eType="#//service/ServiceCommandProviderReg" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
           eType="#//application/ApplicationComponent" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="config" eType="#//application/ServiceConfig"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="config" eType="#//service/ServiceConfig"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//context/ContextRoot"
           transient="true" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="contextDescription" lowerBound="1"
           eType="#//context/ContextDescription" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hooks" upperBound="-1"
-          eType="#//application/ServiceHookReg" containment="true"/>
+          eType="#//service/ServiceHookReg" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="logs" lowerBound="1"
           eType="#//application/ApplicationLogs" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
@@ -46,14 +46,14 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ApplicationComponent" eSuperTypes="#//entity/EntityIdentifiable">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="config" eType="#//application/ServiceConfig"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="config" eType="#//service/ServiceConfig"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//context/Context"
           transient="true" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hooks" upperBound="-1"
-          eType="#//application/ServiceHookReg" containment="true"/>
+          eType="#//service/ServiceHookReg" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
-          eType="#//application/ServiceCommandProviderReg" containment="true"/>
+          eType="#//service/ServiceCommandProviderReg" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
           eType="#//application/ApplicationModule" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
@@ -84,7 +84,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="ApplicationModule" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
-          eType="#//application/ServiceReg" containment="true"/>
+          eType="#//service/ServiceReg" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
           eType="#//application/ModuleStatus" defaultValueLiteral="ACT"/>
     </eClassifiers>
@@ -97,65 +97,6 @@
       <eLiterals name="Active" literal="ACT"/>
       <eLiterals name="Stopped" literal="STP"/>
       <eLiterals name="Testing" literal="TST"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceCommandProviderReg" eSuperTypes="#//application/ServiceReg">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false" defaultValueLiteral="org.eclipse.osgi.framework.console.CommandProvider"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceConfig" eSuperTypes="#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="entities" lowerBound="1"
-          upperBound="-1" eType="#//entity/Entity" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceHookReg" eSuperTypes="#//application/ServiceReg"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceExecutorReg" eSuperTypes="#//application/ServiceReg">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteExport" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceReg" abstract="true" eSuperTypes="#//entity/Entity">
-      <eOperations name="getInterfaceName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
-          eType="#//application/ServiceStatus"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceFactoryReg" eSuperTypes="#//application/ServiceReg">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false" defaultValueLiteral="org.abchip.mimo.context.Factory"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceRegistryReg" eSuperTypes="#//application/ServiceReg">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
-          eType="#//application/ServiceRegistryEntryReg" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceRegistryEntryReg" eSuperTypes="#//application/ServiceReg">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="vendor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="ServiceStatus">
-      <eLiterals name="Active" literal="ACT"/>
-      <eLiterals name="Stopped" literal="STP"/>
-      <eLiterals name="Testing" literal="TST"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceServletReg" eSuperTypes="#//application/ServiceReg">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false" defaultValueLiteral="javax.servlet.Servlet"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceTesterReg" eSuperTypes="#//application/ServiceReg">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false" defaultValueLiteral="org.abchip.mimo.tester.TestSuiteLauncher"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="authentication" nsURI="http://www.abchip.org/mimo/authentication"
@@ -1820,6 +1761,65 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="service" nsURI="http://www.abchip.org/mimo/service" nsPrefix="mimo-service">
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceCommandProviderReg" eSuperTypes="#//service/ServiceReg">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false" defaultValueLiteral="org.eclipse.osgi.framework.console.CommandProvider"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceConfig" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entities" lowerBound="1"
+          upperBound="-1" eType="#//entity/Entity" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceHookReg" eSuperTypes="#//service/ServiceReg"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceExecutorReg" eSuperTypes="#//service/ServiceReg">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteExport" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceReg" abstract="true" eSuperTypes="#//entity/Entity">
+      <eOperations name="getInterfaceName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
+          eType="#//service/ServiceStatus"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceFactoryReg" eSuperTypes="#//service/ServiceReg">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false" defaultValueLiteral="org.abchip.mimo.context.Factory"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceManager" abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceRegistryReg" eSuperTypes="#//service/ServiceReg">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
+          eType="#//service/ServiceRegistryEntryReg" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceRegistryEntryReg" eSuperTypes="#//service/ServiceReg">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="vendor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ServiceStatus">
+      <eLiterals name="Active" literal="ACT"/>
+      <eLiterals name="Stopped" literal="STP"/>
+      <eLiterals name="Testing" literal="TST"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceServletReg" eSuperTypes="#//service/ServiceReg">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false" defaultValueLiteral="javax.servlet.Servlet"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceTesterReg" eSuperTypes="#//service/ServiceReg">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceName" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false" defaultValueLiteral="org.abchip.mimo.tester.TestSuiteLauncher"/>
+    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

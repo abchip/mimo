@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.application;
+package org.abchip.mimo.service;
 
 import java.util.List;
 
@@ -19,18 +19,18 @@ import java.util.List;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceRegistryReg#getEntries <em>Entries</em>}</li>
- *   <li>{@link org.abchip.mimo.application.ServiceRegistryReg#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceRegistryReg#getEntries <em>Entries</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceRegistryReg#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceRegistryReg()
+ * @see org.abchip.mimo.service.ServicePackage#getServiceRegistryReg()
  * @model
  * @generated
  */
 public interface ServiceRegistryReg extends ServiceReg {
 	/**
 	 * Returns the value of the '<em><b>Entries</b></em>' containment reference list.
-	 * The list contents are of type {@link org.abchip.mimo.application.ServiceRegistryEntryReg}.
+	 * The list contents are of type {@link org.abchip.mimo.service.ServiceRegistryEntryReg}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entries</em>' containment reference list isn't clear,
@@ -38,7 +38,7 @@ public interface ServiceRegistryReg extends ServiceReg {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entries</em>' containment reference list.
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceRegistryReg_Entries()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceRegistryReg_Entries()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
@@ -54,7 +54,7 @@ public interface ServiceRegistryReg extends ServiceReg {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
 	 * @see #setInterfaceName(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceRegistryReg_InterfaceName()
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceRegistryReg_InterfaceName()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -62,7 +62,7 @@ public interface ServiceRegistryReg extends ServiceReg {
 	String getInterfaceName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceRegistryReg#getInterfaceName <em>Interface Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRegistryReg#getInterfaceName <em>Interface Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Interface Name</em>' attribute.

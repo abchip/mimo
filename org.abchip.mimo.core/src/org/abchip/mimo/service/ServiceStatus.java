@@ -6,12 +6,11 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.application;
+package org.abchip.mimo.service;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
@@ -19,7 +18,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Service Status</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceStatus()
+ * @see org.abchip.mimo.service.ServicePackage#getServiceStatus()
  * @model
  * @generated
  */
@@ -96,7 +95,7 @@ public enum ServiceStatus implements Enumerator {
 	public static final int TESTING_VALUE = 0;
 
 	/**
-	 * An array of all the '<em><b>Service Status</b></em>' enumerators.
+	 * An array of all the '<em><b>Status</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -109,7 +108,7 @@ public enum ServiceStatus implements Enumerator {
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Service Status</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Status</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -117,7 +116,7 @@ public enum ServiceStatus implements Enumerator {
 	public static final List<ServiceStatus> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Service Status</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Status</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
@@ -135,7 +134,7 @@ public enum ServiceStatus implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Service Status</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Status</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
@@ -153,7 +152,7 @@ public enum ServiceStatus implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Service Status</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Status</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
