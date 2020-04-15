@@ -27,4 +27,12 @@ public interface ServiceExecutor {
 	 * @generated
 	 */
 	String getServiceName();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" requestRequired="true"
+	 * @generated
+	 */
+	ServiceResponse execute(ServiceResponse request) throws ServiceException;
 } // ServiceExecutor

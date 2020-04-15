@@ -43,6 +43,7 @@ import org.abchip.mimo.service.reg.impl.RegPackageImpl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -107,7 +108,7 @@ public class MimoPackageImpl extends EPackageImpl implements MimoPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		org.eclipse.emf.ecore.EcorePackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);

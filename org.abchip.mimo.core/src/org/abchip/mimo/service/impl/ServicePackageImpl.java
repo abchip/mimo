@@ -57,6 +57,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -165,7 +166,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		org.eclipse.emf.ecore.EcorePackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
@@ -388,7 +389,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		// Obtain other dependent packages
 		RegPackage theRegPackage = (RegPackage)EPackage.Registry.INSTANCE.getEPackage(RegPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		org.eclipse.emf.ecore.EcorePackage theEcorePackage = (org.eclipse.emf.ecore.EcorePackage)EPackage.Registry.INSTANCE.getEPackage(org.eclipse.emf.ecore.EcorePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 
 		// Add subpackages
@@ -412,9 +413,13 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		addEOperation(serviceExecutorEClass, theEcorePackage.getEString(), "getServiceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		EOperation op = addEOperation(serviceExecutorEClass, this.getServiceResponse(), "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getServiceResponse(), "request", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getServiceException());
+
 		initEClass(serviceManagerEClass, ServiceManager.class, "ServiceManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(serviceManagerEClass, this.getServiceExecutor(), "getServiceExecutor", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(serviceManagerEClass, this.getServiceExecutor(), "getServiceExecutor", 0, 1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "E");
 		EGenericType g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
 		t1.getEBounds().add(g1);
