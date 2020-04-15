@@ -14,7 +14,7 @@ import java.util.List;
 import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ModuleStatus;
-import org.abchip.mimo.application.ServiceRef;
+import org.abchip.mimo.application.ServiceReg;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -67,7 +67,7 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceRef> services;
+	protected EList<ServiceReg> services;
 	/**
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -139,9 +139,9 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	 * @generated
 	 */
 	@Override
-	public List<ServiceRef> getServices() {
+	public List<ServiceReg> getServices() {
 		if (services == null) {
-			services = new EObjectContainmentEList.Resolving<ServiceRef>(ServiceRef.class, this, ApplicationPackage.APPLICATION_MODULE__SERVICES);
+			services = new EObjectContainmentEList.Resolving<ServiceReg>(ServiceReg.class, this, ApplicationPackage.APPLICATION_MODULE__SERVICES);
 		}
 		return services;
 	}
@@ -215,7 +215,7 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 				return;
 			case ApplicationPackage.APPLICATION_MODULE__SERVICES:
 				getServices().clear();
-				getServices().addAll((Collection<? extends ServiceRef>)newValue);
+				getServices().addAll((Collection<? extends ServiceReg>)newValue);
 				return;
 			case ApplicationPackage.APPLICATION_MODULE__STATUS:
 				setStatus((ModuleStatus)newValue);

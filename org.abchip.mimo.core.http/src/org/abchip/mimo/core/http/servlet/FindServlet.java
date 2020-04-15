@@ -97,13 +97,13 @@ public class FindServlet extends BaseServlet {
 			ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame, tenant);
 			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.MIMO);
 			try (EntityIterator<E> entities = entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy))) {
+				response.setStatus(HttpServletResponse.SC_FOUND);
 				for (E entity : entities)
 					entitySerializer.add(entity);
 			}
 			entitySerializer.save(response.getOutputStream());
 			entitySerializer.clear();
 			
-			response.setStatus(HttpServletResponse.SC_FOUND);
 		} catch (ResourceException e) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 			return;

@@ -38,6 +38,7 @@ public class NextSequenceServlet extends BaseServlet {
 		String frame = request.getParameter("frame");
 
 		try {
+			response.setStatus(HttpServletResponse.SC_OK);
 			ResourceWriter<E> resourceWriter = resourceManager.getResourceWriter(context, frame, tenant);
 			String nextSequence = resourceWriter.getResource().nextSequence();
 			if (nextSequence == null)

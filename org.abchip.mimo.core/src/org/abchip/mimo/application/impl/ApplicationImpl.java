@@ -19,9 +19,9 @@ import org.abchip.mimo.application.ApplicationLogs;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.application.ComponentStatus;
-import org.abchip.mimo.application.ServiceCommandProvider;
+import org.abchip.mimo.application.ServiceCommandProviderReg;
 import org.abchip.mimo.application.ServiceConfig;
-import org.abchip.mimo.application.ServiceHook;
+import org.abchip.mimo.application.ServiceHookReg;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
@@ -104,7 +104,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceCommandProvider> commands;
+	protected EList<ServiceCommandProviderReg> commands;
 	/**
 	 * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -145,7 +145,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceHook> hooks;
+	protected EList<ServiceHookReg> hooks;
 	/**
 	 * The cached value of the '{@link #getLogs() <em>Logs</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -277,9 +277,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * @generated
 	 */
 	@Override
-	public List<ServiceCommandProvider> getCommands() {
+	public List<ServiceCommandProviderReg> getCommands() {
 		if (commands == null) {
-			commands = new EObjectContainmentEList.Resolving<ServiceCommandProvider>(ServiceCommandProvider.class, this, ApplicationPackage.APPLICATION__COMMANDS);
+			commands = new EObjectContainmentEList.Resolving<ServiceCommandProviderReg>(ServiceCommandProviderReg.class, this, ApplicationPackage.APPLICATION__COMMANDS);
 		}
 		return commands;
 	}
@@ -365,9 +365,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * @generated
 	 */
 	@Override
-	public List<ServiceHook> getHooks() {
+	public List<ServiceHookReg> getHooks() {
 		if (hooks == null) {
-			hooks = new EObjectContainmentEList.Resolving<ServiceHook>(ServiceHook.class, this, ApplicationPackage.APPLICATION__HOOKS);
+			hooks = new EObjectContainmentEList.Resolving<ServiceHookReg>(ServiceHookReg.class, this, ApplicationPackage.APPLICATION__HOOKS);
 		}
 		return hooks;
 	}
@@ -774,7 +774,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return;
 			case ApplicationPackage.APPLICATION__COMMANDS:
 				getCommands().clear();
-				getCommands().addAll((Collection<? extends ServiceCommandProvider>)newValue);
+				getCommands().addAll((Collection<? extends ServiceCommandProviderReg>)newValue);
 				return;
 			case ApplicationPackage.APPLICATION__COMPONENTS:
 				getComponents().clear();
@@ -791,7 +791,7 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return;
 			case ApplicationPackage.APPLICATION__HOOKS:
 				getHooks().clear();
-				getHooks().addAll((Collection<? extends ServiceHook>)newValue);
+				getHooks().addAll((Collection<? extends ServiceHookReg>)newValue);
 				return;
 			case ApplicationPackage.APPLICATION__LOGS:
 				setLogs((ApplicationLogs)newValue);

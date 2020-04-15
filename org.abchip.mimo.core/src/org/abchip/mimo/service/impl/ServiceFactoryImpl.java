@@ -87,4 +87,4 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 		return ServicePackage.eINSTANCE;
 	}
 
-} //ServiceFactoryImpl
+} //ServiceFactoryRegImpl

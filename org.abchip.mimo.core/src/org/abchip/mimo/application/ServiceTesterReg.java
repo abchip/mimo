@@ -18,14 +18,14 @@ package org.abchip.mimo.application;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceTester#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.ServiceTesterReg#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceTester()
+ * @see org.abchip.mimo.application.ApplicationPackage#getServiceTesterReg()
  * @model
  * @generated
  */
-public interface ServiceTester extends ServiceRef {
+public interface ServiceTesterReg extends ServiceReg {
 
 	/**
 	 * Returns the value of the '<em><b>Interface Name</b></em>' attribute.
@@ -37,10 +37,10 @@ public interface ServiceTester extends ServiceRef {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceTester_InterfaceName()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceTesterReg_InterfaceName()
 	 * @model default="org.abchip.mimo.tester.TestSuiteLauncher" required="true" changeable="false"
 	 * @generated
 	 */
 	@Override
 	String getInterfaceName();
-} // ServiceTester
+} // ServiceTesterReg

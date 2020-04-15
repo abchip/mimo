@@ -8,45 +8,27 @@
  */
 package org.abchip.mimo.application.impl;
 
-import java.util.Collection;
-import java.util.List;
-
 import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.ServiceRegistry;
-import org.abchip.mimo.application.ServiceRegistryEntry;
+import org.abchip.mimo.application.ServiceExecutorReg;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Service Registry</b></em>'.
+ * An implementation of the model object '<em><b>Service Executor</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceRegistryImpl#getEntries <em>Entries</em>}</li>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceRegistryImpl#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ServiceExecutorRegImpl#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ServiceExecutorRegImpl#isRemoteExport <em>Remote Export</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegistry {
-	/**
-	 * The cached value of the '{@link #getEntries() <em>Entries</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntries()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ServiceRegistryEntry> entries;
+public class ServiceExecutorRegImpl extends ServiceRegImpl implements ServiceExecutorReg {
 	/**
 	 * The default value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,15 +48,34 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	 */
 	protected String interfaceName = INTERFACE_NAME_EDEFAULT;
 	/**
+	 * The default value of the '{@link #isRemoteExport() <em>Remote Export</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRemoteExport()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean REMOTE_EXPORT_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isRemoteExport() <em>Remote Export</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRemoteExport()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean remoteExport = REMOTE_EXPORT_EDEFAULT;
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceRegistryImpl() {
+	protected ServiceExecutorRegImpl() {
 		super();
 	}
 
@@ -85,20 +86,7 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.SERVICE_REGISTRY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<ServiceRegistryEntry> getEntries() {
-		if (entries == null) {
-			entries = new EObjectContainmentEList.Resolving<ServiceRegistryEntry>(ServiceRegistryEntry.class, this, ApplicationPackage.SERVICE_REGISTRY__ENTRIES);
-		}
-		return entries;
+		return ApplicationPackage.Literals.SERVICE_EXECUTOR_REG;
 	}
 
 	/**
@@ -121,7 +109,7 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 		String oldInterfaceName = interfaceName;
 		interfaceName = newInterfaceName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REGISTRY__INTERFACE_NAME, oldInterfaceName, interfaceName));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME, oldInterfaceName, interfaceName));
 	}
 
 	/**
@@ -130,12 +118,21 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY__ENTRIES:
-				return ((InternalEList<?>)getEntries()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public boolean isRemoteExport() {
+		return remoteExport;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRemoteExport(boolean newRemoteExport) {
+		boolean oldRemoteExport = remoteExport;
+		remoteExport = newRemoteExport;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT, oldRemoteExport, remoteExport));
 	}
 
 	/**
@@ -146,10 +143,10 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY__ENTRIES:
-				return getEntries();
-			case ApplicationPackage.SERVICE_REGISTRY__INTERFACE_NAME:
+			case ApplicationPackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME:
 				return getInterfaceName();
+			case ApplicationPackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT:
+				return isRemoteExport();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,16 +156,14 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY__ENTRIES:
-				getEntries().clear();
-				getEntries().addAll((Collection<? extends ServiceRegistryEntry>)newValue);
-				return;
-			case ApplicationPackage.SERVICE_REGISTRY__INTERFACE_NAME:
+			case ApplicationPackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME:
 				setInterfaceName((String)newValue);
+				return;
+			case ApplicationPackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT:
+				setRemoteExport((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,11 +177,11 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY__ENTRIES:
-				getEntries().clear();
-				return;
-			case ApplicationPackage.SERVICE_REGISTRY__INTERFACE_NAME:
+			case ApplicationPackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME:
 				setInterfaceName(INTERFACE_NAME_EDEFAULT);
+				return;
+			case ApplicationPackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT:
+				setRemoteExport(REMOTE_EXPORT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -200,10 +195,10 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REGISTRY__ENTRIES:
-				return entries != null && !entries.isEmpty();
-			case ApplicationPackage.SERVICE_REGISTRY__INTERFACE_NAME:
+			case ApplicationPackage.SERVICE_EXECUTOR_REG__INTERFACE_NAME:
 				return INTERFACE_NAME_EDEFAULT == null ? interfaceName != null : !INTERFACE_NAME_EDEFAULT.equals(interfaceName);
+			case ApplicationPackage.SERVICE_EXECUTOR_REG__REMOTE_EXPORT:
+				return remoteExport != REMOTE_EXPORT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,8 +215,10 @@ public class ServiceRegistryImpl extends ServiceRefImpl implements ServiceRegist
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (interfaceName: ");
 		result.append(interfaceName);
+		result.append(", remoteExport: ");
+		result.append(remoteExport);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ServiceRegistryImpl
+} //ServiceExecutorRegImpl

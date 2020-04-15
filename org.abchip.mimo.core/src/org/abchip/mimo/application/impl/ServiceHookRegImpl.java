@@ -9,7 +9,7 @@
 package org.abchip.mimo.application.impl;
 
 import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.ServiceHook;
+import org.abchip.mimo.application.ServiceHookReg;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ServiceHookImpl extends ServiceRefImpl implements ServiceHook {
+public class ServiceHookRegImpl extends ServiceRegImpl implements ServiceHookReg {
 	/**
 	 * 
 	 */
@@ -30,7 +30,7 @@ public class ServiceHookImpl extends ServiceRefImpl implements ServiceHook {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceHookImpl() {
+	protected ServiceHookRegImpl() {
 		super();
 	}
 
@@ -41,7 +41,7 @@ public class ServiceHookImpl extends ServiceRefImpl implements ServiceHook {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.SERVICE_HOOK;
+		return ApplicationPackage.Literals.SERVICE_HOOK_REG;
 	}
 	
 	/**
@@ -54,4 +54,4 @@ public class ServiceHookImpl extends ServiceRefImpl implements ServiceHook {
 		return getClassName();
 	}
 
-} //ServiceHookImpl
+} //ServiceHookRegImpl

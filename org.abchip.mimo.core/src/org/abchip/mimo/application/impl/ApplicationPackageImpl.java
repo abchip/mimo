@@ -20,17 +20,17 @@ import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.application.ComponentStatus;
 import org.abchip.mimo.application.ModuleStatus;
-import org.abchip.mimo.application.ServiceCommandProvider;
+import org.abchip.mimo.application.ServiceCommandProviderReg;
 import org.abchip.mimo.application.ServiceConfig;
-import org.abchip.mimo.application.ServiceExecutor;
-import org.abchip.mimo.application.ServiceFactory;
-import org.abchip.mimo.application.ServiceHook;
-import org.abchip.mimo.application.ServiceRef;
-import org.abchip.mimo.application.ServiceRegistry;
-import org.abchip.mimo.application.ServiceRegistryEntry;
-import org.abchip.mimo.application.ServiceServlet;
+import org.abchip.mimo.application.ServiceExecutorReg;
+import org.abchip.mimo.application.ServiceFactoryReg;
+import org.abchip.mimo.application.ServiceHookReg;
+import org.abchip.mimo.application.ServiceReg;
+import org.abchip.mimo.application.ServiceRegistryReg;
+import org.abchip.mimo.application.ServiceRegistryEntryReg;
+import org.abchip.mimo.application.ServiceServletReg;
 import org.abchip.mimo.application.ServiceStatus;
-import org.abchip.mimo.application.ServiceTester;
+import org.abchip.mimo.application.ServiceTesterReg;
 import org.abchip.mimo.authentication.AuthenticationPackage;
 import org.abchip.mimo.authentication.impl.AuthenticationPackageImpl;
 import org.abchip.mimo.context.ContextPackage;
@@ -122,7 +122,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceCommandProviderEClass = null;
+	private EClass serviceCommandProviderRegEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,56 +136,56 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceHookEClass = null;
+	private EClass serviceHookRegEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceExecutorEClass = null;
+	private EClass serviceExecutorRegEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceRefEClass = null;
+	private EClass serviceRegEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceFactoryEClass = null;
+	private EClass serviceFactoryRegEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceRegistryEClass = null;
+	private EClass serviceRegistryRegEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceRegistryEntryEClass = null;
+	private EClass serviceRegistryEntryRegEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceServletEClass = null;
+	private EClass serviceServletRegEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass serviceTesterEClass = null;
+	private EClass serviceTesterRegEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -697,8 +697,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getServiceCommandProvider() {
-		return serviceCommandProviderEClass;
+	public EClass getServiceCommandProviderReg() {
+		return serviceCommandProviderRegEClass;
 	}
 
 	/**
@@ -707,8 +707,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceCommandProvider_InterfaceName() {
-		return (EAttribute)serviceCommandProviderEClass.getEStructuralFeatures().get(0);
+	public EAttribute getServiceCommandProviderReg_InterfaceName() {
+		return (EAttribute)serviceCommandProviderRegEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -737,8 +737,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getServiceHook() {
-		return serviceHookEClass;
+	public EClass getServiceHookReg() {
+		return serviceHookRegEClass;
 	}
 
 	/**
@@ -747,8 +747,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getServiceExecutor() {
-		return serviceExecutorEClass;
+	public EClass getServiceExecutorReg() {
+		return serviceExecutorRegEClass;
 	}
 
 	/**
@@ -757,8 +757,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceExecutor_InterfaceName() {
-		return (EAttribute)serviceExecutorEClass.getEStructuralFeatures().get(0);
+	public EAttribute getServiceExecutorReg_InterfaceName() {
+		return (EAttribute)serviceExecutorRegEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -767,8 +767,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceExecutor_RemoteExport() {
-		return (EAttribute)serviceExecutorEClass.getEStructuralFeatures().get(1);
+	public EAttribute getServiceExecutorReg_RemoteExport() {
+		return (EAttribute)serviceExecutorRegEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -777,8 +777,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getServiceRef() {
-		return serviceRefEClass;
+	public EClass getServiceReg() {
+		return serviceRegEClass;
 	}
 
 	/**
@@ -787,8 +787,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceRef_ClassName() {
-		return (EAttribute)serviceRefEClass.getEStructuralFeatures().get(0);
+	public EAttribute getServiceReg_ClassName() {
+		return (EAttribute)serviceRegEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -797,8 +797,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceRef_Status() {
-		return (EAttribute)serviceRefEClass.getEStructuralFeatures().get(1);
+	public EAttribute getServiceReg_Status() {
+		return (EAttribute)serviceRegEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -807,8 +807,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getServiceFactory() {
-		return serviceFactoryEClass;
+	public EClass getServiceFactoryReg() {
+		return serviceFactoryRegEClass;
 	}
 
 	/**
@@ -817,8 +817,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceFactory_InterfaceName() {
-		return (EAttribute)serviceFactoryEClass.getEStructuralFeatures().get(0);
+	public EAttribute getServiceFactoryReg_InterfaceName() {
+		return (EAttribute)serviceFactoryRegEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -827,8 +827,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getServiceRegistry() {
-		return serviceRegistryEClass;
+	public EClass getServiceRegistryReg() {
+		return serviceRegistryRegEClass;
 	}
 
 	/**
@@ -837,8 +837,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EReference getServiceRegistry_Entries() {
-		return (EReference)serviceRegistryEClass.getEStructuralFeatures().get(0);
+	public EReference getServiceRegistryReg_Entries() {
+		return (EReference)serviceRegistryRegEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -847,8 +847,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceRegistry_InterfaceName() {
-		return (EAttribute)serviceRegistryEClass.getEStructuralFeatures().get(1);
+	public EAttribute getServiceRegistryReg_InterfaceName() {
+		return (EAttribute)serviceRegistryRegEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -857,8 +857,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getServiceRegistryEntry() {
-		return serviceRegistryEntryEClass;
+	public EClass getServiceRegistryEntryReg() {
+		return serviceRegistryEntryRegEClass;
 	}
 
 	/**
@@ -867,8 +867,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceRegistryEntry_InterfaceName() {
-		return (EAttribute)serviceRegistryEntryEClass.getEStructuralFeatures().get(0);
+	public EAttribute getServiceRegistryEntryReg_InterfaceName() {
+		return (EAttribute)serviceRegistryEntryRegEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -877,8 +877,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceRegistryEntry_Name() {
-		return (EAttribute)serviceRegistryEntryEClass.getEStructuralFeatures().get(1);
+	public EAttribute getServiceRegistryEntryReg_Name() {
+		return (EAttribute)serviceRegistryEntryRegEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -887,8 +887,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceRegistryEntry_Vendor() {
-		return (EAttribute)serviceRegistryEntryEClass.getEStructuralFeatures().get(2);
+	public EAttribute getServiceRegistryEntryReg_Vendor() {
+		return (EAttribute)serviceRegistryEntryRegEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -897,8 +897,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceRegistryEntry_Version() {
-		return (EAttribute)serviceRegistryEntryEClass.getEStructuralFeatures().get(3);
+	public EAttribute getServiceRegistryEntryReg_Version() {
+		return (EAttribute)serviceRegistryEntryRegEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -907,8 +907,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getServiceServlet() {
-		return serviceServletEClass;
+	public EClass getServiceServletReg() {
+		return serviceServletRegEClass;
 	}
 
 	/**
@@ -917,8 +917,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceServlet_Alias() {
-		return (EAttribute)serviceServletEClass.getEStructuralFeatures().get(0);
+	public EAttribute getServiceServletReg_Alias() {
+		return (EAttribute)serviceServletRegEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -927,8 +927,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceServlet_InterfaceName() {
-		return (EAttribute)serviceServletEClass.getEStructuralFeatures().get(1);
+	public EAttribute getServiceServletReg_InterfaceName() {
+		return (EAttribute)serviceServletRegEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -937,8 +937,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getServiceTester() {
-		return serviceTesterEClass;
+	public EClass getServiceTesterReg() {
+		return serviceTesterRegEClass;
 	}
 
 	/**
@@ -947,8 +947,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceTester_InterfaceName() {
-		return (EAttribute)serviceTesterEClass.getEStructuralFeatures().get(0);
+	public EAttribute getServiceTesterReg_InterfaceName() {
+		return (EAttribute)serviceTesterRegEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1062,41 +1062,41 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEReference(applicationModuleEClass, APPLICATION_MODULE__SERVICES);
 		createEAttribute(applicationModuleEClass, APPLICATION_MODULE__STATUS);
 
-		serviceCommandProviderEClass = createEClass(SERVICE_COMMAND_PROVIDER);
-		createEAttribute(serviceCommandProviderEClass, SERVICE_COMMAND_PROVIDER__INTERFACE_NAME);
+		serviceCommandProviderRegEClass = createEClass(SERVICE_COMMAND_PROVIDER_REG);
+		createEAttribute(serviceCommandProviderRegEClass, SERVICE_COMMAND_PROVIDER_REG__INTERFACE_NAME);
 
 		serviceConfigEClass = createEClass(SERVICE_CONFIG);
 		createEReference(serviceConfigEClass, SERVICE_CONFIG__ENTITIES);
 
-		serviceHookEClass = createEClass(SERVICE_HOOK);
+		serviceHookRegEClass = createEClass(SERVICE_HOOK_REG);
 
-		serviceExecutorEClass = createEClass(SERVICE_EXECUTOR);
-		createEAttribute(serviceExecutorEClass, SERVICE_EXECUTOR__INTERFACE_NAME);
-		createEAttribute(serviceExecutorEClass, SERVICE_EXECUTOR__REMOTE_EXPORT);
+		serviceExecutorRegEClass = createEClass(SERVICE_EXECUTOR_REG);
+		createEAttribute(serviceExecutorRegEClass, SERVICE_EXECUTOR_REG__INTERFACE_NAME);
+		createEAttribute(serviceExecutorRegEClass, SERVICE_EXECUTOR_REG__REMOTE_EXPORT);
 
-		serviceRefEClass = createEClass(SERVICE_REF);
-		createEAttribute(serviceRefEClass, SERVICE_REF__CLASS_NAME);
-		createEAttribute(serviceRefEClass, SERVICE_REF__STATUS);
+		serviceRegEClass = createEClass(SERVICE_REG);
+		createEAttribute(serviceRegEClass, SERVICE_REG__CLASS_NAME);
+		createEAttribute(serviceRegEClass, SERVICE_REG__STATUS);
 
-		serviceFactoryEClass = createEClass(SERVICE_FACTORY);
-		createEAttribute(serviceFactoryEClass, SERVICE_FACTORY__INTERFACE_NAME);
+		serviceFactoryRegEClass = createEClass(SERVICE_FACTORY_REG);
+		createEAttribute(serviceFactoryRegEClass, SERVICE_FACTORY_REG__INTERFACE_NAME);
 
-		serviceRegistryEClass = createEClass(SERVICE_REGISTRY);
-		createEReference(serviceRegistryEClass, SERVICE_REGISTRY__ENTRIES);
-		createEAttribute(serviceRegistryEClass, SERVICE_REGISTRY__INTERFACE_NAME);
+		serviceRegistryRegEClass = createEClass(SERVICE_REGISTRY_REG);
+		createEReference(serviceRegistryRegEClass, SERVICE_REGISTRY_REG__ENTRIES);
+		createEAttribute(serviceRegistryRegEClass, SERVICE_REGISTRY_REG__INTERFACE_NAME);
 
-		serviceRegistryEntryEClass = createEClass(SERVICE_REGISTRY_ENTRY);
-		createEAttribute(serviceRegistryEntryEClass, SERVICE_REGISTRY_ENTRY__INTERFACE_NAME);
-		createEAttribute(serviceRegistryEntryEClass, SERVICE_REGISTRY_ENTRY__NAME);
-		createEAttribute(serviceRegistryEntryEClass, SERVICE_REGISTRY_ENTRY__VENDOR);
-		createEAttribute(serviceRegistryEntryEClass, SERVICE_REGISTRY_ENTRY__VERSION);
+		serviceRegistryEntryRegEClass = createEClass(SERVICE_REGISTRY_ENTRY_REG);
+		createEAttribute(serviceRegistryEntryRegEClass, SERVICE_REGISTRY_ENTRY_REG__INTERFACE_NAME);
+		createEAttribute(serviceRegistryEntryRegEClass, SERVICE_REGISTRY_ENTRY_REG__NAME);
+		createEAttribute(serviceRegistryEntryRegEClass, SERVICE_REGISTRY_ENTRY_REG__VENDOR);
+		createEAttribute(serviceRegistryEntryRegEClass, SERVICE_REGISTRY_ENTRY_REG__VERSION);
 
-		serviceServletEClass = createEClass(SERVICE_SERVLET);
-		createEAttribute(serviceServletEClass, SERVICE_SERVLET__ALIAS);
-		createEAttribute(serviceServletEClass, SERVICE_SERVLET__INTERFACE_NAME);
+		serviceServletRegEClass = createEClass(SERVICE_SERVLET_REG);
+		createEAttribute(serviceServletRegEClass, SERVICE_SERVLET_REG__ALIAS);
+		createEAttribute(serviceServletRegEClass, SERVICE_SERVLET_REG__INTERFACE_NAME);
 
-		serviceTesterEClass = createEClass(SERVICE_TESTER);
-		createEAttribute(serviceTesterEClass, SERVICE_TESTER__INTERFACE_NAME);
+		serviceTesterRegEClass = createEClass(SERVICE_TESTER_REG);
+		createEAttribute(serviceTesterRegEClass, SERVICE_TESTER_REG__INTERFACE_NAME);
 
 		// Create enums
 		applicationLogLevelEEnum = createEEnum(APPLICATION_LOG_LEVEL);
@@ -1145,27 +1145,27 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		applicationComponentEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		applicationLogEntryEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		applicationModuleEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		serviceCommandProviderEClass.getESuperTypes().add(this.getServiceRef());
+		serviceCommandProviderRegEClass.getESuperTypes().add(this.getServiceReg());
 		serviceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		serviceHookEClass.getESuperTypes().add(this.getServiceRef());
-		serviceExecutorEClass.getESuperTypes().add(this.getServiceRef());
-		serviceRefEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		serviceFactoryEClass.getESuperTypes().add(this.getServiceRef());
-		serviceRegistryEClass.getESuperTypes().add(this.getServiceRef());
-		serviceRegistryEntryEClass.getESuperTypes().add(this.getServiceRef());
-		serviceServletEClass.getESuperTypes().add(this.getServiceRef());
-		serviceTesterEClass.getESuperTypes().add(this.getServiceRef());
+		serviceHookRegEClass.getESuperTypes().add(this.getServiceReg());
+		serviceExecutorRegEClass.getESuperTypes().add(this.getServiceReg());
+		serviceRegEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		serviceFactoryRegEClass.getESuperTypes().add(this.getServiceReg());
+		serviceRegistryRegEClass.getESuperTypes().add(this.getServiceReg());
+		serviceRegistryEntryRegEClass.getESuperTypes().add(this.getServiceReg());
+		serviceServletRegEClass.getESuperTypes().add(this.getServiceReg());
+		serviceTesterRegEClass.getESuperTypes().add(this.getServiceReg());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getApplication_AdminKey(), ecorePackage.getEString(), "adminKey", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_Plugin(), ecorePackage.getEString(), "plugin", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getApplication_Commands(), this.getServiceCommandProvider(), null, "commands", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplication_Commands(), this.getServiceCommandProviderReg(), null, "commands", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Components(), this.getApplicationComponent(), null, "components", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Config(), this.getServiceConfig(), null, "config", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Context(), theContextPackage.getContextRoot(), null, "context", null, 0, 1, Application.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_ContextDescription(), theContextPackage.getContextDescription(), null, "contextDescription", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getApplication_Hooks(), this.getServiceHook(), null, "hooks", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplication_Hooks(), this.getServiceHookReg(), null, "hooks", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Logs(), this.getApplicationLogs(), null, "logs", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_Name(), ecorePackage.getEString(), "name", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Paths(), this.getApplicationPaths(), null, "paths", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1189,8 +1189,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEClass(applicationComponentEClass, ApplicationComponent.class, "ApplicationComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getApplicationComponent_Config(), this.getServiceConfig(), null, "config", null, 0, 1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplicationComponent_Context(), theContextPackage.getContext(), null, "context", null, 0, 1, ApplicationComponent.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getApplicationComponent_Hooks(), this.getServiceHook(), null, "hooks", null, 0, -1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getApplicationComponent_Commands(), this.getServiceCommandProvider(), null, "commands", null, 0, -1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplicationComponent_Hooks(), this.getServiceHookReg(), null, "hooks", null, 0, -1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplicationComponent_Commands(), this.getServiceCommandProviderReg(), null, "commands", null, 0, -1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplicationComponent_Modules(), this.getApplicationModule(), null, "modules", null, 0, -1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplicationComponent_Name(), ecorePackage.getEString(), "name", null, 1, 1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplicationComponent_Status(), this.getComponentStatus(), "status", "ACT", 1, 1, ApplicationComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1205,46 +1205,46 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		initEClass(applicationModuleEClass, ApplicationModule.class, "ApplicationModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getApplicationModule_Name(), ecorePackage.getEString(), "name", null, 0, 1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getApplicationModule_Services(), this.getServiceRef(), null, "services", null, 0, -1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplicationModule_Services(), this.getServiceReg(), null, "services", null, 0, -1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplicationModule_Status(), this.getModuleStatus(), "status", "ACT", 1, 1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(serviceCommandProviderEClass, ServiceCommandProvider.class, "ServiceCommandProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceCommandProvider_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.eclipse.osgi.framework.console.CommandProvider", 1, 1, ServiceCommandProvider.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceCommandProviderRegEClass, ServiceCommandProviderReg.class, "ServiceCommandProviderReg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceCommandProviderReg_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.eclipse.osgi.framework.console.CommandProvider", 1, 1, ServiceCommandProviderReg.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceConfigEClass, ServiceConfig.class, "ServiceConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServiceConfig_Entities(), theEntityPackage.getEntity(), null, "entities", null, 1, -1, ServiceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(serviceHookEClass, ServiceHook.class, "ServiceHook", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(serviceHookRegEClass, ServiceHookReg.class, "ServiceHookReg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(serviceExecutorEClass, ServiceExecutor.class, "ServiceExecutor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceExecutor_InterfaceName(), ecorePackage.getEString(), "interfaceName", null, 1, 1, ServiceExecutor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServiceExecutor_RemoteExport(), ecorePackage.getEBoolean(), "remoteExport", null, 1, 1, ServiceExecutor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceExecutorRegEClass, ServiceExecutorReg.class, "ServiceExecutorReg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceExecutorReg_InterfaceName(), ecorePackage.getEString(), "interfaceName", null, 1, 1, ServiceExecutorReg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceExecutorReg_RemoteExport(), ecorePackage.getEBoolean(), "remoteExport", null, 1, 1, ServiceExecutorReg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(serviceRefEClass, ServiceRef.class, "ServiceRef", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceRef_ClassName(), ecorePackage.getEString(), "className", null, 1, 1, ServiceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServiceRef_Status(), this.getServiceStatus(), "status", null, 1, 1, ServiceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceRegEClass, ServiceReg.class, "ServiceReg", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceReg_ClassName(), ecorePackage.getEString(), "className", null, 1, 1, ServiceReg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceReg_Status(), this.getServiceStatus(), "status", null, 1, 1, ServiceReg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(serviceRefEClass, ecorePackage.getEString(), "getInterfaceName", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(serviceRegEClass, ecorePackage.getEString(), "getInterfaceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(serviceFactoryEClass, ServiceFactory.class, "ServiceFactory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceFactory_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.abchip.mimo.context.Factory", 1, 1, ServiceFactory.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceFactoryRegEClass, ServiceFactoryReg.class, "ServiceFactoryReg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceFactoryReg_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.abchip.mimo.context.Factory", 1, 1, ServiceFactoryReg.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(serviceRegistryEClass, ServiceRegistry.class, "ServiceRegistry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceRegistry_Entries(), this.getServiceRegistryEntry(), null, "entries", null, 0, -1, ServiceRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServiceRegistry_InterfaceName(), ecorePackage.getEString(), "interfaceName", null, 1, 1, ServiceRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceRegistryRegEClass, ServiceRegistryReg.class, "ServiceRegistryReg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServiceRegistryReg_Entries(), this.getServiceRegistryEntryReg(), null, "entries", null, 0, -1, ServiceRegistryReg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceRegistryReg_InterfaceName(), ecorePackage.getEString(), "interfaceName", null, 1, 1, ServiceRegistryReg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(serviceRegistryEntryEClass, ServiceRegistryEntry.class, "ServiceRegistryEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceRegistryEntry_InterfaceName(), ecorePackage.getEString(), "interfaceName", null, 1, 1, ServiceRegistryEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServiceRegistryEntry_Name(), ecorePackage.getEString(), "name", null, 1, 1, ServiceRegistryEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServiceRegistryEntry_Vendor(), ecorePackage.getEString(), "vendor", null, 0, 1, ServiceRegistryEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServiceRegistryEntry_Version(), ecorePackage.getEString(), "version", null, 0, 1, ServiceRegistryEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceRegistryEntryRegEClass, ServiceRegistryEntryReg.class, "ServiceRegistryEntryReg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceRegistryEntryReg_InterfaceName(), ecorePackage.getEString(), "interfaceName", null, 1, 1, ServiceRegistryEntryReg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceRegistryEntryReg_Name(), ecorePackage.getEString(), "name", null, 1, 1, ServiceRegistryEntryReg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceRegistryEntryReg_Vendor(), ecorePackage.getEString(), "vendor", null, 0, 1, ServiceRegistryEntryReg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceRegistryEntryReg_Version(), ecorePackage.getEString(), "version", null, 0, 1, ServiceRegistryEntryReg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(serviceServletEClass, ServiceServlet.class, "ServiceServlet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceServlet_Alias(), ecorePackage.getEString(), "alias", null, 1, 1, ServiceServlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServiceServlet_InterfaceName(), ecorePackage.getEString(), "interfaceName", "javax.servlet.Servlet", 1, 1, ServiceServlet.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceServletRegEClass, ServiceServletReg.class, "ServiceServletReg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceServletReg_Alias(), ecorePackage.getEString(), "alias", null, 1, 1, ServiceServletReg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceServletReg_InterfaceName(), ecorePackage.getEString(), "interfaceName", "javax.servlet.Servlet", 1, 1, ServiceServletReg.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(serviceTesterEClass, ServiceTester.class, "ServiceTester", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceTester_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.abchip.mimo.tester.TestSuiteLauncher", 1, 1, ServiceTester.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceTesterRegEClass, ServiceTesterReg.class, "ServiceTesterReg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceTesterReg_InterfaceName(), ecorePackage.getEString(), "interfaceName", "org.abchip.mimo.tester.TestSuiteLauncher", 1, 1, ServiceTesterReg.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(applicationLogLevelEEnum, ApplicationLogLevel.class, "ApplicationLogLevel");

@@ -18,14 +18,14 @@ package org.abchip.mimo.application;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceCommandProvider#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.ServiceCommandProviderReg#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceCommandProvider()
+ * @see org.abchip.mimo.application.ApplicationPackage#getServiceCommandProviderReg()
  * @model
  * @generated
  */
-public interface ServiceCommandProvider extends ServiceRef {
+public interface ServiceCommandProviderReg extends ServiceReg {
 	/**
 	 * Returns the value of the '<em><b>Interface Name</b></em>' attribute.
 	 * The default value is <code>"org.eclipse.osgi.framework.console.CommandProvider"</code>.
@@ -36,11 +36,11 @@ public interface ServiceCommandProvider extends ServiceRef {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceCommandProvider_InterfaceName()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceCommandProviderReg_InterfaceName()
 	 * @model default="org.eclipse.osgi.framework.console.CommandProvider" required="true" changeable="false"
 	 * @generated
 	 */
 	@Override
 	String getInterfaceName();
 
-} // ServiceCommandProvider
+} // ServiceCommandProviderReg

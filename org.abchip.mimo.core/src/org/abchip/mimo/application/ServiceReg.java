@@ -19,15 +19,15 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceRef#getClassName <em>Class Name</em>}</li>
- *   <li>{@link org.abchip.mimo.application.ServiceRef#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.ServiceReg#getClassName <em>Class Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.ServiceReg#getStatus <em>Status</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceRef()
+ * @see org.abchip.mimo.application.ApplicationPackage#getServiceReg()
  * @model abstract="true"
  * @generated
  */
-public interface ServiceRef extends Entity {
+public interface ServiceReg extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Class Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -38,14 +38,14 @@ public interface ServiceRef extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Class Name</em>' attribute.
 	 * @see #setClassName(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceRef_ClassName()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceReg_ClassName()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getClassName();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceRef#getClassName <em>Class Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceReg#getClassName <em>Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Class Name</em>' attribute.
@@ -78,14 +78,14 @@ public interface ServiceRef extends Entity {
 	 * @return the value of the '<em>Status</em>' attribute.
 	 * @see org.abchip.mimo.application.ServiceStatus
 	 * @see #setStatus(ServiceStatus)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceRef_Status()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceReg_Status()
 	 * @model required="true"
 	 * @generated
 	 */
 	ServiceStatus getStatus();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceRef#getStatus <em>Status</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceReg#getStatus <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Status</em>' attribute.
@@ -95,4 +95,4 @@ public interface ServiceRef extends Entity {
 	 */
 	void setStatus(ServiceStatus value);
 
-} // ServiceRef
+} // ServiceReg

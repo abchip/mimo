@@ -101,7 +101,6 @@ public class LookupContextMenuServlet extends BaseServlet {
 		if (!groupRoutes.getData().isEmpty())
 			contextMenu.getElements().add(groupRoutes);
 
-		ResourceSerializer<ContextMenu> entitySerializer = resourceManager.createResourceSerializer(context, ContextMenu.class, SerializationType.JSON);
 		TreeIterator<EObject> features = ((EObject) contextMenu).eAllContents();
 
 		features.forEachRemaining(new Consumer<EObject>() {
@@ -124,6 +123,8 @@ public class LookupContextMenuServlet extends BaseServlet {
 			}
 		});
 
+		response.setStatus(HttpServletResponse.SC_FOUND);
+		ResourceSerializer<ContextMenu> entitySerializer = resourceManager.createResourceSerializer(context, ContextMenu.class, SerializationType.JSON);
 		entitySerializer.add(contextMenu);
 		entitySerializer.save(response.getOutputStream());
 	}

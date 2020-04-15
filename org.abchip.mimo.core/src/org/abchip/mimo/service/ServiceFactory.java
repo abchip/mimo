@@ -35,4 +35,4 @@ public interface ServiceFactory extends EFactory {
 	 */
 	ServicePackage getServicePackage();
 
-} //ServiceFactory
+} //ServiceFactoryReg

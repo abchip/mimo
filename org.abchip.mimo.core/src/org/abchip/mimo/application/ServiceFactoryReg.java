@@ -17,14 +17,14 @@ package org.abchip.mimo.application;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceFactory#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.ServiceFactoryReg#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceFactory()
+ * @see org.abchip.mimo.application.ApplicationPackage#getServiceFactoryReg()
  * @model
  * @generated
  */
-public interface ServiceFactory extends ServiceRef {
+public interface ServiceFactoryReg extends ServiceReg {
 	/**
 	 * Returns the value of the '<em><b>Interface Name</b></em>' attribute.
 	 * The default value is <code>"org.abchip.mimo.context.Factory"</code>.
@@ -35,10 +35,10 @@ public interface ServiceFactory extends ServiceRef {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceFactory_InterfaceName()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceFactoryReg_InterfaceName()
 	 * @model default="org.abchip.mimo.context.Factory" required="true" changeable="false"
 	 * @generated
 	 */
 	String getInterfaceName();
 
-} // ServiceFactory
+} // ServiceFactoryReg

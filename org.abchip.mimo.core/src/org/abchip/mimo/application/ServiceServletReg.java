@@ -17,15 +17,15 @@ package org.abchip.mimo.application;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.ServiceServlet#getAlias <em>Alias</em>}</li>
- *   <li>{@link org.abchip.mimo.application.ServiceServlet#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.ServiceServletReg#getAlias <em>Alias</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.ServiceServletReg#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceServlet()
+ * @see org.abchip.mimo.application.ApplicationPackage#getServiceServletReg()
  * @model
  * @generated
  */
-public interface ServiceServlet extends ServiceRef {
+public interface ServiceServletReg extends ServiceReg {
 	/**
 	 * Returns the value of the '<em><b>Alias</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -36,14 +36,14 @@ public interface ServiceServlet extends ServiceRef {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Alias</em>' attribute.
 	 * @see #setAlias(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceServlet_Alias()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceServletReg_Alias()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getAlias();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceServlet#getAlias <em>Alias</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.application.ServiceServletReg#getAlias <em>Alias</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Alias</em>' attribute.
@@ -62,11 +62,11 @@ public interface ServiceServlet extends ServiceRef {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Name</em>' attribute.
-	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceServlet_InterfaceName()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getServiceServletReg_InterfaceName()
 	 * @model default="javax.servlet.Servlet" required="true" changeable="false"
 	 * @generated
 	 */
 	@Override
 	String getInterfaceName();
 
-} // ServiceServlet
+} // ServiceServletReg

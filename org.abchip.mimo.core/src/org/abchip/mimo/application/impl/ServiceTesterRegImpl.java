@@ -9,23 +9,23 @@
 package org.abchip.mimo.application.impl;
 
 import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.ServiceCommandProvider;
+import org.abchip.mimo.application.ServiceTesterReg;
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Service Command Provider</b></em>'.
+ * An implementation of the model object '<em><b>Service Tester</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceCommandProviderImpl#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ServiceTesterRegImpl#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ServiceCommandProviderImpl extends ServiceRefImpl implements ServiceCommandProvider {
+public class ServiceTesterRegImpl extends ServiceRegImpl implements ServiceTesterReg {
 	/**
 	 * The default value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ public class ServiceCommandProviderImpl extends ServiceRefImpl implements Servic
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INTERFACE_NAME_EDEFAULT = "org.eclipse.osgi.framework.console.CommandProvider";
+	protected static final String INTERFACE_NAME_EDEFAULT = "org.abchip.mimo.tester.TestSuiteLauncher";
 	/**
 	 * The cached value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -48,13 +48,12 @@ public class ServiceCommandProviderImpl extends ServiceRefImpl implements Servic
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceCommandProviderImpl() {
+	protected ServiceTesterRegImpl() {
 		super();
 	}
 
@@ -65,7 +64,7 @@ public class ServiceCommandProviderImpl extends ServiceRefImpl implements Servic
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.SERVICE_COMMAND_PROVIDER;
+		return ApplicationPackage.Literals.SERVICE_TESTER_REG;
 	}
 
 	/**
@@ -86,7 +85,7 @@ public class ServiceCommandProviderImpl extends ServiceRefImpl implements Servic
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_COMMAND_PROVIDER__INTERFACE_NAME:
+			case ApplicationPackage.SERVICE_TESTER_REG__INTERFACE_NAME:
 				return getInterfaceName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -100,7 +99,7 @@ public class ServiceCommandProviderImpl extends ServiceRefImpl implements Servic
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_COMMAND_PROVIDER__INTERFACE_NAME:
+			case ApplicationPackage.SERVICE_TESTER_REG__INTERFACE_NAME:
 				return INTERFACE_NAME_EDEFAULT == null ? interfaceName != null : !INTERFACE_NAME_EDEFAULT.equals(interfaceName);
 		}
 		return super.eIsSet(featureID);
@@ -122,4 +121,4 @@ public class ServiceCommandProviderImpl extends ServiceRefImpl implements Servic
 		return result.toString();
 	}
 
-} //ServiceCommandProviderImpl
+} //ServiceTesterRegImpl

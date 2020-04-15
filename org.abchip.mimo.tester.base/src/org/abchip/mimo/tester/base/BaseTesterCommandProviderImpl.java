@@ -16,7 +16,7 @@ import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationComponent;
 import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ModuleStatus;
-import org.abchip.mimo.application.ServiceRef;
+import org.abchip.mimo.application.ServiceReg;
 import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
@@ -59,7 +59,7 @@ public class BaseTesterCommandProviderImpl extends BaseCommands {
 				for (ApplicationModule module : component.getModules()) {
 					if (module.getStatus() != ModuleStatus.ACTIVE)
 						continue;
-					for (ServiceRef serviceRef : module.getServices()) {
+					for (ServiceReg serviceRef : module.getServices()) {
 						if (!serviceRef.getInterfaceName().equals(TestSuiteLauncher.class.getName()))
 							continue;
 

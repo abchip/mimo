@@ -8,7 +8,7 @@
 package org.abchip.mimo.application.impl;
 
 import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.ServiceServlet;
+import org.abchip.mimo.application.ServiceServletReg;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -21,13 +21,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceServletImpl#getAlias <em>Alias</em>}</li>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceServletImpl#getInterfaceName <em>Interface Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ServiceServletRegImpl#getAlias <em>Alias</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ServiceServletRegImpl#getInterfaceName <em>Interface Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ServiceServletImpl extends ServiceRefImpl implements ServiceServlet {
+public class ServiceServletRegImpl extends ServiceRegImpl implements ServiceServletReg {
 	/**
 	 * The default value of the '{@link #getAlias() <em>Alias</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class ServiceServletImpl extends ServiceRefImpl implements ServiceServlet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceServletImpl() {
+	protected ServiceServletRegImpl() {
 		super();
 	}
 
@@ -85,7 +85,7 @@ public class ServiceServletImpl extends ServiceRefImpl implements ServiceServlet
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.SERVICE_SERVLET;
+		return ApplicationPackage.Literals.SERVICE_SERVLET_REG;
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class ServiceServletImpl extends ServiceRefImpl implements ServiceServlet
 		String oldAlias = alias;
 		alias = newAlias;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_SERVLET__ALIAS, oldAlias, alias));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_SERVLET_REG__ALIAS, oldAlias, alias));
 	}
 
 	/**
@@ -129,9 +129,9 @@ public class ServiceServletImpl extends ServiceRefImpl implements ServiceServlet
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_SERVLET__ALIAS:
+			case ApplicationPackage.SERVICE_SERVLET_REG__ALIAS:
 				return getAlias();
-			case ApplicationPackage.SERVICE_SERVLET__INTERFACE_NAME:
+			case ApplicationPackage.SERVICE_SERVLET_REG__INTERFACE_NAME:
 				return getInterfaceName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -145,7 +145,7 @@ public class ServiceServletImpl extends ServiceRefImpl implements ServiceServlet
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_SERVLET__ALIAS:
+			case ApplicationPackage.SERVICE_SERVLET_REG__ALIAS:
 				setAlias((String)newValue);
 				return;
 		}
@@ -160,7 +160,7 @@ public class ServiceServletImpl extends ServiceRefImpl implements ServiceServlet
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_SERVLET__ALIAS:
+			case ApplicationPackage.SERVICE_SERVLET_REG__ALIAS:
 				setAlias(ALIAS_EDEFAULT);
 				return;
 		}
@@ -175,9 +175,9 @@ public class ServiceServletImpl extends ServiceRefImpl implements ServiceServlet
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_SERVLET__ALIAS:
+			case ApplicationPackage.SERVICE_SERVLET_REG__ALIAS:
 				return ALIAS_EDEFAULT == null ? alias != null : !ALIAS_EDEFAULT.equals(alias);
-			case ApplicationPackage.SERVICE_SERVLET__INTERFACE_NAME:
+			case ApplicationPackage.SERVICE_SERVLET_REG__INTERFACE_NAME:
 				return INTERFACE_NAME_EDEFAULT == null ? interfaceName != null : !INTERFACE_NAME_EDEFAULT.equals(interfaceName);
 		}
 		return super.eIsSet(featureID);
@@ -201,4 +201,4 @@ public class ServiceServletImpl extends ServiceRefImpl implements ServiceServlet
 		return result.toString();
 	}
 
-} //ServiceServletImpl
+} //ServiceServletRegImpl

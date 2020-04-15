@@ -82,13 +82,13 @@ public interface ApplicationFactory extends EFactory {
 	ApplicationModule createApplicationModule();
 
 	/**
-	 * Returns a new object of class '<em>Service Command Provider</em>'.
+	 * Returns a new object of class '<em>Service Command Provider Reg</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Command Provider</em>'.
+	 * @return a new object of class '<em>Service Command Provider Reg</em>'.
 	 * @generated
 	 */
-	ServiceCommandProvider createServiceCommandProvider();
+	ServiceCommandProviderReg createServiceCommandProviderReg();
 
 	/**
 	 * Returns a new object of class '<em>Service Config</em>'.
@@ -100,67 +100,67 @@ public interface ApplicationFactory extends EFactory {
 	ServiceConfig createServiceConfig();
 
 	/**
-	 * Returns a new object of class '<em>Service Hook</em>'.
+	 * Returns a new object of class '<em>Service Hook Reg</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Hook</em>'.
+	 * @return a new object of class '<em>Service Hook Reg</em>'.
 	 * @generated
 	 */
-	ServiceHook createServiceHook();
+	ServiceHookReg createServiceHookReg();
 
 	/**
-	 * Returns a new object of class '<em>Service Executor</em>'.
+	 * Returns a new object of class '<em>Service Executor Reg</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Executor</em>'.
+	 * @return a new object of class '<em>Service Executor Reg</em>'.
 	 * @generated
 	 */
-	ServiceExecutor createServiceExecutor();
+	ServiceExecutorReg createServiceExecutorReg();
 
 	/**
-	 * Returns a new object of class '<em>Service Factory</em>'.
+	 * Returns a new object of class '<em>Service Factory Reg</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Factory</em>'.
+	 * @return a new object of class '<em>Service Factory Reg</em>'.
 	 * @generated
 	 */
-	ServiceFactory createServiceFactory();
+	ServiceFactoryReg createServiceFactoryReg();
 
 	/**
-	 * Returns a new object of class '<em>Service Registry</em>'.
+	 * Returns a new object of class '<em>Service Registry Reg</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Registry</em>'.
+	 * @return a new object of class '<em>Service Registry Reg</em>'.
 	 * @generated
 	 */
-	ServiceRegistry createServiceRegistry();
+	ServiceRegistryReg createServiceRegistryReg();
 
 	/**
-	 * Returns a new object of class '<em>Service Registry Entry</em>'.
+	 * Returns a new object of class '<em>Service Registry Entry Reg</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Registry Entry</em>'.
+	 * @return a new object of class '<em>Service Registry Entry Reg</em>'.
 	 * @generated
 	 */
-	ServiceRegistryEntry createServiceRegistryEntry();
+	ServiceRegistryEntryReg createServiceRegistryEntryReg();
 
 	/**
-	 * Returns a new object of class '<em>Service Servlet</em>'.
+	 * Returns a new object of class '<em>Service Servlet Reg</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Servlet</em>'.
+	 * @return a new object of class '<em>Service Servlet Reg</em>'.
 	 * @generated
 	 */
-	ServiceServlet createServiceServlet();
+	ServiceServletReg createServiceServletReg();
 
 	/**
-	 * Returns a new object of class '<em>Service Tester</em>'.
+	 * Returns a new object of class '<em>Service Tester Reg</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Tester</em>'.
+	 * @return a new object of class '<em>Service Tester Reg</em>'.
 	 * @generated
 	 */
-	ServiceTester createServiceTester();
+	ServiceTesterReg createServiceTesterReg();
 
 	/**
 	 * Returns the package supported by this factory.

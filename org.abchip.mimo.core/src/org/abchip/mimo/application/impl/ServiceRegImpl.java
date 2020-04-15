@@ -9,7 +9,7 @@
 package org.abchip.mimo.application.impl;
 
 import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.ServiceRef;
+import org.abchip.mimo.application.ServiceReg;
 import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
@@ -24,13 +24,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceRefImpl#getClassName <em>Class Name</em>}</li>
- *   <li>{@link org.abchip.mimo.application.impl.ServiceRefImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ServiceRegImpl#getClassName <em>Class Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ServiceRegImpl#getStatus <em>Status</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
+public abstract class ServiceRegImpl extends EntityImpl implements ServiceReg {
 	/**
 	 * The default value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -77,7 +77,7 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceRefImpl() {
+	protected ServiceRegImpl() {
 		super();
 	}
 
@@ -88,7 +88,7 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.SERVICE_REF;
+		return ApplicationPackage.Literals.SERVICE_REG;
 	}
 
 	/**
@@ -111,7 +111,7 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 		String oldClassName = className;
 		className = newClassName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REF__CLASS_NAME, oldClassName, className));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REG__CLASS_NAME, oldClassName, className));
 	}
 
 	/**
@@ -134,9 +134,9 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REF__CLASS_NAME:
+			case ApplicationPackage.SERVICE_REG__CLASS_NAME:
 				return getClassName();
-			case ApplicationPackage.SERVICE_REF__STATUS:
+			case ApplicationPackage.SERVICE_REG__STATUS:
 				return getStatus();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -150,10 +150,10 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REF__CLASS_NAME:
+			case ApplicationPackage.SERVICE_REG__CLASS_NAME:
 				setClassName((String)newValue);
 				return;
-			case ApplicationPackage.SERVICE_REF__STATUS:
+			case ApplicationPackage.SERVICE_REG__STATUS:
 				setStatus((ServiceStatus)newValue);
 				return;
 		}
@@ -168,10 +168,10 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REF__CLASS_NAME:
+			case ApplicationPackage.SERVICE_REG__CLASS_NAME:
 				setClassName(CLASS_NAME_EDEFAULT);
 				return;
-			case ApplicationPackage.SERVICE_REF__STATUS:
+			case ApplicationPackage.SERVICE_REG__STATUS:
 				setStatus(STATUS_EDEFAULT);
 				return;
 		}
@@ -186,9 +186,9 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.SERVICE_REF__CLASS_NAME:
+			case ApplicationPackage.SERVICE_REG__CLASS_NAME:
 				return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
-			case ApplicationPackage.SERVICE_REF__STATUS:
+			case ApplicationPackage.SERVICE_REG__STATUS:
 				return status != STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -232,7 +232,7 @@ public abstract class ServiceRefImpl extends EntityImpl implements ServiceRef {
 		ServiceStatus oldStatus = status;
 		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REF__STATUS, oldStatus, status));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SERVICE_REG__STATUS, oldStatus, status));
 	}
 
-} //ServiceRefImpl
+} //ServiceRegImpl

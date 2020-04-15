@@ -49,8 +49,9 @@ public class FindNamesServlet extends BaseServlet {
 
 		try {
 			boolean first = true;
-			response.getWriter().write("[");
 			try (EntityIterator<E> entities = entityReader.find(filter, null, null, 0, true)) {
+				response.setStatus(HttpServletResponse.SC_FOUND);
+				response.getWriter().write("[");
 				for (E entity : entities) {
 					if (!first)
 						response.getWriter().write(", ");
@@ -58,9 +59,8 @@ public class FindNamesServlet extends BaseServlet {
 					response.getWriter().write("\"" + Strings.escapeJava(entity.getID()) + "\"");
 					first = false;
 				}
+				response.getWriter().write("]");
 			}
-			response.getWriter().write("]");
-			response.setStatus(HttpServletResponse.SC_FOUND);
 		} catch (ResourceException e) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 			return;

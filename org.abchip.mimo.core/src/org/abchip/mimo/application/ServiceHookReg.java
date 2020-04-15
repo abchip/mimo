@@ -15,10 +15,10 @@ package org.abchip.mimo.application;
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getServiceHook()
+ * @see org.abchip.mimo.application.ApplicationPackage#getServiceHookReg()
  * @model
  * @generated
  */
-public interface ServiceHook extends ServiceRef {
+public interface ServiceHookReg extends ServiceReg {
 
-} // ServiceHook
+} // ServiceHookReg

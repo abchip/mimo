@@ -110,12 +110,13 @@ public class LoginServlet extends HttpServlet {
 		// register context
 		ContextUtils.addContext(context);
 
+		response.setStatus(HttpServletResponse.SC_OK);
+		
 		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.MIMO);
 		serializer.add(context.getContextDescription());
 		serializer.save(response.getOutputStream());
 		serializer.clear();
 
-		response.setStatus(HttpServletResponse.SC_OK);
 		response.flushBuffer();
 	}
 

@@ -68,15 +68,15 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 			case ApplicationPackage.APPLICATION_LOGS: return (EObject)createApplicationLogs();
 			case ApplicationPackage.APPLICATION_LOG_ENTRY: return (EObject)createApplicationLogEntry();
 			case ApplicationPackage.APPLICATION_MODULE: return (EObject)createApplicationModule();
-			case ApplicationPackage.SERVICE_COMMAND_PROVIDER: return (EObject)createServiceCommandProvider();
+			case ApplicationPackage.SERVICE_COMMAND_PROVIDER_REG: return (EObject)createServiceCommandProviderReg();
 			case ApplicationPackage.SERVICE_CONFIG: return (EObject)createServiceConfig();
-			case ApplicationPackage.SERVICE_HOOK: return (EObject)createServiceHook();
-			case ApplicationPackage.SERVICE_EXECUTOR: return (EObject)createServiceExecutor();
-			case ApplicationPackage.SERVICE_FACTORY: return (EObject)createServiceFactory();
-			case ApplicationPackage.SERVICE_REGISTRY: return (EObject)createServiceRegistry();
-			case ApplicationPackage.SERVICE_REGISTRY_ENTRY: return (EObject)createServiceRegistryEntry();
-			case ApplicationPackage.SERVICE_SERVLET: return (EObject)createServiceServlet();
-			case ApplicationPackage.SERVICE_TESTER: return (EObject)createServiceTester();
+			case ApplicationPackage.SERVICE_HOOK_REG: return (EObject)createServiceHookReg();
+			case ApplicationPackage.SERVICE_EXECUTOR_REG: return (EObject)createServiceExecutorReg();
+			case ApplicationPackage.SERVICE_FACTORY_REG: return (EObject)createServiceFactoryReg();
+			case ApplicationPackage.SERVICE_REGISTRY_REG: return (EObject)createServiceRegistryReg();
+			case ApplicationPackage.SERVICE_REGISTRY_ENTRY_REG: return (EObject)createServiceRegistryEntryReg();
+			case ApplicationPackage.SERVICE_SERVLET_REG: return (EObject)createServiceServletReg();
+			case ApplicationPackage.SERVICE_TESTER_REG: return (EObject)createServiceTesterReg();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -200,9 +200,9 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Override
-	public ServiceCommandProvider createServiceCommandProvider() {
-		ServiceCommandProviderImpl serviceCommandProvider = new ServiceCommandProviderImpl();
-		return serviceCommandProvider;
+	public ServiceCommandProviderReg createServiceCommandProviderReg() {
+		ServiceCommandProviderRegImpl serviceCommandProviderReg = new ServiceCommandProviderRegImpl();
+		return serviceCommandProviderReg;
 	}
 
 	/**
@@ -222,9 +222,9 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Override
-	public ServiceHook createServiceHook() {
-		ServiceHookImpl serviceHook = new ServiceHookImpl();
-		return serviceHook;
+	public ServiceHookReg createServiceHookReg() {
+		ServiceHookRegImpl serviceHookReg = new ServiceHookRegImpl();
+		return serviceHookReg;
 	}
 
 	/**
@@ -233,9 +233,9 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Override
-	public ServiceExecutor createServiceExecutor() {
-		ServiceExecutorImpl serviceExecutor = new ServiceExecutorImpl();
-		return serviceExecutor;
+	public ServiceExecutorReg createServiceExecutorReg() {
+		ServiceExecutorRegImpl serviceExecutorReg = new ServiceExecutorRegImpl();
+		return serviceExecutorReg;
 	}
 
 	/**
@@ -244,9 +244,9 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Override
-	public ServiceFactory createServiceFactory() {
-		ServiceFactoryImpl serviceFactory = new ServiceFactoryImpl();
-		return serviceFactory;
+	public ServiceFactoryReg createServiceFactoryReg() {
+		ServiceFactoryRegImpl serviceFactoryReg = new ServiceFactoryRegImpl();
+		return serviceFactoryReg;
 	}
 
 	/**
@@ -255,9 +255,9 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Override
-	public ServiceRegistry createServiceRegistry() {
-		ServiceRegistryImpl serviceRegistry = new ServiceRegistryImpl();
-		return serviceRegistry;
+	public ServiceRegistryReg createServiceRegistryReg() {
+		ServiceRegistryRegImpl serviceRegistryReg = new ServiceRegistryRegImpl();
+		return serviceRegistryReg;
 	}
 
 	/**
@@ -266,9 +266,9 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Override
-	public ServiceRegistryEntry createServiceRegistryEntry() {
-		ServiceRegistryEntryImpl serviceRegistryEntry = new ServiceRegistryEntryImpl();
-		return serviceRegistryEntry;
+	public ServiceRegistryEntryReg createServiceRegistryEntryReg() {
+		ServiceRegistryEntryRegImpl serviceRegistryEntryReg = new ServiceRegistryEntryRegImpl();
+		return serviceRegistryEntryReg;
 	}
 
 	/**
@@ -277,9 +277,9 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Override
-	public ServiceServlet createServiceServlet() {
-		ServiceServletImpl serviceServlet = new ServiceServletImpl();
-		return serviceServlet;
+	public ServiceServletReg createServiceServletReg() {
+		ServiceServletRegImpl serviceServletReg = new ServiceServletRegImpl();
+		return serviceServletReg;
 	}
 
 	/**
@@ -288,9 +288,9 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Override
-	public ServiceTester createServiceTester() {
-		ServiceTesterImpl serviceTester = new ServiceTesterImpl();
-		return serviceTester;
+	public ServiceTesterReg createServiceTesterReg() {
+		ServiceTesterRegImpl serviceTesterReg = new ServiceTesterRegImpl();
+		return serviceTesterReg;
 	}
 
 	/**

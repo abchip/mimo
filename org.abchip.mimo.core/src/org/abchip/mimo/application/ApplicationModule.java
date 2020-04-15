@@ -59,7 +59,7 @@ public interface ApplicationModule extends Entity {
 
 	/**
 	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.
-	 * The list contents are of type {@link org.abchip.mimo.application.ServiceRef}.
+	 * The list contents are of type {@link org.abchip.mimo.application.ServiceReg}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Services</em>' containment reference list isn't clear,
@@ -71,7 +71,7 @@ public interface ApplicationModule extends Entity {
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	List<ServiceRef> getServices();
+	List<ServiceReg> getServices();
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' attribute.

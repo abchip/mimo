@@ -107,6 +107,7 @@ public class LookupFormServlet extends BaseServlet {
 				}
 			}
 
+			response.setStatus(HttpServletResponse.SC_FOUND);
 			ResourceSerializer<Form> entitySerializer = resourceManager.createResourceSerializer(context, Form.class, SerializationType.JSON);
 			if (form != null) {
 				entitySerializer.add(form);

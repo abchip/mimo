@@ -57,6 +57,7 @@ public class LookupToolbarServlet extends BaseServlet {
 					toolbar.getElements().addAll(toolbarAko.getElements());
 			}
 
+			response.setStatus(HttpServletResponse.SC_FOUND);
 			ResourceSerializer<Toolbar> entitySerializer = resourceManager.createResourceSerializer(context, Toolbar.class, SerializationType.JSON);
 			if (toolbar != null)
 				entitySerializer.add(toolbar);

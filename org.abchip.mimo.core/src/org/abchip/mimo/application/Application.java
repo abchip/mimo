@@ -98,7 +98,7 @@ public interface Application extends EntityIdentifiable {
 
 	/**
 	 * Returns the value of the '<em><b>Commands</b></em>' containment reference list.
-	 * The list contents are of type {@link org.abchip.mimo.application.ServiceCommandProvider}.
+	 * The list contents are of type {@link org.abchip.mimo.application.ServiceCommandProviderReg}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Commands</em>' containment reference list isn't clear,
@@ -110,7 +110,7 @@ public interface Application extends EntityIdentifiable {
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	List<ServiceCommandProvider> getCommands();
+	List<ServiceCommandProviderReg> getCommands();
 
 	/**
 	 * Returns the value of the '<em><b>Components</b></em>' containment reference list.
@@ -208,7 +208,7 @@ public interface Application extends EntityIdentifiable {
 
 	/**
 	 * Returns the value of the '<em><b>Hooks</b></em>' containment reference list.
-	 * The list contents are of type {@link org.abchip.mimo.application.ServiceHook}.
+	 * The list contents are of type {@link org.abchip.mimo.application.ServiceHookReg}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Hooks</em>' containment reference list isn't clear,
@@ -220,7 +220,7 @@ public interface Application extends EntityIdentifiable {
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	List<ServiceHook> getHooks();
+	List<ServiceHookReg> getHooks();
 
 	/**
 	 * Returns the value of the '<em><b>Logs</b></em>' containment reference.

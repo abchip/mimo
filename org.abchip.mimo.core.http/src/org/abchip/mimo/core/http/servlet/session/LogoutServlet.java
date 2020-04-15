@@ -39,6 +39,7 @@ public class LogoutServlet extends BaseServlet {
 		ContextUtils.removeContext(context.getContextDescription().getId());
 		context.dispose();
 
+		response.setStatus(HttpServletResponse.SC_OK);
 		serializer.add(context.getContextDescription());
 		serializer.save(response.getOutputStream());
 		serializer.clear();
@@ -46,7 +47,5 @@ public class LogoutServlet extends BaseServlet {
 		// invalidate session
 		HttpSession session = request.getSession();
 		session.invalidate();
-
-		response.setStatus(HttpServletResponse.SC_OK);
 	}
 }

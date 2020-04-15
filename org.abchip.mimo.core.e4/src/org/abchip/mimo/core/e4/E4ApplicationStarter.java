@@ -28,13 +28,13 @@ import org.abchip.mimo.application.ComponentStarted;
 import org.abchip.mimo.application.ComponentStarting;
 import org.abchip.mimo.application.ComponentStatus;
 import org.abchip.mimo.application.ModuleStatus;
-import org.abchip.mimo.application.ServiceCommandProvider;
-import org.abchip.mimo.application.ServiceExecutor;
-import org.abchip.mimo.application.ServiceHook;
-import org.abchip.mimo.application.ServiceRef;
-import org.abchip.mimo.application.ServiceRegistry;
-import org.abchip.mimo.application.ServiceRegistryEntry;
-import org.abchip.mimo.application.ServiceServlet;
+import org.abchip.mimo.application.ServiceCommandProviderReg;
+import org.abchip.mimo.application.ServiceExecutorReg;
+import org.abchip.mimo.application.ServiceHookReg;
+import org.abchip.mimo.application.ServiceReg;
+import org.abchip.mimo.application.ServiceRegistryReg;
+import org.abchip.mimo.application.ServiceRegistryEntryReg;
+import org.abchip.mimo.application.ServiceServletReg;
 import org.abchip.mimo.application.ServiceStatus;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextRoot;
@@ -155,7 +155,7 @@ public class E4ApplicationStarter implements Runnable {
 
 			LOGGER.info("Load module {}", module.getName());
 			// services
-			for (ServiceRef serviceRef : module.getServices()) {
+			for (ServiceReg serviceRef : module.getServices()) {
 				try {
 					registerService(component, serviceRef);
 				} catch (Exception e) {
@@ -174,10 +174,10 @@ public class E4ApplicationStarter implements Runnable {
 		registerCommands(application.getContext(), componentContext, component.getCommands());
 	}
 
-	private List<Object> registerHooks(ContextRoot contextRoot, Context contextChild, List<ServiceHook> hooks, Dictionary<String, String> properties) {
+	private List<Object> registerHooks(ContextRoot contextRoot, Context contextChild, List<ServiceHookReg> hooks, Dictionary<String, String> properties) {
 
 		List<Object> services = new ArrayList<Object>();
-		for (ServiceHook hook : hooks) {
+		for (ServiceHookReg hook : hooks) {
 			// STOPPED
 			if (hook.getStatus() == ServiceStatus.STOPPED) {
 				LOGGER.info("Disabled hook {}", hook.getClassName());
@@ -202,10 +202,10 @@ public class E4ApplicationStarter implements Runnable {
 			context.set(entity.getClass().getInterfaces()[0].getName(), entity);
 	}
 
-	private List<Object> registerCommands(ContextRoot contextRoot, Context contextChild, List<ServiceCommandProvider> commandProviders) {
+	private List<Object> registerCommands(ContextRoot contextRoot, Context contextChild, List<ServiceCommandProviderReg> commandProviders) {
 
 		List<Object> commands = new ArrayList<Object>();
-		for (ServiceCommandProvider command : commandProviders) {
+		for (ServiceCommandProviderReg command : commandProviders) {
 			if (command.getStatus() == ServiceStatus.STOPPED) {
 				LOGGER.info("Disabled command {}", command.getClassName());
 				continue;
@@ -224,7 +224,7 @@ public class E4ApplicationStarter implements Runnable {
 		return commands;
 	}
 
-	private void registerService(ApplicationComponent component, ServiceRef serviceRef) {
+	private void registerService(ApplicationComponent component, ServiceReg serviceRef) {
 		// STOPPED
 		if (serviceRef.getStatus() == ServiceStatus.STOPPED) {
 			LOGGER.info("Disabled service {}", serviceRef.getClassName());
@@ -237,23 +237,23 @@ public class E4ApplicationStarter implements Runnable {
 		Dictionary<String, String> dictionary = new Hashtable<String, String>();
 
 		// registry entry
-		if (serviceRef instanceof ServiceRegistryEntry) {
-			ServiceRegistryEntry serviceRegistry = (ServiceRegistryEntry) serviceRef;
+		if (serviceRef instanceof ServiceRegistryEntryReg) {
+			ServiceRegistryEntryReg serviceRegistry = (ServiceRegistryEntryReg) serviceRef;
 			dictionary.put(MimoConstants.REGISTRY_NAME, serviceRegistry.getName());
 			dictionary.put(MimoConstants.REGISTRY_VENDOR, serviceRegistry.getVendor());
 			dictionary.put(MimoConstants.REGISTRY_VERSION, serviceRegistry.getVersion());
 		}
 
 		// servlet
-		if (serviceRef instanceof ServiceServlet) {
-			ServiceServlet serviceServlet = (ServiceServlet) serviceRef;
+		if (serviceRef instanceof ServiceServletReg) {
+			ServiceServletReg serviceServlet = (ServiceServletReg) serviceRef;
 			dictionary.put(MimoConstants.SERVLET_ALIAS, serviceServlet.getAlias());
 		}
 
 		String interfaceName = serviceRef.getInterfaceName() != null ? serviceRef.getInterfaceName() : serviceRef.getClassName();
 		boolean remoteExport = false;
-		if (serviceRef instanceof ServiceExecutor) {
-			ServiceExecutor serviceExecutor = (ServiceExecutor) serviceRef;
+		if (serviceRef instanceof ServiceExecutorReg) {
+			ServiceExecutorReg serviceExecutor = (ServiceExecutorReg) serviceRef;
 			remoteExport = serviceExecutor.isRemoteExport();
 		}
 
@@ -268,17 +268,17 @@ public class E4ApplicationStarter implements Runnable {
 		}
 
 		// registry
-		if (serviceRef instanceof ServiceRegistry) {
-			ServiceRegistry serviceRegistry = (ServiceRegistry) serviceRef;
+		if (serviceRef instanceof ServiceRegistryReg) {
+			ServiceRegistryReg serviceRegistry = (ServiceRegistryReg) serviceRef;
 			// service entries
-			for (ServiceRegistryEntry serviceChildRef : serviceRegistry.getEntries()) {
+			for (ServiceRegistryEntryReg serviceChildRef : serviceRegistry.getEntries()) {
 				registerService(component, serviceChildRef);
 			}
 		}
 
 		// servlet
-		if (serviceRef instanceof ServiceServlet) {
-			ServiceServlet serviceServlet = (ServiceServlet) serviceRef;
+		if (serviceRef instanceof ServiceServletReg) {
+			ServiceServletReg serviceServlet = (ServiceServletReg) serviceRef;
 
 			if (httpService != null) {
 				try {
