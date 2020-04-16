@@ -95,7 +95,6 @@ public class HttpClientFactoryImpl implements HttpClientFactory {
 		threadManager.start(thread);
 	}
 
-
 	@Override
 	public HttpClient create(Context context) {
 		return new HttpClientImpl(HTTP);

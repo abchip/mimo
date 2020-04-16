@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.service;
 
+import org.abchip.mimo.context.Context;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,13 +27,21 @@ public interface ServiceExecutor {
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
+	Context getContext();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
 	String getServiceName();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" requestRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException"
 	 * @generated
 	 */
-	ServiceResponse execute(ServiceResponse request) throws ServiceException;
+	ServiceResponse execute() throws ServiceException;
 } // ServiceExecutor

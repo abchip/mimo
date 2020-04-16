@@ -41,12 +41,6 @@ public class HttpClientImpl implements HttpClient {
 		try {
 			return client.execute(method, handler, context);
 		} catch (Exception e) {
-
-			/*
-			 * String message = e.getMessage(); while (Strings.isEmpty(message)) { if
-			 * (e.getCause() == null) break; message = e.getCause().getMessage(); } if
-			 * (message == null) throw new ResourceException(message); else
-			 */
 			throw new NetworkingException(e);
 		} finally {
 			method.reset();
@@ -58,7 +52,6 @@ public class HttpClientImpl implements HttpClient {
 		if (this.client == null)
 			return;
 
-		// this.client.close();
 		this.client = null;
 	}
 }

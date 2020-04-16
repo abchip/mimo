@@ -1085,22 +1085,34 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//service/ServiceStatus/Testing"/>
       </genEnums>
       <genDataTypes ecoreDataType="mimo.ecore#//service/ServiceException"/>
+      <genClasses ecoreClass="mimo.ecore#//service/Service">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/Service/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/Service/text"/>
+      </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceConfig">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceConfig/entities"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceExecutor">
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceExecutor/getContext"/>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceExecutor/getServiceName"/>
-        <genOperations ecoreOperation="mimo.ecore#//service/ServiceExecutor/execute">
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceExecutor/execute/request"/>
-        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceExecutor/execute"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceManager">
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/getServiceExecutor">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getServiceExecutor/context"/>
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getServiceExecutor/name"/>
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getServiceExecutor/service"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getServiceExecutor/S"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMessage"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceProvider">
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceProvider/execute">
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceProvider/execute/request"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceProvider/getService">
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceProvider/getService/name"/>
+        </genOperations>
+      </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceRequest"/>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceResponse"/>
       <nestedGenPackages prefix="Reg" basePackage="org.abchip.mimo.service" disposableProviderFactory="true"

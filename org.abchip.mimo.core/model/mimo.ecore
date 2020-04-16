@@ -1761,25 +1761,47 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="service" nsURI="http://www.abchip.org/mimo/service" nsPrefix="mimo-service">
+    <eClassifiers xsi:type="ecore:EClass" name="Service">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="entities" lowerBound="1"
           upperBound="-1" eType="#//entity/Entity" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="ServiceException" instanceClassName="org.abchip.mimo.service.ServiceException"/>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceExecutor" abstract="true" interface="true">
-      <eOperations name="getServiceName" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
+      <eOperations name="getServiceName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="execute" lowerBound="1" eType="#//service/ServiceResponse"
-          eExceptions="#//service/ServiceException">
-        <eParameters name="request" lowerBound="1" eType="#//service/ServiceResponse"/>
-      </eOperations>
+          eExceptions="#//service/ServiceException"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceManager" abstract="true" interface="true">
-      <eOperations name="getServiceExecutor" eType="#//service/ServiceExecutor">
+      <eOperations name="getServiceExecutor">
+        <eGenericType eTypeParameter="#//service/ServiceManager/getServiceExecutor/S"/>
+        <eTypeParameters name="S">
+          <eBounds eClassifier="#//service/ServiceExecutor"/>
+        </eTypeParameters>
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="service" lowerBound="1">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/getServiceExecutor/S"/>
+          </eGenericType>
+        </eParameters>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceMessage" abstract="true" eSuperTypes="#//entity/Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceProvider" abstract="true">
+      <eOperations name="execute" lowerBound="1" eType="#//service/ServiceResponse"
+          eExceptions="#//service/ServiceException">
+        <eParameters name="request" lowerBound="1" eType="#//service/ServiceRequest"/>
+      </eOperations>
+      <eOperations name="getService" lowerBound="1" eType="#//service/Service">
+        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceRequest" eSuperTypes="#//service/ServiceMessage"/>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceResponse" eSuperTypes="#//service/ServiceMessage"/>
     <eClassifiers xsi:type="ecore:EEnum" name="ServiceStatus">

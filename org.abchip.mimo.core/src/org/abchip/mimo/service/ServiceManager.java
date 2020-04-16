@@ -25,8 +25,8 @@ public interface ServiceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" nameRequired="true"
+	 * @model contextRequired="true" serviceRequired="true"
 	 * @generated
 	 */
-	ServiceExecutor getServiceExecutor(Context context, String name);
+	<S extends ServiceExecutor> S getServiceExecutor(Context context, Class<S> service);
 } // ServiceManager

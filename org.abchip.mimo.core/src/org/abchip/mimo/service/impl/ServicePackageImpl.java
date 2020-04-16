@@ -36,6 +36,7 @@ import org.abchip.mimo.networking.impl.NetworkingPackageImpl;
 import org.abchip.mimo.resource.ResourcePackage;
 
 import org.abchip.mimo.resource.impl.ResourcePackageImpl;
+import org.abchip.mimo.service.Service;
 import org.abchip.mimo.service.ServiceConfig;
 import org.abchip.mimo.service.ServiceException;
 import org.abchip.mimo.service.ServiceExecutor;
@@ -43,18 +44,22 @@ import org.abchip.mimo.service.ServiceFactory;
 import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServiceMessage;
 import org.abchip.mimo.service.ServicePackage;
+import org.abchip.mimo.service.ServiceProvider;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.service.ServiceStatus;
 import org.abchip.mimo.service.reg.RegPackage;
 import org.abchip.mimo.service.reg.impl.RegPackageImpl;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -65,6 +70,12 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -90,6 +101,12 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	private EClass serviceMessageEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceProviderEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -228,6 +245,36 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getService() {
+		return serviceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getService_Name() {
+		return (EAttribute)serviceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getService_Text() {
+		return (EAttribute)serviceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getServiceConfig() {
 		return serviceConfigEClass;
 	}
@@ -270,6 +317,16 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	@Override
 	public EClass getServiceMessage() {
 		return serviceMessageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getServiceProvider() {
+		return serviceProviderEClass;
 	}
 
 	/**
@@ -341,6 +398,10 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		isCreated = true;
 
 		// Create classes and their features
+		serviceEClass = createEClass(SERVICE);
+		createEAttribute(serviceEClass, SERVICE__NAME);
+		createEAttribute(serviceEClass, SERVICE__TEXT);
+
 		serviceConfigEClass = createEClass(SERVICE_CONFIG);
 		createEReference(serviceConfigEClass, SERVICE_CONFIG__ENTITIES);
 
@@ -349,6 +410,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		serviceManagerEClass = createEClass(SERVICE_MANAGER);
 
 		serviceMessageEClass = createEClass(SERVICE_MESSAGE);
+
+		serviceProviderEClass = createEClass(SERVICE_PROVIDER);
 
 		serviceRequestEClass = createEClass(SERVICE_REQUEST);
 
@@ -387,7 +450,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		// Obtain other dependent packages
 		RegPackage theRegPackage = (RegPackage)EPackage.Registry.INSTANCE.getEPackage(RegPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 
 		// Add subpackages
@@ -404,24 +466,46 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		serviceResponseEClass.getESuperTypes().add(this.getServiceMessage());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getService_Name(), ecorePackage.getEString(), "name", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getService_Text(), ecorePackage.getEString(), "text", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(serviceConfigEClass, ServiceConfig.class, "ServiceConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServiceConfig_Entities(), theEntityPackage.getEntity(), null, "entities", null, 1, -1, ServiceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceExecutorEClass, ServiceExecutor.class, "ServiceExecutor", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(serviceExecutorEClass, theEcorePackage.getEString(), "getServiceName", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(serviceExecutorEClass, theContextPackage.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(serviceExecutorEClass, ecorePackage.getEString(), "getServiceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		EOperation op = addEOperation(serviceExecutorEClass, this.getServiceResponse(), "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getServiceResponse(), "request", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getServiceException());
 
 		initEClass(serviceManagerEClass, ServiceManager.class, "ServiceManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(serviceManagerEClass, this.getServiceExecutor(), "getServiceExecutor", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(serviceManagerEClass, null, "getServiceExecutor", 0, 1, IS_UNIQUE, IS_ORDERED);
+		ETypeParameter t1 = addETypeParameter(op, "S");
+		EGenericType g1 = createEGenericType(this.getServiceExecutor());
+		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		EGenericType g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "service", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t1);
+		initEOperation(op, g1);
 
 		initEClass(serviceMessageEClass, ServiceMessage.class, "ServiceMessage", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(serviceProviderEClass, ServiceProvider.class, "ServiceProvider", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(serviceProviderEClass, this.getServiceResponse(), "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getServiceRequest(), "request", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getServiceException());
+
+		op = addEOperation(serviceProviderEClass, this.getService(), "getService", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(serviceRequestEClass, ServiceRequest.class, "ServiceRequest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
