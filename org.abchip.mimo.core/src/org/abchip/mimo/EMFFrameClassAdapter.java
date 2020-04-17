@@ -281,18 +281,9 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	@Override
 	public String getPackageName() {
 
-		StringBuffer sb = new StringBuffer();
 		EPackage ePackage = eClass.getEPackage();
-		while (ePackage != null) {
-			if (sb.length() == 0)
-				sb.insert(0, ePackage.getName());
-			else
-				sb.insert(0, ePackage.getName() + ".");
-
-			ePackage = ePackage.getESuperPackage();
-		}
-
-		return sb.toString();
+		String packageName = ePackage.getNsPrefix().replaceAll("-", "."); 
+		return packageName;
 	}
 
 	private void setFrameText() {
