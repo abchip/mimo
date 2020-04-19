@@ -36,11 +36,11 @@ public class BaseLanguageCommandProviderImpl extends BaseCommands {
 			for (Language language : languages) {
 				interpreter.println(language);
 
-				LanguagePlanet mars = context.getFrame(LanguagePlanet.class).createProxy("mars");
+				LanguagePlanet mars = context.createProxy(LanguagePlanet.class, "mars");
 				language.getPlanets().add(mars);
 				language.getPlanets().get(0);
 
-				LanguagePlanet moon = context.getFrame(LanguagePlanet.class).createProxy("moon");
+				LanguagePlanet moon = context.createProxy(LanguagePlanet.class, "moon");
 				language.getPlanetsCont().add(moon);
 				language.getPlanetsCont().get(0);
 			}

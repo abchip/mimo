@@ -168,6 +168,16 @@
         <genOperations ecoreOperation="mimo.ecore#//context/Capability/getEntityName"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/Context">
+        <genOperations ecoreOperation="mimo.ecore#//context/Context/createProxy">
+          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy/id"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/createProxy/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/Context/createProxy.1">
+          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy.1/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy.1/id"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/createProxy.1/E"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/dispose"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/get">
           <genParameters ecoreParameter="mimo.ecore#//context/Context/get/clazz"/>

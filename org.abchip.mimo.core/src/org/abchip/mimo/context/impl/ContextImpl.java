@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public abstract class ContextImpl extends MinimalEObjectImpl.Container implements Context {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ContextImpl() {
@@ -38,13 +37,28 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
 		return ContextPackage.Literals.CONTEXT;
 	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract <E extends EntityIdentifiable> E createProxy(Class<E> frame, String id);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public abstract <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

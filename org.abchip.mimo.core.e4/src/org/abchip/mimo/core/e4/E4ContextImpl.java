@@ -24,7 +24,9 @@ import org.abchip.mimo.context.ContextStatus;
 import org.abchip.mimo.context.impl.ContextImpl;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
@@ -36,6 +38,8 @@ public abstract class E4ContextImpl extends ContextImpl {
 	private static final Logger LOGGER = Logs.getLogger(E4ContextImpl.class);
 
 	private ResourceManager resourceManager;
+	@SuppressWarnings("rawtypes")
+	private ResourceReader<Frame> frameReader;
 	private ContextDescription contextDescription;
 	private List<ContextListener> listeners;
 
@@ -43,6 +47,8 @@ public abstract class E4ContextImpl extends ContextImpl {
 		this.contextDescription = contextDescription;
 		this.listeners = new ArrayList<ContextListener>();
 		this.contextDescription.setStatus(ContextStatus.ACTIVE);
+
+		this.frameReader = this.getResourceManager().getResourceReader(this, Frame.class);
 	}
 
 	protected abstract IEclipseContext getEclipseContext();
@@ -236,9 +242,25 @@ public abstract class E4ContextImpl extends ContextImpl {
 		}
 		return this.resourceManager;
 	}
-	
+
+	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass) {
-		return this.getResourceManager().getFrame(this, klass);
+		try {
+			return this.frameReader.lookup(klass.getSimpleName());
+		} catch (ResourceException e) {
+			LOGGER.error(e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> E createProxy(Class<E> frame, String id) {
+		return this.getFrame(frame).createProxy(id);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id) {
+		return frame.createProxy(id);
 	}
 }

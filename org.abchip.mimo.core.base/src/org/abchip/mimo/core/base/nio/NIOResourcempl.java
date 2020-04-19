@@ -43,6 +43,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 
 	private final Logger LOGGER = Logs.getLogger(NIOResourcempl.class);
 
+	private Context context = null;
 	private NIOPathManager pathManager = null;
 	private ResourceSerializer<E> resourceSerializer = null;
 
@@ -50,12 +51,12 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 
 	public NIOResourcempl(Context context, Frame<E> frame, String tenant, NIOPathManager pathManager) {
 
+		this.context = context;
+		this.tenant = tenant;
 		this.pathManager = pathManager;
 
 		ResourceManager resourceManager = context.get(ResourceManager.class);
 		this.resourceSerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.XMI);
-
-		this.tenant = tenant;
 	}
 
 	@Override
@@ -126,7 +127,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 				return null;
 
 			if (proxy)
-				return getFrame().createProxy(name);
+				return context.createProxy(getFrame(), name);
 
 			E entity = null;
 			try (InputStream inputStream = Files.newInputStream(file)) {
@@ -185,7 +186,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 					i++;
 
 					if (proxy) {
-						this.resourceSerializer.add(getFrame().createProxy(name));
+						this.resourceSerializer.add(context.createProxy(getFrame(), name));
 						continue;
 					}
 
@@ -193,7 +194,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 						this.resourceSerializer.load(inputStream, true);
 					} catch (Exception e) {
 						LOGGER.error(e.getMessage());
-						this.resourceSerializer.add(getFrame().createProxy(name));
+						this.resourceSerializer.add(context.createProxy(getFrame(), name));
 					}
 				}
 

@@ -27,6 +27,22 @@ public interface Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model required="true" frameRequired="true" idRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> E createProxy(Class<E> frame, String id);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" frameRequired="true" idRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */

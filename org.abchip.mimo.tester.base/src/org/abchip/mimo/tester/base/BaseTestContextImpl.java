@@ -15,6 +15,8 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.impl.ContextImpl;
+import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
 
 public class BaseTestContextImpl extends ContextImpl {
@@ -97,5 +99,20 @@ public class BaseTestContextImpl extends ContextImpl {
 	@Override
 	public ResourceManager getResourceManager() {
 		return delegate.getResourceManager();
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass) {
+		return delegate.getFrame(klass);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> E createProxy(Class<E> frame, String id) {
+		return delegate.createProxy(frame, id);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id) {
+		return delegate.createProxy(frame, id);
 	}
 }
