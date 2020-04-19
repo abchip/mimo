@@ -8,7 +8,6 @@
 package org.abchip.mimo.service;
 
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -102,25 +101,6 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.service.ServiceCall <em>Call</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.service.ServiceCall
-	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceCall()
-	 * @generated
-	 */
-	int SERVICE_CALL = 1;
-
-	/**
-	 * The number of structural features of the '<em>Call</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_CALL_FEATURE_COUNT = JavaPackage.JAVA_CALLABLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceConfigImpl <em>Config</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,7 +108,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceConfig()
 	 * @generated
 	 */
-	int SERVICE_CONFIG = 2;
+	int SERVICE_CONFIG = 1;
 
 	/**
 	 * The feature id for the '<em><b>Entities</b></em>' containment reference list.
@@ -156,7 +136,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceManager()
 	 * @generated
 	 */
-	int SERVICE_MANAGER = 3;
+	int SERVICE_MANAGER = 2;
 
 	/**
 	 * The number of structural features of the '<em>Manager</em>' class.
@@ -175,7 +155,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMessage()
 	 * @generated
 	 */
-	int SERVICE_MESSAGE = 4;
+	int SERVICE_MESSAGE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Message</em>' class.
@@ -194,7 +174,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceRequest()
 	 * @generated
 	 */
-	int SERVICE_REQUEST = 5;
+	int SERVICE_REQUEST = 4;
 
 	/**
 	 * The number of structural features of the '<em>Request</em>' class.
@@ -213,7 +193,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceResponse()
 	 * @generated
 	 */
-	int SERVICE_RESPONSE = 6;
+	int SERVICE_RESPONSE = 5;
 
 	/**
 	 * The number of structural features of the '<em>Response</em>' class.
@@ -232,7 +212,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceStatus()
 	 * @generated
 	 */
-	int SERVICE_STATUS = 7;
+	int SERVICE_STATUS = 6;
 
 	/**
 	 * The meta object id for the '<em>Exception</em>' data type.
@@ -242,7 +222,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceException()
 	 * @generated
 	 */
-	int SERVICE_EXCEPTION = 8;
+	int SERVICE_EXCEPTION = 7;
 
 
 	/**
@@ -276,16 +256,6 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getService_Request();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceCall <em>Call</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Call</em>'.
-	 * @see org.abchip.mimo.service.ServiceCall
-	 * @generated
-	 */
-	EClass getServiceCall();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceConfig <em>Config</em>}'.
@@ -416,16 +386,6 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SERVICE__REQUEST = eINSTANCE.getService_Request();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.service.ServiceCall <em>Call</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.service.ServiceCall
-		 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceCall()
-		 * @generated
-		 */
-		EClass SERVICE_CALL = eINSTANCE.getServiceCall();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceConfigImpl <em>Config</em>}' class.

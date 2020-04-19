@@ -36,4 +36,12 @@ public interface ServiceCall<R extends ServiceRequest<V>, V extends ServiceRespo
 	 */
 	Service<R, V> getService();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	R getRequest();
+
 } // ServiceCall

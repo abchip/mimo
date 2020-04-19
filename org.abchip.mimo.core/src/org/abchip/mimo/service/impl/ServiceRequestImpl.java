@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.service.impl;
 
+import org.abchip.mimo.context.Context;
+import org.abchip.mimo.service.ServiceException;
 import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.service.ServiceRequest;
 
@@ -43,6 +45,42 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	@Override
 	protected EClass eStaticClass() {
 		return ServicePackage.Literals.SERVICE_REQUEST;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public V call() throws ServiceException {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Context getContext() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isPrepared() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 } //ServiceRequestImpl

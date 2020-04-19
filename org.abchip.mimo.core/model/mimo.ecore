@@ -1780,28 +1780,6 @@
         <eGenericType eTypeParameter="#//service/Service/R"/>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceCall" abstract="true" interface="true">
-      <eTypeParameters name="R">
-        <eBounds eClassifier="#//service/ServiceRequest">
-          <eTypeArguments eTypeParameter="#//service/ServiceCall/V"/>
-        </eBounds>
-      </eTypeParameters>
-      <eTypeParameters name="V">
-        <eBounds eClassifier="#//service/ServiceResponse"/>
-      </eTypeParameters>
-      <eOperations name="call" lowerBound="1" eExceptions="#//service/ServiceException">
-        <eGenericType eTypeParameter="#//service/ServiceCall/V"/>
-      </eOperations>
-      <eOperations name="getService" lowerBound="1">
-        <eGenericType eClassifier="#//service/Service">
-          <eTypeArguments eTypeParameter="#//service/ServiceCall/R"/>
-          <eTypeArguments eTypeParameter="#//service/ServiceCall/V"/>
-        </eGenericType>
-      </eOperations>
-      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
-        <eTypeArguments eTypeParameter="#//service/ServiceCall/V"/>
-      </eGenericSuperTypes>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="entities" lowerBound="1"
           upperBound="-1" eType="#//entity/Entity" containment="true"/>
@@ -1809,10 +1787,7 @@
     <eClassifiers xsi:type="ecore:EDataType" name="ServiceException" instanceClassName="org.abchip.mimo.service.ServiceException"/>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceManager" abstract="true" interface="true">
       <eOperations name="prepare" lowerBound="1">
-        <eGenericType eClassifier="#//service/ServiceCall">
-          <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare/R"/>
-          <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare/V"/>
-        </eGenericType>
+        <eGenericType eTypeParameter="#//service/ServiceManager/prepare/R"/>
         <eTypeParameters name="V">
           <eBounds eClassifier="#//service/ServiceResponse"/>
         </eTypeParameters>
@@ -1828,12 +1803,59 @@
           </eGenericType>
         </eParameters>
       </eOperations>
+      <eOperations name="getService" lowerBound="1">
+        <eGenericType eClassifier="#//service/Service">
+          <eTypeArguments eTypeParameter="#//service/ServiceManager/getService/R"/>
+          <eTypeArguments eTypeParameter="#//service/ServiceManager/getService/V"/>
+        </eGenericType>
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/getService/V"/>
+          </eBounds>
+        </eTypeParameters>
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+        <eParameters name="request">
+          <eGenericType eTypeParameter="#//service/ServiceManager/getService/R"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getService" lowerBound="1">
+        <eGenericType eClassifier="#//service/Service">
+          <eTypeArguments eTypeParameter="#//service/ServiceManager/getService.1/R"/>
+          <eTypeArguments eTypeParameter="#//service/ServiceManager/getService.1/V"/>
+        </eGenericType>
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/getService.1/V"/>
+          </eBounds>
+        </eTypeParameters>
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+        <eParameters name="request">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/getService.1/R"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceMessage" abstract="true" eSuperTypes="#//entity/Entity"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceRequest" abstract="true" eSuperTypes="#//service/ServiceMessage">
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceRequest" abstract="true">
       <eTypeParameters name="V">
         <eBounds eClassifier="#//service/ServiceResponse"/>
       </eTypeParameters>
+      <eOperations name="call" lowerBound="1" eExceptions="#//service/ServiceException">
+        <eGenericType eTypeParameter="#//service/ServiceRequest/V"/>
+      </eOperations>
+      <eOperations name="getContext" eType="#//context/Context"/>
+      <eOperations name="isPrepared" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eGenericSuperTypes eClassifier="#//service/ServiceMessage"/>
+      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
+        <eTypeArguments eTypeParameter="#//service/ServiceRequest/V"/>
+      </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceResponse" abstract="true" eSuperTypes="#//service/ServiceMessage"/>
     <eClassifiers xsi:type="ecore:EEnum" name="ServiceStatus">
