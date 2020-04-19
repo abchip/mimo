@@ -7,9 +7,6 @@
  */
 package org.abchip.mimo.service;
 
-import java.util.concurrent.Callable;
-
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Request</b></em>'.
@@ -17,24 +14,8 @@ import java.util.concurrent.Callable;
  *
  *
  * @see org.abchip.mimo.service.ServicePackage#getServiceRequest()
- * @model abstract="true" superTypes="org.abchip.mimo.service.ServiceMessage org.abchip.mimo.java.JavaCallable&lt;V&gt;"
+ * @model abstract="true"
  * @generated
  */
-public interface ServiceRequest<R extends ServiceRequest<R, V>, V extends ServiceResponse> extends ServiceMessage, Callable<V> {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException"
-	 * @generated
-	 */
-	V call() throws ServiceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	Service<R, V> getService();
+public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessage {
 } // ServiceRequest

@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.service.impl;
 
-import org.abchip.mimo.entity.impl.EntityImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.abchip.mimo.service.Service;
 import org.abchip.mimo.service.ServicePackage;
 
@@ -28,12 +28,31 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.service.impl.ServiceImpl#getRequest <em>Request</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ServiceImpl<R extends ServiceRequest<R, V>, V extends ServiceResponse> extends EntityImpl implements Service<R, V> {
+public abstract class ServiceImpl<R extends ServiceRequest<V>, V extends ServiceResponse> extends EntityIdentifiableImpl implements Service<R, V> {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getRequest() <em>Request</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -65,6 +84,29 @@ public abstract class ServiceImpl<R extends ServiceRequest<R, V>, V extends Serv
 	@Override
 	protected EClass eStaticClass() {
 		return ServicePackage.Literals.SERVICE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE__NAME, oldName, name));
 	}
 
 	/**
@@ -158,6 +200,8 @@ public abstract class ServiceImpl<R extends ServiceRequest<R, V>, V extends Serv
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ServicePackage.SERVICE__NAME:
+				return getName();
 			case ServicePackage.SERVICE__REQUEST:
 				if (resolve) return getRequest();
 				return basicGetRequest();
@@ -174,6 +218,9 @@ public abstract class ServiceImpl<R extends ServiceRequest<R, V>, V extends Serv
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ServicePackage.SERVICE__NAME:
+				setName((String)newValue);
+				return;
 			case ServicePackage.SERVICE__REQUEST:
 				setRequest((R)newValue);
 				return;
@@ -189,6 +236,9 @@ public abstract class ServiceImpl<R extends ServiceRequest<R, V>, V extends Serv
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ServicePackage.SERVICE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case ServicePackage.SERVICE__REQUEST:
 				setRequest((R)null);
 				return;
@@ -204,10 +254,28 @@ public abstract class ServiceImpl<R extends ServiceRequest<R, V>, V extends Serv
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ServicePackage.SERVICE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ServicePackage.SERVICE__REQUEST:
 				return request != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ServiceImpl

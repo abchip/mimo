@@ -1089,7 +1089,14 @@
       <genClasses ecoreClass="mimo.ecore#//service/Service">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/Service/R"/>
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/Service/V"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/Service/name"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//service/Service/request"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceCall">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceCall/R"/>
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceCall/V"/>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceCall/call"/>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceCall/getService"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceConfig">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceConfig/entities"/>
@@ -1104,10 +1111,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMessage"/>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceRequest">
-        <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceRequest/R"/>
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceRequest/V"/>
-        <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/call"/>
-        <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/getService"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceResponse"/>
       <nestedGenPackages prefix="Reg" basePackage="org.abchip.mimo.service" disposableProviderFactory="true"

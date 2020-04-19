@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.service.impl;
 
-import org.abchip.mimo.service.Service;
-import org.abchip.mimo.service.ServiceException;
 import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.service.ServiceRequest;
 
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class ServiceRequestImpl<R extends ServiceRequest<R, V>, V extends ServiceResponse> extends ServiceMessageImpl implements ServiceRequest<R, V> {
+public abstract class ServiceRequestImpl<V extends ServiceResponse> extends ServiceMessageImpl implements ServiceRequest<V> {
 	/**
 	 * 
 	 */
@@ -45,30 +43,6 @@ public abstract class ServiceRequestImpl<R extends ServiceRequest<R, V>, V exten
 	@Override
 	protected EClass eStaticClass() {
 		return ServicePackage.Literals.SERVICE_REQUEST;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public V call() throws ServiceException {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Service<R, V> getService() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 } //ServiceRequestImpl

@@ -28,5 +28,5 @@ public interface ServiceManager {
 	 * @model required="true" contextRequired="true"
 	 * @generated
 	 */
-	<V extends ServiceResponse, R extends ServiceRequest<R, V>> R prepare(Context context, Class<R> request);
+	<V extends ServiceResponse, R extends ServiceRequest<V>> ServiceCall<R, V> prepare(Context context, Class<R> request);
 } // ServiceManager

@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.service;
 
-import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +18,7 @@ import org.abchip.mimo.entity.Entity;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.service.Service#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.service.Service#getRequest <em>Request</em>}</li>
  * </ul>
  *
@@ -25,7 +26,29 @@ import org.abchip.mimo.entity.Entity;
  * @model abstract="true"
  * @generated
  */
-public interface Service<R extends ServiceRequest<R, V>, V extends ServiceResponse> extends Entity {
+public interface Service<R extends ServiceRequest<V>, V extends ServiceResponse> extends EntityIdentifiable {
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see org.abchip.mimo.service.ServicePackage#getService_Name()
+	 * @model id="true" required="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.service.Service#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Request</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
