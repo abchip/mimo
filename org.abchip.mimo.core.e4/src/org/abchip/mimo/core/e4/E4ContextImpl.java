@@ -22,6 +22,8 @@ import org.abchip.mimo.context.ContextEventType;
 import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextStatus;
 import org.abchip.mimo.context.impl.ContextImpl;
+import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
@@ -233,5 +235,10 @@ public abstract class E4ContextImpl extends ContextImpl {
 			}
 		}
 		return this.resourceManager;
+	}
+	
+	@Override
+	public <E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass) {
+		return this.getResourceManager().getFrame(this, klass);
 	}
 }

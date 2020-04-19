@@ -1379,6 +1379,19 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		addEOperation(contextEClass, this.getContextDescription(), "getContextDescription", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(contextEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theEntityPackage.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
 		addEOperation(contextEClass, theResourcePackage.getResourceManager(), "getResourceManager", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(contextEClass, null, "inject", 0, 1, IS_UNIQUE, IS_ORDERED);

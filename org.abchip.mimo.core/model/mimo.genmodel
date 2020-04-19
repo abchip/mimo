@@ -179,6 +179,10 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/getAdapter/T"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/getContextDescription"/>
+        <genOperations ecoreOperation="mimo.ecore#//context/Context/getFrame">
+          <genParameters ecoreParameter="mimo.ecore#//context/Context/getFrame/klass"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/getFrame/E"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/getResourceManager"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/inject">
           <genParameters ecoreParameter="mimo.ecore#//context/Context/inject/object"/>

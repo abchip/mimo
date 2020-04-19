@@ -9,6 +9,8 @@
 package org.abchip.mimo.context;
 
 import java.lang.annotation.Annotation;
+import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
 
 /**
@@ -53,6 +55,14 @@ public interface Context {
 	 * @generated
 	 */
 	ContextDescription getContextDescription();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model klassRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -14,6 +14,8 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextPackage;
+import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -27,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public abstract class ContextImpl extends MinimalEObjectImpl.Container implements Context {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ContextImpl() {
@@ -35,6 +38,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -137,6 +141,14 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	public abstract ContextDescription getContextDescription();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract <E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
