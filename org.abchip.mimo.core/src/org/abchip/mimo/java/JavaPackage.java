@@ -348,7 +348,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaAnnotation()
 	 * @generated
 	 */
-	int JAVA_ANNOTATION = 20;
+	int JAVA_ANNOTATION = 21;
 
 	/**
 	 * The meta object id for the '<em>Dictionary</em>' data type.
@@ -358,7 +358,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaDictionary()
 	 * @generated
 	 */
-	int JAVA_DICTIONARY = 21;
+	int JAVA_DICTIONARY = 22;
 
 	/**
 	 * The meta object id for the '<em>Exception</em>' data type.
@@ -368,7 +368,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaException()
 	 * @generated
 	 */
-	int JAVA_EXCEPTION = 22;
+	int JAVA_EXCEPTION = 23;
 
 	/**
 	 * The number of structural features of the '<em>File</em>' class.
@@ -470,6 +470,25 @@ public interface JavaPackage extends EPackage {
 	int JAVA_THREAD_INFO_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link java.io.File <em>Void</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.io.File
+	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaVoid()
+	 * @generated
+	 */
+	int JAVA_VOID = 20;
+
+	/**
+	 * The number of structural features of the '<em>Void</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_VOID_FEATURE_COUNT = 0;
+
+	/**
 	 * The meta object id for the '<em>Input Stream</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -477,7 +496,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaInputStream()
 	 * @generated
 	 */
-	int JAVA_INPUT_STREAM = 23;
+	int JAVA_INPUT_STREAM = 24;
 
 	/**
 	 * The meta object id for the '<em>IO Exception</em>' data type.
@@ -487,7 +506,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaIOException()
 	 * @generated
 	 */
-	int JAVA_IO_EXCEPTION = 24;
+	int JAVA_IO_EXCEPTION = 25;
 
 	/**
 	 * The meta object id for the '<em>Map</em>' data type.
@@ -497,7 +516,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaMap()
 	 * @generated
 	 */
-	int JAVA_MAP = 25;
+	int JAVA_MAP = 26;
 
 	/**
 	 * The meta object id for the '<em>Output Stream</em>' data type.
@@ -507,7 +526,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaOutputStream()
 	 * @generated
 	 */
-	int JAVA_OUTPUT_STREAM = 26;
+	int JAVA_OUTPUT_STREAM = 27;
 
 	/**
 	 * The meta object id for the '<em>Properties</em>' data type.
@@ -517,7 +536,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaProperties()
 	 * @generated
 	 */
-	int JAVA_PROPERTIES = 27;
+	int JAVA_PROPERTIES = 28;
 
 	/**
 	 * The meta object id for the '<em>Throwable</em>' data type.
@@ -527,7 +546,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaThrowable()
 	 * @generated
 	 */
-	int JAVA_THROWABLE = 28;
+	int JAVA_THROWABLE = 29;
 
 	/**
 	 * The meta object id for the '<em>Type</em>' data type.
@@ -537,7 +556,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaType()
 	 * @generated
 	 */
-	int JAVA_TYPE = 29;
+	int JAVA_TYPE = 30;
 
 	/**
 	 * The meta object id for the '<em>URI</em>' data type.
@@ -547,7 +566,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaURI()
 	 * @generated
 	 */
-	int JAVA_URI = 30;
+	int JAVA_URI = 31;
 
 	/**
 	 * The meta object id for the '<em>URL</em>' data type.
@@ -557,7 +576,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaURL()
 	 * @generated
 	 */
-	int JAVA_URL = 31;
+	int JAVA_URL = 32;
 
 	/**
 	 * The meta object id for the '<em>Writer</em>' data type.
@@ -567,7 +586,7 @@ public interface JavaPackage extends EPackage {
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaWriter()
 	 * @generated
 	 */
-	int JAVA_WRITER = 32;
+	int JAVA_WRITER = 33;
 
 
 	/**
@@ -789,6 +808,17 @@ public interface JavaPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getJavaThreadInfo();
+
+	/**
+	 * Returns the meta object for class '{@link java.io.File <em>Void</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Void</em>'.
+	 * @see java.io.File
+	 * @model instanceClass="java.io.File"
+	 * @generated
+	 */
+	EClass getJavaVoid();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.annotation.Annotation <em>Annotation</em>}'.
@@ -1154,6 +1184,16 @@ public interface JavaPackage extends EPackage {
 		 * @generated
 		 */
 		EClass JAVA_THREAD_INFO = eINSTANCE.getJavaThreadInfo();
+
+		/**
+		 * The meta object literal for the '{@link java.io.File <em>Void</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.io.File
+		 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaVoid()
+		 * @generated
+		 */
+		EClass JAVA_VOID = eINSTANCE.getJavaVoid();
 
 		/**
 		 * The meta object literal for the '<em>Annotation</em>' data type.

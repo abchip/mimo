@@ -232,6 +232,13 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass javaVoidEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType javaAnnotationEDataType = null;
 
 	/**
@@ -630,6 +637,16 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getJavaVoid() {
+		return javaVoidEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDataType getJavaAnnotation() {
 		return javaAnnotationEDataType;
 	}
@@ -823,6 +840,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 
 		javaThreadInfoEClass = createEClass(JAVA_THREAD_INFO);
 
+		javaVoidEClass = createEClass(JAVA_VOID);
+
 		// Create data types
 		javaAnnotationEDataType = createEDataType(JAVA_ANNOTATION);
 		javaDictionaryEDataType = createEDataType(JAVA_DICTIONARY);
@@ -916,6 +935,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 		initEClass(javaThreadGroupEClass, ThreadGroup.class, "JavaThreadGroup", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(javaThreadInfoEClass, ThreadInfo.class, "JavaThreadInfo", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(javaVoidEClass, File.class, "JavaVoid", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types
 		initEDataType(javaAnnotationEDataType, Annotation.class, "JavaAnnotation", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

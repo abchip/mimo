@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ServiceResponseImpl extends ServiceMessageImpl implements ServiceResponse {
+public abstract class ServiceResponseImpl extends ServiceMessageImpl implements ServiceResponse {
 	/**
 	 * 
 	 */

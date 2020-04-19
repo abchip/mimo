@@ -25,8 +25,8 @@ public interface ServiceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" serviceRequired="true"
+	 * @model required="true" contextRequired="true"
 	 * @generated
 	 */
-	<S extends ServiceExecutor> S getServiceExecutor(Context context, Class<S> service);
+	<V extends ServiceResponse, R extends ServiceRequest<R, V>> R prepare(Context context, Class<R> request);
 } // ServiceManager

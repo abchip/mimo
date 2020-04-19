@@ -7,15 +7,18 @@
  */
 package org.abchip.mimo.service.impl;
 
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.service.Service;
 import org.abchip.mimo.service.ServicePackage;
 
+import org.abchip.mimo.service.ServiceRequest;
+import org.abchip.mimo.service.ServiceResponse;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,52 +28,25 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceImpl#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceImpl#getRequest <em>Request</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ServiceImpl extends MinimalEObjectImpl.Container implements Service {
+public abstract class ServiceImpl<R extends ServiceRequest<R, V>, V extends ServiceResponse> extends EntityImpl implements Service<R, V> {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getRequest() <em>Request</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getRequest()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
-
+	protected R request;
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
+	 * 
 	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getText()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TEXT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getText()
-	 * @generated
-	 * @ordered
-	 */
-	protected String text = TEXT_EDEFAULT;
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,9 +72,48 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public String getName() {
-		return name;
+	public R getRequest() {
+		if (request != null && ((EObject)request).eIsProxy()) {
+			InternalEObject oldRequest = (InternalEObject)request;
+			request = (R)eResolveProxy(oldRequest);
+			if (request != oldRequest) {
+				InternalEObject newRequest = (InternalEObject)request;
+				NotificationChain msgs = oldRequest.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServicePackage.SERVICE__REQUEST, null, null);
+				if (newRequest.eInternalContainer() == null) {
+					msgs = newRequest.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServicePackage.SERVICE__REQUEST, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServicePackage.SERVICE__REQUEST, oldRequest, request));
+			}
+		}
+		return request;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public R basicGetRequest() {
+		return request;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRequest(R newRequest, NotificationChain msgs) {
+		R oldRequest = request;
+		request = newRequest;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE__REQUEST, oldRequest, newRequest);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -107,11 +122,18 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE__NAME, oldName, name));
+	public void setRequest(R newRequest) {
+		if (newRequest != request) {
+			NotificationChain msgs = null;
+			if (request != null)
+				msgs = ((InternalEObject)request).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServicePackage.SERVICE__REQUEST, null, msgs);
+			if (newRequest != null)
+				msgs = ((InternalEObject)newRequest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServicePackage.SERVICE__REQUEST, null, msgs);
+			msgs = basicSetRequest(newRequest, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE__REQUEST, newRequest, newRequest));
 	}
 
 	/**
@@ -120,21 +142,12 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @generated
 	 */
 	@Override
-	public String getText() {
-		return text;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setText(String newText) {
-		String oldText = text;
-		text = newText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE__TEXT, oldText, text));
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ServicePackage.SERVICE__REQUEST:
+				return basicSetRequest(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -145,10 +158,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicePackage.SERVICE__NAME:
-				return getName();
-			case ServicePackage.SERVICE__TEXT:
-				return getText();
+			case ServicePackage.SERVICE__REQUEST:
+				if (resolve) return getRequest();
+				return basicGetRequest();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,14 +170,12 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicePackage.SERVICE__NAME:
-				setName((String)newValue);
-				return;
-			case ServicePackage.SERVICE__TEXT:
-				setText((String)newValue);
+			case ServicePackage.SERVICE__REQUEST:
+				setRequest((R)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -179,11 +189,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicePackage.SERVICE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case ServicePackage.SERVICE__TEXT:
-				setText(TEXT_EDEFAULT);
+			case ServicePackage.SERVICE__REQUEST:
+				setRequest((R)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -197,30 +204,10 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicePackage.SERVICE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ServicePackage.SERVICE__TEXT:
-				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+			case ServicePackage.SERVICE__REQUEST:
+				return request != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", text: ");
-		result.append(text);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ServiceImpl

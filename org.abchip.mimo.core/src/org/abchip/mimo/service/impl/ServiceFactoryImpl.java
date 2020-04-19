@@ -61,10 +61,7 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ServicePackage.SERVICE: return (EObject)createService();
 			case ServicePackage.SERVICE_CONFIG: return (EObject)createServiceConfig();
-			case ServicePackage.SERVICE_REQUEST: return (EObject)createServiceRequest();
-			case ServicePackage.SERVICE_RESPONSE: return (EObject)createServiceResponse();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -110,42 +107,9 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	 * @generated
 	 */
 	@Override
-	public Service createService() {
-		ServiceImpl service = new ServiceImpl();
-		return service;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ServiceConfig createServiceConfig() {
 		ServiceConfigImpl serviceConfig = new ServiceConfigImpl();
 		return serviceConfig;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ServiceRequest createServiceRequest() {
-		ServiceRequestImpl serviceRequest = new ServiceRequestImpl();
-		return serviceRequest;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ServiceResponse createServiceResponse() {
-		ServiceResponseImpl serviceResponse = new ServiceResponseImpl();
-		return serviceResponse;
 	}
 
 	/**

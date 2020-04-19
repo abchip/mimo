@@ -27,15 +27,6 @@ public interface ServiceFactory extends EFactory {
 	ServiceFactory eINSTANCE = org.abchip.mimo.service.impl.ServiceFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service</em>'.
-	 * @generated
-	 */
-	Service createService();
-
-	/**
 	 * Returns a new object of class '<em>Config</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -43,24 +34,6 @@ public interface ServiceFactory extends EFactory {
 	 * @generated
 	 */
 	ServiceConfig createServiceConfig();
-
-	/**
-	 * Returns a new object of class '<em>Request</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Request</em>'.
-	 * @generated
-	 */
-	ServiceRequest createServiceRequest();
-
-	/**
-	 * Returns a new object of class '<em>Response</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Response</em>'.
-	 * @generated
-	 */
-	ServiceResponse createServiceResponse();
 
 	/**
 	 * Returns the package supported by this factory.

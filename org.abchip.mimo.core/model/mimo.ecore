@@ -1002,6 +1002,8 @@
     <eClassifiers xsi:type="ecore:EDataType" name="JavaURI" instanceClassName="java.net.URI"/>
     <eClassifiers xsi:type="ecore:EDataType" name="JavaURL" instanceClassName="java.net.URL"/>
     <eClassifiers xsi:type="ecore:EDataType" name="JavaWriter" instanceClassName="java.io.Writer"/>
+    <eClassifiers xsi:type="ecore:EClass" name="JavaVoid" instanceClassName="java.io.File"
+        abstract="true" interface="true"/>
   </eSubpackages>
   <eSubpackages name="networking" nsURI="http://www.abchip.org/mimo/networking" nsPrefix="mimo-net">
     <eClassifiers xsi:type="ecore:EClass" name="ConnectionPoolingConfig" eSuperTypes="#//entity/Entity">
@@ -1761,49 +1763,72 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="service" nsURI="http://www.abchip.org/mimo/service" nsPrefix="mimo-service">
-    <eClassifiers xsi:type="ecore:EClass" name="Service">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          iD="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Service" abstract="true" eSuperTypes="#//entity/Entity">
+      <eTypeParameters name="R">
+        <eBounds eClassifier="#//service/ServiceRequest">
+          <eTypeArguments eTypeParameter="#//service/Service/R"/>
+          <eTypeArguments eTypeParameter="#//service/Service/V"/>
+        </eBounds>
+      </eTypeParameters>
+      <eTypeParameters name="V">
+        <eBounds eClassifier="#//service/ServiceResponse"/>
+      </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="request" lowerBound="1"
+          containment="true">
+        <eGenericType eTypeParameter="#//service/Service/R"/>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="entities" lowerBound="1"
           upperBound="-1" eType="#//entity/Entity" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="ServiceException" instanceClassName="org.abchip.mimo.service.ServiceException"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceExecutor" abstract="true" interface="true">
-      <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
-      <eOperations name="getServiceName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="execute" lowerBound="1" eType="#//service/ServiceResponse"
-          eExceptions="#//service/ServiceException"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceManager" abstract="true" interface="true">
-      <eOperations name="getServiceExecutor">
-        <eGenericType eTypeParameter="#//service/ServiceManager/getServiceExecutor/S"/>
-        <eTypeParameters name="S">
-          <eBounds eClassifier="#//service/ServiceExecutor"/>
+      <eOperations name="prepare" lowerBound="1">
+        <eGenericType eTypeParameter="#//service/ServiceManager/prepare/R"/>
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare/R"/>
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare/V"/>
+          </eBounds>
         </eTypeParameters>
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
-        <eParameters name="service" lowerBound="1">
+        <eParameters name="request">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//service/ServiceManager/getServiceExecutor/S"/>
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare/R"/>
           </eGenericType>
         </eParameters>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceMessage" abstract="true" eSuperTypes="#//entity/Entity"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceProvider" abstract="true">
-      <eOperations name="execute" lowerBound="1" eType="#//service/ServiceResponse"
-          eExceptions="#//service/ServiceException">
-        <eParameters name="request" lowerBound="1" eType="#//service/ServiceRequest"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceRequest" abstract="true">
+      <eTypeParameters name="R">
+        <eBounds eClassifier="#//service/ServiceRequest">
+          <eTypeArguments eTypeParameter="#//service/ServiceRequest/R"/>
+          <eTypeArguments eTypeParameter="#//service/ServiceRequest/V"/>
+        </eBounds>
+      </eTypeParameters>
+      <eTypeParameters name="V">
+        <eBounds eClassifier="#//service/ServiceResponse"/>
+      </eTypeParameters>
+      <eOperations name="call" lowerBound="1" eExceptions="#//service/ServiceException">
+        <eGenericType eTypeParameter="#//service/ServiceRequest/V"/>
       </eOperations>
-      <eOperations name="getService" lowerBound="1" eType="#//service/Service">
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getService" lowerBound="1">
+        <eGenericType eClassifier="#//service/Service">
+          <eTypeArguments eTypeParameter="#//service/ServiceRequest/R"/>
+          <eTypeArguments eTypeParameter="#//service/ServiceRequest/V"/>
+        </eGenericType>
       </eOperations>
+      <eGenericSuperTypes eClassifier="#//service/ServiceMessage"/>
+      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
+        <eTypeArguments eTypeParameter="#//service/ServiceRequest/V"/>
+      </eGenericSuperTypes>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceRequest" eSuperTypes="#//service/ServiceMessage"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceResponse" eSuperTypes="#//service/ServiceMessage"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceResponse" abstract="true" eSuperTypes="#//service/ServiceMessage"/>
     <eClassifiers xsi:type="ecore:EEnum" name="ServiceStatus">
       <eLiterals name="Active" literal="ACT"/>
       <eLiterals name="Stopped" literal="STP"/>

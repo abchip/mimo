@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.service;
 
+import org.abchip.mimo.entity.Entity;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Service</b></em>'.
@@ -16,57 +18,34 @@ package org.abchip.mimo.service;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.Service#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.service.Service#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.Service#getRequest <em>Request</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.service.ServicePackage#getService()
- * @model
+ * @model abstract="true"
  * @generated
  */
-public interface Service {
+public interface Service<R extends ServiceRequest<R, V>, V extends ServiceResponse> extends Entity {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Request</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see org.abchip.mimo.service.ServicePackage#getService_Name()
-	 * @model id="true" required="true"
+	 * @return the value of the '<em>Request</em>' containment reference.
+	 * @see #setRequest(ServiceRequest)
+	 * @see org.abchip.mimo.service.ServicePackage#getService_Request()
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
-	String getName();
+	R getRequest();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.service.Service#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.service.Service#getRequest <em>Request</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Request</em>' containment reference.
+	 * @see #getRequest()
 	 * @generated
 	 */
-	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Text</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Text</em>' attribute.
-	 * @see #setText(String)
-	 * @see org.abchip.mimo.service.ServicePackage#getService_Text()
-	 * @model
-	 * @generated
-	 */
-	String getText();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.service.Service#getText <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Text</em>' attribute.
-	 * @see #getText()
-	 * @generated
-	 */
-	void setText(String value);
+	void setRequest(R value);
 
 } // Service
