@@ -188,7 +188,7 @@ public class E4ApplicationStarter implements Runnable {
 				Object service = loadObject(contextChild, hook.getClassName());
 				contextRoot.set(hook.getInterfaceName(), service, false, properties);
 				services.add(service);
-			} catch (ClassNotFoundException e) {
+			} catch (Exception e) {
 				LOGGER.error(e.getMessage());
 			}
 		}
@@ -215,7 +215,7 @@ public class E4ApplicationStarter implements Runnable {
 				Object service = loadObject(contextChild, command.getClassName());
 				contextRoot.set(command.getInterfaceName(), service, false, null);
 				commands.add(service);
-			} catch (ClassNotFoundException e) {
+			} catch (Exception e) {
 				LOGGER.error(e.getMessage());
 			}
 		}
@@ -261,7 +261,7 @@ public class E4ApplicationStarter implements Runnable {
 		try {
 			service = loadObject(component.getContext(), serviceRef.getClassName());
 			registerService(component, interfaceName, service, remoteExport, dictionary);
-		} catch (ClassNotFoundException e) {
+		} catch (Exception e) {
 			LOGGER.error(e.getMessage());
 			return;
 		}
@@ -298,7 +298,7 @@ public class E4ApplicationStarter implements Runnable {
 		application.getContext().set(name, service, remoteExport, properties);
 	}
 
-	private Object loadObject(Context context, String className) throws ClassNotFoundException {
+	private Object loadObject(Context context, String className) throws Exception {
 		Class<?> tempClass = this.application.getBundle().loadClass(className);
 		return context.make(tempClass);
 	}

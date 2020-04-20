@@ -26,6 +26,7 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
@@ -36,7 +37,6 @@ public abstract class E4ContextImpl extends ContextImpl {
 	private static final String ADAPTER_FACTORIES_NAME = "org.abchip.mimo.context.adapterFactories";
 	private static final Logger LOGGER = Logs.getLogger(E4ContextImpl.class);
 
-	private ResourceManager resourceManager;
 	private ContextDescription contextDescription;
 	private List<ContextListener> listeners;
 
@@ -227,20 +227,17 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 	@Override
 	public ResourceManager getResourceManager() {
+		return this.get(ResourceManager.class);
+	}
 
-		if (this.resourceManager == null) {
-			synchronized (this) {
-				if (this.resourceManager == null) {
-					this.resourceManager = this.get(ResourceManager.class);
-				}
-			}
-		}
-		return this.resourceManager;
+	@Override
+	public ServiceManager getServiceManager() {
+		return this.get(ServiceManager.class);
 	}
 
 	@Override
 	public <E extends Entity> Frame<E> getFrame(Class<E> klass) {
-		return this.resourceManager.getFrame(this, klass);
+		return this.getResourceManager().getFrame(this, klass);
 	}
 
 	@Override

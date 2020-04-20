@@ -19,19 +19,15 @@ import org.abchip.mimo.context.Registry;
 import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.ResourceMappingType;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceMapping;
 import org.abchip.mimo.resource.ResourceMappingRule;
 import org.abchip.mimo.resource.ResourceMappingRuleByFrame;
 import org.abchip.mimo.resource.ResourceMappingRuleByPackage;
+import org.abchip.mimo.resource.ResourceMappingType;
 import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceProviderRegistry;
 
 public class BaseResourceProviderRegistryImpl extends BaseResource implements ResourceProviderRegistry {
-
-	@Inject
-	private ResourceManager resourceManager;
 
 	private Registry<ResourceProvider> registry;
 	private ResourceMapping resourceMapping;
@@ -92,7 +88,7 @@ public class BaseResourceProviderRegistryImpl extends BaseResource implements Re
 		if (ruleByFrame.getFrame().equals(frame.getName()))
 			return this.lookup(ruleByFrame.getProvider());
 
-		Frame<?> frameFromRule = resourceManager.getFrame(context, ruleByFrame.getFrame());
+		Frame<?> frameFromRule = context.getResourceManager().getFrame(context, ruleByFrame.getFrame());
 		if (frameFromRule.getPackageName().startsWith(ruleByPackage.getPackage()))
 			return this.lookup(ruleByFrame.getProvider());
 		else

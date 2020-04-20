@@ -25,17 +25,17 @@ public interface ServiceProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" contextRequired="true"
 	 * @generated
 	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> R execute(Context context, R request);
+	<V extends ServiceResponse, R extends ServiceRequest<V>> V execute(Context context, R request) throws ServiceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaFuture&lt;V&gt;" required="true" contextRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaFuture&lt;V&gt;" required="true" exceptions="org.abchip.mimo.service.ServiceException" contextRequired="true"
 	 * @generated
 	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(Context context, R request);
+	<V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(Context context, R request) throws ServiceException;
 
 } // ServiceProvider

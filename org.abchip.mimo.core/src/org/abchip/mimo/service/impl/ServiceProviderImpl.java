@@ -11,6 +11,7 @@ import java.util.concurrent.Future;
 
 import org.abchip.mimo.context.Context;
 
+import org.abchip.mimo.service.ServiceException;
 import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.service.ServiceProvider;
 import org.abchip.mimo.service.ServiceRequest;
@@ -53,7 +54,7 @@ public abstract class ServiceProviderImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R execute(Context context, R request) {
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> V execute(Context context, R request) throws ServiceException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -65,7 +66,7 @@ public abstract class ServiceProviderImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(Context context, R request) {
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(Context context, R request) throws ServiceException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

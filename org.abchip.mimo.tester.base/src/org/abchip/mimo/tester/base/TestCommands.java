@@ -32,7 +32,7 @@ import org.abchip.mimo.tester.TestSuiteLauncher;
 import org.abchip.mimo.tester.TestSuiteRunner;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
-public class BaseTesterCommandProviderImpl extends BaseCommands {
+public class TestCommands extends BaseCommands {
 
 	@Inject
 	private Application application;

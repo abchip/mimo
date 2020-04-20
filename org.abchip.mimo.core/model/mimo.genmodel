@@ -195,6 +195,7 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/getFrame/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/getResourceManager"/>
+        <genOperations ecoreOperation="mimo.ecore#//context/Context/getServiceManager"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/inject">
           <genParameters ecoreParameter="mimo.ecore#//context/Context/inject/object"/>
         </genOperations>

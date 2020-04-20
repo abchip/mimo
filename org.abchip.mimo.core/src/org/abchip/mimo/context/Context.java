@@ -13,6 +13,7 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.service.ServiceManager;
 
 /**
  * <!-- begin-user-doc -->
@@ -88,6 +89,14 @@ public interface Context {
 	 * @generated
 	 */
 	ResourceManager getResourceManager();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	ServiceManager getServiceManager();
 
 	/**
 	 * <!-- begin-user-doc -->

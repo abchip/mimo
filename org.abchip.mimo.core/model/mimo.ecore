@@ -244,6 +244,7 @@
         </eParameters>
       </eOperations>
       <eOperations name="getResourceManager" lowerBound="1" eType="#//resource/ResourceManager"/>
+      <eOperations name="getServiceManager" lowerBound="1" eType="#//service/ServiceManager"/>
       <eOperations name="inject">
         <eParameters name="object" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       </eOperations>
@@ -1884,8 +1885,8 @@
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="execute" lowerBound="1">
-        <eGenericType eTypeParameter="#//service/ServiceManager/execute/R"/>
+      <eOperations name="execute" lowerBound="1" eExceptions="#//service/ServiceException">
+        <eGenericType eTypeParameter="#//service/ServiceManager/execute/V"/>
         <eTypeParameters name="V">
           <eBounds eClassifier="#//service/ServiceResponse"/>
         </eTypeParameters>
@@ -1899,7 +1900,7 @@
           <eGenericType eTypeParameter="#//service/ServiceManager/execute/R"/>
         </eParameters>
       </eOperations>
-      <eOperations name="submit" lowerBound="1">
+      <eOperations name="submit" lowerBound="1" eExceptions="#//service/ServiceException">
         <eGenericType eClassifier="#//java/JavaFuture">
           <eTypeArguments eTypeParameter="#//service/ServiceManager/submit/V"/>
         </eGenericType>
@@ -1937,8 +1938,8 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceMessage" abstract="true" eSuperTypes="#//entity/Entity"/>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceProvider" abstract="true">
-      <eOperations name="execute" lowerBound="1">
-        <eGenericType eTypeParameter="#//service/ServiceProvider/execute/R"/>
+      <eOperations name="execute" lowerBound="1" eExceptions="#//service/ServiceException">
+        <eGenericType eTypeParameter="#//service/ServiceProvider/execute/V"/>
         <eTypeParameters name="V">
           <eBounds eClassifier="#//service/ServiceResponse"/>
         </eTypeParameters>
@@ -1952,7 +1953,7 @@
           <eGenericType eTypeParameter="#//service/ServiceProvider/execute/R"/>
         </eParameters>
       </eOperations>
-      <eOperations name="submit" lowerBound="1">
+      <eOperations name="submit" lowerBound="1" eExceptions="#//service/ServiceException">
         <eGenericType eClassifier="#//java/JavaFuture">
           <eTypeArguments eTypeParameter="#//service/ServiceProvider/submit/V"/>
         </eGenericType>

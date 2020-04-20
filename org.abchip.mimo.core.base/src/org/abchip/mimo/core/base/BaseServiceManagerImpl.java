@@ -14,6 +14,7 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.service.Service;
+import org.abchip.mimo.service.ServiceException;
 import org.abchip.mimo.service.ServiceFactory;
 import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServiceProvider;
@@ -30,7 +31,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, R request) {
 
 		Service<R, V> service = ServiceFactory.eINSTANCE.createService();
-		service.setName(request.getClass().getSimpleName());
+		service.setName(request.getServiceName());
 		service.setRequest(request);
 
 		return service;
@@ -41,7 +42,9 @@ public class BaseServiceManagerImpl implements ServiceManager {
 
 		Service<R, V> service = ServiceFactory.eINSTANCE.createService();
 		service.setName(klass.getSimpleName());
-		service.setRequest(context.make(klass));
+
+		R request = context.getFrame(klass).createEntity();
+		service.setRequest(request);
 
 		return service;
 	}
@@ -50,23 +53,31 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass) {
 
 		R request = context.getFrame(klass).createEntity();
+
+		// set default parameters
+		// TODO
+
 		request.setContext(context);
 
 		return request;
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R execute(Context context, R request) {
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> V execute(Context context, R request) throws ServiceException {
 
 		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(context, request);
+		if(serviceProvider == null)
+			throw new ServiceException("Service provider not found for request: " + request.getServiceName());
 
 		return serviceProvider.execute(context, request);
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(Context context, R request) {
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(Context context, R request) throws ServiceException {
 
 		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(context, request);
+		if(serviceProvider == null)
+			throw new ServiceException("Service provider not found for request: " + request.getServiceName());
 
 		return serviceProvider.submit(context, request);
 	}

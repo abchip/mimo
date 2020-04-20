@@ -154,7 +154,15 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public Slot getSlot(String name) {
-		return this.slots.get(name);
+
+		if (this.slots != null)
+			return this.slots.get(name);
+
+		for (Slot slot : getSlots())
+			if (slot.getName().equals(name))
+				return slot;
+
+		return null;
 	}
 
 	@Override

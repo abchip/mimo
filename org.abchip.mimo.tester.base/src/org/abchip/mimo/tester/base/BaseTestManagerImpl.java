@@ -28,8 +28,7 @@ public class BaseTestManagerImpl implements TestManager {
 	@Override
 	public TestUnitRunner prepareUnitRunner(Context context, Class<?> klass) {
 
-		Context testContext = new BaseTestContextImpl(context);
-		TestUnitRunner testRunner = new BaseTestUnitRunnerImpl(testContext, klass);
+		TestUnitRunner testRunner = new BaseTestUnitRunnerImpl(context, klass);
 
 		return testRunner;
 	}
@@ -55,8 +54,7 @@ public class BaseTestManagerImpl implements TestManager {
 		for (ServiceReference<TestSuiteLauncher> serviceRef : serviceReferences) {
 			TestSuiteLauncher testSuiteLauncher = bundleContext.getService(serviceRef);
 
-			Context testContext = new BaseTestContextImpl(context);
-			TestSuiteRunner suiteRunner = testSuiteLauncher.createSuite(testContext);
+			TestSuiteRunner suiteRunner = testSuiteLauncher.createSuite(context);
 			suiteRunners.add(suiteRunner);
 		}
 		return suiteRunners;

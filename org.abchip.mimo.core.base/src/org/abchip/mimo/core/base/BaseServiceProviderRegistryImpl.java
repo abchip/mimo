@@ -17,7 +17,6 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Registry;
 import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.service.ServiceMapping;
 import org.abchip.mimo.service.ServiceMappingRule;
 import org.abchip.mimo.service.ServiceMappingRuleByPackage;
@@ -28,9 +27,6 @@ import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
 
 public class BaseServiceProviderRegistryImpl implements ServiceProviderRegistry {
-
-	@Inject
-	private ResourceManager resourceManager;
 
 	private Registry<ServiceProvider> registry;
 	private ServiceMapping serviceMapping;
@@ -59,7 +55,7 @@ public class BaseServiceProviderRegistryImpl implements ServiceProviderRegistry 
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> ServiceProvider getServiceProvider(Context context, Class<R> klass) {
 
-		Frame<?> frame = (Frame<?>) resourceManager.getFrame(context, klass.getSimpleName());
+		Frame<?> frame = (Frame<?>) context.getResourceManager().getFrame(context, klass.getSimpleName());
 		if (frame == null)
 			return null;
 

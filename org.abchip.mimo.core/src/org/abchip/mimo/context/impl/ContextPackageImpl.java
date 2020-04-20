@@ -1295,6 +1295,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		ResourcePackage theResourcePackage = (ResourcePackage)EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
+		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
 		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
 		NetworkingPackage theNetworkingPackage = (NetworkingPackage)EPackage.Registry.INSTANCE.getEPackage(NetworkingPackage.eNS_URI);
 
@@ -1417,6 +1418,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEOperation(op, g1);
 
 		addEOperation(contextEClass, theResourcePackage.getResourceManager(), "getResourceManager", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(contextEClass, theServicePackage.getServiceManager(), "getServiceManager", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(contextEClass, null, "inject", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);

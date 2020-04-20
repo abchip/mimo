@@ -18,6 +18,7 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.service.ServiceManager;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -54,8 +55,8 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	public abstract <E extends EntityIdentifiable> E createProxy(Class<E> frame, String id);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -172,6 +173,14 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	public abstract ResourceManager getResourceManager();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract ServiceManager getServiceManager();
 
 	@Override
 	protected void finalize() throws Throwable {
