@@ -1274,7 +1274,7 @@
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getResourceReader">
+      <eOperations name="getResourceReader" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/ResourceReader">
           <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader/E"/>
         </eGenericType>
@@ -1288,7 +1288,7 @@
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="getResourceReader">
+      <eOperations name="getResourceReader" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/ResourceReader">
           <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.1/E"/>
         </eGenericType>
@@ -1302,7 +1302,7 @@
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="getResourceReader">
+      <eOperations name="getResourceReader" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/ResourceReader">
           <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.2/E"/>
         </eGenericType>
@@ -1312,7 +1312,7 @@
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getResourceReader">
+      <eOperations name="getResourceReader" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/ResourceReader">
           <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.3/E"/>
         </eGenericType>
@@ -1327,7 +1327,7 @@
         </eParameters>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getResourceReader">
+      <eOperations name="getResourceReader" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/ResourceReader">
           <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.4/E"/>
         </eGenericType>
@@ -1342,7 +1342,7 @@
         </eParameters>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getResourceReader">
+      <eOperations name="getResourceReader" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/ResourceReader">
           <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceReader.5/E"/>
         </eGenericType>
@@ -1353,7 +1353,7 @@
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getResourceWriter">
+      <eOperations name="getResourceWriter" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/ResourceWriter">
           <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter/E"/>
         </eGenericType>
@@ -1367,7 +1367,7 @@
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="getResourceWriter">
+      <eOperations name="getResourceWriter" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/ResourceWriter">
           <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.1/E"/>
         </eGenericType>
@@ -1381,7 +1381,7 @@
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="getResourceWriter">
+      <eOperations name="getResourceWriter" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/ResourceWriter">
           <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.2/E"/>
         </eGenericType>
@@ -1391,7 +1391,7 @@
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getResourceWriter">
+      <eOperations name="getResourceWriter" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/ResourceWriter">
           <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.3/E"/>
         </eGenericType>
@@ -1406,7 +1406,7 @@
         </eParameters>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getResourceWriter">
+      <eOperations name="getResourceWriter" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/ResourceWriter">
           <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.4/E"/>
         </eGenericType>
@@ -1421,7 +1421,7 @@
         </eParameters>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getResourceWriter">
+      <eOperations name="getResourceWriter" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/ResourceWriter">
           <eTypeArguments eTypeParameter="#//resource/ResourceManager/getResourceWriter.5/E"/>
         </eGenericType>
@@ -1868,7 +1868,7 @@
           </eGenericType>
         </eParameters>
       </eOperations>
-      <eOperations name="prepare" lowerBound="1">
+      <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
         <eGenericType eTypeParameter="#//service/ServiceManager/prepare/R"/>
         <eTypeParameters name="V">
           <eBounds eClassifier="#//service/ServiceResponse"/>
@@ -1885,6 +1885,24 @@
           </eGenericType>
         </eParameters>
       </eOperations>
+      <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
+        <eGenericType eTypeParameter="#//service/ServiceManager/prepare.1/R"/>
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.1/V"/>
+          </eBounds>
+        </eTypeParameters>
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+        <eParameters name="klass">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.1/R"/>
+          </eGenericType>
+        </eParameters>
+        <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
       <eOperations name="execute" lowerBound="1" eExceptions="#//service/ServiceException">
         <eGenericType eTypeParameter="#//service/ServiceManager/execute/V"/>
         <eTypeParameters name="V">
@@ -1895,7 +1913,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/execute/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="request">
           <eGenericType eTypeParameter="#//service/ServiceManager/execute/R"/>
         </eParameters>
@@ -1912,7 +1929,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/submit/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="request">
           <eGenericType eTypeParameter="#//service/ServiceManager/submit/R"/>
         </eParameters>
@@ -1948,7 +1964,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceProvider/execute/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="request">
           <eGenericType eTypeParameter="#//service/ServiceProvider/execute/R"/>
         </eParameters>
@@ -1965,7 +1980,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceProvider/submit/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="request">
           <eGenericType eTypeParameter="#//service/ServiceProvider/submit/R"/>
         </eParameters>
@@ -2014,6 +2028,7 @@
       <eOperations name="isPrepared" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="getServiceName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//context/Context"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eGenericSuperTypes eClassifier="#//service/ServiceMessage"/>
       <eGenericSuperTypes eClassifier="#//java/JavaCallable">
         <eTypeArguments eTypeParameter="#//service/ServiceRequest/V"/>

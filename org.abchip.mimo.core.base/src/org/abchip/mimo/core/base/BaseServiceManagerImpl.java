@@ -13,6 +13,7 @@ import java.util.concurrent.Future;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.service.Service;
 import org.abchip.mimo.service.ServiceException;
 import org.abchip.mimo.service.ServiceFactory;
@@ -50,7 +51,14 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass) {
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass) throws ServiceException {
+		return prepare(context, klass, null);
+	}
+
+	@Override
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass, String tenant) throws ServiceException {
+
+		this.checkAuthorization(context, tenant);
 
 		R request = context.getFrame(klass).createEntity();
 
@@ -63,22 +71,35 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> V execute(Context context, R request) throws ServiceException {
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> V execute(R request) throws ServiceException {
 
-		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(context, request);
-		if(serviceProvider == null)
+		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(request.getContext(), request);
+		if (serviceProvider == null)
 			throw new ServiceException("Service provider not found for request: " + request.getServiceName());
 
-		return serviceProvider.execute(context, request);
+		return serviceProvider.execute(request);
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(Context context, R request) throws ServiceException {
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(R request) throws ServiceException {
 
-		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(context, request);
-		if(serviceProvider == null)
+		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(request.getContext(), request);
+		if (serviceProvider == null)
 			throw new ServiceException("Service provider not found for request: " + request.getServiceName());
 
-		return serviceProvider.submit(context, request);
+		return serviceProvider.submit(request);
+	}
+
+	protected final void checkAuthorization(Context context, String tenant) throws ServiceException {
+		ContextDescription contextDescription = context.getContextDescription();
+
+		// check authorization
+		if (contextDescription.isTenant()) {
+			// if (!contextDescription.getTenant().equals(tenant))
+			// throw new SecurityException("Permission denied for tenant: " +
+			// contextDescription.getTenant());
+		}
+
+		// check frame authorization
 	}
 }

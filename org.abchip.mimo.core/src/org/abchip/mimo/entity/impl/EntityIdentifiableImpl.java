@@ -15,13 +15,13 @@ import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.EntityState;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.resource.ResourceReader;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -62,7 +62,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	 * 
 	 * @generated NOT
 	 */
-	@SuppressWarnings({ "unchecked", "resource" })
+	@SuppressWarnings({ "unchecked" })
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 
@@ -82,7 +82,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 				MimoResourceImpl<EntityIdentifiable> resource = (MimoResourceImpl<EntityIdentifiable>) eResource();
 				Context context = resource.getContext();
 				ResourceManager resourceManager = context.get(ResourceManager.class);
-				ResourceReader<?> resourceReader = resourceManager.getResourceReader(context, slot.getDomain().getFrame());
+
 				String filter = slot.getDomain().getRoute();
 				if (filter == null || filter.trim().isEmpty()) {
 					if (eIDAttribute != null) {
@@ -105,8 +105,8 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 				}
 
 				List<EntityIdentifiable> values = new EDataTypeUniqueEList<EntityIdentifiable>(EntityIdentifiable.class, this, featureID);
-				try {
-					for (EntityIdentifiable entityIdentifiable : resourceReader.find(filter)) {
+				try (EntityIterator<EntityIdentifiable> entities = resourceManager.getResourceReader(context, slot.getDomain().getFrame()).find(filter)) {
+					for (EntityIdentifiable entityIdentifiable : entities) {
 						String domainKey = entityIdentifiable.isa().getKeys().get(0);
 						entityIdentifiable.isa().setValue(entityIdentifiable, domainKey, this);
 						values.add(entityIdentifiable);

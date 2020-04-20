@@ -9,8 +9,6 @@ package org.abchip.mimo.service;
 
 import java.util.concurrent.Future;
 
-import org.abchip.mimo.context.Context;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Provider</b></em>'.
@@ -25,17 +23,17 @@ public interface ServiceProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" contextRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException"
 	 * @generated
 	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> V execute(Context context, R request) throws ServiceException;
+	<V extends ServiceResponse, R extends ServiceRequest<V>> V execute(R request) throws ServiceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaFuture&lt;V&gt;" required="true" exceptions="org.abchip.mimo.service.ServiceException" contextRequired="true"
+	 * @model type="org.abchip.mimo.java.JavaFuture&lt;V&gt;" required="true" exceptions="org.abchip.mimo.service.ServiceException"
 	 * @generated
 	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(Context context, R request) throws ServiceException;
+	<V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(R request) throws ServiceException;
 
 } // ServiceProvider

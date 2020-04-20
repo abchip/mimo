@@ -20,6 +20,7 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceConfig;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceListener;
 import org.abchip.mimo.resource.ResourceManager;
@@ -80,71 +81,70 @@ public class BaseResourceManagerImpl extends BaseResource implements ResourceMan
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Class<E> klass) {
+	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Class<E> klass) throws ResourceException {
 		return getResourceReader(context, klass.getSimpleName());
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, String frameName) {
+	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, String frameName) throws ResourceException {
 		return getResourceReader(context, frameName, null);
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Frame<E> frame) {
+	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Frame<E> frame) throws ResourceException {
 		return getResourceReader(context, frame, null);
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Class<E> klass, String tenant) {
+	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Class<E> klass, String tenant) throws ResourceException {
 		return getResourceReader(context, klass.getSimpleName(), tenant);
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Frame<E> frame, String tenant) {
+	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, Frame<E> frame, String tenant) throws ResourceException {
 		return getResourceReader(context, frame.getName(), tenant);
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, String frameName, String tenant) {
+	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Context context, String frameName, String tenant) throws ResourceException {
 
 		this.checkAuthorization(context, tenant);
 
 		MimoResourceImpl<E> internal = getInternalResource(context, frameName, tenant);
 
 		ResourceReader<E> resourceReader = new BaseResourceReaderImpl<E>(internal);
-		if (resourceReader != null)
-			prepareListener(resourceReader);
+		prepareListener(resourceReader);
 
 		return resourceReader;
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, Class<E> klass) {
+	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, Class<E> klass) throws ResourceException {
 		return getResourceWriter(context, klass.getSimpleName());
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, String frameName) {
+	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, String frameName) throws ResourceException {
 		return getResourceWriter(context, frameName, null);
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, Frame<E> frame) {
+	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, Frame<E> frame) throws ResourceException {
 		return getResourceWriter(context, frame, null);
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, Class<E> klass, String tenant) {
+	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, Class<E> klass, String tenant) throws ResourceException {
 		return getResourceWriter(context, klass.getSimpleName(), tenant);
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, Frame<E> frame, String tenant) {
+	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, Frame<E> frame, String tenant) throws ResourceException {
 		return getResourceWriter(context, frame.getName(), tenant);
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, String frameName, String tenant) {
+	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(Context context, String frameName, String tenant) throws ResourceException {
 		this.checkAuthorization(context, tenant);
 
 		MimoResourceImpl<E> internal = getInternalResource(context, frameName, tenant);
@@ -156,8 +156,7 @@ public class BaseResourceManagerImpl extends BaseResource implements ResourceMan
 			lockManager = this.getLockManager();
 
 		ResourceWriter<E> resourceWriter = new BaseResourceWriterImpl<E>(internal, lockManager);
-		if (resourceWriter != null)
-			prepareListener(resourceWriter);
+		prepareListener(resourceWriter);
 
 		return resourceWriter;
 	}

@@ -75,9 +75,10 @@ public class BaseJobManagerImpl implements JobManager {
 	public JobCapability create(Identity<?> identity, String jobName) throws ServerException {
 
 		Job startupJob = systemManager.getJobKernel();
-		ResourceReader<UserProfile> userResource = resourceManager.getResourceReader(startupJob.getContext(), UserProfile.class);
 
 		try {
+			ResourceReader<UserProfile> userResource = resourceManager.getResourceReader(startupJob.getContext(), UserProfile.class);
+
 			// check credential
 			UserProfile userProfile = userResource.lookup(identity.getJavaPrincipal().getName());
 
@@ -165,9 +166,8 @@ public class BaseJobManagerImpl implements JobManager {
 
 		Job jobTarget = null;
 
-		ResourceReader<Job> jobReader = resourceManager.getResourceReader(jobCaller.getContext(), Job.class);
 		String filter = "jobReference.jobName = \"" + name + "\" AND jobReference.jobNumber = " + number + " AND jobReference.jobUser = \"" + user + "'";
-		try (EntityIterator<Job> jobs = jobReader.find(filter)) {
+		try (EntityIterator<Job> jobs = resourceManager.getResourceReader(jobCaller.getContext(), Job.class).find(filter)) {
 			if (jobs.hasNext())
 				jobTarget = jobs.next();
 		} catch (ResourceException e) {

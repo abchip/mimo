@@ -74,7 +74,7 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		return this.resource;
 	}
 
-	private ResourceReader<E> getResourceReader() {
+	private ResourceReader<E> getResourceReader() throws ResourceException {
 
 		if (this.resourceReader == null) {
 			synchronized (this) {

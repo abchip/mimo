@@ -930,6 +930,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResourceReader());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -944,6 +945,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResourceReader());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -955,6 +957,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResourceReader());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -970,6 +973,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResourceReader());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -985,6 +989,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResourceReader());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -997,6 +1002,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResourceReader());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1011,6 +1017,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResourceWriter());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1025,6 +1032,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResourceWriter());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1036,6 +1044,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResourceWriter());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1051,6 +1060,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResourceWriter());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1066,6 +1076,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResourceWriter());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1078,6 +1089,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResourceWriter());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);

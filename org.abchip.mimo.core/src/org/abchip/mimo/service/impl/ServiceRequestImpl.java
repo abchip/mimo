@@ -28,6 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  * <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getContext
  * <em>Context</em>}</li>
+ * <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getTenant
+ * <em>Tenant</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,6 +44,24 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 * @ordered
 	 */
 	protected Context context;
+	/**
+	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getTenant()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TENANT_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getTenant()
+	 * @generated
+	 * @ordered
+	 */
+	protected String tenant = TENANT_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -78,7 +98,7 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 			throw new UnsupportedOperationException("Request not prepared");
 
 		ServiceManager serviceManager = this.getContext().getServiceManager();
-		return serviceManager.execute(this.getContext(), this);
+		return serviceManager.execute(this);
 	}
 
 	/**
@@ -128,6 +148,33 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
+	 * @generated
+	 */
+	@Override
+	public String getTenant() {
+		return tenant;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public void setTenant(String newTenant) {
+
+		if (isPrepared())
+			throw new UnsupportedOperationException("Request already prepared");
+
+		String oldTenant = tenant;
+		tenant = newTenant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REQUEST__TENANT, oldTenant, tenant));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -142,7 +189,10 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 */
 	@Override
 	public String getServiceName() {
-		return this.isa().getID();
+		if (this.getTenant() != null)
+			return this.isa().getID() + "@" + this.getTenant();
+		else
+			return this.isa().getID();
 	}
 
 	/**
@@ -157,6 +207,8 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 			if (resolve)
 				return getContext();
 			return basicGetContext();
+		case ServicePackage.SERVICE_REQUEST__TENANT:
+			return getTenant();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,6 +223,9 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 		switch (featureID) {
 		case ServicePackage.SERVICE_REQUEST__CONTEXT:
 			setContext((Context) newValue);
+			return;
+		case ServicePackage.SERVICE_REQUEST__TENANT:
+			setTenant((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,6 +242,9 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 		case ServicePackage.SERVICE_REQUEST__CONTEXT:
 			setContext((Context) null);
 			return;
+		case ServicePackage.SERVICE_REQUEST__TENANT:
+			setTenant(TENANT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,8 +259,27 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 		switch (featureID) {
 		case ServicePackage.SERVICE_REQUEST__CONTEXT:
 			return context != null;
+		case ServicePackage.SERVICE_REQUEST__TENANT:
+			return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (tenant: ");
+		result.append(tenant);
+		result.append(')');
+		return result.toString();
 	}
 
 } // ServiceRequestImpl

@@ -57,11 +57,11 @@ public class LookupContextMenuServlet extends BaseServlet {
 			return;
 		}
 
-		ResourceReader<ContextMenu> contextMenuReader = resourceManager.getResourceReader(context, ContextMenu.class, Resource.TENANT_MASTER);
-
+		
 		ContextMenu contextMenu = null;
 
 		try {
+			ResourceReader<ContextMenu> contextMenuReader = resourceManager.getResourceReader(context, ContextMenu.class, Resource.TENANT_MASTER);
 			contextMenu = contextMenuReader.lookup(frameName);
 			if (contextMenu == null) {
 				contextMenu = MenuFactory.eINSTANCE.createContextMenu();

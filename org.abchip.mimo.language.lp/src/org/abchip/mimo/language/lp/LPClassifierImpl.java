@@ -22,7 +22,6 @@ import org.abchip.mimo.mining.classification.Classifier;
 import org.abchip.mimo.mining.classification.Evaluator;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Files;
 import org.osgi.framework.FrameworkUtil;
 
@@ -68,8 +67,7 @@ public class LPClassifierImpl implements Classifier {
 	public <E extends EntityIdentifiable> Evaluator buildEvaluator(Class<E> klass, Class<?> object) {
 
 		List<Language> languages = new ArrayList<Language>();
-		ResourceReader<Language> languageReader = resourceManager.getResourceReader(contextRoot, Language.class);
-		try (EntityIterator<Language> languageIterator = languageReader.find()) {
+		try (EntityIterator<Language> languageIterator = resourceManager.getResourceReader(contextRoot, Language.class).find()) {
 			for (Language language : languageIterator)
 				languages.add(language);
 		} catch (ResourceException e) {
@@ -96,8 +94,7 @@ public class LPClassifierImpl implements Classifier {
 		List<Classification<E>> classifications = new ArrayList<Classification<E>>();
 
 		List<Language> languages = new ArrayList<Language>();
-		ResourceReader<Language> languageReader = resourceManager.getResourceReader(contextRoot, Language.class);
-		try (EntityIterator<Language> languageIterator = languageReader.find()) {
+		try (EntityIterator<Language> languageIterator = resourceManager.getResourceReader(contextRoot, Language.class).find()) {
 			for (Language language : languageIterator)
 				languages.add(language);
 		} catch (ResourceException e) {

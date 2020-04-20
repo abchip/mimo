@@ -26,26 +26,34 @@ public interface ServiceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextRequired="true"
-	 * @generated
-	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" contextRequired="true"
 	 * @generated
 	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> V execute(Context context, R request) throws ServiceException;
+	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass) throws ServiceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="org.abchip.mimo.java.JavaFuture&lt;V&gt;" required="true" exceptions="org.abchip.mimo.service.ServiceException" contextRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" contextRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(Context context, R request) throws ServiceException;
+	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass, String tenant) throws ServiceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException"
+	 * @generated
+	 */
+	<V extends ServiceResponse, R extends ServiceRequest<V>> V execute(R request) throws ServiceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model type="org.abchip.mimo.java.JavaFuture&lt;V&gt;" required="true" exceptions="org.abchip.mimo.service.ServiceException"
+	 * @generated
+	 */
+	<V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(R request) throws ServiceException;
 
 	/**
 	 * <!-- begin-user-doc -->

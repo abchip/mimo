@@ -62,7 +62,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Context context, Frame<E> frame) {
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, Frame<E> frame) {
 		return getResource(context, frame, null);
 	}
 
@@ -82,7 +82,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Context context, Class<E> klass, String tenant) {
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, Class<E> klass, String tenant) {
 		return getResource(context, klass.getSimpleName(), tenant);
 	}
 
@@ -93,7 +93,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Context context, String frame, String tenant) {
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, String frame, String tenant) {
 		return getResource(context, (Frame<E>) resourceManager.getFrame(context, frame, tenant), tenant);
 	}
 
@@ -103,7 +103,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Context context, Frame<E> frame, String tenant) {
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, Frame<E> frame, String tenant) {
 
 		if (tenant == null || tenant.trim().isEmpty()) {
 			if (context.getContextDescription().isTenant())

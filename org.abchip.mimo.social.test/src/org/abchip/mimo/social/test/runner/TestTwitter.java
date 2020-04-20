@@ -179,7 +179,7 @@ public class TestTwitter {
 		return null;
 	}
 
-	private void loadTweets() {
+	private void loadTweets() throws ResourceException {
 
 		ResourceWriter<Tweet> tweetWriter = resourceManager.getResourceWriter(testRunner.getContext(), Tweet.class);
 		try (EntityIterator<Tweet> tweets = twitterManager.search(testRunner.getContext(), null, "#ai", 1000)) {

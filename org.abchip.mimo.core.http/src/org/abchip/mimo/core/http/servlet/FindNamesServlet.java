@@ -39,15 +39,9 @@ public class FindNamesServlet extends BaseServlet {
 		String frameName = Strings.firstToUpper(request.getParameter("frame"));
 		String filter = request.getParameter("filter");
 
-		ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frameName);
-		if (entityReader == null) {
-			response.setStatus(HttpServletResponse.SC_NO_CONTENT);
-			response.getWriter().write("[]");
-
-			return;
-		}
-
 		try {
+			ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frameName);
+
 			boolean first = true;
 			try (EntityIterator<E> entities = entityReader.find(filter, null, null, 0, true)) {
 				response.setStatus(HttpServletResponse.SC_FOUND);

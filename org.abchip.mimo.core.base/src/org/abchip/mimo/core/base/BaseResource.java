@@ -49,7 +49,7 @@ public class BaseResource {
 		return this.lockManager;
 	}
 
-	protected final void checkAuthorization(Context context, String tenant) {
+	protected final void checkAuthorization(Context context, String tenant) throws ResourceException {
 		ContextDescription contextDescription = context.getContextDescription();
 
 		// check authorization
