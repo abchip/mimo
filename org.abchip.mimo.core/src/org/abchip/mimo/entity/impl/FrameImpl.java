@@ -433,14 +433,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	public abstract void setValue(Entity entity, String slotName, Object value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public abstract Slot getSlotID();
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */

@@ -33,7 +33,7 @@ import org.abchip.mimo.java.JavaPackage;
 import org.abchip.mimo.java.impl.JavaPackageImpl;
 import org.abchip.mimo.networking.NetworkingPackage;
 import org.abchip.mimo.networking.impl.NetworkingPackageImpl;
-import org.abchip.mimo.resource.MappingType;
+import org.abchip.mimo.resource.ResourceMappingType;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceEvent;
@@ -196,6 +196,13 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EEnum resourceMappingTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum serializationTypeEEnum = null;
 
 	/**
@@ -204,13 +211,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	private EDataType resourceExceptionEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum mappingTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -584,6 +584,16 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
+	public EEnum getResourceMappingType() {
+		return resourceMappingTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getSerializationType() {
 		return serializationTypeEEnum;
 	}
@@ -596,16 +606,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	@Override
 	public EDataType getResourceException() {
 		return resourceExceptionEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getMappingType() {
-		return mappingTypeEEnum;
 	}
 
 	/**
@@ -678,8 +678,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		resourceWriterEClass = createEClass(RESOURCE_WRITER);
 
 		// Create enums
-		mappingTypeEEnum = createEEnum(MAPPING_TYPE);
 		resourceEventTypeEEnum = createEEnum(RESOURCE_EVENT_TYPE);
+		resourceMappingTypeEEnum = createEEnum(RESOURCE_MAPPING_TYPE);
 		serializationTypeEEnum = createEEnum(SERIALIZATION_TYPE);
 
 		// Create data types
@@ -1128,7 +1128,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		initEClass(resourceMappingRuleEClass, ResourceMappingRule.class, "ResourceMappingRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getResourceMappingRule_Provider(), ecorePackage.getEString(), "provider", null, 1, 1, ResourceMappingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(resourceMappingRuleEClass, this.getMappingType(), "getMappingType", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(resourceMappingRuleEClass, this.getResourceMappingType(), "getMappingType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(resourceMappingRuleByFrameEClass, ResourceMappingRuleByFrame.class, "ResourceMappingRuleByFrame", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getResourceMappingRuleByFrame_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, ResourceMappingRuleByFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1445,15 +1445,15 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEException(op, this.getResourceException());
 
 		// Initialize enums and add enum literals
-		initEEnum(mappingTypeEEnum, MappingType.class, "MappingType");
-		addEEnumLiteral(mappingTypeEEnum, MappingType.BY_FRAME);
-		addEEnumLiteral(mappingTypeEEnum, MappingType.BY_PACKAGE);
-
 		initEEnum(resourceEventTypeEEnum, ResourceEventType.class, "ResourceEventType");
 		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.BEFORE_SAVE);
 		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.AFTER_SAVE);
 		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.BEFORE_DELETE);
 		addEEnumLiteral(resourceEventTypeEEnum, ResourceEventType.AFTER_DELETE);
+
+		initEEnum(resourceMappingTypeEEnum, ResourceMappingType.class, "ResourceMappingType");
+		addEEnumLiteral(resourceMappingTypeEEnum, ResourceMappingType.BY_FRAME);
+		addEEnumLiteral(resourceMappingTypeEEnum, ResourceMappingType.BY_PACKAGE);
 
 		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.XMI);

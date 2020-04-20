@@ -43,6 +43,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/name"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/paths"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/resourceMapping"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/Application/serviceMapping"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/Application/text"/>
         <genOperations ecoreOperation="mimo.ecore#//application/Application/getActiveComponents"/>
         <genOperations ecoreOperation="mimo.ecore#//application/Application/getBundle"/>
@@ -632,7 +633,6 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue/slotName"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue/value"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlotID"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Slot">
         <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//entity/Slot/cardinality"/>
@@ -739,15 +739,15 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Resource" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="mimo.ecore#//resource">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/MappingType">
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/MappingType/ByFrame"/>
-        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/MappingType/ByPackage"/>
-      </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/ResourceEventType">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceEventType/Before_Save"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceEventType/After_Save"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceEventType/Before_Delete"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceEventType/After_Delete"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/ResourceMappingType">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceMappingType/ByFrame"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/ResourceMappingType/ByPackage"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//resource/SerializationType">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/XMI"/>
@@ -1098,6 +1098,9 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Service" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="mimo.ecore#//service">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//service/ServiceMappingType">
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//service/ServiceMappingType/ByPackage"/>
+      </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//service/ServiceStatus">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//service/ServiceStatus/Active"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//service/ServiceStatus/Stopped"/>
@@ -1145,6 +1148,16 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/submit/R"/>
         </genOperations>
       </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceMapping">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceMapping/rules"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMappingRule">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceMappingRule/provider"/>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceMappingRule/getMappingType"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceMappingRuleByPackage">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceMappingRuleByPackage/package"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMessage"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceProvider">
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceProvider/execute">
@@ -1163,18 +1176,15 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceProviderRegistry">
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider/context"/>
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider/klass"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider/E"/>
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider/request"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider/V"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider/R"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider.1">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider.1/context"/>
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider.1/frame"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider.1/E"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider.2">
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider.2/context"/>
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider.2/frame"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider.2/E"/>
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider.1/klass"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider.1/V"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceProviderRegistry/getServiceProvider.1/R"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceRequest">

@@ -184,13 +184,22 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION__RESOURCE_MAPPING = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
 
 	/**
+	 * The feature id for the '<em><b>Service Mapping</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__SERVICE_MAPPING = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 12;
+
+	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 12;
+	int APPLICATION__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Application</em>' class.
@@ -199,7 +208,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 13;
+	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 14;
 
 	/**
 	 * The meta object id for the '<em>Bundle</em>' data type.
@@ -632,6 +641,17 @@ public interface ApplicationPackage extends EPackage {
 	EReference getApplication_ResourceMapping();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.application.Application#getServiceMapping <em>Service Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Service Mapping</em>'.
+	 * @see org.abchip.mimo.application.Application#getServiceMapping()
+	 * @see #getApplication()
+	 * @generated
+	 */
+	EReference getApplication_ServiceMapping();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.Application#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1047,6 +1067,14 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APPLICATION__RESOURCE_MAPPING = eINSTANCE.getApplication_ResourceMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Service Mapping</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION__SERVICE_MAPPING = eINSTANCE.getApplication_ServiceMapping();
 
 		/**
 		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.

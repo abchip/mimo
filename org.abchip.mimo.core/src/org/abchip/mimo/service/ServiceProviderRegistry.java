@@ -10,9 +10,6 @@ package org.abchip.mimo.service;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Registry;
 
-import org.abchip.mimo.entity.EntityIdentifiable;
-import org.abchip.mimo.entity.Frame;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Provider Registry</b></em>'.
@@ -27,25 +24,17 @@ public interface ServiceProviderRegistry extends Registry<ServiceProvider> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model contextRequired="true" requestRequired="true"
+	 * @generated
+	 */
+	<V extends ServiceResponse, R extends ServiceRequest<V>> ServiceProvider getServiceProvider(Context context, R request);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> ServiceProvider getServiceProvider(Context context, Class<E> klass);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> ServiceProvider getServiceProvider(Context context, Frame<E> frame);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> ServiceProvider getServiceProvider(Context context, String frame);
+	<V extends ServiceResponse, R extends ServiceRequest<V>> ServiceProvider getServiceProvider(Context context, Class<R> klass);
 
 } // ServiceProviderRegistry

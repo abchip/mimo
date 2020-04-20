@@ -149,6 +149,99 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_MANAGER_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceMappingImpl <em>Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.service.impl.ServiceMappingImpl
+	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMapping()
+	 * @generated
+	 */
+	int SERVICE_MAPPING = 3;
+
+	/**
+	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MAPPING__RULES = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MAPPING_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceMappingRuleImpl <em>Mapping Rule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.service.impl.ServiceMappingRuleImpl
+	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMappingRule()
+	 * @generated
+	 */
+	int SERVICE_MAPPING_RULE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Provider</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MAPPING_RULE__PROVIDER = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mapping Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MAPPING_RULE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceMappingRuleByPackageImpl <em>Mapping Rule By Package</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.service.impl.ServiceMappingRuleByPackageImpl
+	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMappingRuleByPackage()
+	 * @generated
+	 */
+	int SERVICE_MAPPING_RULE_BY_PACKAGE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Provider</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MAPPING_RULE_BY_PACKAGE__PROVIDER = SERVICE_MAPPING_RULE__PROVIDER;
+
+	/**
+	 * The feature id for the '<em><b>Package</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MAPPING_RULE_BY_PACKAGE__PACKAGE = SERVICE_MAPPING_RULE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mapping Rule By Package</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MAPPING_RULE_BY_PACKAGE_FEATURE_COUNT = SERVICE_MAPPING_RULE_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceMessageImpl <em>Message</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,7 +249,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMessage()
 	 * @generated
 	 */
-	int SERVICE_MESSAGE = 3;
+	int SERVICE_MESSAGE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Message</em>' class.
@@ -175,7 +268,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceProvider()
 	 * @generated
 	 */
-	int SERVICE_PROVIDER = 4;
+	int SERVICE_PROVIDER = 7;
 
 	/**
 	 * The number of structural features of the '<em>Provider</em>' class.
@@ -194,7 +287,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceProviderRegistry()
 	 * @generated
 	 */
-	int SERVICE_PROVIDER_REGISTRY = 5;
+	int SERVICE_PROVIDER_REGISTRY = 8;
 
 	/**
 	 * The number of structural features of the '<em>Provider Registry</em>' class.
@@ -213,7 +306,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceRequest()
 	 * @generated
 	 */
-	int SERVICE_REQUEST = 6;
+	int SERVICE_REQUEST = 9;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -241,7 +334,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceResponse()
 	 * @generated
 	 */
-	int SERVICE_RESPONSE = 7;
+	int SERVICE_RESPONSE = 10;
 
 	/**
 	 * The number of structural features of the '<em>Response</em>' class.
@@ -253,6 +346,16 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_RESPONSE_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.service.ServiceMappingType <em>Mapping Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.service.ServiceMappingType
+	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMappingType()
+	 * @generated
+	 */
+	int SERVICE_MAPPING_TYPE = 11;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.ServiceStatus <em>Status</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,7 +363,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceStatus()
 	 * @generated
 	 */
-	int SERVICE_STATUS = 8;
+	int SERVICE_STATUS = 12;
 
 	/**
 	 * The meta object id for the '<em>Exception</em>' data type.
@@ -270,7 +373,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceException()
 	 * @generated
 	 */
-	int SERVICE_EXCEPTION = 9;
+	int SERVICE_EXCEPTION = 13;
 
 
 	/**
@@ -337,6 +440,69 @@ public interface ServicePackage extends EPackage {
 	EClass getServiceManager();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceMapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping</em>'.
+	 * @see org.abchip.mimo.service.ServiceMapping
+	 * @generated
+	 */
+	EClass getServiceMapping();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.service.ServiceMapping#getRules <em>Rules</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rules</em>'.
+	 * @see org.abchip.mimo.service.ServiceMapping#getRules()
+	 * @see #getServiceMapping()
+	 * @generated
+	 */
+	EReference getServiceMapping_Rules();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceMappingRule <em>Mapping Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping Rule</em>'.
+	 * @see org.abchip.mimo.service.ServiceMappingRule
+	 * @generated
+	 */
+	EClass getServiceMappingRule();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceMappingRule#getProvider <em>Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Provider</em>'.
+	 * @see org.abchip.mimo.service.ServiceMappingRule#getProvider()
+	 * @see #getServiceMappingRule()
+	 * @generated
+	 */
+	EAttribute getServiceMappingRule_Provider();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceMappingRuleByPackage <em>Mapping Rule By Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping Rule By Package</em>'.
+	 * @see org.abchip.mimo.service.ServiceMappingRuleByPackage
+	 * @generated
+	 */
+	EClass getServiceMappingRuleByPackage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceMappingRuleByPackage#getPackage <em>Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Package</em>'.
+	 * @see org.abchip.mimo.service.ServiceMappingRuleByPackage#getPackage()
+	 * @see #getServiceMappingRuleByPackage()
+	 * @generated
+	 */
+	EAttribute getServiceMappingRuleByPackage_Package();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceMessage <em>Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -396,6 +562,16 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getServiceResponse();
+
+	/**
+	 * Returns the meta object for enum '{@link org.abchip.mimo.service.ServiceMappingType <em>Mapping Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Mapping Type</em>'.
+	 * @see org.abchip.mimo.service.ServiceMappingType
+	 * @generated
+	 */
+	EEnum getServiceMappingType();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.service.ServiceStatus <em>Status</em>}'.
@@ -495,6 +671,60 @@ public interface ServicePackage extends EPackage {
 		EClass SERVICE_MANAGER = eINSTANCE.getServiceManager();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceMappingImpl <em>Mapping</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.service.impl.ServiceMappingImpl
+		 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMapping()
+		 * @generated
+		 */
+		EClass SERVICE_MAPPING = eINSTANCE.getServiceMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_MAPPING__RULES = eINSTANCE.getServiceMapping_Rules();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceMappingRuleImpl <em>Mapping Rule</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.service.impl.ServiceMappingRuleImpl
+		 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMappingRule()
+		 * @generated
+		 */
+		EClass SERVICE_MAPPING_RULE = eINSTANCE.getServiceMappingRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Provider</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_MAPPING_RULE__PROVIDER = eINSTANCE.getServiceMappingRule_Provider();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceMappingRuleByPackageImpl <em>Mapping Rule By Package</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.service.impl.ServiceMappingRuleByPackageImpl
+		 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMappingRuleByPackage()
+		 * @generated
+		 */
+		EClass SERVICE_MAPPING_RULE_BY_PACKAGE = eINSTANCE.getServiceMappingRuleByPackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Package</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_MAPPING_RULE_BY_PACKAGE__PACKAGE = eINSTANCE.getServiceMappingRuleByPackage_Package();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceMessageImpl <em>Message</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -551,6 +781,16 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EClass SERVICE_RESPONSE = eINSTANCE.getServiceResponse();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.service.ServiceMappingType <em>Mapping Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.service.ServiceMappingType
+		 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMappingType()
+		 * @generated
+		 */
+		EEnum SERVICE_MAPPING_TYPE = eINSTANCE.getServiceMappingType();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.service.ServiceStatus <em>Status</em>}' enum.

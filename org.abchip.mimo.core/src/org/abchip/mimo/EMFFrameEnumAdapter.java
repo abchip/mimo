@@ -94,10 +94,4 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 		if (text != null)
 			eSet(EntityPackage.FRAME__TEXT, text);
 	}
-
-	@Override
-	public Slot getSlotID() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

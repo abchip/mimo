@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.resource.impl;
 
-import org.abchip.mimo.resource.MappingType;
+import org.abchip.mimo.resource.ResourceMappingType;
 import org.abchip.mimo.resource.ResourceMappingRuleByFrame;
 import org.abchip.mimo.resource.ResourcePackage;
 
@@ -172,9 +172,14 @@ public class ResourceMappingRuleByFrameImpl extends ResourceMappingRuleImpl impl
 		return result.toString();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	@Override
-	public MappingType getMappingType() {
-		return MappingType.BY_FRAME;
+	public ResourceMappingType getMappingType() {
+		return ResourceMappingType.BY_FRAME;
 	}
 
 } //ResourceMappingRuleByFrameImpl

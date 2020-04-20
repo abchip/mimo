@@ -63,6 +63,8 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 		switch (eClass.getClassifierID()) {
 			case ServicePackage.SERVICE: return (EObject)createService();
 			case ServicePackage.SERVICE_CONFIG: return (EObject)createServiceConfig();
+			case ServicePackage.SERVICE_MAPPING: return (EObject)createServiceMapping();
+			case ServicePackage.SERVICE_MAPPING_RULE_BY_PACKAGE: return (EObject)createServiceMappingRuleByPackage();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -76,6 +78,8 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case ServicePackage.SERVICE_MAPPING_TYPE:
+				return createServiceMappingTypeFromString(eDataType, initialValue);
 			case ServicePackage.SERVICE_STATUS:
 				return createServiceStatusFromString(eDataType, initialValue);
 			case ServicePackage.SERVICE_EXCEPTION:
@@ -93,6 +97,8 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case ServicePackage.SERVICE_MAPPING_TYPE:
+				return convertServiceMappingTypeToString(eDataType, instanceValue);
 			case ServicePackage.SERVICE_STATUS:
 				return convertServiceStatusToString(eDataType, instanceValue);
 			case ServicePackage.SERVICE_EXCEPTION:
@@ -122,6 +128,48 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	public ServiceConfig createServiceConfig() {
 		ServiceConfigImpl serviceConfig = new ServiceConfigImpl();
 		return serviceConfig;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ServiceMapping createServiceMapping() {
+		ServiceMappingImpl serviceMapping = new ServiceMappingImpl();
+		return serviceMapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ServiceMappingRuleByPackage createServiceMappingRuleByPackage() {
+		ServiceMappingRuleByPackageImpl serviceMappingRuleByPackage = new ServiceMappingRuleByPackageImpl();
+		return serviceMappingRuleByPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceMappingType createServiceMappingTypeFromString(EDataType eDataType, String initialValue) {
+		ServiceMappingType result = ServiceMappingType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertServiceMappingTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

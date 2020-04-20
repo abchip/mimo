@@ -8,7 +8,6 @@
  */
 package org.abchip.mimo.core.base;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -17,16 +16,16 @@ import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Registry;
 import org.abchip.mimo.context.RegistryFactory;
-import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.MappingType;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.resource.ResourceMapping;
-import org.abchip.mimo.resource.ResourceMappingRule;
-import org.abchip.mimo.resource.ResourceMappingRuleByFrame;
-import org.abchip.mimo.resource.ResourceMappingRuleByPackage;
+import org.abchip.mimo.service.ServiceMapping;
+import org.abchip.mimo.service.ServiceMappingRule;
+import org.abchip.mimo.service.ServiceMappingRuleByPackage;
+import org.abchip.mimo.service.ServiceMappingType;
 import org.abchip.mimo.service.ServiceProvider;
 import org.abchip.mimo.service.ServiceProviderRegistry;
+import org.abchip.mimo.service.ServiceRequest;
+import org.abchip.mimo.service.ServiceResponse;
 
 public class BaseServiceProviderRegistryImpl implements ServiceProviderRegistry {
 
@@ -34,12 +33,12 @@ public class BaseServiceProviderRegistryImpl implements ServiceProviderRegistry 
 	private ResourceManager resourceManager;
 
 	private Registry<ServiceProvider> registry;
-	private ResourceMapping resourceMapping;
+	private ServiceMapping serviceMapping;
 
 	@Inject
 	public BaseServiceProviderRegistryImpl(RegistryFactory serviceRegistryFactory, Application application) {
 		this.registry = serviceRegistryFactory.createRegistry(ServiceProvider.class);
-		this.resourceMapping = application.getResourceMapping();
+		this.serviceMapping = application.getServiceMapping();
 	}
 
 	@Override
@@ -58,81 +57,39 @@ public class BaseServiceProviderRegistryImpl implements ServiceProviderRegistry 
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> ServiceProvider getServiceProvider(Context context, Class<E> klass) {
-		return getServiceProvider(context, klass.getSimpleName());
-	}
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> ServiceProvider getServiceProvider(Context context, Class<R> klass) {
 
-	@Override
-	public <E extends EntityIdentifiable> ServiceProvider getServiceProvider(Context context, String frameName) {
-
-		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName);
+		Frame<?> frame = (Frame<?>) resourceManager.getFrame(context, klass.getSimpleName());
 		if (frame == null)
 			return null;
 
-		return getServiceProvider(context, frame);
+		return getProvider(context, frame);
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> ServiceProvider getServiceProvider(Context context, Frame<E> frame) {
-		return getProvider(context, frame);
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> ServiceProvider getServiceProvider(Context context, R request) {
+		return getProvider(context, request.isa());
 	}
 
 	private ServiceProvider getProvider(Context context, Frame<?> frame) {
 
-		ResourceMappingRuleByFrame ruleByFrame = getRuleByFrame(context, frame);
-		ResourceMappingRuleByPackage ruleByPackage = getRuleByPackage(context, frame);
+		ServiceMappingRuleByPackage ruleByPackage = getRuleByPackage(context, frame);
 
-		if (ruleByFrame == null && ruleByPackage == null)
-			return null;
 		if (ruleByPackage == null)
-			return this.lookup(ruleByFrame.getProvider());
-		if (ruleByFrame == null)
-			return this.lookup(ruleByPackage.getProvider());
-		if (ruleByFrame.getFrame().equals(frame.getName()))
-			return this.lookup(ruleByFrame.getProvider());
+			return null;
 
-		Frame<?> frameFromRule = resourceManager.getFrame(context, ruleByFrame.getFrame());
-		if (frameFromRule.getPackageName().startsWith(ruleByPackage.getPackage()))
-			return this.lookup(ruleByFrame.getProvider());
-		else
-			return this.lookup(ruleByPackage.getProvider());
+		return this.lookup(ruleByPackage.getProvider());
 	}
 
-	private ResourceMappingRuleByFrame getRuleByFrame(Context context, Frame<?> frame) {
+	private ServiceMappingRuleByPackage getRuleByPackage(Context context, Frame<?> frame) {
 
-		List<Frame<?>> frames = new LinkedList<Frame<?>>();
-		frames.add(frame);
-		frames.addAll(frame.getSuperFrames());
+		ServiceMappingRuleByPackage ruleByPackage = null;
 
-		ResourceMappingRuleByFrame ruleByFrame = null;
-		for (Frame<?> frameItem : frames) {
-			for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
-				if (!mappingRule.getMappingType().equals(MappingType.BY_FRAME))
-					continue;
-
-				ResourceMappingRuleByFrame mappingRuleByFrame = (ResourceMappingRuleByFrame) mappingRule;
-				if (mappingRuleByFrame.getFrame().equals(frameItem.getName())) {
-					ruleByFrame = mappingRuleByFrame;
-					break;
-				}
-			}
-			if (ruleByFrame != null)
-				break;
-		}
-
-		return ruleByFrame;
-	}
-
-	private ResourceMappingRuleByPackage getRuleByPackage(Context context, Frame<?> frame) {
-
-		ResourceMappingRuleByPackage ruleByPackage = null;
-
-		for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
-			if (!mappingRule.getMappingType().equals(MappingType.BY_PACKAGE))
+		for (ServiceMappingRule mappingRule : this.serviceMapping.getRules()) {
+			if (!mappingRule.getMappingType().equals(ServiceMappingType.BY_PACKAGE))
 				continue;
 
-			ResourceMappingRuleByPackage mappingRuleByPackage = (ResourceMappingRuleByPackage) mappingRule;
+			ServiceMappingRuleByPackage mappingRuleByPackage = (ServiceMappingRuleByPackage) mappingRule;
 			if (frame.getPackageName().startsWith(mappingRuleByPackage.getPackage())) {
 				// deeper package
 				if (ruleByPackage != null && ruleByPackage.getPackage().length() > mappingRuleByPackage.getPackage().length())

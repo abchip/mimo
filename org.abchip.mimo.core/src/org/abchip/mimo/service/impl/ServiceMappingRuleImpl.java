@@ -5,60 +5,65 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.resource.impl;
+package org.abchip.mimo.service.impl;
 
-import org.abchip.mimo.resource.ResourceMappingType;
-import org.abchip.mimo.resource.ResourceMappingRuleByPackage;
-import org.abchip.mimo.resource.ResourcePackage;
+import org.abchip.mimo.entity.impl.EntityImpl;
+
+import org.abchip.mimo.service.ServiceMappingRule;
+import org.abchip.mimo.service.ServiceMappingType;
+import org.abchip.mimo.service.ServicePackage;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Mapping Rule By Package</b></em>'.
+ * An implementation of the model object '<em><b>Mapping Rule</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceMappingRuleByPackageImpl#getPackage <em>Package</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceMappingRuleImpl#getProvider <em>Provider</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ResourceMappingRuleByPackageImpl extends ResourceMappingRuleImpl implements ResourceMappingRuleByPackage {
+public abstract class ServiceMappingRuleImpl extends EntityImpl implements ServiceMappingRule {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The default value of the '{@link #getPackage() <em>Package</em>}' attribute.
+	 * The default value of the '{@link #getProvider() <em>Provider</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPackage()
+	 * @see #getProvider()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PACKAGE_EDEFAULT = null;
+	protected static final String PROVIDER_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getPackage() <em>Package</em>}' attribute.
+	 * The cached value of the '{@link #getProvider() <em>Provider</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPackage()
+	 * @see #getProvider()
 	 * @generated
 	 * @ordered
 	 */
-	protected String package_ = PACKAGE_EDEFAULT;
+	protected String provider = PROVIDER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResourceMappingRuleByPackageImpl() {
+	protected ServiceMappingRuleImpl() {
 		super();
 	}
 
@@ -69,7 +74,7 @@ public class ResourceMappingRuleByPackageImpl extends ResourceMappingRuleImpl im
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ResourcePackage.Literals.RESOURCE_MAPPING_RULE_BY_PACKAGE;
+		return ServicePackage.Literals.SERVICE_MAPPING_RULE;
 	}
 
 	/**
@@ -78,8 +83,8 @@ public class ResourceMappingRuleByPackageImpl extends ResourceMappingRuleImpl im
 	 * @generated
 	 */
 	@Override
-	public String getPackage() {
-		return package_;
+	public String getProvider() {
+		return provider;
 	}
 
 	/**
@@ -88,12 +93,20 @@ public class ResourceMappingRuleByPackageImpl extends ResourceMappingRuleImpl im
 	 * @generated
 	 */
 	@Override
-	public void setPackage(String newPackage) {
-		String oldPackage = package_;
-		package_ = newPackage;
+	public void setProvider(String newProvider) {
+		String oldProvider = provider;
+		provider = newProvider;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE_MAPPING_RULE_BY_PACKAGE__PACKAGE, oldPackage, package_));
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_MAPPING_RULE__PROVIDER, oldProvider, provider));
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public abstract ServiceMappingType getMappingType();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,8 +116,8 @@ public class ResourceMappingRuleByPackageImpl extends ResourceMappingRuleImpl im
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_MAPPING_RULE_BY_PACKAGE__PACKAGE:
-				return getPackage();
+			case ServicePackage.SERVICE_MAPPING_RULE__PROVIDER:
+				return getProvider();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,8 +130,8 @@ public class ResourceMappingRuleByPackageImpl extends ResourceMappingRuleImpl im
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_MAPPING_RULE_BY_PACKAGE__PACKAGE:
-				setPackage((String)newValue);
+			case ServicePackage.SERVICE_MAPPING_RULE__PROVIDER:
+				setProvider((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -132,8 +145,8 @@ public class ResourceMappingRuleByPackageImpl extends ResourceMappingRuleImpl im
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_MAPPING_RULE_BY_PACKAGE__PACKAGE:
-				setPackage(PACKAGE_EDEFAULT);
+			case ServicePackage.SERVICE_MAPPING_RULE__PROVIDER:
+				setProvider(PROVIDER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -147,8 +160,8 @@ public class ResourceMappingRuleByPackageImpl extends ResourceMappingRuleImpl im
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE_MAPPING_RULE_BY_PACKAGE__PACKAGE:
-				return PACKAGE_EDEFAULT == null ? package_ != null : !PACKAGE_EDEFAULT.equals(package_);
+			case ServicePackage.SERVICE_MAPPING_RULE__PROVIDER:
+				return PROVIDER_EDEFAULT == null ? provider != null : !PROVIDER_EDEFAULT.equals(provider);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -163,20 +176,10 @@ public class ResourceMappingRuleByPackageImpl extends ResourceMappingRuleImpl im
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (package: ");
-		result.append(package_);
+		result.append(" (provider: ");
+		result.append(provider);
 		result.append(')');
 		return result.toString();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public ResourceMappingType getMappingType() {
-		return ResourceMappingType.BY_PACKAGE;
-	}
-
-} //ResourceMappingRuleByPackageImpl
+} //ServiceMappingRuleImpl

@@ -14,6 +14,7 @@ import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceMapping;
 import org.abchip.mimo.service.ServiceConfig;
+import org.abchip.mimo.service.ServiceMapping;
 import org.abchip.mimo.service.reg.ServiceCommandProviderReg;
 import org.abchip.mimo.service.reg.ServiceHookReg;
 import org.osgi.framework.Bundle;
@@ -39,6 +40,7 @@ import org.osgi.framework.Bundle;
  *   <li>{@link org.abchip.mimo.application.Application#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getPaths <em>Paths</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getResourceMapping <em>Resource Mapping</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.Application#getServiceMapping <em>Service Mapping</em>}</li>
  *   <li>{@link org.abchip.mimo.application.Application#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -324,6 +326,28 @@ public interface Application extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setResourceMapping(ResourceMapping value);
+
+	/**
+	 * Returns the value of the '<em><b>Service Mapping</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Service Mapping</em>' containment reference.
+	 * @see #setServiceMapping(ServiceMapping)
+	 * @see org.abchip.mimo.application.ApplicationPackage#getApplication_ServiceMapping()
+	 * @model containment="true" resolveProxies="true" required="true"
+	 * @generated
+	 */
+	ServiceMapping getServiceMapping();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.application.Application#getServiceMapping <em>Service Mapping</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Service Mapping</em>' containment reference.
+	 * @see #getServiceMapping()
+	 * @generated
+	 */
+	void setServiceMapping(ServiceMapping value);
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.

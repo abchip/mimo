@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package org.abchip.mimo.resource;
+package org.abchip.mimo.service;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -18,21 +18,11 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Mapping Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.abchip.mimo.resource.ResourcePackage#getMappingType()
+ * @see org.abchip.mimo.service.ServicePackage#getServiceMappingType()
  * @model
  * @generated
  */
-public enum MappingType implements Enumerator {
-	/**
-	 * The '<em><b>By Frame</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #BY_FRAME_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	BY_FRAME(10, "ByFrame", "BF"),
-
+public enum ServiceMappingType implements Enumerator {
 	/**
 	 * The '<em><b>By Package</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -41,37 +31,18 @@ public enum MappingType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BY_PACKAGE(20, "ByPackage", "BP");
-
-	/**
-	 * The '<em><b>By Frame</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>By Frame</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #BY_FRAME
-	 * @model name="ByFrame" literal="BF"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int BY_FRAME_VALUE = 10;
+	BY_PACKAGE(10, "ByPackage", "BP");
 
 	/**
 	 * The '<em><b>By Package</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>By Package</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BY_PACKAGE
 	 * @model name="ByPackage" literal="BP"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BY_PACKAGE_VALUE = 20;
+	public static final int BY_PACKAGE_VALUE = 10;
 
 	/**
 	 * An array of all the '<em><b>Mapping Type</b></em>' enumerators.
@@ -79,9 +50,8 @@ public enum MappingType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final MappingType[] VALUES_ARRAY =
-		new MappingType[] {
-			BY_FRAME,
+	private static final ServiceMappingType[] VALUES_ARRAY =
+		new ServiceMappingType[] {
 			BY_PACKAGE,
 		};
 
@@ -91,7 +61,7 @@ public enum MappingType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<MappingType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ServiceMappingType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Mapping Type</b></em>' literal with the specified literal value.
@@ -101,9 +71,9 @@ public enum MappingType implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static MappingType get(String literal) {
+	public static ServiceMappingType get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			MappingType result = VALUES_ARRAY[i];
+			ServiceMappingType result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -119,9 +89,9 @@ public enum MappingType implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static MappingType getByName(String name) {
+	public static ServiceMappingType getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			MappingType result = VALUES_ARRAY[i];
+			ServiceMappingType result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -137,9 +107,8 @@ public enum MappingType implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static MappingType get(int value) {
+	public static ServiceMappingType get(int value) {
 		switch (value) {
-			case BY_FRAME_VALUE: return BY_FRAME;
 			case BY_PACKAGE_VALUE: return BY_PACKAGE;
 		}
 		return null;
@@ -172,7 +141,7 @@ public enum MappingType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private MappingType(int value, String name, String literal) {
+	private ServiceMappingType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -219,4 +188,4 @@ public enum MappingType implements Enumerator {
 		return literal;
 	}
 	
-} //MappingType
+} //ServiceMappingType

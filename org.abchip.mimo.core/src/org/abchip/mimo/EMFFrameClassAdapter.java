@@ -25,7 +25,6 @@ import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -285,15 +284,5 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 		if (text != null)
 			eSet(EntityPackage.FRAME__TEXT, text);
-	}
-
-	@Override
-	public Slot getSlotID() {
-
-		EAttribute eAttribute = eClass.getEIDAttribute();
-		if (eAttribute == null)
-			return null;
-
-		return getSlot(eAttribute.getName());
 	}
 }

@@ -9,7 +9,7 @@ package org.abchip.mimo.resource.impl;
 
 import org.abchip.mimo.entity.impl.EntityImpl;
 
-import org.abchip.mimo.resource.MappingType;
+import org.abchip.mimo.resource.ResourceMappingType;
 import org.abchip.mimo.resource.ResourceMappingRule;
 import org.abchip.mimo.resource.ResourcePackage;
 
@@ -106,7 +106,7 @@ public abstract class ResourceMappingRuleImpl extends EntityImpl implements Reso
 	 * @generated NOT
 	 */
 	@Override
-	public abstract MappingType getMappingType();
+	public abstract ResourceMappingType getMappingType();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -45,6 +45,24 @@ public interface ServiceFactory extends EFactory {
 	ServiceConfig createServiceConfig();
 
 	/**
+	 * Returns a new object of class '<em>Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mapping</em>'.
+	 * @generated
+	 */
+	ServiceMapping createServiceMapping();
+
+	/**
+	 * Returns a new object of class '<em>Mapping Rule By Package</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mapping Rule By Package</em>'.
+	 * @generated
+	 */
+	ServiceMappingRuleByPackage createServiceMappingRuleByPackage();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

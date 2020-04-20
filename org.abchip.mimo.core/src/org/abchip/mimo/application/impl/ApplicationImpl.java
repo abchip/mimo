@@ -24,6 +24,7 @@ import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.abchip.mimo.resource.ResourceMapping;
 import org.abchip.mimo.service.ServiceConfig;
+import org.abchip.mimo.service.ServiceMapping;
 import org.abchip.mimo.service.reg.ServiceCommandProviderReg;
 import org.abchip.mimo.service.reg.ServiceHookReg;
 import org.abchip.mimo.util.Systems;
@@ -59,6 +60,7 @@ import org.osgi.framework.FrameworkUtil;
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getPaths <em>Paths</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getResourceMapping <em>Resource Mapping</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getServiceMapping <em>Service Mapping</em>}</li>
  *   <li>{@link org.abchip.mimo.application.impl.ApplicationImpl#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -190,6 +192,15 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	 * @ordered
 	 */
 	protected ResourceMapping resourceMapping;
+	/**
+	 * The cached value of the '{@link #getServiceMapping() <em>Service Mapping</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServiceMapping()
+	 * @generated
+	 * @ordered
+	 */
+	protected ServiceMapping serviceMapping;
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -590,6 +601,74 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ServiceMapping getServiceMapping() {
+		if (serviceMapping != null && ((EObject)serviceMapping).eIsProxy()) {
+			InternalEObject oldServiceMapping = (InternalEObject)serviceMapping;
+			serviceMapping = (ServiceMapping)eResolveProxy(oldServiceMapping);
+			if (serviceMapping != oldServiceMapping) {
+				InternalEObject newServiceMapping = (InternalEObject)serviceMapping;
+				NotificationChain msgs = oldServiceMapping.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__SERVICE_MAPPING, null, null);
+				if (newServiceMapping.eInternalContainer() == null) {
+					msgs = newServiceMapping.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__SERVICE_MAPPING, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.APPLICATION__SERVICE_MAPPING, oldServiceMapping, serviceMapping));
+			}
+		}
+		return serviceMapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceMapping basicGetServiceMapping() {
+		return serviceMapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetServiceMapping(ServiceMapping newServiceMapping, NotificationChain msgs) {
+		ServiceMapping oldServiceMapping = serviceMapping;
+		serviceMapping = newServiceMapping;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__SERVICE_MAPPING, oldServiceMapping, newServiceMapping);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setServiceMapping(ServiceMapping newServiceMapping) {
+		if (newServiceMapping != serviceMapping) {
+			NotificationChain msgs = null;
+			if (serviceMapping != null)
+				msgs = ((InternalEObject)serviceMapping).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__SERVICE_MAPPING, null, msgs);
+			if (newServiceMapping != null)
+				msgs = ((InternalEObject)newServiceMapping).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ApplicationPackage.APPLICATION__SERVICE_MAPPING, null, msgs);
+			msgs = basicSetServiceMapping(newServiceMapping, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.APPLICATION__SERVICE_MAPPING, newServiceMapping, newServiceMapping));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -711,6 +790,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return basicSetPaths(null, msgs);
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
 				return basicSetResourceMapping(null, msgs);
+			case ApplicationPackage.APPLICATION__SERVICE_MAPPING:
+				return basicSetServiceMapping(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -752,6 +833,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
 				if (resolve) return getResourceMapping();
 				return basicGetResourceMapping();
+			case ApplicationPackage.APPLICATION__SERVICE_MAPPING:
+				if (resolve) return getServiceMapping();
+				return basicGetServiceMapping();
 			case ApplicationPackage.APPLICATION__TEXT:
 				return getText();
 		}
@@ -805,6 +889,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
 				setResourceMapping((ResourceMapping)newValue);
 				return;
+			case ApplicationPackage.APPLICATION__SERVICE_MAPPING:
+				setServiceMapping((ServiceMapping)newValue);
+				return;
 			case ApplicationPackage.APPLICATION__TEXT:
 				setText((String)newValue);
 				return;
@@ -855,6 +942,9 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
 				setResourceMapping((ResourceMapping)null);
 				return;
+			case ApplicationPackage.APPLICATION__SERVICE_MAPPING:
+				setServiceMapping((ServiceMapping)null);
+				return;
 			case ApplicationPackage.APPLICATION__TEXT:
 				setText(TEXT_EDEFAULT);
 				return;
@@ -893,6 +983,8 @@ public class ApplicationImpl extends EntityIdentifiableImpl implements Applicati
 				return paths != null;
 			case ApplicationPackage.APPLICATION__RESOURCE_MAPPING:
 				return resourceMapping != null;
+			case ApplicationPackage.APPLICATION__SERVICE_MAPPING:
+				return serviceMapping != null;
 			case ApplicationPackage.APPLICATION__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}

@@ -19,7 +19,7 @@ import org.abchip.mimo.context.Registry;
 import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.MappingType;
+import org.abchip.mimo.resource.ResourceMappingType;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceMapping;
 import org.abchip.mimo.resource.ResourceMappingRule;
@@ -108,7 +108,7 @@ public class BaseResourceProviderRegistryImpl extends BaseResource implements Re
 		ResourceMappingRuleByFrame ruleByFrame = null;
 		for (Frame<?> frameItem : frames) {
 			for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
-				if (!mappingRule.getMappingType().equals(MappingType.BY_FRAME))
+				if (!mappingRule.getMappingType().equals(ResourceMappingType.BY_FRAME))
 					continue;
 
 				ResourceMappingRuleByFrame mappingRuleByFrame = (ResourceMappingRuleByFrame) mappingRule;
@@ -129,7 +129,7 @@ public class BaseResourceProviderRegistryImpl extends BaseResource implements Re
 		ResourceMappingRuleByPackage ruleByPackage = null;
 
 		for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
-			if (!mappingRule.getMappingType().equals(MappingType.BY_PACKAGE))
+			if (!mappingRule.getMappingType().equals(ResourceMappingType.BY_PACKAGE))
 				continue;
 
 			ResourceMappingRuleByPackage mappingRuleByPackage = (ResourceMappingRuleByPackage) mappingRule;

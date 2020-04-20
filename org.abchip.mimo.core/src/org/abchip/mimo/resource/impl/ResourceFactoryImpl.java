@@ -82,10 +82,10 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case ResourcePackage.MAPPING_TYPE:
-				return createMappingTypeFromString(eDataType, initialValue);
 			case ResourcePackage.RESOURCE_EVENT_TYPE:
 				return createResourceEventTypeFromString(eDataType, initialValue);
+			case ResourcePackage.RESOURCE_MAPPING_TYPE:
+				return createResourceMappingTypeFromString(eDataType, initialValue);
 			case ResourcePackage.SERIALIZATION_TYPE:
 				return createSerializationTypeFromString(eDataType, initialValue);
 			case ResourcePackage.RESOURCE_EXCEPTION:
@@ -103,10 +103,10 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case ResourcePackage.MAPPING_TYPE:
-				return convertMappingTypeToString(eDataType, instanceValue);
 			case ResourcePackage.RESOURCE_EVENT_TYPE:
 				return convertResourceEventTypeToString(eDataType, instanceValue);
+			case ResourcePackage.RESOURCE_MAPPING_TYPE:
+				return convertResourceMappingTypeToString(eDataType, instanceValue);
 			case ResourcePackage.SERIALIZATION_TYPE:
 				return convertSerializationTypeToString(eDataType, instanceValue);
 			case ResourcePackage.RESOURCE_EXCEPTION:
@@ -196,6 +196,26 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ResourceMappingType createResourceMappingTypeFromString(EDataType eDataType, String initialValue) {
+		ResourceMappingType result = ResourceMappingType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertResourceMappingTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SerializationType createSerializationTypeFromString(EDataType eDataType, String initialValue) {
 		SerializationType result = SerializationType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -227,26 +247,6 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 	 */
 	public String convertResourceExceptionToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MappingType createMappingTypeFromString(EDataType eDataType, String initialValue) {
-		MappingType result = MappingType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertMappingTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

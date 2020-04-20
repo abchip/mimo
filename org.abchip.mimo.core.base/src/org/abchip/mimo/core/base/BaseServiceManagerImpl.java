@@ -13,7 +13,6 @@ import java.util.concurrent.Future;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.service.Service;
 import org.abchip.mimo.service.ServiceFactory;
 import org.abchip.mimo.service.ServiceManager;
@@ -59,7 +58,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R execute(Context context, R request) {
 
-		ServiceProvider serviceProvider = this.getProvider(context, request);
+		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(context, request);
 
 		return serviceProvider.execute(context, request);
 	}
@@ -67,18 +66,8 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(Context context, R request) {
 
-		ServiceProvider serviceProvider = this.getProvider(context, request);
+		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(context, request);
 
 		return serviceProvider.submit(context, request);
-	}
-
-	private ServiceProvider getProvider(Context context, ServiceRequest<?> request) {
-
-		Slot slotID = context.getFrame(request.getClass()).getSlotID();
-		if (slotID == null)
-			return null;
-
-		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(context, slotID.getDomain().getFrame());
-		return serviceProvider;
 	}
 }

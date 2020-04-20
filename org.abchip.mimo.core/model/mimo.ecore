@@ -34,6 +34,8 @@
           eType="#//application/ApplicationPaths" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceMapping" lowerBound="1"
           eType="#//resource/ResourceMapping" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceMapping" lowerBound="1"
+          eType="#//service/ServiceMapping" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="ApplicationBundle" instanceClassName="org.osgi.framework.Bundle"/>
@@ -930,7 +932,6 @@
         <eParameters name="slotName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       </eOperations>
-      <eOperations name="getSlotID" eType="#//entity/Slot"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoIncrement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="enum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -1101,10 +1102,6 @@
     <eClassifiers xsi:type="ecore:EDataType" name="NetworkingException" instanceClassName="org.abchip.mimo.networking.NetworkingException"/>
   </eSubpackages>
   <eSubpackages name="resource" nsURI="http://www.abchip.org/mimo/resource" nsPrefix="mimo-resource">
-    <eClassifiers xsi:type="ecore:EEnum" name="MappingType">
-      <eLiterals name="ByFrame" value="10" literal="BF"/>
-      <eLiterals name="ByPackage" value="20" literal="BP"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Resource" abstract="true" eSuperTypes="#//entity/Entity">
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/EntityIdentifiable"/>
@@ -1485,7 +1482,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceMappingRule" abstract="true"
         eSuperTypes="#//entity/Entity">
-      <eOperations name="getMappingType" lowerBound="1" eType="#//resource/MappingType"/>
+      <eOperations name="getMappingType" lowerBound="1" eType="#//resource/ResourceMappingType"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="provider" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
@@ -1498,6 +1495,10 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ResourceMappingType">
+      <eLiterals name="ByFrame" value="10" literal="BF"/>
+      <eLiterals name="ByPackage" value="20" literal="BP"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceNotifier">
       <eTypeParameters name="E">
@@ -1916,6 +1917,24 @@
         </eParameters>
       </eOperations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceMapping" eSuperTypes="#//entity/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
+          eType="#//service/ServiceMappingRule" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceMappingRule" abstract="true"
+        eSuperTypes="#//entity/Entity">
+      <eOperations name="getMappingType" lowerBound="1" eType="#//service/ServiceMappingType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="provider" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceMappingRuleByPackage" eSuperTypes="#//service/ServiceMappingRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ServiceMappingType">
+      <eLiterals name="ByPackage" value="10" literal="BP"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceMessage" abstract="true" eSuperTypes="#//entity/Entity"/>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceProvider" abstract="true">
       <eOperations name="execute" lowerBound="1">
@@ -1954,33 +1973,34 @@
     <eClassifiers xsi:type="ecore:EClass" name="ServiceProviderRegistry" abstract="true"
         interface="true">
       <eOperations name="getServiceProvider" eType="#//service/ServiceProvider">
-        <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceProviderRegistry/getServiceProvider/V"/>
+          </eBounds>
+        </eTypeParameters>
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+        <eParameters name="request" lowerBound="1">
+          <eGenericType eTypeParameter="#//service/ServiceProviderRegistry/getServiceProvider/R"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getServiceProvider" eType="#//service/ServiceProvider">
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceProviderRegistry/getServiceProvider.1/V"/>
+          </eBounds>
         </eTypeParameters>
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//service/ServiceProviderRegistry/getServiceProvider/E"/>
+            <eTypeArguments eTypeParameter="#//service/ServiceProviderRegistry/getServiceProvider.1/R"/>
           </eGenericType>
         </eParameters>
-      </eOperations>
-      <eOperations name="getServiceProvider" eType="#//service/ServiceProvider">
-        <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
-        </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
-        <eParameters name="frame" lowerBound="1">
-          <eGenericType eClassifier="#//entity/Frame">
-            <eTypeArguments eTypeParameter="#//service/ServiceProviderRegistry/getServiceProvider.1/E"/>
-          </eGenericType>
-        </eParameters>
-      </eOperations>
-      <eOperations name="getServiceProvider" eType="#//service/ServiceProvider">
-        <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
-        </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
-        <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eGenericSuperTypes eClassifier="#//context/Registry">
         <eTypeArguments eClassifier="#//service/ServiceProvider"/>

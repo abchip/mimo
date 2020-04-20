@@ -475,8 +475,18 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceEventType()
 	 * @generated
 	 */
-	int RESOURCE_EVENT_TYPE = 16;
+	int RESOURCE_EVENT_TYPE = 15;
 
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.resource.ResourceMappingType <em>Mapping Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.resource.ResourceMappingType
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingType()
+	 * @generated
+	 */
+	int RESOURCE_MAPPING_TYPE = 16;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.SerializationType <em>Serialization Type</em>}' enum.
@@ -498,17 +508,6 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 */
 	int RESOURCE_EXCEPTION = 18;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.resource.MappingType <em>Mapping Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.resource.MappingType
-	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getMappingType()
-	 * @generated
-	 */
-	int MAPPING_TYPE = 15;
-
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.resource.Resource <em>Resource</em>}'.
@@ -781,6 +780,16 @@ public interface ResourcePackage extends EPackage {
 	EEnum getResourceEventType();
 
 	/**
+	 * Returns the meta object for enum '{@link org.abchip.mimo.resource.ResourceMappingType <em>Mapping Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Mapping Type</em>'.
+	 * @see org.abchip.mimo.resource.ResourceMappingType
+	 * @generated
+	 */
+	EEnum getResourceMappingType();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.resource.SerializationType <em>Serialization Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -800,16 +809,6 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getResourceException();
-
-	/**
-	 * Returns the meta object for enum '{@link org.abchip.mimo.resource.MappingType <em>Mapping Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Mapping Type</em>'.
-	 * @see org.abchip.mimo.resource.MappingType
-	 * @generated
-	 */
-	EEnum getMappingType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1074,6 +1073,16 @@ public interface ResourcePackage extends EPackage {
 		EEnum RESOURCE_EVENT_TYPE = eINSTANCE.getResourceEventType();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.resource.ResourceMappingType <em>Mapping Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.resource.ResourceMappingType
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingType()
+		 * @generated
+		 */
+		EEnum RESOURCE_MAPPING_TYPE = eINSTANCE.getResourceMappingType();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.resource.SerializationType <em>Serialization Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1092,16 +1101,6 @@ public interface ResourcePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType RESOURCE_EXCEPTION = eINSTANCE.getResourceException();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.resource.MappingType <em>Mapping Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.resource.MappingType
-		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getMappingType()
-		 * @generated
-		 */
-		EEnum MAPPING_TYPE = eINSTANCE.getMappingType();
 
 	}
 

@@ -48,6 +48,10 @@ import org.abchip.mimo.service.ServiceConfig;
 import org.abchip.mimo.service.ServiceException;
 import org.abchip.mimo.service.ServiceFactory;
 import org.abchip.mimo.service.ServiceManager;
+import org.abchip.mimo.service.ServiceMapping;
+import org.abchip.mimo.service.ServiceMappingRule;
+import org.abchip.mimo.service.ServiceMappingRuleByPackage;
+import org.abchip.mimo.service.ServiceMappingType;
 import org.abchip.mimo.service.ServiceMessage;
 import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.service.ServiceProvider;
@@ -106,6 +110,27 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass serviceMappingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceMappingRuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceMappingRuleByPackageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass serviceMessageEClass = null;
 
 	/**
@@ -135,6 +160,13 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	private EClass serviceResponseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum serviceMappingTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -322,6 +354,66 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getServiceMapping() {
+		return serviceMappingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getServiceMapping_Rules() {
+		return (EReference)serviceMappingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getServiceMappingRule() {
+		return serviceMappingRuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getServiceMappingRule_Provider() {
+		return (EAttribute)serviceMappingRuleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getServiceMappingRuleByPackage() {
+		return serviceMappingRuleByPackageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getServiceMappingRuleByPackage_Package() {
+		return (EAttribute)serviceMappingRuleByPackageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getServiceMessage() {
 		return serviceMessageEClass;
 	}
@@ -382,6 +474,16 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getServiceMappingType() {
+		return serviceMappingTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getServiceStatus() {
 		return serviceStatusEEnum;
 	}
@@ -434,6 +536,15 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		serviceManagerEClass = createEClass(SERVICE_MANAGER);
 
+		serviceMappingEClass = createEClass(SERVICE_MAPPING);
+		createEReference(serviceMappingEClass, SERVICE_MAPPING__RULES);
+
+		serviceMappingRuleEClass = createEClass(SERVICE_MAPPING_RULE);
+		createEAttribute(serviceMappingRuleEClass, SERVICE_MAPPING_RULE__PROVIDER);
+
+		serviceMappingRuleByPackageEClass = createEClass(SERVICE_MAPPING_RULE_BY_PACKAGE);
+		createEAttribute(serviceMappingRuleByPackageEClass, SERVICE_MAPPING_RULE_BY_PACKAGE__PACKAGE);
+
 		serviceMessageEClass = createEClass(SERVICE_MESSAGE);
 
 		serviceProviderEClass = createEClass(SERVICE_PROVIDER);
@@ -446,6 +557,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		serviceResponseEClass = createEClass(SERVICE_RESPONSE);
 
 		// Create enums
+		serviceMappingTypeEEnum = createEEnum(SERVICE_MAPPING_TYPE);
 		serviceStatusEEnum = createEEnum(SERVICE_STATUS);
 
 		// Create data types
@@ -502,6 +614,9 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		// Add supertypes to classes
 		serviceEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		serviceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		serviceMappingEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		serviceMappingRuleEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		serviceMappingRuleByPackageEClass.getESuperTypes().add(this.getServiceMappingRule());
 		serviceMessageEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		g1 = createEGenericType(theContextPackage.getRegistry());
 		g2 = createEGenericType(this.getServiceProvider());
@@ -615,6 +730,17 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		initEClass(serviceMappingEClass, ServiceMapping.class, "ServiceMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServiceMapping_Rules(), this.getServiceMappingRule(), null, "rules", null, 0, -1, ServiceMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(serviceMappingRuleEClass, ServiceMappingRule.class, "ServiceMappingRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceMappingRule_Provider(), ecorePackage.getEString(), "provider", null, 1, 1, ServiceMappingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(serviceMappingRuleEClass, this.getServiceMappingType(), "getMappingType", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(serviceMappingRuleByPackageEClass, ServiceMappingRuleByPackage.class, "ServiceMappingRuleByPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceMappingRuleByPackage_Package(), ecorePackage.getEString(), "package", null, 1, 1, ServiceMappingRuleByPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(serviceMessageEClass, ServiceMessage.class, "ServiceMessage", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(serviceProviderEClass, ServiceProvider.class, "ServiceProvider", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -654,31 +780,32 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		initEClass(serviceProviderRegistryEClass, ServiceProviderRegistry.class, "ServiceProviderRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(serviceProviderRegistryEClass, this.getServiceProvider(), "getServiceProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1 = addETypeParameter(op, "V");
+		g1 = createEGenericType(this.getServiceResponse());
 		t1.getEBounds().add(g1);
+		t2 = addETypeParameter(op, "R");
+		g1 = createEGenericType(this.getServiceRequest());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		t2.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t2);
+		addEParameter(op, g1, "request", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(serviceProviderRegistryEClass, this.getServiceProvider(), "getServiceProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "V");
+		g1 = createEGenericType(this.getServiceResponse());
+		t1.getEBounds().add(g1);
+		t2 = addETypeParameter(op, "R");
+		g1 = createEGenericType(this.getServiceRequest());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		t2.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
-		g2 = createEGenericType(t1);
+		g2 = createEGenericType(t2);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(serviceProviderRegistryEClass, this.getServiceProvider(), "getServiceProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
-		t1.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(theEntityPackage.getFrame());
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(serviceProviderRegistryEClass, this.getServiceProvider(), "getServiceProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
-		t1.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(serviceRequestEClass, ServiceRequest.class, "ServiceRequest", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServiceRequest_Context(), theContextPackage.getContext(), null, "context", null, 0, 1, ServiceRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -690,6 +817,9 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		initEClass(serviceResponseEClass, ServiceResponse.class, "ServiceResponse", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
+		initEEnum(serviceMappingTypeEEnum, ServiceMappingType.class, "ServiceMappingType");
+		addEEnumLiteral(serviceMappingTypeEEnum, ServiceMappingType.BY_PACKAGE);
+
 		initEEnum(serviceStatusEEnum, ServiceStatus.class, "ServiceStatus");
 		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.ACTIVE);
 		addEEnumLiteral(serviceStatusEEnum, ServiceStatus.STOPPED);
