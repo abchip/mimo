@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public abstract class ServiceImpl<R extends ServiceRequest<V>, V extends ServiceResponse> extends EntityIdentifiableImpl implements Service<R, V> {
+public class ServiceImpl<R extends ServiceRequest<V>, V extends ServiceResponse> extends EntityIdentifiableImpl implements Service<R, V> {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

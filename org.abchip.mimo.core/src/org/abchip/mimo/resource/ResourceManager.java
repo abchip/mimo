@@ -54,7 +54,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> Frame<E> getFrame(Context context, Class<E> klass);
+	<E extends Entity> Frame<E> getFrame(Context context, Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +62,7 @@ public interface ResourceManager {
 	 * @model contextRequired="true" klassRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> Frame<E> getFrame(Context context, Class<E> klass, String tenant);
+	<E extends Entity> Frame<E> getFrame(Context context, Class<E> klass, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -50,6 +50,8 @@ import org.abchip.mimo.service.ServiceFactory;
 import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServiceMessage;
 import org.abchip.mimo.service.ServicePackage;
+import org.abchip.mimo.service.ServiceProvider;
+import org.abchip.mimo.service.ServiceProviderRegistry;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.service.ServiceStatus;
@@ -105,6 +107,20 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	private EClass serviceMessageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceProviderEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceProviderRegistryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -316,8 +332,38 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getServiceProvider() {
+		return serviceProviderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getServiceProviderRegistry() {
+		return serviceProviderRegistryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getServiceRequest() {
 		return serviceRequestEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getServiceRequest_Context() {
+		return (EReference)serviceRequestEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -390,7 +436,12 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		serviceMessageEClass = createEClass(SERVICE_MESSAGE);
 
+		serviceProviderEClass = createEClass(SERVICE_PROVIDER);
+
+		serviceProviderRegistryEClass = createEClass(SERVICE_PROVIDER_REGISTRY);
+
 		serviceRequestEClass = createEClass(SERVICE_REQUEST);
+		createEReference(serviceRequestEClass, SERVICE_REQUEST__CONTEXT);
 
 		serviceResponseEClass = createEClass(SERVICE_RESPONSE);
 
@@ -452,6 +503,10 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		serviceEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		serviceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		serviceMessageEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		g1 = createEGenericType(theContextPackage.getRegistry());
+		g2 = createEGenericType(this.getServiceProvider());
+		g1.getETypeArguments().add(g2);
+		serviceProviderRegistryEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getServiceMessage());
 		serviceRequestEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theJavaPackage.getJavaCallable());
@@ -461,7 +516,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		serviceResponseEClass.getESuperTypes().add(this.getServiceMessage());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(serviceEClass, Service.class, "Service", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getService_Name(), ecorePackage.getEString(), "name", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(serviceEClass_R);
 		initEReference(getService_Request(), g1, null, "request", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -471,7 +526,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		initEClass(serviceManagerEClass, ServiceManager.class, "ServiceManager", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(serviceManagerEClass, null, "prepare", 1, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(serviceManagerEClass, null, "getService", 1, 1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "V");
 		g1 = createEGenericType(this.getServiceResponse());
 		t1.getEBounds().add(g1);
@@ -481,23 +536,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g1.getETypeArguments().add(g2);
 		t2.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEJavaClass());
-		g2 = createEGenericType(t2);
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "request", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(t2);
-		initEOperation(op, g1);
-
-		op = addEOperation(serviceManagerEClass, null, "getService", 1, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "V");
-		g1 = createEGenericType(this.getServiceResponse());
-		t1.getEBounds().add(g1);
-		t2 = addETypeParameter(op, "R");
-		g1 = createEGenericType(this.getServiceRequest());
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		t2.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(t2);
 		addEParameter(op, g1, "request", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getService());
@@ -520,26 +558,134 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t2);
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "request", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "klass", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getService());
 		g2 = createEGenericType(t2);
 		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(serviceManagerEClass, null, "prepare", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "V");
+		g1 = createEGenericType(this.getServiceResponse());
+		t1.getEBounds().add(g1);
+		t2 = addETypeParameter(op, "R");
+		g1 = createEGenericType(this.getServiceRequest());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		t2.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t2);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t2);
+		initEOperation(op, g1);
+
+		op = addEOperation(serviceManagerEClass, null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "V");
+		g1 = createEGenericType(this.getServiceResponse());
+		t1.getEBounds().add(g1);
+		t2 = addETypeParameter(op, "R");
+		g1 = createEGenericType(this.getServiceRequest());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		t2.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t2);
+		addEParameter(op, g1, "request", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t2);
+		initEOperation(op, g1);
+
+		op = addEOperation(serviceManagerEClass, null, "submit", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "V");
+		g1 = createEGenericType(this.getServiceResponse());
+		t1.getEBounds().add(g1);
+		t2 = addETypeParameter(op, "R");
+		g1 = createEGenericType(this.getServiceRequest());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		t2.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t2);
+		addEParameter(op, g1, "request", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theJavaPackage.getJavaFuture());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
 		initEClass(serviceMessageEClass, ServiceMessage.class, "ServiceMessage", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(serviceRequestEClass, ServiceRequest.class, "ServiceRequest", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(serviceProviderEClass, ServiceProvider.class, "ServiceProvider", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(serviceRequestEClass, null, "call", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getServiceException());
-		g1 = createEGenericType(serviceRequestEClass_V);
+		op = addEOperation(serviceProviderEClass, null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "V");
+		g1 = createEGenericType(this.getServiceResponse());
+		t1.getEBounds().add(g1);
+		t2 = addETypeParameter(op, "R");
+		g1 = createEGenericType(this.getServiceRequest());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		t2.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t2);
+		addEParameter(op, g1, "request", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t2);
 		initEOperation(op, g1);
 
-		addEOperation(serviceRequestEClass, theContextPackage.getContext(), "getContext", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(serviceProviderEClass, null, "submit", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "V");
+		g1 = createEGenericType(this.getServiceResponse());
+		t1.getEBounds().add(g1);
+		t2 = addETypeParameter(op, "R");
+		g1 = createEGenericType(this.getServiceRequest());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		t2.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t2);
+		addEParameter(op, g1, "request", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theJavaPackage.getJavaFuture());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		initEClass(serviceProviderRegistryEClass, ServiceProviderRegistry.class, "ServiceProviderRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(serviceProviderRegistryEClass, this.getServiceProvider(), "getServiceProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(serviceProviderRegistryEClass, this.getServiceProvider(), "getServiceProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theEntityPackage.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(serviceProviderRegistryEClass, this.getServiceProvider(), "getServiceProvider", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(serviceRequestEClass, ServiceRequest.class, "ServiceRequest", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServiceRequest_Context(), theContextPackage.getContext(), null, "context", null, 0, 1, ServiceRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(serviceRequestEClass, ecorePackage.getEBoolean(), "isPrepared", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(serviceRequestEClass, ecorePackage.getEString(), "getServiceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(serviceResponseEClass, ServiceResponse.class, "ServiceResponse", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

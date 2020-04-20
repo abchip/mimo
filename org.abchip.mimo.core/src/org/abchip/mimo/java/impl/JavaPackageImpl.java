@@ -41,6 +41,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ExecutorService;
 
+import java.util.concurrent.Future;
 import org.abchip.mimo.MimoPackage;
 
 import org.abchip.mimo.application.ApplicationPackage;
@@ -156,6 +157,13 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	 * @generated
 	 */
 	private EClass javaFileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass javaFutureEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -537,6 +545,16 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getJavaFuture() {
+		return javaFutureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getJavaIterable() {
 		return javaIterableEClass;
 	}
@@ -820,6 +838,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 
 		javaFileEClass = createEClass(JAVA_FILE);
 
+		javaFutureEClass = createEClass(JAVA_FUTURE);
+
 		javaIterableEClass = createEClass(JAVA_ITERABLE);
 
 		javaIteratorEClass = createEClass(JAVA_ITERATOR);
@@ -883,6 +903,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 
 		// Create type parameters
 		addETypeParameter(javaCallableEClass, "V");
+		addETypeParameter(javaFutureEClass, "V");
 		addETypeParameter(javaIterableEClass, "T");
 		addETypeParameter(javaIteratorEClass, "T");
 		addETypeParameter(javaListEClass, "E");
@@ -915,6 +936,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 		initEClass(javaExecutorServiceEClass, ExecutorService.class, "JavaExecutorService", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(javaFileEClass, File.class, "JavaFile", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(javaFutureEClass, Future.class, "JavaFuture", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(javaIterableEClass, Iterable.class, "JavaIterable", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 

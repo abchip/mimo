@@ -25,6 +25,7 @@ import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -39,7 +40,7 @@ import org.osgi.service.log.Logger;
 public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	private static final Logger LOGGER = Logs.getLogger(EMFFrameClassAdapter.class);
-	
+
 	private static final long serialVersionUID = 1L;
 	private EClass eClass;
 	private Map<String, Slot> slots = null;
@@ -154,15 +155,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public Slot getSlot(String name) {
-
-		if (this.slots != null)
-			return this.slots.get(name);
-
-		for (Slot slot : getSlots())
-			if (slot.getName().equals(name))
-				return slot;
-
-		return null;
+		return this.slots.get(name);
 	}
 
 	@Override
@@ -190,9 +183,9 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			value = getValue((Object) eObject, slotName, default_, resolve);
 		}
 
-		if(value == null && default_)
+		if (value == null && default_)
 			value = eStructuralFeature.getDefaultValue();
-		
+
 		return value;
 	}
 
@@ -266,7 +259,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public java.net.URI getURI() {
-		if(eResource() != null)
+		if (eResource() != null)
 			return super.getURI();
 		else
 			return java.net.URI.create(EcoreUtil.getURI(eClass).toString());
@@ -282,7 +275,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	public String getPackageName() {
 
 		EPackage ePackage = eClass.getEPackage();
-		String packageName = ePackage.getNsPrefix().replaceAll("-", "."); 
+		String packageName = ePackage.getNsPrefix().replaceAll("-", ".");
 		return packageName;
 	}
 
@@ -292,5 +285,15 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 		if (text != null)
 			eSet(EntityPackage.FRAME__TEXT, text);
+	}
+
+	@Override
+	public Slot getSlotID() {
+
+		EAttribute eAttribute = eClass.getEIDAttribute();
+		if (eAttribute == null)
+			return null;
+
+		return getSlot(eAttribute.getName());
 	}
 }

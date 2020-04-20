@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.service;
 
+import java.util.concurrent.Future;
 import org.abchip.mimo.context.Context;
 
 
@@ -28,7 +29,23 @@ public interface ServiceManager {
 	 * @model required="true" contextRequired="true"
 	 * @generated
 	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> request);
+	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" contextRequired="true"
+	 * @generated
+	 */
+	<V extends ServiceResponse, R extends ServiceRequest<V>> R execute(Context context, R request);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model type="org.abchip.mimo.java.JavaFuture&lt;V&gt;" required="true" contextRequired="true"
+	 * @generated
+	 */
+	<V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(Context context, R request);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -44,5 +61,5 @@ public interface ServiceManager {
 	 * @model required="true" contextRequired="true"
 	 * @generated
 	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, Class<R> request);
+	<V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, Class<R> klass);
 } // ServiceManager

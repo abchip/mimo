@@ -60,12 +60,12 @@ public class BaseResourceManagerImpl extends BaseResource implements ResourceMan
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Frame<E> getFrame(Context context, Class<E> klass) {
+	public <E extends Entity> Frame<E> getFrame(Context context, Class<E> klass) {
 		return super.getFrame(context, klass);
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Frame<E> getFrame(Context context, Class<E> klass, String tenant) {
+	public <E extends Entity> Frame<E> getFrame(Context context, Class<E> klass, String tenant) {
 		return super.getFrame(context, klass, tenant);
 	}
 

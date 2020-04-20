@@ -18,6 +18,7 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.LockManager;
+import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
@@ -61,12 +62,12 @@ public class BaseResource {
 		// check frame authorization
 	}
 
-	protected <E extends EntityIdentifiable> Frame<E> getFrame(Context context, Class<E> klass) {
+	protected <E extends Entity> Frame<E> getFrame(Context context, Class<E> klass) {
 		return getFrame(context, klass, null);
 	}
 
 	@SuppressWarnings("unchecked")
-	protected <E extends EntityIdentifiable> Frame<E> getFrame(Context context, Class<E> klass, String tenant) {
+	protected <E extends Entity> Frame<E> getFrame(Context context, Class<E> klass, String tenant) {
 		return (Frame<E>) getFrame(context, klass.getSimpleName(), tenant);
 	}
 

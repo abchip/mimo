@@ -249,6 +249,14 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	void setValue(Entity entity, String slotName, Object value);
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	Slot getSlotID();
+
+	/**
 	 * Returns the value of the '<em><b>Abstract</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 

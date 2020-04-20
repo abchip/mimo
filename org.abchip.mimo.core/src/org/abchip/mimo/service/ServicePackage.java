@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.service;
 
+import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -167,6 +168,44 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceProviderImpl <em>Provider</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.service.impl.ServiceProviderImpl
+	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceProvider()
+	 * @generated
+	 */
+	int SERVICE_PROVIDER = 4;
+
+	/**
+	 * The number of structural features of the '<em>Provider</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_PROVIDER_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.service.ServiceProviderRegistry <em>Provider Registry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.service.ServiceProviderRegistry
+	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceProviderRegistry()
+	 * @generated
+	 */
+	int SERVICE_PROVIDER_REGISTRY = 5;
+
+	/**
+	 * The number of structural features of the '<em>Provider Registry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_PROVIDER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceRequestImpl <em>Request</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,7 +213,16 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceRequest()
 	 * @generated
 	 */
-	int SERVICE_REQUEST = 4;
+	int SERVICE_REQUEST = 6;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REQUEST__CONTEXT = SERVICE_MESSAGE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Request</em>' class.
@@ -183,7 +231,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_REQUEST_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 0;
+	int SERVICE_REQUEST_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceResponseImpl <em>Response</em>}' class.
@@ -193,7 +241,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceResponse()
 	 * @generated
 	 */
-	int SERVICE_RESPONSE = 5;
+	int SERVICE_RESPONSE = 7;
 
 	/**
 	 * The number of structural features of the '<em>Response</em>' class.
@@ -212,7 +260,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceStatus()
 	 * @generated
 	 */
-	int SERVICE_STATUS = 6;
+	int SERVICE_STATUS = 8;
 
 	/**
 	 * The meta object id for the '<em>Exception</em>' data type.
@@ -222,7 +270,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceException()
 	 * @generated
 	 */
-	int SERVICE_EXCEPTION = 7;
+	int SERVICE_EXCEPTION = 9;
 
 
 	/**
@@ -299,6 +347,26 @@ public interface ServicePackage extends EPackage {
 	EClass getServiceMessage();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceProvider <em>Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Provider</em>'.
+	 * @see org.abchip.mimo.service.ServiceProvider
+	 * @generated
+	 */
+	EClass getServiceProvider();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceProviderRegistry <em>Provider Registry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Provider Registry</em>'.
+	 * @see org.abchip.mimo.service.ServiceProviderRegistry
+	 * @generated
+	 */
+	EClass getServiceProviderRegistry();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceRequest <em>Request</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -307,6 +375,17 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getServiceRequest();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.service.ServiceRequest#getContext <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Context</em>'.
+	 * @see org.abchip.mimo.service.ServiceRequest#getContext()
+	 * @see #getServiceRequest()
+	 * @generated
+	 */
+	EReference getServiceRequest_Context();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceResponse <em>Response</em>}'.
@@ -426,6 +505,26 @@ public interface ServicePackage extends EPackage {
 		EClass SERVICE_MESSAGE = eINSTANCE.getServiceMessage();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceProviderImpl <em>Provider</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.service.impl.ServiceProviderImpl
+		 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceProvider()
+		 * @generated
+		 */
+		EClass SERVICE_PROVIDER = eINSTANCE.getServiceProvider();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.service.ServiceProviderRegistry <em>Provider Registry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.service.ServiceProviderRegistry
+		 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceProviderRegistry()
+		 * @generated
+		 */
+		EClass SERVICE_PROVIDER_REGISTRY = eINSTANCE.getServiceProviderRegistry();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceRequestImpl <em>Request</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -434,6 +533,14 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EClass SERVICE_REQUEST = eINSTANCE.getServiceRequest();
+
+		/**
+		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_REQUEST__CONTEXT = eINSTANCE.getServiceRequest_Context();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceResponseImpl <em>Response</em>}' class.

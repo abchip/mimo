@@ -61,6 +61,7 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case ServicePackage.SERVICE: return (EObject)createService();
 			case ServicePackage.SERVICE_CONFIG: return (EObject)createServiceConfig();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -99,6 +100,17 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public <R extends ServiceRequest<V>, V extends ServiceResponse> Service<R, V> createService() {
+		ServiceImpl<R, V> service = new ServiceImpl<R, V>();
+		return service;
 	}
 
 	/**

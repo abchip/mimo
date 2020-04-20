@@ -23,7 +23,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  * </ul>
  *
  * @see org.abchip.mimo.service.ServicePackage#getService()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Service<R extends ServiceRequest<V>, V extends ServiceResponse> extends EntityIdentifiable {
