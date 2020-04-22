@@ -770,7 +770,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		// Add supertypes to classes
 		applicationEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		applicationPathsEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		applicationComponentEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		applicationLogsEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		applicationLogEntryEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		applicationModuleEClass.getESuperTypes().add(theEntityPackage.getEntity());
 

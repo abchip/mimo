@@ -14,6 +14,7 @@ import org.abchip.mimo.application.ApplicationLogLevel;
 import org.abchip.mimo.application.ApplicationLogs;
 import org.abchip.mimo.application.ApplicationPackage;
 
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -22,7 +23,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -40,7 +40,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ApplicationLogsImpl extends MinimalEObjectImpl.Container implements ApplicationLogs {
+public class ApplicationLogsImpl extends EntityImpl implements ApplicationLogs {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The cached value of the '{@link #getEntries() <em>Entries</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

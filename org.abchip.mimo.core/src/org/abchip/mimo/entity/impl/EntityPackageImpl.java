@@ -924,6 +924,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		domainEClass.getESuperTypes().add(this.getEntity());
 		entityContainerEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		entityEnumEClass.getESuperTypes().add(this.getEntityIdentifiable());
+		entityInfoEClass.getESuperTypes().add(this.getEntity());
 		entityIdentifiableEClass.getESuperTypes().add(this.getEntity());
 		g1 = createEGenericType(theJavaPackage.getJavaIterator());
 		g2 = createEGenericType(entityIteratorEClass_E);

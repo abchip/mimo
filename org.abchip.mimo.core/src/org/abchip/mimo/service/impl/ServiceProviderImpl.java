@@ -26,7 +26,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public abstract class ServiceProviderImpl extends MinimalEObjectImpl.Container implements ServiceProvider {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ServiceProviderImpl() {
@@ -35,7 +34,6 @@ public abstract class ServiceProviderImpl extends MinimalEObjectImpl.Container i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

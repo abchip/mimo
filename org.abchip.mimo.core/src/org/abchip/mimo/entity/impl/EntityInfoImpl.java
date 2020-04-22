@@ -13,7 +13,6 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +30,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class EntityInfoImpl extends MinimalEObjectImpl.Container implements EntityInfo {
+public abstract class EntityInfoImpl extends EntityImpl implements EntityInfo {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * The default value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->

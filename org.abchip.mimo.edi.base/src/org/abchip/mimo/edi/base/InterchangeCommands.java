@@ -20,7 +20,7 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
-public class BaseEdiCommandProviderImpl extends BaseCommands {
+public class InterchangeCommands extends BaseCommands {
 
 	@Inject
 	private ResourceManager resourceManager;

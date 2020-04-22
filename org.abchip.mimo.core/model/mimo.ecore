@@ -39,7 +39,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="ApplicationBundle" instanceClassName="org.osgi.framework.Bundle"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ApplicationPaths">
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationPaths" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="logs" lowerBound="1"
@@ -64,7 +64,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
           eType="#//application/ComponentStatus" defaultValueLiteral="ACT"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ApplicationLogs">
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationLogs" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
           eType="#//application/ApplicationLogEntry" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" lowerBound="1"
@@ -813,7 +813,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EntityInfo" abstract="true">
+    <eClassifiers xsi:type="ecore:EClass" name="EntityInfo" abstract="true" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="createdStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
         <eAnnotations source="mimo-ent-slot">
           <details key="group" value="info"/>

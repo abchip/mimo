@@ -19,7 +19,7 @@ import org.abchip.mimo.language.LanguagePlanet;
 import org.abchip.mimo.resource.ResourceManager;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
-public class BaseLanguageCommandProviderImpl extends BaseCommands {
+public class LanguageCommands extends BaseCommands {
 
 	@Inject
 	private ResourceManager resourceManager;

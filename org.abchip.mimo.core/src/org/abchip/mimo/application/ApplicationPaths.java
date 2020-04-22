@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.application;
 
+import org.abchip.mimo.entity.Entity;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +28,7 @@ package org.abchip.mimo.application;
  * @model
  * @generated
  */
-public interface ApplicationPaths {
+public interface ApplicationPaths extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Data</b></em>' attribute.
 	 * <!-- begin-user-doc -->

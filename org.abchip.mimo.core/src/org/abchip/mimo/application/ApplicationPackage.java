@@ -237,7 +237,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_PATHS__DATA = 0;
+	int APPLICATION_PATHS__DATA = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Logs</b></em>' attribute.
@@ -246,7 +246,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_PATHS__LOGS = 1;
+	int APPLICATION_PATHS__LOGS = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Work</b></em>' attribute.
@@ -255,7 +255,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_PATHS__WORK = 2;
+	int APPLICATION_PATHS__WORK = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Paths</em>' class.
@@ -264,7 +264,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_PATHS_FEATURE_COUNT = 3;
+	int APPLICATION_PATHS_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationComponentImpl <em>Component</em>}' class.
@@ -365,7 +365,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_LOGS__ENTRIES = 0;
+	int APPLICATION_LOGS__ENTRIES = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Level</b></em>' attribute.
@@ -374,7 +374,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_LOGS__LEVEL = 1;
+	int APPLICATION_LOGS__LEVEL = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Logs</em>' class.
@@ -383,7 +383,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_LOGS_FEATURE_COUNT = 2;
+	int APPLICATION_LOGS_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationLogEntryImpl <em>Log Entry</em>}' class.

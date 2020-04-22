@@ -13,6 +13,7 @@ import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
+import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -189,10 +190,7 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 */
 	@Override
 	public String getServiceName() {
-		if (this.getTenant() != null)
-			return this.isa().getID() + "@" + this.getTenant();
-		else
-			return this.isa().getID();
+		return Strings.firstToLower(this.isa().getID());
 	}
 
 	/**

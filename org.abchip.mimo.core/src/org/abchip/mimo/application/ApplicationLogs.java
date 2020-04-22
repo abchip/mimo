@@ -8,6 +8,7 @@
 package org.abchip.mimo.application;
 
 import java.util.List;
+import org.abchip.mimo.entity.Entity;
 
 
 /**
@@ -27,7 +28,7 @@ import java.util.List;
  * @model
  * @generated
  */
-public interface ApplicationLogs {
+public interface ApplicationLogs extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Entries</b></em>' containment reference list.
 	 * The list contents are of type {@link org.abchip.mimo.application.ApplicationLogEntry}.

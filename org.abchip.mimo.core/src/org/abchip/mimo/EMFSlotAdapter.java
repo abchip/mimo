@@ -135,14 +135,10 @@ public class EMFSlotAdapter extends SlotImpl {
 				|| this.getDataClassName().equals(URI.class.getCanonicalName()) || EntityIdentifiable.class.isAssignableFrom(this.getETypedElement().getEType().getInstanceClass())) {
 			StringDef stringDef = DataFactory.eINSTANCE.createStringDef();
 			dataDef = stringDef;
-		} else {
-			"".toString();
 		}
 
 		if (dataDef != null)
 			this.setDataDef(dataDef);
-		else
-			"".toString();
 	}
 
 	@Override

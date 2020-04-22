@@ -28,7 +28,7 @@ import java.util.Date;
  * @model abstract="true"
  * @generated
  */
-public interface EntityInfo {
+public interface EntityInfo extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->

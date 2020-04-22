@@ -303,7 +303,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_INFO__CREATED_STAMP = 0;
+	int ENTITY_INFO__CREATED_STAMP = ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
@@ -312,7 +312,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_INFO__CREATED_TX_STAMP = 1;
+	int ENTITY_INFO__CREATED_TX_STAMP = ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
@@ -321,7 +321,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_INFO__LAST_UPDATED_STAMP = 2;
+	int ENTITY_INFO__LAST_UPDATED_STAMP = ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
@@ -330,7 +330,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_INFO__LAST_UPDATED_TX_STAMP = 3;
+	int ENTITY_INFO__LAST_UPDATED_TX_STAMP = ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Info</em>' class.
@@ -339,7 +339,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_INFO_FEATURE_COUNT = 4;
+	int ENTITY_INFO_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityIterator <em>Iterator</em>}' class.

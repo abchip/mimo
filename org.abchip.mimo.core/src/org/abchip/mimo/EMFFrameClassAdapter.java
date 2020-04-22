@@ -79,6 +79,11 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 			Slot slot = new EMFSlotAdapter(this, structuralFeature);
 
+			if (slot.getDataDef() == null) {
+				LOGGER.warn("Invalid conversion slot {} for frame {}", slot.getName(), this.getName());
+				continue;
+			}
+
 			// set keys
 			if (slot.isKey()) {
 				Slot relativeKey = null;

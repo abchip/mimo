@@ -16,11 +16,7 @@ import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationComponent;
 import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ModuleStatus;
-import org.abchip.mimo.authentication.AuthenticationFactory;
-import org.abchip.mimo.authentication.AuthenticationManager;
-import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.core.base.cmd.BaseCommands;
 import org.abchip.mimo.service.ServiceStatus;
 import org.abchip.mimo.service.reg.ServiceReg;
 import org.abchip.mimo.tester.AssertionFailed;
@@ -32,7 +28,7 @@ import org.abchip.mimo.tester.TestSuiteLauncher;
 import org.abchip.mimo.tester.TestSuiteRunner;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
-public class TestCommands extends BaseCommands {
+public class TestCommands extends BaseTestCommands {
 
 	@Inject
 	private Application application;
@@ -41,14 +37,7 @@ public class TestCommands extends BaseCommands {
 
 	public void _test(CommandInterpreter interpreter) throws Exception {
 
-		AuthenticationUserPassword authentication = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
-		authentication.setUser("test");
-		authentication.setPassword("ofbiz");
-		authentication.setTenant("test");
-
-		AuthenticationManager authenticationManager = application.getContext().get(AuthenticationManager.class);
-
-		try (ContextProvider contextProvider = authenticationManager.login(null, authentication)) {
+		try (ContextProvider contextProvider = this.login()) {
 
 			String componentName = nextArgument(interpreter);
 

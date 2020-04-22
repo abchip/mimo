@@ -10,12 +10,12 @@ package org.abchip.mimo.application.impl;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ApplicationPaths;
 
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +32,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class ApplicationPathsImpl extends MinimalEObjectImpl.Container implements ApplicationPaths {
+public class ApplicationPathsImpl extends EntityImpl implements ApplicationPaths {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The default value of the '{@link #getData() <em>Data</em>}' attribute.
 	 * <!-- begin-user-doc -->
