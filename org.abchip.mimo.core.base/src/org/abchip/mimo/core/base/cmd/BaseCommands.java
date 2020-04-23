@@ -29,8 +29,18 @@ public abstract class BaseCommands implements CommandProvider {
 	private ThreadLocal<Context> threadLocalContext = new ThreadLocal<Context>();
 
 	protected String nextArgument(CommandInterpreter interpreter) {
+		return this.nextArgument(interpreter, null);
+	}
+	
+	protected String nextArgument(CommandInterpreter interpreter, String default_) {
 
 		String argument = interpreter.nextArgument();
+
+		// default
+		if (argument == null)
+			argument = default_;
+
+		// @NULL
 		if (argument != null && argument.equals(NULL))
 			argument = null;
 
