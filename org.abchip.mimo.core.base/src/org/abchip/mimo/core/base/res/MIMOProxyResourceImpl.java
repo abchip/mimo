@@ -147,6 +147,9 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 		object.put("isa", frame.getName());
 
 		for (Slot slot : frame.getSlots()) {
+			if (slot.isTransient())
+				continue;
+
 			Object value = frame.getValue(entity, slot.getName(), true, false);
 			if (isEmpty(value))
 				continue;

@@ -25,7 +25,7 @@ import org.abchip.mimo.service.ServiceManager;
  * @model abstract="true"
  * @generated
  */
-public interface Context {
+public interface Context extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

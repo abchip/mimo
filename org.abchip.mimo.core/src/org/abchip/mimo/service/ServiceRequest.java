@@ -19,7 +19,6 @@ import org.abchip.mimo.context.Context;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.ServiceRequest#getContext <em>Context</em>}</li>
  *   <li>{@link org.abchip.mimo.service.ServiceRequest#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
@@ -30,48 +29,15 @@ import org.abchip.mimo.context.Context;
 public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessage, Callable<V> {
 
 	/**
-	 * Returns the value of the '<em><b>Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context</em>' reference.
-	 * @see #setContext(Context)
-	 * @see org.abchip.mimo.service.ServicePackage#getServiceRequest_Context()
-	 * @model
-	 * @generated
-	 */
-	Context getContext();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRequest#getContext <em>Context</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Context</em>' reference.
-	 * @see #getContext()
-	 * @generated
-	 */
-	void setContext(Context value);
-
-	/**
 	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tenant</em>' attribute.
-	 * @see #setTenant(String)
 	 * @see org.abchip.mimo.service.ServicePackage#getServiceRequest_Tenant()
-	 * @model
+	 * @model changeable="false"
 	 * @generated
 	 */
 	String getTenant();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRequest#getTenant <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tenant</em>' attribute.
-	 * @see #getTenant()
-	 * @generated
-	 */
-	void setTenant(String value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,6 +46,22 @@ public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessag
 	 * @generated
 	 */
 	boolean isPrepared();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model contextRequired="true" tenantRequired="true"
+	 * @generated
+	 */
+	void init(Context context, String tenant);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	V prepareResponse();
 
 	/**
 	 * <!-- begin-user-doc -->

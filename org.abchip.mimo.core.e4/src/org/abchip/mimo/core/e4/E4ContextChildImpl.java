@@ -13,6 +13,10 @@ import org.eclipse.e4.core.contexts.IEclipseContext;
 
 public class E4ContextChildImpl extends E4ContextImpl {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private IEclipseContext eclipseContext;
 
 	public E4ContextChildImpl(IEclipseContext eclipseContext, ContextDescription contextDescription) {

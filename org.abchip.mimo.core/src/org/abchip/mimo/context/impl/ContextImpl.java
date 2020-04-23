@@ -17,10 +17,10 @@ import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.service.ServiceManager;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -28,7 +28,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class ContextImpl extends MinimalEObjectImpl.Container implements Context {
+public abstract class ContextImpl extends EntityImpl implements Context {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated

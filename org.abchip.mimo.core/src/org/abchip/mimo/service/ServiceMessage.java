@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.service;
 
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 
 /**
@@ -14,10 +15,27 @@ import org.abchip.mimo.entity.Entity;
  * A representation of the model object '<em><b>Message</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.abchip.mimo.service.ServiceMessage#getContext <em>Context</em>}</li>
+ * </ul>
  *
  * @see org.abchip.mimo.service.ServicePackage#getServiceMessage()
  * @model abstract="true"
  * @generated
  */
 public interface ServiceMessage extends Entity {
+
+	/**
+	 * Returns the value of the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Context</em>' reference.
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceMessage_Context()
+	 * @model transient="true" changeable="false"
+	 * @generated
+	 */
+	Context getContext();
 } // ServiceMessage

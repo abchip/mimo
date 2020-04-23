@@ -646,6 +646,7 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/key"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/name"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/text"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/transient"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/toString"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getDataType"/>
       </genClasses>
@@ -1164,7 +1165,9 @@
       <genClasses ecoreClass="mimo.ecore#//service/ServiceMappingRuleByPackage">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceMappingRuleByPackage/package"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMessage"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMessage">
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceMessage/context"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceProvider">
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceProvider/execute">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceProvider/execute/request"/>
@@ -1193,11 +1196,14 @@
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceRequest">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceRequest/V"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceRequest/context"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRequest/tenant"/>
-        <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/isPrepared"/>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/getServiceName"/>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/isPrepared"/>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/init">
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceRequest/init/context"/>
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceRequest/init/tenant"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/prepareResponse"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceResponse"/>
       <nestedGenPackages prefix="Reg" basePackage="org.abchip.mimo.service" disposableProviderFactory="true"

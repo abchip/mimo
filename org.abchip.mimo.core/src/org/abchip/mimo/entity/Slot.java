@@ -29,6 +29,7 @@ import org.abchip.mimo.data.DataType;
  *   <li>{@link org.abchip.mimo.entity.Slot#isKey <em>Key</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Slot#isTransient <em>Transient</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Slot#isToString <em>To String</em>}</li>
  * </ul>
  *
@@ -93,6 +94,28 @@ public interface Slot extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setText(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Transient</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Transient</em>' attribute.
+	 * @see #setTransient(boolean)
+	 * @see org.abchip.mimo.entity.EntityPackage#getSlot_Transient()
+	 * @model
+	 * @generated
+	 */
+	boolean isTransient();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Slot#isTransient <em>Transient</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Transient</em>' attribute.
+	 * @see #isTransient()
+	 * @generated
+	 */
+	void setTransient(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>To String</b></em>' attribute. <!--

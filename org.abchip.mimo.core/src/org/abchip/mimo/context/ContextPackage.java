@@ -158,7 +158,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_FEATURE_COUNT = 0;
+	int CONTEXT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Anonymous</b></em>' attribute.

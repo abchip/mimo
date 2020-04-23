@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isKey <em>Key</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isTransient <em>Transient</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.SlotImpl#isToString <em>To String</em>}</li>
  * </ul>
  *
@@ -188,6 +189,24 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	 */
 	protected String text = TEXT_EDEFAULT;
 	/**
+	 * The default value of the '{@link #isTransient() <em>Transient</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTransient()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean TRANSIENT_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isTransient() <em>Transient</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTransient()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean transient_ = TRANSIENT_EDEFAULT;
+	/**
 	 * The default value of the '{@link #isToString() <em>To String</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isToString()
@@ -265,6 +284,29 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 		text = newText;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__TEXT, oldText, text));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isTransient() {
+		return transient_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTransient(boolean newTransient) {
+		boolean oldTransient = transient_;
+		transient_ = newTransient;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.SLOT__TRANSIENT, oldTransient, transient_));
 	}
 
 	/**
@@ -646,6 +688,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return getName();
 			case EntityPackage.SLOT__TEXT:
 				return getText();
+			case EntityPackage.SLOT__TRANSIENT:
+				return isTransient();
 			case EntityPackage.SLOT__TO_STRING:
 				return isToString();
 		}
@@ -688,6 +732,9 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return;
 			case EntityPackage.SLOT__TEXT:
 				setText((String)newValue);
+				return;
+			case EntityPackage.SLOT__TRANSIENT:
+				setTransient((Boolean)newValue);
 				return;
 			case EntityPackage.SLOT__TO_STRING:
 				setToString((Boolean)newValue);
@@ -733,6 +780,9 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 			case EntityPackage.SLOT__TEXT:
 				setText(TEXT_EDEFAULT);
 				return;
+			case EntityPackage.SLOT__TRANSIENT:
+				setTransient(TRANSIENT_EDEFAULT);
+				return;
 			case EntityPackage.SLOT__TO_STRING:
 				setToString(TO_STRING_EDEFAULT);
 				return;
@@ -767,6 +817,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EntityPackage.SLOT__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+			case EntityPackage.SLOT__TRANSIENT:
+				return transient_ != TRANSIENT_EDEFAULT;
 			case EntityPackage.SLOT__TO_STRING:
 				return toString != TO_STRING_EDEFAULT;
 		}
@@ -796,6 +848,8 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 		result.append(name);
 		result.append(", text: ");
 		result.append(text);
+		result.append(", transient: ");
+		result.append(transient_);
 		result.append(", toString: ");
 		result.append(toString);
 		result.append(')');

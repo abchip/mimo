@@ -617,13 +617,22 @@ public interface EntityPackage extends EPackage {
 	int SLOT__TEXT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
+	 * The feature id for the '<em><b>Transient</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__TRANSIENT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
+
+	/**
 	 * The feature id for the '<em><b>To String</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT__TO_STRING = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
+	int SLOT__TO_STRING = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Slot</em>' class.
@@ -632,7 +641,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLOT_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
+	int SLOT_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityState <em>State</em>}' enum.
@@ -1160,6 +1169,17 @@ public interface EntityPackage extends EPackage {
 	EAttribute getSlot_Text();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isTransient <em>Transient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Transient</em>'.
+	 * @see org.abchip.mimo.entity.Slot#isTransient()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Transient();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Slot#isToString <em>To String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1611,6 +1631,14 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SLOT__TEXT = eINSTANCE.getSlot_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Transient</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__TRANSIENT = eINSTANCE.getSlot_Transient();
 
 		/**
 		 * The meta object literal for the '<em><b>To String</b></em>' attribute feature.

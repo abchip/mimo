@@ -65,7 +65,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		// set default parameters
 		// TODO
 
-		request.setContext(context);
+		request.init(context, tenant);
 
 		return request;
 	}

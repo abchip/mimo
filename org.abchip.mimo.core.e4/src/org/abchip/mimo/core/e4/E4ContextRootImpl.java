@@ -30,6 +30,10 @@ import org.osgi.framework.ServiceReference;
 
 public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Bundle bundle;
 	private IEclipseContext eclipseContext;
 

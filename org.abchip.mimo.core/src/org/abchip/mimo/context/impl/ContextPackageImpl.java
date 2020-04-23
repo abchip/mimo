@@ -1318,6 +1318,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		// Add supertypes to classes
 		capabilityEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		contextEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		contextDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		contextProviderEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 		contextRootEClass.getESuperTypes().add(this.getContext());

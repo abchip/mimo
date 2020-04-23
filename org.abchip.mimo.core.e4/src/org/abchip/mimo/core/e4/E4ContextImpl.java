@@ -34,6 +34,10 @@ import org.osgi.service.log.Logger;
 
 public abstract class E4ContextImpl extends ContextImpl {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static final String ADAPTER_FACTORIES_NAME = "org.abchip.mimo.context.adapterFactories";
 	private static final Logger LOGGER = Logs.getLogger(E4ContextImpl.class);
 

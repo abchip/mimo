@@ -57,6 +57,7 @@ public class EMFSlotAdapter extends SlotImpl {
 			EStructuralFeature eStructuralFeature = ((EStructuralFeature) this.element);
 			eSet(EntityPackage.SLOT__DEFAULT_VALUE, eStructuralFeature.getDefaultValueLiteral());
 			eSet(EntityPackage.SLOT__DERIVED, eStructuralFeature.isDerived());
+			eSet(EntityPackage.SLOT__TRANSIENT, eStructuralFeature.isTransient());
 		} else if (element instanceof EOperation)
 			eSet(EntityPackage.SLOT__DERIVED, true);
 
@@ -102,15 +103,29 @@ public class EMFSlotAdapter extends SlotImpl {
 
 		DataDef<?> dataDef = null;
 		if (klass.isPrimitive()) {
-			if (klass.getName().equals("long") || klass.getName().equals("int") || klass.getName().equals("short") || klass.getName().equals("float") || klass.getName().equals("double")) {
-				NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
-				numericDef.setType(NumericType.getByName(Strings.firstToUpper(klass.getName())));
-				dataDef = numericDef;
-			} else if (klass.getName().equals("boolean")) {
-				BooleanDef booleanDef = DataFactory.eINSTANCE.createBooleanDef();
-				dataDef = booleanDef;
-			} else
-				"".toString();
+
+			switch (klass.getName()) {
+				case "long":
+				case "short":
+				case "float":
+				case "double": {
+					NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
+					numericDef.setType(NumericType.getByName(Strings.firstToUpper(klass.getName())));
+					dataDef = numericDef;
+					break;
+				}
+				case "int": {
+					NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
+					numericDef.setType(NumericType.INTEGER);
+					dataDef = numericDef;
+					break;
+				}
+				case "boolean": {
+					BooleanDef booleanDef = DataFactory.eINSTANCE.createBooleanDef();
+					dataDef = booleanDef;
+					break;
+				}
+			}
 		} else if (Number.class.isAssignableFrom(klass)) {
 			NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
 			numericDef.setType(NumericType.BIG_DECIMAL);
@@ -137,8 +152,7 @@ public class EMFSlotAdapter extends SlotImpl {
 			dataDef = stringDef;
 		}
 
-		if (dataDef != null)
-			this.setDataDef(dataDef);
+		this.setDataDef(dataDef);
 	}
 
 	@Override
