@@ -1167,6 +1167,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMessage">
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceMessage/context"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceMessage/locale"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceProvider">
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceProvider/execute">
@@ -1205,7 +1206,12 @@
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/prepareResponse"/>
       </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//service/ServiceResponse"/>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceResponse">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceResponse/error"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceResponse/errorMessage"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceResponse/responseMessage"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceResponse/successMessage"/>
+      </genClasses>
       <nestedGenPackages prefix="Reg" basePackage="org.abchip.mimo.service" disposableProviderFactory="true"
           adapterFactory="false" ecorePackage="mimo.ecore#//service/reg">
         <genClasses ecoreClass="mimo.ecore#//service/reg/ServiceCommandProviderReg">

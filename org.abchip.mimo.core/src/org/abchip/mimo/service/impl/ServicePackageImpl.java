@@ -424,6 +424,16 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getServiceMessage_Locale() {
+		return (EAttribute)serviceMessageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getServiceMessage_Context() {
 		return (EReference)serviceMessageEClass.getEStructuralFeatures().get(0);
 	}
@@ -476,6 +486,46 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	@Override
 	public EClass getServiceResponse() {
 		return serviceResponseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getServiceResponse_Error() {
+		return (EAttribute)serviceResponseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getServiceResponse_ErrorMessage() {
+		return (EAttribute)serviceResponseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getServiceResponse_ResponseMessage() {
+		return (EAttribute)serviceResponseEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getServiceResponse_SuccessMessage() {
+		return (EAttribute)serviceResponseEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -557,6 +607,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		serviceMessageEClass = createEClass(SERVICE_MESSAGE);
 		createEReference(serviceMessageEClass, SERVICE_MESSAGE__CONTEXT);
+		createEAttribute(serviceMessageEClass, SERVICE_MESSAGE__LOCALE);
 
 		serviceProviderEClass = createEClass(SERVICE_PROVIDER);
 
@@ -566,6 +617,10 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		createEAttribute(serviceRequestEClass, SERVICE_REQUEST__TENANT);
 
 		serviceResponseEClass = createEClass(SERVICE_RESPONSE);
+		createEAttribute(serviceResponseEClass, SERVICE_RESPONSE__ERROR);
+		createEAttribute(serviceResponseEClass, SERVICE_RESPONSE__ERROR_MESSAGE);
+		createEAttribute(serviceResponseEClass, SERVICE_RESPONSE__RESPONSE_MESSAGE);
+		createEAttribute(serviceResponseEClass, SERVICE_RESPONSE__SUCCESS_MESSAGE);
 
 		// Create enums
 		serviceMappingTypeEEnum = createEEnum(SERVICE_MAPPING_TYPE);
@@ -774,6 +829,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		initEClass(serviceMessageEClass, ServiceMessage.class, "ServiceMessage", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServiceMessage_Context(), theContextPackage.getContext(), null, "context", null, 0, 1, ServiceMessage.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceMessage_Locale(), ecorePackage.getEString(), "locale", null, 1, 1, ServiceMessage.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceProviderEClass, ServiceProvider.class, "ServiceProvider", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -855,6 +911,10 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		initEOperation(op, g1);
 
 		initEClass(serviceResponseEClass, ServiceResponse.class, "ServiceResponse", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceResponse_Error(), ecorePackage.getEBoolean(), "error", null, 1, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceResponse_ErrorMessage(), ecorePackage.getEString(), "errorMessage", null, 0, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceResponse_ResponseMessage(), ecorePackage.getEString(), "responseMessage", null, 0, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceResponse_SuccessMessage(), ecorePackage.getEString(), "successMessage", null, 0, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(serviceMappingTypeEEnum, ServiceMappingType.class, "ServiceMappingType");

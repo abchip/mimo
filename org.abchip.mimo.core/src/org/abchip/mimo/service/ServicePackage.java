@@ -261,13 +261,22 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_MESSAGE__CONTEXT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MESSAGE__LOCALE = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Message</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int SERVICE_MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceProviderImpl <em>Provider</em>}' class.
@@ -327,6 +336,15 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_REQUEST__CONTEXT = SERVICE_MESSAGE__CONTEXT;
 
 	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REQUEST__LOCALE = SERVICE_MESSAGE__LOCALE;
+
+	/**
 	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -364,13 +382,58 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_RESPONSE__CONTEXT = SERVICE_MESSAGE__CONTEXT;
 
 	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESPONSE__LOCALE = SERVICE_MESSAGE__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Error</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESPONSE__ERROR = SERVICE_MESSAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESPONSE__ERROR_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Response Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESPONSE__RESPONSE_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Success Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_RESPONSE__SUCCESS_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Response</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_RESPONSE_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 0;
+	int SERVICE_RESPONSE_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.ServiceMappingType <em>Mapping Type</em>}' enum.
@@ -540,6 +603,17 @@ public interface ServicePackage extends EPackage {
 	EClass getServiceMessage();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceMessage#getLocale <em>Locale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Locale</em>'.
+	 * @see org.abchip.mimo.service.ServiceMessage#getLocale()
+	 * @see #getServiceMessage()
+	 * @generated
+	 */
+	EAttribute getServiceMessage_Locale();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.service.ServiceMessage#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -600,6 +674,50 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getServiceResponse();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceResponse#isError <em>Error</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Error</em>'.
+	 * @see org.abchip.mimo.service.ServiceResponse#isError()
+	 * @see #getServiceResponse()
+	 * @generated
+	 */
+	EAttribute getServiceResponse_Error();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceResponse#getErrorMessage <em>Error Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Error Message</em>'.
+	 * @see org.abchip.mimo.service.ServiceResponse#getErrorMessage()
+	 * @see #getServiceResponse()
+	 * @generated
+	 */
+	EAttribute getServiceResponse_ErrorMessage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceResponse#getResponseMessage <em>Response Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Response Message</em>'.
+	 * @see org.abchip.mimo.service.ServiceResponse#getResponseMessage()
+	 * @see #getServiceResponse()
+	 * @generated
+	 */
+	EAttribute getServiceResponse_ResponseMessage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceResponse#getSuccessMessage <em>Success Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Success Message</em>'.
+	 * @see org.abchip.mimo.service.ServiceResponse#getSuccessMessage()
+	 * @see #getServiceResponse()
+	 * @generated
+	 */
+	EAttribute getServiceResponse_SuccessMessage();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.service.ServiceMappingType <em>Mapping Type</em>}'.
@@ -773,6 +891,14 @@ public interface ServicePackage extends EPackage {
 		EClass SERVICE_MESSAGE = eINSTANCE.getServiceMessage();
 
 		/**
+		 * The meta object literal for the '<em><b>Locale</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_MESSAGE__LOCALE = eINSTANCE.getServiceMessage_Locale();
+
+		/**
 		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -827,6 +953,38 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EClass SERVICE_RESPONSE = eINSTANCE.getServiceResponse();
+
+		/**
+		 * The meta object literal for the '<em><b>Error</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_RESPONSE__ERROR = eINSTANCE.getServiceResponse_Error();
+
+		/**
+		 * The meta object literal for the '<em><b>Error Message</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_RESPONSE__ERROR_MESSAGE = eINSTANCE.getServiceResponse_ErrorMessage();
+
+		/**
+		 * The meta object literal for the '<em><b>Response Message</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_RESPONSE__RESPONSE_MESSAGE = eINSTANCE.getServiceResponse_ResponseMessage();
+
+		/**
+		 * The meta object literal for the '<em><b>Success Message</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_RESPONSE__SUCCESS_MESSAGE = eINSTANCE.getServiceResponse_SuccessMessage();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.service.ServiceMappingType <em>Mapping Type</em>}' enum.

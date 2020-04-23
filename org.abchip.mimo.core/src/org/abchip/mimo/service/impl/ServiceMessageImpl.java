@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.service.impl.ServiceMessageImpl#getContext <em>Context</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceMessageImpl#getLocale <em>Locale</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,6 +43,24 @@ public abstract class ServiceMessageImpl extends EntityImpl implements ServiceMe
 	 * @ordered
 	 */
 	protected Context context;
+	/**
+	 * The default value of the '{@link #getLocale() <em>Locale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocale()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LOCALE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getLocale() <em>Locale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocale()
+	 * @generated
+	 * @ordered
+	 */
+	protected String locale = LOCALE_EDEFAULT;
 	/**
 	 * 
 	 */
@@ -64,6 +83,16 @@ public abstract class ServiceMessageImpl extends EntityImpl implements ServiceMe
 	@Override
 	protected EClass eStaticClass() {
 		return ServicePackage.Literals.SERVICE_MESSAGE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getLocale() {
+		return locale;
 	}
 
 	/**
@@ -104,6 +133,8 @@ public abstract class ServiceMessageImpl extends EntityImpl implements ServiceMe
 			case ServicePackage.SERVICE_MESSAGE__CONTEXT:
 				if (resolve) return getContext();
 				return basicGetContext();
+			case ServicePackage.SERVICE_MESSAGE__LOCALE:
+				return getLocale();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,8 +149,26 @@ public abstract class ServiceMessageImpl extends EntityImpl implements ServiceMe
 		switch (featureID) {
 			case ServicePackage.SERVICE_MESSAGE__CONTEXT:
 				return context != null;
+			case ServicePackage.SERVICE_MESSAGE__LOCALE:
+				return LOCALE_EDEFAULT == null ? locale != null : !LOCALE_EDEFAULT.equals(locale);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (locale: ");
+		result.append(locale);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ServiceMessageImpl

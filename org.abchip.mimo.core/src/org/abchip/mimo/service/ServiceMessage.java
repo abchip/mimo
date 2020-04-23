@@ -20,6 +20,7 @@ import org.abchip.mimo.entity.Entity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.service.ServiceMessage#getContext <em>Context</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceMessage#getLocale <em>Locale</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.service.ServicePackage#getServiceMessage()
@@ -27,6 +28,17 @@ import org.abchip.mimo.entity.Entity;
  * @generated
  */
 public interface ServiceMessage extends Entity {
+
+	/**
+	 * Returns the value of the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Locale</em>' attribute.
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceMessage_Locale()
+	 * @model required="true" changeable="false"
+	 * @generated
+	 */
+	String getLocale();
 
 	/**
 	 * Returns the value of the '<em><b>Context</b></em>' reference.

@@ -61,7 +61,8 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		this.checkAuthorization(context, tenant);
 
 		R request = context.getFrame(klass).createEntity();
-
+		context.inject(request);
+		
 		// set default parameters
 		// TODO
 

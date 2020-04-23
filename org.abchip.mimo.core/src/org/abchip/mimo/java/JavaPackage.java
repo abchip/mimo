@@ -489,10 +489,10 @@ public interface JavaPackage extends EPackage {
 	int JAVA_THREAD_INFO_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link java.io.File <em>Void</em>}' class.
+	 * The meta object id for the '{@link java.lang.Void <em>Void</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see java.io.File
+	 * @see java.lang.Void
 	 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaVoid()
 	 * @generated
 	 */
@@ -840,12 +840,12 @@ public interface JavaPackage extends EPackage {
 	EClass getJavaThreadInfo();
 
 	/**
-	 * Returns the meta object for class '{@link java.io.File <em>Void</em>}'.
+	 * Returns the meta object for class '{@link java.lang.Void <em>Void</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Void</em>'.
-	 * @see java.io.File
-	 * @model instanceClass="java.io.File"
+	 * @see java.lang.Void
+	 * @model instanceClass="java.lang.Void"
 	 * @generated
 	 */
 	EClass getJavaVoid();
@@ -1226,10 +1226,10 @@ public interface JavaPackage extends EPackage {
 		EClass JAVA_THREAD_INFO = eINSTANCE.getJavaThreadInfo();
 
 		/**
-		 * The meta object literal for the '{@link java.io.File <em>Void</em>}' class.
+		 * The meta object literal for the '{@link java.lang.Void <em>Void</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.io.File
+		 * @see java.lang.Void
 		 * @see org.abchip.mimo.java.impl.JavaPackageImpl#getJavaVoid()
 		 * @generated
 		 */
