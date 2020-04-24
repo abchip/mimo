@@ -1165,10 +1165,7 @@
       <genClasses ecoreClass="mimo.ecore#//service/ServiceMappingRuleByPackage">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceMappingRuleByPackage/package"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMessage">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceMessage/context"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceMessage/locale"/>
-      </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMessage"/>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceProvider">
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceProvider/execute">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceProvider/execute/request"/>
@@ -1197,7 +1194,9 @@
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceRequest">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceRequest/V"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRequest/locale"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRequest/tenant"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceRequest/context"/>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/getServiceName"/>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/init">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceRequest/init/context"/>

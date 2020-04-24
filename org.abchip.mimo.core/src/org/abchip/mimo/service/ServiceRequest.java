@@ -18,7 +18,9 @@ import org.abchip.mimo.context.Context;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.abchip.mimo.service.ServiceRequest#getLocale <em>Locale</em>}</li>
  *   <li>{@link org.abchip.mimo.service.ServiceRequest#getTenant <em>Tenant</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceRequest#getContext <em>Context</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.service.ServicePackage#getServiceRequest()
@@ -26,6 +28,17 @@ import org.abchip.mimo.context.Context;
  * @generated
  */
 public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessage {
+
+	/**
+	 * Returns the value of the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Locale</em>' attribute.
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceRequest_Locale()
+	 * @model required="true" changeable="false"
+	 * @generated
+	 */
+	String getLocale();
 
 	/**
 	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.
@@ -37,6 +50,17 @@ public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessag
 	 * @generated
 	 */
 	String getTenant();
+
+	/**
+	 * Returns the value of the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Context</em>' reference.
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceRequest_Context()
+	 * @model transient="true" changeable="false"
+	 * @generated
+	 */
+	Context getContext();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -1953,13 +1953,7 @@
     <eClassifiers xsi:type="ecore:EEnum" name="ServiceMappingType">
       <eLiterals name="ByPackage" value="10" literal="BP"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceMessage" abstract="true" eSuperTypes="#//entity/Entity">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//context/Context"
-          changeable="false" transient="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="locale" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceMessage" abstract="true" eSuperTypes="#//entity/Entity"/>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceProvider" abstract="true">
       <eOperations name="execute" lowerBound="1" eExceptions="#//service/ServiceException">
         <eGenericType eTypeParameter="#//service/ServiceProvider/execute/V"/>
@@ -2041,8 +2035,13 @@
       <eOperations name="prepareResponse" lowerBound="1">
         <eGenericType eTypeParameter="#//service/ServiceRequest/V"/>
       </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="locale" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//context/Context"
+          changeable="false" transient="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceResponse" abstract="true" eSuperTypes="#//service/ServiceMessage">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="error" lowerBound="1"

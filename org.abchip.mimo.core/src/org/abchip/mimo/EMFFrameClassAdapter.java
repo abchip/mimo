@@ -10,6 +10,7 @@ package org.abchip.mimo;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -235,38 +236,43 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			return;
 		}
 
+		if (eFeature.isMany()) {
+			List<Object> values = new ArrayList<Object>();
+			for (Object object : (Collection<?>) value)
+				values.add(buildValue(eFeature, object));
+			eObject.eSet(eFeature, values);
+		} else {
+			Object object = buildValue(eFeature, value);
+			eObject.eSet(eFeature, object);
+		}
+	}
+
+	private Object buildValue(EStructuralFeature eFeature, Object value) {
+
+		Object object = null;
+
 		if (eFeature instanceof EReference) {
 			if (value instanceof EntityIdentifiable) {
 				EntityIdentifiable entityIdentifiable = (EntityIdentifiable) value;
-				eObject.eSet(eFeature, entityIdentifiable);
+				object = entityIdentifiable;
 			} else {
 				EReference eReference = (EReference) eFeature;
 				EClassifier eClassifier = eReference.getEType();
 				Frame<?> frameRef = (Frame<?>) this.entities.get(eClassifier.getName());
 				if (frameRef != null) {
 					Entity entity = frameRef.createProxy(value.toString());
-					if (entity != null)
-						eObject.eSet(eFeature, entity);
+					object = entity;
 				} else
 					LOGGER.warn("Unexpected condition {}", "bvtw4a87ny4r9tycsa9et6");
 			}
 
-		} else {
-			try {
-				eObject.eSet(eFeature, value);
-			} catch (ClassCastException e) {
-				try {
-					if (eFeature.getEType() instanceof EDataType) {
-						value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
-						eObject.eSet(eFeature, value);
-					}
-				} catch (Exception e1) {
-					LOGGER.error(e.getMessage());
-				}
-			} catch (Exception e) {
-				e.toString();
-			}
-		}
+		} else if (eFeature.getEType() instanceof EDataType) {
+			value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
+			object = value;
+		} else
+			object = value;
+
+		return object;
 	}
 
 	@Override

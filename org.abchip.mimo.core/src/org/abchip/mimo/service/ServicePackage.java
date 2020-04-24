@@ -252,31 +252,13 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_MESSAGE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_MESSAGE__CONTEXT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Locale</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_MESSAGE__LOCALE = EntityPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Message</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int SERVICE_MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceProviderImpl <em>Provider</em>}' class.
@@ -327,22 +309,13 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_REQUEST = 9;
 
 	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_REQUEST__CONTEXT = SERVICE_MESSAGE__CONTEXT;
-
-	/**
 	 * The feature id for the '<em><b>Locale</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_REQUEST__LOCALE = SERVICE_MESSAGE__LOCALE;
+	int SERVICE_REQUEST__LOCALE = SERVICE_MESSAGE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
@@ -351,7 +324,16 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_REQUEST__TENANT = SERVICE_MESSAGE_FEATURE_COUNT + 0;
+	int SERVICE_REQUEST__TENANT = SERVICE_MESSAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REQUEST__CONTEXT = SERVICE_MESSAGE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Request</em>' class.
@@ -360,7 +342,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_REQUEST_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 1;
+	int SERVICE_REQUEST_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceResponseImpl <em>Response</em>}' class.
@@ -371,24 +353,6 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	int SERVICE_RESPONSE = 10;
-
-	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_RESPONSE__CONTEXT = SERVICE_MESSAGE__CONTEXT;
-
-	/**
-	 * The feature id for the '<em><b>Locale</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_RESPONSE__LOCALE = SERVICE_MESSAGE__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Error</b></em>' attribute.
@@ -603,28 +567,6 @@ public interface ServicePackage extends EPackage {
 	EClass getServiceMessage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceMessage#getLocale <em>Locale</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Locale</em>'.
-	 * @see org.abchip.mimo.service.ServiceMessage#getLocale()
-	 * @see #getServiceMessage()
-	 * @generated
-	 */
-	EAttribute getServiceMessage_Locale();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.service.ServiceMessage#getContext <em>Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Context</em>'.
-	 * @see org.abchip.mimo.service.ServiceMessage#getContext()
-	 * @see #getServiceMessage()
-	 * @generated
-	 */
-	EReference getServiceMessage_Context();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceProvider <em>Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -655,6 +597,17 @@ public interface ServicePackage extends EPackage {
 	EClass getServiceRequest();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceRequest#getLocale <em>Locale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Locale</em>'.
+	 * @see org.abchip.mimo.service.ServiceRequest#getLocale()
+	 * @see #getServiceRequest()
+	 * @generated
+	 */
+	EAttribute getServiceRequest_Locale();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceRequest#getTenant <em>Tenant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -664,6 +617,17 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getServiceRequest_Tenant();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.service.ServiceRequest#getContext <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Context</em>'.
+	 * @see org.abchip.mimo.service.ServiceRequest#getContext()
+	 * @see #getServiceRequest()
+	 * @generated
+	 */
+	EReference getServiceRequest_Context();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceResponse <em>Response</em>}'.
@@ -891,22 +855,6 @@ public interface ServicePackage extends EPackage {
 		EClass SERVICE_MESSAGE = eINSTANCE.getServiceMessage();
 
 		/**
-		 * The meta object literal for the '<em><b>Locale</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_MESSAGE__LOCALE = eINSTANCE.getServiceMessage_Locale();
-
-		/**
-		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE_MESSAGE__CONTEXT = eINSTANCE.getServiceMessage_Context();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceProviderImpl <em>Provider</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -937,12 +885,28 @@ public interface ServicePackage extends EPackage {
 		EClass SERVICE_REQUEST = eINSTANCE.getServiceRequest();
 
 		/**
+		 * The meta object literal for the '<em><b>Locale</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_REQUEST__LOCALE = eINSTANCE.getServiceRequest_Locale();
+
+		/**
 		 * The meta object literal for the '<em><b>Tenant</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SERVICE_REQUEST__TENANT = eINSTANCE.getServiceRequest_Tenant();
+
+		/**
+		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_REQUEST__CONTEXT = eINSTANCE.getServiceRequest_Context();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceResponseImpl <em>Response</em>}' class.
