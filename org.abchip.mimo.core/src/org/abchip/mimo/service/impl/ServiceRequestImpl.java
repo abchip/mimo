@@ -8,8 +8,6 @@
 package org.abchip.mimo.service.impl;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.service.ServiceException;
-import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
@@ -23,7 +21,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getTenant <em>Tenant</em>}</li>
+ * <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getTenant
+ * <em>Tenant</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,6 +31,7 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	/**
 	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTenant()
 	 * @generated
 	 * @ordered
@@ -40,6 +40,7 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	/**
 	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTenant()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ServiceRequestImpl() {
@@ -60,6 +62,7 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -70,20 +73,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public V call() throws ServiceException {
-
-		if (!isPrepared())
-			throw new UnsupportedOperationException("Request not prepared");
-
-		ServiceManager serviceManager = this.getContext().getServiceManager();
-		return serviceManager.execute(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -129,37 +118,41 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_REQUEST__TENANT:
-				return getTenant();
+		case ServicePackage.SERVICE_REQUEST__TENANT:
+			return getTenant();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_REQUEST__TENANT:
-				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
+		case ServicePackage.SERVICE_REQUEST__TENANT:
+			return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (tenant: ");

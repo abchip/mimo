@@ -2028,25 +2028,21 @@
         <eTypeArguments eClassifier="#//service/ServiceProvider"/>
       </eGenericSuperTypes>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceRequest" abstract="true">
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceRequest" abstract="true" eSuperTypes="#//service/ServiceMessage">
       <eTypeParameters name="V">
         <eBounds eClassifier="#//service/ServiceResponse"/>
       </eTypeParameters>
       <eOperations name="getServiceName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="isPrepared" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="init">
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
+      <eOperations name="isPrepared" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="prepareResponse" lowerBound="1">
         <eGenericType eTypeParameter="#//service/ServiceRequest/V"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           changeable="false"/>
-      <eGenericSuperTypes eClassifier="#//service/ServiceMessage"/>
-      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
-        <eTypeArguments eTypeParameter="#//service/ServiceRequest/V"/>
-      </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceResponse" abstract="true" eSuperTypes="#//service/ServiceMessage">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="error" lowerBound="1"

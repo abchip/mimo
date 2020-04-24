@@ -1199,11 +1199,11 @@
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceRequest/V"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRequest/tenant"/>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/getServiceName"/>
-        <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/isPrepared"/>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/init">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceRequest/init/context"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceRequest/init/tenant"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/isPrepared"/>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/prepareResponse"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceResponse">

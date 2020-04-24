@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.service;
 
-import java.util.concurrent.Callable;
 import org.abchip.mimo.context.Context;
 
 /**
@@ -23,10 +22,10 @@ import org.abchip.mimo.context.Context;
  * </ul>
  *
  * @see org.abchip.mimo.service.ServicePackage#getServiceRequest()
- * @model abstract="true" superTypes="org.abchip.mimo.service.ServiceMessage org.abchip.mimo.java.JavaCallable&lt;V&gt;"
+ * @model abstract="true"
  * @generated
  */
-public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessage, Callable<V> {
+public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessage {
 
 	/**
 	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.

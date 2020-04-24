@@ -688,12 +688,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g2 = createEGenericType(this.getServiceProvider());
 		g1.getETypeArguments().add(g2);
 		serviceProviderRegistryEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getServiceMessage());
-		serviceRequestEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theJavaPackage.getJavaCallable());
-		g2 = createEGenericType(serviceRequestEClass_V);
-		g1.getETypeArguments().add(g2);
-		serviceRequestEClass.getEGenericSuperTypes().add(g1);
+		serviceRequestEClass.getESuperTypes().add(this.getServiceMessage());
 		serviceResponseEClass.getESuperTypes().add(this.getServiceMessage());
 
 		// Initialize classes and features; add operations and parameters
@@ -900,11 +895,11 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		addEOperation(serviceRequestEClass, ecorePackage.getEString(), "getServiceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(serviceRequestEClass, ecorePackage.getEBoolean(), "isPrepared", 1, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(serviceRequestEClass, null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(serviceRequestEClass, ecorePackage.getEBoolean(), "isPrepared", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(serviceRequestEClass, null, "prepareResponse", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(serviceRequestEClass_V);

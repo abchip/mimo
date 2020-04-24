@@ -8,8 +8,12 @@
  */
 package org.abchip.mimo.core.base;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
@@ -28,6 +32,13 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	@Inject
 	private ServiceProviderRegistry serviceProviderRegistry;
 
+	private ExecutorService executorService = null;
+
+	@PostConstruct
+	private void init() {
+		executorService = Executors.newFixedThreadPool(100);
+	}
+	
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, R request) {
 
@@ -62,7 +73,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 
 		R request = context.getFrame(klass).createEntity();
 		context.inject(request);
-		
+
 		// set default parameters
 		// TODO
 
@@ -71,8 +82,21 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		return request;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> V execute(R request) throws ServiceException {
+
+		if (!request.isPrepared())
+			throw new UnsupportedOperationException("Request not prepared");
+
+		// callable
+		if (request instanceof Callable) {
+			try {
+				return ((Callable<V>) request).call();
+			} catch (Exception e) {
+				throw new ServiceException(e);
+			}
+		}
 
 		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(request.getContext(), request);
 		if (serviceProvider == null)
@@ -81,8 +105,21 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		return serviceProvider.execute(request);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> Future<V> submit(R request) throws ServiceException {
+
+		if (!request.isPrepared())
+			throw new UnsupportedOperationException("Request not prepared");
+
+		// callable
+		if (request instanceof Callable) {
+			try {
+				return executorService.submit(((Callable<V>) request));
+			} catch (Exception e) {
+				throw new ServiceException(e);
+			}
+		}
 
 		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(request.getContext(), request);
 		if (serviceProvider == null)
