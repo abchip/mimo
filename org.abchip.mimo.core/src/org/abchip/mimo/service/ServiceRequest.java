@@ -73,18 +73,18 @@ public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessag
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" tenantRequired="true"
+	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	void init(Context context, String tenant);
+	Class<V> getResponse();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
+	 * @model contextRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	V prepareResponse();
+	void init(Context context, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->

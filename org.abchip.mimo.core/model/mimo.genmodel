@@ -1203,7 +1203,7 @@
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceRequest/init/tenant"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/isPrepared"/>
-        <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/prepareResponse"/>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/getResponse"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceResponse">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceResponse/error"/>

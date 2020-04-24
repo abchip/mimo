@@ -23,6 +23,19 @@ public class EntityCommands extends BaseCommands {
 	@Inject
 	private ResourceManager resourceManager;
 
+	public void _mm(CommandInterpreter interpreter) throws Exception {
+
+		StringBuilder sb = new StringBuilder();
+
+		String argument = interpreter.nextArgument();
+		while (argument != null) {
+			sb.append(argument + " ");
+			argument = interpreter.nextArgument();
+		}
+
+		interpreter.execute(sb.toString());
+	}
+
 	public void _login(CommandInterpreter interpreter) throws Exception {
 		this.login(nextArgument(interpreter));
 	}

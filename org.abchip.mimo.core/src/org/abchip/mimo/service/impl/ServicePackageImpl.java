@@ -901,8 +901,10 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		addEOperation(serviceRequestEClass, ecorePackage.getEBoolean(), "isPrepared", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(serviceRequestEClass, null, "prepareResponse", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(serviceRequestEClass_V);
+		op = addEOperation(serviceRequestEClass, null, "getResponse", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(serviceRequestEClass_V);
+		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
 		initEClass(serviceResponseEClass, ServiceResponse.class, "ServiceResponse", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

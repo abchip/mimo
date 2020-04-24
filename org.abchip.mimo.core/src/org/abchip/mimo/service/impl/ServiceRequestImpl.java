@@ -155,12 +155,16 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
-	public abstract void init(Context context, String tenant);
+	public Class<V> getResponse() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -168,7 +172,7 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 * @generated NOT
 	 */
 	@Override
-	public abstract V prepareResponse();
+	public abstract void init(Context context, String tenant);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

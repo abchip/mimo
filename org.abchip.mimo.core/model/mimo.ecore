@@ -2032,8 +2032,10 @@
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="isPrepared" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eOperations name="prepareResponse" lowerBound="1">
-        <eGenericType eTypeParameter="#//service/ServiceRequest/V"/>
+      <eOperations name="getResponse" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+          <eTypeArguments eTypeParameter="#//service/ServiceRequest/V"/>
+        </eGenericType>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="locale" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

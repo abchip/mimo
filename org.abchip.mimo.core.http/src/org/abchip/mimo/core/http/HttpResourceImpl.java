@@ -128,9 +128,8 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (filter != null) {
 			try {
 				query += "&filter=" + URLEncoder.encode(filter, "UTF-8");
-			} catch (UnsupportedEncodingException e1) {
-				e1.printStackTrace();
-				return null;
+			} catch (UnsupportedEncodingException e) {
+				throw new ResourceException(e);
 			}
 		}
 		if (fields != null)
@@ -195,8 +194,8 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		String query = "frame=" + getFrame().getName() + "&replace=" + replace;
 		try {
 			query += "&json=" + URLEncoder.encode(baos.toString(), "UTF-8");
-		} catch (Exception e1) {
-			e1.printStackTrace();
+		} catch (Exception e) {
+			throw new ResourceException(e);
 		}
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
