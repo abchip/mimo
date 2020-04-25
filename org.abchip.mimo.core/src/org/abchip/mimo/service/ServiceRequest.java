@@ -34,22 +34,44 @@ public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessag
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Locale</em>' attribute.
+	 * @see #setLocale(String)
 	 * @see org.abchip.mimo.service.ServicePackage#getServiceRequest_Locale()
-	 * @model required="true" changeable="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getLocale();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRequest#getLocale <em>Locale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Locale</em>' attribute.
+	 * @see #getLocale()
+	 * @generated
+	 */
+	void setLocale(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tenant</em>' attribute.
+	 * @see #setTenant(String)
 	 * @see org.abchip.mimo.service.ServicePackage#getServiceRequest_Tenant()
-	 * @model changeable="false"
+	 * @model
 	 * @generated
 	 */
 	String getTenant();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRequest#getTenant <em>Tenant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tenant</em>' attribute.
+	 * @see #getTenant()
+	 * @generated
+	 */
+	void setTenant(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Context</b></em>' reference.

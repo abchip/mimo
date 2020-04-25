@@ -109,12 +109,38 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLocale(String newLocale) {
+		String oldLocale = locale;
+		locale = newLocale;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REQUEST__LOCALE, oldLocale, locale));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getTenant() {
 		return tenant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTenant(String newTenant) {
+		String oldTenant = tenant;
+		tenant = newTenant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REQUEST__TENANT, oldTenant, tenant));
 	}
 
 	/**
@@ -200,6 +226,42 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 				return basicGetContext();
 		}
 		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ServicePackage.SERVICE_REQUEST__LOCALE:
+				setLocale((String)newValue);
+				return;
+			case ServicePackage.SERVICE_REQUEST__TENANT:
+				setTenant((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ServicePackage.SERVICE_REQUEST__LOCALE:
+				setLocale(LOCALE_EDEFAULT);
+				return;
+			case ServicePackage.SERVICE_REQUEST__TENANT:
+				setTenant(TENANT_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
 	}
 
 	/**

@@ -16,6 +16,7 @@ import java.util.concurrent.Future;
 import javax.inject.Inject;
 
 import org.abchip.mimo.core.http.handler.HttpExecHandler;
+import org.abchip.mimo.core.http.handler.HttpSubmitHandler;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -29,22 +30,24 @@ public class HttpServiceProviderImpl extends ServiceProviderImpl {
 	@Inject
 	private ResourceManager resourceManager;
 
+	@SuppressWarnings({ "rawtypes", "unchecked", "resource" })
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> V execute(R request) throws ServiceException {
+
+		ResourceSerializer<V> responseSerializer = resourceManager.createResourceSerializer(request.getContext(), request.getResponse(), SerializationType.MIMO);
 		try {
 			String query = "json=" + this.serializeRequest(request) + "&submit=false";
 
-			@SuppressWarnings("resource")
 			HttpConnector connector = request.getContext().get(HttpConnector.class);
 			if (connector == null)
 				throw new ServiceException("Connector not found");
 
-			connector.execute("exec", query, new HttpExecHandler());
+			return (V) connector.execute("exec", query, new HttpExecHandler(responseSerializer));
 		} catch (Exception e) {
 			throw new ServiceException(e);
+		} finally {
+			responseSerializer.clear();
 		}
-
-		return null;
 	}
 
 	@Override
@@ -57,7 +60,7 @@ public class HttpServiceProviderImpl extends ServiceProviderImpl {
 			if (connector == null)
 				throw new ServiceException("Connector not found");
 
-			connector.execute("exec", query, new HttpExecHandler());
+			connector.execute("exec", query, new HttpSubmitHandler());
 		} catch (Exception e) {
 			throw new ServiceException(e);
 		}

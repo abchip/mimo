@@ -889,8 +889,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(serviceRequestEClass, ServiceRequest.class, "ServiceRequest", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceRequest_Locale(), ecorePackage.getEString(), "locale", null, 1, 1, ServiceRequest.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServiceRequest_Tenant(), ecorePackage.getEString(), "tenant", null, 0, 1, ServiceRequest.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceRequest_Locale(), ecorePackage.getEString(), "locale", null, 1, 1, ServiceRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceRequest_Tenant(), ecorePackage.getEString(), "tenant", null, 0, 1, ServiceRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getServiceRequest_Context(), theContextPackage.getContext(), null, "context", null, 0, 1, ServiceRequest.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(serviceRequestEClass, ecorePackage.getEString(), "getServiceName", 1, 1, IS_UNIQUE, IS_ORDERED);
