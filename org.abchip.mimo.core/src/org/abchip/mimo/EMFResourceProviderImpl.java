@@ -48,10 +48,10 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 		EMFResourceImpl<E> resource = null;
 
 		if (isFrame(frame)) {
-			resource = new EMFResourceImpl<E>(frame);
+			resource = new EMFResourceImpl<E>(context, frame);
 			resource.setEntities((Map<String, E>) Frames.getFrames());
 		} else if (isEnum(frame)) {
-			resource = new EMFResourceImpl<E>(frame);
+			resource = new EMFResourceImpl<E>(context, frame);
 			resource.setEntities((Map<String, E>) Frames.getEnumerators((Frame<EntityEnum>) frame));
 		}
 		if (resource != null)
@@ -65,7 +65,7 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 	public static <E extends EntityIdentifiable> Resource<E> internalGetFrameResource(Context context, String tenant) {
 
 		Frame<E> frame = (Frame<E>) Frames.getFrames().get(Frame.class.getSimpleName());
-		EMFResourceImpl<E> resource = new EMFResourceImpl<E>(frame);
+		EMFResourceImpl<E> resource = new EMFResourceImpl<E>(context, frame);
 		resource.setEntities((Map<String, E>) Frames.getFrames());
 		resource.setResourceConfig(EMF_RESOURCE_CONFIG);
 
@@ -77,7 +77,7 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 
 		Frame<E> frame = (Frame<E>) Frames.getFrames().get(frameName);
 
-		EMFResourceImpl<E> resource = new EMFResourceImpl<E>(frame);
+		EMFResourceImpl<E> resource = new EMFResourceImpl<E>(context, frame);
 		resource.setEntities((Map<String, E>) Frames.getEnumerators((Frame<EntityEnum>) frame));
 		resource.setResourceConfig(EMF_RESOURCE_CONFIG);
 

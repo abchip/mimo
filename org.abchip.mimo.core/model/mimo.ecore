@@ -838,8 +838,16 @@
     <eClassifiers xsi:type="ecore:EClass" name="EntityIdentifiable" abstract="true"
         eSuperTypes="#//entity/Entity">
       <eOperations name="getID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eOperations name="getURI" lowerBound="1" eType="#//java/JavaURI"/>
+      <eOperations name="getResource">
+        <eGenericType eClassifier="#//resource/Resource">
+          <eTypeArguments eTypeParameter="#//entity/EntityIdentifiable/getResource/E"/>
+        </eGenericType>
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+        </eTypeParameters>
+      </eOperations>
       <eOperations name="getState" lowerBound="1" eType="#//entity/EntityState"/>
+      <eOperations name="getURI" lowerBound="1" eType="#//java/JavaURI"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityIterator" abstract="true" interface="true">
       <eTypeParameters name="E">
@@ -1146,6 +1154,7 @@
           <eGenericType eTypeParameter="#//resource/Resource/E"/>
         </eParameters>
       </eOperations>
+      <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceConfig" lowerBound="1"
           eType="#//resource/ResourceConfig"/>
     </eClassifiers>

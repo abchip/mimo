@@ -14,6 +14,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
@@ -26,10 +27,12 @@ public class EMFResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<
 	 */
 	private static final long serialVersionUID = 1L;
 
+	private Context context = null;
 	private Frame<E> frame = null;
 	private Map<String, E> entities = null;
 	
-	protected EMFResourceImpl(Frame<E> frame) {
+	protected EMFResourceImpl(Context context, Frame<E> frame) {
+		this.context = context;
 		this.frame = frame;
 	}
 
@@ -40,7 +43,12 @@ public class EMFResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<
 		if(frame == null)
 			this.frame = (Frame<E>) this.entities.get(Frame.class.getSimpleName());
 	}
-	
+
+	@Override
+	public Context getContext() {
+		return this.context;
+	}
+
 	@Override
 	public String getTenant() {
 		return null;

@@ -578,8 +578,11 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIdentifiable">
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getID"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getURI"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getResource">
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityIdentifiable/getResource/E"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getState"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getURI"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIterator">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityIterator/E"/>
@@ -786,6 +789,7 @@
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/update">
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/update/entity"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/getContext"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//resource/ResourceConfig">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/ResourceConfig/lockSupport"/>

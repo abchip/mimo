@@ -35,16 +35,21 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private HttpConnector connector;
+	private Context context = null;
 	private ResourceSerializer<E> resourceSerializer = null;
 
 	private String tenant = null;
 
-	public HttpResourceImpl(Context context, HttpConnector connector, Frame<E> frame, String tenant) {
-		this.connector = connector;
+	public HttpResourceImpl(Context context, Frame<E> frame, String tenant) {
+		this.context = context;
 		this.resourceSerializer = context.getResourceManager().createResourceSerializer(context, frame, SerializationType.MIMO);
 
 		this.tenant = tenant;
+	}
+
+	@Override
+	public Context getContext() {
+		return this.context;
 	}
 
 	@Override
@@ -57,6 +62,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		return this.resourceSerializer.getFrame();
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public String nextSequence() throws ResourceException {
 
@@ -69,6 +75,10 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 
+		HttpConnector connector = context.get(HttpConnector.class);
+		if (connector == null)
+			throw new ResourceException("Unconnected resource " + getFrame().getURI());
+		
 		try {
 			nextSequence = connector.execute("nextSequence", query, new HttpNextSequenceHandler());
 		} catch (Exception e) {
@@ -88,6 +98,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		doSave(entity, true);
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public E read(String id, String fields, boolean proxy) throws ResourceException {
 
@@ -99,11 +110,16 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (proxy)
 			query += "&proxy=" + proxy;
 
+
+		HttpConnector connector = context.get(HttpConnector.class);
+		if (connector == null)
+			throw new ResourceException("Unconnected resource " + getFrame().getURI());
+
 		try {
 			@SuppressWarnings({ "unchecked", "rawtypes" })
 			ResponseHandler<E> handler = new HttpLookupHandler(this.resourceSerializer);
 			synchronized (this.resourceSerializer) {
-				entity = this.connector.execute("lookup", query, handler);
+				entity = connector.execute("lookup", query, handler);
 			}
 
 		} catch (Exception e) {
@@ -113,6 +129,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		return entity;
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException {
 
@@ -137,11 +154,16 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (order != null)
 			query += "&order=" + order;
 
+
+		HttpConnector connector = context.get(HttpConnector.class);
+		if (connector == null)
+			throw new ResourceException("Unconnected resource " + getFrame().getURI());
+
 		try {
 			@SuppressWarnings({ "rawtypes", "unchecked" })
 			HttpFindHandler<E> handler = new HttpFindHandler(this.resourceSerializer);
 			synchronized (this.resourceSerializer) {
-				entities = this.connector.execute("find", query, handler);
+				entities = connector.execute("find", query, handler);
 			}
 		} catch (Exception e) {
 			throw new ResourceException(e);
@@ -150,6 +172,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		return entities;
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public void delete(E entity) throws ResourceException {
 
@@ -170,6 +193,10 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 
+		HttpConnector connector = context.get(HttpConnector.class);
+		if (connector == null)
+			throw new ResourceException("Unconnected resource " + getFrame().getURI());
+
 		try {
 			connector.execute("delete", query, new HttpDeleteHandler());
 		} catch (Exception e) {
@@ -177,6 +204,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		}
 	}
 
+	@SuppressWarnings("resource")
 	private void doSave(E entity, boolean replace) throws ResourceException {
 
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -199,6 +227,10 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		}
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
+
+		HttpConnector connector = context.get(HttpConnector.class);
+		if (connector == null)
+			throw new ResourceException("Unconnected resource " + getFrame().getURI());
 
 		try {
 			connector.execute("save", query, new HttpSaveHandler());

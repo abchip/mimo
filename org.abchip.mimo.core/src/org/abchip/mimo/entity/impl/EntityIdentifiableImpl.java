@@ -20,8 +20,8 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.EntityState;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -42,6 +42,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -50,6 +51,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -62,7 +64,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	 * 
 	 * @generated NOT
 	 */
-	@SuppressWarnings({ "unchecked" })
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 
@@ -72,16 +73,14 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 		if (eFeature.isMany()) {
 			if (!eIsSet(featureID)) {
 
-				if (!(eResource() instanceof MimoResourceImpl))
+				if (this.getResource() == null)
 					return super.eGet(featureID, resolve, coreType);
 
 				Slot slot = isa().getSlot(eFeature.getName());
 				if (slot.getDomain() == null)
 					return super.eGet(featureID, resolve, coreType);
 
-				MimoResourceImpl<EntityIdentifiable> resource = (MimoResourceImpl<EntityIdentifiable>) eResource();
-				Context context = resource.getContext();
-				ResourceManager resourceManager = context.get(ResourceManager.class);
+				Context context = this.getResource().getContext();
 
 				String filter = slot.getDomain().getRoute();
 				if (filter == null || filter.trim().isEmpty()) {
@@ -105,7 +104,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 				}
 
 				List<EntityIdentifiable> values = new EDataTypeUniqueEList<EntityIdentifiable>(EntityIdentifiable.class, this, featureID);
-				try (EntityIterator<EntityIdentifiable> entities = resourceManager.getResourceReader(context, slot.getDomain().getFrame()).find(filter)) {
+				try (EntityIterator<EntityIdentifiable> entities = context.getResourceManager().getResourceReader(context, slot.getDomain().getFrame()).find(filter)) {
 					for (EntityIdentifiable entityIdentifiable : entities) {
 						String domainKey = entityIdentifiable.isa().getKeys().get(0);
 						entityIdentifiable.isa().setValue(entityIdentifiable, domainKey, this);
@@ -212,13 +211,31 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	 * 
 	 * @generated NOT
 	 */
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource() {
+		if (this.eResource() instanceof MimoResourceImpl) {
+			@SuppressWarnings("unchecked")
+			MimoResourceImpl<E> internal = (MimoResourceImpl<E>) this.eResource();
+			return internal.getResource();
+		}
+
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
 	@SuppressWarnings({ "unchecked" })
 	@Override
 	public <E extends Entity> Frame<E> isa() {
-		if (this.eResource() instanceof MimoResourceImpl) {
-			MimoResourceImpl<?> interal = (MimoResourceImpl<?>) this.eResource();
-			return (Frame<E>) interal.getResource().getFrame();
-		} else
+
+		switch (getState()) {
+		case RESOLVED:
+			return (Frame<E>) getResource().getFrame();
+		default:
 			return super.isa();
+		}
 	}
 } // EntityIdentifiableImpl

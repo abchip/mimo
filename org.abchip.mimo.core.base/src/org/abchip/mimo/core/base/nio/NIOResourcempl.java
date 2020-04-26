@@ -60,6 +60,11 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	}
 
 	@Override
+	public Context getContext() {
+		return this.context;
+	}
+
+	@Override
 	public String getTenant() {
 		return tenant;
 	}

@@ -34,11 +34,7 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
 
-		HttpConnector connector = context.get(HttpConnector.class);
-		if (connector == null)
-			return null;
-
-		Resource<E> resource = new HttpResourceImpl<E>(context, connector, frame, tenant);
+		Resource<E> resource = new HttpResourceImpl<E>(context, frame, tenant);
 		resource.setResourceConfig(this.resourceConfig);
 
 		return resource;

@@ -9,6 +9,7 @@
 package org.abchip.mimo.resource;
 
 import java.util.List;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
@@ -117,5 +118,13 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	 * @generated
 	 */
 	void update(E entity) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	Context getContext();
 
 } // Resource
