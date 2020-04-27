@@ -32,12 +32,12 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends ResourceReaderImpl<E> {
 
 	private MimoResourceImpl<E> internal = null;
-	private Diagnostician diagnostician = null;
+//	private Diagnostician diagnostician = null;
 
 	public BaseResourceReaderImpl(MimoResourceImpl<E> internal) {
 		this.internal = internal;
 		
-		this.diagnostician = new BaseDiagnostician(this.getContext());
+//		this.diagnostician = new BaseDiagnostician(this.getContext());
 	}
 
 	protected void setInternalResource(E entity) {
@@ -46,7 +46,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 	}
 
 	protected Diagnostician getDiagnostician() {
-		return this.diagnostician;
+		return Diagnostician.INSTANCE;
 	}
 	
 	@Override

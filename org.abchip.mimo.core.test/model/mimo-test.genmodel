@@ -17,6 +17,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo-test.ecore#//ObjectA/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo-test.ecore#//ObjectA/text"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo-test.ecore#//ObjectA/objectB"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo-test.ecore#//ObjectA/dynamic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo-test.ecore#//ObjectA/dynamic2"/>
       <genOperations ecoreOperation="mimo-test.ecore#//ObjectA/getTotal"/>
     </genClasses>
     <genClasses ecoreClass="mimo-test.ecore#//ObjectB">

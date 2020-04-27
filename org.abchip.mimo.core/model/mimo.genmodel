@@ -1151,6 +1151,19 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.1/V"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.1/R"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/prepare.2">
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.2/context"/>
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.2/frame"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.2/V"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.2/R"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/prepare.3">
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.3/context"/>
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.3/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.3/tenant"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.3/V"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.3/R"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/execute">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/execute/request"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/execute/V"/>
@@ -1160,6 +1173,19 @@
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/submit/request"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/submit/V"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/submit/R"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/prepare.4">
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.4/context"/>
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.4/frame"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.4/V"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.4/R"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/prepare.5">
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.5/context"/>
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.5/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.5/tenant"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.5/V"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.5/R"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceMapping">
@@ -1173,6 +1199,15 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceMappingRuleByPackage/package"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMessage"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceMethodRequest">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceMethodRequest/E"/>
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceMethodRequest/T"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceMethodRequest/entity"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//service/ServiceMethodResponse">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceMethodResponse/T"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceMethodResponse/result"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceProvider">
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceProvider/execute">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceProvider/execute/request"/>

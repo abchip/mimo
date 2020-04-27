@@ -236,15 +236,23 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			return;
 		}
 
-		if (eFeature.isMany()) {
-			List<Object> values = new ArrayList<Object>();
-			for (Object object : (Collection<?>) value)
-				values.add(buildValue(eFeature, object));
-			eObject.eSet(eFeature, values);
-		} else {
-			Object object = buildValue(eFeature, value);
-			eObject.eSet(eFeature, object);
+		try {
+			if (eFeature.isMany()) {
+				List<Object> values = new ArrayList<Object>();
+				for (Object object : (Collection<?>) value)
+					values.add(buildValue(eFeature, object));
+				eObject.eSet(eFeature, values);
+			} else {
+				Object object = buildValue(eFeature, value);
+				eObject.eSet(eFeature, object);
+			}
+		} catch (Exception e) {
+			if (eFeature.getEType() instanceof EDataType) {
+				value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
+				eObject.eSet(eFeature, value);
+			}
 		}
+
 	}
 
 	private Object buildValue(EStructuralFeature eFeature, Object value) {
@@ -266,9 +274,6 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 					LOGGER.warn("Unexpected condition {}", "bvtw4a87ny4r9tycsa9et6");
 			}
 
-		} else if (eFeature.getEType() instanceof EDataType) {
-			value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
-			object = value;
 		} else
 			object = value;
 

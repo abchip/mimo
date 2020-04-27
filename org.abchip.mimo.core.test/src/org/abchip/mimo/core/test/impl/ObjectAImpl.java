@@ -7,7 +7,9 @@
  */
 package org.abchip.mimo.core.test.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
+
 import org.abchip.mimo.core.test.ObjectA;
 import org.abchip.mimo.core.test.ObjectB;
 import org.abchip.mimo.core.test.TestPackage;
@@ -16,7 +18,10 @@ import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -32,16 +37,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.core.test.impl.ObjectAImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.core.test.impl.ObjectAImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.core.test.impl.ObjectAImpl#getObjectB <em>Object B</em>}</li>
+ *   <li>{@link org.abchip.mimo.core.test.impl.ObjectAImpl#getDynamic <em>Dynamic</em>}</li>
+ *   <li>{@link org.abchip.mimo.core.test.impl.ObjectAImpl#getDynamic2 <em>Dynamic2</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ObjectAImpl extends EntityIdentifiableImpl implements ObjectA {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -61,6 +63,11 @@ public class ObjectAImpl extends EntityIdentifiableImpl implements ObjectA {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
@@ -91,6 +98,26 @@ public class ObjectAImpl extends EntityIdentifiableImpl implements ObjectA {
 	 * @ordered
 	 */
 	protected ObjectB objectB;
+
+	/**
+	 * The cached setting delegate for the '{@link #getDynamic() <em>Dynamic</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDynamic()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate DYNAMIC__ESETTING_DELEGATE = ((EStructuralFeature.Internal)TestPackage.Literals.OBJECT_A__DYNAMIC).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getDynamic2() <em>Dynamic2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDynamic2()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate DYNAMIC2__ESETTING_DELEGATE = ((EStructuralFeature.Internal)TestPackage.Literals.OBJECT_A__DYNAMIC2).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,10 +235,63 @@ public class ObjectAImpl extends EntityIdentifiableImpl implements ObjectA {
 	 * @generated
 	 */
 	@Override
+	public String getDynamic() {
+		return (String)DYNAMIC__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDynamic(String newDynamic) {
+		DYNAMIC__ESETTING_DELEGATE.dynamicSet(this, null, 0, newDynamic);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDynamic2() {
+		return (String)DYNAMIC2__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDynamic2(String newDynamic2) {
+		DYNAMIC2__ESETTING_DELEGATE.dynamicSet(this, null, 0, newDynamic2);
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #getTotal() <em>Get Total</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotal()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate GET_TOTAL__EINVOCATION_DELEGATE = ((EOperation.Internal)TestPackage.Literals.OBJECT_A.getEOperations().get(0)).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public BigDecimal getTotal() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		try {
+			return (BigDecimal)GET_TOTAL__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
 	}
 
 	/**
@@ -242,6 +322,10 @@ public class ObjectAImpl extends EntityIdentifiableImpl implements ObjectA {
 				return getText();
 			case TestPackage.OBJECT_A__OBJECT_B:
 				return getObjectB();
+			case TestPackage.OBJECT_A__DYNAMIC:
+				return getDynamic();
+			case TestPackage.OBJECT_A__DYNAMIC2:
+				return getDynamic2();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -262,6 +346,12 @@ public class ObjectAImpl extends EntityIdentifiableImpl implements ObjectA {
 				return;
 			case TestPackage.OBJECT_A__OBJECT_B:
 				setObjectB((ObjectB)newValue);
+				return;
+			case TestPackage.OBJECT_A__DYNAMIC:
+				setDynamic((String)newValue);
+				return;
+			case TestPackage.OBJECT_A__DYNAMIC2:
+				setDynamic2((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,6 +374,12 @@ public class ObjectAImpl extends EntityIdentifiableImpl implements ObjectA {
 			case TestPackage.OBJECT_A__OBJECT_B:
 				setObjectB((ObjectB)null);
 				return;
+			case TestPackage.OBJECT_A__DYNAMIC:
+				DYNAMIC__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+				return;
+			case TestPackage.OBJECT_A__DYNAMIC2:
+				DYNAMIC2__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -302,6 +398,10 @@ public class ObjectAImpl extends EntityIdentifiableImpl implements ObjectA {
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case TestPackage.OBJECT_A__OBJECT_B:
 				return objectB != null;
+			case TestPackage.OBJECT_A__DYNAMIC:
+				return DYNAMIC__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case TestPackage.OBJECT_A__DYNAMIC2:
+				return DYNAMIC2__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -18,6 +18,7 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.service.Service;
 import org.abchip.mimo.service.ServiceException;
 import org.abchip.mimo.service.ServiceFactory;
@@ -38,7 +39,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	private void init() {
 		executorService = Executors.newFixedThreadPool(100);
 	}
-	
+
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, R request) {
 
@@ -68,10 +69,39 @@ public class BaseServiceManagerImpl implements ServiceManager {
 
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass, String tenant) throws ServiceException {
+		return prepare(context, context.getFrame(klass), tenant);
+	}
+
+	@Override
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Frame<R> frame) throws ServiceException {
+		return prepare(context, frame, null);
+	}
+
+	@Override
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, String frame) throws ServiceException {
+		return prepare(context, frame, null);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, String frame, String tenant) throws ServiceException {
+
+		Frame<?> frameRequest = (Frame<?>) context.getResourceManager().getFrame(context, frame);
+		if(frameRequest == null)
+			throw new ServiceException("Service not found" + frame);
+		
+		if (!frameRequest.getSuperNames().contains(ServiceRequest.class.getSimpleName()))
+			throw new ServiceException("Invalid service " + frame);
+
+		return prepare(context, (Frame<R>) frameRequest, tenant);
+	}
+
+	@Override
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Frame<R> frame, String tenant) throws ServiceException {
 
 		this.checkAuthorization(context, tenant);
 
-		R request = context.getFrame(klass).createEntity();
+		R request = frame.createEntity();
 		context.inject(request);
 
 		// set default parameters

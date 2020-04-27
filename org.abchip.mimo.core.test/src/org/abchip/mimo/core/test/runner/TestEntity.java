@@ -15,6 +15,7 @@ import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;
 import org.abchip.mimo.tester.TestStarted;
+import org.eclipse.emf.ecore.util.Diagnostician;
 
 @Test(entity = "Entity")
 public class TestEntity {
@@ -61,6 +62,8 @@ public class TestEntity {
 			objectA.setObjectB(objectB);
 
 			entityWriter.validate(objectA);
+			
+			Diagnostician.INSTANCE.validate(objectA);
 
 			entityWriter.create(objectA);
 

@@ -19,10 +19,12 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.abchip.mimo.core.test.ObjectA#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.core.test.ObjectA#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.core.test.ObjectA#getObjectB <em>Object B</em>}</li>
+ *   <li>{@link org.abchip.mimo.core.test.ObjectA#getDynamic <em>Dynamic</em>}</li>
+ *   <li>{@link org.abchip.mimo.core.test.ObjectA#getDynamic2 <em>Dynamic2</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.core.test.TestPackage#getObjectA()
- * @model
+ * @model extendedMetaData="name='pippo'"
  * @generated
  */
 public interface ObjectA extends EObject, EntityIdentifiable {
@@ -105,9 +107,56 @@ public interface ObjectA extends EObject, EntityIdentifiable {
 	void setObjectB(ObjectB value);
 
 	/**
+	 * Returns the value of the '<em><b>Dynamic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dynamic</em>' attribute.
+	 * @see #setDynamic(String)
+	 * @see org.abchip.mimo.core.test.TestPackage#getObjectA_Dynamic()
+	 * @model required="true"
+	 *        annotation="org.abchip.mimo.core.base.setting"
+	 * @generated
+	 */
+	String getDynamic();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.core.test.ObjectA#getDynamic <em>Dynamic</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Dynamic</em>' attribute.
+	 * @see #getDynamic()
+	 * @generated
+	 */
+	void setDynamic(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Dynamic2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dynamic2</em>' attribute.
+	 * @see #setDynamic2(String)
+	 * @see org.abchip.mimo.core.test.TestPackage#getObjectA_Dynamic2()
+	 * @model required="true"
+	 *        annotation="org.abchip.mimo.core.base.setting"
+	 * @generated
+	 */
+	String getDynamic2();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.core.test.ObjectA#getDynamic2 <em>Dynamic2</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Dynamic2</em>' attribute.
+	 * @see #getDynamic2()
+	 * @generated
+	 */
+	void setDynamic2(String value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
+	 *        annotation="org.abchip.mimo.core.base.invocation"
 	 * @generated
 	 */
 	BigDecimal getTotal();

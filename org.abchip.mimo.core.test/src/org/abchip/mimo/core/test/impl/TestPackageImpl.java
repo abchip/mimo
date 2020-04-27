@@ -13,14 +13,12 @@ import org.abchip.mimo.core.test.ObjectA;
 import org.abchip.mimo.core.test.ObjectB;
 import org.abchip.mimo.core.test.TestFactory;
 import org.abchip.mimo.core.test.TestPackage;
-
 import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -161,6 +159,26 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getObjectA_Dynamic() {
+		return (EAttribute)objectAEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getObjectA_Dynamic2() {
+		return (EAttribute)objectAEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getObjectB() {
 		return objectBEClass;
 	}
@@ -228,6 +246,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		createEAttribute(objectAEClass, OBJECT_A__NAME);
 		createEAttribute(objectAEClass, OBJECT_A__TEXT);
 		createEReference(objectAEClass, OBJECT_A__OBJECT_B);
+		createEAttribute(objectAEClass, OBJECT_A__DYNAMIC);
+		createEAttribute(objectAEClass, OBJECT_A__DYNAMIC2);
 
 		objectBEClass = createEClass(OBJECT_B);
 		createEAttribute(objectBEClass, OBJECT_B__NAME);
@@ -276,6 +296,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getObjectA_Name(), ecorePackage.getEString(), "name", null, 1, 1, ObjectA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getObjectA_Text(), ecorePackage.getEString(), "text", null, 0, 1, ObjectA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getObjectA_ObjectB(), this.getObjectB(), null, "objectB", null, 1, 1, ObjectA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObjectA_Dynamic(), ecorePackage.getEString(), "dynamic", null, 1, 1, ObjectA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObjectA_Dynamic2(), ecorePackage.getEString(), "dynamic2", null, 1, 1, ObjectA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(objectAEClass, ecorePackage.getEBigDecimal(), "getTotal", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -290,6 +312,85 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+		createExtendedMetaDataAnnotations();
+		// org.abchip.mimo.core.base.invocation
+		createOrgAnnotations();
+		// org.abchip.mimo.core.base.setting
+		createOrg_1Annotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "settingDelegates", "org.abchip.mimo.core.base.setting",
+			   "invocationDelegates", "org.abchip.mimo.core.base.invocation",
+			   "validationDelegates", "org.abchip.mimo.core.base.validation"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createExtendedMetaDataAnnotations() {
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		addAnnotation
+		  (objectAEClass,
+		   source,
+		   new String[] {
+			   "name", "pippo"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>org.abchip.mimo.core.base.invocation</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOrgAnnotations() {
+		String source = "org.abchip.mimo.core.base.invocation";
+		addAnnotation
+		  (objectAEClass.getEOperations().get(0),
+		   source,
+		   new String[] {
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>org.abchip.mimo.core.base.setting</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOrg_1Annotations() {
+		String source = "org.abchip.mimo.core.base.setting";
+		addAnnotation
+		  (getObjectA_Dynamic(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getObjectA_Dynamic2(),
+		   source,
+		   new String[] {
+		   });
 	}
 
 } //TestPackageImpl

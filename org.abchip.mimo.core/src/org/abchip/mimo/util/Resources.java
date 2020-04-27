@@ -8,25 +8,16 @@
  */
 package org.abchip.mimo.util;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
-import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceEvent;
 import org.abchip.mimo.resource.ResourceEventType;
 import org.abchip.mimo.resource.ResourceNotifier;
-import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
-import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 
 public class Resources {
 
@@ -36,10 +27,6 @@ public class Resources {
 
 	public static <E extends EntityIdentifiable> EntityIterator<E> wrapIterator(Iterator<E> iterator) {
 		return new MyEntityIterator<E>(iterator);
-	}
-
-	public static <E extends EntityIdentifiable> ResourceReader<E> wrapReader(Context context, Frame<E> frame, Map<String, E> entities) {
-		return new MapReader<E>(context, frame, entities);
 	}
 
 	public static <E extends EntityIdentifiable> void firePreDeleteEvent(final ResourceWriter<E> resourceWriter, final E source) {
@@ -213,72 +200,6 @@ public class Resources {
 		@Override
 		public void close() {
 			this.iterator = null;
-		}
-	}
-
-	private static class MapReader<E extends EntityIdentifiable> extends ResourceReaderImpl<E> {
-
-		private Frame<E> frame;
-		private Context context;
-		private Map<String, E> entities = null;
-
-		public MapReader(Context context, Frame<E> frame, Map<String, E> entities) {
-			this.context = context;
-			this.frame = frame;
-			this.entities = entities;
-		}
-
-		@Override
-		public EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy) {
-
-			List<E> values = new ArrayList<E>(entities.values());
-			if (limit > 0)
-				values = Lists.slice(new ArrayList<E>(values), 0, limit);
-
-			Collections.sort(values, new Comparator<E>() {
-
-				@Override
-				public int compare(E o1, E o2) {
-					return o1.getID().compareTo(o2.getID());
-				}
-			});
-
-			Collections.sort(values, new Comparator<E>() {
-				@Override
-				public int compare(E o1, E o2) {
-					return o1.getID().compareTo(o2.getID());
-				}
-			});
-
-			return Resources.wrapIterator(values);
-		}
-
-		@Override
-		public E lookup(String name, boolean proxyOs) {
-
-			E entity = entities.get(name);
-
-			return entity;
-		}
-
-		@Override
-		public Frame<E> getFrame() {
-			return this.frame;
-		}
-
-		@Override
-		public Context getContext() {
-			return this.context;
-		}
-
-		@Override
-		public String getTenant() {
-			return context.getContextDescription().getTenant();
-		}
-
-		@Override
-		public Resource<E> getResource() {
-			return null;
 		}
 	}
 }

@@ -1894,7 +1894,7 @@
           </eBounds>
         </eTypeParameters>
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
-        <eParameters name="klass">
+        <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
             <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare/R"/>
           </eGenericType>
@@ -1911,9 +1911,44 @@
           </eBounds>
         </eTypeParameters>
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
-        <eParameters name="klass">
+        <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
             <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.1/R"/>
+          </eGenericType>
+        </eParameters>
+        <eParameters name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
+        <eGenericType eTypeParameter="#//service/ServiceManager/prepare.2/R"/>
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.2/V"/>
+          </eBounds>
+        </eTypeParameters>
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+        <eParameters name="frame" lowerBound="1">
+          <eGenericType eClassifier="#//entity/Frame">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.2/R"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
+        <eGenericType eTypeParameter="#//service/ServiceManager/prepare.3/R"/>
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.3/V"/>
+          </eBounds>
+        </eTypeParameters>
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+        <eParameters name="frame" lowerBound="1">
+          <eGenericType eClassifier="#//entity/Frame">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.3/R"/>
           </eGenericType>
         </eParameters>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1928,7 +1963,7 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/execute/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="request">
+        <eParameters name="request" lowerBound="1">
           <eGenericType eTypeParameter="#//service/ServiceManager/execute/R"/>
         </eParameters>
       </eOperations>
@@ -1944,9 +1979,36 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/submit/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="request">
+        <eParameters name="request" lowerBound="1">
           <eGenericType eTypeParameter="#//service/ServiceManager/submit/R"/>
         </eParameters>
+      </eOperations>
+      <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
+        <eGenericType eTypeParameter="#//service/ServiceManager/prepare.4/R"/>
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.4/V"/>
+          </eBounds>
+        </eTypeParameters>
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+        <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
+        <eGenericType eTypeParameter="#//service/ServiceManager/prepare.5/R"/>
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.5/V"/>
+          </eBounds>
+        </eTypeParameters>
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+        <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceMapping" eSuperTypes="#//entity/Entity">
@@ -1968,6 +2030,27 @@
       <eLiterals name="ByPackage" value="10" literal="BP"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceMessage" abstract="true" eSuperTypes="#//entity/Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceMethodRequest" abstract="true">
+      <eTypeParameters name="E">
+        <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+      </eTypeParameters>
+      <eTypeParameters name="T"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
+          containment="true">
+        <eGenericType eTypeParameter="#//service/ServiceMethodRequest/E"/>
+      </eStructuralFeatures>
+      <eGenericSuperTypes eClassifier="#//service/ServiceRequest">
+        <eTypeArguments eClassifier="#//service/ServiceMethodResponse">
+          <eTypeArguments eTypeParameter="#//service/ServiceMethodRequest/T"/>
+        </eTypeArguments>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceMethodResponse" eSuperTypes="#//service/ServiceResponse">
+      <eTypeParameters name="T"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="result">
+        <eGenericType eTypeParameter="#//service/ServiceMethodResponse/T"/>
+      </eStructuralFeatures>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceProvider" abstract="true">
       <eOperations name="execute" lowerBound="1" eExceptions="#//service/ServiceException">
         <eGenericType eTypeParameter="#//service/ServiceProvider/execute/V"/>

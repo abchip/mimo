@@ -8,12 +8,14 @@
 package org.abchip.mimo.service.impl;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -178,7 +180,17 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 * @generated NOT
 	 */
 	@Override
-	public abstract Class<V> getResponse();
+	public Class<V> getResponse() {
+
+		EClass eClass = this.eClass();
+		EGenericType eGenericType = eClass.getEGenericSuperTypes().get(0);
+		eGenericType = eGenericType.getETypeArguments().get(0);
+
+		@SuppressWarnings("unchecked")
+		Class<V> klass = (Class<V>) eGenericType.getEClassifier().getInstanceClass();
+
+		return klass;
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -186,7 +198,16 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 * @generated NOT
 	 */
 	@Override
-	public abstract void init(Context context, String tenant);
+	public void init(Context context, String tenant) {
+		if (isPrepared())
+			throw new UnsupportedOperationException("Request already prepared");
+
+		this.context = context;
+		this.tenant = tenant;
+
+		ContextDescription contextDescription = context.getContextDescription();
+		this.locale = contextDescription.getLocale();
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -194,7 +215,7 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 * @generated NOT
 	 */
 	@Override
-	public final String getServiceName() {
+	public String getServiceName() {
 		return Strings.firstToLower(this.isa().getID());
 	}
 

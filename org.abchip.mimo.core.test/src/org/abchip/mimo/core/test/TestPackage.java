@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see org.abchip.mimo.core.test.TestFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore settingDelegates='org.abchip.mimo.core.base.setting' invocationDelegates='org.abchip.mimo.core.base.invocation' validationDelegates='org.abchip.mimo.core.base.validation'"
  * @generated
  */
 public interface TestPackage extends EPackage {
@@ -101,13 +102,31 @@ public interface TestPackage extends EPackage {
 	int OBJECT_A__OBJECT_B = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Dynamic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_A__DYNAMIC = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Dynamic2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_A__DYNAMIC2 = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Object A</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_A_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
+	int OBJECT_A_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.core.test.impl.ObjectBImpl <em>Object B</em>}' class.
@@ -199,6 +218,28 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getObjectA_ObjectB();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.core.test.ObjectA#getDynamic <em>Dynamic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Dynamic</em>'.
+	 * @see org.abchip.mimo.core.test.ObjectA#getDynamic()
+	 * @see #getObjectA()
+	 * @generated
+	 */
+	EAttribute getObjectA_Dynamic();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.core.test.ObjectA#getDynamic2 <em>Dynamic2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Dynamic2</em>'.
+	 * @see org.abchip.mimo.core.test.ObjectA#getDynamic2()
+	 * @see #getObjectA()
+	 * @generated
+	 */
+	EAttribute getObjectA_Dynamic2();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.core.test.ObjectB <em>Object B</em>}'.
@@ -297,6 +338,22 @@ public interface TestPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OBJECT_A__OBJECT_B = eINSTANCE.getObjectA_ObjectB();
+
+		/**
+		 * The meta object literal for the '<em><b>Dynamic</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBJECT_A__DYNAMIC = eINSTANCE.getObjectA_Dynamic();
+
+		/**
+		 * The meta object literal for the '<em><b>Dynamic2</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBJECT_A__DYNAMIC2 = eINSTANCE.getObjectA_Dynamic2();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.core.test.impl.ObjectBImpl <em>Object B</em>}' class.
