@@ -138,6 +138,14 @@ public interface ResourceReader<E extends EntityIdentifiable> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model entityRequired="true"
+	 * @generated
+	 */
+	boolean validate(E entity);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */

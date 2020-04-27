@@ -42,7 +42,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -51,7 +50,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

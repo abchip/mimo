@@ -60,6 +60,8 @@ public class TestEntity {
 			objectB.setEnum1(Enum1.VALUE1);
 			objectA.setObjectB(objectB);
 
+			entityWriter.validate(objectA);
+
 			entityWriter.create(objectA);
 
 			objectA = TestFactory.eINSTANCE.createObjectA();

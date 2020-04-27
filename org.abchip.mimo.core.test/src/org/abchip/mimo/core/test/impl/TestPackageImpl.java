@@ -277,6 +277,8 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEAttribute(getObjectA_Text(), ecorePackage.getEString(), "text", null, 0, 1, ObjectA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getObjectA_ObjectB(), this.getObjectB(), null, "objectB", null, 1, 1, ObjectA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		addEOperation(objectAEClass, ecorePackage.getEBigDecimal(), "getTotal", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(objectBEClass, ObjectB.class, "ObjectB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getObjectB_Name(), ecorePackage.getEString(), "name", null, 1, 1, ObjectB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getObjectB_Enum1(), this.getEnum1(), "enum1", null, 1, 1, ObjectB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

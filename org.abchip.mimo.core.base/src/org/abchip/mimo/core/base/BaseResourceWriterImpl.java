@@ -8,6 +8,10 @@
  */
 package org.abchip.mimo.core.base;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.EntityLocker;
@@ -18,6 +22,8 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.util.Resources;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.ecore.EObject;
 
 public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseResourceReaderImpl<E> implements ResourceWriter<E> {
 
@@ -118,6 +124,14 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 		} finally {
 			unlock(entityLocker);
 		}
+	}
+
+	@Override
+	public boolean validate(E entity) {
+		Map<Object, Object> context = new HashMap<Object, Object>();
+		context.put(MimoConstants.VALIDATOR_WRITE, null);
+		Diagnostic diagnostic = this.getDiagnostician().validate((EObject) entity, context);
+		return diagnostic.getSeverity() <= 0;
 	}
 
 	private <N extends EntityIdentifiable> EntityLocker<N> lock(Context context, N entity) {

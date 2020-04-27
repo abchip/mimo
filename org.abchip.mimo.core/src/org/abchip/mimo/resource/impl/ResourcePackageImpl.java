@@ -1385,6 +1385,10 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1 = createEGenericType(resourceReaderEClass_E);
 		initEOperation(op, g1);
 
+		op = addEOperation(resourceReaderEClass, ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceReaderEClass_E);
+		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(resourceSerializerEClass, ResourceSerializer.class, "ResourceSerializer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(resourceSerializerEClass_E);

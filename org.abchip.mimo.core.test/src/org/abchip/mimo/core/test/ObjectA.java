@@ -2,6 +2,7 @@
  */
 package org.abchip.mimo.core.test;
 
+import java.math.BigDecimal;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.eclipse.emf.ecore.EObject;
 
@@ -102,5 +103,13 @@ public interface ObjectA extends EObject, EntityIdentifiable {
 	 * @generated
 	 */
 	void setObjectB(ObjectB value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	BigDecimal getTotal();
 
 } // QObjectA

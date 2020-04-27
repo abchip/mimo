@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.core.test.impl;
 
+import java.math.BigDecimal;
 import org.abchip.mimo.core.test.ObjectA;
 import org.abchip.mimo.core.test.ObjectB;
 import org.abchip.mimo.core.test.TestPackage;
@@ -15,7 +16,6 @@ import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -200,6 +200,18 @@ public class ObjectAImpl extends EntityIdentifiableImpl implements ObjectA {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.OBJECT_A__OBJECT_B, newObjectB, newObjectB));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BigDecimal getTotal() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -14,17 +14,12 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationComponent;
-import org.abchip.mimo.application.ApplicationModule;
-import org.abchip.mimo.application.ModuleStatus;
 import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.service.ServiceStatus;
-import org.abchip.mimo.service.reg.ServiceReg;
 import org.abchip.mimo.tester.AssertionFailed;
 import org.abchip.mimo.tester.AssertionResult;
 import org.abchip.mimo.tester.AssertionSuccess;
 import org.abchip.mimo.tester.TestManager;
 import org.abchip.mimo.tester.TestResult;
-import org.abchip.mimo.tester.TestSuiteLauncher;
 import org.abchip.mimo.tester.TestSuiteRunner;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
@@ -45,32 +40,20 @@ public class TestCommands extends BaseTestCommands {
 				if (!component.getName().equalsIgnoreCase(componentName))
 					continue;
 
-				for (ApplicationModule module : component.getModules()) {
-					if (module.getStatus() != ModuleStatus.ACTIVE)
-						continue;
-					for (ServiceReg serviceRef : module.getServices()) {
-						if (!serviceRef.getInterfaceName().equals(TestSuiteLauncher.class.getName()))
-							continue;
-
-						if (serviceRef.getStatus() != ServiceStatus.ACTIVE)
-							continue;
-
-						List<TestSuiteRunner> runners = testManager.prepareSuiteRunner(contextProvider.get(), component.getName());
-						for (TestSuiteRunner runner : runners) {
-							List<TestResult> results = runner.call();
-							for (TestResult result : results) {
-								for (AssertionResult assertionResult : result.getAssertResults()) {
-									switch (assertionResult.getAssertionState()) {
-									case FAILED:
-										AssertionFailed assertionFailed = (AssertionFailed) assertionResult;
-										interpreter.println(assertionFailed);
-										break;
-									case SUCCESS:
-										AssertionSuccess assertionSuccess = (AssertionSuccess) assertionResult;
-										interpreter.println(assertionSuccess);
-										break;
-									}
-								}
+				List<TestSuiteRunner> runners = testManager.prepareSuiteRunner(contextProvider.get(), component.getName());
+				for (TestSuiteRunner runner : runners) {
+					List<TestResult> results = runner.call();
+					for (TestResult result : results) {
+						for (AssertionResult assertionResult : result.getAssertResults()) {
+							switch (assertionResult.getAssertionState()) {
+							case FAILED:
+								AssertionFailed assertionFailed = (AssertionFailed) assertionResult;
+								interpreter.println(assertionFailed);
+								break;
+							case SUCCESS:
+								AssertionSuccess assertionSuccess = (AssertionSuccess) assertionResult;
+								interpreter.println(assertionSuccess);
+								break;
 							}
 						}
 					}

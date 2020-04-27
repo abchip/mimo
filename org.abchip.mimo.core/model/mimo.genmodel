@@ -1054,6 +1054,9 @@
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/lookup.1/name"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/lookup.1/proxy"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceReader/validate">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceReader/validate/entity"/>
+        </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceSerializer">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceSerializer/E"/>

@@ -10,9 +10,12 @@ package org.abchip.mimo.core.base;
 
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
+import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -21,14 +24,20 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
 
 public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends ResourceReaderImpl<E> {
 
 	private MimoResourceImpl<E> internal = null;
+	private Diagnostician diagnostician = null;
 
 	public BaseResourceReaderImpl(MimoResourceImpl<E> internal) {
 		this.internal = internal;
+		
+		this.diagnostician = new BaseDiagnostician(this.getContext());
 	}
 
 	protected void setInternalResource(E entity) {
@@ -36,6 +45,10 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 		internalEObject.eSetResource(internal, null);
 	}
 
+	protected Diagnostician getDiagnostician() {
+		return this.diagnostician;
+	}
+	
 	@Override
 	public Frame<E> getFrame() {
 		return this.internal.getResource().getFrame();
@@ -81,7 +94,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 							order = order.substring(1);
 						}
 
-						Object v1 = o1.isa().getValue(o1, order, false,  false);
+						Object v1 = o1.isa().getValue(o1, order, false, false);
 						if (v1 == null)
 							if (desc)
 								return -1;
@@ -209,5 +222,13 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 			this.iterator = null;
 			this.nextObject = null;
 		}
+	}
+
+	@Override
+	public boolean validate(E entity) {
+		Map<Object, Object> context = new HashMap<Object, Object>();
+		context.put(MimoConstants.VALIDATOR_READ, null);
+		Diagnostic diagnostic = this.getDiagnostician().validate((EObject) entity, context);
+		return diagnostic.getSeverity() > 0;
 	}
 }
