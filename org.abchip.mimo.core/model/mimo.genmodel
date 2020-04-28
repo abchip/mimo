@@ -1246,6 +1246,7 @@
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/isPrepared"/>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/getResponse"/>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/buildResponse"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceResponse">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceResponse/error"/>

@@ -1057,6 +1057,10 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		op = addEOperation(serviceRequestEClass, null, "buildResponse", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(serviceRequestEClass_V);
+		initEOperation(op, g1);
+
 		initEClass(serviceResponseEClass, ServiceResponse.class, "ServiceResponse", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceResponse_Error(), ecorePackage.getEBoolean(), "error", null, 1, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServiceResponse_ErrorMessage(), ecorePackage.getEString(), "errorMessage", null, 0, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

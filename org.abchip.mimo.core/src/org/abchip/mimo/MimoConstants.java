@@ -21,5 +21,8 @@ public class MimoConstants {
 	public static final String VALIDATOR_READ = "org.abchip.mimo.validator.read";
 	public static final String VALIDATOR_WRITE = "org.abchip.mimo.validator.write";
 
+	public static final String SEEDS_PATH = "application/seeds";
+	
+	
 	public static final String TIMESTAMP_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS";
 }

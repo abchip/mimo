@@ -9,6 +9,7 @@ package org.abchip.mimo.service.impl;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
@@ -190,6 +191,20 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 		Class<V> klass = (Class<V>) eGenericType.getEClassifier().getInstanceClass();
 
 		return klass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public V buildResponse() {
+
+		Frame<V> frame = this.getContext().getFrame(this.getResponse());
+		V response = frame.createEntity();
+		
+		return response;
 	}
 
 	/**

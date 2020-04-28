@@ -103,6 +103,14 @@ public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessag
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	V buildResponse();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model contextRequired="true" tenantRequired="true"
 	 * @generated
 	 */

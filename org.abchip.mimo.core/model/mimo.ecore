@@ -2134,6 +2134,9 @@
           <eTypeArguments eTypeParameter="#//service/ServiceRequest/V"/>
         </eGenericType>
       </eOperations>
+      <eOperations name="buildResponse" lowerBound="1">
+        <eGenericType eTypeParameter="#//service/ServiceRequest/V"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="locale" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
