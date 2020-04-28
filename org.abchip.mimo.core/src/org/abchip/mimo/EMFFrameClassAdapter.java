@@ -182,8 +182,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public void setValue(Entity entity, String slot, Object value) {
-		if (entity instanceof EObject)
-			setValue((EObject) entity, slot, value);
+		setValue((EObject) entity, slot, value);
 	}
 
 	private Object getValue(EObject eObject, String slotName, boolean default_, boolean resolve) {
