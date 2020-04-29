@@ -1016,6 +1016,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		addEOperation(entityIdentifiableEClass, theJavaPackage.getJavaURI(), "getURI", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(entityIdentifiableEClass, null, "resolve", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(entityIteratorEClass, EntityIterator.class, "EntityIterator", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(entityIteratorEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);

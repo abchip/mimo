@@ -583,6 +583,7 @@
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getState"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getURI"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/resolve"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIterator">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityIterator/E"/>

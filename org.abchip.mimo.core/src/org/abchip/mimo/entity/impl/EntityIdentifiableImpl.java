@@ -38,6 +38,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -46,6 +47,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -119,11 +121,10 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 			if (eFeature == eIDAttribute)
 				return this.getURI().getFragment();
 
-			EntityIdentifiableImpl eObject = (EntityIdentifiableImpl) EcoreUtil.resolve(this, this);
-			this.eBasicSetSettings(eObject.eBasicSettings());
-			this.eSetProxyURI(null);
+			this.resolve();
 			break;
 		case DIRTY:
+			return null;
 		case RESOLVED:
 		case TRANSIENT:
 		case CHAINED:
@@ -161,6 +162,18 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	@Override
 	public URI getURI() {
 		return URI.create(EcoreUtil.getURI(this).toString());
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public void resolve() {
+		EntityIdentifiableImpl eObject = (EntityIdentifiableImpl) EcoreUtil.resolve(this, this);
+		this.eBasicSetSettings(eObject.eBasicSettings());
+		this.eSetProxyURI(null);
 	}
 
 	/**

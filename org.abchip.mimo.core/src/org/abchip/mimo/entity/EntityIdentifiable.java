@@ -9,6 +9,7 @@ package org.abchip.mimo.entity;
 
 import java.net.URI;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,6 +45,14 @@ public interface EntityIdentifiable extends Entity {
 	 * @generated
 	 */
 	URI getURI();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void resolve() throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->

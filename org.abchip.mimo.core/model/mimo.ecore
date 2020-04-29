@@ -848,6 +848,7 @@
       </eOperations>
       <eOperations name="getState" lowerBound="1" eType="#//entity/EntityState"/>
       <eOperations name="getURI" lowerBound="1" eType="#//java/JavaURI"/>
+      <eOperations name="resolve" lowerBound="1"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityIterator" abstract="true" interface="true">
       <eTypeParameters name="E">
