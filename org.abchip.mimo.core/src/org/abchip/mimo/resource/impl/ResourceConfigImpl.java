@@ -85,10 +85,6 @@ public class ResourceConfigImpl extends EntityImpl implements ResourceConfig {
 	 * @ordered
 	 */
 	protected int pageSize = PAGE_SIZE_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

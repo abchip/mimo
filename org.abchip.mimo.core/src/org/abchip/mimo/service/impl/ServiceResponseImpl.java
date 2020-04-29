@@ -103,10 +103,6 @@ public abstract class ServiceResponseImpl extends ServiceMessageImpl implements 
 	 * @ordered
 	 */
 	protected String successMessage = SUCCESS_MESSAGE_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -27,10 +27,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class WidgetFormEntryImpl extends WidgetEntryImpl implements WidgetFormEntry {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getFrame() <em>Frame</em>}' attribute.

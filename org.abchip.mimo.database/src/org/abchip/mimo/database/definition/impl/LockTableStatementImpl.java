@@ -34,10 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class LockTableStatementImpl extends DefinitionStatementImpl implements LockTableStatement {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #isAllowRead() <em>Allow Read</em>}' attribute.

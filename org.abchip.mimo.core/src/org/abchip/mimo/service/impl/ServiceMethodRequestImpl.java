@@ -32,10 +32,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public abstract class ServiceMethodRequestImpl<E extends EntityIdentifiable, T> extends ServiceRequestImpl<ServiceMethodResponse<T>> implements ServiceMethodRequest<E, T> {
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getEntity()

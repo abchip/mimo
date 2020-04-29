@@ -45,10 +45,6 @@ public class HttpServiceConfigImpl extends EntityImpl implements HttpServiceConf
 	 */
 	protected HostConfig host;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.

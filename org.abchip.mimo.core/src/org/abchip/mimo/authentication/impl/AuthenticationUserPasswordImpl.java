@@ -85,10 +85,6 @@ public class AuthenticationUserPasswordImpl extends EntityImpl implements Authen
 	 * @ordered
 	 */
 	protected String tenant = TENANT_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

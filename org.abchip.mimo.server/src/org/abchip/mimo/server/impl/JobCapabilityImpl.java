@@ -38,10 +38,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class JobCapabilityImpl extends CapabilityImpl implements JobCapability {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getJobReference() <em>Job Reference</em>}' reference.

@@ -50,10 +50,6 @@ public class SystemImpl extends EntityIdentifiableImpl implements org.abchip.mim
 	 */
 	protected ContextRoot context;
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * The default value of the '{@link #getLastJobNumber() <em>Last Job Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

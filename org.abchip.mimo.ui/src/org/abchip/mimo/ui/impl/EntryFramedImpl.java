@@ -26,10 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public abstract class EntryFramedImpl extends EntryImpl implements EntryFramed {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getFrame() <em>Frame</em>}' attribute.

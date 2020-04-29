@@ -60,10 +60,6 @@ public class TableTermImpl extends EntityIdentifiableImpl implements TableTerm {
 	 */
 	protected String name = NAME_EDEFAULT;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getTableDef() <em>Table Def</em>}' containment reference.

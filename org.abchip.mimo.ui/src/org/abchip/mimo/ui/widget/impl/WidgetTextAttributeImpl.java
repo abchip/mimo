@@ -26,10 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class WidgetTextAttributeImpl extends EntityImpl implements WidgetTextAttribute {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getMaxlength() <em>Maxlength</em>}' attribute.

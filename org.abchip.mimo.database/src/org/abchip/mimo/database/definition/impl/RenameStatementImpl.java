@@ -35,10 +35,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class RenameStatementImpl extends DefinitionStatementImpl implements RenameStatement {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getNewName() <em>New Name</em>}' attribute.

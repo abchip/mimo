@@ -76,10 +76,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 * @ordered
 	 */
 	protected Context context;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

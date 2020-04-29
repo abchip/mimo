@@ -14,8 +14,6 @@ import org.eclipse.emf.ecore.ETypedElement;
 
 public class EMFCardinalityAdapter extends CardinalityImpl {
 
-	private static final long serialVersionUID = 1L;
-
 	public EMFCardinalityAdapter(ETypedElement element) {
 		eSet(EntityPackage.CARDINALITY__MIN, element.getLowerBound());
 		eSet(EntityPackage.CARDINALITY__MAX, element.getUpperBound());

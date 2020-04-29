@@ -65,10 +65,6 @@ public class ServiceRegistryRegImpl extends ServiceRegImpl implements ServiceReg
 	 */
 	protected String interfaceName = INTERFACE_NAME_EDEFAULT;
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

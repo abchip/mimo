@@ -45,10 +45,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class MessageFileImpl extends EntityIdentifiableImpl implements MessageFile {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getMessages() <em>Messages</em>}' containment reference list.

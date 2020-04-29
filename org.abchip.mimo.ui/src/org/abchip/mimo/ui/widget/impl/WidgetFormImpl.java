@@ -59,10 +59,6 @@ public class WidgetFormImpl extends WidgetImpl implements WidgetForm {
 	 */
 	protected WidgetFormEntry entry;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

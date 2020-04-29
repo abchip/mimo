@@ -61,10 +61,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class JobImpl extends EntityIdentifiableImpl implements Job {
 
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.

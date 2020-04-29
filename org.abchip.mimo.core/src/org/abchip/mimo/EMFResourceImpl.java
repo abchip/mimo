@@ -22,10 +22,6 @@ import org.abchip.mimo.resource.impl.ResourceImpl;
 
 public class EMFResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	private Context context = null;
 	private Frame<E> frame = null;

@@ -65,10 +65,6 @@ public class ServiceExecutorRegImpl extends ServiceRegImpl implements ServiceExe
 	 * @ordered
 	 */
 	protected boolean remoteExport = REMOTE_EXPORT_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

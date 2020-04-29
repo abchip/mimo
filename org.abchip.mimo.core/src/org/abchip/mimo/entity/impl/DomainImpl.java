@@ -64,10 +64,6 @@ public class DomainImpl extends EntityImpl implements Domain {
 	 * @ordered
 	 */
 	protected String route = ROUTE_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

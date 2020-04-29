@@ -60,10 +60,6 @@ public class DefaultImpl extends EntityImpl implements Default {
 	 * @ordered
 	 */
 	protected EList<String> values;
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

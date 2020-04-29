@@ -28,10 +28,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public abstract class DataNodeImpl extends EntityImpl implements DataNode {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.

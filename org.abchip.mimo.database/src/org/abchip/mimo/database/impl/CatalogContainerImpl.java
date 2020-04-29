@@ -52,10 +52,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class CatalogContainerImpl extends EntityImpl implements CatalogContainer {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.

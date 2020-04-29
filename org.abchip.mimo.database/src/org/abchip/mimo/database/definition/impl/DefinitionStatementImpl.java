@@ -22,10 +22,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public abstract class DefinitionStatementImpl extends EntityImpl implements DefinitionStatement {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

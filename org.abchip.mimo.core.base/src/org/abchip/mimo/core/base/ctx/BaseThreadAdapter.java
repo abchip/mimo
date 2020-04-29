@@ -18,7 +18,6 @@ import org.abchip.mimo.util.Threads;
 
 public class BaseThreadAdapter implements org.abchip.mimo.context.Thread {
 
-	private static final long serialVersionUID = 1L;
 	private Thread thread;
 	private BaseThreadManagerImpl threadManager = null;
 

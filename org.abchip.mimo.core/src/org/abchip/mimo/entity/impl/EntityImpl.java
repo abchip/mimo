@@ -26,10 +26,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public abstract class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

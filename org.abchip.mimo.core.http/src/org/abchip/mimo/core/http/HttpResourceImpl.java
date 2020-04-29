@@ -30,10 +30,6 @@ import org.apache.http.client.ResponseHandler;
 
 public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	private Context context = null;
 	private ResourceSerializer<E> resourceSerializer = null;

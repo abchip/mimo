@@ -35,10 +35,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class NumericDefImpl extends DataDefImpl<Number> implements NumericDef {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.

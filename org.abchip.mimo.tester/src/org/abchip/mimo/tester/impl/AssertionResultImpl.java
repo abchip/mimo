@@ -30,10 +30,6 @@ import org.abchip.mimo.tester.TesterPackage;
  * @generated
  */
 public abstract class AssertionResultImpl extends EntityImpl implements AssertionResult {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.

@@ -40,10 +40,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ConnectionPoolingConfigImpl extends EntityImpl implements ConnectionPoolingConfig {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getMaxTotal() <em>Max Total</em>}' attribute.

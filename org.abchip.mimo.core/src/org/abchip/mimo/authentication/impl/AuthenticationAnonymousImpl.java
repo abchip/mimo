@@ -21,10 +21,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class AuthenticationAnonymousImpl extends EntityImpl implements AuthenticationAnonymous {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

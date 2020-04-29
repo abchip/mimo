@@ -63,10 +63,6 @@ public abstract class CardinalityImpl extends EntityImpl implements Cardinality 
 	 * @ordered
 	 */
 	protected int min = MIN_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

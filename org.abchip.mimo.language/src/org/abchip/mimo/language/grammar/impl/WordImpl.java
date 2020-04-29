@@ -45,10 +45,6 @@ public class WordImpl extends EntityIdentifiableImpl implements Word {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

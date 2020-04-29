@@ -32,10 +32,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class WidgetNumberImpl extends WidgetImpl implements WidgetNumber {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.

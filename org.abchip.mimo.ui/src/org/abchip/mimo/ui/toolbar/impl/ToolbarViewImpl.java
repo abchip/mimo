@@ -47,10 +47,6 @@ public class ToolbarViewImpl extends EntityImpl implements ToolbarView {
 	 */
 	protected String action = ACTION_EDEFAULT;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.

@@ -22,10 +22,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class EntityDefImpl extends DataDefImpl<Entity> implements EntityDef {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

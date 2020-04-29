@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.entity;
 
-import java.io.Serializable;
-
 /**
  * <!-- begin-user-doc --> A representation of the model object
  * '<em><b>Entity</b></em>'. <!-- end-user-doc -->
@@ -16,12 +14,11 @@ import java.io.Serializable;
  *
  * @see org.abchip.mimo.entity.EntityPackage#getEntity()
  * @model abstract="true"
- * @generated NOT
+ * @generated
  */
-public interface Entity extends Serializable {
+public interface Entity {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @model required="true"
 	 * @generated
 	 */

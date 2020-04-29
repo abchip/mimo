@@ -38,10 +38,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class MenuImpl extends EntityIdentifiableImpl implements Menu {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.

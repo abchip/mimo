@@ -59,10 +59,6 @@ public class WidgetComboBoxImpl extends WidgetImpl implements WidgetComboBox {
 	 */
 	protected WidgetComboBoxEntry entry;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -41,7 +41,6 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	private static final Logger LOGGER = Logs.getLogger(EMFFrameClassAdapter.class);
 
-	private static final long serialVersionUID = 1L;
 	private EClass eClass;
 	private Map<String, Slot> slots = null;
 

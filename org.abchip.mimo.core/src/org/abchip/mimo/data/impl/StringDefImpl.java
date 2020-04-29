@@ -32,10 +32,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class StringDefImpl extends DataDefImpl<String> implements StringDef {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getLength() <em>Length</em>}' attribute.

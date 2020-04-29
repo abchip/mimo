@@ -23,10 +23,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class WidgetBrowserImpl extends WidgetImpl implements WidgetBrowser {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.

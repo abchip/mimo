@@ -64,10 +64,6 @@ public abstract class CapabilityImpl extends EntityImpl implements Capability {
 	 * @ordered
 	 */
 	protected URI entityURI = ENTITY_URI_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

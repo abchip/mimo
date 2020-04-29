@@ -37,10 +37,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ConnectionPoolingRouteConfigImpl extends EntityImpl implements ConnectionPoolingRouteConfig {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getHost() <em>Host</em>}' containment reference.

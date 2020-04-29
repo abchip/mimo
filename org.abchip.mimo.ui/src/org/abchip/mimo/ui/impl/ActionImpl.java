@@ -47,10 +47,6 @@ public class ActionImpl extends EntityImpl implements Action {
 	 */
 	protected String command = COMMAND_EDEFAULT;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.

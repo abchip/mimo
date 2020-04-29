@@ -198,10 +198,6 @@ public class ContextDescriptionImpl extends EntityImpl implements ContextDescrip
 	 * @ordered
 	 */
 	protected String user = USER_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

@@ -31,10 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ResourceMappingRuleByFrameImpl extends ResourceMappingRuleImpl implements ResourceMappingRuleByFrame {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getFrame() <em>Frame</em>}' attribute.

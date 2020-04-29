@@ -34,10 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ApplicationLogEntryImpl extends EntityImpl implements ApplicationLogEntry {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getPackage() <em>Package</em>}' attribute.

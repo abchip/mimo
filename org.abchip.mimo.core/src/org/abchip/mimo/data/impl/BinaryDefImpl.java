@@ -20,10 +20,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class BinaryDefImpl extends DataDefImpl<byte[]> implements BinaryDef {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

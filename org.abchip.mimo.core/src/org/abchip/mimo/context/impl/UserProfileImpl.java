@@ -104,10 +104,6 @@ public class UserProfileImpl extends EntityIdentifiableImpl implements UserProfi
 	 * @ordered
 	 */
 	protected UserClass userClass = USER_CLASS_EDEFAULT;
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

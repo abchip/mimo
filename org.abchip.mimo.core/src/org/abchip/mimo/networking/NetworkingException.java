@@ -9,6 +9,7 @@ package org.abchip.mimo.networking;
 
 public class NetworkingException extends Exception {
 
+
 	/**
 	 * 
 	 */

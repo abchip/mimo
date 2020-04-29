@@ -130,10 +130,6 @@ public class ApplicationComponentImpl extends EntityIdentifiableImpl implements 
 	 * @ordered
 	 */
 	protected ComponentStatus status = STATUS_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

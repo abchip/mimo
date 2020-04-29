@@ -22,10 +22,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class WidgetTextAreaImpl extends WidgetImpl implements WidgetTextArea {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.

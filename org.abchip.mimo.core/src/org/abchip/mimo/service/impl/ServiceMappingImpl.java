@@ -41,10 +41,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ServiceMappingImpl extends EntityImpl implements ServiceMapping {
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

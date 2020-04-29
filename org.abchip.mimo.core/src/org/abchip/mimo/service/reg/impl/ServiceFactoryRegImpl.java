@@ -25,10 +25,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class ServiceFactoryRegImpl extends ServiceRegImpl implements ServiceFactoryReg {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getInterfaceName() <em>Interface Name</em>}' attribute.

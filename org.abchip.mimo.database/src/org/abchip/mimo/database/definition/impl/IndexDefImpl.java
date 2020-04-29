@@ -43,10 +43,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class IndexDefImpl extends DatabaseObjectDefImpl implements IndexDef {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #isClustered() <em>Clustered</em>}' attribute.

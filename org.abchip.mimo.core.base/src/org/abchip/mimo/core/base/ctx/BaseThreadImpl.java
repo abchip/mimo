@@ -16,7 +16,6 @@ import org.abchip.mimo.entity.Frame;
 
 public class BaseThreadImpl extends Thread implements org.abchip.mimo.context.Thread {
 
-	private static final long serialVersionUID = 1L;
 	private final AtomicBoolean locked = new AtomicBoolean();
 	private BaseThreadManagerImpl threadManager = null;
 	

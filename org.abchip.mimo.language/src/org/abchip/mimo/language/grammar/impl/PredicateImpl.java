@@ -22,10 +22,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class PredicateImpl extends EntityImpl implements Predicate {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

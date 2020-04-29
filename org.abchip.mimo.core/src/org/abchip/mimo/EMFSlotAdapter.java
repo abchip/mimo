@@ -41,10 +41,6 @@ import org.eclipse.emf.ecore.ETypedElement;
 
 public class EMFSlotAdapter extends SlotImpl {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	private ETypedElement element;
 

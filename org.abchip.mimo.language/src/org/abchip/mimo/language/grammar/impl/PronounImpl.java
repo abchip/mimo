@@ -20,10 +20,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class PronounImpl extends WordImpl implements Pronoun {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -23,10 +23,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public abstract class DataDefImpl<D> extends EntityImpl implements DataDef<D> {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

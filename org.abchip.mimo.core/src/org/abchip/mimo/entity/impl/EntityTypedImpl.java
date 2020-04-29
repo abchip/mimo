@@ -20,10 +20,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public abstract class EntityTypedImpl<T extends EntityType<?>> extends EntityIdentifiableImpl implements EntityTyped<T> {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

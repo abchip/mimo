@@ -9,6 +9,7 @@ package org.abchip.mimo.service;
 
 public class ServiceException extends Exception {
 
+
 	/**
 	 * 
 	 */

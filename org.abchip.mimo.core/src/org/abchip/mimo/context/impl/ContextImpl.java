@@ -29,10 +29,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public abstract class ContextImpl extends EntityImpl implements Context {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

@@ -46,10 +46,6 @@ public abstract class EntityTypeImpl<E extends EntityTyped<?>> extends EntityIde
 	 */
 	protected EList<Slot> slots;
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

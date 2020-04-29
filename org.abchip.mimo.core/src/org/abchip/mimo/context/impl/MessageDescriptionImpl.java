@@ -122,10 +122,6 @@ public class MessageDescriptionImpl extends EntityImpl implements MessageDescrip
 	 * @ordered
 	 */
 	protected EList<MessageDataField<?>> messageDataFields;
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

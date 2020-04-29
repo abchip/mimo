@@ -61,10 +61,6 @@ public class MessageDataFieldImpl<DD extends DataDef<?>> extends EntityImpl impl
 	 * @ordered
 	 */
 	protected DataDef<?> definition;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

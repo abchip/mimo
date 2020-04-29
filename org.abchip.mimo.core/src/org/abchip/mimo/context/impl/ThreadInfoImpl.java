@@ -220,7 +220,6 @@ public class ThreadInfoImpl extends EntityImpl implements ThreadInfo {
 	 * @ordered
 	 */
 	protected boolean threadDaemon = THREAD_DAEMON_EDEFAULT;
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

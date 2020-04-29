@@ -1,6 +1,7 @@
 package org.grammaticalframework.pgf;
 
 public class TypeError extends Exception {
+
 	/**
 	 * 
 	 */

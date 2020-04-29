@@ -61,10 +61,6 @@ public class MenuActionImpl extends DataNodeImpl implements MenuAction {
 	 * @ordered
 	 */
 	protected String filter = FILTER_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

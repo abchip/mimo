@@ -33,10 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ApplicationPathsImpl extends EntityImpl implements ApplicationPaths {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getData() <em>Data</em>}' attribute.

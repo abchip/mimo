@@ -19,10 +19,6 @@ import org.abchip.mimo.tester.TesterPackage;
  * @generated
  */
 public class AssertionFailedImpl extends AssertionResultImpl implements AssertionFailed {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

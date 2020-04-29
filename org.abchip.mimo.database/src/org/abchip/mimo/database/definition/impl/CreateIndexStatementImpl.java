@@ -35,10 +35,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class CreateIndexStatementImpl extends DefinitionStatementImpl implements CreateIndexStatement {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getIndexName() <em>Index Name</em>}' containment reference.

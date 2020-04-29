@@ -40,10 +40,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class TableColumnDefImpl extends DatabaseObjectDefImpl implements TableColumnDef {
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * The default value of the '{@link #isDefault() <em>Default</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isDefault()

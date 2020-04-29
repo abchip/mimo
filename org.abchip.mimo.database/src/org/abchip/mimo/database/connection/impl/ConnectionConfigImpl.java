@@ -42,10 +42,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ConnectionConfigImpl extends EntityImpl implements ConnectionConfig {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getCredentials() <em>Credentials</em>}' containment reference.

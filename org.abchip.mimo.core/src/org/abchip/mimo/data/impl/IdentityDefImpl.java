@@ -19,10 +19,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class IdentityDefImpl extends DataDefImpl<Integer> implements IdentityDef {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

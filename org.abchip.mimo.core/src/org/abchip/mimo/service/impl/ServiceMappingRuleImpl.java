@@ -33,10 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public abstract class ServiceMappingRuleImpl extends EntityImpl implements ServiceMappingRule {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getProvider() <em>Provider</em>}' attribute.

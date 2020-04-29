@@ -36,10 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ServiceConfigImpl extends EntityImpl implements ServiceConfig {
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -34,10 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class JobReferenceImpl extends EntityImpl implements JobReference {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getJobNumber() <em>Job Number</em>}' attribute.

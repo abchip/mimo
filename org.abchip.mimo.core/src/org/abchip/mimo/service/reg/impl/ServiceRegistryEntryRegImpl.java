@@ -104,10 +104,6 @@ public class ServiceRegistryEntryRegImpl extends ServiceRegImpl implements Servi
 	 */
 	protected String version = VERSION_EDEFAULT;
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

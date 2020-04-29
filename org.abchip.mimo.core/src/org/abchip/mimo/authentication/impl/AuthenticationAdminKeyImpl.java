@@ -32,10 +32,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class AuthenticationAdminKeyImpl extends EntityImpl implements AuthenticationAdminKey {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getAdminKey() <em>Admin Key</em>}' attribute.

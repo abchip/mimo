@@ -65,10 +65,6 @@ public class ProviderUserImpl extends EntityImpl implements ProviderUser {
 	 * @ordered
 	 */
 	protected String password = PASSWORD_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

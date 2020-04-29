@@ -44,10 +44,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @ordered
 	 */
 	protected ResourceConfig resourceConfig;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

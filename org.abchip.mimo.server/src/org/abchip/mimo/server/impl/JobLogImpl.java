@@ -46,10 +46,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class JobLogImpl extends EntityImpl implements JobLog {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getJob() <em>Job</em>}' reference.

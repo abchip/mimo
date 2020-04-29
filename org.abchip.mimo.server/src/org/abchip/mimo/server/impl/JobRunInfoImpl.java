@@ -32,10 +32,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class JobRunInfoImpl extends EntityImpl implements JobRunInfo {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getMemorySize() <em>Memory Size</em>}' attribute.

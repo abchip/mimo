@@ -34,10 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public abstract class ViewImpl<E extends Entry> extends EntityImpl implements View<E> {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.

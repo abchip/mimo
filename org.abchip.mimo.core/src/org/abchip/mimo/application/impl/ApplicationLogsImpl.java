@@ -41,10 +41,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ApplicationLogsImpl extends EntityImpl implements ApplicationLogs {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getEntries() <em>Entries</em>}' containment reference list.

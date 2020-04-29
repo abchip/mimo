@@ -22,10 +22,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class DialogImpl extends EntityImpl implements Dialog {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

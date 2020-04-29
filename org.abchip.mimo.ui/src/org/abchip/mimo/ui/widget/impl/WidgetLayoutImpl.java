@@ -29,10 +29,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public class WidgetLayoutImpl extends WidgetImpl implements WidgetLayout {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getView() <em>View</em>}' attribute.

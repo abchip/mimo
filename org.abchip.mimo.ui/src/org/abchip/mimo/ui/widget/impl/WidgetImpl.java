@@ -49,10 +49,6 @@ public abstract class WidgetImpl extends EntityImpl implements Widget {
 	 */
 	protected boolean disabled = DISABLED_EDEFAULT;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.

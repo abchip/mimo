@@ -19,10 +19,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class EnumDefImpl<E extends Enum<E>> extends DataDefImpl<Enum<E>> implements EnumDef<E> {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

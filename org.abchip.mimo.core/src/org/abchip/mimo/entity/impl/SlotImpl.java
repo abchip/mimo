@@ -222,10 +222,6 @@ public abstract class SlotImpl extends EntityIdentifiableImpl implements Slot {
 	 * @ordered
 	 */
 	protected boolean toString = TO_STRING_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

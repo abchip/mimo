@@ -9,6 +9,7 @@ package org.abchip.mimo.resource;
 
 public class ResourceException extends Exception {
 
+
 	/**
 	 * 
 	 */

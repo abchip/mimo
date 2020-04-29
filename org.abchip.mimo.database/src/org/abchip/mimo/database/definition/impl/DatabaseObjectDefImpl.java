@@ -34,10 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public abstract class DatabaseObjectDefImpl extends EntityImpl implements DatabaseObjectDef {
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

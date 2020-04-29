@@ -31,10 +31,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  */
 public class QualifiedNameImpl extends EntityImpl implements QualifiedName {
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * The cached value of the '{@link #getQualifiers() <em>Qualifiers</em>}' attribute list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getQualifiers()

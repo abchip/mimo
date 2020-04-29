@@ -152,10 +152,6 @@ public class LanguageImpl extends EntityIdentifiableImpl implements Language {
 	 * @ordered
 	 */
 	protected EList<LanguagePlanet> planetsCont;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

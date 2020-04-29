@@ -127,10 +127,6 @@ public abstract class MessageImpl extends EntityTypedImpl<MessageType<?>> implem
 	 */
 	protected Date lastUpdatedTxStamp = LAST_UPDATED_TX_STAMP_EDEFAULT;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getMessageId() <em>Message Id</em>}' attribute.

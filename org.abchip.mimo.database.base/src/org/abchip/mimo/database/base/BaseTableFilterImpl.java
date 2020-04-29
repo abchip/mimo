@@ -13,7 +13,7 @@ import org.eclipse.datatools.connectivity.sqm.internal.core.connection.Connectio
 public class BaseTableFilterImpl extends ConnectionFilterImpl {
 
 	/**
-	 *
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 

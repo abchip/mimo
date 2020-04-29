@@ -18,10 +18,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public abstract class EntryImpl extends EntityImpl implements Entry {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

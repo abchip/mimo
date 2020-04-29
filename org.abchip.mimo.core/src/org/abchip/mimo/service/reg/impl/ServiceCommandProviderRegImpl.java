@@ -44,10 +44,6 @@ public class ServiceCommandProviderRegImpl extends ServiceRegImpl implements Ser
 	 * @ordered
 	 */
 	protected String interfaceName = INTERFACE_NAME_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -9,6 +9,7 @@ package org.abchip.mimo.language;
 
 public class LanguageException extends Exception {
 
+
 	/**
 	 * 
 	 */

@@ -77,10 +77,6 @@ public class EdiFrameSetupImpl extends EntityIdentifiableImpl implements EdiFram
 	 */
 	protected String frame = FRAME_EDEFAULT;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getEntityCondition() <em>Entity Condition</em>}' attribute.

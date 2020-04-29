@@ -64,10 +64,6 @@ public class GrammarImpl extends EntityIdentifiableImpl implements Grammar {
 	 * @ordered
 	 */
 	protected String text = TEXT_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

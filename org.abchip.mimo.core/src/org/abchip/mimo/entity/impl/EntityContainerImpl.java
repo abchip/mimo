@@ -64,10 +64,6 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	 */
 	protected String name = NAME_EDEFAULT;
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

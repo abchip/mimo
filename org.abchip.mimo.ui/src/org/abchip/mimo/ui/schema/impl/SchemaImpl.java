@@ -37,10 +37,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class SchemaImpl extends EntityIdentifiableImpl implements Schema {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getColumns() <em>Columns</em>}' containment reference list.

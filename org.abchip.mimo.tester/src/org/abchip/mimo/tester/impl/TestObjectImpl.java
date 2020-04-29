@@ -44,10 +44,6 @@ import org.abchip.mimo.tester.TesterPackage;
  * @generated
  */
 public class TestObjectImpl extends EntityIdentifiableImpl implements TestObject {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.

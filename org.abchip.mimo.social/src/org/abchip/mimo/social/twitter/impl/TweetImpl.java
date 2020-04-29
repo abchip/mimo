@@ -44,10 +44,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * @generated
  */
 public class TweetImpl extends EntityIdentifiableImpl implements Tweet {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getDate() <em>Date</em>}' attribute. <!--

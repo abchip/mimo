@@ -24,10 +24,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class IdentityImpl<T extends Entity> extends EntityImpl implements Identity<T> {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	private Principal principal;
 	

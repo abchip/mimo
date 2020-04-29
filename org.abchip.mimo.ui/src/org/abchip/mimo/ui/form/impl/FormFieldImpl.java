@@ -52,10 +52,6 @@ public class FormFieldImpl extends EntityImpl implements FormField {
 	 */
 	protected boolean contextMenu = CONTEXT_MENU_EDEFAULT;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getGroup() <em>Group</em>}' attribute.

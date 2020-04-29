@@ -30,10 +30,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ConnectStatementImpl extends DefinitionStatementImpl implements ConnectStatement {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getPwd() <em>Pwd</em>}' attribute.

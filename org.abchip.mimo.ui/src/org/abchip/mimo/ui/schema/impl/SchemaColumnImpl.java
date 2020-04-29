@@ -39,10 +39,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class SchemaColumnImpl extends EntityImpl implements SchemaColumn {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #isAdjust() <em>Adjust</em>}' attribute.

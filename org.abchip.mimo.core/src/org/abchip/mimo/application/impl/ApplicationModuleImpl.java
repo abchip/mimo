@@ -86,10 +86,6 @@ public class ApplicationModuleImpl extends EntityImpl implements ApplicationModu
 	 * @ordered
 	 */
 	protected ModuleStatus status = STATUS_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

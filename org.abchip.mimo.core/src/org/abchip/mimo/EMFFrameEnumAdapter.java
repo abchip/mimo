@@ -20,10 +20,6 @@ import org.eclipse.emf.ecore.EEnum;
 
 public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private EEnum eEnum;
 
 	public EMFFrameEnumAdapter(EEnum eEnum) {

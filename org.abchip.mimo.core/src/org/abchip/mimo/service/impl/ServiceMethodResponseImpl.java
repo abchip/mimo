@@ -29,10 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ServiceMethodResponseImpl<T> extends ServiceResponseImpl implements ServiceMethodResponse<T> {
 	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
 	 * The cached value of the '{@link #getResult() <em>Result</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

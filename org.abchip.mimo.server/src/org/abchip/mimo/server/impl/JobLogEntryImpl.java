@@ -36,10 +36,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class JobLogEntryImpl extends EntityImpl implements JobLogEntry {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getGravity() <em>Gravity</em>}' attribute.

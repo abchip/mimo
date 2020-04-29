@@ -71,10 +71,6 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	 * @ordered
 	 */
 	protected ProviderUser publicUser;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

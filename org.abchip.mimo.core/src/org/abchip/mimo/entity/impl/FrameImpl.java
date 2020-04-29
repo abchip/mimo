@@ -192,10 +192,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	 * @ordered
 	 */
 	protected String textFormula = TEXT_FORMULA_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

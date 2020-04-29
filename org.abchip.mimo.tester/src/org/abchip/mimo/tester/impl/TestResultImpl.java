@@ -40,10 +40,6 @@ import org.abchip.mimo.tester.TesterPackage;
  * @generated
  */
 public class TestResultImpl extends EntityImpl implements TestResult {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getAssertResults() <em>Assert Results</em>}' containment reference list.

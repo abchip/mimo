@@ -28,10 +28,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class DisconnectStatementImpl extends DefinitionStatementImpl implements DisconnectStatement {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.

@@ -27,10 +27,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ServiceMappingRuleByPackageImpl extends ServiceMappingRuleImpl implements ServiceMappingRuleByPackage {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default value of the '{@link #getPackage() <em>Package</em>}' attribute.

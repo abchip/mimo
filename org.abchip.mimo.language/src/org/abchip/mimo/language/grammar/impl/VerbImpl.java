@@ -20,10 +20,6 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class VerbImpl extends WordImpl implements Verb {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

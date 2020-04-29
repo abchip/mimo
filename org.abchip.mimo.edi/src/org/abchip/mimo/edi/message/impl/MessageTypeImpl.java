@@ -199,10 +199,6 @@ public class MessageTypeImpl<E extends Message> extends EntityTypeImpl<E> implem
 	 * @ordered
 	 */
 	protected EList<String> ediFrameSetups;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

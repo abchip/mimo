@@ -122,10 +122,6 @@ public class AuthenticationUserTokenImpl extends EntityImpl implements Authentic
 	 * @ordered
 	 */
 	protected String user = USER_EDEFAULT;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->

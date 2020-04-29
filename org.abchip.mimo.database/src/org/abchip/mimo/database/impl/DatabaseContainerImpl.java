@@ -46,10 +46,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class DatabaseContainerImpl extends EntityImpl implements DatabaseContainer {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The cached value of the '{@link #getCatalogContainers()

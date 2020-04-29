@@ -62,10 +62,6 @@ public class ServiceImpl<R extends ServiceRequest<V>, V extends ServiceResponse>
 	 * @ordered
 	 */
 	protected R request;
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * <!-- begin-user-doc -->
