@@ -38,6 +38,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -46,6 +47,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -65,7 +67,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 		EStructuralFeature eFeature = eClass().getEStructuralFeature(featureID);
 
 		if (eFeature.isMany()) {
-			if (!eIsSet(featureID)) {
+			if (resolve && !eIsSet(featureID)) {
 
 				if (this.getResource() == null)
 					return super.eGet(featureID, resolve, coreType);
@@ -110,7 +112,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 				super.eSet(eFeature, values);
 
 				return values;
-
 			}
 		}
 

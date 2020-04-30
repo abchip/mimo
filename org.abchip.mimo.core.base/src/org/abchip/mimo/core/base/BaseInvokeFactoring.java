@@ -1,6 +1,7 @@
 package org.abchip.mimo.core.base;
 
 import java.lang.reflect.InvocationTargetException;
+import java.math.BigDecimal;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -52,9 +53,13 @@ public class BaseInvokeFactoring implements Factory {
 				return null;
 			}
 
-			return _invoke(resource.getContext(), entity, arguments);
+			Object object = _invoke(resource.getContext(), entity, arguments);
+			if (BigDecimal.class.isAssignableFrom(this.eOperation.getEType().getInstanceClass())) {
+				object = new BigDecimal(object.toString());
+			}
+			return object;
 		}
-		
+
 		private <E extends EntityIdentifiable, T> T _invoke(Context context, E entity, EList<?> arguments) throws InvocationTargetException {
 
 			ServiceManager serviceManager = context.getServiceManager();
@@ -62,7 +67,7 @@ public class BaseInvokeFactoring implements Factory {
 			try {
 				ServiceMethodRequest<E, T> request = serviceManager.prepare(context, entity.isa().getName() + "_" + Strings.firstToUpper(this.eOperation.getName()));
 				request.setEntity(entity);
-				
+
 				ServiceMethodResponse<T> response = serviceManager.execute(request);
 				if (response.isError()) {
 					LOGGER.warn(response.getErrorMessage());

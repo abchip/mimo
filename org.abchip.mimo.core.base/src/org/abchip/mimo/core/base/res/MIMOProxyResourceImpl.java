@@ -91,7 +91,11 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 		Entity entity = frame.createEntity();
 
 		for (String slotName : JSONObject.getNames(jsonObject)) {
-			frame.setValue(entity, slotName, jsonObject.get(slotName));
+			Object slotValue = jsonObject.get(slotName);
+			if(slotValue instanceof JSONObject) {
+				slotValue = jsonObject2Entity((JSONObject)slotValue);
+			}
+			frame.setValue(entity, slotName, slotValue);
 		}
 
 		return entity;
@@ -122,8 +126,8 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 			 * if (entity instanceof EntityIdentifiable) { EntityIdentifiable
 			 * entityIdentifiable = (EntityIdentifiable) entity; switch
 			 * (entityIdentifiable.getState()) { case DIRTY: case PROXY: pw.write("\"" +
-			 * Strings..escape(entityIdentifiable.getID()) + "\""); first = false;
-			 * continue; case TRANSIENT: case RESOLVED: break; } }
+			 * Strings..escape(entityIdentifiable.getID()) + "\""); first = false; continue;
+			 * case TRANSIENT: case RESOLVED: break; } }
 			 */
 
 			JSONObject object = entity2JSON(entity);

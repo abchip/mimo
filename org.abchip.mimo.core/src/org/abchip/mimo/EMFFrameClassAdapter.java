@@ -315,13 +315,13 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		E proxy = this.createEntity();
 
 		InternalEObject internalEObject = (InternalEObject) proxy;
-		URI uri = URI.createHierarchicalURI("mimo", tenant, null, new String[] { this.getName() }, null, name);
+		URI uri = URI.createHierarchicalURI("mimo", tenant, null, new String[] { this.getName() }, null, id);
 		internalEObject.eSetProxyURI(uri);
 
 		Entity entity = (Entity) internalEObject;
 		Frame<?> domainFrame = entity.isa();
 		for (String key : domainFrame.getKeys()) {
-			domainFrame.setValue(entity, key, name.toString());
+			domainFrame.setValue(entity, key, id.toString());
 			break;
 		}
 		
