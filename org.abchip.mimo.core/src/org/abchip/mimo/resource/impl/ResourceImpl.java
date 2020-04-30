@@ -130,6 +130,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		InternalEObject internalEObject = (InternalEObject) proxy;
 		URI uri = URI.createHierarchicalURI("mimo", this.getTenant(), null, new String[] { this.getFrame().getName() }, null, id);
 		internalEObject.eSetProxyURI(uri);
+		this.setInternalResource(proxy);
 
 		Entity entity = (Entity) internalEObject;
 		Frame<?> domainFrame = entity.isa();

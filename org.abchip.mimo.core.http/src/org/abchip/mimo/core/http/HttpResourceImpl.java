@@ -85,14 +85,46 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	}
 
 	@Override
+	public void update(E entity) throws ResourceException {
+		create(entity, true);
+	}
+	
+	@SuppressWarnings("resource")
+	@Override
 	public void create(E entity, boolean update) throws ResourceException {
-		doSave(entity, update);
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		synchronized (this.resourceSerializer) {
+			this.resourceSerializer.add(entity);
+			try {
+				this.resourceSerializer.save(baos);
+			} catch (IOException e) {
+				throw new ResourceException(e);
+			} finally {
+				this.resourceSerializer.clear();
+			}
+		}
+
+		String query = "frame=" + getFrame().getName() + "&replace=" + update;
+		try {
+			query += "&json=" + URLEncoder.encode(baos.toString(), "UTF-8");
+		} catch (Exception e) {
+			throw new ResourceException(e);
+		}
+		if (tenant != null)
+			query += "&tenant=" + this.tenant;
+
+		HttpConnector connector = context.get(HttpConnector.class);
+		if (connector == null)
+			throw new ResourceException("Unconnected resource " + getFrame().getURI());
+
+		try {
+			connector.execute("save", query, new HttpSaveHandler());
+			this.setInternalResource(entity);
+		} catch (Exception e) {
+			throw new ResourceException(e);
+		}
 	}
 
-	@Override
-	public void update(E entity) throws ResourceException {
-		doSave(entity, true);
-	}
 
 	@SuppressWarnings("resource")
 	@Override
@@ -197,42 +229,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 		try {
 			connector.execute("delete", query, new HttpDeleteHandler());
-		} catch (Exception e) {
-			throw new ResourceException(e);
-		}
-	}
-
-	@SuppressWarnings("resource")
-	private void doSave(E entity, boolean replace) throws ResourceException {
-
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		synchronized (this.resourceSerializer) {
-			this.resourceSerializer.add(entity);
-			try {
-				this.resourceSerializer.save(baos);
-			} catch (IOException e) {
-				throw new ResourceException(e);
-			} finally {
-				this.resourceSerializer.clear();
-			}
-		}
-
-		String query = "frame=" + getFrame().getName() + "&replace=" + replace;
-		try {
-			query += "&json=" + URLEncoder.encode(baos.toString(), "UTF-8");
-		} catch (Exception e) {
-			throw new ResourceException(e);
-		}
-		if (tenant != null)
-			query += "&tenant=" + this.tenant;
-
-		HttpConnector connector = context.get(HttpConnector.class);
-		if (connector == null)
-			throw new ResourceException("Unconnected resource " + getFrame().getURI());
-
-		try {
-			connector.execute("save", query, new HttpSaveHandler());
-			this.setInternalResource(entity);
 		} catch (Exception e) {
 			throw new ResourceException(e);
 		}
