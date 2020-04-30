@@ -86,14 +86,7 @@ public class BaseResource {
 
 	protected <E extends EntityIdentifiable> MimoResourceImpl<E> getInternalResource(Context context, String frame, String tenant) {
 
-		String query = null;
-		if (tenant != null)
-			query = "tenant=" + tenant;
-		else if (context.getContextDescription().isTenant()) {
-			query = "tenant=" + context.getContextDescription().getTenant();
-		}
-
-		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { frame }, query, null);
+		URI uri = URI.createHierarchicalURI("mimo", tenant, null, new String[] { frame }, null, null);
 		@SuppressWarnings("unchecked")
 		MimoResourceImpl<E> internal = (MimoResourceImpl<E>) getResourceSet(context).getResource(uri, true);
 

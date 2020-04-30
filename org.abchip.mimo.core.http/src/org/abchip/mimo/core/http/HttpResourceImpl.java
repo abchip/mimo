@@ -117,7 +117,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			synchronized (this.resourceSerializer) {
 				entity = connector.execute("lookup", query, handler);
 			}
-
+			this.setInternalResource(entity);
 		} catch (Exception e) {
 			throw new ResourceException(e);
 		}
@@ -161,6 +161,8 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			synchronized (this.resourceSerializer) {
 				entities = connector.execute("find", query, handler);
 			}
+			for(E entity: entities)
+				this.setInternalResource(entity);
 		} catch (Exception e) {
 			throw new ResourceException(e);
 		}
@@ -230,6 +232,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 		try {
 			connector.execute("save", query, new HttpSaveHandler());
+			this.setInternalResource(entity);
 		} catch (Exception e) {
 			throw new ResourceException(e);
 		}

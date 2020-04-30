@@ -183,30 +183,6 @@
       <eLiterals name="Execute" value="30" literal="EXC"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true" eSuperTypes="#//entity/Entity">
-      <eOperations name="createProxy" lowerBound="1">
-        <eGenericType eTypeParameter="#//context/Context/createProxy/E"/>
-        <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
-        </eTypeParameters>
-        <eParameters name="frame" lowerBound="1">
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-            <eTypeArguments eTypeParameter="#//context/Context/createProxy/E"/>
-          </eGenericType>
-        </eParameters>
-        <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="createProxy" lowerBound="1">
-        <eGenericType eTypeParameter="#//context/Context/createProxy.1/E"/>
-        <eTypeParameters name="E">
-          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
-        </eTypeParameters>
-        <eParameters name="frame" lowerBound="1">
-          <eGenericType eClassifier="#//entity/Frame">
-            <eTypeArguments eTypeParameter="#//context/Context/createProxy.1/E"/>
-          </eGenericType>
-        </eParameters>
-        <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
       <eOperations name="dispose"/>
       <eOperations name="get" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/get/T"/>
@@ -245,6 +221,7 @@
       </eOperations>
       <eOperations name="getResourceManager" lowerBound="1" eType="#//resource/ResourceManager"/>
       <eOperations name="getServiceManager" lowerBound="1" eType="#//service/ServiceManager"/>
+      <eOperations name="getTenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="inject">
         <eParameters name="object" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       </eOperations>
@@ -919,6 +896,7 @@
       <eOperations name="createProxy" lowerBound="1">
         <eGenericType eTypeParameter="#//entity/Frame/E"/>
         <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="getPackageName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="getSlot" lowerBound="1" eType="#//entity/Slot">
@@ -1860,7 +1838,7 @@
           </eBounds>
         </eTypeParameters>
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
-        <eParameters name="request">
+        <eParameters name="request" lowerBound="1">
           <eGenericType eTypeParameter="#//service/ServiceManager/getService/R"/>
         </eParameters>
       </eOperations>
@@ -1878,11 +1856,27 @@
           </eBounds>
         </eTypeParameters>
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
-        <eParameters name="klass">
+        <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
             <eTypeArguments eTypeParameter="#//service/ServiceManager/getService.1/R"/>
           </eGenericType>
         </eParameters>
+      </eOperations>
+      <eOperations name="getService" lowerBound="1">
+        <eGenericType eClassifier="#//service/Service">
+          <eTypeArguments eTypeParameter="#//service/ServiceManager/getService.2/R"/>
+          <eTypeArguments eTypeParameter="#//service/ServiceManager/getService.2/V"/>
+        </eGenericType>
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/getService.2/V"/>
+          </eBounds>
+        </eTypeParameters>
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+        <eParameters name="serviceId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
         <eGenericType eTypeParameter="#//service/ServiceManager/prepare/R"/>

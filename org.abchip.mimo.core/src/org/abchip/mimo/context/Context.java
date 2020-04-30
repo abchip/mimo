@@ -10,7 +10,6 @@ package org.abchip.mimo.context;
 
 import java.lang.annotation.Annotation;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.service.ServiceManager;
@@ -26,22 +25,6 @@ import org.abchip.mimo.service.ServiceManager;
  * @generated
  */
 public interface Context extends Entity {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" frameRequired="true" idRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> E createProxy(Class<E> frame, String id);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" frameRequired="true" idRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id);
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,6 +80,14 @@ public interface Context extends Entity {
 	 * @generated
 	 */
 	ServiceManager getServiceManager();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	String getTenant();
 
 	/**
 	 * <!-- begin-user-doc -->

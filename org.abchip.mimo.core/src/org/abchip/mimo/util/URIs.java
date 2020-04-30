@@ -19,7 +19,7 @@ public class URIs {
 		return org.apache.commons.io.FilenameUtils.getBaseName(uri.getRawPath());
 	}
 
-	public static Map<String, String> parseParameter(String query) {
+	public static Map<String, String> parseQuery(String query) {
 
 		Map<String, String> query_pairs = new LinkedHashMap<String, String>();
 		try {

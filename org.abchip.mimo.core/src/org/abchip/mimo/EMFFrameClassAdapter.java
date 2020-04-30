@@ -25,6 +25,7 @@ import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.service.log.Logger;
 
@@ -181,7 +183,36 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public void setValue(Entity entity, String slot, Object value) {
-		setValue((EObject) entity, slot, value);
+		
+		EStructuralFeature eFeature = eClass.getEStructuralFeature(slot);
+		if (eFeature == null)
+			return;
+
+		EObject eObject = (EObject) entity;
+		
+		if (value == null) {
+			eObject.eUnset(eFeature);
+			return;
+		}
+
+		URI uri = EcoreUtil.getURI(eObject);
+		String tenant = uri.authority();
+		try {
+			if (eFeature.isMany()) {
+				List<Object> values = new ArrayList<Object>();
+				for (Object object : (Collection<?>) value)
+					values.add(buildValue(tenant, eFeature, object));
+				eObject.eSet(eFeature, values);
+			} else {
+				Object object = buildValue(tenant, eFeature, value);
+				eObject.eSet(eFeature, object);
+			}
+		} catch (Exception e) {
+			if (eFeature.getEType() instanceof EDataType) {
+				value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
+				eObject.eSet(eFeature, value);
+			}
+		}
 	}
 
 	private Object getValue(EObject eObject, String slotName, boolean default_, boolean resolve) {
@@ -223,37 +254,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		return value;
 	}
 
-	private void setValue(EObject eObject, String slot, Object value) {
-
-		EStructuralFeature eFeature = eClass.getEStructuralFeature(slot);
-		if (eFeature == null)
-			return;
-
-		if (value == null) {
-			eObject.eUnset(eFeature);
-			return;
-		}
-
-		try {
-			if (eFeature.isMany()) {
-				List<Object> values = new ArrayList<Object>();
-				for (Object object : (Collection<?>) value)
-					values.add(buildValue(eFeature, object));
-				eObject.eSet(eFeature, values);
-			} else {
-				Object object = buildValue(eFeature, value);
-				eObject.eSet(eFeature, object);
-			}
-		} catch (Exception e) {
-			if (eFeature.getEType() instanceof EDataType) {
-				value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
-				eObject.eSet(eFeature, value);
-			}
-		}
-
-	}
-
-	private Object buildValue(EStructuralFeature eFeature, Object value) {
+	private Object buildValue(String tenant, EStructuralFeature eFeature, Object value) {
 
 		Object object = null;
 
@@ -266,7 +267,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 				EClassifier eClassifier = eReference.getEType();
 				Frame<?> frameRef = (Frame<?>) this.entities.get(eClassifier.getName());
 				if (frameRef != null) {
-					Entity entity = frameRef.createProxy(value.toString());
+					Entity entity = frameRef.createProxy(value.toString(), tenant);
 					object = entity;
 				} else
 					LOGGER.warn("Unexpected condition {}", "bvtw4a87ny4r9tycsa9et6");
@@ -306,5 +307,24 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 		if (text != null)
 			eSet(EntityPackage.FRAME__TEXT, text);
+	}
+
+	@Override
+	public E createProxy(String id, String tenant) {
+
+		E proxy = this.createEntity();
+
+		InternalEObject internalEObject = (InternalEObject) proxy;
+		URI uri = URI.createHierarchicalURI("mimo", tenant, null, new String[] { this.getName() }, null, name);
+		internalEObject.eSetProxyURI(uri);
+
+		Entity entity = (Entity) internalEObject;
+		Frame<?> domainFrame = entity.isa();
+		for (String key : domainFrame.getKeys()) {
+			domainFrame.setValue(entity, key, name.toString());
+			break;
+		}
+		
+		return proxy;
 	}
 }

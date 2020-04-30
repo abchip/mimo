@@ -36,7 +36,6 @@ import org.osgi.service.log.Logger;
 
 public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
-
 	private final Logger LOGGER = Logs.getLogger(NIOResourcempl.class);
 
 	private Context context = null;
@@ -91,7 +90,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 
 					Files.copy(input, file);
 				}
-
+				this.setInternalResource(entity);
 			} catch (IOException e) {
 				throw new ResourceException(e);
 			} finally {
@@ -128,12 +127,13 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 				return null;
 
 			if (proxy)
-				return context.createProxy(getFrame(), name);
+				return getFrame().createProxy(name, this.getTenant());
 
 			E entity = null;
 			try (InputStream inputStream = Files.newInputStream(file)) {
 				this.resourceSerializer.load(inputStream, false);
 				entity = this.resourceSerializer.get();
+				this.setInternalResource(entity);
 			} catch (IOException e) {
 				throw new ResourceException(e);
 			} finally {
@@ -187,7 +187,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 					i++;
 
 					if (proxy) {
-						this.resourceSerializer.add(context.createProxy(getFrame(), name));
+						this.resourceSerializer.add(getFrame().createProxy(name, this.getTenant()));
 						continue;
 					}
 
@@ -195,11 +195,13 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 						this.resourceSerializer.load(inputStream, true);
 					} catch (Exception e) {
 						LOGGER.error(e.getMessage());
-						this.resourceSerializer.add(context.createProxy(getFrame(), name));
+						this.resourceSerializer.add(getFrame().createProxy(name, this.getTenant()));
 					}
 				}
 
 				entries.addAll(this.resourceSerializer.getAll());
+				for(E entity: entries)
+					this.setInternalResource(entity);
 			} catch (Exception e) {
 				throw new ResourceException(e);
 			} finally {

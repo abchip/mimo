@@ -59,6 +59,22 @@ public interface ServiceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" contextRequired="true" frameRequired="true"
+	 * @generated
+	 */
+	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, String frame) throws ServiceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" contextRequired="true" frameRequired="true"
+	 * @generated
+	 */
+	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, String frame, String tenant) throws ServiceException;
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" requestRequired="true"
 	 * @generated
 	 */
@@ -75,23 +91,7 @@ public interface ServiceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" contextRequired="true" frameRequired="true"
-	 * @generated
-	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, String frame) throws ServiceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" contextRequired="true" frameRequired="true"
-	 * @generated
-	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, String frame, String tenant) throws ServiceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" contextRequired="true"
+	 * @model required="true" contextRequired="true" requestRequired="true"
 	 * @generated
 	 */
 	<V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, R request);
@@ -99,8 +99,16 @@ public interface ServiceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextRequired="true"
+	 * @model required="true" contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
 	<V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, Class<R> klass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" contextRequired="true" serviceIdRequired="true"
+	 * @generated
+	 */
+	<V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, String serviceId);
 } // ServiceManager

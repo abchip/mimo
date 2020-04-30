@@ -79,7 +79,6 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 			Resources.firePreDeleteEvent(this, entity);
 
 			this.getResource().delete(entity);
-			this.setInternalResource(entity);
 
 			Resources.firePostDeleteEvent(this, entity);
 		} finally {
@@ -101,7 +100,6 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 			Resources.firePreSaveEvent(this, entity);
 
 			this.getResource().create(entity, update);
-			this.setInternalResource(entity);
 
 			Resources.firePostSaveEvent(this, entity);
 		} finally {
@@ -118,7 +116,6 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 			Resources.firePreSaveEvent(this, entity);
 
 			this.getResource().update(entity);
-			this.setInternalResource(entity);
 
 			Resources.firePostSaveEvent(this, entity);
 		} finally {

@@ -26,29 +26,23 @@ import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.impl.ResourceReaderImpl;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.Diagnostician;
 
 public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends ResourceReaderImpl<E> {
 
 	private MimoResourceImpl<E> internal = null;
-//	private Diagnostician diagnostician = null;
+	// private Diagnostician diagnostician = null;
 
 	public BaseResourceReaderImpl(MimoResourceImpl<E> internal) {
 		this.internal = internal;
-		
-//		this.diagnostician = new BaseDiagnostician(this.getContext());
-	}
 
-	protected void setInternalResource(E entity) {
-		InternalEObject internalEObject = (InternalEObject) entity;
-		internalEObject.eSetResource(internal, null);
+		// this.diagnostician = new BaseDiagnostician(this.getContext());
 	}
 
 	protected Diagnostician getDiagnostician() {
 		return Diagnostician.INSTANCE;
 	}
-	
+
 	@Override
 	public Frame<E> getFrame() {
 		return this.internal.getResource().getFrame();
@@ -122,7 +116,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 			});
 		}
 
-		EntityIterator<E> entityIterator = new BaseEntityIteratorImpl(entities.iterator(), limit, proxy);
+		EntityIterator<E> entityIterator = new BaseEntityIteratorImpl(entities.iterator(), limit);
 
 		return entityIterator;
 	}
@@ -153,10 +147,6 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 
 		E entity = this.internal.getResource().read(name, null, proxy);
 
-		// if (entity != null && !proxy)
-		if (entity != null)
-			this.setInternalResource(entity);
-
 		return entity;
 	}
 
@@ -164,14 +154,12 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 
 		private Iterator<E> iterator;
 		private int limit = 0;
-		private boolean proxy = false;
 		private E nextObject = null;
 		private int count = 0;
 
-		public BaseEntityIteratorImpl(Iterator<E> iterator, int limit, boolean proxy) {
+		public BaseEntityIteratorImpl(Iterator<E> iterator, int limit) {
 			this.iterator = iterator;
 			this.limit = limit;
-			this.proxy = proxy;
 			doNext();
 		}
 
@@ -202,12 +190,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 
 			nextObject = null;
 			while (iterator.hasNext()) {
-				E entity = iterator.next();
-
-				if (entity != null && !proxy)
-					BaseResourceReaderImpl.this.setInternalResource(entity);
-
-				nextObject = entity;
+				nextObject = iterator.next();
 				break;
 			}
 		}

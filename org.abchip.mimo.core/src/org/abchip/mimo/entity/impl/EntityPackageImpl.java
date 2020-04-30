@@ -1077,6 +1077,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		op = addEOperation(frameEClass, null, "createProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "tenant", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(frameEClass_E);
 		initEOperation(op, g1);
 

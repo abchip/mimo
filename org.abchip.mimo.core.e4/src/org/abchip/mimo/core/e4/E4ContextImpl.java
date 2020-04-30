@@ -23,7 +23,6 @@ import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextStatus;
 import org.abchip.mimo.context.impl.ContextImpl;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.service.ServiceManager;
@@ -238,15 +237,5 @@ public abstract class E4ContextImpl extends ContextImpl {
 	@Override
 	public <E extends Entity> Frame<E> getFrame(Class<E> klass) {
 		return this.getResourceManager().getFrame(this, klass);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> E createProxy(Class<E> frame, String id) {
-		return this.getFrame(frame).createProxy(id);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id) {
-		return frame.createProxy(id);
 	}
 }

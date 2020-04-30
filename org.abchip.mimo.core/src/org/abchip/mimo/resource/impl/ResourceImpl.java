@@ -104,7 +104,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * 
 	 * @generated NOT
 	 */
-	@Override
 	public abstract void create(E entity, boolean update) throws ResourceException;
 
 	/**
@@ -112,7 +111,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * 
 	 * @generated NOT
 	 */
-	@Override
 	public abstract void delete(E entity) throws ResourceException;
 
 	/**
@@ -140,28 +138,20 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	public abstract String nextSequence() throws ResourceException;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
 	public abstract E read(String name, String fields, boolean proxy) throws ResourceException;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
 	public abstract List<E> read(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public abstract void update(E entity) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -226,4 +216,8 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		return super.eIsSet(featureID);
 	}
 
+	protected void setInternalResource(E entity) {
+		InternalEObject internalEObject = (InternalEObject) entity;
+		internalEObject.eSetResource(this.eInternalResource(), null);
+	}
 } // ResourceImpl

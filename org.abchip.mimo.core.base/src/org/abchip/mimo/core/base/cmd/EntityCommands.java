@@ -8,6 +8,9 @@
  */
 package org.abchip.mimo.core.base.cmd;
 
+import java.util.Map;
+import java.util.Map.Entry;
+
 import javax.inject.Inject;
 
 import org.abchip.mimo.context.Context;
@@ -15,25 +18,52 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.service.ServiceManager;
+import org.abchip.mimo.service.ServiceRequest;
+import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.util.Strings;
+import org.abchip.mimo.util.URIs;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
 public class EntityCommands extends BaseCommands {
 
 	@Inject
 	private ResourceManager resourceManager;
+	@Inject
+	private ServiceManager serviceManager;
 
-	public void _mm(CommandInterpreter interpreter) throws Exception {
+	public <R extends ServiceRequest<V>, V extends ServiceResponse> void _mm(CommandInterpreter interpreter) throws Exception {
 
-		StringBuilder sb = new StringBuilder();
+		Context context = this.getContext();
 
-		String argument = interpreter.nextArgument();
+		String serviceId = this.nextArgument(interpreter);
+		String tenant = null;
+
+		StringBuffer query = new StringBuffer();
+
+		String argument = this.nextArgument(interpreter);
 		while (argument != null) {
-			sb.append(argument + " ");
+			if (query.length() != 0)
+				query.append("&");
+			query.append(argument);
 			argument = interpreter.nextArgument();
 		}
 
-		interpreter.execute(sb.toString());
+		Map<String, String> parameters = URIs.parseQuery(query.toString());
+		if (parameters.containsKey("tenant")) {
+			tenant = parameters.get("tenant");
+			parameters.remove("tenant");
+		}
+
+		R request = serviceManager.prepare(context, serviceId, tenant);
+		Frame<R> frame = request.isa();
+		for (Entry<String, String> parameter : parameters.entrySet()) {
+			frame.setValue(request, parameter.getKey(), parameter.getValue());
+		}
+
+		V response = serviceManager.execute(request);
+
+		interpreter.println(response);
 	}
 
 	public void _login(CommandInterpreter interpreter) throws Exception {

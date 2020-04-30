@@ -85,7 +85,7 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * @model required="true" idRequired="true"
 	 * @generated
 	 */
-	E createProxy(String id);
+	E createProxy(String id, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->

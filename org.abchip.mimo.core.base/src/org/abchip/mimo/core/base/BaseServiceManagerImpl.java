@@ -27,6 +27,7 @@ import org.abchip.mimo.service.ServiceProvider;
 import org.abchip.mimo.service.ServiceProviderRegistry;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
+import org.abchip.mimo.util.Strings;
 
 public class BaseServiceManagerImpl implements ServiceManager {
 
@@ -63,6 +64,26 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	}
 
 	@Override
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, String serviceId) {
+
+		Frame<?> frame = context.getResourceManager().getFrame(context, Strings.firstToUpper(serviceId));
+		if (frame == null) 
+			return null;
+
+		if (!frame.getSuperNames().contains(ServiceRequest.class.getSimpleName())) 
+			return null;
+
+		Service<R, V> service = ServiceFactory.eINSTANCE.createService();
+		service.setName(frame.getName());
+
+		@SuppressWarnings("unchecked")
+		R request = (R) frame.createEntity();
+		service.setRequest(request);
+
+		return service;
+	}
+	
+	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass) throws ServiceException {
 		return prepare(context, klass, null);
 	}
@@ -86,14 +107,14 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, String frame, String tenant) throws ServiceException {
 
-		Frame<?> frameRequest = (Frame<?>) context.getResourceManager().getFrame(context, frame);
-		if(frameRequest == null)
+		Frame<?> request = (Frame<?>) context.getResourceManager().getFrame(context, frame, tenant);
+		if(request == null)
 			throw new ServiceException("Service not found" + frame);
 		
-		if (!frameRequest.getSuperNames().contains(ServiceRequest.class.getSimpleName()))
+		if (!request.getSuperNames().contains(ServiceRequest.class.getSimpleName()))
 			throw new ServiceException("Invalid service " + frame);
 
-		return prepare(context, (Frame<R>) frameRequest, tenant);
+		return prepare(context, (Frame<R>) request, tenant);
 	}
 
 	@Override
@@ -103,9 +124,6 @@ public class BaseServiceManagerImpl implements ServiceManager {
 
 		R request = frame.createEntity();
 		context.inject(request);
-
-		// set default parameters
-		// TODO
 
 		request.init(context, tenant);
 

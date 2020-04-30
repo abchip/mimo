@@ -18,7 +18,6 @@ import org.abchip.mimo.entity.Slot;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -81,18 +80,18 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	 */
 	protected boolean autoIncrement = AUTO_INCREMENT_EDEFAULT;
 	/**
-	 * The default value of the '{@link #isEnum() <em>Enum</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #isEnum() <em>Enum</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isEnum()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final boolean ENUM_EDEFAULT = false;
 	/**
-	 * The cached value of the '{@link #isEnum() <em>Enum</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #isEnum() <em>Enum</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isEnum()
 	 * @generated
 	 * @ordered
@@ -108,8 +107,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	protected EList<String> keys;
 	/**
 	 * The default value of the '{@link #isHasToString() <em>Has To String</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isHasToString()
 	 * @generated
 	 * @ordered
@@ -117,8 +115,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	protected static final boolean HAS_TO_STRING_EDEFAULT = false;
 	/**
 	 * The cached value of the '{@link #isHasToString() <em>Has To String</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isHasToString()
 	 * @generated
 	 * @ordered
@@ -159,18 +156,18 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	 */
 	protected EList<String> superNames;
 	/**
-	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getText() <em>Text</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getText()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String TEXT_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getText()
 	 * @generated
 	 * @ordered
@@ -248,32 +245,20 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	public abstract E createEntity();
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public E createProxy(String name) {
-
-		E proxy = this.createEntity();
-
-		InternalEObject internalEObject = (InternalEObject) proxy;
-		URI uri = URI.createHierarchicalURI("mimo", null, null, new String[] { this.getName() }, null, name);
-		internalEObject.eSetProxyURI(uri);
-
-		Entity entity = (Entity) internalEObject;
-		Frame<?> domainFrame = entity.isa();
-		for (String key : domainFrame.getKeys()) {
-			domainFrame.setValue(entity, key, name.toString());
-			break;
-		}
-
-		return proxy;
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public E createProxy(String id, String tenant) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+	
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -292,8 +277,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -302,8 +286,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -347,8 +330,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -357,8 +339,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -656,8 +637,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -666,8 +646,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

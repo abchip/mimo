@@ -26,12 +26,12 @@ import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Logs;
-import org.abchip.mimo.util.URIs;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -51,15 +51,13 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		this.resourceSet = resourceSet;
 
 		String frameName = getURI().segment(0);
-		String tenant = null;
-		if (getURI().hasQuery())
-			tenant = URIs.parseParameter(getURI().query()).get("tenant");
+		String tenant = getURI().authority();
 
 		if (Frame.class.getSimpleName().equals(frameName)) {
 			this.resource = EMFResourceProviderImpl.internalGetFrameResource(this.getContext(), tenant);
 		} else {
 			ResourceManager resourceManager = this.getContext().get(ResourceManager.class);
-			Frame<E> frame = (Frame<E>) resourceManager.getFrame(getContext(), frameName);
+			Frame<E> frame = (Frame<E>) resourceManager.getFrame(getContext(), frameName, tenant);
 			if (frame.isEnum()) {
 				this.resource = EMFResourceProviderImpl.internalGetEnumResource(this.getContext(), frameName, tenant);
 			} else {
@@ -68,6 +66,9 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 				this.resource = resourceProvider.getResource(this.getContext(), frame, tenant);
 			}
 		}
+		
+		InternalEObject internalEObject = (InternalEObject) this.resource;
+		internalEObject.eSetResource(this, null);
 	}
 
 	public Resource<E> getResource() {
@@ -153,7 +154,7 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			}
 
 			if (name.toString().isEmpty())
-				throw new RuntimeException("Unexpected condition 53oqv4ignu84bgo8atyby9087");
+				return null;
 
 			return name.toString();
 		}

@@ -169,16 +169,6 @@
         <genOperations ecoreOperation="mimo.ecore#//context/Capability/getEntityName"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//context/Context">
-        <genOperations ecoreOperation="mimo.ecore#//context/Context/createProxy">
-          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy/frame"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy/id"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/createProxy/E"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//context/Context/createProxy.1">
-          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy.1/frame"/>
-          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy.1/id"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/createProxy.1/E"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/dispose"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/get">
           <genParameters ecoreParameter="mimo.ecore#//context/Context/get/clazz"/>
@@ -196,6 +186,7 @@
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/getResourceManager"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/getServiceManager"/>
+        <genOperations ecoreOperation="mimo.ecore#//context/Context/getTenant"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/inject">
           <genParameters ecoreParameter="mimo.ecore#//context/Context/inject/object"/>
         </genOperations>
@@ -621,6 +612,7 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/createEntity"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/createProxy">
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/createProxy/id"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/createProxy/tenant"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getPackageName"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlot">
@@ -1138,6 +1130,12 @@
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getService.1/klass"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getService.1/V"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getService.1/R"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/getService.2">
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getService.2/context"/>
+          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getService.2/serviceId"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getService.2/V"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getService.2/R"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/prepare">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare/context"/>
