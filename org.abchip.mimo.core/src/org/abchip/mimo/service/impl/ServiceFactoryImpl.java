@@ -66,6 +66,7 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 			case ServicePackage.SERVICE_MAPPING: return (EObject)createServiceMapping();
 			case ServicePackage.SERVICE_MAPPING_RULE_BY_PACKAGE: return (EObject)createServiceMappingRuleByPackage();
 			case ServicePackage.SERVICE_METHOD_RESPONSE: return (EObject)createServiceMethodResponse();
+			case ServicePackage.SERVICE_RESPONSE: return (EObject)createServiceResponse();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -162,6 +163,17 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	public <T> ServiceMethodResponse<T> createServiceMethodResponse() {
 		ServiceMethodResponseImpl<T> serviceMethodResponse = new ServiceMethodResponseImpl<T>();
 		return serviceMethodResponse;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ServiceResponse createServiceResponse() {
+		ServiceResponseImpl serviceResponse = new ServiceResponseImpl();
+		return serviceResponse;
 	}
 
 	/**

@@ -2186,7 +2186,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//context/Context"
           changeable="false" transient="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ServiceResponse" abstract="true" eSuperTypes="#//service/ServiceMessage">
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceResponse" eSuperTypes="#//service/ServiceMessage">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="error" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

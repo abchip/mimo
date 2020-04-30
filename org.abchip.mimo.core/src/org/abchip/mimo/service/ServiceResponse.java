@@ -24,7 +24,7 @@ package org.abchip.mimo.service;
  * </ul>
  *
  * @see org.abchip.mimo.service.ServicePackage#getServiceResponse()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface ServiceResponse extends ServiceMessage {

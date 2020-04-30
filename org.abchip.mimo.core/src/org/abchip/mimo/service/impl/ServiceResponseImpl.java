@@ -11,7 +11,9 @@ import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.service.ServiceResponse;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,7 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public abstract class ServiceResponseImpl extends ServiceMessageImpl implements ServiceResponse {
+public class ServiceResponseImpl extends ServiceMessageImpl implements ServiceResponse {
 	/**
 	 * The default value of the '{@link #isError() <em>Error</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -40,6 +42,7 @@ public abstract class ServiceResponseImpl extends ServiceMessageImpl implements 
 	 * @ordered
 	 */
 	protected static final boolean ERROR_EDEFAULT = false;
+
 	/**
 	 * The cached value of the '{@link #isError() <em>Error</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -49,6 +52,7 @@ public abstract class ServiceResponseImpl extends ServiceMessageImpl implements 
 	 * @ordered
 	 */
 	protected boolean error = ERROR_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getErrorMessage() <em>Error Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,6 +62,7 @@ public abstract class ServiceResponseImpl extends ServiceMessageImpl implements 
 	 * @ordered
 	 */
 	protected static final String ERROR_MESSAGE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getErrorMessage() <em>Error Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -67,6 +72,7 @@ public abstract class ServiceResponseImpl extends ServiceMessageImpl implements 
 	 * @ordered
 	 */
 	protected String errorMessage = ERROR_MESSAGE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getResponseMessage() <em>Response Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -76,6 +82,7 @@ public abstract class ServiceResponseImpl extends ServiceMessageImpl implements 
 	 * @ordered
 	 */
 	protected static final String RESPONSE_MESSAGE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getResponseMessage() <em>Response Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,6 +92,7 @@ public abstract class ServiceResponseImpl extends ServiceMessageImpl implements 
 	 * @ordered
 	 */
 	protected String responseMessage = RESPONSE_MESSAGE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getSuccessMessage() <em>Success Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -94,6 +102,7 @@ public abstract class ServiceResponseImpl extends ServiceMessageImpl implements 
 	 * @ordered
 	 */
 	protected static final String SUCCESS_MESSAGE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getSuccessMessage() <em>Success Message</em>}' attribute.
 	 * <!-- begin-user-doc -->

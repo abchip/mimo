@@ -17,7 +17,9 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.service.Service;
 import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
@@ -64,6 +66,46 @@ public class EntityCommands extends BaseCommands {
 		V response = serviceManager.execute(request);
 
 		interpreter.println(response);
+	}
+
+	public <R extends ServiceRequest<V>, V extends ServiceResponse> void _mm_help(CommandInterpreter interpreter) throws Exception {
+
+		Context context = this.getContext();
+
+		String serviceId = this.nextArgument(interpreter);
+
+		Service<?, ?> service = serviceManager.getService(context, serviceId);
+		if (service == null) {
+			interpreter.println("Service not found " + serviceId);
+			return;
+		}
+
+		ServiceRequest<?> request = service.getRequest();
+		interpreter.println("Service: " + request.getServiceName());
+
+		interpreter.println("Input parameters");
+		for (Slot slot : request.isa().getSlots()) {
+			interpreter.print("Name: " + slot.getName()+ " ");
+			interpreter.print("Text: " + slot.getText()+ " ");
+			interpreter.print("Optional: " + !slot.getCardinality().isMandatory()+ " ");
+			interpreter.print("Type: " + slot.getDataType()+ " ");
+			interpreter.print("Domain: " + slot.getDomain()+ " ");
+			interpreter.print("Default: " + slot.getDefaultValue()+ " ");
+			interpreter.println();
+		}
+		
+		ServiceResponse response = this.getContext().getFrame(request.getResponse()).createEntity();
+		
+		interpreter.println("Output parameters");
+		for (Slot slot : response.isa().getSlots()) {
+			interpreter.print("Name: " + slot.getName()+ " ");
+			interpreter.print("Text: " + slot.getText()+ " ");
+			interpreter.print("Optional: " + !slot.getCardinality().isMandatory()+ " ");
+			interpreter.print("Type: " + slot.getDataType()+ " ");
+			interpreter.print("Domain: " + slot.getDomain()+ " ");
+			interpreter.print("Default: " + slot.getDefaultValue()+ " ");
+			interpreter.println();
+		}
 	}
 
 	public void _login(CommandInterpreter interpreter) throws Exception {

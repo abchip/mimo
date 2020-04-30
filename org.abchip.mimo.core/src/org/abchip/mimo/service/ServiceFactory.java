@@ -72,6 +72,15 @@ public interface ServiceFactory extends EFactory {
 	<T> ServiceMethodResponse<T> createServiceMethodResponse();
 
 	/**
+	 * Returns a new object of class '<em>Response</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Response</em>'.
+	 * @generated
+	 */
+	ServiceResponse createServiceResponse();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

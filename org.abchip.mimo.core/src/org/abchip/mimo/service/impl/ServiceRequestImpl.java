@@ -176,30 +176,36 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 * 
 	 * @generated NOT
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public Class<V> getResponse() {
 
 		EClass eClass = this.eClass();
 		EGenericType eGenericType = eClass.getEGenericSuperTypes().get(0);
-		eGenericType = eGenericType.getETypeArguments().get(0);
 
-		@SuppressWarnings("unchecked")
-		Class<V> klass = (Class<V>) eGenericType.getEClassifier().getInstanceClass();
+		Class<V> klass = null;
+		if (eGenericType.getETypeArguments().isEmpty())
+			klass = (Class<V>) ServicePackage.eINSTANCE.getServiceResponse().getInstanceClass();
+		else {
+			eGenericType = eGenericType.getETypeArguments().get(0);
+			klass = (Class<V>) eGenericType.getEClassifier().getInstanceClass();
+		}
 
 		return klass;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public V buildResponse() {
 
-		Frame<V> frame = this.getContext().getFrame(this.getResponse());
+		Class<V> klass = this.getResponse();
+		Frame<V> frame = this.getContext().getFrame(klass);
 		V response = frame.createEntity();
-		
+
 		return response;
 	}
 
