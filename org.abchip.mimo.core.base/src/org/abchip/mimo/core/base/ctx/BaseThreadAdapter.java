@@ -12,7 +12,9 @@ import java.lang.management.ThreadInfo;
 
 import org.abchip.mimo.context.ThreadStatus;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.util.Threads;
 
 
@@ -92,6 +94,12 @@ public class BaseThreadAdapter implements org.abchip.mimo.context.Thread {
 
 	@Override
 	public <E extends Entity> Frame<E> isa() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource() {
 		// TODO Auto-generated method stub
 		return null;
 	}

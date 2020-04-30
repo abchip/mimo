@@ -44,6 +44,14 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model required="true" idRequired="true"
+	 * @generated
+	 */
+	E createProxy(String id);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true"
 	 * @generated
 	 */

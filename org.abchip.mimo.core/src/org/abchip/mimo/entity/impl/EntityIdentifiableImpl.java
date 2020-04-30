@@ -20,7 +20,6 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.EntityState;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -38,7 +37,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -47,7 +45,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -120,7 +117,10 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 			if (eFeature == eIDAttribute)
 				return this.getURI().getFragment();
 
-			this.resolve();
+			EntityIdentifiableImpl eObject = (EntityIdentifiableImpl) EcoreUtil.resolve(this, this);
+			this.eBasicSetSettings(eObject.eBasicSettings());
+			this.eSetProxyURI(null);
+
 			break;
 		case DIRTY:
 			return null;
@@ -169,18 +169,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	 * @generated NOT
 	 */
 	@Override
-	public void resolve() {
-		EntityIdentifiableImpl eObject = (EntityIdentifiableImpl) EcoreUtil.resolve(this, this);
-		this.eBasicSetSettings(eObject.eBasicSettings());
-		this.eSetProxyURI(null);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
 	public EntityState getState() {
 
 		if (eIsProxy())
@@ -210,22 +198,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 			return uriFragment;
 
 		throw new RuntimeException("Unexpected condition: d66ncotib56ohmjhi4w");
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource() {
-		if (this.eResource() instanceof MimoResourceImpl) {
-			@SuppressWarnings("unchecked")
-			MimoResourceImpl<E> internal = (MimoResourceImpl<E>) this.eResource();
-			return internal.getResource();
-		}
-
-		return null;
 	}
 
 	/**

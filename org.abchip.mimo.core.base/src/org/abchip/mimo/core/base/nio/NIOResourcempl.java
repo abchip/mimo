@@ -127,7 +127,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 				return null;
 
 			if (proxy)
-				return getFrame().createProxy(name, this.getTenant());
+				return createProxy(name);
 
 			E entity = null;
 			try (InputStream inputStream = Files.newInputStream(file)) {
@@ -187,7 +187,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 					i++;
 
 					if (proxy) {
-						this.resourceSerializer.add(getFrame().createProxy(name, this.getTenant()));
+						this.resourceSerializer.add(createProxy(name));
 						continue;
 					}
 
@@ -195,12 +195,12 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 						this.resourceSerializer.load(inputStream, true);
 					} catch (Exception e) {
 						LOGGER.error(e.getMessage());
-						this.resourceSerializer.add(getFrame().createProxy(name, this.getTenant()));
+						this.resourceSerializer.add(createProxy(name));
 					}
 				}
 
 				entries.addAll(this.resourceSerializer.getAll());
-				for(E entity: entries)
+				for (E entity : entries)
 					this.setInternalResource(entity);
 			} catch (Exception e) {
 				throw new ResourceException(e);

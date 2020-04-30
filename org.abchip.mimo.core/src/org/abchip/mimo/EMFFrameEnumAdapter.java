@@ -90,10 +90,4 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 		if (text != null)
 			eSet(EntityPackage.FRAME__TEXT, text);
 	}
-
-	@Override
-	public E createProxy(String id, String tenant) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

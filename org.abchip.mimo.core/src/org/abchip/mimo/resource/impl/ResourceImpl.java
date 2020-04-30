@@ -10,6 +10,7 @@ package org.abchip.mimo.resource.impl;
 import java.util.List;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.impl.EntityImpl;
@@ -18,6 +19,7 @@ import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -30,15 +32,17 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceConfig <em>Resource Config</em>}</li>
+ * <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceConfig
+ * <em>Resource Config</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityImpl implements Resource<E> {
 	/**
-	 * The cached value of the '{@link #getResourceConfig() <em>Resource Config</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getResourceConfig() <em>Resource
+	 * Config</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getResourceConfig()
 	 * @generated
 	 * @ordered
@@ -47,6 +51,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ResourceImpl() {
@@ -55,6 +60,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -64,13 +70,14 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public ResourceConfig getResourceConfig() {
-		if (resourceConfig != null && ((EObject)resourceConfig).eIsProxy()) {
-			InternalEObject oldResourceConfig = (InternalEObject)resourceConfig;
-			resourceConfig = (ResourceConfig)eResolveProxy(oldResourceConfig);
+		if (resourceConfig != null && ((EObject) resourceConfig).eIsProxy()) {
+			InternalEObject oldResourceConfig = (InternalEObject) resourceConfig;
+			resourceConfig = (ResourceConfig) eResolveProxy(oldResourceConfig);
 			if (resourceConfig != oldResourceConfig) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
@@ -81,6 +88,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ResourceConfig basicGetResourceConfig() {
@@ -89,6 +97,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -105,6 +114,32 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @generated NOT
 	 */
 	public abstract void create(E entity, boolean update) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public E createProxy(String id) {
+		if (id == null)
+			return null;
+
+		E proxy = this.getFrame().createEntity();
+
+		InternalEObject internalEObject = (InternalEObject) proxy;
+		URI uri = URI.createHierarchicalURI("mimo", this.getTenant(), null, new String[] { this.getFrame().getName() }, null, id);
+		internalEObject.eSetProxyURI(uri);
+
+		Entity entity = (Entity) internalEObject;
+		Frame<?> domainFrame = entity.isa();
+		for (String key : domainFrame.getKeys()) {
+			domainFrame.setValue(entity, key, id.toString());
+			break;
+		}
+
+		return proxy;
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -138,16 +173,16 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	public abstract String nextSequence() throws ResourceException;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public abstract E read(String name, String fields, boolean proxy) throws ResourceException;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -159,59 +194,72 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @generated NOT
 	 */
 	@Override
+	public abstract void update(E entity) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
 	public abstract Context getContext();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
-				if (resolve) return getResourceConfig();
-				return basicGetResourceConfig();
+		case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
+			if (resolve)
+				return getResourceConfig();
+			return basicGetResourceConfig();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
-				setResourceConfig((ResourceConfig)newValue);
-				return;
+		case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
+			setResourceConfig((ResourceConfig) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
-				setResourceConfig((ResourceConfig)null);
-				return;
+		case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
+			setResourceConfig((ResourceConfig) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
-				return resourceConfig != null;
+		case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
+			return resourceConfig != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -12,7 +12,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.abchip.mimo.context.ThreadStatus;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.Resource;
 
 public class BaseThreadImpl extends Thread implements org.abchip.mimo.context.Thread {
 
@@ -98,6 +100,12 @@ public class BaseThreadImpl extends Thread implements org.abchip.mimo.context.Th
 
 	@Override
 	public <E extends Entity> Frame<E> isa() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource() {
 		// TODO Auto-generated method stub
 		return null;
 	}

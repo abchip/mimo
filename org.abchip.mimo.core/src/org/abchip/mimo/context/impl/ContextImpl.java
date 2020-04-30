@@ -15,6 +15,7 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.resource.ResourceManager;
@@ -44,6 +45,41 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	@Override
 	protected EClass eStaticClass() {
 		return ContextPackage.Literals.CONTEXT;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id, String tenant);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id, String tenant) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -9,7 +9,6 @@
 package org.abchip.mimo.core.http.servlet;
 
 import java.io.IOException;
-import java.net.URI;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;

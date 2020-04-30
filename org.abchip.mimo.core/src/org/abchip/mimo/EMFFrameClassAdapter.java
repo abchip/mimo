@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityPackage;
@@ -35,7 +36,6 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.service.log.Logger;
 
@@ -183,13 +183,13 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public void setValue(Entity entity, String slot, Object value) {
-		
+
 		EStructuralFeature eFeature = eClass.getEStructuralFeature(slot);
 		if (eFeature == null)
 			return;
 
 		EObject eObject = (EObject) entity;
-		
+
 		if (value == null) {
 			eObject.eUnset(eFeature);
 			return;
@@ -201,10 +201,10 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			if (eFeature.isMany()) {
 				List<Object> values = new ArrayList<Object>();
 				for (Object object : (Collection<?>) value)
-					values.add(buildValue(tenant, eFeature, object));
+					values.add(buildValue(entity, tenant, eFeature, object));
 				eObject.eSet(eFeature, values);
 			} else {
-				Object object = buildValue(tenant, eFeature, value);
+				Object object = buildValue(entity, tenant, eFeature, value);
 				eObject.eSet(eFeature, object);
 			}
 		} catch (Exception e) {
@@ -254,7 +254,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		return value;
 	}
 
-	private Object buildValue(String tenant, EStructuralFeature eFeature, Object value) {
+	private Object buildValue(Entity entity, String tenant, EStructuralFeature eFeature, Object value) {
 
 		Object object = null;
 
@@ -265,12 +265,17 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			} else {
 				EReference eReference = (EReference) eFeature;
 				EClassifier eClassifier = eReference.getEType();
-				Frame<?> frameRef = (Frame<?>) this.entities.get(eClassifier.getName());
-				if (frameRef != null) {
-					Entity entity = frameRef.createProxy(value.toString(), tenant);
-					object = entity;
+
+				if (entity.getResource() != null) {
+					Context context = entity.getResource().getContext();
+					@SuppressWarnings("unchecked")
+					Frame<EntityIdentifiable> frameRef = (Frame<EntityIdentifiable>) this.entities.get(eClassifier.getName());
+					if (frameRef != null) {
+						object = context.createProxy(frameRef, value.toString(), tenant);
+					} else
+						LOGGER.warn("Unexpected condition {}", "bvtw4a87ny4r9tycsa9et6");
 				} else
-					LOGGER.warn("Unexpected condition {}", "bvtw4a87ny4r9tycsa9et6");
+					LOGGER.warn("Unexpected condition {}", "bwytn56wn086b7");
 			}
 
 		} else
@@ -307,24 +312,5 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 		if (text != null)
 			eSet(EntityPackage.FRAME__TEXT, text);
-	}
-
-	@Override
-	public E createProxy(String id, String tenant) {
-
-		E proxy = this.createEntity();
-
-		InternalEObject internalEObject = (InternalEObject) proxy;
-		URI uri = URI.createHierarchicalURI("mimo", tenant, null, new String[] { this.getName() }, null, id);
-		internalEObject.eSetProxyURI(uri);
-
-		Entity entity = (Entity) internalEObject;
-		Frame<?> domainFrame = entity.isa();
-		for (String key : domainFrame.getKeys()) {
-			domainFrame.setValue(entity, key, id.toString());
-			break;
-		}
-		
-		return proxy;
 	}
 }

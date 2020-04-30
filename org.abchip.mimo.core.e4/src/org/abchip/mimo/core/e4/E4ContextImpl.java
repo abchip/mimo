@@ -23,7 +23,10 @@ import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextStatus;
 import org.abchip.mimo.context.impl.ContextImpl;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.util.Logs;
@@ -237,5 +240,33 @@ public abstract class E4ContextImpl extends ContextImpl {
 	@Override
 	public <E extends Entity> Frame<E> getFrame(Class<E> klass) {
 		return this.getResourceManager().getFrame(this, klass);
+	}
+
+	public <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id) {
+		return createProxy(klass, id, null);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id, String tenant) {
+		try {
+			Resource<E> resource = this.get(ResourceManager.class).getResourceReader(this, klass, tenant).getResource();
+			return resource.createProxy(id);
+		} catch (ResourceException e) {
+			return null;
+		}
+	}
+
+	public <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id) {
+		return createProxy(frame, id, null);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id, String tenant) {
+		try {
+			Resource<E> resource = this.get(ResourceManager.class).getResourceReader(this, frame, tenant).getResource();
+			return resource.createProxy(id);
+		} catch (ResourceException e) {
+			return null;
+		}
 	}
 }
