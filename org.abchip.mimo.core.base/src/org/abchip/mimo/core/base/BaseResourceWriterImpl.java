@@ -18,7 +18,6 @@ import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
 import org.abchip.mimo.entity.EntityIdentifiable;
-import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.util.Resources;
@@ -33,41 +32,6 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 		super(internal);
 
 		this.lockManager = lockManager;
-	}
-
-	@Override
-	public E make() {
-		try {
-			return make(false);
-		} catch (ResourceException e) {
-			throw new RuntimeException(e);
-		}
-	}
-
-	@Override
-	public E make(boolean sequence) throws ResourceException {
-
-		E entityIdentifiable = this.getFrame().createEntity();
-
-		if (sequence) {
-
-			EntityLocker<?> entityLocker = lock(this.getContext(), this.getFrame());
-
-			try {
-				String id = this.getResource().nextSequence();
-
-				Frame<?> domainFrame = entityIdentifiable.isa();
-				for (String key : domainFrame.getKeys()) {
-					domainFrame.setValue(entityIdentifiable, key, id);
-					break;
-				}
-
-			} finally {
-				unlock(entityLocker);
-			}
-		}
-
-		return entityIdentifiable;
 	}
 
 	@Override

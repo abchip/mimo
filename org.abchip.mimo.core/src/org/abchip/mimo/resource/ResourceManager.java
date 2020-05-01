@@ -85,6 +85,54 @@ public interface ResourceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model required="true" klassRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" klassRequired="true" tenantRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" frameRequired="true" tenantRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" frameRequired="true" tenantRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model klassRequired="true"
 	 * @generated
 	 */

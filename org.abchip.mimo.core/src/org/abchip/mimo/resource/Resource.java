@@ -74,6 +74,22 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	String getTenant();
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	E make();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" sequenceRequired="true"
+	 * @generated
+	 */
+	E make(boolean sequence) throws ResourceException;
+
+	/**
 	 * Returns the value of the '<em><b>Resource Config</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

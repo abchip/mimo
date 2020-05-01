@@ -130,6 +130,11 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			this.slots.put(slot.getName(), slot);
 	}
 
+	@Override
+	public EClass getEClass() {
+		return eClass;
+	}
+	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public Frame<? super E> ako() {
@@ -290,12 +295,6 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			return super.getURI();
 		else
 			return java.net.URI.create(EcoreUtil.getURI(eClass).toString());
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public E createEntity() {
-		return (E) EcoreUtil.create(eClass);
 	}
 
 	@Override

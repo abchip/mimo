@@ -9,6 +9,7 @@
 package org.abchip.mimo.entity;
 
 import java.util.List;
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -74,10 +75,10 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
+	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	E createEntity();
+	EClass getEClass();
 
 	/**
 	 * <!-- begin-user-doc -->

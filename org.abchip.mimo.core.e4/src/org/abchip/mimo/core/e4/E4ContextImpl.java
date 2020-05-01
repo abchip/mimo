@@ -290,26 +290,26 @@ public abstract class E4ContextImpl extends ContextImpl {
 		return this.getResourceManager().getFrame(klass);
 	}
 
-	public <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id) {
+	public final <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id) {
 		return createProxy(klass, id, null);
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id, String tenant) {
+	public final <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id, String tenant) {
 		try {
-			Resource<E> resource = this.getResourceManager().getResourceReader(klass, tenant).getResource();
+			Resource<E> resource = this.getResourceManager().getResource(klass, tenant);
 			return resource.createProxy(id);
 		} catch (ResourceException e) {
 			return null;
 		}
 	}
 
-	public <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id) {
+	public final <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id) {
 		return createProxy(frame, id, null);
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id, String tenant) {
+	public final <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id, String tenant) {
 		try {
 			Resource<E> resource = this.getResourceManager().getResourceReader(frame, tenant).getResource();
 			return resource.createProxy(id);

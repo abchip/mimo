@@ -10,7 +10,6 @@ package org.abchip.mimo.resource.impl;
 import java.util.List;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.impl.EntityImpl;
@@ -24,6 +23,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -118,21 +118,19 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		if (id == null)
 			return null;
 
-		E proxy = this.getFrame().createEntity();
+		E entity = make();
 
-		InternalEObject internalEObject = (InternalEObject) proxy;
+		InternalEObject internalEObject = (InternalEObject) entity;
 		URI uri = URI.createHierarchicalURI("mimo", this.getTenant(), null, new String[] { this.getFrame().getName() }, null, id);
 		internalEObject.eSetProxyURI(uri);
-		this.setInternalResource(proxy);
 
-		Entity entity = (Entity) internalEObject;
 		Frame<?> domainFrame = entity.isa();
 		for (String key : domainFrame.getKeys()) {
 			domainFrame.setValue(entity, key, id.toString());
 			break;
 		}
 
-		return proxy;
+		return entity;
 	}
 
 	/**
@@ -157,6 +155,45 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 */
 	@Override
 	public abstract String getTenant();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public E make() {
+		try {
+			return make(false);
+		} catch (ResourceException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public E make(boolean sequence) throws ResourceException {
+
+		@SuppressWarnings("unchecked")
+		E entity = (E) EcoreUtil.create(this.getFrame().getEClass());
+
+		if (sequence) {
+			String id = this.nextSequence();
+
+			Frame<?> domainFrame = entity.isa();
+			for (String key : domainFrame.getKeys()) {
+				domainFrame.setValue(entity, key, id);
+				break;
+			}
+			this.setInternalResource(entity);
+		}
+
+		return entity;
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

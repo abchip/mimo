@@ -32,14 +32,6 @@ public enum SerializationType implements Enumerator {
 	 * @ordered
 	 */
 	XMI(10, "XMI", "XMI"), /**
-	 * The '<em><b>JSON</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #JSON_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	JSON(20, "JSON", "JSON"), /**
 	 * The '<em><b>MIMO</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,7 +39,7 @@ public enum SerializationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MIMO(30, "MIMO", "MIMO");
+	MIMO(20, "MIMO", "MIMO");
 
 	/**
 	 * The '<em><b>XMI</b></em>' literal value.
@@ -61,17 +53,6 @@ public enum SerializationType implements Enumerator {
 	public static final int XMI_VALUE = 10;
 
 	/**
-	 * The '<em><b>JSON</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #JSON
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int JSON_VALUE = 20;
-
-	/**
 	 * The '<em><b>MIMO</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,7 +61,7 @@ public enum SerializationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MIMO_VALUE = 30;
+	public static final int MIMO_VALUE = 20;
 
 	/**
 	 * An array of all the '<em><b>Serialization Type</b></em>' enumerators.
@@ -91,7 +72,6 @@ public enum SerializationType implements Enumerator {
 	private static final SerializationType[] VALUES_ARRAY =
 		new SerializationType[] {
 			XMI,
-			JSON,
 			MIMO,
 		};
 
@@ -150,7 +130,6 @@ public enum SerializationType implements Enumerator {
 	public static SerializationType get(int value) {
 		switch (value) {
 			case XMI_VALUE: return XMI;
-			case JSON_VALUE: return JSON;
 			case MIMO_VALUE: return MIMO;
 		}
 		return null;

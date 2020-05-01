@@ -47,22 +47,6 @@ public interface ResourceWriter<E extends EntityIdentifiable> extends ResourceRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 * @generated
-	 */
-	E make();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" sequenceRequired="true"
-	 * @generated
-	 */
-	E make(boolean sequence) throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true"
 	 * @generated
 	 */

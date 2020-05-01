@@ -995,8 +995,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEOperation(op, g1);
 
 		initEClass(entityContainerEClass, EntityContainer.class, "EntityContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntityContainer_Contents(), this.getEntityIdentifiable(), null, "contents", null, 0, -1, EntityContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityContainer_Contents(), this.getEntityIdentifiable(), null, "contents", null, 0, -1, EntityContainer.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityContainer_Name(), ecorePackage.getEString(), "name", null, 1, 1, EntityContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = addEOperation(entityContainerEClass, this.getEntityIdentifiable(), "add", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theResourcePackage.getResourceException());
 
 		initEClass(entityEnumEClass, EntityEnum.class, "EntityEnum", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityEnum_Name(), ecorePackage.getEString(), "name", null, 1, 1, EntityEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1069,9 +1073,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2.setELowerBound(g3);
 		initEOperation(op, g1);
 
-		op = addEOperation(frameEClass, null, "createEntity", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(frameEClass_E);
-		initEOperation(op, g1);
+		addEOperation(frameEClass, ecorePackage.getEClass(), "getEClass", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(frameEClass, ecorePackage.getEString(), "getPackageName", 1, 1, IS_UNIQUE, IS_ORDERED);
 

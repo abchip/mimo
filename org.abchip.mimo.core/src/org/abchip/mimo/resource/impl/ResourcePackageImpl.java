@@ -793,6 +793,16 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		addEOperation(resourceEClass, ecorePackage.getEString(), "getTenant", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(resourceEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceEClass_E);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "sequence", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
+		g1 = createEGenericType(resourceEClass_E);
+		initEOperation(op, g1);
+
 		op = addEOperation(resourceEClass, ecorePackage.getEString(), "nextSequence", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());
 
@@ -928,6 +938,81 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceManagerEClass, null, "getResource", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getResource());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceManagerEClass, null, "getResource", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		g1 = createEGenericType(theEntityPackage.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getResource());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceManagerEClass, null, "getResource", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getResource());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceManagerEClass, null, "getResource", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getResource());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceManagerEClass, null, "getResource", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		g1 = createEGenericType(theEntityPackage.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getResource());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceManagerEClass, null, "getResource", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getResource());
+		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
@@ -1375,6 +1460,16 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1 = createEGenericType(resourceReaderEClass_E);
 		initEOperation(op, g1);
 
+		op = addEOperation(resourceReaderEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceReaderEClass_E);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceReaderEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "sequence", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
+		g1 = createEGenericType(resourceReaderEClass_E);
+		initEOperation(op, g1);
+
 		op = addEOperation(resourceReaderEClass, ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceReaderEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1437,16 +1532,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, ecorePackage.getEBoolean(), "update", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());
 
-		op = addEOperation(resourceWriterEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(resourceWriterEClass_E);
-		initEOperation(op, g1);
-
-		op = addEOperation(resourceWriterEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "sequence", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getResourceException());
-		g1 = createEGenericType(resourceWriterEClass_E);
-		initEOperation(op, g1);
-
 		op = addEOperation(resourceWriterEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1465,7 +1550,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		initEEnum(serializationTypeEEnum, SerializationType.class, "SerializationType");
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.XMI);
-		addEEnumLiteral(serializationTypeEEnum, SerializationType.JSON);
 		addEEnumLiteral(serializationTypeEEnum, SerializationType.MIMO);
 
 		// Initialize data types

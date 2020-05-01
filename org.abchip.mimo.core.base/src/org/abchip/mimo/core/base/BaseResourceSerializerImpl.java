@@ -12,15 +12,11 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Locale;
-import java.util.TimeZone;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.core.base.res.JSONProxyResourceImpl;
 import org.abchip.mimo.core.base.res.MIMOProxyResourceImpl;
 import org.abchip.mimo.core.base.res.ReusableResource;
 import org.abchip.mimo.core.base.res.XMIProxyResourceImpl;
@@ -30,10 +26,6 @@ import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceSerializerImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.emfjson.jackson.module.EMFModule;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerializerImpl<E> {
 
@@ -43,22 +35,6 @@ public class BaseResourceSerializerImpl<E extends Entity> extends ResourceSerial
 		this.setFrame(frame);
 
 		switch (serializationType) {
-		case JSON:
-			final ObjectMapper mapper = new ObjectMapper(null);
-			// same as emf
-			final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.ENGLISH);
-			dateFormat.setTimeZone(TimeZone.getDefault());
-
-			mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-			mapper.setDateFormat(dateFormat);
-			mapper.setTimeZone(TimeZone.getDefault());
-			EMFModule module = new EMFModule();
-			module.configure(EMFModule.Feature.OPTION_SERIALIZE_DEFAULT_VALUE, true);
-			mapper.registerModule(module);
-
-			// mapper.
-			this.resource = new JSONProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"), mapper);
-			break;
 		case XMI:
 			this.resource = new XMIProxyResourceImpl(URI.createURI("mimo:/" + getFrame().getName() + "s"));
 			break;

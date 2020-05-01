@@ -204,6 +204,26 @@ public abstract class ResourceReaderImpl<E extends EntityIdentifiable> extends M
 	public abstract E lookup(String name, boolean proxy) throws ResourceException;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public E make() {
+		return this.getResource().make();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public E make(boolean sequence) throws ResourceException {
+		return this.getResource().make(sequence);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated NOT

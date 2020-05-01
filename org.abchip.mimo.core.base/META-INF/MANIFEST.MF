@@ -6,13 +6,9 @@ Bundle-Version: 0.2.0.qualifier
 Bundle-Vendor: ABChip
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.abchip.mimo.core,
- com.fasterxml.jackson.core.jackson-databind,
- com.fasterxml.jackson.core.jackson-core,
- com.fasterxml.jackson.core.jackson-annotations,
  org.eclipse.osgi
 Bundle-ClassPath: .,
- lib/json-1.8.jar,
- lib/emfjson-jackson-1.3.0.jar
+ lib/json-1.8.jar
 Export-Package: org.abchip.mimo.core.base,
  org.abchip.mimo.core.base.cmd,
  org.abchip.mimo.core.base.ctx,

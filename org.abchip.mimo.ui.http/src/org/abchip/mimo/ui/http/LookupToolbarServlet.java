@@ -53,7 +53,7 @@ public class LookupToolbarServlet extends BaseServlet {
 			}
 
 			response.setStatus(HttpServletResponse.SC_FOUND);
-			ResourceSerializer<Toolbar> entitySerializer = context.getResourceManager().createResourceSerializer(Toolbar.class, SerializationType.JSON);
+			ResourceSerializer<Toolbar> entitySerializer = context.getResourceManager().createResourceSerializer(Toolbar.class, SerializationType.MIMO);
 			if (toolbar != null)
 				entitySerializer.add(toolbar);
 			entitySerializer.save(response.getOutputStream());

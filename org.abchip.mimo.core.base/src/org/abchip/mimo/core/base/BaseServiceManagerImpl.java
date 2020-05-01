@@ -28,6 +28,7 @@ import org.abchip.mimo.service.ServiceProviderRegistry;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.util.Strings;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class BaseServiceManagerImpl implements ServiceManager {
 
@@ -57,7 +58,8 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		Service<R, V> service = ServiceFactory.eINSTANCE.createService();
 		service.setName(klass.getSimpleName());
 
-		R request = context.getFrame(klass).createEntity();
+		@SuppressWarnings("unchecked")
+		R request = (R) EcoreUtil.create(context.getFrame(klass).getEClass());
 		service.setRequest(request);
 
 		return service;
@@ -77,7 +79,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		service.setName(frame.getName());
 
 		@SuppressWarnings("unchecked")
-		R request = (R) frame.createEntity();
+		R request = (R) EcoreUtil.create(frame.getEClass());
 		service.setRequest(request);
 
 		return service;
@@ -122,7 +124,8 @@ public class BaseServiceManagerImpl implements ServiceManager {
 
 		this.checkAuthorization(context, tenant);
 
-		R request = frame.createEntity();
+		@SuppressWarnings("unchecked")
+		R request = (R) EcoreUtil.create(frame.getEClass());
 		context.inject(request);
 
 		request.init(context, tenant);

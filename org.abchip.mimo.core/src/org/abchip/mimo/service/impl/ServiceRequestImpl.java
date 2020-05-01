@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -204,7 +205,8 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 		Class<V> klass = this.getResponse();
 		Frame<V> frame = this.getContext().getFrame(klass);
-		V response = frame.createEntity();
+		@SuppressWarnings("unchecked")
+		V response = (V) EcoreUtil.create(frame.getEClass());
 
 		return response;
 	}

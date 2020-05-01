@@ -24,6 +24,7 @@ import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.util.Strings;
 import org.abchip.mimo.util.URIs;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
 public class EntityCommands extends BaseCommands {
@@ -91,7 +92,7 @@ public class EntityCommands extends BaseCommands {
 			interpreter.println();
 		}
 
-		ServiceResponse response = this.getContext().getFrame(request.getResponse()).createEntity();
+		ServiceResponse response = (ServiceResponse) EcoreUtil.create(this.getContext().getFrame(request.getResponse()).getEClass());
 
 		interpreter.println("Output parameters");
 		for (Slot slot : response.isa().getSlots()) {

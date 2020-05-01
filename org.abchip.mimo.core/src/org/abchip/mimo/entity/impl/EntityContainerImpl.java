@@ -7,11 +7,11 @@
  */
 package org.abchip.mimo.entity.impl;
 
-import java.util.Collection;
 import java.util.List;
 import org.abchip.mimo.entity.EntityContainer;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.resource.ResourceException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -121,6 +121,27 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws ResourceException 
+	 * @generated NOT
+	 */
+	@Override
+	public EntityIdentifiable add(String frame) throws ResourceException {
+		switch (this.getState()) {
+		case PROXY:
+		case RESOLVED:
+			EntityIdentifiable entityIdentifiable = this.getResource().getContext().getResourceManager().getResource(frame).make();
+			this.getContents().add(entityIdentifiable);
+			return entityIdentifiable;
+		case CHAINED:
+		case DIRTY:
+		case TRANSIENT:
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -153,14 +174,9 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EntityPackage.ENTITY_CONTAINER__CONTENTS:
-				getContents().clear();
-				getContents().addAll((Collection<? extends EntityIdentifiable>)newValue);
-				return;
 			case EntityPackage.ENTITY_CONTAINER__NAME:
 				setName((String)newValue);
 				return;
@@ -176,9 +192,6 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EntityPackage.ENTITY_CONTAINER__CONTENTS:
-				getContents().clear();
-				return;
 			case EntityPackage.ENTITY_CONTAINER__NAME:
 				setName(NAME_EDEFAULT);
 				return;

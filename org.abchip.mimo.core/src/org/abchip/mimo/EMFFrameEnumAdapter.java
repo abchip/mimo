@@ -16,6 +16,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
 import org.abchip.mimo.util.Strings;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 
 public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
@@ -74,11 +75,6 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public E createEntity() {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
 	public String getPackageName() {
 		return null;
 	}
@@ -89,5 +85,10 @@ public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 
 		if (text != null)
 			eSet(EntityPackage.FRAME__TEXT, text);
+	}
+
+	@Override
+	public EClass getEClass() {
+		return null;
 	}
 }

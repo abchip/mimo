@@ -23,6 +23,8 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -67,26 +69,30 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 		}
 		content.close();
 
-		if (isArray) {
-			JSONArray array = new JSONArray(responseStrBuilder.toString());
-			for (int i = 0; i < array.length(); i++) {
-				JSONObject object = array.getJSONObject(i);
-				Entity entityIdentifiable = jsonObject2Entity(object);
-				this.getContents().add((EObject) entityIdentifiable);
+		try {
+			if (isArray) {
+				JSONArray array = new JSONArray(responseStrBuilder.toString());
+				for (int i = 0; i < array.length(); i++) {
+					JSONObject object = array.getJSONObject(i);
+					Entity entityIdentifiable = jsonObject2Entity(object);
+					this.getContents().add((EObject) entityIdentifiable);
+				}
+			} else {
+				JSONObject object = new JSONObject(responseStrBuilder.toString());
+				Entity entity = jsonObject2Entity(object);
+				this.getContents().add((EObject) entity);
 			}
-		} else {
-			JSONObject object = new JSONObject(responseStrBuilder.toString());
-			Entity entity = jsonObject2Entity(object);
-			this.getContents().add((EObject) entity);
+		} catch (ResourceException e) {
+			throw new IOException(e);
 		}
 	}
 
-	private Entity jsonObject2Entity(JSONObject jsonObject) {
+	private Entity jsonObject2Entity(JSONObject jsonObject) throws ResourceException {
 
-		Frame<?> frame = context.getResourceManager().getFrame(jsonObject.getString("isa"));
+		Resource<?> resource = context.getResourceManager().getResource(jsonObject.getString("isa"));
 
-		Entity entity = frame.createEntity();
-
+		Entity entity = resource.make();
+		Frame<?> frame = entity.isa();
 		for (String slotName : JSONObject.getNames(jsonObject)) {
 			Object slotValue = jsonObject.get(slotName);
 			if (slotValue instanceof JSONObject) {

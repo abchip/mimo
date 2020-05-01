@@ -81,7 +81,7 @@ public class LookupQueryServlet extends BaseServlet {
 			}
 
 			response.setStatus(HttpServletResponse.SC_FOUND);
-			ResourceSerializer<Query> entitySerializer = context.getResourceManager().createResourceSerializer(Query.class, SerializationType.JSON);
+			ResourceSerializer<Query> entitySerializer = context.getResourceManager().createResourceSerializer(Query.class, SerializationType.MIMO);
 			if (query != null)
 				entitySerializer.add(query);
 			entitySerializer.save(response.getOutputStream());

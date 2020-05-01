@@ -20,6 +20,7 @@ import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceFactory;
@@ -89,6 +90,36 @@ public class BaseResourceManagerImpl extends BaseResource implements ResourceMan
 	@Override
 	public Frame<?> getFrame(String frame, String tenant) {
 		return super.getFrame(frame, tenant);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) {
+		return this.getResourceProvider(klass).getResource(getContext(), klass);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) {
+		return this.getResourceProvider(frame).getResource(getContext(), frame);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource(String frame) {
+		return this.getResourceProvider(frame).getResource(getContext(), frame);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) {
+		return this.getResourceProvider(klass).getResource(getContext(), klass, tenant);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) {
+		return this.getResourceProvider(frame).getResource(getContext(), frame, tenant);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) {
+		return this.getResourceProvider(frame).getResource(getContext(), frame, tenant);
 	}
 
 	@Override

@@ -93,7 +93,7 @@ public class LookupMenuServlet extends BaseServlet {
 		}
 
 		response.setStatus(HttpServletResponse.SC_FOUND);
-		ResourceSerializer<Menu> entitySerializer = context.getResourceManager().createResourceSerializer(Menu.class, SerializationType.JSON);
+		ResourceSerializer<Menu> entitySerializer = context.getResourceManager().createResourceSerializer(Menu.class, SerializationType.MIMO);
 		if (menu != null)
 			entitySerializer.add(menu);
 		entitySerializer.save(response.getOutputStream());

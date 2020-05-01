@@ -237,12 +237,12 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	public abstract Frame<? super E> ako();
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
-	public abstract E createEntity();
+	public abstract EClass getEClass();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
