@@ -13,6 +13,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD})
-public @interface ApplicationStopping {
+@Target({ ElementType.TYPE })
+public @interface Service {
+
+	public enum Scope {
+		CONTEXT
+	}
+	
+	Scope scope();
 }

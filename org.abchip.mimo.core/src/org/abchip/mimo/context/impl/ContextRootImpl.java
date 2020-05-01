@@ -61,14 +61,10 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public <T> List<T> getAll(Class<T> klass) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract <T> List<T> getAll(Class<T> klass);
 
 	/**
 	 * <!-- begin-user-doc -->

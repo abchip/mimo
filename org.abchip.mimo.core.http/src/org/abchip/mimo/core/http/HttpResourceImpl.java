@@ -182,7 +182,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (order != null)
 			query += "&order=" + order;
 
-
 		HttpConnector connector = context.get(HttpConnector.class);
 		if (connector == null)
 			throw new ResourceException("Unconnected resource " + getFrame().getURI());

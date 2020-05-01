@@ -10,13 +10,14 @@ package org.abchip.mimo.core.e4;
 
 import org.abchip.mimo.context.ContextDescription;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.osgi.framework.BundleContext;
 
 public class E4ContextChildImpl extends E4ContextImpl {
 
 	private IEclipseContext eclipseContext;
 
-	public E4ContextChildImpl(IEclipseContext eclipseContext, ContextDescription contextDescription) {
-		super(contextDescription);
+	public E4ContextChildImpl(BundleContext bundleContext, ContextDescription contextDescription, IEclipseContext eclipseContext) {
+		super(bundleContext, contextDescription);
 
 		this.eclipseContext = eclipseContext;
 	}

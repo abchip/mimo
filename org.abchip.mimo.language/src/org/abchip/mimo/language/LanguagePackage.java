@@ -93,7 +93,7 @@ public interface LanguagePackage extends EPackage {
 	int LANGUAGE__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Scope</b></em>' attribute.
+	 * The feature id for the '<em><b>Service</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -298,7 +298,7 @@ public interface LanguagePackage extends EPackage {
 	int LANGUAGE_PLANET_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageScope <em>Scope</em>}' enum.
+	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageScope <em>Service</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.abchip.mimo.language.LanguageScope
@@ -360,10 +360,10 @@ public interface LanguagePackage extends EPackage {
 	EAttribute getLanguage_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.language.Language#getScope <em>Scope</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.language.Language#getScope <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Scope</em>'.
+	 * @return the meta object for the attribute '<em>Service</em>'.
 	 * @see org.abchip.mimo.language.Language#getScope()
 	 * @see #getLanguage()
 	 * @generated
@@ -507,10 +507,10 @@ public interface LanguagePackage extends EPackage {
 	EAttribute getLanguagePlanet_Name();
 
 	/**
-	 * Returns the meta object for enum '{@link org.abchip.mimo.language.LanguageScope <em>Scope</em>}'.
+	 * Returns the meta object for enum '{@link org.abchip.mimo.language.LanguageScope <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Scope</em>'.
+	 * @return the meta object for enum '<em>Service</em>'.
 	 * @see org.abchip.mimo.language.LanguageScope
 	 * @generated
 	 */
@@ -583,7 +583,7 @@ public interface LanguagePackage extends EPackage {
 		 */
 		EAttribute LANGUAGE__NAME = eINSTANCE.getLanguage_Name();
 		/**
-		 * The meta object literal for the '<em><b>Scope</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Service</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -695,7 +695,7 @@ public interface LanguagePackage extends EPackage {
 		 */
 		EAttribute LANGUAGE_PLANET__NAME = eINSTANCE.getLanguagePlanet_Name();
 		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.language.LanguageScope <em>Scope</em>}' enum.
+		 * The meta object literal for the '{@link org.abchip.mimo.language.LanguageScope <em>Service</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.abchip.mimo.language.LanguageScope

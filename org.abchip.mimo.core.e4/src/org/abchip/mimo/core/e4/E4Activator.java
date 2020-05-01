@@ -82,10 +82,10 @@ public class E4Activator implements BundleActivator {
 
 			return Applications.load(entry.toString());
 		}
-		
+
 		return null;
 	}
-	
+
 	@Override
 	public void stop(BundleContext context) throws Exception {
 
@@ -112,7 +112,7 @@ public class E4Activator implements BundleActivator {
 		setApplicationPaths(E4Activator.application.getPaths(), applicationHome);
 
 		// context
-		ContextRoot contextApplication = new E4ContextRootImpl(bundle, E4Activator.application.getContextDescription());
+		ContextRoot contextApplication = new E4ContextRootImpl(bundle.getBundleContext(), E4Activator.application.getContextDescription());
 		contextApplication.set(Application.class, E4Activator.application);
 		contextApplication.set(ApplicationPaths.class, E4Activator.application.getPaths());
 		contextApplication.set(ContextRoot.class, contextApplication);

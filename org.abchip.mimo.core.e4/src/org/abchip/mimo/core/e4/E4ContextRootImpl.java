@@ -18,32 +18,25 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.context.Factory;
 import org.eclipse.e4.core.contexts.EclipseContextFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceReference;
 
 public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 
-	private Bundle bundle;
+	BundleContext bundleContext;
 	private IEclipseContext eclipseContext;
 
-	public E4ContextRootImpl(Bundle bundle, ContextDescription contextDescription) {
-		super(contextDescription);
+	public E4ContextRootImpl(BundleContext bundleContext, ContextDescription contextDescription) {
+		super(bundleContext, contextDescription);
 
-		this.bundle = bundle;
-		this.eclipseContext = EclipseContextFactory.getServiceContext(bundle.getBundleContext());
+		this.eclipseContext = EclipseContextFactory.getServiceContext(bundleContext);
 
 		initializeContext(this.eclipseContext);
-	}
-
-	private BundleContext getBundleContext() {
-		return this.bundle.getBundleContext();
 	}
 
 	@Override
@@ -70,6 +63,40 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 			e.toString();
 		}
 	}
+
+	@Override
+	public ContextProvider createChildContext(String contextId) {
+
+		ContextDescription childDescription = (ContextDescription) EcoreUtil.copy((EObject) getContextDescription());
+		childDescription.setId(contextId);
+
+		return createChildContext(childDescription);
+	}
+
+	private ContextProvider createChildContext(ContextDescription contextDescription) {
+
+		IEclipseContext eclipseChildContext = getEclipseContext().createChild();
+		initializeContext(eclipseChildContext);
+
+		if (contextDescription.getId() == null)
+			contextDescription.setId(UUID.randomUUID().toString());
+
+		Context contextChild = new E4ContextChildImpl(this.getBundleContext(), contextDescription, eclipseChildContext);
+
+		return new ContextProvider() {
+
+			@Override
+			public Context get() {
+				return contextChild;
+			}
+
+			@Override
+			public void close() {
+				contextChild.dispose();
+			}
+		};
+	}
+	
 
 	@Override
 	public <T> T get(Class<T> klass, String filter) {
@@ -120,44 +147,5 @@ public class E4ContextRootImpl extends E4ContextImpl implements ContextRoot {
 		}
 
 		return plugins;
-	}
-
-	@Override
-	public ContextProvider createChildContext(String contextId) {
-
-		ContextDescription childDescription = (ContextDescription) EcoreUtil.copy((EObject) getContextDescription());
-		childDescription.setId(contextId);
-
-		return createChildContext(childDescription);
-	}
-
-	@SuppressWarnings("unchecked")
-	private ContextProvider createChildContext(ContextDescription contextDescription) {
-
-		IEclipseContext eclipseChildContext = getEclipseContext().createChild();
-		initializeContext(eclipseChildContext);
-
-		if (contextDescription.getId() == null)
-			contextDescription.setId(UUID.randomUUID().toString());
-
-		Context contextChild = new E4ContextChildImpl(eclipseChildContext, contextDescription);
-
-		for (Factory<Object> factory : this.getAll(Factory.class)) {
-			Object object = factory.create(contextChild);
-			contextChild.set(factory.getInterfaceClass(), object);
-		}
-
-		return new ContextProvider() {
-
-			@Override
-			public Context get() {
-				return contextChild;
-			}
-
-			@Override
-			public void close() {
-				contextChild.dispose();
-			}
-		};
-	}
+	}	
 }

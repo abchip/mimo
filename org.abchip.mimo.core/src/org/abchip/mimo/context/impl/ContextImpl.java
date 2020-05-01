@@ -73,14 +73,11 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id, String tenant) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id, String tenant);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -217,7 +214,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	}
 
 	@Override
-	protected void finalize() throws Throwable {
+	protected final void finalize() throws Throwable {
 		super.finalize();
 
 		this.dispose();

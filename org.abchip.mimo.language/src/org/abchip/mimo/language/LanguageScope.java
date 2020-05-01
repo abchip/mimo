@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Scope</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Service</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.abchip.mimo.language.LanguagePackage#getLanguageScope()
@@ -164,7 +164,7 @@ public enum LanguageScope implements Enumerator {
 	public static final int DIALECTS_VALUE = 60;
 
 	/**
-	 * An array of all the '<em><b>Scope</b></em>' enumerators.
+	 * An array of all the '<em><b>Service</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -180,7 +180,7 @@ public enum LanguageScope implements Enumerator {
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Scope</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Service</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -188,7 +188,7 @@ public enum LanguageScope implements Enumerator {
 	public static final List<LanguageScope> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Scope</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Service</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
@@ -206,7 +206,7 @@ public enum LanguageScope implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Scope</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Service</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
@@ -224,7 +224,7 @@ public enum LanguageScope implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Scope</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Service</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.

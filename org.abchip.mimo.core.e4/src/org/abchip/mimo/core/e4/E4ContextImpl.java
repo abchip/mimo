@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.abchip.mimo.application.Service;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
@@ -21,6 +22,7 @@ import org.abchip.mimo.context.ContextEvent;
 import org.abchip.mimo.context.ContextEventType;
 import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextStatus;
+import org.abchip.mimo.context.Factory;
 import org.abchip.mimo.context.impl.ContextImpl;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -32,6 +34,8 @@ import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
 import org.osgi.service.log.Logger;
 
 public abstract class E4ContextImpl extends ContextImpl {
@@ -39,10 +43,12 @@ public abstract class E4ContextImpl extends ContextImpl {
 	private static final String ADAPTER_FACTORIES_NAME = "org.abchip.mimo.context.adapterFactories";
 	private static final Logger LOGGER = Logs.getLogger(E4ContextImpl.class);
 
+	private BundleContext bundleContext;
 	private ContextDescription contextDescription;
 	private List<ContextListener> listeners;
 
-	public E4ContextImpl(ContextDescription contextDescription) {
+	public E4ContextImpl(BundleContext bundleContext, ContextDescription contextDescription) {
+		this.bundleContext = bundleContext;
 		this.contextDescription = contextDescription;
 		this.listeners = new ArrayList<ContextListener>();
 		this.contextDescription.setStatus(ContextStatus.ACTIVE);
@@ -51,6 +57,10 @@ public abstract class E4ContextImpl extends ContextImpl {
 	protected abstract IEclipseContext getEclipseContext();
 
 	protected abstract void removeEclipseContext();
+
+	protected BundleContext getBundleContext() {
+		return this.bundleContext;
+	}
 
 	protected void initializeContext(IEclipseContext eclipseContext) {
 		eclipseContext.set(ADAPTER_FACTORIES_NAME, new HashMap<Class<?>, List<AdapterFactory>>());
@@ -83,9 +93,43 @@ public abstract class E4ContextImpl extends ContextImpl {
 		ContextInjectionFactory.inject(consumer, getEclipseContext());
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public <T> T get(Class<T> clazz) {
-		return getEclipseContext().get(clazz);
+
+		T object = null;
+
+		Service annotation = clazz.getAnnotation(Service.class);
+		if (annotation == null)
+			object = getEclipseContext().get(clazz);
+		else {
+			switch (annotation.scope()) {
+			case CONTEXT:
+				object = getEclipseContext().getLocal(clazz);
+				break;
+			}
+		}
+
+		if (object != null)
+			return object;
+
+		"".toString();
+		try {
+			for (ServiceReference<Factory> serviceReference : getBundleContext().getServiceReferences(Factory.class, null)) {
+				Factory<T> factory = getBundleContext().getService(serviceReference);
+				if (!factory.getInterfaceClass().equals(clazz))
+					continue;
+
+				object = factory.create(this);
+				this.set(factory.getInterfaceClass(), object);
+				break;
+			}
+		} catch (Exception e) {
+			LOGGER.warn(e.getMessage());
+			return null;
+		}
+
+		return object;
 	}
 
 	@Override

@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.context;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Factory</b></em>'.
