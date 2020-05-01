@@ -22,7 +22,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  * <ul>
  *   <li>{@link org.abchip.mimo.language.Language#getIso_639_1 <em>Iso 639 1</em>}</li>
  *   <li>{@link org.abchip.mimo.language.Language#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.language.Language#getScope <em>Service</em>}</li>
+ *   <li>{@link org.abchip.mimo.language.Language#getScope <em>Scope</em>}</li>
  *   <li>{@link org.abchip.mimo.language.Language#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.language.Language#getType <em>Type</em>}</li>
  *   <li>{@link org.abchip.mimo.language.Language#getPlanets <em>Planets</em>}</li>
@@ -87,7 +87,7 @@ public interface Language extends EntityIdentifiable {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Service</b></em>' attribute.
+	 * Returns the value of the '<em><b>Scope</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.abchip.mimo.language.LanguageScope}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -95,7 +95,7 @@ public interface Language extends EntityIdentifiable {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Service</em>' attribute.
+	 * @return the value of the '<em>Scope</em>' attribute.
 	 * @see org.abchip.mimo.language.LanguageScope
 	 * @see #setScope(LanguageScope)
 	 * @see org.abchip.mimo.language.LanguagePackage#getLanguage_Scope()
@@ -105,10 +105,10 @@ public interface Language extends EntityIdentifiable {
 	LanguageScope getScope();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.language.Language#getScope <em>Service</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.language.Language#getScope <em>Scope</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Service</em>' attribute.
+	 * @param value the new value of the '<em>Scope</em>' attribute.
 	 * @see org.abchip.mimo.language.LanguageScope
 	 * @see #getScope()
 	 * @generated

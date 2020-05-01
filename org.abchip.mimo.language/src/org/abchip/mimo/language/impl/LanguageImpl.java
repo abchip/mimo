@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link org.abchip.mimo.language.impl.LanguageImpl#getIso_639_1 <em>Iso 639 1</em>}</li>
  *   <li>{@link org.abchip.mimo.language.impl.LanguageImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.language.impl.LanguageImpl#getScope <em>Service</em>}</li>
+ *   <li>{@link org.abchip.mimo.language.impl.LanguageImpl#getScope <em>Scope</em>}</li>
  *   <li>{@link org.abchip.mimo.language.impl.LanguageImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.abchip.mimo.language.impl.LanguageImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.abchip.mimo.language.impl.LanguageImpl#getPlanets <em>Planets</em>}</li>
@@ -81,7 +81,7 @@ public class LanguageImpl extends EntityIdentifiableImpl implements Language {
 	 */
 	protected String name = NAME_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getScope() <em>Service</em>}' attribute.
+	 * The default value of the '{@link #getScope() <em>Scope</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getScope()
@@ -90,7 +90,7 @@ public class LanguageImpl extends EntityIdentifiableImpl implements Language {
 	 */
 	protected static final LanguageScope SCOPE_EDEFAULT = LanguageScope.INDIVIDUAL;
 	/**
-	 * The cached value of the '{@link #getScope() <em>Service</em>}' attribute.
+	 * The cached value of the '{@link #getScope() <em>Scope</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getScope()
