@@ -9,11 +9,16 @@
 package org.abchip.mimo.core.http;
 
 import java.io.Closeable;
-import java.io.IOException;
 
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextEvent;
+import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ProviderConfig;
+import org.abchip.mimo.core.http.handler.HttpLogoutHandler;
 import org.abchip.mimo.networking.HttpClient;
+import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.util.Logs;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
@@ -24,21 +29,25 @@ public class HttpConnector implements Closeable {
 
 	private static final Logger LOGGER = Logs.getLogger(HttpConnector.class);
 
+	private Context context;
 	private ProviderConfig providerConfig;
-	private HttpClient httpClient;
-	private ContextDescription contextDescription;
 
 	private String token;
 
-	protected HttpConnector(ProviderConfig providerConfig, HttpClient httpClient, ContextDescription contextDescription) {
+	protected HttpConnector(Context context, ProviderConfig providerConfig) {
+		this.context = context;
 		this.providerConfig = providerConfig;
-		this.httpClient = httpClient;
-		this.contextDescription = contextDescription;
-		this.token = contextDescription.getId();
-	}
 
-	protected ContextDescription getContextDescription() {
-		return this.contextDescription;
+		this.context.registerListener(new ContextListener() {
+			@Override
+			public void handleEvent(ContextEvent event) {
+				switch (event.getEventType()) {
+				case CLOSING:
+					close();
+					break;
+				}
+			}
+		});
 	}
 
 	@SuppressWarnings("deprecation")
@@ -59,12 +68,24 @@ public class HttpConnector implements Closeable {
 
 		LOGGER.trace("Execute http request {}", httpPost.getURI());
 
-		E response = httpClient.execute(httpPost, handler);
+		@SuppressWarnings("resource")
+		E response = context.get(HttpClient.class).execute(httpPost, handler);
 		return response;
 	}
 
 	@Override
-	public void close() throws IOException {
-		this.httpClient.close();
+	public void close() {
+
+		try {
+			ResourceSerializer<ContextDescription> serializer = context.getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
+			ContextDescription contextDescription = execute("logout", null, new HttpLogoutHandler(serializer));
+			LOGGER.audit("Disconnection success id {} user {} tenant {}", contextDescription.getId(), contextDescription.getUser(), contextDescription.getTenant());
+		} catch (Exception e) {
+			LOGGER.audit("Disconnection failed {}", e.getMessage());
+		} finally {
+			this.context = null;
+			this.providerConfig = null;
+		}
 	}
+
 }

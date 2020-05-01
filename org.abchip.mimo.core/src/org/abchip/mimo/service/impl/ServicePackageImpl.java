@@ -980,7 +980,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		addEOperation(serviceMappingRuleEClass, this.getServiceMappingType(), "getMappingType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(serviceMappingRuleByPackageEClass, ServiceMappingRuleByPackage.class, "ServiceMappingRuleByPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceMappingRuleByPackage_Package(), ecorePackage.getEString(), "package", null, 1, 1, ServiceMappingRuleByPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceMappingRuleByPackage_Package(), ecorePackage.getEString(), "package", null, 1, 1, ServiceMappingRuleByPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceMessageEClass, ServiceMessage.class, "ServiceMessage", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

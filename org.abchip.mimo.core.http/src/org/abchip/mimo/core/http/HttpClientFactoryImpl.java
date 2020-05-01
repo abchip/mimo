@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo.core.http;
 
+import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
@@ -18,12 +19,14 @@ import javax.net.ssl.SSLContext;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextEvent;
+import org.abchip.mimo.context.ContextListener;
+import org.abchip.mimo.context.Factory;
 import org.abchip.mimo.context.Thread;
 import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.networking.ConnectionPoolingConfig;
 import org.abchip.mimo.networking.ConnectionPoolingRouteConfig;
 import org.abchip.mimo.networking.HttpClient;
-import org.abchip.mimo.networking.HttpClientFactory;
 import org.abchip.mimo.util.Logs;
 import org.apache.http.HttpHost;
 import org.apache.http.config.RegistryBuilder;
@@ -41,7 +44,7 @@ import org.apache.http.ssl.SSLContexts;
 import org.apache.http.ssl.TrustStrategy;
 import org.osgi.service.log.Logger;
 
-public class HttpClientFactoryImpl implements HttpClientFactory {
+public class HttpClientFactoryImpl implements Factory<HttpClient> {
 
 	private static final Logger LOGGER = Logs.getLogger(HttpClientFactoryImpl.class);
 
@@ -97,7 +100,24 @@ public class HttpClientFactoryImpl implements HttpClientFactory {
 
 	@Override
 	public HttpClient create(Context context) {
-		return new HttpClientImpl(HTTP);
+		HttpClient httpClient = new HttpClientImpl(HTTP);
+
+		context.registerListener(new ContextListener() {
+			@Override
+			public void handleEvent(ContextEvent event) {
+				switch (event.getEventType()) {
+				case CLOSING:
+					try {
+						httpClient.close();
+					} catch (IOException e) {
+						LOGGER.warn(e.getMessage());
+					}
+					break;
+				}
+			}
+		});
+
+		return httpClient;
 	}
 
 	@Override

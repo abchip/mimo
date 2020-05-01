@@ -36,7 +36,7 @@ public interface ResourceMappingRuleByPackage extends ResourceMappingRule {
 	 * @return the value of the '<em>Package</em>' attribute.
 	 * @see #setPackage(String)
 	 * @see org.abchip.mimo.resource.ResourcePackage#getResourceMappingRuleByPackage_Package()
-	 * @model id="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getPackage();

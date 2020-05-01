@@ -36,7 +36,7 @@ public interface ResourceMappingRuleByFrame extends ResourceMappingRule {
 	 * @return the value of the '<em>Frame</em>' attribute.
 	 * @see #setFrame(String)
 	 * @see org.abchip.mimo.resource.ResourcePackage#getResourceMappingRuleByFrame_Frame()
-	 * @model id="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getFrame();

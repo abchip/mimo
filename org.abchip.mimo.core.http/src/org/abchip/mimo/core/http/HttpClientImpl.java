@@ -22,15 +22,15 @@ import org.apache.http.protocol.HttpContext;
 
 public class HttpClientImpl implements HttpClient {
 
-	private HttpContext context;
+	private HttpContext httpContext;
 	private CloseableHttpClient client = null;
 
-	public HttpClientImpl(CloseableHttpClient client) {
+	protected HttpClientImpl(CloseableHttpClient client) {
 		this.client = client;
 
-		this.context = HttpClientContext.create();
+		this.httpContext = HttpClientContext.create();
 		CookieStore cookieStore = new BasicCookieStore();
-		this.context.setAttribute(HttpClientContext.COOKIE_STORE, cookieStore);
+		this.httpContext.setAttribute(HttpClientContext.COOKIE_STORE, cookieStore);
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class HttpClientImpl implements HttpClient {
 			throw new NetworkingException("Client closed");
 
 		try {
-			return client.execute(method, handler, context);
+			return client.execute(method, handler, httpContext);
 		} catch (Exception e) {
 			throw new NetworkingException(e);
 		} finally {
@@ -52,6 +52,7 @@ public class HttpClientImpl implements HttpClient {
 		if (this.client == null)
 			return;
 
-		this.client = null;
+		this.httpContext = null;
+		this.client = null;		
 	}
 }

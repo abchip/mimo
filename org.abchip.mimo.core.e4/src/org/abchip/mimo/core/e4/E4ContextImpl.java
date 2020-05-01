@@ -10,7 +10,9 @@ package org.abchip.mimo.core.e4;
 
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -45,12 +47,12 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 	private BundleContext bundleContext;
 	private ContextDescription contextDescription;
-	private List<ContextListener> listeners;
+	private Deque<ContextListener> listeners;
 
 	public E4ContextImpl(BundleContext bundleContext, ContextDescription contextDescription) {
 		this.bundleContext = bundleContext;
 		this.contextDescription = contextDescription;
-		this.listeners = new ArrayList<ContextListener>();
+		this.listeners = new LinkedList<ContextListener>();
 		this.contextDescription.setStatus(ContextStatus.ACTIVE);
 	}
 
@@ -68,7 +70,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 	@Override
 	public void registerListener(ContextListener listener) {
-		this.listeners.add(listener);
+		this.listeners.push(listener);
 	}
 
 	@Override
@@ -149,7 +151,8 @@ public abstract class E4ContextImpl extends ContextImpl {
 		Map<Class<?>, List<AdapterFactory>> adapterFactories = (Map<Class<?>, List<AdapterFactory>>) getEclipseContext().get(ADAPTER_FACTORIES_NAME);
 		adapterFactories.clear();
 
-		for (ContextListener listener : this.listeners) {
+		while (!listeners.isEmpty()) {
+			ContextListener listener = this.listeners.pop();
 			try {
 				listener.handleEvent(new ContextEvent() {
 
@@ -166,6 +169,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 			} catch (Exception e) {
 				LOGGER.warn(e.getMessage());
 			}
+			listener = this.listeners.pop();
 		}
 
 		this.listeners = null;

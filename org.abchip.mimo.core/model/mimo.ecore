@@ -1108,12 +1108,6 @@
         </eParameters>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HttpClientFactory" abstract="true"
-        interface="true">
-      <eGenericSuperTypes eClassifier="#//context/Factory">
-        <eTypeArguments eClassifier="#//networking/HttpClient"/>
-      </eGenericSuperTypes>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HostConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1530,13 +1524,11 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceMappingRuleByFrame" eSuperTypes="#//resource/ResourceMappingRule">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          iD="true"/>
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceMappingRuleByPackage" eSuperTypes="#//resource/ResourceMappingRule">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          iD="true"/>
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ResourceMappingType">
       <eLiterals name="ByFrame" value="10" literal="BF"/>
@@ -2041,8 +2033,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceMappingRuleByPackage" eSuperTypes="#//service/ServiceMappingRule">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          iD="true"/>
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ServiceMappingType">
       <eLiterals name="ByPackage" value="10" literal="BP"/>

@@ -8,25 +8,26 @@
 package org.abchip.mimo.networking;
 
 import java.io.Closeable;
+
+import org.abchip.mimo.application.Service;
+import org.abchip.mimo.application.Service.Scope;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
 
-
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Http Client</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Http
+ * Client</b></em>'. <!-- end-user-doc -->
  *
  *
  * @see org.abchip.mimo.networking.NetworkingPackage#getHttpClient()
  * @model interface="true" abstract="true" superTypes="org.abchip.mimo.java.JavaCloseable"
  * @generated
  */
+@Service(scope = Scope.CONTEXT)
 public interface HttpClient extends Closeable {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @model required="true" exceptions="org.abchip.mimo.networking.NetworkingException" methodDataType="org.abchip.mimo.networking.HttpPost" methodRequired="true" handlerDataType="org.abchip.mimo.networking.HttpResponseHandler&lt;T&gt;" handlerRequired="true"
 	 * @generated
 	 */

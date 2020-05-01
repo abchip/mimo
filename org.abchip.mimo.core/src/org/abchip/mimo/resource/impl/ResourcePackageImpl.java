@@ -1162,10 +1162,10 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEOperation(resourceMappingRuleEClass, this.getResourceMappingType(), "getMappingType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(resourceMappingRuleByFrameEClass, ResourceMappingRuleByFrame.class, "ResourceMappingRuleByFrame", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getResourceMappingRuleByFrame_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, ResourceMappingRuleByFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResourceMappingRuleByFrame_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, ResourceMappingRuleByFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceMappingRuleByPackageEClass, ResourceMappingRuleByPackage.class, "ResourceMappingRuleByPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getResourceMappingRuleByPackage_Package(), ecorePackage.getEString(), "package", null, 1, 1, ResourceMappingRuleByPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResourceMappingRuleByPackage_Package(), ecorePackage.getEString(), "package", null, 1, 1, ResourceMappingRuleByPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceNotifierEClass, ResourceNotifier.class, "ResourceNotifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

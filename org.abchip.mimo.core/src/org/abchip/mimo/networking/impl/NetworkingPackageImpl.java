@@ -35,7 +35,6 @@ import org.abchip.mimo.networking.ConnectionPoolingConfig;
 import org.abchip.mimo.networking.ConnectionPoolingRouteConfig;
 import org.abchip.mimo.networking.HostConfig;
 import org.abchip.mimo.networking.HttpClient;
-import org.abchip.mimo.networking.HttpClientFactory;
 import org.abchip.mimo.networking.HttpServiceConfig;
 import org.abchip.mimo.networking.NetworkingException;
 import org.abchip.mimo.networking.NetworkingFactory;
@@ -119,12 +118,6 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 	 * @generated
 	 */
 	private EClass httpClientEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass httpClientFactoryEClass = null;
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -426,16 +419,6 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EClass getHttpClientFactory() {
-		return httpClientFactoryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private boolean isCreated = false;
 
 	/**
@@ -460,8 +443,6 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		createEAttribute(connectionPoolingRouteConfigEClass, CONNECTION_POOLING_ROUTE_CONFIG__MAX);
 
 		httpClientEClass = createEClass(HTTP_CLIENT);
-
-		httpClientFactoryEClass = createEClass(HTTP_CLIENT_FACTORY);
 
 		hostConfigEClass = createEClass(HOST_CONFIG);
 		createEAttribute(hostConfigEClass, HOST_CONFIG__ADDRESS);
@@ -504,7 +485,6 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
-		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 
 		// Create type parameters
 		addETypeParameter(httpResponseHandlerEDataType, "T");
@@ -515,10 +495,6 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		connectionPoolingConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		connectionPoolingRouteConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		httpClientEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
-		EGenericType g1 = createEGenericType(theContextPackage.getFactory());
-		EGenericType g2 = createEGenericType(this.getHttpClient());
-		g1.getETypeArguments().add(g2);
-		httpClientFactoryEClass.getEGenericSuperTypes().add(g1);
 		hostConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		httpServiceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
@@ -537,15 +513,13 @@ public class NetworkingPackageImpl extends EPackageImpl implements NetworkingPac
 		EOperation op = addEOperation(httpClientEClass, null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "T");
 		addEParameter(op, this.getHttpPost(), "method", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getHttpResponseHandler());
-		g2 = createEGenericType(t1);
+		EGenericType g1 = createEGenericType(this.getHttpResponseHandler());
+		EGenericType g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "handler", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getNetworkingException());
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
-
-		initEClass(httpClientFactoryEClass, HttpClientFactory.class, "HttpClientFactory", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(hostConfigEClass, HostConfig.class, "HostConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHostConfig_Address(), ecorePackage.getEString(), "address", null, 1, 1, HostConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

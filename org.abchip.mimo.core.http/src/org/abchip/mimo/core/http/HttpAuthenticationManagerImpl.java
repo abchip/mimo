@@ -8,7 +8,6 @@
  */
 package org.abchip.mimo.core.http;
 
-import java.io.IOException;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -23,17 +22,13 @@ import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.authentication.AuthenticationUserToken;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
-import org.abchip.mimo.context.ContextEvent;
-import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
 import org.abchip.mimo.core.http.handler.HttpCheckLoginHandler;
 import org.abchip.mimo.core.http.handler.HttpExternalCredentialHandler;
 import org.abchip.mimo.core.http.handler.HttpLoginHandler;
-import org.abchip.mimo.core.http.handler.HttpLogoutHandler;
 import org.abchip.mimo.networking.HttpClient;
-import org.abchip.mimo.networking.HttpClientFactory;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.util.Logs;
@@ -49,8 +44,6 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	private Application application;
 	@Inject
 	private ProviderConfig providerConfig;
-	@Inject
-	private HttpClientFactory httpClientFactory;
 
 	@Override
 	public ContextProvider login(String contextId, AuthenticationAnonymous authentication) throws AuthenticationException {
@@ -86,28 +79,47 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	@Override
 	public ContextProvider login(String contextId, AuthenticationUserPassword authentication) throws AuthenticationException {
 
-		HttpConnector connector = connect(authentication.getUser(), authentication.getPassword(), authentication.getTenant());
+		String user = authentication.getUser();
+		String password = authentication.getPassword();
+		String tenant = authentication.getTenant();
+
+		LOGGER.audit("Connection from user {} tenant {}", user, tenant);
 
 		ContextProvider contextProvider = application.getContext().createChildContext(contextId);
-		Context context = contextProvider.get();
-		context.getContextDescription().setUser(authentication.getUser());
-		context.getContextDescription().setTenant(authentication.getTenant());
-		context.getContextDescription().setCurrencyUom(connector.getContextDescription().getCurrencyUom());
-		context.getContextDescription().setLocale(connector.getContextDescription().getLocale());
-		context.getContextDescription().setTimeZone(connector.getContextDescription().getTimeZone());
+		try {
+			Context context = contextProvider.get();
+			ResourceSerializer<ContextDescription> serializer = context.getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
+			HttpClient httpClient = context.get(HttpClient.class);
 
-		// http connector
-		context.set(HttpConnector.class, connector);
-		context.registerListener(new ContextListener() {
-			@Override
-			public void handleEvent(ContextEvent event) {
-				switch (event.getEventType()) {
-				case CLOSING:
-					disconnect(context, connector);
-					break;
-				}
-			}
-		});
+			URIBuilder uri = new URIBuilder();
+			uri.setScheme(providerConfig.getHost().getSchema());
+			uri.setHost(providerConfig.getHost().getAddress());
+			uri.setPort(providerConfig.getHost().getPort());
+			uri.setPath(providerConfig.getPath() + "/login");
+			if (tenant != null)
+				uri.setParameter("user", tenant + "/" + user);
+			else
+				uri.setParameter("user", user);
+			uri.setParameter("password", password);
+
+			ContextDescription contextDescription = httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
+			context.getContextDescription().setUser(authentication.getUser());
+			context.getContextDescription().setTenant(authentication.getTenant());
+			context.getContextDescription().setCurrencyUom(contextDescription.getCurrencyUom());
+			context.getContextDescription().setLocale(contextDescription.getLocale());
+			context.getContextDescription().setTimeZone(contextDescription.getTimeZone());
+
+			HttpConnector connector = new HttpConnector(context, providerConfig);
+			context.set(HttpConnector.class, connector);
+
+			LOGGER.audit("Connection success id {} user {} tenant {}", contextDescription.getId(), contextDescription.getUser(), contextDescription.getTenant());
+		} catch (Exception e) {
+			LOGGER.audit("Connection failed {}", e.getMessage());
+			if (contextProvider != null)
+				contextProvider.close();
+
+			throw new AuthenticationException(e);
+		}
 
 		return contextProvider;
 	}
@@ -116,35 +128,53 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	@Override
 	public ContextProvider login(String contextId, AuthenticationAdminKey authentication) throws AuthenticationException {
 
-		HttpConnector connector = connect(authentication.getAdminKey(), authentication.getTenant());
+		String adminKey = authentication.getAdminKey();
+		String tenant = authentication.getTenant();
+
+		LOGGER.audit("Connection from adminKey {} tenant {}", adminKey, tenant);
 
 		ContextProvider contextProvider = application.getContext().createChildContext(contextId);
-		Context context = contextProvider.get();
-		context.getContextDescription().setTenant(authentication.getTenant());
-		context.getContextDescription().setCurrencyUom(connector.getContextDescription().getCurrencyUom());
-		context.getContextDescription().setLocale(connector.getContextDescription().getLocale());
-		context.getContextDescription().setTimeZone(connector.getContextDescription().getTimeZone());
+		try {
+			Context context = contextProvider.get();
+			ResourceSerializer<ContextDescription> serializer = context.getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
+			HttpClient httpClient = context.get(HttpClient.class);
 
-		// http connector
-		context.set(HttpConnector.class, connector);
-		context.registerListener(new ContextListener() {
-			@Override
-			public void handleEvent(ContextEvent event) {
-				switch (event.getEventType()) {
-				case CLOSING:
-					disconnect(context, connector);
-					break;
-				}
-			}
-		});
+			URIBuilder uri = new URIBuilder();
+			uri.setScheme(providerConfig.getHost().getSchema());
+			uri.setHost(providerConfig.getHost().getAddress());
+			uri.setPort(providerConfig.getHost().getPort());
+			uri.setPath(providerConfig.getPath() + "/login");
+			if (tenant != null)
+				uri.setParameter("adminKey", tenant + "/" + adminKey);
+			else
+				uri.setParameter("adminKey", adminKey);
+
+			ContextDescription contextDescription = httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
+
+			context.getContextDescription().setTenant(authentication.getTenant());
+			context.getContextDescription().setCurrencyUom(contextDescription.getCurrencyUom());
+			context.getContextDescription().setLocale(contextDescription.getLocale());
+			context.getContextDescription().setTimeZone(contextDescription.getTimeZone());
+
+			HttpConnector connector = new HttpConnector(context, providerConfig);
+			context.set(HttpConnector.class, connector);
+
+			LOGGER.audit("Connection success id {} adminKey {} tenant {}", contextDescription.getId(), adminKey, tenant);
+		} catch (Exception e) {
+			LOGGER.audit("Connection failed {}", e.getMessage());
+			if (contextProvider != null)
+				contextProvider.close();
+
+			throw new AuthenticationException(e);
+		}
 
 		return contextProvider;
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public boolean checkLogin(AuthenticationUserToken authentication, boolean create) {
 
-		// checkLogin
 		URIBuilder uri = new URIBuilder();
 		uri.setScheme(providerConfig.getHost().getSchema());
 		uri.setHost(providerConfig.getHost().getAddress());
@@ -193,131 +223,36 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 				LOGGER.audit("Unknown provider {} for user {}", authentication.getProvider(), authentication.getUser());
 				return false;
 			}
+
+			// TODO insert service
+			application.getContext().get(HttpClient.class).execute(new HttpPost(uri.build()), new HttpCheckLoginHandler());
+			LOGGER.audit("CheckLogin success id {} user {} provider {}", authentication.getIdToken(), authentication.getUser(), authentication.getProvider());
 		} catch (Exception e) {
 			LOGGER.audit("Invalid check login provider {} for user {} message {}", authentication.getProvider(), authentication.getUser(), e.getMessage());
 			return false;
 		}
-
-		// check login
-		try (HttpClient httpClient = this.httpClientFactory.create(application.getContext())) {
-			httpClient.execute(new HttpPost(uri.build()), new HttpCheckLoginHandler());
-			LOGGER.audit("CheckLogin success id {} user {} provider {}", authentication.getIdToken(), authentication.getUser(), authentication.getProvider());
-		} catch (Exception e) {
-			LOGGER.audit(e.getMessage());
-			return false;
-		}
-
+		
 		return true;
 	}
 
 	@SuppressWarnings("resource")
-	private HttpConnector connect(String user, String password, String tenant) throws AuthenticationException {
-
-		LOGGER.audit("Connection from user {} tenant {}", user, tenant);
-
-		URIBuilder uri = new URIBuilder();
-		uri.setScheme(providerConfig.getHost().getSchema());
-		uri.setHost(providerConfig.getHost().getAddress());
-		uri.setPort(providerConfig.getHost().getPort());
-		uri.setPath(providerConfig.getPath() + "/login");
-
-		if (tenant != null)
-			uri.setParameter("user", tenant + "/" + user);
-		else
-			uri.setParameter("user", user);
-		uri.setParameter("password", password);
-
-		HttpConnector connector = null;
-		HttpClient httpClient = this.httpClientFactory.create(application.getContext());
-
-		try {
-			ResourceSerializer<ContextDescription> serializer = application.getContext().getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
-			ContextDescription contextDescription = httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
-			connector = new HttpConnector(providerConfig, httpClient, contextDescription);
-			LOGGER.audit("Connection success id {} user {} tenant {}", contextDescription.getId(), contextDescription.getUser(), contextDescription.getTenant());
-		} catch (Exception e) {
-			try {
-				httpClient.close();
-			} catch (Exception e1) {
-				LOGGER.warn(e1.getMessage());
-			}
-			LOGGER.audit("Connection failed {}", e.getMessage());
-			throw new AuthenticationException(e);
-		}
-
-		return connector;
-	}
-
-	@SuppressWarnings("resource")
-	private HttpConnector connect(String adminKey, String tenant) throws AuthenticationException {
-
-		LOGGER.audit("Connection from adminKey {} tenant {}", adminKey, tenant);
-
-		URIBuilder uri = new URIBuilder();
-		uri.setScheme(providerConfig.getHost().getSchema());
-		uri.setHost(providerConfig.getHost().getAddress());
-		uri.setPort(providerConfig.getHost().getPort());
-		uri.setPath(providerConfig.getPath() + "/login");
-
-		if (tenant != null)
-			uri.setParameter("adminKey", tenant + "/" + adminKey);
-		else
-			uri.setParameter("adminKey", adminKey);
-
-		HttpConnector connector = null;
-		HttpClient httpClient = this.httpClientFactory.create(application.getContext());
-
-		try {
-			ResourceSerializer<ContextDescription> serializer = application.getContext().getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
-			ContextDescription contextDescription = httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
-			connector = new HttpConnector(providerConfig, httpClient, contextDescription);
-			LOGGER.audit("Connection success id {} adminKey {} tenant {}", contextDescription.getId(), adminKey, tenant);
-		} catch (Exception e) {
-			try {
-				httpClient.close();
-			} catch (Exception e1) {
-				LOGGER.warn(e1.getMessage());
-			}
-			LOGGER.audit("{}", e.getMessage());
-			throw new AuthenticationException(e);
-		}
-
-		return connector;
-	}
-
-	private void disconnect(Context context, HttpConnector connector) {
-
-		try {
-			ResourceSerializer<ContextDescription> serializer = application.getContext().getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
-			ContextDescription contextDescription = connector.execute("logout", null, new HttpLogoutHandler(serializer));
-			LOGGER.audit("Disconnection success id {} user {} tenant {}", contextDescription.getId(), contextDescription.getUser(), contextDescription.getTenant());
-		} catch (Exception e) {
-			LOGGER.audit("Disconnection failed {}", e.getMessage());
-		} finally {
-			try {
-				connector.close();
-			} catch (IOException e) {
-				LOGGER.audit(e.getMessage());
-			}
-		}
-	}
-
 	private AuthenticationUserPassword getExternalCredentials(String user) throws AuthenticationException {
 
 		LOGGER.warn("Unsecure access to external credential for user {}", user);
 
+		URIBuilder uri = new URIBuilder();
+		uri.setScheme(providerConfig.getHost().getSchema());
+		uri.setHost(providerConfig.getHost().getAddress());
+		uri.setPort(providerConfig.getHost().getPort());
+		uri.setPath(providerConfig.getPath() + "/externalCredential");
+		uri.setParameter("userId", user);
+
 		AuthenticationUserPassword authentication = null;
-		try (HttpClient httpClient = this.httpClientFactory.create(application.getContext())) {
-			URIBuilder uri = new URIBuilder();
-			uri.setScheme(providerConfig.getHost().getSchema());
-			uri.setHost(providerConfig.getHost().getAddress());
-			uri.setPort(providerConfig.getHost().getPort());
-			uri.setPath(providerConfig.getPath() + "/externalCredential");
-			uri.setParameter("userId", user);
-			authentication = httpClient.execute(new HttpPost(uri.build()), new HttpExternalCredentialHandler());
+		try {
+			authentication = application.getContext().get(HttpClient.class).execute(new HttpPost(uri.build()), new HttpExternalCredentialHandler());
 			LOGGER.audit("External credential success user {}", user);
 		} catch (Exception e) {
-			LOGGER.audit(e.getMessage());
+			LOGGER.audit("Invalid get external credentials for user {} message", user, e.getMessage());
 			throw new AuthenticationException(e);
 		}
 

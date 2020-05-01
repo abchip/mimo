@@ -32,7 +32,7 @@ public interface ServiceMappingRuleByPackage extends ServiceMappingRule {
 	 * @return the value of the '<em>Package</em>' attribute.
 	 * @see #setPackage(String)
 	 * @see org.abchip.mimo.service.ServicePackage#getServiceMappingRuleByPackage_Package()
-	 * @model id="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getPackage();
