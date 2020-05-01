@@ -8,28 +8,22 @@
  */
 package org.abchip.mimo.edi.base;
 
-import javax.inject.Inject;
-
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.base.cmd.BaseCommands;
 import org.abchip.mimo.edi.entity.EntityEvent;
 import org.abchip.mimo.edi.message.MessageFactory;
 import org.abchip.mimo.edi.message.MessageSent;
 import org.abchip.mimo.edi.message.MessageStatus;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
 public class InterchangeCommands extends BaseCommands {
 
-	@Inject
-	private ResourceManager resourceManager;
-
 	public void _testEdi(CommandInterpreter interpreter) throws Exception {
 
 		Context context = this.getContext();
 
-		ResourceWriter<MessageSent> messageSentWriter = resourceManager.getResourceWriter(context, MessageSent.class);
+		ResourceWriter<MessageSent> messageSentWriter = context.getResourceManager().getResourceWriter(MessageSent.class);
 		MessageSent messageSent = MessageFactory.eINSTANCE.createMessageSent();
 		messageSent.setMessageId("test-010");
 		messageSent.setEvent(EntityEvent.CREATE);

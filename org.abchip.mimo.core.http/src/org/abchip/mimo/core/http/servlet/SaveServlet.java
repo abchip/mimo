@@ -10,14 +10,12 @@ package org.abchip.mimo.core.http.servlet;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.SerializationType;
@@ -25,9 +23,6 @@ import org.abchip.mimo.resource.SerializationType;
 public class SaveServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
-
-	@Inject
-	private ResourceManager resourceManager;
 
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(context, request, response);
@@ -39,7 +34,7 @@ public class SaveServlet extends BaseServlet {
 		String frame = request.getParameter("frame");
 
 		try {
-			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.MIMO);
+			ResourceSerializer<E> entitySerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 
 			String json = request.getParameter("json");
 			if (!json.contains("\"eClass\""))
@@ -52,7 +47,7 @@ public class SaveServlet extends BaseServlet {
 			if (replace == null || replace.trim().isEmpty())
 				replace = "false";
 
-			ResourceWriter<E> entityWriter = resourceManager.getResourceWriter(context, frame, tenant);
+			ResourceWriter<E> entityWriter = context.getResourceManager().getResourceWriter(frame, tenant);
 			entityWriter.create(entity, Boolean.parseBoolean(replace));
 
 			response.setStatus(HttpServletResponse.SC_OK);

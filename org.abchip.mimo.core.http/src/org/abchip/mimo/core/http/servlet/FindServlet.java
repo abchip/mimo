@@ -10,7 +10,6 @@ package org.abchip.mimo.core.http.servlet;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,7 +19,6 @@ import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -28,9 +26,6 @@ import org.abchip.mimo.resource.SerializationType;
 public class FindServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
-
-	@Inject
-	private ResourceManager resourceManager;
 
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(context, request, response);
@@ -54,7 +49,7 @@ public class FindServlet extends BaseServlet {
 		String[] keys = request.getParameterValues("keys");
 
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName, tenant);
+		Frame<E> frame = (Frame<E>) context.getResourceManager().getFrame(frameName, tenant);
 		if (frame == null) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			return;
@@ -94,8 +89,8 @@ public class FindServlet extends BaseServlet {
 		}
 
 		try {
-			ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame, tenant);
-			ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.MIMO);
+			ResourceReader<E> entityReader = context.getResourceManager().getResourceReader(frame, tenant);
+			ResourceSerializer<E> entitySerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 			try (EntityIterator<E> entities = entityReader.find(filter, fields, order, Integer.parseInt(limit), Boolean.parseBoolean(proxy))) {
 				response.setStatus(HttpServletResponse.SC_FOUND);
 				for (E entity : entities)
@@ -103,7 +98,7 @@ public class FindServlet extends BaseServlet {
 			}
 			entitySerializer.save(response.getOutputStream());
 			entitySerializer.clear();
-			
+
 		} catch (ResourceException e) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 			return;

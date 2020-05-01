@@ -10,7 +10,6 @@ package org.abchip.mimo.ui.http;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,7 +19,6 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.ui.query.Query;
@@ -33,9 +31,6 @@ public class LookupQueryServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private ResourceManager resourceManager;
-
 	@SuppressWarnings("resource")
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -43,14 +38,14 @@ public class LookupQueryServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Frame<?> frame = resourceManager.getFrame(context, frameName);
+		Frame<?> frame = context.getResourceManager().getFrame(frameName);
 		if (frame == null) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
 			return;
 		}
 
 		try {
-			Query query = resourceManager.getResourceReader(context, Query.class, Resource.TENANT_MASTER).lookup(name);
+			Query query = context.getResourceManager().getResourceReader(Query.class, Resource.TENANT_MASTER).lookup(name);
 
 			if (query == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 				query = QueryFactory.eINSTANCE.createQuery();
@@ -86,7 +81,7 @@ public class LookupQueryServlet extends BaseServlet {
 			}
 
 			response.setStatus(HttpServletResponse.SC_FOUND);
-			ResourceSerializer<Query> entitySerializer = resourceManager.createResourceSerializer(context, Query.class, SerializationType.JSON);
+			ResourceSerializer<Query> entitySerializer = context.getResourceManager().createResourceSerializer(Query.class, SerializationType.JSON);
 			if (query != null)
 				entitySerializer.add(query);
 			entitySerializer.save(response.getOutputStream());

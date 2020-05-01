@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -24,7 +23,6 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -47,9 +45,6 @@ public class LookupFormServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private ResourceManager resourceManager;
-
 	@SuppressWarnings("resource")
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -57,14 +52,14 @@ public class LookupFormServlet extends BaseServlet {
 		String name = request.getParameter("name");
 		String prototype = request.getParameter("prototype");
 
-		Frame<?> frame = resourceManager.getFrame(context, frameName);
+		Frame<?> frame = context.getResourceManager().getFrame(frameName);
 		if (frame == null) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
 			return;
 		}
 
 		try {
-			Form form = resourceManager.getResourceReader(context, Form.class, Resource.TENANT_MASTER).lookup(name);
+			Form form = context.getResourceManager().getResourceReader(Form.class, Resource.TENANT_MASTER).lookup(name);
 
 			if (form == null && prototype != null && prototype.equalsIgnoreCase(Boolean.TRUE.toString())) {
 				form = FormFactory.eINSTANCE.createForm();
@@ -108,7 +103,7 @@ public class LookupFormServlet extends BaseServlet {
 			}
 
 			response.setStatus(HttpServletResponse.SC_FOUND);
-			ResourceSerializer<Form> entitySerializer = resourceManager.createResourceSerializer(context, Form.class, SerializationType.JSON);
+			ResourceSerializer<Form> entitySerializer = context.getResourceManager().createResourceSerializer(Form.class, SerializationType.JSON);
 			if (form != null) {
 				entitySerializer.add(form);
 			}
@@ -247,9 +242,9 @@ public class LookupFormServlet extends BaseServlet {
 
 	private void completeFormField(Context context, FormField formField, String frameName) throws ResourceException {
 
-		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(context, UiFrameSetup.class);
+		ResourceReader<UiFrameSetup> frameSetupReader = context.getResourceManager().getResourceReader(UiFrameSetup.class);
 
-		Frame<?> frame = resourceManager.getFrame(context, frameName);
+		Frame<?> frame = context.getResourceManager().getFrame(frameName);
 		if (frame == null)
 			return;
 

@@ -27,7 +27,6 @@ import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.mining.classification.Classifier;
 import org.abchip.mimo.mining.classification.Evaluator;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.social.twitter.Tweet;
@@ -43,11 +42,9 @@ import org.osgi.service.log.Logger;
 public class TestTwitter {
 
 	private static final Logger LOGGER = Logs.getLogger(TestTwitter.class);
-	
+
 	@Inject
 	private TwitterManager twitterManager;
-	@Inject
-	private ResourceManager resourceManager;
 	@Inject
 	private LanguageManager languageManager;
 	@Inject
@@ -67,10 +64,10 @@ public class TestTwitter {
 
 		testConfusionMatrix();
 
-		ResourceReader<Tweet> tweetReader = resourceManager.getResourceReader(testRunner.getContext(), Tweet.class);
-		ResourceReader<Language> languageReader = resourceManager.getResourceReader(testRunner.getContext(), Language.class);
+		ResourceReader<Tweet> tweetReader = testRunner.getContext().getResourceManager().getResourceReader(Tweet.class);
+		ResourceReader<Language> languageReader = testRunner.getContext().getResourceManager().getResourceReader(Language.class);
 
-		try (EntityIterator<Frame> frames = resourceManager.getResourceReader(testRunner.getContext(), Frame.class).find()) {
+		try (EntityIterator<Frame> frames = testRunner.getContext().getResourceManager().getResourceReader(Frame.class).find()) {
 			for (Frame<?> frame : frames) {
 				String text = "The frame " + frame.getName() + " has the following properties:";
 				try (AudioPlayer audioPlayer = audioManager.play(testRunner.getContext(), AudioStyle.A, text, true, true)) {
@@ -149,7 +146,7 @@ public class TestTwitter {
 	private void testConfusionMatrix() throws ResourceException {
 
 		List<Language> languages = new ArrayList<Language>();
-		ResourceReader<Language> languageReader = resourceManager.getResourceReader(testRunner.getContext(), Language.class);
+		ResourceReader<Language> languageReader = testRunner.getContext().getResourceManager().getResourceReader(Language.class);
 		try (EntityIterator<Language> languageIterator = languageReader.find()) {
 			for (Language language : languageIterator)
 				languages.add(language);
@@ -158,7 +155,7 @@ public class TestTwitter {
 		Classifier classifier = miningManager.lookupClassifier(Language.class, String.class);
 		Evaluator evaluator = classifier.buildEvaluator(Language.class, String.class);
 
-		ResourceReader<Tweet> tweetReader = resourceManager.getResourceReader(testRunner.getContext(), Tweet.class);
+		ResourceReader<Tweet> tweetReader = testRunner.getContext().getResourceManager().getResourceReader(Tweet.class);
 		try (EntityIterator<Tweet> tweets = tweetReader.find()) {
 			for (Tweet tweet : tweets) {
 
@@ -181,7 +178,7 @@ public class TestTwitter {
 
 	private void loadTweets() throws ResourceException {
 
-		ResourceWriter<Tweet> tweetWriter = resourceManager.getResourceWriter(testRunner.getContext(), Tweet.class);
+		ResourceWriter<Tweet> tweetWriter = testRunner.getContext().getResourceManager().getResourceWriter(Tweet.class);
 		try (EntityIterator<Tweet> tweets = twitterManager.search(testRunner.getContext(), null, "#ai", 1000)) {
 			for (Tweet tweet : tweets) {
 				try {

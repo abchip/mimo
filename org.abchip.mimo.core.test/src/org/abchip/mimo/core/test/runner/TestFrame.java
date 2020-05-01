@@ -14,7 +14,6 @@ import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestRunner;
@@ -27,8 +26,6 @@ public class TestFrame {
 	public TestAsserter testAsserter;
 	@Inject
 	private TestRunner testRunner;
-	@Inject
-	public ResourceManager resourceManager;
 
 	@TestStarted
 	public void main() throws ResourceException {
@@ -38,7 +35,7 @@ public class TestFrame {
 	@SuppressWarnings("rawtypes")
 	private void testFrame() throws ResourceException {
 
-		try (EntityIterator<Frame> frames = resourceManager.getResourceReader(testRunner.getContext(), Frame.class).find()) {
+		try (EntityIterator<Frame> frames = testRunner.getContext().getResourceManager().getResourceReader(Frame.class).find()) {
 			for (Frame<?> frame : frames) {
 				if (!frame.isAbstract() && frame.getSuperNames().contains(EntityPackage.eINSTANCE.getEntityIdentifiable().getName()))
 					testAsserter.assertNotNull("Entity creation " + frame.getName(), frame.createEntity());

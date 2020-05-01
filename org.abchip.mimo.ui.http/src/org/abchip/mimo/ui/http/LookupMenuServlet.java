@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,7 +20,6 @@ import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -36,9 +34,6 @@ public class LookupMenuServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private ResourceManager resourceManager;
-
 	@SuppressWarnings("resource")
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -47,7 +42,7 @@ public class LookupMenuServlet extends BaseServlet {
 		Menu menu = null;
 
 		try {
-			ResourceReader<Menu> menuReader = resourceManager.getResourceReader(context, Menu.class, Resource.TENANT_MASTER);
+			ResourceReader<Menu> menuReader = context.getResourceManager().getResourceReader(Menu.class, Resource.TENANT_MASTER);
 			if (name == null || name.isEmpty()) {
 				menu = MenuFactory.eINSTANCE.createMenu();
 				menu.setName("List Menu");
@@ -98,7 +93,7 @@ public class LookupMenuServlet extends BaseServlet {
 		}
 
 		response.setStatus(HttpServletResponse.SC_FOUND);
-		ResourceSerializer<Menu> entitySerializer = resourceManager.createResourceSerializer(context, Menu.class, SerializationType.JSON);
+		ResourceSerializer<Menu> entitySerializer = context.getResourceManager().createResourceSerializer(Menu.class, SerializationType.JSON);
 		if (menu != null)
 			entitySerializer.add(menu);
 		entitySerializer.save(response.getOutputStream());

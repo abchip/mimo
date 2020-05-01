@@ -10,7 +10,6 @@ package org.abchip.mimo.core.http.servlet.session;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,7 +18,6 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.core.http.servlet.BaseServlet;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 
@@ -27,14 +25,11 @@ public class LogoutServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private ResourceManager resourceManager;
-
 	@SuppressWarnings("resource")
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.MIMO);
-		
+		ResourceSerializer<ContextDescription> serializer = context.getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
+
 		// remove context
 		ContextUtils.removeContext(context.getContextDescription().getId());
 		context.dispose();

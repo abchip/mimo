@@ -8,9 +8,6 @@
  */
 package org.abchip.mimo.core.base;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
 import org.abchip.mimo.MimoResourceFactoryImpl;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.MimoResourceSetImpl;
@@ -27,29 +24,27 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 
 public class BaseResource {
 
-	@Inject
-	private ContextRoot contextRoot;
-	@Inject
+	private Context context;
 	private LockManager lockManager;
-
-	// root ResourceSet
 	private ResourceSet resourceSet = null;
 
-	@PostConstruct
-	protected void init() {
-		this.resourceSet = new MimoResourceSetImpl(contextRoot);
+	public BaseResource(Context context) {
+		this.context = context;
+		this.lockManager = context.get(LockManager.class);
+
+		this.resourceSet = new MimoResourceSetImpl(context);
 		this.resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("mimo", new MimoResourceFactoryImpl(resourceSet));
 	}
 
-	protected ContextRoot getContextRoot() {
-		return this.contextRoot;
+	protected Context getContext() {
+		return this.context;
 	}
 
 	protected LockManager getLockManager() {
 		return this.lockManager;
 	}
 
-	protected final void checkAuthorization(Context context, String tenant) throws ResourceException {
+	protected final void checkAuthorization(String tenant) throws ResourceException {
 		ContextDescription contextDescription = context.getContextDescription();
 
 		// check authorization
@@ -62,41 +57,41 @@ public class BaseResource {
 		// check frame authorization
 	}
 
-	protected <E extends Entity> Frame<E> getFrame(Context context, Class<E> klass) {
-		return getFrame(context, klass, null);
+	protected <E extends Entity> Frame<E> getFrame(Class<E> klass) {
+		return getFrame(klass, null);
 	}
 
 	@SuppressWarnings("unchecked")
-	protected <E extends Entity> Frame<E> getFrame(Context context, Class<E> klass, String tenant) {
-		return (Frame<E>) getFrame(context, klass.getSimpleName(), tenant);
+	protected <E extends Entity> Frame<E> getFrame(Class<E> klass, String tenant) {
+		return (Frame<E>) getFrame(klass.getSimpleName(), tenant);
 	}
 
-	protected Frame<?> getFrame(Context context, String frame) {
-		return getFrame(context, frame, null);
+	protected Frame<?> getFrame(String frame) {
+		return getFrame(frame, null);
 	}
 
-	protected Frame<?> getFrame(Context context, String frame, String tenant) {
+	protected Frame<?> getFrame(String frame, String tenant) {
 		try {
-			MimoResourceImpl<Frame<?>> internal = getInternalResource(context, Frame.class.getSimpleName(), tenant);
+			MimoResourceImpl<Frame<?>> internal = getInternalResource(Frame.class.getSimpleName(), tenant);
 			return internal.getResource().read(frame, null, false);
 		} catch (ResourceException e) {
 			throw new RuntimeException(e);
 		}
 	}
 
-	protected <E extends EntityIdentifiable> MimoResourceImpl<E> getInternalResource(Context context, String frame, String tenant) {
+	protected <E extends EntityIdentifiable> MimoResourceImpl<E> getInternalResource(String frame, String tenant) {
 
-		if(tenant == null)
+		if (tenant == null)
 			tenant = context.getTenant();
-		
+
 		URI uri = URI.createHierarchicalURI("mimo", tenant, null, new String[] { frame }, null, null);
 		@SuppressWarnings("unchecked")
-		MimoResourceImpl<E> internal = (MimoResourceImpl<E>) getResourceSet(context).getResource(uri, true);
+		MimoResourceImpl<E> internal = (MimoResourceImpl<E>) getResourceSet().getResource(uri, true);
 
 		return internal;
 	}
 
-	private ResourceSet getResourceSet(Context context) {
+	private ResourceSet getResourceSet() {
 
 		if (context instanceof ContextRoot)
 			return resourceSet;

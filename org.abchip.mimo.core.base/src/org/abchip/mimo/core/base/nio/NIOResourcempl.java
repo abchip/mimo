@@ -27,7 +27,6 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
@@ -50,8 +49,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 		this.tenant = tenant;
 		this.pathManager = pathManager;
 
-		ResourceManager resourceManager = context.get(ResourceManager.class);
-		this.resourceSerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.XMI);
+		this.resourceSerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.XMI);
 	}
 
 	@Override

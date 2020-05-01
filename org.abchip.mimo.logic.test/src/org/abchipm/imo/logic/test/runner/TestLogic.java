@@ -14,7 +14,6 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.logic.MindManager;
 import org.abchip.mimo.logic.Term;
 import org.abchip.mimo.logic.Theory;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestRunner;
 import org.abchip.mimo.tester.TestStarted;
@@ -23,8 +22,6 @@ import org.abchip.mimo.tester.TestStarted;
 public class TestLogic {
 
 	@Inject
-	private ResourceManager resourceManager;
-	@Inject
 	private MindManager mindManager;
 	@Inject
 	private TestRunner testRunner;
@@ -32,7 +29,7 @@ public class TestLogic {
 	@TestStarted
 	public void start() {
 
-		Frame<?> frame = resourceManager.getFrame(testRunner.getContext(), EntityPackage.eINSTANCE.getFrame().getName());
+		Frame<?> frame = testRunner.getContext().getResourceManager().getFrame(EntityPackage.eINSTANCE.getFrame().getName());
 
 		Theory theory = mindManager.buildTheory(testRunner.getContext(), frame);
 

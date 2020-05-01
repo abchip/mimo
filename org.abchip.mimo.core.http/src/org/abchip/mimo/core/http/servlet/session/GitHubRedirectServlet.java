@@ -24,7 +24,6 @@ import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 
 public class GitHubRedirectServlet extends HttpServlet {
@@ -34,9 +33,6 @@ public class GitHubRedirectServlet extends HttpServlet {
 	public static final String TokenEndpoint = "https://github.com";
 	public static final String AuthorizeUri = "/login/oauth/authorize";
 	public static final String DEFAULT_SCOPE = "user,gist,user:email";
-
-	@Inject
-	private ResourceManager resourceManager;
 
 	@Inject
 	private AuthenticationManager authenticationManager;
@@ -55,7 +51,7 @@ public class GitHubRedirectServlet extends HttpServlet {
 		AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
 		try (ContextProvider context = authenticationManager.login(null, authentication)) {
 
-			ResourceReader<EntityIdentifiable> oauth2Reader = resourceManager.getResourceReader(context.get(), "OAuth2GitHub");
+			ResourceReader<EntityIdentifiable> oauth2Reader = context.get().getResourceManager().getResourceReader("OAuth2GitHub");
 			EntityIdentifiable oauth2GitHub = oauth2Reader.first();
 
 			if (oauth2GitHub == null) {

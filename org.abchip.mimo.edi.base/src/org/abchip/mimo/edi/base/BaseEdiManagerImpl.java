@@ -22,7 +22,6 @@ import org.abchip.mimo.edi.message.MessageStatus;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.SerializationType;
@@ -33,12 +32,11 @@ public class BaseEdiManagerImpl implements EdiManager {
 	public <E extends EntityIdentifiable> void writeMessage(Context context, E entity, EntityEvent event) throws DataInterchangeException {
 
 		ContextDescription contextDescription = context.getContextDescription();
-		ResourceManager resourceManager = context.get(ResourceManager.class);
 
-		ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, entity.isa(), SerializationType.MIMO);
+		ResourceSerializer<E> entitySerializer = context.getResourceManager().createResourceSerializer(entity.isa(), SerializationType.MIMO);
 
-		try (EntityIterator<EdiFrameSetup> setups = resourceManager.getResourceReader(context, EdiFrameSetup.class).find("frame='" + entity.isa().getName() + "'")) {
-			ResourceWriter<MessageSent> messageSentWriter = resourceManager.getResourceWriter(context, MessageSent.class);
+		try (EntityIterator<EdiFrameSetup> setups = context.getResourceManager().getResourceReader(EdiFrameSetup.class).find("frame='" + entity.isa().getName() + "'")) {
+			ResourceWriter<MessageSent> messageSentWriter = context.getResourceManager().getResourceWriter(MessageSent.class);
 
 			for (EdiFrameSetup setup : setups) {
 

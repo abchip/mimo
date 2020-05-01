@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.service.ServiceManager;
@@ -27,8 +26,6 @@ public class ExecServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private ResourceManager resourceManager;
-	@Inject
 	private ServiceManager serviceManager;
 
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -39,8 +36,8 @@ public class ExecServlet extends BaseServlet {
 	private void _execute(Context context, HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws IOException {
 
 		@SuppressWarnings("rawtypes")
-		ResourceSerializer<ServiceRequest> requestSerializer = resourceManager.createResourceSerializer(context, ServiceRequest.class, SerializationType.MIMO);
-		ResourceSerializer<ServiceResponse> responseSerializer = resourceManager.createResourceSerializer(context, ServiceResponse.class, SerializationType.MIMO);
+		ResourceSerializer<ServiceRequest> requestSerializer = context.getResourceManager().createResourceSerializer(ServiceRequest.class, SerializationType.MIMO);
+		ResourceSerializer<ServiceResponse> responseSerializer = context.getResourceManager().createResourceSerializer(ServiceResponse.class, SerializationType.MIMO);
 
 		try {
 			String json = httpRequest.getParameter("json");

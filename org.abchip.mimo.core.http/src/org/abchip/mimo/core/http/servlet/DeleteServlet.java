@@ -10,21 +10,17 @@ package org.abchip.mimo.core.http.servlet;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 
 public class DeleteServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private ResourceManager resourceManager;
 
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(context, request, response);
@@ -37,7 +33,7 @@ public class DeleteServlet extends BaseServlet {
 		String id = request.getParameter("id");
 
 		try {
-			ResourceWriter<E> entityWriter = resourceManager.getResourceWriter(context, frame, tenant);
+			ResourceWriter<E> entityWriter = context.getResourceManager().getResourceWriter(frame, tenant);
 			E entity = entityWriter.lookup(id, true);
 			entityWriter.delete(entity);
 

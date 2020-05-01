@@ -13,11 +13,8 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.concurrent.Future;
 
-import javax.inject.Inject;
-
 import org.abchip.mimo.core.http.handler.HttpExecHandler;
 import org.abchip.mimo.core.http.handler.HttpSubmitHandler;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.service.ServiceException;
@@ -27,14 +24,11 @@ import org.abchip.mimo.service.impl.ServiceProviderImpl;
 
 public class HttpServiceProviderImpl extends ServiceProviderImpl {
 
-	@Inject
-	private ResourceManager resourceManager;
-
 	@SuppressWarnings({ "rawtypes", "unchecked", "resource" })
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> V execute(R request) throws ServiceException {
 
-		ResourceSerializer<V> responseSerializer = resourceManager.createResourceSerializer(request.getContext(), request.getResponse(), SerializationType.MIMO);
+		ResourceSerializer<V> responseSerializer = request.getContext().getResourceManager().createResourceSerializer(request.getResponse(), SerializationType.MIMO);
 		try {
 			String query = "json=" + this.serializeRequest(request) + "&submit=false";
 
@@ -71,7 +65,7 @@ public class HttpServiceProviderImpl extends ServiceProviderImpl {
 	private <V extends ServiceResponse, R extends ServiceRequest<V>> String serializeRequest(R request) throws ServiceException {
 
 		@SuppressWarnings("rawtypes")
-		ResourceSerializer<ServiceRequest> requestSerializer = resourceManager.createResourceSerializer(request.getContext(), ServiceRequest.class, SerializationType.MIMO);
+		ResourceSerializer<ServiceRequest> requestSerializer = request.getContext().getResourceManager().createResourceSerializer(ServiceRequest.class, SerializationType.MIMO);
 
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		requestSerializer.add(request);

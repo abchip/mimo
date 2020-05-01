@@ -23,7 +23,6 @@ import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.core.http.ContextUtils;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 
@@ -31,8 +30,6 @@ public class StatusServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private ResourceManager resourceManager;
 	@Inject
 	private AuthenticationManager authenticationManager;
 
@@ -65,7 +62,7 @@ public class StatusServlet extends HttpServlet {
 
 		response.setStatus(HttpServletResponse.SC_OK);
 
-		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.MIMO);
+		ResourceSerializer<ContextDescription> serializer = context.getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
 		serializer.add(context.getContextDescription());
 		serializer.save(response.getOutputStream());
 

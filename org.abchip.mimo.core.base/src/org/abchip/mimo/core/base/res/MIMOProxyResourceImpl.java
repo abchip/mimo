@@ -23,7 +23,6 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.ResourceManager;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -35,13 +34,11 @@ import org.json.JSONObject;
 public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResource {
 
 	private Context context = null;
-	private ResourceManager resourceManager = null;
 
 	public MIMOProxyResourceImpl(Context context, URI uri) {
 		super(uri);
 
 		this.context = context;
-		this.resourceManager = context.get(ResourceManager.class);
 	}
 
 	@Override
@@ -86,14 +83,14 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 
 	private Entity jsonObject2Entity(JSONObject jsonObject) {
 
-		Frame<?> frame = resourceManager.getFrame(context, jsonObject.getString("isa"));
+		Frame<?> frame = context.getResourceManager().getFrame(jsonObject.getString("isa"));
 
 		Entity entity = frame.createEntity();
 
 		for (String slotName : JSONObject.getNames(jsonObject)) {
 			Object slotValue = jsonObject.get(slotName);
-			if(slotValue instanceof JSONObject) {
-				slotValue = jsonObject2Entity((JSONObject)slotValue);
+			if (slotValue instanceof JSONObject) {
+				slotValue = jsonObject2Entity((JSONObject) slotValue);
 			}
 			frame.setValue(entity, slotName, slotValue);
 		}

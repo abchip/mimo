@@ -66,7 +66,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, String serviceId) {
 
-		Frame<?> frame = context.getResourceManager().getFrame(context, Strings.firstToUpper(serviceId));
+		Frame<?> frame = context.getResourceManager().getFrame(Strings.firstToUpper(serviceId));
 		if (frame == null) 
 			return null;
 
@@ -107,7 +107,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, String frame, String tenant) throws ServiceException {
 
-		Frame<?> request = (Frame<?>) context.getResourceManager().getFrame(context, frame, tenant);
+		Frame<?> request = (Frame<?>) context.getResourceManager().getFrame(frame, tenant);
 		if(request == null)
 			throw new ServiceException("Service not found" + frame);
 		

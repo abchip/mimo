@@ -44,7 +44,7 @@ public class BaseValidator implements EValidator {
 			EntityIdentifiable entityIdentifiable = (EntityIdentifiable) eObject;
 			
 			try {
-				ResourceReader<?> resourceReader = this.context.getResourceManager().getResourceReader(this.context, eClass.getName());
+				ResourceReader<?> resourceReader = this.context.getResourceManager().getResourceReader(eClass.getName());
 				result = resourceReader.lookup(entityIdentifiable.getID(), true) == null;
 
 				if(!result) {

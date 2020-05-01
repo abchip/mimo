@@ -55,7 +55,7 @@ public class BaseServiceProviderRegistryImpl implements ServiceProviderRegistry 
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> ServiceProvider getServiceProvider(Context context, Class<R> klass) {
 
-		Frame<?> frame = (Frame<?>) context.getResourceManager().getFrame(context, klass.getSimpleName());
+		Frame<?> frame = (Frame<?>) context.getResourceManager().getFrame(klass.getSimpleName());
 		if (frame == null)
 			return null;
 

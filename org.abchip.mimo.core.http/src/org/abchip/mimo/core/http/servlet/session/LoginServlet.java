@@ -29,7 +29,6 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -39,9 +38,6 @@ import org.osgi.service.log.Logger;
 public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-
-	@Inject
-	private ResourceManager resourceManager;
 
 	@Inject
 	private AuthenticationManager authenticationManager;
@@ -111,8 +107,8 @@ public class LoginServlet extends HttpServlet {
 		ContextUtils.addContext(context);
 
 		response.setStatus(HttpServletResponse.SC_OK);
-		
-		ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context, ContextDescription.class, SerializationType.MIMO);
+
+		ResourceSerializer<ContextDescription> serializer = context.getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
 		serializer.add(context.getContextDescription());
 		serializer.save(response.getOutputStream());
 		serializer.clear();
@@ -184,7 +180,7 @@ public class LoginServlet extends HttpServlet {
 
 			String entityName = "OAuth2" + provider;
 
-			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context.get(), entityName);
+			ResourceReader<?> oauth2Reader = context.get().getResourceManager().getResourceReader(entityName);
 			EntityIdentifiable oauth2Entity = oauth2Reader.first();
 
 			if (oauth2Entity == null) {
@@ -203,7 +199,7 @@ public class LoginServlet extends HttpServlet {
 			ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
 			tempContextDescription.setId(session.getId());
 			tempContextDescription.setAnonymous(true);
-			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(context.get(), ContextDescription.class, SerializationType.MIMO);
+			ResourceSerializer<ContextDescription> serializer = context.get().getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
 			serializer.add(tempContextDescription);
 			serializer.save(response.getOutputStream());
 

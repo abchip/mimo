@@ -25,7 +25,6 @@ import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 
 public class LinkedInRedirectServlet extends HttpServlet {
@@ -35,9 +34,6 @@ public class LinkedInRedirectServlet extends HttpServlet {
 	public static final String DEFAULT_SCOPE = "r_liteprofile%20r_emailaddress";
 	public static final String TokenEndpoint = "https://www.linkedin.com";
 	public static final String AuthorizeUri = "/oauth/v2/authorization";
-
-	@Inject
-	private ResourceManager resourceManager;
 
 	@Inject
 	private AuthenticationManager authenticationManager;
@@ -56,7 +52,7 @@ public class LinkedInRedirectServlet extends HttpServlet {
 		AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
 		try (ContextProvider context = authenticationManager.login(null, authentication)) {
 
-			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context.get(), "OAuth2LinkedIn");
+			ResourceReader<?> oauth2Reader = context.get().getResourceManager().getResourceReader("OAuth2LinkedIn");
 			EntityIdentifiable oauth2LinkedIn = oauth2Reader.first();
 
 			if (oauth2LinkedIn == null) {
@@ -66,7 +62,7 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
 			String clientId = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "apiKey", false, false).toString();
 			String returnURI = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "liveReturnUrl", false, false).toString();
-			
+
 			// Get user authorization code
 			String location = TokenEndpoint + AuthorizeUri + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&nonce=" + UUID.randomUUID() + "&redirect_uri="
 					+ URLEncoder.encode(returnURI, "UTF8") + "&state=" + session.getId();

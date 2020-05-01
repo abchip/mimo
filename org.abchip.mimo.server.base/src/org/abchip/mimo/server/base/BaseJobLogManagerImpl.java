@@ -82,7 +82,7 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 
 				// save
 				// ResourceWriter<JobLog> jobLogWriter =
-				// resourceManager.getResourceWriter(job.getContext(), JobLog.class);
+				// context.getResourceManager().getResourceWriter(job.getContext(), JobLog.class);
 				// jobLogWriter.create(jobLog, true);
 			}
 		};
@@ -112,7 +112,7 @@ public class BaseJobLogManagerImpl implements JobLogManager {
 			return null;
 
 		// ResourceReader<JobLog> jobLogReader =
-		// resourceManager.getResourceReader(jobCaller.getContext(), JobLog.class);
+		// context.getResourceManager().getResourceReader(jobCaller.getContext(), JobLog.class);
 		// JobLog jobLog = jobLogReader.lookup(jobTarget.getJobID());
 
 		return null;

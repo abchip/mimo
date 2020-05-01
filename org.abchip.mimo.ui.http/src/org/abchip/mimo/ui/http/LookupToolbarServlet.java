@@ -10,7 +10,6 @@ package org.abchip.mimo.ui.http;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,7 +18,6 @@ import org.abchip.mimo.core.http.servlet.BaseServlet;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.ui.toolbar.Toolbar;
@@ -28,9 +26,6 @@ public class LookupToolbarServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private ResourceManager resourceManager;
-
 	@SuppressWarnings("resource")
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -38,16 +33,16 @@ public class LookupToolbarServlet extends BaseServlet {
 		if (frameName == null)
 			return;
 
-		Frame<?> frame = resourceManager.getFrame(context, frameName);
+		Frame<?> frame = context.getResourceManager().getFrame(frameName);
 		if (frame == null) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
 			return;
 		}
 
 		try {
-			Toolbar toolbar = resourceManager.getResourceReader(context, Toolbar.class, Resource.TENANT_MASTER).lookup(frameName);
+			Toolbar toolbar = context.getResourceManager().getResourceReader(Toolbar.class, Resource.TENANT_MASTER).lookup(frameName);
 			for (Frame<?> ako : frame.getSuperFrames()) {
-				Toolbar toolbarAko = resourceManager.getResourceReader(context, Toolbar.class, Resource.TENANT_MASTER).lookup(ako.getName());
+				Toolbar toolbarAko = context.getResourceManager().getResourceReader(Toolbar.class, Resource.TENANT_MASTER).lookup(ako.getName());
 				if (toolbarAko == null)
 					continue;
 
@@ -58,7 +53,7 @@ public class LookupToolbarServlet extends BaseServlet {
 			}
 
 			response.setStatus(HttpServletResponse.SC_FOUND);
-			ResourceSerializer<Toolbar> entitySerializer = resourceManager.createResourceSerializer(context, Toolbar.class, SerializationType.JSON);
+			ResourceSerializer<Toolbar> entitySerializer = context.getResourceManager().createResourceSerializer(Toolbar.class, SerializationType.JSON);
 			if (toolbar != null)
 				entitySerializer.add(toolbar);
 			entitySerializer.save(response.getOutputStream());

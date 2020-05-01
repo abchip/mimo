@@ -13,7 +13,6 @@ import javax.inject.Inject;
 import org.abchip.mimo.application.ComponentStarted;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.ThreadManager;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobLogManager;
 import org.abchip.mimo.server.JobManager;
@@ -25,8 +24,8 @@ public class BaseSystemActivator {
 	private ThreadManager threadManager;
 
 	@ComponentStarted
-	public void start(ContextRoot contextRoot, org.abchip.mimo.server.System system, ResourceManager resourceManager, JobManager jobManager, org.abchip.mimo.server.SystemManager systemManager,
-			JobLogManager jobLogManager) throws ServerException {
+	public void start(ContextRoot contextRoot, org.abchip.mimo.server.System system, JobManager jobManager, org.abchip.mimo.server.SystemManager systemManager, JobLogManager jobLogManager)
+			throws ServerException {
 
 		system.setContext(contextRoot);
 

@@ -24,7 +24,6 @@ import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
 import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobReference;
@@ -49,8 +48,6 @@ public class BaseSystemManagerImpl implements SystemManager {
 
 	@Inject
 	private LockManager lockManager;
-	@Inject
-	private ResourceManager resourceManager;
 	@Inject
 	private ThreadManager threadManager;
 
@@ -83,7 +80,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 			if (lastNumber == 1000000)
 				lastNumber = 1;
 
-			ResourceWriter<org.abchip.mimo.server.System> systemWriter = resourceManager.getResourceWriter(jobKernel.getContext(), org.abchip.mimo.server.System.class);
+			ResourceWriter<org.abchip.mimo.server.System> systemWriter = jobKernel.getContext().getResourceManager().getResourceWriter(org.abchip.mimo.server.System.class);
 			system.setLastJobNumber(lastNumber);
 			systemWriter.update(system);
 		}
@@ -103,7 +100,8 @@ public class BaseSystemManagerImpl implements SystemManager {
 
 		// acquire system lock
 		EntityLocker<org.abchip.mimo.server.System> locker = lockManager.getLocker(system.getContext(), system);
-		while (!locker.tryLock(org.abchip.mimo.server.System.LOCK_TIMEOUT, LockType.WRITE));
+		while (!locker.tryLock(org.abchip.mimo.server.System.LOCK_TIMEOUT, LockType.WRITE))
+			;
 
 		try {
 			SystemEvent systemEvent = ServerFactory.eINSTANCE.createSystemEvent();
@@ -113,7 +111,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 
 			jobKernel = createJob(system, JobType.KERNEL, principal, "KERNEL");
 
-			ResourceWriter<org.abchip.mimo.server.System> systemWriter = resourceManager.getResourceWriter(jobKernel.getContext(), org.abchip.mimo.server.System.class);
+			ResourceWriter<org.abchip.mimo.server.System> systemWriter = jobKernel.getContext().getResourceManager().getResourceWriter(org.abchip.mimo.server.System.class);
 			org.abchip.mimo.server.System persistedSystem = systemWriter.lookup(system.getName());
 			if (persistedSystem != null) {
 				system.setLastJobNumber(persistedSystem.getLastJobNumber());

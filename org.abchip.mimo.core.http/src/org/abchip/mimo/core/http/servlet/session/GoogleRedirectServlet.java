@@ -25,7 +25,6 @@ import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 
 public class GoogleRedirectServlet extends HttpServlet {
@@ -35,9 +34,6 @@ public class GoogleRedirectServlet extends HttpServlet {
 	public static final String AUTHORIZE_URI = "https://accounts.google.com/o/oauth2/auth";
 	public static final String DEFAULT_SCOPE = "openid%20email%20profile";
 	// public static final String SESSION_GOOGLE_STATE = "_GOOGLE_STATE_";
-
-	@Inject
-	private ResourceManager resourceManager;
 
 	@Inject
 	private AuthenticationManager authenticationManager;
@@ -56,7 +52,7 @@ public class GoogleRedirectServlet extends HttpServlet {
 		AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
 		try (ContextProvider context = authenticationManager.login(null, authentication)) {
 
-			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context.get(), "OAuth2Google");
+			ResourceReader<?> oauth2Reader = context.get().getResourceManager().getResourceReader("OAuth2Google");
 			EntityIdentifiable oauth2Google = oauth2Reader.first();
 
 			if (oauth2Google == null) {

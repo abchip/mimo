@@ -23,7 +23,6 @@ import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.context.UserProfile;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.server.Job;
@@ -48,8 +47,6 @@ public class BaseJobManagerImpl implements JobManager {
 	private static final Logger LOGGER = Logs.getLogger(BaseJobLogManagerImpl.class);
 	private static final int MILLIS_IN_ONE_DAY = 1000 * 60 * 60 * 24;
 
-	@Inject
-	private ResourceManager resourceManager;
 	@Inject
 	private ThreadManager threadManager;
 
@@ -77,7 +74,7 @@ public class BaseJobManagerImpl implements JobManager {
 		Job startupJob = systemManager.getJobKernel();
 
 		try {
-			ResourceReader<UserProfile> userResource = resourceManager.getResourceReader(startupJob.getContext(), UserProfile.class);
+			ResourceReader<UserProfile> userResource = startupJob.getContext().getResourceManager().getResourceReader(UserProfile.class);
 
 			// check credential
 			UserProfile userProfile = userResource.lookup(identity.getJavaPrincipal().getName());
@@ -93,7 +90,7 @@ public class BaseJobManagerImpl implements JobManager {
 			fireEvent(jobEvent);
 
 			// save
-			ResourceWriter<Job> jobWriter = resourceManager.getResourceWriter(job.getContext(), Job.class);
+			ResourceWriter<Job> jobWriter = startupJob.getContext().getResourceManager().getResourceWriter(Job.class);
 			jobWriter.create(job);
 
 			jobEvent.setType(JobEventType.STARTED);
@@ -167,7 +164,7 @@ public class BaseJobManagerImpl implements JobManager {
 		Job jobTarget = null;
 
 		String filter = "jobReference.jobName = \"" + name + "\" AND jobReference.jobNumber = " + number + " AND jobReference.jobUser = \"" + user + "'";
-		try (EntityIterator<Job> jobs = resourceManager.getResourceReader(jobCaller.getContext(), Job.class).find(filter)) {
+		try (EntityIterator<Job> jobs = jobCaller.getContext().getResourceManager().getResourceReader(Job.class).find(filter)) {
 			if (jobs.hasNext())
 				jobTarget = jobs.next();
 		} catch (ResourceException e) {
@@ -215,7 +212,7 @@ public class BaseJobManagerImpl implements JobManager {
 
 		// save destroy date job
 		try {
-			ResourceWriter<Job> jobWriter = resourceManager.getResourceWriter(job.getContext(), Job.class);
+			ResourceWriter<Job> jobWriter = job.getContext().getResourceManager().getResourceWriter(Job.class);
 			job.setDestroyDate(new Date());
 			jobWriter.update(job);
 		} catch (ResourceException e) {

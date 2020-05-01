@@ -10,14 +10,12 @@ package org.abchip.mimo.core.http.servlet;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -25,9 +23,6 @@ import org.abchip.mimo.resource.SerializationType;
 public class LookupServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
-
-	@Inject
-	private ResourceManager resourceManager;
 
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(context, request, response);
@@ -44,14 +39,14 @@ public class LookupServlet extends BaseServlet {
 			proxy = "false";
 
 		try {
-			ResourceReader<E> entityReader = resourceManager.getResourceReader(context, frame, tenant);
+			ResourceReader<E> entityReader = context.getResourceManager().getResourceReader(frame, tenant);
 			E entity = entityReader.lookup(id, Boolean.parseBoolean(proxy));
 			if (entity == null)
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 			else {
 				response.setStatus(HttpServletResponse.SC_FOUND);
 
-				ResourceSerializer<E> entitySerializer = resourceManager.createResourceSerializer(context, frame, SerializationType.MIMO);
+				ResourceSerializer<E> entitySerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 				entitySerializer.add(entity);
 				entitySerializer.save(response.getOutputStream());
 			}

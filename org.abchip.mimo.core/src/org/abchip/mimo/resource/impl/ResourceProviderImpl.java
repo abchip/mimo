@@ -7,12 +7,10 @@
  */
 package org.abchip.mimo.resource.impl;
 
-import javax.inject.Inject;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceProvider;
 import org.eclipse.emf.ecore.EClass;
@@ -25,9 +23,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container implements ResourceProvider {
-
-	@Inject
-	private ResourceManager resourceManager;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -94,7 +89,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	@SuppressWarnings("unchecked")
 	@Override
 	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, String frame, String tenant) {
-		return getResource(context, (Frame<E>) resourceManager.getFrame(context, frame, tenant), tenant);
+		return getResource(context, (Frame<E>) context.getResourceManager().getFrame(frame, tenant), tenant);
 	}
 
 	/**

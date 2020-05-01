@@ -38,7 +38,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 	public HttpResourceImpl(Context context, Frame<E> frame, String tenant) {
 		this.context = context;
-		this.resourceSerializer = context.getResourceManager().createResourceSerializer(context, frame, SerializationType.MIMO);
+		this.resourceSerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 
 		this.tenant = tenant;
 	}

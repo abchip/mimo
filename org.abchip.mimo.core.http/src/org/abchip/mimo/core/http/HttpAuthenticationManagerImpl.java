@@ -34,7 +34,6 @@ import org.abchip.mimo.core.http.handler.HttpLoginHandler;
 import org.abchip.mimo.core.http.handler.HttpLogoutHandler;
 import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.networking.HttpClientFactory;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.util.Logs;
@@ -48,8 +47,6 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 	@Inject
 	private Application application;
-	@Inject
-	private ResourceManager resourceManager;
 	@Inject
 	private ProviderConfig providerConfig;
 	@Inject
@@ -234,7 +231,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		HttpClient httpClient = this.httpClientFactory.create(application.getContext());
 
 		try {
-			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(application.getContext(), ContextDescription.class, SerializationType.MIMO);
+			ResourceSerializer<ContextDescription> serializer = application.getContext().getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
 			ContextDescription contextDescription = httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
 			connector = new HttpConnector(providerConfig, httpClient, contextDescription);
 			LOGGER.audit("Connection success id {} user {} tenant {}", contextDescription.getId(), contextDescription.getUser(), contextDescription.getTenant());
@@ -271,7 +268,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		HttpClient httpClient = this.httpClientFactory.create(application.getContext());
 
 		try {
-			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(application.getContext(), ContextDescription.class, SerializationType.MIMO);
+			ResourceSerializer<ContextDescription> serializer = application.getContext().getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
 			ContextDescription contextDescription = httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
 			connector = new HttpConnector(providerConfig, httpClient, contextDescription);
 			LOGGER.audit("Connection success id {} adminKey {} tenant {}", contextDescription.getId(), adminKey, tenant);
@@ -291,7 +288,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	private void disconnect(Context context, HttpConnector connector) {
 
 		try {
-			ResourceSerializer<ContextDescription> serializer = resourceManager.createResourceSerializer(application.getContext(), ContextDescription.class, SerializationType.MIMO);
+			ResourceSerializer<ContextDescription> serializer = application.getContext().getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
 			ContextDescription contextDescription = connector.execute("logout", null, new HttpLogoutHandler(serializer));
 			LOGGER.audit("Disconnection success id {} user {} tenant {}", contextDescription.getId(), contextDescription.getUser(), contextDescription.getTenant());
 		} catch (Exception e) {

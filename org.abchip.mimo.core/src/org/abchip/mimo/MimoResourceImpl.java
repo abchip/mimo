@@ -21,10 +21,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceProvider;
-import org.abchip.mimo.resource.ResourceProviderRegistry;
-import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -42,7 +39,6 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	private static final Logger LOGGER = Logs.getLogger(MimoResourceImpl.class);
 
 	private Resource<E> resource = null;
-	private ResourceReader<E> resourceReader = null;
 
 	@SuppressWarnings("unchecked")
 	public MimoResourceImpl(ResourceSet resourceSet, URI uri) {
@@ -56,37 +52,21 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (Frame.class.getSimpleName().equals(frameName)) {
 			this.resource = EMFResourceProviderImpl.internalGetFrameResource(this.getContext(), tenant);
 		} else {
-			ResourceManager resourceManager = this.getContext().get(ResourceManager.class);
-			Frame<E> frame = (Frame<E>) resourceManager.getFrame(getContext(), frameName, tenant);
+			Frame<E> frame = (Frame<E>) getContext().getResourceManager().getFrame(frameName, tenant);
 			if (frame.isEnum()) {
 				this.resource = EMFResourceProviderImpl.internalGetEnumResource(this.getContext(), frameName, tenant);
 			} else {
-				ResourceProviderRegistry resourceProviderRegistry = this.getContext().get(ResourceProviderRegistry.class);
-				ResourceProvider resourceProvider = resourceProviderRegistry.getResourceProvider(this.getContext(), frame);
+				ResourceProvider resourceProvider = this.getContext().getResourceManager().getResourceProvider(frame);
 				this.resource = resourceProvider.getResource(this.getContext(), frame, tenant);
 			}
 		}
-		
+
 		InternalEObject internalEObject = (InternalEObject) this.resource;
 		internalEObject.eSetResource(this, null);
 	}
 
 	public Resource<E> getResource() {
 		return this.resource;
-	}
-
-	private ResourceReader<E> getResourceReader() throws ResourceException {
-
-		if (this.resourceReader == null) {
-			synchronized (this) {
-				if (this.resourceReader == null) {
-					ResourceManager resourceManager = this.getContext().get(ResourceManager.class);
-					this.resourceReader = resourceManager.getResourceReader(this.getContext(), this.resource.getFrame(), this.resource.getTenant());
-				}
-			}
-		}
-
-		return this.resourceReader;
 	}
 
 	public Context getContext() {
@@ -165,7 +145,7 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	@Override
 	public EObject getEObject(String uriFragment) {
 		try {
-			return (EObject) this.getResourceReader().lookup(uriFragment);
+			return (EObject) this.getResource().read(uriFragment, null, false);
 		} catch (ResourceException e) {
 			LOGGER.error(e.getMessage());
 			throw new RuntimeException("Unexpected condition bsda8f7tsd8rf7ewr4b86ds");

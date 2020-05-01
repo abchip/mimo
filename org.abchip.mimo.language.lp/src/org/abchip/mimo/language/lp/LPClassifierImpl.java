@@ -10,8 +10,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
@@ -21,7 +21,6 @@ import org.abchip.mimo.mining.classification.ClassificationFactory;
 import org.abchip.mimo.mining.classification.Classifier;
 import org.abchip.mimo.mining.classification.Evaluator;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.util.Files;
 import org.osgi.framework.FrameworkUtil;
 
@@ -33,9 +32,7 @@ import com.aliasi.util.AbstractExternalizable;
 public class LPClassifierImpl implements Classifier {
 
 	@Inject
-	private ContextRoot contextRoot;
-	@Inject
-	private ResourceManager resourceManager;
+	private Application application;
 
 	private ScoredClassifier<CharSequence> classifier;
 
@@ -67,7 +64,7 @@ public class LPClassifierImpl implements Classifier {
 	public <E extends EntityIdentifiable> Evaluator buildEvaluator(Class<E> klass, Class<?> object) {
 
 		List<Language> languages = new ArrayList<Language>();
-		try (EntityIterator<Language> languageIterator = resourceManager.getResourceReader(contextRoot, Language.class).find()) {
+		try (EntityIterator<Language> languageIterator = application.getContext().getResourceManager().getResourceReader(Language.class).find()) {
 			for (Language language : languageIterator)
 				languages.add(language);
 		} catch (ResourceException e) {
@@ -94,7 +91,7 @@ public class LPClassifierImpl implements Classifier {
 		List<Classification<E>> classifications = new ArrayList<Classification<E>>();
 
 		List<Language> languages = new ArrayList<Language>();
-		try (EntityIterator<Language> languageIterator = resourceManager.getResourceReader(contextRoot, Language.class).find()) {
+		try (EntityIterator<Language> languageIterator = context.getResourceManager().getResourceReader(Language.class).find()) {
 			for (Language language : languageIterator)
 				languages.add(language);
 		} catch (ResourceException e) {

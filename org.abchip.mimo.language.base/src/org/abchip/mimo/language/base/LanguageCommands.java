@@ -16,13 +16,10 @@ import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
 import org.abchip.mimo.language.LanguagePlanet;
-import org.abchip.mimo.resource.ResourceManager;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
 public class LanguageCommands extends BaseCommands {
 
-	@Inject
-	private ResourceManager resourceManager;
 	@Inject
 	private LanguageManager languageManager;
 
@@ -32,7 +29,7 @@ public class LanguageCommands extends BaseCommands {
 
 		interpreter.println(languageManager.translate(context, "eng", "man", "ita"));
 
-		try (EntityIterator<Language> languages = resourceManager.getResourceReader(context, Language.class).find()) {
+		try (EntityIterator<Language> languages = context.getResourceManager().getResourceReader(Language.class).find()) {
 			for (Language language : languages) {
 				interpreter.println(language);
 

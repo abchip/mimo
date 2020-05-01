@@ -28,7 +28,6 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Strings;
 import org.apache.http.HttpStatus;
@@ -51,8 +50,6 @@ public class LinkedInResponseServlet extends HttpServlet {
 
 	public static final RequestConfig StandardRequestConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build();
 
-	@Inject
-	private ResourceManager resourceManager;
 
 	@Inject
 	private AuthenticationManager authenticationManager;
@@ -88,7 +85,7 @@ public class LinkedInResponseServlet extends HttpServlet {
 
 			// dovremmo accedere con ProductStore e data
 			String entityName = "OAuth2LinkedIn";
-			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context.get(), entityName);
+			ResourceReader<?> oauth2Reader = context.get().getResourceManager().getResourceReader(entityName);
 			EntityIdentifiable oauth2LinkedIn = oauth2Reader.first();
 
 			if (oauth2LinkedIn == null) {

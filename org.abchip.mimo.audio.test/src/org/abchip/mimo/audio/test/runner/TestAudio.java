@@ -21,7 +21,6 @@ import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageManager;
 import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.tester.Test;
@@ -34,8 +33,6 @@ public class TestAudio {
 
 	@Inject
 	private AudioManager audioManager;
-	@Inject
-	private ResourceManager resourceManager;
 	@Inject
 	private LanguageManager languageManager;
 	@Inject
@@ -55,11 +52,11 @@ public class TestAudio {
 
 		// recordAudio();
 
-		for (Audio audio : resourceManager.getResourceReader(null, Audio.class).find()) {
+		for (Audio audio : testRunner.getContext().getResourceManager().getResourceReader(Audio.class).find()) {
 			audio.toString();
 		}
 
-		ResourceReader<Audio> audioReader = resourceManager.getResourceReader(testRunner.getContext(), Audio.class);
+		ResourceReader<Audio> audioReader = testRunner.getContext().getResourceManager().getResourceReader(Audio.class);
 		for (Audio audio : audioReader.find()) {
 
 			asserter.assertNotNull("Audio content", audio.getContent());
@@ -76,13 +73,13 @@ public class TestAudio {
 
 		audioManager.play(testRunner.getContext(), AudioStyle.A, "I found the following frames in the system", true, true);
 
-		for (Frame<?> frame : resourceManager.getResourceReader(testRunner.getContext(), Frame.class).find()) {
+		for (Frame<?> frame : testRunner.getContext().getResourceManager().getResourceReader(Frame.class).find()) {
 			audioManager.play(testRunner.getContext(), AudioStyle.B, frame.getName(), true, true);
 		}
 
 		audioManager.play(testRunner.getContext(), AudioStyle.A, "I found the following languages in the system", true, true);
 
-		ResourceReader<Language> languageReader = resourceManager.getResourceReader(testRunner.getContext(), Language.class);
+		ResourceReader<Language> languageReader = testRunner.getContext().getResourceManager().getResourceReader(Language.class);
 		for (Language language : languageReader.find()) {
 			audioManager.play(testRunner.getContext(), AudioStyle.B, language.getText(), true, true);
 		}
@@ -101,7 +98,7 @@ public class TestAudio {
 			audio.setText("Mimo audio test");
 			audio.setContent(((ByteArrayOutputStream) audioRecorder.getOutputStream()).toByteArray());
 
-			ResourceWriter<Audio> audioWriter = resourceManager.getResourceWriter(testRunner.getContext(), Audio.class);
+			ResourceWriter<Audio> audioWriter = testRunner.getContext().getResourceManager().getResourceWriter(Audio.class);
 			audioWriter.create(audio);
 		}
 	}

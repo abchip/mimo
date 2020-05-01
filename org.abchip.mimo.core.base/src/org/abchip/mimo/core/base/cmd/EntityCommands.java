@@ -18,7 +18,6 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.service.Service;
 import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServiceRequest;
@@ -29,8 +28,6 @@ import org.eclipse.osgi.framework.console.CommandInterpreter;
 
 public class EntityCommands extends BaseCommands {
 
-	@Inject
-	private ResourceManager resourceManager;
 	@Inject
 	private ServiceManager serviceManager;
 
@@ -85,25 +82,25 @@ public class EntityCommands extends BaseCommands {
 
 		interpreter.println("Input parameters");
 		for (Slot slot : request.isa().getSlots()) {
-			interpreter.print("Name: " + slot.getName()+ " ");
-			interpreter.print("Text: " + slot.getText()+ " ");
-			interpreter.print("Optional: " + !slot.getCardinality().isMandatory()+ " ");
-			interpreter.print("Type: " + slot.getDataType()+ " ");
-			interpreter.print("Domain: " + slot.getDomain()+ " ");
-			interpreter.print("Default: " + slot.getDefaultValue()+ " ");
+			interpreter.print("Name: " + slot.getName() + " ");
+			interpreter.print("Text: " + slot.getText() + " ");
+			interpreter.print("Optional: " + !slot.getCardinality().isMandatory() + " ");
+			interpreter.print("Type: " + slot.getDataType() + " ");
+			interpreter.print("Domain: " + slot.getDomain() + " ");
+			interpreter.print("Default: " + slot.getDefaultValue() + " ");
 			interpreter.println();
 		}
-		
+
 		ServiceResponse response = this.getContext().getFrame(request.getResponse()).createEntity();
-		
+
 		interpreter.println("Output parameters");
 		for (Slot slot : response.isa().getSlots()) {
-			interpreter.print("Name: " + slot.getName()+ " ");
-			interpreter.print("Text: " + slot.getText()+ " ");
-			interpreter.print("Optional: " + !slot.getCardinality().isMandatory()+ " ");
-			interpreter.print("Type: " + slot.getDataType()+ " ");
-			interpreter.print("Domain: " + slot.getDomain()+ " ");
-			interpreter.print("Default: " + slot.getDefaultValue()+ " ");
+			interpreter.print("Name: " + slot.getName() + " ");
+			interpreter.print("Text: " + slot.getText() + " ");
+			interpreter.print("Optional: " + !slot.getCardinality().isMandatory() + " ");
+			interpreter.print("Type: " + slot.getDataType() + " ");
+			interpreter.print("Domain: " + slot.getDomain() + " ");
+			interpreter.print("Default: " + slot.getDefaultValue() + " ");
 			interpreter.println();
 		}
 	}
@@ -127,13 +124,13 @@ public class EntityCommands extends BaseCommands {
 		String tenant = nextArgument(interpreter);
 
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName, tenant);
+		Frame<E> frame = (Frame<E>) context.getResourceManager().getFrame(frameName, tenant);
 		if (frame == null) {
 			interpreter.println("Frame not found: " + frameName + " on tenant " + tenant);
 			return;
 		}
 
-		try (EntityIterator<E> entities = resourceManager.getResourceReader(context, frame, tenant).find(null, null, order)) {
+		try (EntityIterator<E> entities = context.getResourceManager().getResourceReader(frame, tenant).find(null, null, order)) {
 			for (E entity : entities) {
 				interpreter.println(entity.getID());
 			}
@@ -151,11 +148,11 @@ public class EntityCommands extends BaseCommands {
 		String tenant = nextArgument(interpreter);
 
 		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) resourceManager.getFrame(context, frameName, tenant);
+		Frame<E> frame = (Frame<E>) context.getResourceManager().getFrame(frameName, tenant);
 		if (frame == null)
 			interpreter.print("Frame not found: " + frameName + " on tenant " + tenant);
 
-		E entity = resourceManager.getResourceReader(context, frame, tenant).lookup(entityName);
+		E entity = context.getResourceManager().getResourceReader(frame, tenant).lookup(entityName);
 		interpreter.println(entity);
 	}
 

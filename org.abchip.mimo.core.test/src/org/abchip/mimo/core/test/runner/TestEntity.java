@@ -8,7 +8,6 @@ import org.abchip.mimo.core.test.ObjectB;
 import org.abchip.mimo.core.test.TestFactory;
 import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.tester.Test;
@@ -19,8 +18,6 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 
 @Test(entity = "Entity")
 public class TestEntity {
-	@Inject
-	private ResourceManager resourceManager;
 	@Inject
 	private TestRunner testRunner;
 	@Inject
@@ -38,7 +35,7 @@ public class TestEntity {
 
 	private void testRead() throws ResourceException {
 
-		ResourceReader<ObjectA> entityReader = resourceManager.getResourceReader(testRunner.getContext(), ObjectA.class);
+		ResourceReader<ObjectA> entityReader = testRunner.getContext().getResourceManager().getResourceReader(ObjectA.class);
 
 		try (EntityIterator<ObjectA> entityIterator = entityReader.find()) {
 			while (entityIterator.hasNext()) {
@@ -50,7 +47,7 @@ public class TestEntity {
 
 	private void testWrite() {
 		try {
-			ResourceWriter<ObjectA> entityWriter = resourceManager.getResourceWriter(testRunner.getContext(), ObjectA.class);
+			ResourceWriter<ObjectA> entityWriter = testRunner.getContext().getResourceManager().getResourceWriter(ObjectA.class);
 
 			ObjectA objectA = TestFactory.eINSTANCE.createObjectA();
 			objectA.setName("PIPPO");
@@ -62,7 +59,7 @@ public class TestEntity {
 			objectA.setObjectB(objectB);
 
 			entityWriter.validate(objectA);
-			
+
 			Diagnostician.INSTANCE.validate(objectA);
 
 			entityWriter.create(objectA);
@@ -84,7 +81,7 @@ public class TestEntity {
 
 	private void testDelete() throws ResourceException {
 
-		ResourceWriter<ObjectA> entityWriter = resourceManager.getResourceWriter(testRunner.getContext(), ObjectA.class);
+		ResourceWriter<ObjectA> entityWriter = testRunner.getContext().getResourceManager().getResourceWriter(ObjectA.class);
 
 		try (EntityIterator<ObjectA> objectIterator = entityWriter.find()) {
 			while (objectIterator.hasNext()) {

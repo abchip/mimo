@@ -28,7 +28,6 @@ import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.CookieSpecs;
@@ -50,9 +49,6 @@ public class GoogleResponseServlet extends HttpServlet {
 	public static final String TokenInfoUri = "https://oauth2.googleapis.com/tokeninfo";
 
 	public static final RequestConfig StandardRequestConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build();
-
-	@Inject
-	private ResourceManager resourceManager;
 
 	@Inject
 	private AuthenticationManager authenticationManager;
@@ -94,7 +90,7 @@ public class GoogleResponseServlet extends HttpServlet {
 
 			// dovremmo accedere con ProductStore e data
 			String entityName = "OAuth2Google";
-			ResourceReader<?> oauth2Reader = resourceManager.getResourceReader(context.get(), entityName);
+			ResourceReader<?> oauth2Reader = context.get().getResourceManager().getResourceReader(entityName);
 			EntityIdentifiable oauth2Google = oauth2Reader.first();
 
 			if (oauth2Google == null) {

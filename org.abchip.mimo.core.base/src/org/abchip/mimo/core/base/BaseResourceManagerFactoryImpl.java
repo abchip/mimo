@@ -8,7 +8,7 @@ public class BaseResourceManagerFactoryImpl implements Factory<ResourceManager> 
 
 	@Override
 	public ResourceManager create(Context context) {
-		return null;
+		return new BaseResourceManagerImpl(context);
 	}
 
 	@Override

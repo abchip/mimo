@@ -10,22 +10,18 @@ package org.abchip.mimo.core.http.servlet;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceWriter;
 
 public class NextSequenceServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private ResourceManager resourceManager;
 
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		_execute(context, request, response);
@@ -39,7 +35,7 @@ public class NextSequenceServlet extends BaseServlet {
 
 		try {
 			response.setStatus(HttpServletResponse.SC_OK);
-			ResourceWriter<E> resourceWriter = resourceManager.getResourceWriter(context, frame, tenant);
+			ResourceWriter<E> resourceWriter = context.getResourceManager().getResourceWriter(frame, tenant);
 			String nextSequence = resourceWriter.getResource().nextSequence();
 			if (nextSequence == null)
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);

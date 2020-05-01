@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -24,7 +23,6 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
@@ -41,9 +39,6 @@ public class LookupContextMenuServlet extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
-	private ResourceManager resourceManager;
-
 	@SuppressWarnings("resource")
 	protected void execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -51,17 +46,16 @@ public class LookupContextMenuServlet extends BaseServlet {
 		if (frameName == null)
 			return;
 
-		Frame<?> frame = resourceManager.getFrame(context, frameName);
+		Frame<?> frame = context.getResourceManager().getFrame(frameName);
 		if (frame == null) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
 			return;
 		}
 
-		
 		ContextMenu contextMenu = null;
 
 		try {
-			ResourceReader<ContextMenu> contextMenuReader = resourceManager.getResourceReader(context, ContextMenu.class, Resource.TENANT_MASTER);
+			ResourceReader<ContextMenu> contextMenuReader = context.getResourceManager().getResourceReader(ContextMenu.class, Resource.TENANT_MASTER);
 			contextMenu = contextMenuReader.lookup(frameName);
 			if (contextMenu == null) {
 				contextMenu = MenuFactory.eINSTANCE.createContextMenu();
@@ -124,19 +118,19 @@ public class LookupContextMenuServlet extends BaseServlet {
 		});
 
 		response.setStatus(HttpServletResponse.SC_FOUND);
-		ResourceSerializer<ContextMenu> entitySerializer = resourceManager.createResourceSerializer(context, ContextMenu.class, SerializationType.JSON);
+		ResourceSerializer<ContextMenu> entitySerializer = context.getResourceManager().createResourceSerializer(ContextMenu.class, SerializationType.JSON);
 		entitySerializer.add(contextMenu);
 		entitySerializer.save(response.getOutputStream());
 	}
 
 	private String getIcon(Context context, String frameName) throws ResourceException {
 
-		Frame<?> frame = resourceManager.getFrame(context, frameName);
+		Frame<?> frame = context.getResourceManager().getFrame(frameName);
 		if (frame == null)
 			return null;
 
 		String icon = null;
-		ResourceReader<UiFrameSetup> frameSetupReader = resourceManager.getResourceReader(context, UiFrameSetup.class, Resource.TENANT_MASTER);
+		ResourceReader<UiFrameSetup> frameSetupReader = context.getResourceManager().getResourceReader(UiFrameSetup.class, Resource.TENANT_MASTER);
 
 		List<String> frameNames = new ArrayList<String>(frame.getSuperNames());
 		Lists.addFirst(frameNames, frameName);
