@@ -28,7 +28,6 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSerializer;
-import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.abchip.mimo.util.Logs;
@@ -38,16 +37,14 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 
 	private final Logger LOGGER = Logs.getLogger(NIOResourcempl.class);
 
-	private Context context = null;
 	private NIOPathManager pathManager = null;
 	private ResourceSerializer<E> resourceSerializer = null;
 
 	private String tenant = null;
 
-	public NIOResourcempl(ResourceSet resourceSet, Context context, Frame<E> frame, String tenant, NIOPathManager pathManager) {
-		super(resourceSet);
-		
-		this.context = context;
+	public NIOResourcempl(Context context, Frame<E> frame, String tenant, NIOPathManager pathManager) {
+		super(context);
+
 		this.tenant = tenant;
 		this.pathManager = pathManager;
 

@@ -114,6 +114,8 @@ public abstract class E4ContextImpl extends ContextImpl {
 		if (object != null)
 			return object;
 
+		"".toString();
+		
 		try {
 			for (ServiceReference<Factory> serviceReference : getBundleContext().getServiceReferences(Factory.class, null)) {
 				Factory<T> factory = getBundleContext().getService(serviceReference);

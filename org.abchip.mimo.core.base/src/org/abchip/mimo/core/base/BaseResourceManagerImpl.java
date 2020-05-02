@@ -9,11 +9,8 @@
 package org.abchip.mimo.core.base;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
-import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.entity.Entity;
@@ -25,13 +22,7 @@ import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceListener;
 import org.abchip.mimo.resource.ResourceManager;
-import org.abchip.mimo.resource.ResourceMapping;
-import org.abchip.mimo.resource.ResourceMappingRule;
-import org.abchip.mimo.resource.ResourceMappingRuleByFrame;
-import org.abchip.mimo.resource.ResourceMappingRuleByPackage;
-import org.abchip.mimo.resource.ResourceMappingType;
 import org.abchip.mimo.resource.ResourceNotifier;
-import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -41,9 +32,8 @@ import org.abchip.mimo.resource.SerializationType;
 public class BaseResourceManagerImpl implements ResourceManager {
 
 	private Context context;
-	private LockManager lockManager;
 	private ResourceProviderRegistry resourceProviderRegistry;
-	private ResourceMapping resourceMapping;
+	private LockManager lockManager;
 	private Map<String, ResourceNotifier<?>> notifiers = null;
 
 	public BaseResourceManagerImpl(Context context) {
@@ -51,7 +41,6 @@ public class BaseResourceManagerImpl implements ResourceManager {
 
 		this.lockManager = context.get(LockManager.class);
 		this.resourceProviderRegistry = context.get(ResourceProviderRegistry.class);
-		this.resourceMapping = context.get(Application.class).getResourceMapping();
 
 		this.notifiers = new HashMap<String, ResourceNotifier<?>>();
 	}
@@ -115,32 +104,32 @@ public class BaseResourceManagerImpl implements ResourceManager {
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) throws ResourceException {
-		return this.getResourceProvider(klass).getResource(getContext(), klass);
+		return resourceProviderRegistry.getResourceProvider(getContext(), klass).getResource(getContext(), klass);
 	}
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) throws ResourceException {
-		return this.getResourceProvider(frame).getResource(getContext(), frame);
+		return resourceProviderRegistry.getResourceProvider(getContext(), frame).getResource(getContext(), frame);
 	}
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException {
-		return this.getResourceProvider(frame).getResource(getContext(), frame);
+		return resourceProviderRegistry.getResourceProvider(getContext(), frame).getResource(getContext(), frame);
 	}
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException {
-		return this.getResourceProvider(klass).getResource(getContext(), klass, tenant);
+		return resourceProviderRegistry.getResourceProvider(getContext(), klass).getResource(getContext(), klass, tenant);
 	}
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException {
-		return this.getResourceProvider(frame).getResource(getContext(), frame, tenant);
+		return resourceProviderRegistry.getResourceProvider(getContext(), frame).getResource(getContext(), frame, tenant);
 	}
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) throws ResourceException {
-		return this.getResourceProvider(frame).getResource(getContext(), frame, tenant);
+		return resourceProviderRegistry.getResourceProvider(getContext(), frame).getResource(getContext(), frame, tenant);
 	}
 
 	@Override
@@ -272,93 +261,5 @@ public class BaseResourceManagerImpl implements ResourceManager {
 		}
 
 		return notifier;
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Class<E> klass) {
-		return getResourceProvider(klass.getSimpleName());
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(String frameName) {
-
-		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) this.getFrame(frameName);
-		if (frame == null)
-			return null;
-
-		return getResourceProvider(frame);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Frame<E> frame) {
-		return getProvider(frame);
-	}
-
-	private ResourceProvider getProvider(Frame<?> frame) {
-
-		ResourceMappingRuleByFrame ruleByFrame = getRuleByFrame(frame);
-		ResourceMappingRuleByPackage ruleByPackage = getRuleByPackage(frame);
-
-		if (ruleByFrame == null && ruleByPackage == null)
-			return null;
-		if (ruleByPackage == null)
-			return resourceProviderRegistry.lookup(ruleByFrame.getProvider());
-		if (ruleByFrame == null)
-			return resourceProviderRegistry.lookup(ruleByPackage.getProvider());
-		if (ruleByFrame.getFrame().equals(frame.getName()))
-			return resourceProviderRegistry.lookup(ruleByFrame.getProvider());
-
-		Frame<?> frameFromRule = this.getFrame(ruleByFrame.getFrame());
-		if (frameFromRule.getPackageName().startsWith(ruleByPackage.getPackage()))
-			return resourceProviderRegistry.lookup(ruleByFrame.getProvider());
-		else
-			return resourceProviderRegistry.lookup(ruleByPackage.getProvider());
-	}
-
-	private ResourceMappingRuleByFrame getRuleByFrame(Frame<?> frame) {
-
-		List<Frame<?>> frames = new LinkedList<Frame<?>>();
-		frames.add(frame);
-		frames.addAll(frame.getSuperFrames());
-
-		ResourceMappingRuleByFrame ruleByFrame = null;
-		for (Frame<?> frameItem : frames) {
-			for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
-				if (!mappingRule.getMappingType().equals(ResourceMappingType.BY_FRAME))
-					continue;
-
-				ResourceMappingRuleByFrame mappingRuleByFrame = (ResourceMappingRuleByFrame) mappingRule;
-				if (mappingRuleByFrame.getFrame().equals(frameItem.getName())) {
-					ruleByFrame = mappingRuleByFrame;
-					break;
-				}
-			}
-			if (ruleByFrame != null)
-				break;
-		}
-
-		return ruleByFrame;
-	}
-
-	private ResourceMappingRuleByPackage getRuleByPackage(Frame<?> frame) {
-
-		ResourceMappingRuleByPackage ruleByPackage = null;
-
-		for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
-			if (!mappingRule.getMappingType().equals(ResourceMappingType.BY_PACKAGE))
-				continue;
-
-			ResourceMappingRuleByPackage mappingRuleByPackage = (ResourceMappingRuleByPackage) mappingRule;
-			if (frame.getPackageName().startsWith(mappingRuleByPackage.getPackage())) {
-				// deeper package
-				if (ruleByPackage != null && ruleByPackage.getPackage().length() > mappingRuleByPackage.getPackage().length())
-					continue;
-
-				ruleByPackage = mappingRuleByPackage;
-			}
-		}
-
-		return ruleByPackage;
 	}
 }

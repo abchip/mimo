@@ -24,6 +24,7 @@ import org.abchip.mimo.entity.Frame;
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.Resource#getResourceConfig <em>Resource Config</em>}</li>
  *   <li>{@link org.abchip.mimo.resource.Resource#getResourceSet <em>Resource Set</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.Resource#getContext <em>Context</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.resource.ResourcePackage#getResource()
@@ -80,7 +81,7 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resource Set</em>' reference.
 	 * @see org.abchip.mimo.resource.ResourcePackage#getResource_ResourceSet()
-	 * @model required="true" changeable="false"
+	 * @model required="true" transient="true" changeable="false"
 	 * @generated
 	 */
 	ResourceSet getResourceSet();
@@ -172,9 +173,12 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	void update(E entity) throws ResourceException;
 
 	/**
+	 * Returns the value of the '<em><b>Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
+	 * @return the value of the '<em>Context</em>' reference.
+	 * @see org.abchip.mimo.resource.ResourcePackage#getResource_Context()
+	 * @model required="true" changeable="false"
 	 * @generated
 	 */
 	Context getContext();

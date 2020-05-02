@@ -133,30 +133,6 @@ public interface ResourceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model klassRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Class<E> klass);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Frame<E> frame);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model frameRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(String frame);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model exceptions="org.abchip.mimo.resource.ResourceException" klassRequired="true"
 	 * @generated
 	 */

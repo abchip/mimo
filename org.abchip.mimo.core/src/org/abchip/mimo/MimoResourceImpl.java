@@ -16,7 +16,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
@@ -47,14 +46,6 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 	public Resource<E> getResource() {
 		return this.resource;
-	}
-
-	public Context getContext() {
-		if (!(this.getResourceSet() instanceof MimoResourceSetImpl))
-			return null;
-
-		MimoResourceSetImpl resourceSet = (MimoResourceSetImpl) this.getResourceSet();
-		return resourceSet.getContext();
 	}
 
 	@Override

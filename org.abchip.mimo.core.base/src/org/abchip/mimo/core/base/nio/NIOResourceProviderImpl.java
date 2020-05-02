@@ -20,7 +20,6 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceFactory;
-import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
 
 public class NIOResourceProviderImpl extends ResourceProviderImpl {
@@ -43,12 +42,12 @@ public class NIOResourceProviderImpl extends ResourceProviderImpl {
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> doGetResource(ResourceSet resourceSet, Context context, Frame<E> frame, String tenant) {
+	public <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
 
 		if (pathManager == null)
 			return null;
 
-		Resource<E> resource = new NIOResourcempl<E>(resourceSet, context, frame, tenant, pathManager);
+		Resource<E> resource = new NIOResourcempl<E>(context, frame, tenant, pathManager);
 		resource.setResourceConfig(this.resourceConfig);
 
 		return resource;

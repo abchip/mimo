@@ -18,25 +18,21 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 
 public class EMFResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
-
-	private Context context = null;
 	private Frame<E> frame = null;
 	private Map<String, E> entities = null;
-	
+
 	@SuppressWarnings("unchecked")
-	protected EMFResourceImpl(ResourceSet resourceSet, Context context, Frame<E> frame, Map<String, E> entities) {
-		super(resourceSet);
-		
-		this.context = context;
+	protected EMFResourceImpl(Context context, Frame<E> frame, Map<String, E> entities) {
+		super(context);
+
 		this.frame = frame;
-		if(frame == null)
+		if (frame == null)
 			this.frame = (Frame<E>) this.entities.get(Frame.class.getSimpleName());
-		
+
 		this.entities = entities;
 	}
 
@@ -49,12 +45,12 @@ public class EMFResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<
 	public String getTenant() {
 		return null;
 	}
-	
+
 	@Override
 	public Frame<E> getFrame() {
 		return this.frame;
 	}
-	
+
 	@Override
 	public void create(E entity, boolean update) {
 		throw new UnsupportedOperationException();

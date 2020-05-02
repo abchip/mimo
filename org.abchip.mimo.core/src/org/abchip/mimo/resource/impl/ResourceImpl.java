@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceConfig <em>Resource Config</em>}</li>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceSet <em>Resource Set</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getContext <em>Context</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,6 +61,16 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	protected ResourceSet resourceSet;
 
 	/**
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContext()
+	 * @generated
+	 * @ordered
+	 */
+	protected Context context;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -72,10 +83,11 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected ResourceImpl(ResourceSet resourceSet) {
+	protected ResourceImpl(Context context) {
 		super();
 		
-		this.resourceSet = resourceSet;
+		this.context = context;
+		this.resourceSet = context.get(ResourceSet.class);
 	}
 
 	/**
@@ -309,6 +321,15 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	public abstract Context getContext();
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Context basicGetContext() {
+		return context;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -321,6 +342,9 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 			case ResourcePackage.RESOURCE__RESOURCE_SET:
 				if (resolve) return getResourceSet();
 				return basicGetResourceSet();
+			case ResourcePackage.RESOURCE__CONTEXT:
+				if (resolve) return getContext();
+				return basicGetContext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -364,6 +388,8 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 				return resourceConfig != null;
 			case ResourcePackage.RESOURCE__RESOURCE_SET:
 				return resourceSet != null;
+			case ResourcePackage.RESOURCE__CONTEXT:
+				return context != null;
 		}
 		return super.eIsSet(featureID);
 	}

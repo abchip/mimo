@@ -30,7 +30,7 @@ public interface ResourceProvider {
 	 * 
 	 * @generated NOT
 	 */
-	public abstract <E extends EntityIdentifiable> Resource<E> doGetResource(ResourceSet resourceSet, Context context, Frame<E> frame, String tenant);
+	public abstract <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->

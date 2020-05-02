@@ -24,22 +24,19 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSerializer;
-import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.apache.http.client.ResponseHandler;
 
 public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
-
-	private Context context = null;
 	private ResourceSerializer<E> resourceSerializer = null;
 
 	private String tenant = null;
 
-	public HttpResourceImpl(ResourceSet resourceSet, Context context, Frame<E> frame, String tenant) {
-		super(resourceSet);
-		this.context = context;
+	public HttpResourceImpl(Context context, Frame<E> frame, String tenant) {
+		super(context);
+
 		this.resourceSerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 
 		this.tenant = tenant;
@@ -76,7 +73,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		HttpConnector connector = context.get(HttpConnector.class);
 		if (connector == null)
 			throw new ResourceException("Unconnected resource " + getFrame().getURI());
-		
+
 		try {
 			nextSequence = connector.execute("nextSequence", query, new HttpNextSequenceHandler());
 		} catch (Exception e) {
@@ -85,7 +82,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 		return nextSequence;
 	}
-	
+
 	@SuppressWarnings("resource")
 	@Override
 	public void create(E entity, boolean update) throws ResourceException {
@@ -122,7 +119,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		}
 	}
 
-
 	@SuppressWarnings("resource")
 	@Override
 	public E read(String id, String fields, boolean proxy) throws ResourceException {
@@ -134,7 +130,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			query += "&tenant=" + this.tenant;
 		if (proxy)
 			query += "&proxy=" + proxy;
-
 
 		HttpConnector connector = context.get(HttpConnector.class);
 		if (connector == null)
@@ -189,7 +184,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			synchronized (this.resourceSerializer) {
 				entities = connector.execute("find", query, handler);
 			}
-			for(E entity: entities)
+			for (E entity : entities)
 				this.attach(entity);
 		} catch (Exception e) {
 			throw new ResourceException(e);
@@ -202,7 +197,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	public void update(E entity) throws ResourceException {
 		create(entity, true);
 	}
-	
+
 	@SuppressWarnings("resource")
 	@Override
 	public void delete(E entity) throws ResourceException {
