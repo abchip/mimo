@@ -14,12 +14,15 @@ import java.net.URL;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.context.Factory;
 import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.context.Thread;
 import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.core.base.BaseRegistryFactoryImpl;
+import org.abchip.mimo.core.base.BaseResourceSetFactoryImpl;
 import org.abchip.mimo.core.base.ctx.BaseThreadManagerImpl;
 import org.abchip.mimo.core.log4j.LOG4JActivator;
+import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.util.Applications;
 import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.Systems;
@@ -126,6 +129,10 @@ public class E4Activator implements BundleActivator {
 		// thread
 		ThreadManager threadManager = new BaseThreadManagerImpl();
 		application.getContext().set(ThreadManager.class, threadManager);
+
+		// resourceSet factory
+		Factory<ResourceSet> resourceSetFactory = new BaseResourceSetFactoryImpl();
+		application.getContext().set(Factory.class.getName(), resourceSetFactory, false, null);
 
 		Runnable applicationManager = new E4ApplicationStarter(E4Activator.application);
 		thread = threadManager.createThread(application.getName(), applicationManager, false);

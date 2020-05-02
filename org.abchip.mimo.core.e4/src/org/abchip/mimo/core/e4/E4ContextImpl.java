@@ -16,6 +16,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.Service;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
@@ -36,7 +37,6 @@ import org.abchip.mimo.util.Logs;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
 import org.osgi.service.log.Logger;
 
 public abstract class E4ContextImpl extends ContextImpl {
@@ -94,7 +94,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 		ContextInjectionFactory.inject(consumer, getEclipseContext());
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "unchecked" })
 	@Override
 	public <T> T get(Class<T> clazz) {
 
@@ -115,10 +115,11 @@ public abstract class E4ContextImpl extends ContextImpl {
 			return object;
 
 		"".toString();
-		
+
+		Application application = this.get(Application.class);
 		try {
-			for (ServiceReference<Factory> serviceReference : getBundleContext().getServiceReferences(Factory.class, null)) {
-				Factory<T> factory = getBundleContext().getService(serviceReference);
+
+			for (Factory<T> factory : application.getContext().getAll(Factory.class)) {
 				if (!factory.getInterfaceClass().equals(clazz))
 					continue;
 
