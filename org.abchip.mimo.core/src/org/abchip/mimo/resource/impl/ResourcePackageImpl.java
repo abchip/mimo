@@ -58,6 +58,7 @@ import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.SerializationType;
 
@@ -186,6 +187,13 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	private EClass resourceSerializerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass resourceSetEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -346,6 +354,16 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	@Override
 	public EReference getResource_ResourceConfig() {
 		return (EReference)resourceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getResource_ResourceSet() {
+		return (EReference)resourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -574,6 +592,16 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
+	public EClass getResourceSet() {
+		return resourceSetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getResourceWriter() {
 		return resourceWriterEClass;
 	}
@@ -649,6 +677,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		// Create classes and their features
 		resourceEClass = createEClass(RESOURCE);
 		createEReference(resourceEClass, RESOURCE__RESOURCE_CONFIG);
+		createEReference(resourceEClass, RESOURCE__RESOURCE_SET);
 
 		resourceConfigEClass = createEClass(RESOURCE_CONFIG);
 		createEAttribute(resourceConfigEClass, RESOURCE_CONFIG__LOCK_SUPPORT);
@@ -684,6 +713,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		resourceSerializerEClass = createEClass(RESOURCE_SERIALIZER);
 		createEReference(resourceSerializerEClass, RESOURCE_SERIALIZER__FRAME);
+
+		resourceSetEClass = createEClass(RESOURCE_SET);
 
 		resourceWriterEClass = createEClass(RESOURCE_WRITER);
 
@@ -760,6 +791,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		EGenericType g2 = createEGenericType(this.getResourceProvider());
 		g1.getETypeArguments().add(g2);
 		resourceProviderRegistryEClass.getEGenericSuperTypes().add(g1);
+		resourceSetEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		g1 = createEGenericType(this.getResourceReader());
 		g2 = createEGenericType(resourceWriterEClass_E);
 		g1.getETypeArguments().add(g2);
@@ -768,8 +800,14 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		// Initialize classes and features; add operations and parameters
 		initEClass(resourceEClass, Resource.class, "Resource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResource_ResourceConfig(), this.getResourceConfig(), null, "resourceConfig", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResource_ResourceSet(), this.getResourceSet(), null, "resourceSet", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = addEOperation(resourceEClass, null, "create", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(resourceEClass, null, "attach", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceEClass_E);
+		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
+
+		op = addEOperation(resourceEClass, null, "create", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "update", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -784,6 +822,13 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1 = createEGenericType(resourceEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());
+
+		op = addEOperation(resourceEClass, null, "detach", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceEClass_E);
+		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
+
+		addEOperation(resourceEClass, theContextPackage.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(resourceEClass, null, "getFrame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
@@ -828,8 +873,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1 = createEGenericType(resourceEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());
-
-		addEOperation(resourceEClass, theContextPackage.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(resourceConfigEClass, ResourceConfig.class, "ResourceConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getResourceConfig_LockSupport(), ecorePackage.getEBoolean(), "lockSupport", null, 1, 1, ResourceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -901,7 +944,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		op = addEOperation(resourceManagerEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntity());
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
 		t1.getEBounds().add(g1);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
@@ -914,7 +957,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		op = addEOperation(resourceManagerEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntity());
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
 		t1.getEBounds().add(g1);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
@@ -927,17 +970,23 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		initEOperation(op, g1);
 
 		op = addEOperation(resourceManagerEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
-		g2 = createEGenericType();
+		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
 		op = addEOperation(resourceManagerEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
-		g2 = createEGenericType();
+		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
@@ -949,6 +998,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResource());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -962,6 +1012,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResource());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -972,6 +1023,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
 		t1.getEBounds().add(g1);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResource());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -986,6 +1038,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResource());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1000,6 +1053,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResource());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1011,6 +1065,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1.getEBounds().add(g1);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResource());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1283,6 +1338,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResource());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1297,6 +1353,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResource());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1308,6 +1365,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1.getEBounds().add(g1);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResource());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1323,6 +1381,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResource());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1338,6 +1397,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResource());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1350,6 +1410,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
 		g1 = createEGenericType(this.getResource());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1513,6 +1574,21 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		initEOperation(op, g1);
 
 		addEOperation(resourceSerializerEClass, ecorePackage.getEBoolean(), "isEmpty", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(resourceSetEClass, ResourceSet.class, "ResourceSet", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(resourceSetEClass, theContextPackage.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resourceSetEClass, null, "getResource", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, ecorePackage.getEString(), "frameId", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "tenantId", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getResource());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
 
 		initEClass(resourceWriterEClass, ResourceWriter.class, "ResourceWriter", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

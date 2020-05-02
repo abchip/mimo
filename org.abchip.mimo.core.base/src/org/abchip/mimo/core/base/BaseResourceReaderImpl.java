@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.abchip.mimo.MimoConstants;
-import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
@@ -30,13 +29,10 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 
 public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends ResourceReaderImpl<E> {
 
-	private MimoResourceImpl<E> internal = null;
-	// private Diagnostician diagnostician = null;
+	private Resource<E> resource = null;
 
-	public BaseResourceReaderImpl(MimoResourceImpl<E> internal) {
-		this.internal = internal;
-
-		// this.diagnostician = new BaseDiagnostician(this.getContext());
+	public BaseResourceReaderImpl(Resource<E> resource) {
+		this.resource = resource;
 	}
 
 	protected Diagnostician getDiagnostician() {
@@ -45,30 +41,30 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 
 	@Override
 	public Frame<E> getFrame() {
-		return this.internal.getResource().getFrame();
+		return this.resource.getFrame();
 	}
 
 	@Override
 	public String getTenant() {
-		return this.internal.getResource().getTenant();
+		return this.resource.getTenant();
 	}
 
 	@Override
 	public Context getContext() {
-		return this.internal.getContext();
+		return this.resource.getContext();
 	}
 
 	@Override
 	public Resource<E> getResource() {
-		return this.internal.getResource();
+		return this.resource;
 	}
 
 	@Override
 	public EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException {
 
-		List<E> entities = this.internal.getResource().read(filter, fields, order, limit, proxy);
+		List<E> entities = resource.read(filter, fields, order, limit, proxy);
 
-		if (this.internal.getResource().getResourceConfig().isOrderSupport() && order != null) {
+		if (resource.getResourceConfig().isOrderSupport() && order != null) {
 
 			String[] orders = order.split(",");
 			Collections.sort(entities, new Comparator<E>() {
@@ -145,7 +141,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 	@Override
 	public E lookup(String name, boolean proxy) throws ResourceException {
 
-		E entity = this.internal.getResource().read(name, null, proxy);
+		E entity = resource.read(name, null, proxy);
 
 		return entity;
 	}

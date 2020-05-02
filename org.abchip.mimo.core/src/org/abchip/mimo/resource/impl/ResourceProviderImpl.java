@@ -8,11 +8,15 @@
 package org.abchip.mimo.resource.impl;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceProvider;
+import org.abchip.mimo.resource.ResourceSet;
+import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -47,7 +51,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, Class<E> klass) {
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, Class<E> klass) throws ResourceException {
 		return getResource(context, klass.getSimpleName());
 	}
 
@@ -57,7 +61,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, Frame<E> frame) {
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, Frame<E> frame) throws ResourceException {
 		return getResource(context, frame, null);
 	}
 
@@ -67,8 +71,8 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, String frame) {
-		return getResource(context, frame, null);
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, String frameId) throws ResourceException {
+		return getResource(context, frameId, null);
 	}
 
 	/**
@@ -77,7 +81,7 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, Class<E> klass, String tenant) {
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, Class<E> klass, String tenant) throws ResourceException {
 		return getResource(context, klass.getSimpleName(), tenant);
 	}
 
@@ -86,10 +90,9 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * 
 	 * @generated NOT
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
-	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, String frame, String tenant) {
-		return getResource(context, (Frame<E>) context.getResourceManager().getFrame(frame, tenant), tenant);
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, Frame<E> frame, String tenant) throws ResourceException {
+		return getResource(context, frame.getName(), tenant);
 	}
 
 	/**
@@ -98,16 +101,32 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	 * @generated NOT
 	 */
 	@Override
-	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, Frame<E> frame, String tenant) {
-
-		if (tenant == null || tenant.trim().isEmpty()) {
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Context context, String frameId, String tenantId) throws ResourceException {
+		
+		if (Strings.isEmpty(tenantId)) {
 			if (context.getContextDescription().isTenant())
-				tenant = context.getContextDescription().getTenant();
-		} else if (tenant.equals(Resource.TENANT_MASTER))
-			tenant = null;
+				tenantId = context.getContextDescription().getTenant();
+		} else if (tenantId.equals(Resource.TENANT_MASTER))
+			tenantId = null;
 
-		return doGetResource(context, frame, tenant);
+		checkAuthorization(context, tenantId);
+
+		ResourceSet resourceSet = context.get(ResourceSet.class);
+		Resource<E> resource = resourceSet.getResource(frameId, tenantId);
+
+		return resource;
 	}
 
-	public abstract <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant);
+	private final void checkAuthorization(Context context, String tenantId) throws ResourceException {
+		ContextDescription contextDescription = context.getContextDescription();
+
+		// check authorization
+		if (contextDescription.isTenant()) {
+			if (!contextDescription.getTenant().equals(tenantId))
+				throw new ResourceException("Permission denied for tenant: " + contextDescription.getTenant());
+		}
+
+		// check frame authorization
+	}
+
 } // ResourceProviderImpl

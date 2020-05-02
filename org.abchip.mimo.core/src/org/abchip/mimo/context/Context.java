@@ -96,7 +96,7 @@ public interface Context extends Entity {
 	 * @model klassRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> Frame<E> getFrame(Class<E> klass);
+	<E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->

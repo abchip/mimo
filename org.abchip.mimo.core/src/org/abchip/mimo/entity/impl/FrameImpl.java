@@ -379,7 +379,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	 * @generated NOT
 	 */
 	@Override
-	public abstract Object getValue(Entity entity, String slotName, boolean default_, boolean resolve);
+	public abstract Object getValue(E entity, String slotName, boolean default_, boolean resolve);
 
 	private void addFrames(Frame<? super E> frame, List<Frame<? super E>> frames) {
 		Frame<? super E> ako = frame.ako();
@@ -395,7 +395,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	 * @generated NOT
 	 */
 	@Override
-	public abstract void setValue(Entity entity, String slotName, Object value);
+	public abstract void setValue(E entity, String slotName, Object value);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

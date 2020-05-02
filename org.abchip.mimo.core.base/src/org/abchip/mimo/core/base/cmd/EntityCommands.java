@@ -92,7 +92,7 @@ public class EntityCommands extends BaseCommands {
 			interpreter.println();
 		}
 
-		ServiceResponse response = (ServiceResponse) EcoreUtil.create(this.getContext().getFrame(request.getResponse()).getEClass());
+		ServiceResponse response = (ServiceResponse) EcoreUtil.create(this.getContext().createProxy(Frame.class, request.getResponse().getSimpleName()).getEClass());
 
 		interpreter.println("Output parameters");
 		for (Slot slot : response.isa().getSlots()) {

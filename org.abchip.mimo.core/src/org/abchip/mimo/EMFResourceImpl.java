@@ -18,6 +18,7 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
+import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 
 public class EMFResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
@@ -27,17 +28,16 @@ public class EMFResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<
 	private Frame<E> frame = null;
 	private Map<String, E> entities = null;
 	
-	protected EMFResourceImpl(Context context, Frame<E> frame) {
+	@SuppressWarnings("unchecked")
+	protected EMFResourceImpl(ResourceSet resourceSet, Context context, Frame<E> frame, Map<String, E> entities) {
+		super(resourceSet);
+		
 		this.context = context;
 		this.frame = frame;
-	}
-
-	@SuppressWarnings("unchecked")
-	protected void setEntities(Map<String, E> entities) {
-		this.entities = entities;
-		
 		if(frame == null)
 			this.frame = (Frame<E>) this.entities.get(Frame.class.getSimpleName());
+		
+		this.entities = entities;
 	}
 
 	@Override

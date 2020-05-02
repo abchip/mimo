@@ -178,7 +178,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public Object getValue(Entity entity, String slotName, boolean default_, boolean resolve) {
+	public Object getValue(E entity, String slotName, boolean default_, boolean resolve) {
 
 		if (entity instanceof EObject)
 			return getValue((EObject) entity, slotName, default_, resolve);
@@ -187,7 +187,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public void setValue(Entity entity, String slot, Object value) {
+	public void setValue(E entity, String slot, Object value) {
 
 		EStructuralFeature eFeature = eClass.getEStructuralFeature(slot);
 		if (eFeature == null)

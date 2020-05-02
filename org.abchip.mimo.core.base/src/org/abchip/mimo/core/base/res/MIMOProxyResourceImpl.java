@@ -87,12 +87,13 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 		}
 	}
 
-	private Entity jsonObject2Entity(JSONObject jsonObject) throws ResourceException {
+	private <E extends EntityIdentifiable> E jsonObject2Entity(JSONObject jsonObject) throws ResourceException {
 
-		Resource<?> resource = context.getResourceManager().getResource(jsonObject.getString("isa"));
+		@SuppressWarnings("unchecked")
+		Resource<E> resource = (Resource<E>) context.getResourceManager().getResource(jsonObject.getString("isa"));
 
-		Entity entity = resource.make();
-		Frame<?> frame = entity.isa();
+		E entity = resource.make();
+		Frame<E> frame = entity.isa();
 		for (String slotName : JSONObject.getNames(jsonObject)) {
 			Object slotValue = jsonObject.get(slotName);
 			if (slotValue instanceof JSONObject) {

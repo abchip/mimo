@@ -14,7 +14,6 @@ import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextPackage;
-import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.impl.EntityImpl;
@@ -32,6 +31,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ContextImpl() {
@@ -40,6 +40,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -181,7 +182,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 * @generated NOT
 	 */
 	@Override
-	public abstract <E extends Entity> Frame<E> getFrame(Class<E> klass);
+	public abstract <E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

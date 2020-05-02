@@ -13,7 +13,6 @@ import java.util.WeakHashMap;
 import org.abchip.mimo.context.Context;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 public class MimoResourceSetImpl extends ResourceSetImpl {
@@ -36,7 +35,7 @@ public class MimoResourceSetImpl extends ResourceSetImpl {
 	public Resource createResource(URI uri, String contentType) {
 		Resource.Factory resourceFactory = getResourceFactoryRegistry().getFactory(uri, contentType);
 		if (resourceFactory != null) {
-			ResourceImpl resource = (ResourceImpl) resourceFactory.createResource(uri);
+			Resource resource = resourceFactory.createResource(uri);
 			return resource;
 		} else {
 			return null;

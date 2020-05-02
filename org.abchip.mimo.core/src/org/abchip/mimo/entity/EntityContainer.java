@@ -8,7 +8,6 @@
 package org.abchip.mimo.entity;
 
 import java.util.List;
-import org.abchip.mimo.resource.ResourceException;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,13 +68,5 @@ public interface EntityContainer extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" frameRequired="true"
-	 * @generated
-	 */
-	EntityIdentifiable add(String frame) throws ResourceException;
 
 } // EntityContainer

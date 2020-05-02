@@ -56,7 +56,7 @@ public interface ResourceManager {
 	 * @model klassRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> Frame<E> getFrame(Class<E> klass);
+	<E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public interface ResourceManager {
 	 * @model klassRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	<E extends Entity> Frame<E> getFrame(Class<E> klass, String tenant);
+	<E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public interface ResourceManager {
 	 * @model frameRequired="true"
 	 * @generated
 	 */
-	Frame<?> getFrame(String frame);
+	<E extends EntityIdentifiable> Frame<E> getFrame(String frame);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,12 +80,12 @@ public interface ResourceManager {
 	 * @model frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
-	Frame<?> getFrame(String frame, String tenant);
+	<E extends EntityIdentifiable> Frame<E> getFrame(String frame, String tenant);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" klassRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" klassRequired="true"
 	 * @generated
 	 */
 	<E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) throws ResourceException;
@@ -93,7 +93,7 @@ public interface ResourceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" frameRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" frameRequired="true"
 	 * @generated
 	 */
 	<E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) throws ResourceException;
@@ -101,7 +101,7 @@ public interface ResourceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" frameRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" frameRequired="true"
 	 * @generated
 	 */
 	<E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException;
@@ -109,7 +109,7 @@ public interface ResourceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" klassRequired="true" tenantRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" klassRequired="true" tenantRequired="true"
 	 * @generated
 	 */
 	<E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException;
@@ -117,7 +117,7 @@ public interface ResourceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" frameRequired="true" tenantRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
 	<E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException;
@@ -125,7 +125,7 @@ public interface ResourceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" frameRequired="true" tenantRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" frameRequired="true" tenantRequired="true"
 	 * @generated
 	 */
 	<E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) throws ResourceException;

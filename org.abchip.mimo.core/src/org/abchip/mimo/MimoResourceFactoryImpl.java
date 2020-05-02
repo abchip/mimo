@@ -8,26 +8,46 @@
  */
 package org.abchip.mimo;
 
+import org.abchip.mimo.context.Context;
+import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceProvider;
+import org.abchip.mimo.resource.ResourceSet;
+import org.abchip.mimo.util.Frames;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 
 public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 
-	private ResourceSet resourceSet;
+	private MimoResourceSetImpl resourceSet;
 
-	public MimoResourceFactoryImpl(ResourceSet resourceSet) {
+	public MimoResourceFactoryImpl(MimoResourceSetImpl resourceSet) {
 		super();
 		this.resourceSet = resourceSet;
 	}
 
+	private Context getContext() {
+		return resourceSet.getContext();
+	}
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
-	public Resource createResource(URI uri) {
+	public org.eclipse.emf.ecore.resource.Resource createResource(URI uri) {
 
-		@SuppressWarnings("rawtypes")
-		MimoResourceImpl<?> internal = new MimoResourceImpl(resourceSet, uri);
+		String frameId = uri.segment(0);
+		String tenantId = uri.authority();
 
-		return internal;
+		ResourceProvider resourceProvider = getContext().getResourceManager().getResourceProvider(frameId);
+		ResourceSet resourceSet = getContext().get(ResourceSet.class);
+		Frame<EntityIdentifiable> frame = (Frame<EntityIdentifiable>) Frames.getFrames().get(frameId);
+		Resource<EntityIdentifiable> resource = resourceProvider.doGetResource(resourceSet, this.getContext(), frame, tenantId);
+
+		org.eclipse.emf.ecore.resource.Resource.Internal e4resource = new MimoResourceImpl(resource, this.resourceSet, uri);
+		InternalEObject internalEObject = (InternalEObject) resource;
+		internalEObject.eSetResource(e4resource, null);
+
+		return e4resource;
 	}
 }

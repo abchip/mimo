@@ -21,14 +21,12 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -40,29 +38,11 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 	private Resource<E> resource = null;
 
-	@SuppressWarnings("unchecked")
-	public MimoResourceImpl(ResourceSet resourceSet, URI uri) {
+	public MimoResourceImpl(Resource<E> resource, ResourceSet resourceSet, URI uri) {
 		super(uri);
 
+		this.resource = resource;
 		this.resourceSet = resourceSet;
-
-		String frameName = getURI().segment(0);
-		String tenant = getURI().authority();
-
-		if (Frame.class.getSimpleName().equals(frameName)) {
-			this.resource = EMFResourceProviderImpl.internalGetFrameResource(this.getContext(), tenant);
-		} else {
-			Frame<E> frame = (Frame<E>) getContext().getResourceManager().getFrame(frameName, tenant);
-			if (frame.isEnum()) {
-				this.resource = EMFResourceProviderImpl.internalGetEnumResource(this.getContext(), frameName, tenant);
-			} else {
-				ResourceProvider resourceProvider = this.getContext().getResourceManager().getResourceProvider(frame);
-				this.resource = resourceProvider.getResource(this.getContext(), frame, tenant);
-			}
-		}
-
-		InternalEObject internalEObject = (InternalEObject) this.resource;
-		internalEObject.eSetResource(this, null);
 	}
 
 	public Resource<E> getResource() {
@@ -108,11 +88,12 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			return id;
 
 		if (eObject instanceof EntityIdentifiable) {
-			EntityIdentifiable entityIdentifiable = (EntityIdentifiable) eObject;
+			@SuppressWarnings("unchecked")
+			E entityIdentifiable = (E) eObject;
 
 			StringBuffer name = new StringBuffer();
 
-			Frame<?> frame = entityIdentifiable.isa();
+			Frame<E> frame = entityIdentifiable.isa();
 			for (String key : frame.getKeys()) {
 				if (!name.toString().isEmpty())
 					name.append("/");

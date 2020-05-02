@@ -13,7 +13,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.LockManager;
@@ -39,17 +38,30 @@ import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.SerializationType;
 
-public class BaseResourceManagerImpl extends BaseResource implements ResourceManager {
+public class BaseResourceManagerImpl implements ResourceManager {
 
+	private Context context;
+	private LockManager lockManager;
 	private ResourceProviderRegistry resourceProviderRegistry;
 	private ResourceMapping resourceMapping;
 	private Map<String, ResourceNotifier<?>> notifiers = null;
 
 	public BaseResourceManagerImpl(Context context) {
-		super(context);
+		this.context = context;
+
+		this.lockManager = context.get(LockManager.class);
 		this.resourceProviderRegistry = context.get(ResourceProviderRegistry.class);
 		this.resourceMapping = context.get(Application.class).getResourceMapping();
+
 		this.notifiers = new HashMap<String, ResourceNotifier<?>>();
+	}
+
+	private Context getContext() {
+		return this.context;
+	}
+
+	private LockManager getLockManager() {
+		return this.lockManager;
 	}
 
 	@Override
@@ -73,52 +85,61 @@ public class BaseResourceManagerImpl extends BaseResource implements ResourceMan
 	}
 
 	@Override
-	public <E extends Entity> Frame<E> getFrame(Class<E> klass) {
-		return super.getFrame(klass);
+	public <E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass) {
+		return getFrame(klass, null);
 	}
 
 	@Override
-	public <E extends Entity> Frame<E> getFrame(Class<E> klass, String tenant) {
-		return super.getFrame(klass, tenant);
+	public <E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass, String tenant) {
+		try {
+			return this.getResource(klass, tenant).getFrame();
+		} catch (ResourceException e) {
+			return null;
+		}
 	}
 
 	@Override
-	public Frame<?> getFrame(String frame) {
-		return super.getFrame(frame);
+	public <E extends EntityIdentifiable> Frame<E> getFrame(String frame) {
+		return getFrame(frame, null);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public <E extends EntityIdentifiable> Frame<E> getFrame(String frame, String tenant) {
+		try {
+			return (Frame<E>) this.getResource(frame, tenant).getFrame();
+		} catch (ResourceException e) {
+			return null;
+		}
 	}
 
 	@Override
-	public Frame<?> getFrame(String frame, String tenant) {
-		return super.getFrame(frame, tenant);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) {
+	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) throws ResourceException {
 		return this.getResourceProvider(klass).getResource(getContext(), klass);
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) {
+	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) throws ResourceException {
 		return this.getResourceProvider(frame).getResource(getContext(), frame);
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(String frame) {
+	public <E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException {
 		return this.getResourceProvider(frame).getResource(getContext(), frame);
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) {
+	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException {
 		return this.getResourceProvider(klass).getResource(getContext(), klass, tenant);
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) {
+	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException {
 		return this.getResourceProvider(frame).getResource(getContext(), frame, tenant);
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) {
+	public <E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) throws ResourceException {
 		return this.getResourceProvider(frame).getResource(getContext(), frame, tenant);
 	}
 
@@ -148,13 +169,11 @@ public class BaseResourceManagerImpl extends BaseResource implements ResourceMan
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(String frameName, String tenant) throws ResourceException {
+	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(String frameId, String tenant) throws ResourceException {
 
-		this.checkAuthorization(tenant);
+		Resource<E> resource = getResource(frameId, tenant);
 
-		MimoResourceImpl<E> internal = getInternalResource(frameName, tenant);
-
-		ResourceReader<E> resourceReader = new BaseResourceReaderImpl<E>(internal);
+		ResourceReader<E> resourceReader = new BaseResourceReaderImpl<E>(resource);
 		prepareListener(resourceReader);
 
 		return resourceReader;
@@ -186,18 +205,16 @@ public class BaseResourceManagerImpl extends BaseResource implements ResourceMan
 	}
 
 	@Override
-	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(String frameName, String tenant) throws ResourceException {
-		this.checkAuthorization(tenant);
+	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(String frameId, String tenant) throws ResourceException {
 
-		MimoResourceImpl<E> internal = getInternalResource(frameName, tenant);
+		Resource<E> resource = getResource(frameId, tenant);
+		ResourceConfig resourceConfig = resource.getResourceConfig();
 
 		LockManager lockManager = null;
-		ResourceConfig resourceConfig = internal.getResource().getResourceConfig();
-
 		if (resourceConfig != null && resourceConfig.isLockSupport())
 			lockManager = this.getLockManager();
 
-		ResourceWriter<E> resourceWriter = new BaseResourceWriterImpl<E>(internal, lockManager);
+		ResourceWriter<E> resourceWriter = new BaseResourceWriterImpl<E>(resource, lockManager);
 		prepareListener(resourceWriter);
 
 		return resourceWriter;

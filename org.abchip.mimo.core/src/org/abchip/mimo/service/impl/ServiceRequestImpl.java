@@ -204,7 +204,8 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	public V buildResponse() {
 
 		Class<V> klass = this.getResponse();
-		Frame<V> frame = this.getContext().getFrame(klass);
+		@SuppressWarnings("unchecked")
+		Frame<V> frame = this.getContext().createProxy(Frame.class, klass.getSimpleName());
 		@SuppressWarnings("unchecked")
 		V response = (V) EcoreUtil.create(frame.getEClass());
 

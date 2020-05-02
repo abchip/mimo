@@ -12,12 +12,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.abchip.mimo.MimoConstants;
-import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.EntityLocker;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.LockType;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.util.Resources;
@@ -28,8 +28,8 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 
 	private LockManager lockManager = null;
 
-	public BaseResourceWriterImpl(MimoResourceImpl<E> internal, LockManager lockManager) {
-		super(internal);
+	public BaseResourceWriterImpl(Resource<E> resource, LockManager lockManager) {
+		super(resource);
 
 		this.lockManager = lockManager;
 	}

@@ -17,6 +17,7 @@ import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourcePackage;
+import org.abchip.mimo.resource.ResourceSet;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceConfig <em>Resource Config</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceSet <em>Resource Set</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,11 +50,32 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	protected ResourceConfig resourceConfig;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getResourceSet() <em>Resource Set</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResourceSet()
+	 * @generated
+	 * @ordered
+	 */
+	protected ResourceSet resourceSet;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ResourceImpl() {
 		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected ResourceImpl(ResourceSet resourceSet) {
+		super();
+		
+		this.resourceSet = resourceSet;
 	}
 
 	/**
@@ -102,6 +125,44 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceSet getResourceSet() {
+		if (resourceSet != null && ((EObject)resourceSet).eIsProxy()) {
+			InternalEObject oldResourceSet = (InternalEObject)resourceSet;
+			resourceSet = (ResourceSet)eResolveProxy(oldResourceSet);
+			if (resourceSet != oldResourceSet) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE__RESOURCE_SET, oldResourceSet, resourceSet));
+			}
+		}
+		return resourceSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResourceSet basicGetResourceSet() {
+		return resourceSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public final void attach(E entity) throws ResourceException {
+		InternalEObject internalEObject = (InternalEObject) entity;
+		internalEObject.eSetResource(this.eInternalResource(), null);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
@@ -113,32 +174,18 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * 
 	 * @generated NOT
 	 */
-	@Override
-	public E createProxy(String id) {
-		if (id == null)
-			return null;
-
-		E entity = make();
-
-		InternalEObject internalEObject = (InternalEObject) entity;
-		URI uri = URI.createHierarchicalURI("mimo", this.getTenant(), null, new String[] { this.getFrame().getName() }, null, id);
-		internalEObject.eSetProxyURI(uri);
-
-		Frame<?> domainFrame = entity.isa();
-		for (String key : domainFrame.getKeys()) {
-			domainFrame.setValue(entity, key, id.toString());
-			break;
-		}
-
-		return entity;
-	}
+	public abstract void delete(E entity) throws ResourceException;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public abstract void delete(E entity) throws ResourceException;
+	@Override
+	public final void detach(E entity) throws ResourceException {
+		InternalEObject internalEObject = (InternalEObject) entity;
+		internalEObject.eSetResource(null, null);
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -162,7 +209,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @generated NOT
 	 */
 	@Override
-	public E make() {
+	public final E make() {
 		try {
 			return make(false);
 		} catch (ResourceException e) {
@@ -176,7 +223,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @generated NOT
 	 */
 	@Override
-	public E make(boolean sequence) throws ResourceException {
+	public final E make(boolean sequence) throws ResourceException {
 
 		@SuppressWarnings("unchecked")
 		E entity = (E) EcoreUtil.create(this.getFrame().getEClass());
@@ -184,17 +231,43 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		if (sequence) {
 			String id = this.nextSequence();
 
-			Frame<?> domainFrame = entity.isa();
+			Frame<E> domainFrame = entity.isa();
 			for (String key : domainFrame.getKeys()) {
 				domainFrame.setValue(entity, key, id);
 				break;
 			}
-			this.setInternalResource(entity);
+		}
+		
+		this.attach(entity);
+		
+		return entity;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final E createProxy(String id) {
+		if (id == null)
+			return null;
+
+		E entity = make();
+
+		InternalEObject internalEObject = (InternalEObject) entity;
+		URI uri = URI.createHierarchicalURI("mimo", this.getTenant(), null, new String[] { this.getFrame().getName() }, null, id);
+		internalEObject.eSetProxyURI(uri);
+
+		Frame<E> domainFrame = entity.isa();
+		for (String key : domainFrame.getKeys()) {
+			domainFrame.setValue(entity, key, id.toString());
+			break;
 		}
 
 		return entity;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -245,6 +318,9 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
 				if (resolve) return getResourceConfig();
 				return basicGetResourceConfig();
+			case ResourcePackage.RESOURCE__RESOURCE_SET:
+				if (resolve) return getResourceSet();
+				return basicGetResourceSet();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -286,12 +362,9 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		switch (featureID) {
 			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
 				return resourceConfig != null;
+			case ResourcePackage.RESOURCE__RESOURCE_SET:
+				return resourceSet != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	protected void setInternalResource(E entity) {
-		InternalEObject internalEObject = (InternalEObject) entity;
-		internalEObject.eSetResource(this.eInternalResource(), null);
 	}
 } // ResourceImpl

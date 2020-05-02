@@ -231,7 +231,7 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * @model required="true" entityRequired="true" slotNameRequired="true" defaultRequired="true" resolveRequired="true"
 	 * @generated
 	 */
-	Object getValue(Entity entity, String slotName, boolean default_, boolean resolve);
+	Object getValue(E entity, String slotName, boolean default_, boolean resolve);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -239,7 +239,7 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * @model entityRequired="true" slotNameRequired="true" valueRequired="true"
 	 * @generated
 	 */
-	void setValue(Entity entity, String slotName, Object value);
+	void setValue(E entity, String slotName, Object value);
 
 	/**
 	 * Returns the value of the '<em><b>Abstract</b></em>' attribute. <!--

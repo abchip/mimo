@@ -28,6 +28,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.abchip.mimo.util.Logs;
@@ -43,8 +44,9 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 
 	private String tenant = null;
 
-	public NIOResourcempl(Context context, Frame<E> frame, String tenant, NIOPathManager pathManager) {
-
+	public NIOResourcempl(ResourceSet resourceSet, Context context, Frame<E> frame, String tenant, NIOPathManager pathManager) {
+		super(resourceSet);
+		
 		this.context = context;
 		this.tenant = tenant;
 		this.pathManager = pathManager;
@@ -88,27 +90,11 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 
 					Files.copy(input, file);
 				}
-				this.setInternalResource(entity);
+				this.attach(entity);
 			} catch (IOException e) {
 				throw new ResourceException(e);
 			} finally {
 				this.resourceSerializer.clear();
-			}
-		}
-	}
-
-	@Override
-	public void delete(E entity) throws ResourceException {
-
-		synchronized (this.resourceSerializer) {
-			Path file = getClassFolder(getFrame(), false).resolve(entity.getID());
-			if (!Files.exists(file))
-				return;
-
-			try {
-				this.pathManager.deletePath(file);
-			} catch (IOException e) {
-				throw new ResourceException(e);
 			}
 		}
 	}
@@ -131,7 +117,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 			try (InputStream inputStream = Files.newInputStream(file)) {
 				this.resourceSerializer.load(inputStream, false);
 				entity = this.resourceSerializer.get();
-				this.setInternalResource(entity);
+				this.attach(entity);
 			} catch (IOException e) {
 				throw new ResourceException(e);
 			} finally {
@@ -199,7 +185,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 
 				entries.addAll(this.resourceSerializer.getAll());
 				for (E entity : entries)
-					this.setInternalResource(entity);
+					this.attach(entity);
 			} catch (Exception e) {
 				throw new ResourceException(e);
 			} finally {
@@ -238,6 +224,23 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 				throw new ResourceException(e);
 			} finally {
 				this.resourceSerializer.clear();
+			}
+		}
+	}
+
+	@Override
+	public void delete(E entity) throws ResourceException {
+
+		synchronized (this.resourceSerializer) {
+			Path file = getClassFolder(getFrame(), false).resolve(entity.getID());
+			if (!Files.exists(file))
+				return;
+
+			try {
+				this.pathManager.deletePath(file);
+				this.detach(entity);
+			} catch (IOException e) {
+				throw new ResourceException(e);
 			}
 		}
 	}

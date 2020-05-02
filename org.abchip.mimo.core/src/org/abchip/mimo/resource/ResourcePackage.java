@@ -85,13 +85,22 @@ public interface ResourcePackage extends EPackage {
 	int RESOURCE__RESOURCE_CONFIG = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Resource Set</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__RESOURCE_SET = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int RESOURCE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceConfigImpl <em>Config</em>}' class.
@@ -440,6 +449,25 @@ public interface ResourcePackage extends EPackage {
 	int RESOURCE_SERIALIZER_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceSetImpl <em>Set</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.resource.impl.ResourceSetImpl
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceSet()
+	 * @generated
+	 */
+	int RESOURCE_SET = 14;
+
+	/**
+	 * The number of structural features of the '<em>Set</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SET_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.ResourceWriter <em>Writer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -447,7 +475,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceWriter()
 	 * @generated
 	 */
-	int RESOURCE_WRITER = 14;
+	int RESOURCE_WRITER = 15;
 
 	/**
 	 * The feature id for the '<em><b>Notifier</b></em>' reference.
@@ -475,7 +503,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceEventType()
 	 * @generated
 	 */
-	int RESOURCE_EVENT_TYPE = 15;
+	int RESOURCE_EVENT_TYPE = 16;
 
 
 	/**
@@ -486,7 +514,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingType()
 	 * @generated
 	 */
-	int RESOURCE_MAPPING_TYPE = 16;
+	int RESOURCE_MAPPING_TYPE = 17;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.SerializationType <em>Serialization Type</em>}' enum.
@@ -496,7 +524,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getSerializationType()
 	 * @generated
 	 */
-	int SERIALIZATION_TYPE = 17;
+	int SERIALIZATION_TYPE = 18;
 
 
 	/**
@@ -507,7 +535,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceException()
 	 * @generated
 	 */
-	int RESOURCE_EXCEPTION = 18;
+	int RESOURCE_EXCEPTION = 19;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.resource.Resource <em>Resource</em>}'.
@@ -529,6 +557,17 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getResource_ResourceConfig();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.resource.Resource#getResourceSet <em>Resource Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Resource Set</em>'.
+	 * @see org.abchip.mimo.resource.Resource#getResourceSet()
+	 * @see #getResource()
+	 * @generated
+	 */
+	EReference getResource_ResourceSet();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceConfig <em>Config</em>}'.
@@ -760,6 +799,16 @@ public interface ResourcePackage extends EPackage {
 	EReference getResourceSerializer_Frame();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceSet <em>Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Set</em>'.
+	 * @see org.abchip.mimo.resource.ResourceSet
+	 * @generated
+	 */
+	EClass getResourceSet();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceWriter <em>Writer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -849,6 +898,14 @@ public interface ResourcePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RESOURCE__RESOURCE_CONFIG = eINSTANCE.getResource_ResourceConfig();
+
+		/**
+		 * The meta object literal for the '<em><b>Resource Set</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCE__RESOURCE_SET = eINSTANCE.getResource_ResourceSet();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceConfigImpl <em>Config</em>}' class.
@@ -1051,6 +1108,16 @@ public interface ResourcePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RESOURCE_SERIALIZER__FRAME = eINSTANCE.getResourceSerializer_Frame();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceSetImpl <em>Set</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.resource.impl.ResourceSetImpl
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceSet()
+		 * @generated
+		 */
+		EClass RESOURCE_SET = eINSTANCE.getResourceSet();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.resource.ResourceWriter <em>Writer</em>}' class.

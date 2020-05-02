@@ -49,8 +49,12 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 
 	@Override
 	public String toString() {
+		return stringValue();
+	}
 
-		Frame<?> isa = this.isa();
+	private <E extends Entity>String stringValue() {
+
+		Frame<E> isa = this.isa();
 		StringBuilder result = new StringBuilder(isa.getName());
 
 		if (eIsProxy()) {
@@ -73,7 +77,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 				if (slot.isDerived())
 					continue;
 
-				Object value = isa.getValue(this, slot.getName(), false, false);
+				@SuppressWarnings("unchecked")
+				Object value = isa.getValue((E) this, slot.getName(), false, false);
 				if (value == null)
 					continue;
 

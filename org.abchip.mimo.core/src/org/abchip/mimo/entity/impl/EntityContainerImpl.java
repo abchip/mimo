@@ -8,10 +8,10 @@
 package org.abchip.mimo.entity.impl;
 
 import java.util.List;
+
 import org.abchip.mimo.entity.EntityContainer;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.resource.ResourceException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -22,9 +22,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Container</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Container</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -38,34 +37,33 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class EntityContainerImpl extends EntityIdentifiableImpl implements EntityContainer {
 	/**
 	 * The cached value of the '{@link #getContents() <em>Contents</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getContents()
 	 * @generated
 	 * @ordered
 	 */
 	protected EList<EntityIdentifiable> contents;
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected EntityContainerImpl() {
@@ -73,8 +71,7 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -83,8 +80,7 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -96,8 +92,7 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -106,8 +101,7 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -119,29 +113,7 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @throws ResourceException 
-	 * @generated NOT
-	 */
-	@Override
-	public EntityIdentifiable add(String frame) throws ResourceException {
-		switch (this.getState()) {
-		case PROXY:
-		case RESOLVED:
-			EntityIdentifiable entityIdentifiable = this.getResource().getContext().getResourceManager().getResource(frame).make();
-			this.getContents().add(entityIdentifiable);
-			return entityIdentifiable;
-		case CHAINED:
-		case DIRTY:
-		case TRANSIENT:
-		}
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -154,8 +126,7 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -170,11 +141,10 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-		@Override
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case EntityPackage.ENTITY_CONTAINER__NAME:
@@ -185,8 +155,7 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -200,8 +169,7 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -216,8 +184,7 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -231,4 +198,4 @@ public class EntityContainerImpl extends EntityIdentifiableImpl implements Entit
 		return result.toString();
 	}
 
-} //EntityContainerImpl
+} // EntityContainerImpl

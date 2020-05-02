@@ -1433,7 +1433,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		op = addEOperation(contextEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntity());
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
 		t1.getEBounds().add(g1);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
@@ -1453,8 +1453,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		op = addEOperation(contextEClass, null, "inject", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "object", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(contextEClass, ecorePackage.getEBoolean(), "isClosed", 1, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(contextEClass, null, "invoke", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "A");
 		g1 = createEGenericType(theJavaPackage.getJavaAnnotation());
@@ -1464,6 +1462,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "qualifier", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(contextEClass, ecorePackage.getEBoolean(), "isClosed", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(contextEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "T");

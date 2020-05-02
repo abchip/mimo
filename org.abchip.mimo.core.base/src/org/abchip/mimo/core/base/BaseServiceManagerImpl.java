@@ -59,7 +59,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		service.setName(klass.getSimpleName());
 
 		@SuppressWarnings("unchecked")
-		R request = (R) EcoreUtil.create(context.getFrame(klass).getEClass());
+		R request = (R) EcoreUtil.create(context.createProxy(Frame.class, klass.getSimpleName()).getEClass());
 		service.setRequest(request);
 
 		return service;
@@ -69,10 +69,10 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, String serviceId) {
 
 		Frame<?> frame = context.getResourceManager().getFrame(Strings.firstToUpper(serviceId));
-		if (frame == null) 
+		if (frame == null)
 			return null;
 
-		if (!frame.getSuperNames().contains(ServiceRequest.class.getSimpleName())) 
+		if (!frame.getSuperNames().contains(ServiceRequest.class.getSimpleName()))
 			return null;
 
 		Service<R, V> service = ServiceFactory.eINSTANCE.createService();
@@ -84,15 +84,16 @@ public class BaseServiceManagerImpl implements ServiceManager {
 
 		return service;
 	}
-	
+
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass) throws ServiceException {
 		return prepare(context, klass, null);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass, String tenant) throws ServiceException {
-		return prepare(context, context.getFrame(klass), tenant);
+		return (R) prepare(context, context.createProxy(Frame.class, klass.getSimpleName()), tenant);
 	}
 
 	@Override
@@ -110,9 +111,9 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, String frame, String tenant) throws ServiceException {
 
 		Frame<?> request = (Frame<?>) context.getResourceManager().getFrame(frame, tenant);
-		if(request == null)
+		if (request == null)
 			throw new ServiceException("Service not found" + frame);
-		
+
 		if (!request.getSuperNames().contains(ServiceRequest.class.getSimpleName()))
 			throw new ServiceException("Invalid service " + frame);
 
