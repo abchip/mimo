@@ -60,9 +60,6 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 		String frameId = uri.segment(0);
 		String tenantId = uri.authority();
 
-		if (Frame.class.getSimpleName().equals(frameId)) {
-			"".toString();
-		}
 		try {
 
 			Frame<EntityIdentifiable> frame = (Frame<EntityIdentifiable>) Frames.getFrames().get(frameId);
@@ -70,8 +67,8 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 			Resource<EntityIdentifiable> resource = resourceProvider.createResource(resourceSet.getResourceSet(), frame, tenantId);
 
 			org.eclipse.emf.ecore.resource.Resource.Internal e4resource = new MimoResourceImpl(resource, this.resourceSet, uri);
-			InternalEObject internalEObject = (InternalEObject) resource;
-			internalEObject.eSetResource(e4resource, null);
+			// TODO insert Resource as resource
+			((InternalEObject) resource).eSetResource(e4resource, null);
 
 			return e4resource;
 		} catch (ResourceException e) {
