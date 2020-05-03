@@ -12,6 +12,7 @@ import org.abchip.mimo.application.ServiceScope.Scope;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.Frame;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object
@@ -31,12 +32,52 @@ public interface ResourceSet extends Entity {
 	 */
 	Context getContext();
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" frameIdRequired="true" tenantIdRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> Resource<E> getResource(String frameId, String tenantId);
+	<E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) throws ResourceException;
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" klassRequired="true" tenantRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" frameRequired="true" tenantRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" frameRequired="true" tenantRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) throws ResourceException;
 } // ResourceSet

@@ -90,7 +90,7 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 	private <E extends EntityIdentifiable> E jsonObject2Entity(JSONObject jsonObject) throws ResourceException {
 
 		@SuppressWarnings("unchecked")
-		Resource<E> resource = (Resource<E>) context.getResourceManager().getResource(jsonObject.getString("isa"));
+		Resource<E> resource = (Resource<E>) context.getResourceSet().getResource(jsonObject.getString("isa"));
 
 		E entity = resource.make();
 		Frame<E> frame = entity.isa();

@@ -13,6 +13,7 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.service.ServiceManager;
 
 /**
@@ -121,6 +122,14 @@ public interface Context extends Entity {
 	 * @generated
 	 */
 	ResourceManager getResourceManager();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	ResourceSet getResourceSet();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -28,7 +28,6 @@ import org.abchip.mimo.resource.ResourceMappingRuleByPackage;
 import org.abchip.mimo.resource.ResourceMappingType;
 import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceProviderRegistry;
-import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.util.Logs;
 import org.osgi.service.log.Logger;
 
@@ -61,14 +60,13 @@ public class BaseResourceProviderRegistryImpl implements ResourceProviderRegistr
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Class<E> klass) {
+	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Class<E> klass) throws ResourceException {
 		return getResourceProvider(context, klass.getSimpleName());
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, String frameName) {
+	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, String frameName) throws ResourceException {
 
-		// Frame<E> frame =
 		@SuppressWarnings("unchecked")
 		Frame<E> frame = (Frame<E>) this.getFrame(context, frameName);
 		if (frame == null)
@@ -78,7 +76,7 @@ public class BaseResourceProviderRegistryImpl implements ResourceProviderRegistr
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Frame<E> frame) {
+	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Frame<E> frame) throws ResourceException {
 
 		ResourceMappingRuleByFrame ruleByFrame = getRuleByFrame(frame);
 		ResourceMappingRuleByPackage ruleByPackage = getRuleByPackage(frame);
@@ -99,9 +97,8 @@ public class BaseResourceProviderRegistryImpl implements ResourceProviderRegistr
 			return lookup(ruleByPackage.getProvider());
 	}
 
-	private Frame<?> getFrame(Context context, String frameId) {
-		ResourceSet resourceSet = context.get(ResourceSet.class);
-		Resource<Frame<?>> frameResource = resourceSet.getResource(Frame.class.getSimpleName(), null);
+	private <E extends EntityIdentifiable> Frame<E> getFrame(Context context, String frameId) throws ResourceException {
+		Resource<Frame<E>> frameResource = context.getResourceSet().getResource(Frame.class.getSimpleName(), null);
 		try {
 			return frameResource.read(frameId, null, false);
 		} catch (ResourceException e) {

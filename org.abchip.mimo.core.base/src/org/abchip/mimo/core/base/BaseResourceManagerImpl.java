@@ -25,14 +25,12 @@ import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceNotifier;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
-import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.SerializationType;
 
 public class BaseResourceManagerImpl implements ResourceManager {
 
 	private Context context;
-	private ResourceSet resourceSet;
 	private LockManager lockManager;
 	private Map<String, ResourceNotifier<?>> notifiers = null;
 
@@ -40,8 +38,6 @@ public class BaseResourceManagerImpl implements ResourceManager {
 		this.context = context;
 
 		this.lockManager = context.get(LockManager.class);
-		this.resourceSet = context.get(ResourceSet.class);
-
 		this.notifiers = new HashMap<String, ResourceNotifier<?>>();
 	}
 
@@ -95,36 +91,6 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) throws ResourceException {
-		return getResource(klass, null);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) throws ResourceException {
-		return getResource(frame, null);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException {
-		return getResource(frame, null);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException {
-		return getResource(klass.getSimpleName(), tenant);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException {
-		return getResource(frame.getName(), tenant);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) throws ResourceException {
-		return resourceSet.getResource(frame, tenant);
-	}
-
-	@Override
 	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(Class<E> klass) throws ResourceException {
 		return getResourceReader(klass.getSimpleName());
 	}
@@ -152,7 +118,7 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	@Override
 	public final <E extends EntityIdentifiable> ResourceReader<E> getResourceReader(String frameId, String tenant) throws ResourceException {
 
-		Resource<E> resource = getResource(frameId, tenant);
+		Resource<E> resource = getContext().getResourceSet().getResource(frameId, tenant);
 
 		ResourceReader<E> resourceReader = new BaseResourceReaderImpl<E>(resource);
 		prepareListener(resourceReader);
@@ -188,7 +154,7 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	@Override
 	public final <E extends EntityIdentifiable> ResourceWriter<E> getResourceWriter(String frameId, String tenant) throws ResourceException {
 
-		Resource<E> resource = getResource(frameId, tenant);
+		Resource<E> resource = getContext().getResourceSet().getResource(frameId, tenant);
 		ResourceConfig resourceConfig = resource.getResourceConfig();
 
 		LockManager lockManager = null;

@@ -13,7 +13,9 @@ import java.util.WeakHashMap;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.common.util.URI;
 
@@ -37,9 +39,34 @@ public class E4ResourceSetImpl extends ResourceSetImpl {
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(String frameId, String tenantId) {
+	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) throws ResourceException {
+		return getResource(klass, null);
+	}
 
-		URI uri = URI.createHierarchicalURI("mimo", tenantId, null, new String[] { frameId }, null, null);
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) throws ResourceException {
+		return getResource(frame, null);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException {
+		return getResource(frame, null);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException {
+		return getResource(klass.getSimpleName(), tenant);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException {
+		return getResource(frame.getName(), tenant);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) throws ResourceException {
+
+		URI uri = URI.createHierarchicalURI("mimo", tenant, null, new String[] { frame }, null, null);
 		@SuppressWarnings("unchecked")
 		MimoResourceImpl<E> internal = (MimoResourceImpl<E>) e4ResourceSet.getResource(uri, true);
 

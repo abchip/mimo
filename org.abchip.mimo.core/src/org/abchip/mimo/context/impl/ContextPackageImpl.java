@@ -1465,6 +1465,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		addEOperation(contextEClass, theResourcePackage.getResourceManager(), "getResourceManager", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(contextEClass, theResourcePackage.getResourceSet(), "getResourceSet", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		addEOperation(contextEClass, theServicePackage.getServiceManager(), "getServiceManager", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(contextEClass, ecorePackage.getEString(), "getTenant", 0, 1, IS_UNIQUE, IS_ORDERED);

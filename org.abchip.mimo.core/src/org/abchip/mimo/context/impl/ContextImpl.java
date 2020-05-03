@@ -18,6 +18,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.service.ServiceManager;
 import org.eclipse.emf.ecore.EClass;
 
@@ -205,6 +206,14 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 */
 	@Override
 	public abstract ResourceManager getResourceManager();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract ResourceSet getResourceSet();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

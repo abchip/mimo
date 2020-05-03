@@ -62,7 +62,7 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true"
+	 * @model entityRequired="true"
 	 * @generated
 	 */
 	void detach(E entity) throws ResourceException;
@@ -76,6 +76,14 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	Frame<E> getFrame();
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	E make();
+
+	/**
 	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -86,13 +94,6 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	 */
 	String getTenant();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 * @generated
-	 */
-	E make();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,7 +139,7 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true"
+	 * @model entityRequired="true"
 	 * @generated
 	 */
 	void attach(E entity) throws ResourceException;

@@ -32,6 +32,7 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
+import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
@@ -114,8 +115,6 @@ public abstract class E4ContextImpl extends ContextImpl {
 		if (object != null)
 			return object;
 
-		"".toString();
-
 		Application application = this.get(Application.class);
 		try {
 
@@ -131,6 +130,9 @@ public abstract class E4ContextImpl extends ContextImpl {
 			LOGGER.warn(e.getMessage());
 			return null;
 		}
+
+		if (object == null)
+			"".toString();
 
 		return object;
 	}
@@ -282,6 +284,11 @@ public abstract class E4ContextImpl extends ContextImpl {
 	}
 
 	@Override
+	public ResourceSet getResourceSet() {
+		return this.get(ResourceSet.class);
+	}
+
+	@Override
 	public ServiceManager getServiceManager() {
 		return this.get(ServiceManager.class);
 	}
@@ -304,7 +311,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 	@Override
 	public final <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id, String tenant) {
 		try {
-			Resource<E> resource = this.getResourceManager().getResource(klass, tenant);
+			Resource<E> resource = this.getResourceSet().getResource(klass, tenant);
 			return resource.createProxy(id);
 		} catch (ResourceException e) {
 			return null;
@@ -314,7 +321,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 	@Override
 	public final <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id, String tenant) {
 		try {
-			Resource<E> resource = this.getResourceManager().getResource(frame, tenant);
+			Resource<E> resource = this.getResourceSet().getResource(frame, tenant);
 			return resource.createProxy(id);
 		} catch (ResourceException e) {
 			return null;
@@ -329,7 +336,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 	@Override
 	public <E extends EntityIdentifiable> E createProxy(String frame, String id, String tenant) {
 		try {
-			Resource<E> resource = this.getResourceManager().getResource(frame, tenant);
+			Resource<E> resource = this.getResourceSet().getResource(frame, tenant);
 			return resource.createProxy(id);
 		} catch (ResourceException e) {
 			return null;

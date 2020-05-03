@@ -18,6 +18,7 @@ import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.resource.ResourceSet;
+import org.abchip.mimo.util.Logs;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.osgi.service.log.Logger;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -41,6 +43,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * @generated
  */
 public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityImpl implements Resource<E> {
+	
+	private static final Logger LOGGER = Logs.getLogger(ResourceImpl.class);
+	
 	/**
 	 * The cached value of the '{@link #getResourceConfig() <em>Resource Config</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -61,8 +66,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTenant()
 	 * @generated
 	 * @ordered
@@ -71,8 +75,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTenant()
 	 * @generated
 	 * @ordered
@@ -171,8 +174,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -186,7 +188,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @generated NOT
 	 */
 	@Override
-	public final void attach(E entity) throws ResourceException {
+	public final void attach(E entity) {
 		InternalEObject internalEObject = (InternalEObject) entity;
 		internalEObject.eSetResource(this.eInternalResource(), null);
 	}
@@ -211,14 +213,14 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @generated NOT
 	 */
 	@Override
-	public final void detach(E entity) throws ResourceException {
+	public final void detach(E entity) {
 		InternalEObject internalEObject = (InternalEObject) entity;
 		internalEObject.eSetResource(null, null);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -244,7 +246,8 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		try {
 			return make(false);
 		} catch (ResourceException e) {
-			throw new RuntimeException(e);
+			LOGGER.warn(e.getMessage());
+			return null;
 		}
 	}
 
@@ -258,7 +261,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 		@SuppressWarnings("unchecked")
 		E entity = (E) EcoreUtil.create(this.getFrame().getEClass());
-
 		if (sequence) {
 			String id = this.nextSequence();
 
@@ -280,7 +282,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @generated NOT
 	 */
 	@Override
-	public final E createProxy(String id) {
+	public E createProxy(String id) {
 		if (id == null)
 			return null;
 
@@ -396,8 +398,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

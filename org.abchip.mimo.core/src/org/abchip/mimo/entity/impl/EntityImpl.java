@@ -18,7 +18,6 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
-import org.abchip.mimo.util.Frames;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -122,7 +121,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	@SuppressWarnings({ "unchecked" })
 	@Override
 	public <E extends Entity> Frame<E> isa() {
-		Frame<E> isa = (Frame<E>) Frames.getFrames().get(eClass().getName());
+
+		Frame<E> isa = this.getResource().getContext().createProxy(Frame.class, eClass().getName());
 		if (isa != null)
 			return isa;
 

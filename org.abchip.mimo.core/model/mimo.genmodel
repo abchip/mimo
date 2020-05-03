@@ -218,6 +218,7 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/getFrame/E"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/getResourceManager"/>
+        <genOperations ecoreOperation="mimo.ecore#//context/Context/getResourceSet"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/getServiceManager"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/getTenant"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/inject">
@@ -877,33 +878,6 @@
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getFrame.3/tenant"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/getFrame.3/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/getResource">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getResource/klass"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/getResource/E"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/getResource.1">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getResource.1/frame"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/getResource.1/E"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/getResource.2">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getResource.2/frame"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/getResource.2/E"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/getResource.3">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getResource.3/klass"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getResource.3/tenant"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/getResource.3/E"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/getResource.4">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getResource.4/frame"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getResource.4/tenant"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/getResource.4/E"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/getResource.5">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getResource.5/frame"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getResource.5/tenant"/>
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/getResource.5/E"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceManager/getResourceReader">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceManager/getResourceReader/klass"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceManager/getResourceReader/E"/>
@@ -998,6 +972,12 @@
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceProvider">
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProvider/createResource">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/createResource/resourceSet"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/createResource/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/createResource/tenantId"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceProvider/createResource/E"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProvider/getResource">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/getResource/context"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/getResource/klass"/>
@@ -1131,9 +1111,31 @@
       <genClasses ecoreClass="mimo.ecore#//resource/ResourceSet">
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceSet/getContext"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceSet/getResource">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceSet/getResource/frameId"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceSet/getResource/tenantId"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceSet/getResource/klass"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceSet/getResource/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceSet/getResource.1">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceSet/getResource.1/frame"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceSet/getResource.1/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceSet/getResource.2">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceSet/getResource.2/frame"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceSet/getResource.2/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceSet/getResource.3">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceSet/getResource.3/klass"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceSet/getResource.3/tenant"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceSet/getResource.3/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceSet/getResource.4">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceSet/getResource.4/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceSet/getResource.4/tenant"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceSet/getResource.4/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceSet/getResource.5">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceSet/getResource.5/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceSet/getResource.5/tenant"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceSet/getResource.5/E"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceWriter">

@@ -26,25 +26,25 @@ public interface ResourceProviderRegistry extends Registry<ResourceProvider> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" klassRequired="true"
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" contextRequired="true" klassRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Class<E> klass);
+	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Class<E> klass) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" frameRequired="true"
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Frame<E> frame);
+	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Frame<E> frame) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model contextRequired="true" frameRequired="true"
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, String frame);
+	<E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, String frame) throws ResourceException;
 
 } // ResourceProviderRegistry

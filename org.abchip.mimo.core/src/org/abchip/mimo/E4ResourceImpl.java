@@ -14,13 +14,14 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.impl.ResourceImpl;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.InternalEObject;
 
-public class E4ResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
+public class E4ResourceImpl<E extends Frame<?>> extends ResourceImpl<E> {
 
 	private Frame<E> frame = null;
 	private Map<String, E> entities = null;
@@ -37,13 +38,27 @@ public class E4ResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E
 	}
 
 	@Override
-	public String getTenant() {
-		return null;
-	}
-
-	@Override
 	public Frame<E> getFrame() {
 		return this.frame;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public E createProxy(String id) {
+
+		if (id == null)
+			return null;
+
+		E entity = this.entities.get(id);
+		if (entity == null) {
+			// TODO !!!!!!!!!!
+			entity = (E) new E4FrameClassAdapter<E>(this.entities, getFrame().getEClass());
+			InternalEObject internalEObject = (InternalEObject) entity;
+			URI uri = URI.createHierarchicalURI("mimo", this.getTenant(), null, new String[] { this.getFrame().getName() }, null, id);
+			internalEObject.eSetProxyURI(uri);
+		}
+		
+		return entity;
 	}
 
 	@Override
@@ -52,8 +67,13 @@ public class E4ResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E
 	}
 
 	@Override
-	public void delete(E entity) {
-		throw new UnsupportedOperationException();
+	public String nextSequence() throws ResourceException {
+		throw new ResourceException(new UnsupportedOperationException());
+	}
+
+	@Override
+	public E read(String name, String fields, boolean proxy) {
+		return this.entities.get(name);
 	}
 
 	@Override
@@ -76,12 +96,7 @@ public class E4ResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E
 	}
 
 	@Override
-	public String nextSequence() throws ResourceException {
-		throw new ResourceException(new UnsupportedOperationException());
-	}
-
-	@Override
-	public E read(String name, String fields, boolean proxy) {
-		return this.entities.get(name);
+	public void delete(E entity) {
+		throw new UnsupportedOperationException();
 	}
 }
