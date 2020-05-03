@@ -18,11 +18,4 @@
          </run>
       </application>
    </extension>
-   <extension
-         point="org.eclipse.emf.ecore.extension_parser">
-      <parser
-            class="org.abchip.mimo.core.e4.Factory1"
-            type="org.abchip.mimo.core.e4.parser1">
-      </parser>
-   </extension>
 </plugin>

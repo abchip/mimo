@@ -8,15 +8,11 @@
  */
 package org.abchip.mimo.core.base;
 
-import java.util.Dictionary;
-import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.EMFResourceProviderImpl;
-import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Registry;
@@ -42,20 +38,11 @@ public class BaseResourceProviderRegistryImpl implements ResourceProviderRegistr
 
 	private Registry<ResourceProvider> registry;
 	private ResourceMapping resourceMapping;
-	private EMFResourceProviderImpl e4provider;
 
 	@Inject
 	public BaseResourceProviderRegistryImpl(Application application, RegistryFactory serviceRegistryFactory) {
 		this.registry = serviceRegistryFactory.createRegistry(ResourceProvider.class);
 		this.resourceMapping = application.getResourceMapping();
-
-		Dictionary<String, String> dictionary = new Hashtable<String, String>();
-		dictionary.put(MimoConstants.REGISTRY_NAME, MimoConstants.REGISTRY_NAME_EMF);
-		dictionary.put(MimoConstants.REGISTRY_VENDOR, "ABChip");
-		dictionary.put(MimoConstants.REGISTRY_VERSION, "0.2.0");
-		dictionary.put(MimoConstants.APPLICATION_NAME, application.getName());
-		this.e4provider = new EMFResourceProviderImpl();
-		application.getContext().set(ResourceProvider.class.getName(), e4provider, false, dictionary);
 	}
 
 	@Override
@@ -92,12 +79,6 @@ public class BaseResourceProviderRegistryImpl implements ResourceProviderRegistr
 
 	@Override
 	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Frame<E> frame) {
-
-		// Frame / Enumerator
-		if (e4provider.isFrame(frame))
-			return e4provider;
-		else if (e4provider.isEnum(frame))
-			return e4provider;
 
 		ResourceMappingRuleByFrame ruleByFrame = getRuleByFrame(frame);
 		ResourceMappingRuleByPackage ruleByPackage = getRuleByPackage(frame);

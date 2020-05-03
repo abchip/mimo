@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Http Service Config</b></em>'.
+ * An implementation of the model object '<em><b>Http ServiceScope Config</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:

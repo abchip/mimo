@@ -10,7 +10,7 @@ package org.abchip.mimo.service.reg;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Service Executor</b></em>'.
+ * A representation of the model object '<em><b>ServiceScope Executor</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>

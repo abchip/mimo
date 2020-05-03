@@ -12,16 +12,16 @@ import java.nio.CharBuffer;
 import java.util.List;
 
 import org.abchip.mimo.MimoConstants;
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Registry;
 
 public class BaseRegistryImpl<K> implements Registry<K> {
 
-	private ContextRoot contextRoot;
+	private Application application;
 	private Class<K> klass;
 
-	public BaseRegistryImpl(ContextRoot contextRoot, Class<K> klass) {
-		this.contextRoot = contextRoot;
+	public BaseRegistryImpl(Application application, Class<K> klass) {
+		this.application = application;
 		this.klass = klass;
 	}
 
@@ -29,34 +29,42 @@ public class BaseRegistryImpl<K> implements Registry<K> {
 	public K lookup(String name) {
 		name = escapeFilterCharacters(name);
 		String filter = "(" + MimoConstants.REGISTRY_NAME + "=" + name + ")";
-		return contextRoot.get(klass, filter);
+		return application.getContext().get(klass, filter);
 	}
 
 	@Override
 	public List<K> list() {
 
-		List<K> plugins = contextRoot.getAll(klass);
+		List<K> plugins = application.getContext().getAll(klass);
 		return plugins;
 	}
 
 	@Override
 	public K lookupByVendorVersion(String vendor, String version) {
-		
+
 		vendor = escapeFilterCharacters(vendor);
-		
+
 		String filter = "(&(" + MimoConstants.REGISTRY_VENDOR + "=" + vendor + ")" + "(" + MimoConstants.REGISTRY_VERSION + "=" + version + "))";
-		return contextRoot.get(klass, filter);
+		return application.getContext().get(klass, filter);
 	}
-	
+
 	private String escapeFilterCharacters(String value) {
-		
+
 		CharBuffer buffer = CharBuffer.allocate(value.length() * 2);
-		for ( char c : value.toCharArray()) {
+		for (char c : value.toCharArray()) {
 			switch (c) {
-				case '*'  : buffer.append('\\'); break;
-				case '\\' : buffer.append('\\'); break;
-				case '('  : buffer.append('\\'); break;
-				case ')'  : buffer.append('\\'); break;
+			case '*':
+				buffer.append('\\');
+				break;
+			case '\\':
+				buffer.append('\\');
+				break;
+			case '(':
+				buffer.append('\\');
+				break;
+			case ')':
+				buffer.append('\\');
+				break;
 			}
 			buffer.append(c);
 		}

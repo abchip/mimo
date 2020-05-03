@@ -65,7 +65,7 @@ public class BaseInvokeFactoring implements Factory {
 			ServiceManager serviceManager = context.getServiceManager();
 
 			try {
-				ServiceMethodRequest<E, T> request = serviceManager.prepare(context, entity.isa().getName() + "_" + Strings.firstToUpper(this.eOperation.getName()));
+				ServiceMethodRequest<E, T> request = serviceManager.prepare(entity.isa().getName() + "_" + Strings.firstToUpper(this.eOperation.getName()));
 				request.setEntity(entity);
 
 				ServiceMethodResponse<T> response = serviceManager.execute(request);

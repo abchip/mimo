@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Service Registry</b></em>'.
+ * An implementation of the model object '<em><b>ServiceScope Registry</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:

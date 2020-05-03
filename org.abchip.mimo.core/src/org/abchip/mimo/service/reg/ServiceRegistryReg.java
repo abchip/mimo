@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Service Registry</b></em>'.
+ * A representation of the model object '<em><b>ServiceScope Registry</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>

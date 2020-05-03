@@ -16,7 +16,10 @@ public class MimoConstants {
 
 	public static final String REGISTRY_NAME = "org.abchip.mimo.registry.name";
 	public static final String REGISTRY_NAME_EMF = "*EMF";
+	public static final String REGISTRY_NAME_NIO = "*NIO";
+	public static final String REGISTRY_NAME_HTTP = "*HTTP";
 	public static final String REGISTRY_VENDOR = "org.abchip.mimo.registry.vendor";
+	public static final String REGISTRY_VENDOR_ABCHIP = "ABChip";
 	public static final String REGISTRY_VERSION = "org.abchip.mimo.registry.version";
 	
 	public static final String VALIDATOR_READ = "org.abchip.mimo.validator.read";

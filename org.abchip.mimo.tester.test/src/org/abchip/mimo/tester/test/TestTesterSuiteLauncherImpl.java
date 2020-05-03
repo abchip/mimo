@@ -10,6 +10,7 @@ package org.abchip.mimo.tester.test;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.tester.Test;
 import org.abchip.mimo.tester.TestManager;
@@ -19,21 +20,23 @@ import org.abchip.mimo.tester.base.BaseTestSuiteDirectoryRunnerImpl;
 
 public class TestTesterSuiteLauncherImpl implements TestSuiteLauncher {
 
-	@Inject
 	private TestManager testManager;
-	
+
+	@Inject
+	public TestTesterSuiteLauncherImpl(Application application) {
+		this.testManager = application.getContext().get(TestManager.class);
+	}
+
 	@Override
 	public TestSuiteRunner createSuite(Context context) {
 		return new InternalSuiteDirectoryRunnerImpl(context, testManager, null);
-	}	
-	
+	}
+
 	@Test(category = "Tester")
 	private class InternalSuiteDirectoryRunnerImpl extends BaseTestSuiteDirectoryRunnerImpl {
 
 		public InternalSuiteDirectoryRunnerImpl(Context context, TestManager testManager, String category) {
 			super(context, testManager, category);
-		}		
+		}
 	}
 }
-	
-

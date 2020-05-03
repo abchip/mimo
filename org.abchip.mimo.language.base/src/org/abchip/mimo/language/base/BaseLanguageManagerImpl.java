@@ -11,6 +11,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageExpression;
@@ -24,28 +25,32 @@ import org.abchip.mimo.mining.classification.Classification;
 
 public class BaseLanguageManagerImpl implements LanguageManager {
 
-	@Inject
 	private LanguageParserRegistry languageParserRegistry;
-	@Inject
 	private LanguageLinearizerRegistry languageWriterRegistry;
-	@Inject
 	private MiningManager miningManager;
-	
+
+	@Inject
+	public BaseLanguageManagerImpl(Application application) {
+		this.languageParserRegistry = application.getContext().get(LanguageParserRegistry.class);
+		this.languageWriterRegistry = application.getContext().get(LanguageLinearizerRegistry.class);
+		this.miningManager = application.getContext().get(MiningManager.class);
+	}
+
 	@Override
 	public Classification<Language> classifyLanguage(Context context, String text) {
-		
-		List<Classification<Language>> classifications = miningManager.classify(context, Language.class, text); 
-		
+
+		List<Classification<Language>> classifications = miningManager.classify(context, Language.class, text);
+
 		return classifications.get(0);
 	}
 
 	@Override
 	public String translate(Context context, String languageSource, String text, String languageTarget) {
-		
-		LanguageParser languageParser = languageParserRegistry.list().get(0);		
+
+		LanguageParser languageParser = languageParserRegistry.list().get(0);
 		LanguageExpression languageExpression = languageParser.parse(context, languageSource, text);
-		
-		LanguageLinearizer languageLinearizer = languageWriterRegistry.list().get(0);		
+
+		LanguageLinearizer languageLinearizer = languageWriterRegistry.list().get(0);
 		String result = languageLinearizer.linearize(context, languageTarget, languageExpression);
 
 		return result;

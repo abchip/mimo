@@ -15,6 +15,7 @@ import javax.inject.Inject;
 
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationLogs;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.osgi.service.log.LogLevel;
@@ -23,7 +24,9 @@ import org.osgi.service.log.admin.LoggerContext;
 public class LogCommands extends BaseCommands {
 
 	@Inject
-	private Application application;
+	public LogCommands(Application application) {
+		super(application);
+	}
 
 	public void _logSet(CommandInterpreter interpreter) throws Exception {
 
@@ -52,13 +55,13 @@ public class LogCommands extends BaseCommands {
 
 	public void _logReset(CommandInterpreter interpreter) throws Exception {
 
-		this.getContext();
+		Context context = this.getContext();
 
 		LoggerContext loggerContext = Logs.getLoggerContext();
 		if (loggerContext == null)
 			return;
 
-		ApplicationLogs applicationLogs = application.getLogs();
+		ApplicationLogs applicationLogs = context.get(Application.class).getLogs();
 
 		Logs.reset(applicationLogs);
 	}

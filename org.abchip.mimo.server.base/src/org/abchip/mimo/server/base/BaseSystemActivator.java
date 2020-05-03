@@ -10,8 +10,8 @@ package org.abchip.mimo.server.base;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ComponentStarted;
-import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.server.Job;
 import org.abchip.mimo.server.JobLogManager;
@@ -24,15 +24,15 @@ public class BaseSystemActivator {
 	private ThreadManager threadManager;
 
 	@ComponentStarted
-	public void start(ContextRoot contextRoot, org.abchip.mimo.server.System system, JobManager jobManager, org.abchip.mimo.server.SystemManager systemManager, JobLogManager jobLogManager)
+	public void start(Application application, org.abchip.mimo.server.System system, JobManager jobManager, org.abchip.mimo.server.SystemManager systemManager, JobLogManager jobLogManager)
 			throws ServerException {
 
-		system.setContext(contextRoot);
+		system.setContext(application.getContext());
 
 		Job jobKernel = systemManager.start(system);
 
-		contextRoot.set(org.abchip.mimo.server.System.class, system);
-		contextRoot.set(Job.class, jobKernel);
+		application.getContext().set(org.abchip.mimo.server.System.class, system);
+		application.getContext().set(Job.class, jobKernel);
 
 		org.abchip.mimo.context.Thread thread = threadManager.createThread("job-closer", new BaseJobCloser(threadManager, jobManager), true);
 		threadManager.start(thread);

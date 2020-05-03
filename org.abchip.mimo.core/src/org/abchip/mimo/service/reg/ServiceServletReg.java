@@ -9,7 +9,7 @@ package org.abchip.mimo.service.reg;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Service Servlet</b></em>'.
+ * A representation of the model object '<em><b>ServiceScope Servlet</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>

@@ -1164,44 +1164,37 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//service/ServiceManager">
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/getService">
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getService/context"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getService/request"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getService/V"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getService/R"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/getService.1">
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getService.1/context"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getService.1/klass"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getService.1/V"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getService.1/R"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/getService.2">
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getService.2/context"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/getService.2/serviceId"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getService.2/V"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/getService.2/R"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/prepare">
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare/context"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare/klass"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare/V"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare/R"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/prepare.1">
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.1/context"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.1/klass"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.1/tenant"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.1/V"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.1/R"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/prepare.2">
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.2/context"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.2/frame"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.2/V"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.2/R"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/prepare.3">
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.3/context"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.3/frame"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.3/tenant"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.3/V"/>
@@ -1218,13 +1211,11 @@
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/submit/R"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/prepare.4">
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.4/context"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.4/frame"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.4/V"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.4/R"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceManager/prepare.5">
-          <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.5/context"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.5/frame"/>
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceManager/prepare.5/tenant"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceManager/prepare.5/V"/>

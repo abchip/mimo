@@ -8,29 +8,31 @@
  */
 package org.abchip.mimo.tester.base;
 
-import javax.inject.Inject;
-
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.authentication.AuthenticationException;
 import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.authentication.AuthenticationUserPassword;
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.base.cmd.BaseCommands;
 
 public abstract class BaseTestCommands extends BaseCommands {
 
-	@Inject
-	private Application application;
+	public BaseTestCommands(Application application) {
+		super(application);
+	}
 
 	protected ContextProvider login() throws AuthenticationException {
+
+		Context context = this.getContext();
 
 		AuthenticationUserPassword authentication = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
 		authentication.setUser("abchip-test");
 		authentication.setPassword("ofbiz");
 		authentication.setTenant("test");
 
-		ContextProvider contextProvider = application.getContext().get(AuthenticationManager.class).login(null, authentication);
+		ContextProvider contextProvider = context.get(AuthenticationManager.class).login(null, authentication);
 
 		return contextProvider;
 	}

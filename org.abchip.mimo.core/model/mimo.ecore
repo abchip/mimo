@@ -1968,7 +1968,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/getService/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="request" lowerBound="1">
           <eGenericType eTypeParameter="#//service/ServiceManager/getService/R"/>
         </eParameters>
@@ -1986,7 +1985,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/getService.1/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
             <eTypeArguments eTypeParameter="#//service/ServiceManager/getService.1/R"/>
@@ -2006,7 +2004,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/getService.2/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="serviceId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
@@ -2019,7 +2016,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
             <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare/R"/>
@@ -2036,7 +2032,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.1/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="klass" lowerBound="1">
           <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
             <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.1/R"/>
@@ -2054,7 +2049,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.2/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
             <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.2/R"/>
@@ -2071,7 +2065,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.3/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
             <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.3/R"/>
@@ -2119,7 +2112,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.4/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
       <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
@@ -2132,7 +2124,6 @@
             <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.5/V"/>
           </eBounds>
         </eTypeParameters>
-        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>

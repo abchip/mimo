@@ -13,8 +13,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.database.CatalogContainer;
 import org.abchip.mimo.database.DatabaseContainer;
 import org.abchip.mimo.database.connection.ConnectionConfig;
@@ -30,7 +30,7 @@ public class BaseDatabaseLoader {
 	private static final Logger LOGGER = Logs.getLogger(BaseDatabaseLoader.class);
 
 	@Inject
-	private ContextRoot contextRoot;
+	private Application application;
 	@Inject
 	private QueryWriterRegistry queryWriterRegistry;
 	@Inject
@@ -49,7 +49,7 @@ public class BaseDatabaseLoader {
 
 			// build catalog context
 			@SuppressWarnings("resource")
-			Context catalogContext = contextRoot.createChildContext(catalogContainer.getName()).get();
+			Context catalogContext = application.getContext().createChildContext(catalogContainer.getName()).get();
 
 			ConnectionConfig connectionConfig = catalogContainer.getConnectionConfig();
 			QueryWriter queryWriter = queryWriterRegistry.lookup(connectionConfig);

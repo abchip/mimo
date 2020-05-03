@@ -11,7 +11,7 @@ import org.abchip.mimo.entity.Entity;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Http Service Config</b></em>'.
+ * A representation of the model object '<em><b>Http ServiceScope Config</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>

@@ -13,28 +13,29 @@ import java.util.Map.Entry;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityIdentifiable;
-import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.service.Service;
 import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
-import org.abchip.mimo.util.Strings;
 import org.abchip.mimo.util.URIs;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
-public class EntityCommands extends BaseCommands {
+public class ServiceCommands extends BaseCommands {
 
 	@Inject
-	private ServiceManager serviceManager;
+	public ServiceCommands(Application application) {
+		super(application);
+	}
 
 	public <R extends ServiceRequest<V>, V extends ServiceResponse> void _mm(CommandInterpreter interpreter) throws Exception {
 
 		Context context = this.getContext();
+		ServiceManager serviceManager = context.getServiceManager();
 
 		String serviceId = this.nextArgument(interpreter);
 		String tenant = null;
@@ -55,7 +56,7 @@ public class EntityCommands extends BaseCommands {
 			parameters.remove("tenant");
 		}
 
-		R request = serviceManager.prepare(context, serviceId, tenant);
+		R request = serviceManager.prepare(serviceId, tenant);
 		Frame<R> frame = request.isa();
 		for (Entry<String, String> parameter : parameters.entrySet()) {
 			frame.setValue(request, parameter.getKey(), parameter.getValue());
@@ -69,17 +70,18 @@ public class EntityCommands extends BaseCommands {
 	public <R extends ServiceRequest<V>, V extends ServiceResponse> void _mm_help(CommandInterpreter interpreter) throws Exception {
 
 		Context context = this.getContext();
+		ServiceManager serviceManager = context.getServiceManager();
 
 		String serviceId = this.nextArgument(interpreter);
 
-		Service<?, ?> service = serviceManager.getService(context, serviceId);
+		Service<?, ?> service = serviceManager.getService(serviceId);
 		if (service == null) {
-			interpreter.println("Service not found " + serviceId);
+			interpreter.println("ServiceScope not found " + serviceId);
 			return;
 		}
 
 		ServiceRequest<?> request = service.getRequest();
-		interpreter.println("Service: " + request.getServiceName());
+		interpreter.println("ServiceScope: " + request.getServiceName());
 
 		interpreter.println("Input parameters");
 		for (Slot slot : request.isa().getSlots()) {
@@ -104,57 +106,6 @@ public class EntityCommands extends BaseCommands {
 			interpreter.print("Default: " + slot.getDefaultValue() + " ");
 			interpreter.println();
 		}
-	}
-
-	public void _login(CommandInterpreter interpreter) throws Exception {
-		this.login(nextArgument(interpreter));
-	}
-
-	public void _logout(CommandInterpreter interpreter) throws Exception {
-		this.logout();
-
-		interpreter.execute("disconnect");
-	}
-
-	public <E extends EntityIdentifiable> void _find(CommandInterpreter interpreter) throws Exception {
-
-		Context context = this.getContext();
-
-		String frameName = nextArgument(interpreter);
-		String order = nextArgument(interpreter);
-		String tenant = nextArgument(interpreter);
-
-		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) context.getResourceManager().getFrame(frameName, tenant);
-		if (frame == null) {
-			interpreter.println("Frame not found: " + frameName + " on tenant " + tenant);
-			return;
-		}
-
-		try (EntityIterator<E> entities = context.getResourceManager().getResourceReader(frame, tenant).find(null, null, order)) {
-			for (E entity : entities) {
-				interpreter.println(entity.getID());
-			}
-		}
-	}
-
-	public <E extends EntityIdentifiable> void _lookup(CommandInterpreter interpreter) throws Exception {
-
-		Context context = this.getContext();
-
-		String frameName = Strings.firstToUpper(nextArgument(interpreter));
-
-		String entityName = nextArgument(interpreter);
-
-		String tenant = nextArgument(interpreter);
-
-		@SuppressWarnings("unchecked")
-		Frame<E> frame = (Frame<E>) context.getResourceManager().getFrame(frameName, tenant);
-		if (frame == null)
-			interpreter.print("Frame not found: " + frameName + " on tenant " + tenant);
-
-		E entity = context.getResourceManager().getResourceReader(frame, tenant).lookup(entityName);
-		interpreter.println(entity);
 	}
 
 	@Override

@@ -10,6 +10,7 @@ package org.abchip.mimo.core.test;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.tester.TestManager;
 import org.abchip.mimo.tester.TestSuiteLauncher;
@@ -17,11 +18,15 @@ import org.abchip.mimo.tester.TestSuiteRunner;
 
 public class TestCoreSuiteLauncherImpl implements TestSuiteLauncher {
 
-	@Inject
 	private TestManager testManager;
+
+	@Inject
+	public TestCoreSuiteLauncherImpl(Application application) {
+		this.testManager = application.getContext().get(TestManager.class);
+	}
 
 	@Override
 	public TestSuiteRunner createSuite(Context context) {
 		return new TestCoreSuiteRunnerImpl(context, testManager, null);
-	}	
+	}
 }

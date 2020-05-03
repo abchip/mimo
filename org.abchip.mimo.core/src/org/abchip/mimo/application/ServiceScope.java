@@ -14,11 +14,11 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.TYPE })
-public @interface Service {
+public @interface ServiceScope {
 
 	public enum Scope {
 		CONTEXT
 	}
 	
-	Scope scope();
+	Scope value();
 }

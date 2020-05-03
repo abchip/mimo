@@ -10,6 +10,7 @@ package org.abchip.mimo.language.test;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.tester.TestManager;
 import org.abchip.mimo.tester.TestSuiteLauncher;
@@ -17,11 +18,15 @@ import org.abchip.mimo.tester.TestSuiteRunner;
 
 public class TestLanguageSuiteLauncherImpl implements TestSuiteLauncher {
 
-	@Inject
 	private TestManager testManager;
+
+	@Inject
+	public TestLanguageSuiteLauncherImpl(Application application) {
+		this.testManager = application.getContext().get(TestManager.class);
+	}
 
 	@Override
 	public TestSuiteRunner createSuite(Context context) {
 		return new TestLanguageSuiteRunnerImpl(context, testManager, null);
-	}	
+	}
 }

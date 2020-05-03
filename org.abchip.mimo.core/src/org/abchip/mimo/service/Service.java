@@ -11,7 +11,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Service</b></em>'.
+ * A representation of the model object '<em><b>ServiceScope</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -71,4 +71,4 @@ public interface Service<R extends ServiceRequest<V>, V extends ServiceResponse>
 	 */
 	void setRequest(R value);
 
-} // Service
+} // ServiceScope

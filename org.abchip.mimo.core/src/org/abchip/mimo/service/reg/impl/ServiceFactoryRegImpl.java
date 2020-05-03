@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Service Factory</b></em>'.
+ * An implementation of the model object '<em><b>ServiceScope Factory</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:

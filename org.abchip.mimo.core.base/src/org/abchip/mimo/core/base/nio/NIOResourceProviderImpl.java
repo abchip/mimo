@@ -10,9 +10,9 @@ package org.abchip.mimo.core.base.nio;
 
 import java.nio.file.Paths;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -24,20 +24,19 @@ import org.abchip.mimo.resource.impl.ResourceProviderImpl;
 
 public class NIOResourceProviderImpl extends ResourceProviderImpl {
 
-	@Inject
 	private ApplicationPaths paths;
 
 	private NIOPathManager pathManager;
 
 	private ResourceConfig resourceConfig;
 
-	@PostConstruct
-	protected void init() {
-
+	@Inject
+	public NIOResourceProviderImpl(Application application) {
 		this.resourceConfig = ResourceFactory.eINSTANCE.createResourceConfig();
 		this.resourceConfig.setLockSupport(true);
 		this.resourceConfig.setOrderSupport(true);
 
+		this.paths = application.getPaths();
 		this.pathManager = new NIOPathManager(Paths.get(paths.getData(), "nio"));
 	}
 

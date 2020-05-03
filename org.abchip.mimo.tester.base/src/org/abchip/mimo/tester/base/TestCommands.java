@@ -25,10 +25,14 @@ import org.eclipse.osgi.framework.console.CommandInterpreter;
 
 public class TestCommands extends BaseTestCommands {
 
-	@Inject
-	private Application application;
-	@Inject
 	private TestManager testManager;
+
+	@Inject
+	public TestCommands(Application application) {
+		super(application);
+
+		this.testManager = application.getContext().get(TestManager.class);
+	}
 
 	public void _test(CommandInterpreter interpreter) throws Exception {
 
@@ -36,7 +40,7 @@ public class TestCommands extends BaseTestCommands {
 
 			String componentName = nextArgument(interpreter);
 
-			for (ApplicationComponent component : application.getActiveComponents()) {
+			for (ApplicationComponent component : contextProvider.get().get(Application.class).getActiveComponents()) {
 				if (!component.getName().equalsIgnoreCase(componentName))
 					continue;
 

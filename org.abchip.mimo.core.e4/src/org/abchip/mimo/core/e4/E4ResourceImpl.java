@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo;
+package org.abchip.mimo.core.e4;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,13 +20,13 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 
-public class EMFResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
+public class E4ResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
 	private Frame<E> frame = null;
 	private Map<String, E> entities = null;
 
 	@SuppressWarnings("unchecked")
-	protected EMFResourceImpl(Context context, Frame<E> frame, Map<String, E> entities) {
+	protected E4ResourceImpl(Context context, Frame<E> frame, Map<String, E> entities) {
 		super(context);
 
 		this.frame = frame;

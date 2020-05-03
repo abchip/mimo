@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Service Hook</b></em>'.
+ * An implementation of the model object '<em><b>ServiceScope Hook</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated

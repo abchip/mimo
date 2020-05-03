@@ -718,8 +718,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		// Obtain other dependent packages
 		RegPackage theRegPackage = (RegPackage)EPackage.Registry.INSTANCE.getEPackage(RegPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
-		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theRegPackage);
@@ -785,7 +785,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		t2.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(t2);
 		addEParameter(op, g1, "request", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getService());
@@ -804,7 +803,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		t2.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t2);
 		g1.getETypeArguments().add(g2);
@@ -825,7 +823,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		t2.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "serviceId", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getService());
 		g2 = createEGenericType(t2);
@@ -843,7 +840,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		t2.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t2);
 		g1.getETypeArguments().add(g2);
@@ -861,7 +857,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		t2.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t2);
 		g1.getETypeArguments().add(g2);
@@ -880,7 +875,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		t2.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(t2);
 		g1.getETypeArguments().add(g2);
@@ -898,7 +892,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		t2.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(t2);
 		g1.getETypeArguments().add(g2);
@@ -949,7 +942,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		t2.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getServiceException());
 		g1 = createEGenericType(t2);
@@ -964,7 +956,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		t2.getEBounds().add(g1);
-		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getServiceException());

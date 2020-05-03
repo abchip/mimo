@@ -13,9 +13,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.entity.Frame;
@@ -32,18 +29,20 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class BaseServiceManagerImpl implements ServiceManager {
 
-	@Inject
+	private Context context;
 	private ServiceProviderRegistry serviceProviderRegistry;
 
 	private ExecutorService executorService = null;
 
-	@PostConstruct
-	private void init() {
+	public BaseServiceManagerImpl(Context context) {
+		this.context = context;
+
+		serviceProviderRegistry = context.get(ServiceProviderRegistry.class);
 		executorService = Executors.newFixedThreadPool(100);
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, R request) {
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(R request) {
 
 		Service<R, V> service = ServiceFactory.eINSTANCE.createService();
 		service.setName(request.getServiceName());
@@ -53,7 +52,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, Class<R> klass) {
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Class<R> klass) {
 
 		Service<R, V> service = ServiceFactory.eINSTANCE.createService();
 		service.setName(klass.getSimpleName());
@@ -66,7 +65,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Context context, String serviceId) {
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(String serviceId) {
 
 		Frame<?> frame = context.getResourceManager().getFrame(Strings.firstToUpper(serviceId));
 		if (frame == null)
@@ -86,44 +85,44 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass) throws ServiceException {
-		return prepare(context, klass, null);
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Class<R> klass) throws ServiceException {
+		return prepare(klass, null);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Class<R> klass, String tenant) throws ServiceException {
-		return (R) prepare(context, context.createProxy(Frame.class, klass.getSimpleName()), tenant);
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Class<R> klass, String tenant) throws ServiceException {
+		return (R) prepare(context.createProxy(Frame.class, klass.getSimpleName()), tenant);
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Frame<R> frame) throws ServiceException {
-		return prepare(context, frame, null);
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Frame<R> frame) throws ServiceException {
+		return prepare(frame, null);
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, String frame) throws ServiceException {
-		return prepare(context, frame, null);
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(String frame) throws ServiceException {
+		return prepare(frame, null);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, String frame, String tenant) throws ServiceException {
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(String frame, String tenant) throws ServiceException {
 
 		Frame<?> request = (Frame<?>) context.getResourceManager().getFrame(frame, tenant);
 		if (request == null)
-			throw new ServiceException("Service not found" + frame);
+			throw new ServiceException("ServiceScope not found" + frame);
 
 		if (!request.getSuperNames().contains(ServiceRequest.class.getSimpleName()))
 			throw new ServiceException("Invalid service " + frame);
 
-		return prepare(context, (Frame<R>) request, tenant);
+		return prepare((Frame<R>) request, tenant);
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Context context, Frame<R> frame, String tenant) throws ServiceException {
+	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Frame<R> frame, String tenant) throws ServiceException {
 
-		this.checkAuthorization(context, tenant);
+		this.checkAuthorization(tenant);
 
 		@SuppressWarnings("unchecked")
 		R request = (R) EcoreUtil.create(frame.getEClass());
@@ -152,7 +151,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 
 		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(request.getContext(), request);
 		if (serviceProvider == null)
-			throw new ServiceException("Service provider not found for request: " + request.getServiceName());
+			throw new ServiceException("ServiceScope provider not found for request: " + request.getServiceName());
 
 		return serviceProvider.execute(request);
 	}
@@ -175,12 +174,12 @@ public class BaseServiceManagerImpl implements ServiceManager {
 
 		ServiceProvider serviceProvider = this.serviceProviderRegistry.getServiceProvider(request.getContext(), request);
 		if (serviceProvider == null)
-			throw new ServiceException("Service provider not found for request: " + request.getServiceName());
+			throw new ServiceException("ServiceScope provider not found for request: " + request.getServiceName());
 
 		return serviceProvider.submit(request);
 	}
 
-	protected final void checkAuthorization(Context context, String tenant) throws ServiceException {
+	protected final void checkAuthorization(String tenant) throws ServiceException {
 		ContextDescription contextDescription = context.getContextDescription();
 
 		// check authorization

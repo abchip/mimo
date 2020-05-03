@@ -32,7 +32,7 @@ public class BaseServiceProviderRegistryImpl implements ServiceProviderRegistry 
 	private ServiceMapping serviceMapping;
 
 	@Inject
-	public BaseServiceProviderRegistryImpl(RegistryFactory serviceRegistryFactory, Application application) {
+	public BaseServiceProviderRegistryImpl(Application application, RegistryFactory serviceRegistryFactory) {
 		this.registry = serviceRegistryFactory.createRegistry(ServiceProvider.class);
 		this.serviceMapping = application.getServiceMapping();
 	}

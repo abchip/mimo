@@ -10,7 +10,7 @@ package org.abchip.mimo.service.reg;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Service Hook</b></em>'.
+ * A representation of the model object '<em><b>ServiceScope Hook</b></em>'.
  * <!-- end-user-doc -->
  *
  *

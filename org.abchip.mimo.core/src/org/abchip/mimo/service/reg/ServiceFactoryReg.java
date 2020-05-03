@@ -9,7 +9,7 @@ package org.abchip.mimo.service.reg;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Service Factory</b></em>'.
+ * A representation of the model object '<em><b>ServiceScope Factory</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>

@@ -91,7 +91,7 @@ public interface Language extends EntityIdentifiable {
 	 * The literals are from the enumeration {@link org.abchip.mimo.language.LanguageScope}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Service</em>' attribute isn't clear,
+	 * If the meaning of the '<em>ServiceScope</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

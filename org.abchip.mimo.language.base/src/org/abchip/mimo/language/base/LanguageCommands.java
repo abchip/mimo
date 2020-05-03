@@ -10,6 +10,7 @@ package org.abchip.mimo.language.base;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.base.cmd.BaseCommands;
 import org.abchip.mimo.entity.EntityIterator;
@@ -20,8 +21,14 @@ import org.eclipse.osgi.framework.console.CommandInterpreter;
 
 public class LanguageCommands extends BaseCommands {
 
-	@Inject
 	private LanguageManager languageManager;
+
+	@Inject
+	public LanguageCommands(Application application) {
+		super(application);
+
+		this.languageManager = application.getContext().get(LanguageManager.class);
+	}
 
 	public void _lang(CommandInterpreter interpreter) throws Exception {
 

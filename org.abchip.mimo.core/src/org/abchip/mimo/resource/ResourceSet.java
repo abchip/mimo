@@ -7,8 +7,8 @@
  */
 package org.abchip.mimo.resource;
 
-import org.abchip.mimo.application.Service;
-import org.abchip.mimo.application.Service.Scope;
+import org.abchip.mimo.application.ServiceScope;
+import org.abchip.mimo.application.ServiceScope.Scope;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -22,7 +22,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  * @model abstract="true"
  * @generated
  */
-@Service(scope = Scope.CONTEXT)
+@ServiceScope(Scope.CONTEXT)
 public interface ResourceSet extends Entity {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

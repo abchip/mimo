@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.abchip.mimo.application.Application;
-import org.abchip.mimo.application.Service;
+import org.abchip.mimo.application.ServiceScope;
 import org.abchip.mimo.context.AdapterFactory;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
@@ -100,11 +100,11 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 		T object = null;
 
-		Service annotation = clazz.getAnnotation(Service.class);
+		ServiceScope annotation = clazz.getAnnotation(ServiceScope.class);
 		if (annotation == null)
 			object = getEclipseContext().get(clazz);
 		else {
-			switch (annotation.scope()) {
+			switch (annotation.value()) {
 			case CONTEXT:
 				object = getEclipseContext().getLocal(clazz);
 				break;

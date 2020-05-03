@@ -9,8 +9,8 @@ package org.abchip.mimo.networking;
 
 import java.io.Closeable;
 
-import org.abchip.mimo.application.Service;
-import org.abchip.mimo.application.Service.Scope;
+import org.abchip.mimo.application.ServiceScope;
+import org.abchip.mimo.application.ServiceScope.Scope;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
 
@@ -23,7 +23,7 @@ import org.apache.http.client.methods.HttpPost;
  * @model interface="true" abstract="true" superTypes="org.abchip.mimo.java.JavaCloseable"
  * @generated
  */
-@Service(scope = Scope.CONTEXT)
+@ServiceScope(Scope.CONTEXT)
 public interface HttpClient extends Closeable {
 
 	/**

@@ -13,7 +13,7 @@ import org.abchip.mimo.service.ServiceStatus;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Service Reg</b></em>'.
+ * A representation of the model object '<em><b>ServiceScope Reg</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>

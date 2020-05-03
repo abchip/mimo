@@ -10,7 +10,7 @@ package org.abchip.mimo.service.reg;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Service Command Provider</b></em>'.
+ * A representation of the model object '<em><b>ServiceScope Command Provider</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>

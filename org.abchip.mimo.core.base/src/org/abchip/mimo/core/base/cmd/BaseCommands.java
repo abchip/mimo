@@ -8,8 +8,6 @@
  */
 package org.abchip.mimo.core.base.cmd;
 
-import javax.inject.Inject;
-
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.authentication.AuthenticationAdminKey;
 import org.abchip.mimo.authentication.AuthenticationException;
@@ -23,15 +21,17 @@ public abstract class BaseCommands implements CommandProvider {
 
 	protected static final String NULL = "@NULL";
 
-	@Inject
 	private Application application;
-
 	private ThreadLocal<Context> threadLocalContext = new ThreadLocal<Context>();
+
+	public BaseCommands(Application application) {
+		this.application = application;
+	}
 
 	protected String nextArgument(CommandInterpreter interpreter) {
 		return this.nextArgument(interpreter, null);
 	}
-	
+
 	protected String nextArgument(CommandInterpreter interpreter, String default_) {
 
 		String argument = interpreter.nextArgument();

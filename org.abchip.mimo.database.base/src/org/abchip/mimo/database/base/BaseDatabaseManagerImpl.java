@@ -13,7 +13,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.abchip.mimo.context.ContextRoot;
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.data.DataFactory;
 import org.abchip.mimo.data.IdentityDef;
 import org.abchip.mimo.database.CatalogContainer;
@@ -58,7 +58,7 @@ public class BaseDatabaseManagerImpl implements DatabaseManager {
 	private static final Logger LOGGER = Logs.getLogger(BaseDatabaseManagerImpl.class);
 
 	@Inject
-	private ContextRoot contextRoot;
+	private Application application;
 	@Inject
 	private DefinitionParserRegistry definitionParserRegistry;
 	@Inject
@@ -80,12 +80,12 @@ public class BaseDatabaseManagerImpl implements DatabaseManager {
 
 		// database context
 		DefinitionParser definitionParser = this.definitionParserRegistry.lookupByVendorVersion(databaseContainer.getVendor(), databaseContainer.getVersion());
-		contextRoot.set(DefinitionParser.class, definitionParser);
+		application.getContext().set(DefinitionParser.class, definitionParser);
 		QueryParser queryParser = this.queryParserRegistry.lookupByVendorVersion(databaseContainer.getVendor(), databaseContainer.getVersion());
-		contextRoot.set(QueryParser.class, queryParser);
+		application.getContext().set(QueryParser.class, queryParser);
 
 		// database loader
-		BaseDatabaseLoader databaseStarter = contextRoot.make(BaseDatabaseLoader.class);
+		BaseDatabaseLoader databaseStarter = application.getContext().make(BaseDatabaseLoader.class);
 		databaseStarter.loadDatabase(databaseContainer);
 
 		this.started = false;

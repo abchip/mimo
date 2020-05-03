@@ -6,10 +6,11 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo;
+package org.abchip.mimo.core.e4;
 
 import java.util.Map;
 
+import org.abchip.mimo.EMFFrameEnumAdapter;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -20,11 +21,11 @@ import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
 import org.abchip.mimo.util.Frames;
 
-public class EMFResourceProviderImpl extends ResourceProviderImpl {
+public class E4ResourceProviderImpl extends ResourceProviderImpl {
 
 	private static ResourceConfig EMF_RESOURCE_CONFIG;
 
-	public EMFResourceProviderImpl() {
+	public E4ResourceProviderImpl() {
 		EMF_RESOURCE_CONFIG = ResourceFactory.eINSTANCE.createResourceConfig();
 		EMF_RESOURCE_CONFIG.setLockSupport(true);
 		EMF_RESOURCE_CONFIG.setOrderSupport(true);
@@ -33,12 +34,12 @@ public class EMFResourceProviderImpl extends ResourceProviderImpl {
 	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
-		EMFResourceImpl<E> resource = null;
+		E4ResourceImpl<E> resource = null;
 
 		if (isFrame(frame)) {
-			resource = new EMFResourceImpl<E>(context, frame, (Map<String, E>) Frames.getFrames());
+			resource = new E4ResourceImpl<E>(context, frame, (Map<String, E>) Frames.getFrames());
 		} else if (isEnum(frame)) {
-			resource = new EMFResourceImpl<E>(context, frame, (Map<String, E>) Frames.getEnumerators((Frame<EntityEnum>) frame));
+			resource = new E4ResourceImpl<E>(context, frame, (Map<String, E>) Frames.getEnumerators((Frame<EntityEnum>) frame));
 		}
 		if (resource != null)
 			resource.setResourceConfig(EMF_RESOURCE_CONFIG);

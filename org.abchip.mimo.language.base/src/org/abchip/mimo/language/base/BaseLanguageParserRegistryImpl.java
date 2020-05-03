@@ -19,7 +19,6 @@ import org.abchip.mimo.language.LanguageParserRegistry;
 
 public class BaseLanguageParserRegistryImpl implements LanguageParserRegistry {
 	
-	
 	private Registry<LanguageParser> registry;
 	
 	@Inject
