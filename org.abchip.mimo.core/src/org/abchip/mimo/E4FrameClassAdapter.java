@@ -39,16 +39,16 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.service.log.Logger;
 
-public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
+public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
-	private static final Logger LOGGER = Logs.getLogger(EMFFrameClassAdapter.class);
+	private static final Logger LOGGER = Logs.getLogger(E4FrameClassAdapter.class);
 
 	private EClass eClass;
 	private Map<String, Slot> slots = null;
 
 	private Map<String, E> entities = null;
 
-	public EMFFrameClassAdapter(Map<String, E> entities, EClass eClass) {
+	public E4FrameClassAdapter(Map<String, E> entities, EClass eClass) {
 		super();
 
 		this.entities = entities;
@@ -79,7 +79,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 		boolean hasToString = false;
 		for (EStructuralFeature structuralFeature : eClass.getEAllStructuralFeatures()) {
 
-			Slot slot = new EMFSlotAdapter(this, structuralFeature);
+			Slot slot = new E4SlotAdapter(this, structuralFeature);
 
 			if (slot.getDataDef() == null) {
 				LOGGER.warn("Invalid conversion slot {} for frame {}", slot.getName(), this.getName());
@@ -90,7 +90,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 			if (slot.isKey()) {
 				Slot relativeKey = null;
 				for (String keyName : keys) {
-					EMFSlotAdapter slotKey = (EMFSlotAdapter) this.getSlot(keyName);
+					E4SlotAdapter slotKey = (E4SlotAdapter) this.getSlot(keyName);
 					if (slotKey.getETypedElement().eContainer().equals(eClass))
 						relativeKey = slotKey;
 				}
@@ -122,7 +122,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 				continue;
 
 			// other operation
-			this.getSlots().add(new EMFSlotAdapter(this, operation));
+			this.getSlots().add(new E4SlotAdapter(this, operation));
 		}
 
 		this.slots = new HashMap<String, Slot>();
@@ -152,7 +152,7 @@ public class EMFFrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 				return akoFrame;
 		}
 
-		akoFrame = new EMFFrameClassAdapter(this.entities, eAko);
+		akoFrame = new E4FrameClassAdapter(this.entities, eAko);
 		if (this.entities != null)
 			this.entities.put(eAko.getName(), (E) akoFrame);
 

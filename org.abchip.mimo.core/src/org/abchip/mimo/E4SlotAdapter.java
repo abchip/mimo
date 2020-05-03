@@ -39,12 +39,12 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
 
-public class EMFSlotAdapter extends SlotImpl {
+public class E4SlotAdapter extends SlotImpl {
 
 
 	private ETypedElement element;
 
-	public EMFSlotAdapter(Frame<?> frame, ETypedElement element) {
+	public E4SlotAdapter(Frame<?> frame, ETypedElement element) {
 		this.element = element;
 
 		eSet(EntityPackage.SLOT__NAME, element.getName());
@@ -59,7 +59,7 @@ public class EMFSlotAdapter extends SlotImpl {
 
 		this.setSlotText(frame);
 
-		eSet(EntityPackage.SLOT__CARDINALITY, new EMFCardinalityAdapter(element));
+		eSet(EntityPackage.SLOT__CARDINALITY, new E4CardinalityAdapter(element));
 
 		if (element instanceof EAttribute)
 			eSet(EntityPackage.SLOT__KEY, ((EAttribute) element).isID());

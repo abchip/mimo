@@ -1406,6 +1406,25 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
+		op = addEOperation(contextEClass, null, "createProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t1);
+		initEOperation(op, g1);
+
+		op = addEOperation(contextEClass, null, "createProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t1);
+		initEOperation(op, g1);
+
 		addEOperation(contextEClass, null, "dispose", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(contextEClass, null, "get", 1, 1, IS_UNIQUE, IS_ORDERED);

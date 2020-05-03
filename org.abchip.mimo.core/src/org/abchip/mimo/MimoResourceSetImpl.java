@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo;
 
-import java.util.WeakHashMap;
+import java.util.Map;
 
 import org.abchip.mimo.context.Context;
 import org.eclipse.emf.common.util.URI;
@@ -19,12 +19,11 @@ public class MimoResourceSetImpl extends ResourceSetImpl {
 
 	private Context context;
 
-	public MimoResourceSetImpl(Context context) {
+	public MimoResourceSetImpl(Context context, Map<URI, Resource> uriResourceMap) {
 		super();
 
 		this.context = context;
-
-		this.setURIResourceMap(new WeakHashMap<URI, Resource>());
+		this.setURIResourceMap(uriResourceMap);
 	}
 
 	public Context getContext() {

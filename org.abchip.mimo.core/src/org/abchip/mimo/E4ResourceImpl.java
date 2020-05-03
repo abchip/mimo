@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.e4;
+package org.abchip.mimo;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -320,4 +320,19 @@ public abstract class E4ContextImpl extends ContextImpl {
 			return null;
 		}
 	}
+
+	@Override
+	public <E extends EntityIdentifiable> E createProxy(String frame, String id) {
+		return createProxy(frame, id, null);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable> E createProxy(String frame, String id, String tenant) {
+		try {
+			Resource<E> resource = this.getResourceManager().getResource(frame, tenant);
+			return resource.createProxy(id);
+		} catch (ResourceException e) {
+			return null;
+		}
+	}
 }

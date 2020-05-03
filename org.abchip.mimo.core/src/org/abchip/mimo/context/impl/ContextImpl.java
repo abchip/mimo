@@ -84,6 +84,22 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 	 * @generated NOT
 	 */
 	@Override
+	public abstract <E extends EntityIdentifiable> E createProxy(String frame, String id);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract <E extends EntityIdentifiable> E createProxy(String frame, String id, String tenant);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
 	public abstract void dispose();
 
 	/**

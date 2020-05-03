@@ -6,17 +6,17 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.base;
+package org.abchip.mimo;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.Factory;
 import org.abchip.mimo.resource.ResourceSet;
 
-public class BaseResourceSetFactoryImpl implements Factory<ResourceSet> {
+public class E4ResourceSetFactoryImpl implements Factory<ResourceSet> {
 
 	@Override
 	public ResourceSet create(Context context) {
-		return new BaseResourceSetImpl(context);
+		return new E4ResourceSetImpl(context);
 	}
 
 	@Override

@@ -23,16 +23,16 @@ import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceListener;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceNotifier;
-import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.ResourceWriter;
 import org.abchip.mimo.resource.SerializationType;
 
 public class BaseResourceManagerImpl implements ResourceManager {
 
 	private Context context;
-	private ResourceProviderRegistry resourceProviderRegistry;
+	private ResourceSet resourceSet;
 	private LockManager lockManager;
 	private Map<String, ResourceNotifier<?>> notifiers = null;
 
@@ -40,7 +40,7 @@ public class BaseResourceManagerImpl implements ResourceManager {
 		this.context = context;
 
 		this.lockManager = context.get(LockManager.class);
-		this.resourceProviderRegistry = context.get(ResourceProviderRegistry.class);
+		this.resourceSet = context.get(ResourceSet.class);
 
 		this.notifiers = new HashMap<String, ResourceNotifier<?>>();
 	}
@@ -80,11 +80,7 @@ public class BaseResourceManagerImpl implements ResourceManager {
 
 	@Override
 	public <E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass, String tenant) {
-		try {
-			return this.getResource(klass, tenant).getFrame();
-		} catch (ResourceException e) {
-			return null;
-		}
+		return getFrame(klass.getSimpleName(), tenant);
 	}
 
 	@Override
@@ -95,41 +91,37 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends EntityIdentifiable> Frame<E> getFrame(String frame, String tenant) {
-		try {
-			return (Frame<E>) this.getResource(frame, tenant).getFrame();
-		} catch (ResourceException e) {
-			return null;
-		}
+		return getContext().createProxy(Frame.class, frame, tenant);
 	}
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) throws ResourceException {
-		return resourceProviderRegistry.getResourceProvider(getContext(), klass).getResource(getContext(), klass);
+		return getResource(klass, null);
 	}
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) throws ResourceException {
-		return resourceProviderRegistry.getResourceProvider(getContext(), frame).getResource(getContext(), frame);
+		return getResource(frame, null);
 	}
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException {
-		return resourceProviderRegistry.getResourceProvider(getContext(), frame).getResource(getContext(), frame);
+		return getResource(frame, null);
 	}
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException {
-		return resourceProviderRegistry.getResourceProvider(getContext(), klass).getResource(getContext(), klass, tenant);
+		return getResource(klass.getSimpleName(), tenant);
 	}
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException {
-		return resourceProviderRegistry.getResourceProvider(getContext(), frame).getResource(getContext(), frame, tenant);
+		return getResource(frame.getName(), tenant);
 	}
 
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) throws ResourceException {
-		return resourceProviderRegistry.getResourceProvider(getContext(), frame).getResource(getContext(), frame, tenant);
+		return resourceSet.getResource(frame, tenant);
 	}
 
 	@Override

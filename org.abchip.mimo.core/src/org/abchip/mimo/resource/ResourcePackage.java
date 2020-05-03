@@ -85,22 +85,13 @@ public interface ResourcePackage extends EPackage {
 	int RESOURCE__RESOURCE_CONFIG = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Resource Set</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE__RESOURCE_SET = EntityPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__CONTEXT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int RESOURCE__CONTEXT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
@@ -109,7 +100,7 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int RESOURCE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceConfigImpl <em>Config</em>}' class.
@@ -568,17 +559,6 @@ public interface ResourcePackage extends EPackage {
 	EReference getResource_ResourceConfig();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.resource.Resource#getResourceSet <em>Resource Set</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Resource Set</em>'.
-	 * @see org.abchip.mimo.resource.Resource#getResourceSet()
-	 * @see #getResource()
-	 * @generated
-	 */
-	EReference getResource_ResourceSet();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.abchip.mimo.resource.Resource#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -918,14 +898,6 @@ public interface ResourcePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RESOURCE__RESOURCE_CONFIG = eINSTANCE.getResource_ResourceConfig();
-
-		/**
-		 * The meta object literal for the '<em><b>Resource Set</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESOURCE__RESOURCE_SET = eINSTANCE.getResource_ResourceSet();
 
 		/**
 		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.

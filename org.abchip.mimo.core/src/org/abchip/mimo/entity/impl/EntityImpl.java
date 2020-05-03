@@ -10,7 +10,7 @@ package org.abchip.mimo.entity.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.EMFFrameClassAdapter;
+import org.abchip.mimo.E4FrameClassAdapter;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -52,7 +52,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		return stringValue();
 	}
 
-	private <E extends Entity>String stringValue() {
+	private <E extends Entity> String stringValue() {
 
 		Frame<E> isa = this.isa();
 		StringBuilder result = new StringBuilder(isa.getName());
@@ -126,7 +126,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		if (isa != null)
 			return isa;
 
-		isa = (Frame<E>) new EMFFrameClassAdapter<Frame<E>>(null, eClass());
+		isa = (Frame<E>) new E4FrameClassAdapter<Frame<E>>(null, eClass());
 		return isa;
 	}
 

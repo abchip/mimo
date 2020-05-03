@@ -13,6 +13,8 @@ import java.net.URL;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
+import org.abchip.mimo.E4ResourceSetFactoryImpl;
+import org.abchip.mimo.E4ResourceProviderImpl;
 import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationPaths;
@@ -26,7 +28,6 @@ import org.abchip.mimo.core.base.BaseLockManagerImpl;
 import org.abchip.mimo.core.base.BaseRegistryFactoryImpl;
 import org.abchip.mimo.core.base.BaseResourceManagerFactoryImpl;
 import org.abchip.mimo.core.base.BaseResourceProviderRegistryImpl;
-import org.abchip.mimo.core.base.BaseResourceSetFactoryImpl;
 import org.abchip.mimo.core.base.BaseServiceManagerFactoryImpl;
 import org.abchip.mimo.core.base.BaseServiceProviderRegistryImpl;
 import org.abchip.mimo.core.base.cmd.LogCommands;
@@ -163,13 +164,11 @@ public class E4Activator implements BundleActivator {
 		// services
 		registerServices();
 
-		// class loader
-		ClassLoader bundleLoader = bundle.adapt(BundleWiring.class).getClassLoader();
-		thread.getJavaThread().setContextClassLoader(bundleLoader);
-
 		// start
 		ThreadManager threadManager = application.getContext().get(ThreadManager.class);
 		thread = threadManager.createThread(application.getName(), new E4ApplicationStarter(application), false);
+		ClassLoader bundleLoader = bundle.adapt(BundleWiring.class).getClassLoader();
+		thread.getJavaThread().setContextClassLoader(bundleLoader);
 		threadManager.start(thread);
 	}
 
@@ -237,7 +236,7 @@ public class E4Activator implements BundleActivator {
 		String VERSION = bundle.getHeaders().get(Constants.BUNDLE_VERSION);
 
 		// resourceSet
-		Factory<ResourceSet> resourceSetFactory = new BaseResourceSetFactoryImpl();
+		Factory<ResourceSet> resourceSetFactory = new E4ResourceSetFactoryImpl();
 		application.getContext().set(Factory.class.getName(), resourceSetFactory, false, null);
 
 		// resource

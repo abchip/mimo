@@ -8,10 +8,15 @@
  */
 package org.abchip.mimo;
 
+import java.util.Map;
+
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceConfig;
+import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceProviderRegistry;
 import org.abchip.mimo.util.Frames;
@@ -23,9 +28,22 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 
 	private MimoResourceSetImpl resourceSet;
 
-	public MimoResourceFactoryImpl(MimoResourceSetImpl resourceSet) {
+	public MimoResourceFactoryImpl(MimoResourceSetImpl resourceSet, Map<URI, org.eclipse.emf.ecore.resource.Resource> uriResourceMap) {
 		super();
 		this.resourceSet = resourceSet;
+		
+		Context context = resourceSet.getContext();
+		
+		ResourceConfig EMF_RESOURCE_CONFIG = ResourceFactory.eINSTANCE.createResourceConfig();
+		EMF_RESOURCE_CONFIG.setLockSupport(true);
+		EMF_RESOURCE_CONFIG.setOrderSupport(true);
+
+		// frame resource
+		E4FrameClassAdapter<Frame<?>> frame = new E4FrameClassAdapter<Frame<?>>(Frames.getFrames(), EntityPackage.eINSTANCE.getFrame());
+		E4ResourceImpl<Frame<?>> frameResource = new E4ResourceImpl<Frame<?>>(context, frame, (Map<String, Frame<?>>) Frames.getFrames());
+		frameResource.setResourceConfig(EMF_RESOURCE_CONFIG);
+		URI frameUri = URI.createHierarchicalURI("mimo", context.getTenant(), null, new String[] { Frame.class.getSimpleName() }, null, null);
+		uriResourceMap.put(frameUri, new MimoResourceImpl<Frame<?>>(frameResource, resourceSet, frameUri));
 	}
 
 	private Context getContext() {
@@ -39,7 +57,11 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 		String frameId = uri.segment(0);
 		String tenantId = uri.authority();
 
-		ResourceProvider resourceProvider = getContext().get(ResourceProviderRegistry.class).getResourceProvider(getContext(), frameId);
+		ResourceProvider resourceProvider = null;
+		if (Frame.class.getSimpleName().equals(frameId)) {
+
+		}
+		resourceProvider = getContext().get(ResourceProviderRegistry.class).getResourceProvider(getContext(), frameId);
 
 		Frame<EntityIdentifiable> frame = (Frame<EntityIdentifiable>) Frames.getFrames().get(frameId);
 		Resource<EntityIdentifiable> resource = resourceProvider.doGetResource(this.getContext(), frame, tenantId);

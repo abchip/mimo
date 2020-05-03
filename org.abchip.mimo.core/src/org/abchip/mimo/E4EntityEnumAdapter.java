@@ -11,10 +11,10 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.impl.EntityEnumImpl;
 import org.eclipse.emf.ecore.EEnumLiteral;
 
-public class EMFEntityEnumAdapter extends EntityEnumImpl {
+public class E4EntityEnumAdapter extends EntityEnumImpl {
 
 
-	public EMFEntityEnumAdapter(EEnumLiteral eEnumLiteral) {
+	public E4EntityEnumAdapter(EEnumLiteral eEnumLiteral) {
 		eSet(EntityPackage.ENTITY_ENUM__NAME, eEnumLiteral.getLiteral());
 		eSet(EntityPackage.ENTITY_ENUM__TEXT, eEnumLiteral.getName());
 	}

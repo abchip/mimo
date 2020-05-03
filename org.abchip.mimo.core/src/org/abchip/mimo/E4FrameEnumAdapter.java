@@ -19,11 +19,11 @@ import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 
-public class EMFFrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
+public class E4FrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 
 	private EEnum eEnum;
 
-	public EMFFrameEnumAdapter(EEnum eEnum) {
+	public E4FrameEnumAdapter(EEnum eEnum) {
 		super();
 
 		this.eEnum = eEnum;

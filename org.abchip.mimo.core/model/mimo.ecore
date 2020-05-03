@@ -233,6 +233,23 @@
         <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
+      <eOperations name="createProxy" lowerBound="1">
+        <eGenericType eTypeParameter="#//context/Context/createProxy.4/E"/>
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+        </eTypeParameters>
+        <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="createProxy" lowerBound="1">
+        <eGenericType eTypeParameter="#//context/Context/createProxy.5/E"/>
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+        </eTypeParameters>
+        <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
       <eOperations name="dispose"/>
       <eOperations name="get" lowerBound="1">
         <eGenericType eTypeParameter="#//context/Context/get/T"/>
@@ -1196,8 +1213,6 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceConfig" lowerBound="1"
           eType="#//resource/ResourceConfig"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceSet" lowerBound="1"
-          eType="#//resource/ResourceSet" changeable="false" transient="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
           eType="#//context/Context" changeable="false"/>
     </eClassifiers>

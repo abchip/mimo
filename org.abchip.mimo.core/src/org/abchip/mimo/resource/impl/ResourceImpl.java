@@ -17,7 +17,6 @@ import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourcePackage;
-import org.abchip.mimo.resource.ResourceSet;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -34,7 +33,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceConfig <em>Resource Config</em>}</li>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceSet <em>Resource Set</em>}</li>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getContext <em>Context</em>}</li>
  * </ul>
  *
@@ -49,16 +47,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @ordered
 	 */
 	protected ResourceConfig resourceConfig;
-
-	/**
-	 * The cached value of the '{@link #getResourceSet() <em>Resource Set</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceSet()
-	 * @generated
-	 * @ordered
-	 */
-	protected ResourceSet resourceSet;
 
 	/**
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
@@ -87,7 +75,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		super();
 		
 		this.context = context;
-		this.resourceSet = context.get(ResourceSet.class);
 	}
 
 	/**
@@ -134,33 +121,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		resourceConfig = newResourceConfig;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.RESOURCE__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceSet getResourceSet() {
-		if (resourceSet != null && ((EObject)resourceSet).eIsProxy()) {
-			InternalEObject oldResourceSet = (InternalEObject)resourceSet;
-			resourceSet = (ResourceSet)eResolveProxy(oldResourceSet);
-			if (resourceSet != oldResourceSet) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE__RESOURCE_SET, oldResourceSet, resourceSet));
-			}
-		}
-		return resourceSet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceSet basicGetResourceSet() {
-		return resourceSet;
 	}
 
 	/**
@@ -339,9 +299,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
 				if (resolve) return getResourceConfig();
 				return basicGetResourceConfig();
-			case ResourcePackage.RESOURCE__RESOURCE_SET:
-				if (resolve) return getResourceSet();
-				return basicGetResourceSet();
 			case ResourcePackage.RESOURCE__CONTEXT:
 				if (resolve) return getContext();
 				return basicGetContext();
@@ -386,8 +343,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		switch (featureID) {
 			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
 				return resourceConfig != null;
-			case ResourcePackage.RESOURCE__RESOURCE_SET:
-				return resourceSet != null;
 			case ResourcePackage.RESOURCE__CONTEXT:
 				return context != null;
 		}

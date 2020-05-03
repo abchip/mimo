@@ -13,9 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.abchip.mimo.EMFEntityEnumAdapter;
-import org.abchip.mimo.EMFFrameClassAdapter;
-import org.abchip.mimo.EMFFrameEnumAdapter;
+import org.abchip.mimo.E4EntityEnumAdapter;
+import org.abchip.mimo.E4FrameClassAdapter;
+import org.abchip.mimo.E4FrameEnumAdapter;
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
@@ -50,11 +50,11 @@ public class Frames {
 	public static Map<String, EntityEnum> getEnumerators(Frame<EntityEnum> frame) {
 		Map<String, EntityEnum> enums = new HashMap<String, EntityEnum>();
 
-		EMFFrameEnumAdapter<EntityEnum> frameEnum = (EMFFrameEnumAdapter<EntityEnum>) frame;
+		E4FrameEnumAdapter<EntityEnum> frameEnum = (E4FrameEnumAdapter<EntityEnum>) frame;
 		EEnum eEnum = frameEnum.getEEnum();
 
 		for (EEnumLiteral eEnumLiteral : eEnum.getELiterals()) {
-			EntityEnum entity = new EMFEntityEnumAdapter(eEnumLiteral);
+			EntityEnum entity = new E4EntityEnumAdapter(eEnumLiteral);
 			enums.put(eEnumLiteral.getName(), entity);
 		}
 		return enums;
@@ -82,12 +82,12 @@ public class Frames {
 					EClass eClass = (EClass) eClassifier;
 					if (EntityPackage.eINSTANCE.getEntity().isSuperTypeOf(eClass)) {
 						// if(!tempFrames.containsKey(eClass.getName()))
-						tempFrames.put(eClass.getName(), new EMFFrameClassAdapter<>(tempFrames, eClass));
+						tempFrames.put(eClass.getName(), new E4FrameClassAdapter<>(tempFrames, eClass));
 					}
 				} else if (eClassifier instanceof EEnum) {
 					EEnum eEnum = (EEnum) eClassifier;
 					// if(!tempFrames.containsKey(eEnum.getName()))
-					tempFrames.put(eEnum.getName(), new EMFFrameEnumAdapter<>(eEnum));
+					tempFrames.put(eEnum.getName(), new E4FrameEnumAdapter<>(eEnum));
 				} else if (eClassifier instanceof EDataType) {
 					// TODO
 				} else {

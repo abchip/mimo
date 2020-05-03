@@ -191,6 +191,17 @@
           <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy.3/tenant"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/createProxy.3/E"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/Context/createProxy.4">
+          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy.4/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy.4/id"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/createProxy.4/E"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//context/Context/createProxy.5">
+          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy.5/frame"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy.5/id"/>
+          <genParameters ecoreParameter="mimo.ecore#//context/Context/createProxy.5/tenant"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//context/Context/createProxy.5/E"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/dispose"/>
         <genOperations ecoreOperation="mimo.ecore#//context/Context/get">
           <genParameters ecoreParameter="mimo.ecore#//context/Context/get/clazz"/>
@@ -772,7 +783,6 @@
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/Resource/E"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference mimo.ecore#//resource/Resource/resourceConfig"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//resource/Resource/resourceSet"/>
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//resource/Resource/context"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/attach">
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/attach/entity"/>

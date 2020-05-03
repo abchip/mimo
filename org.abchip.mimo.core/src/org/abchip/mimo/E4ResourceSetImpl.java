@@ -6,28 +6,29 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.base;
+package org.abchip.mimo;
 
-import org.abchip.mimo.MimoResourceFactoryImpl;
-import org.abchip.mimo.MimoResourceImpl;
-import org.abchip.mimo.MimoResourceSetImpl;
+import java.util.Map;
+import java.util.WeakHashMap;
+
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.common.util.URI;
 
-public class BaseResourceSetImpl extends ResourceSetImpl {
+public class E4ResourceSetImpl extends ResourceSetImpl {
 
 	private Context context;
 	private MimoResourceSetImpl e4ResourceSet;
 
-	public BaseResourceSetImpl(Context context) {
+	public E4ResourceSetImpl(Context context) {
 		super();
 		this.context = context;
 
-		e4ResourceSet = new MimoResourceSetImpl(context);
-		e4ResourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("mimo", new MimoResourceFactoryImpl(e4ResourceSet));
+		Map<URI, org.eclipse.emf.ecore.resource.Resource> uriResourceMap = new WeakHashMap<URI, org.eclipse.emf.ecore.resource.Resource>();
+		e4ResourceSet = new MimoResourceSetImpl(context, uriResourceMap);
+		e4ResourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("mimo", new MimoResourceFactoryImpl(e4ResourceSet, uriResourceMap));
 	}
 
 	@Override

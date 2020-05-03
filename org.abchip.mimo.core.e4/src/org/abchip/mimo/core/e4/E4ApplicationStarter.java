@@ -71,7 +71,7 @@ public class E4ApplicationStarter implements Runnable {
 		try {
 			application.getContext().set(Application.class, application);
 			this.start();
-			application.getContext().set(Application.class, null);
+//			application.getContext().set(Application.class, null);
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage());
 		}
