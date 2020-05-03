@@ -14,7 +14,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
 
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.core.http.handler.HttpDeleteHandler;
 import org.abchip.mimo.core.http.handler.HttpFindHandler;
 import org.abchip.mimo.core.http.handler.HttpLookupHandler;
@@ -24,6 +23,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.apache.http.client.ResponseHandler;
@@ -34,22 +34,10 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 	private String tenant = null;
 
-	public HttpResourceImpl(Context context, Frame<E> frame, String tenant) {
-		super(context);
+	public HttpResourceImpl(ResourceSet resourceSet, String tenant, Frame<E> frame) {
+		super(resourceSet, tenant);
 
-		this.resourceSerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
-
-		this.tenant = tenant;
-	}
-
-	@Override
-	public Context getContext() {
-		return this.context;
-	}
-
-	@Override
-	public String getTenant() {
-		return tenant;
+		this.resourceSerializer = resourceSet.getContext().getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 	}
 
 	@Override
@@ -70,7 +58,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 
-		HttpConnector connector = context.get(HttpConnector.class);
+		HttpConnector connector = getContext().get(HttpConnector.class);
 		if (connector == null)
 			throw new ResourceException("Unconnected resource " + getFrame().getURI());
 
@@ -107,7 +95,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 
-		HttpConnector connector = context.get(HttpConnector.class);
+		HttpConnector connector = getContext().get(HttpConnector.class);
 		if (connector == null)
 			throw new ResourceException("Unconnected resource " + getFrame().getURI());
 
@@ -131,7 +119,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (proxy)
 			query += "&proxy=" + proxy;
 
-		HttpConnector connector = context.get(HttpConnector.class);
+		HttpConnector connector = getContext().get(HttpConnector.class);
 		if (connector == null)
 			throw new ResourceException("Unconnected resource " + getFrame().getURI());
 
@@ -174,7 +162,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (order != null)
 			query += "&order=" + order;
 
-		HttpConnector connector = context.get(HttpConnector.class);
+		HttpConnector connector = getContext().get(HttpConnector.class);
 		if (connector == null)
 			throw new ResourceException("Unconnected resource " + getFrame().getURI());
 
@@ -219,7 +207,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 
-		HttpConnector connector = context.get(HttpConnector.class);
+		HttpConnector connector = getContext().get(HttpConnector.class);
 		if (connector == null)
 			throw new ResourceException("Unconnected resource " + getFrame().getURI());
 

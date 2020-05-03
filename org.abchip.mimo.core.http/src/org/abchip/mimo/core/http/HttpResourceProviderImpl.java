@@ -8,12 +8,12 @@
  */
 package org.abchip.mimo.core.http;
 
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceFactory;
+import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
 
 public class HttpResourceProviderImpl extends ResourceProviderImpl {
@@ -27,9 +27,9 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> doGetResource(Context context, Frame<E> frame, String tenant) {
+	public <E extends EntityIdentifiable> Resource<E> doGetResource(ResourceSet resourceSet, String tenant, Frame<E> frame) {
 
-		Resource<E> resource = new HttpResourceImpl<E>(context, frame, tenant);
+		Resource<E> resource = new HttpResourceImpl<E>(resourceSet, tenant, frame);
 		resource.setResourceConfig(this.resourceConfig);
 
 		return resource;

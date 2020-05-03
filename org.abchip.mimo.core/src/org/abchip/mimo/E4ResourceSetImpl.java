@@ -27,7 +27,7 @@ public class E4ResourceSetImpl extends ResourceSetImpl {
 		this.context = context;
 
 		Map<URI, org.eclipse.emf.ecore.resource.Resource> uriResourceMap = new WeakHashMap<URI, org.eclipse.emf.ecore.resource.Resource>();
-		e4ResourceSet = new MimoResourceSetImpl(context, uriResourceMap);
+		e4ResourceSet = new MimoResourceSetImpl(this, uriResourceMap);
 		e4ResourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("mimo", new MimoResourceFactoryImpl(e4ResourceSet, uriResourceMap));
 	}
 

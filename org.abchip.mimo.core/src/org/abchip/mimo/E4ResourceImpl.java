@@ -14,10 +14,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
+import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 
 public class E4ResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
@@ -26,19 +26,14 @@ public class E4ResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E
 	private Map<String, E> entities = null;
 
 	@SuppressWarnings("unchecked")
-	protected E4ResourceImpl(Context context, Frame<E> frame, Map<String, E> entities) {
-		super(context);
+	protected E4ResourceImpl(ResourceSet resourceSet, String tenant, Frame<E> frame, Map<String, E> entities) {
+		super(resourceSet, tenant);
 
 		this.frame = frame;
 		if (frame == null)
 			this.frame = (Frame<E>) this.entities.get(Frame.class.getSimpleName());
 
 		this.entities = entities;
-	}
-
-	@Override
-	public Context getContext() {
-		return this.context;
 	}
 
 	@Override

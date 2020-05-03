@@ -362,8 +362,18 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
-	public EReference getResource_Context() {
+	public EReference getResource_ResourceSet() {
 		return (EReference)resourceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getResource_Tenant() {
+		return (EAttribute)resourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -677,7 +687,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		// Create classes and their features
 		resourceEClass = createEClass(RESOURCE);
 		createEReference(resourceEClass, RESOURCE__RESOURCE_CONFIG);
-		createEReference(resourceEClass, RESOURCE__CONTEXT);
+		createEReference(resourceEClass, RESOURCE__RESOURCE_SET);
+		createEAttribute(resourceEClass, RESOURCE__TENANT);
 
 		resourceConfigEClass = createEClass(RESOURCE_CONFIG);
 		createEAttribute(resourceConfigEClass, RESOURCE_CONFIG__LOCK_SUPPORT);
@@ -800,7 +811,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		// Initialize classes and features; add operations and parameters
 		initEClass(resourceEClass, Resource.class, "Resource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResource_ResourceConfig(), this.getResourceConfig(), null, "resourceConfig", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getResource_Context(), theContextPackage.getContext(), null, "context", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResource_ResourceSet(), this.getResourceSet(), null, "resourceSet", null, 1, 1, Resource.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_Tenant(), ecorePackage.getEString(), "tenant", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(resourceEClass, null, "attach", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceEClass_E);
@@ -828,13 +840,13 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());
 
+		addEOperation(resourceEClass, theContextPackage.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(resourceEClass, null, "getFrame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(resourceEClass_E);
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
-
-		addEOperation(resourceEClass, ecorePackage.getEString(), "getTenant", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(resourceEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceEClass_E);

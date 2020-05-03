@@ -783,7 +783,8 @@
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/Resource/E"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference mimo.ecore#//resource/Resource/resourceConfig"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//resource/Resource/context"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//resource/Resource/resourceSet"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/Resource/tenant"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/attach">
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/attach/entity"/>
         </genOperations>
@@ -800,8 +801,8 @@
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/detach">
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/detach/entity"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/getContext"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/getFrame"/>
-        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/getTenant"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/make"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/make.1">
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/make.1/sequence"/>

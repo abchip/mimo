@@ -22,12 +22,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSerializer;
+import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.abchip.mimo.util.Logs;
@@ -40,25 +40,11 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	private NIOPathManager pathManager = null;
 	private ResourceSerializer<E> resourceSerializer = null;
 
-	private String tenant = null;
-
-	public NIOResourcempl(Context context, Frame<E> frame, String tenant, NIOPathManager pathManager) {
-		super(context);
-
-		this.tenant = tenant;
+	public NIOResourcempl(ResourceSet resourceSet, String tenant, Frame<E> frame, NIOPathManager pathManager) {
+		super(resourceSet, tenant);
 		this.pathManager = pathManager;
 
-		this.resourceSerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.XMI);
-	}
-
-	@Override
-	public Context getContext() {
-		return this.context;
-	}
-
-	@Override
-	public String getTenant() {
-		return tenant;
+		this.resourceSerializer = resourceSet.getContext().getResourceManager().createResourceSerializer(frame, SerializationType.XMI);
 	}
 
 	@Override

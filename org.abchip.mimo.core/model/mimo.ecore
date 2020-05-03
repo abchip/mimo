@@ -1177,12 +1177,12 @@
           <eGenericType eTypeParameter="#//resource/Resource/E"/>
         </eParameters>
       </eOperations>
+      <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
       <eOperations name="getFrame" lowerBound="1">
         <eGenericType eClassifier="#//entity/Frame">
           <eTypeArguments eTypeParameter="#//resource/Resource/E"/>
         </eGenericType>
       </eOperations>
-      <eOperations name="getTenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="make" lowerBound="1">
         <eGenericType eTypeParameter="#//resource/Resource/E"/>
       </eOperations>
@@ -1213,8 +1213,11 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceConfig" lowerBound="1"
           eType="#//resource/ResourceConfig"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
-          eType="#//context/Context" changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceSet" lowerBound="1"
+          eType="#//resource/ResourceSet" changeable="false" transient="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ResourceConfig" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lockSupport" lowerBound="1"

@@ -11,23 +11,28 @@ package org.abchip.mimo;
 import java.util.Map;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.resource.ResourceSet;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 public class MimoResourceSetImpl extends ResourceSetImpl {
 
-	private Context context;
+	private ResourceSet resourceSet;
 
-	public MimoResourceSetImpl(Context context, Map<URI, Resource> uriResourceMap) {
+	public MimoResourceSetImpl(ResourceSet resourceSet, Map<URI, Resource> uriResourceMap) {
 		super();
 
-		this.context = context;
+		this.resourceSet = resourceSet;
 		this.setURIResourceMap(uriResourceMap);
 	}
 
+	public ResourceSet getResourceSet() {
+		return this.resourceSet;
+	}
+	
 	public Context getContext() {
-		return this.context;
+		return this.resourceSet.getContext();
 	}
 
 	@Override

@@ -85,13 +85,22 @@ public interface ResourcePackage extends EPackage {
 	int RESOURCE__RESOURCE_CONFIG = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * The feature id for the '<em><b>Resource Set</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__CONTEXT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+	int RESOURCE__RESOURCE_SET = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__TENANT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
@@ -100,7 +109,7 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+	int RESOURCE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceConfigImpl <em>Config</em>}' class.
@@ -559,15 +568,26 @@ public interface ResourcePackage extends EPackage {
 	EReference getResource_ResourceConfig();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.abchip.mimo.resource.Resource#getContext <em>Context</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.resource.Resource#getResourceSet <em>Resource Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Context</em>'.
-	 * @see org.abchip.mimo.resource.Resource#getContext()
+	 * @return the meta object for the reference '<em>Resource Set</em>'.
+	 * @see org.abchip.mimo.resource.Resource#getResourceSet()
 	 * @see #getResource()
 	 * @generated
 	 */
-	EReference getResource_Context();
+	EReference getResource_ResourceSet();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.Resource#getTenant <em>Tenant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tenant</em>'.
+	 * @see org.abchip.mimo.resource.Resource#getTenant()
+	 * @see #getResource()
+	 * @generated
+	 */
+	EAttribute getResource_Tenant();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.resource.ResourceConfig <em>Config</em>}'.
@@ -900,12 +920,20 @@ public interface ResourcePackage extends EPackage {
 		EReference RESOURCE__RESOURCE_CONFIG = eINSTANCE.getResource_ResourceConfig();
 
 		/**
-		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Resource Set</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RESOURCE__CONTEXT = eINSTANCE.getResource_Context();
+		EReference RESOURCE__RESOURCE_SET = eINSTANCE.getResource_ResourceSet();
+
+		/**
+		 * The meta object literal for the '<em><b>Tenant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE__TENANT = eINSTANCE.getResource_Tenant();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceConfigImpl <em>Config</em>}' class.

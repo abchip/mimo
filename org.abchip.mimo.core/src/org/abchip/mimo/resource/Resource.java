@@ -23,7 +23,8 @@ import org.abchip.mimo.entity.Frame;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.Resource#getResourceConfig <em>Resource Config</em>}</li>
- *   <li>{@link org.abchip.mimo.resource.Resource#getContext <em>Context</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.Resource#getResourceSet <em>Resource Set</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.Resource#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.resource.ResourcePackage#getResource()
@@ -75,9 +76,12 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	Frame<E> getFrame();
 
 	/**
+	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
+	 * @return the value of the '<em>Tenant</em>' attribute.
+	 * @see org.abchip.mimo.resource.ResourcePackage#getResource_Tenant()
+	 * @model required="true" changeable="false"
 	 * @generated
 	 */
 	String getTenant();
@@ -121,6 +125,17 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	void setResourceConfig(ResourceConfig value);
 
 	/**
+	 * Returns the value of the '<em><b>Resource Set</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Resource Set</em>' reference.
+	 * @see org.abchip.mimo.resource.ResourcePackage#getResource_ResourceSet()
+	 * @model required="true" transient="true" changeable="false"
+	 * @generated
+	 */
+	ResourceSet getResourceSet();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true"
@@ -161,12 +176,9 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	void update(E entity) throws ResourceException;
 
 	/**
-	 * Returns the value of the '<em><b>Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context</em>' reference.
-	 * @see org.abchip.mimo.resource.ResourcePackage#getResource_Context()
-	 * @model required="true" changeable="false"
+	 * @model kind="operation" required="true"
 	 * @generated
 	 */
 	Context getContext();

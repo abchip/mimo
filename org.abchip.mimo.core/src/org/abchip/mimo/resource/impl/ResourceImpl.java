@@ -17,6 +17,7 @@ import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourcePackage;
+import org.abchip.mimo.resource.ResourceSet;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -33,7 +34,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceConfig <em>Resource Config</em>}</li>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getContext <em>Context</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceSet <em>Resource Set</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,18 +51,36 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	protected ResourceConfig resourceConfig;
 
 	/**
-	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContext()
+	 * The cached value of the '{@link #getResourceSet() <em>Resource Set</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getResourceSet()
 	 * @generated
 	 * @ordered
 	 */
-	protected Context context;
+	protected ResourceSet resourceSet;
 
 	/**
+	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see #getTenant()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TENANT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTenant()
+	 * @generated
+	 * @ordered
+	 */
+	protected String tenant = TENANT_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ResourceImpl() {
@@ -69,12 +89,14 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
-	protected ResourceImpl(Context context) {
+	protected ResourceImpl(ResourceSet resourceSet, String tenant) {
 		super();
-		
-		this.context = context;
+
+		this.resourceSet = resourceSet;
+		this.tenant = tenant;
 	}
 
 	/**
@@ -124,8 +146,43 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	}
 
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceSet getResourceSet() {
+		if (resourceSet != null && ((EObject)resourceSet).eIsProxy()) {
+			InternalEObject oldResourceSet = (InternalEObject)resourceSet;
+			resourceSet = (ResourceSet)eResolveProxy(oldResourceSet);
+			if (resourceSet != oldResourceSet) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE__RESOURCE_SET, oldResourceSet, resourceSet));
+			}
+		}
+		return resourceSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResourceSet basicGetResourceSet() {
+		return resourceSet;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getTenant() {
+		return tenant;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -149,8 +206,8 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	public abstract void delete(E entity) throws ResourceException;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -160,12 +217,14 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
-	public abstract Frame<E> getFrame();
+	public Context getContext() {
+		return getResourceSet().getContext();
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -173,7 +232,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @generated NOT
 	 */
 	@Override
-	public abstract String getTenant();
+	public abstract Frame<E> getFrame();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -209,9 +268,9 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 				break;
 			}
 		}
-		
+
 		this.attach(entity);
-		
+
 		return entity;
 	}
 
@@ -239,7 +298,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 		return entity;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -274,23 +333,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public abstract Context getContext();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Context basicGetContext() {
-		return context;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -299,9 +341,11 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
 				if (resolve) return getResourceConfig();
 				return basicGetResourceConfig();
-			case ResourcePackage.RESOURCE__CONTEXT:
-				if (resolve) return getContext();
-				return basicGetContext();
+			case ResourcePackage.RESOURCE__RESOURCE_SET:
+				if (resolve) return getResourceSet();
+				return basicGetResourceSet();
+			case ResourcePackage.RESOURCE__TENANT:
+				return getTenant();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -343,9 +387,27 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		switch (featureID) {
 			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
 				return resourceConfig != null;
-			case ResourcePackage.RESOURCE__CONTEXT:
-				return context != null;
+			case ResourcePackage.RESOURCE__RESOURCE_SET:
+				return resourceSet != null;
+			case ResourcePackage.RESOURCE__TENANT:
+				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (tenant: ");
+		result.append(tenant);
+		result.append(')');
+		return result.toString();
 	}
 } // ResourceImpl
