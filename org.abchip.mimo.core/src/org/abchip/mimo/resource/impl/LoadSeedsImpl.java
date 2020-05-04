@@ -41,7 +41,7 @@ import org.osgi.service.log.Logger;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.impl.LoadSeedsImpl#getSeedPattern <em>Seed Pattern</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.impl.LoadSeedsImpl#getPattern <em>Pattern</em>}</li>
  *   <li>{@link org.abchip.mimo.resource.impl.LoadSeedsImpl#isUpdate <em>Update</em>}</li>
  * </ul>
  *
@@ -50,23 +50,23 @@ import org.osgi.service.log.Logger;
 public class LoadSeedsImpl extends ServiceRequestImpl<ServiceResponse> implements LoadSeeds {
 
 	/**
-	 * The default value of the '{@link #getSeedPattern() <em>Seed Pattern</em>}' attribute.
+	 * The default value of the '{@link #getPattern() <em>Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSeedPattern()
+	 * @see #getPattern()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SEED_PATTERN_EDEFAULT = null;
+	protected static final String PATTERN_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getSeedPattern() <em>Seed Pattern</em>}' attribute.
+	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSeedPattern()
+	 * @see #getPattern()
 	 * @generated
 	 * @ordered
 	 */
-	protected String seedPattern = SEED_PATTERN_EDEFAULT;
+	protected String pattern = PATTERN_EDEFAULT;
 	/**
 	 * The default value of the '{@link #isUpdate() <em>Update</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -105,24 +105,26 @@ public class LoadSeedsImpl extends ServiceRequestImpl<ServiceResponse> implement
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public String getSeedPattern() {
-		return seedPattern;
+	public String getPattern() {
+		return pattern;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public void setSeedPattern(String newSeedPattern) {
-		String oldSeedPattern = seedPattern;
-		seedPattern = newSeedPattern;
+	public void setPattern(String newPattern) {
+		String oldPattern = pattern;
+		pattern = newPattern;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.LOAD_SEEDS__SEED_PATTERN, oldSeedPattern, seedPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcePackage.LOAD_SEEDS__PATTERN, oldPattern, pattern));
 	}
 
 	/**
@@ -154,8 +156,8 @@ public class LoadSeedsImpl extends ServiceRequestImpl<ServiceResponse> implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ResourcePackage.LOAD_SEEDS__SEED_PATTERN:
-				return getSeedPattern();
+			case ResourcePackage.LOAD_SEEDS__PATTERN:
+				return getPattern();
 			case ResourcePackage.LOAD_SEEDS__UPDATE:
 				return isUpdate();
 		}
@@ -170,8 +172,8 @@ public class LoadSeedsImpl extends ServiceRequestImpl<ServiceResponse> implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ResourcePackage.LOAD_SEEDS__SEED_PATTERN:
-				setSeedPattern((String)newValue);
+			case ResourcePackage.LOAD_SEEDS__PATTERN:
+				setPattern((String)newValue);
 				return;
 			case ResourcePackage.LOAD_SEEDS__UPDATE:
 				setUpdate((Boolean)newValue);
@@ -188,8 +190,8 @@ public class LoadSeedsImpl extends ServiceRequestImpl<ServiceResponse> implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.LOAD_SEEDS__SEED_PATTERN:
-				setSeedPattern(SEED_PATTERN_EDEFAULT);
+			case ResourcePackage.LOAD_SEEDS__PATTERN:
+				setPattern(PATTERN_EDEFAULT);
 				return;
 			case ResourcePackage.LOAD_SEEDS__UPDATE:
 				setUpdate(UPDATE_EDEFAULT);
@@ -206,8 +208,8 @@ public class LoadSeedsImpl extends ServiceRequestImpl<ServiceResponse> implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.LOAD_SEEDS__SEED_PATTERN:
-				return SEED_PATTERN_EDEFAULT == null ? seedPattern != null : !SEED_PATTERN_EDEFAULT.equals(seedPattern);
+			case ResourcePackage.LOAD_SEEDS__PATTERN:
+				return PATTERN_EDEFAULT == null ? pattern != null : !PATTERN_EDEFAULT.equals(pattern);
 			case ResourcePackage.LOAD_SEEDS__UPDATE:
 				return update != UPDATE_EDEFAULT;
 		}
@@ -224,8 +226,8 @@ public class LoadSeedsImpl extends ServiceRequestImpl<ServiceResponse> implement
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (seedPattern: ");
-		result.append(seedPattern);
+		result.append(" (pattern: ");
+		result.append(pattern);
 		result.append(", update: ");
 		result.append(update);
 		result.append(')');
@@ -239,7 +241,7 @@ public class LoadSeedsImpl extends ServiceRequestImpl<ServiceResponse> implement
 		Context context = this.getContext();
 
 		Bundle bundle = context.get(Application.class).getBundle();
-		Enumeration<URL> entries = bundle.findEntries(MimoConstants.SEEDS_PATH + "/" + this.getSeedPattern(), null, false);
+		Enumeration<URL> entries = bundle.findEntries(MimoConstants.SEEDS_PATH + "/" + this.getPattern(), null, false);
 		List<URL> elements = Enumerations.sort(entries, new Comparator<URL>() {
 			@Override
 			public int compare(URL o1, URL o2) {

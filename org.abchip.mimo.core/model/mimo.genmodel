@@ -790,7 +790,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/LoadSeed/update"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//resource/LoadSeeds">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/LoadSeeds/seedPattern"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/LoadSeeds/pattern"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/LoadSeeds/update"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/Resource">

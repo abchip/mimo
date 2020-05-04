@@ -168,13 +168,13 @@ public interface ResourcePackage extends EPackage {
 	int LOAD_SEEDS__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
 
 	/**
-	 * The feature id for the '<em><b>Seed Pattern</b></em>' attribute.
+	 * The feature id for the '<em><b>Pattern</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOAD_SEEDS__SEED_PATTERN = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+	int LOAD_SEEDS__PATTERN = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Update</b></em>' attribute.
@@ -718,15 +718,15 @@ public interface ResourcePackage extends EPackage {
 	EClass getLoadSeeds();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.LoadSeeds#getSeedPattern <em>Seed Pattern</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.LoadSeeds#getPattern <em>Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Seed Pattern</em>'.
-	 * @see org.abchip.mimo.resource.LoadSeeds#getSeedPattern()
+	 * @return the meta object for the attribute '<em>Pattern</em>'.
+	 * @see org.abchip.mimo.resource.LoadSeeds#getPattern()
 	 * @see #getLoadSeeds()
 	 * @generated
 	 */
-	EAttribute getLoadSeeds_SeedPattern();
+	EAttribute getLoadSeeds_Pattern();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.LoadSeeds#isUpdate <em>Update</em>}'.
@@ -1131,12 +1131,12 @@ public interface ResourcePackage extends EPackage {
 		EClass LOAD_SEEDS = eINSTANCE.getLoadSeeds();
 
 		/**
-		 * The meta object literal for the '<em><b>Seed Pattern</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Pattern</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LOAD_SEEDS__SEED_PATTERN = eINSTANCE.getLoadSeeds_SeedPattern();
+		EAttribute LOAD_SEEDS__PATTERN = eINSTANCE.getLoadSeeds_Pattern();
 
 		/**
 		 * The meta object literal for the '<em><b>Update</b></em>' attribute feature.

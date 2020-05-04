@@ -398,7 +398,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLoadSeeds_SeedPattern() {
+	public EAttribute getLoadSeeds_Pattern() {
 		return (EAttribute)loadSeedsEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -766,7 +766,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		createEAttribute(loadSeedEClass, LOAD_SEED__UPDATE);
 
 		loadSeedsEClass = createEClass(LOAD_SEEDS);
-		createEAttribute(loadSeedsEClass, LOAD_SEEDS__SEED_PATTERN);
+		createEAttribute(loadSeedsEClass, LOAD_SEEDS__PATTERN);
 		createEAttribute(loadSeedsEClass, LOAD_SEEDS__UPDATE);
 
 		resourceEClass = createEClass(RESOURCE);
@@ -915,7 +915,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		initEAttribute(getLoadSeed_Update(), ecorePackage.getEBoolean(), "update", null, 0, 1, LoadSeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(loadSeedsEClass, LoadSeeds.class, "LoadSeeds", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLoadSeeds_SeedPattern(), ecorePackage.getEString(), "seedPattern", null, 1, 1, LoadSeeds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLoadSeeds_Pattern(), ecorePackage.getEString(), "pattern", null, 1, 1, LoadSeeds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLoadSeeds_Update(), ecorePackage.getEBoolean(), "update", null, 0, 1, LoadSeeds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceEClass, Resource.class, "Resource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

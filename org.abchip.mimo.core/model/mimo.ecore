@@ -1184,7 +1184,7 @@
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LoadSeeds">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="seedPattern" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="update" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eGenericSuperTypes eClassifier="#//service/ServiceRequest">

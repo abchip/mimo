@@ -20,7 +20,7 @@ import org.abchip.mimo.service.ServiceResponse;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.LoadSeeds#getSeedPattern <em>Seed Pattern</em>}</li>
+ *   <li>{@link org.abchip.mimo.resource.LoadSeeds#getPattern <em>Pattern</em>}</li>
  *   <li>{@link org.abchip.mimo.resource.LoadSeeds#isUpdate <em>Update</em>}</li>
  * </ul>
  *
@@ -30,26 +30,26 @@ import org.abchip.mimo.service.ServiceResponse;
  */
 public interface LoadSeeds extends ServiceRequest<ServiceResponse>, Callable<ServiceResponse> {
 	/**
-	 * Returns the value of the '<em><b>Seed Pattern</b></em>' attribute.
+	 * Returns the value of the '<em><b>Pattern</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Seed Pattern</em>' attribute.
-	 * @see #setSeedPattern(String)
-	 * @see org.abchip.mimo.resource.ResourcePackage#getLoadSeeds_SeedPattern()
+	 * @return the value of the '<em>Pattern</em>' attribute.
+	 * @see #setPattern(String)
+	 * @see org.abchip.mimo.resource.ResourcePackage#getLoadSeeds_Pattern()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getSeedPattern();
+	String getPattern();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.resource.LoadSeeds#getSeedPattern <em>Seed Pattern</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.resource.LoadSeeds#getPattern <em>Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Seed Pattern</em>' attribute.
-	 * @see #getSeedPattern()
+	 * @param value the new value of the '<em>Pattern</em>' attribute.
+	 * @see #getPattern()
 	 * @generated
 	 */
-	void setSeedPattern(String value);
+	void setPattern(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Update</b></em>' attribute.
