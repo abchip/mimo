@@ -278,18 +278,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setHasToString(boolean newHasToString) {
-		boolean oldHasToString = hasToString;
-		hasToString = newHasToString;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__HAS_TO_STRING, oldHasToString, hasToString));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
 	 */
@@ -464,16 +452,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 			case EntityPackage.FRAME__AKO:
 				setAko((Frame<? super E>)newValue);
 				return;
-			case EntityPackage.FRAME__ENUM:
-				setEnum((Boolean)newValue);
-				return;
-			case EntityPackage.FRAME__KEYS:
-				getKeys().clear();
-				getKeys().addAll((Collection<? extends String>)newValue);
-				return;
-			case EntityPackage.FRAME__HAS_TO_STRING:
-				setHasToString((Boolean)newValue);
-				return;
 			case EntityPackage.FRAME__NAME:
 				setName((String)newValue);
 				return;
@@ -506,15 +484,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 				return;
 			case EntityPackage.FRAME__AKO:
 				setAko((Frame<? super E>)null);
-				return;
-			case EntityPackage.FRAME__ENUM:
-				setEnum(ENUM_EDEFAULT);
-				return;
-			case EntityPackage.FRAME__KEYS:
-				getKeys().clear();
-				return;
-			case EntityPackage.FRAME__HAS_TO_STRING:
-				setHasToString(HAS_TO_STRING_EDEFAULT);
 				return;
 			case EntityPackage.FRAME__NAME:
 				setName(NAME_EDEFAULT);
@@ -686,18 +655,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	@Override
 	public boolean isEnum() {
 		return enum_;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setEnum(boolean newEnum) {
-		boolean oldEnum = enum_;
-		enum_ = newEnum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__ENUM, oldEnum, enum_));
 	}
 
 } // FrameImpl

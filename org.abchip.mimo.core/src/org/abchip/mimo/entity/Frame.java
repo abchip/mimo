@@ -89,7 +89,7 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Keys</em>' attribute list.
 	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_Keys()
-	 * @model
+	 * @model changeable="false" derived="true"
 	 * @generated
 	 */
 	List<String> getKeys();
@@ -103,22 +103,11 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Has To String</em>' attribute.
-	 * @see #setHasToString(boolean)
 	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_HasToString()
-	 * @model
+	 * @model changeable="false" derived="true"
 	 * @generated
 	 */
 	boolean isHasToString();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Frame#isHasToString <em>Has To String</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Has To String</em>' attribute.
-	 * @see #isHasToString()
-	 * @generated
-	 */
-	void setHasToString(boolean value);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -155,7 +144,7 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Super Names</em>' attribute list.
 	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_SuperNames()
-	 * @model changeable="false"
+	 * @model changeable="false" derived="true"
 	 * @generated
 	 */
 	List<String> getSuperNames();
@@ -313,20 +302,9 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Enum</em>' attribute.
-	 * @see #setEnum(boolean)
 	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_Enum()
-	 * @model
+	 * @model changeable="false" derived="true"
 	 * @generated
 	 */
 	boolean isEnum();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.entity.Frame#isEnum <em>Enum</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Enum</em>' attribute.
-	 * @see #isEnum()
-	 * @generated
-	 */
-	void setEnum(boolean value);
 } // Frame

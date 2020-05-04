@@ -12,7 +12,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Queue;
 
 import org.abchip.mimo.context.Context;
@@ -26,14 +25,13 @@ import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceProvider;
 import org.abchip.mimo.resource.ResourceProviderRegistry;
+import org.abchip.mimo.util.Frames;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 import org.osgi.service.log.Logger;
@@ -46,13 +44,13 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 	private ResourceProviderRegistry resourceProviderRegistry;
 
 	private static Map<String, Frame<?>> FRAMES = new HashMap<String, Frame<?>>();
-
+	private static final ResourceConfig EMF_RESOURCE_CONFIG = ResourceFactory.eINSTANCE.createResourceConfig();
+	
 	public MimoResourceFactoryImpl(MimoResourceSetImpl resourceSet, Map<URI, org.eclipse.emf.ecore.resource.Resource> uriResourceMap) {
 		super();
 		this.resourceSet = resourceSet;
 		this.resourceProviderRegistry = getContext().get(ResourceProviderRegistry.class);
 
-		ResourceConfig EMF_RESOURCE_CONFIG = ResourceFactory.eINSTANCE.createResourceConfig();
 		EMF_RESOURCE_CONFIG.setLockSupport(true);
 		EMF_RESOURCE_CONFIG.setOrderSupport(true);
 
@@ -68,9 +66,9 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 
 		@SuppressWarnings("unchecked")
 		Frame<Frame<?>> frame = (Frame<Frame<?>>) FRAMES.get(Frame.class.getSimpleName());
-		E4ResourceImpl<Frame<?>> frameResource = new E4ResourceImpl<Frame<?>>(resourceSet.getResourceSet(), context.getTenant(), frame, FRAMES);
-
+		E4FrameClassResourceImpl<Frame<?>> frameResource = new E4FrameClassResourceImpl<Frame<?>>(resourceSet.getResourceSet(), context.getTenant(), frame, FRAMES);
 		frameResource.setResourceConfig(EMF_RESOURCE_CONFIG);
+		
 		URI frameUri = URI.createHierarchicalURI("mimo", context.getTenant(), null, new String[] { Frame.class.getSimpleName() }, null, null);
 		uriResourceMap.put(frameUri, new MimoResourceImpl<Frame<?>>(frameResource, resourceSet, frameUri));
 	}
@@ -89,11 +87,17 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 		try {
 
 			Frame<EntityIdentifiable> frame = (Frame<EntityIdentifiable>) FRAMES.get(frameId);
-			ResourceProvider resourceProvider = resourceProviderRegistry.getResourceProvider(getContext(), frameId);
-			Resource<EntityIdentifiable> resource = resourceProvider.createResource(resourceSet.getResourceSet(), frame, tenantId);
+
+			Resource<EntityIdentifiable> resource = null;
+			if (frame.isEnum()) {
+				resource = new E4FrameEnumResourceImpl(resourceSet.getResourceSet(), tenantId, frame, getEnumerators(frame));
+				resource.setResourceConfig(EMF_RESOURCE_CONFIG);
+			} else {
+				ResourceProvider resourceProvider = resourceProviderRegistry.getResourceProvider(getContext(), frameId);
+				resource = resourceProvider.createResource(resourceSet.getResourceSet(), frame, tenantId);
+			}
 
 			org.eclipse.emf.ecore.resource.Resource.Internal e4resource = new MimoResourceImpl(resource, this.resourceSet, uri);
-			// TODO insert Resource as resource
 			((InternalEObject) resource).eSetResource(e4resource, null);
 
 			return e4resource;
@@ -104,49 +108,10 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 
 	private void loadFrames() {
 
-		// if (publicFrames == null)
-		// publicFrames = tempFrames;
-
 		EntityPackage.eINSTANCE.getEntity();
 
 		Queue<EClassifier> eClassifiers = new LinkedList<EClassifier>();
-
-		for (Entry<String, Object> entry : EPackage.Registry.INSTANCE.entrySet()) {
-
-			EPackage ePackage = null;
-			if (entry.getValue() instanceof EPackage.Descriptor) {
-				EPackage.Descriptor descriptor = (EPackage.Descriptor) entry.getValue();
-				ePackage = descriptor.getEPackage();
-			} else
-				ePackage = (EPackage) entry.getValue();
-
-			for (EClassifier eClassifier : ePackage.getEClassifiers()) {
-
-				if (eClassifiers.contains(eClassifier)) {
-					LOGGER.warn("Duplicated entity found {}", eClassifier.getName());
-					continue;
-				}
-
-				if (eClassifier instanceof EClass) {
-					EClass eClass = (EClass) eClassifier;
-
-					// only extends Entity
-					if (!EntityPackage.eINSTANCE.getEntity().isSuperTypeOf(eClass))
-						continue;
-
-					eClassifiers.add(eClass);
-				} else if (eClassifier instanceof EEnum) {
-					EEnum eEnum = (EEnum) eClassifier;
-
-					eClassifiers.add(eEnum);
-				} else if (eClassifier instanceof EDataType) {
-					// TODO
-					continue;
-				} else {
-					LOGGER.warn("Unknown classifier {}", eClassifier.getName());
-				}
-			}
-		}
+		eClassifiers.addAll(Frames.getEClassifiers().values());
 
 		// consuming order
 		{
@@ -154,24 +119,18 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 			EClass eClass = EntityPackage.eINSTANCE.getEntity();
 			if (eClassifiers.remove(eClass))
 				FRAMES.put(eClass.getName(), new E4FrameClassAdapter<>(null, eClass));
-			else
-				"".toString();
 		}
 		{
 			// entity identifiable
 			EClass eClass = EntityPackage.eINSTANCE.getEntityIdentifiable();
 			if (eClassifiers.remove(eClass))
 				FRAMES.put(eClass.getName(), new E4FrameClassAdapter<>(FRAMES.get(EntityPackage.eINSTANCE.getEntity().getName()), eClass));
-			else
-				"".toString();
 		}
 		{
 			// frame
 			EClass eClass = EntityPackage.eINSTANCE.getFrame();
 			if (eClassifiers.remove(eClass))
 				FRAMES.put(eClass.getName(), new E4FrameClassAdapter<>(FRAMES.get(EntityPackage.eINSTANCE.getEntityIdentifiable().getName()), eClass));
-			else
-				"".toString();
 		}
 
 		while (!eClassifiers.isEmpty()) {
@@ -181,15 +140,17 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 				EClass eClass = (EClass) eClassifier;
 
 				// before parent
-				if (eClass.getESuperTypes().isEmpty())
-					"".toString();
+				if (eClass.getESuperTypes().isEmpty()) {
+					LOGGER.warn("Invlaid class {}", eClass.getName());
+					continue;
+				}
 
 				EClass eSuperType = eClass.getESuperTypes().get(0);
 				if (eClassifiers.contains(eSuperType)) {
 					eClassifiers.add(eClass);
 					continue;
 				} else if (!FRAMES.containsKey(eSuperType.getName())) {
-					LOGGER.warn("Unknown classifier {}", eSuperType.getName());
+					LOGGER.warn("Unknown class {}", eSuperType.getName());
 					continue;
 				}
 
@@ -206,11 +167,10 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 		FRAMES = Collections.unmodifiableMap(FRAMES);
 	}
 
-	@SuppressWarnings("unused")
-	private Map<String, EntityEnum> getEnumerators(Frame<EntityEnum> frame) {
+	private Map<String, EntityEnum> getEnumerators(Frame<EntityIdentifiable> frame) {
 		Map<String, EntityEnum> enums = new HashMap<String, EntityEnum>();
 
-		E4FrameEnumAdapter<EntityEnum> frameEnum = (E4FrameEnumAdapter<EntityEnum>) frame;
+		E4FrameEnumAdapter<?> frameEnum = (E4FrameEnumAdapter<?>) frame;
 		EEnum eEnum = frameEnum.getEEnum();
 
 		for (EEnumLiteral eEnumLiteral : eEnum.getELiterals()) {

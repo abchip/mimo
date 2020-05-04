@@ -116,23 +116,14 @@ public abstract class E4ContextImpl extends ContextImpl {
 			return object;
 
 		Application application = this.get(Application.class);
-		try {
+		for (Factory<T> factory : application.getContext().getAll(Factory.class)) {
+			if (!factory.getInterfaceClass().equals(clazz))
+				continue;
 
-			for (Factory<T> factory : application.getContext().getAll(Factory.class)) {
-				if (!factory.getInterfaceClass().equals(clazz))
-					continue;
-
-				object = factory.create(this);
-				this.set(factory.getInterfaceClass(), object);
-				break;
-			}
-		} catch (Exception e) {
-			LOGGER.warn(e.getMessage());
-			return null;
+			object = factory.create(this);
+			this.set(factory.getInterfaceClass(), object);
+			break;
 		}
-
-		if (object == null)
-			"".toString();
 
 		return object;
 	}

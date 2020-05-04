@@ -17,6 +17,7 @@ import org.abchip.mimo.entity.impl.FrameImpl;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
 
 public class E4FrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 
@@ -70,7 +71,10 @@ public class E4FrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 
 	@Override
 	public String getPackageName() {
-		return null;
+
+		EPackage ePackage = eEnum.getEPackage();
+		String packageName = ePackage.getNsPrefix().replaceAll("-", ".");
+		return packageName;
 	}
 
 	private void setFrameText() {

@@ -19,16 +19,16 @@ import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 
-public class E4ResourceImpl<E extends Frame<?>> extends ResourceImpl<E> {
+public class E4FrameClassResourceImpl<E extends Frame<?>> extends ResourceImpl<E> {
 
 	private Frame<E> frame = null;
 	private Map<String, E> entities = null;
 
-	protected E4ResourceImpl(ResourceSet resourceSet, String tenant, Frame<E> frame, Map<String, E> entities) {
+	protected E4FrameClassResourceImpl(ResourceSet resourceSet, String tenant, Frame<E> frame, Map<String, E> frames) {
 		super(resourceSet, tenant);
 
 		this.frame = frame;
-		this.entities = entities;
+		this.entities = frames;
 	}
 
 	@Override
