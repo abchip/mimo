@@ -10,6 +10,7 @@ package org.abchip.mimo.resource;
 import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.service.ServicePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -66,6 +67,134 @@ public interface ResourcePackage extends EPackage {
 	ResourcePackage eINSTANCE = org.abchip.mimo.resource.impl.ResourcePackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.LoadSeedImpl <em>Load Seed</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.resource.impl.LoadSeedImpl
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getLoadSeed()
+	 * @generated
+	 */
+	int LOAD_SEED = 0;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEED__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEED__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEED__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Seed Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEED__SEED_ID = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Update</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEED__UPDATE = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Load Seed</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEED_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.LoadSeedsImpl <em>Load Seeds</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.resource.impl.LoadSeedsImpl
+	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getLoadSeeds()
+	 * @generated
+	 */
+	int LOAD_SEEDS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEEDS__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEEDS__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEEDS__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Seed Pattern</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEEDS__SEED_PATTERN = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Update</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEEDS__UPDATE = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Load Seeds</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEEDS_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.impl.ResourceImpl <em>Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,7 +202,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResource()
 	 * @generated
 	 */
-	int RESOURCE = 0;
+	int RESOURCE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Resource Config</b></em>' reference.
@@ -119,7 +248,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceConfig()
 	 * @generated
 	 */
-	int RESOURCE_CONFIG = 1;
+	int RESOURCE_CONFIG = 3;
 
 	/**
 	 * The feature id for the '<em><b>Lock Support</b></em>' attribute.
@@ -165,7 +294,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceEvent()
 	 * @generated
 	 */
-	int RESOURCE_EVENT = 2;
+	int RESOURCE_EVENT = 4;
 
 	/**
 	 * The number of structural features of the '<em>Event</em>' class.
@@ -184,7 +313,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceListener()
 	 * @generated
 	 */
-	int RESOURCE_LISTENER = 3;
+	int RESOURCE_LISTENER = 5;
 
 	/**
 	 * The number of structural features of the '<em>Listener</em>' class.
@@ -203,7 +332,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceManager()
 	 * @generated
 	 */
-	int RESOURCE_MANAGER = 4;
+	int RESOURCE_MANAGER = 6;
 
 	/**
 	 * The number of structural features of the '<em>Manager</em>' class.
@@ -222,7 +351,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMapping()
 	 * @generated
 	 */
-	int RESOURCE_MAPPING = 5;
+	int RESOURCE_MAPPING = 7;
 
 	/**
 	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
@@ -250,7 +379,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingRule()
 	 * @generated
 	 */
-	int RESOURCE_MAPPING_RULE = 6;
+	int RESOURCE_MAPPING_RULE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Provider</b></em>' attribute.
@@ -278,7 +407,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingRuleByFrame()
 	 * @generated
 	 */
-	int RESOURCE_MAPPING_RULE_BY_FRAME = 7;
+	int RESOURCE_MAPPING_RULE_BY_FRAME = 9;
 
 	/**
 	 * The feature id for the '<em><b>Provider</b></em>' attribute.
@@ -315,7 +444,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingRuleByPackage()
 	 * @generated
 	 */
-	int RESOURCE_MAPPING_RULE_BY_PACKAGE = 8;
+	int RESOURCE_MAPPING_RULE_BY_PACKAGE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Provider</b></em>' attribute.
@@ -352,7 +481,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceNotifier()
 	 * @generated
 	 */
-	int RESOURCE_NOTIFIER = 9;
+	int RESOURCE_NOTIFIER = 11;
 
 	/**
 	 * The number of structural features of the '<em>Notifier</em>' class.
@@ -371,7 +500,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceProvider()
 	 * @generated
 	 */
-	int RESOURCE_PROVIDER = 10;
+	int RESOURCE_PROVIDER = 12;
 
 	/**
 	 * The number of structural features of the '<em>Provider</em>' class.
@@ -390,7 +519,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceProviderRegistry()
 	 * @generated
 	 */
-	int RESOURCE_PROVIDER_REGISTRY = 11;
+	int RESOURCE_PROVIDER_REGISTRY = 13;
 
 	/**
 	 * The number of structural features of the '<em>Provider Registry</em>' class.
@@ -409,7 +538,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceReader()
 	 * @generated
 	 */
-	int RESOURCE_READER = 12;
+	int RESOURCE_READER = 14;
 
 	/**
 	 * The feature id for the '<em><b>Notifier</b></em>' reference.
@@ -437,7 +566,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceSerializer()
 	 * @generated
 	 */
-	int RESOURCE_SERIALIZER = 13;
+	int RESOURCE_SERIALIZER = 15;
 
 	/**
 	 * The feature id for the '<em><b>Frame</b></em>' reference.
@@ -465,7 +594,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceSet()
 	 * @generated
 	 */
-	int RESOURCE_SET = 14;
+	int RESOURCE_SET = 16;
 
 	/**
 	 * The number of structural features of the '<em>Set</em>' class.
@@ -484,7 +613,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceWriter()
 	 * @generated
 	 */
-	int RESOURCE_WRITER = 15;
+	int RESOURCE_WRITER = 17;
 
 	/**
 	 * The feature id for the '<em><b>Notifier</b></em>' reference.
@@ -512,7 +641,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceEventType()
 	 * @generated
 	 */
-	int RESOURCE_EVENT_TYPE = 16;
+	int RESOURCE_EVENT_TYPE = 18;
 
 
 	/**
@@ -523,7 +652,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceMappingType()
 	 * @generated
 	 */
-	int RESOURCE_MAPPING_TYPE = 17;
+	int RESOURCE_MAPPING_TYPE = 19;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.resource.SerializationType <em>Serialization Type</em>}' enum.
@@ -533,7 +662,7 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getSerializationType()
 	 * @generated
 	 */
-	int SERIALIZATION_TYPE = 18;
+	int SERIALIZATION_TYPE = 20;
 
 
 	/**
@@ -544,7 +673,71 @@ public interface ResourcePackage extends EPackage {
 	 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getResourceException()
 	 * @generated
 	 */
-	int RESOURCE_EXCEPTION = 19;
+	int RESOURCE_EXCEPTION = 21;
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.resource.LoadSeed <em>Load Seed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Load Seed</em>'.
+	 * @see org.abchip.mimo.resource.LoadSeed
+	 * @generated
+	 */
+	EClass getLoadSeed();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.LoadSeed#getSeedId <em>Seed Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Seed Id</em>'.
+	 * @see org.abchip.mimo.resource.LoadSeed#getSeedId()
+	 * @see #getLoadSeed()
+	 * @generated
+	 */
+	EAttribute getLoadSeed_SeedId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.LoadSeed#isUpdate <em>Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Update</em>'.
+	 * @see org.abchip.mimo.resource.LoadSeed#isUpdate()
+	 * @see #getLoadSeed()
+	 * @generated
+	 */
+	EAttribute getLoadSeed_Update();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.resource.LoadSeeds <em>Load Seeds</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Load Seeds</em>'.
+	 * @see org.abchip.mimo.resource.LoadSeeds
+	 * @generated
+	 */
+	EClass getLoadSeeds();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.LoadSeeds#getSeedPattern <em>Seed Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Seed Pattern</em>'.
+	 * @see org.abchip.mimo.resource.LoadSeeds#getSeedPattern()
+	 * @see #getLoadSeeds()
+	 * @generated
+	 */
+	EAttribute getLoadSeeds_SeedPattern();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.resource.LoadSeeds#isUpdate <em>Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Update</em>'.
+	 * @see org.abchip.mimo.resource.LoadSeeds#isUpdate()
+	 * @see #getLoadSeeds()
+	 * @generated
+	 */
+	EAttribute getLoadSeeds_Update();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.resource.Resource <em>Resource</em>}'.
@@ -901,6 +1094,58 @@ public interface ResourcePackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.LoadSeedImpl <em>Load Seed</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.resource.impl.LoadSeedImpl
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getLoadSeed()
+		 * @generated
+		 */
+		EClass LOAD_SEED = eINSTANCE.getLoadSeed();
+
+		/**
+		 * The meta object literal for the '<em><b>Seed Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOAD_SEED__SEED_ID = eINSTANCE.getLoadSeed_SeedId();
+
+		/**
+		 * The meta object literal for the '<em><b>Update</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOAD_SEED__UPDATE = eINSTANCE.getLoadSeed_Update();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.LoadSeedsImpl <em>Load Seeds</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.resource.impl.LoadSeedsImpl
+		 * @see org.abchip.mimo.resource.impl.ResourcePackageImpl#getLoadSeeds()
+		 * @generated
+		 */
+		EClass LOAD_SEEDS = eINSTANCE.getLoadSeeds();
+
+		/**
+		 * The meta object literal for the '<em><b>Seed Pattern</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOAD_SEEDS__SEED_PATTERN = eINSTANCE.getLoadSeeds_SeedPattern();
+
+		/**
+		 * The meta object literal for the '<em><b>Update</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOAD_SEEDS__UPDATE = eINSTANCE.getLoadSeeds_Update();
+
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.resource.impl.ResourceImpl <em>Resource</em>}' class.
 		 * <!-- begin-user-doc -->

@@ -86,8 +86,11 @@ public class Frames {
 			} else
 				ePackage = (EPackage) entry.getValue();
 
-			for (EClassifier eClassifier : ePackage.getEClassifiers()) {
+			if(!ePackage.getNsURI().startsWith("http://www.abchip.org"))
+				continue;
 
+			for (EClassifier eClassifier : ePackage.getEClassifiers()) {
+				
 				if (eClassifiers.containsKey(eClassifier.getName())) {
 					LOGGER.warn("Duplicated entity found {}", eClassifier.getName());
 					continue;

@@ -780,6 +780,14 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//resource/SerializationType/MIMO"/>
       </genEnums>
       <genDataTypes ecoreDataType="mimo.ecore#//resource/ResourceException"/>
+      <genClasses ecoreClass="mimo.ecore#//resource/LoadSeed">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/LoadSeed/seedId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/LoadSeed/update"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//resource/LoadSeeds">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/LoadSeeds/seedPattern"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/LoadSeeds/update"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/Resource">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/Resource/E"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

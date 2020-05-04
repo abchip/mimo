@@ -1152,6 +1152,28 @@
     <eClassifiers xsi:type="ecore:EDataType" name="NetworkingException" instanceClassName="org.abchip.mimo.networking.NetworkingException"/>
   </eSubpackages>
   <eSubpackages name="resource" nsURI="http://www.abchip.org/mimo/resource" nsPrefix="mimo-resource">
+    <eClassifiers xsi:type="ecore:EClass" name="LoadSeed">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="seedId" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="update" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eGenericSuperTypes eClassifier="#//service/ServiceRequest">
+        <eTypeArguments eClassifier="#//service/ServiceResponse"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
+        <eTypeArguments eClassifier="#//service/ServiceResponse"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LoadSeeds">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="seedPattern" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="update" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eGenericSuperTypes eClassifier="#//service/ServiceRequest">
+        <eTypeArguments eClassifier="#//service/ServiceResponse"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
+        <eTypeArguments eClassifier="#//service/ServiceResponse"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Resource" abstract="true" eSuperTypes="#//entity/Entity">
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/EntityIdentifiable"/>

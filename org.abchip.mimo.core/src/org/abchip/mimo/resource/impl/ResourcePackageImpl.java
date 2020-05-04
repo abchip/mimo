@@ -39,6 +39,8 @@ import org.abchip.mimo.networking.NetworkingPackage;
 
 import org.abchip.mimo.networking.impl.NetworkingPackageImpl;
 
+import org.abchip.mimo.resource.LoadSeed;
+import org.abchip.mimo.resource.LoadSeeds;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceEvent;
@@ -90,6 +92,20 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass loadSeedEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass loadSeedsEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -334,6 +350,66 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ResourcePackage.eNS_URI, theResourcePackage);
 		return theResourcePackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getLoadSeed() {
+		return loadSeedEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLoadSeed_SeedId() {
+		return (EAttribute)loadSeedEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLoadSeed_Update() {
+		return (EAttribute)loadSeedEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getLoadSeeds() {
+		return loadSeedsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLoadSeeds_SeedPattern() {
+		return (EAttribute)loadSeedsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLoadSeeds_Update() {
+		return (EAttribute)loadSeedsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -685,6 +761,14 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		isCreated = true;
 
 		// Create classes and their features
+		loadSeedEClass = createEClass(LOAD_SEED);
+		createEAttribute(loadSeedEClass, LOAD_SEED__SEED_ID);
+		createEAttribute(loadSeedEClass, LOAD_SEED__UPDATE);
+
+		loadSeedsEClass = createEClass(LOAD_SEEDS);
+		createEAttribute(loadSeedsEClass, LOAD_SEEDS__SEED_PATTERN);
+		createEAttribute(loadSeedsEClass, LOAD_SEEDS__UPDATE);
+
 		resourceEClass = createEClass(RESOURCE);
 		createEReference(resourceEClass, RESOURCE__RESOURCE_CONFIG);
 		createEReference(resourceEClass, RESOURCE__RESOURCE_SET);
@@ -762,9 +846,10 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 
 		// Create type parameters
 		ETypeParameter resourceEClass_E = addETypeParameter(resourceEClass, "E");
@@ -792,6 +877,22 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		resourceWriterEClass_E.getEBounds().add(g1);
 
 		// Add supertypes to classes
+		g1 = createEGenericType(theServicePackage.getServiceRequest());
+		EGenericType g2 = createEGenericType(theServicePackage.getServiceResponse());
+		g1.getETypeArguments().add(g2);
+		loadSeedEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
+		g2 = createEGenericType(theServicePackage.getServiceResponse());
+		g1.getETypeArguments().add(g2);
+		loadSeedEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theServicePackage.getServiceRequest());
+		g2 = createEGenericType(theServicePackage.getServiceResponse());
+		g1.getETypeArguments().add(g2);
+		loadSeedsEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
+		g2 = createEGenericType(theServicePackage.getServiceResponse());
+		g1.getETypeArguments().add(g2);
+		loadSeedsEClass.getEGenericSuperTypes().add(g1);
 		resourceEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		resourceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		resourceMappingEClass.getESuperTypes().add(theEntityPackage.getEntity());
@@ -799,7 +900,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		resourceMappingRuleByFrameEClass.getESuperTypes().add(this.getResourceMappingRule());
 		resourceMappingRuleByPackageEClass.getESuperTypes().add(this.getResourceMappingRule());
 		g1 = createEGenericType(theContextPackage.getRegistry());
-		EGenericType g2 = createEGenericType(this.getResourceProvider());
+		g2 = createEGenericType(this.getResourceProvider());
 		g1.getETypeArguments().add(g2);
 		resourceProviderRegistryEClass.getEGenericSuperTypes().add(g1);
 		resourceSetEClass.getESuperTypes().add(theEntityPackage.getEntity());
@@ -809,6 +910,14 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		resourceWriterEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(loadSeedEClass, LoadSeed.class, "LoadSeed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLoadSeed_SeedId(), ecorePackage.getEString(), "seedId", null, 1, 1, LoadSeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLoadSeed_Update(), ecorePackage.getEBoolean(), "update", null, 0, 1, LoadSeed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(loadSeedsEClass, LoadSeeds.class, "LoadSeeds", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLoadSeeds_SeedPattern(), ecorePackage.getEString(), "seedPattern", null, 1, 1, LoadSeeds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLoadSeeds_Update(), ecorePackage.getEBoolean(), "update", null, 0, 1, LoadSeeds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(resourceEClass, Resource.class, "Resource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResource_ResourceConfig(), this.getResourceConfig(), null, "resourceConfig", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_ResourceSet(), this.getResourceSet(), null, "resourceSet", null, 1, 1, Resource.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

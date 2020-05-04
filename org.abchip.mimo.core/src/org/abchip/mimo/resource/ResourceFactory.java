@@ -29,6 +29,24 @@ public interface ResourceFactory extends EFactory {
 	ResourceFactory eINSTANCE = org.abchip.mimo.resource.impl.ResourceFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Load Seed</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Load Seed</em>'.
+	 * @generated
+	 */
+	LoadSeed createLoadSeed();
+
+	/**
+	 * Returns a new object of class '<em>Load Seeds</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Load Seeds</em>'.
+	 * @generated
+	 */
+	LoadSeeds createLoadSeeds();
+
+	/**
 	 * Returns a new object of class '<em>Config</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

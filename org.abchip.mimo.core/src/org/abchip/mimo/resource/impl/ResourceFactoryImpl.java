@@ -64,6 +64,8 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case ResourcePackage.LOAD_SEED: return (EObject)createLoadSeed();
+			case ResourcePackage.LOAD_SEEDS: return (EObject)createLoadSeeds();
 			case ResourcePackage.RESOURCE_CONFIG: return (EObject)createResourceConfig();
 			case ResourcePackage.RESOURCE_MAPPING: return (EObject)createResourceMapping();
 			case ResourcePackage.RESOURCE_MAPPING_RULE_BY_FRAME: return (EObject)createResourceMappingRuleByFrame();
@@ -114,6 +116,28 @@ public class ResourceFactoryImpl extends EFactoryImpl implements ResourceFactory
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LoadSeed createLoadSeed() {
+		LoadSeedImpl loadSeed = new LoadSeedImpl();
+		return loadSeed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LoadSeeds createLoadSeeds() {
+		LoadSeedsImpl loadSeeds = new LoadSeedsImpl();
+		return loadSeeds;
 	}
 
 	/**
