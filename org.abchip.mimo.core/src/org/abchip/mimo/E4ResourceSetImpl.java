@@ -28,6 +28,9 @@ public class E4ResourceSetImpl extends ResourceSetImpl {
 		super();
 		this.context = context;
 
+		// TODO ???? prevent recursive proxy
+		// this.context.set(ResourceSet.class, this);
+
 		Map<URI, org.eclipse.emf.ecore.resource.Resource> uriResourceMap = new WeakHashMap<URI, org.eclipse.emf.ecore.resource.Resource>();
 		e4ResourceSet = new MimoResourceSetImpl(this, uriResourceMap);
 		e4ResourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("mimo", new MimoResourceFactoryImpl(e4ResourceSet, uriResourceMap));

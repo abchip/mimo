@@ -572,8 +572,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFrame_Enum() {
-		return (EAttribute)frameEClass.getEStructuralFeatures().get(2);
+	public EReference getFrame_Ako() {
+		return (EReference)frameEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -582,7 +582,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFrame_Keys() {
+	public EAttribute getFrame_Enum() {
 		return (EAttribute)frameEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -592,7 +592,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFrame_HasToString() {
+	public EAttribute getFrame_Keys() {
 		return (EAttribute)frameEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -602,7 +602,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFrame_Name() {
+	public EAttribute getFrame_HasToString() {
 		return (EAttribute)frameEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -612,8 +612,18 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getFrame_Name() {
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getFrame_Slots() {
-		return (EReference)frameEClass.getEStructuralFeatures().get(6);
+		return (EReference)frameEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -623,16 +633,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 */
 	@Override
 	public EAttribute getFrame_SuperNames() {
-		return (EAttribute)frameEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getFrame_Text() {
 		return (EAttribute)frameEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -642,8 +642,18 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFrame_TextFormula() {
+	public EAttribute getFrame_Text() {
 		return (EAttribute)frameEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFrame_TextFormula() {
+		return (EAttribute)frameEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -855,6 +865,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		frameEClass = createEClass(FRAME);
 		createEAttribute(frameEClass, FRAME__ABSTRACT);
 		createEAttribute(frameEClass, FRAME__AUTO_INCREMENT);
+		createEReference(frameEClass, FRAME__AKO);
 		createEAttribute(frameEClass, FRAME__ENUM);
 		createEAttribute(frameEClass, FRAME__KEYS);
 		createEAttribute(frameEClass, FRAME__HAS_TO_STRING);
@@ -1052,6 +1063,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEClass(frameEClass, Frame.class, "Frame", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFrame_Abstract(), ecorePackage.getEBoolean(), "abstract", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_AutoIncrement(), ecorePackage.getEBoolean(), "autoIncrement", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		g1 = createEGenericType(this.getFrame());
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		EGenericType g3 = createEGenericType(frameEClass_E);
+		g2.setELowerBound(g3);
+		initEReference(getFrame_Ako(), g1, null, "ako", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_Enum(), ecorePackage.getEBoolean(), "enum", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_Keys(), ecorePackage.getEString(), "keys", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_HasToString(), ecorePackage.getEBoolean(), "hasToString", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1060,14 +1077,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getFrame_SuperNames(), ecorePackage.getEString(), "superNames", null, 0, -1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_Text(), ecorePackage.getEString(), "text", null, 1, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_TextFormula(), ecorePackage.getEString(), "textFormula", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = addEOperation(frameEClass, null, "ako", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getFrame());
-		g2 = createEGenericType();
-		g1.getETypeArguments().add(g2);
-		EGenericType g3 = createEGenericType(frameEClass_E);
-		g2.setELowerBound(g3);
-		initEOperation(op, g1);
 
 		addEOperation(frameEClass, ecorePackage.getEClass(), "getEClass", 1, 1, IS_UNIQUE, IS_ORDERED);
 

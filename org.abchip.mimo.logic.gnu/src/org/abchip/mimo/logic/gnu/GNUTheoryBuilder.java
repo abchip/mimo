@@ -27,8 +27,8 @@ public class GNUTheoryBuilder {
 
 		theory.getFacts().add(buildTerm("asup_frame(" + frame.getName() + ")."));
 
-		if (frame.ako() != null)
-			theory.getFacts().add(buildTerm("asup_ako(" + frame.getName() + ", " + frame.ako().getName() + ")."));
+		if (frame.getAko() != null)
+			theory.getFacts().add(buildTerm("asup_ako(" + frame.getName() + ", " + frame.getAko().getName() + ")."));
 
 		for (Slot slot : frame.getSlots())
 			theory.getFacts().add(buildTerm("asup_slot(" + frame.getName() + ", " + slot.getName() + ")."));

@@ -630,18 +630,18 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Frame">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/Frame/E"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/abstract"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/autoIncrement"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/enum"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/keys"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/hasToString"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/abstract"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/autoIncrement"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference mimo.ecore#//entity/Frame/slots"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/superNames"/>
+            ecoreFeature="ecore:EReference mimo.ecore#//entity/Frame/ako"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/enum"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/keys"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/hasToString"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//entity/Frame/slots"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/superNames"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/text"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/textFormula"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/ako"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/textFormula"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getEClass"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getPackageName"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlot">

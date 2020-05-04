@@ -436,13 +436,22 @@ public interface EntityPackage extends EPackage {
 	int FRAME__AUTO_INCREMENT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Ako</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__AKO = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Enum</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__ENUM = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+	int FRAME__ENUM = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Keys</b></em>' attribute list.
@@ -451,7 +460,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__KEYS = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
+	int FRAME__KEYS = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Has To String</b></em>' attribute.
@@ -460,7 +469,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__HAS_TO_STRING = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
+	int FRAME__HAS_TO_STRING = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -469,7 +478,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__NAME = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
+	int FRAME__NAME = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -478,7 +487,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SLOTS = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
+	int FRAME__SLOTS = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Super Names</b></em>' attribute list.
@@ -487,7 +496,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__SUPER_NAMES = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
+	int FRAME__SUPER_NAMES = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -496,7 +505,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__TEXT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
+	int FRAME__TEXT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Text Formula</b></em>' attribute.
@@ -505,7 +514,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME__TEXT_FORMULA = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
+	int FRAME__TEXT_FORMULA = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Frame</em>' class.
@@ -514,7 +523,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAME_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
+	int FRAME_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.SlotImpl <em>Slot</em>}' class.
@@ -959,6 +968,17 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFrame_AutoIncrement();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.entity.Frame#getAko <em>Ako</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ako</em>'.
+	 * @see org.abchip.mimo.entity.Frame#getAko()
+	 * @see #getFrame()
+	 * @generated
+	 */
+	EReference getFrame_Ako();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Frame#isEnum <em>Enum</em>}'.
@@ -1477,6 +1497,14 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FRAME__AUTO_INCREMENT = eINSTANCE.getFrame_AutoIncrement();
+
+		/**
+		 * The meta object literal for the '<em><b>Ako</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FRAME__AKO = eINSTANCE.getFrame_Ako();
 
 		/**
 		 * The meta object literal for the '<em><b>Enum</b></em>' attribute feature.

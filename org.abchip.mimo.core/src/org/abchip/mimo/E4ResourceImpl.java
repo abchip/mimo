@@ -18,22 +18,16 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.impl.ResourceImpl;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.InternalEObject;
 
 public class E4ResourceImpl<E extends Frame<?>> extends ResourceImpl<E> {
 
 	private Frame<E> frame = null;
 	private Map<String, E> entities = null;
 
-	@SuppressWarnings("unchecked")
 	protected E4ResourceImpl(ResourceSet resourceSet, String tenant, Frame<E> frame, Map<String, E> entities) {
 		super(resourceSet, tenant);
 
 		this.frame = frame;
-		if (frame == null)
-			this.frame = (Frame<E>) this.entities.get(Frame.class.getSimpleName());
-
 		this.entities = entities;
 	}
 
@@ -42,22 +36,12 @@ public class E4ResourceImpl<E extends Frame<?>> extends ResourceImpl<E> {
 		return this.frame;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public E createProxy(String id) {
-
 		if (id == null)
 			return null;
 
 		E entity = this.entities.get(id);
-		if (entity == null) {
-			// TODO !!!!!!!!!!
-			entity = (E) new E4FrameClassAdapter<E>(this.entities, getFrame().getEClass());
-			InternalEObject internalEObject = (InternalEObject) entity;
-			URI uri = URI.createHierarchicalURI("mimo", this.getTenant(), null, new String[] { this.getFrame().getName() }, null, id);
-			internalEObject.eSetProxyURI(uri);
-		}
-		
 		return entity;
 	}
 

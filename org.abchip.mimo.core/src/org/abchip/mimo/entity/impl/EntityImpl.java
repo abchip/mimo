@@ -10,7 +10,6 @@ package org.abchip.mimo.entity.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.E4FrameClassAdapter;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -125,9 +124,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		Frame<E> isa = this.getResource().getContext().createProxy(Frame.class, eClass().getName());
 		if (isa != null)
 			return isa;
-
-		isa = (Frame<E>) new E4FrameClassAdapter<Frame<E>>(null, eClass());
-		return isa;
+		else
+			return null;
 	}
 
 	/**

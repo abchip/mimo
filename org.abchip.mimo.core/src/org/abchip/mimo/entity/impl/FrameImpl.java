@@ -19,6 +19,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isAutoIncrement <em>Auto Increment</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getAko <em>Ako</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isEnum <em>Enum</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.impl.FrameImpl#isHasToString <em>Has To String</em>}</li>
@@ -79,6 +81,15 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	 * @ordered
 	 */
 	protected boolean autoIncrement = AUTO_INCREMENT_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getAko() <em>Ako</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAko()
+	 * @generated
+	 * @ordered
+	 */
+	protected Frame<? super E> ako;
 	/**
 	 * The default value of the '{@link #isEnum() <em>Enum</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -229,14 +240,6 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public abstract Frame<? super E> ako();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -382,7 +385,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	public abstract Object getValue(E entity, String slotName, boolean default_, boolean resolve);
 
 	private void addFrames(Frame<? super E> frame, List<Frame<? super E>> frames) {
-		Frame<? super E> ako = frame.ako();
+		Frame<? super E> ako = frame.getAko();
 		if (ako != null) {
 			frames.add(ako);
 			addFrames(ako, frames);
@@ -421,6 +424,9 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 				return isAbstract();
 			case EntityPackage.FRAME__AUTO_INCREMENT:
 				return isAutoIncrement();
+			case EntityPackage.FRAME__AKO:
+				if (resolve) return getAko();
+				return basicGetAko();
 			case EntityPackage.FRAME__ENUM:
 				return isEnum();
 			case EntityPackage.FRAME__KEYS:
@@ -454,6 +460,9 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 				return;
 			case EntityPackage.FRAME__AUTO_INCREMENT:
 				setAutoIncrement((Boolean)newValue);
+				return;
+			case EntityPackage.FRAME__AKO:
+				setAko((Frame<? super E>)newValue);
 				return;
 			case EntityPackage.FRAME__ENUM:
 				setEnum((Boolean)newValue);
@@ -495,6 +504,9 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 			case EntityPackage.FRAME__AUTO_INCREMENT:
 				setAutoIncrement(AUTO_INCREMENT_EDEFAULT);
 				return;
+			case EntityPackage.FRAME__AKO:
+				setAko((Frame<? super E>)null);
+				return;
 			case EntityPackage.FRAME__ENUM:
 				setEnum(ENUM_EDEFAULT);
 				return;
@@ -531,6 +543,8 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 				return abstract_ != ABSTRACT_EDEFAULT;
 			case EntityPackage.FRAME__AUTO_INCREMENT:
 				return autoIncrement != AUTO_INCREMENT_EDEFAULT;
+			case EntityPackage.FRAME__AKO:
+				return ako != null;
 			case EntityPackage.FRAME__ENUM:
 				return enum_ != ENUM_EDEFAULT;
 			case EntityPackage.FRAME__KEYS:
@@ -622,6 +636,47 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 		autoIncrement = newAutoIncrement;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__AUTO_INCREMENT, oldAutoIncrement, autoIncrement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public Frame<? super E> getAko() {
+		if (ako != null && ((EObject)ako).eIsProxy()) {
+			InternalEObject oldAko = (InternalEObject)ako;
+			ako = (Frame<? super E>)eResolveProxy(oldAko);
+			if (ako != oldAko) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EntityPackage.FRAME__AKO, oldAko, ako));
+			}
+		}
+		return ako;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Frame<? super E> basicGetAko() {
+		return ako;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAko(Frame<? super E> newAko) {
+		Frame<? super E> oldAko = ako;
+		ako = newAko;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EntityPackage.FRAME__AKO, oldAko, ako));
 	}
 
 	/**

@@ -950,13 +950,6 @@
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/Entity"/>
       </eTypeParameters>
-      <eOperations name="ako">
-        <eGenericType eClassifier="#//entity/Frame">
-          <eTypeArguments>
-            <eLowerBound eTypeParameter="#//entity/Frame/E"/>
-          </eTypeArguments>
-        </eGenericType>
-      </eOperations>
       <eOperations name="getEClass" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
       <eOperations name="getPackageName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="getSlot" lowerBound="1" eType="#//entity/Slot">
@@ -986,6 +979,13 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoIncrement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ako">
+        <eGenericType eClassifier="#//entity/Frame">
+          <eTypeArguments>
+            <eLowerBound eTypeParameter="#//entity/Frame/E"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="enum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="keys" upperBound="-1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

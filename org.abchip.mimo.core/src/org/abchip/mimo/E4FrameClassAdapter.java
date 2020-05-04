@@ -25,7 +25,6 @@ import org.abchip.mimo.entity.impl.FrameImpl;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.Strings;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
@@ -46,12 +45,10 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	private EClass eClass;
 	private Map<String, Slot> slots = null;
 
-	private Map<String, E> entities = null;
-
-	public E4FrameClassAdapter(Map<String, E> entities, EClass eClass) {
+	public E4FrameClassAdapter(Frame<? super E> ako, EClass eClass) {
 		super();
 
-		this.entities = entities;
+		this.ako = ako;
 		this.eClass = eClass;
 
 		eSet(EntityPackage.FRAME__NAME, this.eClass.getName());
@@ -133,30 +130,6 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 	@Override
 	public EClass getEClass() {
 		return eClass;
-	}
-	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@Override
-	public Frame<? super E> ako() {
-
-		EList<EClass> classes = this.eClass.getESuperTypes();
-		if (classes == null || classes.isEmpty())
-			return null;
-
-		EClass eAko = classes.get(0);
-		Frame<? super E> akoFrame = null;
-
-		if (this.entities != null) {
-			akoFrame = (Frame<? super E>) this.entities.get(eAko.getName());
-			if (akoFrame != null)
-				return akoFrame;
-		}
-
-		akoFrame = new E4FrameClassAdapter(this.entities, eAko);
-		if (this.entities != null)
-			this.entities.put(eAko.getName(), (E) akoFrame);
-
-		return akoFrame;
 	}
 
 	@Override
@@ -273,8 +246,9 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 				if (entity.getResource() != null) {
 					Context context = entity.getResource().getContext();
+
 					@SuppressWarnings("unchecked")
-					Frame<EntityIdentifiable> frameRef = (Frame<EntityIdentifiable>) this.entities.get(eClassifier.getName());
+					Frame<EntityIdentifiable> frameRef = (Frame<EntityIdentifiable>) context.createProxy(Frame.class, eClassifier.getName());
 					if (frameRef != null) {
 						object = context.createProxy(frameRef, value.toString(), tenant);
 					} else

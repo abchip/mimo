@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link org.abchip.mimo.entity.Frame#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#isAutoIncrement <em>Auto Increment</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.Frame#getAko <em>Ako</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#isEnum <em>Enum</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#getKeys <em>Keys</em>}</li>
  *   <li>{@link org.abchip.mimo.entity.Frame#isHasToString <em>Has To String</em>}</li>
@@ -64,13 +65,6 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	Frame<? super E> ako();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -287,6 +281,28 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setAutoIncrement(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Ako</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ako</em>' reference.
+	 * @see #setAko(Frame)
+	 * @see org.abchip.mimo.entity.EntityPackage#getFrame_Ako()
+	 * @model
+	 * @generated
+	 */
+	Frame<? super E> getAko();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.entity.Frame#getAko <em>Ako</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ako</em>' reference.
+	 * @see #getAko()
+	 * @generated
+	 */
+	void setAko(Frame<? super E> value);
 
 	/**
 	 * Returns the value of the '<em><b>Enum</b></em>' attribute.

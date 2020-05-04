@@ -12,7 +12,6 @@ import java.net.URI;
 
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
 import org.abchip.mimo.util.Strings;
@@ -32,11 +31,6 @@ public class E4FrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 		eSet(EntityPackage.FRAME__NAME, this.eEnum.getName());
 
 		this.setFrameText();
-	}
-
-	@Override
-	public Frame<? super E> ako() {
-		return null;
 	}
 
 	public EEnum getEEnum() {
