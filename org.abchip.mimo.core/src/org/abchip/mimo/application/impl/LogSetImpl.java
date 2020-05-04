@@ -29,19 +29,16 @@ import org.osgi.service.log.admin.LoggerContext;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.abchip.mimo.application.impl.LogSetImpl#getLogPattern <em>Log
- * Pattern</em>}</li>
- * <li>{@link org.abchip.mimo.application.impl.LogSetImpl#getLogLevel <em>Log
- * Level</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.LogSetImpl#getLogPattern <em>Log Pattern</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.LogSetImpl#getLogLevel <em>Log Level</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements LogSet {
 	/**
-	 * The default value of the '{@link #getLogPattern() <em>Log Pattern</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getLogPattern() <em>Log Pattern</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLogPattern()
 	 * @generated
 	 * @ordered
@@ -49,9 +46,8 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 	protected static final String LOG_PATTERN_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLogPattern() <em>Log Pattern</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getLogPattern() <em>Log Pattern</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLogPattern()
 	 * @generated
 	 * @ordered
@@ -59,9 +55,8 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 	protected String logPattern = LOG_PATTERN_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLogLevel() <em>Log Level</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getLogLevel() <em>Log Level</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLogLevel()
 	 * @generated
 	 * @ordered
@@ -69,9 +64,8 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 	protected static final ApplicationLogLevel LOG_LEVEL_EDEFAULT = ApplicationLogLevel.ERROR;
 
 	/**
-	 * The cached value of the '{@link #getLogLevel() <em>Log Level</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getLogLevel() <em>Log Level</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLogLevel()
 	 * @generated
 	 * @ordered
@@ -80,7 +74,6 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected LogSetImpl() {
@@ -89,7 +82,6 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -99,7 +91,6 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -109,7 +100,6 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -122,7 +112,6 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -132,7 +121,6 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -145,81 +133,75 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ApplicationPackage.LOG_SET__LOG_PATTERN:
-			return getLogPattern();
-		case ApplicationPackage.LOG_SET__LOG_LEVEL:
-			return getLogLevel();
+			case ApplicationPackage.LOG_SET__LOG_PATTERN:
+				return getLogPattern();
+			case ApplicationPackage.LOG_SET__LOG_LEVEL:
+				return getLogLevel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ApplicationPackage.LOG_SET__LOG_PATTERN:
-			setLogPattern((String) newValue);
-			return;
-		case ApplicationPackage.LOG_SET__LOG_LEVEL:
-			setLogLevel((ApplicationLogLevel) newValue);
-			return;
+			case ApplicationPackage.LOG_SET__LOG_PATTERN:
+				setLogPattern((String)newValue);
+				return;
+			case ApplicationPackage.LOG_SET__LOG_LEVEL:
+				setLogLevel((ApplicationLogLevel)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ApplicationPackage.LOG_SET__LOG_PATTERN:
-			setLogPattern(LOG_PATTERN_EDEFAULT);
-			return;
-		case ApplicationPackage.LOG_SET__LOG_LEVEL:
-			setLogLevel(LOG_LEVEL_EDEFAULT);
-			return;
+			case ApplicationPackage.LOG_SET__LOG_PATTERN:
+				setLogPattern(LOG_PATTERN_EDEFAULT);
+				return;
+			case ApplicationPackage.LOG_SET__LOG_LEVEL:
+				setLogLevel(LOG_LEVEL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ApplicationPackage.LOG_SET__LOG_PATTERN:
-			return LOG_PATTERN_EDEFAULT == null ? logPattern != null : !LOG_PATTERN_EDEFAULT.equals(logPattern);
-		case ApplicationPackage.LOG_SET__LOG_LEVEL:
-			return logLevel != LOG_LEVEL_EDEFAULT;
+			case ApplicationPackage.LOG_SET__LOG_PATTERN:
+				return LOG_PATTERN_EDEFAULT == null ? logPattern != null : !LOG_PATTERN_EDEFAULT.equals(logPattern);
+			case ApplicationPackage.LOG_SET__LOG_LEVEL:
+				return logLevel != LOG_LEVEL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (logPattern: ");

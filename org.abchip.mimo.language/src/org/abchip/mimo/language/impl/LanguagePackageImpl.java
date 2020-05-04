@@ -13,6 +13,7 @@ import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
 
+import org.abchip.mimo.java.JavaPackage;
 import org.abchip.mimo.language.Language;
 import org.abchip.mimo.language.LanguageException;
 import org.abchip.mimo.language.LanguageExpression;
@@ -25,6 +26,7 @@ import org.abchip.mimo.language.LanguageParser;
 import org.abchip.mimo.language.LanguageParserRegistry;
 import org.abchip.mimo.language.LanguagePlanet;
 import org.abchip.mimo.language.LanguageScope;
+import org.abchip.mimo.language.LanguageTranslate;
 import org.abchip.mimo.language.LanguageType;
 
 import org.abchip.mimo.language.grammar.GrammarPackage;
@@ -35,6 +37,7 @@ import org.abchip.mimo.mining.MiningPackage;
 
 import org.abchip.mimo.mining.classification.ClassificationPackage;
 
+import org.abchip.mimo.service.ServicePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -108,6 +111,13 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * @generated
 	 */
 	private EClass languagePlanetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass languageTranslateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -377,6 +387,46 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 	 * @generated
 	 */
 	@Override
+	public EClass getLanguageTranslate() {
+		return languageTranslateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLanguageTranslate_Text() {
+		return (EAttribute)languageTranslateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLanguageTranslate_From() {
+		return (EAttribute)languageTranslateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLanguageTranslate_To() {
+		return (EAttribute)languageTranslateEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getLanguageScope() {
 		return languageScopeEEnum;
 	}
@@ -455,6 +505,11 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		languagePlanetEClass = createEClass(LANGUAGE_PLANET);
 		createEAttribute(languagePlanetEClass, LANGUAGE_PLANET__NAME);
 
+		languageTranslateEClass = createEClass(LANGUAGE_TRANSLATE);
+		createEAttribute(languageTranslateEClass, LANGUAGE_TRANSLATE__TEXT);
+		createEAttribute(languageTranslateEClass, LANGUAGE_TRANSLATE__FROM);
+		createEAttribute(languageTranslateEClass, LANGUAGE_TRANSLATE__TO);
+
 		// Create enums
 		languageScopeEEnum = createEEnum(LANGUAGE_SCOPE);
 		languageTypeEEnum = createEEnum(LANGUAGE_TYPE);
@@ -491,6 +546,8 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		ClassificationPackage theClassificationPackage = (ClassificationPackage)EPackage.Registry.INSTANCE.getEPackage(ClassificationPackage.eNS_URI);
+		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
+		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theGrammarPackage);
@@ -510,6 +567,14 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		g1.getETypeArguments().add(g2);
 		languageParserRegistryEClass.getEGenericSuperTypes().add(g1);
 		languagePlanetEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		g1 = createEGenericType(theServicePackage.getServiceRequest());
+		g2 = createEGenericType(theServicePackage.getServiceResponse());
+		g1.getETypeArguments().add(g2);
+		languageTranslateEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
+		g2 = createEGenericType(theServicePackage.getServiceResponse());
+		g1.getETypeArguments().add(g2);
+		languageTranslateEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(languageEClass, Language.class, "Language", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -538,6 +603,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		op = addEOperation(languageManagerEClass, null, "classifyLanguage", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "text", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getLanguageException());
 		g1 = createEGenericType(theClassificationPackage.getClassification());
 		g2 = createEGenericType(this.getLanguage());
 		g1.getETypeArguments().add(g2);
@@ -548,6 +614,7 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 		addEParameter(op, ecorePackage.getEString(), "languageSource", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "text", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "languageTarget", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getLanguageException());
 
 		initEClass(languageParserEClass, LanguageParser.class, "LanguageParser", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -560,6 +627,11 @@ public class LanguagePackageImpl extends EPackageImpl implements LanguagePackage
 
 		initEClass(languagePlanetEClass, LanguagePlanet.class, "LanguagePlanet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLanguagePlanet_Name(), ecorePackage.getEString(), "name", null, 1, 1, LanguagePlanet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(languageTranslateEClass, LanguageTranslate.class, "LanguageTranslate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLanguageTranslate_Text(), ecorePackage.getEString(), "text", null, 1, 1, LanguageTranslate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLanguageTranslate_From(), ecorePackage.getEString(), "from", "eng", 0, 1, LanguageTranslate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLanguageTranslate_To(), ecorePackage.getEString(), "to", "ita", 0, 1, LanguageTranslate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(languageScopeEEnum, LanguageScope.class, "LanguageScope");

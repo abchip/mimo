@@ -25,6 +25,9 @@ import org.abchip.mimo.entity.impl.FrameImpl;
 import org.abchip.mimo.util.Lists;
 import org.abchip.mimo.util.Logs;
 import org.abchip.mimo.util.Strings;
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
@@ -38,15 +41,18 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.service.log.Logger;
 
-public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> {
+public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implements Adapter {
 
 	private static final Logger LOGGER = Logs.getLogger(E4FrameClassAdapter.class);
 
 	private EClass eClass;
 	private Map<String, Slot> slots = null;
+	protected Notifier target = null;
 
 	public E4FrameClassAdapter(Frame<? super E> ako, EClass eClass) {
 		super();
+
+		eClass.eAdapters().add(this);
 
 		this.ako = ako;
 		this.eClass = eClass;
@@ -244,17 +250,22 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 				EReference eReference = (EReference) eFeature;
 				EClassifier eClassifier = eReference.getEType();
 
-				if (entity.getResource() != null) {
-					Context context = entity.getResource().getContext();
+				if (entity instanceof EntityIdentifiable) {
+					EntityIdentifiable entityIdentifiable = (EntityIdentifiable) entity;
+					if (entityIdentifiable.getResource() != null) {
+						Context context = entityIdentifiable.getResource().getContext();
 
-					@SuppressWarnings("unchecked")
-					Frame<EntityIdentifiable> frameRef = (Frame<EntityIdentifiable>) context.createProxy(Frame.class, eClassifier.getName());
-					if (frameRef != null) {
-						object = context.createProxy(frameRef, value.toString(), tenant);
+						@SuppressWarnings("unchecked")
+						Frame<EntityIdentifiable> frameRef = (Frame<EntityIdentifiable>) context.createProxy(Frame.class, eClassifier.getName());
+						if (frameRef != null) {
+							object = context.createProxy(frameRef, value.toString(), tenant);
+						} else
+							LOGGER.warn("Unexpected condition {}", "bvtw4a87ny4r9tycsa9et6");
 					} else
-						LOGGER.warn("Unexpected condition {}", "bvtw4a87ny4r9tycsa9et6");
+						LOGGER.warn("Unexpected condition {}", "bwytn56wn086b787rt874we");
 				} else
-					LOGGER.warn("Unexpected condition {}", "bwytn56wn086b7");
+					LOGGER.warn("Unexpected condition {}", "bvonstriy53679r8e76tyn87naq");
+
 			}
 
 		} else
@@ -285,5 +296,21 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> {
 
 		if (text != null)
 			eSet(EntityPackage.FRAME__TEXT, text);
+	}
+
+	public boolean isAdapterForType(Object type) {
+		return false;
+	}
+
+	public void notifyChanged(Notification msg) {
+		msg.toString();
+	}
+
+	public Notifier getTarget() {
+		return target;
+	}
+
+	public void setTarget(Notifier newTarget) {
+		target = newTarget;
 	}
 }

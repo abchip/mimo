@@ -69,6 +69,11 @@
     <genClasses ecoreClass="language.ecore#//LanguagePlanet">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//LanguagePlanet/name"/>
     </genClasses>
+    <genClasses ecoreClass="language.ecore#//LanguageTranslate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//LanguageTranslate/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//LanguageTranslate/from"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute language.ecore#//LanguageTranslate/to"/>
+    </genClasses>
     <nestedGenPackages prefix="Grammar" basePackage="org.abchip.mimo.language" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="language.ecore#//grammar">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="language.ecore#//grammar/Gender">

@@ -12,15 +12,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.abchip.mimo.context.ThreadStatus;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.Resource;
 
 public class BaseThreadImpl extends Thread implements org.abchip.mimo.context.Thread {
 
 	private final AtomicBoolean locked = new AtomicBoolean();
 	private BaseThreadManagerImpl threadManager = null;
-	
+
 	protected BaseThreadImpl(BaseThreadManagerImpl threadManager, Runnable runnable, String name, boolean daemon) {
 		super(runnable, name);
 		this.threadManager = threadManager;
@@ -34,14 +32,14 @@ public class BaseThreadImpl extends Thread implements org.abchip.mimo.context.Th
 
 	@Override
 	public boolean checkRunnable() {
-		
+
 		boolean result = true;
 
 		if (isSuspended() || locked.get())
 			result = false;
-							
+
 		return result;
-				
+
 	}
 
 	@Override
@@ -80,14 +78,14 @@ public class BaseThreadImpl extends Thread implements org.abchip.mimo.context.Th
 	}
 
 	protected void unlock() {
-		if(locked.get())
+		if (locked.get())
 			locked.set(false);
 	}
 
 	protected void lock() {
 		locked.set(true);
 	}
-	
+
 	@Override
 	public double getThreadCPUUsage() {
 
@@ -100,12 +98,6 @@ public class BaseThreadImpl extends Thread implements org.abchip.mimo.context.Th
 
 	@Override
 	public <E extends Entity> Frame<E> isa() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource() {
 		// TODO Auto-generated method stub
 		return null;
 	}

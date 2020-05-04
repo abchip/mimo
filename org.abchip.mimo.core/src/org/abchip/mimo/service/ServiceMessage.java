@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.service;
 
-import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,5 +19,5 @@ import org.abchip.mimo.entity.Entity;
  * @model abstract="true"
  * @generated
  */
-public interface ServiceMessage extends Entity {
+public interface ServiceMessage extends EntityIdentifiable {
 } // ServiceMessage

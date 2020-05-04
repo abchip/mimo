@@ -26,16 +26,16 @@ public interface LanguageManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextRequired="true" textRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.language.LanguageException" contextRequired="true" textRequired="true"
 	 * @generated
 	 */
-	Classification<Language> classifyLanguage(Context context, String text);
+	Classification<Language> classifyLanguage(Context context, String text) throws LanguageException;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" contextRequired="true" languageSourceRequired="true" textRequired="true" languageTargetRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.language.LanguageException" contextRequired="true" languageSourceRequired="true" textRequired="true" languageTargetRequired="true"
 	 * @generated
 	 */
-	String translate(Context context, String languageSource, String text, String languageTarget);
+	String translate(Context context, String languageSource, String text, String languageTarget) throws LanguageException;
 } // LanguageManager

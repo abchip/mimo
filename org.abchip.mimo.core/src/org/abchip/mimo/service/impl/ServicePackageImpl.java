@@ -750,7 +750,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		serviceMappingEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		serviceMappingRuleEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		serviceMappingRuleByPackageEClass.getESuperTypes().add(this.getServiceMappingRule());
-		serviceMessageEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		serviceMessageEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
 		g1 = createEGenericType(this.getServiceRequest());
 		g2 = createEGenericType(this.getServiceMethodResponse());
 		g1.getETypeArguments().add(g2);
@@ -1067,6 +1067,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		initEOperation(op, g1);
 
 		op = addEOperation(serviceRequestEClass, null, "buildResponse", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getServiceException());
 		g1 = createEGenericType(serviceRequestEClass_V);
 		initEOperation(op, g1);
 

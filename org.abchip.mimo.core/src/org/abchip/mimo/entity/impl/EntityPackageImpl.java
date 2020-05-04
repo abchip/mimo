@@ -996,15 +996,6 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
-		op = addEOperation(entityEClass, null, "getResource", 0, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(this.getEntityIdentifiable());
-		t1.getEBounds().add(g1);
-		g1 = createEGenericType(theResourcePackage.getResource());
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		initEOperation(op, g1);
-
 		initEClass(entityContainerEClass, EntityContainer.class, "EntityContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntityContainer_Contents(), this.getEntityIdentifiable(), null, "contents", null, 0, -1, EntityContainer.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityContainer_Name(), ecorePackage.getEString(), "name", null, 1, 1, EntityContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1022,6 +1013,15 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEClass(entityIdentifiableEClass, EntityIdentifiable.class, "EntityIdentifiable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(entityIdentifiableEClass, ecorePackage.getEString(), "getID", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(entityIdentifiableEClass, null, "getResource", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(this.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		g1 = createEGenericType(theResourcePackage.getResource());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
 
 		addEOperation(entityIdentifiableEClass, this.getEntityState(), "getState", 1, 1, IS_UNIQUE, IS_ORDERED);
 

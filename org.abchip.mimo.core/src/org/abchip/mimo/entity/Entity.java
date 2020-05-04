@@ -7,8 +7,6 @@
  */
 package org.abchip.mimo.entity;
 
-import org.abchip.mimo.resource.Resource;
-
 /**
  * <!-- begin-user-doc --> A representation of the model object
  * '<em><b>Entity</b></em>'. <!-- end-user-doc -->
@@ -25,13 +23,5 @@ public interface Entity {
 	 * @generated
 	 */
 	<E extends Entity> Frame<E> isa();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> Resource<E> getResource();
 
 } // Entity

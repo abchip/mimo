@@ -8,6 +8,7 @@
 package org.abchip.mimo.entity;
 
 import java.net.URI;
+import org.abchip.mimo.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +28,14 @@ public interface EntityIdentifiable extends Entity {
 	 * @generated
 	 */
 	String getID();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Resource<E> getResource();
 
 	/**
 	 * <!-- begin-user-doc -->

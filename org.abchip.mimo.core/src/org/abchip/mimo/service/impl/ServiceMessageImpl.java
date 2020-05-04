@@ -7,8 +7,7 @@
  */
 package org.abchip.mimo.service.impl;
 
-import org.abchip.mimo.entity.impl.EntityImpl;
-
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.abchip.mimo.service.ServiceMessage;
 import org.abchip.mimo.service.ServicePackage;
 import org.eclipse.emf.ecore.EClass;
@@ -20,7 +19,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class ServiceMessageImpl extends EntityImpl implements ServiceMessage {
+public abstract class ServiceMessageImpl extends EntityIdentifiableImpl implements ServiceMessage {
 
 	/**
 	 * <!-- begin-user-doc -->

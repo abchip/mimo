@@ -591,9 +591,6 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/Entity/isa">
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/Entity/isa/E"/>
         </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Entity/getResource">
-          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/Entity/getResource/E"/>
-        </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/EntityContainer">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//entity/EntityContainer/contents"/>
@@ -611,6 +608,9 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIdentifiable">
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getID"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getResource">
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityIdentifiable/getResource/E"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getState"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getURI"/>
       </genClasses>

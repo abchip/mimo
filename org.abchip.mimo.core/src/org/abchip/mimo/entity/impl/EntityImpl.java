@@ -10,13 +10,12 @@ package org.abchip.mimo.entity.impl;
 
 import java.util.List;
 
-import org.abchip.mimo.MimoResourceImpl;
+import org.abchip.mimo.E4FrameClassAdapter;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.Resource;
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -117,30 +116,13 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * 
 	 * @generated NOT
 	 */
-	@SuppressWarnings({ "unchecked" })
+	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends Entity> Frame<E> isa() {
-
-		Frame<E> isa = this.getResource().getContext().createProxy(Frame.class, eClass().getName());
-		if (isa != null)
-			return isa;
-		else
-			return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource() {
-		if (this.eResource() instanceof MimoResourceImpl) {
-			@SuppressWarnings("unchecked")
-			MimoResourceImpl<E> internal = (MimoResourceImpl<E>) this.eResource();
-			return internal.getResource();
+		for(Adapter adapter : eClass().eAdapters()) {
+			if(adapter instanceof E4FrameClassAdapter) 
+				return (Frame<E>) adapter;
 		}
-
 		return null;
 	}
 } // EntityImpl

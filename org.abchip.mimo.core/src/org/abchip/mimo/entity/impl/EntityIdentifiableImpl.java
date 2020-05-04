@@ -11,6 +11,7 @@ package org.abchip.mimo.entity.impl;
 import java.net.URI;
 import java.util.List;
 
+import org.abchip.mimo.E4FrameClassAdapter;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
@@ -20,7 +21,9 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.EntityState;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
+import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -209,11 +212,33 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	@Override
 	public <E extends Entity> Frame<E> isa() {
 
+		for(Adapter adapter : eClass().eAdapters()) {
+			if(adapter instanceof E4FrameClassAdapter) 
+				return (Frame<E>) adapter;
+		}
+		
 		switch (getState()) {
 		case RESOLVED:
+		case PROXY:
 			return (Frame<E>) getResource().getFrame();
 		default:
 			return super.isa();
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public <E extends EntityIdentifiable> Resource<E> getResource() {
+		if (this.eResource() instanceof MimoResourceImpl) {
+			@SuppressWarnings("unchecked")
+			MimoResourceImpl<E> internal = (MimoResourceImpl<E>) this.eResource();
+			return internal.getResource();
+		}
+
+		return null;
 	}
 } // EntityIdentifiableImpl

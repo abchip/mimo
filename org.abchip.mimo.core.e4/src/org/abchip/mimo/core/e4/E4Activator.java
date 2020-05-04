@@ -44,7 +44,6 @@ import org.abchip.mimo.language.LanguageParserRegistry;
 import org.abchip.mimo.language.base.BaseLanguageLinearizerRegistryImpl;
 import org.abchip.mimo.language.base.BaseLanguageManagerImpl;
 import org.abchip.mimo.language.base.BaseLanguageParserRegistryImpl;
-import org.abchip.mimo.language.base.LanguageCommands;
 import org.abchip.mimo.language.test.TestLanguageSuiteLauncherImpl;
 import org.abchip.mimo.mining.MiningManager;
 import org.abchip.mimo.mining.base.BaseClassifierRegistryImpl;
@@ -191,13 +190,22 @@ public class E4Activator implements BundleActivator {
 		registerServiceServices();
 
 		// tester
-		registerTestServices();
+		{
+			application.getContext().set(TestManager.class, new BaseTestManagerImpl());
+			application.getContext().set(TestSuiteLauncher.class.getName(), new TestTesterSuiteLauncherImpl(application), false, null);
+			application.getContext().set(TestSuiteLauncher.class.getName(), new TestCoreSuiteLauncherImpl(application), false, null);
+			application.getContext().set(CommandProvider.class.getName(), new TestCommands(application), false, null);
 
+		}
 		// mining
-		registerMiningServices();
-
+		{
+			application.getContext().set(MiningManager.class, new BaseMiningManagerImpl(application));
+		}
 		// language
-		registerLanguageServices();
+		{
+			application.getContext().set(LanguageManager.class, new BaseLanguageManagerImpl(application));
+			application.getContext().set(TestSuiteLauncher.class.getName(), new TestLanguageSuiteLauncherImpl(application), false, null);
+		}
 	}
 
 	private void registerRegistryServices() {
@@ -289,23 +297,6 @@ public class E4Activator implements BundleActivator {
 		}
 
 		application.getContext().set(CommandProvider.class.getName(), new ServiceCommands(application), false, null);
-	}
-
-	private void registerTestServices() {
-		application.getContext().set(TestManager.class, new BaseTestManagerImpl());
-		application.getContext().set(TestSuiteLauncher.class.getName(), new TestTesterSuiteLauncherImpl(application), false, null);
-		application.getContext().set(TestSuiteLauncher.class.getName(), new TestCoreSuiteLauncherImpl(application), false, null);
-		application.getContext().set(CommandProvider.class.getName(), new TestCommands(application), false, null);
-	}
-
-	private void registerMiningServices() {
-		application.getContext().set(MiningManager.class, new BaseMiningManagerImpl(application));
-	}
-
-	private void registerLanguageServices() {
-		application.getContext().set(LanguageManager.class, new BaseLanguageManagerImpl(application));
-		application.getContext().set(CommandProvider.class.getName(), new LanguageCommands(application), false, null);
-		application.getContext().set(TestSuiteLauncher.class.getName(), new TestLanguageSuiteLauncherImpl(application), false, null);
 	}
 
 	private void setApplicationKeys(String adminKey) {

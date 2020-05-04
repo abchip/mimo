@@ -103,10 +103,10 @@ public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessag
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
+	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException"
 	 * @generated
 	 */
-	V buildResponse();
+	V buildResponse() throws ServiceException;
 
 	/**
 	 * <!-- begin-user-doc -->

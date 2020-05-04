@@ -65,6 +65,7 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
 			case LanguagePackage.LANGUAGE: return (EObject)createLanguage();
 			case LanguagePackage.LANGUAGE_EXPRESSION: return (EObject)createLanguageExpression();
 			case LanguagePackage.LANGUAGE_PLANET: return (EObject)createLanguagePlanet();
+			case LanguagePackage.LANGUAGE_TRANSLATE: return (EObject)createLanguageTranslate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -139,6 +140,17 @@ public class LanguageFactoryImpl extends EFactoryImpl implements LanguageFactory
 	public LanguagePlanet createLanguagePlanet() {
 		LanguagePlanetImpl languagePlanet = new LanguagePlanetImpl();
 		return languagePlanet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LanguageTranslate createLanguageTranslate() {
+		LanguageTranslateImpl languageTranslate = new LanguageTranslateImpl();
+		return languageTranslate;
 	}
 
 	/**

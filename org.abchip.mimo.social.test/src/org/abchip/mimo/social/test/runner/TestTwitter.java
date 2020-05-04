@@ -21,6 +21,7 @@ import org.abchip.mimo.entity.EntityIterator;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.language.Language;
+import org.abchip.mimo.language.LanguageException;
 import org.abchip.mimo.language.LanguageManager;
 import org.abchip.mimo.mining.MiningManager;
 import org.abchip.mimo.mining.classification.Classification;
@@ -58,7 +59,7 @@ public class TestTwitter {
 
 	@SuppressWarnings("rawtypes")
 	@TestStarted
-	public void start() throws InterruptedException, ResourceException {
+	public void start() throws InterruptedException, ResourceException, LanguageException {
 
 		loadTweets();
 

@@ -18,6 +18,7 @@ import org.abchip.mimo.audio.AudioRecorder;
 import org.abchip.mimo.audio.AudioStyle;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.language.Language;
+import org.abchip.mimo.language.LanguageException;
 import org.abchip.mimo.language.LanguageManager;
 import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.resource.ResourceException;
@@ -42,7 +43,7 @@ public class TestAudio {
 
 	@SuppressWarnings("resource")
 	@TestStarted
-	public void start() throws InterruptedException, ResourceException {
+	public void start() throws InterruptedException, ResourceException, LanguageException {
 
 		audioManager.play(testRunner.getContext(), AudioStyle.A, "Hi Diana, there is a kitchen to clean!!", true, true);
 

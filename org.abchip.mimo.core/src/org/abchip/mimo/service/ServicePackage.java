@@ -258,7 +258,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+	int SERVICE_MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceProviderImpl <em>Provider</em>}' class.

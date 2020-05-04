@@ -16,6 +16,8 @@ import java.util.concurrent.Future;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.entity.Frame;
+import org.abchip.mimo.resource.Resource;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.service.Service;
 import org.abchip.mimo.service.ServiceException;
 import org.abchip.mimo.service.ServiceFactory;
@@ -124,13 +126,16 @@ public class BaseServiceManagerImpl implements ServiceManager {
 
 		this.checkAuthorization(tenant);
 
-		@SuppressWarnings("unchecked")
-		R request = (R) EcoreUtil.create(frame.getEClass());
-		context.inject(request);
+		try {
+			Resource<R> resource = (Resource<R>) context.getResourceSet().getResource(frame, tenant);
+			R request = resource.make();
 
-		request.init(context, tenant);
-
-		return request;
+			context.inject(request);
+			request.init(context, tenant);
+			return request;
+		} catch (ResourceException e) {
+			throw new ServiceException(e);
+		}
 	}
 
 	@SuppressWarnings("unchecked")

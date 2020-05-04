@@ -9,6 +9,7 @@ package org.abchip.mimo.language;
 
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.EntityPackage;
+import org.abchip.mimo.service.ServicePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -298,6 +299,79 @@ public interface LanguagePackage extends EPackage {
 	int LANGUAGE_PLANET_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.language.impl.LanguageTranslateImpl <em>Translate</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.language.impl.LanguageTranslateImpl
+	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageTranslate()
+	 * @generated
+	 */
+	int LANGUAGE_TRANSLATE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_TRANSLATE__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_TRANSLATE__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_TRANSLATE__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_TRANSLATE__TEXT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_TRANSLATE__FROM = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>To</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_TRANSLATE__TO = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Translate</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_TRANSLATE_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageScope <em>Scope</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -305,7 +379,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageScope()
 	 * @generated
 	 */
-	int LANGUAGE_SCOPE = 8;
+	int LANGUAGE_SCOPE = 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.language.LanguageType <em>Type</em>}' enum.
@@ -315,7 +389,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageType()
 	 * @generated
 	 */
-	int LANGUAGE_TYPE = 9;
+	int LANGUAGE_TYPE = 10;
 
 	/**
 	 * The meta object id for the '<em>Exception</em>' data type.
@@ -325,7 +399,7 @@ public interface LanguagePackage extends EPackage {
 	 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageException()
 	 * @generated
 	 */
-	int LANGUAGE_EXCEPTION = 10;
+	int LANGUAGE_EXCEPTION = 11;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.language.Language <em>Language</em>}'.
@@ -505,6 +579,49 @@ public interface LanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLanguagePlanet_Name();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.language.LanguageTranslate <em>Translate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Translate</em>'.
+	 * @see org.abchip.mimo.language.LanguageTranslate
+	 * @generated
+	 */
+	EClass getLanguageTranslate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.language.LanguageTranslate#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see org.abchip.mimo.language.LanguageTranslate#getText()
+	 * @see #getLanguageTranslate()
+	 * @generated
+	 */
+	EAttribute getLanguageTranslate_Text();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.language.LanguageTranslate#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>From</em>'.
+	 * @see org.abchip.mimo.language.LanguageTranslate#getFrom()
+	 * @see #getLanguageTranslate()
+	 * @generated
+	 */
+	EAttribute getLanguageTranslate_From();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.language.LanguageTranslate#getTo <em>To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>To</em>'.
+	 * @see org.abchip.mimo.language.LanguageTranslate#getTo()
+	 * @see #getLanguageTranslate()
+	 * @generated
+	 */
+	EAttribute getLanguageTranslate_To();
 
 	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.language.LanguageScope <em>Scope</em>}'.
@@ -694,6 +811,36 @@ public interface LanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LANGUAGE_PLANET__NAME = eINSTANCE.getLanguagePlanet_Name();
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.language.impl.LanguageTranslateImpl <em>Translate</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.language.impl.LanguageTranslateImpl
+		 * @see org.abchip.mimo.language.impl.LanguagePackageImpl#getLanguageTranslate()
+		 * @generated
+		 */
+		EClass LANGUAGE_TRANSLATE = eINSTANCE.getLanguageTranslate();
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LANGUAGE_TRANSLATE__TEXT = eINSTANCE.getLanguageTranslate_Text();
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LANGUAGE_TRANSLATE__FROM = eINSTANCE.getLanguageTranslate_From();
+		/**
+		 * The meta object literal for the '<em><b>To</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LANGUAGE_TRANSLATE__TO = eINSTANCE.getLanguageTranslate_To();
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.language.LanguageScope <em>Scope</em>}' enum.
 		 * <!-- begin-user-doc -->

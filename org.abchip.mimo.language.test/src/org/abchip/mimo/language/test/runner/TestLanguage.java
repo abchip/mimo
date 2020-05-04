@@ -10,6 +10,7 @@ package org.abchip.mimo.language.test.runner;
 import javax.inject.Inject;
 
 import org.abchip.mimo.language.Language;
+import org.abchip.mimo.language.LanguageException;
 import org.abchip.mimo.language.LanguageManager;
 import org.abchip.mimo.mining.classification.Classification;
 import org.abchip.mimo.tester.Test;
@@ -28,7 +29,7 @@ public class TestLanguage {
 	private TestRunner testRunner;
 
 	@TestStarted
-	public void start() {
+	public void start() throws LanguageException {
 		
 		String text = languageManager.translate(testRunner.getContext(), "ita", "Marco è un fotografo", "eng");
 		asserter.assertEquals("Text translation", "Marco is a photographer", text);

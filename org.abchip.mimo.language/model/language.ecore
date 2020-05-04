@@ -34,14 +34,15 @@
     </eGenericSuperTypes>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LanguageManager" abstract="true" interface="true">
-    <eOperations name="classifyLanguage" lowerBound="1">
+    <eOperations name="classifyLanguage" lowerBound="1" eExceptions="#//LanguageException">
       <eGenericType eClassifier="ecore:EClass ../../org.abchip.mimo.mining/model/mining.ecore#//classification/Classification">
         <eTypeArguments eClassifier="#//Language"/>
       </eGenericType>
       <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="translate" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eOperations name="translate" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        eExceptions="#//LanguageException">
       <eParameters name="context" lowerBound="1" eType="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//context/Context"/>
       <eParameters name="languageSource" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -79,6 +80,19 @@
     <eLiterals name="Ancient" value="30" literal="A"/>
     <eLiterals name="Historical" value="40" literal="H"/>
     <eLiterals name="Constructed" value="50" literal="C"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LanguageTranslate">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="from" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="eng"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="to" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="ita"/>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//service/ServiceRequest">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//service/ServiceResponse"/>
+    </eGenericSuperTypes>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaCallable">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//service/ServiceResponse"/>
+    </eGenericSuperTypes>
   </eClassifiers>
   <eSubpackages name="grammar" nsURI="http://www.abchip.org/mimo/language/grammar"
       nsPrefix="mimo-gram">
