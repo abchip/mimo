@@ -10,6 +10,7 @@ package org.abchip.mimo.application;
 
 import org.abchip.mimo.entity.EntityPackage;
 
+import org.abchip.mimo.service.ServicePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -218,7 +219,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationBundle()
 	 * @generated
 	 */
-	int APPLICATION_BUNDLE = 9;
+	int APPLICATION_BUNDLE = 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationPathsImpl <em>Paths</em>}' class.
@@ -469,6 +470,116 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION_MODULE_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.application.impl.LogResetImpl <em>Log Reset</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.application.impl.LogResetImpl
+	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getLogReset()
+	 * @generated
+	 */
+	int LOG_RESET = 6;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_RESET__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_RESET__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_RESET__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+
+	/**
+	 * The number of structural features of the '<em>Log Reset</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_RESET_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.application.impl.LogSetImpl <em>Log Set</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.application.impl.LogSetImpl
+	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getLogSet()
+	 * @generated
+	 */
+	int LOG_SET = 7;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_SET__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_SET__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_SET__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Log Pattern</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_SET__LOG_PATTERN = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Log Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_SET__LOG_LEVEL = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Log Set</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_SET_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ApplicationLogLevel <em>Log Level</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -476,7 +587,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getApplicationLogLevel()
 	 * @generated
 	 */
-	int APPLICATION_LOG_LEVEL = 6;
+	int APPLICATION_LOG_LEVEL = 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ComponentStatus <em>Component Status</em>}' enum.
@@ -486,7 +597,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getComponentStatus()
 	 * @generated
 	 */
-	int COMPONENT_STATUS = 7;
+	int COMPONENT_STATUS = 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.ModuleStatus <em>Module Status</em>}' enum.
@@ -496,7 +607,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getModuleStatus()
 	 * @generated
 	 */
-	int MODULE_STATUS = 8;
+	int MODULE_STATUS = 10;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.application.Application <em>Application</em>}'.
@@ -911,6 +1022,48 @@ public interface ApplicationPackage extends EPackage {
 	EAttribute getApplicationModule_Status();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.application.LogReset <em>Log Reset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Log Reset</em>'.
+	 * @see org.abchip.mimo.application.LogReset
+	 * @generated
+	 */
+	EClass getLogReset();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.application.LogSet <em>Log Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Log Set</em>'.
+	 * @see org.abchip.mimo.application.LogSet
+	 * @generated
+	 */
+	EClass getLogSet();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.LogSet#getLogPattern <em>Log Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Log Pattern</em>'.
+	 * @see org.abchip.mimo.application.LogSet#getLogPattern()
+	 * @see #getLogSet()
+	 * @generated
+	 */
+	EAttribute getLogSet_LogPattern();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.application.LogSet#getLogLevel <em>Log Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Log Level</em>'.
+	 * @see org.abchip.mimo.application.LogSet#getLogLevel()
+	 * @see #getLogSet()
+	 * @generated
+	 */
+	EAttribute getLogSet_LogLevel();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.application.ApplicationLogLevel <em>Log Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1279,6 +1432,42 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute APPLICATION_MODULE__STATUS = eINSTANCE.getApplicationModule_Status();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.LogResetImpl <em>Log Reset</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.application.impl.LogResetImpl
+		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getLogReset()
+		 * @generated
+		 */
+		EClass LOG_RESET = eINSTANCE.getLogReset();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.application.impl.LogSetImpl <em>Log Set</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.application.impl.LogSetImpl
+		 * @see org.abchip.mimo.application.impl.ApplicationPackageImpl#getLogSet()
+		 * @generated
+		 */
+		EClass LOG_SET = eINSTANCE.getLogSet();
+
+		/**
+		 * The meta object literal for the '<em><b>Log Pattern</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOG_SET__LOG_PATTERN = eINSTANCE.getLogSet_LogPattern();
+
+		/**
+		 * The meta object literal for the '<em><b>Log Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOG_SET__LOG_LEVEL = eINSTANCE.getLogSet_LogLevel();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.application.ApplicationLogLevel <em>Log Level</em>}' enum.

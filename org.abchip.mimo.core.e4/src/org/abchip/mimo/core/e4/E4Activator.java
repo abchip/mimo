@@ -13,8 +13,8 @@ import java.net.URL;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-import org.abchip.mimo.E4ResourceSetFactoryImpl;
 import org.abchip.mimo.E4ResourceProviderImpl;
+import org.abchip.mimo.E4ResourceSetFactoryImpl;
 import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationPaths;
@@ -30,7 +30,6 @@ import org.abchip.mimo.core.base.BaseResourceManagerFactoryImpl;
 import org.abchip.mimo.core.base.BaseResourceProviderRegistryImpl;
 import org.abchip.mimo.core.base.BaseServiceManagerFactoryImpl;
 import org.abchip.mimo.core.base.BaseServiceProviderRegistryImpl;
-import org.abchip.mimo.core.base.cmd.LogCommands;
 import org.abchip.mimo.core.base.cmd.ResourceCommands;
 import org.abchip.mimo.core.base.cmd.ServiceCommands;
 import org.abchip.mimo.core.base.ctx.BaseThreadManagerImpl;
@@ -173,9 +172,6 @@ public class E4Activator implements BundleActivator {
 	}
 
 	private void registerServices() {
-
-		// logs
-		application.getContext().set(CommandProvider.class.getName(), new LogCommands(application), false, null);
 
 		// thread
 		ThreadManager threadManager = new BaseThreadManagerImpl();
