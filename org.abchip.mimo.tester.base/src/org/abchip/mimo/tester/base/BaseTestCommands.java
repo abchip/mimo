@@ -16,6 +16,7 @@ import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.base.cmd.BaseCommands;
+import org.eclipse.osgi.framework.console.CommandInterpreter;
 
 public abstract class BaseTestCommands extends BaseCommands {
 
@@ -23,9 +24,9 @@ public abstract class BaseTestCommands extends BaseCommands {
 		super(application);
 	}
 
-	protected ContextProvider login() throws AuthenticationException {
+	protected ContextProvider login(CommandInterpreter interpreter) throws AuthenticationException {
 
-		Context context = this.getContext();
+		Context context = this.getContext(interpreter);
 
 		AuthenticationUserPassword authentication = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
 		authentication.setUser("abchip-test");

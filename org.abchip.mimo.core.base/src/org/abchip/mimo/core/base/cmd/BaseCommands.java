@@ -8,21 +8,23 @@
  */
 package org.abchip.mimo.core.base.cmd;
 
+import java.lang.reflect.Field;
+
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.authentication.AuthenticationAdminKey;
 import org.abchip.mimo.authentication.AuthenticationException;
 import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.context.Context;
+import org.apache.felix.service.command.CommandSession;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 import org.eclipse.osgi.framework.console.CommandProvider;
 
 public abstract class BaseCommands implements CommandProvider {
 
-	protected static final String NULL = "@NULL";
-
+	private static final String NULL = "@NULL";
+	private static final String MIMO_CONTEXT = "mimo.context";
 	private Application application;
-	private ThreadLocal<Context> threadLocalContext = new ThreadLocal<Context>();
 
 	public BaseCommands(Application application) {
 		this.application = application;
@@ -47,18 +49,26 @@ public abstract class BaseCommands implements CommandProvider {
 		return argument;
 	}
 
-	protected Context getContext() {
+	@SuppressWarnings("resource")
+	protected Context getContext(CommandInterpreter interpreter) {
 
-		Context context = threadLocalContext.get();
-		if (context != null)
-			return context;
+		try {
+			Field field = interpreter.getClass().getDeclaredField("commandSession");
+			field.setAccessible(true);
+			CommandSession commandSession = (CommandSession) field.get(interpreter);
 
-		if (application.getAdminKey() == null)
-			try {
-				return login(null);
-			} catch (AuthenticationException e) {
-				throw new RuntimeException(e);
+			Context context = (Context) commandSession.get(MIMO_CONTEXT);
+			if (context != null)
+				return context;
+
+			if (application.getAdminKey() == null) {
+				context = login(null);
+				commandSession.put(MIMO_CONTEXT, context);
+				return context;
 			}
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 
 		throw new RuntimeException("You need a login, please use first command 'login'");
 	}
@@ -75,12 +85,10 @@ public abstract class BaseCommands implements CommandProvider {
 		@SuppressWarnings("resource")
 		Context context = authenticationManager.login(null, authAdminKey).get();
 
-		threadLocalContext.set(context);
-
 		return context;
 	}
 
-	protected void logout() {
-		this.getContext().dispose();
+	protected void logout(CommandInterpreter interpreter) {
+		this.getContext(interpreter).dispose();
 	}
 }

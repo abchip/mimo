@@ -19,8 +19,8 @@ import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.application.ComponentStatus;
-import org.abchip.mimo.application.LogReset;
-import org.abchip.mimo.application.LogSet;
+import org.abchip.mimo.application.ResetLog;
+import org.abchip.mimo.application.SetLog;
 import org.abchip.mimo.application.ModuleStatus;
 import org.abchip.mimo.authentication.AuthenticationPackage;
 import org.abchip.mimo.authentication.impl.AuthenticationPackageImpl;
@@ -117,14 +117,14 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass logResetEClass = null;
+	private EClass resetLogEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass logSetEClass = null;
+	private EClass setLogEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -646,8 +646,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getLogReset() {
-		return logResetEClass;
+	public EClass getResetLog() {
+		return resetLogEClass;
 	}
 
 	/**
@@ -656,8 +656,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EClass getLogSet() {
-		return logSetEClass;
+	public EClass getSetLog() {
+		return setLogEClass;
 	}
 
 	/**
@@ -666,8 +666,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLogSet_LogPattern() {
-		return (EAttribute)logSetEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSetLog_LogPattern() {
+		return (EAttribute)setLogEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -676,8 +676,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLogSet_LogLevel() {
-		return (EAttribute)logSetEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSetLog_LogLevel() {
+		return (EAttribute)setLogEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -782,11 +782,11 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		createEReference(applicationModuleEClass, APPLICATION_MODULE__SERVICES);
 		createEAttribute(applicationModuleEClass, APPLICATION_MODULE__STATUS);
 
-		logResetEClass = createEClass(LOG_RESET);
+		resetLogEClass = createEClass(RESET_LOG);
 
-		logSetEClass = createEClass(LOG_SET);
-		createEAttribute(logSetEClass, LOG_SET__LOG_PATTERN);
-		createEAttribute(logSetEClass, LOG_SET__LOG_LEVEL);
+		setLogEClass = createEClass(SET_LOG);
+		createEAttribute(setLogEClass, SET_LOG__LOG_PATTERN);
+		createEAttribute(setLogEClass, SET_LOG__LOG_LEVEL);
 
 		// Create enums
 		applicationLogLevelEEnum = createEEnum(APPLICATION_LOG_LEVEL);
@@ -842,19 +842,19 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		EGenericType g1 = createEGenericType(theServicePackage.getServiceRequest());
 		EGenericType g2 = createEGenericType(theServicePackage.getServiceResponse());
 		g1.getETypeArguments().add(g2);
-		logResetEClass.getEGenericSuperTypes().add(g1);
+		resetLogEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theJavaPackage.getJavaCallable());
 		g2 = createEGenericType(theServicePackage.getServiceResponse());
 		g1.getETypeArguments().add(g2);
-		logResetEClass.getEGenericSuperTypes().add(g1);
+		resetLogEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theServicePackage.getServiceRequest());
 		g2 = createEGenericType(theServicePackage.getServiceResponse());
 		g1.getETypeArguments().add(g2);
-		logSetEClass.getEGenericSuperTypes().add(g1);
+		setLogEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theJavaPackage.getJavaCallable());
 		g2 = createEGenericType(theServicePackage.getServiceResponse());
 		g1.getETypeArguments().add(g2);
-		logSetEClass.getEGenericSuperTypes().add(g1);
+		setLogEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -909,11 +909,11 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		initEReference(getApplicationModule_Services(), theRegPackage.getServiceReg(), null, "services", null, 0, -1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplicationModule_Status(), this.getModuleStatus(), "status", "ACT", 1, 1, ApplicationModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(logResetEClass, LogReset.class, "LogReset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(resetLogEClass, ResetLog.class, "ResetLog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(logSetEClass, LogSet.class, "LogSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLogSet_LogPattern(), ecorePackage.getEString(), "logPattern", null, 1, 1, LogSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLogSet_LogLevel(), this.getApplicationLogLevel(), "logLevel", null, 1, 1, LogSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(setLogEClass, SetLog.class, "SetLog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSetLog_LogPattern(), ecorePackage.getEString(), "logPattern", null, 1, 1, SetLog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSetLog_LogLevel(), this.getApplicationLogLevel(), "logLevel", null, 1, 1, SetLog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(applicationLogLevelEEnum, ApplicationLogLevel.class, "ApplicationLogLevel");

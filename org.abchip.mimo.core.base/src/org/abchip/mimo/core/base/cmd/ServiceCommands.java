@@ -21,6 +21,7 @@ import org.abchip.mimo.service.Service;
 import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
+import org.abchip.mimo.util.Strings;
 import org.abchip.mimo.util.URIs;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
@@ -34,16 +35,26 @@ public class ServiceCommands extends BaseCommands {
 
 	public <R extends ServiceRequest<V>, V extends ServiceResponse> void _mm(CommandInterpreter interpreter) throws Exception {
 
-		Context context = this.getContext();
+		Context context = this.getContext(interpreter);
 		ServiceManager serviceManager = context.getServiceManager();
 
 		String serviceId = this.nextArgument(interpreter);
+		serviceId = Strings.firstToUpper(serviceId);
+
 		String tenant = null;
 
 		StringBuffer query = new StringBuffer();
 
 		String argument = this.nextArgument(interpreter);
 		while (argument != null) {
+			
+			// concatenate service name
+			if (!argument.contains("=")) {
+				serviceId = serviceId + Strings.firstToUpper(argument);
+				argument = interpreter.nextArgument();
+				continue;
+			}
+
 			if (query.length() != 0)
 				query.append("&");
 			query.append(argument);
@@ -69,41 +80,42 @@ public class ServiceCommands extends BaseCommands {
 
 	public <R extends ServiceRequest<V>, V extends ServiceResponse> void _mm_help(CommandInterpreter interpreter) throws Exception {
 
-		Context context = this.getContext();
+		Context context = this.getContext(interpreter);
 		ServiceManager serviceManager = context.getServiceManager();
 
 		String serviceId = this.nextArgument(interpreter);
 
 		Service<?, ?> service = serviceManager.getService(serviceId);
 		if (service == null) {
-			interpreter.println("ServiceScope not found " + serviceId);
+			interpreter.println("Service not found " + serviceId);
 			return;
 		}
 
+		interpreter.println();
 		ServiceRequest<?> request = service.getRequest();
-		interpreter.println("ServiceScope: " + request.getServiceName());
+		interpreter.println("Service: " + request.getServiceName());
 
 		interpreter.println("Input parameters");
 		for (Slot slot : request.isa().getSlots()) {
-			interpreter.print("Name: " + slot.getName() + " ");
-			interpreter.print("Text: " + slot.getText() + " ");
-			interpreter.print("Optional: " + !slot.getCardinality().isMandatory() + " ");
-			interpreter.print("Type: " + slot.getDataType() + " ");
-			interpreter.print("Domain: " + slot.getDomain() + " ");
-			interpreter.print("Default: " + slot.getDefaultValue() + " ");
+			interpreter.print("\tName: " + slot.getName() + " ");
+			interpreter.print("\tText: " + slot.getText() + " ");
+			interpreter.print("\tOptional: " + !slot.getCardinality().isMandatory() + " ");
+			interpreter.print("\tType: " + slot.getDataType() + " ");
+			interpreter.print("\tDomain: " + slot.getDomain() + " ");
+			interpreter.print("\tDefault: " + slot.getDefaultValue() + " ");
 			interpreter.println();
 		}
 
-		ServiceResponse response = (ServiceResponse) EcoreUtil.create(this.getContext().createProxy(Frame.class, request.getResponse().getSimpleName()).getEClass());
+		ServiceResponse response = (ServiceResponse) EcoreUtil.create(context.createProxy(Frame.class, request.getResponse().getSimpleName()).getEClass());
 
 		interpreter.println("Output parameters");
 		for (Slot slot : response.isa().getSlots()) {
-			interpreter.print("Name: " + slot.getName() + " ");
-			interpreter.print("Text: " + slot.getText() + " ");
-			interpreter.print("Optional: " + !slot.getCardinality().isMandatory() + " ");
-			interpreter.print("Type: " + slot.getDataType() + " ");
-			interpreter.print("Domain: " + slot.getDomain() + " ");
-			interpreter.print("Default: " + slot.getDefaultValue() + " ");
+			interpreter.print("\tName: " + slot.getName() + " ");
+			interpreter.print("\tText: " + slot.getText() + " ");
+			interpreter.print("\tOptional: " + !slot.getCardinality().isMandatory() + " ");
+			interpreter.print("\tType: " + slot.getDataType() + " ");
+			interpreter.print("\tDomain: " + slot.getDomain() + " ");
+			interpreter.print("\tDefault: " + slot.getDefaultValue() + " ");
 			interpreter.println();
 		}
 	}

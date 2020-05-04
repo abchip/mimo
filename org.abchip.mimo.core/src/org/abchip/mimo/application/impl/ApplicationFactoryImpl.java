@@ -68,8 +68,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 			case ApplicationPackage.APPLICATION_LOGS: return (EObject)createApplicationLogs();
 			case ApplicationPackage.APPLICATION_LOG_ENTRY: return (EObject)createApplicationLogEntry();
 			case ApplicationPackage.APPLICATION_MODULE: return (EObject)createApplicationModule();
-			case ApplicationPackage.LOG_RESET: return (EObject)createLogReset();
-			case ApplicationPackage.LOG_SET: return (EObject)createLogSet();
+			case ApplicationPackage.RESET_LOG: return (EObject)createResetLog();
+			case ApplicationPackage.SET_LOG: return (EObject)createSetLog();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -189,9 +189,9 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Override
-	public LogReset createLogReset() {
-		LogResetImpl logReset = new LogResetImpl();
-		return logReset;
+	public ResetLog createResetLog() {
+		ResetLogImpl resetLog = new ResetLogImpl();
+		return resetLog;
 	}
 
 	/**
@@ -200,9 +200,9 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Override
-	public LogSet createLogSet() {
-		LogSetImpl logSet = new LogSetImpl();
-		return logSet;
+	public SetLog createSetLog() {
+		SetLogImpl setLog = new SetLogImpl();
+		return setLog;
 	}
 
 	/**

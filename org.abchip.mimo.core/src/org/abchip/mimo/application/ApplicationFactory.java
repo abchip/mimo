@@ -82,22 +82,22 @@ public interface ApplicationFactory extends EFactory {
 	ApplicationModule createApplicationModule();
 
 	/**
-	 * Returns a new object of class '<em>Log Reset</em>'.
+	 * Returns a new object of class '<em>Reset Log</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Log Reset</em>'.
+	 * @return a new object of class '<em>Reset Log</em>'.
 	 * @generated
 	 */
-	LogReset createLogReset();
+	ResetLog createResetLog();
 
 	/**
-	 * Returns a new object of class '<em>Log Set</em>'.
+	 * Returns a new object of class '<em>Set Log</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Log Set</em>'.
+	 * @return a new object of class '<em>Set Log</em>'.
 	 * @generated
 	 */
-	LogSet createLogSet();
+	SetLog createSetLog();
 
 	/**
 	 * Returns the package supported by this factory.

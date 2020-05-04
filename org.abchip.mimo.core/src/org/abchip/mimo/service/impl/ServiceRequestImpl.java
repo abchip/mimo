@@ -30,12 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getLocale
- * <em>Locale</em>}</li>
- * <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getTenant
- * <em>Tenant</em>}</li>
- * <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getContext
- * <em>Context</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getLocale <em>Locale</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getTenant <em>Tenant</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getContext <em>Context</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,7 +41,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	/**
 	 * The default value of the '{@link #getLocale() <em>Locale</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getLocale()
 	 * @generated
 	 * @ordered
@@ -53,7 +49,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	/**
 	 * The cached value of the '{@link #getLocale() <em>Locale</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getLocale()
 	 * @generated
 	 * @ordered
@@ -62,7 +57,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	/**
 	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getTenant()
 	 * @generated
 	 * @ordered
@@ -71,7 +65,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	/**
 	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getTenant()
 	 * @generated
 	 * @ordered
@@ -80,7 +73,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	/**
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -89,7 +81,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ServiceRequestImpl() {
@@ -98,7 +89,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -108,7 +98,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -118,7 +107,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -131,7 +119,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -141,7 +128,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -154,14 +140,13 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Context getContext() {
-		if (context != null && ((EObject) context).eIsProxy()) {
-			InternalEObject oldContext = (InternalEObject) context;
-			context = (Context) eResolveProxy(oldContext);
+		if (context != null && ((EObject)context).eIsProxy()) {
+			InternalEObject oldContext = (InternalEObject)context;
+			context = (Context)eResolveProxy(oldContext);
 			if (context != oldContext) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServicePackage.SERVICE_REQUEST__CONTEXT, oldContext, context));
@@ -172,7 +157,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Context basicGetContext() {
@@ -260,87 +244,80 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ServicePackage.SERVICE_REQUEST__LOCALE:
-			return getLocale();
-		case ServicePackage.SERVICE_REQUEST__TENANT:
-			return getTenant();
-		case ServicePackage.SERVICE_REQUEST__CONTEXT:
-			if (resolve)
-				return getContext();
-			return basicGetContext();
+			case ServicePackage.SERVICE_REQUEST__LOCALE:
+				return getLocale();
+			case ServicePackage.SERVICE_REQUEST__TENANT:
+				return getTenant();
+			case ServicePackage.SERVICE_REQUEST__CONTEXT:
+				if (resolve) return getContext();
+				return basicGetContext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ServicePackage.SERVICE_REQUEST__LOCALE:
-			setLocale((String) newValue);
-			return;
-		case ServicePackage.SERVICE_REQUEST__TENANT:
-			setTenant((String) newValue);
-			return;
+			case ServicePackage.SERVICE_REQUEST__LOCALE:
+				setLocale((String)newValue);
+				return;
+			case ServicePackage.SERVICE_REQUEST__TENANT:
+				setTenant((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ServicePackage.SERVICE_REQUEST__LOCALE:
-			setLocale(LOCALE_EDEFAULT);
-			return;
-		case ServicePackage.SERVICE_REQUEST__TENANT:
-			setTenant(TENANT_EDEFAULT);
-			return;
+			case ServicePackage.SERVICE_REQUEST__LOCALE:
+				setLocale(LOCALE_EDEFAULT);
+				return;
+			case ServicePackage.SERVICE_REQUEST__TENANT:
+				setTenant(TENANT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ServicePackage.SERVICE_REQUEST__LOCALE:
-			return LOCALE_EDEFAULT == null ? locale != null : !LOCALE_EDEFAULT.equals(locale);
-		case ServicePackage.SERVICE_REQUEST__TENANT:
-			return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
-		case ServicePackage.SERVICE_REQUEST__CONTEXT:
-			return context != null;
+			case ServicePackage.SERVICE_REQUEST__LOCALE:
+				return LOCALE_EDEFAULT == null ? locale != null : !LOCALE_EDEFAULT.equals(locale);
+			case ServicePackage.SERVICE_REQUEST__TENANT:
+				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
+			case ServicePackage.SERVICE_REQUEST__CONTEXT:
+				return context != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (locale: ");

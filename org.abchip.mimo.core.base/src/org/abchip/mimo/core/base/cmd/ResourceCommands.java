@@ -25,19 +25,15 @@ public class ResourceCommands extends BaseCommands {
 		super(application);
 	}
 
-	public void _login(CommandInterpreter interpreter) throws Exception {
-		this.login(nextArgument(interpreter));
-	}
-
 	public void _logout(CommandInterpreter interpreter) throws Exception {
-		this.logout();
+		this.logout(interpreter);
 
 		interpreter.execute("disconnect");
 	}
 
 	public <E extends EntityIdentifiable> void _find(CommandInterpreter interpreter) throws Exception {
 
-		Context context = this.getContext();
+		Context context = this.getContext(interpreter);
 
 		String frameName = nextArgument(interpreter);
 		String order = nextArgument(interpreter);
@@ -59,7 +55,7 @@ public class ResourceCommands extends BaseCommands {
 
 	public <E extends EntityIdentifiable> void _lookup(CommandInterpreter interpreter) throws Exception {
 
-		Context context = this.getContext();
+		Context context = this.getContext(interpreter);
 
 		String frameName = Strings.firstToUpper(nextArgument(interpreter));
 

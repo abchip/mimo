@@ -21,29 +21,29 @@ import org.abchip.mimo.service.ServiceResponse;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.LogSet#getLogPattern <em>Log Pattern</em>}</li>
- *   <li>{@link org.abchip.mimo.application.LogSet#getLogLevel <em>Log Level</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.SetLog#getLogPattern <em>Log Pattern</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.SetLog#getLogLevel <em>Log Level</em>}</li>
  * </ul>
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getLogSet()
+ * @see org.abchip.mimo.application.ApplicationPackage#getSetLog()
  * @model superTypes="org.abchip.mimo.service.ServiceRequest&lt;org.abchip.mimo.service.ServiceResponse&gt; org.abchip.mimo.java.JavaCallable&lt;org.abchip.mimo.service.ServiceResponse&gt;"
  * @generated
  */
-public interface LogSet extends ServiceRequest<ServiceResponse>, Callable<ServiceResponse> {
+public interface SetLog extends ServiceRequest<ServiceResponse>, Callable<ServiceResponse> {
 	/**
 	 * Returns the value of the '<em><b>Log Pattern</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Log Pattern</em>' attribute.
 	 * @see #setLogPattern(String)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getLogSet_LogPattern()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getSetLog_LogPattern()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getLogPattern();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.LogSet#getLogPattern <em>Log Pattern</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.application.SetLog#getLogPattern <em>Log Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Log Pattern</em>' attribute.
@@ -60,14 +60,14 @@ public interface LogSet extends ServiceRequest<ServiceResponse>, Callable<Servic
 	 * @return the value of the '<em>Log Level</em>' attribute.
 	 * @see org.abchip.mimo.application.ApplicationLogLevel
 	 * @see #setLogLevel(ApplicationLogLevel)
-	 * @see org.abchip.mimo.application.ApplicationPackage#getLogSet_LogLevel()
+	 * @see org.abchip.mimo.application.ApplicationPackage#getSetLog_LogLevel()
 	 * @model required="true"
 	 * @generated
 	 */
 	ApplicationLogLevel getLogLevel();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.application.LogSet#getLogLevel <em>Log Level</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.application.SetLog#getLogLevel <em>Log Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Log Level</em>' attribute.
@@ -77,4 +77,4 @@ public interface LogSet extends ServiceRequest<ServiceResponse>, Callable<Servic
 	 */
 	void setLogLevel(ApplicationLogLevel value);
 
-} // LogSet
+} // SetLog

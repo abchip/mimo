@@ -12,7 +12,7 @@ import java.util.Map;
 
 import org.abchip.mimo.application.ApplicationLogLevel;
 import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.LogSet;
+import org.abchip.mimo.application.SetLog;
 import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.service.impl.ServiceRequestImpl;
 import org.abchip.mimo.util.Logs;
@@ -29,13 +29,13 @@ import org.osgi.service.log.admin.LoggerContext;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.application.impl.LogSetImpl#getLogPattern <em>Log Pattern</em>}</li>
- *   <li>{@link org.abchip.mimo.application.impl.LogSetImpl#getLogLevel <em>Log Level</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.SetLogImpl#getLogPattern <em>Log Pattern</em>}</li>
+ *   <li>{@link org.abchip.mimo.application.impl.SetLogImpl#getLogLevel <em>Log Level</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements LogSet {
+public class SetLogImpl extends ServiceRequestImpl<ServiceResponse> implements SetLog {
 	/**
 	 * The default value of the '{@link #getLogPattern() <em>Log Pattern</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -76,7 +76,7 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LogSetImpl() {
+	protected SetLogImpl() {
 		super();
 	}
 
@@ -86,7 +86,7 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.LOG_SET;
+		return ApplicationPackage.Literals.SET_LOG;
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 		String oldLogPattern = logPattern;
 		logPattern = newLogPattern;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.LOG_SET__LOG_PATTERN, oldLogPattern, logPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SET_LOG__LOG_PATTERN, oldLogPattern, logPattern));
 	}
 
 	/**
@@ -128,7 +128,7 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 		ApplicationLogLevel oldLogLevel = logLevel;
 		logLevel = newLogLevel == null ? LOG_LEVEL_EDEFAULT : newLogLevel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.LOG_SET__LOG_LEVEL, oldLogLevel, logLevel));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.SET_LOG__LOG_LEVEL, oldLogLevel, logLevel));
 	}
 
 	/**
@@ -138,9 +138,9 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.LOG_SET__LOG_PATTERN:
+			case ApplicationPackage.SET_LOG__LOG_PATTERN:
 				return getLogPattern();
-			case ApplicationPackage.LOG_SET__LOG_LEVEL:
+			case ApplicationPackage.SET_LOG__LOG_LEVEL:
 				return getLogLevel();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -153,10 +153,10 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.LOG_SET__LOG_PATTERN:
+			case ApplicationPackage.SET_LOG__LOG_PATTERN:
 				setLogPattern((String)newValue);
 				return;
-			case ApplicationPackage.LOG_SET__LOG_LEVEL:
+			case ApplicationPackage.SET_LOG__LOG_LEVEL:
 				setLogLevel((ApplicationLogLevel)newValue);
 				return;
 		}
@@ -170,10 +170,10 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.LOG_SET__LOG_PATTERN:
+			case ApplicationPackage.SET_LOG__LOG_PATTERN:
 				setLogPattern(LOG_PATTERN_EDEFAULT);
 				return;
-			case ApplicationPackage.LOG_SET__LOG_LEVEL:
+			case ApplicationPackage.SET_LOG__LOG_LEVEL:
 				setLogLevel(LOG_LEVEL_EDEFAULT);
 				return;
 		}
@@ -187,9 +187,9 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.LOG_SET__LOG_PATTERN:
+			case ApplicationPackage.SET_LOG__LOG_PATTERN:
 				return LOG_PATTERN_EDEFAULT == null ? logPattern != null : !LOG_PATTERN_EDEFAULT.equals(logPattern);
-			case ApplicationPackage.LOG_SET__LOG_LEVEL:
+			case ApplicationPackage.SET_LOG__LOG_LEVEL:
 				return logLevel != LOG_LEVEL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -248,4 +248,4 @@ public class LogSetImpl extends ServiceRequestImpl<ServiceResponse> implements L
 		return response;
 	}
 
-} // LogSetImpl
+} // SetLogImpl

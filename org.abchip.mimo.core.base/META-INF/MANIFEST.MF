@@ -6,7 +6,8 @@ Bundle-Version: 0.2.0.qualifier
 Bundle-Vendor: ABChip
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.abchip.mimo.core,
- org.eclipse.osgi
+ org.eclipse.osgi,
+ org.eclipse.equinox.console;bundle-version="1.4.0"
 Bundle-ClassPath: .,
  lib/json-1.8.jar
 Export-Package: org.abchip.mimo.core.base,

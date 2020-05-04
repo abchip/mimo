@@ -26,10 +26,10 @@ public class InterchangeCommands extends BaseCommands {
 	public InterchangeCommands(Application application) {
 		super(application);
 	}
-	
+
 	public void _testEdi(CommandInterpreter interpreter) throws Exception {
 
-		Context context = this.getContext();
+		Context context = this.getContext(interpreter);
 
 		ResourceWriter<MessageSent> messageSentWriter = context.getResourceManager().getResourceWriter(MessageSent.class);
 		MessageSent messageSent = MessageFactory.eINSTANCE.createMessageSent();

@@ -12,11 +12,14 @@ import org.abchip.mimo.context.ContextPackage;
 
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.java.JavaPackage;
+import org.abchip.mimo.service.ServicePackage;
 import org.abchip.mimo.tester.Asserter;
 import org.abchip.mimo.tester.AssertionFailed;
 import org.abchip.mimo.tester.AssertionResult;
 import org.abchip.mimo.tester.AssertionState;
 import org.abchip.mimo.tester.AssertionSuccess;
+import org.abchip.mimo.tester.RunTest;
+import org.abchip.mimo.tester.RunTestResponse;
 import org.abchip.mimo.tester.TestAsserter;
 import org.abchip.mimo.tester.TestManager;
 import org.abchip.mimo.tester.TestObject;
@@ -143,6 +146,20 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * @generated
 	 */
 	private EClass testObjectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runTestEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runTestResponseEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -528,6 +545,46 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getRunTest() {
+		return runTestEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRunTest_Component() {
+		return (EAttribute)runTestEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRunTestResponse() {
+		return runTestResponseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRunTestResponse_Assertions() {
+		return (EReference)runTestResponseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssertionState() {
 		return assertionStateEEnum;
 	}
@@ -615,6 +672,12 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		createEReference(testObjectEClass, TEST_OBJECT__OBJECT_REFERENCES);
 		createEAttribute(testObjectEClass, TEST_OBJECT__VALUES);
 
+		runTestEClass = createEClass(RUN_TEST);
+		createEAttribute(runTestEClass, RUN_TEST__COMPONENT);
+
+		runTestResponseEClass = createEClass(RUN_TEST_RESPONSE);
+		createEReference(runTestResponseEClass, RUN_TEST_RESPONSE__ASSERTIONS);
+
 		// Create enums
 		assertionStateEEnum = createEEnum(ASSERTION_STATE);
 		testRunnerEventTypeEEnum = createEEnum(TEST_RUNNER_EVENT_TYPE);
@@ -647,6 +710,7 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -673,6 +737,15 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		g1.getETypeArguments().add(g2);
 		testUnitRunnerEClass.getEGenericSuperTypes().add(g1);
 		testObjectEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		g1 = createEGenericType(theServicePackage.getServiceRequest());
+		g2 = createEGenericType(this.getRunTestResponse());
+		g1.getETypeArguments().add(g2);
+		runTestEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
+		g2 = createEGenericType(this.getRunTestResponse());
+		g1.getETypeArguments().add(g2);
+		runTestEClass.getEGenericSuperTypes().add(g1);
+		runTestResponseEClass.getESuperTypes().add(theServicePackage.getServiceResponse());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(asserterEClass, Asserter.class, "Asserter", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -833,6 +906,12 @@ public class TesterPackageImpl extends EPackageImpl implements TesterPackage {
 		initEReference(getTestObject_ObjectReference(), this.getTestObject(), null, "objectReference", null, 0, 1, TestObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestObject_ObjectReferences(), this.getTestObject(), null, "objectReferences", null, 0, -1, TestObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestObject_Values(), ecorePackage.getEString(), "values", null, 0, -1, TestObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(runTestEClass, RunTest.class, "RunTest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRunTest_Component(), ecorePackage.getEString(), "component", null, 1, 1, RunTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(runTestResponseEClass, RunTestResponse.class, "RunTestResponse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRunTestResponse_Assertions(), this.getAssertionResult(), null, "assertions", null, 0, -1, RunTestResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assertionStateEEnum, AssertionState.class, "AssertionState");

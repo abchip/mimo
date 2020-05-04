@@ -9,6 +9,7 @@ package org.abchip.mimo.tester;
 
 import org.abchip.mimo.entity.EntityPackage;
 
+import org.abchip.mimo.service.ServicePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -528,6 +529,125 @@ public interface TesterPackage extends EPackage {
 	int TEST_OBJECT_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.tester.impl.RunTestImpl <em>Run Test</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.tester.impl.RunTestImpl
+	 * @see org.abchip.mimo.tester.impl.TesterPackageImpl#getRunTest()
+	 * @generated
+	 */
+	int RUN_TEST = 14;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_TEST__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_TEST__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_TEST__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_TEST__COMPONENT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Run Test</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_TEST_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.tester.impl.RunTestResponseImpl <em>Run Test Response</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.tester.impl.RunTestResponseImpl
+	 * @see org.abchip.mimo.tester.impl.TesterPackageImpl#getRunTestResponse()
+	 * @generated
+	 */
+	int RUN_TEST_RESPONSE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Error</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_TEST_RESPONSE__ERROR = ServicePackage.SERVICE_RESPONSE__ERROR;
+
+	/**
+	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_TEST_RESPONSE__ERROR_MESSAGE = ServicePackage.SERVICE_RESPONSE__ERROR_MESSAGE;
+
+	/**
+	 * The feature id for the '<em><b>Response Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_TEST_RESPONSE__RESPONSE_MESSAGE = ServicePackage.SERVICE_RESPONSE__RESPONSE_MESSAGE;
+
+	/**
+	 * The feature id for the '<em><b>Success Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_TEST_RESPONSE__SUCCESS_MESSAGE = ServicePackage.SERVICE_RESPONSE__SUCCESS_MESSAGE;
+
+	/**
+	 * The feature id for the '<em><b>Assertions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_TEST_RESPONSE__ASSERTIONS = ServicePackage.SERVICE_RESPONSE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Run Test Response</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_TEST_RESPONSE_FEATURE_COUNT = ServicePackage.SERVICE_RESPONSE_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.tester.AssertionState <em>Assertion State</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -535,7 +655,7 @@ public interface TesterPackage extends EPackage {
 	 * @see org.abchip.mimo.tester.impl.TesterPackageImpl#getAssertionState()
 	 * @generated
 	 */
-	int ASSERTION_STATE = 14;
+	int ASSERTION_STATE = 16;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.tester.TestRunnerEventType <em>Test Runner Event Type</em>}' enum.
@@ -545,7 +665,7 @@ public interface TesterPackage extends EPackage {
 	 * @see org.abchip.mimo.tester.impl.TesterPackageImpl#getTestRunnerEventType()
 	 * @generated
 	 */
-	int TEST_RUNNER_EVENT_TYPE = 15;
+	int TEST_RUNNER_EVENT_TYPE = 17;
 
 
 	/**
@@ -865,6 +985,48 @@ public interface TesterPackage extends EPackage {
 	EAttribute getTestObject_Values();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.tester.RunTest <em>Run Test</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Run Test</em>'.
+	 * @see org.abchip.mimo.tester.RunTest
+	 * @generated
+	 */
+	EClass getRunTest();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.tester.RunTest#getComponent <em>Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Component</em>'.
+	 * @see org.abchip.mimo.tester.RunTest#getComponent()
+	 * @see #getRunTest()
+	 * @generated
+	 */
+	EAttribute getRunTest_Component();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.tester.RunTestResponse <em>Run Test Response</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Run Test Response</em>'.
+	 * @see org.abchip.mimo.tester.RunTestResponse
+	 * @generated
+	 */
+	EClass getRunTestResponse();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.abchip.mimo.tester.RunTestResponse#getAssertions <em>Assertions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Assertions</em>'.
+	 * @see org.abchip.mimo.tester.RunTestResponse#getAssertions()
+	 * @see #getRunTestResponse()
+	 * @generated
+	 */
+	EReference getRunTestResponse_Assertions();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.tester.AssertionState <em>Assertion State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1173,6 +1335,42 @@ public interface TesterPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TEST_OBJECT__VALUES = eINSTANCE.getTestObject_Values();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.tester.impl.RunTestImpl <em>Run Test</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.tester.impl.RunTestImpl
+		 * @see org.abchip.mimo.tester.impl.TesterPackageImpl#getRunTest()
+		 * @generated
+		 */
+		EClass RUN_TEST = eINSTANCE.getRunTest();
+
+		/**
+		 * The meta object literal for the '<em><b>Component</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RUN_TEST__COMPONENT = eINSTANCE.getRunTest_Component();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.tester.impl.RunTestResponseImpl <em>Run Test Response</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.tester.impl.RunTestResponseImpl
+		 * @see org.abchip.mimo.tester.impl.TesterPackageImpl#getRunTestResponse()
+		 * @generated
+		 */
+		EClass RUN_TEST_RESPONSE = eINSTANCE.getRunTestResponse();
+
+		/**
+		 * The meta object literal for the '<em><b>Assertions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RUN_TEST_RESPONSE__ASSERTIONS = eINSTANCE.getRunTestResponse_Assertions();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.tester.AssertionState <em>Assertion State</em>}' enum.

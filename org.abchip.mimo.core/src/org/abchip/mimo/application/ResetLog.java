@@ -18,9 +18,9 @@ import org.abchip.mimo.service.ServiceResponse;
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.application.ApplicationPackage#getLogReset()
+ * @see org.abchip.mimo.application.ApplicationPackage#getResetLog()
  * @model superTypes="org.abchip.mimo.service.ServiceRequest&lt;org.abchip.mimo.service.ServiceResponse&gt; org.abchip.mimo.java.JavaCallable&lt;org.abchip.mimo.service.ServiceResponse&gt;"
  * @generated
  */
-public interface LogReset extends ServiceRequest<ServiceResponse>, Callable<ServiceResponse> {
-} // LogReset
+public interface ResetLog extends ServiceRequest<ServiceResponse>, Callable<ServiceResponse> {
+} // ResetLog

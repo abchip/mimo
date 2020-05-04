@@ -95,7 +95,7 @@
       <eLiterals name="Stopped" literal="STP"/>
       <eLiterals name="Testing" literal="TST"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LogReset">
+    <eClassifiers xsi:type="ecore:EClass" name="ResetLog">
       <eGenericSuperTypes eClassifier="#//service/ServiceRequest">
         <eTypeArguments eClassifier="#//service/ServiceResponse"/>
       </eGenericSuperTypes>
@@ -103,7 +103,7 @@
         <eTypeArguments eClassifier="#//service/ServiceResponse"/>
       </eGenericSuperTypes>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LogSet">
+    <eClassifiers xsi:type="ecore:EClass" name="SetLog">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="logPattern" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="logLevel" lowerBound="1"

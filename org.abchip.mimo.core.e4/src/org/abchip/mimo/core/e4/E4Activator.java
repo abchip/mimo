@@ -59,7 +59,6 @@ import org.abchip.mimo.service.ServiceProviderRegistry;
 import org.abchip.mimo.tester.TestManager;
 import org.abchip.mimo.tester.TestSuiteLauncher;
 import org.abchip.mimo.tester.base.BaseTestManagerImpl;
-import org.abchip.mimo.tester.base.TestCommands;
 import org.abchip.mimo.tester.test.TestTesterSuiteLauncherImpl;
 import org.abchip.mimo.util.Applications;
 import org.abchip.mimo.util.Logs;
@@ -194,8 +193,6 @@ public class E4Activator implements BundleActivator {
 			application.getContext().set(TestManager.class, new BaseTestManagerImpl());
 			application.getContext().set(TestSuiteLauncher.class.getName(), new TestTesterSuiteLauncherImpl(application), false, null);
 			application.getContext().set(TestSuiteLauncher.class.getName(), new TestCoreSuiteLauncherImpl(application), false, null);
-			application.getContext().set(CommandProvider.class.getName(), new TestCommands(application), false, null);
-
 		}
 		// mining
 		{

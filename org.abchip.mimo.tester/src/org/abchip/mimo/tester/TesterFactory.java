@@ -72,6 +72,24 @@ public interface TesterFactory extends EFactory {
 	TestObject createTestObject();
 
 	/**
+	 * Returns a new object of class '<em>Run Test</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Run Test</em>'.
+	 * @generated
+	 */
+	RunTest createRunTest();
+
+	/**
+	 * Returns a new object of class '<em>Run Test Response</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Run Test Response</em>'.
+	 * @generated
+	 */
+	RunTestResponse createRunTestResponse();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

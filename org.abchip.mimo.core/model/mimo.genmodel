@@ -79,10 +79,10 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//application/ApplicationModule/services"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/ApplicationModule/status"/>
       </genClasses>
-      <genClasses ecoreClass="mimo.ecore#//application/LogReset"/>
-      <genClasses ecoreClass="mimo.ecore#//application/LogSet">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/LogSet/logPattern"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/LogSet/logLevel"/>
+      <genClasses ecoreClass="mimo.ecore#//application/ResetLog"/>
+      <genClasses ecoreClass="mimo.ecore#//application/SetLog">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/SetLog/logPattern"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//application/SetLog/logLevel"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Authentication" basePackage="org.abchip.mimo" disposableProviderFactory="true"

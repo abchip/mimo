@@ -67,6 +67,8 @@ public class TesterFactoryImpl extends EFactoryImpl implements TesterFactory {
 			case TesterPackage.TEST_RUNNER_EVENT: return (EObject)createTestRunnerEvent();
 			case TesterPackage.TEST_RESULT: return (EObject)createTestResult();
 			case TesterPackage.TEST_OBJECT: return (EObject)createTestObject();
+			case TesterPackage.RUN_TEST: return (EObject)createRunTest();
+			case TesterPackage.RUN_TEST_RESPONSE: return (EObject)createRunTestResponse();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -159,6 +161,28 @@ public class TesterFactoryImpl extends EFactoryImpl implements TesterFactory {
 	public TestObject createTestObject() {
 		TestObjectImpl testObject = new TestObjectImpl();
 		return testObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RunTest createRunTest() {
+		RunTestImpl runTest = new RunTestImpl();
+		return runTest;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RunTestResponse createRunTestResponse() {
+		RunTestResponseImpl runTestResponse = new RunTestResponseImpl();
+		return runTestResponse;
 	}
 
 	/**

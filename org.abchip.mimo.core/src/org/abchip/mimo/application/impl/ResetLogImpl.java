@@ -10,7 +10,7 @@ package org.abchip.mimo.application.impl;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationLogs;
 import org.abchip.mimo.application.ApplicationPackage;
-import org.abchip.mimo.application.LogReset;
+import org.abchip.mimo.application.ResetLog;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.service.ServiceResponse;
 
@@ -26,13 +26,13 @@ import org.osgi.service.log.admin.LoggerContext;
  *
  * @generated
  */
-public class LogResetImpl extends ServiceRequestImpl<ServiceResponse> implements LogReset {
+public class ResetLogImpl extends ServiceRequestImpl<ServiceResponse> implements ResetLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LogResetImpl() {
+	protected ResetLogImpl() {
 		super();
 	}
 
@@ -43,7 +43,7 @@ public class LogResetImpl extends ServiceRequestImpl<ServiceResponse> implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.LOG_RESET;
+		return ApplicationPackage.Literals.RESET_LOG;
 	}
 
 	@Override
@@ -65,4 +65,4 @@ public class LogResetImpl extends ServiceRequestImpl<ServiceResponse> implements
 		return response;
 	}
 
-} //LogResetImpl
+} //ResetLogImpl

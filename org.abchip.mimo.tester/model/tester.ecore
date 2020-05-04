@@ -186,4 +186,18 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RunTest">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="component" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//service/ServiceRequest">
+      <eTypeArguments eClassifier="#//RunTestResponse"/>
+    </eGenericSuperTypes>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.abchip.mimo.core/model/mimo.ecore#//java/JavaCallable">
+      <eTypeArguments eClassifier="#//RunTestResponse"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RunTestResponse" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//service/ServiceResponse">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assertions" upperBound="-1"
+        eType="#//AssertionResult" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

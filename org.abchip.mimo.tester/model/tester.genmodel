@@ -167,5 +167,11 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tester.ecore#//TestObject/objectReferences"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tester.ecore#//TestObject/values"/>
     </genClasses>
+    <genClasses ecoreClass="tester.ecore#//RunTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tester.ecore#//RunTest/component"/>
+    </genClasses>
+    <genClasses ecoreClass="tester.ecore#//RunTestResponse">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tester.ecore#//RunTestResponse/assertions"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
