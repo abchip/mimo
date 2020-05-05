@@ -265,7 +265,7 @@ public class LoadSeedsImpl extends ServiceRequestImpl<ServiceResponse> implement
 						ResourceWriter<EntityIdentifiable> entityWriter = context.getResourceManager().getResourceWriter(entityIdentifiable.isa(), this.getTenant());
 						entityWriter.create(entityIdentifiable, this.isUpdate());
 					} catch (Exception e) {
-						LOGGER.error(e.getMessage());
+						LOGGER.warn(e.getMessage());
 					}
 				}
 			} catch (IOException e) {
