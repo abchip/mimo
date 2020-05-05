@@ -84,6 +84,18 @@ public class ServiceCommands extends BaseCommands {
 		ServiceManager serviceManager = context.getServiceManager();
 
 		String serviceId = this.nextArgument(interpreter);
+		serviceId = Strings.firstToUpper(serviceId);
+
+		String argument = this.nextArgument(interpreter);
+		while (argument != null) {
+			
+			// concatenate service name
+			if (!argument.contains("=")) {
+				serviceId = serviceId + Strings.firstToUpper(argument);
+				argument = interpreter.nextArgument();
+				continue;
+			}
+		}
 
 		Service<?, ?> service = serviceManager.getService(serviceId);
 		if (service == null) {
