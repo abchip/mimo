@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.WeakHashMap;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.UserProfile;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
@@ -66,6 +67,10 @@ public class E4ResourceSetImpl extends ResourceSetImpl {
 	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) throws ResourceException {
 
+		// TODO
+		if(UserProfile.class.getSimpleName().equals(frame))
+			frame = "UserLogin";
+		
 		URI uri = URI.createHierarchicalURI("mimo", tenant, null, new String[] { frame }, null, null);
 		@SuppressWarnings("unchecked")
 		MimoResourceImpl<E> internal = (MimoResourceImpl<E>) e4ResourceSet.getResource(uri, true);

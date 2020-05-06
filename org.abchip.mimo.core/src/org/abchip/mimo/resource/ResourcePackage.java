@@ -104,6 +104,15 @@ public interface ResourcePackage extends EPackage {
 	int LOAD_SEED__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
 
 	/**
+	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEED__USER_PROFILE = ServicePackage.SERVICE_REQUEST__USER_PROFILE;
+
+	/**
 	 * The feature id for the '<em><b>Seed Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,6 +175,15 @@ public interface ResourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int LOAD_SEEDS__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOAD_SEEDS__USER_PROFILE = ServicePackage.SERVICE_REQUEST__USER_PROFILE;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' attribute.

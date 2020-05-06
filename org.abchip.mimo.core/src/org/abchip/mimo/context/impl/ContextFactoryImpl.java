@@ -25,7 +25,6 @@ import org.abchip.mimo.context.ProviderUser;
 import org.abchip.mimo.context.ThreadInfo;
 import org.abchip.mimo.context.ThreadStatus;
 import org.abchip.mimo.context.UserClass;
-import org.abchip.mimo.context.UserProfile;
 import org.abchip.mimo.data.DataDef;
 import org.abchip.mimo.entity.Entity;
 import org.eclipse.emf.ecore.EClass;
@@ -89,7 +88,6 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 			case ContextPackage.PROVIDER_CONFIG: return (EObject)createProviderConfig();
 			case ContextPackage.PROVIDER_USER: return (EObject)createProviderUser();
 			case ContextPackage.THREAD_INFO: return (EObject)createThreadInfo();
-			case ContextPackage.USER_PROFILE: return (EObject)createUserProfile();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -239,17 +237,6 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	public ThreadInfo createThreadInfo() {
 		ThreadInfoImpl threadInfo = new ThreadInfoImpl();
 		return threadInfo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public UserProfile createUserProfile() {
-		UserProfileImpl userProfile = new UserProfileImpl();
-		return userProfile;
 	}
 
 	/**

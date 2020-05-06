@@ -491,9 +491,7 @@
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//context/UserProfile">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/UserProfile/jobDescription"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/UserProfile/name"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/UserProfile/text"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/UserProfile/jobDescriptionId"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/UserProfile/userClass"/>
       </genClasses>
     </nestedGenPackages>
@@ -1299,6 +1297,7 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRequest/locale"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRequest/tenant"/>
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceRequest/context"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceRequest/userProfile"/>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/getServiceName"/>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/init">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceRequest/init/context"/>

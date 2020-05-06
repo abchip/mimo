@@ -8,6 +8,7 @@
 package org.abchip.mimo.service;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.UserProfile;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +22,7 @@ import org.abchip.mimo.context.Context;
  *   <li>{@link org.abchip.mimo.service.ServiceRequest#getLocale <em>Locale</em>}</li>
  *   <li>{@link org.abchip.mimo.service.ServiceRequest#getTenant <em>Tenant</em>}</li>
  *   <li>{@link org.abchip.mimo.service.ServiceRequest#getContext <em>Context</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceRequest#getUserProfile <em>User Profile</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.service.ServicePackage#getServiceRequest()
@@ -83,6 +85,28 @@ public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessag
 	 * @generated
 	 */
 	Context getContext();
+
+	/**
+	 * Returns the value of the '<em><b>User Profile</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>User Profile</em>' containment reference.
+	 * @see #setUserProfile(UserProfile)
+	 * @see org.abchip.mimo.service.ServicePackage#getServiceRequest_UserProfile()
+	 * @model containment="true" resolveProxies="true" required="true"
+	 * @generated
+	 */
+	UserProfile getUserProfile();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRequest#getUserProfile <em>User Profile</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>User Profile</em>' containment reference.
+	 * @see #getUserProfile()
+	 * @generated
+	 */
+	void setUserProfile(UserProfile value);
 
 	/**
 	 * <!-- begin-user-doc -->

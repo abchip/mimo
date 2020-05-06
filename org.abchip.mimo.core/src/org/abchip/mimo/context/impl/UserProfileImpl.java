@@ -8,9 +8,12 @@
  */
 package org.abchip.mimo.context.impl;
 
+import java.util.Date;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.UserClass;
 import org.abchip.mimo.context.UserProfile;
+import org.abchip.mimo.entity.EntityInfo;
+import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -23,69 +26,107 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.impl.UserProfileImpl#getJobDescription <em>Job Description</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.UserProfileImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.context.impl.UserProfileImpl#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.UserProfileImpl#getCreatedStamp <em>Created Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.UserProfileImpl#getCreatedTxStamp <em>Created Tx Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.UserProfileImpl#getLastUpdatedStamp <em>Last Updated Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.UserProfileImpl#getLastUpdatedTxStamp <em>Last Updated Tx Stamp</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.UserProfileImpl#getJobDescriptionId <em>Job Description Id</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.UserProfileImpl#getUserClass <em>User Class</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class UserProfileImpl extends EntityIdentifiableImpl implements UserProfile {
+public abstract class UserProfileImpl extends EntityIdentifiableImpl implements UserProfile {
 	/**
-	 * The default value of the '{@link #getJobDescription() <em>Job Description</em>}' attribute.
+	 * The default value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getJobDescription()
+	 * @see #getCreatedStamp()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String JOB_DESCRIPTION_EDEFAULT = null;
+	protected static final Date CREATED_STAMP_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getJobDescription() <em>Job Description</em>}' attribute.
+	 * The cached value of the '{@link #getCreatedStamp() <em>Created Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getJobDescription()
+	 * @see #getCreatedStamp()
 	 * @generated
 	 * @ordered
 	 */
-	protected String jobDescription = JOB_DESCRIPTION_EDEFAULT;
+	protected Date createdStamp = CREATED_STAMP_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getCreatedTxStamp() <em>Created Tx Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getCreatedTxStamp()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final Date CREATED_TX_STAMP_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getCreatedTxStamp() <em>Created Tx Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getCreatedTxStamp()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected Date createdTxStamp = CREATED_TX_STAMP_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * The default value of the '{@link #getLastUpdatedStamp() <em>Last Updated Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getText()
+	 * @see #getLastUpdatedStamp()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TEXT_EDEFAULT = null;
+	protected static final Date LAST_UPDATED_STAMP_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * The cached value of the '{@link #getLastUpdatedStamp() <em>Last Updated Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getText()
+	 * @see #getLastUpdatedStamp()
 	 * @generated
 	 * @ordered
 	 */
-	protected String text = TEXT_EDEFAULT;
+	protected Date lastUpdatedStamp = LAST_UPDATED_STAMP_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getLastUpdatedTxStamp() <em>Last Updated Tx Stamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastUpdatedTxStamp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date LAST_UPDATED_TX_STAMP_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getLastUpdatedTxStamp() <em>Last Updated Tx Stamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastUpdatedTxStamp()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date lastUpdatedTxStamp = LAST_UPDATED_TX_STAMP_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getJobDescriptionId() <em>Job Description Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJobDescriptionId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String JOB_DESCRIPTION_ID_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getJobDescriptionId() <em>Job Description Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJobDescriptionId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String jobDescriptionId = JOB_DESCRIPTION_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getUserClass() <em>User Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -123,24 +164,13 @@ public class UserProfileImpl extends EntityIdentifiableImpl implements UserProfi
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public String getJobDescription() {
-		return jobDescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setJobDescription(String newJobDescription) {
-		String oldJobDescription = jobDescription;
-		jobDescription = newJobDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.USER_PROFILE__JOB_DESCRIPTION, oldJobDescription, jobDescription));
+	public Date getCreatedStamp() {
+		return createdStamp;
 	}
 
 	/**
@@ -149,8 +179,11 @@ public class UserProfileImpl extends EntityIdentifiableImpl implements UserProfi
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
+	public void setCreatedStamp(Date newCreatedStamp) {
+		Date oldCreatedStamp = createdStamp;
+		createdStamp = newCreatedStamp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.USER_PROFILE__CREATED_STAMP, oldCreatedStamp, createdStamp));
 	}
 
 	/**
@@ -159,11 +192,90 @@ public class UserProfileImpl extends EntityIdentifiableImpl implements UserProfi
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public Date getCreatedTxStamp() {
+		return createdTxStamp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCreatedTxStamp(Date newCreatedTxStamp) {
+		Date oldCreatedTxStamp = createdTxStamp;
+		createdTxStamp = newCreatedTxStamp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.USER_PROFILE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.USER_PROFILE__CREATED_TX_STAMP, oldCreatedTxStamp, createdTxStamp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date getLastUpdatedStamp() {
+		return lastUpdatedStamp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLastUpdatedStamp(Date newLastUpdatedStamp) {
+		Date oldLastUpdatedStamp = lastUpdatedStamp;
+		lastUpdatedStamp = newLastUpdatedStamp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.USER_PROFILE__LAST_UPDATED_STAMP, oldLastUpdatedStamp, lastUpdatedStamp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date getLastUpdatedTxStamp() {
+		return lastUpdatedTxStamp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLastUpdatedTxStamp(Date newLastUpdatedTxStamp) {
+		Date oldLastUpdatedTxStamp = lastUpdatedTxStamp;
+		lastUpdatedTxStamp = newLastUpdatedTxStamp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.USER_PROFILE__LAST_UPDATED_TX_STAMP, oldLastUpdatedTxStamp, lastUpdatedTxStamp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getJobDescriptionId() {
+		return jobDescriptionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setJobDescriptionId(String newJobDescriptionId) {
+		String oldJobDescriptionId = jobDescriptionId;
+		jobDescriptionId = newJobDescriptionId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.USER_PROFILE__JOB_DESCRIPTION_ID, oldJobDescriptionId, jobDescriptionId));
 	}
 
 	/**
@@ -197,12 +309,16 @@ public class UserProfileImpl extends EntityIdentifiableImpl implements UserProfi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContextPackage.USER_PROFILE__JOB_DESCRIPTION:
-				return getJobDescription();
-			case ContextPackage.USER_PROFILE__NAME:
-				return getName();
-			case ContextPackage.USER_PROFILE__TEXT:
-				return getText();
+			case ContextPackage.USER_PROFILE__CREATED_STAMP:
+				return getCreatedStamp();
+			case ContextPackage.USER_PROFILE__CREATED_TX_STAMP:
+				return getCreatedTxStamp();
+			case ContextPackage.USER_PROFILE__LAST_UPDATED_STAMP:
+				return getLastUpdatedStamp();
+			case ContextPackage.USER_PROFILE__LAST_UPDATED_TX_STAMP:
+				return getLastUpdatedTxStamp();
+			case ContextPackage.USER_PROFILE__JOB_DESCRIPTION_ID:
+				return getJobDescriptionId();
 			case ContextPackage.USER_PROFILE__USER_CLASS:
 				return getUserClass();
 		}
@@ -217,14 +333,20 @@ public class UserProfileImpl extends EntityIdentifiableImpl implements UserProfi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContextPackage.USER_PROFILE__JOB_DESCRIPTION:
-				setJobDescription((String)newValue);
+			case ContextPackage.USER_PROFILE__CREATED_STAMP:
+				setCreatedStamp((Date)newValue);
 				return;
-			case ContextPackage.USER_PROFILE__NAME:
-				setName((String)newValue);
+			case ContextPackage.USER_PROFILE__CREATED_TX_STAMP:
+				setCreatedTxStamp((Date)newValue);
 				return;
-			case ContextPackage.USER_PROFILE__TEXT:
-				setText((String)newValue);
+			case ContextPackage.USER_PROFILE__LAST_UPDATED_STAMP:
+				setLastUpdatedStamp((Date)newValue);
+				return;
+			case ContextPackage.USER_PROFILE__LAST_UPDATED_TX_STAMP:
+				setLastUpdatedTxStamp((Date)newValue);
+				return;
+			case ContextPackage.USER_PROFILE__JOB_DESCRIPTION_ID:
+				setJobDescriptionId((String)newValue);
 				return;
 			case ContextPackage.USER_PROFILE__USER_CLASS:
 				setUserClass((UserClass)newValue);
@@ -241,14 +363,20 @@ public class UserProfileImpl extends EntityIdentifiableImpl implements UserProfi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContextPackage.USER_PROFILE__JOB_DESCRIPTION:
-				setJobDescription(JOB_DESCRIPTION_EDEFAULT);
+			case ContextPackage.USER_PROFILE__CREATED_STAMP:
+				setCreatedStamp(CREATED_STAMP_EDEFAULT);
 				return;
-			case ContextPackage.USER_PROFILE__NAME:
-				setName(NAME_EDEFAULT);
+			case ContextPackage.USER_PROFILE__CREATED_TX_STAMP:
+				setCreatedTxStamp(CREATED_TX_STAMP_EDEFAULT);
 				return;
-			case ContextPackage.USER_PROFILE__TEXT:
-				setText(TEXT_EDEFAULT);
+			case ContextPackage.USER_PROFILE__LAST_UPDATED_STAMP:
+				setLastUpdatedStamp(LAST_UPDATED_STAMP_EDEFAULT);
+				return;
+			case ContextPackage.USER_PROFILE__LAST_UPDATED_TX_STAMP:
+				setLastUpdatedTxStamp(LAST_UPDATED_TX_STAMP_EDEFAULT);
+				return;
+			case ContextPackage.USER_PROFILE__JOB_DESCRIPTION_ID:
+				setJobDescriptionId(JOB_DESCRIPTION_ID_EDEFAULT);
 				return;
 			case ContextPackage.USER_PROFILE__USER_CLASS:
 				setUserClass(USER_CLASS_EDEFAULT);
@@ -265,12 +393,16 @@ public class UserProfileImpl extends EntityIdentifiableImpl implements UserProfi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContextPackage.USER_PROFILE__JOB_DESCRIPTION:
-				return JOB_DESCRIPTION_EDEFAULT == null ? jobDescription != null : !JOB_DESCRIPTION_EDEFAULT.equals(jobDescription);
-			case ContextPackage.USER_PROFILE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ContextPackage.USER_PROFILE__TEXT:
-				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+			case ContextPackage.USER_PROFILE__CREATED_STAMP:
+				return CREATED_STAMP_EDEFAULT == null ? createdStamp != null : !CREATED_STAMP_EDEFAULT.equals(createdStamp);
+			case ContextPackage.USER_PROFILE__CREATED_TX_STAMP:
+				return CREATED_TX_STAMP_EDEFAULT == null ? createdTxStamp != null : !CREATED_TX_STAMP_EDEFAULT.equals(createdTxStamp);
+			case ContextPackage.USER_PROFILE__LAST_UPDATED_STAMP:
+				return LAST_UPDATED_STAMP_EDEFAULT == null ? lastUpdatedStamp != null : !LAST_UPDATED_STAMP_EDEFAULT.equals(lastUpdatedStamp);
+			case ContextPackage.USER_PROFILE__LAST_UPDATED_TX_STAMP:
+				return LAST_UPDATED_TX_STAMP_EDEFAULT == null ? lastUpdatedTxStamp != null : !LAST_UPDATED_TX_STAMP_EDEFAULT.equals(lastUpdatedTxStamp);
+			case ContextPackage.USER_PROFILE__JOB_DESCRIPTION_ID:
+				return JOB_DESCRIPTION_ID_EDEFAULT == null ? jobDescriptionId != null : !JOB_DESCRIPTION_ID_EDEFAULT.equals(jobDescriptionId);
 			case ContextPackage.USER_PROFILE__USER_CLASS:
 				return userClass != USER_CLASS_EDEFAULT;
 		}
@@ -283,42 +415,61 @@ public class UserProfileImpl extends EntityIdentifiableImpl implements UserProfi
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == EntityInfo.class) {
+			switch (derivedFeatureID) {
+				case ContextPackage.USER_PROFILE__CREATED_STAMP: return EntityPackage.ENTITY_INFO__CREATED_STAMP;
+				case ContextPackage.USER_PROFILE__CREATED_TX_STAMP: return EntityPackage.ENTITY_INFO__CREATED_TX_STAMP;
+				case ContextPackage.USER_PROFILE__LAST_UPDATED_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP;
+				case ContextPackage.USER_PROFILE__LAST_UPDATED_TX_STAMP: return EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == EntityInfo.class) {
+			switch (baseFeatureID) {
+				case EntityPackage.ENTITY_INFO__CREATED_STAMP: return ContextPackage.USER_PROFILE__CREATED_STAMP;
+				case EntityPackage.ENTITY_INFO__CREATED_TX_STAMP: return ContextPackage.USER_PROFILE__CREATED_TX_STAMP;
+				case EntityPackage.ENTITY_INFO__LAST_UPDATED_STAMP: return ContextPackage.USER_PROFILE__LAST_UPDATED_STAMP;
+				case EntityPackage.ENTITY_INFO__LAST_UPDATED_TX_STAMP: return ContextPackage.USER_PROFILE__LAST_UPDATED_TX_STAMP;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (jobDescription: ");
-		result.append(jobDescription);
-		result.append(", name: ");
-		result.append(name);
-		result.append(", text: ");
-		result.append(text);
+		result.append(" (createdStamp: ");
+		result.append(createdStamp);
+		result.append(", createdTxStamp: ");
+		result.append(createdTxStamp);
+		result.append(", lastUpdatedStamp: ");
+		result.append(lastUpdatedStamp);
+		result.append(", lastUpdatedTxStamp: ");
+		result.append(lastUpdatedTxStamp);
+		result.append(", jobDescriptionId: ");
+		result.append(jobDescriptionId);
 		result.append(", userClass: ");
 		result.append(userClass);
 		result.append(')');
 		return result.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getText() {
-		return text;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setText(String newText) {
-		String oldText = text;
-		text = newText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.USER_PROFILE__TEXT, oldText, text));
 	}
 } // QUserProfileImpl

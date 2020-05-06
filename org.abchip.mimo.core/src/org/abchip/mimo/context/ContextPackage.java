@@ -837,31 +837,49 @@ public interface ContextPackage extends EPackage {
 	int THREAD_MANAGER_FEATURE_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Job Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PROFILE__JOB_DESCRIPTION = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
+	int USER_PROFILE__CREATED_STAMP = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PROFILE__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
+	int USER_PROFILE__CREATED_TX_STAMP = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PROFILE__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+	int USER_PROFILE__LAST_UPDATED_STAMP = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_PROFILE__LAST_UPDATED_TX_STAMP = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Job Description Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_PROFILE__JOB_DESCRIPTION_ID = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>User Class</b></em>' attribute.
@@ -870,7 +888,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PROFILE__USER_CLASS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
+	int USER_PROFILE__USER_CLASS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>User Profile</em>' class.
@@ -879,7 +897,7 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PROFILE_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
+	int USER_PROFILE_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.CapabilityRight <em>Capability Right</em>}' enum.
@@ -1588,37 +1606,15 @@ public interface ContextPackage extends EPackage {
 	EClass getUserProfile();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.UserProfile#getJobDescription <em>Job Description</em>}'.
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.UserProfile#getJobDescriptionId <em>Job Description Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Job Description</em>'.
-	 * @see org.abchip.mimo.context.UserProfile#getJobDescription()
+	 * @return the meta object for the attribute '<em>Job Description Id</em>'.
+	 * @see org.abchip.mimo.context.UserProfile#getJobDescriptionId()
 	 * @see #getUserProfile()
 	 * @generated
 	 */
-	EAttribute getUserProfile_JobDescription();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.UserProfile#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.abchip.mimo.context.UserProfile#getName()
-	 * @see #getUserProfile()
-	 * @generated
-	 */
-	EAttribute getUserProfile_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.UserProfile#getText <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Text</em>'.
-	 * @see org.abchip.mimo.context.UserProfile#getText()
-	 * @see #getUserProfile()
-	 * @generated
-	 */
-	EAttribute getUserProfile_Text();
+	EAttribute getUserProfile_JobDescriptionId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.UserProfile#getUserClass <em>User Class</em>}'.
@@ -2263,28 +2259,12 @@ public interface ContextPackage extends EPackage {
 		EClass USER_PROFILE = eINSTANCE.getUserProfile();
 
 		/**
-		 * The meta object literal for the '<em><b>Job Description</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Job Description Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_PROFILE__JOB_DESCRIPTION = eINSTANCE.getUserProfile_JobDescription();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute USER_PROFILE__NAME = eINSTANCE.getUserProfile_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute USER_PROFILE__TEXT = eINSTANCE.getUserProfile_Text();
+		EAttribute USER_PROFILE__JOB_DESCRIPTION_ID = eINSTANCE.getUserProfile_JobDescriptionId();
 
 		/**
 		 * The meta object literal for the '<em><b>User Class</b></em>' attribute feature.

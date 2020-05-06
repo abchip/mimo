@@ -720,13 +720,8 @@
     <eClassifiers xsi:type="ecore:EEnum" name="UserClass">
       <eLiterals name="User" value="10" literal="USR"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="UserProfile" eSuperTypes="#//entity/EntityIdentifiable">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="jobDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          iD="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UserProfile" abstract="true" eSuperTypes="#//entity/EntityIdentifiable #//entity/EntityInfo">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="jobDescriptionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="userClass" lowerBound="1"
           eType="#//context/UserClass" derived="true"/>
     </eClassifiers>
@@ -2330,6 +2325,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//context/Context"
           changeable="false" transient="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="userProfile" lowerBound="1"
+          eType="#//context/UserProfile" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceResponse" eSuperTypes="#//service/ServiceMessage">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="error" lowerBound="1"

@@ -1014,7 +1014,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserProfile_JobDescription() {
+	public EAttribute getUserProfile_JobDescriptionId() {
 		return (EAttribute)userProfileEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1024,28 +1024,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserProfile_Name() {
-		return (EAttribute)userProfileEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getUserProfile_Text() {
-		return (EAttribute)userProfileEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getUserProfile_UserClass() {
-		return (EAttribute)userProfileEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)userProfileEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1250,9 +1230,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		threadManagerEClass = createEClass(THREAD_MANAGER);
 
 		userProfileEClass = createEClass(USER_PROFILE);
-		createEAttribute(userProfileEClass, USER_PROFILE__JOB_DESCRIPTION);
-		createEAttribute(userProfileEClass, USER_PROFILE__NAME);
-		createEAttribute(userProfileEClass, USER_PROFILE__TEXT);
+		createEAttribute(userProfileEClass, USER_PROFILE__JOB_DESCRIPTION_ID);
 		createEAttribute(userProfileEClass, USER_PROFILE__USER_CLASS);
 
 		// Create enums
@@ -1331,6 +1309,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		threadEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		threadInfoEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		userProfileEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		userProfileEClass.getESuperTypes().add(theEntityPackage.getEntityInfo());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(adapterFactoryEClass, AdapterFactory.class, "AdapterFactory", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1837,10 +1816,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		op = addEOperation(threadManagerEClass, null, "suspend", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getThread(), "thread", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(userProfileEClass, UserProfile.class, "UserProfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUserProfile_JobDescription(), ecorePackage.getEString(), "jobDescription", null, 0, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUserProfile_Name(), ecorePackage.getEString(), "name", null, 1, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUserProfile_Text(), ecorePackage.getEString(), "text", null, 1, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(userProfileEClass, UserProfile.class, "UserProfile", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUserProfile_JobDescriptionId(), ecorePackage.getEString(), "jobDescriptionId", null, 0, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserProfile_UserClass(), this.getUserClass(), "userClass", null, 1, 1, UserProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

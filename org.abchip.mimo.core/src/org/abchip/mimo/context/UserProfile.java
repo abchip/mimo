@@ -8,6 +8,7 @@
 package org.abchip.mimo.context;
 
 import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.EntityInfo;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,94 +19,36 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.context.UserProfile#getJobDescription <em>Job Description</em>}</li>
- *   <li>{@link org.abchip.mimo.context.UserProfile#getName <em>Name</em>}</li>
- *   <li>{@link org.abchip.mimo.context.UserProfile#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.UserProfile#getJobDescriptionId <em>Job Description Id</em>}</li>
  *   <li>{@link org.abchip.mimo.context.UserProfile#getUserClass <em>User Class</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.context.ContextPackage#getUserProfile()
- * @model
+ * @model abstract="true"
  * @generated
  */
-public interface UserProfile extends EntityIdentifiable {
+public interface UserProfile extends EntityIdentifiable, EntityInfo {
 	/**
-	 * Returns the value of the '<em><b>Job Description</b></em>' attribute.
+	 * Returns the value of the '<em><b>Job Description Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Job Description</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Job Description</em>' attribute.
-	 * @see #setJobDescription(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getUserProfile_JobDescription()
+	 * @return the value of the '<em>Job Description Id</em>' attribute.
+	 * @see #setJobDescriptionId(String)
+	 * @see org.abchip.mimo.context.ContextPackage#getUserProfile_JobDescriptionId()
 	 * @model
 	 * @generated
 	 */
-	String getJobDescription();
+	String getJobDescriptionId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.UserProfile#getJobDescription <em>Job Description</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.context.UserProfile#getJobDescriptionId <em>Job Description Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Job Description</em>' attribute.
-	 * @see #getJobDescription()
+	 * @param value the new value of the '<em>Job Description Id</em>' attribute.
+	 * @see #getJobDescriptionId()
 	 * @generated
 	 */
-	void setJobDescription(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getUserProfile_Name()
-	 * @model id="true" required="true"
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.UserProfile#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Text</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Text</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Text</em>' attribute.
-	 * @see #setText(String)
-	 * @see org.abchip.mimo.context.ContextPackage#getUserProfile_Text()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getText();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.context.UserProfile#getText <em>Text</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Text</em>' attribute.
-	 * @see #getText()
-	 * @generated
-	 */
-	void setText(String value);
+	void setJobDescriptionId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>User Class</b></em>' attribute.
