@@ -24,17 +24,19 @@ public class Frames {
 
 	private static final Logger LOGGER = Logs.getLogger(Frames.class);
 
-	public static EPackage getEPackage(EPackage root, String name) {
+	public static EPackage getEPackage(EPackage root, String name, boolean deep) {
 
 		for (EPackage ePackage : root.getESubpackages()) {
 			if (ePackage.getName().equals(name))
 				return ePackage;
 		}
 
-		for (EPackage ePackage : root.getESubpackages()) {
-			ePackage = getEPackage(ePackage, name);
-			if (ePackage != null)
-				return ePackage;
+		if (deep) {
+			for (EPackage ePackage : root.getESubpackages()) {
+				ePackage = getEPackage(ePackage, name, true);
+				if (ePackage != null)
+					return ePackage;
+			}
 		}
 
 		return null;
@@ -86,11 +88,11 @@ public class Frames {
 			} else
 				ePackage = (EPackage) entry.getValue();
 
-			if(!ePackage.getNsURI().startsWith("http://www.abchip.org"))
+			if (!ePackage.getNsURI().startsWith("http://www.abchip.org"))
 				continue;
 
 			for (EClassifier eClassifier : ePackage.getEClassifiers()) {
-				
+
 				if (eClassifiers.containsKey(eClassifier.getName())) {
 					LOGGER.warn("Duplicated entity found {}", eClassifier.getName());
 					continue;
