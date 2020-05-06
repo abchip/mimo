@@ -113,7 +113,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 
 		Frame<?> request = (Frame<?>) context.getResourceManager().getFrame(frame, tenant);
 		if (request == null)
-			throw new ServiceException("Service not found" + frame);
+			throw new ServiceException("Service not found " + frame);
 
 		if (!request.getSuperNames().contains(ServiceRequest.class.getSimpleName()))
 			throw new ServiceException("Invalid service " + frame);
