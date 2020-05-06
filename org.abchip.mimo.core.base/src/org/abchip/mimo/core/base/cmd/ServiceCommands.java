@@ -41,13 +41,14 @@ public class ServiceCommands extends BaseCommands {
 		String serviceId = this.nextArgument(interpreter);
 		serviceId = Strings.firstToUpper(serviceId);
 
+		boolean submit = false;
 		String tenant = null;
 
 		StringBuffer query = new StringBuffer();
 
 		String argument = this.nextArgument(interpreter);
 		while (argument != null) {
-			
+
 			// concatenate service name
 			if (!argument.contains("=")) {
 				serviceId = serviceId + Strings.firstToUpper(argument);
@@ -62,6 +63,8 @@ public class ServiceCommands extends BaseCommands {
 		}
 
 		Map<String, String> parameters = URIs.parseQuery(query.toString());
+
+		// tenant
 		if (parameters.containsKey("tenant")) {
 			tenant = parameters.get("tenant");
 			parameters.remove("tenant");
@@ -73,7 +76,11 @@ public class ServiceCommands extends BaseCommands {
 			frame.setValue(request, parameter.getKey(), parameter.getValue());
 		}
 
-		V response = serviceManager.execute(request);
+		V response = null;
+		if (submit)
+			serviceManager.submit(request);
+		else
+			serviceManager.execute(request);
 
 		interpreter.println(response);
 	}
@@ -88,7 +95,7 @@ public class ServiceCommands extends BaseCommands {
 
 		String argument = this.nextArgument(interpreter);
 		while (argument != null) {
-			
+
 			// concatenate service name
 			if (!argument.contains("=")) {
 				serviceId = serviceId + Strings.firstToUpper(argument);
