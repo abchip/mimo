@@ -80,7 +80,7 @@ public class ServiceCommands extends BaseCommands {
 		if (submit)
 			serviceManager.submit(request);
 		else
-			serviceManager.execute(request);
+			response = serviceManager.execute(request);
 
 		interpreter.println(response);
 	}
