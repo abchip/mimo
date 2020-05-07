@@ -94,7 +94,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	@SuppressWarnings("unchecked")
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Class<R> klass, String tenant) throws ServiceException {
-		return (R) prepare(context.createProxy(Frame.class, klass.getSimpleName()), tenant);
+		return (R) prepare(context.createProxy(Frame.class, klass.getSimpleName(), tenant), tenant);
 	}
 
 	@Override
