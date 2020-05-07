@@ -70,11 +70,14 @@ public class E4ResourceSetImpl extends ResourceSetImpl {
 		// TODO
 		if(UserProfile.class.getSimpleName().equals(frame))
 			frame = "UserLogin";
+
+		if (tenant == null)
+			tenant = context.getTenant(); 
 		
 		// TODO
 		if(Frame.class.getSimpleName().equals(frame))
 			tenant = null;
-		
+			
 		URI uri = URI.createHierarchicalURI("mimo", tenant, null, new String[] { frame }, null, null);
 		@SuppressWarnings("unchecked")
 		MimoResourceImpl<E> internal = (MimoResourceImpl<E>) e4ResourceSet.getResource(uri, true);
