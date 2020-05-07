@@ -69,7 +69,7 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 		E4FrameClassResourceImpl<Frame<?>> frameResource = new E4FrameClassResourceImpl<Frame<?>>(resourceSet.getResourceSet(), context.getTenant(), frame, FRAMES);
 		frameResource.setResourceConfig(EMF_RESOURCE_CONFIG);
 		
-		URI frameUri = URI.createHierarchicalURI("mimo", context.getTenant(), null, new String[] { Frame.class.getSimpleName() }, null, null);
+		URI frameUri = URI.createHierarchicalURI("mimo", null, null, new String[] { Frame.class.getSimpleName() }, null, null);
 		uriResourceMap.put(frameUri, new MimoResourceImpl<Frame<?>>(frameResource, resourceSet, frameUri));
 	}
 

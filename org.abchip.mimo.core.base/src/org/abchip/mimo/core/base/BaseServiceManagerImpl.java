@@ -96,7 +96,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Class<R> klass, String tenant) throws ServiceException {
 		return (R) prepare(context.createProxy(Frame.class, klass.getSimpleName(), tenant), tenant);
 	}
-
+	
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(Frame<R> frame) throws ServiceException {
 		return prepare(frame, null);
