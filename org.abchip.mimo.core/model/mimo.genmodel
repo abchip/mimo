@@ -645,7 +645,7 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/superNames"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/text"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/textFormula"/>
-        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getEClass"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getEClassifier"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getPackageName"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getSlot">
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getSlot/name"/>

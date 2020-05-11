@@ -18,12 +18,15 @@ import org.abchip.mimo.entity.Slot;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -82,9 +85,9 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	 */
 	protected boolean autoIncrement = AUTO_INCREMENT_EDEFAULT;
 	/**
-	 * The cached value of the '{@link #getAko() <em>Ako</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getAko() <em>Ako</em>}' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getAko()
 	 * @generated
 	 * @ordered
@@ -240,12 +243,12 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
-	public abstract EClass getEClass();
+	public abstract EClassifier getEClassifier();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -253,7 +256,23 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	 * @generated NOT
 	 */
 	@Override
-	public abstract String getPackageName();
+	public final String getPackageName() {
+
+		StringBuffer packageName = new StringBuffer();
+		URI nsURI = EcoreUtil.getURI(getEClassifier().getEPackage());
+
+		int i = 0;
+		for (String segment : nsURI.segments()) {
+			if(segment.equals("mimo"))
+				continue;
+			
+			if (i > 0)
+				packageName.append(".");
+			packageName.append(segment);
+			i++;
+		}
+		return packageName.toString();
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -608,8 +627,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -627,8 +645,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Frame<? super E> basicGetAko() {
@@ -636,8 +653,7 @@ public abstract class FrameImpl<E extends Entity> extends EntityIdentifiableImpl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

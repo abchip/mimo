@@ -31,7 +31,22 @@ public abstract class BaseCommands implements CommandProvider {
 	}
 
 	protected String nextArgument(CommandInterpreter interpreter) {
-		return this.nextArgument(interpreter, null);
+		return this.nextArgument(interpreter, (String) null);
+	}
+
+	protected Number nextArgument(CommandInterpreter interpreter, double default_) {
+
+		String argument = interpreter.nextArgument();
+
+		// @NULL
+		if (argument != null && argument.equals(NULL))
+			return 0;
+
+		// default
+		if (argument == null)
+			return default_;
+		else
+			return Double.parseDouble(argument);
 	}
 
 	protected String nextArgument(CommandInterpreter interpreter, String default_) {

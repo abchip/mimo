@@ -15,9 +15,8 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.entity.impl.FrameImpl;
 import org.abchip.mimo.util.Strings;
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EPackage;
 
 public class E4FrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 
@@ -69,14 +68,6 @@ public class E4FrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 		// return URI.create(EcoreUtil.getURI(eEnum).toString());
 	}
 
-	@Override
-	public String getPackageName() {
-
-		EPackage ePackage = eEnum.getEPackage();
-		String packageName = ePackage.getNsPrefix().replaceAll("-", ".");
-		return packageName;
-	}
-
 	private void setFrameText() {
 
 		String text = Strings.firstToUpper(this.getName());
@@ -86,7 +77,7 @@ public class E4FrameEnumAdapter<E extends Entity> extends FrameImpl<E> {
 	}
 
 	@Override
-	public EClass getEClass() {
-		return null;
+	public EClassifier getEClassifier() {
+		return eEnum;
 	}
 }

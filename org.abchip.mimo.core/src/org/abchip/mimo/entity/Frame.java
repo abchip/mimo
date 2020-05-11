@@ -9,7 +9,7 @@
 package org.abchip.mimo.entity;
 
 import java.util.List;
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -65,14 +65,6 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	EClass getEClass();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,6 +192,14 @@ public interface Frame<E extends Entity> extends EntityIdentifiable {
 	 * @generated
 	 */
 	void setTextFormula(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	EClassifier getEClassifier();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

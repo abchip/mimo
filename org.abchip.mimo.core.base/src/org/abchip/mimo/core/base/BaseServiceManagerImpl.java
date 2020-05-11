@@ -27,6 +27,7 @@ import org.abchip.mimo.service.ServiceProviderRegistry;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.util.Strings;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class BaseServiceManagerImpl implements ServiceManager {
@@ -60,7 +61,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		service.setName(klass.getSimpleName());
 
 		@SuppressWarnings("unchecked")
-		R request = (R) EcoreUtil.create(context.createProxy(Frame.class, klass.getSimpleName()).getEClass());
+		R request = (R) EcoreUtil.create((EClass) context.createProxy(Frame.class, klass.getSimpleName()).getEClassifier());
 		service.setRequest(request);
 
 		return service;
@@ -80,7 +81,7 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		service.setName(frame.getName());
 
 		@SuppressWarnings("unchecked")
-		R request = (R) EcoreUtil.create(frame.getEClass());
+		R request = (R) EcoreUtil.create((EClass) frame.getEClassifier());
 		service.setRequest(request);
 
 		return service;

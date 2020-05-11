@@ -1078,7 +1078,7 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getFrame_Text(), ecorePackage.getEString(), "text", null, 1, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_TextFormula(), ecorePackage.getEString(), "textFormula", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(frameEClass, ecorePackage.getEClass(), "getEClass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(frameEClass, ecorePackage.getEClassifier(), "getEClassifier", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(frameEClass, ecorePackage.getEString(), "getPackageName", 1, 1, IS_UNIQUE, IS_ORDERED);
 

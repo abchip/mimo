@@ -23,6 +23,7 @@ import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.util.Strings;
 import org.abchip.mimo.util.URIs;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
@@ -125,7 +126,7 @@ public class ServiceCommands extends BaseCommands {
 			interpreter.println();
 		}
 
-		ServiceResponse response = (ServiceResponse) EcoreUtil.create(context.createProxy(Frame.class, request.getResponse().getSimpleName()).getEClass());
+		ServiceResponse response = (ServiceResponse) EcoreUtil.create((EClass) context.createProxy(Frame.class, request.getResponse().getSimpleName()).getEClassifier());
 
 		interpreter.println("Output parameters");
 		for (Slot slot : response.isa().getSlots()) {

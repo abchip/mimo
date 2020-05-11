@@ -35,7 +35,6 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -134,7 +133,7 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 	}
 
 	@Override
-	public EClass getEClass() {
+	public EClass getEClassifier() {
 		return eClass;
 	}
 
@@ -280,14 +279,6 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 			return super.getURI();
 		else
 			return java.net.URI.create(EcoreUtil.getURI(eClass).toString());
-	}
-
-	@Override
-	public String getPackageName() {
-
-		EPackage ePackage = eClass.getEPackage();
-		String packageName = ePackage.getNsPrefix().replaceAll("-", ".");
-		return packageName;
 	}
 
 	private void setFrameText() {

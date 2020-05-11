@@ -35,20 +35,24 @@ import org.osgi.service.log.Logger;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceConfig <em>Resource Config</em>}</li>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceSet <em>Resource Set</em>}</li>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getTenant <em>Tenant</em>}</li>
+ * <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceConfig
+ * <em>Resource Config</em>}</li>
+ * <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceSet
+ * <em>Resource Set</em>}</li>
+ * <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getTenant
+ * <em>Tenant</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityImpl implements Resource<E> {
-	
+
 	private static final Logger LOGGER = Logs.getLogger(ResourceImpl.class);
-	
+
 	/**
-	 * The cached value of the '{@link #getResourceConfig() <em>Resource Config</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getResourceConfig() <em>Resource
+	 * Config</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getResourceConfig()
 	 * @generated
 	 * @ordered
@@ -56,8 +60,9 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	protected ResourceConfig resourceConfig;
 
 	/**
-	 * The cached value of the '{@link #getResourceSet() <em>Resource Set</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getResourceSet() <em>Resource Set</em>}'
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getResourceSet()
 	 * @generated
 	 * @ordered
@@ -67,6 +72,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	/**
 	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTenant()
 	 * @generated
 	 * @ordered
@@ -76,6 +82,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	/**
 	 * The cached value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTenant()
 	 * @generated
 	 * @ordered
@@ -84,6 +91,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ResourceImpl() {
@@ -104,6 +112,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -113,13 +122,14 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public ResourceConfig getResourceConfig() {
-		if (resourceConfig != null && ((EObject)resourceConfig).eIsProxy()) {
-			InternalEObject oldResourceConfig = (InternalEObject)resourceConfig;
-			resourceConfig = (ResourceConfig)eResolveProxy(oldResourceConfig);
+		if (resourceConfig != null && ((EObject) resourceConfig).eIsProxy()) {
+			InternalEObject oldResourceConfig = (InternalEObject) resourceConfig;
+			resourceConfig = (ResourceConfig) eResolveProxy(oldResourceConfig);
 			if (resourceConfig != oldResourceConfig) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE__RESOURCE_CONFIG, oldResourceConfig, resourceConfig));
@@ -130,6 +140,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ResourceConfig basicGetResourceConfig() {
@@ -138,6 +149,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -150,13 +162,14 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public ResourceSet getResourceSet() {
-		if (resourceSet != null && ((EObject)resourceSet).eIsProxy()) {
-			InternalEObject oldResourceSet = (InternalEObject)resourceSet;
-			resourceSet = (ResourceSet)eResolveProxy(oldResourceSet);
+		if (resourceSet != null && ((EObject) resourceSet).eIsProxy()) {
+			InternalEObject oldResourceSet = (InternalEObject) resourceSet;
+			resourceSet = (ResourceSet) eResolveProxy(oldResourceSet);
 			if (resourceSet != oldResourceSet) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE__RESOURCE_SET, oldResourceSet, resourceSet));
@@ -167,6 +180,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ResourceSet basicGetResourceSet() {
@@ -175,6 +189,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -259,8 +274,11 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	@Override
 	public final E make(boolean sequence) throws ResourceException {
 
+		if (this.getFrame().isEnum())
+			throw new ResourceException("Invalid frame " + this.getFrame().getID());
+
 		@SuppressWarnings("unchecked")
-		E entity = (E) EcoreUtil.create(this.getFrame().getEClass());
+		E entity = (E) EcoreUtil.create((EClass) this.getFrame().getEClassifier());
 		if (sequence) {
 			String id = this.nextSequence();
 
@@ -335,75 +353,83 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
-				if (resolve) return getResourceConfig();
-				return basicGetResourceConfig();
-			case ResourcePackage.RESOURCE__RESOURCE_SET:
-				if (resolve) return getResourceSet();
-				return basicGetResourceSet();
-			case ResourcePackage.RESOURCE__TENANT:
-				return getTenant();
+		case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
+			if (resolve)
+				return getResourceConfig();
+			return basicGetResourceConfig();
+		case ResourcePackage.RESOURCE__RESOURCE_SET:
+			if (resolve)
+				return getResourceSet();
+			return basicGetResourceSet();
+		case ResourcePackage.RESOURCE__TENANT:
+			return getTenant();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
-				setResourceConfig((ResourceConfig)newValue);
-				return;
+		case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
+			setResourceConfig((ResourceConfig) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
-				setResourceConfig((ResourceConfig)null);
-				return;
+		case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
+			setResourceConfig((ResourceConfig) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
-				return resourceConfig != null;
-			case ResourcePackage.RESOURCE__RESOURCE_SET:
-				return resourceSet != null;
-			case ResourcePackage.RESOURCE__TENANT:
-				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
+		case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
+			return resourceConfig != null;
+		case ResourcePackage.RESOURCE__RESOURCE_SET:
+			return resourceSet != null;
+		case ResourcePackage.RESOURCE__TENANT:
+			return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (tenant: ");
