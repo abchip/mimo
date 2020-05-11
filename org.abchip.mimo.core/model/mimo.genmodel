@@ -1308,10 +1308,10 @@
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/buildResponse"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceResponse">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceResponse/error"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceResponse/errorMessage"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceResponse/responseMessage"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceResponse/successMessage"/>
+        <genOperations ecoreOperation="mimo.ecore#//service/ServiceResponse/onError"/>
       </genClasses>
       <nestedGenPackages prefix="Reg" basePackage="org.abchip.mimo.service" disposableProviderFactory="true"
           adapterFactory="false" ecorePackage="mimo.ecore#//service/reg">

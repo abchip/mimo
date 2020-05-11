@@ -17,7 +17,6 @@ package org.abchip.mimo.service;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.ServiceResponse#isError <em>Error</em>}</li>
  *   <li>{@link org.abchip.mimo.service.ServiceResponse#getErrorMessage <em>Error Message</em>}</li>
  *   <li>{@link org.abchip.mimo.service.ServiceResponse#getResponseMessage <em>Response Message</em>}</li>
  *   <li>{@link org.abchip.mimo.service.ServiceResponse#getSuccessMessage <em>Success Message</em>}</li>
@@ -28,28 +27,6 @@ package org.abchip.mimo.service;
  * @generated
  */
 public interface ServiceResponse extends ServiceMessage {
-
-	/**
-	 * Returns the value of the '<em><b>Error</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Error</em>' attribute.
-	 * @see #setError(boolean)
-	 * @see org.abchip.mimo.service.ServicePackage#getServiceResponse_Error()
-	 * @model required="true"
-	 * @generated
-	 */
-	boolean isError();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceResponse#isError <em>Error</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Error</em>' attribute.
-	 * @see #isError()
-	 * @generated
-	 */
-	void setError(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Error Message</b></em>' attribute.
@@ -116,4 +93,12 @@ public interface ServiceResponse extends ServiceMessage {
 	 * @generated
 	 */
 	void setSuccessMessage(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean onError();
 } // ServiceResponse

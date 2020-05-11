@@ -220,7 +220,6 @@ public class SetLogImpl extends ServiceRequestImpl<ServiceResponse> implements S
 
 		LoggerContext loggerContext = Logs.getLoggerContext();
 		if (loggerContext == null) {
-			response.setError(true);
 			response.setErrorMessage("LoggerContext not found");
 			return response;
 		}

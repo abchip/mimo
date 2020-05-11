@@ -54,7 +54,6 @@ public class ResetLogImpl extends ServiceRequestImpl<ServiceResponse> implements
 
 		LoggerContext loggerContext = Logs.getLoggerContext();
 		if (loggerContext == null) {
-			response.setError(true);
 			response.setErrorMessage("LoggerContext not found");
 			return response;
 		}

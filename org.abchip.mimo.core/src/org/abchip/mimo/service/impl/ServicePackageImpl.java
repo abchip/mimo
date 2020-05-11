@@ -560,7 +560,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceResponse_Error() {
+	public EAttribute getServiceResponse_ErrorMessage() {
 		return (EAttribute)serviceResponseEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -570,7 +570,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceResponse_ErrorMessage() {
+	public EAttribute getServiceResponse_ResponseMessage() {
 		return (EAttribute)serviceResponseEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -580,18 +580,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceResponse_ResponseMessage() {
-		return (EAttribute)serviceResponseEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getServiceResponse_SuccessMessage() {
-		return (EAttribute)serviceResponseEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)serviceResponseEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -690,7 +680,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		createEReference(serviceRequestEClass, SERVICE_REQUEST__USER_PROFILE);
 
 		serviceResponseEClass = createEClass(SERVICE_RESPONSE);
-		createEAttribute(serviceResponseEClass, SERVICE_RESPONSE__ERROR);
 		createEAttribute(serviceResponseEClass, SERVICE_RESPONSE__ERROR_MESSAGE);
 		createEAttribute(serviceResponseEClass, SERVICE_RESPONSE__RESPONSE_MESSAGE);
 		createEAttribute(serviceResponseEClass, SERVICE_RESPONSE__SUCCESS_MESSAGE);
@@ -1084,10 +1073,11 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		initEOperation(op, g1);
 
 		initEClass(serviceResponseEClass, ServiceResponse.class, "ServiceResponse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceResponse_Error(), ecorePackage.getEBoolean(), "error", null, 1, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServiceResponse_ErrorMessage(), ecorePackage.getEString(), "errorMessage", null, 0, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServiceResponse_ResponseMessage(), ecorePackage.getEString(), "responseMessage", null, 0, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServiceResponse_SuccessMessage(), ecorePackage.getEString(), "successMessage", null, 0, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(serviceResponseEClass, ecorePackage.getEBoolean(), "onError", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(serviceMappingTypeEEnum, ServiceMappingType.class, "ServiceMappingType");

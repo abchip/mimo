@@ -420,22 +420,13 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_METHOD_REQUEST_FEATURE_COUNT = SERVICE_REQUEST_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Error</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_RESPONSE__ERROR = SERVICE_MESSAGE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_RESPONSE__ERROR_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 1;
+	int SERVICE_RESPONSE__ERROR_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Response Message</b></em>' attribute.
@@ -444,7 +435,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_RESPONSE__RESPONSE_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 2;
+	int SERVICE_RESPONSE__RESPONSE_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Success Message</b></em>' attribute.
@@ -453,7 +444,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_RESPONSE__SUCCESS_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 3;
+	int SERVICE_RESPONSE__SUCCESS_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Response</em>' class.
@@ -462,16 +453,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_RESPONSE_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Error</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_METHOD_RESPONSE__ERROR = SERVICE_RESPONSE__ERROR;
+	int SERVICE_RESPONSE_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -830,17 +812,6 @@ public interface ServicePackage extends EPackage {
 	EClass getServiceResponse();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceResponse#isError <em>Error</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Error</em>'.
-	 * @see org.abchip.mimo.service.ServiceResponse#isError()
-	 * @see #getServiceResponse()
-	 * @generated
-	 */
-	EAttribute getServiceResponse_Error();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceResponse#getErrorMessage <em>Error Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1151,14 +1122,6 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EClass SERVICE_RESPONSE = eINSTANCE.getServiceResponse();
-
-		/**
-		 * The meta object literal for the '<em><b>Error</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_RESPONSE__ERROR = eINSTANCE.getServiceResponse_Error();
 
 		/**
 		 * The meta object literal for the '<em><b>Error Message</b></em>' attribute feature.

@@ -237,7 +237,6 @@ public class LoadSeedImpl extends ServiceRequestImpl<ServiceResponse> implements
 
 		URL seedUrl = bundle.getResource(MimoConstants.SEEDS_PATH + "/" + this.getSeedId() + ".xmi");
 		if (seedUrl == null) {
-			response.setError(true);
 			response.setErrorMessage("Seed not found " + this.getSeedId());
 			return response;
 		}

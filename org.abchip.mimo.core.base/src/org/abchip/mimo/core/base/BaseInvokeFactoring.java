@@ -69,7 +69,7 @@ public class BaseInvokeFactoring implements Factory {
 				request.setEntity(entity);
 
 				ServiceMethodResponse<T> response = serviceManager.execute(request);
-				if (response.isError()) {
+				if (response.onError()) {
 					LOGGER.warn(response.getErrorMessage());
 					return null;
 				}
