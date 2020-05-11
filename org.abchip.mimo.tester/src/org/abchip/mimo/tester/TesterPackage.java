@@ -566,6 +566,15 @@ public interface TesterPackage extends EPackage {
 	int RUN_TEST__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
 
 	/**
+	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_TEST__USER_PROFILE = ServicePackage.SERVICE_REQUEST__USER_PROFILE;
+
+	/**
 	 * The feature id for the '<em><b>Component</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -592,15 +601,6 @@ public interface TesterPackage extends EPackage {
 	 * @generated
 	 */
 	int RUN_TEST_RESPONSE = 15;
-
-	/**
-	 * The feature id for the '<em><b>Error</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUN_TEST_RESPONSE__ERROR = ServicePackage.SERVICE_RESPONSE__ERROR;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.

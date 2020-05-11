@@ -183,7 +183,6 @@ public class RunTestImpl extends ServiceRequestImpl<RunTestResponse> implements 
 							response.getAssertions().add(assertionFailed);
 							break;
 						case SUCCESS:
-							response.setError(true);
 							AssertionSuccess assertionSuccess = (AssertionSuccess) assertionResult;
 							response.getAssertions().add(assertionSuccess);
 							break;
