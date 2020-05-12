@@ -429,22 +429,13 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_RESPONSE__ERROR_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Response Message</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_RESPONSE__RESPONSE_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Success Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_RESPONSE__SUCCESS_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 2;
+	int SERVICE_RESPONSE__SUCCESS_MESSAGE = SERVICE_MESSAGE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Response</em>' class.
@@ -453,7 +444,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_RESPONSE_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 3;
+	int SERVICE_RESPONSE_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
@@ -463,15 +454,6 @@ public interface ServicePackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_METHOD_RESPONSE__ERROR_MESSAGE = SERVICE_RESPONSE__ERROR_MESSAGE;
-
-	/**
-	 * The feature id for the '<em><b>Response Message</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_METHOD_RESPONSE__RESPONSE_MESSAGE = SERVICE_RESPONSE__RESPONSE_MESSAGE;
 
 	/**
 	 * The feature id for the '<em><b>Success Message</b></em>' attribute.
@@ -823,17 +805,6 @@ public interface ServicePackage extends EPackage {
 	EAttribute getServiceResponse_ErrorMessage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceResponse#getResponseMessage <em>Response Message</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Response Message</em>'.
-	 * @see org.abchip.mimo.service.ServiceResponse#getResponseMessage()
-	 * @see #getServiceResponse()
-	 * @generated
-	 */
-	EAttribute getServiceResponse_ResponseMessage();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.service.ServiceResponse#getSuccessMessage <em>Success Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1130,14 +1101,6 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVICE_RESPONSE__ERROR_MESSAGE = eINSTANCE.getServiceResponse_ErrorMessage();
-
-		/**
-		 * The meta object literal for the '<em><b>Response Message</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_RESPONSE__RESPONSE_MESSAGE = eINSTANCE.getServiceResponse_ResponseMessage();
 
 		/**
 		 * The meta object literal for the '<em><b>Success Message</b></em>' attribute feature.

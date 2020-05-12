@@ -18,7 +18,6 @@ package org.abchip.mimo.service;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.service.ServiceResponse#getErrorMessage <em>Error Message</em>}</li>
- *   <li>{@link org.abchip.mimo.service.ServiceResponse#getResponseMessage <em>Response Message</em>}</li>
  *   <li>{@link org.abchip.mimo.service.ServiceResponse#getSuccessMessage <em>Success Message</em>}</li>
  * </ul>
  *
@@ -49,28 +48,6 @@ public interface ServiceResponse extends ServiceMessage {
 	 * @generated
 	 */
 	void setErrorMessage(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Response Message</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Response Message</em>' attribute.
-	 * @see #setResponseMessage(String)
-	 * @see org.abchip.mimo.service.ServicePackage#getServiceResponse_ResponseMessage()
-	 * @model
-	 * @generated
-	 */
-	String getResponseMessage();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceResponse#getResponseMessage <em>Response Message</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Response Message</em>' attribute.
-	 * @see #getResponseMessage()
-	 * @generated
-	 */
-	void setResponseMessage(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Success Message</b></em>' attribute.

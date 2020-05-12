@@ -570,18 +570,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceResponse_ResponseMessage() {
-		return (EAttribute)serviceResponseEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getServiceResponse_SuccessMessage() {
-		return (EAttribute)serviceResponseEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)serviceResponseEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -681,7 +671,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		serviceResponseEClass = createEClass(SERVICE_RESPONSE);
 		createEAttribute(serviceResponseEClass, SERVICE_RESPONSE__ERROR_MESSAGE);
-		createEAttribute(serviceResponseEClass, SERVICE_RESPONSE__RESPONSE_MESSAGE);
 		createEAttribute(serviceResponseEClass, SERVICE_RESPONSE__SUCCESS_MESSAGE);
 
 		// Create enums
@@ -1074,7 +1063,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		initEClass(serviceResponseEClass, ServiceResponse.class, "ServiceResponse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceResponse_ErrorMessage(), ecorePackage.getEString(), "errorMessage", null, 0, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServiceResponse_ResponseMessage(), ecorePackage.getEString(), "responseMessage", null, 0, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServiceResponse_SuccessMessage(), ecorePackage.getEString(), "successMessage", null, 0, 1, ServiceResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(serviceResponseEClass, ecorePackage.getEBoolean(), "onError", 1, 1, IS_UNIQUE, IS_ORDERED);

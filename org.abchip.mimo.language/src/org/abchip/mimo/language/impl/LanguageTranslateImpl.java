@@ -279,8 +279,7 @@ public class LanguageTranslateImpl extends ServiceRequestImpl<ServiceResponse> i
 
 		LanguageManager languageManager = getContext().get(LanguageManager.class);
 
-
-		response.setResponseMessage(languageManager.translate(context, getFrom(), getText(), getTo()));
+		response.setSuccessMessage(languageManager.translate(context, getFrom(), getText(), getTo()));
 
 		return response;
 	}
