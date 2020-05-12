@@ -217,6 +217,7 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 
 		switch (slot.getDataType()) {
 		case BINARY:
+		case OBJECT:
 			raw = value;
 			break;
 		case BOOLEAN:

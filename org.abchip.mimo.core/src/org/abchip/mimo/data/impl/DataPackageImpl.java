@@ -32,6 +32,7 @@ import org.abchip.mimo.data.EnumDef;
 import org.abchip.mimo.data.IdentityDef;
 import org.abchip.mimo.data.NumericDef;
 import org.abchip.mimo.data.NumericType;
+import org.abchip.mimo.data.ObjectDef;
 import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.data.TimeFormat;
 
@@ -112,6 +113,13 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	private EClass numericDefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass objectDefEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -431,6 +439,16 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getObjectDef() {
+		return objectDefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getBinaryDef() {
 		return binaryDefEClass;
 	}
@@ -555,6 +573,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		createEAttribute(numericDefEClass, NUMERIC_DEF__SCALE);
 		createEAttribute(numericDefEClass, NUMERIC_DEF__UNSIGNED);
 
+		objectDefEClass = createEClass(OBJECT_DEF);
+
 		binaryDefEClass = createEClass(BINARY_DEF);
 
 		identityDefEClass = createEClass(IDENTITY_DEF);
@@ -627,6 +647,10 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		g1.getETypeArguments().add(g2);
 		numericDefEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getDataDef());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		objectDefEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getDataDef());
 		g2 = createEGenericType(ecorePackage.getEByteArray());
 		g1.getETypeArguments().add(g2);
 		binaryDefEClass.getEGenericSuperTypes().add(g1);
@@ -669,6 +693,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		initEAttribute(getNumericDef_Scale(), ecorePackage.getEInt(), "scale", null, 0, 1, NumericDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNumericDef_Unsigned(), ecorePackage.getEBoolean(), "unsigned", null, 0, 1, NumericDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(objectDefEClass, ObjectDef.class, "ObjectDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(binaryDefEClass, BinaryDef.class, "BinaryDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(identityDefEClass, IdentityDef.class, "IdentityDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -685,6 +711,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		addEEnumLiteral(dataTypeEEnum, DataType.BINARY);
 		addEEnumLiteral(dataTypeEEnum, DataType.IDENTITY);
 		addEEnumLiteral(dataTypeEEnum, DataType.ENTITY);
+		addEEnumLiteral(dataTypeEEnum, DataType.OBJECT);
 
 		initEEnum(datetimeTypeEEnum, DatetimeType.class, "DatetimeType");
 		addEEnumLiteral(datetimeTypeEEnum, DatetimeType.TIME_STAMP);

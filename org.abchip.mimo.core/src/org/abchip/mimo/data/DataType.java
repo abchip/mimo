@@ -101,7 +101,15 @@ public enum DataType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ENTITY(80, "Entity", "ENT");
+	ENTITY(80, "Entity", "ENT"), /**
+	 * The '<em><b>Object</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #OBJECT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	OBJECT(90, "Object", "OBJ");
 
 	/**
 	 * The '<em><b>String</b></em>' literal value.
@@ -224,6 +232,17 @@ public enum DataType implements Enumerator {
 	public static final int ENTITY_VALUE = 80;
 
 	/**
+	 * The '<em><b>Object</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #OBJECT
+	 * @model name="Object" literal="OBJ"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int OBJECT_VALUE = 90;
+
+	/**
 	 * An array of all the '<em><b>Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -239,6 +258,7 @@ public enum DataType implements Enumerator {
 			BINARY,
 			IDENTITY,
 			ENTITY,
+			OBJECT,
 		};
 
 	/**
@@ -303,6 +323,7 @@ public enum DataType implements Enumerator {
 			case BINARY_VALUE: return BINARY;
 			case IDENTITY_VALUE: return IDENTITY;
 			case ENTITY_VALUE: return ENTITY;
+			case OBJECT_VALUE: return OBJECT;
 		}
 		return null;
 	}

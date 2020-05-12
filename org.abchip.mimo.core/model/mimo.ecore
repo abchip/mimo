@@ -736,6 +736,7 @@
       <eLiterals name="Binary" value="60" literal="BIN"/>
       <eLiterals name="Identity" value="70" literal="IDN"/>
       <eLiterals name="Entity" value="80" literal="ENT"/>
+      <eLiterals name="Object" value="90" literal="OBJ"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DataDef" abstract="true" eSuperTypes="#//entity/Entity">
       <eTypeParameters name="D"/>
@@ -812,6 +813,11 @@
       <eLiterals name="Float" value="50" literal="FLT"/>
       <eLiterals name="Double" value="60" literal="DBL"/>
       <eLiterals name="BigDecimal" value="70" literal="BGD"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectDef">
+      <eGenericSuperTypes eClassifier="#//data/DataDef">
+        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BinaryDef">
       <eGenericSuperTypes eClassifier="#//data/DataDef">

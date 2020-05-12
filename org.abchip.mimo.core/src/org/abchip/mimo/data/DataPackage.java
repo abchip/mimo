@@ -258,6 +258,25 @@ public interface DataPackage extends EPackage {
 	int NUMERIC_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.data.impl.ObjectDefImpl <em>Object Def</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.data.impl.ObjectDefImpl
+	 * @see org.abchip.mimo.data.impl.DataPackageImpl#getObjectDef()
+	 * @generated
+	 */
+	int OBJECT_DEF = 6;
+
+	/**
+	 * The number of structural features of the '<em>Object Def</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.data.impl.BinaryDefImpl <em>Binary Def</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -265,7 +284,7 @@ public interface DataPackage extends EPackage {
 	 * @see org.abchip.mimo.data.impl.DataPackageImpl#getBinaryDef()
 	 * @generated
 	 */
-	int BINARY_DEF = 6;
+	int BINARY_DEF = 7;
 
 	/**
 	 * The number of structural features of the '<em>Binary Def</em>' class.
@@ -284,7 +303,7 @@ public interface DataPackage extends EPackage {
 	 * @see org.abchip.mimo.data.impl.DataPackageImpl#getIdentityDef()
 	 * @generated
 	 */
-	int IDENTITY_DEF = 7;
+	int IDENTITY_DEF = 8;
 
 	/**
 	 * The number of structural features of the '<em>Identity Def</em>' class.
@@ -303,7 +322,7 @@ public interface DataPackage extends EPackage {
 	 * @see org.abchip.mimo.data.impl.DataPackageImpl#getEntityDef()
 	 * @generated
 	 */
-	int ENTITY_DEF = 8;
+	int ENTITY_DEF = 9;
 
 	/**
 	 * The number of structural features of the '<em>Entity Def</em>' class.
@@ -322,7 +341,7 @@ public interface DataPackage extends EPackage {
 	 * @see org.abchip.mimo.data.impl.DataPackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 9;
+	int DATA_TYPE = 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.data.DatetimeType <em>Datetime Type</em>}' enum.
@@ -332,7 +351,7 @@ public interface DataPackage extends EPackage {
 	 * @see org.abchip.mimo.data.impl.DataPackageImpl#getDatetimeType()
 	 * @generated
 	 */
-	int DATETIME_TYPE = 10;
+	int DATETIME_TYPE = 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.data.DateFormat <em>Date Format</em>}' enum.
@@ -342,7 +361,7 @@ public interface DataPackage extends EPackage {
 	 * @see org.abchip.mimo.data.impl.DataPackageImpl#getDateFormat()
 	 * @generated
 	 */
-	int DATE_FORMAT = 11;
+	int DATE_FORMAT = 12;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.data.TimeFormat <em>Time Format</em>}' enum.
@@ -352,7 +371,7 @@ public interface DataPackage extends EPackage {
 	 * @see org.abchip.mimo.data.impl.DataPackageImpl#getTimeFormat()
 	 * @generated
 	 */
-	int TIME_FORMAT = 12;
+	int TIME_FORMAT = 13;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.data.NumericType <em>Numeric Type</em>}' enum.
@@ -362,7 +381,7 @@ public interface DataPackage extends EPackage {
 	 * @see org.abchip.mimo.data.impl.DataPackageImpl#getNumericType()
 	 * @generated
 	 */
-	int NUMERIC_TYPE = 13;
+	int NUMERIC_TYPE = 14;
 
 
 	/**
@@ -523,6 +542,16 @@ public interface DataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNumericDef_Unsigned();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.data.ObjectDef <em>Object Def</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Object Def</em>'.
+	 * @see org.abchip.mimo.data.ObjectDef
+	 * @generated
+	 */
+	EClass getObjectDef();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.data.BinaryDef <em>Binary Def</em>}'.
@@ -757,6 +786,16 @@ public interface DataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NUMERIC_DEF__UNSIGNED = eINSTANCE.getNumericDef_Unsigned();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.data.impl.ObjectDefImpl <em>Object Def</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.data.impl.ObjectDefImpl
+		 * @see org.abchip.mimo.data.impl.DataPackageImpl#getObjectDef()
+		 * @generated
+		 */
+		EClass OBJECT_DEF = eINSTANCE.getObjectDef();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.data.impl.BinaryDefImpl <em>Binary Def</em>}' class.

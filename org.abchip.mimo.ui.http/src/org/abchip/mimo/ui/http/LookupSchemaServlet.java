@@ -136,6 +136,7 @@ public class LookupSchemaServlet extends BaseServlet {
 			widget = WidgetFactory.eINSTANCE.createWidgetCheckBox();
 			break;
 		case BINARY:
+		case OBJECT:
 			break;
 		case DATE_TIME:
 			column.setSort("raw");

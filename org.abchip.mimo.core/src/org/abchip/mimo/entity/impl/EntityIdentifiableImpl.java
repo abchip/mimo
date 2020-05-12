@@ -86,6 +86,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 						case STRING:
 						case DATE_TIME:
 						case ENTITY:
+						case OBJECT:
 							filter = eIDAttribute.getName() + " = '" + this.getID() + "'";
 							break;
 						case BINARY:

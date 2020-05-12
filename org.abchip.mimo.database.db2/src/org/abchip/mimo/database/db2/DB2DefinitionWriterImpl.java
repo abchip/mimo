@@ -98,6 +98,7 @@ public class DB2DefinitionWriterImpl extends BaseDefinitionWriterImpl {
 				break;
 			case BOOLEAN:
 			case ENUM:
+			case OBJECT:
 			case ENTITY:
 				result.append(getNameInSQLFormat(column) + " " + columnDef.getDataType().getName().toUpperCase());
 				break;

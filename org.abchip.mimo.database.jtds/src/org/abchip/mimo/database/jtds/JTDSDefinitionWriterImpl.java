@@ -79,6 +79,7 @@ public class JTDSDefinitionWriterImpl extends BaseDefinitionWriterImpl {
 			case BOOLEAN:
 			case DATE_TIME:
 			case ENUM:
+			case OBJECT:
 			case ENTITY:
 				result.append(getNameInSQLFormat(column) + " " + columnDef.getDataType().getName().toUpperCase());
 				break;

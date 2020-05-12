@@ -506,6 +506,7 @@
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataType/Binary"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataType/Identity"/>
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataType/Entity"/>
+        <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DataType/Object"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="mimo.ecore#//data/DatetimeType">
         <genEnumLiterals ecoreEnumLiteral="mimo.ecore#//data/DatetimeType/TimeStamp"/>
@@ -556,6 +557,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/NumericDef/scale"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/NumericDef/unsigned"/>
       </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//data/ObjectDef"/>
       <genClasses ecoreClass="mimo.ecore#//data/BinaryDef"/>
       <genClasses ecoreClass="mimo.ecore#//data/IdentityDef"/>
       <genClasses ecoreClass="mimo.ecore#//data/EntityDef"/>

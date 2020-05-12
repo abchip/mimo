@@ -67,6 +67,7 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 			case DataPackage.ENUM_DEF: return (EObject)createEnumDef();
 			case DataPackage.DATETIME_DEF: return (EObject)createDatetimeDef();
 			case DataPackage.NUMERIC_DEF: return (EObject)createNumericDef();
+			case DataPackage.OBJECT_DEF: return (EObject)createObjectDef();
 			case DataPackage.BINARY_DEF: return (EObject)createBinaryDef();
 			case DataPackage.IDENTITY_DEF: return (EObject)createIdentityDef();
 			case DataPackage.ENTITY_DEF: return (EObject)createEntityDef();
@@ -174,6 +175,17 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	public NumericDef createNumericDef() {
 		NumericDefImpl numericDef = new NumericDefImpl();
 		return numericDef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ObjectDef createObjectDef() {
+		ObjectDefImpl objectDef = new ObjectDefImpl();
+		return objectDef;
 	}
 
 	/**

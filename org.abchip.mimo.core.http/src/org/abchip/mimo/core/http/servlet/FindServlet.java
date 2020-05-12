@@ -76,6 +76,7 @@ public class FindServlet extends BaseServlet {
 					break;
 				case BINARY:
 				case ENTITY:
+				case OBJECT:
 					break;
 				}
 

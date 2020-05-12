@@ -134,6 +134,7 @@ public class LookupFormServlet extends BaseServlet {
 		else {
 			switch (slot.getDataType()) {
 			case BINARY:
+			case OBJECT:
 				break;
 			case BOOLEAN:
 				widget = WidgetFactory.eINSTANCE.createWidgetCheckBox();

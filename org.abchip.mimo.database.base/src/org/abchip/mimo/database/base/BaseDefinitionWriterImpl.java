@@ -97,6 +97,7 @@ public abstract class BaseDefinitionWriterImpl extends StatementWriterImpl imple
 					result.append(getNameInSQLFormat(column) + " CHAR(" + stringDef.getLength() + ")");
 				break;
 			case BINARY:
+			case OBJECT:
 			case BOOLEAN:
 			case DATE_TIME:
 			case ENUM:

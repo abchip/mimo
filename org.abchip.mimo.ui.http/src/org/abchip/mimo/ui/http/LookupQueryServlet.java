@@ -111,6 +111,7 @@ public class LookupQueryServlet extends BaseServlet {
 			field.setType("string");
 			break;
 		case BINARY:
+		case OBJECT:
 			break;
 		case DATE_TIME:
 			field.setType("date");

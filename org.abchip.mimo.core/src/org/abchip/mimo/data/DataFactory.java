@@ -72,6 +72,15 @@ public interface DataFactory extends EFactory {
 	NumericDef createNumericDef();
 
 	/**
+	 * Returns a new object of class '<em>Object Def</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Object Def</em>'.
+	 * @generated
+	 */
+	ObjectDef createObjectDef();
+
+	/**
 	 * Returns a new object of class '<em>Binary Def</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

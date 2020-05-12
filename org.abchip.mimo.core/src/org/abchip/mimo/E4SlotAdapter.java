@@ -21,6 +21,7 @@ import org.abchip.mimo.data.EntityDef;
 import org.abchip.mimo.data.EnumDef;
 import org.abchip.mimo.data.NumericDef;
 import org.abchip.mimo.data.NumericType;
+import org.abchip.mimo.data.ObjectDef;
 import org.abchip.mimo.data.StringDef;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
@@ -126,9 +127,12 @@ public class E4SlotAdapter extends SlotImpl {
 			NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
 			numericDef.setType(NumericType.BIG_DECIMAL);
 			dataDef = numericDef;
-		} else if (klass == byte[].class || klass == Object.class) {
+		} else if (klass == Object.class) {
+			ObjectDef objectDef = DataFactory.eINSTANCE.createObjectDef();
+			dataDef = objectDef;
+		} else if (klass == byte[].class) {
 			BinaryDef binaryDef = DataFactory.eINSTANCE.createBinaryDef();
-			dataDef = binaryDef;
+			dataDef = binaryDef;			
 		} else if (Entity.class.isAssignableFrom(klass)) {
 			EntityDef entityDef = DataFactory.eINSTANCE.createEntityDef();
 			dataDef = entityDef;
