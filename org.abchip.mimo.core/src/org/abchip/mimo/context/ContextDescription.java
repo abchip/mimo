@@ -8,7 +8,7 @@
  */
 package org.abchip.mimo.context;
 
-import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ import org.abchip.mimo.entity.Entity;
  * @model
  * @generated
  */
-public interface ContextDescription extends Entity {
+public interface ContextDescription extends EntityIdentifiable {
 	/**
 	 * Returns the value of the '<em><b>Anonymous</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -98,7 +98,7 @@ public interface ContextDescription extends Entity {
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
 	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_Id()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getId();

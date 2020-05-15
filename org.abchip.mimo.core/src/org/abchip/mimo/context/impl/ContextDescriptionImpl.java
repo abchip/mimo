@@ -10,7 +10,7 @@ package org.abchip.mimo.context.impl;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.ContextStatus;
-import org.abchip.mimo.entity.impl.EntityImpl;
+import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ContextDescriptionImpl extends EntityImpl implements ContextDescription {
+public class ContextDescriptionImpl extends EntityIdentifiableImpl implements ContextDescription {
 	/**
 	 * The default value of the '{@link #isAnonymous() <em>Anonymous</em>}' attribute.
 	 * <!-- begin-user-doc -->
