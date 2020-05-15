@@ -69,6 +69,9 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 		}
 		content.close();
 
+		if(responseStrBuilder.toString().isEmpty())
+			return;
+		
 		try {
 			if (isArray) {
 				JSONArray array = new JSONArray(responseStrBuilder.toString());

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -148,13 +149,22 @@ public interface DataPackage extends EPackage {
 	int ENUM_DEF = 3;
 
 	/**
+	 * The feature id for the '<em><b>Enum</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM_DEF__ENUM = DATA_DEF_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Enum Def</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUM_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 0;
+	int ENUM_DEF_FEATURE_COUNT = DATA_DEF_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.data.impl.DatetimeDefImpl <em>Datetime Def</em>}' class.
@@ -447,6 +457,17 @@ public interface DataPackage extends EPackage {
 	EClass getEnumDef();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.data.EnumDef#getEnum <em>Enum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Enum</em>'.
+	 * @see org.abchip.mimo.data.EnumDef#getEnum()
+	 * @see #getEnumDef()
+	 * @generated
+	 */
+	EReference getEnumDef_Enum();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.data.DatetimeDef <em>Datetime Def</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -710,6 +731,14 @@ public interface DataPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENUM_DEF = eINSTANCE.getEnumDef();
+
+		/**
+		 * The meta object literal for the '<em><b>Enum</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENUM_DEF__ENUM = eINSTANCE.getEnumDef_Enum();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.data.impl.DatetimeDefImpl <em>Datetime Def</em>}' class.

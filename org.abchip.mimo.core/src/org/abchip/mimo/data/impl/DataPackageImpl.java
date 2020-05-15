@@ -61,6 +61,7 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -349,6 +350,16 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getEnumDef_Enum() {
+		return (EReference)enumDefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDatetimeDef() {
 		return datetimeDefEClass;
 	}
@@ -561,6 +572,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		booleanDefEClass = createEClass(BOOLEAN_DEF);
 
 		enumDefEClass = createEClass(ENUM_DEF);
+		createEReference(enumDefEClass, ENUM_DEF__ENUM);
 
 		datetimeDefEClass = createEClass(DATETIME_DEF);
 		createEAttribute(datetimeDefEClass, DATETIME_DEF__TYPE);
@@ -681,6 +693,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		initEClass(booleanDefEClass, BooleanDef.class, "BooleanDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(enumDefEClass, EnumDef.class, "EnumDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEnumDef_Enum(), ecorePackage.getEEnum(), null, "enum", null, 1, 1, EnumDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(datetimeDefEClass, DatetimeDef.class, "DatetimeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDatetimeDef_Type(), this.getDatetimeType(), "type", null, 1, 1, DatetimeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

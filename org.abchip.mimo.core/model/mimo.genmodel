@@ -545,6 +545,8 @@
       <genClasses ecoreClass="mimo.ecore#//data/BooleanDef"/>
       <genClasses ecoreClass="mimo.ecore#//data/EnumDef">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//data/EnumDef/E"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference mimo.ecore#//data/EnumDef/enum"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//data/DatetimeDef">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//data/DatetimeDef/type"/>

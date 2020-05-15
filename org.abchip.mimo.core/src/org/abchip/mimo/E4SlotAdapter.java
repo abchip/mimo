@@ -42,7 +42,6 @@ import org.eclipse.emf.ecore.ETypedElement;
 
 public class E4SlotAdapter extends SlotImpl {
 
-
 	private ETypedElement element;
 
 	public E4SlotAdapter(Frame<?> frame, ETypedElement element) {
@@ -102,26 +101,26 @@ public class E4SlotAdapter extends SlotImpl {
 		if (klass.isPrimitive()) {
 
 			switch (klass.getName()) {
-				case "long":
-				case "short":
-				case "float":
-				case "double": {
-					NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
-					numericDef.setType(NumericType.getByName(Strings.firstToUpper(klass.getName())));
-					dataDef = numericDef;
-					break;
-				}
-				case "int": {
-					NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
-					numericDef.setType(NumericType.INTEGER);
-					dataDef = numericDef;
-					break;
-				}
-				case "boolean": {
-					BooleanDef booleanDef = DataFactory.eINSTANCE.createBooleanDef();
-					dataDef = booleanDef;
-					break;
-				}
+			case "long":
+			case "short":
+			case "float":
+			case "double": {
+				NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
+				numericDef.setType(NumericType.getByName(Strings.firstToUpper(klass.getName())));
+				dataDef = numericDef;
+				break;
+			}
+			case "int": {
+				NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
+				numericDef.setType(NumericType.INTEGER);
+				dataDef = numericDef;
+				break;
+			}
+			case "boolean": {
+				BooleanDef booleanDef = DataFactory.eINSTANCE.createBooleanDef();
+				dataDef = booleanDef;
+				break;
+			}
 			}
 		} else if (Number.class.isAssignableFrom(klass)) {
 			NumericDef numericDef = DataFactory.eINSTANCE.createNumericDef();
@@ -132,7 +131,7 @@ public class E4SlotAdapter extends SlotImpl {
 			dataDef = objectDef;
 		} else if (klass == byte[].class) {
 			BinaryDef binaryDef = DataFactory.eINSTANCE.createBinaryDef();
-			dataDef = binaryDef;			
+			dataDef = binaryDef;
 		} else if (Entity.class.isAssignableFrom(klass)) {
 			EntityDef entityDef = DataFactory.eINSTANCE.createEntityDef();
 			dataDef = entityDef;
@@ -144,7 +143,9 @@ public class E4SlotAdapter extends SlotImpl {
 			datetimeDef.setType(DatetimeType.TIME_STAMP);
 			dataDef = datetimeDef;
 		} else if (element.getEType() instanceof EEnum) {
-			EnumDef<?> enumDef = DataFactory.eINSTANCE.createEnumDef();
+			@SuppressWarnings("rawtypes")
+			EnumDef enumDef = DataFactory.eINSTANCE.createEnumDef();
+			enumDef.setEnum((EEnum) element.getEType());
 			dataDef = enumDef;
 		} else if (this.getDataClassName().equals(String.class.getCanonicalName()) || this.getDataClassName().equals(char.class.getCanonicalName())
 				|| this.getDataClassName().equals(URI.class.getCanonicalName()) || EntityIdentifiable.class.isAssignableFrom(this.getETypedElement().getEType().getInstanceClass())) {

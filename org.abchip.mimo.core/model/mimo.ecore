@@ -767,6 +767,8 @@
       <eTypeParameters name="E">
         <eBounds eClassifier="#//java/JavaEnum"/>
       </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="enum" lowerBound="1"
+          eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EEnum"/>
       <eGenericSuperTypes eClassifier="#//data/DataDef">
         <eTypeArguments eClassifier="#//java/JavaEnum"/>
       </eGenericSuperTypes>

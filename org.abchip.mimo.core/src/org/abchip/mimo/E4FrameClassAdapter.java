@@ -32,7 +32,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EReference;
@@ -180,21 +179,14 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 
 		URI uri = EcoreUtil.getURI(eObject);
 		String tenant = uri.authority();
-		try {
-			if (eFeature.isMany()) {
-				List<Object> values = new ArrayList<Object>();
-				for (Object object : (Collection<?>) value)
-					values.add(buildValue(entity, tenant, eFeature, object));
-				eObject.eSet(eFeature, values);
-			} else {
-				Object object = buildValue(entity, tenant, eFeature, value);
-				eObject.eSet(eFeature, object);
-			}
-		} catch (Exception e) {
-			if (eFeature.getEType() instanceof EDataType) {
-				value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
-				eObject.eSet(eFeature, value);
-			}
+		if (eFeature.isMany()) {
+			List<Object> values = new ArrayList<Object>();
+			for (Object object : (Collection<?>) value)
+				values.add(buildValue(entity, tenant, eFeature, object));
+			eObject.eSet(eFeature, values);
+		} else {
+			Object object = buildValue(entity, tenant, eFeature, value);
+			eObject.eSet(eFeature, object);
 		}
 	}
 
