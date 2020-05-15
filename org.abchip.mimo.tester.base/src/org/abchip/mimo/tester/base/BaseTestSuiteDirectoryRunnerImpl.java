@@ -15,11 +15,12 @@ import org.abchip.mimo.tester.TestManager;
 
 public abstract class BaseTestSuiteDirectoryRunnerImpl extends BaseTestSuiteRunnerImpl {
 
-	public BaseTestSuiteDirectoryRunnerImpl(Context context, TestManager testManager, String category) {
-		super(context, testManager, category);
-	}
+	private String runnerDirPath = null;	
 
-	private String runnerDirPath = "/runner/";	
+	public BaseTestSuiteDirectoryRunnerImpl(Context context, TestManager testManager, String category, String runnerDirPath) {
+		super(context, testManager, category);
+		this.runnerDirPath = runnerDirPath;
+	}
 
 	/**
 	 * Override to define runners dir path

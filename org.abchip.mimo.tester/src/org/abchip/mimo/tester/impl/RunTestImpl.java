@@ -23,7 +23,9 @@ import org.abchip.mimo.tester.TestSuiteRunner;
 import org.abchip.mimo.tester.TesterPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Run
@@ -180,11 +182,11 @@ public class RunTestImpl extends ServiceRequestImpl<RunTestResponse> implements 
 						switch (assertionResult.getAssertionState()) {
 						case FAILED:
 							AssertionFailed assertionFailed = (AssertionFailed) assertionResult;
-							response.getAssertions().add(assertionFailed);
+							response.getAssertions().add((AssertionResult) EcoreUtil.copy((EObject) assertionFailed));
 							break;
 						case SUCCESS:
 							AssertionSuccess assertionSuccess = (AssertionSuccess) assertionResult;
-							response.getAssertions().add(assertionSuccess);
+							response.getAssertions().add((AssertionResult) EcoreUtil.copy((EObject) assertionSuccess));
 							break;
 						}
 					}

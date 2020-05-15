@@ -18,7 +18,7 @@ import org.abchip.mimo.tester.base.BaseTestSuiteDirectoryRunnerImpl;
 public class TestLanguageSuiteRunnerImpl extends BaseTestSuiteDirectoryRunnerImpl {
 
 	public TestLanguageSuiteRunnerImpl(Context context, TestManager testManager, String category) {
-		super(context, testManager, category);
+		super(context, testManager, category, "/runner/");
 	}
 
 	@TestStarted

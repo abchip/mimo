@@ -27,7 +27,7 @@ public class TestDatabaseSuiteRunnerImpl extends BaseTestSuiteDirectoryRunnerImp
 	private Connection connection;
 
 	public TestDatabaseSuiteRunnerImpl(Context context, TestManager testManager, String category) {
-		super(context, testManager, category);
+		super(context, testManager, category, "/runner/");
 	}
 
 	@TestStarted

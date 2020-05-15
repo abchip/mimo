@@ -31,7 +31,7 @@ public class TestServerSuiteLauncherImpl implements TestSuiteLauncher {
 	private class InternalSuiteDirectoryRunnerImpl extends BaseTestSuiteDirectoryRunnerImpl {
 
 		public InternalSuiteDirectoryRunnerImpl(Context context, TestManager testManager, String category) {
-			super(context, testManager, category);
+			super(context, testManager, category, "/runner/");
 		}		
 	}
 }

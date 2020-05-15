@@ -18,7 +18,7 @@ import org.abchip.mimo.tester.base.BaseTestSuiteDirectoryRunnerImpl;
 public class TestAudioSuiteRunnerImpl extends BaseTestSuiteDirectoryRunnerImpl {
 
 	public TestAudioSuiteRunnerImpl(Context context, TestManager testManager, String category) {
-		super(context, testManager, category);
+		super(context, testManager, category, "/runner/");
 	}
 
 	@TestStarted

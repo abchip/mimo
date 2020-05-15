@@ -18,12 +18,12 @@ import org.abchip.mimo.tester.base.BaseTestSuiteDirectoryRunnerImpl;
 public class TestLogicSuiteRunnerImpl extends BaseTestSuiteDirectoryRunnerImpl {
 
 	public TestLogicSuiteRunnerImpl(Context context, TestManager testManager, String category) {
-		super(context, testManager, category);
+		super(context, testManager, category, "/runner/");
 	}
 
 	@TestStarted
 	public void start() {
-		
+
 	}
 
 	@TestStopped
