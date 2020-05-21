@@ -24,11 +24,12 @@ public class HttpExternalCredentialHandler implements ResponseHandler<Authentica
 	@Override
 	public AuthenticationUserPassword handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
-		if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
+		switch (response.getStatusLine().getStatusCode()) {
+		case HttpServletResponse.SC_OK:
+			AuthenticationUserPassword authenticationUserPassword = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
+			return authenticationUserPassword;
+		default:
 			throw HttpUtils.buildException(response);
-
-		AuthenticationUserPassword authenticationUserPassword = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
-
-		return authenticationUserPassword;
+		}
 	}
 }

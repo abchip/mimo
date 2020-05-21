@@ -22,9 +22,11 @@ public class HttpCheckLoginHandler implements ResponseHandler<Boolean> {
 	@Override
 	public Boolean handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
-		if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
+		switch (response.getStatusLine().getStatusCode()) {
+		case HttpServletResponse.SC_OK:
+			return true;
+		default:
 			throw HttpUtils.buildException(response);
-
-		return true;
+		}
 	}
 }

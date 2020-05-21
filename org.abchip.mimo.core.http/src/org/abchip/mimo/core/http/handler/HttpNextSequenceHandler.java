@@ -24,10 +24,12 @@ public class HttpNextSequenceHandler implements ResponseHandler<String> {
 	@Override
 	public String handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
-		if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_FOUND)
+		switch (response.getStatusLine().getStatusCode()) {
+		case HttpServletResponse.SC_FOUND:
+			HttpEntity httpEntity = response.getEntity();
+			return EntityUtils.toString(httpEntity, "UTF-8");
+		default:
 			throw HttpUtils.buildException(response);
-
-		HttpEntity httpEntity = response.getEntity();
-		return EntityUtils.toString(httpEntity, "UTF-8");
+		}
 	}
 }

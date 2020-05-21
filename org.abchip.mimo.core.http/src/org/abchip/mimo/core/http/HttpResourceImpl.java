@@ -100,8 +100,13 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			throw new ResourceException("Unconnected resource " + getFrame().getURI());
 
 		try {
-			connector.execute("save", query, new HttpSaveHandler());
-			this.attach(entity);
+			@SuppressWarnings({ "unchecked", "rawtypes" })
+			ResponseHandler<E> handler = new HttpSaveHandler(this.resourceSerializer);
+			synchronized (this.resourceSerializer) {
+				entity = connector.execute("save", query, handler);
+			}
+			if (entity != null)
+				this.attach(entity);
 		} catch (Exception e) {
 			throw new ResourceException(e);
 		}
@@ -129,7 +134,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			synchronized (this.resourceSerializer) {
 				entity = connector.execute("lookup", query, handler);
 			}
-			if(entity != null)
+			if (entity != null)
 				this.attach(entity);
 		} catch (Exception e) {
 			throw new ResourceException(e);

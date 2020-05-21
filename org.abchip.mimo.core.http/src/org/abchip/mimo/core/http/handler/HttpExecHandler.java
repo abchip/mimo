@@ -32,15 +32,17 @@ public class HttpExecHandler<V extends ServiceResponse> implements ResponseHandl
 	@Override
 	public V handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
-		if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
+		switch (response.getStatusLine().getStatusCode()) {
+		case HttpServletResponse.SC_OK:
+			HttpEntity httpEntity = response.getEntity();
+			try (InputStream stream = httpEntity.getContent()) {
+				serializer.load(stream, false);
+				return serializer.get();
+			} finally {
+				serializer.clear();
+			}
+		default:
 			throw HttpUtils.buildException(response);
-
-		HttpEntity httpEntity = response.getEntity();
-		try (InputStream stream = httpEntity.getContent()) {
-			serializer.load(stream, false);
-			return serializer.get();
-		} finally {
-			serializer.clear();
 		}
 	}
 }

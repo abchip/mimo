@@ -28,6 +28,7 @@ public class SaveServlet extends BaseServlet {
 		_execute(context, request, response);
 	}
 
+	@SuppressWarnings("resource")
 	private <E extends EntityIdentifiable> void _execute(Context context, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String tenant = request.getParameter("tenant");
@@ -51,6 +52,11 @@ public class SaveServlet extends BaseServlet {
 			entityWriter.create(entity, Boolean.parseBoolean(replace));
 
 			response.setStatus(HttpServletResponse.SC_OK);
+
+			entitySerializer.clear();
+			entitySerializer.add(entity);
+			entitySerializer.save(response.getOutputStream());
+
 		} catch (ResourceException e) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 			return;

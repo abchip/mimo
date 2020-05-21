@@ -9,22 +9,40 @@
 package org.abchip.mimo.core.http.handler;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.abchip.mimo.core.http.HttpUtils;
+import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.resource.ResourceSerializer;
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 
-public class HttpSaveHandler implements ResponseHandler<Boolean> {
+public class HttpSaveHandler<E extends EntityIdentifiable> implements ResponseHandler<E> {
+
+	protected ResourceSerializer<E> serializer;
+
+	public HttpSaveHandler(ResourceSerializer<E> resourceSerializer) {
+		this.serializer = resourceSerializer;
+	}
 
 	@Override
-	public Boolean handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
+	public E handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
-		if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_OK)
+		switch (response.getStatusLine().getStatusCode()) {
+		case HttpServletResponse.SC_OK:
+			HttpEntity httpEntity = response.getEntity();
+			try (InputStream stream = httpEntity.getContent()) {
+				serializer.load(stream, false);
+				return serializer.get();
+			} finally {
+				serializer.clear();
+			}
+		default:
 			throw HttpUtils.buildException(response);
-
-		return true;
+		}
 	}
 }
