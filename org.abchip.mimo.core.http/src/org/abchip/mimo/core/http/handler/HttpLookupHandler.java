@@ -34,19 +34,17 @@ public class HttpLookupHandler<E extends EntityIdentifiable> implements Response
 
 		switch (response.getStatusLine().getStatusCode()) {
 		case HttpServletResponse.SC_FOUND:
-			break;
+			HttpEntity httpEntity = response.getEntity();
+			try (InputStream stream = httpEntity.getContent()) {
+				serializer.load(stream, false);
+				return serializer.get();
+			} finally {
+				serializer.clear();
+			}
 		case HttpServletResponse.SC_NOT_FOUND:
 			return null;
 		default:
 			throw HttpUtils.buildException(response);
-		}
-
-		HttpEntity httpEntity = response.getEntity();
-		try (InputStream stream = httpEntity.getContent()) {
-			serializer.load(stream, false);
-			return serializer.get();
-		} finally {
-			serializer.clear();
 		}
 	}
 }

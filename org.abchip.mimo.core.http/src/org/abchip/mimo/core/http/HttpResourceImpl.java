@@ -129,7 +129,8 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			synchronized (this.resourceSerializer) {
 				entity = connector.execute("lookup", query, handler);
 			}
-			this.attach(entity);
+			if(entity != null)
+				this.attach(entity);
 		} catch (Exception e) {
 			throw new ResourceException(e);
 		}
