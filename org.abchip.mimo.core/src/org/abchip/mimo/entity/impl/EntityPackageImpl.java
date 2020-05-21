@@ -23,7 +23,9 @@ import org.abchip.mimo.data.DataPackage;
 import org.abchip.mimo.data.impl.DataPackageImpl;
 
 import org.abchip.mimo.entity.Cardinality;
+import org.abchip.mimo.entity.Create;
 import org.abchip.mimo.entity.Default;
+import org.abchip.mimo.entity.Delete;
 import org.abchip.mimo.entity.Domain;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityContainer;
@@ -39,6 +41,7 @@ import org.abchip.mimo.entity.EntityTyped;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 
+import org.abchip.mimo.entity.Update;
 import org.abchip.mimo.impl.MimoPackageImpl;
 
 import org.abchip.mimo.java.JavaPackage;
@@ -84,7 +87,21 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass createEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass defaultEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass deleteEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,6 +179,13 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EClass slotEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass updateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -312,6 +336,26 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getCreate() {
+		return createEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCreate_Entity() {
+		return (EReference)createEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDefault() {
 		return defaultEClass;
 	}
@@ -334,6 +378,26 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	@Override
 	public EAttribute getDefault_Values() {
 		return (EAttribute)defaultEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDelete() {
+		return deleteEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDelete_Entity() {
+		return (EReference)deleteEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -792,6 +856,26 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getUpdate() {
+		return updateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUpdate_Entity() {
+		return (EReference)updateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getEntityState() {
 		return entityStateEEnum;
 	}
@@ -829,9 +913,15 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(cardinalityEClass, CARDINALITY__MAX);
 		createEAttribute(cardinalityEClass, CARDINALITY__MIN);
 
+		createEClass = createEClass(CREATE);
+		createEReference(createEClass, CREATE__ENTITY);
+
 		defaultEClass = createEClass(DEFAULT);
 		createEAttribute(defaultEClass, DEFAULT__VALUE);
 		createEAttribute(defaultEClass, DEFAULT__VALUES);
+
+		deleteEClass = createEClass(DELETE);
+		createEReference(deleteEClass, DELETE__ENTITY);
 
 		domainEClass = createEClass(DOMAIN);
 		createEAttribute(domainEClass, DOMAIN__FRAME);
@@ -889,6 +979,9 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		createEAttribute(slotEClass, SLOT__TRANSIENT);
 		createEAttribute(slotEClass, SLOT__TO_STRING);
 
+		updateEClass = createEClass(UPDATE);
+		createEReference(updateEClass, UPDATE__ENTITY);
+
 		// Create enums
 		entityStateEEnum = createEEnum(ENTITY_STATE);
 	}
@@ -917,18 +1010,26 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ResourcePackage theResourcePackage = (ResourcePackage)EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
+		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		ResourcePackage theResourcePackage = (ResourcePackage)EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
 
 		// Create type parameters
+		ETypeParameter createEClass_E = addETypeParameter(createEClass, "E");
+		ETypeParameter deleteEClass_E = addETypeParameter(deleteEClass, "E");
 		ETypeParameter entityIteratorEClass_E = addETypeParameter(entityIteratorEClass, "E");
 		ETypeParameter entityTypedEClass_T = addETypeParameter(entityTypedEClass, "T");
 		ETypeParameter entityTypeEClass_E = addETypeParameter(entityTypeEClass, "E");
 		ETypeParameter frameEClass_E = addETypeParameter(frameEClass, "E");
+		ETypeParameter updateEClass_E = addETypeParameter(updateEClass, "E");
 
 		// Set bounds for type parameters
-		EGenericType g1 = createEGenericType(this.getEntity());
+		EGenericType g1 = createEGenericType(this.getEntityIdentifiable());
+		createEClass_E.getEBounds().add(g1);
+		g1 = createEGenericType(this.getEntityIdentifiable());
+		deleteEClass_E.getEBounds().add(g1);
+		g1 = createEGenericType(this.getEntity());
 		entityIteratorEClass_E.getEBounds().add(g1);
 		g1 = createEGenericType(this.getEntityType());
 		EGenericType g2 = createEGenericType();
@@ -940,10 +1041,28 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		entityTypeEClass_E.getEBounds().add(g1);
 		g1 = createEGenericType(this.getEntity());
 		frameEClass_E.getEBounds().add(g1);
+		g1 = createEGenericType(this.getEntityIdentifiable());
+		updateEClass_E.getEBounds().add(g1);
 
 		// Add supertypes to classes
 		cardinalityEClass.getESuperTypes().add(this.getEntity());
+		g1 = createEGenericType(theServicePackage.getServiceRequest());
+		g2 = createEGenericType(theServicePackage.getServiceResponse());
+		g1.getETypeArguments().add(g2);
+		createEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
+		g2 = createEGenericType(theServicePackage.getServiceResponse());
+		g1.getETypeArguments().add(g2);
+		createEClass.getEGenericSuperTypes().add(g1);
 		defaultEClass.getESuperTypes().add(this.getEntity());
+		g1 = createEGenericType(theServicePackage.getServiceRequest());
+		g2 = createEGenericType(theServicePackage.getServiceResponse());
+		g1.getETypeArguments().add(g2);
+		deleteEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
+		g2 = createEGenericType(theServicePackage.getServiceResponse());
+		g1.getETypeArguments().add(g2);
+		deleteEClass.getEGenericSuperTypes().add(g1);
 		domainEClass.getESuperTypes().add(this.getEntity());
 		entityContainerEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		entityEnumEClass.getESuperTypes().add(this.getEntityIdentifiable());
@@ -963,6 +1082,14 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		entityTypeEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		frameEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		slotEClass.getESuperTypes().add(this.getEntityIdentifiable());
+		g1 = createEGenericType(theServicePackage.getServiceRequest());
+		g2 = createEGenericType(theServicePackage.getServiceResponse());
+		g1.getETypeArguments().add(g2);
+		updateEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
+		g2 = createEGenericType(theServicePackage.getServiceResponse());
+		g1.getETypeArguments().add(g2);
+		updateEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -973,6 +1100,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		addEOperation(cardinalityEClass, ecorePackage.getEBoolean(), "isMultiple", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(createEClass, Create.class, "Create", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		g1 = createEGenericType(createEClass_E);
+		initEReference(getCreate_Entity(), g1, null, "entity", null, 1, 1, Create.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(defaultEClass, Default.class, "Default", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDefault_Value(), ecorePackage.getEString(), "value", null, 0, 1, Default.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDefault_Values(), ecorePackage.getEString(), "values", null, 0, -1, Default.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -980,6 +1111,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		addEOperation(defaultEClass, null, "clear", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(defaultEClass, ecorePackage.getEBoolean(), "isEmpty", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(deleteEClass, Delete.class, "Delete", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		g1 = createEGenericType(deleteEClass_E);
+		initEReference(getDelete_Entity(), g1, null, "entity", null, 1, 1, Delete.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDomain_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1124,6 +1259,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		initEAttribute(getSlot_ToString(), ecorePackage.getEBoolean(), "toString", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(slotEClass, theDataPackage.getDataType(), "getDataType", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(updateEClass, Update.class, "Update", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		g1 = createEGenericType(updateEClass_E);
+		initEReference(getUpdate_Entity(), g1, null, "entity", null, 1, 1, Update.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(entityStateEEnum, EntityState.class, "EntityState");

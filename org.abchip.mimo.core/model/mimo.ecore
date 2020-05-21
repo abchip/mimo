@@ -846,12 +846,42 @@
           defaultValueLiteral="1"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Create">
+      <eTypeParameters name="E">
+        <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+      </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
+          containment="true">
+        <eGenericType eTypeParameter="#//entity/Create/E"/>
+      </eStructuralFeatures>
+      <eGenericSuperTypes eClassifier="#//service/ServiceRequest">
+        <eTypeArguments eClassifier="#//service/ServiceResponse"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
+        <eTypeArguments eClassifier="#//service/ServiceResponse"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Default" eSuperTypes="#//entity/Entity">
       <eOperations name="clear"/>
       <eOperations name="isEmpty" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
           upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Delete">
+      <eTypeParameters name="E">
+        <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+      </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
+          containment="true">
+        <eGenericType eTypeParameter="#//entity/Delete/E"/>
+      </eStructuralFeatures>
+      <eGenericSuperTypes eClassifier="#//service/ServiceRequest">
+        <eTypeArguments eClassifier="#//service/ServiceResponse"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
+        <eTypeArguments eClassifier="#//service/ServiceResponse"/>
+      </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Domain" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
@@ -1051,6 +1081,21 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="transient" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Update">
+      <eTypeParameters name="E">
+        <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+      </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
+          containment="true">
+        <eGenericType eTypeParameter="#//entity/Update/E"/>
+      </eStructuralFeatures>
+      <eGenericSuperTypes eClassifier="#//service/ServiceRequest">
+        <eTypeArguments eClassifier="#//service/ServiceResponse"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
+        <eTypeArguments eClassifier="#//service/ServiceResponse"/>
+      </eGenericSuperTypes>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="java" nsURI="http://www.abchip.org/mimo/java" nsPrefix="mimo-java">

@@ -9,6 +9,7 @@ package org.abchip.mimo.entity;
 
 import org.abchip.mimo.java.JavaPackage;
 
+import org.abchip.mimo.service.ServicePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -71,7 +72,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 3;
+	int ENTITY = 5;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -127,7 +128,110 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getDefault()
 	 * @generated
 	 */
-	int DEFAULT = 1;
+	int DEFAULT = 2;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.DomainImpl <em>Domain</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.DomainImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getDomain()
+	 * @generated
+	 */
+	int DOMAIN = 4;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityContainerImpl <em>Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.EntityContainerImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityContainer()
+	 * @generated
+	 */
+	int ENTITY_CONTAINER = 6;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityIdentifiableImpl <em>Identifiable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.EntityIdentifiableImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityIdentifiable()
+	 * @generated
+	 */
+	int ENTITY_IDENTIFIABLE = 9;
+
+	/**
+	 * The number of structural features of the '<em>Identifiable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_IDENTIFIABLE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.CreateImpl <em>Create</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.CreateImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getCreate()
+	 * @generated
+	 */
+	int CREATE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE__USER_PROFILE = ServicePackage.SERVICE_REQUEST__USER_PROFILE;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE__ENTITY = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Create</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -157,14 +261,68 @@ public interface EntityPackage extends EPackage {
 	int DEFAULT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.DomainImpl <em>Domain</em>}' class.
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.DeleteImpl <em>Delete</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.impl.DomainImpl
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getDomain()
+	 * @see org.abchip.mimo.entity.impl.DeleteImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getDelete()
 	 * @generated
 	 */
-	int DOMAIN = 2;
+	int DELETE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE__USER_PROFILE = ServicePackage.SERVICE_REQUEST__USER_PROFILE;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE__ENTITY = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Delete</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Frame</b></em>' attribute.
@@ -192,35 +350,6 @@ public interface EntityPackage extends EPackage {
 	 * @ordered
 	 */
 	int DOMAIN_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityContainerImpl <em>Container</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.impl.EntityContainerImpl
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityContainer()
-	 * @generated
-	 */
-	int ENTITY_CONTAINER = 4;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.EntityIdentifiableImpl <em>Identifiable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.entity.impl.EntityIdentifiableImpl
-	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityIdentifiable()
-	 * @generated
-	 */
-	int ENTITY_IDENTIFIABLE = 7;
-
-	/**
-	 * The number of structural features of the '<em>Identifiable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_IDENTIFIABLE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Contents</b></em>' containment reference list.
@@ -257,7 +386,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityEnum()
 	 * @generated
 	 */
-	int ENTITY_ENUM = 5;
+	int ENTITY_ENUM = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -294,7 +423,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityInfo()
 	 * @generated
 	 */
-	int ENTITY_INFO = 6;
+	int ENTITY_INFO = 8;
 
 	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
@@ -349,7 +478,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityIterator()
 	 * @generated
 	 */
-	int ENTITY_ITERATOR = 8;
+	int ENTITY_ITERATOR = 10;
 
 	/**
 	 * The number of structural features of the '<em>Iterator</em>' class.
@@ -368,7 +497,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityTyped()
 	 * @generated
 	 */
-	int ENTITY_TYPED = 9;
+	int ENTITY_TYPED = 11;
 
 	/**
 	 * The number of structural features of the '<em>Typed</em>' class.
@@ -387,7 +516,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityType()
 	 * @generated
 	 */
-	int ENTITY_TYPE = 10;
+	int ENTITY_TYPE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -415,7 +544,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrame()
 	 * @generated
 	 */
-	int FRAME = 11;
+	int FRAME = 13;
 
 	/**
 	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
@@ -533,7 +662,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSlot()
 	 * @generated
 	 */
-	int SLOT = 12;
+	int SLOT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -653,6 +782,70 @@ public interface EntityPackage extends EPackage {
 	int SLOT_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 12;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.UpdateImpl <em>Update</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.UpdateImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getUpdate()
+	 * @generated
+	 */
+	int UPDATE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE__USER_PROFILE = ServicePackage.SERVICE_REQUEST__USER_PROFILE;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE__ENTITY = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityState <em>State</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -660,7 +853,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityState()
 	 * @generated
 	 */
-	int ENTITY_STATE = 13;
+	int ENTITY_STATE = 16;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Cardinality <em>Cardinality</em>}'.
@@ -695,6 +888,27 @@ public interface EntityPackage extends EPackage {
 	EAttribute getCardinality_Min();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Create <em>Create</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Create</em>'.
+	 * @see org.abchip.mimo.entity.Create
+	 * @generated
+	 */
+	EClass getCreate();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.entity.Create#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Entity</em>'.
+	 * @see org.abchip.mimo.entity.Create#getEntity()
+	 * @see #getCreate()
+	 * @generated
+	 */
+	EReference getCreate_Entity();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Default <em>Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -725,6 +939,27 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDefault_Values();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Delete <em>Delete</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Delete</em>'.
+	 * @see org.abchip.mimo.entity.Delete
+	 * @generated
+	 */
+	EClass getDelete();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.entity.Delete#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Entity</em>'.
+	 * @see org.abchip.mimo.entity.Delete#getEntity()
+	 * @see #getDelete()
+	 * @generated
+	 */
+	EReference getDelete_Entity();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Domain <em>Domain</em>}'.
@@ -1211,6 +1446,27 @@ public interface EntityPackage extends EPackage {
 	EAttribute getSlot_ToString();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Update <em>Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Update</em>'.
+	 * @see org.abchip.mimo.entity.Update
+	 * @generated
+	 */
+	EClass getUpdate();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.entity.Update#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Entity</em>'.
+	 * @see org.abchip.mimo.entity.Update#getEntity()
+	 * @see #getUpdate()
+	 * @generated
+	 */
+	EReference getUpdate_Entity();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.EntityState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1269,6 +1525,24 @@ public interface EntityPackage extends EPackage {
 		EAttribute CARDINALITY__MIN = eINSTANCE.getCardinality_Min();
 
 		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.CreateImpl <em>Create</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.entity.impl.CreateImpl
+		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getCreate()
+		 * @generated
+		 */
+		EClass CREATE = eINSTANCE.getCreate();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREATE__ENTITY = eINSTANCE.getCreate_Entity();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.DefaultImpl <em>Default</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1293,6 +1567,24 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEFAULT__VALUES = eINSTANCE.getDefault_Values();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.DeleteImpl <em>Delete</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.entity.impl.DeleteImpl
+		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getDelete()
+		 * @generated
+		 */
+		EClass DELETE = eINSTANCE.getDelete();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DELETE__ENTITY = eINSTANCE.getDelete_Entity();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.DomainImpl <em>Domain</em>}' class.
@@ -1675,6 +1967,24 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SLOT__TO_STRING = eINSTANCE.getSlot_ToString();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.UpdateImpl <em>Update</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.entity.impl.UpdateImpl
+		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getUpdate()
+		 * @generated
+		 */
+		EClass UPDATE = eINSTANCE.getUpdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UPDATE__ENTITY = eINSTANCE.getUpdate_Entity();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.EntityState <em>State</em>}' enum.

@@ -62,9 +62,12 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case EntityPackage.CREATE: return (EObject)createCreate();
 			case EntityPackage.DEFAULT: return (EObject)createDefault();
+			case EntityPackage.DELETE: return (EObject)createDelete();
 			case EntityPackage.DOMAIN: return (EObject)createDomain();
 			case EntityPackage.ENTITY_CONTAINER: return (EObject)createEntityContainer();
+			case EntityPackage.UPDATE: return (EObject)createUpdate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -106,9 +109,31 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	 * @generated
 	 */
 	@Override
+	public <E extends EntityIdentifiable> Create<E> createCreate() {
+		CreateImpl<E> create = new CreateImpl<E>();
+		return create;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Default createDefault() {
 		DefaultImpl default_ = new DefaultImpl();
 		return default_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public <E extends EntityIdentifiable> Delete<E> createDelete() {
+		DeleteImpl<E> delete = new DeleteImpl<E>();
+		return delete;
 	}
 
 	/**
@@ -131,6 +156,17 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	public EntityContainer createEntityContainer() {
 		EntityContainerImpl entityContainer = new EntityContainerImpl();
 		return entityContainer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public <E extends EntityIdentifiable> Update<E> createUpdate() {
+		UpdateImpl<E> update = new UpdateImpl<E>();
+		return update;
 	}
 
 	/**
