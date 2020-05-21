@@ -32,8 +32,14 @@ public class HttpLookupHandler<E extends EntityIdentifiable> implements Response
 	@Override
 	public E handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
-		if (response.getStatusLine().getStatusCode() != HttpServletResponse.SC_FOUND)
+		switch (response.getStatusLine().getStatusCode()) {
+		case HttpServletResponse.SC_FOUND:
+			break;
+		case HttpServletResponse.SC_NOT_FOUND:
+			return null;
+		default:
 			throw HttpUtils.buildException(response);
+		}
 
 		HttpEntity httpEntity = response.getEntity();
 		try (InputStream stream = httpEntity.getContent()) {
@@ -43,5 +49,4 @@ public class HttpLookupHandler<E extends EntityIdentifiable> implements Response
 			serializer.clear();
 		}
 	}
-
 }
