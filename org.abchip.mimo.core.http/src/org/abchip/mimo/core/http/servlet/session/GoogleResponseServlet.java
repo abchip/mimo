@@ -104,7 +104,7 @@ public class GoogleResponseServlet extends HttpServlet {
 				String returnURI = oauth2Google.isa().getValue(oauth2Google, "returnUrl", false, false).toString();
 				String secret = oauth2Google.isa().getValue(oauth2Google, "clientSecret", false, false).toString();
 
-				URI uri = new URIBuilder().setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("grant_type", "authorization_code")
+				URI uri = new URIBuilder(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("grant_type", "authorization_code")
 						.setParameter("code", authorizationCode).setParameter("redirect_uri", returnURI).build();
 
 				postMethod = new HttpPost(uri);
