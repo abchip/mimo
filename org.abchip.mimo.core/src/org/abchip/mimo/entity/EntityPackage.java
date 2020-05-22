@@ -186,7 +186,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+	int CREATE__LOCALE = ServicePackage.SERVICE_ENTITY_REQUEST__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
@@ -195,7 +195,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+	int CREATE__TENANT = ServicePackage.SERVICE_ENTITY_REQUEST__TENANT;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -204,7 +204,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+	int CREATE__CONTEXT = ServicePackage.SERVICE_ENTITY_REQUEST__CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
@@ -213,7 +213,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE__USER_PROFILE = ServicePackage.SERVICE_REQUEST__USER_PROFILE;
+	int CREATE__USER_PROFILE = ServicePackage.SERVICE_ENTITY_REQUEST__USER_PROFILE;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' containment reference.
@@ -222,7 +222,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE__ENTITY = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+	int CREATE__ENTITY = ServicePackage.SERVICE_ENTITY_REQUEST__ENTITY;
 
 	/**
 	 * The number of structural features of the '<em>Create</em>' class.
@@ -231,7 +231,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
+	int CREATE_FEATURE_COUNT = ServicePackage.SERVICE_ENTITY_REQUEST_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -277,7 +277,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELETE__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+	int DELETE__LOCALE = ServicePackage.SERVICE_ENTITY_REQUEST__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
@@ -286,7 +286,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELETE__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+	int DELETE__TENANT = ServicePackage.SERVICE_ENTITY_REQUEST__TENANT;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -295,7 +295,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELETE__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+	int DELETE__CONTEXT = ServicePackage.SERVICE_ENTITY_REQUEST__CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
@@ -304,7 +304,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELETE__USER_PROFILE = ServicePackage.SERVICE_REQUEST__USER_PROFILE;
+	int DELETE__USER_PROFILE = ServicePackage.SERVICE_ENTITY_REQUEST__USER_PROFILE;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' containment reference.
@@ -313,7 +313,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELETE__ENTITY = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+	int DELETE__ENTITY = ServicePackage.SERVICE_ENTITY_REQUEST__ENTITY;
 
 	/**
 	 * The number of structural features of the '<em>Delete</em>' class.
@@ -322,7 +322,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELETE_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
+	int DELETE_FEATURE_COUNT = ServicePackage.SERVICE_ENTITY_REQUEST_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Frame</b></em>' attribute.
@@ -798,7 +798,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+	int UPDATE__LOCALE = ServicePackage.SERVICE_ENTITY_REQUEST__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
@@ -807,7 +807,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+	int UPDATE__TENANT = ServicePackage.SERVICE_ENTITY_REQUEST__TENANT;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -816,7 +816,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+	int UPDATE__CONTEXT = ServicePackage.SERVICE_ENTITY_REQUEST__CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
@@ -825,7 +825,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE__USER_PROFILE = ServicePackage.SERVICE_REQUEST__USER_PROFILE;
+	int UPDATE__USER_PROFILE = ServicePackage.SERVICE_ENTITY_REQUEST__USER_PROFILE;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' containment reference.
@@ -834,7 +834,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE__ENTITY = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+	int UPDATE__ENTITY = ServicePackage.SERVICE_ENTITY_REQUEST__ENTITY;
 
 	/**
 	 * The number of structural features of the '<em>Update</em>' class.
@@ -843,7 +843,7 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
+	int UPDATE_FEATURE_COUNT = ServicePackage.SERVICE_ENTITY_REQUEST_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.EntityState <em>State</em>}' enum.
@@ -898,17 +898,6 @@ public interface EntityPackage extends EPackage {
 	EClass getCreate();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.entity.Create#getEntity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Entity</em>'.
-	 * @see org.abchip.mimo.entity.Create#getEntity()
-	 * @see #getCreate()
-	 * @generated
-	 */
-	EReference getCreate_Entity();
-
-	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Default <em>Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -949,17 +938,6 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDelete();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.entity.Delete#getEntity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Entity</em>'.
-	 * @see org.abchip.mimo.entity.Delete#getEntity()
-	 * @see #getDelete()
-	 * @generated
-	 */
-	EReference getDelete_Entity();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Domain <em>Domain</em>}'.
@@ -1456,17 +1434,6 @@ public interface EntityPackage extends EPackage {
 	EClass getUpdate();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.entity.Update#getEntity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Entity</em>'.
-	 * @see org.abchip.mimo.entity.Update#getEntity()
-	 * @see #getUpdate()
-	 * @generated
-	 */
-	EReference getUpdate_Entity();
-
-	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.entity.EntityState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1535,14 +1502,6 @@ public interface EntityPackage extends EPackage {
 		EClass CREATE = eINSTANCE.getCreate();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CREATE__ENTITY = eINSTANCE.getCreate_Entity();
-
-		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.DefaultImpl <em>Default</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1577,14 +1536,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DELETE = eINSTANCE.getDelete();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DELETE__ENTITY = eINSTANCE.getDelete_Entity();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.DomainImpl <em>Domain</em>}' class.
@@ -1977,14 +1928,6 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UPDATE = eINSTANCE.getUpdate();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UPDATE__ENTITY = eINSTANCE.getUpdate_Entity();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.EntityState <em>State</em>}' enum.
