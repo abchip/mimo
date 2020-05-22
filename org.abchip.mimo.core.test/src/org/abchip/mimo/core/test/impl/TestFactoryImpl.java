@@ -79,6 +79,8 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 		switch (eDataType.getClassifierID()) {
 			case TestPackage.ENUM1:
 				return createEnum1FromString(eDataType, initialValue);
+			case TestPackage.STRING8_CHARS:
+				return createString8CharsFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -94,6 +96,8 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 		switch (eDataType.getClassifierID()) {
 			case TestPackage.ENUM1:
 				return convertEnum1ToString(eDataType, instanceValue);
+			case TestPackage.STRING8_CHARS:
+				return convertString8CharsToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -139,6 +143,24 @@ public class TestFactoryImpl extends EFactoryImpl implements TestFactory {
 	 */
 	public String convertEnum1ToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String createString8CharsFromString(EDataType eDataType, String initialValue) {
+		return (String)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertString8CharsToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

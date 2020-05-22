@@ -7,7 +7,9 @@ Bundle-Vendor: ABChip
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.abchip.mimo.core,
  org.eclipse.osgi,
- org.eclipse.equinox.console;bundle-version="1.4.0"
+ org.eclipse.equinox.console;bundle-version="1.4.0",
+ org.eclipse.emf.validation;bundle-version="1.8.0",
+ org.eclipse.emf.validation.ocl;bundle-version="1.4.0"
 Bundle-ClassPath: .,
  lib/json-1.8.jar
 Export-Package: org.abchip.mimo.core.base,

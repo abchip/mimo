@@ -4,7 +4,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="settingDelegates" value="org.abchip.mimo.core.base.setting"/>
     <details key="invocationDelegates" value="org.abchip.mimo.core.base.invocation"/>
-    <details key="validationDelegates" value="org.abchip.mimo.core.base.validation"/>
+    <details key="validationDelegates" value=""/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectA" eSuperTypes="../../org.abchip.mimo.core/model/mimo.ecore#//entity/EntityIdentifiable">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -31,9 +31,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="enum1" lowerBound="1" eType="#//Enum1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nationality" eType="#//String8Chars"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Enum1">
     <eLiterals name="Value1" value="10" literal="VAL1"/>
     <eLiterals name="Value2" value="20" literal="VAL2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="String8Chars" instanceClassName="java.lang.String">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="maxLength" value="8"/>
+    </eAnnotations>
   </eClassifiers>
 </ecore:EPackage>

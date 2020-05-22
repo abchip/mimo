@@ -25,5 +25,19 @@
             uri="org.abchip.mimo.core.base.invocation">
       </factory>
    </extension>
+   <extension
+         id="mimo"
+         point="org.eclipse.emf.validation.constraintProviders">
+      <constraintProvider
+            cache="true"
+            class="org.abchip.mimo.core.base.BaseConstraintProvider">
+         <package
+               namespaceUri="org.abchip.mimo.core.base.constraint">
+         </package>
+         <description>
+            dsfsdfsdfdjsgldsfjhglsd
+         </description>
+      </constraintProvider>
+   </extension>
 
 </plugin>

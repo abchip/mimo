@@ -8,6 +8,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.abchip.mimo.core.test,
  org.abchip.mimo.core.test.impl,
+ org.abchip.mimo.core.test.util,
  org.abchip.mimo.core.test.runner
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,

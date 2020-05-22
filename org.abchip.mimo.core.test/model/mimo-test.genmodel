@@ -13,6 +13,7 @@
       <genEnumLiterals ecoreEnumLiteral="mimo-test.ecore#//Enum1/Value1"/>
       <genEnumLiterals ecoreEnumLiteral="mimo-test.ecore#//Enum1/Value2"/>
     </genEnums>
+    <genDataTypes ecoreDataType="mimo-test.ecore#//String8Chars"/>
     <genClasses ecoreClass="mimo-test.ecore#//ObjectA">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo-test.ecore#//ObjectA/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo-test.ecore#//ObjectA/text"/>
@@ -24,6 +25,7 @@
     <genClasses ecoreClass="mimo-test.ecore#//ObjectB">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo-test.ecore#//ObjectB/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo-test.ecore#//ObjectB/enum1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo-test.ecore#//ObjectB/nationality"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

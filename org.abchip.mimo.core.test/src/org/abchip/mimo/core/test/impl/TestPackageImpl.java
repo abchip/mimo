@@ -13,12 +13,15 @@ import org.abchip.mimo.core.test.ObjectA;
 import org.abchip.mimo.core.test.ObjectB;
 import org.abchip.mimo.core.test.TestFactory;
 import org.abchip.mimo.core.test.TestPackage;
+import org.abchip.mimo.core.test.util.TestValidator;
 import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -48,6 +51,13 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	private EEnum enum1EEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType string8CharsEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -104,6 +114,16 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 
 		// Initialize created meta-data
 		theTestPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theTestPackage,
+			 new EValidator.Descriptor() {
+				 @Override
+				 public EValidator getEValidator() {
+					 return TestValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theTestPackage.freeze();
@@ -209,8 +229,28 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getObjectB_Nationality() {
+		return (EAttribute)objectBEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getEnum1() {
 		return enum1EEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EDataType getString8Chars() {
+		return string8CharsEDataType;
 	}
 
 	/**
@@ -252,9 +292,13 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		objectBEClass = createEClass(OBJECT_B);
 		createEAttribute(objectBEClass, OBJECT_B__NAME);
 		createEAttribute(objectBEClass, OBJECT_B__ENUM1);
+		createEAttribute(objectBEClass, OBJECT_B__NATIONALITY);
 
 		// Create enums
 		enum1EEnum = createEEnum(ENUM1);
+
+		// Create data types
+		string8CharsEDataType = createEDataType(STRING8_CHARS);
 	}
 
 	/**
@@ -304,11 +348,15 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		initEClass(objectBEClass, ObjectB.class, "ObjectB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getObjectB_Name(), ecorePackage.getEString(), "name", null, 1, 1, ObjectB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getObjectB_Enum1(), this.getEnum1(), "enum1", null, 1, 1, ObjectB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObjectB_Nationality(), this.getString8Chars(), "nationality", null, 0, 1, ObjectB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(enum1EEnum, Enum1.class, "Enum1");
 		addEEnumLiteral(enum1EEnum, Enum1.VALUE1);
 		addEEnumLiteral(enum1EEnum, Enum1.VALUE2);
+
+		// Initialize data types
+		initEDataType(string8CharsEDataType, String.class, "String8Chars", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -338,7 +386,7 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		   new String[] {
 			   "settingDelegates", "org.abchip.mimo.core.base.setting",
 			   "invocationDelegates", "org.abchip.mimo.core.base.invocation",
-			   "validationDelegates", "org.abchip.mimo.core.base.validation"
+			   "validationDelegates", ""
 		   });
 	}
 
@@ -355,6 +403,12 @@ public class TestPackageImpl extends EPackageImpl implements TestPackage {
 		   source,
 		   new String[] {
 			   "name", "pippo"
+		   });
+		addAnnotation
+		  (string8CharsEDataType,
+		   source,
+		   new String[] {
+			   "maxLength", "8"
 		   });
 	}
 

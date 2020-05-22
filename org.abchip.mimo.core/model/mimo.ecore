@@ -2193,6 +2193,31 @@
         </eParameters>
         <eParameters name="tenant" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
+      <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
+        <eGenericType eTypeParameter="#//service/ServiceManager/prepare.4/R"/>
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.4/V"/>
+          </eBounds>
+        </eTypeParameters>
+        <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
+        <eGenericType eTypeParameter="#//service/ServiceManager/prepare.5/R"/>
+        <eTypeParameters name="V">
+          <eBounds eClassifier="#//service/ServiceResponse"/>
+        </eTypeParameters>
+        <eTypeParameters name="R">
+          <eBounds eClassifier="#//service/ServiceRequest">
+            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.5/V"/>
+          </eBounds>
+        </eTypeParameters>
+        <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
       <eOperations name="execute" lowerBound="1" eExceptions="#//service/ServiceException">
         <eGenericType eTypeParameter="#//service/ServiceManager/execute/V"/>
         <eTypeParameters name="V">
@@ -2222,31 +2247,6 @@
         <eParameters name="request" lowerBound="1">
           <eGenericType eTypeParameter="#//service/ServiceManager/submit/R"/>
         </eParameters>
-      </eOperations>
-      <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
-        <eGenericType eTypeParameter="#//service/ServiceManager/prepare.4/R"/>
-        <eTypeParameters name="V">
-          <eBounds eClassifier="#//service/ServiceResponse"/>
-        </eTypeParameters>
-        <eTypeParameters name="R">
-          <eBounds eClassifier="#//service/ServiceRequest">
-            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.4/V"/>
-          </eBounds>
-        </eTypeParameters>
-        <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="prepare" lowerBound="1" eExceptions="#//service/ServiceException">
-        <eGenericType eTypeParameter="#//service/ServiceManager/prepare.5/R"/>
-        <eTypeParameters name="V">
-          <eBounds eClassifier="#//service/ServiceResponse"/>
-        </eTypeParameters>
-        <eTypeParameters name="R">
-          <eBounds eClassifier="#//service/ServiceRequest">
-            <eTypeArguments eTypeParameter="#//service/ServiceManager/prepare.5/V"/>
-          </eBounds>
-        </eTypeParameters>
-        <eParameters name="frame" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceMapping" eSuperTypes="#//entity/Entity">

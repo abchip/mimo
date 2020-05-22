@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.core.test.impl.ObjectBImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.abchip.mimo.core.test.impl.ObjectBImpl#getEnum1 <em>Enum1</em>}</li>
+ *   <li>{@link org.abchip.mimo.core.test.impl.ObjectBImpl#getNationality <em>Nationality</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,6 +75,26 @@ public class ObjectBImpl extends EntityIdentifiableImpl implements ObjectB {
 	 * @ordered
 	 */
 	protected Enum1 enum1 = ENUM1_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNationality() <em>Nationality</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNationality()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NATIONALITY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNationality() <em>Nationality</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNationality()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nationality = NATIONALITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -146,12 +167,37 @@ public class ObjectBImpl extends EntityIdentifiableImpl implements ObjectB {
 	 * @generated
 	 */
 	@Override
+	public String getNationality() {
+		return nationality;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setNationality(String newNationality) {
+		String oldNationality = nationality;
+		nationality = newNationality;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.OBJECT_B__NATIONALITY, oldNationality, nationality));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TestPackage.OBJECT_B__NAME:
 				return getName();
 			case TestPackage.OBJECT_B__ENUM1:
 				return getEnum1();
+			case TestPackage.OBJECT_B__NATIONALITY:
+				return getNationality();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,6 +215,9 @@ public class ObjectBImpl extends EntityIdentifiableImpl implements ObjectB {
 				return;
 			case TestPackage.OBJECT_B__ENUM1:
 				setEnum1((Enum1)newValue);
+				return;
+			case TestPackage.OBJECT_B__NATIONALITY:
+				setNationality((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -188,6 +237,9 @@ public class ObjectBImpl extends EntityIdentifiableImpl implements ObjectB {
 			case TestPackage.OBJECT_B__ENUM1:
 				setEnum1(ENUM1_EDEFAULT);
 				return;
+			case TestPackage.OBJECT_B__NATIONALITY:
+				setNationality(NATIONALITY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -204,6 +256,8 @@ public class ObjectBImpl extends EntityIdentifiableImpl implements ObjectB {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case TestPackage.OBJECT_B__ENUM1:
 				return enum1 != ENUM1_EDEFAULT;
+			case TestPackage.OBJECT_B__NATIONALITY:
+				return NATIONALITY_EDEFAULT == null ? nationality != null : !NATIONALITY_EDEFAULT.equals(nationality);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -222,6 +276,8 @@ public class ObjectBImpl extends EntityIdentifiableImpl implements ObjectB {
 		result.append(name);
 		result.append(", enum1: ");
 		result.append(enum1);
+		result.append(", nationality: ");
+		result.append(nationality);
 		result.append(')');
 		return result.toString();
 	}

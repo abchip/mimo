@@ -11,6 +11,7 @@ import org.abchip.mimo.entity.EntityPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -28,7 +29,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see org.abchip.mimo.core.test.TestFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore settingDelegates='org.abchip.mimo.core.base.setting' invocationDelegates='org.abchip.mimo.core.base.invocation' validationDelegates='org.abchip.mimo.core.base.validation'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore settingDelegates='org.abchip.mimo.core.base.setting' invocationDelegates='org.abchip.mimo.core.base.invocation' validationDelegates=''"
  * @generated
  */
 public interface TestPackage extends EPackage {
@@ -157,13 +158,22 @@ public interface TestPackage extends EPackage {
 	int OBJECT_B__ENUM1 = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Nationality</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_B__NATIONALITY = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Object B</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_B_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+	int OBJECT_B_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.core.test.Enum1 <em>Enum1</em>}' enum.
@@ -174,6 +184,17 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 */
 	int ENUM1 = 2;
+
+
+	/**
+	 * The meta object id for the '<em>String8 Chars</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see org.abchip.mimo.core.test.impl.TestPackageImpl#getString8Chars()
+	 * @generated
+	 */
+	int STRING8_CHARS = 3;
 
 
 	/**
@@ -274,6 +295,17 @@ public interface TestPackage extends EPackage {
 	EAttribute getObjectB_Enum1();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.core.test.ObjectB#getNationality <em>Nationality</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nationality</em>'.
+	 * @see org.abchip.mimo.core.test.ObjectB#getNationality()
+	 * @see #getObjectB()
+	 * @generated
+	 */
+	EAttribute getObjectB_Nationality();
+
+	/**
 	 * Returns the meta object for enum '{@link org.abchip.mimo.core.test.Enum1 <em>Enum1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -282,6 +314,18 @@ public interface TestPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getEnum1();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>String8 Chars</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>String8 Chars</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 *        extendedMetaData="maxLength='8'"
+	 * @generated
+	 */
+	EDataType getString8Chars();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -382,6 +426,14 @@ public interface TestPackage extends EPackage {
 		EAttribute OBJECT_B__ENUM1 = eINSTANCE.getObjectB_Enum1();
 
 		/**
+		 * The meta object literal for the '<em><b>Nationality</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBJECT_B__NATIONALITY = eINSTANCE.getObjectB_Nationality();
+
+		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.core.test.Enum1 <em>Enum1</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -390,6 +442,16 @@ public interface TestPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ENUM1 = eINSTANCE.getEnum1();
+
+		/**
+		 * The meta object literal for the '<em>String8 Chars</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see org.abchip.mimo.core.test.impl.TestPackageImpl#getString8Chars()
+		 * @generated
+		 */
+		EDataType STRING8_CHARS = eINSTANCE.getString8Chars();
 
 	}
 
