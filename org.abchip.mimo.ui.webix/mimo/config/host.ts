@@ -7,6 +7,6 @@
  *
  */
 export function getBizServicePath(): string {
-    return "http://localhost:7080/mimo/service";
+    return "http://localhost:7080/ui/service";
     // return "/ui/service";
 }
