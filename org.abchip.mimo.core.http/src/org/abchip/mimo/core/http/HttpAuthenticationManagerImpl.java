@@ -22,12 +22,13 @@ import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.authentication.AuthenticationUserToken;
 import org.abchip.mimo.biz.service.security.CheckExternalLoginUser;
 import org.abchip.mimo.biz.service.security.CheckExternalLoginUserResponse;
+import org.abchip.mimo.biz.service.security.UserCredentialFromExternalId;
+import org.abchip.mimo.biz.service.security.UserCredentialFromExternalIdResponse;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
-import org.abchip.mimo.core.http.handler.HttpExternalCredentialHandler;
 import org.abchip.mimo.core.http.handler.HttpLoginHandler;
 import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.resource.ResourceSerializer;
@@ -234,21 +235,22 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		return true;
 	}
 
-	@SuppressWarnings("resource")
 	private AuthenticationUserPassword getExternalCredentials(String user) throws AuthenticationException {
 
 		LOGGER.warn("Unsecure access to external credential for user {}", user);
 
-		URIBuilder uri = new URIBuilder();
-		uri.setScheme(providerConfig.getHost().getSchema());
-		uri.setHost(providerConfig.getHost().getAddress());
-		uri.setPort(providerConfig.getHost().getPort());
-		uri.setPath(providerConfig.getPath() + "/externalCredential");
-		uri.setParameter("userId", user);
-
-		AuthenticationUserPassword authentication = null;
+		AuthenticationUserPassword authentication = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
 		try {
-			authentication = application.getContext().get(HttpClient.class).execute(new HttpPost(uri.build()), new HttpExternalCredentialHandler());
+			ServiceManager serviceManager = application.getContext().getServiceManager();
+			UserCredentialFromExternalId userCredentialFromExternalId = application.getContext().getServiceManager().prepare(UserCredentialFromExternalId.class);
+			userCredentialFromExternalId.setUserId(user);
+			UserCredentialFromExternalIdResponse response = serviceManager.execute(userCredentialFromExternalId);
+			if (response.onError())
+				LOGGER.error(response.getErrorMessage());
+			
+			authentication.setUser(response.getUser());
+			authentication.setPassword(response.getPassword());
+
 			LOGGER.audit("External credential success user {}", user);
 		} catch (Exception e) {
 			LOGGER.audit("Invalid get external credentials for user {} message", user, e.getMessage());
