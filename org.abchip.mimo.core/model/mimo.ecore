@@ -173,6 +173,13 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationProvider" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationProviderRegistry" abstract="true"
+        interface="true">
+      <eGenericSuperTypes eClassifier="#//context/Registry">
+        <eTypeArguments eClassifier="#//authentication/AuthenticationProvider"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="context" nsURI="http://www.abchip.org/mimo/context" nsPrefix="mimo-ctx">
     <eClassifiers xsi:type="ecore:EClass" name="AdapterFactory" abstract="true" interface="true">

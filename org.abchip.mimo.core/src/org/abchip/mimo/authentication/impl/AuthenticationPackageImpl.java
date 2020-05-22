@@ -14,6 +14,8 @@ import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.impl.ApplicationPackageImpl;
 import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationPackage;
+import org.abchip.mimo.authentication.AuthenticationProvider;
+import org.abchip.mimo.authentication.AuthenticationProviderRegistry;
 import org.abchip.mimo.authentication.Authentication;
 import org.abchip.mimo.authentication.AuthenticationAdminKey;
 import org.abchip.mimo.authentication.AuthenticationAnonymous;
@@ -52,6 +54,7 @@ import org.abchip.mimo.service.reg.impl.RegPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -101,6 +104,18 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 	 * @generated
 	 */
 	private EClass authenticationUserTokenEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass authenticationProviderEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass authenticationProviderRegistryEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -379,6 +394,26 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 	 * @generated
 	 */
 	@Override
+	public EClass getAuthenticationProvider() {
+		return authenticationProviderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAuthenticationProviderRegistry() {
+		return authenticationProviderRegistryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDataType getAuthenticationException() {
 		return authenticationExceptionEDataType;
 	}
@@ -434,6 +469,10 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__PICTURE);
 		createEAttribute(authenticationUserTokenEClass, AUTHENTICATION_USER_TOKEN__USER);
 
+		authenticationProviderEClass = createEClass(AUTHENTICATION_PROVIDER);
+
+		authenticationProviderRegistryEClass = createEClass(AUTHENTICATION_PROVIDER_REGISTRY);
+
 		// Create data types
 		authenticationExceptionEDataType = createEDataType(AUTHENTICATION_EXCEPTION);
 	}
@@ -475,6 +514,10 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 		authenticationAnonymousEClass.getESuperTypes().add(this.getAuthentication());
 		authenticationUserPasswordEClass.getESuperTypes().add(this.getAuthentication());
 		authenticationUserTokenEClass.getESuperTypes().add(this.getAuthentication());
+		EGenericType g1 = createEGenericType(theContextPackage.getRegistry());
+		EGenericType g2 = createEGenericType(this.getAuthenticationProvider());
+		g1.getETypeArguments().add(g2);
+		authenticationProviderRegistryEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -522,6 +565,10 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 		initEAttribute(getAuthenticationUserToken_IdToken(), ecorePackage.getEString(), "idToken", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationUserToken_Picture(), ecorePackage.getEString(), "picture", null, 0, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthenticationUserToken_User(), ecorePackage.getEString(), "user", null, 1, 1, AuthenticationUserToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(authenticationProviderEClass, AuthenticationProvider.class, "AuthenticationProvider", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(authenticationProviderRegistryEClass, AuthenticationProviderRegistry.class, "AuthenticationProviderRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types
 		initEDataType(authenticationExceptionEDataType, AuthenticationException.class, "AuthenticationException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

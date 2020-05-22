@@ -21,6 +21,8 @@ import org.abchip.mimo.authentication.AuthenticationAnonymous;
 import org.abchip.mimo.authentication.AuthenticationException;
 import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
+import org.abchip.mimo.authentication.AuthenticationProvider;
+import org.abchip.mimo.authentication.AuthenticationProviderRegistry;
 import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
@@ -41,6 +43,8 @@ public class LoginServlet extends HttpServlet {
 
 	@Inject
 	private AuthenticationManager authenticationManager;
+	@Inject
+	AuthenticationProviderRegistry authenticationProviderRegistry;
 
 	private static final Logger LOGGER = Logs.getLogger(LoginServlet.class);
 
@@ -173,6 +177,11 @@ public class LoginServlet extends HttpServlet {
 	private void loginRedirect(HttpServletRequest request, HttpServletResponse response, String provider) throws IOException, AuthenticationException, ResourceException {
 
 		HttpSession session = request.getSession();
+
+		if (provider.equals("Google")) {
+			AuthenticationProvider authenticationProvider = authenticationProviderRegistry.lookup(provider);
+			authenticationProvider.toString();
+		}
 
 		// TODO remove anonymous access
 		AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();

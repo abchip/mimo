@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.authentication;
 
+import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.entity.EntityPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -266,6 +267,44 @@ public interface AuthenticationPackage extends EPackage {
 	int AUTHENTICATION_USER_TOKEN_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 5;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.authentication.impl.AuthenticationProviderImpl <em>Provider</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.authentication.impl.AuthenticationProviderImpl
+	 * @see org.abchip.mimo.authentication.impl.AuthenticationPackageImpl#getAuthenticationProvider()
+	 * @generated
+	 */
+	int AUTHENTICATION_PROVIDER = 6;
+
+	/**
+	 * The number of structural features of the '<em>Provider</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_PROVIDER_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.authentication.AuthenticationProviderRegistry <em>Provider Registry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.authentication.AuthenticationProviderRegistry
+	 * @see org.abchip.mimo.authentication.impl.AuthenticationPackageImpl#getAuthenticationProviderRegistry()
+	 * @generated
+	 */
+	int AUTHENTICATION_PROVIDER_REGISTRY = 7;
+
+	/**
+	 * The number of structural features of the '<em>Provider Registry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION_PROVIDER_REGISTRY_FEATURE_COUNT = ContextPackage.REGISTRY_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>Exception</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -273,7 +312,7 @@ public interface AuthenticationPackage extends EPackage {
 	 * @see org.abchip.mimo.authentication.impl.AuthenticationPackageImpl#getAuthenticationException()
 	 * @generated
 	 */
-	int AUTHENTICATION_EXCEPTION = 6;
+	int AUTHENTICATION_EXCEPTION = 8;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.authentication.Authentication <em>Authentication</em>}'.
@@ -446,6 +485,26 @@ public interface AuthenticationPackage extends EPackage {
 	EAttribute getAuthenticationUserToken_User();
 
 	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.authentication.AuthenticationProvider <em>Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Provider</em>'.
+	 * @see org.abchip.mimo.authentication.AuthenticationProvider
+	 * @generated
+	 */
+	EClass getAuthenticationProvider();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.authentication.AuthenticationProviderRegistry <em>Provider Registry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Provider Registry</em>'.
+	 * @see org.abchip.mimo.authentication.AuthenticationProviderRegistry
+	 * @generated
+	 */
+	EClass getAuthenticationProviderRegistry();
+
+	/**
 	 * Returns the meta object for data type '{@link org.abchip.mimo.authentication.AuthenticationException <em>Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -602,6 +661,24 @@ public interface AuthenticationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute AUTHENTICATION_USER_TOKEN__USER = eINSTANCE.getAuthenticationUserToken_User();
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.authentication.impl.AuthenticationProviderImpl <em>Provider</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.authentication.impl.AuthenticationProviderImpl
+		 * @see org.abchip.mimo.authentication.impl.AuthenticationPackageImpl#getAuthenticationProvider()
+		 * @generated
+		 */
+		EClass AUTHENTICATION_PROVIDER = eINSTANCE.getAuthenticationProvider();
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.authentication.AuthenticationProviderRegistry <em>Provider Registry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.authentication.AuthenticationProviderRegistry
+		 * @see org.abchip.mimo.authentication.impl.AuthenticationPackageImpl#getAuthenticationProviderRegistry()
+		 * @generated
+		 */
+		EClass AUTHENTICATION_PROVIDER_REGISTRY = eINSTANCE.getAuthenticationProviderRegistry();
 		/**
 		 * The meta object literal for the '<em>Exception</em>' data type.
 		 * <!-- begin-user-doc -->

@@ -18,12 +18,14 @@ import org.abchip.mimo.E4ResourceSetFactoryImpl;
 import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.application.Application;
 import org.abchip.mimo.application.ApplicationPaths;
+import org.abchip.mimo.authentication.AuthenticationProviderRegistry;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.context.Factory;
 import org.abchip.mimo.context.LockManager;
 import org.abchip.mimo.context.RegistryFactory;
 import org.abchip.mimo.context.Thread;
 import org.abchip.mimo.context.ThreadManager;
+import org.abchip.mimo.core.base.BaseAuthenticationProviderRegistryImpl;
 import org.abchip.mimo.core.base.BaseLockManagerImpl;
 import org.abchip.mimo.core.base.BaseRegistryFactoryImpl;
 import org.abchip.mimo.core.base.BaseResourceManagerFactoryImpl;
@@ -211,6 +213,10 @@ public class E4Activator implements BundleActivator {
 		RegistryFactory registryFactory = new BaseRegistryFactoryImpl(application);
 		application.getContext().set(RegistryFactory.class, registryFactory);
 
+		// authentication
+		{
+			application.getContext().set(AuthenticationProviderRegistry.class, new BaseAuthenticationProviderRegistryImpl(application, registryFactory));
+		}
 		// resource
 		{
 			application.getContext().set(ResourceProviderRegistry.class, new BaseResourceProviderRegistryImpl(application, registryFactory));

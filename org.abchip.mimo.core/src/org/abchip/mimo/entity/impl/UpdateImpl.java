@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.EClass;
 public class UpdateImpl<E extends EntityIdentifiable> extends ServiceEntityRequestImpl<E> implements Update<E> {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected UpdateImpl() {
@@ -32,7 +31,6 @@ public class UpdateImpl<E extends EntityIdentifiable> extends ServiceEntityReque
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

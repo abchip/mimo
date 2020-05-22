@@ -128,6 +128,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationUserToken/picture"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationUserToken/user"/>
       </genClasses>
+      <genClasses image="false" ecoreClass="mimo.ecore#//authentication/AuthenticationProvider"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//authentication/AuthenticationProviderRegistry"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Context" basePackage="org.abchip.mimo" disposableProviderFactory="true"
         adapterFactory="false" ecorePackage="mimo.ecore#//context">

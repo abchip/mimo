@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.EClass;
 public class CreateImpl<E extends EntityIdentifiable> extends ServiceEntityRequestImpl<E> implements Create<E> {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected CreateImpl() {
@@ -32,7 +31,6 @@ public class CreateImpl<E extends EntityIdentifiable> extends ServiceEntityReque
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
