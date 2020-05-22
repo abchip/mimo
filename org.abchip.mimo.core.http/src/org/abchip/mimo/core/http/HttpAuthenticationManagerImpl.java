@@ -20,17 +20,19 @@ import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.authentication.AuthenticationUserToken;
+import org.abchip.mimo.biz.service.security.CheckExternalLoginUser;
+import org.abchip.mimo.biz.service.security.CheckExternalLoginUserResponse;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
-import org.abchip.mimo.core.http.handler.HttpCheckLoginHandler;
 import org.abchip.mimo.core.http.handler.HttpExternalCredentialHandler;
 import org.abchip.mimo.core.http.handler.HttpLoginHandler;
 import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
+import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.util.Logs;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
@@ -171,52 +173,47 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		return contextProvider;
 	}
 
-	@SuppressWarnings("resource")
 	@Override
 	public boolean checkLogin(AuthenticationUserToken authentication, boolean create) {
-
-		URIBuilder uri = new URIBuilder();
-		uri.setScheme(providerConfig.getHost().getSchema());
-		uri.setHost(providerConfig.getHost().getAddress());
-		uri.setPort(providerConfig.getHost().getPort());
-		uri.setPath(providerConfig.getPath() + "/checkLogin");
-		uri.setParameter("provider", authentication.getProvider());
-		uri.setParameter("accessToken", authentication.getAccessToken());
-
-		Map<String, Object> userInfo = null;
 		try {
+			ServiceManager serviceManager = application.getContext().getServiceManager();
+			CheckExternalLoginUser checkExternalLoginUser = application.getContext().getServiceManager().prepare(CheckExternalLoginUser.class);
+			checkExternalLoginUser.setProvider(authentication.getProvider());
+			checkExternalLoginUser.setAccessToken(authentication.getAccessToken());
+	
+			Map<String, Object> userInfo = null;
 			switch (authentication.getProvider()) {
 			case "GitHub": {
 				userInfo = HttpUtils.checkLoginGitHub(authentication);
+				authentication.setUser((String) userInfo.get("email"));
 				authentication.setPicture((String) userInfo.get("avatar_url"));
 
-				// build checkLogin
-				uri.setParameter("userId", (String) userInfo.get("email"));
-				uri.setParameter("email", (String) userInfo.get("email"));
-				uri.setParameter("firstName", (String) userInfo.get("name"));
-				uri.setParameter("lastName", (String) userInfo.get("lastName"));
+				checkExternalLoginUser.setUserId((String) userInfo.get("email"));
+				checkExternalLoginUser.setEmail((String) userInfo.get("email"));
+				checkExternalLoginUser.setFirstName((String) userInfo.get("name"));
+				checkExternalLoginUser.setLastName((String) userInfo.get("lastName"));
 				break;
 			}
 			case "Google": {
 				userInfo = HttpUtils.checkLoginGoogle(authentication);
+				authentication.setUser((String) userInfo.get("email"));
 				authentication.setPicture((String) userInfo.get("picture"));
 
-				// build checkLogin
-				uri.setParameter("userId", (String) userInfo.get("email"));
-				uri.setParameter("email", (String) userInfo.get("email"));
-				uri.setParameter("firstName", (String) userInfo.get("given_name"));
-				uri.setParameter("lastName", (String) userInfo.get("family_name"));
+				checkExternalLoginUser.setUserId((String) userInfo.get("email"));
+				checkExternalLoginUser.setEmail((String) userInfo.get("email"));
+				checkExternalLoginUser.setFirstName((String) userInfo.get("given_name"));
+				checkExternalLoginUser.setLastName((String) userInfo.get("family_name"));
 				break;
 			}
 			case "LinkedIn": {
 				userInfo = HttpUtils.checkLoginLinkedIn(authentication);
+				authentication.setUser((String) userInfo.get("email"));
 				authentication.setPicture((String) userInfo.get("picture"));
 
-				// build checkLogin
-				uri.setParameter("userId", (String) userInfo.get("email"));
-				uri.setParameter("email", (String) userInfo.get("email"));
-				uri.setParameter("firstName", (String) userInfo.get("localizedFirstName"));
-				uri.setParameter("lastName", (String) userInfo.get("localizedLastName"));
+				checkExternalLoginUser.setUserId((String) userInfo.get("email"));
+				checkExternalLoginUser.setEmail((String) userInfo.get("email"));
+				checkExternalLoginUser.setFirstName((String) userInfo.get("localizedFirstName"));
+				checkExternalLoginUser.setLastName((String) userInfo.get("localizedLastName"));
 				break;
 			}
 			default:
@@ -224,8 +221,10 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 				return false;
 			}
 
-			// TODO insert service
-			application.getContext().get(HttpClient.class).execute(new HttpPost(uri.build()), new HttpCheckLoginHandler());
+			CheckExternalLoginUserResponse response = serviceManager.execute(checkExternalLoginUser);
+			if (response.onError())
+				LOGGER.error(response.getErrorMessage());
+
 			LOGGER.audit("CheckLogin success id {} user {} provider {}", authentication.getIdToken(), authentication.getUser(), authentication.getProvider());
 		} catch (Exception e) {
 			LOGGER.audit("Invalid check login provider {} for user {} message {}", authentication.getProvider(), authentication.getUser(), e.getMessage());

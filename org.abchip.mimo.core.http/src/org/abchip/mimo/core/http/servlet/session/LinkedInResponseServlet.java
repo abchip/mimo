@@ -146,7 +146,7 @@ public class LinkedInResponseServlet extends HttpServlet {
 				return;
 			}
 
-			String location = response.encodeURL("http://localhost:8081");
+			String location = response.encodeURL("http://localhost:8001");
 			// System.err.println(("Response location: " + location));
 
 			response.sendRedirect(location);
