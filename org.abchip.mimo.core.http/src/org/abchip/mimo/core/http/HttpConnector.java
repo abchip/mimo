@@ -20,7 +20,6 @@ import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.util.Logs;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
@@ -59,12 +58,8 @@ public class HttpConnector implements Closeable {
 		uri.setHost(providerConfig.getHost().getAddress());
 		uri.setPort(providerConfig.getHost().getPort());
 		uri.setPath(providerConfig.getPath() + "/" + path + ";jsessionid=" + token);
+		uri.setParameters(URLEncodedUtils.parse(query, null));
 
-		if (query != null) {
-			for (NameValuePair parameter : URLEncodedUtils.parse(query, null)) {
-				uri.setParameter(parameter.getName(), parameter.getValue());
-			}
-		}
 		// uri.setQuery(query);
 
 		HttpPost httpPost = new HttpPost(uri.build());
