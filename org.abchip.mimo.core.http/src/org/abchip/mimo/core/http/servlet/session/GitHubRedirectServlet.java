@@ -17,12 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.abchip.mimo.authentication.AuthenticationAnonymous;
-import org.abchip.mimo.authentication.AuthenticationException;
-import org.abchip.mimo.authentication.AuthenticationFactory;
-import org.abchip.mimo.authentication.AuthenticationManager;
-import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.application.Application;
+import org.abchip.mimo.biz.model.passport.OAuth2GitHub;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceReader;
 
@@ -35,7 +31,7 @@ public class GitHubRedirectServlet extends HttpServlet {
 	public static final String DEFAULT_SCOPE = "user,gist,user:email";
 
 	@Inject
-	private AuthenticationManager authenticationManager;
+	private Application application;
 
 	@Override
 	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -47,32 +43,21 @@ public class GitHubRedirectServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		// anonymous access
-		AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
-		try (ContextProvider context = authenticationManager.login(null, authentication)) {
-
-			ResourceReader<EntityIdentifiable> oauth2Reader = context.get().getResourceManager().getResourceReader("OAuth2GitHub");
-			EntityIdentifiable oauth2GitHub = oauth2Reader.first();
+		try {
+			ResourceReader<OAuth2GitHub> oauth2Reader = application.getContext().getResourceManager().getResourceReader(OAuth2GitHub.class);
+			OAuth2GitHub oauth2GitHub = oauth2Reader.first();
 
 			if (oauth2GitHub == null) {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 				return;
 			}
-
-			String clientId = oauth2GitHub.isa().getValue(oauth2GitHub, "clientId", false, false).toString();
-			String returnURI = oauth2GitHub.isa().getValue(oauth2GitHub, "returnUrl", false, false).toString();
-
 			// Get user authorization code
-			String location = TokenEndpoint + AuthorizeUri + "?client_id=" + clientId + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&redirect_uri="
-					+ URLEncoder.encode(returnURI, "UTF8") + "&state=" + session.getId();
+			String location = TokenEndpoint + AuthorizeUri + "?client_id=" + oauth2GitHub.getClientId() + "&response_type=code" + "&scope=" + DEFAULT_SCOPE + "&redirect_uri="
+					+ URLEncoder.encode(oauth2GitHub.getReturnUrl(), "UTF8") + "&state=" + session.getId();
 
 			response.sendRedirect(location);
-		} catch (AuthenticationException e) {
-			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
-			return;
 		} catch (ResourceException e) {
-			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
-			return;
+			throw new IOException(e);
 		}
 	}
 }

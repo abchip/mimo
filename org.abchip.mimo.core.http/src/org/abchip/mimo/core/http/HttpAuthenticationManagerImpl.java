@@ -8,8 +8,10 @@
  */
 package org.abchip.mimo.core.http;
 
+import java.net.URISyntaxException;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.abchip.mimo.application.Application;
@@ -31,6 +33,7 @@ import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
 import org.abchip.mimo.core.http.handler.HttpLoginHandler;
 import org.abchip.mimo.networking.HttpClient;
+import org.abchip.mimo.networking.NetworkingException;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.service.ServiceManager;
@@ -47,6 +50,14 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	private Application application;
 	@Inject
 	private ProviderConfig providerConfig;
+
+	@PostConstruct
+	private void init() throws NetworkingException, URISyntaxException {
+
+		AuthenticationAdminKey authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAdminKey();
+		authentication.setAdminKey(application.getAdminKey());
+		connectContext(application.getContext(), authentication);
+	}
 
 	@Override
 	public ContextProvider login(String contextId, AuthenticationAnonymous authentication) throws AuthenticationException {
@@ -139,30 +150,9 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		ContextProvider contextProvider = application.getContext().createChildContext(contextId);
 		try {
 			Context context = contextProvider.get();
-			ResourceSerializer<ContextDescription> serializer = context.getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
-			HttpClient httpClient = context.get(HttpClient.class);
+			connectContext(context, authentication);
 
-			URIBuilder uri = new URIBuilder();
-			uri.setScheme(providerConfig.getHost().getSchema());
-			uri.setHost(providerConfig.getHost().getAddress());
-			uri.setPort(providerConfig.getHost().getPort());
-			uri.setPath(providerConfig.getPath() + "/login");
-			if (tenant != null)
-				uri.setParameter("adminKey", tenant + "/" + adminKey);
-			else
-				uri.setParameter("adminKey", adminKey);
-
-			ContextDescription contextDescription = httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
-
-			context.getContextDescription().setTenant(authentication.getTenant());
-			context.getContextDescription().setCurrencyUom(contextDescription.getCurrencyUom());
-			context.getContextDescription().setLocale(contextDescription.getLocale());
-			context.getContextDescription().setTimeZone(contextDescription.getTimeZone());
-
-			HttpConnector connector = new HttpConnector(context, providerConfig);
-			context.set(HttpConnector.class, connector);
-
-			LOGGER.audit("Connection success id {} adminKey {} tenant {}", contextDescription.getId(), adminKey, tenant);
+			LOGGER.audit("Connection success id {} adminKey {} tenant {}", context.getContextDescription().getId(), adminKey, tenant);
 		} catch (Exception e) {
 			LOGGER.audit("Connection failed {}", e.getMessage());
 			if (contextProvider != null)
@@ -181,7 +171,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			CheckExternalLoginUser checkExternalLoginUser = application.getContext().getServiceManager().prepare(CheckExternalLoginUser.class);
 			checkExternalLoginUser.setProvider(authentication.getProvider());
 			checkExternalLoginUser.setAccessToken(authentication.getAccessToken());
-	
+
 			Map<String, Object> userInfo = null;
 			switch (authentication.getProvider()) {
 			case "GitHub": {
@@ -231,7 +221,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			LOGGER.audit("Invalid check login provider {} for user {} message {}", authentication.getProvider(), authentication.getUser(), e.getMessage());
 			return false;
 		}
-		
+
 		return true;
 	}
 
@@ -247,7 +237,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			UserCredentialFromExternalIdResponse response = serviceManager.execute(userCredentialFromExternalId);
 			if (response.onError())
 				LOGGER.error(response.getErrorMessage());
-			
+
 			authentication.setUser(response.getUser());
 			authentication.setPassword(response.getPassword());
 
@@ -258,5 +248,35 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		}
 
 		return authentication;
+	}
+
+	@SuppressWarnings("resource")
+	private void connectContext(Context context, AuthenticationAdminKey authentication) throws NetworkingException, URISyntaxException {
+
+		String adminKey = authentication.getAdminKey();
+		String tenant = authentication.getTenant();
+
+		ResourceSerializer<ContextDescription> serializer = context.getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
+		HttpClient httpClient = context.get(HttpClient.class);
+
+		URIBuilder uri = new URIBuilder();
+		uri.setScheme(providerConfig.getHost().getSchema());
+		uri.setHost(providerConfig.getHost().getAddress());
+		uri.setPort(providerConfig.getHost().getPort());
+		uri.setPath(providerConfig.getPath() + "/login");
+		if (tenant != null)
+			uri.setParameter("adminKey", tenant + "/" + adminKey);
+		else
+			uri.setParameter("adminKey", adminKey);
+
+		ContextDescription contextDescription = httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
+
+		context.getContextDescription().setTenant(authentication.getTenant());
+		context.getContextDescription().setCurrencyUom(contextDescription.getCurrencyUom());
+		context.getContextDescription().setLocale(contextDescription.getLocale());
+		context.getContextDescription().setTimeZone(contextDescription.getTimeZone());
+
+		HttpConnector connector = new HttpConnector(context, providerConfig);
+		context.set(HttpConnector.class, connector);
 	}
 }

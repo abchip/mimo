@@ -18,12 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.abchip.mimo.authentication.AuthenticationAnonymous;
-import org.abchip.mimo.authentication.AuthenticationException;
-import org.abchip.mimo.authentication.AuthenticationFactory;
-import org.abchip.mimo.authentication.AuthenticationManager;
-import org.abchip.mimo.context.ContextProvider;
-import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.application.Application;
+import org.abchip.mimo.biz.model.passport.OAuth2LinkedIn;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceReader;
 
@@ -36,7 +32,7 @@ public class LinkedInRedirectServlet extends HttpServlet {
 	public static final String AuthorizeUri = "/oauth/v2/authorization";
 
 	@Inject
-	private AuthenticationManager authenticationManager;
+	private Application application;
 
 	@Override
 	protected final void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -48,12 +44,10 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		// anonymous access
-		AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
-		try (ContextProvider context = authenticationManager.login(null, authentication)) {
+		try {
 
-			ResourceReader<?> oauth2Reader = context.get().getResourceManager().getResourceReader("OAuth2LinkedIn");
-			EntityIdentifiable oauth2LinkedIn = oauth2Reader.first();
+			ResourceReader<OAuth2LinkedIn> oauth2Reader = application.getContext().getResourceManager().getResourceReader(OAuth2LinkedIn.class);
+			OAuth2LinkedIn oauth2LinkedIn = oauth2Reader.first();
 
 			if (oauth2LinkedIn == null) {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
@@ -72,9 +66,6 @@ public class LinkedInRedirectServlet extends HttpServlet {
 			// System.err.println(("Redirect location: " + location));
 
 			response.sendRedirect(location);
-		} catch (AuthenticationException e) {
-			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
-			return;
 		} catch (ResourceException e) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 			return;

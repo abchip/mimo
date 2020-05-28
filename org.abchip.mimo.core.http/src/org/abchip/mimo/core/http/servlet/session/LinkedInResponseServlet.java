@@ -19,14 +19,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.abchip.mimo.authentication.AuthenticationAnonymous;
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.authentication.AuthenticationException;
 import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.authentication.AuthenticationUserToken;
+import org.abchip.mimo.biz.model.passport.OAuth2LinkedIn;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
-import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceReader;
 import org.abchip.mimo.util.Strings;
@@ -50,7 +50,8 @@ public class LinkedInResponseServlet extends HttpServlet {
 
 	public static final RequestConfig StandardRequestConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build();
 
-
+	@Inject
+	private Application application;
 	@Inject
 	private AuthenticationManager authenticationManager;
 
@@ -79,31 +80,23 @@ public class LinkedInResponseServlet extends HttpServlet {
 		String accessToken = null;
 		String idToken = null;
 
-		AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
+		try {
 
-		try (ContextProvider context = authenticationManager.login(null, authentication)) {
-
-			// dovremmo accedere con ProductStore e data
-			String entityName = "OAuth2LinkedIn";
-			ResourceReader<?> oauth2Reader = context.get().getResourceManager().getResourceReader(entityName);
-			EntityIdentifiable oauth2LinkedIn = oauth2Reader.first();
+			ResourceReader<OAuth2LinkedIn> oauth2Reader = application.getContext().getResourceManager().getResourceReader(OAuth2LinkedIn.class);
+			OAuth2LinkedIn oauth2LinkedIn = oauth2Reader.first();
 
 			if (oauth2LinkedIn == null) {
 				response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! LinkedIn get OAuth2 configuration error");
 				return;
 			}
 
-			HttpPost postMethod = null;
 			try (CloseableHttpClient client = HttpClients.custom().build()) {
-				String clientId = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "apiKey", false, false).toString();
-				String returnURI = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "liveReturnUrl", false, false).toString();
-				String secret = oauth2LinkedIn.isa().getValue(oauth2LinkedIn, "secretKey", false, false).toString();
 
 				URI uri = new URIBuilder().setScheme(TokenEndpoint.substring(0, TokenEndpoint.indexOf(":"))).setHost(TokenEndpoint.substring(TokenEndpoint.indexOf(":") + 3))
-						.setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("grant_type", "authorization_code")
-						.setParameter("code", authorizationCode).setParameter("redirect_uri", returnURI).build();
+						.setPath(TokenServiceUri).setParameter("client_id", oauth2LinkedIn.getApiKey()).setParameter("client_secret", oauth2LinkedIn.getSecretKey())
+						.setParameter("grant_type", "authorization_code").setParameter("code", authorizationCode).setParameter("redirect_uri", oauth2LinkedIn.getLiveReturnUrl()).build();
 
-				postMethod = new HttpPost(uri);
+				HttpPost postMethod = new HttpPost(uri);
 				postMethod.setConfig(StandardRequestConfig);
 				try (CloseableHttpResponse postResponse = client.execute(postMethod)) {
 					String responseString = new BasicResponseHandler().handleResponse(postResponse);
@@ -121,9 +114,6 @@ public class LinkedInResponseServlet extends HttpServlet {
 				response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 				return;
 			}
-		} catch (AuthenticationException e) {
-			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
-			return;
 		} catch (ResourceException e) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 			return;

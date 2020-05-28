@@ -19,15 +19,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.abchip.mimo.authentication.AuthenticationAnonymous;
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.authentication.AuthenticationException;
 import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.authentication.AuthenticationUserToken;
+import org.abchip.mimo.biz.model.passport.OAuth2GitHub;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
-import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceReader;
 import org.apache.http.HttpStatus;
@@ -50,6 +49,8 @@ public class GitHubResponseServlet extends HttpServlet {
 	public static final String TokenEndpoint = "https://github.com";
 	public static final String TokenServiceUri = "/login/oauth/access_token";
 
+	@Inject
+	private Application application;
 	@Inject
 	private AuthenticationManager authenticationManager;
 
@@ -84,31 +85,23 @@ public class GitHubResponseServlet extends HttpServlet {
 		String accessToken = null;
 		String idToken = null;
 
-		AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
+		try {
 
-		try (ContextProvider context = authenticationManager.login(null, authentication)) {
-
-			// dovremmo accedere con ProductStore e data
-			String entityName = "OAuth2GitHub";
-			ResourceReader<?> oauth2Reader = context.get().getResourceManager().getResourceReader(entityName);
-			EntityIdentifiable oauth2GitHub = oauth2Reader.first();
+			ResourceReader<OAuth2GitHub> oauth2Reader = application.getContext().getResourceManager().getResourceReader(OAuth2GitHub.class);
+			OAuth2GitHub oauth2GitHub = oauth2Reader.first();
 
 			if (oauth2GitHub == null) {
 				response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error! GitHub get OAuth2 configuration error");
 				return;
 			}
 
-			HttpPost postMethod = null;
 			try (CloseableHttpClient client = HttpClients.custom().build()) {
-				String clientId = oauth2GitHub.isa().getValue(oauth2GitHub, "clientId", false, false).toString();
-				String returnURI = oauth2GitHub.isa().getValue(oauth2GitHub, "returnUrl", false, false).toString();
-				String secret = oauth2GitHub.isa().getValue(oauth2GitHub, "clientSecret", false, false).toString();
 
 				URI uri = new URIBuilder().setScheme(TokenEndpoint.substring(0, TokenEndpoint.indexOf(":"))).setHost(TokenEndpoint.substring(TokenEndpoint.indexOf(":") + 3))
-						.setPath(TokenServiceUri).setParameter("client_id", clientId).setParameter("client_secret", secret).setParameter("code", authorizationCode)
-						.setParameter("redirect_uri", returnURI).build();
+						.setPath(TokenServiceUri).setParameter("client_id", oauth2GitHub.getClientId()).setParameter("client_secret", oauth2GitHub.getClientSecret())
+						.setParameter("code", authorizationCode).setParameter("redirect_uri", oauth2GitHub.getReturnUrl()).build();
 
-				postMethod = new HttpPost(uri);
+				HttpPost postMethod = new HttpPost(uri);
 				postMethod.setConfig(StandardRequestConfig);
 				postMethod.setHeader("Accept", "application/json");
 
@@ -128,9 +121,6 @@ public class GitHubResponseServlet extends HttpServlet {
 				response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 				return;
 			}
-		} catch (AuthenticationException e) {
-			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
-			return;
 		} catch (ResourceException e) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
 			return;

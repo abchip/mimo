@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.abchip.mimo.application.Application;
 import org.abchip.mimo.authentication.AuthenticationAdminKey;
-import org.abchip.mimo.authentication.AuthenticationAnonymous;
 import org.abchip.mimo.authentication.AuthenticationException;
 import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
@@ -27,7 +27,6 @@ import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextFactory;
-import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.resource.ResourceException;
@@ -41,6 +40,8 @@ public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
+	@Inject
+	private Application application;
 	@Inject
 	private AuthenticationManager authenticationManager;
 	@Inject
@@ -183,36 +184,32 @@ public class LoginServlet extends HttpServlet {
 			authenticationProvider.toString();
 		}
 
-		// TODO remove anonymous access
-		AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
-		try (ContextProvider context = authenticationManager.login(session.getId(), authentication)) {
+		Context context = application.getContext();
+		String entityName = "OAuth2" + provider;
 
-			String entityName = "OAuth2" + provider;
+		ResourceReader<?> oauth2Reader = context.getResourceManager().getResourceReader(entityName);
+		EntityIdentifiable oauth2Entity = oauth2Reader.first();
 
-			ResourceReader<?> oauth2Reader = context.get().getResourceManager().getResourceReader(entityName);
-			EntityIdentifiable oauth2Entity = oauth2Reader.first();
-
-			if (oauth2Entity == null) {
-				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-				return;
-			}
-			String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-					+ oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri", false, false).toString();
-
-			location = response.encodeURL(location);
-			// System.err.println(("Login location: " + location));
-
-			response.setHeader("Location", location);
-			response.setStatus(HttpServletResponse.SC_OK);
-
-			ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
-			tempContextDescription.setId(session.getId());
-			tempContextDescription.setAnonymous(true);
-			ResourceSerializer<ContextDescription> serializer = context.get().getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
-			serializer.add(tempContextDescription);
-			serializer.save(response.getOutputStream());
-
-			response.flushBuffer();
+		if (oauth2Entity == null) {
+			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			return;
 		}
+		String location = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+				+ oauth2Entity.isa().getValue(oauth2Entity, "localRedirectUri", false, false).toString();
+
+		location = response.encodeURL(location);
+		// System.err.println(("Login location: " + location));
+
+		response.setHeader("Location", location);
+		response.setStatus(HttpServletResponse.SC_OK);
+
+		ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
+		tempContextDescription.setId(session.getId());
+		tempContextDescription.setAnonymous(true);
+		ResourceSerializer<ContextDescription> serializer = context.getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
+		serializer.add(tempContextDescription);
+		serializer.save(response.getOutputStream());
+
+		response.flushBuffer();
 	}
 }
