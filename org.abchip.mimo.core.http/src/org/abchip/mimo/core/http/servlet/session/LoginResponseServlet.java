@@ -25,7 +25,7 @@ import org.abchip.mimo.authentication.AuthenticationUserToken;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.core.http.ContextUtils;
 
-public class GoogleResponseServlet extends HttpServlet {
+public class LoginResponseServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
