@@ -44,7 +44,7 @@ public class LoginResponseServlet extends HttpServlet {
 	@Override
 	protected final void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		AuthenticationProvider authenticationProvider = authenticationProviderRegistry.lookup("Google");
+		AuthenticationProvider authenticationProvider = authenticationProviderRegistry.lookup("GitHub");
 
 		String state = request.getParameter("state");
 

@@ -183,7 +183,7 @@ public class LoginServlet extends HttpServlet {
 		if (provider.equals("Google") || provider.equals("GitHub")) {
 			AuthenticationProvider authenticationProvider = authenticationProviderRegistry.lookup(provider);
 			String redirectLocation = authenticationProvider.getRedirectLocation(context, session.getId());
-			redirectLocation = response.encodeURL(redirectLocation);
+//			redirectLocation = response.encodeURL(redirectLocation);
 			response.setHeader("Location", redirectLocation);
 			response.setStatus(HttpServletResponse.SC_OK);
 
