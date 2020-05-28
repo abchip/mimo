@@ -25,8 +25,16 @@ public interface AuthenticationProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.authentication.AuthenticationException" contextRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.authentication.AuthenticationException" contextRequired="true" contextIdRequired="true"
 	 * @generated
 	 */
-	String getRedirectLocation(Context context) throws AuthenticationException;
+	String getRedirectLocation(Context context, String contextId) throws AuthenticationException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.authentication.AuthenticationException" contextRequired="true" authorizationCodeRequired="true"
+	 * @generated
+	 */
+	AuthenticationUserToken checkAccessToken(Context context, String authorizationCode) throws AuthenticationException;
 } // AuthenticationProvider

@@ -570,6 +570,12 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 
 		op = addEOperation(authenticationProviderEClass, ecorePackage.getEString(), "getRedirectLocation", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getAuthenticationException());
+
+		op = addEOperation(authenticationProviderEClass, this.getAuthenticationUserToken(), "checkAccessToken", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "authorizationCode", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getAuthenticationException());
 
 		initEClass(authenticationProviderRegistryEClass, AuthenticationProviderRegistry.class, "AuthenticationProviderRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

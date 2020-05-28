@@ -177,6 +177,12 @@
       <eOperations name="getRedirectLocation" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           eExceptions="#//authentication/AuthenticationException">
         <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+        <eParameters name="contextId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="checkAccessToken" lowerBound="1" eType="#//authentication/AuthenticationUserToken"
+          eExceptions="#//authentication/AuthenticationException">
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+        <eParameters name="authorizationCode" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AuthenticationProviderRegistry" abstract="true"

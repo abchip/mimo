@@ -131,6 +131,11 @@
       <genClasses image="false" ecoreClass="mimo.ecore#//authentication/AuthenticationProvider">
         <genOperations ecoreOperation="mimo.ecore#//authentication/AuthenticationProvider/getRedirectLocation">
           <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationProvider/getRedirectLocation/context"/>
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationProvider/getRedirectLocation/contextId"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//authentication/AuthenticationProvider/checkAccessToken">
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationProvider/checkAccessToken/context"/>
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationProvider/checkAccessToken/authorizationCode"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//authentication/AuthenticationProviderRegistry"/>

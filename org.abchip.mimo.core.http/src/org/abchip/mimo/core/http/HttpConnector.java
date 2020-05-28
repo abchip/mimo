@@ -20,9 +20,11 @@ import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.resource.ResourceSerializer;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.util.Logs;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.client.utils.URLEncodedUtils;
 import org.osgi.service.log.Logger;
 
 public class HttpConnector implements Closeable {
@@ -50,7 +52,6 @@ public class HttpConnector implements Closeable {
 		});
 	}
 
-	@SuppressWarnings("deprecation")
 	public <E> E execute(String path, String query, ResponseHandler<E> handler) throws Exception {
 
 		URIBuilder uri = new URIBuilder();
@@ -59,8 +60,12 @@ public class HttpConnector implements Closeable {
 		uri.setPort(providerConfig.getHost().getPort());
 		uri.setPath(providerConfig.getPath() + "/" + path + ";jsessionid=" + token);
 
-		if (query != null)
-			uri.setQuery(query);
+		if (query != null) {
+			for (NameValuePair parameter : URLEncodedUtils.parse(query, null)) {
+				uri.setParameter(parameter.getName(), parameter.getValue());
+			}
+		}
+		// uri.setQuery(query);
 
 		HttpPost httpPost = new HttpPost(uri.build());
 		// httpPost.setHeader("Connection", "Keep-Alive");

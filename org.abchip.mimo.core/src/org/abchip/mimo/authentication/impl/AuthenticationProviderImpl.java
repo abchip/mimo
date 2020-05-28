@@ -11,6 +11,7 @@ import org.abchip.mimo.authentication.AuthenticationException;
 import org.abchip.mimo.authentication.AuthenticationPackage;
 import org.abchip.mimo.authentication.AuthenticationProvider;
 
+import org.abchip.mimo.authentication.AuthenticationUserToken;
 import org.abchip.mimo.context.Context;
 
 import org.eclipse.emf.ecore.EClass;
@@ -50,7 +51,19 @@ public abstract class AuthenticationProviderImpl extends MinimalEObjectImpl.Cont
 	 * @generated
 	 */
 	@Override
-	public String getRedirectLocation(Context context) throws AuthenticationException {
+	public String getRedirectLocation(Context context, String contextId) throws AuthenticationException {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AuthenticationUserToken checkAccessToken(Context context, String authorizationCode) throws AuthenticationException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
