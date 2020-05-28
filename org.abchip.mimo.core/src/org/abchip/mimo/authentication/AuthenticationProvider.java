@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.authentication;
 
+import org.abchip.mimo.context.Context;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -19,4 +21,12 @@ package org.abchip.mimo.authentication;
  * @generated
  */
 public interface AuthenticationProvider {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.authentication.AuthenticationException" contextRequired="true"
+	 * @generated
+	 */
+	String getRedirectLocation(Context context) throws AuthenticationException;
 } // AuthenticationProvider

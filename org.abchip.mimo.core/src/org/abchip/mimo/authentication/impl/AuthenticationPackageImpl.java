@@ -568,6 +568,10 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 
 		initEClass(authenticationProviderEClass, AuthenticationProvider.class, "AuthenticationProvider", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		op = addEOperation(authenticationProviderEClass, ecorePackage.getEString(), "getRedirectLocation", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getAuthenticationException());
+
 		initEClass(authenticationProviderRegistryEClass, AuthenticationProviderRegistry.class, "AuthenticationProviderRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types

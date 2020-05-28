@@ -7,8 +7,11 @@
  */
 package org.abchip.mimo.authentication.impl;
 
+import org.abchip.mimo.authentication.AuthenticationException;
 import org.abchip.mimo.authentication.AuthenticationPackage;
 import org.abchip.mimo.authentication.AuthenticationProvider;
+
+import org.abchip.mimo.context.Context;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -39,6 +42,18 @@ public abstract class AuthenticationProviderImpl extends MinimalEObjectImpl.Cont
 	@Override
 	protected EClass eStaticClass() {
 		return AuthenticationPackage.Literals.AUTHENTICATION_PROVIDER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getRedirectLocation(Context context) throws AuthenticationException {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 } //AuthenticationProviderImpl

@@ -178,13 +178,26 @@ public class LoginServlet extends HttpServlet {
 	private void loginRedirect(HttpServletRequest request, HttpServletResponse response, String provider) throws IOException, AuthenticationException, ResourceException {
 
 		HttpSession session = request.getSession();
+		Context context = application.getContext();
 
 		if (provider.equals("Google")) {
 			AuthenticationProvider authenticationProvider = authenticationProviderRegistry.lookup(provider);
-			authenticationProvider.toString();
+			String redirectLocation = authenticationProvider.getRedirectLocation(context);
+			redirectLocation = response.encodeURL(redirectLocation);
+			response.setHeader("Location", redirectLocation);
+			response.setStatus(HttpServletResponse.SC_OK);
+
+			ContextDescription tempContextDescription = ContextFactory.eINSTANCE.createContextDescription();
+			tempContextDescription.setId(session.getId());
+			tempContextDescription.setAnonymous(true);
+			ResourceSerializer<ContextDescription> serializer = context.getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
+			serializer.add(tempContextDescription);
+			serializer.save(response.getOutputStream());
+
+			response.flushBuffer();
+			return;
 		}
 
-		Context context = application.getContext();
 		String entityName = "OAuth2" + provider;
 
 		ResourceReader<?> oauth2Reader = context.getResourceManager().getResourceReader(entityName);

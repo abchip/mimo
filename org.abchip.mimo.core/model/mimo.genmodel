@@ -128,7 +128,11 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationUserToken/picture"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//authentication/AuthenticationUserToken/user"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="mimo.ecore#//authentication/AuthenticationProvider"/>
+      <genClasses image="false" ecoreClass="mimo.ecore#//authentication/AuthenticationProvider">
+        <genOperations ecoreOperation="mimo.ecore#//authentication/AuthenticationProvider/getRedirectLocation">
+          <genParameters ecoreParameter="mimo.ecore#//authentication/AuthenticationProvider/getRedirectLocation/context"/>
+        </genOperations>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//authentication/AuthenticationProviderRegistry"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Context" basePackage="org.abchip.mimo" disposableProviderFactory="true"

@@ -173,7 +173,12 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationProvider" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationProvider" abstract="true">
+      <eOperations name="getRedirectLocation" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          eExceptions="#//authentication/AuthenticationException">
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+      </eOperations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AuthenticationProviderRegistry" abstract="true"
         interface="true">
       <eGenericSuperTypes eClassifier="#//context/Registry">
