@@ -180,7 +180,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Context context = application.getContext();
 
-		if (provider.equals("Google")) {
+		if (provider.equals("Google") || provider.equals("GitHub")) {
 			AuthenticationProvider authenticationProvider = authenticationProviderRegistry.lookup(provider);
 			String redirectLocation = authenticationProvider.getRedirectLocation(context, session.getId());
 			redirectLocation = response.encodeURL(redirectLocation);
