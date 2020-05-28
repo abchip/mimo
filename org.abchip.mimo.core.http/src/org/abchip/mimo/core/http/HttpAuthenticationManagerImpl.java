@@ -31,6 +31,8 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
+import org.abchip.mimo.context.Thread;
+import org.abchip.mimo.context.ThreadManager;
 import org.abchip.mimo.core.http.handler.HttpLoginHandler;
 import org.abchip.mimo.networking.HttpClient;
 import org.abchip.mimo.networking.NetworkingException;
@@ -50,13 +52,13 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	private Application application;
 	@Inject
 	private ProviderConfig providerConfig;
+	@Inject
+	private ThreadManager threadManager;
 
 	@PostConstruct
-	private void init() throws NetworkingException, URISyntaxException {
-
-		AuthenticationAdminKey authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAdminKey();
-		authentication.setAdminKey(application.getAdminKey());
-		connectContext(application.getContext(), authentication);
+	private void init() {
+		Thread thread = threadManager.createThread("login-checker", new HttpAuthenticationLoginChecker());
+		threadManager.start(thread);
 	}
 
 	@Override
@@ -251,6 +253,26 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	}
 
 	@SuppressWarnings("resource")
+	private HttpConnector getConnector() throws NetworkingException, URISyntaxException {
+		Context context = application.getContext();
+
+		HttpConnector connector = context.get(HttpConnector.class);
+
+		if (connector == null) {
+			synchronized (this) {
+				connector = context.get(HttpConnector.class);
+				if (connector == null) {
+					AuthenticationAdminKey authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAdminKey();
+					authentication.setAdminKey(application.getAdminKey());
+					connectContext(context, authentication);
+				}
+			}
+		}
+
+		return connector;
+	}
+
+	@SuppressWarnings("resource")
 	private void connectContext(Context context, AuthenticationAdminKey authentication) throws NetworkingException, URISyntaxException {
 
 		String adminKey = authentication.getAdminKey();
@@ -278,5 +300,26 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		HttpConnector connector = new HttpConnector(context, providerConfig);
 		context.set(HttpConnector.class, connector);
+	}
+
+	private class HttpAuthenticationLoginChecker implements Runnable {
+
+		@SuppressWarnings("resource")
+		@Override
+		public void run() {
+			while (true) {
+				try {
+					java.lang.Thread.sleep(1000);
+
+					HttpConnector connector = getConnector();
+					if (connector != null)
+						java.lang.Thread.sleep(5000);
+				} catch (NetworkingException | URISyntaxException e) {
+					LOGGER.warn(e.getMessage());
+				} catch (InterruptedException e) {
+					return;
+				}
+			}
+		}
 	}
 }
