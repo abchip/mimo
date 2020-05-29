@@ -77,7 +77,7 @@ public class LoginResponseServlet extends HttpServlet {
 
 			response.sendRedirect(location);
 		} else {
-			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error in google response");
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Error in provider response");
 			return;
 		}
 	}
