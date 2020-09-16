@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.entity;
 
+import java.util.concurrent.Callable;
 import org.abchip.mimo.service.ServiceEntityRequest;
 
 /**
@@ -16,9 +17,9 @@ import org.abchip.mimo.service.ServiceEntityRequest;
  *
  *
  * @see org.abchip.mimo.entity.EntityPackage#getUpdate()
- * @model
+ * @model superTypes="org.abchip.mimo.service.ServiceEntityRequest&lt;E&gt; org.abchip.mimo.java.JavaCallable&lt;org.abchip.mimo.java.JavaVoid&gt;"
  * @generated
  */
-public interface Update<E extends EntityIdentifiable> extends ServiceEntityRequest<E> {
+public interface Update<E extends EntityIdentifiable> extends ServiceEntityRequest<E>, Callable<Void> {
 
 } // Update

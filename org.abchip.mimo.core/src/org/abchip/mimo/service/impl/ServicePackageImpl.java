@@ -774,10 +774,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g2 = createEGenericType(this.getServiceResponse());
 		g1.getETypeArguments().add(g2);
 		serviceEntityRequestEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theJavaPackage.getJavaCallable());
-		g2 = createEGenericType(theJavaPackage.getJavaVoid());
-		g1.getETypeArguments().add(g2);
-		serviceEntityRequestEClass.getEGenericSuperTypes().add(g1);
 		serviceMappingEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		serviceMappingRuleEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		serviceMappingRuleByPackageEClass.getESuperTypes().add(this.getServiceMappingRule());

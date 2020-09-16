@@ -141,6 +141,22 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		}
 	}
 
+	@Override
+	public <E extends EntityIdentifiable, R extends ServiceEntityRequest<E>> R prepare(Class<R> method, Class<E> entity) throws ServiceException {
+		return prepare(method, entity, null);
+	}
+
+	@Override
+	public <E extends EntityIdentifiable, R extends ServiceEntityRequest<E>> R prepare(Class<R> method, Class<E> entity, String tenant) throws ServiceException {
+
+		Service<?, ?> service = getService(method.getSimpleName() + entity.getSimpleName());
+		if(service == null)
+			service = getService(method.getSimpleName());
+		
+		R request = prepare(service.getName(), tenant);
+		return request;
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> V execute(R request) throws ServiceException {
@@ -198,21 +214,5 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		}
 
 		// check frame authorization
-	}
-
-	@Override
-	public <E extends EntityIdentifiable, R extends ServiceEntityRequest<E>> R prepare(Class<R> method, Class<E> entity) throws ServiceException {
-		return prepare(method, entity, null);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable, R extends ServiceEntityRequest<E>> R prepare(Class<R> method, Class<E> entity, String tenant) throws ServiceException {
-
-		Service<?, ?> service = getService(method.getSimpleName() + entity.getSimpleName());
-		if(service == null)
-			service = getService(method.getSimpleName());
-		
-		R request = prepare(service.getName(), tenant);
-		return request;
 	}
 }

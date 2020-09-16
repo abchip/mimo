@@ -7,7 +7,6 @@
  */
 package org.abchip.mimo.service;
 
-import java.util.concurrent.Callable;
 import org.abchip.mimo.entity.EntityIdentifiable;
 
 /**
@@ -23,10 +22,10 @@ import org.abchip.mimo.entity.EntityIdentifiable;
  * </ul>
  *
  * @see org.abchip.mimo.service.ServicePackage#getServiceEntityRequest()
- * @model abstract="true" superTypes="org.abchip.mimo.service.ServiceRequest&lt;org.abchip.mimo.service.ServiceResponse&gt; org.abchip.mimo.java.JavaCallable&lt;org.abchip.mimo.java.JavaVoid&gt;"
+ * @model abstract="true"
  * @generated
  */
-public interface ServiceEntityRequest<E extends EntityIdentifiable> extends ServiceRequest<ServiceResponse>, Callable<Void> {
+public interface ServiceEntityRequest<E extends EntityIdentifiable> extends ServiceRequest<ServiceResponse> {
 	/**
 	 * Returns the value of the '<em><b>Entity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

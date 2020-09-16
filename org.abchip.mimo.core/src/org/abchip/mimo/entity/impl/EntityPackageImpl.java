@@ -978,8 +978,8 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		// Obtain other dependent packages
 		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
-		ResourcePackage theResourcePackage = (ResourcePackage)EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		ResourcePackage theResourcePackage = (ResourcePackage)EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
 
 		// Create type parameters
@@ -1017,9 +1017,17 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2 = createEGenericType(createEClass_E);
 		g1.getETypeArguments().add(g2);
 		createEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
+		g2 = createEGenericType(theJavaPackage.getJavaVoid());
+		g1.getETypeArguments().add(g2);
+		createEClass.getEGenericSuperTypes().add(g1);
 		defaultEClass.getESuperTypes().add(this.getEntity());
 		g1 = createEGenericType(theServicePackage.getServiceEntityRequest());
 		g2 = createEGenericType(deleteEClass_E);
+		g1.getETypeArguments().add(g2);
+		deleteEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
+		g2 = createEGenericType(theJavaPackage.getJavaVoid());
 		g1.getETypeArguments().add(g2);
 		deleteEClass.getEGenericSuperTypes().add(g1);
 		domainEClass.getESuperTypes().add(this.getEntity());
@@ -1043,6 +1051,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		slotEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		g1 = createEGenericType(theServicePackage.getServiceEntityRequest());
 		g2 = createEGenericType(updateEClass_E);
+		g1.getETypeArguments().add(g2);
+		updateEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
+		g2 = createEGenericType(theJavaPackage.getJavaVoid());
 		g1.getETypeArguments().add(g2);
 		updateEClass.getEGenericSuperTypes().add(g1);
 

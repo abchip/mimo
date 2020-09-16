@@ -871,6 +871,9 @@
       <eGenericSuperTypes eClassifier="#//service/ServiceEntityRequest">
         <eTypeArguments eTypeParameter="#//entity/Create/E"/>
       </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
+        <eTypeArguments eClassifier="#//java/JavaVoid"/>
+      </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Default" eSuperTypes="#//entity/Entity">
       <eOperations name="clear"/>
@@ -885,6 +888,9 @@
       </eTypeParameters>
       <eGenericSuperTypes eClassifier="#//service/ServiceEntityRequest">
         <eTypeArguments eTypeParameter="#//entity/Delete/E"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
+        <eTypeArguments eClassifier="#//java/JavaVoid"/>
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Domain" eSuperTypes="#//entity/Entity">
@@ -1092,6 +1098,9 @@
       </eTypeParameters>
       <eGenericSuperTypes eClassifier="#//service/ServiceEntityRequest">
         <eTypeArguments eTypeParameter="#//entity/Update/E"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
+        <eTypeArguments eClassifier="#//java/JavaVoid"/>
       </eGenericSuperTypes>
     </eClassifiers>
   </eSubpackages>
@@ -2080,9 +2089,6 @@
       </eStructuralFeatures>
       <eGenericSuperTypes eClassifier="#//service/ServiceRequest">
         <eTypeArguments eClassifier="#//service/ServiceResponse"/>
-      </eGenericSuperTypes>
-      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
-        <eTypeArguments eClassifier="#//java/JavaVoid"/>
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="ServiceException" instanceClassName="org.abchip.mimo.service.ServiceException"/>
