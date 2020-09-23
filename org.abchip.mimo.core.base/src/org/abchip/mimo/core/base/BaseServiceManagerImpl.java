@@ -15,12 +15,10 @@ import java.util.concurrent.Future;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
-import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.service.Service;
-import org.abchip.mimo.service.ServiceEntityRequest;
 import org.abchip.mimo.service.ServiceException;
 import org.abchip.mimo.service.ServiceFactory;
 import org.abchip.mimo.service.ServiceManager;
@@ -141,22 +139,6 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		}
 	}
 
-	@Override
-	public <E extends EntityIdentifiable, R extends ServiceEntityRequest<E>> R prepare(Class<R> method, Class<E> entity) throws ServiceException {
-		return prepare(method, entity, null);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable, R extends ServiceEntityRequest<E>> R prepare(Class<R> method, Class<E> entity, String tenant) throws ServiceException {
-
-		Service<?, ?> service = getService(method.getSimpleName() + entity.getSimpleName());
-		if(service == null)
-			service = getService(method.getSimpleName());
-		
-		R request = prepare(service.getName(), tenant);
-		return request;
-	}
-	
 	@SuppressWarnings("unchecked")
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> V execute(R request) throws ServiceException {

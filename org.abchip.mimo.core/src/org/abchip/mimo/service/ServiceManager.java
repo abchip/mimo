@@ -11,7 +11,6 @@ import java.util.concurrent.Future;
 
 import org.abchip.mimo.application.ServiceScope;
 import org.abchip.mimo.application.ServiceScope.Scope;
-import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 
 /**
@@ -111,20 +110,4 @@ public interface ServiceManager {
 	 * @generated
 	 */
 	<V extends ServiceResponse, R extends ServiceRequest<V>> R prepare(String frame, String tenant) throws ServiceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" methodRequired="true" entityRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable, R extends ServiceEntityRequest<E>> R prepare(Class<R> method, Class<E> entity) throws ServiceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.service.ServiceException" methodRequired="true" entityRequired="true"
-	 * @generated
-	 */
-	<E extends EntityIdentifiable, R extends ServiceEntityRequest<E>> R prepare(Class<R> method, Class<E> entity, String tenant) throws ServiceException;
 } // ServiceManager

@@ -27,15 +27,6 @@ public interface EntityFactory extends EFactory {
 	EntityFactory eINSTANCE = org.abchip.mimo.entity.impl.EntityFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Create</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Create</em>'.
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> Create<E> createCreate();
-
-	/**
 	 * Returns a new object of class '<em>Default</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -43,15 +34,6 @@ public interface EntityFactory extends EFactory {
 	 * @generated
 	 */
 	Default createDefault();
-
-	/**
-	 * Returns a new object of class '<em>Delete</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Delete</em>'.
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> Delete<E> createDelete();
 
 	/**
 	 * Returns a new object of class '<em>Domain</em>'.
@@ -70,15 +52,6 @@ public interface EntityFactory extends EFactory {
 	 * @generated
 	 */
 	EntityContainer createEntityContainer();
-
-	/**
-	 * Returns a new object of class '<em>Update</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Update</em>'.
-	 * @generated
-	 */
-	<E extends EntityIdentifiable> Update<E> createUpdate();
 
 	/**
 	 * Returns the package supported by this factory.

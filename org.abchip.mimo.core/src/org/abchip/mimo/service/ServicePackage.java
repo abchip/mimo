@@ -137,7 +137,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceManager()
 	 * @generated
 	 */
-	int SERVICE_MANAGER = 3;
+	int SERVICE_MANAGER = 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceMappingImpl <em>Mapping</em>}' class.
@@ -147,7 +147,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMapping()
 	 * @generated
 	 */
-	int SERVICE_MAPPING = 4;
+	int SERVICE_MAPPING = 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceMappingRuleImpl <em>Mapping Rule</em>}' class.
@@ -157,7 +157,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMappingRule()
 	 * @generated
 	 */
-	int SERVICE_MAPPING_RULE = 5;
+	int SERVICE_MAPPING_RULE = 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceMappingRuleByPackageImpl <em>Mapping Rule By Package</em>}' class.
@@ -167,7 +167,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMappingRuleByPackage()
 	 * @generated
 	 */
-	int SERVICE_MAPPING_RULE_BY_PACKAGE = 6;
+	int SERVICE_MAPPING_RULE_BY_PACKAGE = 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceMessageImpl <em>Message</em>}' class.
@@ -177,16 +177,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMessage()
 	 * @generated
 	 */
-	int SERVICE_MESSAGE = 7;
-
-	/**
-	 * The number of structural features of the '<em>Message</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
+	int SERVICE_MESSAGE = 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceProviderImpl <em>Provider</em>}' class.
@@ -196,7 +187,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceProvider()
 	 * @generated
 	 */
-	int SERVICE_PROVIDER = 10;
+	int SERVICE_PROVIDER = 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.ServiceProviderRegistry <em>Provider Registry</em>}' class.
@@ -206,7 +197,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceProviderRegistry()
 	 * @generated
 	 */
-	int SERVICE_PROVIDER_REGISTRY = 11;
+	int SERVICE_PROVIDER_REGISTRY = 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceRequestImpl <em>Request</em>}' class.
@@ -216,7 +207,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceRequest()
 	 * @generated
 	 */
-	int SERVICE_REQUEST = 12;
+	int SERVICE_REQUEST = 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceResponseImpl <em>Response</em>}' class.
@@ -226,7 +217,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceResponse()
 	 * @generated
 	 */
-	int SERVICE_RESPONSE = 13;
+	int SERVICE_RESPONSE = 12;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceMethodResponseImpl <em>Method Response</em>}' class.
@@ -236,116 +227,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMethodResponse()
 	 * @generated
 	 */
-	int SERVICE_METHOD_RESPONSE = 9;
-
-	/**
-	 * The feature id for the '<em><b>Locale</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_REQUEST__LOCALE = SERVICE_MESSAGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_REQUEST__TENANT = SERVICE_MESSAGE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_REQUEST__CONTEXT = SERVICE_MESSAGE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_REQUEST__USER_PROFILE = SERVICE_MESSAGE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Request</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_REQUEST_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 4;
-
-	/**
-	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceEntityRequestImpl <em>Entity Request</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.abchip.mimo.service.impl.ServiceEntityRequestImpl
-	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceEntityRequest()
-	 * @generated
-	 */
-	int SERVICE_ENTITY_REQUEST = 2;
-
-	/**
-	 * The feature id for the '<em><b>Locale</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ENTITY_REQUEST__LOCALE = SERVICE_REQUEST__LOCALE;
-
-	/**
-	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ENTITY_REQUEST__TENANT = SERVICE_REQUEST__TENANT;
-
-	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ENTITY_REQUEST__CONTEXT = SERVICE_REQUEST__CONTEXT;
-
-	/**
-	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ENTITY_REQUEST__USER_PROFILE = SERVICE_REQUEST__USER_PROFILE;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ENTITY_REQUEST__ENTITY = SERVICE_REQUEST_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Entity Request</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ENTITY_REQUEST_FEATURE_COUNT = SERVICE_REQUEST_FEATURE_COUNT + 1;
+	int SERVICE_METHOD_RESPONSE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Manager</em>' class.
@@ -420,6 +302,60 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_MAPPING_RULE_BY_PACKAGE_FEATURE_COUNT = SERVICE_MAPPING_RULE_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of structural features of the '<em>Message</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_MESSAGE_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REQUEST__LOCALE = SERVICE_MESSAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REQUEST__TENANT = SERVICE_MESSAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REQUEST__CONTEXT = SERVICE_MESSAGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REQUEST__USER_PROFILE = SERVICE_MESSAGE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Request</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_REQUEST_FEATURE_COUNT = SERVICE_MESSAGE_FEATURE_COUNT + 4;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.impl.ServiceMethodRequestImpl <em>Method Request</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -427,7 +363,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMethodRequest()
 	 * @generated
 	 */
-	int SERVICE_METHOD_REQUEST = 8;
+	int SERVICE_METHOD_REQUEST = 7;
 
 	/**
 	 * The feature id for the '<em><b>Locale</b></em>' attribute.
@@ -572,7 +508,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceMappingType()
 	 * @generated
 	 */
-	int SERVICE_MAPPING_TYPE = 14;
+	int SERVICE_MAPPING_TYPE = 13;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.service.ServiceStatus <em>Status</em>}' enum.
@@ -582,7 +518,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceStatus()
 	 * @generated
 	 */
-	int SERVICE_STATUS = 15;
+	int SERVICE_STATUS = 14;
 
 	/**
 	 * The meta object id for the '<em>Exception</em>' data type.
@@ -592,7 +528,7 @@ public interface ServicePackage extends EPackage {
 	 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceException()
 	 * @generated
 	 */
-	int SERVICE_EXCEPTION = 16;
+	int SERVICE_EXCEPTION = 15;
 
 
 	/**
@@ -647,27 +583,6 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getServiceConfig_Entities();
-
-	/**
-	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceEntityRequest <em>Entity Request</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Entity Request</em>'.
-	 * @see org.abchip.mimo.service.ServiceEntityRequest
-	 * @generated
-	 */
-	EClass getServiceEntityRequest();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.service.ServiceEntityRequest#getEntity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Entity</em>'.
-	 * @see org.abchip.mimo.service.ServiceEntityRequest#getEntity()
-	 * @see #getServiceEntityRequest()
-	 * @generated
-	 */
-	EReference getServiceEntityRequest_Entity();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.service.ServiceManager <em>Manager</em>}'.
@@ -996,24 +911,6 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SERVICE_CONFIG__ENTITIES = eINSTANCE.getServiceConfig_Entities();
-
-		/**
-		 * The meta object literal for the '{@link org.abchip.mimo.service.impl.ServiceEntityRequestImpl <em>Entity Request</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.abchip.mimo.service.impl.ServiceEntityRequestImpl
-		 * @see org.abchip.mimo.service.impl.ServicePackageImpl#getServiceEntityRequest()
-		 * @generated
-		 */
-		EClass SERVICE_ENTITY_REQUEST = eINSTANCE.getServiceEntityRequest();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE_ENTITY_REQUEST__ENTITY = eINSTANCE.getServiceEntityRequest_Entity();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.service.ServiceManager <em>Manager</em>}' class.
