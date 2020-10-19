@@ -29,12 +29,12 @@ import org.abchip.mimo.service.ServiceResponse;
 public class BaseServiceProviderRegistryImpl implements ServiceProviderRegistry {
 
 	private Registry<ServiceProvider> registry;
-	private ServiceMapping serviceMapping;
+	private Application application;
 
 	@Inject
 	public BaseServiceProviderRegistryImpl(Application application, RegistryFactory serviceRegistryFactory) {
+		this.application = application;
 		this.registry = serviceRegistryFactory.createRegistry(ServiceProvider.class);
-		this.serviceMapping = application.getServiceMapping();
 	}
 
 	@Override
@@ -59,17 +59,21 @@ public class BaseServiceProviderRegistryImpl implements ServiceProviderRegistry 
 		if (frame == null)
 			return null;
 
-		return getProvider(context, frame);
+		return getServiceProvider(context, frame);
 	}
 
 	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> ServiceProvider getServiceProvider(Context context, R request) {
-		return getProvider(context, request.isa());
+		return getServiceProvider(context, request.isa());
 	}
 
-	private ServiceProvider getProvider(Context context, Frame<?> frame) {
+	private ServiceProvider getServiceProvider(Context context, Frame<?> frame) {
 
-		ServiceMappingRuleByPackage ruleByPackage = getRuleByPackage(context, frame);
+		// TODO
+		// search tenant mapping
+		ServiceMapping serviceMapping = application.getServiceMapping();
+
+		ServiceMappingRuleByPackage ruleByPackage = getRuleByPackage(serviceMapping, frame);
 
 		if (ruleByPackage == null)
 			return null;
@@ -77,11 +81,11 @@ public class BaseServiceProviderRegistryImpl implements ServiceProviderRegistry 
 		return this.lookup(ruleByPackage.getProvider());
 	}
 
-	private ServiceMappingRuleByPackage getRuleByPackage(Context context, Frame<?> frame) {
-
+	private ServiceMappingRuleByPackage getRuleByPackage(ServiceMapping serviceMapping, Frame<?> frame) {
+		
 		ServiceMappingRuleByPackage ruleByPackage = null;
 
-		for (ServiceMappingRule mappingRule : this.serviceMapping.getRules()) {
+		for (ServiceMappingRule mappingRule : serviceMapping.getRules()) {
 			if (!mappingRule.getMappingType().equals(ServiceMappingType.BY_PACKAGE))
 				continue;
 

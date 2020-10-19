@@ -30,13 +30,15 @@ import org.apache.http.client.ResponseHandler;
 
 public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl<E> {
 
+	private HttpConnector connector = null;
 	private ResourceSerializer<E> resourceSerializer = null;
 
 	private String tenant = null;
 
-	public HttpResourceImpl(ResourceSet resourceSet, String tenant, Frame<E> frame) {
+	public HttpResourceImpl(ResourceSet resourceSet, HttpConnector connector, String tenant, Frame<E> frame) {
 		super(resourceSet, tenant);
 
+		this.connector = connector;
 		this.resourceSerializer = resourceSet.getContext().getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 	}
 
@@ -45,7 +47,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		return this.resourceSerializer.getFrame();
 	}
 
-	@SuppressWarnings("resource")
 	@Override
 	public String nextSequence() throws ResourceException {
 
@@ -58,10 +59,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 
-		HttpConnector connector = getContext().get(HttpConnector.class);
-		if (connector == null)
-			throw new ResourceException("Unconnected resource " + getFrame().getURI());
-
 		try {
 			nextSequence = connector.execute("nextSequence", query, new HttpNextSequenceHandler());
 		} catch (Exception e) {
@@ -71,7 +68,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		return nextSequence;
 	}
 
-	@SuppressWarnings("resource")
 	@Override
 	public void create(E entity, boolean update) throws ResourceException {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -95,10 +91,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
 
-		HttpConnector connector = getContext().get(HttpConnector.class);
-		if (connector == null)
-			throw new ResourceException("Unconnected resource " + getFrame().getURI());
-
 		try {
 			@SuppressWarnings({ "unchecked", "rawtypes" })
 			ResponseHandler<E> handler = new HttpSaveHandler(this.resourceSerializer);
@@ -112,7 +104,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		}
 	}
 
-	@SuppressWarnings("resource")
 	@Override
 	public E read(String id, String fields, boolean proxy) throws ResourceException {
 
@@ -123,10 +114,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			query += "&tenant=" + this.tenant;
 		if (proxy)
 			query += "&proxy=" + proxy;
-
-		HttpConnector connector = getContext().get(HttpConnector.class);
-		if (connector == null)
-			throw new ResourceException("Unconnected resource " + getFrame().getURI());
 
 		try {
 			@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -143,7 +130,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		return entity;
 	}
 
-	@SuppressWarnings("resource")
 	@Override
 	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException {
 
@@ -168,10 +154,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		if (order != null)
 			query += "&order=" + order;
 
-		HttpConnector connector = getContext().get(HttpConnector.class);
-		if (connector == null)
-			throw new ResourceException("Unconnected resource " + getFrame().getURI());
-
 		try {
 			@SuppressWarnings({ "rawtypes", "unchecked" })
 			HttpFindHandler<E> handler = new HttpFindHandler(this.resourceSerializer);
@@ -192,7 +174,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		create(entity, true);
 	}
 
-	@SuppressWarnings("resource")
 	@Override
 	public void delete(E entity) throws ResourceException {
 
@@ -212,10 +193,6 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 		String query = "frame=" + getFrame().getName() + "&id=" + entity.getID();
 		if (tenant != null)
 			query += "&tenant=" + this.tenant;
-
-		HttpConnector connector = getContext().get(HttpConnector.class);
-		if (connector == null)
-			throw new ResourceException("Unconnected resource " + getFrame().getURI());
 
 		try {
 			connector.execute("delete", query, new HttpDeleteHandler());

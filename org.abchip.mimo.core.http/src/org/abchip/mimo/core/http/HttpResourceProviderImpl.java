@@ -12,6 +12,7 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
+import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceFactory;
 import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.impl.ResourceProviderImpl;
@@ -26,10 +27,15 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 		this.resourceConfig.setOrderSupport(false);
 	}
 
+	@SuppressWarnings("resource")
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> createResource(ResourceSet resourceSet, Frame<E> frame, String tenantId) {
+	public <E extends EntityIdentifiable> Resource<E> createResource(ResourceSet resourceSet, Frame<E> frame, String tenantId) throws ResourceException {
 
-		Resource<E> resource = new HttpResourceImpl<E>(resourceSet, tenantId, frame);
+		HttpConnector connector = resourceSet.getContext().get(HttpConnector.class);
+		if (connector == null)
+			throw new ResourceException("Unconnected resource " + frame.getURI());
+		
+		Resource<E> resource = new HttpResourceImpl<E>(resourceSet, connector, tenantId, frame);
 		resource.setResourceConfig(this.resourceConfig);
 
 		return resource;

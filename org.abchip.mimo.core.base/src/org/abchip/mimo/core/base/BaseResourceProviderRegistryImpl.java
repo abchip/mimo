@@ -36,12 +36,13 @@ public class BaseResourceProviderRegistryImpl implements ResourceProviderRegistr
 	private static final Logger LOGGER = Logs.getLogger(BaseResourceProviderRegistryImpl.class);
 
 	private Registry<ResourceProvider> registry;
-	private ResourceMapping resourceMapping;
 
+	private Application application;
+	
 	@Inject
 	public BaseResourceProviderRegistryImpl(Application application, RegistryFactory serviceRegistryFactory) {
+		this.application = application;
 		this.registry = serviceRegistryFactory.createRegistry(ResourceProvider.class);
-		this.resourceMapping = application.getResourceMapping();
 	}
 
 	@Override
@@ -78,8 +79,12 @@ public class BaseResourceProviderRegistryImpl implements ResourceProviderRegistr
 	@Override
 	public <E extends EntityIdentifiable> ResourceProvider getResourceProvider(Context context, Frame<E> frame) throws ResourceException {
 
-		ResourceMappingRuleByFrame ruleByFrame = getRuleByFrame(frame);
-		ResourceMappingRuleByPackage ruleByPackage = getRuleByPackage(frame);
+		// TODO
+		// search tenant mapping
+		ResourceMapping resourceMapping = application.getResourceMapping();
+		
+		ResourceMappingRuleByFrame ruleByFrame = getRuleByFrame(resourceMapping, frame);
+		ResourceMappingRuleByPackage ruleByPackage = getRuleByPackage(resourceMapping, frame);
 
 		if (ruleByFrame == null && ruleByPackage == null)
 			return null;
@@ -107,7 +112,7 @@ public class BaseResourceProviderRegistryImpl implements ResourceProviderRegistr
 		}
 	}
 
-	private ResourceMappingRuleByFrame getRuleByFrame(Frame<?> frame) {
+	private ResourceMappingRuleByFrame getRuleByFrame(ResourceMapping resourceMapping, Frame<?> frame) {
 
 		List<Frame<?>> frames = new LinkedList<Frame<?>>();
 		frames.add(frame);
@@ -115,7 +120,7 @@ public class BaseResourceProviderRegistryImpl implements ResourceProviderRegistr
 
 		ResourceMappingRuleByFrame ruleByFrame = null;
 		for (Frame<?> frameItem : frames) {
-			for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
+			for (ResourceMappingRule mappingRule : resourceMapping.getRules()) {
 				if (!mappingRule.getMappingType().equals(ResourceMappingType.BY_FRAME))
 					continue;
 
@@ -132,11 +137,11 @@ public class BaseResourceProviderRegistryImpl implements ResourceProviderRegistr
 		return ruleByFrame;
 	}
 
-	private ResourceMappingRuleByPackage getRuleByPackage(Frame<?> frame) {
+	private ResourceMappingRuleByPackage getRuleByPackage(ResourceMapping resourceMapping, Frame<?> frame) {
 
 		ResourceMappingRuleByPackage ruleByPackage = null;
 
-		for (ResourceMappingRule mappingRule : this.resourceMapping.getRules()) {
+		for (ResourceMappingRule mappingRule : resourceMapping.getRules()) {
 			if (!mappingRule.getMappingType().equals(ResourceMappingType.BY_PACKAGE))
 				continue;
 

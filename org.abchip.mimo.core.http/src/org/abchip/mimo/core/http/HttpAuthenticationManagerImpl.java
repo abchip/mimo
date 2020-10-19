@@ -152,7 +152,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		ContextProvider contextProvider = application.getContext().createChildContext(contextId);
 		try {
 			Context context = contextProvider.get();
-			connectContext(context, authentication);
+			connectAdmin(context, authentication);
 
 			LOGGER.audit("Connection success id {} adminKey {} tenant {}", context.getContextDescription().getId(), adminKey, tenant);
 		} catch (Exception e) {
@@ -253,27 +253,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	}
 
 	@SuppressWarnings("resource")
-	private HttpConnector getConnector() throws NetworkingException, URISyntaxException {
-		Context context = application.getContext();
-
-		HttpConnector connector = context.get(HttpConnector.class);
-
-		if (connector == null) {
-			synchronized (this) {
-				connector = context.get(HttpConnector.class);
-				if (connector == null) {
-					AuthenticationAdminKey authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAdminKey();
-					authentication.setAdminKey(application.getAdminKey());
-					connectContext(context, authentication);
-				}
-			}
-		}
-
-		return connector;
-	}
-
-	@SuppressWarnings("resource")
-	private void connectContext(Context context, AuthenticationAdminKey authentication) throws NetworkingException, URISyntaxException {
+	private void connectAdmin(Context context, AuthenticationAdminKey authentication) throws NetworkingException, URISyntaxException {
 
 		String adminKey = authentication.getAdminKey();
 		String tenant = authentication.getTenant();
@@ -311,7 +291,21 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 				try {
 					java.lang.Thread.sleep(1000);
 
-					HttpConnector connector = getConnector();
+					Context context = application.getContext();
+
+					HttpConnector connector = context.get(HttpConnector.class);
+
+					if (connector == null) {
+						synchronized (this) {
+							connector = context.get(HttpConnector.class);
+							if (connector == null) {
+								AuthenticationAdminKey authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAdminKey();
+								authentication.setAdminKey(application.getAdminKey());
+								connectAdmin(context, authentication);
+							}
+						}
+					}
+
 					if (connector != null)
 						java.lang.Thread.sleep(5000);
 				} catch (NetworkingException | URISyntaxException e) {
