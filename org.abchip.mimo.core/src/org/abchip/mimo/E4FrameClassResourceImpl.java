@@ -56,12 +56,12 @@ public class E4FrameClassResourceImpl<E extends Frame<?>> extends ResourceImpl<E
 	}
 
 	@Override
-	public E read(String name, String fields, boolean proxy) {
+	public E lookup(String name, String fields, boolean proxy) {
 		return this.entities.get(name);
 	}
 
 	@Override
-	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) {
+	public List<E> find(String filter, String fields, String order, int limit, boolean proxy) {
 		List<E> entities = new ArrayList<E>(this.entities.values());
 
 		Collections.sort(entities, new Comparator<E>() {

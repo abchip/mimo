@@ -83,7 +83,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	}
 
 	@Override
-	public E read(String name, String fields, boolean proxy) throws ResourceException {
+	public E lookup(String name, String fields, boolean proxy) throws ResourceException {
 
 		synchronized (this.resourceSerializer) {
 			Path folder = getClassFolder(this.getFrame(), false);
@@ -112,7 +112,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	}
 
 	@Override
-	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException {
+	public List<E> find(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException {
 
 		synchronized (this.resourceSerializer) {
 			List<E> entries = new ArrayList<E>();

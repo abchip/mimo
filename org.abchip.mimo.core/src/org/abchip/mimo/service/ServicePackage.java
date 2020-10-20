@@ -338,7 +338,7 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_REQUEST__CONTEXT = SERVICE_MESSAGE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * The feature id for the '<em><b>User Profile</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -393,7 +393,7 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_METHOD_REQUEST__CONTEXT = SERVICE_REQUEST__CONTEXT;
 
 	/**
-	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * The feature id for the '<em><b>User Profile</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -773,10 +773,10 @@ public interface ServicePackage extends EPackage {
 	EReference getServiceRequest_Context();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.abchip.mimo.service.ServiceRequest#getUserProfile <em>User Profile</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.service.ServiceRequest#getUserProfile <em>User Profile</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>User Profile</em>'.
+	 * @return the meta object for the reference '<em>User Profile</em>'.
 	 * @see org.abchip.mimo.service.ServiceRequest#getUserProfile()
 	 * @see #getServiceRequest()
 	 * @generated
@@ -1077,7 +1077,7 @@ public interface ServicePackage extends EPackage {
 		EReference SERVICE_REQUEST__CONTEXT = eINSTANCE.getServiceRequest_Context();
 
 		/**
-		 * The meta object literal for the '<em><b>User Profile</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>User Profile</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -318,7 +318,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @generated NOT
 	 */
 	@Override
-	public abstract E read(String name, String fields, boolean proxy) throws ResourceException;
+	public abstract E lookup(String name, String fields, boolean proxy) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -326,7 +326,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @generated NOT
 	 */
 	@Override
-	public abstract List<E> read(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException;
+	public abstract List<E> find(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

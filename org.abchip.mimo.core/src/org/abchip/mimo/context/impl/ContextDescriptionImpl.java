@@ -404,7 +404,8 @@ public class ContextDescriptionImpl extends EntityIdentifiableImpl implements Co
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

@@ -62,7 +62,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 	@Override
 	public EntityIterator<E> find(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException {
 
-		List<E> entities = resource.read(filter, fields, order, limit, proxy);
+		List<E> entities = resource.find(filter, fields, order, limit, proxy);
 
 		if (resource.getResourceConfig().isOrderSupport() && order != null) {
 
@@ -141,7 +141,7 @@ public class BaseResourceReaderImpl<E extends EntityIdentifiable> extends Resour
 	@Override
 	public E lookup(String name, boolean proxy) throws ResourceException {
 
-		E entity = resource.read(name, null, proxy);
+		E entity = resource.lookup(name, null, proxy);
 
 		return entity;
 	}

@@ -70,10 +70,26 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException"
+	 * @generated
+	 */
+	List<E> find(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
 	Frame<E> getFrame();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException"
+	 * @generated
+	 */
+	E lookup(String name, String fields, boolean proxy) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,22 +167,6 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	 * @generated
 	 */
 	String nextSequence() throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException"
-	 * @generated
-	 */
-	E read(String name, String fields, boolean proxy) throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException"
-	 * @generated
-	 */
-	List<E> read(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->

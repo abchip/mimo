@@ -507,7 +507,7 @@ public interface ApplicationPackage extends EPackage {
 	int RESET_LOG__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
 
 	/**
-	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * The feature id for the '<em><b>User Profile</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -562,7 +562,7 @@ public interface ApplicationPackage extends EPackage {
 	int SET_LOG__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
 
 	/**
-	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * The feature id for the '<em><b>User Profile</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

@@ -273,6 +273,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		ContextDescription contextDescription = httpClient.execute(new HttpPost(uri.build()), new HttpLoginHandler(serializer));
 
+		context.getContextDescription().setUser(application.getContextDescription().getUser());
 		context.getContextDescription().setTenant(authentication.getTenant());
 		context.getContextDescription().setCurrencyUom(contextDescription.getCurrencyUom());
 		context.getContextDescription().setLocale(contextDescription.getLocale());

@@ -947,12 +947,30 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1 = createEGenericType(resourceEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(resourceEClass, null, "find", 1, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "order", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "limit", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
+		g1 = createEGenericType(resourceEClass_E);
+		initEOperation(op, g1);
+
 		addEOperation(resourceEClass, theContextPackage.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(resourceEClass, null, "getFrame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(resourceEClass_E);
 		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceEClass, null, "lookup", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
+		g1 = createEGenericType(resourceEClass_E);
 		initEOperation(op, g1);
 
 		op = addEOperation(resourceEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -967,24 +985,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		op = addEOperation(resourceEClass, ecorePackage.getEString(), "nextSequence", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());
-
-		op = addEOperation(resourceEClass, null, "read", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getResourceException());
-		g1 = createEGenericType(resourceEClass_E);
-		initEOperation(op, g1);
-
-		op = addEOperation(resourceEClass, null, "read", 1, -1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "filter", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "fields", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "order", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "limit", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "proxy", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getResourceException());
-		g1 = createEGenericType(resourceEClass_E);
-		initEOperation(op, g1);
 
 		op = addEOperation(resourceEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceEClass_E);

@@ -394,8 +394,7 @@
           eType="#//context/ContextStatus"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeZone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContextEvent" abstract="true" interface="true">
       <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
@@ -1245,11 +1244,25 @@
           <eGenericType eTypeParameter="#//resource/Resource/E"/>
         </eParameters>
       </eOperations>
+      <eOperations name="find" lowerBound="1" upperBound="-1" eExceptions="#//resource/ResourceException">
+        <eGenericType eTypeParameter="#//resource/Resource/E"/>
+        <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eOperations>
       <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
       <eOperations name="getFrame" lowerBound="1">
         <eGenericType eClassifier="#//entity/Frame">
           <eTypeArguments eTypeParameter="#//resource/Resource/E"/>
         </eGenericType>
+      </eOperations>
+      <eOperations name="lookup" lowerBound="1" eExceptions="#//resource/ResourceException">
+        <eGenericType eTypeParameter="#//resource/Resource/E"/>
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="make" lowerBound="1">
         <eGenericType eTypeParameter="#//resource/Resource/E"/>
@@ -1260,20 +1273,6 @@
       </eOperations>
       <eOperations name="nextSequence" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           eExceptions="#//resource/ResourceException"/>
-      <eOperations name="read" lowerBound="1" eExceptions="#//resource/ResourceException">
-        <eGenericType eTypeParameter="#//resource/Resource/E"/>
-        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eOperations>
-      <eOperations name="read" lowerBound="1" upperBound="-1" eExceptions="#//resource/ResourceException">
-        <eGenericType eTypeParameter="#//resource/Resource/E"/>
-        <eParameters name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eOperations>
       <eOperations name="update" eExceptions="#//resource/ResourceException">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//resource/Resource/E"/>
@@ -2353,7 +2352,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//context/Context"
           changeable="false" transient="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="userProfile" lowerBound="1"
-          eType="#//context/UserProfile" containment="true"/>
+          eType="#//context/UserProfile"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceResponse" eSuperTypes="#//service/ServiceMessage">
       <eOperations name="onError" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

@@ -87,22 +87,22 @@ public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessag
 	Context getContext();
 
 	/**
-	 * Returns the value of the '<em><b>User Profile</b></em>' containment reference.
+	 * Returns the value of the '<em><b>User Profile</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Profile</em>' containment reference.
+	 * @return the value of the '<em>User Profile</em>' reference.
 	 * @see #setUserProfile(UserProfile)
 	 * @see org.abchip.mimo.service.ServicePackage#getServiceRequest_UserProfile()
-	 * @model containment="true" resolveProxies="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	UserProfile getUserProfile();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRequest#getUserProfile <em>User Profile</em>}' containment reference.
+	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRequest#getUserProfile <em>User Profile</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Profile</em>' containment reference.
+	 * @param value the new value of the '<em>User Profile</em>' reference.
 	 * @see #getUserProfile()
 	 * @generated
 	 */

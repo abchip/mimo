@@ -117,7 +117,7 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	@Override
 	public EObject getEObject(String uriFragment) {
 		try {
-			return (EObject) this.getResource().read(uriFragment, null, false);
+			return (EObject) this.getResource().lookup(uriFragment, null, false);
 		} catch (ResourceException e) {
 			LOGGER.error(e.getMessage());
 			throw new RuntimeException("Unexpected condition bsda8f7tsd8rf7ewr4b86ds");

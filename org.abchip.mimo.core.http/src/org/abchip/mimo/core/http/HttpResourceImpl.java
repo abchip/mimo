@@ -105,7 +105,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	}
 
 	@Override
-	public E read(String id, String fields, boolean proxy) throws ResourceException {
+	public E lookup(String id, String fields, boolean proxy) throws ResourceException {
 
 		E entity = null;
 
@@ -131,7 +131,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	}
 
 	@Override
-	public List<E> read(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException {
+	public List<E> find(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException {
 
 		List<E> entities = null;
 

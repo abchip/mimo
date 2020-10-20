@@ -104,7 +104,7 @@ public interface ResourcePackage extends EPackage {
 	int LOAD_SEED__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
 
 	/**
-	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * The feature id for the '<em><b>User Profile</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -177,7 +177,7 @@ public interface ResourcePackage extends EPackage {
 	int LOAD_SEEDS__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
 
 	/**
-	 * The feature id for the '<em><b>User Profile</b></em>' containment reference.
+	 * The feature id for the '<em><b>User Profile</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

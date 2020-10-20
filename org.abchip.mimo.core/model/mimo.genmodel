@@ -828,25 +828,25 @@
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/detach">
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/detach/entity"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/find">
+          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/find/filter"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/find/fields"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/find/order"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/find/limit"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/find/proxy"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/getContext"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/getFrame"/>
+        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/lookup">
+          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/lookup/name"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/lookup/fields"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/lookup/proxy"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/make"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/make.1">
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/make.1/sequence"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/nextSequence"/>
-        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/read">
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read/name"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read/fields"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read/proxy"/>
-        </genOperations>
-        <genOperations ecoreOperation="mimo.ecore#//resource/Resource/read.1">
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read.1/filter"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read.1/fields"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read.1/order"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read.1/limit"/>
-          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/read.1/proxy"/>
-        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/update">
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/update/entity"/>
         </genOperations>

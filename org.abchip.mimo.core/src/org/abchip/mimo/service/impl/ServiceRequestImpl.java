@@ -18,7 +18,6 @@ import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EObject;
@@ -83,7 +82,7 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	protected Context context;
 
 	/**
-	 * The cached value of the '{@link #getUserProfile() <em>User Profile</em>}' containment reference.
+	 * The cached value of the '{@link #getUserProfile() <em>User Profile</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getUserProfile()
 	 * @generated
@@ -185,12 +184,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 			InternalEObject oldUserProfile = (InternalEObject)userProfile;
 			userProfile = (UserProfile)eResolveProxy(oldUserProfile);
 			if (userProfile != oldUserProfile) {
-				InternalEObject newUserProfile = (InternalEObject)userProfile;
-				NotificationChain msgs = oldUserProfile.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServicePackage.SERVICE_REQUEST__USER_PROFILE, null, null);
-				if (newUserProfile.eInternalContainer() == null) {
-					msgs = newUserProfile.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServicePackage.SERVICE_REQUEST__USER_PROFILE, null, msgs);
-				}
-				if (msgs != null) msgs.dispatch();
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServicePackage.SERVICE_REQUEST__USER_PROFILE, oldUserProfile, userProfile));
 			}
@@ -210,33 +203,12 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetUserProfile(UserProfile newUserProfile, NotificationChain msgs) {
-		UserProfile oldUserProfile = userProfile;
-		userProfile = newUserProfile;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REQUEST__USER_PROFILE, oldUserProfile, newUserProfile);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public void setUserProfile(UserProfile newUserProfile) {
-		if (newUserProfile != userProfile) {
-			NotificationChain msgs = null;
-			if (userProfile != null)
-				msgs = ((InternalEObject)userProfile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServicePackage.SERVICE_REQUEST__USER_PROFILE, null, msgs);
-			if (newUserProfile != null)
-				msgs = ((InternalEObject)newUserProfile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServicePackage.SERVICE_REQUEST__USER_PROFILE, null, msgs);
-			msgs = basicSetUserProfile(newUserProfile, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REQUEST__USER_PROFILE, newUserProfile, newUserProfile));
+		UserProfile oldUserProfile = userProfile;
+		userProfile = newUserProfile;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REQUEST__USER_PROFILE, oldUserProfile, userProfile));
 	}
 
 	/**
@@ -289,19 +261,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 		}
 
 		return response;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ServicePackage.SERVICE_REQUEST__USER_PROFILE:
-				return basicSetUserProfile(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

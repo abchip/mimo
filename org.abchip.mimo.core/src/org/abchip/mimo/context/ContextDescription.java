@@ -253,7 +253,7 @@ public interface ContextDescription extends EntityIdentifiable {
 	 * @return the value of the '<em>User</em>' attribute.
 	 * @see #setUser(String)
 	 * @see org.abchip.mimo.context.ContextPackage#getContextDescription_User()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getUser();
