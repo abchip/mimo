@@ -57,15 +57,22 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 
 	@Override
 	public void create(E entity, boolean update) throws ResourceException {
+		create(entity, update, false);
+	}
+
+	@Override
+	public void create(E entity, boolean update, boolean raw) throws ResourceException {
 
 		EntityLocker<?> entityLocker = lock(this.getContext(), entity);
 
 		try {
-			Resources.firePreSaveEvent(this, entity);
+			if(!raw)
+				Resources.firePreSaveEvent(this, entity);
 
-			this.getResource().create(entity, update);
+			this.getResource().create(entity, update, raw);
 
-			Resources.firePostSaveEvent(this, entity);
+			if(!raw)
+				Resources.firePostSaveEvent(this, entity);
 		} finally {
 			unlock(entityLocker);
 		}

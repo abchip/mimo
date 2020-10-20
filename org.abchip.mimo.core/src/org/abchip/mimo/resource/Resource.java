@@ -38,14 +38,6 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true" updateRequired="true"
-	 * @generated
-	 */
-	void create(E entity, boolean update) throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" idRequired="true"
 	 * @generated
 	 */
@@ -159,6 +151,14 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	 * @generated
 	 */
 	void attach(E entity) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model exceptions="org.abchip.mimo.resource.ResourceException" entityRequired="true" updateRequired="true" rawRequired="true"
+	 * @generated
+	 */
+	void create(E entity, boolean update, boolean raw) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc -->

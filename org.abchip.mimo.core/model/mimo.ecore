@@ -1229,6 +1229,7 @@
           <eGenericType eTypeParameter="#//resource/Resource/E"/>
         </eParameters>
         <eParameters name="update" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="raw" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="createProxy" lowerBound="1">
         <eGenericType eTypeParameter="#//resource/Resource/E"/>
@@ -2009,6 +2010,13 @@
           <eGenericType eTypeParameter="#//resource/ResourceWriter/E"/>
         </eParameters>
         <eParameters name="update" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eOperations>
+      <eOperations name="create" eExceptions="#//resource/ResourceException">
+        <eParameters name="entity" lowerBound="1">
+          <eGenericType eTypeParameter="#//resource/ResourceWriter/E"/>
+        </eParameters>
+        <eParameters name="update" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="raw" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="update" eExceptions="#//resource/ResourceException">
         <eParameters name="entity" lowerBound="1">

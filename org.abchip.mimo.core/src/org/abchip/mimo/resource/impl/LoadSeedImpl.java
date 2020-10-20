@@ -251,7 +251,7 @@ public class LoadSeedImpl extends ServiceRequestImpl<ServiceResponse> implements
 				for (EntityIdentifiable entityIdentifiable : entityContainer.getContents()) {
 					try {
 						ResourceWriter<EntityIdentifiable> entityWriter = context.getResourceManager().getResourceWriter(entityIdentifiable.isa(), this.getTenant());
-						entityWriter.create(entityIdentifiable, this.isUpdate());
+						entityWriter.create(entityIdentifiable, this.isUpdate(), true);
 					} catch (Exception e) {
 						LOGGER.error(e.getMessage());
 					}

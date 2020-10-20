@@ -69,7 +69,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	}
 
 	@Override
-	public void create(E entity, boolean update) throws ResourceException {
+	public void create(E entity, boolean update, boolean raw) throws ResourceException {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		synchronized (this.resourceSerializer) {
 			this.resourceSerializer.add(entity);
@@ -82,7 +82,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			}
 		}
 
-		String query = "frame=" + getFrame().getName() + "&replace=" + update;
+		String query = "frame=" + getFrame().getName() + "&replace=" + update + "&raw=" + raw;
 		try {
 			query += "&json=" + URLEncoder.encode(baos.toString(), "UTF-8");
 		} catch (Exception e) {
@@ -171,7 +171,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 	@Override
 	public void update(E entity) throws ResourceException {
-		create(entity, true);
+		create(entity, true, false);
 	}
 
 	@Override

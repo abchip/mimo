@@ -47,7 +47,7 @@ public class E4FrameEnumResourceImpl<E extends EntityEnum> extends ResourceImpl<
 	}
 
 	@Override
-	public void create(E entity, boolean update) {
+	public void create(E entity, boolean update, boolean raw) {
 		throw new UnsupportedOperationException();
 	}
 

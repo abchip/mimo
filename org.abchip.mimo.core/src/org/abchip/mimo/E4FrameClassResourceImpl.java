@@ -46,7 +46,7 @@ public class E4FrameClassResourceImpl<E extends Frame<?>> extends ResourceImpl<E
 	}
 
 	@Override
-	public void create(E entity, boolean update) {
+	public void create(E entity, boolean update, boolean raw) {
 		throw new UnsupportedOperationException();
 	}
 

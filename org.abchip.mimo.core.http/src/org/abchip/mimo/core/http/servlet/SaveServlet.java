@@ -48,8 +48,12 @@ public class SaveServlet extends BaseServlet {
 			if (replace == null || replace.trim().isEmpty())
 				replace = "false";
 
+			String raw = request.getParameter("raw");
+			if (raw == null || raw.trim().isEmpty())
+				raw = "false";
+
 			ResourceWriter<E> entityWriter = context.getResourceManager().getResourceWriter(frame, tenant);
-			entityWriter.create(entity, Boolean.parseBoolean(replace));
+			entityWriter.create(entity, Boolean.parseBoolean(replace), Boolean.parseBoolean(raw));
 
 			response.setStatus(HttpServletResponse.SC_OK);
 

@@ -818,6 +818,7 @@
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/create">
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/create/entity"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/create/update"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/Resource/create/raw"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/createProxy">
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/createProxy/id"/>
@@ -1175,6 +1176,11 @@
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceWriter/create.1">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceWriter/create.1/entity"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceWriter/create.1/update"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceWriter/create.2">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceWriter/create.2/entity"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceWriter/create.2/update"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceWriter/create.2/raw"/>
         </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceWriter/update">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceWriter/update/entity"/>

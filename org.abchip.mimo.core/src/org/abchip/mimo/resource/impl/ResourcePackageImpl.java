@@ -931,6 +931,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1 = createEGenericType(resourceEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "update", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "raw", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());
 
 		op = addEOperation(resourceEClass, null, "createProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1734,6 +1735,13 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1 = createEGenericType(resourceWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "update", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
+
+		op = addEOperation(resourceWriterEClass, null, "create", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceWriterEClass_E);
+		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "update", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "raw", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());
 
 		op = addEOperation(resourceWriterEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);

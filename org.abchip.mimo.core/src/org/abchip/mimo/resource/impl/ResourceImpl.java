@@ -194,11 +194,13 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
 	 */
-	public abstract void create(E entity, boolean update) throws ResourceException;
+	@Override
+	public abstract void create(E entity, boolean update, boolean raw) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

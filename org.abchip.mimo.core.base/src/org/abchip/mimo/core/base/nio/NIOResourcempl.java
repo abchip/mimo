@@ -53,7 +53,7 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	}
 
 	@Override
-	public void create(E entity, boolean update) throws ResourceException {
+	public void create(E entity, boolean update, boolean raw) throws ResourceException {
 
 		synchronized (this.resourceSerializer) {
 			Path file = getClassFolder(getFrame(), true).resolve(entity.getID());
