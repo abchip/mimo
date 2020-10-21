@@ -8,6 +8,7 @@
 package org.abchip.mimo.entity;
 
 import org.abchip.mimo.java.JavaPackage;
+import org.abchip.mimo.service.ServicePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -407,6 +408,116 @@ public interface EntityPackage extends EPackage {
 	int ENTITY_TYPE_FEATURE_COUNT = ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FindImpl <em>Find</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.FindImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFind()
+	 * @generated
+	 */
+	int FIND = 11;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>User Profile</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND__USER_PROFILE = ServicePackage.SERVICE_REQUEST__USER_PROFILE;
+
+	/**
+	 * The feature id for the '<em><b>Frame</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND__FRAME = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Find</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FindResponseImpl <em>Find Response</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.entity.impl.FindResponseImpl
+	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFindResponse()
+	 * @generated
+	 */
+	int FIND_RESPONSE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Error Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND_RESPONSE__ERROR_MESSAGE = ServicePackage.SERVICE_RESPONSE__ERROR_MESSAGE;
+
+	/**
+	 * The feature id for the '<em><b>Success Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND_RESPONSE__SUCCESS_MESSAGE = ServicePackage.SERVICE_RESPONSE__SUCCESS_MESSAGE;
+
+	/**
+	 * The feature id for the '<em><b>Entities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND_RESPONSE__ENTITIES = ServicePackage.SERVICE_RESPONSE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Find Response</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND_RESPONSE_FEATURE_COUNT = ServicePackage.SERVICE_RESPONSE_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FrameImpl <em>Frame</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -414,7 +525,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFrame()
 	 * @generated
 	 */
-	int FRAME = 11;
+	int FRAME = 13;
 
 	/**
 	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
@@ -532,7 +643,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getSlot()
 	 * @generated
 	 */
-	int SLOT = 12;
+	int SLOT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -659,7 +770,7 @@ public interface EntityPackage extends EPackage {
 	 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getEntityState()
 	 * @generated
 	 */
-	int ENTITY_STATE = 13;
+	int ENTITY_STATE = 15;
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Cardinality <em>Cardinality</em>}'.
@@ -935,6 +1046,48 @@ public interface EntityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEntityType_Slots();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Find <em>Find</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Find</em>'.
+	 * @see org.abchip.mimo.entity.Find
+	 * @generated
+	 */
+	EClass getFind();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Find#getFrame <em>Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Frame</em>'.
+	 * @see org.abchip.mimo.entity.Find#getFrame()
+	 * @see #getFind()
+	 * @generated
+	 */
+	EAttribute getFind_Frame();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.entity.FindResponse <em>Find Response</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Find Response</em>'.
+	 * @see org.abchip.mimo.entity.FindResponse
+	 * @generated
+	 */
+	EClass getFindResponse();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.abchip.mimo.entity.FindResponse#getEntities <em>Entities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Entities</em>'.
+	 * @see org.abchip.mimo.entity.FindResponse#getEntities()
+	 * @see #getFindResponse()
+	 * @generated
+	 */
+	EReference getFindResponse_Entities();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.Frame <em>Frame</em>}'.
@@ -1470,6 +1623,42 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY_TYPE__SLOTS = eINSTANCE.getEntityType_Slots();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.FindImpl <em>Find</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.entity.impl.FindImpl
+		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFind()
+		 * @generated
+		 */
+		EClass FIND = eINSTANCE.getFind();
+
+		/**
+		 * The meta object literal for the '<em><b>Frame</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIND__FRAME = eINSTANCE.getFind_Frame();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.FindResponseImpl <em>Find Response</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.entity.impl.FindResponseImpl
+		 * @see org.abchip.mimo.entity.impl.EntityPackageImpl#getFindResponse()
+		 * @generated
+		 */
+		EClass FIND_RESPONSE = eINSTANCE.getFindResponse();
+
+		/**
+		 * The meta object literal for the '<em><b>Entities</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FIND_RESPONSE__ENTITIES = eINSTANCE.getFindResponse_Entities();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.FrameImpl <em>Frame</em>}' class.

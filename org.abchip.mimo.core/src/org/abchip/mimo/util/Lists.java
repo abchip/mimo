@@ -13,6 +13,12 @@ import java.util.List;
 
 public class Lists {
 
+	public static <E> void addAll(List<E> list, Iterable<E> elements) {
+		for(E element: elements) {
+			list.add(element);
+		}
+	}
+
 	public static <E> void addFirst(List<E> list, E element) {
 		list.add(0, element);
 	}

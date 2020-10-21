@@ -36,6 +36,8 @@ import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.EntityState;
 import org.abchip.mimo.entity.EntityType;
 import org.abchip.mimo.entity.EntityTyped;
+import org.abchip.mimo.entity.Find;
+import org.abchip.mimo.entity.FindResponse;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.impl.MimoPackageImpl;
@@ -147,6 +149,20 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	private EClass entityTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass findEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass findResponseEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -541,6 +557,46 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getFind() {
+		return findEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFind_Frame() {
+		return (EAttribute)findEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getFindResponse() {
+		return findResponseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFindResponse_Entities() {
+		return (EReference)findResponseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getFrame() {
 		return frameEClass;
 	}
@@ -861,6 +917,12 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		entityTypeEClass = createEClass(ENTITY_TYPE);
 		createEReference(entityTypeEClass, ENTITY_TYPE__SLOTS);
 
+		findEClass = createEClass(FIND);
+		createEAttribute(findEClass, FIND__FRAME);
+
+		findResponseEClass = createEClass(FIND_RESPONSE);
+		createEReference(findResponseEClass, FIND_RESPONSE__ENTITIES);
+
 		frameEClass = createEClass(FRAME);
 		createEAttribute(frameEClass, FRAME__ABSTRACT);
 		createEAttribute(frameEClass, FRAME__AUTO_INCREMENT);
@@ -918,12 +980,15 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		// Obtain other dependent packages
 		ResourcePackage theResourcePackage = (ResourcePackage)EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
+		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
 		DataPackage theDataPackage = (DataPackage)EPackage.Registry.INSTANCE.getEPackage(DataPackage.eNS_URI);
 
 		// Create type parameters
 		ETypeParameter entityIteratorEClass_E = addETypeParameter(entityIteratorEClass, "E");
 		ETypeParameter entityTypedEClass_T = addETypeParameter(entityTypedEClass, "T");
 		ETypeParameter entityTypeEClass_E = addETypeParameter(entityTypeEClass, "E");
+		ETypeParameter findEClass_E = addETypeParameter(findEClass, "E");
+		ETypeParameter findResponseEClass_E = addETypeParameter(findResponseEClass, "E");
 		ETypeParameter frameEClass_E = addETypeParameter(frameEClass, "E");
 
 		// Set bounds for type parameters
@@ -937,6 +1002,10 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		entityTypeEClass_E.getEBounds().add(g1);
+		g1 = createEGenericType(this.getEntityIdentifiable());
+		findEClass_E.getEBounds().add(g1);
+		g1 = createEGenericType(this.getEntityIdentifiable());
+		findResponseEClass_E.getEBounds().add(g1);
 		g1 = createEGenericType(this.getEntity());
 		frameEClass_E.getEBounds().add(g1);
 
@@ -960,6 +1029,19 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 		entityIteratorEClass.getEGenericSuperTypes().add(g1);
 		entityTypedEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		entityTypeEClass.getESuperTypes().add(this.getEntityIdentifiable());
+		g1 = createEGenericType(theServicePackage.getServiceRequest());
+		g2 = createEGenericType(this.getFindResponse());
+		g1.getETypeArguments().add(g2);
+		EGenericType g3 = createEGenericType(findEClass_E);
+		g2.getETypeArguments().add(g3);
+		findEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theJavaPackage.getJavaCallable());
+		g2 = createEGenericType(this.getFindResponse());
+		g1.getETypeArguments().add(g2);
+		g3 = createEGenericType(findEClass_E);
+		g2.getETypeArguments().add(g3);
+		findEClass.getEGenericSuperTypes().add(g1);
+		findResponseEClass.getESuperTypes().add(theServicePackage.getServiceResponse());
 		frameEClass.getESuperTypes().add(this.getEntityIdentifiable());
 		slotEClass.getESuperTypes().add(this.getEntityIdentifiable());
 
@@ -1059,13 +1141,20 @@ public class EntityPackageImpl extends EPackageImpl implements EntityPackage {
 
 		addEOperation(entityTypeEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(findEClass, Find.class, "Find", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFind_Frame(), ecorePackage.getEString(), "frame", null, 1, 1, Find.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(findResponseEClass, FindResponse.class, "FindResponse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		g1 = createEGenericType(findResponseEClass_E);
+		initEReference(getFindResponse_Entities(), g1, null, "entities", null, 1, -1, FindResponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(frameEClass, Frame.class, "Frame", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFrame_Abstract(), ecorePackage.getEBoolean(), "abstract", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_AutoIncrement(), ecorePackage.getEBoolean(), "autoIncrement", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(this.getFrame());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
-		EGenericType g3 = createEGenericType(frameEClass_E);
+		g3 = createEGenericType(frameEClass_E);
 		g2.setELowerBound(g3);
 		initEReference(getFrame_Ako(), g1, null, "ako", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrame_Enum(), ecorePackage.getEBoolean(), "enum", null, 0, 1, Frame.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);

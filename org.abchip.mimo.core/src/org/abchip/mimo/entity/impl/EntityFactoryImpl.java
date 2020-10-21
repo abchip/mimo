@@ -65,6 +65,8 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 			case EntityPackage.DEFAULT: return (EObject)createDefault();
 			case EntityPackage.DOMAIN: return (EObject)createDomain();
 			case EntityPackage.ENTITY_CONTAINER: return (EObject)createEntityContainer();
+			case EntityPackage.FIND: return (EObject)createFind();
+			case EntityPackage.FIND_RESPONSE: return (EObject)createFindResponse();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -131,6 +133,28 @@ public class EntityFactoryImpl extends EFactoryImpl implements EntityFactory {
 	public EntityContainer createEntityContainer() {
 		EntityContainerImpl entityContainer = new EntityContainerImpl();
 		return entityContainer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public <E extends EntityIdentifiable> Find<E> createFind() {
+		FindImpl<E> find = new FindImpl<E>();
+		return find;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public <E extends EntityIdentifiable> FindResponse<E> createFindResponse() {
+		FindResponseImpl<E> findResponse = new FindResponseImpl<E>();
+		return findResponse;
 	}
 
 	/**

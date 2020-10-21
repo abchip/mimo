@@ -54,6 +54,24 @@ public interface EntityFactory extends EFactory {
 	EntityContainer createEntityContainer();
 
 	/**
+	 * Returns a new object of class '<em>Find</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Find</em>'.
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Find<E> createFind();
+
+	/**
+	 * Returns a new object of class '<em>Find Response</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Find Response</em>'.
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> FindResponse<E> createFindResponse();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

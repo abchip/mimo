@@ -646,6 +646,15 @@
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityType/hasTable"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityType/getText"/>
       </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//entity/Find">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/Find/E"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Find/frame"/>
+      </genClasses>
+      <genClasses ecoreClass="mimo.ecore#//entity/FindResponse">
+        <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FindResponse/E"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference mimo.ecore#//entity/FindResponse/entities"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Frame">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/Frame/E"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Frame/abstract"/>

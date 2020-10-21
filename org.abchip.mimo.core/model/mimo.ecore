@@ -987,6 +987,32 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="slots" upperBound="-1"
           eType="#//entity/Slot" containment="true"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Find">
+      <eTypeParameters name="E">
+        <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+      </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eGenericSuperTypes eClassifier="#//service/ServiceRequest">
+        <eTypeArguments eClassifier="#//entity/FindResponse">
+          <eTypeArguments eTypeParameter="#//entity/Find/E"/>
+        </eTypeArguments>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="#//java/JavaCallable">
+        <eTypeArguments eClassifier="#//entity/FindResponse">
+          <eTypeArguments eTypeParameter="#//entity/Find/E"/>
+        </eTypeArguments>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FindResponse" eSuperTypes="#//service/ServiceResponse">
+      <eTypeParameters name="E">
+        <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+      </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entities" lowerBound="1"
+          upperBound="-1">
+        <eGenericType eTypeParameter="#//entity/FindResponse/E"/>
+      </eStructuralFeatures>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Frame" abstract="true" eSuperTypes="#//entity/EntityIdentifiable">
       <eTypeParameters name="E">
         <eBounds eClassifier="#//entity/Entity"/>
