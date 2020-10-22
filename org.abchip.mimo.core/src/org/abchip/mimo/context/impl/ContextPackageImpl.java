@@ -824,6 +824,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getProviderConfig_Token() {
+		return (EAttribute)providerConfigEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProviderUser() {
 		return providerUserEClass;
 	}
@@ -1204,6 +1214,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		createEReference(providerConfigEClass, PROVIDER_CONFIG__HOST);
 		createEAttribute(providerConfigEClass, PROVIDER_CONFIG__PATH);
 		createEReference(providerConfigEClass, PROVIDER_CONFIG__PUBLIC_USER);
+		createEAttribute(providerConfigEClass, PROVIDER_CONFIG__TOKEN);
 
 		providerUserEClass = createEClass(PROVIDER_USER);
 		createEAttribute(providerUserEClass, PROVIDER_USER__USER);
@@ -1709,6 +1720,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		initEReference(getProviderConfig_Host(), theNetworkingPackage.getHostConfig(), null, "host", null, 1, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProviderConfig_Path(), ecorePackage.getEString(), "path", null, 1, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProviderConfig_PublicUser(), this.getProviderUser(), null, "publicUser", null, 0, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProviderConfig_Token(), ecorePackage.getEString(), "token", null, 0, 1, ProviderConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(providerUserEClass, ProviderUser.class, "ProviderUser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProviderUser_User(), ecorePackage.getEString(), "user", null, 1, 1, ProviderUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

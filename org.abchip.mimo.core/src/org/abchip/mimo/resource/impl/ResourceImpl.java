@@ -17,7 +17,6 @@ import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceConfig;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourcePackage;
-import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
@@ -36,7 +35,6 @@ import org.osgi.service.log.Logger;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceConfig <em>Resource Config</em>}</li>
- *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getResourceSet <em>Resource Set</em>}</li>
  *   <li>{@link org.abchip.mimo.resource.impl.ResourceImpl#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
@@ -46,6 +44,8 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	private static final Logger LOGGER = Logs.getLogger(ResourceImpl.class);
 
+	private Context context;
+
 	/**
 	 * The cached value of the '{@link #getResourceConfig() <em>Resource Config</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -54,15 +54,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @ordered
 	 */
 	protected ResourceConfig resourceConfig;
-
-	/**
-	 * The cached value of the '{@link #getResourceSet() <em>Resource Set</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getResourceSet()
-	 * @generated
-	 * @ordered
-	 */
-	protected ResourceSet resourceSet;
 
 	/**
 	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
@@ -95,10 +86,10 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * 
 	 * @generated NOT
 	 */
-	protected ResourceImpl(ResourceSet resourceSet, String tenant) {
+	protected ResourceImpl(Context context, String tenant) {
 		super();
 
-		this.resourceSet = resourceSet;
+		this.context = context;
 		this.tenant = tenant;
 	}
 
@@ -153,31 +144,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @generated
 	 */
 	@Override
-	public ResourceSet getResourceSet() {
-		if (resourceSet != null && ((EObject)resourceSet).eIsProxy()) {
-			InternalEObject oldResourceSet = (InternalEObject)resourceSet;
-			resourceSet = (ResourceSet)eResolveProxy(oldResourceSet);
-			if (resourceSet != oldResourceSet) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ResourcePackage.RESOURCE__RESOURCE_SET, oldResourceSet, resourceSet));
-			}
-		}
-		return resourceSet;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceSet basicGetResourceSet() {
-		return resourceSet;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getTenant() {
 		return tenant;
 	}
@@ -194,8 +160,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
 	 */
@@ -227,7 +192,7 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 */
 	@Override
 	public Context getContext() {
-		return getResourceSet().getContext();
+		return this.context;
 	}
 
 	/**
@@ -348,9 +313,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
 				if (resolve) return getResourceConfig();
 				return basicGetResourceConfig();
-			case ResourcePackage.RESOURCE__RESOURCE_SET:
-				if (resolve) return getResourceSet();
-				return basicGetResourceSet();
 			case ResourcePackage.RESOURCE__TENANT:
 				return getTenant();
 		}
@@ -394,8 +356,6 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		switch (featureID) {
 			case ResourcePackage.RESOURCE__RESOURCE_CONFIG:
 				return resourceConfig != null;
-			case ResourcePackage.RESOURCE__RESOURCE_SET:
-				return resourceSet != null;
 			case ResourcePackage.RESOURCE__TENANT:
 				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 		}

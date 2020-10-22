@@ -420,6 +420,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//context/ProviderConfig/host"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderConfig/path"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//context/ProviderConfig/publicUser"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderConfig/token"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//context/ProviderUser">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//context/ProviderUser/user"/>
@@ -819,7 +820,6 @@
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/Resource/E"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference mimo.ecore#//resource/Resource/resourceConfig"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//resource/Resource/resourceSet"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//resource/Resource/tenant"/>
         <genOperations ecoreOperation="mimo.ecore#//resource/Resource/attach">
           <genParameters ecoreParameter="mimo.ecore#//resource/Resource/attach/entity"/>
@@ -1009,7 +1009,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//resource/ResourceProvider">
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProvider/createResource">
-          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/createResource/resourceSet"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/createResource/context"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/createResource/frame"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/createResource/tenantId"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceProvider/createResource/E"/>

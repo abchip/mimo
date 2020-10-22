@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.abchip.mimo.entity.impl.FindImpl#getFrame <em>Frame</em>}</li>
+ *   <li>{@link org.abchip.mimo.entity.impl.FindImpl#getFrame <em>Frame</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,7 +54,6 @@ public class FindImpl<E extends EntityIdentifiable> extends ServiceRequestImpl<F
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected FindImpl() {
@@ -63,7 +62,6 @@ public class FindImpl<E extends EntityIdentifiable> extends ServiceRequestImpl<F
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -73,7 +71,6 @@ public class FindImpl<E extends EntityIdentifiable> extends ServiceRequestImpl<F
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -83,7 +80,6 @@ public class FindImpl<E extends EntityIdentifiable> extends ServiceRequestImpl<F
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -96,71 +92,65 @@ public class FindImpl<E extends EntityIdentifiable> extends ServiceRequestImpl<F
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case EntityPackage.FIND__FRAME:
-			return getFrame();
+			case EntityPackage.FIND__FRAME:
+				return getFrame();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case EntityPackage.FIND__FRAME:
-			setFrame((String) newValue);
-			return;
+			case EntityPackage.FIND__FRAME:
+				setFrame((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case EntityPackage.FIND__FRAME:
-			setFrame(FRAME_EDEFAULT);
-			return;
+			case EntityPackage.FIND__FRAME:
+				setFrame(FRAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case EntityPackage.FIND__FRAME:
-			return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
+			case EntityPackage.FIND__FRAME:
+				return FRAME_EDEFAULT == null ? frame != null : !FRAME_EDEFAULT.equals(frame);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (frame: ");

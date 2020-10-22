@@ -636,13 +636,22 @@ public interface ContextPackage extends EPackage {
 	int PROVIDER_CONFIG__PUBLIC_USER = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Token</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDER_CONFIG__TOKEN = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Provider Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+	int PROVIDER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>User</b></em>' attribute.
@@ -1404,6 +1413,17 @@ public interface ContextPackage extends EPackage {
 	EReference getProviderConfig_PublicUser();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.context.ProviderConfig#getToken <em>Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Token</em>'.
+	 * @see org.abchip.mimo.context.ProviderConfig#getToken()
+	 * @see #getProviderConfig()
+	 * @generated
+	 */
+	EAttribute getProviderConfig_Token();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.context.ProviderUser <em>Provider User</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2091,6 +2111,14 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROVIDER_CONFIG__PUBLIC_USER = eINSTANCE.getProviderConfig_PublicUser();
+
+		/**
+		 * The meta object literal for the '<em><b>Token</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROVIDER_CONFIG__TOKEN = eINSTANCE.getProviderConfig_Token();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.impl.ProviderUserImpl <em>Provider User</em>}' class.

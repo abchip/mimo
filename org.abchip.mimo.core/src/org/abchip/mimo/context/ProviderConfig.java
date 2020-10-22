@@ -22,6 +22,7 @@ import org.abchip.mimo.networking.HostConfig;
  *   <li>{@link org.abchip.mimo.context.ProviderConfig#getHost <em>Host</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ProviderConfig#getPath <em>Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.ProviderConfig#getPublicUser <em>Public User</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.ProviderConfig#getToken <em>Token</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.context.ContextPackage#getProviderConfig()
@@ -98,5 +99,27 @@ public interface ProviderConfig extends Entity {
 	 * @generated
 	 */
 	void setPublicUser(ProviderUser value);
+
+	/**
+	 * Returns the value of the '<em><b>Token</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Token</em>' attribute.
+	 * @see #setToken(String)
+	 * @see org.abchip.mimo.context.ContextPackage#getProviderConfig_Token()
+	 * @model
+	 * @generated
+	 */
+	String getToken();
+
+	/**
+	 * Sets the value of the '{@link org.abchip.mimo.context.ProviderConfig#getToken <em>Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Token</em>' attribute.
+	 * @see #getToken()
+	 * @generated
+	 */
+	void setToken(String value);
 
 } // ProviderConfig

@@ -14,9 +14,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 
 public class E4FrameClassResourceImpl<E extends Frame<?>> extends ResourceImpl<E> {
@@ -24,8 +24,8 @@ public class E4FrameClassResourceImpl<E extends Frame<?>> extends ResourceImpl<E
 	private Frame<E> frame = null;
 	private Map<String, E> entities = null;
 
-	protected E4FrameClassResourceImpl(ResourceSet resourceSet, String tenant, Frame<E> frame, Map<String, E> frames) {
-		super(resourceSet, tenant);
+	protected E4FrameClassResourceImpl(Context context, String tenant, Frame<E> frame, Map<String, E> frames) {
+		super(context, tenant);
 
 		this.frame = frame;
 		this.entities = frames;

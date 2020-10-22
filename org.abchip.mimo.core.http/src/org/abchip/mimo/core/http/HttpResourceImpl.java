@@ -23,7 +23,6 @@ import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSerializer;
-import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.apache.http.client.ResponseHandler;
@@ -35,11 +34,11 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 	private String tenant = null;
 
-	public HttpResourceImpl(ResourceSet resourceSet, HttpConnector connector, String tenant, Frame<E> frame) {
-		super(resourceSet, tenant);
+	public HttpResourceImpl(HttpConnector connector, String tenant, Frame<E> frame) {
+		super(connector.getContext(), tenant);
 
 		this.connector = connector;
-		this.resourceSerializer = resourceSet.getContext().getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
+		this.resourceSerializer = this.getContext().getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 	}
 
 	@Override

@@ -22,12 +22,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceSerializer;
-import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.SerializationType;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 import org.abchip.mimo.util.Logs;
@@ -40,11 +40,11 @@ public class NIOResourcempl<E extends EntityIdentifiable> extends ResourceImpl<E
 	private NIOPathManager pathManager = null;
 	private ResourceSerializer<E> resourceSerializer = null;
 
-	public NIOResourcempl(ResourceSet resourceSet, String tenant, Frame<E> frame, NIOPathManager pathManager) {
-		super(resourceSet, tenant);
+	public NIOResourcempl(Context context, String tenant, Frame<E> frame, NIOPathManager pathManager) {
+		super(context, tenant);
 		this.pathManager = pathManager;
 
-		this.resourceSerializer = resourceSet.getContext().getResourceManager().createResourceSerializer(frame, SerializationType.XMI);
+		this.resourceSerializer = this.getContext().getResourceManager().createResourceSerializer(frame, SerializationType.XMI);
 	}
 
 	@Override

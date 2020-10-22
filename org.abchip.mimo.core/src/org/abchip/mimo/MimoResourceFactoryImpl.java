@@ -66,7 +66,7 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 
 		@SuppressWarnings("unchecked")
 		Frame<Frame<?>> frame = (Frame<Frame<?>>) FRAMES.get(Frame.class.getSimpleName());
-		E4FrameClassResourceImpl<Frame<?>> frameResource = new E4FrameClassResourceImpl<Frame<?>>(resourceSet.getResourceSet(), context.getTenant(), frame, FRAMES);
+		E4FrameClassResourceImpl<Frame<?>> frameResource = new E4FrameClassResourceImpl<Frame<?>>(context, context.getTenant(), frame, FRAMES);
 		frameResource.setResourceConfig(EMF_RESOURCE_CONFIG);
 		
 		URI frameUri = URI.createHierarchicalURI("mimo", null, null, new String[] { Frame.class.getSimpleName() }, null, null);
@@ -90,11 +90,11 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 
 			Resource<EntityIdentifiable> resource = null;
 			if (frame.isEnum()) {
-				resource = new E4FrameEnumResourceImpl(resourceSet.getResourceSet(), tenantId, frame, getEnumerators(frame));
+				resource = new E4FrameEnumResourceImpl(resourceSet.getResourceSet().getContext(), tenantId, frame, getEnumerators(frame));
 				resource.setResourceConfig(EMF_RESOURCE_CONFIG);
 			} else {
 				ResourceProvider resourceProvider = resourceProviderRegistry.getResourceProvider(getContext(), frameId);
-				resource = resourceProvider.createResource(resourceSet.getResourceSet(), frame, tenantId);
+				resource = resourceProvider.createResource(getContext(), frame, tenantId);
 			}
 
 			org.eclipse.emf.ecore.resource.Resource.Internal e4resource = new MimoResourceImpl(resource, this.resourceSet, uri);

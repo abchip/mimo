@@ -438,18 +438,8 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 	 * @generated
 	 */
 	@Override
-	public EReference getResource_ResourceSet() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getResource_Tenant() {
-		return (EAttribute)resourceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)resourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -771,7 +761,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		resourceEClass = createEClass(RESOURCE);
 		createEReference(resourceEClass, RESOURCE__RESOURCE_CONFIG);
-		createEReference(resourceEClass, RESOURCE__RESOURCE_SET);
 		createEAttribute(resourceEClass, RESOURCE__TENANT);
 
 		resourceConfigEClass = createEClass(RESOURCE_CONFIG);
@@ -920,7 +909,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 
 		initEClass(resourceEClass, Resource.class, "Resource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResource_ResourceConfig(), this.getResourceConfig(), null, "resourceConfig", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getResource_ResourceSet(), this.getResourceSet(), null, "resourceSet", null, 1, 1, Resource.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_Tenant(), ecorePackage.getEString(), "tenant", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(resourceEClass, null, "attach", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1346,7 +1334,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
 		t1.getEBounds().add(g1);
-		addEParameter(op, this.getResourceSet(), "resourceSet", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theContextPackage.getContext(), "context", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);

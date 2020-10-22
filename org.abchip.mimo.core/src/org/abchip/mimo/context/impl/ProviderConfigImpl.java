@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getHost <em>Host</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getPath <em>Path</em>}</li>
  *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getPublicUser <em>Public User</em>}</li>
+ *   <li>{@link org.abchip.mimo.context.impl.ProviderConfigImpl#getToken <em>Token</em>}</li>
  * </ul>
  *
  * @generated
@@ -71,6 +72,25 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	 * @ordered
 	 */
 	protected ProviderUser publicUser;
+
+	/**
+	 * The default value of the '{@link #getToken() <em>Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getToken()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TOKEN_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getToken() <em>Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getToken()
+	 * @generated
+	 * @ordered
+	 */
+	protected String token = TOKEN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,6 +276,29 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 	 * @generated
 	 */
 	@Override
+	public String getToken() {
+		return token;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setToken(String newToken) {
+		String oldToken = token;
+		token = newToken;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContextPackage.PROVIDER_CONFIG__TOKEN, oldToken, token));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ContextPackage.PROVIDER_CONFIG__HOST:
@@ -282,6 +325,8 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 			case ContextPackage.PROVIDER_CONFIG__PUBLIC_USER:
 				if (resolve) return getPublicUser();
 				return basicGetPublicUser();
+			case ContextPackage.PROVIDER_CONFIG__TOKEN:
+				return getToken();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -302,6 +347,9 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 				return;
 			case ContextPackage.PROVIDER_CONFIG__PUBLIC_USER:
 				setPublicUser((ProviderUser)newValue);
+				return;
+			case ContextPackage.PROVIDER_CONFIG__TOKEN:
+				setToken((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -324,6 +372,9 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 			case ContextPackage.PROVIDER_CONFIG__PUBLIC_USER:
 				setPublicUser((ProviderUser)null);
 				return;
+			case ContextPackage.PROVIDER_CONFIG__TOKEN:
+				setToken(TOKEN_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -342,6 +393,8 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case ContextPackage.PROVIDER_CONFIG__PUBLIC_USER:
 				return publicUser != null;
+			case ContextPackage.PROVIDER_CONFIG__TOKEN:
+				return TOKEN_EDEFAULT == null ? token != null : !TOKEN_EDEFAULT.equals(token);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -358,6 +411,8 @@ public class ProviderConfigImpl extends EntityImpl implements ProviderConfig {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (path: ");
 		result.append(path);
+		result.append(", token: ");
+		result.append(token);
 		result.append(')');
 		return result.toString();
 	}

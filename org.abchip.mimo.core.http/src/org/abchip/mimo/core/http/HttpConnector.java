@@ -33,9 +33,7 @@ public class HttpConnector implements Closeable {
 	private Context context;
 	private ProviderConfig providerConfig;
 
-	private String token;
-
-	protected HttpConnector(Context context, ProviderConfig providerConfig) {
+	public HttpConnector(Context context, ProviderConfig providerConfig) {
 		this.context = context;
 		this.providerConfig = providerConfig;
 
@@ -51,13 +49,19 @@ public class HttpConnector implements Closeable {
 		});
 	}
 
+	protected Context getContext() {
+		return this.context;
+	}
+
 	public <E> E execute(String path, String query, ResponseHandler<E> handler) throws Exception {
 
 		URIBuilder uri = new URIBuilder();
 		uri.setScheme(providerConfig.getHost().getSchema());
 		uri.setHost(providerConfig.getHost().getAddress());
 		uri.setPort(providerConfig.getHost().getPort());
-		uri.setPath(providerConfig.getPath() + "/" + path + ";jsessionid=" + token);
+		uri.setPath(providerConfig.getPath() + "/" + path);
+		if(providerConfig.getToken() != null)
+			uri.setParameter("token", providerConfig.getToken());
 		uri.setParameters(URLEncodedUtils.parse(query, null));
 
 		// uri.setQuery(query);

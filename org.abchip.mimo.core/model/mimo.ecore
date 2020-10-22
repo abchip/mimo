@@ -621,6 +621,7 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="publicUser" eType="#//context/ProviderUser"
           containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ProviderUser" eSuperTypes="#//entity/Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" lowerBound="1"
@@ -1307,8 +1308,6 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceConfig" lowerBound="1"
           eType="#//resource/ResourceConfig"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceSet" lowerBound="1"
-          eType="#//resource/ResourceSet" changeable="false" transient="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           changeable="false"/>
@@ -1680,7 +1679,7 @@
         <eTypeParameters name="E">
           <eBounds eClassifier="#//entity/EntityIdentifiable"/>
         </eTypeParameters>
-        <eParameters name="resourceSet" lowerBound="1" eType="#//resource/ResourceSet"/>
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
         <eParameters name="frame" lowerBound="1">
           <eGenericType eClassifier="#//entity/Frame">
             <eTypeArguments eTypeParameter="#//resource/ResourceProvider/createResource/E"/>

@@ -27,10 +27,10 @@ public interface ResourceProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" resourceSetRequired="true" frameRequired="true"
+	 * @model required="true" exceptions="org.abchip.mimo.resource.ResourceException" contextRequired="true" frameRequired="true"
 	 * @generated
 	 */
-	<E extends EntityIdentifiable> Resource<E> createResource(ResourceSet resourceSet, Frame<E> frame, String tenantId) throws ResourceException;
+	<E extends EntityIdentifiable> Resource<E> createResource(Context context, Frame<E> frame, String tenantId) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

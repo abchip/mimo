@@ -14,10 +14,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
+import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityEnum;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.ResourceException;
-import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.resource.impl.ResourceImpl;
 
 public class E4FrameEnumResourceImpl<E extends EntityEnum> extends ResourceImpl<E> {
@@ -25,8 +25,8 @@ public class E4FrameEnumResourceImpl<E extends EntityEnum> extends ResourceImpl<
 	private Frame<E> frame = null;
 	private Map<String, E> enums = null;
 
-	protected E4FrameEnumResourceImpl(ResourceSet resourceSet, String tenant, Frame<E> frame, Map<String, E> enums) {
-		super(resourceSet, tenant);
+	protected E4FrameEnumResourceImpl(Context context, String tenant, Frame<E> frame, Map<String, E> enums) {
+		super(context, tenant);
 
 		this.frame = frame;
 		this.enums = enums;

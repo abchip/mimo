@@ -23,7 +23,6 @@ import org.abchip.mimo.entity.Frame;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.resource.Resource#getResourceConfig <em>Resource Config</em>}</li>
- *   <li>{@link org.abchip.mimo.resource.Resource#getResourceSet <em>Resource Set</em>}</li>
  *   <li>{@link org.abchip.mimo.resource.Resource#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
@@ -132,17 +131,6 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	 * @generated
 	 */
 	void setResourceConfig(ResourceConfig value);
-
-	/**
-	 * Returns the value of the '<em><b>Resource Set</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resource Set</em>' reference.
-	 * @see org.abchip.mimo.resource.ResourcePackage#getResource_ResourceSet()
-	 * @model required="true" transient="true" changeable="false"
-	 * @generated
-	 */
-	ResourceSet getResourceSet();
 
 	/**
 	 * <!-- begin-user-doc -->
