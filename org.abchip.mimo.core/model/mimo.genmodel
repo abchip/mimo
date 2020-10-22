@@ -1014,6 +1014,12 @@
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/createResource/tenantId"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceProvider/createResource/E"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProvider/createResource.1">
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/createResource.1/context"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/createResource.1/klass"/>
+          <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/createResource.1/tenantId"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//resource/ResourceProvider/createResource.1/E"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//resource/ResourceProvider/getResource">
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/getResource/context"/>
           <genParameters ecoreParameter="mimo.ecore#//resource/ResourceProvider/getResource/klass"/>

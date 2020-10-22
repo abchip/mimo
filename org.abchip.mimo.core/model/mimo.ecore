@@ -1687,6 +1687,21 @@
         </eParameters>
         <eParameters name="tenantId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
+      <eOperations name="createResource" lowerBound="1" eExceptions="#//resource/ResourceException">
+        <eGenericType eClassifier="#//resource/Resource">
+          <eTypeArguments eTypeParameter="#//resource/ResourceProvider/createResource.1/E"/>
+        </eGenericType>
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/EntityIdentifiable"/>
+        </eTypeParameters>
+        <eParameters name="context" lowerBound="1" eType="#//context/Context"/>
+        <eParameters name="klass" lowerBound="1">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//resource/ResourceProvider/createResource.1/E"/>
+          </eGenericType>
+        </eParameters>
+        <eParameters name="tenantId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
       <eOperations name="getResource" lowerBound="1" eExceptions="#//resource/ResourceException">
         <eGenericType eClassifier="#//resource/Resource">
           <eTypeArguments eTypeParameter="#//resource/ResourceProvider/getResource/E"/>

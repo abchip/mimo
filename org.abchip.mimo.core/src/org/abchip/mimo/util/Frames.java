@@ -88,7 +88,8 @@ public class Frames {
 			} else
 				ePackage = (EPackage) entry.getValue();
 
-			if (!ePackage.getNsURI().startsWith("http://www.abchip.org"))
+			if (!ePackage.getNsURI().startsWith("http://www.abchip.org") &&
+				!ePackage.getNsURI().startsWith("http://ssi.abchip.net"))
 				continue;
 
 			for (EClassifier eClassifier : ePackage.getEClassifiers()) {

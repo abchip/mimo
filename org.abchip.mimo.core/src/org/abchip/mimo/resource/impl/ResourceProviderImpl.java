@@ -54,6 +54,16 @@ public abstract class ResourceProviderImpl extends MinimalEObjectImpl.Container 
 	public abstract <E extends EntityIdentifiable> Resource<E> createResource(Context context, Frame<E> frame, String tenantId) throws ResourceException;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public final <E extends EntityIdentifiable> Resource<E> createResource(Context context, Class<E> klass, String tenantId) throws ResourceException {
+		return createResource(context, context.getFrame(klass), tenantId);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
