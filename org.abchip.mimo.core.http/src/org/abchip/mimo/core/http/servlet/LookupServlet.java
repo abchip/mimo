@@ -44,7 +44,7 @@ public class LookupServlet extends BaseServlet {
 			if (entity == null)
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 			else {
-				response.setStatus(HttpServletResponse.SC_FOUND);
+				response.setStatus(HttpServletResponse.SC_OK);
 
 				ResourceSerializer<E> entitySerializer = context.getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 				entitySerializer.add(entity);

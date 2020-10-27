@@ -23,10 +23,10 @@ import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
-import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -92,11 +92,15 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 
 	private <E extends EntityIdentifiable> E jsonObject2Entity(JSONObject jsonObject) throws ResourceException {
 
+//		@SuppressWarnings("unchecked")
+//		Resource<E> resource = (Resource<E>) context.getResourceSet().getResource(jsonObject.getString("isa"));
+//		E entity = resource.make();
+		
+		Frame<E> frame = context.getResourceManager().getFrame(jsonObject.getString("isa"));
 		@SuppressWarnings("unchecked")
-		Resource<E> resource = (Resource<E>) context.getResourceSet().getResource(jsonObject.getString("isa"));
-
-		E entity = resource.make();
-		Frame<E> frame = entity.isa();
+		E entity = (E) EcoreUtil.create((EClass) frame.getEClassifier());
+		
+//		Frame<E> frame = entity.isa();
 		for (String slotName : JSONObject.getNames(jsonObject)) {
 			Object slotValue = jsonObject.get(slotName);
 			if (slotValue instanceof JSONObject) {

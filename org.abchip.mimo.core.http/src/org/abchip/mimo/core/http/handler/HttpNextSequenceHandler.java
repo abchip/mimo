@@ -25,7 +25,7 @@ public class HttpNextSequenceHandler implements ResponseHandler<String> {
 	public String handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
 		switch (response.getStatusLine().getStatusCode()) {
-		case HttpServletResponse.SC_FOUND:
+		case HttpServletResponse.SC_OK:
 			HttpEntity httpEntity = response.getEntity();
 			return EntityUtils.toString(httpEntity, "UTF-8");
 		default:

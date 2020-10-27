@@ -34,7 +34,7 @@ public class HttpFindHandler<E extends EntityIdentifiable> implements ResponseHa
 	public List<E> handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
 
 		switch (response.getStatusLine().getStatusCode()) {
-		case HttpServletResponse.SC_FOUND:
+		case HttpServletResponse.SC_OK:
 			HttpEntity httpEntity = response.getEntity();
 			try (InputStream stream = httpEntity.getContent()) {
 				serializer.load(stream, false);

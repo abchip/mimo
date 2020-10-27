@@ -9,6 +9,7 @@
 package org.abchip.mimo.core.http;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.core.http.HttpResourceImpl.HttpResourceConfig;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
@@ -35,7 +36,8 @@ public class HttpResourceProviderImpl extends ResourceProviderImpl {
 		if (connector == null)
 			throw new ResourceException("Unconnected resource " + frame.getURI());
 		
-		Resource<E> resource = new HttpResourceImpl<E>(connector, tenantId, frame);
+		HttpResourceConfig config = new HttpResourceConfig();
+		Resource<E> resource = new HttpResourceImpl<E>(config, connector, tenantId, frame);
 		resource.setResourceConfig(this.resourceConfig);
 
 		return resource;

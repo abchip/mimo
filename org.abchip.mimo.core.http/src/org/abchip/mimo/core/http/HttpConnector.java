@@ -58,7 +58,10 @@ public class HttpConnector implements Closeable {
 		URIBuilder uri = new URIBuilder();
 		uri.setScheme(providerConfig.getHost().getSchema());
 		uri.setHost(providerConfig.getHost().getAddress());
-		uri.setPort(providerConfig.getHost().getPort());
+		
+		if(providerConfig.getHost().getPort() != 0)
+			uri.setPort(providerConfig.getHost().getPort());
+		
 		uri.setPath(providerConfig.getPath() + "/" + path);
 		uri.setParameters(URLEncodedUtils.parse(query, null));
 		if(providerConfig.getToken() != null)

@@ -94,7 +94,7 @@ public class LookupSchemaServlet extends BaseServlet {
 				}
 			}
 
-			response.setStatus(HttpServletResponse.SC_FOUND);
+			response.setStatus(HttpServletResponse.SC_OK);
 			ResourceSerializer<Schema> entitySerializer = context.getResourceManager().createResourceSerializer(Schema.class, SerializationType.MIMO);
 			if (schema != null) {
 				completeSchema(context, schema);

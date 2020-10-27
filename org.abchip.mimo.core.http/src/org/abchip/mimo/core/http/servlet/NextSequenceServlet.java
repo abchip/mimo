@@ -40,7 +40,7 @@ public class NextSequenceServlet extends BaseServlet {
 			if (nextSequence == null)
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 			else {
-				response.setStatus(HttpServletResponse.SC_FOUND);
+				response.setStatus(HttpServletResponse.SC_OK);
 
 				response.getWriter().write(nextSequence);
 			}

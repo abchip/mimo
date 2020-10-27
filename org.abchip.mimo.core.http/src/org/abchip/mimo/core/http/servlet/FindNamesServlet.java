@@ -39,7 +39,7 @@ public class FindNamesServlet extends BaseServlet {
 
 			boolean first = true;
 			try (EntityIterator<E> entities = entityReader.find(filter, null, null, 0, true)) {
-				response.setStatus(HttpServletResponse.SC_FOUND);
+				response.setStatus(HttpServletResponse.SC_OK);
 				response.getWriter().write("[");
 				for (E entity : entities) {
 					if (!first)

@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.WeakHashMap;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.UserProfile;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
@@ -40,48 +41,37 @@ public class E4ResourceSetImpl extends ResourceSetImpl {
 	}
 
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) throws ResourceException {
-		return getResource(klass, null);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) throws ResourceException {
-		return getResource(frame, null);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException {
-		return getResource(frame, null);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException {
-		return getResource(klass.getSimpleName(), tenant);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException {
-		return getResource(frame.getName(), tenant);
-	}
-
-	@Override
 	public <E extends EntityIdentifiable> Resource<E> getResource(String frame, String tenant) throws ResourceException {
 
 		// TODO
-		if(UserProfile.class.getSimpleName().equals(frame))
+		if (UserProfile.class.getSimpleName().equals(frame))
 			frame = "UserLogin";
 
 		if (tenant == null)
-			tenant = context.getTenant(); 
-		
+			tenant = context.getTenant();
+
 		// TODO
-		if(Frame.class.getSimpleName().equals(frame))
+		if (Frame.class.getSimpleName().equals(frame))
 			tenant = null;
-			
+
+		checkAuthorization(tenant);
+		
 		URI uri = URI.createHierarchicalURI("mimo", tenant, null, new String[] { frame }, null, null);
 		@SuppressWarnings("unchecked")
 		MimoResourceImpl<E> internal = (MimoResourceImpl<E>) e4ResourceSet.getResource(uri, true);
 
 		return internal.getResource();
+	}
+
+	private final void checkAuthorization(String tenantId) throws ResourceException {
+		ContextDescription contextDescription = context.getContextDescription();
+
+		// check authorization
+		if (contextDescription.isTenant()) {
+			if (!contextDescription.getTenant().equals(tenantId))
+				throw new ResourceException("Permission denied for tenant: " + contextDescription.getTenant());
+		}
+
+		// check frame authorization
 	}
 }

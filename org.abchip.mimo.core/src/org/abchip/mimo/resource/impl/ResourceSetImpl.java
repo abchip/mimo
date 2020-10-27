@@ -50,65 +50,55 @@ public abstract class ResourceSetImpl extends EntityImpl implements ResourceSet 
 	public abstract Context getContext();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) throws ResourceException {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass) throws ResourceException {
+		return getResource(klass, null);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) throws ResourceException {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame) throws ResourceException {
+		return getResource(frame, null);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public final <E extends EntityIdentifiable> Resource<E> getResource(String frame) throws ResourceException {
+		return getResource(frame, null);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Class<E> klass, String tenant) throws ResourceException {
+		return getResource(klass.getSimpleName(), tenant);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
-	public <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public final <E extends EntityIdentifiable> Resource<E> getResource(Frame<E> frame, String tenant) throws ResourceException {
+		return getResource(frame.getName(), tenant);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 

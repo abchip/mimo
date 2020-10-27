@@ -32,12 +32,19 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 	private HttpConnector connector = null;
 	private ResourceSerializer<E> resourceSerializer = null;
 
+	private HttpResourceConfig config;
 	private String tenant = null;
+	
+	public static class HttpResourceConfig {
+		public String find = "find";
+	}
 
-	public HttpResourceImpl(HttpConnector connector, String tenant, Frame<E> frame) {
+	public HttpResourceImpl(HttpResourceConfig config, HttpConnector connector, String tenant, Frame<E> frame) {
 		super(connector.getContext(), tenant);
 
 		this.connector = connector;
+		this.config = config;
+		
 		this.resourceSerializer = this.getContext().getResourceManager().createResourceSerializer(frame, SerializationType.MIMO);
 	}
 
@@ -157,7 +164,7 @@ public class HttpResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 			@SuppressWarnings({ "rawtypes", "unchecked" })
 			HttpFindHandler<E> handler = new HttpFindHandler(this.resourceSerializer);
 			synchronized (this.resourceSerializer) {
-				entities = connector.execute("find", query, handler);
+				entities = connector.execute(this.config.find, query, handler);
 			}
 			for (E entity : entities)
 				this.attach(entity);
