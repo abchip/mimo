@@ -924,6 +924,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntityIdentifiable" abstract="true"
         eSuperTypes="#//entity/Entity">
+      <eOperations name="getContext" lowerBound="1" eType="#//context/Context"/>
       <eOperations name="getID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="getResource">
         <eGenericType eClassifier="#//resource/Resource">

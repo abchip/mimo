@@ -621,6 +621,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/EntityInfo/lastUpdatedTxStamp"/>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/EntityIdentifiable">
+        <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getContext"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getID"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/EntityIdentifiable/getResource">
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/EntityIdentifiable/getResource/E"/>

@@ -12,6 +12,7 @@ import java.net.URI;
 import java.util.List;
 
 import org.abchip.mimo.E4FrameClassAdapter;
+import org.abchip.mimo.MIMOProxyResourceImpl;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
@@ -225,6 +226,25 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 		default:
 			return super.isa();
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public Context getContext() {
+		
+		if(getResource() != null)
+			return getResource().getContext();
+		
+		if (this.eResource() instanceof MIMOProxyResourceImpl) {
+			MIMOProxyResourceImpl resource = (MIMOProxyResourceImpl)this.eResource();
+			return resource.getContext();
+		}
+		
+		return null;
 	}
 
 	/**

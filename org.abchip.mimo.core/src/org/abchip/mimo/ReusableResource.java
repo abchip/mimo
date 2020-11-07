@@ -6,7 +6,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.base.res;
+package org.abchip.mimo;
 
 import java.io.IOException;
 import java.io.InputStream;

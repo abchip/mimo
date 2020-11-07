@@ -5,7 +5,7 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *
  */
-package org.abchip.mimo.core.base.res;
+package org.abchip.mimo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,7 +17,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import org.abchip.mimo.MimoConstants;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
@@ -41,6 +40,10 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 		super(uri);
 
 		this.context = context;
+	}
+
+	public Context getContext() {
+		return this.context;
 	}
 
 	@Override
@@ -69,42 +72,44 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 		}
 		content.close();
 
-		if(responseStrBuilder.toString().isEmpty())
+		if (responseStrBuilder.toString().isEmpty())
 			return;
-		
+
 		try {
 			if (isArray) {
 				JSONArray array = new JSONArray(responseStrBuilder.toString());
 				for (int i = 0; i < array.length(); i++) {
 					JSONObject object = array.getJSONObject(i);
-					Entity entityIdentifiable = jsonObject2Entity(object);
-					this.getContents().add((EObject) entityIdentifiable);
+					jsonObject2Entity(this.getContents(), object);
+
 				}
 			} else {
 				JSONObject object = new JSONObject(responseStrBuilder.toString());
-				Entity entity = jsonObject2Entity(object);
-				this.getContents().add((EObject) entity);
+				jsonObject2Entity(this.getContents(), object);
 			}
 		} catch (ResourceException e) {
 			throw new IOException(e);
 		}
 	}
 
-	private <E extends EntityIdentifiable> E jsonObject2Entity(JSONObject jsonObject) throws ResourceException {
+	private <E extends EntityIdentifiable> E jsonObject2Entity(List<EObject> container, JSONObject jsonObject) throws ResourceException {
 
-//		@SuppressWarnings("unchecked")
-//		Resource<E> resource = (Resource<E>) context.getResourceSet().getResource(jsonObject.getString("isa"));
-//		E entity = resource.make();
-		
+		// @SuppressWarnings("unchecked")
+		// Resource<E> resource = (Resource<E>)
+		// context.getResourceSet().getResource(jsonObject.getString("isa"));
+		// E entity = resource.make();
+
 		Frame<E> frame = context.getResourceManager().getFrame(jsonObject.getString("isa"));
 		@SuppressWarnings("unchecked")
 		E entity = (E) EcoreUtil.create((EClass) frame.getEClassifier());
-		
-//		Frame<E> frame = entity.isa();
+
+		if (container != null)
+			container.add((EObject) entity);
+
 		for (String slotName : JSONObject.getNames(jsonObject)) {
 			Object slotValue = jsonObject.get(slotName);
 			if (slotValue instanceof JSONObject) {
-				slotValue = jsonObject2Entity((JSONObject) slotValue);
+				slotValue = jsonObject2Entity(null, (JSONObject) slotValue);
 			}
 			frame.setValue(entity, slotName, slotValue);
 		}

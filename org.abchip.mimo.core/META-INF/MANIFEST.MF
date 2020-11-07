@@ -4,7 +4,8 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.abchip.mimo.core;singleton:=true
 Automatic-Module-Name: org.abchip.mimo.core
 Bundle-Version: 0.2.0.qualifier
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ lib/json-1.8.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

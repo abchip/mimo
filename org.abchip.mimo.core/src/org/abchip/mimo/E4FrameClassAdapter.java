@@ -251,8 +251,8 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 
 				if (entity instanceof EntityIdentifiable) {
 					EntityIdentifiable entityIdentifiable = (EntityIdentifiable) entity;
-					if (entityIdentifiable.getResource() != null) {
-						Context context = entityIdentifiable.getResource().getContext();
+					if (entityIdentifiable.getContext() != null) {
+						Context context = entityIdentifiable.getContext();
 
 						@SuppressWarnings("unchecked")
 						Frame<EntityIdentifiable> frameRef = (Frame<EntityIdentifiable>) context.createProxy(Frame.class, eClassifier.getName());

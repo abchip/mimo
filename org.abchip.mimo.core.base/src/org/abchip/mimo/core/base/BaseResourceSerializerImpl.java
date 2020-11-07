@@ -16,10 +16,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.abchip.mimo.MIMOProxyResourceImpl;
+import org.abchip.mimo.ReusableResource;
+import org.abchip.mimo.XMIProxyResourceImpl;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.core.base.res.MIMOProxyResourceImpl;
-import org.abchip.mimo.core.base.res.ReusableResource;
-import org.abchip.mimo.core.base.res.XMIProxyResourceImpl;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.SerializationType;
