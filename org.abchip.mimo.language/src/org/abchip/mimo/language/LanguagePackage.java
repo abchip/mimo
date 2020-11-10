@@ -309,13 +309,13 @@ public interface LanguagePackage extends EPackage {
 	int LANGUAGE_TRANSLATE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * The feature id for the '<em><b>Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_TRANSLATE__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+	int LANGUAGE_TRANSLATE__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
@@ -325,15 +325,6 @@ public interface LanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int LANGUAGE_TRANSLATE__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
-
-	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LANGUAGE_TRANSLATE__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.

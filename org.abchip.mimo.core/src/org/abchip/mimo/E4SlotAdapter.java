@@ -35,36 +35,31 @@ import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.ETypedElement;
 
 public class E4SlotAdapter extends SlotImpl {
 
-	private ETypedElement element;
+	private EStructuralFeature feature;
 
-	public E4SlotAdapter(Frame<?> frame, ETypedElement element) {
-		this.element = element;
+	public E4SlotAdapter(Frame<?> frame, EStructuralFeature feature) {
+		this.feature = feature;
 
-		eSet(EntityPackage.SLOT__NAME, element.getName());
+		eSet(EntityPackage.SLOT__NAME, feature.getName());
 
-		if (element instanceof EStructuralFeature) {
-			EStructuralFeature eStructuralFeature = ((EStructuralFeature) this.element);
-			eSet(EntityPackage.SLOT__DEFAULT_VALUE, eStructuralFeature.getDefaultValueLiteral());
-			eSet(EntityPackage.SLOT__DERIVED, eStructuralFeature.isDerived());
-			eSet(EntityPackage.SLOT__TRANSIENT, eStructuralFeature.isTransient());
-		} else if (element instanceof EOperation)
-			eSet(EntityPackage.SLOT__DERIVED, true);
+		EStructuralFeature eStructuralFeature = ((EStructuralFeature) feature);
+		eSet(EntityPackage.SLOT__DEFAULT_VALUE, eStructuralFeature.getDefaultValueLiteral());
+		eSet(EntityPackage.SLOT__DERIVED, eStructuralFeature.isDerived());
+		eSet(EntityPackage.SLOT__TRANSIENT, eStructuralFeature.isTransient());
 
 		this.setSlotText(frame);
 
-		eSet(EntityPackage.SLOT__CARDINALITY, new E4CardinalityAdapter(element));
+		eSet(EntityPackage.SLOT__CARDINALITY, new E4CardinalityAdapter(feature));
 
-		if (element instanceof EAttribute)
-			eSet(EntityPackage.SLOT__KEY, ((EAttribute) element).isID());
+		if (feature instanceof EAttribute)
+			eSet(EntityPackage.SLOT__KEY, ((EAttribute) feature).isID());
 
-		EAnnotation eAnnotation = element.getEAnnotation(Slot.NS_PREFIX_SLOT);
+		EAnnotation eAnnotation = feature.getEAnnotation(Slot.NS_PREFIX_SLOT);
 		if (eAnnotation != null) {
 			for (String key : eAnnotation.getDetails().keySet()) {
 				if (key.equals("key"))
@@ -78,24 +73,12 @@ public class E4SlotAdapter extends SlotImpl {
 
 		this.setSlotDataDef();
 
-		/*
-		 * EAnnotation eAnnotationFormat =
-		 * element.getEAnnotation(Slot.NS_PREFIX_FORMAT); if (eAnnotationFormat != null)
-		 * { for (String key : eAnnotationFormat.getDetails().keySet()) { if
-		 * (key.equals("length")) eSet(EntityPackage.SLOT__LENGTH,
-		 * Integer.parseInt(eAnnotationFormat.getDetails().get(key))); else if
-		 * (key.equals("precision")) eSet(EntityPackage.SLOT__PRECISION,
-		 * Integer.parseInt(eAnnotationFormat.getDetails().get(key))); else if
-		 * (key.equals("scale")) eSet(EntityPackage.SLOT__SCALE,
-		 * Integer.parseInt(eAnnotationFormat.getDetails().get(key))); } }
-		 */
-
 		this.setSlotDomain();
 	}
 
 	private void setSlotDataDef() {
 
-		Class<?> klass = element.getEType().getInstanceClass();
+		Class<?> klass = feature.getEType().getInstanceClass();
 
 		DataDef<?> dataDef = null;
 		if (klass.isPrimitive()) {
@@ -142,13 +125,13 @@ public class E4SlotAdapter extends SlotImpl {
 			DatetimeDef datetimeDef = DataFactory.eINSTANCE.createDatetimeDef();
 			datetimeDef.setType(DatetimeType.TIME_STAMP);
 			dataDef = datetimeDef;
-		} else if (element.getEType() instanceof EEnum) {
+		} else if (feature.getEType() instanceof EEnum) {
 			@SuppressWarnings("rawtypes")
 			EnumDef enumDef = DataFactory.eINSTANCE.createEnumDef();
-			enumDef.setEnum((EEnum) element.getEType());
+			enumDef.setEnum((EEnum) feature.getEType());
 			dataDef = enumDef;
 		} else if (this.getDataClassName().equals(String.class.getCanonicalName()) || this.getDataClassName().equals(char.class.getCanonicalName())
-				|| this.getDataClassName().equals(URI.class.getCanonicalName()) || EntityIdentifiable.class.isAssignableFrom(this.getETypedElement().getEType().getInstanceClass())) {
+				|| this.getDataClassName().equals(URI.class.getCanonicalName()) || EntityIdentifiable.class.isAssignableFrom(feature.getEType().getInstanceClass())) {
 			StringDef stringDef = DataFactory.eINSTANCE.createStringDef();
 			dataDef = stringDef;
 		}
@@ -158,11 +141,7 @@ public class E4SlotAdapter extends SlotImpl {
 
 	@Override
 	public String toString() {
-		return this.element.toString();
-	}
-
-	protected ETypedElement getETypedElement() {
-		return this.element;
+		return this.feature.toString();
 	}
 
 	private void setSlotText(Frame<?> frame) {
@@ -196,17 +175,17 @@ public class E4SlotAdapter extends SlotImpl {
 		Domain domain = null;
 
 		// reference
-		if (element instanceof EReference) {
+		if (feature instanceof EReference) {
 			domain = EntityFactory.eINSTANCE.createDomain();
-			domain.setFrame(element.getEType().getName());
+			domain.setFrame(feature.getEType().getName());
 
-			if (((EReference) element).isContainment())
+			if (((EReference) feature).isContainment())
 				eSet(EntityPackage.SLOT__CONTAINMENT, true);
 		}
 		// enum
-		else if (element.getEType() instanceof EEnum) {
+		else if (feature.getEType() instanceof EEnum) {
 			domain = EntityFactory.eINSTANCE.createDomain();
-			domain.setFrame(element.getEType().getName());
+			domain.setFrame(feature.getEType().getName());
 		}
 
 		if (domain != null)
@@ -214,6 +193,11 @@ public class E4SlotAdapter extends SlotImpl {
 	}
 
 	private String getDataClassName() {
-		return element.getEType().getInstanceClassName();
+		return feature.getEType().getInstanceClassName();
+	}
+
+	@Override
+	public EStructuralFeature getEStructuralFeature() {
+		return feature;
 	}
 }

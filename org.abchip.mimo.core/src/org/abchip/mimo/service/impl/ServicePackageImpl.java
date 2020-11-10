@@ -510,16 +510,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServiceRequest_Locale() {
-		return (EAttribute)serviceRequestEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getServiceRequest_Tenant() {
 		return (EAttribute)serviceRequestEClass.getEStructuralFeatures().get(1);
 	}
@@ -531,17 +521,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 */
 	@Override
 	public EReference getServiceRequest_Context() {
-		return (EReference)serviceRequestEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getServiceRequest_UserProfile() {
-		return (EReference)serviceRequestEClass.getEStructuralFeatures().get(3);
+		return (EReference)serviceRequestEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -664,10 +644,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		serviceProviderRegistryEClass = createEClass(SERVICE_PROVIDER_REGISTRY);
 
 		serviceRequestEClass = createEClass(SERVICE_REQUEST);
-		createEAttribute(serviceRequestEClass, SERVICE_REQUEST__LOCALE);
-		createEAttribute(serviceRequestEClass, SERVICE_REQUEST__TENANT);
 		createEReference(serviceRequestEClass, SERVICE_REQUEST__CONTEXT);
-		createEReference(serviceRequestEClass, SERVICE_REQUEST__USER_PROFILE);
+		createEAttribute(serviceRequestEClass, SERVICE_REQUEST__TENANT);
 
 		serviceResponseEClass = createEClass(SERVICE_RESPONSE);
 		createEAttribute(serviceResponseEClass, SERVICE_RESPONSE__ERROR_MESSAGE);
@@ -1037,10 +1015,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(serviceRequestEClass, ServiceRequest.class, "ServiceRequest", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getServiceRequest_Locale(), ecorePackage.getEString(), "locale", null, 1, 1, ServiceRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServiceRequest_Tenant(), ecorePackage.getEString(), "tenant", null, 0, 1, ServiceRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getServiceRequest_Context(), theContextPackage.getContext(), null, "context", null, 0, 1, ServiceRequest.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServiceRequest_UserProfile(), theContextPackage.getUserProfile(), null, "userProfile", null, 1, 1, ServiceRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceRequest_Tenant(), ecorePackage.getEString(), "tenant", null, 0, 1, ServiceRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(serviceRequestEClass, ecorePackage.getEString(), "getServiceName", 1, 1, IS_UNIQUE, IS_ORDERED);
 

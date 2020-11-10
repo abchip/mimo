@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.abchip.mimo.E4FrameClassAdapter;
 import org.abchip.mimo.entity.Entity;
+import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
@@ -29,6 +30,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityImpl() {
@@ -37,6 +39,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -49,6 +52,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		return stringValue();
 	}
 
+	@SuppressWarnings("unchecked")
 	private <E extends Entity> String stringValue() {
 
 		Frame<E> isa = this.isa();
@@ -74,31 +78,30 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 				if (slot.isDerived())
 					continue;
 
-				@SuppressWarnings("unchecked")
-				Object value = isa.getValue((E) this, slot.getName(), false, false);
+				if (!isa.isSet((E) this, slot))
+					continue;
+
+				Object value = isa.getValue((E) this, slot, false, false);
 				if (value == null)
 					continue;
 
 				if (isa.isHasToString() && !slot.isToString())
 					continue;
 
+				if (!first)
+					result.append(", ");
+
 				if (value instanceof List<?>) {
 					List<?> listValue = (List<?>) value;
-					if (listValue.isEmpty())
-						continue;
 
-					if (!first)
-						result.append(", ");
-
-					if (listValue.size() > 3)
-						result.append(slot.getName() + ": " + listValue.subList(0, 2));
-					else
-						result.append(slot.getName() + ": " + listValue);
+					// if (listValue.size() > 3)
+					// result.append(slot.getName() + ": " + listValue.subList(0, 2));
+					// else
+					result.append(slot.getName() + ": " + listValue);
+				} else if (value instanceof EntityIdentifiable) {
+					EntityIdentifiable valueIdentifiable = (EntityIdentifiable) value;
+					result.append(slot.getName() + ": " + valueIdentifiable.getID());
 				} else {
-
-					if (!first)
-						result.append(", ");
-
 					result.append(slot.getName() + ": " + value);
 				}
 
@@ -119,8 +122,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends Entity> Frame<E> isa() {
-		for(Adapter adapter : eClass().eAdapters()) {
-			if(adapter instanceof E4FrameClassAdapter) 
+		for (Adapter adapter : eClass().eAdapters()) {
+			if (adapter instanceof E4FrameClassAdapter)
 				return (Frame<E>) adapter;
 		}
 		return null;

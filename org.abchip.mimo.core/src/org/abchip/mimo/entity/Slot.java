@@ -10,6 +10,7 @@ package org.abchip.mimo.entity;
 
 import org.abchip.mimo.data.DataDef;
 import org.abchip.mimo.data.DataType;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -150,6 +151,14 @@ public interface Slot extends EntityIdentifiable {
 	 * @generated
 	 */
 	DataType getDataType();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true"
+	 * @generated
+	 */
+	EStructuralFeature getEStructuralFeature();
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.

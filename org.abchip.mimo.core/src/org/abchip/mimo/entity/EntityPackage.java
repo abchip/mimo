@@ -418,13 +418,13 @@ public interface EntityPackage extends EPackage {
 	int FIND = 11;
 
 	/**
-	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * The feature id for the '<em><b>Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIND__LOCALE = ServicePackage.SERVICE_REQUEST__LOCALE;
+	int FIND__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Tenant</b></em>' attribute.
@@ -436,24 +436,6 @@ public interface EntityPackage extends EPackage {
 	int FIND__TENANT = ServicePackage.SERVICE_REQUEST__TENANT;
 
 	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIND__CONTEXT = ServicePackage.SERVICE_REQUEST__CONTEXT;
-
-	/**
-	 * The feature id for the '<em><b>User Profile</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIND__USER_PROFILE = ServicePackage.SERVICE_REQUEST__USER_PROFILE;
-
-	/**
 	 * The feature id for the '<em><b>Frame</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -463,13 +445,58 @@ public interface EntityPackage extends EPackage {
 	int FIND__FRAME = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Filter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND__FILTER = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Fields</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND__FIELDS = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Order</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND__ORDER = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Limit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND__LIMIT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Proxy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND__PROXY = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Find</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIND_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 1;
+	int FIND_FEATURE_COUNT = ServicePackage.SERVICE_REQUEST_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.entity.impl.FindResponseImpl <em>Find Response</em>}' class.
@@ -1069,6 +1096,61 @@ public interface EntityPackage extends EPackage {
 	EAttribute getFind_Frame();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Find#getFilter <em>Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Filter</em>'.
+	 * @see org.abchip.mimo.entity.Find#getFilter()
+	 * @see #getFind()
+	 * @generated
+	 */
+	EAttribute getFind_Filter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Find#getFields <em>Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fields</em>'.
+	 * @see org.abchip.mimo.entity.Find#getFields()
+	 * @see #getFind()
+	 * @generated
+	 */
+	EAttribute getFind_Fields();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Find#getOrder <em>Order</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Order</em>'.
+	 * @see org.abchip.mimo.entity.Find#getOrder()
+	 * @see #getFind()
+	 * @generated
+	 */
+	EAttribute getFind_Order();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Find#getLimit <em>Limit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Limit</em>'.
+	 * @see org.abchip.mimo.entity.Find#getLimit()
+	 * @see #getFind()
+	 * @generated
+	 */
+	EAttribute getFind_Limit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.abchip.mimo.entity.Find#isProxy <em>Proxy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Proxy</em>'.
+	 * @see org.abchip.mimo.entity.Find#isProxy()
+	 * @see #getFind()
+	 * @generated
+	 */
+	EAttribute getFind_Proxy();
+
+	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.entity.FindResponse <em>Find Response</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1641,6 +1723,46 @@ public interface EntityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIND__FRAME = eINSTANCE.getFind_Frame();
+
+		/**
+		 * The meta object literal for the '<em><b>Filter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIND__FILTER = eINSTANCE.getFind_Filter();
+
+		/**
+		 * The meta object literal for the '<em><b>Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIND__FIELDS = eINSTANCE.getFind_Fields();
+
+		/**
+		 * The meta object literal for the '<em><b>Order</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIND__ORDER = eINSTANCE.getFind_Order();
+
+		/**
+		 * The meta object literal for the '<em><b>Limit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIND__LIMIT = eINSTANCE.getFind_Limit();
+
+		/**
+		 * The meta object literal for the '<em><b>Proxy</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIND__PROXY = eINSTANCE.getFind_Proxy();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.entity.impl.FindResponseImpl <em>Find Response</em>}' class.

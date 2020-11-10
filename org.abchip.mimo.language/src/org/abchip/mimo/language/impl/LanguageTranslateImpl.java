@@ -22,12 +22,9 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.abchip.mimo.language.impl.LanguageTranslateImpl#getText
- * <em>Text</em>}</li>
- * <li>{@link org.abchip.mimo.language.impl.LanguageTranslateImpl#getFrom
- * <em>From</em>}</li>
- * <li>{@link org.abchip.mimo.language.impl.LanguageTranslateImpl#getTo
- * <em>To</em>}</li>
+ *   <li>{@link org.abchip.mimo.language.impl.LanguageTranslateImpl#getText <em>Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.language.impl.LanguageTranslateImpl#getFrom <em>From</em>}</li>
+ *   <li>{@link org.abchip.mimo.language.impl.LanguageTranslateImpl#getTo <em>To</em>}</li>
  * </ul>
  *
  * @generated
@@ -95,7 +92,6 @@ public class LanguageTranslateImpl extends ServiceRequestImpl<ServiceResponse> i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected LanguageTranslateImpl() {
@@ -104,7 +100,6 @@ public class LanguageTranslateImpl extends ServiceRequestImpl<ServiceResponse> i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -114,7 +109,6 @@ public class LanguageTranslateImpl extends ServiceRequestImpl<ServiceResponse> i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -124,7 +118,6 @@ public class LanguageTranslateImpl extends ServiceRequestImpl<ServiceResponse> i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -134,7 +127,6 @@ public class LanguageTranslateImpl extends ServiceRequestImpl<ServiceResponse> i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -144,7 +136,6 @@ public class LanguageTranslateImpl extends ServiceRequestImpl<ServiceResponse> i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -154,7 +145,6 @@ public class LanguageTranslateImpl extends ServiceRequestImpl<ServiceResponse> i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -164,7 +154,6 @@ public class LanguageTranslateImpl extends ServiceRequestImpl<ServiceResponse> i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -174,91 +163,85 @@ public class LanguageTranslateImpl extends ServiceRequestImpl<ServiceResponse> i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case LanguagePackage.LANGUAGE_TRANSLATE__TEXT:
-			return getText();
-		case LanguagePackage.LANGUAGE_TRANSLATE__FROM:
-			return getFrom();
-		case LanguagePackage.LANGUAGE_TRANSLATE__TO:
-			return getTo();
+			case LanguagePackage.LANGUAGE_TRANSLATE__TEXT:
+				return getText();
+			case LanguagePackage.LANGUAGE_TRANSLATE__FROM:
+				return getFrom();
+			case LanguagePackage.LANGUAGE_TRANSLATE__TO:
+				return getTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case LanguagePackage.LANGUAGE_TRANSLATE__TEXT:
-			setText((String) newValue);
-			return;
-		case LanguagePackage.LANGUAGE_TRANSLATE__FROM:
-			setFrom((String) newValue);
-			return;
-		case LanguagePackage.LANGUAGE_TRANSLATE__TO:
-			setTo((String) newValue);
-			return;
+			case LanguagePackage.LANGUAGE_TRANSLATE__TEXT:
+				setText((String)newValue);
+				return;
+			case LanguagePackage.LANGUAGE_TRANSLATE__FROM:
+				setFrom((String)newValue);
+				return;
+			case LanguagePackage.LANGUAGE_TRANSLATE__TO:
+				setTo((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case LanguagePackage.LANGUAGE_TRANSLATE__TEXT:
-			setText(TEXT_EDEFAULT);
-			return;
-		case LanguagePackage.LANGUAGE_TRANSLATE__FROM:
-			setFrom(FROM_EDEFAULT);
-			return;
-		case LanguagePackage.LANGUAGE_TRANSLATE__TO:
-			setTo(TO_EDEFAULT);
-			return;
+			case LanguagePackage.LANGUAGE_TRANSLATE__TEXT:
+				setText(TEXT_EDEFAULT);
+				return;
+			case LanguagePackage.LANGUAGE_TRANSLATE__FROM:
+				setFrom(FROM_EDEFAULT);
+				return;
+			case LanguagePackage.LANGUAGE_TRANSLATE__TO:
+				setTo(TO_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case LanguagePackage.LANGUAGE_TRANSLATE__TEXT:
-			return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
-		case LanguagePackage.LANGUAGE_TRANSLATE__FROM:
-			return FROM_EDEFAULT == null ? from != null : !FROM_EDEFAULT.equals(from);
-		case LanguagePackage.LANGUAGE_TRANSLATE__TO:
-			return TO_EDEFAULT == null ? to != null : !TO_EDEFAULT.equals(to);
+			case LanguagePackage.LANGUAGE_TRANSLATE__TEXT:
+				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+			case LanguagePackage.LANGUAGE_TRANSLATE__FROM:
+				return FROM_EDEFAULT == null ? from != null : !FROM_EDEFAULT.equals(from);
+			case LanguagePackage.LANGUAGE_TRANSLATE__TO:
+				return TO_EDEFAULT == null ? to != null : !TO_EDEFAULT.equals(to);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (text: ");

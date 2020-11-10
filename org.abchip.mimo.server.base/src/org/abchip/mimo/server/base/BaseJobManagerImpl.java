@@ -163,7 +163,7 @@ public class BaseJobManagerImpl implements JobManager {
 
 		Job jobTarget = null;
 
-		String filter = "jobReference.jobName = \"" + name + "\" AND jobReference.jobNumber = " + number + " AND jobReference.jobUser = \"" + user + "'";
+		String filter = "jobReference.jobName = '" + name + "' AND jobReference.jobNumber = " + number + " AND jobReference.jobUser = '" + user + "'";
 		try (EntityIterator<Job> jobs = jobCaller.getContext().getResourceManager().getResourceReader(Job.class).find(filter)) {
 			if (jobs.hasNext())
 				jobTarget = jobs.next();

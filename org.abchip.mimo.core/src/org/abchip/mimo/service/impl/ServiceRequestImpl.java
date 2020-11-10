@@ -8,8 +8,6 @@
 package org.abchip.mimo.service.impl;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextDescription;
-import org.abchip.mimo.context.UserProfile;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.service.ServiceException;
@@ -31,31 +29,21 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getLocale <em>Locale</em>}</li>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getTenant <em>Tenant</em>}</li>
  *   <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getContext <em>Context</em>}</li>
- *   <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getUserProfile <em>User Profile</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.impl.ServiceRequestImpl#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class ServiceRequestImpl<V extends ServiceResponse> extends ServiceMessageImpl implements ServiceRequest<V> {
 	/**
-	 * The default value of the '{@link #getLocale() <em>Locale</em>}' attribute.
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getLocale()
+	 * @see #getContext()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LOCALE_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getLocale() <em>Locale</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getLocale()
-	 * @generated
-	 * @ordered
-	 */
-	protected String locale = LOCALE_EDEFAULT;
+	protected Context context;
 	/**
 	 * The default value of the '{@link #getTenant() <em>Tenant</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -72,23 +60,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 * @ordered
 	 */
 	protected String tenant = TENANT_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getContext()
-	 * @generated
-	 * @ordered
-	 */
-	protected Context context;
-
-	/**
-	 * The cached value of the '{@link #getUserProfile() <em>User Profile</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getUserProfile()
-	 * @generated
-	 * @ordered
-	 */
-	protected UserProfile userProfile;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -105,27 +76,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	@Override
 	protected EClass eStaticClass() {
 		return ServicePackage.Literals.SERVICE_REQUEST;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getLocale() {
-		return locale;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setLocale(String newLocale) {
-		String oldLocale = locale;
-		locale = newLocale;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REQUEST__LOCALE, oldLocale, locale));
 	}
 
 	/**
@@ -172,43 +122,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	 */
 	public Context basicGetContext() {
 		return context;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public UserProfile getUserProfile() {
-		if (userProfile != null && ((EObject)userProfile).eIsProxy()) {
-			InternalEObject oldUserProfile = (InternalEObject)userProfile;
-			userProfile = (UserProfile)eResolveProxy(oldUserProfile);
-			if (userProfile != oldUserProfile) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServicePackage.SERVICE_REQUEST__USER_PROFILE, oldUserProfile, userProfile));
-			}
-		}
-		return userProfile;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UserProfile basicGetUserProfile() {
-		return userProfile;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setUserProfile(UserProfile newUserProfile) {
-		UserProfile oldUserProfile = userProfile;
-		userProfile = newUserProfile;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE_REQUEST__USER_PROFILE, oldUserProfile, userProfile));
 	}
 
 	/**
@@ -275,11 +188,6 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 
 		this.context = context;
 		this.tenant = tenant;
-
-		ContextDescription contextDescription = context.getContextDescription();
-		this.locale = contextDescription.getLocale();
-
-		this.setUserProfile(context.createProxy(UserProfile.class, contextDescription.getUser(), tenant));
 	}
 
 	/**
@@ -299,16 +207,11 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_REQUEST__LOCALE:
-				return getLocale();
-			case ServicePackage.SERVICE_REQUEST__TENANT:
-				return getTenant();
 			case ServicePackage.SERVICE_REQUEST__CONTEXT:
 				if (resolve) return getContext();
 				return basicGetContext();
-			case ServicePackage.SERVICE_REQUEST__USER_PROFILE:
-				if (resolve) return getUserProfile();
-				return basicGetUserProfile();
+			case ServicePackage.SERVICE_REQUEST__TENANT:
+				return getTenant();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -320,14 +223,8 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_REQUEST__LOCALE:
-				setLocale((String)newValue);
-				return;
 			case ServicePackage.SERVICE_REQUEST__TENANT:
 				setTenant((String)newValue);
-				return;
-			case ServicePackage.SERVICE_REQUEST__USER_PROFILE:
-				setUserProfile((UserProfile)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -340,14 +237,8 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_REQUEST__LOCALE:
-				setLocale(LOCALE_EDEFAULT);
-				return;
 			case ServicePackage.SERVICE_REQUEST__TENANT:
 				setTenant(TENANT_EDEFAULT);
-				return;
-			case ServicePackage.SERVICE_REQUEST__USER_PROFILE:
-				setUserProfile((UserProfile)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -360,14 +251,10 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicePackage.SERVICE_REQUEST__LOCALE:
-				return LOCALE_EDEFAULT == null ? locale != null : !LOCALE_EDEFAULT.equals(locale);
-			case ServicePackage.SERVICE_REQUEST__TENANT:
-				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 			case ServicePackage.SERVICE_REQUEST__CONTEXT:
 				return context != null;
-			case ServicePackage.SERVICE_REQUEST__USER_PROFILE:
-				return userProfile != null;
+			case ServicePackage.SERVICE_REQUEST__TENANT:
+				return TENANT_EDEFAULT == null ? tenant != null : !TENANT_EDEFAULT.equals(tenant);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -381,9 +268,7 @@ public abstract class ServiceRequestImpl<V extends ServiceResponse> extends Serv
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (locale: ");
-		result.append(locale);
-		result.append(", tenant: ");
+		result.append(" (tenant: ");
 		result.append(tenant);
 		result.append(')');
 		return result.toString();

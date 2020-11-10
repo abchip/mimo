@@ -995,6 +995,11 @@
       </eTypeParameters>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="frame" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="fields" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="proxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eGenericSuperTypes eClassifier="#//service/ServiceRequest">
         <eTypeArguments eClassifier="#//entity/FindResponse">
           <eTypeArguments eTypeParameter="#//entity/Find/E"/>
@@ -1039,12 +1044,39 @@
         <eParameters name="default" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eParameters name="resolve" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
+      <eOperations name="getValue" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+        <eParameters name="entity" lowerBound="1">
+          <eGenericType eTypeParameter="#//entity/Frame/E"/>
+        </eParameters>
+        <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
+        <eParameters name="default" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="resolve" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eOperations>
       <eOperations name="setValue">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//entity/Frame/E"/>
         </eParameters>
         <eParameters name="slotName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eOperations>
+      <eOperations name="setValue">
+        <eParameters name="entity" lowerBound="1">
+          <eGenericType eTypeParameter="#//entity/Frame/E"/>
+        </eParameters>
+        <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
+        <eParameters name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eOperations>
+      <eOperations name="isSet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="entity" lowerBound="1">
+          <eGenericType eTypeParameter="#//entity/Frame/E"/>
+        </eParameters>
+        <eParameters name="slotName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="isSet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="entity" lowerBound="1">
+          <eGenericType eTypeParameter="#//entity/Frame/E"/>
+        </eParameters>
+        <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoIncrement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -1076,6 +1108,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Slot" abstract="true" eSuperTypes="#//entity/EntityIdentifiable">
       <eOperations name="getDataType" lowerBound="1" eType="#//data/DataType"/>
+      <eOperations name="getEStructuralFeature" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" eType="#//entity/Cardinality"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="containment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -2316,13 +2349,9 @@
       <eOperations name="buildResponse" lowerBound="1" eExceptions="#//service/ServiceException">
         <eGenericType eTypeParameter="#//service/ServiceRequest/V"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="locale" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//context/Context"
           changeable="false" transient="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="userProfile" lowerBound="1"
-          eType="#//context/UserProfile"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ServiceResponse" eSuperTypes="#//service/ServiceMessage">
       <eOperations name="onError" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

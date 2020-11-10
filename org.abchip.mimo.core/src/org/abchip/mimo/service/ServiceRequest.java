@@ -8,7 +8,6 @@
 package org.abchip.mimo.service;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.UserProfile;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,10 +18,8 @@ import org.abchip.mimo.context.UserProfile;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.abchip.mimo.service.ServiceRequest#getLocale <em>Locale</em>}</li>
- *   <li>{@link org.abchip.mimo.service.ServiceRequest#getTenant <em>Tenant</em>}</li>
  *   <li>{@link org.abchip.mimo.service.ServiceRequest#getContext <em>Context</em>}</li>
- *   <li>{@link org.abchip.mimo.service.ServiceRequest#getUserProfile <em>User Profile</em>}</li>
+ *   <li>{@link org.abchip.mimo.service.ServiceRequest#getTenant <em>Tenant</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.service.ServicePackage#getServiceRequest()
@@ -30,28 +27,6 @@ import org.abchip.mimo.context.UserProfile;
  * @generated
  */
 public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessage {
-
-	/**
-	 * Returns the value of the '<em><b>Locale</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Locale</em>' attribute.
-	 * @see #setLocale(String)
-	 * @see org.abchip.mimo.service.ServicePackage#getServiceRequest_Locale()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getLocale();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRequest#getLocale <em>Locale</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Locale</em>' attribute.
-	 * @see #getLocale()
-	 * @generated
-	 */
-	void setLocale(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Tenant</b></em>' attribute.
@@ -85,28 +60,6 @@ public interface ServiceRequest<V extends ServiceResponse> extends ServiceMessag
 	 * @generated
 	 */
 	Context getContext();
-
-	/**
-	 * Returns the value of the '<em><b>User Profile</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Profile</em>' reference.
-	 * @see #setUserProfile(UserProfile)
-	 * @see org.abchip.mimo.service.ServicePackage#getServiceRequest_UserProfile()
-	 * @model required="true"
-	 * @generated
-	 */
-	UserProfile getUserProfile();
-
-	/**
-	 * Sets the value of the '{@link org.abchip.mimo.service.ServiceRequest#getUserProfile <em>User Profile</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Profile</em>' reference.
-	 * @see #getUserProfile()
-	 * @generated
-	 */
-	void setUserProfile(UserProfile value);
 
 	/**
 	 * <!-- begin-user-doc -->

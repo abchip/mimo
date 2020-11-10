@@ -8,6 +8,7 @@
  */
 package org.abchip.mimo.core.base.cmd;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -22,7 +23,6 @@ import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.util.Strings;
-import org.abchip.mimo.util.URIs;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
@@ -45,25 +45,26 @@ public class ServiceCommands extends BaseCommands {
 		boolean submit = false;
 		String tenant = null;
 
-		StringBuffer query = new StringBuffer();
+		Map<String, String> parameters = new HashMap<String, String>();
 
 		String argument = this.nextArgument(interpreter);
 		while (argument != null) {
 
+			int i = argument.indexOf("=");
+
 			// concatenate service name
-			if (!argument.contains("=")) {
+			if (i < 0) {
 				serviceId = serviceId + Strings.firstToUpper(argument);
-				argument = interpreter.nextArgument();
-				continue;
+			}
+			// parameter
+			else {
+				String key = argument.substring(0, i);
+				String value = argument.substring(i + 1);
+				parameters.put(key, value);
 			}
 
-			if (query.length() != 0)
-				query.append("&");
-			query.append(argument);
 			argument = interpreter.nextArgument();
 		}
-
-		Map<String, String> parameters = URIs.parseQuery(query.toString());
 
 		// tenant
 		if (parameters.containsKey("tenant")) {

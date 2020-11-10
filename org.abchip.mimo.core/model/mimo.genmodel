@@ -651,6 +651,11 @@
       <genClasses ecoreClass="mimo.ecore#//entity/Find">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/Find/E"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Find/frame"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Find/filter"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Find/fields"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Find/order"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Find/limit"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Find/proxy"/>
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//entity/FindResponse">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FindResponse/E"/>
@@ -683,10 +688,29 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/default"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue/resolve"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/getValue.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue.1/entity"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue.1/slot"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue.1/default"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/getValue.1/resolve"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/Frame/setValue">
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue/entity"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue/slotName"/>
           <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/setValue.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue.1/entity"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue.1/slot"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/setValue.1/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/isSet">
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/isSet/entity"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/isSet/slotName"/>
+        </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Frame/isSet.1">
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/isSet.1/entity"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/Frame/isSet.1/slot"/>
         </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="mimo.ecore#//entity/Slot">
@@ -703,6 +727,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/transient"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//entity/Slot/toString"/>
         <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getDataType"/>
+        <genOperations ecoreOperation="mimo.ecore#//entity/Slot/getEStructuralFeature"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Java" basePackage="org.abchip.mimo" disposableProviderFactory="true"
@@ -1298,10 +1323,8 @@
       </genClasses>
       <genClasses ecoreClass="mimo.ecore#//service/ServiceRequest">
         <genTypeParameters ecoreTypeParameter="mimo.ecore#//service/ServiceRequest/V"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRequest/locale"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRequest/tenant"/>
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceRequest/context"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mimo.ecore#//service/ServiceRequest/userProfile"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mimo.ecore#//service/ServiceRequest/tenant"/>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/getServiceName"/>
         <genOperations ecoreOperation="mimo.ecore#//service/ServiceRequest/init">
           <genParameters ecoreParameter="mimo.ecore#//service/ServiceRequest/init/context"/>

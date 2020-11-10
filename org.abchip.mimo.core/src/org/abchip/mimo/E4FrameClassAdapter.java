@@ -34,7 +34,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -93,7 +92,7 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 				Slot relativeKey = null;
 				for (String keyName : keys) {
 					E4SlotAdapter slotKey = (E4SlotAdapter) this.getSlot(keyName);
-					if (slotKey.getETypedElement().eContainer().equals(eClass))
+					if (slotKey.getEStructuralFeature().eContainer().equals(eClass))
 						relativeKey = slotKey;
 				}
 
@@ -115,17 +114,6 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 			eSet(EntityPackage.FRAME__HAS_TO_STRING, true);
 
 		this.getKeys().addAll(keys);
-
-		// load operations
-		for (EOperation operation : eClass.getEAllOperations()) {
-
-			EAnnotation eAnnotation = operation.getEAnnotation(Slot.NS_PREFIX_SLOT);
-			if (eAnnotation == null)
-				continue;
-
-			// other operation
-			this.getSlots().add(new E4SlotAdapter(this, operation));
-		}
 
 		this.slots = new HashMap<String, Slot>();
 		for (Slot slot : getSlots())
@@ -156,18 +144,26 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 	}
 
 	@Override
-	public Object getValue(E entity, String slotName, boolean default_, boolean resolve) {
-
-		if (entity instanceof EObject)
-			return getValue((EObject) entity, slotName, default_, resolve);
-		else
-			return getValue((Object) entity, slotName, default_, resolve);
+	public boolean isSet(E entity, Slot slot) {
+		EStructuralFeature eStructuralFeature = slot.getEStructuralFeature();
+		EObject eObject = (EObject) entity;
+		
+		return eObject.eIsSet(eStructuralFeature); 
 	}
 
 	@Override
-	public void setValue(E entity, String slot, Object value) {
+	public Object getValue(E entity, Slot slot, boolean default_, boolean resolve) {
 
-		EStructuralFeature eFeature = eClass.getEStructuralFeature(slot);
+		if (entity instanceof EObject)
+			return getValue((EObject) entity, slot, default_, resolve);
+		else
+			return getValue((Object) entity, slot, default_, resolve);
+	}
+
+	@Override
+	public void setValue(E entity, Slot slot, Object value) {
+
+		EStructuralFeature eFeature = slot.getEStructuralFeature();
 		if (eFeature == null)
 			return;
 
@@ -198,14 +194,14 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 		}
 	}
 
-	private Object getValue(EObject eObject, String slotName, boolean default_, boolean resolve) {
+	private Object getValue(EObject eObject, Slot slot, boolean default_, boolean resolve) {
 		Object value = null;
 
-		EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(slotName);
+		EStructuralFeature eStructuralFeature = slot.getEStructuralFeature();
 		if (eStructuralFeature != null)
 			value = eObject.eGet(eStructuralFeature, resolve);
 		else {
-			value = getValue((Object) eObject, slotName, default_, resolve);
+			value = getValue((Object) eObject, slot, default_, resolve);
 		}
 
 		if (value == null && default_)
@@ -214,17 +210,17 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 		return value;
 	}
 
-	private Object getValue(Object object, String slotName, boolean default_, boolean resolve) {
+	private Object getValue(Object object, Slot slot, boolean default_, boolean resolve) {
 		Object value = null;
 
 		try {
 			String methodName = null;
-			if (slotName.startsWith("is"))
-				methodName = slotName;
-			else if (slotName.startsWith("get"))
-				methodName = slotName;
+			if (slot.getName().startsWith("is"))
+				methodName = slot.getName();
+			else if (slot.getName().startsWith("get"))
+				methodName = slot.getName();
 			else
-				methodName = "get" + Strings.firstToUpper(slotName);
+				methodName = "get" + Strings.firstToUpper(slot.getName());
 			Method method = object.getClass().getMethod(methodName, new Class[] {});
 			if (method != null)
 				value = method.invoke(object, new Object[] {});
