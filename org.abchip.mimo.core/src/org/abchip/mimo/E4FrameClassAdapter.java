@@ -127,7 +127,7 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 
 	@Override
 	public String toString() {
-		return eClass.toString();
+		return super.toString();
 	}
 
 	@Override

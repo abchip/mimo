@@ -422,7 +422,7 @@ public class FindImpl<E extends EntityIdentifiable> extends ServiceRequestImpl<F
 		Context context = this.getContext();
 		FindResponse<E> response = this.buildResponse();
 
-		ResourceReader<E> entityReader = context.getResourceManager().getResourceReader(this.getFrame());
+		ResourceReader<E> entityReader = context.getResourceManager().getResourceReader(this.getFrame(), this.getTenant());
 		try (EntityIterator<E> entityIterator = entityReader.find(getFilter(), getFields(), getOrder(), getLimit(), isProxy())) {
 			Lists.addAll(response.getEntities(), entityIterator);
 		}

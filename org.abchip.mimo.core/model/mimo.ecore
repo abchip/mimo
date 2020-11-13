@@ -1052,6 +1052,18 @@
         <eParameters name="default" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eParameters name="resolve" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
+      <eOperations name="isSet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="entity" lowerBound="1">
+          <eGenericType eTypeParameter="#//entity/Frame/E"/>
+        </eParameters>
+        <eParameters name="slotName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="isSet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="entity" lowerBound="1">
+          <eGenericType eTypeParameter="#//entity/Frame/E"/>
+        </eParameters>
+        <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
+      </eOperations>
       <eOperations name="setValue">
         <eParameters name="entity" lowerBound="1">
           <eGenericType eTypeParameter="#//entity/Frame/E"/>
@@ -1065,18 +1077,6 @@
         </eParameters>
         <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
         <eParameters name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-      </eOperations>
-      <eOperations name="isSet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//entity/Frame/E"/>
-        </eParameters>
-        <eParameters name="slotName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="isSet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//entity/Frame/E"/>
-        </eParameters>
-        <eParameters name="slot" lowerBound="1" eType="#//entity/Slot"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoIncrement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

@@ -77,7 +77,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			for (Slot slot : isa.getSlots()) {
 				if (slot.isDerived())
 					continue;
-
+				if("info".equals(slot.getGroup()))
+					continue;
 				if (!isa.isSet((E) this, slot))
 					continue;
 
@@ -93,7 +94,6 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 
 				if (value instanceof List<?>) {
 					List<?> listValue = (List<?>) value;
-
 					// if (listValue.size() > 3)
 					// result.append(slot.getName() + ": " + listValue.subList(0, 2));
 					// else

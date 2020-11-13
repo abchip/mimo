@@ -55,7 +55,7 @@ public class E4ResourceSetImpl extends ResourceSetImpl {
 			tenant = null;
 
 		checkAuthorization(tenant);
-		
+
 		URI uri = URI.createHierarchicalURI("mimo", tenant, null, new String[] { frame }, null, null);
 		@SuppressWarnings("unchecked")
 		MimoResourceImpl<E> internal = (MimoResourceImpl<E>) e4ResourceSet.getResource(uri, true);
@@ -67,7 +67,7 @@ public class E4ResourceSetImpl extends ResourceSetImpl {
 		ContextDescription contextDescription = context.getContextDescription();
 
 		// check authorization
-		if (contextDescription.isTenant()) {
+		if (contextDescription.isTenant() && tenantId != null) {
 			if (!contextDescription.getTenant().equals(tenantId))
 				throw new ResourceException("Permission denied for tenant: " + contextDescription.getTenant());
 		}
