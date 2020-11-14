@@ -100,6 +100,8 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 		// E entity = resource.make();
 
 		Frame<E> frame = context.getResourceManager().getFrame(jsonObject.getString("isa"));
+		jsonObject.remove("isa");
+		
 		@SuppressWarnings("unchecked")
 		E entity = (E) EcoreUtil.create((EClass) frame.getEClassifier());
 
@@ -107,11 +109,16 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 			container.add((EObject) entity);
 
 		for (String slotName : JSONObject.getNames(jsonObject)) {
+			Slot slot = this.getSlot(frame, slotName);
+
+			if(jsonObject.isNull(slotName))
+				continue;
+			
 			Object slotValue = jsonObject.get(slotName);
 			if (slotValue instanceof JSONObject) {
 				slotValue = jsonObject2Entity(null, (JSONObject) slotValue);
 			}
-			frame.setValue(entity, slotName, slotValue);
+			frame.setValue(entity, slot, slotValue);
 		}
 
 		return entity;
@@ -259,6 +266,18 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 		}
 
 		return raw;
+	}
+
+	private Slot getSlot(Frame<?> frame, String field) {
+
+		Slot slot = frame.getSlot(field);
+		if (slot == null && field.endsWith("Id")) {
+			slot = frame.getSlot(field.substring(0, field.length() - 2));
+			if (slot != null && slot.getDomain() == null)
+				slot = null;
+		}
+
+		return slot;
 	}
 
 	private boolean isEmpty(Object value) {
