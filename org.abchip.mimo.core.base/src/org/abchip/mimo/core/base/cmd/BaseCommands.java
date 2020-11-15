@@ -15,6 +15,7 @@ import org.abchip.mimo.authentication.AuthenticationAdminKey;
 import org.abchip.mimo.authentication.AuthenticationException;
 import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
+import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.context.Context;
 import org.apache.felix.service.command.CommandSession;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
@@ -28,6 +29,10 @@ public abstract class BaseCommands implements CommandProvider {
 
 	public BaseCommands(Application application) {
 		this.application = application;
+	}
+
+	protected Application getApplication() {
+		return this.application;
 	}
 
 	protected String nextArgument(CommandInterpreter interpreter) {
@@ -75,35 +80,60 @@ public abstract class BaseCommands implements CommandProvider {
 			Context context = (Context) commandSession.get(MIMO_CONTEXT);
 			if (context != null)
 				return context;
-
-			if (application.getAdminKey() == null) {
-				context = login(null);
-				commandSession.put(MIMO_CONTEXT, context);
-				return context;
-			}
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 
-		throw new RuntimeException("You need a login, please use first command 'login'");
+		throw new RuntimeException("You need a login, please use first command 'mm_login'");
 	}
 
-	protected Context login(String adminKey) throws AuthenticationException {
+	@SuppressWarnings("resource")
+	protected Context loginByAdminKey(CommandInterpreter interpreter, String tenant, String adminKey) throws AuthenticationException {
 
 		AuthenticationManager authenticationManager = application.getContext().get(AuthenticationManager.class);
 		if (authenticationManager == null)
-			return null;
+			throw new AuthenticationException("AuthenticationManager not found");
 
 		AuthenticationAdminKey authAdminKey = AuthenticationFactory.eINSTANCE.createAuthenticationAdminKey();
+		authAdminKey.setTenant(tenant);
 		authAdminKey.setAdminKey(adminKey);
 
-		@SuppressWarnings("resource")
 		Context context = authenticationManager.login(null, authAdminKey).get();
+		this.getCommandSession(interpreter).put(MIMO_CONTEXT, context);
+
+		return context;
+	}
+
+	@SuppressWarnings("resource")
+	protected Context loginByUserPassword(CommandInterpreter interpreter, String tenant, String user, String password) throws AuthenticationException {
+
+		AuthenticationManager authenticationManager = application.getContext().get(AuthenticationManager.class);
+		if (authenticationManager == null)
+			throw new AuthenticationException("AuthenticationManager not found");
+
+		AuthenticationUserPassword authUserPassword = AuthenticationFactory.eINSTANCE.createAuthenticationUserPassword();
+		authUserPassword.setTenant(tenant);
+		authUserPassword.setUser(user);
+		authUserPassword.setPassword(password);
+
+		Context context = authenticationManager.login(null, authUserPassword).get();
+		this.getCommandSession(interpreter).put(MIMO_CONTEXT, context);
 
 		return context;
 	}
 
 	protected void logout(CommandInterpreter interpreter) {
 		this.getContext(interpreter).dispose();
+	}
+
+	private CommandSession getCommandSession(CommandInterpreter interpreter) {
+		try {
+			Field field = interpreter.getClass().getDeclaredField("commandSession");
+			field.setAccessible(true);
+			CommandSession commandSession = (CommandSession) field.get(interpreter);
+			return commandSession;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 }

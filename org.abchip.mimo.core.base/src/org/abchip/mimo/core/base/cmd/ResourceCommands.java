@@ -25,11 +25,6 @@ public class ResourceCommands extends BaseCommands {
 		super(application);
 	}
 
-	public void _logout(CommandInterpreter interpreter) throws Exception {
-		this.logout(interpreter);
-
-		interpreter.execute("disconnect");
-	}
 
 	public <E extends EntityIdentifiable> void _find(CommandInterpreter interpreter) throws Exception {
 

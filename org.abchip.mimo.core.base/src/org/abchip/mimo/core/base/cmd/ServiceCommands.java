@@ -34,6 +34,49 @@ public class ServiceCommands extends BaseCommands {
 		super(application);
 	}
 
+	public void _mm_login(CommandInterpreter interpreter) throws Exception {
+
+		Map<String, String> arguments = new HashMap<String, String>();
+
+		String argument = this.nextArgument(interpreter);
+		while (argument != null) {
+
+			int i = argument.indexOf("=");
+
+			// concatenate service name
+			if (i < 0) {
+				throw new RuntimeException("Invalid argument: " + argument);
+			}
+			// parameter
+			else {
+				String key = argument.substring(0, i);
+				String value = argument.substring(i + 1);
+				arguments.put(key, value);
+			}
+
+			argument = interpreter.nextArgument();
+		}
+
+		String tenant = arguments.get("tenant");
+		String user = arguments.get("user");
+		if (user != null) {
+			String password = arguments.get("password");
+			this.loginByUserPassword(interpreter, tenant, user, password);
+		} else {
+			String adminKey = arguments.get("adminKey");
+			if (Strings.isEmpty(adminKey))
+				adminKey = this.getApplication().getAdminKey();
+
+			this.loginByAdminKey(interpreter, tenant, adminKey);
+		}
+	}
+
+	public void _mm_logout(CommandInterpreter interpreter) throws Exception {
+		this.logout(interpreter);
+
+		interpreter.execute("disconnect");
+	}
+
 	public <R extends ServiceRequest<V>, V extends ServiceResponse> void _mm(CommandInterpreter interpreter) throws Exception {
 
 		Context context = this.getContext(interpreter);
