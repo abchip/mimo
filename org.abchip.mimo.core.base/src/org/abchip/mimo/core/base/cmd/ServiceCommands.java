@@ -57,18 +57,22 @@ public class ServiceCommands extends BaseCommands {
 			argument = interpreter.nextArgument();
 		}
 
+		Context context = null;
+		
 		String tenant = arguments.get("tenant");
 		String user = arguments.get("user");
 		if (user != null) {
 			String password = arguments.get("password");
-			this.loginByUserPassword(interpreter, tenant, user, password);
+			context = this.loginByUserPassword(interpreter, tenant, user, password);
 		} else {
 			String adminKey = arguments.get("adminKey");
 			if (Strings.isEmpty(adminKey))
 				adminKey = this.getApplication().getAdminKey();
 
-			this.loginByAdminKey(interpreter, tenant, adminKey);
+			context = this.loginByAdminKey(interpreter, tenant, adminKey);
 		}
+		
+		interpreter.println(context.getContextDescription());
 	}
 
 	public void _mm_logout(CommandInterpreter interpreter) throws Exception {
