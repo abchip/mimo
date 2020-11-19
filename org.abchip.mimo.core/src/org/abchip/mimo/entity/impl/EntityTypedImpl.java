@@ -24,10 +24,12 @@ public abstract class EntityTypedImpl<T extends EntityType<?>> extends EntityIde
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected EntityTypedImpl() {
 		super();
+		
+		// TODO 
 	}
 
 	/**
