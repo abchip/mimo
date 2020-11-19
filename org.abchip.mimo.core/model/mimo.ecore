@@ -978,11 +978,6 @@
           <eTypeArguments/>
         </eBounds>
       </eTypeParameters>
-      <eOperations name="getFrame" lowerBound="1">
-        <eGenericType eClassifier="#//entity/Frame">
-          <eTypeArguments eTypeParameter="#//entity/EntityType/E"/>
-        </eGenericType>
-      </eOperations>
       <eOperations name="getTypeId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eOperations name="hasTable" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="getText" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

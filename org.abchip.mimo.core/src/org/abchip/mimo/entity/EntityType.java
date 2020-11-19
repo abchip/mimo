@@ -48,14 +48,6 @@ public interface EntityType<E extends EntityTyped<?>> extends EntityIdentifiable
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
-	Frame<E> getFrame();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
 	String getTypeId();
 
 	/**

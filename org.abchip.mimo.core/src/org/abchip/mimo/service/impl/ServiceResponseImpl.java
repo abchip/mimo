@@ -203,4 +203,22 @@ public class ServiceResponseImpl extends ServiceMessageImpl implements ServiceRe
 		}
 		return super.eIsSet(featureID);
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (errorMessage: ");
+		result.append(errorMessage);
+		result.append(", successMessage: ");
+		result.append(successMessage);
+		result.append(')');
+		return result.toString();
+	}
 } // ServiceResponseImpl

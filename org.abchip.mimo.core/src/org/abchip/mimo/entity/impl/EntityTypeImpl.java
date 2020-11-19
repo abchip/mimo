@@ -13,7 +13,6 @@ import java.util.List;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.EntityType;
 import org.abchip.mimo.entity.EntityTyped;
-import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -75,18 +74,6 @@ public abstract class EntityTypeImpl<E extends EntityTyped<?>> extends EntityIde
 			slots = new EObjectContainmentEList.Resolving<Slot>(Slot.class, this, EntityPackage.ENTITY_TYPE__SLOTS);
 		}
 		return slots;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Frame<E> getFrame() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
