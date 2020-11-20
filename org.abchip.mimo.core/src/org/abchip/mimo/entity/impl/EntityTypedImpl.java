@@ -7,10 +7,15 @@
  */
 package org.abchip.mimo.entity.impl;
 
+import java.util.Map.Entry;
+
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.EntityType;
 import org.abchip.mimo.entity.EntityTyped;
+import org.abchip.mimo.entity.Frame;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,8 +33,22 @@ public abstract class EntityTypedImpl<T extends EntityType<?>> extends EntityIde
 	 */
 	protected EntityTypedImpl() {
 		super();
-		
-		// TODO 
+				
+		EAnnotation eFrameAnnotation = this.eClass().getEAnnotation(Frame.NS_PREFIX_FRAME_CONSTRAINTS);
+		if (eFrameAnnotation == null) 
+			return;
+
+		for(Entry<String, String> constraint: eFrameAnnotation.getDetails().entrySet()) {
+			try {
+				EStructuralFeature eFeature = this.eClass().getEStructuralFeature(constraint.getKey());
+				if(eFeature == null)
+					"".toString();
+				eSet(eFeature, constraint.getValue());
+			}
+			catch(Exception e) {
+				e.toString();
+			}
+		}
 	}
 
 	/**

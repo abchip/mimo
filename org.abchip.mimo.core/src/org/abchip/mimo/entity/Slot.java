@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 public interface Slot extends EntityIdentifiable {
 
 	public final static String NS_PREFIX_SLOT = EntityPackage.eNS_PREFIX + "-slot";
-	public final static String NS_PREFIX_SLOT_CONSTRAINT = NS_PREFIX_SLOT + "-constraint";
+	public final static String NS_PREFIX_SLOT_CONSTRAINTS = NS_PREFIX_SLOT + "-constraints";
 	public final static String NS_PREFIX_FORMAT = EntityPackage.eNS_PREFIX + "-format";
 
 	/**
