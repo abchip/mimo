@@ -1647,13 +1647,13 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEException(op, this.getResourceException());
 
 		op = addEOperation(resourceWriterEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(resourceReaderEClass_E);
+		g1 = createEGenericType(resourceWriterEClass_E);
 		initEOperation(op, g1);
 
 		op = addEOperation(resourceWriterEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "sequence", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());
-		g1 = createEGenericType(resourceReaderEClass_E);
+		g1 = createEGenericType(resourceWriterEClass_E);
 		initEOperation(op, g1);
 
 		op = addEOperation(resourceWriterEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1662,7 +1662,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEException(op, this.getResourceException());
 
 		op = addEOperation(resourceWriterEClass, ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(resourceReaderEClass_E);
+		g1 = createEGenericType(resourceWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals

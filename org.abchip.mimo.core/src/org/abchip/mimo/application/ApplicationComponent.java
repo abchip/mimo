@@ -11,7 +11,8 @@ package org.abchip.mimo.application;
 import java.util.List;
 
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.service.ServiceConfig;
 import org.abchip.mimo.service.reg.ServiceCommandProviderReg;
 import org.abchip.mimo.service.reg.ServiceHookReg;
@@ -38,7 +39,7 @@ import org.abchip.mimo.service.reg.ServiceHookReg;
  * @model
  * @generated
  */
-public interface ApplicationComponent extends EntityIdentifiable {
+public interface ApplicationComponent extends Entity, ContextProvider {
 	/**
 	 * Returns the value of the '<em><b>Config</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

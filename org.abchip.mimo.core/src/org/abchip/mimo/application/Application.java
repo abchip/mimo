@@ -9,9 +9,10 @@ package org.abchip.mimo.application;
 
 import java.util.List;
 import org.abchip.mimo.context.ContextDescription;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 
-import org.abchip.mimo.entity.EntityIdentifiable;
+import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.resource.ResourceMapping;
 import org.abchip.mimo.service.ServiceConfig;
 import org.abchip.mimo.service.ServiceMapping;
@@ -48,7 +49,7 @@ import org.osgi.framework.Bundle;
  * @model
  * @generated
  */
-public interface Application extends EntityIdentifiable {
+public interface Application extends Entity, ContextProvider {
 	/**
 	 * Returns the value of the '<em><b>Admin Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->

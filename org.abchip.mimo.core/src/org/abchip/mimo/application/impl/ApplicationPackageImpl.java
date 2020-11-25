@@ -817,9 +817,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		// Obtain other dependent packages
 		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		RegPackage theRegPackage = (RegPackage)EPackage.Registry.INSTANCE.getEPackage(RegPackage.eNS_URI);
 		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
-		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 		ResourcePackage theResourcePackage = (ResourcePackage)EPackage.Registry.INSTANCE.getEPackage(ResourcePackage.eNS_URI);
 		JavaPackage theJavaPackage = (JavaPackage)EPackage.Registry.INSTANCE.getEPackage(JavaPackage.eNS_URI);
 
@@ -828,9 +828,11 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		applicationEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		applicationEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		applicationEClass.getESuperTypes().add(theContextPackage.getContextProvider());
 		applicationPathsEClass.getESuperTypes().add(theEntityPackage.getEntity());
-		applicationComponentEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
+		applicationComponentEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		applicationComponentEClass.getESuperTypes().add(theContextPackage.getContextProvider());
 		applicationLogsEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		applicationLogEntryEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		applicationModuleEClass.getESuperTypes().add(theEntityPackage.getEntity());

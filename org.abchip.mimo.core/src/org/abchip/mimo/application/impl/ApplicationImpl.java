@@ -21,7 +21,7 @@ import org.abchip.mimo.application.ApplicationPaths;
 import org.abchip.mimo.application.ComponentStatus;
 import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextRoot;
-import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.resource.ResourceMapping;
 import org.abchip.mimo.service.ServiceConfig;
 import org.abchip.mimo.service.ServiceMapping;
@@ -66,7 +66,7 @@ import org.osgi.framework.FrameworkUtil;
  *
  * @generated
  */
-public class ApplicationImpl extends EntityIdentifiableImpl implements Application {
+public class ApplicationImpl extends EntityImpl implements Application {
 	/**
 	 * The default value of the '{@link #getAdminKey() <em>Admin Key</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

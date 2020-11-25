@@ -4,7 +4,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Mimo"/>
   <eSubpackages name="application" nsURI="http://www.abchip.org/mimo/application"
       nsPrefix="mimo-app">
-    <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//entity/EntityIdentifiable">
+    <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//entity/Entity #//context/ContextProvider">
       <eOperations name="getActiveComponents" upperBound="-1" eType="#//application/ApplicationComponent"/>
       <eOperations name="getBundle" lowerBound="1" eType="#//application/ApplicationBundle"/>
       <eOperations name="getInstallArea" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -47,7 +47,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="work" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ApplicationComponent" eSuperTypes="#//entity/EntityIdentifiable">
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationComponent" eSuperTypes="#//entity/Entity #//context/ContextProvider">
       <eStructuralFeatures xsi:type="ecore:EReference" name="config" eType="#//service/ServiceConfig"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//context/Context"
@@ -2064,10 +2064,10 @@
         <eParameters name="raw" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="make" lowerBound="1">
-        <eGenericType eTypeParameter="#//resource/ResourceReader/E"/>
+        <eGenericType eTypeParameter="#//resource/ResourceWriter/E"/>
       </eOperations>
       <eOperations name="make" lowerBound="1" eExceptions="#//resource/ResourceException">
-        <eGenericType eTypeParameter="#//resource/ResourceReader/E"/>
+        <eGenericType eTypeParameter="#//resource/ResourceWriter/E"/>
         <eParameters name="sequence" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eOperations>
       <eOperations name="update" eExceptions="#//resource/ResourceException">
@@ -2077,7 +2077,7 @@
       </eOperations>
       <eOperations name="validate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eParameters name="entity" lowerBound="1">
-          <eGenericType eTypeParameter="#//resource/ResourceReader/E"/>
+          <eGenericType eTypeParameter="#//resource/ResourceWriter/E"/>
         </eParameters>
       </eOperations>
       <eGenericSuperTypes eClassifier="#//resource/ResourceReader">

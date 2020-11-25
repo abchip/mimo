@@ -83,7 +83,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__ADMIN_KEY = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
+	int APPLICATION__ADMIN_KEY = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Plugin</b></em>' attribute.
@@ -92,7 +92,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__PLUGIN = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
+	int APPLICATION__PLUGIN = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Commands</b></em>' containment reference list.
@@ -101,7 +101,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__COMMANDS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+	int APPLICATION__COMMANDS = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
@@ -110,7 +110,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__COMPONENTS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
+	int APPLICATION__COMPONENTS = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Config</b></em>' containment reference.
@@ -119,7 +119,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__CONFIG = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
+	int APPLICATION__CONFIG = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -128,7 +128,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__CONTEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
+	int APPLICATION__CONTEXT = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Context Description</b></em>' containment reference.
@@ -137,7 +137,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__CONTEXT_DESCRIPTION = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
+	int APPLICATION__CONTEXT_DESCRIPTION = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Hooks</b></em>' containment reference list.
@@ -146,7 +146,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__HOOKS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
+	int APPLICATION__HOOKS = EntityPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Logs</b></em>' containment reference.
@@ -155,7 +155,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__LOGS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 8;
+	int APPLICATION__LOGS = EntityPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -164,7 +164,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 9;
+	int APPLICATION__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Paths</b></em>' containment reference.
@@ -173,7 +173,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__PATHS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 10;
+	int APPLICATION__PATHS = EntityPackage.ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Resource Mapping</b></em>' containment reference.
@@ -182,7 +182,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__RESOURCE_MAPPING = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 11;
+	int APPLICATION__RESOURCE_MAPPING = EntityPackage.ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Service Mapping</b></em>' containment reference.
@@ -191,7 +191,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__SERVICE_MAPPING = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 12;
+	int APPLICATION__SERVICE_MAPPING = EntityPackage.ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -200,7 +200,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__TEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 13;
+	int APPLICATION__TEXT = EntityPackage.ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Application</em>' class.
@@ -209,7 +209,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 14;
+	int APPLICATION_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The meta object id for the '<em>Bundle</em>' data type.
@@ -284,7 +284,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__CONFIG = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 0;
+	int APPLICATION_COMPONENT__CONFIG = EntityPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -293,7 +293,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__CONTEXT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 1;
+	int APPLICATION_COMPONENT__CONTEXT = EntityPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Hooks</b></em>' containment reference list.
@@ -302,7 +302,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__HOOKS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 2;
+	int APPLICATION_COMPONENT__HOOKS = EntityPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Commands</b></em>' containment reference list.
@@ -311,7 +311,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__COMMANDS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 3;
+	int APPLICATION_COMPONENT__COMMANDS = EntityPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Modules</b></em>' containment reference list.
@@ -320,7 +320,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__MODULES = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 4;
+	int APPLICATION_COMPONENT__MODULES = EntityPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -329,7 +329,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__NAME = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 5;
+	int APPLICATION_COMPONENT__NAME = EntityPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
@@ -338,7 +338,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT__STATUS = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 6;
+	int APPLICATION_COMPONENT__STATUS = EntityPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -347,7 +347,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_COMPONENT_FEATURE_COUNT = EntityPackage.ENTITY_IDENTIFIABLE_FEATURE_COUNT + 7;
+	int APPLICATION_COMPONENT_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.application.impl.ApplicationLogsImpl <em>Logs</em>}' class.

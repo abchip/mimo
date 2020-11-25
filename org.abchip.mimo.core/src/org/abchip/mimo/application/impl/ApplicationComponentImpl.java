@@ -15,7 +15,7 @@ import org.abchip.mimo.application.ApplicationModule;
 import org.abchip.mimo.application.ApplicationPackage;
 import org.abchip.mimo.application.ComponentStatus;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.entity.impl.EntityIdentifiableImpl;
+import org.abchip.mimo.entity.impl.EntityImpl;
 import org.abchip.mimo.service.ServiceConfig;
 import org.abchip.mimo.service.reg.ServiceCommandProviderReg;
 import org.abchip.mimo.service.reg.ServiceHookReg;
@@ -48,7 +48,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ApplicationComponentImpl extends EntityIdentifiableImpl implements ApplicationComponent {
+public class ApplicationComponentImpl extends EntityImpl implements ApplicationComponent {
 	/**
 	 * The cached value of the '{@link #getConfig() <em>Config</em>}' containment reference.
 	 * <!-- begin-user-doc -->

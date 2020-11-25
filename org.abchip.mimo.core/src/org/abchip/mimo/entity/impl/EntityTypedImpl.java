@@ -22,7 +22,6 @@ public abstract class EntityTypedImpl<T extends EntityType<?>> extends EntityIde
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EntityTypedImpl() {
@@ -31,7 +30,6 @@ public abstract class EntityTypedImpl<T extends EntityType<?>> extends EntityIde
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -43,7 +41,6 @@ public abstract class EntityTypedImpl<T extends EntityType<?>> extends EntityIde
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

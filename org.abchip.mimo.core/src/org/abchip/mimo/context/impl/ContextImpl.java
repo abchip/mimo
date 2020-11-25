@@ -224,7 +224,7 @@ public abstract class ContextImpl extends EntityImpl implements Context {
 			}
 		}
 
-		// TODO init(this)
+		entity.init(this);
 		
 		return entity;
 	}

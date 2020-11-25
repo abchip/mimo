@@ -46,7 +46,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -55,7 +54,6 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -78,9 +76,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 		for (Entry<String, String> constraint : eFrameAnnotation.getDetails().entrySet()) {
 			try {
 				EStructuralFeature eFeature = this.eClass().getEStructuralFeature(constraint.getKey());
-				if (eFeature == null)
-					"".toString();
-				eSet(eFeature, constraint.getValue());
+				eSet(context, eFeature, constraint.getValue());
 			} catch (Exception e) {
 				e.toString();
 			}
@@ -272,6 +268,10 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	public void eSet(EStructuralFeature eFeature, Object newValue) {
 
 		Context context = this.getContext();
+		this.eSet(context, eFeature, newValue);
+	}
+
+	private void eSet(Context context, EStructuralFeature eFeature, Object newValue) {
 		if (eFeature.isMany()) {
 			List<Object> values = new ArrayList<Object>();
 			for (Object object : (Collection<?>) newValue)
@@ -286,9 +286,9 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 					super.eSet(eFeature, EcoreUtil.createFromString((EDataType) eFeature.getEType(), newValue.toString()));
 				}
 			}
-		}
+		}		
 	}
-
+	
 	private Object buildValue(Context context, EStructuralFeature eFeature, Object value) {
 
 		Object object = null;
