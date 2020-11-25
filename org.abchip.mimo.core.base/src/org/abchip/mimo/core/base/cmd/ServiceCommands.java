@@ -23,8 +23,6 @@ import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.util.Strings;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
 public class ServiceCommands extends BaseCommands {
@@ -58,7 +56,7 @@ public class ServiceCommands extends BaseCommands {
 		}
 
 		Context context = null;
-		
+
 		String tenant = arguments.get("tenant");
 		String user = arguments.get("user");
 		if (user != null) {
@@ -71,7 +69,7 @@ public class ServiceCommands extends BaseCommands {
 
 			context = this.loginByAdminKey(interpreter, tenant, adminKey);
 		}
-		
+
 		interpreter.println(context.getContextDescription());
 	}
 
@@ -174,10 +172,8 @@ public class ServiceCommands extends BaseCommands {
 			interpreter.println();
 		}
 
-		ServiceResponse response = (ServiceResponse) EcoreUtil.create((EClass) context.createProxy(Frame.class, request.getResponse().getSimpleName()).getEClassifier());
-
 		interpreter.println("Output parameters");
-		for (Slot slot : response.isa().getSlots()) {
+		for (Slot slot : context.getFrame(request.getResponse()).getSlots()) {
 			interpreter.print("\tName: " + slot.getName() + " ");
 			interpreter.print("\tText: " + slot.getText() + " ");
 			interpreter.print("\tOptional: " + !slot.getCardinality().isMandatory() + " ");

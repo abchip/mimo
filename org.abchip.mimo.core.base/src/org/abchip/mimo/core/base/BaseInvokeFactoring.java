@@ -5,7 +5,6 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.EntityIdentifiable;
-import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.service.ServiceException;
 import org.abchip.mimo.service.ServiceManager;
 import org.abchip.mimo.service.ServiceMethodRequest;
@@ -47,13 +46,13 @@ public class BaseInvokeFactoring implements Factory {
 
 			EntityIdentifiable entity = (EntityIdentifiable) target;
 
-			Resource<?> resource = entity.getResource();
-			if (resource == null) {
-				LOGGER.warn("Unactive entity {}", entity.getURI());
+			Context context = entity.getContext();
+			if (context == null) {
+				LOGGER.warn("Invalid context");
 				return null;
 			}
 
-			Object object = _invoke(resource.getContext(), entity, arguments);
+			Object object = _invoke(context, entity, arguments);
 			if (BigDecimal.class.isAssignableFrom(this.eOperation.getEType().getInstanceClass())) {
 				object = new BigDecimal(object.toString());
 			}

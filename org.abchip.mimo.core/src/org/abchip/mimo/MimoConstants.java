@@ -22,7 +22,6 @@ public class MimoConstants {
 	public static final String REGISTRY_VENDOR_ABCHIP = "ABChip";
 	public static final String REGISTRY_VERSION = "org.abchip.mimo.registry.version";
 	
-	public static final String VALIDATOR_READ = "org.abchip.mimo.validator.read";
 	public static final String VALIDATOR_WRITE = "org.abchip.mimo.validator.write";
 
 	public static final String SEEDS_PATH = "application/seeds";

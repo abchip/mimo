@@ -45,7 +45,7 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 
 	private static Map<String, Frame<?>> FRAMES = new HashMap<String, Frame<?>>();
 	private static final ResourceConfig EMF_RESOURCE_CONFIG = ResourceFactory.eINSTANCE.createResourceConfig();
-	
+
 	public MimoResourceFactoryImpl(MimoResourceSetImpl resourceSet, Map<URI, org.eclipse.emf.ecore.resource.Resource> uriResourceMap) {
 		super();
 		this.resourceSet = resourceSet;
@@ -68,7 +68,7 @@ public class MimoResourceFactoryImpl extends ResourceFactoryImpl {
 		Frame<Frame<?>> frame = (Frame<Frame<?>>) FRAMES.get(Frame.class.getSimpleName());
 		E4FrameClassResourceImpl<Frame<?>> frameResource = new E4FrameClassResourceImpl<Frame<?>>(context, context.getTenant(), frame, FRAMES);
 		frameResource.setResourceConfig(EMF_RESOURCE_CONFIG);
-		
+
 		URI frameUri = URI.createHierarchicalURI("mimo", null, null, new String[] { Frame.class.getSimpleName() }, null, null);
 		uriResourceMap.put(frameUri, new MimoResourceImpl<Frame<?>>(frameResource, resourceSet, frameUri));
 	}

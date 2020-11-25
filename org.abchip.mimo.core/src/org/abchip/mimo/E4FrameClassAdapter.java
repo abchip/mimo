@@ -10,14 +10,11 @@ package org.abchip.mimo;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.abchip.mimo.context.Context;
 import org.abchip.mimo.entity.Entity;
-import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityPackage;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
@@ -28,13 +25,9 @@ import org.abchip.mimo.util.Strings;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.service.log.Logger;
@@ -147,8 +140,8 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 	public boolean isSet(E entity, Slot slot) {
 		EStructuralFeature eStructuralFeature = slot.getEStructuralFeature();
 		EObject eObject = (EObject) entity;
-		
-		return eObject.eIsSet(eStructuralFeature); 
+
+		return eObject.eIsSet(eStructuralFeature);
 	}
 
 	@Override
@@ -174,24 +167,7 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 			return;
 		}
 
-		URI uri = EcoreUtil.getURI(eObject);
-		String tenant = uri.authority();
-		if (eFeature.isMany()) {
-			List<Object> values = new ArrayList<Object>();
-			for (Object object : (Collection<?>) value)
-				values.add(buildValue(entity, tenant, eFeature, object));
-			eObject.eSet(eFeature, values);
-		} else {
-			try {
-				Object object = buildValue(entity, tenant, eFeature, value);
-				eObject.eSet(eFeature, object);
-			} catch (Exception e) {
-				if (eFeature.getEType() instanceof EDataType) {
-					value = EcoreUtil.createFromString((EDataType) eFeature.getEType(), value.toString());
-					eObject.eSet(eFeature, value);
-				}
-			}
-		}
+		eObject.eSet(eFeature, value);
 	}
 
 	private Object getValue(EObject eObject, Slot slot, boolean default_, boolean resolve) {
@@ -231,42 +207,6 @@ public class E4FrameClassAdapter<E extends Entity> extends FrameImpl<E> implemen
 		}
 
 		return value;
-	}
-
-	private Object buildValue(Entity entity, String tenant, EStructuralFeature eFeature, Object value) {
-
-		Object object = null;
-
-		if (eFeature instanceof EReference) {
-			if (value instanceof EntityIdentifiable) {
-				EntityIdentifiable entityIdentifiable = (EntityIdentifiable) value;
-				object = entityIdentifiable;
-			} else {
-				EReference eReference = (EReference) eFeature;
-				EClassifier eClassifier = eReference.getEType();
-
-				if (entity instanceof EntityIdentifiable) {
-					EntityIdentifiable entityIdentifiable = (EntityIdentifiable) entity;
-					if (entityIdentifiable.getContext() != null) {
-						Context context = entityIdentifiable.getContext();
-
-						@SuppressWarnings("unchecked")
-						Frame<EntityIdentifiable> frameRef = (Frame<EntityIdentifiable>) context.createProxy(Frame.class, eClassifier.getName());
-						if (frameRef != null) {
-							object = context.createProxy(frameRef, value.toString(), tenant);
-						} else
-							LOGGER.warn("Unexpected condition {}", "bvtw4a87ny4r9tycsa9et6");
-					} else
-						LOGGER.warn("Unexpected condition {}", "bwytn56wn086b787rt874we");
-				} else
-					LOGGER.warn("Unexpected condition {}", "bvonstriy53679r8e76tyn87naq");
-
-			}
-
-		} else
-			object = value;
-
-		return object;
 	}
 
 	@Override

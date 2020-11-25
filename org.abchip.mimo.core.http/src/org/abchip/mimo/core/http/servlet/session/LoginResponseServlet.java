@@ -67,7 +67,7 @@ public class LoginResponseServlet extends HttpServlet {
 			try {
 				@SuppressWarnings("resource")
 				ContextProvider context = authenticationManager.login(state, authenticationUserToken);
-				ContextUtils.addContext(context.get());
+				ContextUtils.addContext(context.getContext());
 			} catch (AuthenticationException e) {
 				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
 				return;

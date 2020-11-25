@@ -64,7 +64,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -174,9 +173,6 @@ public class RegPackageImpl extends EPackageImpl implements RegPackage {
 		RegPackageImpl theRegPackage = registeredRegPackage instanceof RegPackageImpl ? (RegPackageImpl)registeredRegPackage : new RegPackageImpl();
 
 		isInited = true;
-
-		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);

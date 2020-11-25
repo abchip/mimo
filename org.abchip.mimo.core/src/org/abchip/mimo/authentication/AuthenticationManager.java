@@ -7,7 +7,7 @@
  */
 package org.abchip.mimo.authentication;
 
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.ContextHandler;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ public interface AuthenticationManager {
 	 * @model exceptions="org.abchip.mimo.authentication.AuthenticationException" contextIdRequired="true" authenticationRequired="true"
 	 * @generated
 	 */
-	ContextProvider login(String contextId, AuthenticationAnonymous authentication) throws AuthenticationException;
+	ContextHandler login(String contextId, AuthenticationAnonymous authentication) throws AuthenticationException;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -42,7 +42,7 @@ public interface AuthenticationManager {
 	 * @model exceptions="org.abchip.mimo.authentication.AuthenticationException" contextIdRequired="true" authenticationRequired="true"
 	 * @generated
 	 */
-	ContextProvider login(String contextId, AuthenticationUserPassword authentication) throws AuthenticationException;
+	ContextHandler login(String contextId, AuthenticationUserPassword authentication) throws AuthenticationException;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public interface AuthenticationManager {
 	 * @model exceptions="org.abchip.mimo.authentication.AuthenticationException" contextIdRequired="true" authenticationRequired="true"
 	 * @generated
 	 */
-	ContextProvider login(String contextId, AuthenticationUserToken authentication) throws AuthenticationException;
+	ContextHandler login(String contextId, AuthenticationUserToken authentication) throws AuthenticationException;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,6 +58,6 @@ public interface AuthenticationManager {
 	 * @model exceptions="org.abchip.mimo.authentication.AuthenticationException" contextIdRequired="true" authenticationRequired="true"
 	 * @generated
 	 */
-	ContextProvider login(String contextId, AuthenticationAdminKey authentication) throws AuthenticationException;
+	ContextHandler login(String contextId, AuthenticationAdminKey authentication) throws AuthenticationException;
 
 } // AuthenticationManager

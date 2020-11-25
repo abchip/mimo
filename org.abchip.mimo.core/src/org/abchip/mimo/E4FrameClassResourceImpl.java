@@ -80,7 +80,7 @@ public class E4FrameClassResourceImpl<E extends Frame<?>> extends ResourceImpl<E
 	}
 
 	@Override
-	public void delete(E entity) {
-		throw new UnsupportedOperationException();
+	public void delete(E entity) throws ResourceException {
+		throw new ResourceException(new UnsupportedOperationException());
 	}
 }

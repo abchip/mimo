@@ -9,23 +9,22 @@ package org.abchip.mimo.context.impl;
 
 import java.util.Dictionary;
 import java.util.List;
+
+import org.abchip.mimo.context.ContextHandler;
 import org.abchip.mimo.context.ContextPackage;
-import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.context.ContextRoot;
 import org.eclipse.emf.ecore.EClass;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Root</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Root</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
 public abstract class ContextRootImpl extends ContextImpl implements ContextRoot {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ContextRootImpl() {
@@ -33,8 +32,7 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -43,43 +41,43 @@ public abstract class ContextRootImpl extends ContextImpl implements ContextRoot
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
-	public abstract ContextProvider createChildContext(String contextId);
+	public abstract ContextHandler createChildContext(String contextId);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public abstract <T> T get(Class<T> klass, String filter);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public abstract <T> List<T> getAll(Class<T> klass);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public abstract <T> List<T> getAll(Class<T> klass, String filter);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public abstract void set(String name, Object object, boolean remoteExport, Dictionary<String, String> dictionary);
 
-} //ContextRootImpl
+} // ContextRootImpl

@@ -66,12 +66,12 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 		EntityLocker<?> entityLocker = lock(this.getContext(), entity);
 
 		try {
-			if(!raw)
+			if (!raw)
 				Resources.firePreSaveEvent(this, entity);
 
 			this.getResource().create(entity, update, raw);
 
-			if(!raw)
+			if (!raw)
 				Resources.firePostSaveEvent(this, entity);
 		} finally {
 			unlock(entityLocker);
@@ -92,6 +92,16 @@ public class BaseResourceWriterImpl<E extends EntityIdentifiable> extends BaseRe
 		} finally {
 			unlock(entityLocker);
 		}
+	}
+
+	@Override
+	public E make() {
+		return this.getResource().make();
+	}
+
+	@Override
+	public E make(boolean sequence) throws ResourceException {
+		return this.getResource().make(sequence);
 	}
 
 	@Override

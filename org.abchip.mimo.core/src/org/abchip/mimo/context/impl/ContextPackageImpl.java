@@ -22,6 +22,7 @@ import org.abchip.mimo.context.ContextDescription;
 import org.abchip.mimo.context.ContextEvent;
 import org.abchip.mimo.context.ContextEventType;
 import org.abchip.mimo.context.ContextFactory;
+import org.abchip.mimo.context.ContextHandler;
 import org.abchip.mimo.context.ContextListener;
 import org.abchip.mimo.context.ContextPackage;
 import org.abchip.mimo.context.ContextProvider;
@@ -77,8 +78,6 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
-
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -122,6 +121,13 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	private EClass contextEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass contextHandlerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -359,9 +365,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		isInited = true;
 
-		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
-
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
 		MimoPackageImpl theMimoPackage = (MimoPackageImpl)(registeredPackage instanceof MimoPackageImpl ? registeredPackage : MimoPackage.eINSTANCE);
@@ -576,6 +579,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	@Override
 	public EClass getContextEvent() {
 		return contextEventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getContextHandler() {
+		return contextHandlerEClass;
 	}
 
 	/**
@@ -1178,6 +1191,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		contextEventEClass = createEClass(CONTEXT_EVENT);
 
+		contextHandlerEClass = createEClass(CONTEXT_HANDLER);
+
 		contextListenerEClass = createEClass(CONTEXT_LISTENER);
 
 		contextProviderEClass = createEClass(CONTEXT_PROVIDER);
@@ -1309,7 +1324,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		capabilityEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		contextEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		contextDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntityIdentifiable());
-		contextProviderEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
+		contextHandlerEClass.getESuperTypes().add(this.getContextProvider());
+		contextHandlerEClass.getESuperTypes().add(theJavaPackage.getJavaCloseable());
 		contextRootEClass.getESuperTypes().add(this.getContext());
 		identityEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		messageDescriptionEClass.getESuperTypes().add(theEntityPackage.getEntity());
@@ -1374,6 +1390,15 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		t1 = addETypeParameter(op, "E");
 		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
 		t1.getEBounds().add(g1);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t1);
+		initEOperation(op, g1);
+
+		op = addEOperation(contextEClass, null, "createProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
@@ -1393,15 +1418,6 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "tenant", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(t1);
-		initEOperation(op, g1);
-
-		op = addEOperation(contextEClass, null, "createProxy", 1, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "E");
-		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
-		t1.getEBounds().add(g1);
-		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
@@ -1453,6 +1469,16 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
 
+		op = addEOperation(contextEClass, null, "getFrame", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theEntityPackage.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
 		addEOperation(contextEClass, theResourcePackage.getResourceManager(), "getResourceManager", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(contextEClass, theResourcePackage.getResourceSet(), "getResourceSet", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1482,6 +1508,58 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t1);
+		initEOperation(op, g1);
+
+		op = addEOperation(contextEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		g1 = createEGenericType(theEntityPackage.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t1);
+		initEOperation(op, g1);
+
+		op = addEOperation(contextEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t1);
+		initEOperation(op, g1);
+
+		op = addEOperation(contextEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t1);
+		initEOperation(op, g1);
+
+		op = addEOperation(contextEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		g1 = createEGenericType(theEntityPackage.getFrame());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t1);
+		initEOperation(op, g1);
+
+		op = addEOperation(contextEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "E");
+		g1 = createEGenericType(theEntityPackage.getEntityIdentifiable());
+		t1.getEBounds().add(g1);
+		addEParameter(op, ecorePackage.getEString(), "frame", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
@@ -1530,6 +1608,10 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		addEOperation(contextEventEClass, this.getContextEventType(), "getEventType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(contextHandlerEClass, ContextHandler.class, "ContextHandler", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(contextHandlerEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(contextListenerEClass, ContextListener.class, "ContextListener", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(contextListenerEClass, null, "handleEvent", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1537,13 +1619,11 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 
 		initEClass(contextProviderEClass, ContextProvider.class, "ContextProvider", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(contextProviderEClass, null, "close", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(contextProviderEClass, this.getContext(), "get", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(contextProviderEClass, this.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contextRootEClass, ContextRoot.class, "ContextRoot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(contextRootEClass, this.getContextProvider(), "createChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(contextRootEClass, this.getContextHandler(), "createChildContext", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(contextRootEClass, null, "get", 0, 1, IS_UNIQUE, IS_ORDERED);

@@ -7,23 +7,25 @@
  */
 package org.abchip.mimo.context;
 
+import java.io.Closeable;
+
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Provider</b></em>'.
+ * A representation of the model object '<em><b>Handler</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.abchip.mimo.context.ContextPackage#getContextProvider()
- * @model interface="true" abstract="true"
+ * @see org.abchip.mimo.context.ContextPackage#getContextHandler()
+ * @model interface="true" abstract="true" superTypes="org.abchip.mimo.context.ContextProvider org.abchip.mimo.java.JavaCloseable"
  * @generated
  */
-public interface ContextProvider {
+public interface ContextHandler extends ContextProvider, Closeable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
+	 * @model
 	 * @generated
 	 */
-	Context getContext();
+	void close();
 
-} // ContextProvider
+} // ContextHandler

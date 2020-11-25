@@ -9,7 +9,6 @@
 package org.abchip.mimo.context;
 
 import org.abchip.mimo.entity.EntityPackage;
-import org.abchip.mimo.java.JavaPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -139,7 +138,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextRoot()
 	 * @generated
 	 */
-	int CONTEXT_ROOT = 7;
+	int CONTEXT_ROOT = 8;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.ContextDescriptionImpl <em>Description</em>}' class.
@@ -277,16 +276,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextListener()
 	 * @generated
 	 */
-	int CONTEXT_LISTENER = 5;
-
-	/**
-	 * The number of structural features of the '<em>Listener</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_LISTENER_FEATURE_COUNT = 0;
+	int CONTEXT_LISTENER = 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.EntityLocker <em>Entity Locker</em>}' class.
@@ -296,7 +286,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getEntityLocker()
 	 * @generated
 	 */
-	int ENTITY_LOCKER = 8;
+	int ENTITY_LOCKER = 9;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.ExceptionManager <em>Exception Manager</em>}' class.
@@ -306,7 +296,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getExceptionManager()
 	 * @generated
 	 */
-	int EXCEPTION_MANAGER = 9;
+	int EXCEPTION_MANAGER = 10;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.Factory <em>Factory</em>}' class.
@@ -316,7 +306,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getFactory()
 	 * @generated
 	 */
-	int FACTORY = 10;
+	int FACTORY = 11;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.IdentityImpl <em>Identity</em>}' class.
@@ -326,7 +316,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getIdentity()
 	 * @generated
 	 */
-	int IDENTITY = 11;
+	int IDENTITY = 12;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.LockManager <em>Lock Manager</em>}' class.
@@ -336,7 +326,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLockManager()
 	 * @generated
 	 */
-	int LOCK_MANAGER = 12;
+	int LOCK_MANAGER = 13;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.MessageDescriptionImpl <em>Message Description</em>}' class.
@@ -346,7 +336,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageDescription()
 	 * @generated
 	 */
-	int MESSAGE_DESCRIPTION = 13;
+	int MESSAGE_DESCRIPTION = 14;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.MessageDataFieldImpl <em>Message Data Field</em>}' class.
@@ -356,7 +346,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageDataField()
 	 * @generated
 	 */
-	int MESSAGE_DATA_FIELD = 14;
+	int MESSAGE_DATA_FIELD = 15;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.MessageFileImpl <em>Message File</em>}' class.
@@ -366,7 +356,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageFile()
 	 * @generated
 	 */
-	int MESSAGE_FILE = 15;
+	int MESSAGE_FILE = 16;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.ProviderConfigImpl <em>Provider Config</em>}' class.
@@ -376,7 +366,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getProviderConfig()
 	 * @generated
 	 */
-	int PROVIDER_CONFIG = 16;
+	int PROVIDER_CONFIG = 17;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.ProviderUserImpl <em>Provider User</em>}' class.
@@ -386,7 +376,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getProviderUser()
 	 * @generated
 	 */
-	int PROVIDER_USER = 17;
+	int PROVIDER_USER = 18;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.Registry <em>Registry</em>}' class.
@@ -396,7 +386,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getRegistry()
 	 * @generated
 	 */
-	int REGISTRY = 18;
+	int REGISTRY = 19;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.RegistryFactory <em>Registry Factory</em>}' class.
@@ -406,7 +396,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getRegistryFactory()
 	 * @generated
 	 */
-	int REGISTRY_FACTORY = 19;
+	int REGISTRY_FACTORY = 20;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.impl.UserProfileImpl <em>User Profile</em>}' class.
@@ -416,7 +406,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getUserProfile()
 	 * @generated
 	 */
-	int USER_PROFILE = 23;
+	int USER_PROFILE = 24;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.ContextProvider <em>Provider</em>}' class.
@@ -426,7 +416,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextProvider()
 	 * @generated
 	 */
-	int CONTEXT_PROVIDER = 6;
+	int CONTEXT_PROVIDER = 7;
 
 	/**
 	 * The number of structural features of the '<em>Provider</em>' class.
@@ -435,7 +425,35 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_PROVIDER_FEATURE_COUNT = JavaPackage.JAVA_CLOSEABLE_FEATURE_COUNT + 0;
+	int CONTEXT_PROVIDER_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.abchip.mimo.context.ContextHandler <em>Handler</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.abchip.mimo.context.ContextHandler
+	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextHandler()
+	 * @generated
+	 */
+	int CONTEXT_HANDLER = 5;
+
+	/**
+	 * The number of structural features of the '<em>Handler</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_HANDLER_FEATURE_COUNT = CONTEXT_PROVIDER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Listener</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_LISTENER_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Root</em>' class.
@@ -706,7 +724,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThread()
 	 * @generated
 	 */
-	int THREAD = 20;
+	int THREAD = 21;
 
 	/**
 	 * The number of structural features of the '<em>Thread</em>' class.
@@ -725,7 +743,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThreadInfo()
 	 * @generated
 	 */
-	int THREAD_INFO = 21;
+	int THREAD_INFO = 22;
 
 	/**
 	 * The feature id for the '<em><b>Thread Name</b></em>' attribute.
@@ -834,7 +852,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThreadManager()
 	 * @generated
 	 */
-	int THREAD_MANAGER = 22;
+	int THREAD_MANAGER = 23;
 
 	/**
 	 * The number of structural features of the '<em>Thread Manager</em>' class.
@@ -916,7 +934,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getCapabilityRight()
 	 * @generated
 	 */
-	int CAPABILITY_RIGHT = 24;
+	int CAPABILITY_RIGHT = 25;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.ContextEventType <em>Event Type</em>}' enum.
@@ -926,7 +944,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextEventType()
 	 * @generated
 	 */
-	int CONTEXT_EVENT_TYPE = 25;
+	int CONTEXT_EVENT_TYPE = 26;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.ContextStatus <em>Status</em>}' enum.
@@ -936,7 +954,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextStatus()
 	 * @generated
 	 */
-	int CONTEXT_STATUS = 26;
+	int CONTEXT_STATUS = 27;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.LockType <em>Lock Type</em>}' enum.
@@ -946,7 +964,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getLockType()
 	 * @generated
 	 */
-	int LOCK_TYPE = 27;
+	int LOCK_TYPE = 28;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.ThreadStatus <em>Thread Status</em>}' enum.
@@ -956,7 +974,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getThreadStatus()
 	 * @generated
 	 */
-	int THREAD_STATUS = 28;
+	int THREAD_STATUS = 29;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.context.UserClass <em>User Class</em>}' enum.
@@ -966,7 +984,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getUserClass()
 	 * @generated
 	 */
-	int USER_CLASS = 29;
+	int USER_CLASS = 30;
 
 	/**
 	 * The meta object id for the '<em>Message Variable List</em>' data type.
@@ -975,7 +993,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageVariableList()
 	 * @generated
 	 */
-	int MESSAGE_VARIABLE_LIST = 30;
+	int MESSAGE_VARIABLE_LIST = 31;
 
 	/**
 	 * The meta object id for the '<em>Message Exception</em>' data type.
@@ -985,7 +1003,7 @@ public interface ContextPackage extends EPackage {
 	 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getMessageException()
 	 * @generated
 	 */
-	int MESSAGE_EXCEPTION = 31;
+	int MESSAGE_EXCEPTION = 32;
 
 
 	/**
@@ -1168,6 +1186,16 @@ public interface ContextPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getContextEvent();
+
+	/**
+	 * Returns the meta object for class '{@link org.abchip.mimo.context.ContextHandler <em>Handler</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Handler</em>'.
+	 * @see org.abchip.mimo.context.ContextHandler
+	 * @generated
+	 */
+	EClass getContextHandler();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.context.ContextListener <em>Listener</em>}'.
@@ -1907,6 +1935,16 @@ public interface ContextPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONTEXT_EVENT = eINSTANCE.getContextEvent();
+
+		/**
+		 * The meta object literal for the '{@link org.abchip.mimo.context.ContextHandler <em>Handler</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.abchip.mimo.context.ContextHandler
+		 * @see org.abchip.mimo.context.impl.ContextPackageImpl#getContextHandler()
+		 * @generated
+		 */
+		EClass CONTEXT_HANDLER = eINSTANCE.getContextHandler();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.context.ContextListener <em>Listener</em>}' class.

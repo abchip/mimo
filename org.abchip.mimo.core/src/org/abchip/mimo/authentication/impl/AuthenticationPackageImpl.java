@@ -57,8 +57,6 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -168,9 +166,6 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 		AuthenticationPackageImpl theAuthenticationPackage = registeredAuthenticationPackage instanceof AuthenticationPackageImpl ? (AuthenticationPackageImpl)registeredAuthenticationPackage : new AuthenticationPackageImpl();
 
 		isInited = true;
-
-		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
@@ -534,22 +529,22 @@ public class AuthenticationPackageImpl extends EPackageImpl implements Authentic
 		addEParameter(op, this.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "create", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(authenticationManagerEClass, theContextPackage.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(authenticationManagerEClass, theContextPackage.getContextHandler(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAuthenticationAnonymous(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getAuthenticationException());
 
-		op = addEOperation(authenticationManagerEClass, theContextPackage.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(authenticationManagerEClass, theContextPackage.getContextHandler(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAuthenticationUserPassword(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getAuthenticationException());
 
-		op = addEOperation(authenticationManagerEClass, theContextPackage.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(authenticationManagerEClass, theContextPackage.getContextHandler(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAuthenticationUserToken(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getAuthenticationException());
 
-		op = addEOperation(authenticationManagerEClass, theContextPackage.getContextProvider(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(authenticationManagerEClass, theContextPackage.getContextHandler(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "contextId", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAuthenticationAdminKey(), "authentication", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getAuthenticationException());

@@ -143,7 +143,7 @@ public class LoginServlet extends HttpServlet {
 		authentication.setTenant(tenant);
 
 		@SuppressWarnings("resource")
-		Context context = authenticationManager.login(session.getId(), authentication).get();
+		Context context = authenticationManager.login(session.getId(), authentication).getContext();
 
 		return context;
 	}
@@ -169,7 +169,7 @@ public class LoginServlet extends HttpServlet {
 		authentication.setTenant(tenant);
 
 		@SuppressWarnings("resource")
-		Context context = authenticationManager.login(session.getId(), authentication).get();
+		Context context = authenticationManager.login(session.getId(), authentication).getContext();
 
 		return context;
 	}

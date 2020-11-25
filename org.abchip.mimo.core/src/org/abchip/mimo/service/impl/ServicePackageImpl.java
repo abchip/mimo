@@ -75,8 +75,6 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
-import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -244,9 +242,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		ServicePackageImpl theServicePackage = registeredServicePackage instanceof ServicePackageImpl ? (ServicePackageImpl)registeredServicePackage : new ServicePackageImpl();
 
 		isInited = true;
-
-		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
@@ -748,44 +743,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		g1 = createEGenericType(this.getServiceResponse());
 		t1.getEBounds().add(g1);
 		ETypeParameter t2 = addETypeParameter(op, "R");
-		g1 = createEGenericType(this.getServiceRequest());
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		t2.getEBounds().add(g1);
-		g1 = createEGenericType(t2);
-		addEParameter(op, g1, "request", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getService());
-		g2 = createEGenericType(t2);
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		initEOperation(op, g1);
-
-		op = addEOperation(serviceManagerEClass, null, "getService", 1, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "V");
-		g1 = createEGenericType(this.getServiceResponse());
-		t1.getEBounds().add(g1);
-		t2 = addETypeParameter(op, "R");
-		g1 = createEGenericType(this.getServiceRequest());
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		t2.getEBounds().add(g1);
-		g1 = createEGenericType(ecorePackage.getEJavaClass());
-		g2 = createEGenericType(t2);
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "klass", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(this.getService());
-		g2 = createEGenericType(t2);
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		initEOperation(op, g1);
-
-		op = addEOperation(serviceManagerEClass, null, "getService", 1, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "V");
-		g1 = createEGenericType(this.getServiceResponse());
-		t1.getEBounds().add(g1);
-		t2 = addETypeParameter(op, "R");
 		g1 = createEGenericType(this.getServiceRequest());
 		g2 = createEGenericType(t1);
 		g1.getETypeArguments().add(g2);

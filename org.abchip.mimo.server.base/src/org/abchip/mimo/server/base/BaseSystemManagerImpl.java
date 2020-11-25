@@ -188,7 +188,7 @@ public class BaseSystemManagerImpl implements SystemManager {
 
 		// system resources
 
-		Context jobContext = system.getContext().createChildContext(job.getJobReference().getJobName()).get();
+		Context jobContext = system.getContext().createChildContext(job.getJobReference().getJobName()).getContext();
 		// job.setJobID(jobContext.get);
 		job.setContext(jobContext);
 

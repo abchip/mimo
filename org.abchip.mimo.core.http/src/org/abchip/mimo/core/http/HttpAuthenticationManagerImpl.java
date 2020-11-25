@@ -28,7 +28,7 @@ import org.abchip.mimo.biz.service.security.UserCredentialFromExternalId;
 import org.abchip.mimo.biz.service.security.UserCredentialFromExternalIdResponse;
 import org.abchip.mimo.context.Context;
 import org.abchip.mimo.context.ContextDescription;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.ContextHandler;
 import org.abchip.mimo.context.ProviderConfig;
 import org.abchip.mimo.context.ProviderUser;
 import org.abchip.mimo.context.Thread;
@@ -62,7 +62,7 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 	}
 
 	@Override
-	public ContextProvider login(String contextId, AuthenticationAnonymous authentication) throws AuthenticationException {
+	public ContextHandler login(String contextId, AuthenticationAnonymous authentication) throws AuthenticationException {
 
 		ProviderUser user = this.providerConfig.getPublicUser();
 		if (user == null)
@@ -72,28 +72,28 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 		authenticationUserPassword.setUser(user.getUser());
 		authenticationUserPassword.setPassword(user.getPassword());
 
-		ContextProvider context = this.login(contextId, authenticationUserPassword);
+		ContextHandler context = this.login(contextId, authenticationUserPassword);
 		if (context != null)
-			context.get().getContextDescription().setAnonymous(true);
+			context.getContext().getContextDescription().setAnonymous(true);
 
 		return context;
 	}
 
 	@Override
-	public ContextProvider login(String contextId, AuthenticationUserToken authentication) throws AuthenticationException {
+	public ContextHandler login(String contextId, AuthenticationUserToken authentication) throws AuthenticationException {
 
 		AuthenticationUserPassword authenticationUserPassword = getExternalCredentials(authentication.getUser());
 
-		ContextProvider context = this.login(contextId, authenticationUserPassword);
+		ContextHandler context = this.login(contextId, authenticationUserPassword);
 
-		context.get().getContextDescription().setPicture(authentication.getPicture());
+		context.getContext().getContextDescription().setPicture(authentication.getPicture());
 
 		return context;
 	}
 
 	@SuppressWarnings("resource")
 	@Override
-	public ContextProvider login(String contextId, AuthenticationUserPassword authentication) throws AuthenticationException {
+	public ContextHandler login(String contextId, AuthenticationUserPassword authentication) throws AuthenticationException {
 
 		String user = authentication.getUser();
 		String password = authentication.getPassword();
@@ -101,9 +101,9 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 
 		LOGGER.audit("Connection from user {} tenant {}", user, tenant);
 
-		ContextProvider contextProvider = application.getContext().createChildContext(contextId);
+		ContextHandler contextHandler = application.getContext().createChildContext(contextId);
 		try {
-			Context context = contextProvider.get();
+			Context context = contextHandler.getContext();
 			ResourceSerializer<ContextDescription> serializer = context.getResourceManager().createResourceSerializer(ContextDescription.class, SerializationType.MIMO);
 			HttpClient httpClient = context.get(HttpClient.class);
 
@@ -131,39 +131,39 @@ public class HttpAuthenticationManagerImpl implements AuthenticationManager {
 			LOGGER.audit("Connection success id {} user {} tenant {}", contextDescription.getId(), contextDescription.getUser(), contextDescription.getTenant());
 		} catch (Exception e) {
 			LOGGER.audit("Connection failed {}", e.getMessage());
-			if (contextProvider != null)
-				contextProvider.close();
+			if (contextHandler != null)
+				contextHandler.close();
 
 			throw new AuthenticationException(e);
 		}
 
-		return contextProvider;
+		return contextHandler;
 	}
 
 	@SuppressWarnings("resource")
 	@Override
-	public ContextProvider login(String contextId, AuthenticationAdminKey authentication) throws AuthenticationException {
+	public ContextHandler login(String contextId, AuthenticationAdminKey authentication) throws AuthenticationException {
 
 		String adminKey = authentication.getAdminKey();
 		String tenant = authentication.getTenant();
 
 		LOGGER.audit("Connection from adminKey {} tenant {}", adminKey, tenant);
 
-		ContextProvider contextProvider = application.getContext().createChildContext(contextId);
+		ContextHandler contextHandler = application.getContext().createChildContext(contextId);
 		try {
-			Context context = contextProvider.get();
+			Context context = contextHandler.getContext();
 			connectAdmin(context, authentication);
 
 			LOGGER.audit("Connection success id {} adminKey {} tenant {}", context.getContextDescription().getId(), adminKey, tenant);
 		} catch (Exception e) {
 			LOGGER.audit("Connection failed {}", e.getMessage());
-			if (contextProvider != null)
-				contextProvider.close();
+			if (contextHandler != null)
+				contextHandler.close();
 
 			throw new AuthenticationException(e);
 		}
 
-		return contextProvider;
+		return contextHandler;
 	}
 
 	@Override

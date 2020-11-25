@@ -9,7 +9,7 @@
 package org.abchip.mimo.resource;
 
 import java.util.List;
-import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
@@ -30,7 +30,7 @@ import org.abchip.mimo.entity.Frame;
  * @model abstract="true"
  * @generated
  */
-public interface Resource<E extends EntityIdentifiable> extends Entity {
+public interface Resource<E extends EntityIdentifiable> extends Entity, ContextProvider {
 
 	public static String TENANT_MASTER = "*MASTER";
 	
@@ -111,6 +111,14 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	E make(boolean sequence) throws ResourceException;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" idRequired="true"
+	 * @generated
+	 */
+	E make(String id) throws ResourceException;
+
+	/**
 	 * Returns the value of the '<em><b>Resource Config</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -163,13 +171,5 @@ public interface Resource<E extends EntityIdentifiable> extends Entity {
 	 * @generated
 	 */
 	void update(E entity) throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
-	 * @generated
-	 */
-	Context getContext();
 
 } // Resource

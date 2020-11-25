@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
@@ -25,14 +26,13 @@ import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.ResourceException;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResource {
+public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResource, ContextProvider {
 
 	private Context context = null;
 
@@ -101,9 +101,8 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 
 		Frame<E> frame = context.getResourceManager().getFrame(jsonObject.getString("isa"));
 		jsonObject.remove("isa");
-		
-		@SuppressWarnings("unchecked")
-		E entity = (E) EcoreUtil.create((EClass) frame.getEClassifier());
+
+		E entity = context.make(frame);
 
 		if (container != null)
 			container.add((EObject) entity);
@@ -111,9 +110,9 @@ public class MIMOProxyResourceImpl extends ResourceImpl implements ReusableResou
 		for (String slotName : JSONObject.getNames(jsonObject)) {
 			Slot slot = this.getSlot(frame, slotName);
 
-			if(jsonObject.isNull(slotName))
+			if (jsonObject.isNull(slotName))
 				continue;
-			
+
 			Object slotValue = jsonObject.get(slotName);
 			if (slotValue instanceof JSONObject) {
 				slotValue = jsonObject2Entity(null, (JSONObject) slotValue);

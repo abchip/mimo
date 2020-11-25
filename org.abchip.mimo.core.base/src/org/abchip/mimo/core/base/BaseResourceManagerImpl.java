@@ -87,7 +87,11 @@ public class BaseResourceManagerImpl implements ResourceManager {
 	@SuppressWarnings("unchecked")
 	@Override
 	public <E extends EntityIdentifiable> Frame<E> getFrame(String frame, String tenant) {
-		return getContext().createProxy(Frame.class, frame, tenant);
+		try {
+			return (Frame<E>) getContext().getResourceSet().getResource(frame, tenant).getFrame();
+		} catch (ResourceException e) {
+			return null;
+		}
 	}
 
 	@Override

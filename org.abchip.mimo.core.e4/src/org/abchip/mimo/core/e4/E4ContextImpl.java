@@ -29,8 +29,6 @@ import org.abchip.mimo.context.Factory;
 import org.abchip.mimo.context.impl.ContextImpl;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
-import org.abchip.mimo.resource.Resource;
-import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourceManager;
 import org.abchip.mimo.resource.ResourceSet;
 import org.abchip.mimo.service.ServiceManager;
@@ -84,13 +82,6 @@ public abstract class E4ContextImpl extends ContextImpl {
 	}
 
 	@Override
-	public <T> T make(Class<T> clazz) {
-		IEclipseContext eclipseContext = getEclipseContext();
-		T object = ContextInjectionFactory.make(clazz, eclipseContext);
-		return object;
-	}
-
-	@Override
 	public void inject(Object consumer) {
 		ContextInjectionFactory.inject(consumer, getEclipseContext());
 	}
@@ -140,7 +131,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void dispose() {
+	public final void dispose() {
 
 		Map<Class<?>, List<AdapterFactory>> adapterFactories = (Map<Class<?>, List<AdapterFactory>>) getEclipseContext().get(ADAPTER_FACTORIES_NAME);
 		adapterFactories.clear();
@@ -176,7 +167,7 @@ public abstract class E4ContextImpl extends ContextImpl {
 	}
 
 	@Override
-	public boolean isClosed() {
+	public final boolean isClosed() {
 		return getEclipseContext() == null;
 	}
 
@@ -284,53 +275,16 @@ public abstract class E4ContextImpl extends ContextImpl {
 		return this.get(ServiceManager.class);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public final <E extends EntityIdentifiable> Frame<E> getFrame(Class<E> klass) {
-		return this.getResourceManager().getFrame(klass);
-	}
-
-	@Override
-	public final <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id) {
-		return createProxy(klass, id, null);
-	}
-
-	@Override
-	public final <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id) {
-		return createProxy(frame, id, null);
-	}
-
-	@Override
-	public final <E extends EntityIdentifiable> E createProxy(Class<E> klass, String id, String tenant) {
-		try {
-			Resource<E> resource = this.getResourceSet().getResource(klass, tenant);
-			return resource.createProxy(id);
-		} catch (ResourceException e) {
-			return null;
+	public final <T> T make(Class<T> clazz) {
+		if (clazz.isAssignableFrom(EntityIdentifiable.class)) {
+			Frame<EntityIdentifiable> frame = this.getFrame((Class<EntityIdentifiable>) clazz);
+			return (T) this.make(frame);
 		}
-	}
 
-	@Override
-	public final <E extends EntityIdentifiable> E createProxy(Frame<E> frame, String id, String tenant) {
-		try {
-			Resource<E> resource = this.getResourceSet().getResource(frame, tenant);
-			return resource.createProxy(id);
-		} catch (ResourceException e) {
-			return null;
-		}
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> E createProxy(String frame, String id) {
-		return createProxy(frame, id, null);
-	}
-
-	@Override
-	public <E extends EntityIdentifiable> E createProxy(String frame, String id, String tenant) {
-		try {
-			Resource<E> resource = this.getResourceSet().getResource(frame, tenant);
-			return resource.createProxy(id);
-		} catch (ResourceException e) {
-			return null;
-		}
+		IEclipseContext eclipseContext = getEclipseContext();
+		T object = ContextInjectionFactory.make(clazz, eclipseContext);
+		return object;
 	}
 }

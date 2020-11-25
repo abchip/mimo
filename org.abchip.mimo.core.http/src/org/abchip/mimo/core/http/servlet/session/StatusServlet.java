@@ -51,7 +51,7 @@ public class StatusServlet extends HttpServlet {
 
 			AuthenticationAnonymous authentication = AuthenticationFactory.eINSTANCE.createAuthenticationAnonymous();
 			try {
-				context = authenticationManager.login(session.getId(), authentication).get();
+				context = authenticationManager.login(session.getId(), authentication).getContext();
 			} catch (AuthenticationException e) {
 				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
 				return;

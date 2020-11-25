@@ -19,12 +19,10 @@ import org.abchip.mimo.resource.ResourceException;
 import org.abchip.mimo.resource.ResourcePackage;
 import org.abchip.mimo.util.Logs;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.service.log.Logger;
 
 /**
@@ -141,57 +139,11 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getTenant() {
-		return tenant;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
 	 */
 	@Override
-	public final void attach(E entity) {
-		InternalEObject internalEObject = (InternalEObject) entity;
-		internalEObject.eSetResource(this.eInternalResource(), null);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public abstract void create(E entity, boolean update, boolean raw) throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public abstract void delete(E entity) throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final void detach(E entity) {
-		InternalEObject internalEObject = (InternalEObject) entity;
-		internalEObject.eSetResource(null, null);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public Context getContext() {
+	public final Context getContext() {
 		return this.context;
 	}
 
@@ -201,107 +153,9 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 	 * @generated NOT
 	 */
 	@Override
-	public abstract Frame<E> getFrame();
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final E make() {
-		try {
-			return make(false);
-		} catch (ResourceException e) {
-			LOGGER.warn(e.getMessage());
-			return null;
-		}
+	public final String getTenant() {
+		return tenant;
 	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public final E make(boolean sequence) throws ResourceException {
-
-		if (this.getFrame().isEnum())
-			throw new ResourceException("Invalid frame " + this.getFrame().getID());
-
-		@SuppressWarnings("unchecked")
-		E entity = (E) EcoreUtil.create((EClass) this.getFrame().getEClassifier());
-		if (sequence) {
-			String id = this.nextSequence();
-
-			Frame<E> domainFrame = entity.isa();
-			for (String key : domainFrame.getKeys()) {
-				domainFrame.setValue(entity, key, id);
-				break;
-			}
-		}
-
-		this.attach(entity);
-
-		return entity;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public E createProxy(String id) {
-		if (id == null)
-			return null;
-
-		E entity = make();
-
-		InternalEObject internalEObject = (InternalEObject) entity;
-		URI uri = URI.createHierarchicalURI("mimo", this.getTenant(), null, new String[] { this.getFrame().getName() }, null, id);
-		internalEObject.eSetProxyURI(uri);
-
-		Frame<E> domainFrame = entity.isa();
-		for (String key : domainFrame.getKeys()) {
-			domainFrame.setValue(entity, key, id.toString());
-			break;
-		}
-
-		return entity;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public abstract String nextSequence() throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public abstract E lookup(String name, String fields, boolean proxy) throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public abstract List<E> find(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public abstract void update(E entity) throws ResourceException;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -376,4 +230,143 @@ public abstract class ResourceImpl<E extends EntityIdentifiable> extends EntityI
 		result.append(')');
 		return result.toString();
 	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final void attach(E entity) {
+		InternalEObject internalEObject = (InternalEObject) entity;
+		internalEObject.eSetResource(this.eInternalResource(), null);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final void detach(E entity) {
+		InternalEObject internalEObject = (InternalEObject) entity;
+		internalEObject.eSetResource(null, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public E createProxy(String id) {
+
+		E entity = this.getContext().createProxy(this.getFrame(), id, this.getTenant());
+		if (entity == null)
+			return null;
+
+		this.attach(entity);
+
+		return entity;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final E make() {
+		try {
+			return make(false);
+		} catch (ResourceException e) {
+			LOGGER.warn(e.getMessage());
+			return null;
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final E make(boolean sequence) throws ResourceException {
+
+		String id = null;
+		if (sequence)
+			id = this.nextSequence();
+
+		return make(id);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public final E make(String id) {
+
+		E entity = this.getContext().make(this.getFrame(), id);
+
+		this.attach(entity);
+
+		return entity;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract void create(E entity, boolean update, boolean raw) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public abstract void delete(E entity) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract Frame<E> getFrame();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract String nextSequence() throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract E lookup(String name, String fields, boolean proxy) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract List<E> find(String filter, String fields, String order, int limit, boolean proxy) throws ResourceException;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public abstract void update(E entity) throws ResourceException;
 } // ResourceImpl

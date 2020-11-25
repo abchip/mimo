@@ -16,6 +16,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
+import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.resource.Resource;
@@ -31,7 +33,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.service.log.Logger;
 
-public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl {
+public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl implements ContextProvider {
 
 	private static final Logger LOGGER = Logs.getLogger(MimoResourceImpl.class);
 
@@ -46,6 +48,11 @@ public class MimoResourceImpl<E extends EntityIdentifiable> extends ResourceImpl
 
 	public Resource<E> getResource() {
 		return this.resource;
+	}
+
+	@Override
+	public Context getContext() {
+		return this.getResource().getContext();
 	}
 
 	@Override

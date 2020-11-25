@@ -57,6 +57,14 @@ public interface EntityIdentifiable extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model contextRequired="true"
+	 * @generated
+	 */
+	void init(Context context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */

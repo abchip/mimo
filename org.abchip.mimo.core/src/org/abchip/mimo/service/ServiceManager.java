@@ -28,22 +28,6 @@ public interface ServiceManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" requestRequired="true"
-	 * @generated
-	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(R request);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" klassRequired="true"
-	 * @generated
-	 */
-	<V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Class<R> klass);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" serviceIdRequired="true"
 	 * @generated
 	 */

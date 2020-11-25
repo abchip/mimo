@@ -129,7 +129,7 @@ public class E4ApplicationStarter implements Runnable {
 		LOGGER.info("Starting component {}", component.getName());
 
 		@SuppressWarnings("resource")
-		Context componentContext = application.getContext().createChildContext(component.getName()).get();
+		Context componentContext = application.getContext().createChildContext(component.getName()).getContext();
 		componentContext.set(ApplicationComponent.class, component);
 		component.setContext(componentContext);
 

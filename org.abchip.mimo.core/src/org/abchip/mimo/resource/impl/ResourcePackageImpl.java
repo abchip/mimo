@@ -81,8 +81,6 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
-import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -292,9 +290,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		ResourcePackageImpl theResourcePackage = registeredResourcePackage instanceof ResourcePackageImpl ? (ResourcePackageImpl)registeredResourcePackage : new ResourcePackageImpl();
 
 		isInited = true;
-
-		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MimoPackage.eNS_URI);
@@ -883,6 +878,7 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1.getETypeArguments().add(g2);
 		loadSeedsEClass.getEGenericSuperTypes().add(g1);
 		resourceEClass.getESuperTypes().add(theEntityPackage.getEntity());
+		resourceEClass.getESuperTypes().add(theContextPackage.getContextProvider());
 		resourceConfigEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		resourceMappingEClass.getESuperTypes().add(theEntityPackage.getEntity());
 		resourceMappingRuleEClass.getESuperTypes().add(theEntityPackage.getEntity());
@@ -946,8 +942,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1 = createEGenericType(resourceEClass_E);
 		initEOperation(op, g1);
 
-		addEOperation(resourceEClass, theContextPackage.getContext(), "getContext", 1, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(resourceEClass, null, "getFrame", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(resourceEClass_E);
@@ -969,6 +963,11 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		op = addEOperation(resourceEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "sequence", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());
+		g1 = createEGenericType(resourceEClass_E);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceEClass_E);
 		initEOperation(op, g1);
 
@@ -1497,20 +1496,6 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		g1 = createEGenericType(resourceReaderEClass_E);
 		initEOperation(op, g1);
 
-		op = addEOperation(resourceReaderEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(resourceReaderEClass_E);
-		initEOperation(op, g1);
-
-		op = addEOperation(resourceReaderEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "sequence", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getResourceException());
-		g1 = createEGenericType(resourceReaderEClass_E);
-		initEOperation(op, g1);
-
-		op = addEOperation(resourceReaderEClass, ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(resourceReaderEClass_E);
-		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(resourceSerializerEClass, ResourceSerializer.class, "ResourceSerializer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		g1 = createEGenericType(theEntityPackage.getFrame());
 		g2 = createEGenericType(resourceSerializerEClass_E);
@@ -1661,10 +1646,24 @@ public class ResourcePackageImpl extends EPackageImpl implements ResourcePackage
 		addEParameter(op, ecorePackage.getEBoolean(), "raw", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());
 
+		op = addEOperation(resourceWriterEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceReaderEClass_E);
+		initEOperation(op, g1);
+
+		op = addEOperation(resourceWriterEClass, null, "make", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "sequence", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getResourceException());
+		g1 = createEGenericType(resourceReaderEClass_E);
+		initEOperation(op, g1);
+
 		op = addEOperation(resourceWriterEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(resourceWriterEClass_E);
 		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getResourceException());
+
+		op = addEOperation(resourceWriterEClass, ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(resourceReaderEClass_E);
+		addEParameter(op, g1, "entity", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(resourceEventTypeEEnum, ResourceEventType.class, "ResourceEventType");

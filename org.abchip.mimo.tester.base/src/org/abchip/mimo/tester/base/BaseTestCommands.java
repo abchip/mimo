@@ -14,7 +14,7 @@ import org.abchip.mimo.authentication.AuthenticationFactory;
 import org.abchip.mimo.authentication.AuthenticationManager;
 import org.abchip.mimo.authentication.AuthenticationUserPassword;
 import org.abchip.mimo.context.Context;
-import org.abchip.mimo.context.ContextProvider;
+import org.abchip.mimo.context.ContextHandler;
 import org.abchip.mimo.core.base.cmd.BaseCommands;
 import org.eclipse.osgi.framework.console.CommandInterpreter;
 
@@ -24,7 +24,7 @@ public abstract class BaseTestCommands extends BaseCommands {
 		super(application);
 	}
 
-	protected ContextProvider login(CommandInterpreter interpreter) throws AuthenticationException {
+	protected ContextHandler login(CommandInterpreter interpreter) throws AuthenticationException {
 
 		Context context = this.getContext(interpreter);
 
@@ -33,8 +33,8 @@ public abstract class BaseTestCommands extends BaseCommands {
 		authentication.setPassword("ofbiz");
 		authentication.setTenant("test");
 
-		ContextProvider contextProvider = context.get(AuthenticationManager.class).login(null, authentication);
+		ContextHandler contextHandler = context.get(AuthenticationManager.class).login(null, authentication);
 
-		return contextProvider;
+		return contextHandler;
 	}
 }

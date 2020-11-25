@@ -118,6 +118,14 @@ public interface Context extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> Frame<E> getFrame(String frame);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
@@ -178,6 +186,46 @@ public interface Context extends Entity {
 	 * @generated
 	 */
 	<T> T make(Class<T> klass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> E make(Frame<E> frame);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" frameRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> E make(String frame);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" klassRequired="true" idRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> E make(Class<E> klass, String id);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" frameRequired="true" idRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> E make(Frame<E> frame, String id);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" frameRequired="true" idRequired="true"
+	 * @generated
+	 */
+	<E extends EntityIdentifiable> E make(String frame, String id);
 
 	/**
 	 * <!-- begin-user-doc -->

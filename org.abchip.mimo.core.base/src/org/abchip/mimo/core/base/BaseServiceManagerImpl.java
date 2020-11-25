@@ -27,8 +27,6 @@ import org.abchip.mimo.service.ServiceProviderRegistry;
 import org.abchip.mimo.service.ServiceRequest;
 import org.abchip.mimo.service.ServiceResponse;
 import org.abchip.mimo.util.Strings;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class BaseServiceManagerImpl implements ServiceManager {
 
@@ -45,32 +43,9 @@ public class BaseServiceManagerImpl implements ServiceManager {
 	}
 
 	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(R request) {
-
-		Service<R, V> service = ServiceFactory.eINSTANCE.createService();
-		service.setName(request.getServiceName());
-		service.setRequest(request);
-
-		return service;
-	}
-
-	@Override
-	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(Class<R> klass) {
-
-		Service<R, V> service = ServiceFactory.eINSTANCE.createService();
-		service.setName(klass.getSimpleName());
-
-		@SuppressWarnings("unchecked")
-		R request = (R) EcoreUtil.create((EClass) context.createProxy(Frame.class, klass.getSimpleName()).getEClassifier());
-		service.setRequest(request);
-
-		return service;
-	}
-
-	@Override
 	public <V extends ServiceResponse, R extends ServiceRequest<V>> Service<R, V> getService(String serviceId) {
 
-		Frame<?> frame = context.getResourceManager().getFrame(Strings.firstToUpper(serviceId));
+		Frame<R> frame = context.getResourceManager().getFrame(Strings.firstToUpper(serviceId));
 		if (frame == null)
 			return null;
 
@@ -80,8 +55,8 @@ public class BaseServiceManagerImpl implements ServiceManager {
 		Service<R, V> service = ServiceFactory.eINSTANCE.createService();
 		service.setName(frame.getName());
 
-		@SuppressWarnings("unchecked")
-		R request = (R) EcoreUtil.create((EClass) frame.getEClassifier());
+		R request = this.context.make(frame);
+
 		service.setRequest(request);
 
 		return service;

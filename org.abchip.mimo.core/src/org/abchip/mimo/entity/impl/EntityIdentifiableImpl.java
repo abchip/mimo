@@ -9,12 +9,14 @@
 package org.abchip.mimo.entity.impl;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map.Entry;
 
-import org.abchip.mimo.E4FrameClassAdapter;
-import org.abchip.mimo.MIMOProxyResourceImpl;
 import org.abchip.mimo.MimoResourceImpl;
 import org.abchip.mimo.context.Context;
+import org.abchip.mimo.context.ContextProvider;
 import org.abchip.mimo.entity.Entity;
 import org.abchip.mimo.entity.EntityIdentifiable;
 import org.abchip.mimo.entity.EntityIterator;
@@ -24,9 +26,12 @@ import org.abchip.mimo.entity.Frame;
 import org.abchip.mimo.entity.Slot;
 import org.abchip.mimo.resource.Resource;
 import org.abchip.mimo.resource.ResourceException;
-import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -41,6 +46,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EntityIdentifiableImpl() {
@@ -49,6 +55,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -62,100 +69,22 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	 * @generated NOT
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public void init(Context context) {
 
-		EAttribute eIDAttribute = eClass().getEIDAttribute();
-		EStructuralFeature eFeature = eClass().getEStructuralFeature(featureID);
+		EAnnotation eFrameAnnotation = this.eClass().getEAnnotation(Frame.NS_PREFIX_FRAME_CONSTRAINTS);
+		if (eFrameAnnotation == null)
+			return;
 
-		if (eFeature.isMany()) {
-			if (resolve && !eIsSet(featureID)) {
-
-				if (this.getResource() == null)
-					return super.eGet(featureID, resolve, coreType);
-
-				Slot slot = isa().getSlot(eFeature.getName());
-				if (slot.getDomain() == null)
-					return super.eGet(featureID, resolve, coreType);
-
-				Context context = this.getResource().getContext();
-
-				String filter = slot.getDomain().getRoute();
-				if (filter == null || filter.trim().isEmpty()) {
-					if (eIDAttribute != null) {
-						switch (slot.getDataType()) {
-						case ENUM:
-						case STRING:
-						case DATE_TIME:
-						case ENTITY:
-						case OBJECT:
-							filter = eIDAttribute.getName() + " = '" + this.getID() + "'";
-							break;
-						case BINARY:
-						case BOOLEAN:
-						case IDENTITY:
-						case NUMERIC:
-							filter = eIDAttribute.getName() + " = " + this.getID();
-							break;
-						}
-					} else
-						return super.eGet(featureID, resolve, coreType);
-				}
-
-				List<EntityIdentifiable> values = new EDataTypeUniqueEList<EntityIdentifiable>(EntityIdentifiable.class, this, featureID);
-				try (EntityIterator<EntityIdentifiable> entities = context.getResourceManager().getResourceReader(slot.getDomain().getFrame()).find(filter)) {
-					for (EntityIdentifiable entityIdentifiable : entities) {
-						String domainKey = entityIdentifiable.isa().getKeys().get(0);
-						entityIdentifiable.isa().setValue(entityIdentifiable, domainKey, this);
-						values.add(entityIdentifiable);
-					}
-				} catch (ResourceException e) {
-					throw new RuntimeException(e);
-				}
-				super.eSet(eFeature, values);
-
-				return values;
+		for (Entry<String, String> constraint : eFrameAnnotation.getDetails().entrySet()) {
+			try {
+				EStructuralFeature eFeature = this.eClass().getEStructuralFeature(constraint.getKey());
+				if (eFeature == null)
+					"".toString();
+				eSet(eFeature, constraint.getValue());
+			} catch (Exception e) {
+				e.toString();
 			}
 		}
-
-		switch (this.getState()) {
-		case PROXY:
-			if (eFeature == eIDAttribute)
-				return this.getURI().getFragment();
-
-			EntityIdentifiableImpl eObject = (EntityIdentifiableImpl) EcoreUtil.resolve(this, this);
-			this.eBasicSetSettings(eObject.eBasicSettings());
-			this.eSetProxyURI(null);
-
-			break;
-		case DIRTY:
-			return null;
-		case RESOLVED:
-		case TRANSIENT:
-		case CHAINED:
-			break;
-		}
-
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		super.eSet(featureID, newValue);
 	}
 
 	/**
@@ -192,7 +121,7 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	 * @generated NOT
 	 */
 	@Override
-	public String getID() {
+	public final String getID() {
 
 		String id = EcoreUtil.getID(this);
 		if (id != null)
@@ -212,38 +141,34 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 	 */
 	@SuppressWarnings({ "unchecked" })
 	@Override
-	public <E extends Entity> Frame<E> isa() {
+	public final <E extends Entity> Frame<E> isa() {
 
-		for(Adapter adapter : eClass().eAdapters()) {
-			if(adapter instanceof E4FrameClassAdapter) 
-				return (Frame<E>) adapter;
-		}
-		
+		Frame<E> isa = super.isa();
+		if (isa != null)
+			return isa;
+
 		switch (getState()) {
 		case RESOLVED:
 		case PROXY:
 			return (Frame<E>) getResource().getFrame();
 		default:
-			return super.isa();
+			return null;
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public Context getContext() {
-		
-		if(getResource() != null)
-			return getResource().getContext();
-		
-		if (this.eResource() instanceof MIMOProxyResourceImpl) {
-			MIMOProxyResourceImpl resource = (MIMOProxyResourceImpl)this.eResource();
-			return resource.getContext();
+
+		if (this.eResource() instanceof ContextProvider) {
+			ContextProvider contextProvider = (ContextProvider) this.eResource();
+			return contextProvider.getContext();
 		}
-		
+
 		return null;
 	}
 
@@ -261,5 +186,132 @@ public abstract class EntityIdentifiableImpl extends EntityImpl implements Entit
 		}
 
 		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+
+		EAttribute eIDAttribute = eClass().getEIDAttribute();
+		EStructuralFeature eFeature = eClass().getEStructuralFeature(featureID);
+
+		if (eFeature.isMany()) {
+			if (resolve && !eIsSet(featureID)) {
+
+				if (this.getContext() == null)
+					return super.eGet(featureID, resolve, coreType);
+
+				Slot slot = isa().getSlot(eFeature.getName());
+				if (slot.getDomain() == null)
+					return super.eGet(featureID, resolve, coreType);
+
+				String filter = slot.getDomain().getRoute();
+				if (filter == null || filter.trim().isEmpty()) {
+					if (eIDAttribute != null) {
+						switch (slot.getDataType()) {
+						case ENUM:
+						case STRING:
+						case DATE_TIME:
+						case ENTITY:
+						case OBJECT:
+							filter = eIDAttribute.getName() + " = '" + this.getID() + "'";
+							break;
+						case BINARY:
+						case BOOLEAN:
+						case IDENTITY:
+						case NUMERIC:
+							filter = eIDAttribute.getName() + " = " + this.getID();
+							break;
+						}
+					} else
+						return super.eGet(featureID, resolve, coreType);
+				}
+
+				List<EntityIdentifiable> values = new EDataTypeUniqueEList<EntityIdentifiable>(EntityIdentifiable.class, this, featureID);
+				try (EntityIterator<EntityIdentifiable> entities = this.getContext().getResourceManager().getResourceReader(slot.getDomain().getFrame()).find(filter)) {
+					for (EntityIdentifiable entityIdentifiable : entities) {
+						String domainKey = entityIdentifiable.isa().getKeys().get(0);
+						entityIdentifiable.isa().setValue(entityIdentifiable, domainKey, this);
+						values.add(entityIdentifiable);
+					}
+				} catch (ResourceException e) {
+					throw new RuntimeException(e);
+				}
+				super.eSet(eFeature, values);
+
+				return values;
+			}
+		}
+
+		switch (this.getState()) {
+		case PROXY:
+			if (eFeature == eIDAttribute)
+				return this.getURI().getFragment();
+
+			EntityIdentifiableImpl eObject = (EntityIdentifiableImpl) EcoreUtil.resolve(this, this);
+			this.eBasicSetSettings(eObject.eBasicSettings());
+			this.eSetProxyURI(null);
+
+			break;
+		case DIRTY:
+			return null;
+		case RESOLVED:
+		case TRANSIENT:
+		case CHAINED:
+			break;
+		}
+
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	@Override
+	public void eSet(EStructuralFeature eFeature, Object newValue) {
+
+		Context context = this.getContext();
+		if (eFeature.isMany()) {
+			List<Object> values = new ArrayList<Object>();
+			for (Object object : (Collection<?>) newValue)
+				values.add(buildValue(context, eFeature, object));
+			super.eSet(eFeature, values);
+		} else {
+			try {
+				Object object = buildValue(context, eFeature, newValue);
+				super.eSet(eFeature, object);
+			} catch (Exception e) {
+				if (eFeature.getEType() instanceof EDataType) {
+					super.eSet(eFeature, EcoreUtil.createFromString((EDataType) eFeature.getEType(), newValue.toString()));
+				}
+			}
+		}
+	}
+
+	private Object buildValue(Context context, EStructuralFeature eFeature, Object value) {
+
+		Object object = null;
+
+		if (eFeature instanceof EReference) {
+			if (value instanceof Entity) {
+				Entity entityIdentifiable = (Entity) value;
+				object = entityIdentifiable;
+			} else {
+				EReference eReference = (EReference) eFeature;
+				EClassifier eClassifier = eReference.getEType();
+
+				if (eClassifier instanceof EClass && EntityPackage.eINSTANCE.getEntityIdentifiable().isSuperTypeOf((EClass) eClassifier)) {
+					if (context != null)
+						object = context.createProxy(eClassifier.getName(), value.toString());
+					else
+						System.err.println("Unexpected condition bwytn56wn086b787rt874we");
+				} else
+					System.err.println("Unexpected condition gkvjsfct4rttycgfad908");
+			}
+		} else
+			object = value;
+
+		return object;
 	}
 } // EntityIdentifiableImpl
